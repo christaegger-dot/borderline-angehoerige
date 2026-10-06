@@ -42,6 +42,11 @@ export const quellenLinks = {
   whoStress2026: "/quellen#src-world-health-organization-2026",
   whoSuicide2026: "/quellen#src-world-health-organization-suicide-q-a-2026",
   zaccaro2018: "/quellen#src-zaccaro-piarulli-laurinot-al-2018",
+  eggshells2020: "/quellen#src-mason-kreger-2020",
+  zgb2026: "/quellen#src-zgb-2026",
+  opferhilfeSchutz: "/quellen#src-opferhilfe-schutz",
+  interpret2019: "/quellen#src-interpret-2019",
+  bagDolmetschen: "/quellen#src-bag-dolmetschen",
 } as const;
 
 export type QuellenLinkKey = keyof typeof quellenLinks;

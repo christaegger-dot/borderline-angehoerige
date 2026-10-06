@@ -149,6 +149,9 @@ test("materialien filter and first cards match baseline", async ({ page }) => {
       ".material-library-grid > :nth-child(n + 4) { display: none !important; }",
   });
   const firstGrid = page.locator(".material-library-grid");
+  // Die Bibliothek folgt auf die Lernweg-Auswahl. Vor dem Dekodieren die
+  // Karten in den Viewport holen, damit ihre lazy geladenen Bilder starten.
+  await firstGrid.scrollIntoViewIfNeeded();
   await firstGrid
     .locator(":scope > :nth-child(-n+3) img")
     .evaluateAll(images =>

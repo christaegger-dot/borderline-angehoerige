@@ -9,6 +9,8 @@ import {
 import type { ElementType, HTMLAttributes, ReactNode } from "react";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { Router } from "wouter";
+import AppLink from "@/components/AppLink";
+import ContentSection from "@/components/ContentSection";
 
 const MOTION_PROPS = new Set([
   "animate",
@@ -123,6 +125,42 @@ const HASH_CASES = [
 ] as const;
 
 describe("hash-linked content sections", () => {
+  it("links immediate danger from the everyday section directly to static emergency help", async () => {
+    const { default: Page } = await import("@/pages/UnterstuetzenAlltag");
+    renderWithRoute(<Page />, "/unterstuetzen/alltag");
+    const section = document.getElementById("impulsivitaet")!;
+    const help = within(section).getByRole("link", {
+      name: "Akute Hilfe und Notfallkontakte",
+    });
+    expect(help).toHaveAttribute("href", "/soforthilfe");
+    expect(
+      within(section).queryByRole("link", { name: "Krisenbegleitung" })
+    ).not.toBeInTheDocument();
+  });
+  it("opens a collapsed same-page canonical explanation through AppLink", async () => {
+    renderWithRoute(
+      <>
+        <ContentSection id="erklaerung" title="Kanonische Erklärung">
+          Vertiefender Inhalt
+        </ContentSection>
+        <AppLink href="/verstehen#erklaerung">Grundlage dieser Seite</AppLink>
+      </>,
+      "/verstehen"
+    );
+    const toggle = screen.getByRole("button", {
+      name: /Abschnitt Kanonische Erklärung/,
+    });
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+    fireEvent.click(
+      screen.getByRole("link", { name: "Grundlage dieser Seite" })
+    );
+    await waitFor(() =>
+      expect(toggle).toHaveAttribute("aria-expanded", "true")
+    );
+    expect(window.location.hash).toBe("#erklaerung");
+    expect(screen.getByText("Vertiefender Inhalt")).toBeVisible();
+    expect(window.scrollTo).toHaveBeenCalled();
+  });
   it.each(HASH_CASES)(
     "opens and scrolls the requested section on first render for $route",
     async ({ route, loadPage, buttonName, contentText }) => {

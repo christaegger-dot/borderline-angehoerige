@@ -1,3 +1,4 @@
+import { LearningGoal, LearningPathNav } from "@/components/LearningPath";
 import LearningGuide from "@/components/interactive/LearningGuide";
 import AngehoerigenBeratung from "@/components/AngehoerigenBeratung";
 import KinderEntlasten from "@/components/KinderEntlasten";
@@ -76,7 +77,7 @@ const gewaltSchritte = [
   {
     schritt: "Nach sexueller oder häuslicher Gewalt: Spurensicherung mitdenken",
     detail:
-      "Spezialisierte Fachstellen unterstützen bei medizinischer Versorgung, Dokumentation und Spurensicherung – auch ohne sofortige Strafanzeige.",
+      "Bei Verletzungen holen Sie medizinische Hilfe. Fragen Sie eine spezialisierte Fachstelle direkt nach Dokumentation und Spurensicherung und klären Sie dort das Vorgehen, wenn Sie zunächst keine Anzeige erstatten möchten.",
   },
   {
     schritt: "Opferhilfe und Beratung dazunehmen",
@@ -148,6 +149,7 @@ export default function Grenzen() {
             dürfen abwägen, wie viel Kontakt für Sie tragbar ist – auch eine
             Pause oder eine Trennung kann eine mögliche Entscheidung sein.
           </Lede>
+          <LearningGoal path="/grenzen" />
           <TopicQuickLinks
             items={[
               { href: "#warnsignale", label: "Warnsignale" },
@@ -228,29 +230,24 @@ export default function Grenzen() {
             id="warnsignale"
           >
             <EditorialProse>
-              <ul className="ml-6 list-disc space-y-2">
-                <li>
-                  Sie sagen aus Angst ja, obwohl innerlich längst nein da ist.
-                </li>
-                <li>
-                  Sie fühlen sich dauernd zuständig, beobachtend oder auf Abruf.
-                </li>
-                <li>
-                  Sie werden gereizt, hart oder ziehen sich innerlich zurück.
-                </li>
-                <li>
-                  Sie merken, dass Hilfe nur noch aus Schuld oder Panik
-                  geschieht.
-                </li>
-              </ul>
               <p>
-                Grenzen beginnen oft nicht mit dem Satz an den anderen, sondern
-                mit dem ernsten Wahrnehmen Ihrer eigenen Belastung.{" "}
-                <Link href="/selbstfuersorge" className="editorial-link">
-                  Selbstfürsorge
+                Vielleicht sagen Sie ja, obwohl Sie nein meinen, oder fühlen
+                sich ständig auf Abruf. Das kann ein Anlass sein, die eigenen
+                Möglichkeiten zu prüfen. Eine Grenze darf auch bestehen, bevor
+                Sie überlastet sind.
+              </p>
+              <p>
+                Die ausführliche Einordnung eigener Veränderungen finden Sie
+                unter{" "}
+                <Link
+                  href="/selbstfuersorge#warnsignale"
+                  className="editorial-link"
+                >
+                  Eigene Belastungszeichen
                 </Link>{" "}
-                zeigt, was Sie tun können, wenn Sie merken, dass Sie sich selbst
-                vernachlässigt haben.
+                – ohne feste Belastungsstufe oder Schluss auf die Ursache von
+                Beschwerden. Hier geht es darum, daraus eine eigene Grenze zu
+                formulieren.
               </p>
             </EditorialProse>
           </ContentSection>
@@ -831,45 +828,6 @@ export default function Grenzen() {
       </EditorialSection>
       <GrenzenMaterialsSection />
 
-      {/* ── 9 Weiter-Hinweis ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Weiter
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EditorialProse>
-            <p>
-              Grenzen sind der Schutzraum — Selbstfürsorge ist das, was Sie
-              darin aufbauen. Wer weiss, wo er aufhört und der andere anfängt,
-              kann sich eher erholen. Schuldgefühle können dabei trotzdem
-              bleiben —{" "}
-              <Link href="/selbstfuersorge" className="editorial-link">
-                weiter zu Selbstfürsorge
-              </Link>
-              . Zurück geht es zu{" "}
-              <Link href="/kommunizieren" className="editorial-link">
-                Kommunizieren
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSection.Body>
-      </EditorialSection>
-
       {/* ── 10 Querverweise ── EditorialSection variant="cream-deep" */}
       <EditorialSection variant="cream-deep">
         <EditorialSection.MarginNote>
@@ -915,6 +873,7 @@ export default function Grenzen() {
           />
         </EditorialSection.Body>
       </EditorialSection>
+      <LearningPathNav path="/grenzen" />
     </Layout>
   );
 }

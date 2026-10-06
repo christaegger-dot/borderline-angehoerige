@@ -9,8 +9,10 @@ import {
 import Layout from "@/components/Layout";
 import ReviewBadge from "@/components/ReviewBadge";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
+import { claimSources } from "@/content/claimSources";
 
 interface QuelleEintrag {
+  id?: string;
   autoren: string;
   jahr: string;
   titel: string;
@@ -382,11 +384,23 @@ const quellen: QuelleKategorie[] = [
       {
         autoren: "Mason, P. T. & Kreger, R.",
         jahr: "2007 / 2014",
-        titel: "Stop Walking on Eggshells / Schluss mit dem Eiertanz",
+        titel: "Schluss mit dem Eiertanz",
         quelle:
-          "Balance Buch + Medien Verlag (deutsche Ausgabe 2007, 8. Auflage 2014); New Harbinger Publications (englische 3. Auflage 2014)",
+          "Balance Buch + Medien Verlag (bisher erfasste deutsche Ausgabe 2007, 8. Auflage 2014; in diesem Durchlauf nicht neu unabhängig geprüft)",
         hinweis:
           "Historisch einflussreicher Ratgeber für Angehörige, keine wissenschaftliche Studie oder aktuelle systematische Übersicht. Einzelne Beschreibungen verallgemeinern Beziehungsmuster und Motive; Krisenhinweise sind nicht als heutige Notfallanleitung zu verwenden. Als Erfahrungs- und Praxisquelle kritisch lesen. Originalausgabe (englisch) 1998.",
+      },
+      {
+        id: "src-mason-kreger-2020",
+        autoren: "Mason, P. T. & Kreger, R.",
+        jahr: "2020",
+        titel: "Stop Walking on Eggshells, Third Edition",
+        quelle:
+          "New Harbinger Publications, englische 3. Auflage, Dezember 2020; Paperback ISBN 9781684036899",
+        hinweis:
+          "Das Jahr und die Ausgabe sind am 06.10.2026 anhand der offiziellen Verlagsseite abgeglichen. Ratgeber- und Praxisliteratur, keine klinische Evidenzquelle oder heutige Notfallanleitung. Die deutsche Ausgabe ist davon getrennt erfasst.",
+        link: claimSources.eggshells2020.url,
+        linkLabel: "Offizielle Verlagsseite",
       },
       {
         autoren: "Kreisman, J. J. & Straus, H.",
@@ -700,6 +714,52 @@ const quellen: QuelleKategorie[] = [
       },
     ],
   },
+  {
+    kategorie: "Schweizer Rechts- und Schutzquellen",
+    eintraege: [
+      {
+        id: "src-zgb-2026",
+        autoren: "Schweizerische Eidgenossenschaft (Fedlex)",
+        jahr: "2026",
+        titel: "Schweizerisches Zivilgesetzbuch (SR 210)",
+        quelle: "Amtliche konsolidierte Fassung, Stand 1. Juli 2026",
+        hinweis:
+          "Art. 307, 314c und 314d betreffen Kindesschutzmassnahmen, Melderechte und rollenabhängige Meldepflichten. Art. 426, 428 und 429 betreffen Voraussetzungen und Zuständigkeit der fürsorgerischen Unterbringung. Gesetzestext am 06.10.2026 direkt abgeglichen; Einzelfallanwendung, kantonales Recht und schweizerisch-rechtliche Prüfung bleiben offen.",
+        link: claimSources.zgb.url,
+        linkLabel: "Amtlicher Gesetzestext",
+      },
+      {
+        id: "src-opferhilfe-schutz",
+        autoren: "Opferhilfe Schweiz (SODK)",
+        jahr: "laufend",
+        titel: "Schutz",
+        quelle: "Offizielle Informationsseite; abgerufen am 06.10.2026",
+        hinweis: claimSources.opferhilfeSchutz.scope,
+        link: claimSources.opferhilfeSchutz.url,
+        linkLabel: "Offizielle Schutzinformation",
+      },
+      {
+        id: "src-interpret-2019",
+        autoren: "INTERPRET",
+        jahr: "2019",
+        titel: "Interkulturelles Dolmetschen im Gesundheitsbereich",
+        quelle: "Argumentarium, Juni 2019, Seite 1",
+        hinweis: claimSources.interpret2019.scope,
+        link: claimSources.interpret2019.url,
+        linkLabel: "Offizielles Argumentarium (PDF)",
+      },
+      {
+        id: "src-bag-dolmetschen",
+        autoren: "Bundesamt für Gesundheit (BAG)",
+        jahr: "laufend",
+        titel: "Interkulturelles Dolmetschen",
+        quelle: "Offizielle Informationsseite; abgerufen am 06.10.2026",
+        hinweis: claimSources.bagDolmetschen.scope,
+        link: claimSources.bagDolmetschen.url,
+        linkLabel: "BAG",
+      },
+    ],
+  },
 ];
 
 /** Slugifiziert Autor-Feld für stabile id-Anker. */
@@ -717,6 +777,7 @@ function slugifyAuthor(autoren: string): string {
 }
 
 function entryAnchor(eintrag: QuelleEintrag): string {
+  if (eintrag.id) return eintrag.id;
   return `src-${slugifyAuthor(eintrag.autoren)}-${eintrag.jahr}`;
 }
 
@@ -760,6 +821,11 @@ export default function Quellen() {
             geordnet.
           </Lede>
           <ReviewBadge path="/quellen" />
+          <p className="mt-4" style={noteStyle}>
+            Quellenangaben und redaktionelle Abgleiche sind keine klinische oder
+            schweizerisch-rechtliche Freigabe. Bei den FAQ und Glossarbegriffen
+            stehen die Belege und ihre Reichweite direkt beim jeweiligen Inhalt.
+          </p>
           <p
             className="mt-4"
             style={{

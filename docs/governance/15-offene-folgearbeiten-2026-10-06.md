@@ -1,5 +1,8 @@
 # Umsetzung offener Folgearbeiten vom 06.10.2026
 
+Fortsetzung: [Kontakte, Quellenmatrix und Lernarchitektur](16-kontakte-quellen-lernarchitektur-2026-10-06.md).
+Die unten genannten Restpunkte beschreiben den Stand nach PR #655/#656.
+
 Dieses Folgepaket basiert auf `main` nach PR #654 (`a56ed27`). Es setzt die
 technisch und redaktionell überprüfbaren Folgearbeiten um. Klinische,
 institutionelle, rechtliche und perspektivenbezogene Freigaben werden daraus

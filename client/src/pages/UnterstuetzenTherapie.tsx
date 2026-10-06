@@ -1,3 +1,4 @@
+import { LearningGoal, LearningExtensionNav } from "@/components/LearningPath";
 import AngehoerigenBeratung from "@/components/AngehoerigenBeratung";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
@@ -21,15 +22,20 @@ import RollenOrbitVisualisierung from "@/components/visualizations/RollenOrbitVi
 import { quellenLinks } from "@/content/quellenLinks";
 import {
   emailByIdStrict,
+  fachstellenProfil,
   kontaktByIdStrict,
+  kontaktNachweisByIdStrict,
   urlByIdStrict,
 } from "@/data/kontakte";
 import { Link } from "wouter";
 
-const hype = kontaktByIdStrict("INFO_PUK_KJPP_HYPE");
-const emailKjpp = emailByIdStrict("EMAIL_KJPP");
+const kjppAmbulatorium = kontaktByIdStrict("INFO_PUK_KJPP_HYPE");
+const hypeUrl = urlByIdStrict("URL_PUK_KJP_PERSOENLICHKEITSSTOERUNGEN");
 const pukDbt = kontaktByIdStrict("INFO_PUK_DBT");
 const ipw = kontaktByIdStrict("INFO_IPW");
+const ipwStationUrl =
+  kontaktNachweisByIdStrict("INFO_IPW").primarySourceUrl ??
+  urlByIdStrict("URL_IPW").url;
 const emailHard = emailByIdStrict("EMAIL_HARD");
 const clieniaUrl = urlByIdStrict("URL_CLIENIA");
 const dbtDachUrl = urlByIdStrict("URL_DBT_DACH");
@@ -111,7 +117,7 @@ const therapieformen = [
   {
     name: "TFP · Übertragungsfokussierte Psychotherapie",
     description:
-      "Arbeitet mit dem Beziehungserleben in der therapeutischen Beziehung selbst: innere Konflikte werden im «Hier und Jetzt» zwischen Therapeut:in und Patient:in sichtbar und bearbeitbar. In der Schweizer Versorgungsrealität weniger verbreitet als DBT, aber als evidenzbasierte Therapie etabliert.",
+      "Arbeitet mit dem Beziehungserleben in der therapeutischen Beziehung selbst: innere Konflikte werden im «Hier und Jetzt» zwischen Therapeut:in und Patient:in betrachtet und bearbeitet.",
   },
   {
     name: "Strukturierte generalistische Behandlung",
@@ -202,6 +208,7 @@ export default function UnterstuetzenTherapie() {
             Fachpersonen. Angehörige dürfen ihre eigene Rolle und Unterstützung
             unabhängig davon klären.
           </Lede>
+          <LearningGoal path="/unterstuetzen/therapie" />
           <TopicQuickLinks
             items={[
               { href: "#rolle", label: "Die eigene Rolle" },
@@ -364,10 +371,9 @@ export default function UnterstuetzenTherapie() {
                 <h3 style={h4Style}>3. Eigene Beratung nutzen</h3>
                 <p style={bodyStyle}>
                   Für Ihre eigene Belastung und Ihre Fragen dürfen Sie
-                  unabhängig Hilfe suchen. Die Fachstelle Angehörigenarbeit der
-                  PUK berät kostenlos und vertraulich, auch ohne Vollmacht der
-                  erkrankten Person. Diese Beratung gibt Ihnen keinen Zugang zu
-                  deren Behandlungsinformationen.
+                  unabhängig Hilfe suchen. {fachstellenProfil.zugangHinweis}{" "}
+                  Eigene Beratung gibt Ihnen keinen automatischen Zugang zu
+                  vertraulichen Behandlungsinformationen einer anderen Person.
                 </p>
                 <Link href="/fachstelle" className="editorial-link">
                   Angehörigenberatung kontaktieren
@@ -812,15 +818,25 @@ export default function UnterstuetzenTherapie() {
               className="flex flex-wrap gap-x-6 gap-y-1"
               style={{ fontSize: "var(--text-sm)" }}
             >
-              <a href={`tel:${hype.tel}`} className="editorial-link">
-                Telefon {hype.nummer}
-              </a>
               <a
-                href={`mailto:${emailKjpp.adresse}`}
+                href={`tel:${kjppAmbulatorium.tel}`}
                 className="editorial-link"
               >
-                {emailKjpp.adresse}
+                Allgemeines Ambulatorium Zürich {kjppAmbulatorium.nummer}
               </a>
+              <a
+                href={hypeUrl.url}
+                className="editorial-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Offizielles HYPE-Angebot und Kontaktweg
+              </a>
+            </p>
+            <p style={bodyStyle}>
+              Die Telefonnummer gehört zum allgemeinen Ambulatorium Zürich.
+              Aktuelle Kontakt- und Anmeldewege für das HYPE-Programm finden Sie
+              auf der verlinkten Angebotsseite.
             </p>
           </article>
 
@@ -847,14 +863,27 @@ export default function UnterstuetzenTherapie() {
 
           <div className="mt-8 grid gap-8 sm:grid-cols-2">
             <article className="space-y-2">
-              <h3 style={h4Style}>IPW Winterthur</h3>
+              <h3 style={h4Style}>
+                ipw – Psychotherapiestation für junge Erwachsene
+              </h3>
               <p style={bodyStyle}>
-                Erwachsenenpsychiatrisches Angebot in Winterthur mit regionaler
-                Anbindung.
+                Diese Telefonnummer gehört zur Psychotherapiestation für junge
+                Erwachsene. Klären Sie aktuelle Alters- und Aufnahmebedingungen
+                direkt mit dem Anbieter.
               </p>
               <p style={{ fontSize: "var(--text-sm)" }}>
                 <a href={`tel:${ipw.tel}`} className="editorial-link">
-                  Telefon {ipw.nummer}
+                  Psychotherapiestation {ipw.nummer}
+                </a>
+              </p>
+              <p style={{ fontSize: "var(--text-sm)" }}>
+                <a
+                  href={ipwStationUrl}
+                  className="editorial-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Offizielles Stationsangebot
                 </a>
               </p>
             </article>
@@ -909,42 +938,6 @@ export default function UnterstuetzenTherapie() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 10 Weiter-Hinweis ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Weiter
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EditorialProse>
-            <p>
-              Wenn aus Therapierahmen akute Eskalation wird, geht es um{" "}
-              <Link href="/unterstuetzen/krise" className="editorial-link">
-                weiter: In der Krise unterstützen
-              </Link>
-              . Zurück geht es zu{" "}
-              <Link href="/unterstuetzen/alltag" className="editorial-link">
-                Im Alltag unterstützen
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSection.Body>
-      </EditorialSection>
-
       {/* ── 11 Querverweise ── EditorialSection variant="cream-deep" */}
       <EditorialSection variant="cream-deep">
         <EditorialSection.MarginNote>
@@ -990,6 +983,7 @@ export default function UnterstuetzenTherapie() {
           />
         </EditorialSection.Body>
       </EditorialSection>
+      <LearningExtensionNav path="/unterstuetzen/therapie" />
     </Layout>
   );
 }

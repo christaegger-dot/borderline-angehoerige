@@ -91,11 +91,13 @@ try {
       await page.getByRole("heading", { level: 1 }).first().waitFor();
 
       if (route === "/soforthilfe") {
-        assert.equal(await page.locator('a[href="tel:0583846500"]').count(), 0);
+        const kiz = page.locator('a[href="tel:+41583846500"]');
+        assert.equal(await kiz.count(), 1);
+        assert(await kiz.isVisible());
+        assert.match(await kiz.locator("..").innerText(), /Durchwahlnummer 4/);
+        assert.equal(await page.locator('a[href="tel:0442967310"]').count(), 0);
         assert(
-          await page
-            .getByText(/Telefonangabe derzeit\s+nicht geklärt/)
-            .isVisible()
+          await page.getByText(/nennt weiterhin\s+044 296 73 10/).isVisible()
         );
       }
 
@@ -193,6 +195,7 @@ try {
   const page = await context.newPage();
   await page.goto(new URL("/soforthilfe", baseUrl).href);
   assert(await page.locator('a[href="tel:144"]').first().isVisible());
+  assert(await page.locator('a[href="tel:+41583846500"]').isVisible());
   await context.close();
   results.push({ case: "Soforthilfe ohne JavaScript", status: "passed" });
   await fs.mkdir("qa/output", { recursive: true });

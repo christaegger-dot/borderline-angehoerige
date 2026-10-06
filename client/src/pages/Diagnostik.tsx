@@ -1,3 +1,4 @@
+import { LearningGoal, LearningExtensionNav } from "@/components/LearningPath";
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -24,6 +25,7 @@ import { quellenLinks } from "@/content/quellenLinks";
 import {
   fachstellenProfil,
   kontaktByIdStrict,
+  kontaktNachweisByIdStrict,
   urlByIdStrict,
 } from "@/data/kontakte";
 import { Link } from "wouter";
@@ -31,11 +33,13 @@ import { Link } from "wouter";
 // Single-source-of-truth für Kontaktdaten (keine Hardcoding im Markup).
 // PUK-Diagnostik-Anmeldung: Zentrale (058 384 21 11), nicht 24/7-Notfall.
 const pukZentrale = kontaktByIdStrict("INFO_PUK_ZENTRALE");
-const hypeZueri = kontaktByIdStrict("INFO_PUK_KJPP_HYPE");
+const kjppAmbulatorium = kontaktByIdStrict("INFO_PUK_KJPP_HYPE");
 const ipw = kontaktByIdStrict("INFO_IPW");
 const sanatorium = kontaktByIdStrict("INFO_SANATORIUM_KILCHBERG");
 const pukUrl = urlByIdStrict("URL_PUK");
 const ipwUrl = urlByIdStrict("URL_IPW");
+const ipwStationUrl =
+  kontaktNachweisByIdStrict("INFO_IPW").primarySourceUrl ?? ipwUrl.url;
 const sanatoriumUrl = urlByIdStrict("URL_SANATORIUM_KILCHBERG");
 const clieniaUrl = urlByIdStrict("URL_CLIENIA");
 const pukKjpUrl = urlByIdStrict("URL_PUK_KJP_PERSOENLICHKEITSSTOERUNGEN");
@@ -149,6 +153,7 @@ export default function Diagnostik() {
             drängen, sondern als Orientierung in einer Phase, in der vieles
             unklar ist.
           </Lede>
+          <LearningGoal path="/verstehen/diagnostik" />
           <p
             className="mt-4"
             style={{
@@ -631,16 +636,19 @@ export default function Diagnostik() {
               className="flex flex-wrap gap-x-6 gap-y-1"
               style={{ fontSize: "var(--text-md)" }}
             >
-              <a href={`tel:${hypeZueri.tel}`} className="editorial-link">
-                Telefon {hypeZueri.nummer}
+              <a
+                href={`tel:${kjppAmbulatorium.tel}`}
+                className="editorial-link"
+              >
+                Allgemeines Ambulatorium Zürich {kjppAmbulatorium.nummer}
               </a>
               <a
-                href={pukUrl.url}
+                href={pukKjpUrl.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="editorial-link"
               >
-                pukzh.ch
+                Offizielles HYPE-Angebot und Kontaktweg
               </a>
             </p>
           </EditorialProse>
@@ -673,8 +681,9 @@ export default function Diagnostik() {
                 <strong>Erwachsene (18+):</strong> Anmeldung über das
                 elektronische Anmeldeformular auf pukzh.ch oder die Zentrale.
                 <br />
-                <strong>Jugendliche ab 13 Jahren:</strong> über das HYPE
-                ZÜRI-Programm an der Kinder- und Jugendpsychiatrie.
+                <strong>Jugendliche:</strong> Kontakt- und Anmeldewege für das
+                HYPE-Angebot stehen auf der offiziellen Programmseite. Die unten
+                genannte KJPP-Nummer gehört zum allgemeinen Ambulatorium Zürich.
               </p>
               <p
                 className="flex flex-wrap gap-x-6 gap-y-1"
@@ -683,8 +692,11 @@ export default function Diagnostik() {
                 <a href={`tel:${pukZentrale.tel}`} className="editorial-link">
                   Zentrale {pukZentrale.nummer}
                 </a>
-                <a href={`tel:${hypeZueri.tel}`} className="editorial-link">
-                  HYPE ZÜRI {hypeZueri.nummer}
+                <a
+                  href={`tel:${kjppAmbulatorium.tel}`}
+                  className="editorial-link"
+                >
+                  KJPP Ambulatorium Zürich {kjppAmbulatorium.nummer}
                 </a>
                 <a
                   href={pukUrl.url}
@@ -698,17 +710,29 @@ export default function Diagnostik() {
             </article>
 
             <article className="space-y-2">
-              <h3 style={h4Style}>ipw — Integrierte Psychiatrie Winterthur</h3>
+              <h3 style={h4Style}>
+                ipw – Psychotherapiestation für junge Erwachsene
+              </h3>
               <p style={bodyStyle}>
-                Ambulante und stationäre Behandlung von
-                Persönlichkeitsstörungen.
+                Die hier genannte Telefonnummer gehört zur Psychotherapiestation
+                für junge Erwachsene. Klären Sie die aktuellen Alters- und
+                Aufnahmebedingungen direkt mit dem Anbieter. Für weitere
+                Anliegen nutzen Sie die allgemeine Angebotsübersicht der ipw.
               </p>
               <p
                 className="flex flex-wrap gap-x-6 gap-y-1"
                 style={{ fontSize: "var(--text-md)" }}
               >
                 <a href={`tel:${ipw.tel}`} className="editorial-link">
-                  Telefon {ipw.nummer}
+                  Psychotherapiestation {ipw.nummer}
+                </a>
+                <a
+                  href={ipwStationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="editorial-link"
+                >
+                  Offizielles Stationsangebot
                 </a>
                 <a
                   href={ipwUrl.url}
@@ -716,7 +740,7 @@ export default function Diagnostik() {
                   rel="noopener noreferrer"
                   className="editorial-link"
                 >
-                  ipw.ch
+                  Allgemeine ipw-Angebote
                 </a>
               </p>
             </article>
@@ -873,6 +897,7 @@ export default function Diagnostik() {
           ]}
         />
       </EditorialLayout>
+      <LearningExtensionNav path="/verstehen/diagnostik" />
     </Layout>
   );
 }

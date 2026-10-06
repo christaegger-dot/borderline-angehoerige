@@ -16,14 +16,24 @@ import {
   TrendingUp,
 } from "@/icons/root-icons";
 import type { NavigationItem } from "@/domain/content-types";
-export const primaryNavigationItems: NavigationItem[] = [
-  { href: "/verstehen", label: "Verstehen", icon: BookOpen },
-  { href: "/unterstuetzen/uebersicht", label: "Unterstützen", icon: Heart },
-  { href: "/kommunizieren", label: "Kommunizieren", icon: MessageCircle },
-  { href: "/grenzen", label: "Grenzen", icon: Shield },
-  { href: "/selbstfuersorge", label: "Selbstfürsorge", icon: Sparkles },
-  { href: "/genesung", label: "Genesung", icon: TrendingUp },
-];
+import { learningSteps } from "@/content/learningArchitecture";
+
+const learningIcons: Record<string, NavigationItem["icon"]> = {
+  verstehen: BookOpen,
+  rolle: Heart,
+  kommunikation: MessageCircle,
+  grenzen: Shield,
+  "eigene-gesundheit": Sparkles,
+  genesung: TrendingUp,
+};
+
+export const primaryNavigationItems: NavigationItem[] = learningSteps
+  .filter(step => step.navigationLabel)
+  .map(step => ({
+    href: step.href,
+    label: step.navigationLabel!,
+    icon: learningIcons[step.id],
+  }));
 
 export const resourceNavigationItems: NavigationItem[] = [
   // Gruppe: Sofortige Hilfe

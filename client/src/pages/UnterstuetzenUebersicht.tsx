@@ -1,3 +1,4 @@
+import { LearningGoal, LearningPathNav } from "@/components/LearningPath";
 import KinderEntlasten from "@/components/KinderEntlasten";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
@@ -81,6 +82,7 @@ export default function UnterstuetzenUebersicht() {
             können und möchten. Sie müssen keine andere Person beruhigen oder
             ihre Behandlung und Genesung tragen.
           </Lede>
+          <LearningGoal path="/unterstuetzen/uebersicht" />
           <TopicQuickLinks
             items={[
               {
@@ -502,44 +504,6 @@ export default function UnterstuetzenUebersicht() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 9 Weiter-Hinweis ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Weiter
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EditorialProse>
-            <p>
-              Im Alltag wird aus dieser Haltung konkret, was Verlässlichkeit,
-              Konflikt-Repair und kleine Kontaktangebote in der Praxis bedeuten
-              —{" "}
-              <Link href="/unterstuetzen/alltag" className="editorial-link">
-                weiter: Im Alltag unterstützen
-              </Link>
-              . Zurück geht es zu{" "}
-              <Link href="/verstehen" className="editorial-link">
-                Verstehen
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSection.Body>
-      </EditorialSection>
-
       {/* ── 9 Dispatch: Was möchten Sie vertiefen? ── */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
@@ -645,6 +609,7 @@ export default function UnterstuetzenUebersicht() {
           />
         </EditorialSection.Body>
       </EditorialSection>
+      <LearningPathNav path="/unterstuetzen/uebersicht" />
     </Layout>
   );
 }

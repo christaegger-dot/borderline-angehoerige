@@ -1,3 +1,4 @@
+import { LearningGoal, LearningExtensionNav } from "@/components/LearningPath";
 import KinderEntlasten from "@/components/KinderEntlasten";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
@@ -81,7 +82,7 @@ const formulierungen: ReadonlyArray<{
     title: "Bei Suizidgedanken direkt ansprechen",
     quote:
       "«Ich mache mir Sorgen um dich. Denkst du gerade daran, dir das Leben zu nehmen?»",
-    note: "Nach bisherigem Forschungsstand verstärkt direktes Fragen Suizidgedanken nicht. Holen Sie bei Sorge professionelle Einschätzung; Sie müssen nicht auf vollständige Antworten warten.",
+    note: "Die von Dazzi et al. ausgewerteten Studien zeigten keinen statistisch signifikanten Anstieg von Suizidgedanken durch direktes Fragen. Das garantiert keine bestimmte Wirkung im einzelnen Gespräch. Holen Sie bei Sorge professionelle Einschätzung; Sie müssen nicht auf vollständige Antworten warten.",
   },
 ];
 
@@ -255,6 +256,7 @@ export default function UnterstuetzenKrise() {
             passende Hilfe einzubeziehen. Sie müssen eine Krise nicht allein
             deeskalieren oder bewältigen.
           </Lede>
+          <LearningGoal path="/unterstuetzen/krise" />
           <TopicQuickLinks
             items={[
               { href: "#belastung-handlungsraeume", label: "Belastung ordnen" },
@@ -555,10 +557,12 @@ export default function UnterstuetzenKrise() {
             <article className="mt-10 space-y-3">
               <h3 style={h4Style}>Für Sie persönlich</h3>
               <p style={bodyStyle}>
-                Schwere Krisen hinterlassen auch bei Angehörigen Spuren.
-                Dauernde Alarmbereitschaft, Schreckhaftigkeit, Angst vor der
-                nächsten Eskalation oder emotionale Taubheit sind normale
-                Reaktionen – kein Zeichen von Schwäche.
+                Schwere Krisen können auch Angehörige belasten. Dauernde
+                Alarmbereitschaft, Schreckhaftigkeit, Angst vor der nächsten
+                Eskalation oder emotionale Taubheit können nach belastenden
+                Ereignissen auftreten. Diese Beschreibung ist keine Diagnose;
+                bei anhaltenden oder beeinträchtigenden Beschwerden ist
+                fachliche Unterstützung sinnvoll.
               </p>
               <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
                 {fuerSiePersoenlich.map(p => (
@@ -744,42 +748,6 @@ export default function UnterstuetzenKrise() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 7 Weiter-Hinweis ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Weiter
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EditorialProse>
-            <p>
-              Wenn die Spitze überstanden ist, hilft sprachliche Klarheit:{" "}
-              <Link href="/kommunizieren" className="editorial-link">
-                weiter zu Kommunizieren
-              </Link>
-              . Zurück geht es zu{" "}
-              <Link href="/unterstuetzen/therapie" className="editorial-link">
-                Therapie und Angehörigenrolle
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSection.Body>
-      </EditorialSection>
-
       {/* ── 8 Querverweise ── EditorialSection variant="cream-deep" */}
       <EditorialSection variant="cream-deep">
         <EditorialSection.MarginNote>
@@ -825,6 +793,7 @@ export default function UnterstuetzenKrise() {
           />
         </EditorialSection.Body>
       </EditorialSection>
+      <LearningExtensionNav path="/unterstuetzen/krise" />
     </Layout>
   );
 }

@@ -1681,6 +1681,13 @@
     font-size: var(--text-sm);
   }
 
+  .material-library-card__actions > .editorial-link {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
   .material-library-card__verified {
     margin: 0;
     line-height: var(--lh-relaxed);

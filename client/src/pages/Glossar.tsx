@@ -8,12 +8,14 @@ import {
   EyebrowLabel,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
+import ClaimEvidence from "@/components/ClaimEvidence";
 import SEO from "@/components/SEO";
 import ReviewBadge from "@/components/ReviewBadge";
 import { slugifyTerm } from "@/lib/glossarAnchor";
 import { Link, useLocation } from "wouter";
 
 interface GlossaryTerm {
+  claimIds: string[];
   term: string;
   abbreviation?: string;
   category: "therapie" | "kommunikation" | "symptome" | "selbsthilfe";
@@ -27,8 +29,12 @@ interface GlossaryTerm {
   relatedPageTitle?: string;
 }
 
-const glossaryTerms: GlossaryTerm[] = [
+export const glossaryTerms: GlossaryTerm[] = [
   {
+    claimIds: [
+      "glossar-borderline-persoenlichkeitsstoerung",
+      "glossar-dsm-kriterien",
+    ],
     term: "Borderline-Persönlichkeitsstörung",
     abbreviation: "BPS",
     category: "symptome",
@@ -55,17 +61,19 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Wie eine Diagnose entsteht",
   },
   {
+    claimIds: ["glossar-dialektisch-behaviorale-therapie"],
     term: "Dialektisch-Behaviorale Therapie",
     abbreviation: "DBT",
     category: "therapie",
     definition:
-      "Die DBT ist eine der am besten untersuchten und am breitesten etablierten Therapieformen für Borderline. Sie wurde von Marsha Linehan entwickelt und kombiniert Verhaltenstherapie mit Achtsamkeitspraktiken. Der Begriff 'dialektisch' bezieht sich auf die Balance zwischen Akzeptanz (so wie es ist) und Veränderung (was besser werden kann).",
+      "Die DBT gehört zu den wissenschaftlich untersuchten Psychotherapien für Borderline. Sie wurde von Marsha Linehan entwickelt und kombiniert Verhaltenstherapie mit Achtsamkeitspraktiken. Der Begriff 'dialektisch' bezieht sich auf die Balance zwischen Akzeptanz (so wie es ist) und Veränderung (was besser werden kann). Eine allgemeine Überlegenheit gegenüber allen anderen geeigneten Therapien ist damit nicht belegt.",
     example:
       "In der DBT lernen Betroffene konkrete Fertigkeiten (Skills) zur Emotionsregulation, Stresstoleranz, zwischenmenschlichen Effektivität und Achtsamkeit.",
     relatedPage: "/unterstuetzen/therapie",
     relatedPageTitle: "Therapie und Angehörigenrolle",
   },
   {
+    claimIds: ["glossar-skills"],
     term: "Skills",
     category: "therapie",
     definition:
@@ -76,6 +84,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Im Alltag unterstützen",
   },
   {
+    claimIds: ["glossar-komorbiditaet"],
     term: "Komorbidität",
     category: "symptome",
     definition:
@@ -84,6 +93,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Begleiterkrankungen",
   },
   {
+    claimIds: ["glossar-mentalisierung"],
     term: "Mentalisierung",
     category: "therapie",
     definition:
@@ -92,17 +102,19 @@ const glossaryTerms: GlossaryTerm[] = [
       "Mentalisieren kann heissen: «Ich deute ihre Reaktion gerade als Ablehnung. Vielleicht gibt es noch andere Erklärungen; ich kann nachfragen, statt mir sicher zu sein.»",
   },
   {
+    claimIds: ["glossar-uebertragungsfokussierte-psychotherapie"],
     term: "Übertragungsfokussierte Psychotherapie",
     abbreviation: "TFP",
     category: "therapie",
     definition:
-      "Eine evidenzbasierte Psychotherapie für Borderline, entwickelt von Otto Kernberg und Mitarbeitenden. TFP arbeitet mit dem Beziehungserleben in der therapeutischen Beziehung selbst: innere Konflikte werden im «Hier und Jetzt» zwischen Therapeut:in und Patient:in sichtbar und können dort bearbeitet werden. In der Schweizer Versorgungsrealität weniger verbreitet als DBT, aber als evidenzbasierte Therapie etabliert.",
+      "Eine wissenschaftlich untersuchte Psychotherapie für Borderline, entwickelt von Otto Kernberg und Mitarbeitenden. TFP arbeitet mit dem Beziehungserleben in der therapeutischen Beziehung selbst: innere Konflikte werden im «Hier und Jetzt» zwischen Therapeut:in und Patient:in sichtbar und können dort bearbeitet werden. Welche Therapie passt und angeboten wird, wird individuell mit einer Fachperson geklärt.",
     example:
       "Wenn sich das Erleben der Therapeutin stark zwischen Sicherheit und Enttäuschung verändert, kann diese Erfahrung gemeinsam untersucht werden — ohne sie als Absicht oder Charakterzug zu bewerten.",
     relatedPage: "/unterstuetzen/therapie",
     relatedPageTitle: "Therapie und Angehörigenrolle",
   },
   {
+    claimIds: ["glossar-remission"],
     term: "Remission",
     category: "therapie",
     definition:
@@ -111,6 +123,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Genesung ist möglich",
   },
   {
+    claimIds: ["glossar-recovery"],
     term: "Recovery",
     category: "therapie",
     definition:
@@ -119,6 +132,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Genesung ist möglich",
   },
   {
+    claimIds: ["glossar-validierung"],
     term: "Validierung",
     category: "kommunikation",
     definition:
@@ -129,6 +143,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Kommunizieren",
   },
   {
+    claimIds: ["glossar-set-kommunikation"],
     term: "SET-Kommunikation",
     category: "kommunikation",
     definition:
@@ -139,6 +154,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Kommunizieren",
   },
   {
+    claimIds: ["glossar-dear-man"],
     term: "DEAR MAN",
     category: "kommunikation",
     definition:
@@ -149,6 +165,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Kommunizieren",
   },
   {
+    claimIds: ["glossar-invalidierung"],
     term: "Invalidierung",
     category: "kommunikation",
     definition:
@@ -157,6 +174,7 @@ const glossaryTerms: GlossaryTerm[] = [
       "Invalidierende Aussagen: 'Das ist doch nicht so schlimm', 'Du übertreibst mal wieder', 'Andere haben es viel schwerer'.",
   },
   {
+    claimIds: ["glossar-emotionale-dysregulation"],
     term: "Emotionale Dysregulation",
     category: "symptome",
     definition:
@@ -167,6 +185,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Borderline verstehen",
   },
   {
+    claimIds: ["glossar-splitting"],
     term: "Splitting",
     category: "symptome",
     definition:
@@ -177,6 +196,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Borderline verstehen",
   },
   {
+    claimIds: ["glossar-verlassensangst"],
     term: "Verlassensangst",
     category: "symptome",
     definition:
@@ -187,6 +207,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Borderline verstehen",
   },
   {
+    claimIds: ["glossar-dissoziation"],
     term: "Dissoziation",
     category: "symptome",
     definition:
@@ -195,6 +216,7 @@ const glossaryTerms: GlossaryTerm[] = [
       "Betroffene beschreiben es als 'neben sich stehen', 'wie in Watte gepackt sein' oder 'die Welt wirkt unwirklich'.",
   },
   {
+    claimIds: ["glossar-identitaetsdiffusion"],
     term: "Identitätsdiffusion",
     category: "symptome",
     definition:
@@ -205,6 +227,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Borderline verstehen",
   },
   {
+    claimIds: ["glossar-selbstfuersorge"],
     term: "Selbstfürsorge",
     category: "selbsthilfe",
     definition:
@@ -215,6 +238,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Selbstfürsorge",
   },
   {
+    claimIds: ["glossar-grenzen-setzen"],
     term: "Grenzen setzen",
     category: "selbsthilfe",
     definition:
@@ -225,6 +249,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Grenzen setzen",
   },
   {
+    claimIds: ["glossar-co-abhaengigkeit"],
     term: "Co-Abhängigkeit",
     category: "selbsthilfe",
     definition:
@@ -235,6 +260,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Selbstfürsorge",
   },
   {
+    claimIds: ["glossar-enabling"],
     term: "Enabling",
     category: "selbsthilfe",
     definition:
@@ -245,6 +271,7 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Grenzen setzen",
   },
   {
+    claimIds: ["glossar-leuchtturm-prinzip"],
     term: "Leuchtturm-Prinzip",
     category: "selbsthilfe",
     definition:
@@ -529,6 +556,9 @@ export default function Glossar() {
                           </Link>
                         </dd>
                       )}
+                      <dd>
+                        <ClaimEvidence claimIds={t.claimIds} />
+                      </dd>
                     </div>
                   );
                 })}

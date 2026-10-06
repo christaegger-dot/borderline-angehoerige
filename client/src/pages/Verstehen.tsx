@@ -1,3 +1,4 @@
+import { LearningGoal, LearningPathNav } from "@/components/LearningPath";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -75,6 +76,7 @@ export default function Verstehen() {
             reduzieren, Motive festzulegen oder Angehörigen eine feste Rolle
             zuzuweisen.
           </Lede>
+          <LearningGoal path="/verstehen" />
           <TopicQuickLinks
             items={[
               {
@@ -359,6 +361,23 @@ export default function Verstehen() {
             id="stressmodus"
           >
             <EditorialProse>
+              <p>
+                «Alarm-Modus» und «Denk-Modus» sind hier eine vereinfachte
+                didaktische Darstellung, keine zwei sicher messbaren Zustände.
+                <Link
+                  href="/materialien#modell-alarm-modus"
+                  className="editorial-link"
+                >
+                  {" "}
+                  Einordnung und Grenzen des Bildes
+                </Link>
+                . Für Gesprächsbereitschaft und Pausen finden Sie die
+                grundlegende Erklärung unter{" "}
+                <Link href="/kommunizieren#timing" className="editorial-link">
+                  Wann ein Gespräch möglich und gewünscht ist
+                </Link>
+                .
+              </p>
               <p>
                 Unter hoher emotionaler Überflutung verengt sich das Erleben
                 häufig stark auf den aktuellen Schmerz, die aktuelle Angst oder
@@ -713,42 +732,6 @@ export default function Verstehen() {
 
       <VerstehenMaterialsSection />
 
-      {/* ── 6 Weiter-Hinweis ── EditorialSection mit «Weiter»-MarginNote */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Weiter
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EditorialProse>
-            <p>
-              Wenn Sie Dynamiken besser einordnen können, wird oft klarer, wie
-              Sie hilfreicher reagieren, Grenzen besser halten und die eigene
-              Belastung ernster nehmen können. Als Nächstes geht es darum, wie
-              Unterstützung tragfähig bleiben kann, ohne dass Sie sich selbst
-              verlieren —{" "}
-              <Link href="/unterstuetzen/uebersicht" className="editorial-link">
-                weiter zu Unterstützen
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSection.Body>
-      </EditorialSection>
-
       {/* ── 7 Querverweise ── EditorialSection variant="cream-deep" */}
       <EditorialSection variant="cream-deep">
         <EditorialSection.MarginNote>
@@ -794,6 +777,7 @@ export default function Verstehen() {
           />
         </EditorialSection.Body>
       </EditorialSection>
+      <LearningPathNav path="/verstehen" />
     </Layout>
   );
 }

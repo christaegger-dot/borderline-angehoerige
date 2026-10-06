@@ -156,6 +156,6 @@ export const roleCommunicationCards: {
   {
     title: "Als erwachsenes Kind",
     tone: "sage",
-    text: "Erwachsene Kinder dürfen ihre eigene Wahrnehmung, Beziehung und Grenzen ernst nehmen. Unterstützung ist freiwillig; familiäre Zugehörigkeit begründet keine Pflicht, Belastungen oder Verantwortung zu übernehmen.",
+    text: "Erwachsene Kinder dürfen ihre eigene Wahrnehmung, Beziehung und Grenzen ernst nehmen. Emotionale Unterstützung können Sie nach Ihren Möglichkeiten anbieten und begrenzen. Damit übernehmen Sie nicht die Aufgabe, die Gefühle, Behandlung oder Genesung Ihres Elternteils zu steuern.",
   },
 ];

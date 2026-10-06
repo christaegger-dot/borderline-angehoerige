@@ -43,8 +43,15 @@ nicht abgeleitet. `CURRENT_PUBLICATION_STATUS` bleibt unverändert `pending`.
   akuten Situationen auf Soforthilfe.
 - **Audit:** Der wegen Inaktivität deaktivierte GitHub-Workflow
   `audit-regression.yml` wurde wieder aktiviert. `workflow_dispatch` ermöglicht
-  künftig einen manuellen Smoke-Lauf; PR-Smoke und geplanter Live-Audit bleiben
-  getrennt. Der Zeitkommentar bildet Winter- und Sommerzeit korrekt ab.
+  künftig die manuelle Wahl zwischen `smoke` und `full`; PR-Smoke und Vollcheck des
+  gebauten Stands bleiben getrennt. Der Zeitkommentar bildet Winter- und
+  Sommerzeit korrekt ab. Die produktive Netlify-Seite verlangt beim direkten
+  Abruf einen Login (HTTP 401 mit `edge-access`-Weiterleitung). Der Vollcheck
+  wird deshalb gegen einen eigenen Produktionspreview ausgeführt. Eine
+  tatsächliche Live-Abnahme braucht weiterhin autorisierten Netlify-Zugriff.
+  Der Vollcheck prüft 29 Routen: Overflow bei sechs Breiten und axe bei
+  1280 × 800 beziehungsweise 375 × 700 Pixeln. Er ersetzt keine Prüfung aller
+  interaktiven Zustände oder eine reale Hilfsmittelprüfung.
 - **Fachstelle (#649):** Ein gemeinsames Profil versorgt Kontaktseite,
   Beratungsübersicht, Suche und wiederverwendete Beratungshinweise. Zugang,
   Kosten, Terminbedingungen und Vertraulichkeitsrahmen werden nicht mehr als
@@ -110,7 +117,7 @@ nachvollziehbar.
 
 ## Technische Prüfung
 
-- Gesamter Unit-Testlauf, ESLint, TypeScript, Prettier und Produktionsbuild
+- 616 Unit-Tests in 67 Dateien, ESLint, TypeScript, Prettier und Produktionsbuild
   bestanden. Der Build enthält 15 kanonische Infografikdateien.
 - Materialguard und alle sieben Manifesttests bestanden. Ein zusätzlicher
   physischer Negativtest bestätigte die Ablehnung einer unbekannten öffentlichen
@@ -119,6 +126,9 @@ nachvollziehbar.
 - P1-Illustrationsaudit bestanden: drei zurückgehaltene V3-Pakete und neun
   Entwurfsassets weiterhin ausserhalb öffentlicher Auslieferung.
 - Audit-Smoke: alle zehn Prüfstufen bestanden, null Issues.
+- Lokaler Voll-Audit des gebauten Stands: alle 29 Routen im oben beschriebenen
+  Prüfumfang bestanden, null Issues. Prüfprotokoll:
+  `audit-results/followup-full-built-2026-10-06/report.md`.
 - `qa/scripts/audit-followup-web.mjs`: 62 Fälle bestanden gegen den gebauten
   Express-Server. 15 geänderte Routen bei 360 × 800, 768 × 900 und
   1440 × 1000 Pixeln, zusätzliche initiale und zurückgesetzte Übungszustände,

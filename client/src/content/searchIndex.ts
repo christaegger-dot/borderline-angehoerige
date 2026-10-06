@@ -1,3 +1,5 @@
+import { fachstellenProfil } from "@/data/kontakte";
+
 export type SearchEntry = {
   title: string;
   description: string;
@@ -1224,16 +1226,18 @@ export const searchableContent: SearchEntry[] = [
     section: "Beratung & Netzwerke",
   },
   {
-    title: "Fachstelle Angehörigenarbeit PUK Zürich",
-    description:
-      "Kostenlose, vertrauliche Beratung für Angehörige im Kanton Zürich",
+    title: fachstellenProfil.name,
+    description: fachstellenProfil.suchBeschreibung,
     keywords: [
       "fachstelle",
       "angehörigenarbeit",
       "puk",
       "zürich",
       "beratung",
-      "kostenlos",
+      "kosten",
+      "zugang",
+      "termin",
+      "vertraulichkeit",
     ],
     href: "/beratung",
     section: "Beratung & Netzwerke",
@@ -1836,9 +1840,8 @@ export const searchableContent: SearchEntry[] = [
 
   // Fachstelle
   {
-    title: "Fachstelle Angehörigenarbeit PUK Zürich",
-    description:
-      "Beratung, Orientierung und Materialien für Angehörige – Fachstelle der Psychiatrischen Universitätsklinik Zürich",
+    title: fachstellenProfil.name,
+    description: fachstellenProfil.suchBeschreibung,
     keywords: [
       "fachstelle",
       "puk",

@@ -85,13 +85,14 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/grenzen": {
-    editorialUpdated: "2026-10-05",
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
   "/beratung": {
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
@@ -102,6 +103,21 @@ export const pageGovernance: Record<string, PageGovernance> = {
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
+    owner: DEFAULT_OWNER,
+  },
+  "/barrierefreiheit": {
+    editorialUpdated: "2026-10-06",
+    riskLevel: "medium",
+    owner: DEFAULT_OWNER,
+  },
+  "/feedback": {
+    editorialUpdated: "2026-10-06",
+    riskLevel: "medium",
+    owner: DEFAULT_OWNER,
+  },
+  "/selbsttest": {
+    editorialUpdated: "2026-10-06",
+    riskLevel: "high",
     owner: DEFAULT_OWNER,
   },
   "/quellen": {
@@ -132,7 +148,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
       source:
         "https://www.pukzh.ch/patienten-angehoerige/informationen-fuer-angehoerige/",
     },
-    editorialUpdated: "2026-09-23",
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-03-24",
     nextReviewDue: "2026-09-24",
@@ -160,7 +176,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/selbstfuersorge": {
-    editorialUpdated: "2026-10-05",
+    editorialUpdated: "2026-10-06",
     riskLevel: "medium",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2027-04-30",

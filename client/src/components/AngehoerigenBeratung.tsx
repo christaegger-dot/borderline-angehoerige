@@ -1,7 +1,5 @@
-import { kontaktByIdStrict } from "@/data/kontakte";
+import { fachstellenProfil } from "@/data/kontakte";
 import { Link } from "wouter";
-
-const kontakt = kontaktByIdStrict("INFO_FACHSTELLE");
 
 export default function AngehoerigenBeratung() {
   return (
@@ -11,15 +9,18 @@ export default function AngehoerigenBeratung() {
     >
       <h3 className="editorial-card-heading">Beratung für Sie</h3>
       <p className="mt-3 text-base leading-relaxed">
-        Sie dürfen sich auch mit Erschöpfung, Schuldgefühlen oder schwierigen
-        Entscheidungen melden. Die Fachstelle Angehörigenarbeit berät kostenlos
-        und vertraulich – ohne Vollmacht und auch dann, wenn die erkrankte
-        Person nicht in der PUK behandelt wird. Gespräche sind telefonisch oder
-        vor Ort nach Vereinbarung möglich.
+        Sie dürfen auch mit Erschöpfung, Schuldgefühlen oder schwierigen
+        Entscheidungen eigene Beratung suchen. {fachstellenProfil.zugangHinweis}
+      </p>
+      <p className="mt-3 text-sm leading-relaxed">
+        {fachstellenProfil.pruefHinweis}
       </p>
       <p className="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-base">
-        <a className="editorial-link" href={`tel:${kontakt.tel}`}>
-          {kontakt.nummer}
+        <a
+          className="editorial-link"
+          href={`tel:${fachstellenProfil.telefon.tel}`}
+        >
+          {fachstellenProfil.telefon.nummer}
         </a>
         <Link className="editorial-link" href="/fachstelle">
           Kontakt und Terminvereinbarung

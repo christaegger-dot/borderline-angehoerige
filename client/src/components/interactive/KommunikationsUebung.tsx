@@ -1,14 +1,7 @@
-import { useState, useCallback } from "react";
-import { m, AnimatePresence } from "framer-motion";
+import { useState, useCallback, useId, useRef } from "react";
+import AppLink from "@/components/AppLink";
 import { Button } from "@/components/ui/button";
-import {
-  CheckCircle2,
-  RotateCcw,
-  Lightbulb,
-  Heart,
-  Shield,
-  Scale,
-} from "lucide-react";
+import { RotateCcw, Lightbulb, Heart, Shield, Scale } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────
 
@@ -17,11 +10,10 @@ type Technique = "Zugewandtheit" | "DEAR" | "Validierung";
 interface AnswerOption {
   id: string;
   text: string;
-  correct: boolean;
-  /** Feedback shown after selecting this option */
-  feedback: string;
-  /** Which technique component this demonstrates */
-  techniqueHint?: string;
+  possibleEffect: string;
+  prerequisites: string;
+  ownBoundary: string;
+  otherPerspective: string;
 }
 
 interface Scenario {
@@ -31,6 +23,8 @@ interface Scenario {
   technique: Technique;
   /** Scene-setting context */
   context: string;
+  /** The responding position changes between the fictional scenes. */
+  respondingRole: string;
   /** What one person in the fictional scene says */
   statement: string;
   /** Available response options */
@@ -42,231 +36,307 @@ interface Scenario {
 // ─── Scenario data ────────────────────────────────────────
 
 const SCENARIOS: Scenario[] = [
-  // ─── Zugewandtheit + Klarheit ───────────────────────
   {
     id: "set-1",
     title: "«Du bist nie für mich da!»",
     technique: "Zugewandtheit",
     context:
-      "Eine nahestehende Person ist nach einem schwierigen Tag aufgewühlt und macht Ihnen Vorwürfe. Sie möchten begrenzt zugewandt reagieren, ohne ein Gefühl oder Motiv vorzugeben.",
+      "Eine nahestehende Person ist nach einem schwierigen Tag aufgewühlt. Sie wissen noch nicht, welcher konkrete Moment hinter dem Vorwurf steht.",
+    respondingRole: "Sie antworten als die angesprochene Person.",
     statement:
       "«Du bist nie für mich da! Niemand versteht mich! Du machst alles nur schlimmer!»",
     options: [
       {
         id: "a",
-        text: "«Ich höre dir jetzt zu. Ich kann mir vorstellen, dass du dich gerade sehr allein fühlst. Lass uns gemeinsam überlegen, was dir in diesem Moment helfen könnte.»",
-        correct: true,
-        feedback:
-          "Diese Antwort bietet begrenzte und wahrheitsgemässe Präsenz an, formuliert das mögliche Erleben ausdrücklich vorsichtig und öffnet eine gemeinsame Frage. Auch eine Pause oder ein Gesprächsende kann passend sein.",
-        techniqueHint: "Präsenz → vorsichtig spiegeln → offen fragen",
+        text: "«Ich kann dir jetzt eine Weile zuhören. Welcher Moment war heute besonders schwierig für dich?»",
+        possibleEffect:
+          "Eine konkrete Frage kann Raum für das Anliegen öffnen, ohne ein verborgenes Gefühl oder Motiv festzulegen.",
+        prerequisites:
+          "Sie haben gerade Zeit und Kraft zum Zuhören; die andere Person möchte erzählen.",
+        ownBoundary:
+          "Zuhören bedeutet keine unbegrenzte Verfügbarkeit und keine Zustimmung zu jedem Vorwurf.",
+        otherPerspective:
+          "Eine Frage kann willkommen sein oder sich zunächst wie eine weitere Anforderung anfühlen. Die andere Person darf noch nicht antworten wollen.",
       },
       {
         id: "b",
-        text: "«Das stimmt doch gar nicht, ich bin ständig für dich da. Letzte Woche erst habe ich alles stehen und liegen lassen.»",
-        correct: false,
-        feedback:
-          "Die Antwort verteidigt die eigene Sicht, ohne zuerst nach dem konkreten Erleben oder Anliegen zu fragen. Das kann ein Gespräch weiter verengen; Ihre eigene Sicht dürfen Sie später trotzdem benennen.",
-        techniqueHint: "Rechtfertigung statt offener Frage",
+        text: "«Ich möchte verstehen, was dir gefehlt hat. Gleichzeitig trifft mich der Satz, ich würde alles schlimmer machen. Können wir über den konkreten Moment sprechen?»",
+        possibleEffect:
+          "Die Antwort verbindet Interesse am Anliegen mit der eigenen Sicht, statt die pauschale Aussage einfach zu übernehmen.",
+        prerequisites:
+          "Beide können gerade unterschiedliche Sichtweisen hören; die Frage ist als Einladung gemeint.",
+        ownBoundary:
+          "Sie dürfen benennen, dass Sie ein Vorwurf verletzt. Das verpflichtet die andere Person nicht, sofort Ihre Sicht zu bestätigen.",
+        otherPerspective:
+          "Die eigene Sicht kann Orientierung geben, aber auch als Rechtfertigung ankommen. Fragen Sie nach, statt eine bestimmte Wirkung anzunehmen.",
       },
       {
         id: "c",
-        text: "«So schlimm ist es doch nicht. Versuch mal, positiv zu denken.»",
-        correct: false,
-        feedback:
-          "Die Formulierung kann bagatellisierend wirken, weil sie das geäusserte Erleben relativiert. Eine offene Frage lässt der Person mehr Raum, selbst zu beschreiben, was gerade wichtig ist.",
-        techniqueHint: "Invalidierung",
+        text: "«Ich merke, dass ich gerade zu aufgewühlt bin, um aufmerksam zuzuhören. Ich mache jetzt eine Pause und entscheide danach, was für mich möglich ist.»",
+        possibleEffect:
+          "Eine offen benannte Pause kann verhindern, dass Sie aus Überforderung verletzend reagieren.",
+        prerequisites:
+          "Sie brauchen eine Unterbrechung und können sie ohne zusätzliche Abwertung mitteilen.",
+        ownBoundary:
+          "Eine Pause oder ein Gesprächsende ist auch ohne Rückkehrversprechen möglich.",
+        otherPerspective:
+          "Eine Unterbrechung kann entlasten oder enttäuschen. Beides darf benannt werden, ohne daraus eine Pflicht zum Weiterreden abzuleiten.",
       },
     ],
     learnNote:
-      "Begrenzte Präsenz, vorsichtiges Spiegeln und eine offene Frage können ein Gespräch unterstützen. Das ist kein festes Schema: Je nach Situation kann eine andere Reihenfolge, eine Pause oder ein Gesprächsende passender sein.",
+      "Interesse, die eigene Sicht und eine Pause sind unterschiedliche Möglichkeiten. Welche passt, hängt von Zeit, Kraft und Gesprächswunsch ab; keine Formulierung garantiert den Verlauf.",
   },
   {
     id: "set-2",
-    title: "«Ich brauche dich jetzt sofort!»",
+    title: "Ein Zeitpunkt, zwei Vorstellungen",
     technique: "Zugewandtheit",
     context:
-      "Es ist 23 Uhr. Ihr Angehöriger ruft an und verlangt, dass Sie sofort vorbeikommen. Sie haben morgen früh einen wichtigen Termin.",
+      "Alex und Robin haben «am Abend zusammen kochen» vereinbart. Alex dachte an 18 Uhr, Robin an 20 Uhr. Beide haben nach ihrer eigenen Vorstellung geplant und den Zeitpunkt nicht geklärt.",
+    respondingRole:
+      "Sie antworten als Robin; Sie sind erst um 20 Uhr angekommen.",
     statement:
-      "«Du musst jetzt sofort herkommen! Ich halte das nicht mehr aus und weiss nicht, an wen ich mich wenden soll!»",
+      "Alex sagt: «Ich dachte, wir fangen um sechs an. Jetzt bin ich hungrig und enttäuscht.»",
     options: [
       {
         id: "a",
-        text: "«Ich komme sofort. Halte durch, ich bin gleich da.»",
-        correct: false,
-        feedback:
-          "Das bietet sofortige persönliche Hilfe an, ohne die eigene Grenze zu benennen. Versprechen Sie nur Unterstützung, die für Sie sicher und möglich ist. Sie müssen die Belastung des anderen Menschen nicht allein bewältigen.",
-        techniqueHint: "Hilfeversprechen ohne eigene Grenze",
+        text: "«Ich hatte acht Uhr im Kopf und habe nicht nachgefragt. Wollen wir für heute schauen, was noch passt, und nächstes Mal eine Uhrzeit festhalten?»",
+        possibleEffect:
+          "Die unterschiedlichen Vorstellungen werden sichtbar; ein konkreter nächster Schritt kann das Missverständnis begrenzen.",
+        prerequisites:
+          "Beide möchten den heutigen Plan noch abstimmen. Der Vorschlag ist verhandelbar.",
+        ownBoundary:
+          "Sie übernehmen Ihren Anteil an der unklaren Absprache, ohne die gesamte Verantwortung für den Abend zu übernehmen.",
+        otherPerspective:
+          "Alex kann eine Lösung wünschen oder erst über die Enttäuschung sprechen wollen. Der Vorschlag muss nicht sofort angenommen werden.",
       },
       {
         id: "b",
-        text: "«Ich höre, dass es gerade sehr schwer ist. Ich kann heute Nacht nicht kommen. Auf der Soforthilfe-Seite findest du passende Anlaufstellen. Wenn du möchtest, schaue ich sie mit dir an – soweit das für mich sicher und möglich ist.»",
-        correct: true,
-        feedback:
-          "Diese Antwort nimmt die Belastung ernst, benennt die eigene Grenze und verweist auf die zentrale Seite mit passenden Anlaufstellen. Die Unterstützung wird nur im eigenen sicheren und möglichen Rahmen angeboten.",
-        techniqueHint: "Belastung anerkennen → Grenze → zentrale Anlaufstelle",
+        text: "«Du hast schon gewartet und bist enttäuscht. Magst du zuerst erzählen, was du dir für den Abend gewünscht hattest? Danach möchte ich auch meine Vorstellung erklären.»",
+        possibleEffect:
+          "Beide Erwartungen können hörbar werden, bevor über den Plan entschieden wird.",
+        prerequisites:
+          "Es ist Zeit für ein Gespräch, und beide sind bereit, einander zuzuhören.",
+        ownBoundary:
+          "Auch Ihre Vorstellung darf vorkommen. Zuhören verpflichtet Sie nicht, den ursprünglichen Plan nachzuholen.",
+        otherPerspective:
+          "Alex könnte lieber zuerst essen als reden. Eine kurze Klärung oder ein anderer Zeitpunkt kann dann passender sein.",
       },
       {
         id: "c",
-        text: "«Du rufst immer so spät an. Das geht nicht. Ruf eine Beratungsstelle an.»",
-        correct: false,
-        feedback:
-          "Die Grenze ist wichtig. Die Antwort geht jedoch kaum auf die geäusserte Belastung ein und nennt keine konkrete Anlaufstelle. Ein begrenztes Kontaktangebot ist möglich, wenn es für Sie sicher und gewollt ist.",
-        techniqueHint: "Grenze ohne Anerkennung der Belastung",
+        text: "«Ich sehe das Missverständnis. Für gemeinsames Kochen habe ich heute keine Kraft mehr. Ich esse für mich; wir können später besprechen, ob wir neu planen möchten.»",
+        possibleEffect:
+          "Eine klare Grenze macht die eigene Möglichkeit sichtbar, ohne die Enttäuschung der anderen Person zu bestreiten.",
+        prerequisites:
+          "Ihre Kraft reicht heute nicht mehr aus; Sie können die Planänderung klar mitteilen.",
+        ownBoundary:
+          "Sie dürfen den gemeinsamen Plan ablehnen. Ein neues Treffen bleibt eine gemeinsame Entscheidung.",
+        otherPerspective:
+          "Alex kann weiterhin enttäuscht sein und ebenfalls für sich entscheiden. Eine Grenze muss nicht beiden gefallen, um ausgesprochen werden zu dürfen.",
       },
     ],
     learnNote:
-      "Diese Kommunikationsübung nimmt keine Risikoeinschätzung vor. Wenn Suizidgedanken im Raum stehen, können Sie ausdrücklich fragen: «Denkst du gerade daran, dir das Leben zu nehmen?» Selbstverletzung kann ohne Todesabsicht erfolgen, schliesst Suizidgedanken aber nicht aus. Die Antworten ersetzen keine fachliche Beurteilung. Bei Sorge um Sicherheit oder Unsicherheit finden Sie auf der zentralen Soforthilfe-Seite passende Anlaufstellen. Sie müssen die Dringlichkeit nicht allein beurteilen oder auf vollständige Antworten warten; eigene Grenzen und Sicherheit bleiben wichtig.",
+      "Ein Missverständnis ist nicht automatisch die Schuld einer Person. Beide dürfen ihren Anteil benennen, Wünsche erklären und eine gemeinsame Aktivität ablehnen.",
   },
-
-  // ─── DEAR scenarios ─────────────────────────────────
   {
     id: "dear-1",
     title: "Eigene Bedürfnisse ansprechen",
     technique: "DEAR",
     context:
-      "Ihr Angehöriger hat zum dritten Mal einen gemeinsamen Termin kurzfristig abgesagt. Sie möchten das Thema mit DEAR ansprechen: Describe, Express, Assert, Reinforce.",
-    statement:
-      "Sie bereiten ein ruhiges Gespräch vor. Welche Formulierung nutzen Sie?",
+      "Eine nahestehende Person hat drei gemeinsame Termine kurzfristig abgesagt. Sie möchten benennen, was das für Ihre Planung bedeutet, ohne den Grund für die Absagen zu behaupten.",
+    respondingRole:
+      "Sie antworten als die Person, die mehr Planbarkeit wünscht.",
+    statement: "Wie möchten Sie Ihre gemeinsame Zeit ansprechen?",
     options: [
       {
         id: "a",
-        text: "«In den letzten drei Wochen sind unsere gemeinsamen Termine ausgefallen. Das macht mich traurig, weil mir die Zeit mit dir wichtig ist. Ich wünsche mir, dass wir einen festen Tag vereinbaren, der für uns beide passt. Das würde mir helfen, mich auf unsere gemeinsame Zeit zu freuen.»",
-        correct: true,
-        feedback:
-          "D: Die Situation wird sachlich beschrieben (3 Absagen). E: Gefühl mit Ich-Botschaft (macht mich traurig). A: Klarer, konkreter Wunsch (festen Tag). R: Positive Verstärkung (freuen auf gemeinsame Zeit).",
-        techniqueHint: "D → E → A → R",
+        text: "«Unsere letzten drei Termine sind kurzfristig ausgefallen. Das macht mich traurig, weil mir die Zeit mit dir wichtig ist. Können wir einen Termin wählen, der für uns beide passt? Dann kann ich besser planen.»",
+        possibleEffect:
+          "Die Antwort verbindet eine konkrete Beobachtung, eine Ich-Botschaft, eine Bitte und den möglichen Nutzen der Absprache.",
+        prerequisites:
+          "Beide möchten weitere Treffen und können über einen verlässlichen Termin verhandeln.",
+        ownBoundary:
+          "Eine Bitte ist keine Verpflichtung für die andere Person. Sie entscheiden selbst, wie viel Planung Sie übernehmen möchten.",
+        otherPerspective:
+          "Die Person kann den Wunsch teilen oder gerade keinen Termin zusagen können. Ein Nein darf Teil der Klärung sein.",
       },
       {
         id: "b",
-        text: "«Du sagst ständig ab! Dir sind unsere Termine offensichtlich egal. Andere würden sich das nicht gefallen lassen.»",
-        correct: false,
-        feedback:
-          "Das sind Du-Botschaften und Verallgemeinerungen («ständig», «offensichtlich»). Es fehlt eine sachliche Beschreibung, ein eigenes Gefühl und ein konkreter Wunsch.",
-        techniqueHint: "Du-Botschaft statt DEAR",
+        text: "«Die kurzfristigen Absagen sind für meine Planung schwierig. Ich möchte künftig erst dann einen Abend freihalten, wenn wir beide zugesagt haben. So kann ich auch andere Dinge verabreden.»",
+        possibleEffect:
+          "Die Antwort benennt eine eigene Grenze und ihren praktischen Nutzen, ohne der anderen Person ein Motiv zuzuschreiben.",
+        prerequisites:
+          "Sie können die angekündigte Grenze selbst umsetzen und verwenden sie nicht als Strafe.",
+        ownBoundary:
+          "Sie dürfen Ihre Zeit anders planen. Die andere Person darf weiterhin ein Treffen absagen.",
+        otherPerspective:
+          "Die Änderung kann als Entlastung oder als mehr Abstand erlebt werden. Besprechen Sie die Bedeutung, ohne eine Reaktion vorzugeben.",
       },
       {
         id: "c",
-        text: "«Es ist okay, ich verstehe, dass es dir manchmal nicht gut geht. Mach dir keinen Stress.»",
-        correct: false,
-        feedback:
-          "Das ist verständnisvoll, aber Ihre eigenen Bedürfnisse kommen nicht vor. DEAR bedeutet, die eigene Position freundlich, aber klar zu formulieren – auch das gehört zur Beziehungspflege.",
-        techniqueHint: "Nur Empathie, ohne A und R",
+        text: "«Mir ist unsere Zeit wichtig. Feste Termine scheinen gerade schwierig zu sein. Möchtest du eher spontan fragen? Ich würde dann jedes Mal schauen, ob es für mich passt.»",
+        possibleEffect:
+          "Ein anderes Format kann gemeinsame Zeit ermöglichen, ohne von beiden dieselbe Planbarkeit zu verlangen.",
+        prerequisites:
+          "Spontane Treffen passen auch zu Ihren Bedürfnissen; beide können ohne Vorwurf Nein sagen.",
+        ownBoundary:
+          "Sie müssen sich nicht freihalten. Wenn spontane Treffen Sie belasten, passt diese Möglichkeit für Sie nicht.",
+        otherPerspective:
+          "Mehr Flexibilität kann willkommen sein; die andere Person kann aber ebenfalls feste Absprachen bevorzugen.",
       },
     ],
     learnNote:
-      "DEAR umfasst die ersten vier inhaltlichen Schritte von DEAR MAN und hilft, eigene Bedürfnisse klar und respektvoll auszudrücken. D = Beschreiben (Fakten), E = Ausdrücken (Ich-Gefühl), A = Bitten (konkreter Wunsch), R = Verstärken (positive Folgen benennen). Mindful, Appear confident und Negotiate werden in dieser Übung nicht trainiert.",
+      "DEAR umfasst die ersten vier inhaltlichen Schritte von DEAR MAN: Beschreiben, Ausdrücken, Bitten und Verstärken (positive Folgen benennen). Die Beispiele setzen unterschiedliche Schwerpunkte; nicht jeder Satz enthält alle vier Schritte. Mindful, Appear confident und Negotiate werden hier nicht trainiert.",
   },
   {
     id: "dear-2",
-    title: "Abmachung neu verhandeln",
+    title: "Unterstützung anbieten, Entscheidung lassen",
     technique: "DEAR",
     context:
-      "Ihr Angehöriger hatte vor zwei Monaten erwähnt, vielleicht einen Therapieplatz suchen zu wollen. Sie machen sich Sorgen und möchten nachfragen, ohne die Behandlungsentscheidung zu übernehmen.",
-    statement: "Wie formulieren Sie Ihr Anliegen?",
+      "Eine nahestehende Person hatte erwähnt, vielleicht einen Therapieplatz suchen zu wollen. Sie machen sich Sorgen und möchten Ihre Rolle klären, ohne die Behandlungsentscheidung zu übernehmen.",
+    respondingRole:
+      "Sie antworten als die Person, die Unterstützung anbieten möchte.",
+    statement: "Wie sprechen Sie Ihre Sorge und Ihre Möglichkeiten an?",
     options: [
       {
         id: "a",
-        text: "«Du hast versprochen, dich um Therapie zu kümmern. Jetzt sind zwei Monate rum und nichts ist passiert. Du musst das endlich angehen.»",
-        correct: false,
-        feedback:
-          "Die Formulierung macht aus einer früheren Äusserung eine Pflicht und übernimmt die Behandlungsentscheidung. Sie können Ihre Sorge benennen, ohne eine Therapieplatzsuche zu verlangen.",
-        techniqueHint: "Druck statt eigener Bitte",
+        text: "«Du hattest eine mögliche Therapieplatzsuche erwähnt. Ich merke, dass ich mir Sorgen mache. Möchtest du darüber sprechen? Wenn ich weiss, welche Unterstützung du möchtest, kann ich schauen, was ich anbieten kann.»",
+        possibleEffect:
+          "Eine Beobachtung und eine Ich-Botschaft öffnen eine Einladung, ohne aus der früheren Äusserung eine Pflicht zu machen.",
+        prerequisites:
+          "Die andere Person möchte das Thema besprechen. Sie können auch eine Ablehnung stehen lassen.",
+        ownBoundary:
+          "Sie bieten nur Unterstützung an, die für Sie möglich ist; Sie übernehmen keine Behandlungsentscheidung.",
+        otherPerspective:
+          "Die Nachfrage kann hilfreich sein oder als Druck ankommen. Ob eine Therapie gesucht wird, entscheidet die betroffene Person.",
       },
       {
         id: "b",
-        text: "«Vor zwei Monaten hast du eine mögliche Therapieplatzsuche erwähnt. Ich merke, dass ich mir Sorgen mache. Möchtest du darüber sprechen – und gibt es eine Unterstützung von mir, die du dir wünschst? Ob du eine Therapie suchst, entscheidest du. Wenn du mir sagst, was du möchtest, kann ich meine Unterstützung passend und realistisch anbieten.»",
-        correct: true,
-        feedback:
-          "D: Die frühere Äusserung wird sachlich erinnert. E: Die Sorge bleibt eine Ich-Botschaft. A: Das Gespräch und mögliche Unterstützung werden mit Einverständnis angeboten. R: Der mögliche Nutzen für eine passende, realistische Unterstützung wird benannt. Die Behandlungsentscheidung bleibt ausdrücklich bei der betroffenen Person.",
-        techniqueHint: "D → E → A → R",
+        text: "«Falls du Unterstützung möchtest, kann ich dir einmal bei einer praktischen Aufgabe helfen. Ich möchte die Suche aber nicht organisieren. So bleibt klar, was ich übernehmen kann und was nicht.»",
+        possibleEffect:
+          "Ein begrenztes Angebot macht die eigene Rolle konkret und lässt die Entscheidung bei der anderen Person.",
+        prerequisites:
+          "Praktische Hilfe ist gewünscht; Umfang und Aufgabe werden gemeinsam geklärt.",
+        ownBoundary:
+          "Sie dürfen die Organisation ablehnen oder ein Angebot zurücknehmen, wenn es Ihre Möglichkeiten übersteigt.",
+        otherPerspective:
+          "Das Angebot kann passen oder am aktuellen Wunsch vorbeigehen. Die andere Person muss es weder nutzen noch begründen, warum sie es ablehnt.",
       },
       {
         id: "c",
-        text: "«Ist schon okay, du machst das, wenn du bereit bist. Ich will dich nicht drängen.»",
-        correct: false,
-        feedback:
-          "Nicht zu drängen kann eine respektvolle Entscheidung sein, besonders wenn keine akute Gefahr besteht. Für diese DEAR-Übung fehlt lediglich eine konkrete Ich-Botschaft oder offene Frage; die Formulierung ist deshalb nicht grundsätzlich falsch.",
-        techniqueHint: "Respektvoll, aber ohne eigene Bitte",
+        text: "«Ich möchte das Thema nicht immer wieder aufbringen. Ob du eine Therapie suchst, entscheidest du. Wenn du von dir aus darüber sprechen möchtest, frage mich gern; ich schaue dann, was für mich möglich ist.»",
+        possibleEffect:
+          "Die Entscheidung bleibt ausdrücklich bei der anderen Person; wiederholter Druck durch Nachfragen kann abnehmen.",
+        prerequisites:
+          "Sie möchten keine weitere Nachfrage stellen und meinen die Entscheidungsfreiheit ernst.",
+        ownBoundary:
+          "Sie müssen sich nicht dauerhaft bereithalten und dürfen bei einer späteren Anfrage Nein sagen.",
+        otherPerspective:
+          "Weniger Nachfragen kann entlasten oder als weniger Interesse erlebt werden. Die Bedeutung ist nicht aus der Formulierung allein ableitbar.",
       },
     ],
     learnNote:
-      "DEAR – die ersten vier inhaltlichen Schritte von DEAR MAN – kann helfen, Sorge und einen eigenen Wunsch ohne Vorwurf auszudrücken. Unterstützung wird angeboten, nicht vorausgesetzt; die betroffene Person darf sie ablehnen und entscheidet selbst über Behandlung. Mindful, Appear confident und Negotiate werden hier nicht trainiert. Bei akuter Gefahr gelten die Soforthilfewege.",
+      "DEAR kann helfen, eigene Sorge, eine Bitte oder eine Grenze klar auszudrücken. Es begründet keinen Anspruch auf eine bestimmte Behandlungsentscheidung. Unterstützung wird angeboten, nicht vorausgesetzt; die andere Person darf sie ablehnen.",
   },
-
-  // ─── Validierungs-Szenarien ─────────────────────────
   {
     id: "val-1",
     title: "«Niemand nimmt mich ernst!»",
     technique: "Validierung",
     context:
-      "Ihr Angehöriger kommt nach einem Arztbesuch nach Hause und ist aufgelöst. Die Person fühlt sich vom Arzt nicht gehört. Sie möchten validieren – die Gefühle anerkennen, ohne sofort zu bewerten oder zu lösen.",
+      "Eine nahestehende Person fühlt sich nach einem Arztbesuch nicht gehört. Sie möchten nach dem Erleben fragen, ohne eine Erklärung oder Lösung vorauszusetzen.",
+    respondingRole: "Sie antworten als die zuhörende Person.",
     statement:
       "«Der Arzt hat mich überhaupt nicht ernst genommen! Ich habe versucht zu erklären, wie es mir geht, und er hat einfach auf seinen Computer gestarrt. Niemand hört mir zu!»",
     options: [
       {
         id: "a",
-        text: "«Das klingt frustrierend. Vielleicht war er nur gestresst, versuch es nochmal bei einem anderen Arzt.»",
-        correct: false,
-        feedback:
-          "Der erste Satz spiegelt das mögliche Erleben vorsichtig. Danach folgen jedoch eine Erklärung und ein Lösungsvorschlag, bevor geklärt ist, was die Person gerade braucht. Das kann den Fokus verschieben; ein Lösungsvorschlag ist nicht automatisch falsch und kann passen, wenn er gewünscht ist.",
-        techniqueHint: "Erklärung und Lösung vor offener Nachfrage",
+        text: "«Du kommst vom Arzt und fühlst dich nicht gehört. Was war für dich an dem Gespräch besonders schwierig?»",
+        possibleEffect:
+          "Das ausdrücklich Gesagte wird aufgegriffen. Eine offene Frage lässt Raum für die eigene Beschreibung.",
+        prerequisites:
+          "Die Person möchte erzählen und hat gerade Kraft für eine Frage.",
+        ownBoundary:
+          "Sie müssen den Arztbesuch nicht beurteilen oder eine Lösung finden, um zuzuhören.",
+        otherPerspective:
+          "Eine offene Frage kann passen; manchmal ist stilles Zuhören oder eine Pause eher gewünscht.",
       },
       {
         id: "b",
-        text: "«Du kommst vom Arzt und fühlst dich nicht gehört. War das für dich eher enttäuschend, wütend machend oder ganz anders?»",
-        correct: true,
-        feedback:
-          "Die Antwort spiegelt nur das ausdrücklich Gesagte und fragt offen nach dem Erleben. Das Gegenüber muss keine vorgegebene Deutung korrigieren; andere Formulierungen können ebenfalls passen.",
-        techniqueHint: "Spiegeln + offen nachfragen",
+        text: "«Das klingt frustrierend. Möchtest du, dass ich einfach zuhöre, oder möchtest du mit mir überlegen, was du jetzt brauchst?»",
+        possibleEffect:
+          "Die Antwort bietet eine Wahl zwischen Zuhören und gemeinsamem Nachdenken, ohne eine Lösung als Auftrag zu setzen.",
+        prerequisites:
+          "Beide angebotenen Möglichkeiten sind für Sie möglich; die Person kann auch etwas anderes wünschen.",
+        ownBoundary:
+          "Sie dürfen sagen, wenn Sie für eine gewünschte Unterstützung nicht die passende Person sind.",
+        otherPerspective:
+          "Eine Wahl kann Orientierung geben oder gerade zu viel sein. Es braucht keine sofortige Entscheidung.",
       },
       {
         id: "c",
-        text: "«Ach, das kenne ich. Bei meinem letzten Arztbesuch war es genauso. Das ist leider normal heutzutage.»",
-        correct: false,
-        feedback:
-          "Eine eigene Erfahrung kann verbinden. Hier kann sie den Fokus aber verschieben, bevor das aktuelle Erleben genauer gehört wurde; die Verallgemeinerung «normal heutzutage» kann den konkreten Arztbesuch zusätzlich überdecken. Die Formulierung ist nicht automatisch falsch – eine offene Nachfrage oder die Frage, ob die eigene Erfahrung gerade hilfreich ist, lässt mehr Wahl.",
-        techniqueHint: "Eigene Erfahrung vor offener Nachfrage",
+        text: "«Ich kenne eine ähnliche Erfahrung. Wäre es gerade hilfreich, wenn ich davon erzähle, oder möchtest du erst bei deinem Besuch bleiben?»",
+        possibleEffect:
+          "Eine eigene Erfahrung kann verbinden. Die Nachfrage lässt offen, ob sie im aktuellen Gespräch erwünscht ist.",
+        prerequisites:
+          "Die Person möchte Ihre Erfahrung hören; Sie können bei einem Nein beim Anliegen der anderen Person bleiben.",
+        ownBoundary:
+          "Sie entscheiden, was Sie von sich erzählen möchten, und müssen keine persönliche Erfahrung offenlegen.",
+        otherPerspective:
+          "Eine ähnliche Erfahrung kann sich verbindend anfühlen oder den Fokus verschieben. Fragen Sie nach, statt beides vorauszusetzen.",
       },
     ],
     learnNote:
-      "Validierung bedeutet nicht, einer Aussage zuzustimmen. Spiegeln Sie, was tatsächlich gesagt wurde, und fragen Sie offen nach, statt ein verborgenes Gefühl oder Motiv festzulegen. Das eigene Erleben kann verbinden oder den Fokus verschieben; fragen Sie im Zweifel, ob es gerade hilfreich ist.",
+      "Validierung bedeutet nicht, einer Aussage zuzustimmen. Fragen Sie nach, statt ein verborgenes Gefühl oder Motiv festzulegen; ein Lösungsvorschlag ist nicht automatisch falsch und kann passen, wenn er gewünscht ist.",
   },
   {
     id: "val-2",
-    title: "«Es hat sowieso keinen Sinn»",
+    title: "Der eigene Kommentar wurde anders verstanden",
     technique: "Validierung",
     context:
-      "Ihr Angehöriger ist nach einem Rückschlag in der Therapie hoffnungslos. Sie möchten validieren, ohne die Hoffnungslosigkeit zu verstärken oder wegzureden.",
+      "Alex sagte beim Aufräumen: «Na, das hast du ja toll gemacht.» Alex meinte es scherzhaft, Robin hörte darin eine Abwertung. Beide hatten zuvor nicht über diesen Humor gesprochen.",
+    respondingRole:
+      "Hier wechseln Sie die Sprecherposition: Sie antworten als Alex, dessen eigener Kommentar Robin verletzt hat.",
     statement:
-      "«Therapie bringt doch nichts. Ich werde nie besser. Es hat alles keinen Sinn.»",
+      "Robin sagt: «Dein Spruch hat mich getroffen. Ich dachte, du machst dich über mich lustig.»",
     options: [
       {
         id: "a",
-        text: "«Natürlich bringt Therapie etwas! Du hast doch letzte Woche selbst gesagt, dass es dir besser geht. Du darfst jetzt nicht aufgeben.»",
-        correct: false,
-        feedback:
-          "Auch wenn alles inhaltlich stimmt: Das Gefühl (Hoffnungslosigkeit) wird komplett übergangen. «Du darfst nicht aufgeben» erzeugt Druck statt Verbindung.",
-        techniqueHint: "Invalidierung + Druck",
+        text: "«Mein Kommentar hat dich getroffen. Es tut mir leid, dass ich so gesprochen habe. Wie ist er bei dir angekommen?»",
+        possibleEffect:
+          "Die Antwort nimmt die mitgeteilte Wirkung auf und übernimmt Verantwortung für den eigenen Satz, ohne Robin eine Reaktion vorzuschreiben.",
+        prerequisites:
+          "Die Entschuldigung ist ernst gemeint; Sie sind bereit, auch eine andere Wirkung als Ihre Absicht zu hören.",
+        ownBoundary:
+          "Verantwortung für den eigenen Kommentar bedeutet nicht, jedes weitere Urteil über sich übernehmen zu müssen.",
+        otherPerspective:
+          "Robin kann die Entschuldigung annehmen oder noch Zeit brauchen. Eine Entschuldigung schafft keinen Anspruch auf Vergebung.",
       },
       {
         id: "b",
-        text: "«Rückschläge gehören dazu. Morgen sieht alles anders aus.»",
-        correct: false,
-        feedback:
-          "Gut gemeint, aber bagatellisierend. Für jemanden in einem tiefen Loch klingt «morgen sieht alles anders aus» wie eine leere Phrase. Der Schmerz jetzt braucht Anerkennung.",
-        techniqueHint: "Plattitüde statt Validierung",
+        text: "«Ich wollte einen Scherz machen und höre, dass es anders angekommen ist. Ich möchte solche Kommentare beim Aufräumen lassen. Können wir sagen, was uns dabei wichtig ist?»",
+        possibleEffect:
+          "Absicht und Wirkung können nebeneinanderstehen. Eine konkrete Änderung macht Verantwortung praktisch sichtbar.",
+        prerequisites:
+          "Sie können die angekündigte Änderung umsetzen und verwenden Ihre Absicht nicht, um die Verletzung abzustreiten.",
+        ownBoundary:
+          "Auch Ihre Wünsche für den Umgang dürfen benannt werden; eine gemeinsame Absprache bleibt verhandelbar.",
+        otherPerspective:
+          "Robin kann eine Änderung wichtiger finden als eine Erklärung der Absicht. Vielleicht ist gerade noch kein gemeinsames Gespräch gewünscht.",
       },
       {
         id: "c",
-        text: "«Ich höre, dass du gerade das Gefühl hast, es bringt nichts. Nach so einem Rückschlag ist es verständlich, dass sich alles sinnlos anfühlt. Ich bin trotzdem hier.»",
-        correct: true,
-        feedback:
-          "Die Antwort spiegelt die Aussage, ordnet sie vorsichtig in den genannten Rückschlag ein und bietet begrenzte Präsenz an. Die Hoffnungslosigkeit wird weder bestätigt noch bekämpft.",
-        techniqueHint: "Spiegeln → vorsichtig einordnen → Präsenz anbieten",
+        text: "«Ich höre, dass mein Satz verletzt hat, und möchte das nicht wegreden. Ich brauche einen Moment, bevor ich weiter darüber sprechen kann.»",
+        possibleEffect:
+          "Die mitgeteilte Verletzung wird anerkannt, während Sie die eigene aktuelle Grenze benennen.",
+        prerequisites:
+          "Sie brauchen eine Pause und nutzen sie nicht, um die Verantwortung für den Kommentar abzuweisen.",
+        ownBoundary:
+          "Beide dürfen pausieren oder ein Gespräch beenden. Sie müssen keinen festen Rückkehrzeitpunkt versprechen.",
+        otherPerspective:
+          "Robin kann ebenfalls Abstand brauchen oder enttäuscht sein. Eine Pause erledigt die Verletzung nicht automatisch.",
       },
     ],
     learnNote:
-      "Bei Hoffnungslosigkeit ist der Impuls gross, dagegen zu argumentieren. Anerkennung kann eher Raum für weitere Perspektiven schaffen, garantiert aber keine bestimmte Reaktion. Bei Hinweisen auf Selbstgefährdung geht Sicherheitsklärung vor Gesprächstechnik.",
+      "Alle Beteiligten können verletzend reagieren und Verantwortung für das eigene Verhalten übernehmen. Eine andere Absicht hebt die berichtete Wirkung nicht auf. Zugleich dürfen beide Grenzen setzen und ein Gespräch unterbrechen.",
   },
 ];
 
@@ -339,47 +409,53 @@ function ScenarioCard({
   index: number;
 }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [revealed, setRevealed] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+  const optionRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const uid = useId();
+  const titleId = `${uid}-title`;
+  const contextId = `${uid}-context`;
+  const roleId = `${uid}-role`;
+  const questionId = `${uid}-question`;
+  const detailId = `${uid}-detail`;
+  const detailTitleId = `${uid}-detail-title`;
   const meta = TECHNIQUE_META[scenario.technique];
   const TechniqueIcon = meta.icon;
-  const tintStyle = {
-    color: `var(${meta.tintVar})`,
-  };
+  const tintStyle = { color: `var(${meta.tintVar})` };
   const tintBadgeStyle = {
     color: `var(${meta.tintVar})`,
     borderColor: `color-mix(in oklch, var(${meta.tintVar}) 28%, transparent)`,
     backgroundColor: `color-mix(in oklch, var(${meta.tintVar}) 8%, white)`,
   };
-  const tintPanelStyle = {
-    borderColor: `color-mix(in oklch, var(${meta.tintVar}) 22%, transparent)`,
-    backgroundColor: `color-mix(in oklch, var(${meta.tintVar}) 5%, var(--bg-primary))`,
-  };
-
   const selectedOption = scenario.options.find(o => o.id === selectedId);
 
   const handleSelect = useCallback(
     (optionId: string) => {
-      if (revealed) return;
       setSelectedId(optionId);
-      setRevealed(true);
+      setStatusMessage(
+        `Reaktion ${optionId.toUpperCase()} angezeigt: ${scenario.title}. Sie können eine andere Reaktion vergleichen.`
+      );
     },
-    [revealed]
+    [scenario.title]
   );
 
   const handleReset = useCallback(() => {
+    // Focus the still-mounted choice before the reset control disappears.
+    if (selectedId) optionRefs.current[selectedId]?.focus();
     setSelectedId(null);
-    setRevealed(false);
-  }, []);
+    setStatusMessage(
+      `Vergleich zurückgesetzt: ${scenario.title}. Keine Reaktion ist ausgewählt; Sie können erneut vergleichen.`
+    );
+  }, [selectedId, scenario.title]);
 
   return (
     <article
+      aria-labelledby={titleId}
       className="overflow-hidden rounded-[1.35rem] border"
       style={{
         borderColor: "var(--rule-color)",
         backgroundColor: "var(--bg-elevated)",
       }}
     >
-      {/* Header */}
       <div
         className="border-b px-5 py-4"
         style={{
@@ -402,6 +478,7 @@ function ScenarioCard({
           </span>
         </div>
         <h3
+          id={titleId}
           className="leading-tight"
           style={{
             fontSize: "var(--text-lg)",
@@ -414,168 +491,124 @@ function ScenarioCard({
       </div>
 
       <div className="p-5 space-y-4">
-        {/* Context */}
         <p
-          style={{
-            fontSize: "var(--text-sm)",
-            lineHeight: "var(--lh-relaxed)",
-            color: "var(--fg-secondary)",
-          }}
+          id={contextId}
+          className="text-sm leading-relaxed text-muted-foreground"
         >
           {scenario.context}
         </p>
-
-        {/* Statement (what the person says) */}
-        <div
-          className="rounded-[1rem] border-l-2 px-4 py-4"
+        <p id={roleId} className="text-sm leading-relaxed text-foreground">
+          {scenario.respondingRole}
+        </p>
+        <blockquote
+          className="rounded-[1rem] border-l-2 px-4 py-4 text-sm italic leading-relaxed"
           style={{
             borderColor: `var(${meta.tintVar})`,
             backgroundColor:
               "color-mix(in oklch, var(--bg-primary) 72%, white)",
           }}
         >
-          <p
-            className="italic"
-            style={{
-              fontSize: "var(--text-sm)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-primary)",
-              fontWeight: 500,
-            }}
-          >
-            {scenario.statement}
-          </p>
-        </div>
+          {scenario.statement}
+        </blockquote>
 
-        {/* Options */}
-        <div className="space-y-2.5">
-          <p className="text-sm font-medium text-foreground">
-            Wie reagieren Sie?
+        <div
+          role="group"
+          aria-labelledby={questionId}
+          aria-describedby={`${contextId} ${roleId}`}
+          className="space-y-2.5"
+        >
+          <p id={questionId} className="text-sm font-medium text-foreground">
+            Welche Reaktion möchten Sie vergleichen?
           </p>
           {scenario.options.map(option => {
             const isSelected = selectedId === option.id;
-            const showResult = revealed;
-
-            let borderClass =
-              "border-border/60 hover:border-[color:var(--rule-color-strong)]";
-            let bgClass = "bg-background hover:bg-muted/20";
-
-            if (showResult && isSelected && option.correct) {
-              borderClass = "border-green-500/60";
-              bgClass = "bg-green-50";
-            } else if (showResult && isSelected && !option.correct) {
-              borderClass = "border-blue-400/50";
-              bgClass = "bg-blue-50/60";
-            } else if (showResult && option.correct) {
-              borderClass = "border-green-400/40";
-              bgClass = "bg-green-50/50";
-            }
-
             return (
               <button
                 key={option.id}
+                ref={node => {
+                  optionRefs.current[option.id] = node;
+                }}
                 type="button"
-                onClick={() => handleSelect(option.id)}
-                disabled={revealed}
-                className={`w-full text-left p-4 rounded-xl border ${borderClass} ${bgClass} transition-all ${
-                  !revealed
-                    ? "cursor-pointer active:scale-[0.99]"
-                    : "cursor-default"
+                aria-pressed={isSelected}
+                aria-controls={detailId}
+                onClick={event => {
+                  event.currentTarget.focus();
+                  handleSelect(option.id);
+                }}
+                className={`w-full rounded-xl border p-4 text-left focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                  isSelected
+                    ? "border-[color:var(--rule-color-strong)] bg-muted/30"
+                    : "border-border/60 bg-background hover:bg-muted/20"
                 }`}
               >
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 mt-0.5">
-                    {showResult && option.correct ? (
-                      <CheckCircle2 className="w-5 h-5 text-green-600" />
-                    ) : showResult && isSelected && !option.correct ? (
-                      <Lightbulb className="w-5 h-5 text-blue-600" />
-                    ) : (
-                      <div className="w-5 h-5 rounded-full border-2 border-border" />
-                    )}
-                  </div>
-                  <p className="text-sm text-foreground leading-relaxed">
+                <span className="flex items-start gap-3">
+                  <span aria-hidden="true" className="font-semibold">
+                    {option.id.toUpperCase()}
+                  </span>
+                  <span className="text-sm leading-relaxed text-foreground">
                     {option.text}
-                  </p>
-                </div>
-
-                {/* Per-option feedback */}
-                <AnimatePresence>
-                  {showResult && isSelected && (
-                    <m.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="overflow-hidden"
-                    >
-                      <div
-                        className={`mt-3 pt-3 border-t text-sm leading-relaxed ${
-                          option.correct
-                            ? "border-green-200 text-green-800"
-                            : "border-blue-200 text-blue-800"
-                        }`}
-                      >
-                        <p>{option.feedback}</p>
-                        {option.techniqueHint && (
-                          <p className="mt-1.5 text-xs font-medium opacity-75">
-                            Technik: {option.techniqueHint}
-                          </p>
-                        )}
-                      </div>
-                    </m.div>
-                  )}
-                </AnimatePresence>
+                  </span>
+                </span>
+                {isSelected && (
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 block text-xs font-medium"
+                  >
+                    Ausgewählt zum Vergleich
+                  </span>
+                )}
               </button>
             );
           })}
         </div>
 
-        {/* Preferred alternative for this didactic example */}
-        <AnimatePresence>
-          {revealed && selectedOption && !selectedOption.correct && (
-            <m.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              transition={{ duration: 0.25, delay: 0.1 }}
-              className="overflow-hidden"
-            >
-              <div className="rounded-[1rem] border border-green-200 bg-green-50/70 p-4">
-                <p className="text-sm font-medium text-green-800 mb-1 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4" />
-                  Eine in dieser Übung bevorzugte Alternative:
-                </p>
-                <p className="text-sm text-green-700 leading-relaxed">
-                  {scenario.options.find(o => o.correct)?.feedback}
-                </p>
-              </div>
-            </m.div>
+        <section
+          id={detailId}
+          hidden={!selectedOption}
+          aria-labelledby={detailTitleId}
+          className="rounded-[1rem] border p-4"
+          style={{ borderColor: "var(--rule-color)" }}
+        >
+          <h4 id={detailTitleId} className="mb-3 text-sm font-semibold">
+            Perspektiven zur Reaktion {selectedId?.toUpperCase()}
+          </h4>
+          {selectedOption && (
+            <dl className="space-y-3 text-sm leading-relaxed">
+              {[
+                ["Mögliche Wirkung", selectedOption.possibleEffect],
+                ["Voraussetzungen", selectedOption.prerequisites],
+                ["Eigene Grenze", selectedOption.ownBoundary],
+                ["Andere Perspektive", selectedOption.otherPerspective],
+              ].map(([label, text]) => (
+                <div key={label}>
+                  <dt className="font-medium text-foreground">{label}</dt>
+                  <dd className="mt-1 text-muted-foreground">{text}</dd>
+                </div>
+              ))}
+            </dl>
           )}
-        </AnimatePresence>
+          <div className="mt-4 border-t pt-3 text-sm leading-relaxed">
+            <p className="mb-1 flex items-center gap-1.5 font-medium">
+              <Lightbulb
+                className="h-4 w-4"
+                style={tintStyle}
+                aria-hidden="true"
+              />
+              Zum Vergleich
+            </p>
+            <p className="text-muted-foreground">{scenario.learnNote}</p>
+          </div>
+        </section>
 
-        {/* Learning note */}
-        <AnimatePresence>
-          {revealed && (
-            <m.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              transition={{ duration: 0.25, delay: 0.15 }}
-              className="overflow-hidden"
-            >
-              <div className="rounded-[1rem] border p-4" style={tintPanelStyle}>
-                <p className="text-sm font-medium text-foreground mb-1 flex items-center gap-1.5">
-                  <Lightbulb className="w-4 h-4" style={tintStyle} />
-                  Merke
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {scenario.learnNote}
-                </p>
-              </div>
-            </m.div>
-          )}
-        </AnimatePresence>
-
-        {/* Reset */}
-        {revealed && (
+        <p
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          className="sr-only"
+        >
+          {statusMessage}
+        </p>
+        {selectedOption && (
           <div className="flex justify-end pt-1">
             <Button
               variant="ghost"
@@ -583,8 +616,8 @@ function ScenarioCard({
               onClick={handleReset}
               className="gap-1.5 text-muted-foreground"
             >
-              <RotateCcw className="w-3.5 h-3.5" />
-              Andere Antwort prüfen
+              <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
+              Vergleich zurücksetzen
             </Button>
           </div>
         )}
@@ -692,14 +725,39 @@ export default function KommunikationsUebung() {
 
   return (
     <div className="space-y-10">
-      <p className="text-sm leading-relaxed text-muted-foreground">
-        Die folgenden Szenarien sind fachlich adaptierte Übungsbeispiele. Sie
-        zeigen mögliche Formulierungen, keine universellen Gesprächsrezepte. Die
-        Rollen sind erfunden und nicht aus einer Diagnose ableitbar; die Übung
-        trainiert bewusst nur eine mögliche Sprecherposition. Kontext, Beziehung
-        und Sicherheit können eine andere Antwort, einen Rollenwechsel oder eine
-        Pause sinnvoll machen; keine Formulierung garantiert den Verlauf.
-      </p>
+      <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+        <p>
+          <strong className="text-foreground">Redaktioneller Entwurf.</strong>{" "}
+          Die fachliche Prüfung sowie unabhängige Rückmeldungen von einer Person
+          mit eigener Borderline-Erfahrung und einer angehörigen Person stehen
+          aus. Reale VoiceOver- und NVDA-Prüfungen sind ebenfalls offen.
+        </p>
+        <p>
+          Diese erfundenen Szenarien sind eigene didaktische Ableitungen aus den
+          auf der{" "}
+          <AppLink href="/kommunizieren" className="editorial-link">
+            Kommunikations-Seite
+          </AppLink>{" "}
+          erläuterten Ansätzen. Sie sind kein auf Wirksamkeit geprüftes
+          Übungsprogramm. Die Rollen sind nicht aus einer Diagnose ableitbar;
+          die Sprecherposition wechselt zwischen den Alltagsszenarien.
+        </p>
+        <p>
+          Vergleichen Sie die Voraussetzungen, Grenzen und möglichen Wirkungen
+          der drei Reaktionen. Sie sind je nach Kontext unterschiedlich passend;
+          keine Formulierung garantiert den Verlauf. Alle Beteiligten dürfen
+          Grenzen setzen, pausieren und Verantwortung für eigenes verletzendes
+          Verhalten übernehmen.
+        </p>
+        <p>
+          Diese Kommunikationsübung nimmt keine Risikoeinschätzung vor.
+          Allgemeine Hinweise zu Anlaufstellen finden Sie unter{" "}
+          <AppLink href="/soforthilfe" className="editorial-link">
+            Akute Hilfe und Notfallkontakte
+          </AppLink>
+          .
+        </p>
+      </div>
       {(["Zugewandtheit", "DEAR", "Validierung"] as Technique[]).map(
         tech =>
           grouped[tech].length > 0 && (

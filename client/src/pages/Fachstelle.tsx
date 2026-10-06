@@ -11,45 +11,14 @@ import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO from "@/components/SEO";
-import {
-  emailByIdStrict,
-  kontaktByIdStrict,
-  urlByIdStrict,
-} from "@/data/kontakte";
-
-const fachstelleTel = kontaktByIdStrict("INFO_FACHSTELLE");
-const fachstelleEmail = emailByIdStrict("EMAIL_ANGEHOERIGEN");
-const pukUrl = urlByIdStrict("URL_PUK");
-
-const leistungen = [
-  {
-    title: "Beratung für Angehörige",
-    description:
-      "Vertrauliche und kostenlose Gespräche für Angehörige, die Orientierung, Entlastung oder Klärung in einer belastenden Situation suchen.",
-  },
-  {
-    title: "Psychoedukation & Materialien",
-    description:
-      "Fachlich fundierte Informationen, Handouts und Materialien, die helfen können, Dynamiken besser einzuordnen und Gespräche vorzubereiten.",
-  },
-  {
-    title: "Orientierung & Vermittlung",
-    description:
-      "Unterstützung bei der Suche nach passenden Hilfen, Selbsthilfeangeboten und weiteren Anlaufstellen.",
-  },
-  {
-    title: "Schulungen & Weiterbildung",
-    description:
-      "Fachliche Weiterbildung und Sensibilisierung zum Thema Angehörigenarbeit im psychosozialen Kontext.",
-  },
-] as const;
+import { fachstellenProfil } from "@/data/kontakte";
 
 export default function Fachstelle() {
   return (
     <Layout>
       <SEO
         title="Fachstelle Angehörigenarbeit"
-        description="Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK). Beratung, Orientierung und Materialien für Angehörige."
+        description={fachstellenProfil.suchBeschreibung}
         path="/fachstelle"
       />
 
@@ -61,18 +30,22 @@ export default function Fachstelle() {
             Angehörigenarbeit – professionell begleitet
           </DisplayHeading>
           <Lede className="mt-6">
-            Kostenlose, vertrauliche Beratung für Angehörige und weitere
-            Bezugspersonen – ohne Vollmacht der erkrankten Person und auch dann,
-            wenn diese nicht in der PUK behandelt wird.
+            {fachstellenProfil.beschreibung} {fachstellenProfil.zugangHinweis}
           </Lede>
           <p className="secondary-page-meta">
             Vollständig ca. 4 Min · Auch abschnittweise lesbar.
           </p>
           <LastVerifiedBadge path="/fachstelle" className="mt-6" />
+          <p className="secondary-page-meta">
+            {fachstellenProfil.pruefHinweis}
+          </p>
         </header>
 
         {/* ── Unser Angebot ── */}
-        <EditorialSectionBlock label="Leistungen" title="Unser Angebot">
+        <EditorialSectionBlock
+          label="Gespräch vorbereiten"
+          title="Fragen an die Fachstelle"
+        >
           <EditorialProse>
             <p>
               Die Fachstelle ist kein Krisendienst und keine Therapie. Sie ist
@@ -81,7 +54,7 @@ export default function Fachstelle() {
             </p>
           </EditorialProse>
           <ul className="secondary-page-list secondary-page-list--spacious">
-            {leistungen.map(item => (
+            {fachstellenProfil.gespraechsthemen.map(item => (
               <li key={item.title}>
                 <h3 className="secondary-page-list-title">{item.title}</h3>
                 <p className="secondary-page-list-text">{item.description}</p>
@@ -97,55 +70,51 @@ export default function Fachstelle() {
         >
           <EditorialProse>
             <p>
-              Fachstelle Angehörigenarbeit, Psychiatrische Universitätsklinik
-              Zürich (PUK).
+              {fachstellenProfil.name}, {fachstellenProfil.organisation}.
             </p>
           </EditorialProse>
           <dl className="secondary-page-definition-list">
             <dt className="secondary-page-definition-term">Adresse</dt>
             <dd className="secondary-page-definition-description">
-              Lenggstrasse 31
-              <br />
-              Postfach
-              <br />
-              8032 Zürich
+              {fachstellenProfil.adresse.adresse}
             </dd>
 
             <dt className="secondary-page-definition-term">Telefon</dt>
             <dd>
               <a
-                href={`tel:${fachstelleTel.tel}`}
+                href={`tel:${fachstellenProfil.telefon.tel}`}
                 className="editorial-link secondary-page-contact-link"
               >
-                {fachstelleTel.nummer}
+                {fachstellenProfil.telefon.nummer}
               </a>
               <p className="secondary-page-list-text">
-                Terminvereinbarung telefonisch.
+                Fragen Sie nach dem aktuellen Weg zur Terminvereinbarung.
               </p>
             </dd>
 
             <dt className="secondary-page-definition-term">E-Mail</dt>
             <dd>
               <a
-                href={`mailto:${fachstelleEmail.adresse}`}
+                href={`mailto:${fachstellenProfil.email.adresse}`}
                 className="editorial-link secondary-page-contact-link"
               >
-                {fachstelleEmail.adresse}
+                {fachstellenProfil.email.adresse}
               </a>
               <p className="secondary-page-list-text">
-                Terminvereinbarung per E-Mail.
+                Klären Sie vorab, welche Angaben für eine Anfrage benötigt
+                werden.
               </p>
             </dd>
 
             <dt className="secondary-page-definition-term">Web</dt>
             <dd>
               <a
-                href={pukUrl.url}
+                href={fachstellenProfil.web.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="editorial-link secondary-page-contact-link"
               >
-                {pukUrl.url.replace("https://", "")}
+                {fachstellenProfil.web.url.replace("https://", "")}
               </a>
               <p className="secondary-page-list-text">
                 Website der PUK Zürich.

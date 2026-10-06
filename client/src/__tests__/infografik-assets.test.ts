@@ -1,10 +1,32 @@
-import { existsSync, statSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import {
+  copyFileSync,
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  rmSync,
+  statSync,
+  writeFileSync,
+} from "node:fs";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { collectReferencedInfografikAssets } from "@/content/infografikAssetRefs";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const PUBLIC_ROOT = path.join(REPO_ROOT, "client", "public");
+const WITHHELD_ROOT = path.join(
+  REPO_ROOT,
+  "qa/withheld-handouts/issue-650-content-drift-2026-10-06"
+);
+const RETIRED_REVIEW_ASSETS = [
+  "infografiken/manus-spiegeln-statt-aufsaugen-v3.pdf",
+  "infografiken/manus-spiegeln-statt-aufsaugen-v3.webp",
+  "infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v3-thumb.png",
+  "infografiken/manus-warnsignale-v3.pdf",
+  "infografiken/manus-warnsignale-v3.webp",
+  "infografiken/extras/thumbnails/manus-warnsignale-v3-thumb.png",
+];
 
 function expectProductiveAssetVersion(
   referencedPaths: string[],
@@ -143,19 +165,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Spiegeln-statt-Aufsaugen v3 assets in productive references", () => {
+  it("withholds the superseded Spiegeln-statt-Aufsaugen v3 assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/manus-spiegeln-statt-aufsaugen-v3.pdf",
         "/infografiken/manus-spiegeln-statt-aufsaugen-v3.webp",
         "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v3-thumb.png",
-      ],
-      [
         "/infografiken/manus-spiegeln-statt-aufsaugen-v2.pdf",
         "/infografiken/manus-spiegeln-statt-aufsaugen-v2.webp",
         "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v2.webp",
@@ -185,19 +206,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Warnsignale v3 assets in productive references", () => {
+  it("withholds the superseded Warnsignale v3 assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/manus-warnsignale-v3.pdf",
         "/infografiken/manus-warnsignale-v3.webp",
         "/infografiken/extras/thumbnails/manus-warnsignale-v3-thumb.png",
-      ],
-      [
         "/infografiken/manus-warnsignale-v2.pdf",
         "/infografiken/manus-warnsignale-v2.webp",
         "/infografiken/extras/thumbnails/manus-warnsignale-v2.webp",
@@ -206,6 +226,63 @@ describe("infografik assets", () => {
         "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp",
       ]
     );
+  });
+
+  it.each(RETIRED_REVIEW_ASSETS)(
+    "archives %s outside the public static delivery root",
+    relativePath => {
+      expect(existsSync(path.join(PUBLIC_ROOT, relativePath))).toBe(false);
+      expect(
+        statSync(path.join(WITHHELD_ROOT, relativePath)).size
+      ).toBeGreaterThan(0);
+    }
+  );
+
+  it("prunes the retired review assets from a cached build", () => {
+    const fixtureRoot = mkdtempSync(
+      path.join(tmpdir(), "retired-handout-build-")
+    );
+    try {
+      const fixtureScripts = path.join(fixtureRoot, "scripts");
+      mkdirSync(fixtureScripts, { recursive: true });
+      const fixtureScript = path.join(
+        fixtureScripts,
+        "prune-built-infografiken.mjs"
+      );
+      copyFileSync(
+        path.join(REPO_ROOT, "scripts/prune-built-infografiken.mjs"),
+        fixtureScript
+      );
+
+      const sourceRoot = path.join(fixtureRoot, "client/public/infografiken");
+      const buildRoot = path.join(fixtureRoot, "dist/public/infografiken");
+      mkdirSync(sourceRoot, { recursive: true });
+      mkdirSync(buildRoot, { recursive: true });
+      writeFileSync(
+        path.join(sourceRoot, "current.pdf"),
+        "current public asset"
+      );
+      copyFileSync(
+        path.join(sourceRoot, "current.pdf"),
+        path.join(buildRoot, "current.pdf")
+      );
+      for (const relativePath of RETIRED_REVIEW_ASSETS) {
+        const cachedPath = path.join(fixtureRoot, "dist/public", relativePath);
+        mkdirSync(path.dirname(cachedPath), { recursive: true });
+        copyFileSync(path.join(WITHHELD_ROOT, relativePath), cachedPath);
+      }
+
+      execFileSync(process.execPath, [fixtureScript]);
+
+      expect(existsSync(path.join(buildRoot, "current.pdf"))).toBe(true);
+      for (const relativePath of RETIRED_REVIEW_ASSETS) {
+        expect(
+          existsSync(path.join(fixtureRoot, "dist/public", relativePath))
+        ).toBe(false);
+      }
+    } finally {
+      rmSync(fixtureRoot, { recursive: true, force: true });
+    }
   });
 
   it("withholds the superseded Eisberg assets", () => {

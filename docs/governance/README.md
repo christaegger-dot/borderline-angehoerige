@@ -31,6 +31,10 @@ Die Dokumente sind bewusst nicht als juristische Formalität geschrieben, sonder
 14. [Weitere Inhaltskorrekturen vom 06.10.2026](14-inhaltsreview-nachbesserungen-2026-10-06.md) —
     verbleibende Text-, Navigations-, Datums- und Statusfehler, präzisierte
     Quellen sowie acht weitere begrenzte Nummernabgleiche.
+15. [Umsetzung offener Folgearbeiten vom 06.10.2026](15-offene-folgearbeiten-2026-10-06.md) —
+    Rückhaltung veralteter Grafiken, Materialregister, Übungsbedienung,
+    Datenschutz- und Barrierefreiheitshinweise sowie weitere Kontaktbelege;
+    externe Freigaben bleiben offen.
 
 Paketbezogenes Protokoll:
 

@@ -127,6 +127,11 @@ describe("handout delivery helpers", () => {
     ["6-leitlinien", "/infografiken/manus-6-leitlinien-v1.pdf"],
     ["4-alltags-tipps", "/infografiken/manus-4-alltags-tipps-v1.pdf"],
     ["sauerstoffmaske", "/infografiken/sauerstoff-die-sauerstoffmaske-v5.pdf"],
+    ["warnsignale", "/infografiken/manus-warnsignale-v3.pdf"],
+    [
+      "spiegeln-statt-aufsaugen",
+      "/infografiken/manus-spiegeln-statt-aufsaugen-v3.pdf",
+    ],
     ["gehirn", "/infografiken/manus-gehirn-v1.pdf"],
     ["gehirn", "/infografiken/puk-hohe-anspannung-v1.pdf"],
     ["zustands-landkarte", "/infografiken/puk-zustands-landkarte-v1.pdf"],

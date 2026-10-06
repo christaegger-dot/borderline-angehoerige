@@ -277,6 +277,12 @@ export const handoutGovernance = {
     id: "spiegeln-statt-aufsaugen",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-spiegeln-statt-aufsaugen-v3",
+    visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-spiegeln-statt-aufsaugen-v3.pdf",
+      "/infografiken/manus-spiegeln-statt-aufsaugen-v3.webp",
+      "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v3-thumb.png",
+    ],
   },
   "4-arten-von-grenzen": {
     id: "4-arten-von-grenzen",
@@ -322,6 +328,12 @@ export const handoutGovernance = {
     id: "warnsignale",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-warnsignale-v3",
+    visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-warnsignale-v3.pdf",
+      "/infografiken/manus-warnsignale-v3.webp",
+      "/infografiken/extras/thumbnails/manus-warnsignale-v3-thumb.png",
+    ],
   },
   sauerstoffmaske: {
     id: "sauerstoffmaske",

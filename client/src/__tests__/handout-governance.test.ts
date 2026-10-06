@@ -141,6 +141,8 @@ describe("handout governance", () => {
       "energie-konto",
       "erlaubnis-karte",
       "sauerstoffmaske",
+      "warnsignale",
+      "spiegeln-statt-aufsaugen",
       "remission-heilung",
       "5-faktoren-genesung",
       "rolle-genesungsprozess",

@@ -73,18 +73,20 @@ describe("netlify material-download function adapter", () => {
     );
   });
 
-  it.each(["notfallplan-krise", "notfallkarte-zuerich"])(
-    "returns 404 when no static download is published for %s",
-    async id => {
-      const req = new Request(
-        `https://example.com/api/material-download/${id}`
-      );
+  it.each([
+    "notfallplan-krise",
+    "notfallkarte-zuerich",
+    "warnsignale",
+    "selbstfuersorge-warnsignale",
+    "spiegeln-statt-aufsaugen",
+    "grenzen-spiegeln-statt-aufsaugen",
+  ])("returns 404 when no static download is published for %s", async id => {
+    const req = new Request(`https://example.com/api/material-download/${id}`);
 
-      const response = await materialDownloadFunction(req, {
-        params: { id },
-      });
+    const response = await materialDownloadFunction(req, {
+      params: { id },
+    });
 
-      expect(response.status).toBe(404);
-    }
-  );
+    expect(response.status).toBe(404);
+  });
 });

@@ -22,15 +22,13 @@ import { TableOfContents } from "@/components/UXEnhancements";
 import AppLink from "@/components/AppLink";
 import { quellenLinks } from "@/content/quellenLinks";
 import {
-  emailByIdStrict,
+  fachstellenProfil,
   kontaktByIdStrict,
   urlByIdStrict,
 } from "@/data/kontakte";
 import { Link } from "wouter";
 
 // Single-source-of-truth für Kontaktdaten (keine Hardcoding im Markup).
-const fachstelleTel = kontaktByIdStrict("INFO_FACHSTELLE");
-const fachstelleEmail = emailByIdStrict("EMAIL_ANGEHOERIGEN");
 // PUK-Diagnostik-Anmeldung: Zentrale (058 384 21 11), nicht 24/7-Notfall.
 const pukZentrale = kontaktByIdStrict("INFO_PUK_ZENTRALE");
 const hypeZueri = kontaktByIdStrict("INFO_PUK_KJPP_HYPE");
@@ -84,7 +82,7 @@ const unterschiedlicheEinordnungWasMoeglich = [
   "fragen, was unklar ist oder sich für die Person nicht stimmig anfühlt",
   "konkrete Erfahrungen und beobachtbares Verhalten ansprechen statt ein Etikett",
   "offene Fragen mit der behandelnden Fachperson klären oder eine zweite fachliche Einschätzung einholen — sofern die Person das möchte",
-  "Beratung der Fachstelle Angehörigenarbeit der PUK in Anspruch nehmen — auch ohne Diagnose-Stellung",
+  "Bei der Fachstelle Angehörigenarbeit der PUK nach eigener Beratung fragen und die Zugangsbedingungen klären",
 ] as const;
 
 const vermutungSchritte = [
@@ -94,7 +92,7 @@ const vermutungSchritte = [
   },
   {
     title: "Fachstelle Angehörigenarbeit der PUK kontaktieren",
-    desc: "Beratung für Angehörige ist auch möglich, wenn keine Diagnose vorliegt oder die betroffene Person nicht in Behandlung ist.",
+    desc: fachstellenProfil.zugangHinweis,
   },
   {
     title: "Spezialisierte Anlaufstelle anfragen",
@@ -827,24 +825,26 @@ export default function Diagnostik() {
         >
           <EditorialProse>
             <p>
-              Die Fachstelle Angehörigenarbeit der PUK berät auch dann, wenn
-              keine Diagnose vorliegt — und auch unabhängig davon, ob die
-              erkrankte Person bereits in Behandlung ist. Beratung kostet nichts
-              und wird nicht an Krankenkassen weitergegeben.
+              Sie können nach Unterstützung für Ihre eigene Situation fragen.{" "}
+              {fachstellenProfil.zugangHinweis}
             </p>
+            <p>{fachstellenProfil.pruefHinweis}</p>
           </EditorialProse>
           <div
             className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-6"
             style={{ fontSize: "var(--text-md)" }}
           >
-            <a href={`tel:${fachstelleTel.tel}`} className="editorial-link">
-              {fachstelleTel.nummer}
-            </a>
             <a
-              href={`mailto:${fachstelleEmail.adresse}`}
+              href={`tel:${fachstellenProfil.telefon.tel}`}
               className="editorial-link"
             >
-              {fachstelleEmail.adresse}
+              {fachstellenProfil.telefon.nummer}
+            </a>
+            <a
+              href={`mailto:${fachstellenProfil.email.adresse}`}
+              className="editorial-link"
+            >
+              {fachstellenProfil.email.adresse}
             </a>
           </div>
         </EditorialSectionBlock>

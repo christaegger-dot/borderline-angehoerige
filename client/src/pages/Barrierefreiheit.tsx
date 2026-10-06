@@ -11,20 +11,21 @@ import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO from "@/components/SEO";
 
-const conformanceItems = [
+const accessibilityMeasures = [
   "Skip-Navigation zum Hauptinhalt (WCAG 2.4.1)",
-  "Tastaturnavigation für alle interaktiven Elemente",
+  "Tastaturbedienung und sichtbare Fokusmarkierungen",
   "ARIA-Rollen und -Labels für Menüs, Dialoge und Navigation",
-  "Farbkontraste nach WCAG AA (mind. 4.5:1 für Text)",
-  "Responsives Design für alle Bildschirmgrössen",
+  "Kontrastprüfung als Teil der automatisierten Prüfungen",
+  "Layouts für schmale und breite Bildschirmansichten",
   "Semantische HTML-Struktur (Überschriften-Hierarchie, Landmarks)",
   "Fokus-Management bei modalen Dialogen und Dropdown-Menüs",
   "Reduzierte Bewegung wird respektiert (prefers-reduced-motion)",
 ];
 
 const knownLimitations = [
-  "Einzelne externe oder ältere PDF-Handouts sind weiterhin bildbasiert; wo nötig steht eine lesbare Textversion als empfohlene Lesefassung bereit",
-  "Einzelne interaktive Übungen (Übungsszenarien) können mit Screenreadern eingeschränkt nutzbar sein",
+  "Die vollständige Prüfung mit VoiceOver/Safari und NVDA/Firefox sowie auf realen Mobilgeräten steht aus. Automatisierte Prüfungen ersetzen diese Nutzungstests nicht.",
+  "Die Übungsszenarien sind noch nicht mit Screenreader-Nutzenden geprüft. Rückmeldungen zur Verständlichkeit und Bedienung stehen aus.",
+  "Für die angebotenen PDF-Handouts ist eine vollständige PDF/UA- und Druckprüfung nicht nachgewiesen. Lesbare Webtextfassungen sind verlinkt; sie belegen keine Barrierefreiheit der jeweiligen PDF-Datei.",
 ];
 
 export default function Barrierefreiheit() {
@@ -66,21 +67,46 @@ export default function Barrierefreiheit() {
             <p>
               Diese Website orientiert sich an den{" "}
               <strong>
-                Web Content Accessibility Guidelines (WCAG) 2.1, Stufe AA
+                Web Content Accessibility Guidelines (WCAG) 2.2, Stufe AA
               </strong>
-              . Wir arbeiten kontinuierlich daran, die Barrierefreiheit weiter
-              zu verbessern.
+              . Das ist ein Projektziel. Eine vollständige Konformitätsprüfung
+              und die institutionelle Bestätigung stehen aus; eine vollständige
+              Konformität wird derzeit nicht erklärt.
+            </p>
+            <p>
+              Eine institutionell verbindliche Mindestvorgabe für dieses Projekt
+              ist noch nicht bestätigt.
             </p>
           </EditorialProse>
         </EditorialSectionBlock>
 
         <EditorialSectionBlock
-          label="Umgesetzt"
-          title="Bereits umgesetzte Massnahmen"
+          label="Massnahmen"
+          title="Technische Massnahmen und Prüfungen"
           rule
         >
+          <EditorialProse>
+            <p>
+              Im Entwicklungsprozess werden ausgewählte Seiten und Bedienabläufe
+              mit automatisierten Tests geprüft. Dazu gehören Struktur,
+              Tastaturbedienung und Prüfungen mit axe. Diese Stichproben
+              erfassen weder alle Seitenzustände noch die Nutzung mit
+              Hilfsmitteln.
+            </p>
+            <p>
+              Die technische Stichprobe vom 6. Oktober 2026 umfasst Startseite,
+              Soforthilfe, Übungen, diese Erklärung, Datenschutz, Feedback,
+              Fachstelle, Beratung, Diagnostik, Selbstfürsorge, Selbsttest,
+              Grenzen, Therapie sowie die Webtextfassungen Warnsignale und
+              Spiegeln statt Aufsaugen. Geprüft wurden Chromium, axe und
+              Tastaturabläufe in den Übungen bei simulierten Ansichten von 360 ×
+              800, 768 × 900 und 1440 × 1000 Pixeln. Andere Browser,
+              Hilfsmittel, Seitenzustände und die übrigen Materialien sind damit
+              nicht vollständig geprüft.
+            </p>
+          </EditorialProse>
           <ul className="space-y-5">
-            {conformanceItems.map(item => (
+            {accessibilityMeasures.map(item => (
               <li key={item}>
                 <p style={itemTitleStyle}>{item}</p>
               </li>
@@ -128,7 +154,7 @@ export default function Barrierefreiheit() {
         </EditorialSectionBlock>
 
         <EditorialSectionBlock label="Stand" title="Aktualität" rule>
-          <p style={bodyStyle}>Stand: April 2026</p>
+          <p style={bodyStyle}>Redaktioneller Stand: 6. Oktober 2026</p>
         </EditorialSectionBlock>
 
         <RelatedLinksEditorial

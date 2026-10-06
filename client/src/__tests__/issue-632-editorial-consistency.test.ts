@@ -83,7 +83,7 @@ describe("Issue 632 redaktionelle Konsistenz", () => {
     );
   });
 
-  it("führt die Angehörigenberatung einheitlich als Fachstelle Angehörigenarbeit der PUK", () => {
+  it("führt die Fachstellenberatung mit gemeinsamem Profil und offener Zugangsprüfung", () => {
     const diagnostik = normalizedSource("client/src/pages/Diagnostik.tsx");
     const selbstfuersorgeCheck = normalizedSource(
       "client/src/components/interactive/SelbstfuersorgeCheck.tsx"
@@ -92,12 +92,11 @@ describe("Issue 632 redaktionelle Konsistenz", () => {
     expect(diagnostik).toContain(
       "Fachstelle Angehörigenarbeit der PUK kontaktieren"
     );
-    expect(diagnostik).toContain(
-      "Die Fachstelle Angehörigenarbeit der PUK berät auch dann"
-    );
-    expect(selbstfuersorgeCheck).toContain(
-      "Die Fachstelle Angehörigenarbeit der PUK berät kostenlos, ohne Vollmacht und nach Voranmeldung."
-    );
+    for (const source of [diagnostik, selbstfuersorgeCheck]) {
+      expect(source).toContain("fachstellenProfil.zugangHinweis");
+      expect(source).toContain("fachstellenProfil.pruefHinweis");
+      expect(source).not.toMatch(/berät kostenlos|Beratung kostet nichts/);
+    }
     expect(`${diagnostik}\n${selbstfuersorgeCheck}`).not.toContain(
       "PUK-Angehörigenberatung"
     );

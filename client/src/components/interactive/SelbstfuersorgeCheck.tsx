@@ -6,6 +6,7 @@ import {
   Heart,
 } from "lucide-react";
 import { Link } from "wouter";
+import { fachstellenProfil } from "@/data/kontakte";
 
 const wege = [
   {
@@ -119,8 +120,10 @@ export default function SelbstfuersorgeCheck() {
       </details>
       <p className="mt-5 text-base leading-relaxed">
         Eigene Beratung darf unabhängig davon beginnen, ob die andere Person
-        Hilfe möchte. Die Fachstelle Angehörigenarbeit der PUK berät kostenlos,
-        ohne Vollmacht und nach Voranmeldung.
+        Hilfe möchte. {fachstellenProfil.zugangHinweis}
+      </p>
+      <p className="mt-3 text-sm leading-relaxed">
+        {fachstellenProfil.pruefHinweis}
       </p>
       <Link
         href="/fachstelle"

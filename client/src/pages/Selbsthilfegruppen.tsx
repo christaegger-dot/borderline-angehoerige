@@ -13,14 +13,12 @@ import ReviewBadge from "@/components/ReviewBadge";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import {
   emailByIdStrict,
+  fachstellenProfil,
   kontaktByIdStrict,
   urlByIdStrict,
 } from "@/data/kontakte";
 import { Link, useLocation } from "wouter";
 
-const fachstelleTel = kontaktByIdStrict("INFO_FACHSTELLE");
-const fachstelleEmail = emailByIdStrict("EMAIL_ANGEHOERIGEN");
-const pukUrl = urlByIdStrict("URL_PUK");
 const proMente = kontaktByIdStrict("INFO_PROMENTE");
 const standByYouTel = kontaktByIdStrict("INFO_STANDBYYOU");
 const vaskZhTel = kontaktByIdStrict("INFO_VASK_ZH");
@@ -29,14 +27,6 @@ const vaskZhUrl = urlByIdStrict("URL_VASK_ZH");
 const proMenteUrl = urlByIdStrict("URL_PROMENTE");
 const standByYouUrl = urlByIdStrict("URL_STANDBYYOU");
 const selbsthilfeChUrl = urlByIdStrict("URL_SELBSTHILFE_CH");
-
-const fachstelleLeistungen = [
-  "Vertrauliche Beratung und Entlastungsgespräche (ca. 60 Min.)",
-  "Unterstützung im Umgang mit der Erkrankung im Alltag",
-  "Orientierung zu Hilfs-, Gruppen- und Entlastungsangeboten",
-  "Klärung von Fragen rund um Rolle, Grenzen und Selbstfürsorge",
-  "Kostenlos – Daten werden nicht an die Krankenkasse weitergeleitet",
-] as const;
 
 const standByYouHelpLineZeiten = [
   ["Montag", "09:30 – 19:00 Uhr"],
@@ -187,20 +177,15 @@ export default function Selbsthilfegruppen() {
             className="border-t pt-8 space-y-4"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <h3 style={stelleTitleStyle}>
-              Fachstelle Angehörigenarbeit (PUK Zürich)
-            </h3>
+            <h3 style={stelleTitleStyle}>{fachstellenProfil.name}</h3>
             <EditorialBody>
-              Die Fachstelle an der Psychiatrischen Universitätsklinik Zürich
-              bietet kostenlose, vertrauliche{" "}
-              <strong>Einzelberatung und Entlastungsgespräche</strong> für
-              Angehörige von psychisch erkrankten Menschen – unabhängig davon,
-              ob die betroffene Person an der PUK behandelt wird.
+              {fachstellenProfil.beschreibung} {fachstellenProfil.zugangHinweis}
             </EditorialBody>
+            <EditorialBody>{fachstellenProfil.pruefHinweis}</EditorialBody>
 
             <div className="space-y-2">
               <p className="uppercase" style={labelStyle}>
-                Was bietet die Fachstelle?
+                Was Sie vorab klären können
               </p>
               <ul
                 className="ml-5 list-disc space-y-1"
@@ -210,7 +195,7 @@ export default function Selbsthilfegruppen() {
                   color: "var(--fg-secondary)",
                 }}
               >
-                {fachstelleLeistungen.map(item => (
+                {fachstellenProfil.klaerungsfragen.map(item => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -222,11 +207,11 @@ export default function Selbsthilfegruppen() {
               </dt>
               <dd>
                 <a
-                  href={`tel:${fachstelleTel.tel}`}
+                  href={`tel:${fachstellenProfil.telefon.tel}`}
                   className="editorial-link"
                   style={{ fontSize: "var(--text-md)" }}
                 >
-                  {fachstelleTel.nummer}
+                  {fachstellenProfil.telefon.nummer}
                 </a>
               </dd>
 
@@ -235,11 +220,11 @@ export default function Selbsthilfegruppen() {
               </dt>
               <dd>
                 <a
-                  href={`mailto:${fachstelleEmail.adresse}`}
+                  href={`mailto:${fachstellenProfil.email.adresse}`}
                   className="editorial-link"
                   style={{ fontSize: "var(--text-md)" }}
                 >
-                  {fachstelleEmail.adresse}
+                  {fachstellenProfil.email.adresse}
                 </a>
               </dd>
 
@@ -247,9 +232,7 @@ export default function Selbsthilfegruppen() {
                 Adresse
               </dt>
               <EditorialBody as="dd">
-                Lenggstrasse 31, Postfach
-                <br />
-                8032 Zürich
+                {fachstellenProfil.adresse.adresse}
               </EditorialBody>
 
               <dt className="uppercase" style={labelStyle}>
@@ -257,13 +240,13 @@ export default function Selbsthilfegruppen() {
               </dt>
               <dd>
                 <a
-                  href={pukUrl.url}
+                  href={fachstellenProfil.web.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="editorial-link"
                   style={{ fontSize: "var(--text-md)" }}
                 >
-                  {pukUrl.url.replace("https://", "")}
+                  {fachstellenProfil.web.url.replace("https://", "")}
                 </a>
               </dd>
             </dl>

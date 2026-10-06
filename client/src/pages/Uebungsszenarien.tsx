@@ -18,7 +18,7 @@ export default function Uebungsszenarien() {
     <Layout>
       <SEO
         title="Kommunikations-Übungen"
-        description="Üben Sie offene Fragen, klare Grenzen, die vier DEAR-Schritte und Validierung anhand anpassbarer Szenarien – interaktiv, mit Feedback und Erklärungen."
+        description="Vergleichen Sie mögliche Reaktionen in erfundenen Gesprächssituationen: Voraussetzungen, Grenzen und Perspektiven zu Zugewandtheit, DEAR und Validierung."
         path="/uebungen"
       />
 
@@ -40,10 +40,10 @@ export default function Uebungsszenarien() {
           </DisplayHeading>
 
           <Lede className="mt-6">
-            Realistische Situationen, verschiedene Antwortmöglichkeiten und
-            sofortiges Feedback. Probieren Sie aus, wie begrenzte Zugewandtheit,
-            offene Fragen, die vier DEAR-Schritte und Validierung klingen
-            können.
+            Erfundene Alltagssituationen und verschiedene Sprecherpositionen:
+            Vergleichen Sie, wie Zugewandtheit, klare Grenzen, die vier
+            DEAR-Schritte und Validierung klingen können und wann eine Reaktion
+            passen könnte.
           </Lede>
 
           <p
@@ -54,9 +54,11 @@ export default function Uebungsszenarien() {
               color: "var(--fg-tertiary)",
             }}
           >
-            Es gibt kein starres «richtig» im echten Leben, aber oft
-            hilfreichere und weniger hilfreiche Reaktionen. Diese Übungen zeigen
-            bewährte Muster, die Sie für Ihre eigene Situation anpassen können.
+            Wählen Sie eine Reaktion, um mögliche Wirkungen, Voraussetzungen,
+            eigene Grenzen und die andere Perspektive zu lesen. Sie können
+            jederzeit eine andere Reaktion vergleichen. Die Beispiele sind
+            kontextabhängig und werden nicht als richtige oder falsche Antworten
+            bewertet.
           </p>
           <ReviewBadge path="/uebungen" className="mt-4" />
         </header>

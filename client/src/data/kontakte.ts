@@ -5,7 +5,7 @@
  * Statische Sonderseiten und Druckvorlagen muessen mit diesen Werten
  * synchron bleiben; Regressionstests pruefen die Spiegelungen.
  *
- * Inventar: 27 Telefonnummern, 4 E-Mail-Adressen, 1 Adresse, 11 URLs.
+ * Inventar: 26 Telefonnummern, 4 E-Mail-Adressen, 1 Adresse, 11 URLs.
  *
  * Regeln:
  * - NO-MIX: PUK ≠ USZ ≠ UZH
@@ -564,7 +564,7 @@ function pendingKontaktNachweis(
 const pukPrimarySourceUrl = urlByIdStrict("URL_PUK").url;
 
 /**
- * Getrennte Nachweise für alle 27 Telefonkontakte.
+ * Getrennte Nachweise für alle 26 Telefonkontakte.
  *
  * Stand 06.10.2026: Die als number-confirmed gekennzeichneten Nummern
  * wurden auf den jeweils angegebenen offiziellen Primärseiten bestätigt. Der
@@ -573,9 +573,36 @@ const pukPrimarySourceUrl = urlByIdStrict("URL_PUK").url;
  * diese Nachweise nicht. Fachliche Zuständigkeiten sind noch zu benennen.
  */
 export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
-  ROT_144: pendingKontaktNachweis("Schweiz"),
-  ROT_117: pendingKontaktNachweis("Schweiz"),
-  ROT_112: pendingKontaktNachweis("Schweiz"),
+  ROT_144: {
+    region: "Schweiz",
+    primarySourceUrl:
+      "https://www.ch.ch/de/sicherheit-und-recht/gefahren-und-notfalle/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Notrufnummer 144 für die Ambulanz auf dem offiziellen Schweizer Behördenportal bestätigt; keine Prüfung von Erreichbarkeit im Einzelfall oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  ROT_117: {
+    region: "Schweiz",
+    primarySourceUrl:
+      "https://www.ch.ch/de/sicherheit-und-recht/gefahren-und-notfalle/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Notrufnummer 117 für die Polizei auf dem offiziellen Schweizer Behördenportal bestätigt; keine Prüfung von Erreichbarkeit im Einzelfall oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  ROT_112: {
+    region: "Schweiz",
+    primarySourceUrl:
+      "https://www.ch.ch/de/sicherheit-und-recht/gefahren-und-notfalle/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte allgemeine Notrufnummer 112 auf dem offiziellen Schweizer Behördenportal bestätigt; keine Prüfung von SIM-Voraussetzungen, Erreichbarkeit im Einzelfall oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   ROT_145: {
     region: "Schweiz",
     primarySourceUrl: "https://www.toxinfo.ch/",
@@ -606,7 +633,15 @@ export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
     namedOwner: null,
     status: "number-confirmed",
   },
-  GRUEN_ELTERN: pendingKontaktNachweis("Schweiz"),
+  GRUEN_ELTERN: {
+    region: "Schweiz",
+    primarySourceUrl: "https://www.elternnotruf.ch/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Beratungsnummer 0848 35 45 55 auf der Anbieterwebsite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   INFO_KIZ: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
   INFO_AERZTEFON: {
     region: "Kanton Zürich",
@@ -626,7 +661,15 @@ export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
     namedOwner: null,
     status: "number-confirmed",
   },
-  INFO_OPFERHILFE_ZH_24_7: pendingKontaktNachweis("Kanton Zürich"),
+  INFO_OPFERHILFE_ZH_24_7: {
+    region: "Kanton Zürich",
+    primarySourceUrl: "https://www.zh.ch/de/gesundheit/notfall-rettung.html",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichtes Telefonziel tel:0444552142 unter «Opfer von Gewalt / Dringende Hilfe: 24/7-Telefon» auf der offiziellen kantonalen Notfallseite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   INFO_FORENSIC_NURSES: {
     region: "Kanton Zürich",
     primarySourceUrl:
@@ -697,10 +740,15 @@ export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
     "Kanton Zürich",
     urlByIdStrict("URL_IPW").url
   ),
-  INFO_SANATORIUM_KILCHBERG: pendingKontaktNachweis(
-    "Kanton Zürich",
-    urlByIdStrict("URL_SANATORIUM_KILCHBERG").url
-  ),
+  INFO_SANATORIUM_KILCHBERG: {
+    region: "Kanton Zürich",
+    primarySourceUrl: "https://www.sanatorium-kilchberg.ch/kontakt/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Empfangsnummer 044 716 42 42 auf der Anbieter-Kontaktseite bestätigt; kein Abgleich von Behandlung, Zuweisung, Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
 };
 
 /** Getrennten Quellen- und Prüfstatus über die bestehende Kontakt-ID abrufen. */
@@ -778,6 +826,70 @@ export function urlByIdStrict(id: string): UrlKontakt {
 export function adresseById(id: string): AdresseKontakt | undefined {
   return ADRESSEN.find(a => a.id === id);
 }
+
+export function adresseByIdStrict(id: string): AdresseKontakt {
+  const adresse = adresseById(id);
+  if (!adresse) throw new Error(`Adresse nicht gefunden: "${id}"`);
+  return adresse;
+}
+
+/**
+ * Gemeinsames Fachstellenprofil aus den historisch erfassten Kontaktdaten.
+ * Telefon-Nachweis und Prüfung des gesamten Angebots bleiben getrennt.
+ * Ohne aktuellen Primärbeleg werden Zugang, Kosten und Vertraulichkeit nicht
+ * als bestätigte Eigenschaften des Angebots ausgegeben.
+ */
+export const fachstellenProfil = {
+  name: "Fachstelle Angehörigenarbeit PUK Zürich",
+  organisation: "Psychiatrische Universitätsklinik Zürich (PUK)",
+  telefon: kontaktByIdStrict("INFO_FACHSTELLE"),
+  email: emailByIdStrict("EMAIL_ANGEHOERIGEN"),
+  adresse: adresseByIdStrict("ADRESSE_PUK"),
+  web: urlByIdStrict("URL_PUK"),
+  telefonNachweis: kontaktNachweisByIdStrict("INFO_FACHSTELLE"),
+  profilPruefung: {
+    status: "pending",
+    datum: null,
+    namentlichVerantwortlich: null,
+    umfang: "Kontaktangaben und Angebotsbedingungen",
+  },
+  beschreibung:
+    "Anlaufstelle für Fragen zur Angehörigenrolle und zu passenden Hilfen.",
+  zugangHinweis:
+    "Klären Sie direkt bei der Fachstelle, wer das Angebot nutzen kann, ob Kosten entstehen, wie ein Termin vereinbart wird und wie mit vertraulichen Informationen umgegangen wird.",
+  pruefHinweis:
+    "Telefon, E-Mail und Adresse sind aus bisherigen Angaben übernommen. Ihr aktueller Abgleich und die Prüfung der Angebotsbedingungen sind offen.",
+  suchBeschreibung:
+    "Kontakt zur Fachstelle Angehörigenarbeit: Zugang, mögliche Kosten und Termin direkt klären. Aktueller Abgleich der Kontaktangaben und Angebotsbedingungen offen.",
+  klaerungsfragen: [
+    "Ist Beratung zu Ihrer Situation möglich, auch wenn keine Diagnose oder Behandlung an der PUK vorliegt?",
+    "Entstehen Kosten, und werden Informationen an eine Krankenkasse weitergegeben?",
+    "Wie werden Termine vereinbart, und welche Gesprächsformate und Dauer sind möglich?",
+    "Wie wird mit vertraulichen Informationen umgegangen, und wird eine Vollmacht benötigt?",
+  ],
+  gespraechsthemen: [
+    {
+      title: "Beratung für Angehörige",
+      description:
+        "Fragen Sie, ob ein Gespräch zu Ihrer Rolle, Belastung oder einer konkreten Entscheidung möglich ist.",
+    },
+    {
+      title: "Psychoedukation & Materialien",
+      description:
+        "Erfragen Sie, welche Informationen und Materialien zu Ihrer Situation angeboten werden und welchen aktuellen Stand sie haben.",
+    },
+    {
+      title: "Orientierung & Vermittlung",
+      description:
+        "Sprechen Sie an, welche weiteren Hilfen, Selbsthilfeangebote oder Anlaufstellen für Sie infrage kommen könnten.",
+    },
+    {
+      title: "Schulungen & Weiterbildung",
+      description:
+        "Erfragen Sie aktuelle Angebote, Zielgruppen, Termine und mögliche Kosten direkt bei der Fachstelle.",
+    },
+  ],
+} as const;
 
 // ─── QA-Guardrail: Validierung ───────────────────────────
 // Einmal bei Bedarf ausführen (z. B. im Build oder als Test).

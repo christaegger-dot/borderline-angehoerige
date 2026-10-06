@@ -1,6 +1,7 @@
 name: Audit Regression Guard
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
@@ -17,7 +18,7 @@ on:
       - "vite.config.ts"
       - ".github/workflows/audit-regression.yml"
   schedule:
-    # Nightly Voll-Lauf gegen die Live-Production-Site (04:00 Zürich, 03:00 UTC).
+    # Täglich 03:00 UTC: 04:00 Zürich im Winter, 05:00 im Sommer.
     - cron: "0 3 * * *"
 
 concurrency:
@@ -26,8 +27,8 @@ concurrency:
 
 jobs:
   audit-smoke:
-    name: Audit Smoke (PR)
-    if: github.event_name == 'pull_request'
+    name: Audit Smoke (PR / Manual)
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     timeout-minutes: 15
 

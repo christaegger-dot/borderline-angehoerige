@@ -41,6 +41,49 @@ describe("static soforthilfe page", () => {
     }
   });
 
+  it("withholds the disputed KIZ phone link and points to official information", () => {
+    const page = new DOMParser().parseFromString(
+      readSoforthilfeDirectPage(),
+      "text/html"
+    );
+    const kizCard = [...page.querySelectorAll("li")].find(item =>
+      item.textContent?.includes("Kriseninterventionszentrum Zürich (KIZ)")
+    );
+
+    expect(kizCard).toBeDefined();
+    expect(kizCard?.textContent?.replace(/\s+/g, " ")).toContain(
+      "Telefonangabe derzeit nicht geklärt"
+    );
+    expect(kizCard?.querySelector('a[href^="tel:"]')).toBeNull();
+    expect(kizCard?.querySelector("a")?.getAttribute("href")).toBe(
+      "https://www.zh.ch/de/gesundheit/notfall-rettung.html"
+    );
+    expect(page.querySelector('a[href="tel:+41583846500"]')).toBeNull();
+    expect(page.querySelector('a[href="tel:+41442967310"]')).toBeNull();
+  });
+
+  it("documents the official general emergency numbers with a limited verification scope", () => {
+    const page = new DOMParser().parseFromString(
+      readSoforthilfeDirectPage(),
+      "text/html"
+    );
+    const sources = page.querySelector('[aria-labelledby="kontaktpruefung"]');
+    const sourceText = sources?.textContent?.replace(/\s+/g, " ");
+
+    expect(
+      sources?.querySelector(
+        'a[href="https://www.ch.ch/de/sicherheit-und-recht/gefahren-und-notfalle/"]'
+      )
+    ).not.toBeNull();
+    expect(sourceText).toContain(
+      "Veröffentlichte Nummern 144, 117 und 112 am 06.10.2026"
+    );
+    expect(sourceText).toContain(
+      "nur die veröffentlichten Nummern, keine aktuelle Erreichbarkeit"
+    );
+    expect(sourceText).toContain("fachliche Publikationsfreigabe");
+  });
+
   it("limits the crisis examples without linking them to character or diagnosis", () => {
     const html = readSoforthilfeDirectPage();
 

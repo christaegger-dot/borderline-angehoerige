@@ -78,10 +78,13 @@ describe("accessible P1 handout visualizations", () => {
     }
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/Bei Bedrohung oder Gewalt.*117/i);
+    ).toHaveTextContent(/Bei Bedrohung oder Gewalt/i);
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/unmittelbarer Selbstgefährdung.*144/i);
+    ).toHaveTextContent(/Akute Hilfe und Notfallkontakte/i);
+    expect(
+      screen.getByRole("note", { name: /Sicherheitshinweis/i })
+    ).not.toHaveTextContent(/\b(?:117|144)\b/);
     expect(screen.getAllByText(/keine Pflicht/i)).not.toHaveLength(0);
     expect(
       screen.getAllByText(/keine Formulierung garantiert/i)
@@ -108,10 +111,13 @@ describe("accessible P1 handout visualizations", () => {
     ).not.toHaveLength(0);
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/Bei Bedrohung oder Gewalt.*117/i);
+    ).toHaveTextContent(/Bei Bedrohung oder Gewalt/i);
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/unmittelbarer Selbstgefährdung.*144/i);
+    ).toHaveTextContent(/Akute Hilfe und Notfallkontakte/i);
+    expect(
+      screen.getByRole("note", { name: /Sicherheitshinweis/i })
+    ).not.toHaveTextContent(/\b(?:117|144)\b/);
     expect(
       screen.getByText(/Textbeschreibung der Darstellung/i)
     ).toBeInTheDocument();

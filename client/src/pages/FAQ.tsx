@@ -12,7 +12,6 @@ import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import SEO, { FAQSchema } from "@/components/SEO";
-import { kontaktByIdStrict } from "@/data/kontakte";
 import { Link } from "wouter";
 
 interface FAQItem {
@@ -46,9 +45,6 @@ function openSection(sectionId: string) {
     new CustomEvent("open-section", { detail: { sectionId } })
   );
 }
-
-const elternnotruf = kontaktByIdStrict("GRUEN_ELTERN");
-const proJuventute147 = kontaktByIdStrict("GRUEN_147");
 
 const faqCategories: FAQCategory[] = [
   {
@@ -183,8 +179,10 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Wann ist eine Einweisung nötig?",
         answer:
-          "Ob eine stationäre Aufnahme oder eine fürsorgerische Unterbringung angezeigt und rechtlich zulässig ist, können Angehörige nicht selbst entscheiden. Das braucht eine professionelle Einschätzung; die fürsorgerische Unterbringung ist zusätzlich gesetzlich geregelt und hängt von der konkreten Situation und Zuständigkeit ab. Bei unmittelbarer Gefahr rufen Sie 144 beziehungsweise bei Gewalt 117. Wenn Sie unsicher sind, kontaktieren Sie den psychiatrischen Notfalldienst der passenden Altersgruppe.",
-        links: [{ text: "Notfallnummern", url: "/soforthilfe" }],
+          "Ob eine stationäre Aufnahme oder eine fürsorgerische Unterbringung angezeigt und rechtlich zulässig ist, können Angehörige nicht selbst entscheiden. Das braucht eine professionelle Einschätzung; die fürsorgerische Unterbringung ist zusätzlich gesetzlich geregelt und hängt von der konkreten Situation und Zuständigkeit ab. Bei akuter Gefahr oder Unsicherheit finden Sie passende Anlaufstellen auf der Soforthilfe-Seite.",
+        links: [
+          { text: "Akute Hilfe und Notfallkontakte", url: "/soforthilfe" },
+        ],
       },
       {
         question: "Darf ich meinen Angehörigen verlassen?",
@@ -198,10 +196,10 @@ const faqCategories: FAQCategory[] = [
           "Wichtig ist, alltägliche Belastung, wiederholte Eskalation, Kindeswohlgefährdung und akute Gefahr auseinanderzuhalten. Nicht jede überforderte Familie braucht sofort eine Meldung – aber Kinder brauchen Schutz vor Gewalt, massiver Alarmstimmung und Krisensituationen, die sie nicht einschätzen können. Erklären Sie altersgerecht, dass starke Gefühle nicht die Schuld des Kindes sind, und schützen Sie Kinder aktiv vor Eskalationen.",
         bullets: [
           "Im Alltag helfen Routinen, verlässliche Bezugspersonen, Schlaf, Schule, Freunde und eine einfache Sprache: «Bei uns ist es gerade schwer. Du hast daran keine Schuld.»",
-          `Bei wiederholten Eskalationen holen Sie früh Beratung dazu, zum Beispiel den ${elternnotruf.label} (${elternnotruf.nummer}). Zusätzlich kann eine Elternberatung wie die Pro Juventute Elternberatung 24/7 helfen.`,
-          `Wenn ein Kind selbst stark belastet ist, nennen Sie konkrete Anlaufstellen: ${proJuventute147.nummer} für Kinder und Jugendliche, der schulpsychologische Dienst, die Kinder- und Jugendpsychiatrie oder die örtliche Mütter-/Väterberatung.`,
+          "Bei wiederholten Eskalationen holen Sie früh fachliche Beratung dazu. Anlaufstellen finden Sie auf der Soforthilfe-Seite.",
+          "Wenn ein Kind selbst stark belastet ist, können der schulpsychologische Dienst, die Kinder- und Jugendpsychiatrie oder die örtliche Mütter-/Väterberatung passende Unterstützung bieten.",
           "Bei ernsthafter Kindeswohlgefährdung – etwa bei Gewalt, massiver Vernachlässigung, Angst vor zuhause oder wenn ein Kind wiederholt Schutzräume braucht – ist eine Gefährdungsmeldung an die KESB oder eine lokale Kindesschutzstelle angemessen.",
-          "Bei akuter Gefahr gehen Sie mit dem Kind aus der Situation und holen Sie Hilfe über 117 oder 144.",
+          "Bei akuter Gefahr bringen Sie sich und das Kind in Sicherheit und holen Sie professionelle Hilfe.",
         ],
         links: [
           { text: "Grenzen setzen", url: "/grenzen" },
@@ -210,7 +208,7 @@ const faqCategories: FAQCategory[] = [
             text: "Jugendliche & Diagnostik",
             url: "/verstehen/diagnostik#jugendliche",
           },
-          { text: "Soforthilfe", url: "/soforthilfe" },
+          { text: "Akute Hilfe und Notfallkontakte", url: "/soforthilfe" },
         ],
       },
       {

@@ -1,6 +1,5 @@
 import { Link, useLocation } from "wouter";
 import { getHandoutTextVersionMeta } from "@/content/handoutTextVersions";
-import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 import { hasHeaderNavigationCurrent } from "@/domain/navigation";
 import { ArrowLeft, ChevronRight, Home } from "@/icons/root-icons";
 
@@ -32,7 +31,6 @@ const pageNames: Record<string, string> = {
   "/buchempfehlungen": "Buchempfehlungen",
   "/feedback": "Feedback",
   "/wegweiser": "Situations-Wegweiser",
-  [PERSONAL_NOTFALLKARTE_PATH]: "Persönliche Notfallkarte",
   "/uebungen": "Kommunikations-Übungen",
   "/quellen": "Quellen & Literatur",
   "/fachstelle": "Fachstelle Angehörigenarbeit",

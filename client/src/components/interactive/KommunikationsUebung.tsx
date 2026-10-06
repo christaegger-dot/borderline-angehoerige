@@ -87,7 +87,7 @@ const SCENARIOS: Scenario[] = [
     context:
       "Es ist 23 Uhr. Ihr Angehöriger ruft an und verlangt, dass Sie sofort vorbeikommen. Sie haben morgen früh einen wichtigen Termin.",
     statement:
-      "«Du musst jetzt sofort herkommen! Ich halte das nicht mehr aus! Wenn du nicht kommst, weiss ich nicht, was ich tue!»",
+      "«Du musst jetzt sofort herkommen! Ich halte das nicht mehr aus und weiss nicht, an wen ich mich wenden soll!»",
     options: [
       {
         id: "a",
@@ -99,11 +99,11 @@ const SCENARIOS: Scenario[] = [
       },
       {
         id: "b",
-        text: "«Ich nehme das ernst: Denkst du daran, dir etwas anzutun, oder bist du unmittelbar in Gefahr? Ich kann heute Nacht nicht kommen. Bei akuter Gefahr rufen wir jetzt 144; sonst holen wir eine professionelle Einschätzung beim psychiatrischen Notfalldienst. 143 kann zusätzlich im Gespräch entlasten.»",
+        text: "«Ich höre, dass es gerade sehr schwer ist. Ich kann heute Nacht nicht kommen. Auf der Soforthilfe-Seite findest du passende Anlaufstellen. Wenn du möchtest, schaue ich sie mit dir an – soweit das für mich sicher und möglich ist.»",
         correct: true,
         feedback:
-          "Diese Antwort nimmt die unklare Sicherheitsäusserung ernst, fragt direkt nach möglicher Selbstgefährdung, benennt die eigene Grenze und ordnet die Hilfen korrekt: 144 bei akuter Gefahr, psychiatrischer Notfalldienst zur Einschätzung und 143 nur ergänzend für ein entlastendes Gespräch.",
-        techniqueHint: "Sicherheit klären → Grenze → passende Hilfe",
+          "Diese Antwort nimmt die Belastung ernst, benennt die eigene Grenze und verweist auf die zentrale Seite mit passenden Anlaufstellen. Die Unterstützung wird nur im eigenen sicheren und möglichen Rahmen angeboten.",
+        techniqueHint: "Belastung anerkennen → Grenze → zentrale Anlaufstelle",
       },
       {
         id: "c",
@@ -115,7 +115,7 @@ const SCENARIOS: Scenario[] = [
       },
     ],
     learnNote:
-      "Bei einer unklaren Aussage über die eigene Sicherheit hat die direkte Gefährdungsabklärung Vorrang vor einer Kommunikationsmethode. Fragen Sie direkt und ruhig nach Suizidgedanken und unmittelbarer Gefahr. Bei möglicher unmittelbarer Lebensgefahr 144 rufen; sonst professionelle psychiatrische Einschätzung einholen. 143 bietet zusätzliche Gesprächsentlastung, ersetzt aber keinen Notruf. Eigene Grenzen und Sicherheit bleiben wichtig.",
+      "Diese Kommunikationsübung nimmt keine Risikoeinschätzung vor. Bei Sorge um Sicherheit oder Unsicherheit finden Sie auf der zentralen Soforthilfe-Seite passende Anlaufstellen. Sie müssen die Dringlichkeit nicht allein beurteilen; eigene Grenzen und Sicherheit bleiben wichtig.",
   },
 
   // ─── DEAR scenarios ─────────────────────────────────

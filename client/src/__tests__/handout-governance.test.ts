@@ -25,7 +25,6 @@ import { selbstfuersorgeInfografiken } from "@/content/selbstfuersorge";
 import { unterstuetzenItems } from "@/content/unterstuetzen";
 import { verstehenInfografiken } from "@/content/verstehen";
 import type { HandoutTextVersion } from "@/content/handoutTextVersionTypes";
-import { kontaktByIdStrict } from "@/data/kontakte";
 
 const allTextVersions: HandoutTextVersion[] = [
   ...genesungTextVersions,
@@ -193,17 +192,20 @@ describe("handout governance", () => {
     }
   });
 
-  it("keeps the notfallkarte web-only and permanently blocks its retired assets", () => {
+  it("withdraws the notfallkarte web page and permanently blocks its retired assets", () => {
+    expect(
+      getHandoutGovernance("notfallkarte-zuerich")?.publicationStatus
+    ).toBe("withdrawn");
     expect(isHandoutVisualPublished("notfallkarte-zuerich")).toBe(false);
-    expect(isHandoutWebVersionPublished("notfallkarte-zuerich")).toBe(true);
+    expect(isHandoutWebVersionPublished("notfallkarte-zuerich")).toBe(false);
     expect(isHandoutWebVersionPublished("kinder")).toBe(false);
     expect(isHandoutWebVersionPublished("nicht-registriert")).toBe(false);
     expect(
       getHandoutGovernance("notfallkarte-zuerich")?.visualAssetStatus
-    ).toBe("web-only");
+    ).toBeUndefined();
     expect(
       getHandoutGovernance("notfallkarte-zuerich")?.webVersionPublished
-    ).toBe(true);
+    ).toBe(false);
     expect(HANDOUT_TEXT_VERSION_IDS).not.toContain("notfallkarte-zuerich");
     expect(
       getHandoutGovernance("notfallkarte-zuerich")?.approvedVersion
@@ -214,12 +216,9 @@ describe("handout governance", () => {
       "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
       "/notfallkarte-preview.webp",
     ]);
-    expect(
-      materials.find(item => item.id === "notfallkarte-zuerich")
-    ).toMatchObject({
-      isHtml: true,
-      url: "/notfallkarte",
-    });
+    expect(materials.find(item => item.id === "notfallkarte-zuerich")).toBe(
+      undefined
+    );
     expect(
       materials.find(item => item.id === "notfallkarte-zuerich")?.downloadUrl
     ).toBeUndefined();
@@ -308,40 +307,11 @@ describe("handout governance", () => {
     }
   });
 
-  it("keeps crisis numbers out of non-acute handouts and limits the safety-critical exceptions", () => {
+  it("keeps operational contact numbers out of handout text versions", () => {
     const crisisNumberPattern =
       /\b(?:112|117|143|144|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i;
-    const handlungsnaheExceptions = new Set([
-      "gespraeche-kippen",
-      "beispiel-dialog",
-      "pause-statt-streit",
-      // Issue 625, Befund GS-08: Praxisblatt zum Beenden eines Gesprächs
-      // braucht dieselbe Schutzregel bei Gewalt und Selbstgefährdung.
-      "lmk",
-    ]);
 
     for (const version of allTextVersions) {
-      if (version.documentType === "KRISEN-HANDOUT") {
-        continue;
-      }
-
-      if (handlungsnaheExceptions.has(version.id)) {
-        const serialized = JSON.stringify(version);
-        expect(serialized, `${version.id} must carry 117`).toContain(
-          kontaktByIdStrict("ROT_117").nummer
-        );
-        expect(serialized, `${version.id} must carry 144`).toContain(
-          kontaktByIdStrict("ROT_144").nummer
-        );
-        expect(
-          serialized,
-          `${version.id} must not add other crisis numbers`
-        ).not.toMatch(
-          /\b(?:112|143|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i
-        );
-        continue;
-      }
-
       expect(
         JSON.stringify(version),
         `${version.id} must not carry crisis numbers`

@@ -118,15 +118,16 @@ describe("handout text versions", () => {
     }
   });
 
-  it("keeps the html notfallkarte outside the text-version route set", () => {
-    const notfallkarte = materials.find(
-      item => item.id === "notfallkarte-zuerich"
+  it("keeps the withdrawn notfallkarte out of materials and text-version routes", () => {
+    expect(materials.some(item => item.id === "notfallkarte-zuerich")).toBe(
+      false
     );
-
-    expect(notfallkarte?.isHtml).toBe(true);
-    expect(notfallkarte?.url).toBe("/notfallkarte");
-    expect(notfallkarte?.downloadUrl).toBeUndefined();
-    expect(getHandoutTextVersionHrefBySource(notfallkarte?.pdfUrl)).toBeNull();
+    expect(getHandoutTextVersionMeta("notfallkarte-zuerich")).toBeNull();
+    expect(
+      getHandoutTextVersionHrefBySource(
+        "/Notfallkarte-Zuerich-Psychische-Krise.pdf"
+      )
+    ).toBeNull();
   });
 
   it("keeps the material library on locally controlled pdf assets", () => {

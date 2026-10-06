@@ -18,10 +18,7 @@ import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
 import BelastungHandlungsraeume from "@/components/visualizations/BelastungHandlungsraeume";
 import AppLink from "@/components/AppLink";
-import { kontaktByIdStrict } from "@/data/kontakte";
 import { Link } from "wouter";
-
-const rot144 = kontaktByIdStrict("ROT_144");
 
 const deeskalationsSchritte = [
   {
@@ -217,14 +214,9 @@ export default function UnterstuetzenKrise() {
         <div className="container">
           <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center sm:gap-4">
             <p className="text-sm leading-relaxed text-white sm:text-left sm:text-base">
-              <strong>Bei akuter Suizidgefahr:</strong> Rufen Sie sofort den
-              Notruf{" "}
-              <a href={`tel:${rot144.tel}`} className="font-bold underline">
-                {rot144.nummer}
-              </a>
-              . Für psychiatrische Krisen ohne unmittelbare Lebensgefahr finden
-              Sie auf der Soforthilfe-Seite den Notfalldienst für Kinder und
-              Jugendliche, Erwachsene oder Menschen ab 65 Jahren.
+              Bei Sorge um Sicherheit oder Unsicherheit finden Sie unter «Akute
+              Hilfe und Notfallkontakte» passende Anlaufstellen. Sie müssen die
+              Dringlichkeit nicht allein beurteilen.
             </p>
             <AppLink
               href="/soforthilfe"
@@ -315,9 +307,12 @@ export default function UnterstuetzenKrise() {
               Group C body) */}
           <EditorialCallout variant="hinweis">
             Diese Inhalte ersetzen keine professionelle Krisenberatung. Bei
-            akuter Gefahr direkt{" "}
-            <strong style={{ color: "var(--fg-primary)" }}>144 / 117</strong>{" "}
-            anrufen.
+            akuter Gefahr oder Unsicherheit finden Sie passende Anlaufstellen
+            unter{" "}
+            <AppLink href="/soforthilfe" className="editorial-link">
+              Akute Hilfe und Notfallkontakte
+            </AppLink>
+            .
           </EditorialCallout>
           <div id="belastung-handlungsraeume" className="scroll-mt-28">
             <BelastungHandlungsraeume />

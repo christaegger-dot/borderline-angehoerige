@@ -3,7 +3,6 @@ import AppLink from "@/components/AppLink";
 import {
   ChevronDown,
   FolderOpen,
-  Phone,
   Search as SearchIcon,
 } from "@/icons/root-icons";
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
@@ -188,15 +187,6 @@ export function MobileMenu({
             </div>
           )}
         </div>
-
-        <AppLink
-          href="/soforthilfe"
-          onClick={closeMenu}
-          className="mt-2 flex items-center gap-3 rounded-2xl bg-alert px-4 py-3 text-base font-medium text-white shadow-[0_10px_22px_-18px_rgba(197,95,61,0.58)]"
-        >
-          <Phone className="w-5 h-5" />
-          Soforthilfe
-        </AppLink>
 
         <button
           type="button"

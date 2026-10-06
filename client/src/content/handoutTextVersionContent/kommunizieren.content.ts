@@ -1,9 +1,4 @@
 import { createHandoutTextVersion } from "./shared";
-import { kontaktByIdStrict } from "@/data/kontakte";
-
-// Krisennummern aus der Single Source (kontakte.ts); umgebender Text bleibt
-// die eigene Stimme dieses Handouts. Nur die Ziffern werden gebunden.
-const n = (id: string) => kontaktByIdStrict(id).nummer;
 
 export const handoutTextVersions = [
   createHandoutTextVersion("krisenkommunikation", {
@@ -67,16 +62,8 @@ export const handoutTextVersions = [
         title: "5. Wenn es nicht mehr Gespräch, sondern Krise ist",
         cards: [
           {
-            title: "Akut / unmittelbare Gefahr",
-            text: `Bei Lebensgefahr, laufender Selbstgefährdung, schwerer Verletzung oder schwerer Intoxikation: ${n("ROT_144")}. Bei Gewalt oder akuter Bedrohung: ${n("ROT_117")}.`,
-          },
-          {
-            title: "Psychiatrische Krise ohne unmittelbare Lebensgefahr",
-            text: `PUK Zürich 24/7: Erwachsene ${n("GELB_PUK_ERW")}, Kinder/Jugendliche ${n("GELB_PUK_KJP")}, ab 65 Jahren ${n("GELB_PUK_65")}.`,
-          },
-          {
-            title: "Entlastung / Beratung",
-            text: `Die Dargebotene Hand ${n("GRUEN_143")} ist für ein entlastendes Gespräch da. Pro Mente Sana ${n("INFO_PROMENTE")} ist Beratung und Information, kein akuter Einsatzdienst.`,
+            title: "Akute Hilfe und Notfallkontakte",
+            text: "Diese Textversion enthält keine Kontaktdaten. Bei akuter Gefahr oder wenn Sie die Dringlichkeit nicht sicher einschätzen können, finden Sie passende Anlaufstellen unter «Akute Hilfe und Notfallkontakte».",
           },
         ],
       },
@@ -232,7 +219,7 @@ export const handoutTextVersions = [
       title: "Wenn Gespräche kippen",
       lead: "Drei mögliche Schritte können helfen, ein angespanntes Gespräch zu verlangsamen und die eigene Grenze zu schützen. Sie sind ein Angebot, keine Pflichtfolge: Schritte dürfen ausgelassen und Gespräche beendet werden.",
       longDescription:
-        "Die eigene didaktische Darstellung zeigt drei wählbare Schritte: das eigene Tempo senken, das Erleben des Gegenübers vorsichtig spiegeln und die eigene Grenze benennen. Angehörige dürfen Schritte auslassen, eine Pause ohne Rückkehrversprechen machen oder das Gespräch beenden. Bei Bedrohung oder Gewalt gilt Schutz vor Gesprächstechnik und im Notfall 117. Bei vermuteter unmittelbarer Selbstgefährdung soll professionelle Hilfe beigezogen werden, bei unmittelbarer Gefahr 144. Angehörige bleiben nur bei der Person, soweit dies für sie sicher möglich ist, und müssen das Risiko nicht allein beurteilen oder bewältigen.",
+        "Die eigene didaktische Darstellung zeigt drei wählbare Schritte: das eigene Tempo senken, das Erleben des Gegenübers vorsichtig spiegeln und die eigene Grenze benennen. Angehörige dürfen Schritte auslassen, eine Pause ohne Rückkehrversprechen machen oder das Gespräch beenden. Bei Bedrohung oder Gewalt gilt Schutz vor Gesprächstechnik. Die Website nimmt keine Risikoeinschätzung vor; Angehörige müssen die Dringlichkeit nicht allein beurteilen oder bewältigen. Hinweise zu passenden Anlaufstellen finden Sie unter «Akute Hilfe und Notfallkontakte».",
       safetyTitle: "Schutz und Akuthilfe vor Gesprächstechnik",
       safetyBulletStartsWith: "Bei Bedrohung oder Gewalt",
       sections: {
@@ -286,7 +273,7 @@ export const handoutTextVersions = [
           "Wenn Sie möchten, üben Sie in ruhigen Momenten einen oder mehrere passende Schritte, damit sie unter Anspannung verfügbarer sind.",
           "Halten Sie Sätze so kurz, dass Sie sie im Stress wiederholen können.",
           "Bereiten Sie einen Pausensatz ohne Rückkehrversprechen vor: «Ich beende das Gespräch jetzt und entscheide später, ob und wann ich wieder ansprechbar bin.»",
-          `Bei Bedrohung oder Gewalt: Beenden Sie das Gespräch, schaffen Sie Abstand und bringen Sie sich in Sicherheit; im Notfall ${n("ROT_117")}. Bei vermuteter unmittelbarer Selbstgefährdung: Holen Sie umgehend professionelle Hilfe; bei unmittelbarer Gefahr ${n("ROT_144")}. Bleiben Sie nur bei der Person, soweit dies für Sie sicher möglich ist. Sie müssen das Risiko nicht allein beurteilen oder bewältigen.`,
+          "Bei Bedrohung oder Gewalt: Beenden Sie das Gespräch, schaffen Sie Abstand und bringen Sie sich in Sicherheit. Bei Sorgen um Sicherheit oder Unsicherheit finden Sie passende Anlaufstellen unter «Akute Hilfe und Notfallkontakte». Sie müssen die Dringlichkeit nicht allein beurteilen oder bewältigen.",
         ],
       },
     ],
@@ -402,7 +389,7 @@ export const handoutTextVersions = [
         title: "Zusatzhinweis",
         calloutTitle: "Bei Gefahr",
         calloutText:
-          "Bei Gewalt oder Bedrohung schaffen Sie Abstand und bringen sich in Sicherheit; im Notfall rufen Sie 117. Bei vermuteter unmittelbarer Selbstgefährdung holen Sie umgehend professionelle Hilfe, bei unmittelbarer Gefahr 144. Folgen Sie den Anweisungen der Leitstelle. Bleiben Sie nur bei der Person oder in Kontakt, soweit dies für Sie sicher und möglich ist; Sie tragen nicht allein die Verantwortung für Überwachung oder Sicherung.",
+          "Bei Gewalt oder Bedrohung schaffen Sie Abstand und bringen sich in Sicherheit. Bei Sorgen um Sicherheit oder Unsicherheit finden Sie passende Anlaufstellen unter «Akute Hilfe und Notfallkontakte». Sie müssen die Dringlichkeit nicht allein beurteilen und tragen nicht allein die Verantwortung für Überwachung oder Sicherung.",
       },
       {
         title: "Orientierung",
@@ -495,7 +482,7 @@ export const handoutTextVersions = [
       kind: "dialog-sequence",
       lead: "Ein möglicher Gesprächsweg: wahrnehmen, vorsichtig spiegeln, begrenzen – und nur wenn es passt wieder einsteigen.",
       longDescription:
-        "Die eigene didaktische Darstellung beginnt mit dem Vorwurf «Du bist nie für mich da». Darauf folgen fünf mögliche Bewegungen: die Anspannung wahrnehmen, das Erleben vorsichtig und als Frage spiegeln, eine Grenze setzen, eine Pause ohne Rückkehrpflicht nehmen und – nur wenn es sicher und gewollt ist – einen neuen Kontakt anbieten. Das Blatt ist ein anpassbares Beispiel, kein Rezept; keine Formulierung garantiert den Verlauf. Bei Bedrohung oder Gewalt gilt Schutz vor Gesprächstechnik und im Notfall 117. Bei vermuteter unmittelbarer Selbstgefährdung soll professionelle Hilfe beigezogen werden, bei unmittelbarer Gefahr 144. Angehörige bleiben nur bei der Person, soweit dies für sie sicher möglich ist, und müssen das Risiko nicht allein beurteilen oder bewältigen.",
+        "Die eigene didaktische Darstellung beginnt mit dem Vorwurf «Du bist nie für mich da». Darauf folgen fünf mögliche Bewegungen: die Anspannung wahrnehmen, das Erleben vorsichtig und als Frage spiegeln, eine Grenze setzen, eine Pause ohne Rückkehrpflicht nehmen und – nur wenn es sicher und gewollt ist – einen neuen Kontakt anbieten. Das Blatt ist ein anpassbares Beispiel, kein Rezept; keine Formulierung garantiert den Verlauf. Bei Bedrohung oder Gewalt gilt Schutz vor Gesprächstechnik. Die Website nimmt keine Risikoeinschätzung vor; Angehörige müssen die Dringlichkeit nicht allein beurteilen oder bewältigen. Hinweise zu passenden Anlaufstellen finden Sie unter «Akute Hilfe und Notfallkontakte».",
       safetyTitle: "Schutz und Akuthilfe vor Gesprächstechnik",
       safetyBulletStartsWith: "Bei Bedrohung oder Gewalt",
       sections: {
@@ -553,7 +540,7 @@ export const handoutTextVersions = [
           "Lesen Sie den Dialog laut und markieren Sie die Sätze, die zu Ihrer Sprache passen.",
           "Üben Sie besonders einen klaren Grenz- und Pausensatz, der kein Rückkehrversprechen enthält.",
           "Ein späterer Wiedereinstieg ist nur sinnvoll, wenn er für Sie sicher und gewollt ist.",
-          `Bei Bedrohung oder Gewalt: Beenden Sie den Dialog, schaffen Sie Abstand und bringen Sie sich in Sicherheit; im Notfall ${n("ROT_117")}. Bei vermuteter unmittelbarer Selbstgefährdung: Holen Sie umgehend professionelle Hilfe; bei unmittelbarer Gefahr ${n("ROT_144")}. Bleiben Sie nur bei der Person, soweit dies für Sie sicher möglich ist. Sie müssen das Risiko nicht allein beurteilen oder bewältigen.`,
+          "Bei Bedrohung oder Gewalt: Beenden Sie den Dialog, schaffen Sie Abstand und bringen Sie sich in Sicherheit. Bei Sorgen um Sicherheit oder Unsicherheit finden Sie passende Anlaufstellen unter «Akute Hilfe und Notfallkontakte». Sie müssen die Dringlichkeit nicht allein beurteilen oder bewältigen.",
         ],
       },
     ],

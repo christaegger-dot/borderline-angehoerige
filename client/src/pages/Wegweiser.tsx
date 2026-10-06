@@ -1,31 +1,25 @@
 import {
   DisplayHeading,
-  EditorialCallout,
   EditorialLayout,
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
-import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import SituationsWegweiser from "@/components/interactive/SituationsWegweiser";
-import { kontaktByIdStrict } from "@/data/kontakte";
-import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
-
-const rot144 = kontaktByIdStrict("ROT_144");
 
 export default function Wegweiser() {
   return (
     <Layout>
       <SEO
-        title="Situations-Wegweiser"
-        description="Beobachtbare Situationen einordnen, den eigenen Schutz wahren und passende professionelle Hilfe finden."
+        title="Hilfe in belastenden Situationen"
+        description="Der Wegweiser nimmt keine Risikoeinschätzung vor und führt bei akuter Gefahr oder Unsicherheit zu professioneller Hilfe."
         path="/wegweiser"
       />
       <MedicalPageSchema
-        title="Situations-Wegweiser"
-        description="Beobachtbare Situationen einordnen, den eigenen Schutz wahren und passende professionelle Hilfe finden."
+        title="Hilfe in belastenden Situationen"
+        description="Der Wegweiser nimmt keine Risikoeinschätzung vor und führt bei akuter Gefahr oder Unsicherheit zu professioneller Hilfe."
         path="/wegweiser"
       />
 
@@ -34,12 +28,12 @@ export default function Wegweiser() {
         <header className="py-6">
           <EyebrowLabel spacing="compact">Wegweiser</EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Situations-Wegweiser
+            Hilfe in belastenden Situationen
           </DisplayHeading>
           <Lede className="mt-6">
-            Wählen Sie die Situation, die am ehesten zutrifft. Sie müssen Gefahr
-            nicht selbst sicher einschätzen können. Bei Unsicherheit helfen
-            professionelle Anlaufstellen weiter.
+            Dieser Wegweiser ordnet keine einzelne Situation oder Gefährdung
+            ein. Für akute Hilfe gibt es einen gemeinsamen professionellen
+            Kontaktweg.
           </Lede>
           <p
             className="mt-4"
@@ -49,35 +43,19 @@ export default function Wegweiser() {
               color: "var(--fg-secondary)",
             }}
           >
-            Die beschriebenen Situationen kommen nicht bei allen Menschen mit
-            Borderline vor und können auch unabhängig von einer Diagnose
-            auftreten. Der Wegweiser ordnet beobachtbare Situationen – nicht
-            Diagnose, Motive oder Charakter einer Person.
+            Krisen und Belastungen können unabhängig von einer Diagnose
+            auftreten. Unterstützung richtet sich nach dem, was Sie gerade
+            brauchen – nicht nach Diagnose, Motiven oder Charakter einer Person.
           </p>
-          <EditorialCallout
-            variant="achtung"
-            title="Bei akuter Lebensgefahr"
-            className="mt-6"
-          >
-            Rufen Sie sofort{" "}
-            <a href={`tel:${rot144.tel}`} className="editorial-link">
-              {rot144.nummer}
-            </a>{" "}
-            an. Dieser Wegweiser ersetzt keinen Notruf —{" "}
-            <AppLink href="/soforthilfe" className="editorial-link">
-              alle Notfallnummern
-            </AppLink>
-            .
-          </EditorialCallout>
         </header>
 
-        {/* ── Hairline-Trenner Editorial-Hero → funktionales Tool ── */}
+        {/* ── Hairline-Trenner Editorial-Hero → Hilfeweg ── */}
         <hr
           className="border-0 border-t"
           style={{ borderColor: "var(--rule-color)" }}
         />
 
-        {/* ── Interaktives Tool ── */}
+        {/* ── Zentraler Hilfeweg ── */}
         <div className="mt-6">
           <SituationsWegweiser />
         </div>
@@ -90,16 +68,6 @@ export default function Wegweiser() {
               title: "Krisenbegleitung",
               description:
                 "Hilfe holen, eigene Grenzen beachten und Unterstützung finden.",
-            },
-            {
-              href: "/soforthilfe",
-              title: "Soforthilfe",
-              description: "Alle Notfallnummern.",
-            },
-            {
-              href: PERSONAL_NOTFALLKARTE_PATH,
-              title: "Notfallkarte",
-              description: "Persönliche Karte erstellen.",
             },
             {
               href: "/selbstfuersorge#eigene-unterstuetzung",

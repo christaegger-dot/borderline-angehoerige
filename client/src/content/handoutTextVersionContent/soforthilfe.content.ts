@@ -1,53 +1,4 @@
 import { createHandoutTextVersion } from "./shared";
-import { AKUT_KONTAKT_IDS, kontaktByIdStrict } from "@/data/kontakte";
-
-// Ziffern kommen aus der Single Source (kontakte.ts); Label/Beschreibung
-// bleiben handgeschrieben. Beide Notfalllisten unten rendern aus demselben
-// kanonischen AKUT_KONTAKT_IDS-Satz → identisch zusammengesetzt und sortiert.
-const nr = (id: (typeof AKUT_KONTAKT_IDS)[number]) =>
-  kontaktByIdStrict(id).nummer;
-
-const AKUT_LABEL: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
-  ROT_144: "Sanität",
-  ROT_117: "Polizei",
-  INFO_AERZTEFON: "Ärztefon",
-  GELB_PUK_ERW: "PUK Zürich Notfall Erwachsene",
-  GELB_PUK_KJP: "PUK Kinder und Jugendliche",
-  GELB_PUK_65: "PUK ab 65",
-  GRUEN_143: "Dargebotene Hand",
-};
-
-// Ausführliche Beschreibungen (Liste «Wichtige Kontakte in einer Krise»).
-const AKUT_TEXT_LANG: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
-  ROT_144:
-    "Akute Lebensgefahr, laufende Suizidhandlung, schwere Selbstverletzung, Bewusstlosigkeit oder schwere Intoxikation.",
-  ROT_117: "Gewalt, akute Bedrohung oder wenn sofort Schutz vor Ort nötig ist.",
-  INFO_AERZTEFON:
-    "Dringende medizinische oder psychiatrische Notfall-Triage, 24/7.",
-  GELB_PUK_ERW: "Psychiatrische Krise ohne unmittelbare Lebensgefahr, 24/7.",
-  GELB_PUK_KJP: "Psychiatrische Krise bis 18 Jahre, 24/7.",
-  GELB_PUK_65: "Psychiatrische Krise ab 65 Jahren, 24/7.",
-  GRUEN_143:
-    "Entlastendes Gespräch für Angehörige und Betroffene. Bei akuter Gefahr kein Ersatz für den Notruf.",
-};
-
-// Kurze Beschreibungen (Liste «Kontaktübersicht – Kurzreferenz»).
-const AKUT_TEXT_KURZ: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
-  ROT_144: "Akute Lebensgefahr.",
-  ROT_117: "Bedrohung oder Gewalt.",
-  INFO_AERZTEFON: "Triage 24/7.",
-  GELB_PUK_ERW: "Psychiatrischer Notfall, 24/7.",
-  GELB_PUK_KJP: "Bis 18 Jahre, 24/7.",
-  GELB_PUK_65: "Ab 65 Jahren, 24/7.",
-  GRUEN_143:
-    "Entlastendes Gespräch, anonym und 24/7. Bei akuter Gefahr kein Ersatz für den Notruf.",
-};
-
-const akutCards = (texts: Record<(typeof AKUT_KONTAKT_IDS)[number], string>) =>
-  AKUT_KONTAKT_IDS.map(id => ({
-    title: `${nr(id)} – ${AKUT_LABEL[id]}`,
-    text: texts[id],
-  }));
 
 export const handoutTextVersions = [
   createHandoutTextVersion("notfallplan-krise", {
@@ -60,18 +11,9 @@ export const handoutTextVersions = [
     ],
     sections: [
       {
-        title: "Akute Gefahr? Sofort handeln.",
-        intro: `Sofort ${nr("ROT_144")} anrufen, wenn unmittelbare Lebensgefahr besteht oder medizinische Hilfe vor Ort nötig ist, zum Beispiel wenn die Person:`,
-        bullets: [
-          "sich weiter selbst verletzt, eine schwere Verletzung hat, stark blutet oder dringend medizinisch versorgt werden muss",
-          "eine Überdosis eingenommen hat oder eine schwere Intoxikation vermutet wird",
-          "bewusstlos ist",
-          "einen konkreten Suizidplan äussert oder unmittelbar in Gefahr ist",
-        ],
-      },
-      {
-        title: "Wichtige Kontakte in einer Krise",
-        cards: akutCards(AKUT_TEXT_LANG),
+        title: "Bei Sorge um Sicherheit oder Unsicherheit",
+        intro:
+          "Diese Textversion nimmt keine Risikoeinschätzung vor und enthält keine Kontaktdaten. Passende Anlaufstellen finden Sie unter «Akute Hilfe und Notfallkontakte».",
       },
       {
         title: "Wichtiger Soforthinweis",
@@ -97,7 +39,7 @@ export const handoutTextVersions = [
           },
           {
             title: "4. Professionelle Hilfe einbeziehen",
-            text: "Sie müssen diese Situation nicht allein tragen oder beurteilen. Ziehen Sie frühzeitig professionelle Hilfe bei, und folgen Sie in der Akutsituation den Anweisungen der Leitstelle. Informieren Sie wenn möglich die behandelnde Fachperson oder nutzen Sie die Notfallnummern. Suizidgedanken und akute Selbstgefährdung sollten nicht als Geheimnis mitgetragen werden.",
+            text: "Sie müssen diese Situation nicht allein tragen oder beurteilen. Ziehen Sie professionelle Hilfe bei und folgen Sie den Anweisungen der Fachpersonen. Informieren Sie wenn möglich die behandelnde Fachperson oder nutzen Sie die zentrale Seite «Akute Hilfe und Notfallkontakte». Suizidgedanken und akute Selbstgefährdung sollten nicht als Geheimnis mitgetragen werden.",
           },
         ],
       },
@@ -133,7 +75,8 @@ export const handoutTextVersions = [
       },
       {
         title: "Nach der akuten Situation",
-        intro: `Nach einer akuten Situation kann fachliche Nachsorge nötig sein. Bei erneut möglicher unmittelbarer Lebensgefahr gilt weiterhin: ${nr("ROT_144")} anrufen. Angehörige müssen den Verlauf weder überwachen noch eine weitere Krise vorhersagen. Mögliche nächste Schritte sind:`,
+        intro:
+          "Nach einer akuten Situation kann fachliche Nachsorge nötig sein. Bei erneuter Sorge um Sicherheit finden Sie passende Anlaufstellen unter «Akute Hilfe und Notfallkontakte». Angehörige müssen den Verlauf weder überwachen noch eine weitere Krise vorhersagen. Mögliche nächste Schritte sind:",
         bullets: [
           "mit der betroffenen Person und, wenn sie einverstanden ist, mit der Fachperson klären, welche Nachsorge vorgesehen ist",
           "die betroffene Person fragen, welche Unterstützung jetzt gewünscht ist oder nicht",
@@ -151,25 +94,20 @@ export const handoutTextVersions = [
           "Gespräch mit eigener Fachperson suchen",
           "nicht alles allein tragen müssen",
           "Fachstelle Angehörigenarbeit PUK kontaktieren",
-          `Dargebotene Hand ${nr("GRUEN_143")} – auch für Angehörige`,
+          "Passende Anlaufstellen für Angehörige finden Sie unter «Akute Hilfe und Notfallkontakte».",
           "eigene Gefühle (Angst, Wut, Erschöpfung) zulassen",
         ],
       },
       {
-        title: "Kontaktübersicht – Kurzreferenz",
-        cards: [
-          ...akutCards(AKUT_TEXT_KURZ),
-          {
-            // Angehörigen-Ergänzung (bewusst kein Akutblock-Eintrag).
-            title: `${kontaktByIdStrict("INFO_FACHSTELLE").nummer} – Fachstelle Angehörigenarbeit PUK`,
-            text: "Unterstützung für Angehörige.",
-          },
-        ],
+        title: "Akute Hilfe und Notfallkontakte",
+        intro:
+          "Diese Übersicht enthält keine Kontaktdaten. Die aktuellen Anlaufstellen finden Sie auf der zentralen Soforthilfe-Seite.",
       },
       {
         title: "Wichtiger Hinweis",
         calloutTitle: "Orientierung, kein Ersatz für Notfallbeurteilung",
-        calloutText: `Dieser Notfallplan ersetzt keine professionelle Beurteilung und keine psychiatrische Diagnose. Er dient der Orientierung in einer akuten Situation. Bei akuter Lebensgefahr sofort ${nr("ROT_144")} anrufen.`,
+        calloutText:
+          "Dieser Notfallplan ersetzt keine professionelle Beurteilung und keine psychiatrische Diagnose. Er dient der allgemeinen Orientierung. Aktuelle Anlaufstellen finden Sie auf der zentralen Soforthilfe-Seite.",
       },
     ],
     sourceLine:

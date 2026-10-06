@@ -58,23 +58,13 @@ describe("SiteHeader (HeaderNav)", () => {
     });
   });
 
-  it("renders the Soforthilfe link as a quiet crisis action on desktop", () => {
+  it("renders a restrained Soforthilfe text link in the header", () => {
     const { container } = renderHeader();
-    const soforthilfeLinks = Array.from(
-      container.querySelectorAll('a[aria-label*="Soforthilfe"]')
-    );
-    // Mindestens ein Soforthilfe-Link (Desktop-Version mit Text)
-    expect(soforthilfeLinks.length).toBeGreaterThan(0);
+    const soforthilfe = container.querySelector('a[href="/soforthilfe"]');
 
-    // Desktop-Version bleibt sichtbar, aber weniger button-heavy.
-    const desktopSoforthilfe = soforthilfeLinks.find(link =>
-      link.className.includes("site-header__action--crisis")
-    );
-    expect(desktopSoforthilfe).toBeTruthy();
-    expect(desktopSoforthilfe?.className).toContain("site-header__action");
-    expect(
-      desktopSoforthilfe?.querySelector(".site-header__crisis-dot")
-    ).toBeTruthy();
+    expect(soforthilfe).toHaveTextContent("Hilfe");
+    expect(soforthilfe?.className).toContain("site-header__link");
+    expect(soforthilfe?.className).not.toMatch(/action|alert|button/);
   });
 
   it("renders the Brand wordmark with shortened text Borderline · Angehörige", () => {

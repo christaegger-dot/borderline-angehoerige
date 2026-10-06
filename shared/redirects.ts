@@ -24,7 +24,8 @@ export interface AppRedirect {
 }
 
 export const APP_REDIRECTS: readonly AppRedirect[] = [
-  { from: "/notfallkarte.html", to: "/notfallkarte", status: 301 },
+  { from: "/notfallkarte", to: "/soforthilfe", status: 301 },
+  { from: "/notfallkarte.html", to: "/soforthilfe", status: 301 },
   { from: "/notfall", to: "/soforthilfe", status: 301 },
   { from: "/unterstuetzen", to: "/unterstuetzen/uebersicht", status: 301 },
   { from: "/diagnostik", to: "/verstehen/diagnostik", status: 301 },

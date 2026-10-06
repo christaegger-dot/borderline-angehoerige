@@ -46,32 +46,6 @@ export const pageGovernance: Record<string, PageGovernance> = {
     nextReviewDue: "2026-07-31",
     owner: DEFAULT_OWNER,
   },
-  "/notfallkarte": {
-    editorialUpdated: "2026-10-05",
-    contactCheck: {
-      date: "2026-09-22",
-      scope: "Die drei PUK-Notfallnummern (Kinder, Erwachsene, ab 65)",
-      source:
-        "https://www.pukzh.ch/patienten-angehoerige/informationen-fuer-angehoerige/",
-    },
-    riskLevel: "high",
-    lastReviewed: "2026-04-30",
-    nextReviewDue: "2026-07-31",
-    owner: DEFAULT_OWNER,
-  },
-  "/notfallkarte/erstellen": {
-    contactCheck: {
-      date: "2026-09-22",
-      scope: "Die drei PUK-Notfallnummern (Kinder, Erwachsene, ab 65)",
-      source:
-        "https://www.pukzh.ch/patienten-angehoerige/informationen-fuer-angehoerige/",
-    },
-    editorialUpdated: "2026-09-22",
-    riskLevel: "high",
-    lastReviewed: "2026-04-30",
-    nextReviewDue: "2026-07-31",
-    owner: DEFAULT_OWNER,
-  },
   "/unterstuetzen/krise": {
     editorialUpdated: "2026-10-05",
     riskLevel: "high",

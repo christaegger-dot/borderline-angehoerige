@@ -6,7 +6,7 @@ import { navItems } from "@/components/layout/navigationData";
 import { RessourcenMenu } from "@/components/layout/RessourcenMenu";
 import { getRouteAccent } from "@/components/layout/routeAccent";
 import { BrandMark } from "@/components/layout/BrandMark";
-import { Menu, Phone, Search as SearchIcon, X } from "@/icons/root-icons";
+import { Menu, Search as SearchIcon, X } from "@/icons/root-icons";
 import { isPrimaryNavigationItemActive } from "@/domain/navigation";
 
 interface HeaderNavProps {
@@ -135,20 +135,10 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
 
             <AppLink
               href="/soforthilfe"
-              aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
-              className="site-header__action site-header__action--crisis hidden xl:inline-flex"
+              aria-current={location === "/soforthilfe" ? "page" : undefined}
+              className="site-header__link"
             >
-              <span aria-hidden="true" className="site-header__crisis-dot" />
-              <span>Soforthilfe</span>
-            </AppLink>
-
-            <AppLink
-              href="/soforthilfe"
-              aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
-              className="site-header__mobile-crisis xl:hidden"
-            >
-              <Phone className="h-[18px] w-[18px]" />
-              <span>Hilfe</span>
+              Hilfe
             </AppLink>
 
             <button

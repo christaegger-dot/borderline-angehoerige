@@ -38,6 +38,7 @@ for (const governanceValue of Object.values(handoutGovernance)) {
     withheldHandoutSources.add(source);
   }
 
+  if (governance.publicationStatus === "withdrawn") continue;
   if (isHandoutVisualPublished(governance.id)) continue;
   if (governance.visualAssetStatus === "web-only") continue;
   const version = getHandoutAssetVersion(governance);

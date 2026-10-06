@@ -1,12 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { AKUT_KONTAKT_IDS, kontaktByIdStrict } from "@/data/kontakte";
 import { handoutTextVersions as soforthilfe } from "@/content/handoutTextVersionContent/soforthilfe.content";
 import { handoutTextVersions as kommunizieren } from "@/content/handoutTextVersionContent/kommunizieren.content";
 
 /**
- * Drift-Schutz: Die Krisennummern in den Handout-Textversionen müssen aus
- * kontakte.ts stammen. Dieser Test fängt künftige Hartkodierung ab — wird eine
- * Nummer in kontakte.ts geändert, müssen die Handouts automatisch mitziehen.
+ * Handout-Textversionen dürfen operative Kontaktdaten nicht zusätzlich zur
+ * zentralen Soforthilfe-Seite veröffentlichen.
  */
 
 // Alle Strings einer Textversion rekursiv einsammeln.
@@ -21,61 +19,16 @@ function collectStrings(node: unknown, out: string[] = []): string[] {
   return out;
 }
 
-const soforthilfeText = collectStrings(soforthilfe).join("\n");
+const notfallplanText = collectStrings(soforthilfe).join("\n");
 const kommunizierenText = collectStrings(kommunizieren).join("\n");
+const operationalContactPattern =
+  /\b(?:112|117|143|144|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i;
 
-describe("Krisennummern — Single Source (kontakte.ts)", () => {
-  it("soforthilfe-Handout zeigt alle Akutblock-Nummern aus kontakte.ts", () => {
-    for (const id of AKUT_KONTAKT_IDS) {
-      expect(soforthilfeText).toContain(kontaktByIdStrict(id).nummer);
-    }
-  });
-
-  it("soforthilfe rendert beide Kontaktlisten identisch aus der zentralen Kontaktfolge", () => {
-    const lists = (soforthilfe[0].sections ?? []).filter(s =>
-      /Wichtige Kontakte in einer Krise|Kontaktübersicht – Kurzreferenz/.test(
-        s.title
-      )
-    );
-    expect(lists).toHaveLength(2);
-
-    const akutNummern = AKUT_KONTAKT_IDS.map(
-      id => kontaktByIdStrict(id).nummer
-    );
-
-    for (const list of lists) {
-      const titles = (list.cards ?? []).map(c => c.title);
-      // Die ersten N Karten beider Listen entsprechen — in identischer
-      // Reihenfolge — exakt dem Akutblock (die «Kurzreferenz» hängt danach
-      // bewusst die Fachstelle als Ergänzung an).
-      const akutTitles = titles.slice(0, akutNummern.length);
-      akutNummern.forEach((nummer, i) => {
-        expect(akutTitles[i]).toContain(nummer);
-      });
-    }
-  });
-
-  it("ordnet 143 als Gesprächsunterstützung und nicht als Einsatzdienst ein", () => {
-    expect(soforthilfeText).toContain(
-      "Entlastendes Gespräch für Angehörige und Betroffene. Bei akuter Gefahr kein Ersatz für den Notruf."
-    );
-    expect(soforthilfeText).toContain(
-      "Entlastendes Gespräch, anonym und 24/7. Bei akuter Gefahr kein Ersatz für den Notruf."
-    );
-  });
-
-  it("kommunizieren-Handout bezieht Krisennummern aus kontakte.ts", () => {
-    const ids = [
-      "ROT_144",
-      "ROT_117",
-      "GELB_PUK_ERW",
-      "GELB_PUK_KJP",
-      "GELB_PUK_65",
-      "GRUEN_143",
-      "INFO_PROMENTE",
-    ];
-    for (const id of ids) {
-      expect(kommunizierenText).toContain(kontaktByIdStrict(id).nummer);
-    }
+describe("Operative Kontakte bleiben der Soforthilfe-Seite vorbehalten", () => {
+  it("keeps crisis handout text free of copied contact numbers", () => {
+    expect(notfallplanText).not.toMatch(operationalContactPattern);
+    expect(kommunizierenText).not.toMatch(operationalContactPattern);
+    expect(notfallplanText).toContain("Soforthilfe-Seite");
+    expect(kommunizierenText).toContain("Akute Hilfe und Notfallkontakte");
   });
 });

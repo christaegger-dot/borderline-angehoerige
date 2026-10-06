@@ -566,8 +566,8 @@ const pukPrimarySourceUrl = urlByIdStrict("URL_PUK").url;
 /**
  * Getrennte Nachweise für alle 27 Telefonkontakte.
  *
- * Stand 06.10.2026: Nur die drei unten ausdrücklich gekennzeichneten Nummern
- * wurden auf den offiziellen Anbieterwebsites unabhängig bestätigt. Der
+ * Stand 06.10.2026: Die als number-confirmed gekennzeichneten Nummern
+ * wurden auf den jeweils angegebenen offiziellen Primärseiten bestätigt. Der
  * Abgleich umfasst keine Öffnungszeiten und keine Publikationsfreigabe.
  * Die historischen sourceRef-Fundstellen und der Mai-Abgleich oben ersetzen
  * diese Nachweise nicht. Fachliche Zuständigkeiten sind noch zu benennen.
@@ -588,14 +588,35 @@ export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
   GELB_PUK_KJP: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
   GELB_PUK_ERW: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
   GELB_PUK_65: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
-  GRUEN_143: pendingKontaktNachweis("Schweiz"),
-  GRUEN_147: pendingKontaktNachweis(
-    "Schweiz",
-    "https://www.147.ch/de/info/darum-kannst-du-uns-vertrauen/"
-  ),
+  GRUEN_143: {
+    region: "Schweiz",
+    primarySourceUrl: "https://www.143.ch/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Telefonnummer 143 auf der Anbieterwebsite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  GRUEN_147: {
+    region: "Schweiz",
+    primarySourceUrl: "https://www.147.ch/de/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Telefonnummer 147 auf der Anbieterwebsite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   GRUEN_ELTERN: pendingKontaktNachweis("Schweiz"),
   INFO_KIZ: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
-  INFO_AERZTEFON: pendingKontaktNachweis("Kanton Zürich"),
+  INFO_AERZTEFON: {
+    region: "Kanton Zürich",
+    primarySourceUrl: "https://www.aerztefon.ch/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Telefonnummer 0800 33 66 55 auf der Anbieterwebsite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   INFO_OPFERHILFE_142: {
     region: "Schweiz",
     primarySourceUrl: "https://www.opferhilfe-schweiz.ch/de/",
@@ -606,8 +627,25 @@ export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
     status: "number-confirmed",
   },
   INFO_OPFERHILFE_ZH_24_7: pendingKontaktNachweis("Kanton Zürich"),
-  INFO_FORENSIC_NURSES: pendingKontaktNachweis("Kanton Zürich"),
-  INFO_OPFERBERATUNG_ZH: pendingKontaktNachweis("Kanton Zürich"),
+  INFO_FORENSIC_NURSES: {
+    region: "Kanton Zürich",
+    primarySourceUrl:
+      "https://www.zh.ch/de/gesundheit/strategien-programme/forensic-nurses.html",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Telefonnummer 0800 09 09 09 auf der offiziellen Seite des Kantons Zürich zum Dienst bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  INFO_OPFERBERATUNG_ZH: {
+    region: "Kanton Zürich",
+    primarySourceUrl: "https://obzh.ch/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Telefonnummer 044 299 40 50 auf der Anbieterwebsite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   INFO_PUK_ZENTRALE: pendingKontaktNachweis(
     "Kanton Zürich",
     pukPrimarySourceUrl
@@ -626,15 +664,34 @@ export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
     namedOwner: null,
     status: "number-confirmed",
   },
-  INFO_SELBSTHILFE_CH: pendingKontaktNachweis("Kanton Zürich"),
-  INFO_PROMENTE: pendingKontaktNachweis(
-    "Schweiz",
-    urlByIdStrict("URL_PROMENTE").url
-  ),
-  INFO_VASK_ZH: pendingKontaktNachweis(
-    "Kanton Zürich",
-    urlByIdStrict("URL_VASK_ZH").url
-  ),
+  INFO_SELBSTHILFE_CH: {
+    region: "Kanton Zürich",
+    primarySourceUrl: "https://www.selbsthilfezuerich.ch/shzh/de.html",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Beratungsnummer 043 288 88 88 auf der Anbieterwebsite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  INFO_PROMENTE: {
+    region: "Schweiz",
+    primarySourceUrl: "https://promentesana.ch/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Beratungsnummer 0848 800 858 auf der Anbieterwebsite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  INFO_VASK_ZH: {
+    region: "Kanton Zürich",
+    primarySourceUrl:
+      "https://www.vaskzuerich.ch/de/Angebote-der-VASK/Beratungstelefon",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Beratungsnummer 044 240 48 68 auf der Anbieterwebsite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   INFO_PUK_DBT: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
   INFO_IPW: pendingKontaktNachweis(
     "Kanton Zürich",

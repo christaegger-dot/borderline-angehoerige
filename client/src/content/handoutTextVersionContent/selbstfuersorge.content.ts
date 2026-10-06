@@ -1,105 +1,55 @@
 import revisedHandouts from "@/content/revisedHandouts.json";
+import { warningSignalGroups } from "@/content/selbstfuersorge-page";
 import { createHandoutTextVersion } from "./shared";
 
 export const handoutTextVersions = [
   createHandoutTextVersion("warnsignale", {
     kicker: "Textversion",
     summary:
-      "Überlastung baut sich oft schrittweise auf. Wer erste Warnzeichen ernst nimmt, kann früher gegensteuern und rechtzeitig Hilfe holen.",
+      "Veränderungen von Körper, Gefühlen, Gedanken oder Alltag können Anlass sein, Entlastung oder eine fachliche Abklärung zu suchen. Sie dürfen Unterstützung nutzen, sobald Sie sie brauchen.",
     intro: [
-      "Die Ampellogik hilft, eigene Überlastung früher wahrzunehmen. Grün, Gelb und Rot markieren unterschiedliche Belastungsstufen und zeigen, wann Gegensteuern nötig wird.",
-      "Die Grafik ist als frühzeitige Orientierung gedacht, nicht als Selbstvorwurf. Entscheidend ist, Belastung ernst zu nehmen, bevor Erschöpfung oder Krisen eskalieren.",
+      "Die folgenden Anzeichen sind unspezifisch. Sie können bei Überlastung auftreten, aber auch andere körperliche oder psychische Ursachen haben. Aus Beschwerden allein lässt sich keine Stressursache ableiten.",
+      "Die fünf Bereiche sind eine redaktionelle Ordnung zur Selbstbeobachtung, keine festen Belastungs- oder Sicherheitsstufen und kein validiertes Testinstrument. Sie erlauben keine Einschätzung der Dringlichkeit. Fehlende Anzeichen bedeuten keine Entwarnung; Unterstützung ist auch ohne Zuordnung zu einem Bereich möglich.",
     ],
     sections: [
       {
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Überlastung kommt oft nicht plötzlich – sie kündigt sich an. Warnsignale sind Orientierung, keine Diagnose.",
+          "Überlastung kommt oft nicht plötzlich. Wie sich Belastung zeigt und verändert, ist individuell. Warnsignale sind Orientierung, keine Diagnose und kein Beweis, dass Sie zu wenig für sich tun.",
       },
-      {
-        title: "Noch im Rahmen",
-        intro:
-          "Die grüne Stufe beschreibt erste, noch gut beeinflussbare Belastungszeichen. Sie sind ernst zu nehmen, aber noch ein günstiger Moment zum Gegensteuern.",
-        cards: [
-          {
-            title: "Gelegentliche Gereiztheit",
-            text: "Die innere Spannung steigt schneller als sonst, beruhigt sich aber noch wieder.",
-          },
-          {
-            title: "Leichte Schlafprobleme",
-            text: "Ein- oder Durchschlafen fällt schwerer, ohne dass der ganze Alltag schon kippt.",
-          },
-          {
-            title: "Weniger Lust auf Hobbys",
-            text: "Freude, Interesse oder Erholung kommen zu kurz.",
-          },
-        ],
-      },
-      {
-        title: "Achtung, handeln",
-        intro:
-          "Die gelbe Stufe zeigt, dass Belastung bereits deutlicher in Stimmung, Körper und Beziehungen eingreift. Jetzt reicht blosses Durchhalten meist nicht mehr.",
-        cards: [
-          {
-            title: "Emotionale Taubheit oder Dauerfrust",
-            text: "Sie fühlen sich abgestumpft, leer oder dauerhaft gereizt.",
-          },
-          {
-            title: "Körperliche Beschwerden",
-            text: "Stress zeigt sich bereits spürbar körperlich.",
-          },
-          {
-            title: "Sozialer Rückzug beginnt",
-            text: "Kontakte werden weniger, Austausch wird anstrengender oder vermieden.",
-          },
-        ],
-      },
-      {
-        title: "Hilfe suchen",
-        intro:
-          "Die rote Stufe steht für deutliche Warnsignale. Hier braucht es Unterstützung von aussen und nicht nur mehr Disziplin im Alltag.",
-        cards: [
-          {
-            title: "Hoffnungslosigkeit",
-            text: "Die Belastung wirkt festgefahren und ohne Ausweg.",
-          },
-          {
-            title: "Kontrollverlust-Angst",
-            text: "Sie haben das Gefühl, sich selbst oder die Situation nicht mehr im Griff zu haben.",
-          },
-          {
-            title: "Eigene Identität verloren",
-            text: "Sie erleben sich fast nur noch in der Angehörigenrolle.",
-          },
-          {
-            title: "Körperliche Dauerbeschwerden",
-            text: "Stresssymptome halten an und werden zu einem dauerhaften Problem.",
-          },
-        ],
-      },
+      ...warningSignalGroups.map(group => ({
+        title: group.title,
+        bullets: group.items,
+      })),
       {
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Grün: früh gegensteuern",
-            text: "Planen Sie bewusst kleine Dinge ein, die Sie stabilisieren: Pause, Schlaf, Bewegung oder ein entlastendes Gespräch.",
+            title: "Entlastung ermöglichen",
+            text: "Pausen, weniger Aufgaben oder praktische Hilfe können entlasten. Was passt und verfügbar ist, hängt von Ihrer Situation ab; Sie müssen Belastung nicht durch mehr Disziplin ausgleichen.",
           },
           {
-            title: "2. Gelb: Unterstützung aktivieren",
-            text: "Holen Sie sich Beratung oder Begleitung, bevor Überlastung zum Dauerzustand wird.",
+            title: "Unterstützung früh nutzen",
+            text: "Sie dürfen Beratung, Begleitung oder ein Gespräch suchen, sobald Sie das brauchen. Sie müssen weder eine bestimmte Anzahl von Anzeichen haben noch warten, bis Beschwerden stärker werden.",
           },
           {
-            title: "3. Rot: Hilfe dazuholen",
-            text: "Wenn Sie sich stark erschöpft, hoffnungslos oder nicht mehr sicher fühlen, holen Sie umgehend Hilfe von aussen.",
+            title: "Beschwerden fachlich abklären",
+            text: "Wenn Beschwerden anhalten, stark sind oder Ihren Alltag beeinträchtigen, sprechen Sie mit Ihrer Hausärzt:in oder einer passenden Fachperson. Dabei können auch andere körperliche oder psychische Ursachen abgeklärt werden.",
           },
         ],
       },
+      {
+        title: "Bei Sorge um Sicherheit",
+        calloutTitle: "Professionelle Hilfe einbeziehen",
+        calloutText:
+          "Wenn Sie sich nicht mehr sicher fühlen oder die Dringlichkeit nicht einschätzen können, wenden Sie sich an professionelle Hilfe. Warten Sie nicht auf bestimmte Warnzeichen. Passende Anlaufstellen finden Sie unter «Akute Hilfe und Notfallkontakte».",
+      },
     ],
     sourceLine:
-      "Quelle: Maslach, C. & Leiter, M. P. (2016), allgemeine Burnout-Prävention; Mason, P. T. & Kreger, R. (2014), Angehörigenperspektive.",
+      "Fachliche Bezugspunkte: WHO (2026), Stress: Questions and answers; NICE NG150 (2020), Supporting adult carers. Die fünf Bereiche sind eine eigene redaktionelle Ordnung zur Selbstbeobachtung, kein validiertes Testinstrument.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Redaktionell aktualisiert: 06.10.2026; erneute Fachprüfung ausstehend.",
   }),
   createHandoutTextVersion("sauerstoffmaske", {
     kicker: "Textversion",
@@ -149,12 +99,12 @@ export const handoutTextVersions = [
             text: "Sie schützen bewusst Zeit, Gesundheit, Beziehungen, Interessen und Erholung.",
           },
           {
-            title: "Weniger Schuldgefühle",
-            text: "Selbstfürsorge entlastet innerlich und macht klarer, was realistisch möglich ist.",
+            title: "Mit Schuldgefühlen umgehen",
+            text: "Selbstfürsorge kann entlasten. Schuldgefühle können trotzdem bestehen bleiben oder zunächst stärker werden. Das ist kein Beweis, dass Sie etwas falsch machen.",
           },
           {
             title: "Energie und Klarheit",
-            text: "Mit mehr Kraft und Übersicht reagieren Sie ruhiger und gezielter.",
+            text: "Erholung kann Raum für eigene Bedürfnisse und Entscheidungen schaffen. Ihre Wirkung ist individuell; Sie müssen dadurch weder sofort ruhig werden noch besser Unterstützung leisten.",
           },
           {
             title: "Freier über Unterstützung entscheiden",
@@ -163,33 +113,33 @@ export const handoutTextVersions = [
         ],
       },
       {
-        title: "Wendepunkt",
-        calloutTitle: "Wo sich der Kreislauf verändert",
+        title: "Eigene Bedürfnisse ernst nehmen",
+        calloutTitle: "Entlastung im eigenen Tempo",
         calloutText:
-          "Der entscheidende Wechsel passiert dort, wo Sie Selbstfürsorge nicht mehr verschieben, sondern als eigenes Bedürfnis ernst nehmen. Auch kleine Entlastungen zählen.",
+          "Was Sie entlastet, kann sich verändern. Auch kleine Entlastungen dürfen einen Platz haben. Nicht jede Belastung lässt sich durch persönliche Selbstfürsorge lösen; praktische Unterstützung und eine andere Aufgabenverteilung können nötig sein.",
       },
       {
         title: "Was können Sie tun?",
         cards: [
           {
             title: "1. Zeit nur für sich reservieren",
-            text: "Planen Sie diese Woche bewusst etwas ein, das nicht dem Krisenmanagement gehört.",
+            text: "Wenn es möglich ist, planen Sie etwas für Ihr eigenes Leben oder Ihre Erholung ein. Fehlt dafür Raum, dürfen Sie Hilfe oder eine andere Aufgabenverteilung suchen.",
           },
           {
             title: "2. Den eigenen Bedarf aussprechen",
             text: "Benennen Sie, was Sie für Ihre eigene Gesundheit und Erholung brauchen.",
           },
           {
-            title: "3. Hilfe annehmen üben",
-            text: "Entlastung wird oft erst möglich, wenn Sie Unterstützung nicht nur anbieten, sondern auch selbst zulassen.",
+            title: "3. Passende Unterstützung suchen",
+            text: "Eigene Beratung oder praktische Hilfe kann entlasten, wenn sie verfügbar und für Sie passend ist. Schwierigkeiten beim Zugang oder Annehmen von Hilfe sind kein persönliches Versagen.",
           },
         ],
       },
     ],
     sourceLine:
-      "Quelle: Mason, P. T. & Kreger, R. (2014), Angehörigen-Psychoedukation.",
+      "Fachliche Bezugspunkte: NICE NG150 (2020), Supporting adult carers; Mason, P. T. & Kreger, R. (2014), Angehörigen-Psychoedukation. Die Sauerstoffmaske ist eine redaktionelle Reflexionsmetapher, kein validiertes Wirkungsmodell.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Redaktionell aktualisiert: 06.10.2026; erneute Fachprüfung ausstehend.",
   }),
   createHandoutTextVersion("stopp-technik", revisedHandouts["stopp-technik"]),
   createHandoutTextVersion("energie-konto", {

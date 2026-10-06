@@ -318,8 +318,9 @@ export const searchableContent: SearchEntry[] = [
 
   // Notfall
   {
-    title: "Notfallnummern Schweiz",
-    description: "144 Sanitätsnotruf, 143 Die Dargebotene Hand, 117 Polizei",
+    title: "Notruf und Gesprächsangebote in der Schweiz",
+    description:
+      "Notruf bei akuter Gefahr und Angebote für Entlastung und Gespräch – mit getrennten Zuständigkeiten",
     keywords: [
       "notfall",
       "notruf",
@@ -334,26 +335,36 @@ export const searchableContent: SearchEntry[] = [
     section: "Krisenressourcen",
   },
   {
-    title: "Psychiatrische Notdienste",
-    description: "Regionale psychiatrische Notaufnahmen in der Schweiz",
+    title: "Psychiatrische Krisenhilfe im Kanton Zürich",
+    description:
+      "PUK-Krisenkontakte für den Kanton Zürich und Hinweise zur zuständigen Hilfe in anderen Kantonen",
     keywords: [
       "psychiatrie",
       "notdienst",
       "notaufnahme",
       "klinik",
       "zürich",
-      "bern",
-      "basel",
+      "kanton",
     ],
     href: "/soforthilfe",
     section: "Krisenressourcen",
   },
   {
-    title: "Krisenplan erstellen",
-    description: "Einen persönlichen Krisenplan gemeinsam vorbereiten",
-    keywords: ["krisenplan", "vorbereitung", "notfall", "plan", "sicherheit"],
-    href: "/soforthilfe",
-    section: "Krisenressourcen",
+    title: "Kein Therapieplatz: nächste Schritte",
+    description:
+      "Anmeldung, Kosten, Wartezeit, Zwischenhilfe und einen nächsten Kontakt mit einer Fachperson klären",
+    keywords: [
+      "therapieplatz",
+      "warteliste",
+      "wartezeit",
+      "anmeldung",
+      "anordnung",
+      "kosten",
+      "zwischenhilfe",
+      "versorgung",
+    ],
+    href: "/unterstuetzen/therapie#versorgungszugang",
+    section: "Unterstützen",
   },
 
   // Genesung
@@ -423,6 +434,8 @@ export const searchableContent: SearchEntry[] = [
     keywords: [
       "textversion",
       "notfallplan",
+      "krisenplan",
+      "vorbereitung",
       "suizidgedanken",
       "selbstverletzung",
       "psychische krise",
@@ -1787,16 +1800,13 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Situations-Wegweiser",
     description:
-      "Beobachtbare Situationen einordnen, den eigenen Schutz wahren und passende professionelle Hilfe finden",
+      "Bei akuter Gefahr oder unklarer Dringlichkeit professionelle Hilfe finden – ohne eigene Risikoeinschätzung",
     keywords: [
       "wegweiser",
       "situation",
       "was tun",
       "krise",
       "eskalation",
-      "schritt für schritt",
-      "anleitung",
-      "konkret",
       "hilfe",
     ],
     href: "/wegweiser",

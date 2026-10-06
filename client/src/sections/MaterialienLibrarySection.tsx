@@ -23,6 +23,8 @@ import {
 } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 import {
+  getHandoutApprovalStatus,
+  HANDOUT_EDITORIAL_DRAFT_NOTE,
   HANDOUT_VISUAL_REFRESH_NOTE,
   isHandoutVisualPublished,
   isHandoutWebVersionPublished,
@@ -76,6 +78,8 @@ function MaterialEntry({
     : getHandoutTextVersionHrefBySource(pdfSource);
   const textVersionPreferred = prefersHandoutTextVersion(pdfSource);
   const visualPublished = isHandoutVisualPublished(item.id);
+  const editorialDraft =
+    getHandoutApprovalStatus(item.id) === "draft-editorial-review-pending";
   const currentHtmlAvailable = Boolean(
     item.isHtml && isHandoutWebVersionPublished(item.id)
   );
@@ -116,14 +120,26 @@ function MaterialEntry({
       ) : (
         <HandoutVisualPlaceholder
           title={item.title}
-          readingLabel={currentHtmlAvailable ? "Webfassung" : undefined}
+          readingLabel={
+            editorialDraft
+              ? "Entwurf"
+              : currentHtmlAvailable
+                ? "Webfassung"
+                : undefined
+          }
           statusText={
-            currentHtmlAvailable ? "Nur als Webfassung verfügbar." : undefined
+            editorialDraft
+              ? HANDOUT_EDITORIAL_DRAFT_NOTE
+              : currentHtmlAvailable
+                ? "Nur als Webfassung verfügbar."
+                : undefined
           }
           ariaDescription={
-            currentHtmlAvailable
-              ? "Webfassung verfügbar; keine separate PDF- oder Bildfassung"
-              : undefined
+            editorialDraft
+              ? HANDOUT_EDITORIAL_DRAFT_NOTE
+              : currentHtmlAvailable
+                ? "Webfassung verfügbar; keine separate PDF- oder Bildfassung"
+                : undefined
           }
         />
       )}
@@ -139,7 +155,9 @@ function MaterialEntry({
         <p className="material-library-card__description">{item.description}</p>
         {!visualPublished && textVersionHref ? (
           <p className="material-library-card__note">
-            {HANDOUT_VISUAL_REFRESH_NOTE}
+            {editorialDraft
+              ? "Die Textfassung ist als Entwurf verfügbar. Eine Druckfassung wird derzeit nicht angeboten."
+              : HANDOUT_VISUAL_REFRESH_NOTE}
           </p>
         ) : textVersionPreferred && textVersionHref ? (
           <p className="material-library-card__note">
@@ -180,13 +198,17 @@ function MaterialEntry({
             </a>
           )}
         </p>
-        {!visualPublished && currentHtmlAvailable ? (
+        {editorialDraft ? (
+          <p className="material-library-card__verified">
+            Materialstand: {HANDOUT_EDITORIAL_DRAFT_NOTE}
+          </p>
+        ) : !visualPublished && currentHtmlAvailable ? (
           <p className="material-library-card__verified">
             Materialformat: Webfassung · keine separate PDF- oder Bildfassung
           </p>
         ) : !visualPublished ? (
           <p className="material-library-card__verified">
-            Materialstand: Textversion aktuell · Druckfassung in Überarbeitung
+            Materialstand: Textfassung verfügbar · Druckfassung in Überarbeitung
           </p>
         ) : item.verifiedAt ? (
           <p className="material-library-card__verified">
@@ -231,8 +253,10 @@ export default function MaterialienLibrarySection() {
         <EditorialSection.Aside background="cream-deep">
           <p className="material-library-use-note">
             <strong>Lesetipp:</strong> «Textversion lesen» ist die ruhigste
-            Fassung für bildbasierte PDFs. Wenn eine aktuelle Druckfassung
-            vorliegt, öffnet «PDF öffnen» sie in einem neuen Tab.
+            Fassung für bildbasierte PDFs. Wenn eine Druckfassung vorliegt,
+            öffnet «PDF öffnen» sie in einem neuen Tab. Text- und Druckfassungen
+            können unterschiedliche Stände haben; beachten Sie die Hinweise zur
+            jeweiligen Fassung.
           </p>
         </EditorialSection.Aside>
       </EditorialSection>

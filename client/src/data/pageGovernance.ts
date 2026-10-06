@@ -23,7 +23,7 @@ export const CURRENT_PUBLICATION_STATUS = {
 
 export const pageGovernance: Record<string, PageGovernance> = {
   "/": {
-    editorialUpdated: "2026-10-02",
+    editorialUpdated: "2026-10-06",
     riskLevel: "medium",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2027-04-30",
@@ -98,7 +98,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/datenschutz": {
-    editorialUpdated: "2026-10-02",
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
@@ -174,6 +174,11 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/glossar": {
+    editorialUpdated: "2026-10-06",
+    riskLevel: "medium",
+    owner: DEFAULT_OWNER,
+  },
+  "/materialien": {
     editorialUpdated: "2026-10-06",
     riskLevel: "medium",
     owner: DEFAULT_OWNER,

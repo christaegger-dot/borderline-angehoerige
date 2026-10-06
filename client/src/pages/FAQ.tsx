@@ -68,7 +68,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Ist Borderline erblich? Bin ich schuld?",
         answer:
-          "Die Forschung spricht für ein Zusammenspiel aus biologischer Empfindlichkeit und belastenden Entwicklungs- oder Beziehungserfahrungen. Eine erhöhte emotionale Sensibilität kann teilweise mitvererbt werden, nicht aber die Störung eins zu eins. Belastende Erfahrungen können das Risiko erhöhen, erklären Borderline aber nie allein. Die Ursachen sind komplex – Sie tragen keine Schuld.",
+          "Die Forschung spricht für ein Zusammenspiel aus biologischer Empfindlichkeit und Entwicklungs- oder Beziehungserfahrungen. Eine erhöhte emotionale Sensibilität kann teilweise mitvererbt werden, nicht aber die Störung eins zu eins. Belastende Erfahrungen können eine Rolle spielen; aus einer Diagnose lässt sich jedoch keine persönliche Schuld ableiten. Verantwortung für konkrete verletzende oder gewalttätige Handlungen bleibt davon getrennt. Angehörige müssen weder die Behandlung noch die Genesung allein tragen. Kinder sind nicht für die Erkrankung oder Behandlung ihrer Eltern verantwortlich.",
         links: [{ text: "Borderline verstehen", url: "/verstehen" }],
       },
       {

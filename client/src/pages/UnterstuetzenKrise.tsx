@@ -1,6 +1,7 @@
 import KinderEntlasten from "@/components/KinderEntlasten";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
+import EvidenceNote from "@/components/EvidenceNote";
 import {
   DisplayHeading,
   EditorialCallout,
@@ -18,6 +19,7 @@ import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
 import BelastungHandlungsraeume from "@/components/visualizations/BelastungHandlungsraeume";
 import AppLink from "@/components/AppLink";
+import { quellenLinks } from "@/content/quellenLinks";
 import { Link } from "wouter";
 
 const deeskalationsSchritte = [
@@ -78,8 +80,8 @@ const formulierungen: ReadonlyArray<{
   {
     title: "Bei Suizidgedanken direkt ansprechen",
     quote:
-      "«Ich mache mir Sorgen um dich. Hast du gerade Gedanken, dir etwas anzutun?»",
-    note: "Hinweis: Direktes Fragen erhöht das Risiko nicht, sondern zeigt, dass Sie die Situation ernst nehmen.",
+      "«Ich mache mir Sorgen um dich. Denkst du gerade daran, dir das Leben zu nehmen?»",
+    note: "Nach bisherigem Forschungsstand verstärkt direktes Fragen Suizidgedanken nicht. Holen Sie bei Sorge professionelle Einschätzung; Sie müssen nicht auf vollständige Antworten warten.",
   },
 ];
 
@@ -397,6 +399,14 @@ export default function UnterstuetzenKrise() {
                 eine Orientierung sein; keine Formulierung garantiert einen
                 bestimmten Verlauf.
               </p>
+              <p>
+                Selbstverletzung kann ohne Todesabsicht erfolgen, schliesst
+                Suizidgedanken aber nicht aus. Auch eine klein wirkende
+                Verletzung erlaubt keine Entwarnung. Fragen Sie ausdrücklich
+                nach Suizidgedanken; wenn Selbstverletzung im Raum steht, können
+                Sie zusätzlich fragen: «Denkst du gerade daran, dich zu
+                verletzen?» Die Antworten ersetzen keine fachliche Beurteilung.
+              </p>
             </EditorialProse>
             <div className="mt-8 space-y-8">
               {formulierungen.map(item => (
@@ -407,6 +417,22 @@ export default function UnterstuetzenKrise() {
                 </article>
               ))}
             </div>
+            <EvidenceNote
+              sources={[
+                {
+                  label: "Dazzi et al. (2014)",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/24998511/",
+                  type: "wissenschaft",
+                  note: "Übersicht zum direkten Fragen nach Suizidgedanken; in den eingeschlossenen Studien kein statistisch signifikanter Anstieg.",
+                },
+                {
+                  label: "NICE NG225 (2022)",
+                  href: quellenLinks.niceNg225,
+                  type: "wissenschaft",
+                  note: "Fachliche Beurteilung nach Selbstverletzung; keine Vorhersage durch pauschale Risikostufen. Aufgaben der Fachpersonen werden Angehörigen nicht übertragen.",
+                },
+              ]}
+            />
           </ContentSection>
 
           {/* ── ContentSection 4: vermeiden (sicherheitskritisch — Alert-Akzent bleibt) ── */}

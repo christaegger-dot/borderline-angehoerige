@@ -13,6 +13,8 @@ export const quellenLinks = {
   gunderson1997: "/quellen#src-gunderson-berkowitz-ruiz-sancho-1997",
   gunderson2011: "/quellen#src-gunderson-2011",
   guillen2021: "/quellen#src-guill-nt-al-2021",
+  guillen2024: "/quellen#src-guill-nt-al-2024",
+  cohen2024: "/quellen#src-cohent-al-2024",
   hoffman2005: "/quellen#src-hoffman-2005",
   icd11: "/quellen#src-world-health-organization-icd-11-2024",
   ipde1999: "/quellen#src-loranger-1999",
@@ -24,6 +26,8 @@ export const quellenLinks = {
     "/quellen#src-national-institute-for-health-and-care-excellence-nice-2009",
   niceNg150:
     "/quellen#src-national-institute-for-health-and-care-excellence-nice-2020",
+  niceNg225:
+    "/quellen#src-national-institute-for-health-and-care-excellence-nice-2022",
   projectAir: "/quellen#src-project-air-strategy-laufend",
   porter2020: "/quellen#src-portert-al-2020",
   qian2022: "/quellen#src-qiant-al-2022",

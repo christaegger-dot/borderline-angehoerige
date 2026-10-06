@@ -8,6 +8,7 @@ export const handoutTextVersions = [
     intro: [
       "Diese Seite macht den «Notfallplan bei psychischer Krise» direkt lesbar. Die Orientierung bleibt bewusst nah am Notfallplan, damit wichtige Hinweise auch ohne PDF-Ansicht schnell zugänglich sind.",
       "Der Notfallplan richtet sich an Angehörige, wenn Suizidgedanken, Selbstverletzung oder eine akute psychische Krise im Raum stehen. Er ersetzt keine professionelle Beurteilung, soll aber helfen, in einer belastenden Situation klarer zu handeln.",
+      "Selbstverletzung kann ohne Todesabsicht erfolgen, schliesst Suizidgedanken aber nicht aus. Auch eine klein wirkende Verletzung erlaubt keine Entwarnung. Sie müssen die Dringlichkeit nicht selbst beurteilen; holen Sie bei Sorge professionelle Einschätzung.",
     ],
     sections: [
       {
@@ -31,7 +32,7 @@ export const handoutTextVersions = [
           },
           {
             title: "2. Ernst nehmen und direkt ansprechen",
-            text: "Jede Äusserung über Suizid oder Selbstverletzung sollte ernst genommen werden. Sprechen Sie das Thema offen und klar an – das erhöht das Risiko nicht, sondern kann entlastend sein. Beispiele: «Ich habe gehört, was du gesagt hast. Ich nehme das ernst.» und «Denkst du daran, dir etwas anzutun?»",
+            text: "Jede Äusserung über Suizid oder Selbstverletzung sollte ernst genommen werden. Fragen Sie ausdrücklich: «Denkst du gerade daran, dir das Leben zu nehmen?» Nach bisherigem Forschungsstand verstärkt direktes Fragen Suizidgedanken nicht. Wenn Selbstverletzung im Raum steht, können Sie zusätzlich fragen: «Denkst du gerade daran, dich zu verletzen?» Warten Sie mit dem Hilfeholen nicht auf vollständige Antworten.",
           },
           {
             title: "3. Zuhören und Gefühle anerkennen",
@@ -111,8 +112,8 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quellen: Berkowitz, C. & Gunderson, J. G., BPD Family Guidelines (NEABPD); Project Air Strategy, Understanding Self-Harm & Suicidal Thinking for Families & Carers.",
+      "Quellen: Berkowitz, C. & Gunderson, J. G., BPD Family Guidelines (NEABPD); Project Air Strategy, Understanding Self-Harm & Suicidal Thinking for Families & Carers; Dazzi et al. (2014), PMID 24998511; NICE NG225 (2022), Self-harm: assessment, management and preventing recurrence.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 10.03.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Redaktionell aktualisiert: 06.10.2026; erneute Fachprüfung ausstehend.",
   }),
 ];

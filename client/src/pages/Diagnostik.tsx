@@ -16,6 +16,7 @@ import GlossarBegriff from "@/components/GlossarBegriff";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
+import VersorgungsZugang from "@/components/VersorgungsZugang";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import AppLink from "@/components/AppLink";
@@ -208,6 +209,14 @@ export default function Diagnostik() {
                 onClick={e => handleAnchorClick(e, "anbieter")}
               >
                 «Wo eine Abklärung möglich ist»
+              </a>{" "}
+              oder zu{" "}
+              <a
+                href="#versorgungszugang"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "versorgungszugang")}
+              >
+                «Kein Therapieplatz oder lange Wartezeit»
               </a>{" "}
               springen.
             </p>
@@ -602,14 +611,17 @@ export default function Diagnostik() {
           variant="editorial"
           title="Diagnostik bei Jugendlichen"
           id="jugendliche"
-          preview="Bei Jugendlichen gelten besondere Vorsichtigkeiten. Spezialisierte Frühinterventions-Angebote arbeiten ab 13 Jahren."
+          preview="Fachliche Abklärung und Behandlung sind auch vor dem 18. Geburtstag möglich. Entwicklungsverlauf und Beschwerden werden gemeinsam eingeordnet."
         >
           <EditorialProse>
             <p>
-              Bei Jugendlichen gelten besondere Vorsichtigkeiten in der
-              Diagnose-Stellung — viele Verhaltensmuster, die bei Erwachsenen
-              auf Borderline hinweisen, sind in der Adoleszenz auch
-              entwicklungstypisch und brauchen entsprechende Einordnung.
+              Fachliche Abklärung und Behandlung sind auch vor dem 18.
+              Geburtstag möglich. Jugendliche müssen nicht warten, bis sie
+              erwachsen sind oder eine bestimmte Diagnose feststeht. Eine
+              kinder- und jugendpsychiatrische Fachperson beurteilt Beschwerden,
+              Belastung und Entwicklungsverlauf gemeinsam. Manche Muster können
+              zur Entwicklung gehören, andere brauchen gezielte Unterstützung;
+              eine Momentaufnahme reicht für die Einordnung nicht aus.
             </p>
             <p>
               Ein spezialisiertes Frühinterventions-Angebot im Kanton Zürich ist{" "}
@@ -646,8 +658,8 @@ export default function Diagnostik() {
           <EditorialProse>
             <p>
               Für eine Diagnostik-Abklärung im Kanton Zürich kommen verschiedene
-              Stellen infrage. Diese Liste ist nicht abschliessend — niedrig-
-              gelassene Psychiater:innen oder psychologische
+              Stellen infrage. Diese Liste ist nicht abschliessend —
+              niedergelassene Psychiater:innen oder psychologische
               Psychotherapeut:innen mit Borderline-Erfahrung sind ebenfalls
               möglich. Die <strong>Hausärzt:in</strong> kann ein erster Schritt
               sein und bei Bedarf an eine geeignete Fachperson überweisen.
@@ -765,6 +777,15 @@ export default function Diagnostik() {
             Klären Sie die Kostenübernahme bei der abklärenden Stelle und bei
             Ihrer Krankenversicherung vorab.
           </p>
+        </ContentSection>
+
+        <ContentSection
+          variant="editorial"
+          title="Kein Therapieplatz oder lange Wartezeit"
+          id="versorgungszugang"
+          preview="Anmeldung, Kosten, Zwischenhilfe und einen nächsten Kontakt klären — auch ausserhalb des Kantons Zürich."
+        >
+          <VersorgungsZugang />
         </ContentSection>
 
         {/* ── 10: Hinweis PUK-Elterngruppe ── */}

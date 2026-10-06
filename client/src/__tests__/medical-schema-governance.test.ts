@@ -2,17 +2,25 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { pageGovernance } from "../data/pageGovernance";
-import { STATIC_ROUTE_HEAD_METADATA } from "@shared/staticRouteShells";
+import {
+  CURRENT_PUBLICATION_STATUS,
+  pageGovernance,
+} from "../data/pageGovernance";
+import { buildMedicalPageSchemaData } from "../lib/seoMetadata";
+import {
+  STATIC_ROUTE_HEAD_METADATA,
+  renderStaticRouteHtml,
+} from "@shared/staticRouteShells";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const pagesDir = path.resolve(__dirname, "..", "pages");
 
-// Pages mit MedicalPageSchema-Component MUESSEN einen pageGovernance-Eintrag
-// mit lastReviewed haben. Build-Date != Review-Date - Compliance/Vertrauen.
-// Ausnahme: dynamische Pfade (HandoutTextPage mit /materialien/text/:id),
-// die werden hier explizit ausgeklammert.
+// Medizinische Seiten brauchen eine nachvollziehbare Projektzuordnung.
+// Historische Projekt-Prüfangaben sind kein Nachweis für den aktuellen Stand;
+// lastReviewed ist kein Pflichtfeld des MedicalWebPage-Schemas.
+// Ausnahmen: dynamische Handout-Pfade und nicht veröffentlichte Seitenquellen
+// werden ausdrücklich ausgeklammert; ausgemusterte Routen bleiben entfernt.
 const DYNAMIC_PATH_PAGES = new Set([
   "HandoutTextPage.tsx", // path={handoutMeta.path} - dynamisch pro Handout
   "Notfallkarte.tsx", // bewusst nicht mehr als öffentliche Route registriert
@@ -65,23 +73,28 @@ describe("MedicalPageSchema pageGovernance parity", () => {
   });
 
   it.each(pagesWithMedicalSchema)(
-    "$file (path=$path) hat pageGovernance-Eintrag mit lastReviewed",
+    "$file (path=$path) hat Governance-Daten und behauptet bei offenem Review kein Prüfdatum",
     ({ path: routePath }) => {
       const entry = pageGovernance[routePath];
       expect(entry, `${routePath} fehlt in pageGovernance`).toBeDefined();
       expect(
-        entry?.lastReviewed,
-        `${routePath} fehlt lastReviewed`
-      ).toBeDefined();
+        entry?.owner,
+        `${routePath} fehlt die Projektzuordnung`
+      ).toBeTruthy();
+      expect(CURRENT_PUBLICATION_STATUS.clinicalReview).toBe("pending");
+      const schema = buildMedicalPageSchemaData({
+        title: routePath,
+        description: "Test der Review-Metadaten",
+        path: routePath,
+      });
+      expect(schema).not.toHaveProperty("lastReviewed");
     }
   );
 });
 
-describe("STATIC_ROUTE_HEAD_METADATA medical-schema lastReviewed", () => {
-  // Statische Meta-Eintraege (inkl. Handout-Textversionen) mit
-  // includeMedicalSchema: true MUESSEN eine Review-Datum-Quelle haben -
-  // entweder medicalLastReviewed inline oder pageGovernance[path].lastReviewed.
-  // Ohne das emittiert MedicalWebPage-Schema ohne lastReviewed = Compliance-Gap.
+describe("Review-Metadaten der generierten medizinischen Static-Routes", () => {
+  // Auch Inline-Daten und Handout-Metadaten dürfen einen ausstehenden Review
+  // nicht umgehen. Geprüft wird die tatsächliche JSON-LD-Ausgabe des Generators.
   const medicalRoutes = STATIC_ROUTE_HEAD_METADATA.filter(
     meta => meta.includeMedicalSchema
   );
@@ -91,14 +104,14 @@ describe("STATIC_ROUTE_HEAD_METADATA medical-schema lastReviewed", () => {
   });
 
   it.each(medicalRoutes)(
-    "$path hat medicalLastReviewed oder pageGovernance-lastReviewed",
+    "$path exportiert bei ausstehendem Review kein lastReviewed",
     meta => {
-      const fromMeta = meta.medicalLastReviewed;
-      const fromGovernance = pageGovernance[meta.path]?.lastReviewed;
-      expect(
-        fromMeta ?? fromGovernance,
-        `${meta.path}: weder medicalLastReviewed noch pageGovernance.lastReviewed gesetzt`
-      ).toBeDefined();
+      const html = renderStaticRouteHtml(
+        "<!doctype html><html><head></head><body></body></html>",
+        meta
+      );
+      expect(html).toContain('"@type":"MedicalWebPage"');
+      expect(html).not.toContain('"lastReviewed"');
     }
   );
 });

@@ -1,4 +1,7 @@
-import { pageGovernance } from "../data/pageGovernance";
+import {
+  CURRENT_PUBLICATION_STATUS,
+  pageGovernance,
+} from "../data/pageGovernance";
 
 const IMPORT_META_ENV =
   (
@@ -57,6 +60,13 @@ function resolveMedicalLastReviewed(
   path: string,
   lastReviewed?: string | null
 ): string | null {
+  // lastReviewed asserts an actual accuracy/completeness review. Historical
+  // project dates and explicit overrides cannot establish that review while
+  // the clinical review of the current publication remains pending.
+  if (CURRENT_PUBLICATION_STATUS.clinicalReview === "pending") {
+    return null;
+  }
+
   if (lastReviewed) {
     return lastReviewed;
   }

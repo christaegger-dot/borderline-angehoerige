@@ -9,6 +9,7 @@ import {
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
+import ReviewBadge from "@/components/ReviewBadge";
 import { slugifyTerm } from "@/lib/glossarAnchor";
 import { Link, useLocation } from "wouter";
 
@@ -32,12 +33,12 @@ const glossaryTerms: GlossaryTerm[] = [
     abbreviation: "BPS",
     category: "symptome",
     definition:
-      "Ein komplexes Störungsbild, das unter anderem intensive oder rasch wechselnde Gefühle, Schwierigkeiten mit innerer Stabilität, dem Selbstbild oder Beziehungen beschreiben kann. Erfahrungen und Ausprägung sind individuell verschieden. Klassifiziert im DSM-5 als eigenständige Persönlichkeitsstörung und im ICD-11 als «Borderline-Muster» (Code 6D11.5). Die englische Bezeichnung lautet Borderline Personality Disorder (BPD).",
+      "Ein komplexes Störungsbild, das unter anderem intensive oder rasch wechselnde Gefühle, Schwierigkeiten mit innerer Stabilität, dem Selbstbild oder Beziehungen beschreiben kann. Erfahrungen und Ausprägung sind individuell verschieden. Klassifiziert im DSM-5-TR als eigenständige Persönlichkeitsstörung und im ICD-11 als «Borderline-Muster» (Code 6D11.5). Die englische Bezeichnung lautet Borderline Personality Disorder (BPD).",
     example:
       "Ausprägung und Verlauf unterscheiden sich deutlich. Manche Menschen erleben vor allem rasch wechselnde starke Gefühle, andere eher Leere, Rückzug oder Selbstzweifel. Eine Diagnose beschreibt weder die ganze Person noch ihre Fähigkeiten.",
     criteria: {
       intro:
-        "Für eine Diagnose nach DSM-5 müssen mindestens 5 der folgenden 9 Merkmale zutreffen:",
+        "Im DSM-5-TR gehören mindestens 5 der folgenden 9 Merkmale zur Diagnose. Sie müssen ein überdauerndes, situationsübergreifendes Muster bilden, das mit klinisch relevanter Belastung oder Beeinträchtigung verbunden ist. Verlauf und mögliche andere Erklärungen werden fachlich beurteilt; die Liste ermöglicht keine Selbst- oder Fremddiagnose:",
       items: [
         "Verzweifeltes Bemühen, reales oder vorgestelltes Verlassenwerden zu vermeiden",
         "Instabile und intensive zwischenmenschliche Beziehungen (abwechselnd Idealisierung und Entwertung)",
@@ -50,8 +51,8 @@ const glossaryTerms: GlossaryTerm[] = [
         "Vorübergehende, stressabhängige paranoide Vorstellungen oder schwere dissoziative Symptome",
       ],
     },
-    relatedPage: "/verstehen",
-    relatedPageTitle: "Borderline verstehen",
+    relatedPage: "/verstehen/diagnostik",
+    relatedPageTitle: "Wie eine Diagnose entsteht",
   },
   {
     term: "Dialektisch-Behaviorale Therapie",
@@ -70,7 +71,7 @@ const glossaryTerms: GlossaryTerm[] = [
     definition:
       "Skills sind konkrete Fertigkeiten, die in der DBT erlernt werden. Sie sollen helfen, mit intensiven Emotionen, Krisen und zwischenmenschlichen Spannungen anders umzugehen, ohne sofort auf selbstschädigende oder eskalierende Muster zurückzugreifen.",
     example:
-      "Ein Skill bei starker Anspannung kann sein, die Hände in eiskaltes Wasser zu tauchen – der intensive Reiz lenkt vom emotionalen Schmerz ab.",
+      "Ein Beispiel ist, den Kontakt der Füsse zum Boden wahrzunehmen und einige Dinge im Raum zu benennen. Skills sollten nicht verletzen und zur Person passen; geeignete Strategien können mit einer Fachperson vereinbart werden. Wenn eine Übung zusätzlich belastet, darf sie angepasst oder beendet werden.",
     relatedPage: "/unterstuetzen/alltag",
     relatedPageTitle: "Im Alltag unterstützen",
   },
@@ -189,7 +190,7 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Dissoziation",
     category: "symptome",
     definition:
-      "Ein Zustand, in dem sich Menschen von sich selbst, ihrem Körper oder ihrer Umgebung abgetrennt fühlen. Es ist eine Schutzreaktion des Gehirns auf überwältigende Emotionen oder Stress.",
+      "Dissoziation kann sich etwa als Unwirklichkeitsgefühl, Abgetrenntsein von sich selbst oder Erinnerungslücken zeigen. Sie kann unter starkem Stress oder im Zusammenhang mit belastenden Erfahrungen auftreten, hat aber unterschiedliche Formen und kommt auch ausserhalb von Borderline vor. Wiederholte oder ausgeprägte Beschwerden brauchen eine fachliche Einordnung.",
     example:
       "Betroffene beschreiben es als 'neben sich stehen', 'wie in Watte gepackt sein' oder 'die Welt wirkt unwirklich'.",
   },
@@ -404,6 +405,7 @@ export default function Glossar() {
           <p className="mt-4 uppercase" style={labelStyle}>
             {glossaryTerms.length} Begriffe
           </p>
+          <ReviewBadge path="/glossar" className="mt-4" />
         </header>
 
         {/* ── Anker-Sprungleiste A–Z ── */}

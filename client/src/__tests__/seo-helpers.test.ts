@@ -52,14 +52,26 @@ describe("SEO helpers", () => {
     );
   });
 
-  it("uses page governance review dates for medical schema when available", () => {
+  it("does not export historical project dates as review evidence while clinical review is pending", () => {
     const schema = buildMedicalPageSchemaData({
       title: "Diagnostik",
       description: "Beschreibung",
       path: "/verstehen/diagnostik",
     });
 
-    expect(schema.lastReviewed).toBe("2026-04-30");
+    expect(schema).not.toHaveProperty("lastReviewed");
+  });
+
+  it("does not let an explicit date bypass the pending clinical review", () => {
+    const schema = buildMedicalPageSchemaData({
+      title: "Handout",
+      description: "Beschreibung",
+      path: "/materialien/text/leuchtturm",
+      lastReviewed: "2026-04-30",
+    });
+
+    expect(schema).not.toHaveProperty("lastReviewed");
+    expect(JSON.stringify(schema)).not.toContain("lastReviewed");
   });
 
   it("builds breadcrumb schema with correct positions", () => {

@@ -116,26 +116,26 @@ export const handoutTextVersions = [
           },
           {
             title: "Stress",
-            text: "Überforderung und Anspannung verstärken sichtbare Reaktionen und engen den Handlungsspielraum ein.",
+            text: "Überforderung und Anspannung können Reaktionen beeinflussen und den Handlungsspielraum verengen. Wie sich das zeigt, ist individuell.",
           },
         ],
       },
       {
         title: "Anspannung und Ventile",
         intro:
-          "Die Grafik ergänzt den Eisberg um zwei Regler: mehr Trigger und Überforderung erhöhen den Druck, mehr Sicherheit, Skills und Erholung entlasten.",
+          "Die Regler der Grafik veranschaulichen mögliche Belastungen und Entlastungen. Sie sind eine redaktionelle Metapher, keine Messung der Anspannung und keine Vorhersage, wie eine bestimmte Person reagiert.",
         cards: [
           {
             title: "Anspannung",
-            text: "Die Anzeige visualisiert, wie hoch die innere Aktivierung gerade ist.",
+            text: "Die Anzeige steht beispielhaft für Anspannung. Der tatsächliche innere Zustand einer Person lässt sich daraus nicht ablesen.",
           },
           {
             title: "Mehr Trigger",
-            text: "Stress, Überforderung und belastende Reize erhöhen den inneren Druck.",
+            text: "Stress, Überforderung und belastende Reize können die Anspannung erhöhen. Welche Bedingungen gerade mitwirken, ist individuell.",
           },
           {
             title: "Mehr Ventile",
-            text: "Sicherheit, Skills und Erholung senken die Anspannung und schaffen wieder Spielraum.",
+            text: "Sicherheit, selbst gewählte Skills und Erholung können entlasten. Ihre Wirkung ist individuell und nicht garantiert; Angehörige müssen keine Beruhigung erreichen.",
           },
         ],
       },
@@ -172,7 +172,7 @@ export const handoutTextVersions = [
     sourceLine:
       "Fachlicher Bezugspunkt: Emotionsregulation nach Linehan, M. M. (1993). Eisberg-Metapher und Beispiele: eigene didaktische Darstellung.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Redaktionell aktualisiert: 06.10.2026; fachlich-redaktionelle Freigabe ausstehend.",
   }),
   createHandoutTextVersion("spaltung", {
     kicker: "Textversion",
@@ -348,7 +348,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Denk-Modus",
-            text: "Wenn Anspannung sinkt, werden Zuhören, Abwägen und Planen wieder besser zugänglich. Erst dann trägt ein klärendes Gespräch eher.",
+            text: "Bei geringerer Anspannung können Zuhören, Abwägen und Planen leichter werden. Ob ein klärendes Gespräch möglich und gewünscht ist, muss dennoch gemeinsam geklärt werden.",
           },
           {
             title: "Übergang",
@@ -389,7 +389,7 @@ export const handoutTextVersions = [
     sourceLine:
       "Quelle: Linehan, M. M. (1993/2015), DBT und Emotionsregulation; Stressmodell als didaktische Vereinfachung.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Redaktionell aktualisiert: 06.10.2026; fachlich-redaktionelle Freigabe ausstehend.",
   }),
   createHandoutTextVersion("gehirn", {
     kicker: "Entwurf · Textversion",

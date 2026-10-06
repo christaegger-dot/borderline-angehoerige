@@ -15,11 +15,11 @@ import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
+import VersorgungsZugang from "@/components/VersorgungsZugang";
 import { TableOfContents } from "@/components/UXEnhancements";
 import RollenOrbitVisualisierung from "@/components/visualizations/RollenOrbitVisualisierung";
 import { quellenLinks } from "@/content/quellenLinks";
 import {
-  GELB,
   emailByIdStrict,
   kontaktByIdStrict,
   urlByIdStrict,
@@ -208,6 +208,7 @@ export default function UnterstuetzenTherapie() {
               { href: "#zusammenarbeit", label: "Kontakt zum Behandlungsteam" },
               { href: "#musterbrief", label: "Musterbrief" },
               { href: "#therapieangebote", label: "Therapieangebote" },
+              { href: "#versorgungszugang", label: "Kein Therapieplatz" },
             ]}
           />
           <div
@@ -494,7 +495,7 @@ export default function UnterstuetzenTherapie() {
             <EvidenceNote
               variant="editorial"
               title="Quellen zu Therapieverfahren und Angehörigenprogrammen"
-              definition="Mehrere strukturierte Psychotherapien können bei BPS helfen; die Sicherheit der Evidenz ist für viele Einzelvergleiche begrenzt, und es gibt keine für alle Menschen beste Methode. Auch strukturierte generalistische Behandlung ist relevant. Familienprogramme wie Family Connections zeigen vielversprechende Ergebnisse, die Evidenzbasis ist jedoch kleiner und vorläufiger als bei den untersuchten Psychotherapien."
+              definition="Mehrere strukturierte Psychotherapien können bei BPS helfen; die Sicherheit der Evidenz ist für viele Einzelvergleiche begrenzt, und es gibt keine für alle Menschen beste Methode. Auch strukturierte generalistische Behandlung ist relevant. Psychoedukative Angehörigenprogramme können entlastende Unterstützung bieten. Für Family Connections liegen inzwischen auch randomisierte Daten vor: Die Studie von 2024 fand keinen statistisch signifikanten Vorteil gegenüber einer aktiven Vergleichsbehandlung; daraus folgt weder gesicherte Überlegenheit noch Gleichwertigkeit. Eine Beobachtungsstudie aus Frankreich und der Schweiz berichtete Verbesserungen nach dem Programm, kann deren Ursache aber nicht eindeutig dem Programm zuordnen. Die lokale Verfügbarkeit ist getrennt von der Wirksamkeit zu klären."
               sources={[
                 {
                   label:
@@ -532,12 +533,37 @@ export default function UnterstuetzenTherapie() {
                 },
                 {
                   label:
+                    "Guillén et al. (2024) – Family Connections im randomisierten Vergleich mit aktiver Behandlung",
+                  href: quellenLinks.guillen2024,
+                  type: "wissenschaft",
+                },
+                {
+                  label:
+                    "Cohen et al. (2024) – Beobachtungsstudie aus Frankreich und der Schweiz",
+                  href: quellenLinks.cohen2024,
+                  type: "wissenschaft",
+                },
+                {
+                  label:
                     "Gunderson, Berkowitz & Ruiz-Sancho (1997) – psychoedukative Familienarbeit",
                   href: quellenLinks.gunderson1997,
                   type: "wissenschaft",
                 },
               ]}
             />
+          </ContentSection>
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      <EditorialSection variant="cream">
+        <EditorialSection.Body>
+          <ContentSection
+            variant="editorial"
+            title="Kein Therapieplatz oder lange Wartezeit"
+            id="versorgungszugang"
+            preview="Anmeldung, Kosten, Zwischenhilfe und einen nächsten Kontakt klären — auch ausserhalb des Kantons Zürich."
+          >
+            <VersorgungsZugang />
           </ContentSection>
         </EditorialSection.Body>
       </EditorialSection>
@@ -870,24 +896,15 @@ export default function UnterstuetzenTherapie() {
             className="mt-10 border-t pt-6"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <h3 style={h4Style}>Notfall-Nummern PUK Zürich (24/7)</h3>
-            <ul
-              className="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-3"
-              style={bodyStyle}
-            >
-              {GELB.filter(k => k.id !== "GELB_KIZ").map(k => (
-                <li key={k.id}>
-                  <p style={labelStyle}>{k.fuerWen ?? k.label}</p>
-                  <a
-                    href={`tel:${k.tel}`}
-                    className="editorial-link"
-                    style={{ fontSize: "var(--text-md)", fontWeight: 500 }}
-                  >
-                    {k.nummer}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <h3 style={h4Style}>Akute Hilfe</h3>
+            <p className="mt-3" style={bodyStyle}>
+              Bei akuter Gefahr oder unklarer Dringlichkeit warten Sie nicht auf
+              einen Therapieplatz. Zuständige Notfalldienste finden Sie unter{" "}
+              <a href="/soforthilfe" className="editorial-link">
+                Akute Hilfe und Notfallkontakte
+              </a>
+              .
+            </p>
           </article>
         </EditorialSection.Body>
       </EditorialSection>

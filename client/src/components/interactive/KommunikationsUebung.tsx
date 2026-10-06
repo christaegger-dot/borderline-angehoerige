@@ -94,8 +94,8 @@ const SCENARIOS: Scenario[] = [
         text: "«Ich komme sofort. Halte durch, ich bin gleich da.»",
         correct: false,
         feedback:
-          "Das bietet sofortige persönliche Hilfe an, prüft aber weder die mögliche akute Gefahr noch Ihre eigene Grenze. Selbst hinzufahren ersetzt keine professionelle Einschätzung und kann Ihnen die alleinige Verantwortung zuschieben.",
-        techniqueHint: "Hilfeversprechen ohne Sicherheitsklärung",
+          "Das bietet sofortige persönliche Hilfe an, ohne die eigene Grenze zu benennen. Versprechen Sie nur Unterstützung, die für Sie sicher und möglich ist. Sie müssen die Belastung des anderen Menschen nicht allein bewältigen.",
+        techniqueHint: "Hilfeversprechen ohne eigene Grenze",
       },
       {
         id: "b",
@@ -110,12 +110,12 @@ const SCENARIOS: Scenario[] = [
         text: "«Du rufst immer so spät an. Das geht nicht. Ruf eine Beratungsstelle an.»",
         correct: false,
         feedback:
-          "Die Grenze ist wichtig. Die Antwort klärt jedoch nicht, ob eine unmittelbare Gefahr oder Selbstgefährdung vorliegt, und nennt keine passend abgestufte professionelle Hilfe.",
-        techniqueHint: "Nur T, ohne S und E",
+          "Die Grenze ist wichtig. Die Antwort geht jedoch kaum auf die geäusserte Belastung ein und nennt keine konkrete Anlaufstelle. Ein begrenztes Kontaktangebot ist möglich, wenn es für Sie sicher und gewollt ist.",
+        techniqueHint: "Grenze ohne Anerkennung der Belastung",
       },
     ],
     learnNote:
-      "Diese Kommunikationsübung nimmt keine Risikoeinschätzung vor. Bei Sorge um Sicherheit oder Unsicherheit finden Sie auf der zentralen Soforthilfe-Seite passende Anlaufstellen. Sie müssen die Dringlichkeit nicht allein beurteilen; eigene Grenzen und Sicherheit bleiben wichtig.",
+      "Diese Kommunikationsübung nimmt keine Risikoeinschätzung vor. Wenn Suizidgedanken im Raum stehen, können Sie ausdrücklich fragen: «Denkst du gerade daran, dir das Leben zu nehmen?» Selbstverletzung kann ohne Todesabsicht erfolgen, schliesst Suizidgedanken aber nicht aus. Die Antworten ersetzen keine fachliche Beurteilung. Bei Sorge um Sicherheit oder Unsicherheit finden Sie auf der zentralen Soforthilfe-Seite passende Anlaufstellen. Sie müssen die Dringlichkeit nicht allein beurteilen oder auf vollständige Antworten warten; eigene Grenzen und Sicherheit bleiben wichtig.",
   },
 
   // ─── DEAR scenarios ─────────────────────────────────

@@ -246,19 +246,23 @@ const quellen: QuelleKategorie[] = [
         autoren: "Skodol, A. E. et al.",
         jahr: "2005",
         titel:
-          "Prevalence and quality of life in personality disorders: Results from the Collaborative Longitudinal Personality Disorders Study",
-        quelle: "Journal of Personality Disorders",
-        hinweis: "Prävalenz- und Verlaufsdaten zu Persönlichkeitsstörungen.",
+          "The Collaborative Longitudinal Personality Disorders Study (CLPS): overview and implications",
+        quelle:
+          "Journal of Personality Disorders 19(5), 487–504. DOI: 10.1521/pedi.2005.19.5.487",
+        hinweis:
+          "Übersicht über die klinische CLPS-Längsschnittstudie zu Verlauf, Beeinträchtigungen und Behandlung von Persönlichkeitsstörungen. Keine bevölkerungsbezogene Prävalenzstudie.",
         link: "https://pubmed.ncbi.nlm.nih.gov/16274278/",
         linkLabel: "PubMed",
       },
       {
-        autoren: "Torgersen, S. et al.",
-        jahr: "2000",
+        autoren: "Torgersen, S., Kringlen, E. & Cramer, V.",
+        jahr: "2001",
         titel: "The prevalence of personality disorders in a community sample",
-        quelle: "Archives of General Psychiatry",
-        hinweis: "Häufigkeit von BPS in der Allgemeinbevölkerung (ca. 1–3%).",
-        link: "https://pubmed.ncbi.nlm.nih.gov/10872917/",
+        quelle:
+          "Archives of General Psychiatry 58(6), 590–596. DOI: 10.1001/archpsyc.58.6.590",
+        hinweis:
+          "Bevölkerungsbezogene Untersuchung von 2'053 Erwachsenen im Alter von 18 bis 65 Jahren in Oslo, erhoben 1994–1997 nach DSM-III-R. Die Borderline-Prävalenz lag in dieser Stichprobe bei 0,7%. Dieser Wert ist keine allgemeingültige oder Schweizer Prävalenzangabe.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/11386989/",
         linkLabel: "PubMed",
       },
       {
@@ -413,6 +417,29 @@ const quellen: QuelleKategorie[] = [
         link: "https://pubmed.ncbi.nlm.nih.gov/32304101/",
         linkLabel: "PubMed",
       },
+      {
+        autoren: "Guillén, V. et al.",
+        jahr: "2024",
+        titel:
+          '"Family Connections", a program for relatives of people with borderline personality disorder: A randomized controlled trial',
+        quelle: "Family Process 63(4), 2195–2214. DOI: 10.1111/famp.13089",
+        hinweis:
+          "Randomisierte Studie mit 121 Angehörigen aus 82 Familieneinheiten in Spanien. Family Connections wurde mit einem aktiven Angehörigenangebot ähnlicher Dauer verglichen. Zwischen den Bedingungen fanden sich keine statistisch signifikanten Unterschiede; günstigere Mittelwerte in der Family-Connections-Gruppe belegen keine Überlegenheit. Ein fehlender signifikanter Unterschied beweist auch keine Gleichwertigkeit der Angebote.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/39624006/",
+        linkLabel: "PubMed",
+      },
+      {
+        autoren: "Cohen, S. et al.",
+        jahr: "2024",
+        titel:
+          "Group intervention for family members of people with borderline personality disorder based on Dialectical Behavior Therapy: Implementation of the Family Connections® program in France and Switzerland",
+        quelle:
+          "Borderline Personality Disorder and Emotion Dysregulation 11, 16. DOI: 10.1186/s40479-024-00254-3",
+        hinweis:
+          "Beobachtungsstudie mit 149 Teilnehmenden an fünf Zentren in Frankreich und der Schweiz. Nach dem Programm wurden unter anderem weniger Belastung und depressive Symptome berichtet. Ohne randomisierte Kontrollgruppe lassen sich diese Veränderungen nicht sicher auf das Programm zurückführen; die Studie belegt auch keine aktuelle Verfügbarkeit eines Angebots vor Ort.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/39039536/",
+        linkLabel: "PubMed",
+      },
     ],
   },
   {
@@ -494,6 +521,16 @@ const quellen: QuelleKategorie[] = [
     kategorie: "Versorgungs-Materialien & Praxis-Manuale",
     eintraege: [
       {
+        autoren: "Bundesamt für Gesundheit (BAG)",
+        jahr: "laufend (Abruf 06.10.2026)",
+        titel: "Neuregelung der psychologischen Psychotherapie ab 1. Juli 2022",
+        quelle: "BAG – obligatorische Krankenpflegeversicherung",
+        hinweis:
+          "Schweizer Primärinformation zum Anordnungsmodell, zur Zulassung und zur Kostenübernahme psychologischer Psychotherapie. Eine ärztliche Anordnung ist erforderlich; die reguläre Anordnungsbefugnis ist auf bestimmte Qualifikationen begrenzt. Die Regeln sind nicht pauschal auf ärztliche Psychotherapie oder stationäre Leistungen übertragbar. Der konkrete Zugangsweg und die Kostenübernahme sind mit Praxis und Krankenversicherung zu klären.",
+        link: "https://www.bag.admin.ch/de/neuregelung-der-psychologischen-psychotherapie-ab-1-juli-2022",
+        linkLabel: "BAG",
+      },
+      {
         autoren: "Project Air Strategy",
         jahr: "laufend",
         titel:
@@ -549,6 +586,17 @@ const quellen: QuelleKategorie[] = [
           "Britische Leitlinie zur Information sowie praktischen, emotionalen und sozialen Unterstützung erwachsener unbezahlter Betreuungspersonen. Nicht Borderline-spezifisch und nicht ohne Weiteres auf Schweizer Rechtsansprüche übertragbar.",
         link: "https://www.nice.org.uk/guidance/ng150",
         linkLabel: "NICE NG150",
+      },
+      {
+        autoren: "National Institute for Health and Care Excellence (NICE)",
+        jahr: "2022",
+        titel:
+          "Self-harm: assessment, management and preventing recurrence (NG225)",
+        quelle: "NICE guideline NG225, veröffentlicht am 7. September 2022",
+        hinweis:
+          "Britische Leitlinie zur Versorgung nach Selbstverletzung, unabhängig von der vermuteten Absicht. Sie empfiehlt eine professionelle psychosoziale Beurteilung und gemeinsam erarbeitete Sicherheitspläne. Risikoskalen oder globale Einstufungen in niedriges, mittleres oder hohes Risiko sollen nicht zur Vorhersage von Suizid oder erneuter Selbstverletzung verwendet werden. Diese Fachaufgaben dürfen nicht auf Angehörige übertragen werden.",
+        link: "https://www.nice.org.uk/guidance/ng225/chapter/Recommendations",
+        linkLabel: "NICE NG225",
       },
       {
         autoren:

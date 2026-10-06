@@ -1,7 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
-import { pageGovernance } from "@/data/pageGovernance";
+import {
+  CURRENT_PUBLICATION_STATUS,
+  pageGovernance,
+} from "@/data/pageGovernance";
 
 const originalGenesung = { ...pageGovernance["/genesung"] };
 
@@ -21,8 +24,13 @@ describe("LastVerifiedBadge", () => {
     render(<LastVerifiedBadge path="/genesung" date="16.04.2026" />);
 
     expect(
-      screen.getByText("Dokumentierte Fachprüfung: 30.04.2026")
+      screen.getByText("Frühere Prüfangabe: 30.04.2026")
     ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        `Frühere Prüfangaben belegen keine Freigabe des aktuellen Stands. ${CURRENT_PUBLICATION_STATUS.notice}`
+      )
+    ).toBeVisible();
   });
 
   it("falls back to the explicit date when no governance metadata exists", () => {
@@ -47,8 +55,26 @@ describe("LastVerifiedBadge", () => {
 
     expect(
       screen.getByText(
-        "Kontaktabgleich: 22.09.2026 · erneute Prüfung ausstehend seit 24.09.2026"
+        "Früherer Kontaktabgleich: 22.09.2026 · erneute Prüfung ausstehend seit 24.09.2026"
       )
     ).toBeInTheDocument();
+    expect(
+      screen.getByText(/bestätigt keine heutige Erreichbarkeit/)
+    ).toBeVisible();
+  });
+
+  it("does not treat a text update as a clinical review when no review date is recorded", () => {
+    pageGovernance["/genesung"] = {
+      riskLevel: "medium",
+      editorialUpdated: "2026-10-06",
+    };
+
+    render(<LastVerifiedBadge path="/genesung" />);
+
+    expect(screen.getByText("Text aktualisiert: 06.10.2026")).toBeVisible();
+    expect(screen.queryByText(/Frühere Prüfangabe:/)).not.toBeInTheDocument();
+    expect(
+      screen.getByText(new RegExp(CURRENT_PUBLICATION_STATUS.notice))
+    ).toBeVisible();
   });
 });

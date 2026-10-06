@@ -1,4 +1,8 @@
-import { pageGovernance, type PageGovernance } from "@/data/pageGovernance";
+import {
+  CURRENT_PUBLICATION_STATUS,
+  pageGovernance,
+  type PageGovernance,
+} from "@/data/pageGovernance";
 
 type ReviewBadgeVariant = "compact" | "detailed";
 
@@ -26,8 +30,8 @@ export default function ReviewBadge({
   if (!meta) return null;
 
   const lastReviewed = meta.lastReviewed
-    ? `geprüft am ${formatDate(meta.lastReviewed)}`
-    : "Noch kein Reviewdatum gesetzt";
+    ? `${formatDate(meta.lastReviewed)} – frühere Prüfangabe im Projekt; kein Nachweis einer Freigabe für den aktuellen Stand`
+    : "Keine frühere Prüfangabe im Projekt vermerkt";
 
   const nextReviewDue = meta.nextReviewDue
     ? formatDate(meta.nextReviewDue)
@@ -53,8 +57,8 @@ export default function ReviewBadge({
   const summary = meta.editorialUpdated
     ? `Text aktualisiert: ${formatDate(meta.editorialUpdated)}`
     : meta.lastReviewed
-      ? `Fachlich geprüft: ${formatDate(meta.lastReviewed)}`
-      : "Fachlicher Review: Datum noch offen";
+      ? `Frühere Prüfangabe: ${formatDate(meta.lastReviewed)}`
+      : "Fachliche Prüfung: ausstehend";
 
   return (
     <details
@@ -62,7 +66,12 @@ export default function ReviewBadge({
       aria-label="Review-Informationen"
     >
       <summary className="review-badge__summary">
-        <span>{summary}</span>
+        <span>
+          {summary}
+          <span className="block text-xs font-normal">
+            Freigabe des aktuellen Stands ausstehend
+          </span>
+        </span>
         <span className="review-badge__summary-action">Details</span>
       </summary>
       <ReviewDetails
@@ -89,8 +98,13 @@ function ReviewDetails({
   return (
     <dl className="review-badge__details">
       <div className="review-badge__details-row">
-        <dt className="review-badge__term">Fachlicher Review:</dt>
+        <dt className="review-badge__term">Frühere Prüfangabe:</dt>
         <dd>{lastReviewed}</dd>
+      </div>
+
+      <div className="review-badge__details-row">
+        <dt className="review-badge__term">Aktueller Freigabestand:</dt>
+        <dd>{CURRENT_PUBLICATION_STATUS.notice}</dd>
       </div>
 
       {meta.editorialUpdated && (
@@ -103,9 +117,10 @@ function ReviewDetails({
       )}
       {meta.contactCheck && (
         <div className="review-badge__details-row">
-          <dt className="review-badge__term">Kontaktabgleich:</dt>
+          <dt className="review-badge__term">Früherer Kontaktabgleich:</dt>
           <dd>
-            {formatDate(meta.contactCheck.date)}: {meta.contactCheck.scope}.{" "}
+            {formatDate(meta.contactCheck.date)}: {meta.contactCheck.scope}.
+            Keine Bestätigung der heutigen Erreichbarkeit.{" "}
             <a
               className="editorial-link"
               href={meta.contactCheck.source}
@@ -132,8 +147,8 @@ function ReviewDetails({
 
       {owner && (
         <div className="review-badge__details-row">
-          <dt className="review-badge__term">Verantwortlich:</dt>
-          <dd>{owner}</dd>
+          <dt className="review-badge__term">Projektzuordnung:</dt>
+          <dd>{owner}; namentlich verantwortete Freigabe ausstehend</dd>
         </div>
       )}
     </dl>

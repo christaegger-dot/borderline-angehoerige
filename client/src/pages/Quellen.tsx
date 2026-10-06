@@ -617,7 +617,7 @@ const quellen: QuelleKategorie[] = [
           "Borderline personality disorder: recognition and management (Clinical guideline CG78)",
         quelle: "NICE, London",
         hinweis:
-          "Britische Leitlinie zu Erkennung und Behandlung der Borderline-Persönlichkeitsstörung. Veröffentlicht 2009, zuletzt überprüft am 30. Juli 2024 (rein präsentationelle Vereinfachung, keine inhaltliche Praxisänderung). Empfiehlt unter anderem DBT bei BPS und wiederholter Selbstverletzung. Ergänzt die internationale Leitlinien-Basis (APA, AWMF) um den NICE-Bezug.",
+          "Britische Leitlinie zu Erkennung und Behandlung der Borderline-Persönlichkeitsstörung. Veröffentlicht 2009, zuletzt überprüft am 30. Juli 2024 (rein präsentationelle Vereinfachung, keine inhaltliche Praxisänderung). Empfehlung 1.3.4.5 lautet, für Frauen mit Borderline, bei denen die Verringerung wiederholter Selbstverletzung ein vorrangiges Behandlungsziel ist, ein umfassendes DBT-Programm in Betracht zu ziehen. Diese Eingrenzung beschreibt den Geltungsbereich der ursprünglichen Empfehlung; sie begründet keine allgemeine Rangfolge der Verfahren und schliesst einen Nutzen für andere Personen nicht aus.",
         link: "https://www.nice.org.uk/guidance/cg78",
         linkLabel: "NICE CG78",
       },
@@ -666,7 +666,7 @@ const quellen: QuelleKategorie[] = [
         quelle:
           "Im Auftrag von und in Zusammenarbeit mit Stand by You Schweiz, Zürich",
         hinweis:
-          "Erste repräsentative Studie der Schweiz zur Rolle von Angehörigen und Vertrauten psychisch erkrankter Menschen (Befragung von 2'042 Personen, März 2024). Stand by You Schweiz ist die Nachfolgeorganisation der VASK Schweiz. Als Schweizer Kontext- und Häufigkeitsquelle herangezogen, nicht BPS-spezifisch.",
+          "Bericht vom März 2024 zur Rolle von Angehörigen und Vertrauten psychisch erkrankter Menschen. Die Daten wurden vom 14. bis 27. November 2023 erhoben; ausgewertet wurden 2'042 Personen. Grundgesamtheit ist die sprachlich integrierte Wohnbevölkerung der Deutschschweiz und der französischsprachigen Schweiz. Das Opt-in-Onlinepanel wurde nach Geschlecht, Alter und Bildungsgrad gewichtet; die Ergebnisse sind innerhalb dieses Geltungsbereichs und der Grenzen einer solchen Befragung einzuordnen. Stand by You Schweiz ist die Nachfolgeorganisation der VASK Schweiz. Als Schweizer Kontextquelle herangezogen, nicht BPS-spezifisch.",
         link: "https://stand-by-you.ch/wp-content/uploads/2024/03/sby_studie_final.pdf",
         linkLabel: "Studienbericht (PDF)",
       },

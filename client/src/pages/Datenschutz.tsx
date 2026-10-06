@@ -14,10 +14,10 @@ import SEO from "@/components/SEO";
 import { pageGovernance } from "@/data/pageGovernance";
 
 export default function Datenschutz() {
-  const lastReviewed = pageGovernance["/datenschutz"]?.lastReviewed;
+  const editorialUpdated = pageGovernance["/datenschutz"]?.editorialUpdated;
 
-  const formattedReviewDate = lastReviewed
-    ? lastReviewed.split("-").reverse().join(".")
+  const formattedEditorialDate = editorialUpdated
+    ? editorialUpdated.split("-").reverse().join(".")
     : null;
 
   return (
@@ -320,7 +320,8 @@ export default function Datenschutz() {
 
         <EditorialSectionBlock label="Stand" title="Aktualität" rule>
           <p className="secondary-page-body">
-            Stand der Erklärung: {formattedReviewDate ?? "nicht angegeben"}
+            Redaktioneller Stand der Erklärung:{" "}
+            {formattedEditorialDate ?? "nicht angegeben"}
           </p>
         </EditorialSectionBlock>
 

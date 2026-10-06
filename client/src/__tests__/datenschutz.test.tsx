@@ -88,11 +88,11 @@ describe("Datenschutz", () => {
     );
   });
 
-  it("links to current emergency contacts and keeps the stand in sync", () => {
+  it("links to current emergency contacts and separates the text update from historical review", () => {
     render(<Datenschutz />);
 
-    const lastReviewed = pageGovernance["/datenschutz"]?.lastReviewed;
-    const expectedDate = lastReviewed?.split("-").reverse().join(".");
+    const editorialUpdated = pageGovernance["/datenschutz"]?.editorialUpdated;
+    const expectedDate = editorialUpdated?.split("-").reverse().join(".");
 
     const emergencyLinks = screen.getAllByRole("link", {
       name: /Akute Hilfe und Notfallkontakte/i,
@@ -102,7 +102,18 @@ describe("Datenschutz", () => {
       expect(link).toHaveAttribute("href", "/soforthilfe");
     }
     expect(
-      screen.getByText(new RegExp(`Stand der Erklärung: ${expectedDate}`))
+      screen.getByText(
+        new RegExp(`Redaktioneller Stand der Erklärung: ${expectedDate}`)
+      )
     ).toBeInTheDocument();
+    expect(
+      screen.getByText(/30\.04\.2026 – frühere Prüfangabe im Projekt/)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("Freigabe des aktuellen Stands ausstehend")
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText("Stand der Erklärung: 30.04.2026")
+    ).not.toBeInTheDocument();
   });
 });

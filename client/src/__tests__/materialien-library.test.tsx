@@ -1,6 +1,7 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { Router } from "wouter";
 import { describe, expect, it } from "vitest";
+import { HANDOUT_EDITORIAL_DRAFT_NOTE } from "@/content/handoutGovernance";
 import MaterialienLibrarySection from "@/sections/MaterialienLibrarySection";
 
 describe("MaterialienLibrarySection", () => {
@@ -12,6 +13,11 @@ describe("MaterialienLibrarySection", () => {
     );
 
     expect(screen.getByText("Alle Materialien")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Text- und Druckfassungen können unterschiedliche Stände haben/
+      )
+    ).toBeInTheDocument();
     expect(
       screen.queryByRole("heading", {
         name: "Notfallkarte Zürich – Psychische Krise",
@@ -77,11 +83,28 @@ describe("MaterialienLibrarySection", () => {
         name: /Textversion lesen: Schuld, Verantwortung und was dazwischen liegt/i,
       })
     ).toHaveAttribute("href", "/materialien/text/schuld-verantwortung");
+    const draftTextLink = screen.getByRole("link", {
+      name: /Textversion lesen: Radikale Akzeptanz – die Realität anerkennen und Handlungsspielraum finden/i,
+    });
+    expect(draftTextLink).toHaveAttribute(
+      "href",
+      "/materialien/text/radikale-akzeptanz"
+    );
+    const draftCard = draftTextLink.closest("article");
+    expect(draftCard).not.toBeNull();
     expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Radikale Akzeptanz – die Realität anerkennen und Handlungsspielraum finden/i,
+      within(draftCard!).getByRole("img", {
+        name: /Radikale Akzeptanz.*Entwurf.*Freigabe ausstehend/i,
       })
-    ).toHaveAttribute("href", "/materialien/text/radikale-akzeptanz");
+    ).toBeInTheDocument();
+    expect(
+      within(draftCard!).getByText(
+        `Materialstand: ${HANDOUT_EDITORIAL_DRAFT_NOTE}`
+      )
+    ).toBeInTheDocument();
+    expect(
+      within(draftCard!).queryByText(/Textversion aktuell/)
+    ).not.toBeInTheDocument();
     expect(
       screen.queryByRole("button", {
         name: /Radikale Akzeptanz.*öffnen/i,

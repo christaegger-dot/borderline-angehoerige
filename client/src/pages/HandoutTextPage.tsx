@@ -129,6 +129,8 @@ export default function HandoutTextPage({
     "genesung-zahlen",
     "kinder",
     "stopp-technik",
+    "warnsignale",
+    "spiegeln-statt-aufsaugen",
   ].includes(handoutMeta.id);
   const pageKicker = handout?.kicker ?? "Textversion";
 
@@ -188,8 +190,10 @@ export default function HandoutTextPage({
           {revisedWebCopy && (
             <p className="mt-6 border-l pl-4" style={bodyStyle}>
               Die Textfassung wurde redaktionell überarbeitet; das Datum steht
-              unter «Quelle & Stand». Daraus folgt keine Freigabe einer PDF-
-              oder Bildfassung. Die erneute fachliche Prüfung ist ausstehend.
+              unter «Quelle & Stand». PDF und Bildvorschau können einen anderen
+              Textstand enthalten. Nutzen Sie für die überarbeiteten Inhalte
+              diese Textfassung. Daraus folgt keine Freigabe einer PDF- oder
+              Bildfassung. Die erneute fachliche Prüfung ist ausstehend.
             </p>
           )}
           {visualPublished && openHref && downloadHref ? (

@@ -17,7 +17,7 @@ function readSitemap() {
 }
 
 function parseSitemapEntries(xml: string) {
-  const entries = new Map<string, { lastmod: string }>();
+  const entries = new Map<string, { lastmod?: string }>();
 
   const urlBlocks = xml.match(/<url\b[\s\S]*?<\/url\s*>/g) ?? [];
 
@@ -28,7 +28,7 @@ function parseSitemapEntries(xml: string) {
     )?.[1];
     const routePath = url?.replace(SITE_URL, "");
 
-    if (routePath && lastmod) {
+    if (routePath) {
       entries.set(routePath, { lastmod });
     }
   }
@@ -44,20 +44,24 @@ describe("sitemap", () => {
     expect(entries.has("/verstehen/begleiterkrankungen")).toBe(true);
   });
 
-  it("keeps every governance-backed sitemap route in sync with page governance lastReviewed dates", () => {
+  it("uses documented text updates for lastmod and omits dates without a modification record", () => {
     const entries = parseSitemapEntries(readSitemap());
-    const governedPaths = Object.entries(pageGovernance)
-      .filter(([, meta]) => Boolean(meta.lastReviewed))
-      .map(([routePath]) => routePath);
 
-    for (const routePath of governedPaths) {
+    for (const [routePath, meta] of Object.entries(pageGovernance)) {
       expect(
         entries.has(routePath),
         `${routePath} is missing from sitemap`
       ).toBe(true);
-      expect(entries.get(routePath)?.lastmod).toBe(
-        pageGovernance[routePath]?.lastReviewed
-      );
+      expect(entries.get(routePath)?.lastmod).toBe(meta.editorialUpdated);
+    }
+
+    for (const [routePath, entry] of entries) {
+      if (!pageGovernance[routePath]?.editorialUpdated) {
+        expect(
+          entry.lastmod,
+          `${routePath} has no documented text update`
+        ).toBeUndefined();
+      }
     }
   });
 });

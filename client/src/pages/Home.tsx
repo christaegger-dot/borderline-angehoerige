@@ -36,22 +36,17 @@ export default function Home() {
             </p>
           </div>
           <nav className="home-puk__paths" aria-label="Welcher Einstieg passt?">
-            <AppLink
-              href="/soforthilfe"
-              className="home-puk__path home-puk__path--crisis"
-            >
-              <strong>Akute Hilfe</strong>
-              <span>
-                Notruf und Krisenberatung – auch wenn Sie unsicher sind.
-              </span>
-            </AppLink>
-            <AppLink href="/wegweiser" className="home-puk__path">
-              <strong>Eine konkrete Situation</strong>
-              <span>Den nächsten hilfreichen Schritt finden.</span>
-            </AppLink>
             <AppLink href="/verstehen" className="home-puk__path">
               <strong>Borderline verstehen</strong>
               <span>Erleben, Behandlung und Angehörigenrollen einordnen.</span>
+            </AppLink>
+            <AppLink href="/unterstuetzen/alltag" className="home-puk__path">
+              <strong>Im Alltag unterstützen</strong>
+              <span>Absprachen, eigene Grenzen und Unterstützung klären.</span>
+            </AppLink>
+            <AppLink href="/selbstfuersorge" className="home-puk__path">
+              <strong>Auf sich achten</strong>
+              <span>Eigene Belastung wahrnehmen und Entlastung finden.</span>
             </AppLink>
           </nav>
           <p className="home-puk__more">
@@ -64,6 +59,13 @@ export default function Home() {
             <AppLink href="/selbsttest" className="editorial-link">
               Passende Inhalte finden
             </AppLink>
+          </p>
+          <p className="home-puk__more">
+            Bei akuter Gefahr oder Unsicherheit:{" "}
+            <AppLink href="/soforthilfe" className="editorial-link">
+              Akute Hilfe und Notfallkontakte
+            </AppLink>
+            .
           </p>
         </div>
       </section>

@@ -28,6 +28,9 @@ Die Dokumente sind bewusst nicht als juristische Formalität geschrieben, sonder
     umgesetzte Quellen- und Textkorrekturen, technische Prüfungen und weiterhin
     offene Kontakt- und Freigabeprüfungen; die technischen Ausmusterungen aus
     PR #652 bleiben erhalten. Daraus folgt keine fachliche Freigabe von #631.
+14. [Weitere Inhaltskorrekturen vom 06.10.2026](14-inhaltsreview-nachbesserungen-2026-10-06.md) —
+    verbleibende Text-, Navigations-, Datums- und Statusfehler, präzisierte
+    Quellen sowie acht weitere begrenzte Nummernabgleiche.
 
 Paketbezogenes Protokoll:
 

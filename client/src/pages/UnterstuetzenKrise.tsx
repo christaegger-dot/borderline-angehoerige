@@ -166,8 +166,8 @@ const frueherkennung = [
     sub: "Gemeinsam klären, ob und wie Hinweise, Stichwörter oder Kontakte in einer Belastungssituation genutzt werden sollen",
   },
   {
-    label: "Notfallkarte aktualisieren",
-    sub: "Neue Erkenntnisse eintragen, Kontakte überprüfen",
+    label: "Vereinbarte Hilfewege überprüfen",
+    sub: "Mit dem Behandlungsteam klären, welche professionelle Unterstützung vorgesehen und erreichbar ist",
   },
   {
     label: "Fachliche Unterstützung prüfen",
@@ -211,24 +211,17 @@ export default function UnterstuetzenKrise() {
 
       <UnterstuetzenSubNav />
 
-      {/* ── Sicherheits-Banner: bleibt prominent (sicherheitskritisch) ── */}
-      <section className="bg-alert py-3 sm:py-4">
-        <div className="container">
-          <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center sm:gap-4">
-            <p className="text-sm leading-relaxed text-white sm:text-left sm:text-base">
-              Bei Sorge um Sicherheit oder Unsicherheit finden Sie unter «Akute
-              Hilfe und Notfallkontakte» passende Anlaufstellen. Sie müssen die
-              Dringlichkeit nicht allein beurteilen.
-            </p>
-            <AppLink
-              href="/soforthilfe"
-              className="rounded bg-white px-3 py-2 text-sm font-medium text-alert-dark transition-colors hover:bg-white/90"
-            >
-              Soforthilfe nach Altersgruppe
-            </AppLink>
-          </div>
-        </div>
-      </section>
+      <p className="container py-3 text-sm leading-relaxed text-muted-foreground">
+        Die Fachstelle Angehörigenarbeit bietet Beratung und Orientierung, aber
+        keine Krisenintervention. Bei akuter Gefahr oder wenn Sie die
+        Dringlichkeit nicht sicher einschätzen können, wenden Sie sich an den
+        zuständigen Notfalldienst. Hinweise zu passenden Anlaufstellen finden
+        Sie unter{" "}
+        <AppLink href="/soforthilfe" className="editorial-link">
+          «Akute Hilfe und Notfallkontakte»
+        </AppLink>
+        .
+      </p>
 
       {/* ── 1 Hero ── EditorialSection ohne Aside (Sub-Page-Identität) */}
       <EditorialSection
@@ -742,9 +735,10 @@ export default function UnterstuetzenKrise() {
             >
               In der akuten Situation ist klares Denken schwer. Der{" "}
               <Link href="/wegweiser" className="editorial-link">
-                Situations-Wegweiser «Was tun wenn…»
+                Situations-Wegweiser
               </Link>{" "}
-              führt Sie Schritt für Schritt durch verschiedene Krisenszenarien.
+              verweist bei Sorge um Sicherheit oder Unsicherheit auf einen
+              gemeinsamen professionellen Hilfeweg.
             </p>
           </div>
         </EditorialSection.Body>
@@ -811,15 +805,15 @@ export default function UnterstuetzenKrise() {
             links={[
               {
                 href: "/soforthilfe",
-                title: "Soforthilfe & Notfallnummern",
+                title: "Akute Hilfe und Notfallkontakte",
                 description:
-                  "Akute Notfall-Kontakte, Krisenkarten und 24/7-Hotlines für Suizidgedanken oder Selbstverletzung.",
+                  "Zentrale Anlaufstellen bei akuter Gefahr oder Unsicherheit, mit regionaler Zuständigkeit und Kontaktangaben.",
               },
               {
                 href: "/wegweiser",
                 title: "Situations-Wegweiser",
                 description:
-                  "Interaktive Schritt-für-Schritt-Hilfe für konkrete Krisenszenarien.",
+                  "Ein gemeinsamer professioneller Hilfeweg bei Sorge um Sicherheit oder Unsicherheit.",
               },
               {
                 href: "/kommunizieren",

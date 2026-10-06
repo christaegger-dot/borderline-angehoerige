@@ -2,7 +2,7 @@ export type RiskLevel = "high" | "medium" | "low";
 
 export interface PageGovernance {
   riskLevel: RiskLevel;
-  lastReviewed?: string; // YYYY-MM-DD: documented clinical review, never a build date
+  lastReviewed?: string; // YYYY-MM-DD: historical project record; not approval of the current version
   editorialUpdated?: string; // Text update; not a new clinical sign-off
   contactCheck?: { date: string; scope: string; source: string };
   nextReviewDue?: string; // YYYY-MM-DD
@@ -10,6 +10,16 @@ export interface PageGovernance {
 }
 
 const DEFAULT_OWNER = "Fachstelle Angehörigenarbeit";
+
+// Current project decision: docs/governance/12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md.
+// Historical review and contact-check dates do not replace the outstanding sign-off.
+export const CURRENT_PUBLICATION_STATUS = {
+  clinicalReview: "pending",
+  institutionalDecision: "pending",
+  publicationApproval: "pending",
+  notice:
+    "Fachliche Prüfung, institutioneller Entscheid und Publikationsfreigabe für den aktuellen Stand sind ausstehend.",
+} as const;
 
 export const pageGovernance: Record<string, PageGovernance> = {
   "/": {
@@ -34,7 +44,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/soforthilfe": {
-    editorialUpdated: "2026-10-05",
+    editorialUpdated: "2026-10-06",
     contactCheck: {
       date: "2026-09-22",
       scope: "Die drei PUK-Notfallnummern (Kinder, Erwachsene, ab 65)",
@@ -47,14 +57,14 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/unterstuetzen/krise": {
-    editorialUpdated: "2026-10-05",
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
   "/verstehen/diagnostik": {
-    editorialUpdated: "2026-10-05",
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
@@ -68,7 +78,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/verstehen/begleiterkrankungen": {
-    editorialUpdated: "2026-10-05",
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
@@ -95,21 +105,21 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/quellen": {
-    editorialUpdated: "2026-10-05",
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
   "/faq": {
-    editorialUpdated: "2026-10-02",
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-04-16",
     nextReviewDue: "2026-10-16",
     owner: DEFAULT_OWNER,
   },
   "/unterstuetzen/therapie": {
-    editorialUpdated: "2026-10-02",
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-04-16",
     nextReviewDue: "2026-10-16",
@@ -161,6 +171,16 @@ export const pageGovernance: Record<string, PageGovernance> = {
     riskLevel: "medium",
     lastReviewed: "2026-04-16",
     nextReviewDue: "2027-04-16",
+    owner: DEFAULT_OWNER,
+  },
+  "/glossar": {
+    editorialUpdated: "2026-10-06",
+    riskLevel: "medium",
+    owner: DEFAULT_OWNER,
+  },
+  "/uebungen": {
+    editorialUpdated: "2026-10-06",
+    riskLevel: "high",
     owner: DEFAULT_OWNER,
   },
 };

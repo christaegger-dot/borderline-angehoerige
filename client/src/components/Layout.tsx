@@ -119,8 +119,8 @@ export default function Layout({ children }: LayoutProps) {
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 Diese Website ersetzt keine professionelle Beratung oder
-                Therapie. Die Fachstelle Angehörigenarbeit bietet keine
-                Krisenintervention.
+                Therapie. Die Fachstelle Angehörigenarbeit bietet Beratung und
+                Orientierung, aber keine Krisenintervention.
               </p>
               <p className="mt-3 text-sm leading-relaxed">
                 Bei akuter Gefahr oder wenn Sie die Dringlichkeit nicht sicher
@@ -136,8 +136,9 @@ export default function Layout({ children }: LayoutProps) {
                 .
               </p>
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-                Schweiz · Kanton Zürich. Für andere Regionen bitte lokale
-                Notrufnummern nutzen.
+                Schweiz · Schwerpunkt Kanton Zürich. In anderen Kantonen gelten
+                die dortigen Versorgungswege; ausserhalb der Schweiz die lokalen
+                Notrufnummern.
               </p>
             </div>
           </div>

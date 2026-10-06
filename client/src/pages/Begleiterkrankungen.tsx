@@ -435,10 +435,12 @@ export default function Begleiterkrankungen() {
             <p>
               Eine wichtige Klarstellung: Depressive Episoden entstehen durch
               ein Zusammenspiel biologischer, psychischer und sozialer Faktoren.
-              Angehörige sind nicht für die Erkrankung verantwortlich und müssen
-              sie nicht verhindern können. Beziehungen können das Befinden
-              dennoch beeinflussen; Veränderungen im Miteinander sind deshalb
-              kein Beleg für Schuld oder Ursache.
+              Aus einer Diagnose lässt sich keine persönliche Schuld ableiten.
+              Angehörige müssen die Erkrankung weder verhindern noch heilen.
+              Beziehungen können das Befinden dennoch beeinflussen;
+              Verantwortung für konkrete verletzende oder gewalttätige
+              Handlungen bleibt davon getrennt. Veränderungen im Miteinander
+              sind allein kein Beleg für die Ursache einer Erkrankung.
             </p>
             <p>
               Manche Angehörige erleben depressive Phasen als besonders

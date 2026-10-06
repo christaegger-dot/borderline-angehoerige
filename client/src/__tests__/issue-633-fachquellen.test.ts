@@ -78,7 +78,7 @@ describe("Issue 633 fachliche Quellen und Tatsachen", () => {
       "nicht durch Ihr Verhalten verursachen oder verhindern"
     );
     expect(begleiterkrankungen).toContain(
-      "Angehörige sind nicht für die Erkrankung verantwortlich"
+      "Aus einer Diagnose lässt sich keine persönliche Schuld ableiten"
     );
     expect(begleiterkrankungen).toContain(
       "Beziehungen können das Befinden dennoch beeinflussen"

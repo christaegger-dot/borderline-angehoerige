@@ -10,8 +10,9 @@
  * Regeln:
  * - NO-MIX: PUK ≠ USZ ≠ UZH
  * - Keine neuen Kontakte ohne explizite Freigabe
- * - INFO enthält nur Einträge, die im Forensik-Kontaktregister verifiziert sind
- *   (Fundstelle + Quelle). sourceRef ist Pflichtfeld.
+ * - sourceRef benennt interne Fundstellen, keine externe Verifikation.
+ *   Externe Quellen und der Umfang eines aktuellen Abgleichs stehen getrennt
+ *   in KONTAKT_NACHWEISE. Ein Nummernabgleich ist keine Publikationsfreigabe.
  * - Kategorien: ROT (Notruf), GELB (PUK 24/7), GRUEN (Entlastung), INFO (Beratung)
  * - 145 Tox Info Suisse: auf Website (Soforthilfe Block 4) UND Notfallkarte
  * - 143 ist GRUEN, niemals ROT. Niemals gleichrangig neben 144/117.
@@ -27,11 +28,13 @@
  */
 
 /**
- * QUELLEN-VERIFIKATION (Notfallnummern)
+ * HISTORISCHER QUELLENABGLEICH (Notfallnummern)
  *
  * Verifikationsdatum: 30.05.2026. Abgleich der sicherheitskritischen Notfall-
  * nummern gegen zwei offizielle Quellen — reiner Verifikations-Durchlauf, keine
  * Werte geaendert.
+ * Dieser historische Eintrag ist kein erneuter Abgleich im Oktober 2026 und
+ * keine dokumentierte fachliche oder institutionelle Publikationsfreigabe.
  *
  * Quelle A — PUK Zuerich, https://www.pukzh.ch (Notfall Zentrale)
  * Quelle B — Suizidpraevention Kanton Zuerich,
@@ -69,12 +72,27 @@ export interface Kontakt {
   label: string;
   /** Einzeiliger Hinweistext */
   hinweis: string;
-  /** Forensik-Fundstelle als Nachweis, z. B. "public/soforthilfe/index.html" */
+  /** Interne Fundstelle; kein externer Nummern- oder Freigabenachweis. */
   sourceRef: string;
   /** Verfügbarkeit, z. B. "24/7" */
   verfuegbarkeit?: string;
   /** Zielgruppe, z. B. "bis 18 Jahre" */
   fuerWen?: string;
+}
+
+/** Ein aktueller Nummernabgleich bestätigt weder Öffnungszeiten noch Freigabe. */
+export interface KontaktNachweis {
+  /** Region des Dienstes; keine Zusage zur Aufnahme oder zum Einzugsgebiet. */
+  region: string;
+  /** Offizielle Anbieterquelle; eine URL allein bedeutet keine Verifikation. */
+  primarySourceUrl: string | null;
+  /** Datum des unabhängig dokumentierten Abgleichs, nicht des Code-Updates. */
+  independentCheckDate: string | null;
+  /** Welche einzelne Angabe geprüft wurde; ungeprüfte Angaben bleiben offen. */
+  independentCheckScope: string | null;
+  /** Benannte fachliche Zuständigkeit; null bedeutet noch nicht zugewiesen. */
+  namedOwner: string | null;
+  status: "pending" | "number-confirmed";
 }
 
 export interface EmailKontakt {
@@ -529,6 +547,116 @@ export const WEBSITE_ROT = ROT.filter(k => k.id !== "ROT_145");
 /** Alle Kontakte flach */
 export const ALLE_KONTAKTE: Kontakt[] = [...ROT, ...GELB, ...GRUEN, ...INFO];
 
+function pendingKontaktNachweis(
+  region: string,
+  primarySourceUrl: string | null = null
+): KontaktNachweis {
+  return {
+    region,
+    primarySourceUrl,
+    independentCheckDate: null,
+    independentCheckScope: null,
+    namedOwner: null,
+    status: "pending",
+  };
+}
+
+const pukPrimarySourceUrl = urlByIdStrict("URL_PUK").url;
+
+/**
+ * Getrennte Nachweise für alle 27 Telefonkontakte.
+ *
+ * Stand 06.10.2026: Nur die drei unten ausdrücklich gekennzeichneten Nummern
+ * wurden auf den offiziellen Anbieterwebsites unabhängig bestätigt. Der
+ * Abgleich umfasst keine Öffnungszeiten und keine Publikationsfreigabe.
+ * Die historischen sourceRef-Fundstellen und der Mai-Abgleich oben ersetzen
+ * diese Nachweise nicht. Fachliche Zuständigkeiten sind noch zu benennen.
+ */
+export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
+  ROT_144: pendingKontaktNachweis("Schweiz"),
+  ROT_117: pendingKontaktNachweis("Schweiz"),
+  ROT_112: pendingKontaktNachweis("Schweiz"),
+  ROT_145: {
+    region: "Schweiz",
+    primarySourceUrl: "https://www.toxinfo.ch/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Telefonnummer 145 auf der Anbieterwebsite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  GELB_PUK_KJP: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
+  GELB_PUK_ERW: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
+  GELB_PUK_65: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
+  GRUEN_143: pendingKontaktNachweis("Schweiz"),
+  GRUEN_147: pendingKontaktNachweis(
+    "Schweiz",
+    "https://www.147.ch/de/info/darum-kannst-du-uns-vertrauen/"
+  ),
+  GRUEN_ELTERN: pendingKontaktNachweis("Schweiz"),
+  INFO_KIZ: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
+  INFO_AERZTEFON: pendingKontaktNachweis("Kanton Zürich"),
+  INFO_OPFERHILFE_142: {
+    region: "Schweiz",
+    primarySourceUrl: "https://www.opferhilfe-schweiz.ch/de/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Telefonnummer 142 auf der offiziellen Website der Opferhilfe Schweiz bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  INFO_OPFERHILFE_ZH_24_7: pendingKontaktNachweis("Kanton Zürich"),
+  INFO_FORENSIC_NURSES: pendingKontaktNachweis("Kanton Zürich"),
+  INFO_OPFERBERATUNG_ZH: pendingKontaktNachweis("Kanton Zürich"),
+  INFO_PUK_ZENTRALE: pendingKontaktNachweis(
+    "Kanton Zürich",
+    pukPrimarySourceUrl
+  ),
+  INFO_PUK_KJPP_HYPE: pendingKontaktNachweis(
+    "Kanton Zürich",
+    urlByIdStrict("URL_PUK_KJP_PERSOENLICHKEITSSTOERUNGEN").url
+  ),
+  INFO_FACHSTELLE: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
+  INFO_STANDBYYOU: {
+    region: "Schweiz",
+    primarySourceUrl: "https://stand-by-you.ch/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte HelpLine-Nummer 0800 840 400 auf der Anbieterwebsite bestätigt; keine Prüfung von Öffnungszeiten oder fachlicher Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  INFO_SELBSTHILFE_CH: pendingKontaktNachweis("Kanton Zürich"),
+  INFO_PROMENTE: pendingKontaktNachweis(
+    "Schweiz",
+    urlByIdStrict("URL_PROMENTE").url
+  ),
+  INFO_VASK_ZH: pendingKontaktNachweis(
+    "Kanton Zürich",
+    urlByIdStrict("URL_VASK_ZH").url
+  ),
+  INFO_PUK_DBT: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
+  INFO_IPW: pendingKontaktNachweis(
+    "Kanton Zürich",
+    urlByIdStrict("URL_IPW").url
+  ),
+  INFO_SANATORIUM_KILCHBERG: pendingKontaktNachweis(
+    "Kanton Zürich",
+    urlByIdStrict("URL_SANATORIUM_KILCHBERG").url
+  ),
+};
+
+/** Getrennten Quellen- und Prüfstatus über die bestehende Kontakt-ID abrufen. */
+export function kontaktNachweisById(id: string): KontaktNachweis | undefined {
+  return KONTAKT_NACHWEISE[id];
+}
+
+export function kontaktNachweisByIdStrict(id: string): KontaktNachweis {
+  const nachweis = kontaktNachweisById(id);
+  if (!nachweis) throw new Error(`Kontaktnachweis nicht gefunden: "${id}"`);
+  return nachweis;
+}
+
 /** Kontakt nach ID finden */
 export function kontaktById(id: string): Kontakt | undefined {
   return ALLE_KONTAKTE.find(k => k.id === id);
@@ -604,6 +732,43 @@ export function validateKontakte(): void {
     }
     if (k.id === "GRUEN_143" && k.kategorie !== "gruen") {
       throw new Error("143 muss gruen sein");
+    }
+  }
+  validateKontakteCoverage();
+}
+
+/** Fehlende, verwaiste oder widersprüchliche Telefonkontakt-Nachweise abweisen. */
+export function validateKontakteCoverage(): void {
+  const kontaktIds = new Set(ALLE_KONTAKTE.map(k => k.id));
+  for (const id of Array.from(kontaktIds)) {
+    const nachweis = kontaktNachweisById(id);
+    if (!nachweis) throw new Error(`Kontakt ohne Kontaktnachweis: ${id}`);
+    if (!nachweis.region.trim()) {
+      throw new Error(`Kontaktnachweis ohne Region: ${id}`);
+    }
+    if (
+      nachweis.status === "number-confirmed" &&
+      (!nachweis.primarySourceUrl ||
+        !nachweis.independentCheckDate ||
+        !nachweis.independentCheckScope?.trim())
+    ) {
+      throw new Error(
+        `Nummernbestätigung ohne Quelle, Datum oder Umfang: ${id}`
+      );
+    }
+    if (
+      nachweis.status === "pending" &&
+      (nachweis.independentCheckDate !== null ||
+        nachweis.independentCheckScope !== null)
+    ) {
+      throw new Error(
+        `Offener Kontaktnachweis mit behauptetem Abgleich: ${id}`
+      );
+    }
+  }
+  for (const id of Object.keys(KONTAKT_NACHWEISE)) {
+    if (!kontaktIds.has(id)) {
+      throw new Error(`Kontaktnachweis ohne Kontakt: ${id}`);
     }
   }
 }

@@ -9,6 +9,7 @@ import {
 import KommunikationsUebung from "@/components/interactive/KommunikationsUebung";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
 
@@ -57,6 +58,7 @@ export default function Uebungsszenarien() {
             hilfreichere und weniger hilfreiche Reaktionen. Diese Übungen zeigen
             bewährte Muster, die Sie für Ihre eigene Situation anpassen können.
           </p>
+          <ReviewBadge path="/uebungen" className="mt-4" />
         </header>
 
         <EditorialSectionBlock label="Praxis" title="Interaktive Szenarien">

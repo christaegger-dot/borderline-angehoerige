@@ -76,28 +76,29 @@ export const handoutTextVersions = [
   createHandoutTextVersion("anspannungskurve", {
     kicker: "Textversion",
     summary:
-      "Die Anspannungskurve hilft einzuschätzen, wann ein Gespräch möglich ist und wann zuerst Ruhe, weniger Druck oder eine Pause hilfreicher sind.",
+      "Die Anspannungskurve ist eine redaktionelle Orientierung für Gespräche unter Belastung. Ob ein Gespräch gerade möglich und gewünscht ist, lässt sich daraus nicht sicher ablesen.",
     intro: [
-      "Nicht jedes Gespräch ist in jedem Moment möglich. Wenn Anspannung steigt, wird Zuhören schwerer, Denken enger und Perspektivwechsel seltener erreichbar.",
-      "Die Kurve unterscheidet Rückzug, Gesprächsfähigkeit und zu viel Alarm. Sie unterstützt Angehörige dabei, nicht weiter zu drücken, wenn gerade wenig ankommt.",
+      "Nicht jedes Gespräch ist in jedem Moment möglich. Hohe Anspannung kann Zuhören, Abwägen und Perspektivwechsel erschweren. Wie sich das zeigt, ist individuell und von aussen nicht sicher erkennbar.",
+      "Die Kurve stellt Rückzug, Gespräch und Alarm beispielhaft dar. Sie ist kein validiertes Messinstrument und keine Beurteilung des Zustands einer Person. Fragen Sie nach, wenn es möglich und sicher ist, und beachten Sie auch Ihren eigenen Gesprächswunsch und Ihre Grenze.",
     ],
     sections: [
       {
         title: "Merksatz",
         calloutTitle: "Zentraler Satz des Handouts",
-        calloutText: "Wenn die Anspannung steigt, kommen weniger Worte an.",
+        calloutText:
+          "Bei hoher Anspannung können Worte schwerer ankommen. Sie dürfen eine Pause machen oder das Gespräch beenden.",
       },
       {
         title: "Rückzug",
         calloutTitle: "Gerade kommt wenig an",
         calloutText:
-          "Schweigen, Leere, Wegsehen, Erstarren oder innerer Rückzug können zeigen: Mehr Druck hilft jetzt nicht.",
+          "Schweigen, Wegsehen oder Erstarren können unterschiedliche Gründe haben. Sie erlauben keine sichere Einschätzung der Anspannung oder Gesprächsfähigkeit. Sie dürfen Druck vermeiden und Raum lassen.",
       },
       {
         title: "Im Gespräch",
         calloutTitle: "Wir können sprechen",
         calloutText:
-          "Zuhören, kurze Sätze, Perspektivwechsel und Absprachen sind eher erreichbar.",
+          "Wenn beide Seiten möchten und ein respektvolles Gespräch möglich ist, können kurze Sätze, Zuhören und Absprachen hilfreich sein. Ruhiges Auftreten allein zeigt nicht sicher, wie es einer Person geht.",
       },
       {
         title: "Zu viel Alarm",
@@ -134,23 +135,24 @@ export const handoutTextVersions = [
         ],
       },
       {
-        title: "Warum Pausen helfen",
+        title: "Was eine Pause ermöglichen kann",
         bullets: [
-          "Pausen senken Anspannung und öffnen wieder mehr Spielraum für Zuhören und Denken.",
+          "Eine Pause kann entlasten und Raum zum Zuhören und Denken schaffen. Ihre Wirkung ist individuell; sie kann zunächst auch Unsicherheit auslösen.",
           "Eine Pause kann Selbstschutz sein. Sie braucht weder ein Rückkehrversprechen noch eine Rechtfertigung.",
           "Ein späterer Kontakt ist möglich, wenn beide Seiten ihn möchten und er sicher erscheint.",
         ],
       },
       {
         title: "Schutzsatz",
-        calloutTitle: "Erst wieder ansprechbar werden",
-        calloutText: "Erst wieder ansprechbar werden – dann klären.",
+        calloutTitle: "Ein Gespräch braucht Bereitschaft und Sicherheit",
+        calloutText:
+          "Klären Sie später, wenn beide Seiten sprechen möchten und können. Sie müssen keine Beruhigung erreichen oder einen neuen Kontakt versprechen.",
       },
     ],
     sourceLine:
-      "Quellen: Linehan, M. M.; Carpenter/Trull; NICE CG78; Hoffman, P. D. et al. (2005), Family Connections; Siegel/Ogden als didaktisches Modell; Stand by You / Sotomo (2024).",
+      "Fachliche Bezugspunkte: Linehan, M. M.; Carpenter/Trull; NICE CG78; Hoffman, P. D. et al. (2005), Family Connections; Siegel/Ogden als didaktisches Modell; Stand by You / Sotomo (2024). Kurve und Beispiele: eigene redaktionelle Orientierung, kein validiertes Messinstrument.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 25.05.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Redaktionell aktualisiert: 06.10.2026; fachlich-redaktionelle Freigabe ausstehend.",
   }),
   createHandoutTextVersion("wenn-worte-treffen", {
     kicker: "Textversion",
@@ -343,10 +345,10 @@ export const handoutTextVersions = [
   createHandoutTextVersion("pause-statt-streit", {
     kicker: "Textversion",
     summary:
-      "Nicht jede Anspannung ist noch gesprächsfähig. Das Handout unterscheidet stabil, Warnstufe und Eskalation und zeigt, wann Sie stoppen sollten.",
+      "Das Handout zeigt Beispiele für ruhigere und belastete Gespräche. Sie dürfen ein Gespräch unterbrechen oder beenden, wenn Sie eine Pause oder Schutz brauchen.",
     intro: [
-      "Pause statt Streit hilft, Kipppunkte früher zu erkennen. Der Schwerpunkt liegt darauf, rechtzeitig auszusteigen, bevor ein Gespräch beide Seiten weiter verletzt.",
-      "Sie finden drei Zustände, die Kernaussage, eine kurze Orientierung und drei praktische Hinweise für den Alltag.",
+      "Die Begriffe «stabil», «Warnstufe» und «Eskalation» sind eine redaktionelle Orientierung. Sie beschreiben keine verbindlichen Stufen und erlauben keine sichere Beurteilung des inneren Zustands einer Person. Eine Pause kann entlasten; ihre Wirkung ist individuell.",
+      "Sie finden beispielhafte Beobachtungen, die Kernaussage und praktische Hinweise. Sie dürfen auch bei einem ruhig wirkenden Gespräch auf Ihre eigene Belastung, Bereitschaft und Grenze achten.",
     ],
     sections: [
       {
@@ -409,7 +411,7 @@ export const handoutTextVersions = [
     sourceLine:
       "Quelle: Deeskalation nach DBT, Linehan, M. M. (1993); Mason, P. T. & Kreger, R. (2014).",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Redaktionell aktualisiert: 06.10.2026; fachlich-redaktionelle Freigabe ausstehend.",
   }),
   createHandoutTextVersion("zuhoeren-ohne-zustimmen", {
     kicker: "Textversion",

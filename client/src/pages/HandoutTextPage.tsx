@@ -187,8 +187,9 @@ export default function HandoutTextPage({
 
           {revisedWebCopy && (
             <p className="mt-6 border-l pl-4" style={bodyStyle}>
-              Text-, PDF- und Bildfassung sind redaktionell auf dem Stand vom
-              23.09.2026. Die erneute fachliche Prüfung ist ausstehend.
+              Die Textfassung wurde redaktionell überarbeitet; das Datum steht
+              unter «Quelle & Stand». Daraus folgt keine Freigabe einer PDF-
+              oder Bildfassung. Die erneute fachliche Prüfung ist ausstehend.
             </p>
           )}
           {visualPublished && openHref && downloadHref ? (

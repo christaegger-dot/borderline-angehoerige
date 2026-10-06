@@ -363,9 +363,9 @@ export const handoutTextVersions = [
   createHandoutTextVersion("schuld-verantwortung", {
     kicker: "Textversion",
     summary:
-      "Schuldgefühle sind bei Angehörigen häufig und verständlich. Hilfreicher als der Blick zurück ist die Frage, was Sie heute beeinflussen können, ohne sich die ganze Verantwortung aufzuladen.",
+      "Schuldgefühle sind bei Angehörigen häufig und verständlich. Aus einer Diagnose lässt sich keine persönliche Schuld ableiten. Sie dürfen klären, was Sie heute beeinflussen können und wofür Sie konkret Verantwortung tragen.",
     intro: [
-      "Schuld und Verantwortung geraten bei Angehörigen leicht durcheinander. Diese Orientierung hilft, Selbstvorwürfe zu entlasten und den eigenen Einfluss realistischer zu sehen.",
+      "Schuldgefühle und konkrete Verantwortung können schwer auseinanderzuhalten sein. Diese Orientierung lädt dazu ein, Selbstvorwürfe zu hinterfragen und den eigenen Einfluss realistischer zu sehen.",
       "Sie finden zuerst eine Einordnung von Schuldgefühlen, dann den Blick auf Forschung, den Unterschied zwischen Schuld und Verantwortung und typische Selbstvorwürfe mit einer realistischeren Gegenperspektive.",
     ],
     sections: [
@@ -373,66 +373,66 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentrale Entlastung",
         calloutText:
-          "Schuldgefühle gehören zu den häufigsten Belastungen von Angehörigen. Diese Gedanken sind verständlich, aber sie helfen weder Ihnen noch der betroffenen Person. Eine Borderline-Persönlichkeitsstörung hat keine einzelne Ursache, und kein einzelner Mensch ist dafür verantwortlich.",
+          "Schuldgefühle gehören zu den häufigsten Belastungen von Angehörigen. Das Gefühl allein ist kein Nachweis persönlicher Schuld. Eine Borderline-Persönlichkeitsstörung hat keine einfache einzelne Ursache. Aus der Diagnose lässt sich keine individuelle Schuldzuweisung ableiten; Verantwortung für konkrete verletzende oder gewalttätige Handlungen bleibt davon getrennt.",
       },
       {
         title: "Was die Forschung zeigt",
         intro:
-          "Das Handout fasst die Entlastung bewusst sachlich zusammen: Borderline entsteht nicht durch einen einzelnen Auslöser und nicht durch eine einzelne Person.",
+          "Bei der Entwicklung einer Borderline-Persönlichkeitsstörung können mehrere Faktoren zusammenwirken. Forschung zu solchen Zusammenhängen erklärt nicht die Erkrankung einer einzelnen Person abschliessend.",
         cards: [
           {
             title: "Genetik und Temperament",
-            text: "Vererbt werden Temperamentszüge – diese allein führen noch nicht zur Erkrankung.",
+            text: "Genetische Einflüsse und Temperament können zur Verletzlichkeit beitragen. Sie bestimmen weder Erkrankung noch Verlauf allein.",
           },
           {
             title: "Zusammenspiel vieler Faktoren",
-            text: "Es gibt keine einzelne Ursache – und keinen einzelnen Schuldigen.",
+            text: "Temperament, Beziehungen, Erfahrungen und soziale Bedingungen können zusammenwirken. Eine Diagnose erlaubt keine einfache Zuordnung von Ursache oder Schuld zu einer Person.",
           },
           {
             title: "Entwicklung im Kontext",
-            text: "Temperament, Beziehungen, Erfahrungen, soziale Bedingungen und Versorgung können zusammenwirken. Daraus lässt sich keine Einzelschuld ableiten.",
+            text: "Kindheitsbelastungen, etwa Misshandlung oder Vernachlässigung, stehen in Studien mit Borderline in Zusammenhang. Das beweist keine einfache individuelle Ursache und bedeutet nicht, dass jede betroffene Person solche Erfahrungen gemacht hat.",
           },
         ],
       },
       {
-        title: "Schuld vs. Verantwortung",
+        title: "Selbstvorwürfe und konkrete Verantwortung",
         intro:
-          "Das Handout stellt beide Haltungen bewusst gegenüber. Schuld fixiert auf das Vergangene, Verantwortung öffnet wieder Handlungsspielraum im Hier und Jetzt.",
+          "Selbstvorwürfe können sehr belastend sein. Konkrete Verantwortung bedeutet, eigene Handlungen anzuschauen, mögliche Verletzungen anzuerkennen und zu klären, was Sie heute verändern können.",
         cards: [
           {
             title: "Blickrichtung",
-            text: "Schuld fragt rückwärts: «Was habe ich falsch gemacht?» Verantwortung fragt vorwärts: «Was kann ich jetzt tun?»",
+            text: "Statt sich pauschal zu verurteilen, können Sie fragen: «Was habe ich konkret getan? Was braucht Anerkennung oder Wiedergutmachung? Was kann ich jetzt tun?»",
           },
           {
             title: "Wirkung",
-            text: "Schuld lähmt und macht hilflos. Verantwortung macht handlungsfähiger und klarer.",
+            text: "Anhaltende Selbstvorwürfe können Handlungsspielraum verengen. Eine konkrete Einordnung kann helfen, Verantwortung und Einfluss voneinander zu unterscheiden.",
           },
           {
             title: "Fokus",
-            text: "Schuld fixiert Fehler und Versagen. Verantwortung richtet den Blick auf Möglichkeiten und Einfluss.",
+            text: "Sie können Verantwortung für eigenes Verhalten übernehmen, ohne für die gesamte Erkrankung oder Genesung einer anderen Person verantwortlich zu sein.",
           },
           {
             title: "Ergebnis",
-            text: "Schuld begünstigt Rückzug oder Überanpassung. Verantwortung erleichtert klare Entscheidungen und gesunde Grenzen.",
+            text: "Entschuldigung, Wiedergutmachung und Veränderungen können sinnvoll sein. Gleichzeitig bleiben eigene Grenzen, Selbstschutz und Unterstützung berechtigt.",
           },
         ],
       },
       {
         title:
-          "5 Sätze, die Angehörige sich oft sagen – und was wirklich stimmt",
+          "5 Sätze, die Angehörige sich oft sagen – und mögliche Einordnungen",
         cards: [
           {
             title: "«Ich hätte es früher merken müssen.»",
-            text: "Sie sind kein Diagnostik-Team. Eine Borderline-Persönlichkeitsstörung wird selbst von Fachpersonen oft erst spät erkannt.",
+            text: "Angehörige müssen keine Diagnose stellen. Eine fachliche Beurteilung braucht Zeit und Informationen, die Ihnen damals vielleicht nicht zur Verfügung standen.",
           },
           {
             title:
               "«Wenn ich ein besserer Elternteil gewesen wäre, wäre das nicht passiert.»",
-            text: "Eine Borderline-Persönlichkeitsstörung entsteht nie durch eine einzelne Person. Dass Sie jetzt da sind, zeigt Ihre Fürsorge.",
+            text: "Aus der Diagnose folgt kein pauschales Urteil über Ihre Elternschaft. Belastende Erfahrungen können mitwirken; für konkrete verletzende Handlungen können Sie Verantwortung übernehmen. Das ist eine andere Frage als die persönliche Schuld an einer Erkrankung.",
           },
           {
             title: "«Ich tue nicht genug.»",
-            text: "Sie tun bereits viel. Genug ist, was Sie leisten können, ohne sich selbst zu verlieren.",
+            text: "Sie dürfen prüfen, was für Sie möglich und freiwillig tragbar ist. Behandlung und Genesung müssen Sie nicht allein tragen.",
           },
           {
             title:
@@ -441,9 +441,15 @@ export const handoutTextVersions = [
           },
           {
             title: "«Andere Familien haben dieses Problem nicht.»",
-            text: "Eine Borderline-Persönlichkeitsstörung kommt in allen Familien vor – unabhängig von Bildung, Einkommen oder Erziehungsstil.",
+            text: "Borderline betrifft Menschen mit unterschiedlichen Lebensgeschichten und in unterschiedlichen Familien. Ein Vergleich mit anderen Familien erklärt weder die Ursachen noch Ihre persönliche Verantwortung.",
           },
         ],
+      },
+      {
+        title: "Kinder entlasten",
+        calloutTitle: "Keine Verantwortung für die Erkrankung der Eltern",
+        calloutText:
+          "Kinder sind nicht für die Erkrankung oder Behandlung ihrer Eltern verantwortlich. Betreuung, Unterstützung und Sicherheit müssen Erwachsene organisieren; Kinder brauchen altersgerechte Informationen und verlässliche Bezugspersonen.",
       },
       {
         title: "Vertiefung",
@@ -455,13 +461,13 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Was Sie sich merken dürfen",
         calloutText:
-          "Sie haben die Erkrankung nicht verursacht und müssen sie nicht heilen. Eine Diagnose legt Verhalten oder Schuld nicht fest. Alle Beteiligten dürfen Verantwortung für eigene Handlungen übernehmen, Grenzen benennen und Sicherheit priorisieren. (Angelehnt an die «3 C's» der Angehörigenarbeit.)",
+          "Eine Diagnose weist Ihnen keine persönliche Schuld zu. Sie müssen die Erkrankung nicht heilen und weder Behandlung noch Genesung allein tragen. Verantwortung für eigene verletzende oder gewalttätige Handlungen bleibt bestehen. Grenzen, Schutz und eigene Unterstützung sind berechtigt.",
       },
     ],
     sourceLine:
-      "Quellen: [1] Berkowitz, C. & Gunderson, J. G., BPD Family Guidelines (NEABPD). [2] Hoffman, P. D. et al. (2005), Family Connections (NEABPD). [3] Gunderson, J. G., Herpertz, S. C., Skodol, A. E., Torgersen, S. & Zanarini, M. C. (2018), Nature Reviews Disease Primers.",
+      "Quellen: [1] Berkowitz, C. & Gunderson, J. G., BPD Family Guidelines (NEABPD). [2] Hoffman, P. D. et al. (2005), Family Connections (NEABPD). [3] Gunderson, J. G., Herpertz, S. C., Skodol, A. E., Torgersen, S. & Zanarini, M. C. (2018), Nature Reviews Disease Primers. [4] Porter, C. et al. (2020), Childhood adversity and borderline personality disorder: a meta-analysis. Die Metaanalyse beschreibt Zusammenhänge, keine individuelle Schuldzuweisung.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Redaktionell aktualisiert: 06.10.2026; fachlich-redaktionelle Freigabe ausstehend.",
   }),
   createHandoutTextVersion("radikale-akzeptanz", {
     kicker: "Textversion",

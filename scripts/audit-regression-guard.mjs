@@ -249,52 +249,75 @@ async function checkHeaderLayout(page) {
 async function checkFilterButtons(page) {
   await page.setViewportSize({ width: 1280, height: 800 });
   await gotoIdle(page, "/materialien");
-  const r = await page.evaluate(() => {
-    const buttons = Array.from(document.querySelectorAll('button[role="tab"]'));
-    if (buttons.length === 0) return { found: false };
-    const spans = buttons[0].querySelectorAll("span");
-    if (spans.length < 3) return { found: true, spanCount: spans.length };
-    return {
-      found: true,
-      separatorOpacity: getComputedStyle(spans[1]).opacity,
-      counterOpacity: getComputedStyle(spans[2]).opacity,
-      separatorAriaHidden: spans[1].getAttribute("aria-hidden"),
-    };
-  });
-  if (!r.found) {
-    fail("filter-buttons", "/materialien: keine filter buttons gefunden");
-    return;
-  }
-  if (r.spanCount !== undefined) {
+  // Die Bibliothek filtert eine Ergebnisliste mit aria-pressed-Buttons;
+  // sie verwendet keine Tabs und keine Tabpanels.
+  const buttons = page
+    .getByRole("group", {
+      name: "Filter Materialien nach Kategorie",
+      exact: true,
+    })
+    .getByRole("button");
+  try {
+    await buttons.first().waitFor({ state: "visible", timeout: 10000 });
+  } catch {
     fail(
       "filter-buttons",
-      `Filter-Button hat nur ${r.spanCount} spans (erwartet ≥ 3)`
+      "/materialien: keine sichtbaren Filterbuttons gefunden"
     );
     return;
   }
-  if (r.counterOpacity === EXPECT.filterCounterOpacity) {
-    pass("counter-opacity", `opacity ${r.counterOpacity}`);
-  } else {
-    fail(
-      "counter-opacity",
-      `expected ${EXPECT.filterCounterOpacity}, got ${r.counterOpacity}`
-    );
-  }
-  if (r.separatorOpacity === EXPECT.separatorOpacity) {
-    pass("separator-opacity", `opacity ${r.separatorOpacity}`);
-  } else {
-    fail(
-      "separator-opacity",
-      `expected ${EXPECT.separatorOpacity}, got ${r.separatorOpacity}`
-    );
-  }
-  if (r.separatorAriaHidden !== "true") {
-    fail(
-      "separator-aria-hidden",
-      `Separator-Span muss aria-hidden bleiben, got "${r.separatorAriaHidden}"`
-    );
-  } else {
-    pass("separator-aria-hidden", 'aria-hidden="true"');
+  const results = await buttons.evaluateAll(elements => {
+    return elements.map(button => {
+      const spans = button.querySelectorAll("span");
+      const label = spans[0]?.textContent?.trim() ?? button.textContent?.trim();
+      if (spans.length < 3) return { label, spanCount: spans.length };
+      return {
+        label,
+        pressed: button.getAttribute("aria-pressed"),
+        separatorOpacity: getComputedStyle(spans[1]).opacity,
+        counterOpacity: getComputedStyle(spans[2]).opacity,
+        separatorAriaHidden: spans[1].getAttribute("aria-hidden"),
+      };
+    });
+  });
+  for (const r of results) {
+    if (r.spanCount !== undefined) {
+      fail(
+        "filter-buttons",
+        `${r.label}: Filter-Button hat nur ${r.spanCount} spans (erwartet ≥ 3)`
+      );
+      continue;
+    }
+    if (r.pressed !== "true" && r.pressed !== "false") {
+      fail(
+        "filter-aria-pressed",
+        `${r.label}: Filter-Button braucht aria-pressed, got "${r.pressed}"`
+      );
+    }
+    if (r.counterOpacity === EXPECT.filterCounterOpacity) {
+      pass("counter-opacity", `${r.label}: opacity ${r.counterOpacity}`);
+    } else {
+      fail(
+        "counter-opacity",
+        `${r.label}: expected ${EXPECT.filterCounterOpacity}, got ${r.counterOpacity}`
+      );
+    }
+    if (r.separatorOpacity === EXPECT.separatorOpacity) {
+      pass("separator-opacity", `${r.label}: opacity ${r.separatorOpacity}`);
+    } else {
+      fail(
+        "separator-opacity",
+        `${r.label}: expected ${EXPECT.separatorOpacity}, got ${r.separatorOpacity}`
+      );
+    }
+    if (r.separatorAriaHidden !== "true") {
+      fail(
+        "separator-aria-hidden",
+        `${r.label}: Separator-Span muss aria-hidden bleiben, got "${r.separatorAriaHidden}"`
+      );
+    } else {
+      pass("separator-aria-hidden", `${r.label}: aria-hidden="true"`);
+    }
   }
 }
 

@@ -24,6 +24,10 @@ Die Dokumente sind bewusst nicht als juristische Formalität geschrieben, sonder
     Platzierung von Sicherheitszugängen und zum Umgang mit Kontaktdaten. Der
     institutionelle Grundsatzentscheid und die Publikationsfreigabe bleiben
     offen.
+13. [Inhaltskorrekturen nach Review vom 06.10.2026](13-inhaltskorrekturen-review-2026-10-06.md) —
+    umgesetzte Quellen- und Textkorrekturen, technische Prüfungen und weiterhin
+    offene Kontakt- und Freigabeprüfungen; die technischen Ausmusterungen aus
+    PR #652 bleiben erhalten. Daraus folgt keine fachliche Freigabe von #631.
 
 Paketbezogenes Protokoll:
 

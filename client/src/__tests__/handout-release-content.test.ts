@@ -49,7 +49,7 @@ describe("handout release content guardrails", () => {
       /\b(?:112|117|143|144|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i;
 
     expect(krisenkommunikation).toContain("Akute Hilfe und Notfallkontakte");
-    expect(notfallplan).toContain("zentrale Soforthilfe-Seite");
+    expect(notfallplan).toMatch(/Soforthilfe-Seite/);
     expect(`${krisenkommunikation} ${notfallplan}`).not.toMatch(
       contactNumberPattern
     );

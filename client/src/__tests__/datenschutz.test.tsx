@@ -94,9 +94,13 @@ describe("Datenschutz", () => {
     const lastReviewed = pageGovernance["/datenschutz"]?.lastReviewed;
     const expectedDate = lastReviewed?.split("-").reverse().join(".");
 
-    expect(
-      screen.getByRole("link", { name: /Akute Hilfe und Notfallkontakte/i })
-    ).toHaveAttribute("href", "/soforthilfe");
+    const emergencyLinks = screen.getAllByRole("link", {
+      name: /Akute Hilfe und Notfallkontakte/i,
+    });
+    expect(emergencyLinks.length).toBeGreaterThan(0);
+    for (const link of emergencyLinks) {
+      expect(link).toHaveAttribute("href", "/soforthilfe");
+    }
     expect(
       screen.getByText(new RegExp(`Stand der Erklärung: ${expectedDate}`))
     ).toBeInTheDocument();

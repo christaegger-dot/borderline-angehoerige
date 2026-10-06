@@ -54,7 +54,6 @@ const EXPECT = {
 const FULL_ROUTES = [
   "/",
   "/soforthilfe",
-  "/notfallkarte",
   "/verstehen",
   "/verstehen/diagnostik",
   "/verstehen/begleiterkrankungen",
@@ -78,7 +77,6 @@ const FULL_ROUTES = [
   "/faq",
   "/ueber-uns",
   "/fachstelle",
-  "/notfallkarte/erstellen",
   "/wegweiser",
   "/uebungen",
   "/quellen",

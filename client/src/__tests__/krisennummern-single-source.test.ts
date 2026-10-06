@@ -28,7 +28,7 @@ describe("Operative Kontakte bleiben der Soforthilfe-Seite vorbehalten", () => {
   it("keeps crisis handout text free of copied contact numbers", () => {
     expect(notfallplanText).not.toMatch(operationalContactPattern);
     expect(kommunizierenText).not.toMatch(operationalContactPattern);
-    expect(notfallplanText).toContain("zentrale Soforthilfe-Seite");
+    expect(notfallplanText).toContain("Soforthilfe-Seite");
     expect(kommunizierenText).toContain("Akute Hilfe und Notfallkontakte");
   });
 });

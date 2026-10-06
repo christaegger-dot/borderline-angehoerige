@@ -255,7 +255,7 @@ export const handoutTextVersions = [
         title: "Sicherheit",
         calloutTitle: "Wenn Schutz wichtiger ist als ein Gespräch",
         calloutText:
-          "Diese Schutzregel gilt diagnoseunabhängig in jeder Beziehung. Bei Gewalt oder Bedrohung schaffen Sie Abstand und bringen sich in Sicherheit, ohne etwas anzukündigen oder zu erklären; im Notfall rufen Sie 117. Bei vermuteter unmittelbarer Selbstgefährdung der anderen Person holen Sie umgehend professionelle Hilfe, bei unmittelbarer Gefahr 144. Bleiben Sie nur bei der Person, soweit dies für Sie sicher möglich ist. Sie müssen keine unsichere Situation aushalten.",
+          "Diese Schutzregel gilt diagnoseunabhängig in jeder Beziehung. Bei Gewalt oder Bedrohung schaffen Sie Abstand und bringen sich in Sicherheit, ohne etwas anzukündigen oder zu erklären. Bei akuter Gefahr oder Sorge um Selbstgefährdung finden Sie passende professionelle Anlaufstellen unter «Akute Hilfe und Notfallkontakte». Bleiben Sie nur bei der Person, soweit dies für Sie sicher möglich ist. Sie müssen keine unsichere Situation aushalten.",
       },
     ],
     sourceLine:

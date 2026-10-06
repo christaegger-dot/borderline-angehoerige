@@ -8,18 +8,14 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "../../..");
 
 describe("Grenzen content", () => {
-  it("uses the corrected violence-help contacts and removes the wrong victim-help number", () => {
+  it("directs readers to the central crisis contacts without copying numbers", () => {
     const pageSource = fs.readFileSync(
       path.join(repoRoot, "client/src/pages/Grenzen.tsx"),
       "utf8"
     );
 
-    expect(pageSource).toContain('kontaktByIdStrict("INFO_OPFERHILFE_142")');
-    expect(pageSource).toContain(
-      'kontaktByIdStrict("INFO_OPFERHILFE_ZH_24_7")'
-    );
-    expect(pageSource).toContain('kontaktByIdStrict("INFO_FORENSIC_NURSES")');
-    expect(pageSource).toContain('kontaktByIdStrict("INFO_OPFERBERATUNG_ZH")');
+    expect(pageSource).toContain("Akute Hilfe und Notfallkontakte");
+    expect(pageSource).not.toMatch(/\b(?:112|117|142|144)\b/);
     expect(pageSource).not.toContain("0800 040 080");
   });
 

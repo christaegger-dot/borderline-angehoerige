@@ -131,11 +131,13 @@ function getAssetCandidates(): AssetCandidate[] {
   ];
 }
 
-export function collectReferencedInfografikAssets() {
+export function collectReferencedInfografikAssets({
+  includeUnpublished = false,
+}: { includeUnpublished?: boolean } = {}) {
   const registry = new Map<string, ReferencedInfografikAsset>();
 
   for (const candidate of getAssetCandidates()) {
-    if (!isHandoutVisualPublished(candidate.id)) {
+    if (!includeUnpublished && !isHandoutVisualPublished(candidate.id)) {
       continue;
     }
 

@@ -1,5 +1,12 @@
 # Weitere Inhaltskorrekturen vom 06.10.2026
 
+**Berichtigung der Kontaktzählung:** Die unten genannten 27 Telefonnummern und
+16 offenen Abgleiche waren falsch. Zu diesem Bericht gehörten elf bestätigte
+und 15 offene Einträge aus tatsächlich 26. Der nächste Abgleich ist in
+[Folgebericht 15](15-offene-folgearbeiten-2026-10-06.md) dokumentiert. Die Zahl
+27 im Abschnitt zum Materialkatalog bezeichnet Materialien und ist davon
+unabhängig. Der damals deaktivierte Audit-Workflow wurde inzwischen reaktiviert.
+
 ## Umfang und Status
 
 Diese Nachprüfung ergänzt [Review 13](13-inhaltskorrekturen-review-2026-10-06.md)

@@ -1,16 +1,35 @@
 # Handout Asset Blocker Report
 
 Stand: 2026-10-06
-Quelle der Wahrheit: `client/src/content/handoutGovernance.ts`
+Technischer Publikationsstatus: `client/src/content/handoutGovernance.ts`
+Vollständiges Dateiregister: `qa/handout-asset-manifest.json`
 
 ## Zweck
 
-Dieser Report trennt freigegebene, aktuell auslieferbare Druckgrafiken von
+Dieser Report trennt technisch aktuell auslieferbare Druckgrafiken von
 Textversionen, deren PDF-, WebP- oder Thumbnail-Fassung fachlich,
 sicherheitsbezogen oder perspektivisch nicht mehr anschlussfähig ist. Eine
-vorhandene Datei gilt nicht automatisch als publizierbar.
+vorhandene Datei gilt nicht automatisch als fachlich oder institutionell
+freigegeben. Auch der Codewert `approved` belegt keine menschliche Freigabe.
 
-## Aktueller Freigabestand
+Das deterministische Vollregister erfasst alle 45 Governance-IDs, 42
+registrierte Textpfade und die tatsächlich vorhandenen Dateien in `public`,
+`withheld`, `archived` und `retired` mit SHA-256. Registrierte Katalogpfade
+und Kandidatenversionen werden getrennt geführt. Historische Dateien ohne
+belegte Zuordnung bleiben unzugeordnet; die entfernten Notfallkartenbytes
+werden nicht anhand der README-Prüfsummen als vorhanden ausgegeben.
+
+Für jeden registrierten Webpfad bindet ein zusätzlicher SHA-256 die tatsächliche
+`HandoutTextVersion` mit Metadaten und Inhalt an den Snapshot. Die Serialisierung
+prüft reine JSON-Werte, sortiert Objektschlüssel und erhält die Reihenfolge von
+Listen. Sie misst weder gerendertes HTML noch semantische Text/PDF-Parität und
+stellt keine gemeinsame Veröffentlichungs- oder Freigabeversion her.
+
+Klinische, institutionelle, Perspektiven-, PDF/UA- und Druckfreigaben bleiben
+im Register `unknown`. Das Dateiinventar, PDF-Tags und bestandene technische
+Prüfungen ersetzen diese Entscheide nicht.
+
+## Aktueller technischer Publikationsstand
 
 - Die Website veröffentlicht Visuals ausschliesslich fail-closed: unbekannte,
   zurückgezogene, als `text-only` markierte oder nicht freigegebene Entwürfe
@@ -40,6 +59,12 @@ vorhandene Datei gilt nicht automatisch als publizierbar.
   Nachvollziehbarkeit unter
   `qa/withheld-handouts/issue-633-fachquellen-2026-10-05/`; die korrigierten
   HTML-Textversionen bleiben erreichbar.
+- Die V3-Grafiken zu `warnsignale` und `spiegeln-statt-aufsaugen` stimmen
+  nicht mit den vorsichtigeren aktuellen Texten überein. Ihre sechs PDF-,
+  WebP- und Thumbnail-Dateien liegen unverändert mit geprüftem
+  `SHA256SUMS` unter
+  `qa/withheld-handouts/issue-650-content-drift-2026-10-06/`. Beide Familien
+  bleiben `text-only`; alte Direkt-URLs und Download-IDs werden auf 404 geprüft.
 - Die Notfallplan-Textversion ist aktuell; die ältere PDF- und Bildfassung ist
   wegen fehlender Schutzklauseln vorläufig zurückgezogen.
 - Die allgemeine Notfallkarte wird gemäss
@@ -51,23 +76,22 @@ vorhandene Datei gilt nicht automatisch als publizierbar.
   `qa/retired-handouts/notfallkarte-static-2026-10-05/` dokumentiert. Die alten
   Direktpfade bleiben dauerhaft gesperrt.
 
-## Weiterhin freigegebene Visuals
+## Weiterhin technisch ausgelieferte Visuals
 
-Diese Familien bleiben als Visual, PDF und Textversion auslieferbar, solange
-die automatischen und manuellen Freigabegates grün bleiben:
+Diese fünf Familien werden durch die aktuelle Codekonfiguration ausgeliefert.
+Die Tabelle dokumentiert diese Konfiguration und erteilt keine Freigabe:
 
-| ID                         | Freigegebene Version                |
-| -------------------------- | ----------------------------------- |
-| `kinder`                   | `manus-kinder-v3`                   |
-| `spiegeln-statt-aufsaugen` | `manus-spiegeln-statt-aufsaugen-v3` |
-| `4-arten-von-grenzen`      | `puk-4-arten-von-grenzen-v1`        |
-| `garten`                   | `puk-garten-v1`                     |
-| `genesung-zahlen`          | `manus-genesung-zahlen-v3`          |
-| `stopp-technik`            | `manus-stopp-technik-v3`            |
+| ID                    | Registrierte Version         |
+| --------------------- | ---------------------------- |
+| `kinder`              | `manus-kinder-v3`            |
+| `4-arten-von-grenzen` | `puk-4-arten-von-grenzen-v1` |
+| `garten`              | `puk-garten-v1`              |
+| `genesung-zahlen`     | `manus-genesung-zahlen-v3`   |
+| `stopp-technik`       | `manus-stopp-technik-v3`     |
 
-Weitere in der Governance als publiziert geführte P2-Handouts bleiben
-freigegeben, sofern ihre referenzierten Dateien vorhanden sind. Die Tabelle ist
-eine hervorgehobene Kernliste und ersetzt nicht das maschinenlesbare Register.
+Die 15 tatsächlich öffentlichen Dateien dieser fünf Familien werden gegen
+die referenzierten Pfade und den Manifest-Snapshot geprüft. Dateiänderungen
+benötigen eine überprüfbare Aktualisierung dieses technischen Registers.
 
 ## Vorläufig nur als HTML-Textversion
 
@@ -86,7 +110,8 @@ oder direkt ausgeliefert:
   `konsistenz-prinzip`, `beziehungs-achtsamkeit`, `6-leitlinien`,
   `4-alltags-tipps`, `grenzen-erkennen`, `lmk`, `energie-konto`,
   `erlaubnis-karte`, `schuld-verantwortung`, `sauerstoffmaske`, `dear`,
-  `grenzen-spickzettel` und `wenn-worte-treffen`.
+  `grenzen-spickzettel`, `warnsignale`, `spiegeln-statt-aufsaugen` und
+  `wenn-worte-treffen`.
 
 `4-phasen` und `im-krisenmodus` sind zusätzlich vollständig `withdrawn` und
 erscheinen auch nicht mehr als aktive Textversion.
@@ -149,9 +174,17 @@ pnpm test -- anti-stigma-governance
 pnpm test -- material-download-function
 pnpm audit:issue615-handouts
 pnpm audit:infografiken
+pnpm audit:handout-assets
 pnpm build
 pnpm audit:release-http-gates
 ```
 
-Eine neue Grafik wird erst sichtbar, wenn HTML, Abbildung, PDF und Thumbnail
-denselben freigegebenen fachlichen Stand zeigen.
+Nach einer bewusst geprüften Datei- oder Registryänderung kann der technische
+Snapshot mit `pnpm refresh:handout-assets` aktualisiert werden. Der Guard
+meldet unregistrierte öffentliche Dateien, fehlende oder geänderte
+registrierte Dateien, abweichende Paketprüfsummen und veraltete Snapshots.
+Er liest keine fachlichen Freigaben aus Codeflags ab.
+
+Eine neue Grafik darf erst sichtbar werden, wenn HTML, Abbildung, PDF und
+Thumbnail gemeinsam geprüft und die erforderlichen menschlichen Freigaben
+nachvollziehbar dokumentiert sind.

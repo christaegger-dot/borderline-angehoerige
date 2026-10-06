@@ -54,12 +54,12 @@
   >
   <url
     ><loc>https://borderline-angehoerige.netlify.app/grenzen</loc
-    ><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq
+    ><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq
     ><priority>0.8</priority></url
   >
   <url
     ><loc>https://borderline-angehoerige.netlify.app/selbstfuersorge</loc
-    ><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq
+    ><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq
     ><priority>0.8</priority></url
   >
   <url
@@ -74,11 +74,12 @@
   >
   <url
     ><loc>https://borderline-angehoerige.netlify.app/beratung</loc
-    ><changefreq>monthly</changefreq><priority>0.8</priority></url
+    ><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq
+    ><priority>0.8</priority></url
   >
   <url
     ><loc>https://borderline-angehoerige.netlify.app/fachstelle</loc
-    ><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq
+    ><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq
     ><priority>0.8</priority></url
   >
   <url
@@ -98,7 +99,8 @@
   >
   <url
     ><loc>https://borderline-angehoerige.netlify.app/selbsttest</loc
-    ><changefreq>monthly</changefreq><priority>0.7</priority></url
+    ><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq
+    ><priority>0.7</priority></url
   >
   <url
     ><loc>https://borderline-angehoerige.netlify.app/buchempfehlungen</loc
@@ -125,7 +127,8 @@
   >
   <url
     ><loc>https://borderline-angehoerige.netlify.app/feedback</loc
-    ><changefreq>monthly</changefreq><priority>0.5</priority></url
+    ><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq
+    ><priority>0.5</priority></url
   >
   <url
     ><loc>https://borderline-angehoerige.netlify.app/impressum</loc
@@ -138,6 +141,7 @@
   >
   <url
     ><loc>https://borderline-angehoerige.netlify.app/barrierefreiheit</loc
-    ><changefreq>yearly</changefreq><priority>0.3</priority></url
+    ><lastmod>2026-10-06</lastmod><changefreq>yearly</changefreq
+    ><priority>0.3</priority></url
   >
 </urlset>

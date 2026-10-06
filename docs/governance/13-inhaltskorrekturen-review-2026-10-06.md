@@ -1,5 +1,10 @@
 # Inhaltskorrekturen nach Review vom 06.10.2026
 
+**Berichtigung der Kontaktzählung:** Die unten verwendete Zahl 27 war falsch.
+Das aktuelle Telefonregister enthält 26 Einträge. Der vollständige Abgleich
+und weitere Nachweise sind in [Folgebericht 15](15-offene-folgearbeiten-2026-10-06.md)
+und im [Kontaktbelegbericht](../../qa/contact-verification-2026-10-06.md) dokumentiert.
+
 ## Status und Umfang
 
 Dieser Stand setzt die redaktionellen Korrekturen aus der Inhaltsreview des

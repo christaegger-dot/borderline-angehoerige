@@ -1,3 +1,4 @@
+import AppLink from "@/components/AppLink";
 import {
   DisplayHeading,
   EditorialLayout,
@@ -48,7 +49,27 @@ export default function Feedback() {
                 {emailAngehoerigen.adresse}
               </a>
             </p>
-            <p>Wir freuen uns über eine kurze Schilderung Ihres Anliegens.</p>
+            <p>
+              Nennen Sie möglichst die betroffene Seite und den Fehler oder
+              Verbesserungsvorschlag. Bitte senden Sie keine Diagnosen,
+              Gesundheitsdaten oder identifizierenden Angaben über andere
+              Personen. Prüfen Sie auch Anhänge und Bildschirmfotos auf solche
+              Angaben.
+            </p>
+            <p>
+              Dieses Postfach dient Rückmeldungen zur Website. Es ist kein
+              Notfalldienst; eine zeitnahe Antwort wird nicht zugesichert.
+              Anlaufstellen für akute Situationen finden Sie auf der Seite{" "}
+              <AppLink href="/soforthilfe" className="editorial-link">
+                Soforthilfe
+              </AppLink>
+              . Hinweise zur Übermittlung und zu noch offenen Fragen der
+              Datenbearbeitung stehen in der{" "}
+              <AppLink href="/datenschutz#email" className="editorial-link">
+                Datenschutzerklärung
+              </AppLink>
+              .
+            </p>
           </EditorialProse>
         </EditorialSectionBlock>
 

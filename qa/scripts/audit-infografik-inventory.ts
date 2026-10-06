@@ -1,4 +1,5 @@
 import { promises as fs } from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { collectReferencedInfografikAssets } from "../../client/src/content/infografikAssetRefs";
@@ -6,6 +7,7 @@ import { collectReferencedInfografikAssets } from "../../client/src/content/info
 type InventoryRecord = {
   path: string;
   sizeBytes: number;
+  sha256: string;
 };
 
 type InventoryReference = InventoryRecord & {
@@ -131,6 +133,9 @@ async function main() {
       return {
         path: normalizePublicPath(absolutePath),
         sizeBytes: stat.size,
+        sha256: createHash("sha256")
+          .update(await fs.readFile(absolutePath))
+          .digest("hex"),
       };
     })
   );

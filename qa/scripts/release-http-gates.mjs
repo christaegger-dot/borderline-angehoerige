@@ -127,6 +127,30 @@ const HEADER_CASES = [
     redirect: "manual",
     requiredHeaders: SECURITY_HEADERS,
   },
+  ...[
+    ["warnsignale", "selbstfuersorge-warnsignale", "manus-warnsignale-v3"],
+    [
+      "spiegeln-statt-aufsaugen",
+      "grenzen-spiegeln-statt-aufsaugen",
+      "manus-spiegeln-statt-aufsaugen-v3",
+    ],
+  ].flatMap(([id, alias, stem]) =>
+    [
+      ["api", `/api/material-download/${id}?disposition=inline`],
+      ["api-alias", `/api/material-download/${alias}?disposition=inline`],
+      ["pdf", `/infografiken/${stem}.pdf`],
+      ["preview", `/infografiken/${stem}.webp`],
+      ["thumbnail", `/infografiken/extras/thumbnails/${stem}-thumb.png`],
+    ].map(([format, route]) => ({
+      id: `withheld-${id}-${format}`,
+      title: `Zurückgehaltenes Material ${id} (${format})`,
+      kind: "header",
+      route,
+      expectedStatus: 404,
+      redirect: "manual",
+      requiredHeaders: SECURITY_HEADERS,
+    }))
+  ),
 ];
 
 function nowIso() {

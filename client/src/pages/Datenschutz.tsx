@@ -99,10 +99,11 @@ export default function Datenschutz() {
               .
             </p>
             <p>
-              Darüber hinaus werden{" "}
-              <strong>keine weiteren Drittanbieter-Dienste</strong> eingesetzt:
-              kein Analytics, kein externes Schrift-CDN, keine eingebetteten
-              Social-Media-Plugins und keine Werbedienste.
+              Im Website-Code sind keine zusätzlichen Analytics- oder
+              Werbedienste, externen Schrift-CDNs oder eingebetteten
+              Social-Media-Plugins eingebunden. Hosting und eine Kontaktaufnahme
+              per E-Mail können dennoch eine Bearbeitung durch Dienstleister
+              einschliessen.
             </p>
           </EditorialProse>
         </ContentSection>
@@ -133,13 +134,14 @@ export default function Datenschutz() {
           variant="editorial"
           title="Erhebung und Verarbeitung von Daten"
           id="datenerhebung"
-          preview="Technisch notwendige Server-Logfiles ohne Zusammenführung mit anderen Datenquellen."
+          preview="Technische Verbindungsdaten beim Hosting; der konkrete Protokollierungsumfang ist noch zu bestätigen."
         >
           <EditorialProse>
             <p>
-              Beim Zugriff auf diese Website werden automatisch Informationen in
-              sogenannten Server-Logfiles gespeichert, die Ihr Browser technisch
-              übermittelt.
+              Beim Zugriff auf diese Website werden Verbindungsdaten an den
+              Hosting-Anbieter übertragen. Je nach dessen Konfiguration können
+              insbesondere folgende Angaben in technischen Protokollen erfasst
+              werden:
             </p>
           </EditorialProse>
 
@@ -149,18 +151,16 @@ export default function Datenschutz() {
             </li>
             <li className="secondary-page-body">verwendetes Betriebssystem</li>
             <li className="secondary-page-body">Referrer URL</li>
-            <li className="secondary-page-body">
-              Hostname des zugreifenden Rechners
-            </li>
             <li className="secondary-page-body">Uhrzeit der Serveranfrage</li>
             <li className="secondary-page-body">IP-Adresse</li>
           </ul>
 
           <p className="secondary-page-body mt-6">
             Diese technischen Daten dienen der Bereitstellung, Absicherung und
-            Fehleranalyse des Angebots. Die konkrete Aufbewahrungsdauer der
-            Hosting-Protokolle und die datenschutzrechtliche Rollenverteilung
-            werden derzeit mit der verantwortlichen Stelle geprüft.
+            Fehleranalyse des Angebots. Der tatsächliche Protokollierungsumfang,
+            die Aufbewahrungsdauer, Empfänger, Bearbeitungsorte und
+            datenschutzrechtliche Rollenverteilung werden derzeit mit der
+            verantwortlichen Stelle geprüft.
           </p>
         </ContentSection>
 
@@ -197,7 +197,9 @@ export default function Datenschutz() {
               Die Website setzt nach aktuellem technischem Stand selbst{" "}
               <strong>keine Tracking- oder Werbe-Cookies</strong>. Beim
               geprüften Seitenaufruf wurde auch kein Cookie durch den
-              Hosting-Dienst gesetzt.
+              Hosting-Dienst gesetzt. Diese einzelne Beobachtung ist keine
+              Zusicherung für alle Seitenaufrufe oder zukünftigen
+              Hosting-Konfigurationen.
             </p>
           </EditorialProse>
         </ContentSection>
@@ -212,12 +214,39 @@ export default function Datenschutz() {
             <p>
               Diese Website verwendet{" "}
               <strong>keine Analyse- oder Tracking-Tools</strong> wie Google
-              Analytics, Facebook Pixel oder ähnliche Dienste. Wir erfassen
-              keine Nutzungsprofile und geben keine Daten an Dritte weiter.
+              Analytics, Facebook Pixel oder ähnliche Dienste. Im Website-Code
+              ist keine Erstellung von Nutzungsprofilen vorgesehen. Die oben
+              beschriebene Übertragung technischer Daten an den Hosting-Anbieter
+              findet beim Seitenaufruf dennoch statt.
             </p>
             <p>
               Es werden auch <strong>keine Social-Media-Plugins</strong>{" "}
               eingebunden, die Daten an soziale Netzwerke übertragen könnten.
+            </p>
+          </EditorialProse>
+        </ContentSection>
+
+        <ContentSection
+          variant="editorial"
+          title="Kontaktaufnahme per E-Mail"
+          id="email"
+          preview="Ihr E-Mail-Dienst und der empfangende Dienst bearbeiten die Nachricht; bitte nur notwendige Angaben senden."
+        >
+          <EditorialProse>
+            <p>
+              Ein E-Mail-Link öffnet Ihr eigenes E-Mail-Programm. Wenn Sie eine
+              Nachricht senden, werden Absenderadresse, Inhalt und
+              gegebenenfalls Anhänge über Ihren E-Mail-Dienst an den
+              empfangenden Dienst übermittelt. Bitte senden Sie für
+              Website-Feedback keine Diagnosen, Gesundheitsdaten oder
+              identifizierenden Angaben über andere Personen.
+            </p>
+            <p>
+              Zugriffsberechtigungen auf das Postfach, interne Weitergabe und
+              Aufbewahrungsdauer sind für dieses Website-Angebot noch nicht
+              abschliessend dokumentiert. Eine vertrauliche Beratung oder
+              zeitnahe Bearbeitung eines Notfalls über dieses Postfach wird hier
+              nicht zugesichert.
             </p>
           </EditorialProse>
         </ContentSection>

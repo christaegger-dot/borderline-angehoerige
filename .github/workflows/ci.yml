@@ -44,6 +44,9 @@ jobs:
       - name: Test
         run: pnpm test
 
+      - name: Audit handout asset register
+        run: pnpm audit:handout-assets
+
       - name: Build
         run: pnpm build
 

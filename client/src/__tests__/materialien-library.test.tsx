@@ -31,11 +31,6 @@ describe("MaterialienLibrarySection", () => {
     ).not.toBeInTheDocument();
     expect(
       screen.getAllByRole("link", {
-        name: "Akute Hilfe und Notfallkontakte",
-      })[0]
-    ).toHaveAttribute("href", "/soforthilfe");
-    expect(
-      screen.getAllByRole("link", {
         name: /Textversion lesen: Notfallplan Krise – Suizidgedanken & Selbstverletzung/i,
       })[0]
     ).toHaveAttribute("href", "/materialien/text/notfallplan-krise");

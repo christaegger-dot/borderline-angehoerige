@@ -134,15 +134,24 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
   });
 
-  it("Situations-Wegweiser: ordnet Situationen ohne Diagnose- oder Charakterurteil ein", async () => {
+  it("Situations-Wegweiser: verweist bei Belastung auf einen gemeinsamen Hilfeweg", async () => {
     const { default: Wegweiser } = await import("@/pages/Wegweiser");
     withRouter(<Wegweiser />);
     expect(
-      screen.getByText(/kommen nicht bei allen Menschen mit Borderline vor/i)
+      screen.getByText(
+        /Krisen und Belastungen können unabhängig von einer Diagnose/i
+      )
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/nicht Diagnose, Motive oder Charakter/i)
+      screen.getByRole("heading", {
+        name: "Hilfe in belastenden Situationen",
+      })
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", {
+        name: "«Akute Hilfe und Notfallkontakte»",
+      })
+    ).toHaveAttribute("href", "/soforthilfe");
   });
 
   it("HandoutTextPage: rendert Leuchtturm-Textversion", async () => {

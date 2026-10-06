@@ -122,7 +122,7 @@ describe("handout text versions", () => {
     expect(materials.some(item => item.id === "notfallkarte-zuerich")).toBe(
       false
     );
-    expect(getHandoutTextVersionMeta("notfallkarte-zuerich")).toBeUndefined();
+    expect(getHandoutTextVersionMeta("notfallkarte-zuerich")).toBeNull();
     expect(
       getHandoutTextVersionHrefBySource(
         "/Notfallkarte-Zuerich-Psychische-Krise.pdf"

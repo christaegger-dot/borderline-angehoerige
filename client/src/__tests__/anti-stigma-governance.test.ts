@@ -504,7 +504,7 @@ describe("anti-stigma governance", () => {
     expect(understanding).toContain("keine Schuldzuweisung");
   });
 
-  it("uses observable situation labels and validation without a power contest", () => {
+  it("keeps the crisis guide non-triaging and its central help path non-stigmatizing", () => {
     const guide = fs.readFileSync(
       path.resolve(
         process.cwd(),
@@ -524,14 +524,10 @@ describe("anti-stigma governance", () => {
       "utf8"
     );
 
-    expect(guide).toContain("Starke Verzweiflung oder anhaltendes Weinen");
-    expect(guide).toContain("Konkrete Aussage und Wirkung benennen");
-    expect(guide).toContain(
-      "Fühlen Sie sich bedroht, eingeschüchtert oder unter Zwang?"
-    );
-    expect(guide).toContain("Stalking");
+    expect(guide).toContain("keine Krisenintervention");
+    expect(guide).toContain('href="/soforthilfe"');
     expect(guide).not.toMatch(
-      /Weinkrampf|Erkennen Sie das Muster|id: "manipulation"|id: "aggression"|keine körperliche Bedrohung/
+      /Besteht unmittelbare Gefahr|Starke Verzweiflung|Suizidgedanken|Selbstverletzung|Stalking|\b(?:112|117|143|144|145)\b/
     );
     expect(communication).toContain(
       "Gefühle anerkennen, ohne automatisch zuzustimmen"

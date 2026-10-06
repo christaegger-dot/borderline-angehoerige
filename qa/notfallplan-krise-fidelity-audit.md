@@ -1,5 +1,12 @@
 # Notfallplan Krise Fidelity Audit
 
+> **Historischer Audit:** Die hier geprüften PDF- und WebP-Fassungen sind nach
+> dem projektinternen Arbeitsentscheid
+> `docs/governance/12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md`
+> vorläufig keine freizugebende Publikationsfamilie mehr. Statische
+> Notfallplan-Ableitungen mit kopierten operativen Kontakten werden im
+> Folgepaket zurückgehalten; dieses Dokument bleibt als Drift-Nachweis erhalten.
+
 Stand: 2026-06-02  
 Historisches Drift-Asset: `notfallplan-krise-v03`
 Integriertes Korrektur-Asset: `notfallplan-krise-v04`

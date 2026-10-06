@@ -1,5 +1,14 @@
 # Schritt 1 — Inventur & Vorschlag: Krisennummern aus `kontakte.ts` speisen
 
+> **Historische Inventur:** Diese Datei belegt den damaligen verteilten
+> Nummernbestand, aber nicht dessen heutige Richtigkeit oder Freigabe. Seit dem
+> projektinternen Arbeitsentscheid
+> `docs/governance/12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md` ist
+> `/soforthilfe` als einziger nutzerseitiger Publikationsort für operative
+> Kontakte vorgesehen; Kopien in psychoedukativen Inhalten und Werkzeugen
+> werden im Folgepaket entfernt. Der institutionelle Grundsatzentscheid bleibt
+> offen.
+
 **Status: STOP-Gate — read-only, keine Inhalte geändert. Warte auf Christas Freigabe.**
 Verifikationsstand 30.05.2026. Keine Nummer aus dem Web geladen.
 

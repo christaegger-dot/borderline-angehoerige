@@ -7,9 +7,9 @@ Diese Klassifikation steuert Reviewtiefe und Release-Freigabe.
 Diese Seiten brauchen fachliche Prüfung und regelmässige Aktualisierung:
 
 - `/soforthilfe`
-- `/notfallkarte`
-- `/notfallkarte/erstellen`
 - `/unterstuetzen/krise`
+- `/wegweiser`
+- Krisenausgang von `/selbsttest`
 - `/diagnostik`
 - `/begleiterkrankungen`
 - `/grenzen`
@@ -19,10 +19,22 @@ Diese Seiten brauchen fachliche Prüfung und regelmässige Aktualisierung:
 
 Typische Risiken:
 
-- falsche oder veraltete Notfallnummern
+- falsche, veraltete oder mehrfach kopierte Notfallkontakte
 - missverständliche Krisenempfehlungen
+- unbeabsichtigte Triage oder Verantwortungsverschiebung auf Angehörige
 - unklare medizinische Aussagen
 - Datenschutz- oder Vertrauensprobleme
+
+Zusätzlich gelten folgende klare Zielzustände:
+
+- `/notfallkarte` ist eine Legacy-Route und leitet dauerhaft auf
+  `/soforthilfe` um.
+- `/notfallkarte/erstellen` ist hochriskant und gibt in der öffentlichen
+  Produktion bis zu einem separaten Review `404` zurück. In einer geschützten
+  Prüfumgebung darf das Werkzeug direkt erreichbar sein.
+
+Das persönliche Werkzeug braucht zusätzlich eine klinische,
+datenschutzrechtliche und nutzerbezogene Prüfung.
 
 ## Mittel
 
@@ -35,7 +47,6 @@ Diese Seiten brauchen redaktionelle und periodische fachliche Prüfung:
 - `/unterstuetzen/alltag`
 - `/unterstuetzen/therapie`
 - `/genesung`
-- `/selbsttest`
 - `/materialien`
 
 Typische Risiken:
@@ -66,3 +77,8 @@ Diese Seiten brauchen vor allem redaktionelle Pflege:
 ## Release-Regel
 
 Änderungen an Hochrisiko-Seiten dürfen nicht ohne bewusste fachliche Freigabe gemergt werden.
+
+Für `/soforthilfe` gilt zusätzlich: Kontakte und Links werden vor jedem
+öffentlichen Release und mindestens alle drei Monate geprüft. Diese bewusst
+strengere Sonderregel geht für Kontakte der allgemeinen Spanne von drei bis
+sechs Monaten vor. Eine überfällige Prüfung blockiert die Veröffentlichung.

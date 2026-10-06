@@ -1,5 +1,12 @@
 # Notfallkarte: Privacy-Fix
 
+> **Historische Umsetzungsnotiz:** Das persönliche Werkzeug bleibt gemäss
+> `12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md` bis zu einer
+> separaten klinischen, datenschutzrechtlichen und nutzerbezogenen Prüfung aus
+> der öffentlichen Produktionsauslieferung ausgeschlossen; dort gibt es `404`
+> zurück. Es gibt keine bereits gespeicherten Krisenpläne, die migriert werden
+> müssten.
+
 Status: als Umsetzungsanleitung für `client/src/pages/Notfallkarte.tsx` dokumentiert.
 
 ## Ziel

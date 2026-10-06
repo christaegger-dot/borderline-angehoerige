@@ -22,7 +22,9 @@ Diese Checkliste ist vor jedem Release zwingend zu prüfen.
 
 ## Hochrisiko-Seiten
 
-- [ ] Soforthilfe geprüft
+- [ ] `/soforthilfe` fachlich, technisch und gegen amtliche Primärquellen geprüft
+- [ ] keine operativen Kontaktkopien ausserhalb von `/soforthilfe`
+- [ ] feste nummernfreie Zuständigkeitsaussage konsistent
 - [ ] Diagnostik geprüft
 - [ ] Grenzen geprüft
 
@@ -34,7 +36,10 @@ Diese Checkliste ist vor jedem Release zwingend zu prüfen.
 ## Freigabe
 
 - [ ] Fachlich geprüft
-- [ ] Erfahrungsperspektiven geprüft oder als offen dokumentiert
+- [ ] Erfahrungsperspektiven geprüft; bei Krisen- und Sicherheitsänderungen ist
+      ein offener Review ein Release-Blocker
+- [ ] Inhaltsverantwortung für `/soforthilfe` namentlich zugeordnet
+- [ ] institutioneller Grundsatz- und Publikationsentscheid dokumentiert
 - [ ] Release freigegeben
 
 ## Release-Gates
@@ -45,25 +50,43 @@ Für diese Site ist das der wichtigste Gate.
 
 Prüfen:
 
-- Notfallnummern
-- PUK- und Beratungsdaten
+- staatliche Notrufnummern `144` und `117` gegen amtliche Primärquelle
+- offizielle Zielseiten veränderlicher PUK- und Beratungsangebote
+- Inhaltsverantwortung, Primärquelle, Prüfdatum und Status jedes Kontakts
+- Parität zwischen `client/src/data/kontakte.ts` und `/soforthilfe` durch
+  Generierung oder automatischen Test
 - rechtliche Begriffe
 - Quellen- und Krisenhinweise
 - lokale Relevanz für Schweiz / Zürich
+- keine Nummern oder Kontaktlisten in psychoedukativen Seiten, Textversionen
+  und Werkzeugen
 
 Pflicht-Scope:
 
 - `/soforthilfe`
-- `/notfallkarte`
-- `/notfallkarte/erstellen`
 - `/unterstuetzen/krise`
 - `/diagnostik`
 - `/begleiterkrankungen`
 - `/grenzen`
 - `/beratung`
 - `/quellen`
-- lokale Notfall-PDFs
 - `client/src/data/kontakte.ts`
+- gesperrte Pfade und Assets der statischen Notfallkarte
+- Redirect `/notfallkarte` nach `/soforthilfe`
+- öffentlicher `404`-Status von `/notfallkarte/erstellen`
+- `/wegweiser` und der Krisenausgang des Selbsttests, solange deren Folgereview
+  nicht abgeschlossen ist
+
+Zusätzliche Kontaktregel:
+
+- vor jedem öffentlichen Release und mindestens alle drei Monate prüfen
+- überfällige Prüfung blockiert den Release
+- gebrochene oder unbelegbare variable Kontakte entfernen, nicht aus
+  Erinnerung ersetzen
+- `/soforthilfe-print.html` und statische Notfallplan-Ableitungen mit kopierten
+  operativen Kontakten dürfen nicht produktiv ausgeliefert werden
+- der feste Footer-Hinweis ist auf jeder psychoedukativen Seite vorhanden; ein
+  allfälliger Header-Link ist ein nachgeordneter Textlink, kein Krisenbutton
 
 Dieses Gate soll vor Release von einer fachlich verantwortlichen Person
 gegengelesen und ausdrücklich freigegeben werden.
@@ -88,12 +111,16 @@ Vor Release systematisch prüfen:
 Besonderes Augenmerk:
 
 - SPA-Routen
-- statische Sonderseiten wie `/soforthilfe` und `/notfallkarte`
+- die statische Sonderseite `/soforthilfe`
+- ausgemusterte oder unveröffentlichte Sonderpfade müssen den dokumentierten
+  404-, Redirect- oder Zugriffszustand zeigen
 - Material-Download-Proxy `/api/material-download/:id`
 
 ### PDF- und Download-Audit
 
-Die Site hängt stark an PDFs, Downloads und Textversionen.
+Die Site hängt stark an PDFs, Downloads und Textversionen. Operative
+Notfallkontakte werden jedoch nicht als statische PDF-, WebP- oder
+Thumbnail-Fassung veröffentlicht.
 
 Vor Release explizit prüfen:
 
@@ -155,11 +182,12 @@ Drift-Check:
 
 Vor Release bewusst testen:
 
-- Notfallkarte speichern
-- Reload
-- Löschen
-- Druckansicht
-- `localStorage`-Übergabe ans Print-Template
+- `/notfallkarte` leitet dauerhaft auf `/soforthilfe` um
+- `/notfallkarte/erstellen` gibt in der öffentlichen Produktion `404` zurück
+- Wegweiser und Selbsttest enthalten keine operative Nummernkopie, behaupten
+  keine Triage und führen zu genau einer primären nächsten Aktion
+- falls das persönliche Notfallkarten-Werkzeug später freigegeben wird:
+  Speichern, Reload, Löschen, Druckansicht und Shared-Device-Hinweis
 - Zurück / Vorwärts
 - Fokus nach Dialog oder Menü
 - Such-Overlay
@@ -167,8 +195,9 @@ Vor Release bewusst testen:
 - Selbsttest-Navigation
 - interaktive Komponenten unter `client/src/components/interactive`
 
-Bei Hochrisiko-Flows gilt: kein stilles Fehlverhalten bei Storage-,
-Print- oder Fokuswechseln.
+Bei Hochrisiko-Flows gilt: keine automatische Triage, keine versteckte
+Sicherheitsinformation und kein stilles Fehlverhalten bei Storage-, Print-
+oder Fokuswechseln.
 
 ### Voller Geräte- und Browser-Release-Test
 

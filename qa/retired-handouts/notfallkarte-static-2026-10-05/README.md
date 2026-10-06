@@ -1,5 +1,10 @@
 # Ausgemusterte statische Notfallkarte
 
+Der spätere, übergreifende Entscheid zu Krisenwegen steht unter
+`docs/governance/12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md`. Der
+hier dokumentierte dauerhafte Verzicht auf PDF-, WebP- und Thumbnail-Fassungen
+bleibt unverändert gültig.
+
 Stand: 05.10.2026
 
 ## Dauerhafte Formatentscheidung

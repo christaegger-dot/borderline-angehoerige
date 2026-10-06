@@ -19,6 +19,11 @@ Die Dokumente sind bewusst nicht als juristische Formalität geschrieben, sonder
 11. `11-anti-stigma-und-perspektivenstandard.md` — verbindlicher Standard für
     Würde, Autonomie, Zuschreibungen und die Prüfung beider
     Erfahrungsperspektiven.
+12. `12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md` — verbindlicher
+    projektinterner Arbeitsentscheid zur zentralen Soforthilfe-Seite, zur
+    Platzierung von Sicherheitszugängen und zum Umgang mit Kontaktdaten. Der
+    institutionelle Grundsatzentscheid und die Publikationsfreigabe bleiben
+    offen.
 
 Paketbezogenes Protokoll:
 
@@ -44,3 +49,6 @@ Die Website bietet psychoedukative Orientierung für Angehörige. Sie ersetzt ke
 ## Arbeitsregel
 
 Änderungen an Hochrisiko-Seiten dürfen nur erfolgen, wenn mindestens die fachliche Aussage, die Krisenlogik, die Quellenlage und die Datenschutzfolgen geprüft wurden.
+
+Bei Krisenwegen, Notfallkontakten und Notfallkarten gilt vorrangig der datierte
+Entscheid `12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md`.

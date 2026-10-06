@@ -19,23 +19,24 @@ Vor jedem Release mit Änderungen an:
 - Kontakt- und Kriseninhalten
 - Diagnostik-, Quellen- oder Beratungsinhalten
 - Darstellungen von Erleben, Beziehungen, Rollen oder Genesung
-- lokalen Notfall-PDFs
+- zentralem Soforthilfeweg oder unveröffentlichten Sicherheitswerkzeugen
 
 ## Pflicht-Scope
 
 Mindestens diese Stellen prüfen, wenn sie vom Release betroffen sind:
 
 - `/soforthilfe`
-- `/notfallkarte`
-- `/notfallkarte/erstellen`
 - `/unterstuetzen/krise`
 - `/diagnostik`
 - `/begleiterkrankungen`
 - `/grenzen`
 - `/beratung`
 - `/quellen`
-- lokale Notfall-PDFs
 - `client/src/data/kontakte.ts`
+- ausgemusterte statische Notfallpfade und Assets
+- betroffene Sicherheitsrouten und -werkzeuge `/notfallkarte`,
+  `/notfallkarte/erstellen`, `/wegweiser` und der Krisenausgang von
+  `/selbsttest`
 
 ## Copy/Paste-Vorlage
 
@@ -47,29 +48,45 @@ Mindestens diese Stellen prüfen, wenn sie vom Release betroffen sind:
 - Datum der Prüfung:
 - Fachlich prüfende Person:
 - Rolle / Funktion:
+- Inhaltlich verantwortliche Person für /soforthilfe:
+- Institutioneller Grundsatzentscheid dokumentiert: ja / nein
+- Sicherheitsvariante /soforthilfe: direct
+- Sicherheitsvariante nicht akute Seiten: persistent-subdued
 
 ### Geprüfter Scope
 
 - [ ] /soforthilfe
-- [ ] /notfallkarte
-- [ ] /notfallkarte/erstellen
 - [ ] /unterstuetzen/krise
 - [ ] /diagnostik
 - [ ] /begleiterkrankungen
 - [ ] /grenzen
 - [ ] /beratung
 - [ ] /quellen
-- [ ] lokale Notfall-PDFs
 - [ ] client/src/data/kontakte.ts
+- [ ] ausgemusterte statische Notfallpfade und Assets
+- [ ] betroffene Sicherheitsrouten und -werkzeuge
 
 ### Prüfgegenstände
 
-- [ ] Notfallnummern korrekt
-- [ ] PUK- und Beratungsdaten korrekt
+- [ ] 144 und 117 gegen amtliche Primärquelle geprüft
+- [ ] veränderliche PUK- und Beratungsangebote über offizielle Zielseiten
+      geprüft
+- [ ] Inhaltsverantwortung, Primärquelle, Prüfdatum und Status jedes Kontakts
+      dokumentiert
+- [ ] Parität zwischen Kontaktregister und `/soforthilfe` automatisiert geprüft
+- [ ] Kontaktprüfung ist höchstens drei Monate alt und wurde vor diesem Release
+      wiederholt
 - [ ] rechtliche Begriffe korrekt und nicht missverständlich
 - [ ] Quellen- und Krisenhinweise korrekt
 - [ ] lokale Relevanz für Schweiz / Zürich gegeben
-- [ ] Soforthilfe-Logik intakt
+- [ ] `/soforthilfe` ist die einzige veröffentlichte operative Kontaktquelle
+- [ ] ausserhalb von `/soforthilfe` keine Nummern- oder Kontaktkopien
+- [ ] feste nummernfreie Zuständigkeitserklärung konsistent
+- [ ] keine statische Notfallkarte, Soforthilfe-Druckseite oder
+      Krisenplan-Ableitung mit kopierten operativen Kontakten veröffentlicht
+- [ ] `/notfallkarte` leitet dauerhaft auf `/soforthilfe` um
+- [ ] `/notfallkarte/erstellen` gibt in der öffentlichen Produktion `404`
+- [ ] Werkzeuge nehmen keine automatische Triage vor
 - [ ] keine neue fachliche Aussage ohne belastbare Quelle
 - [ ] Anti-Stigma- und Perspektivenstandard in allen betroffenen Fassungen
       erfüllt
@@ -83,7 +100,7 @@ Mindestens diese Stellen prüfen, wenn sie vom Release betroffen sind:
 - [ ] Review durch eine Person mit eigener Borderline-Erfahrung dokumentiert
 - [ ] Review durch eine angehörige Person dokumentiert
 - [ ] unterschiedliche Rückmeldungen und offene Punkte festgehalten
-- [ ] noch offen und deshalb keine öffentliche Gesamtfreigabe
+- [ ] noch offen und deshalb keine öffentliche Freigabe
 
 ### Ergebnis
 
@@ -103,4 +120,7 @@ Mindestens diese Stellen prüfen, wenn sie vom Release betroffen sind:
 ## Minimalregel
 
 Ohne dokumentiertes fachliches Sign-off soll ein Release mit Änderungen an
-Hochrisiko-Seiten nicht als vollständig freigegeben gelten.
+Hochrisiko-Seiten nicht als vollständig freigegeben gelten. Für Krisen- und
+Sicherheitsänderungen blockieren ausserdem eine fehlende namentliche
+Inhaltsverantwortung, ein fehlender institutioneller Grundsatzentscheid oder
+ein offener Review beider Erfahrungsperspektiven die öffentliche Freigabe.

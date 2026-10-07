@@ -47,12 +47,19 @@ async function loadContentModule(category: HandoutTextVersionCategory) {
 
   loadedContentModulesByCategory.set(category, promise);
 
-  const contentModule = await promise;
-  if (contentModule) {
-    cacheContentModule(contentModule);
-  }
+  try {
+    const contentModule = await promise;
+    if (contentModule) {
+      cacheContentModule(contentModule);
+    }
 
-  return contentModule;
+    return contentModule;
+  } catch (error) {
+    if (loadedContentModulesByCategory.get(category) === promise) {
+      loadedContentModulesByCategory.delete(category);
+    }
+    throw error;
+  }
 }
 
 export function getHandoutTextVersion(id: string | undefined) {

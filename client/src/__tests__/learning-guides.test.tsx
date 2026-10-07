@@ -7,6 +7,33 @@ import guides from "@/content/learningGuides.json";
 import { isHandoutVisualPublished } from "@/content/handoutGovernance";
 
 describe("interactive learning guides", () => {
+  it.each([false, true])(
+    "opens all steps for printing and restores the previous open state (%s)",
+    initiallyOpen => {
+      const { container } = render(<LearningGuide kind="dear" id="guide" />);
+      const details = container.querySelector(
+        ".learning-tool__all"
+      ) as HTMLDetailsElement;
+      details.open = initiallyOpen;
+      const choices = within(
+        screen.getByRole("group", { name: "DEAR-Schritt auswählen" })
+      ).getAllByRole("button");
+      fireEvent.click(choices[2]);
+
+      fireEvent(window, new Event("beforeprint"));
+      fireEvent(window, new Event("beforeprint"));
+      expect(details.open).toBe(true);
+      for (const card of guides.dear.sections[0].cards!) {
+        expect(within(details).getByText(card.title)).toBeVisible();
+      }
+      fireEvent(window, new Event("afterprint"));
+      expect(details.open).toBe(initiallyOpen);
+      expect(choices[2]).toHaveAttribute("aria-pressed", "true");
+      fireEvent(window, new Event("afterprint"));
+      expect(details.open).toBe(initiallyOpen);
+    }
+  );
+
   for (const kind of Object.keys(guides) as LearningGuideKind[]) {
     it(`${kind}: selection updates the explanation and retains help and reading alternatives`, () => {
       const { container } = render(<LearningGuide kind={kind} id="guide" />);

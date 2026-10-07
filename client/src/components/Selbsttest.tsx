@@ -1,7 +1,7 @@
 /* Interactive self-check with weighted routing for Angehörigen-Orientierung. */
 import { useCallback, useEffect, useRef, useState } from "react";
 import AppLink from "@/components/AppLink";
-import { m, AnimatePresence } from "framer-motion";
+import { m } from "framer-motion";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 
 const immediateHelpAnswers = new Set(["akut", "unsicher"]);
@@ -396,7 +396,6 @@ function OptionButton({
 export default function Selbsttest() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});
-  const [scores, setScores] = useState<Record<string, number>>({});
   const [showResult, setShowResult] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -404,6 +403,15 @@ export default function Selbsttest() {
   const questionHeadingRef = useRef<HTMLHeadingElement>(null);
   const resultHeadingRef = useRef<HTMLHeadingElement>(null);
   const focusQuestionAfterChange = useRef(false);
+  const scores: Record<string, number> = {};
+  for (const question of questions) {
+    const answer = question.options.find(
+      option => option.value === answers[question.id]
+    );
+    for (const [category, weight] of Object.entries(answer?.weight ?? {})) {
+      scores[category] = (scores[category] ?? 0) + weight;
+    }
+  }
 
   const setQuestionHeadingRef = useCallback(
     (heading: HTMLHeadingElement | null) => {
@@ -434,13 +442,10 @@ export default function Selbsttest() {
     setIsTransitioning(true);
     setSelectedOption(option.value);
 
-    const newScores = { ...scores };
-    Object.entries(option.weight).forEach(([key, value]) => {
-      newScores[key] = (newScores[key] || 0) + value;
-    });
-    setScores(newScores);
-
-    setAnswers({ ...answers, [questions[currentQuestion].id]: option.value });
+    setAnswers(previous => ({
+      ...previous,
+      [questions[currentQuestion].id]: option.value,
+    }));
 
     // Krisensignale unterbrechen die Orientierung sofort, ohne Folgfragen
     // oder die sonstige Übergangsverzögerung.
@@ -451,6 +456,7 @@ export default function Selbsttest() {
     }
 
     transitionTimer.current = setTimeout(() => {
+      transitionTimer.current = null;
       if (currentQuestion < questions.length - 1) {
         focusQuestionAfterChange.current = true;
         setCurrentQuestion(currentQuestion + 1);
@@ -464,31 +470,36 @@ export default function Selbsttest() {
 
   const goBack = () => {
     if (currentQuestion > 0) {
+      if (transitionTimer.current) clearTimeout(transitionTimer.current);
+      transitionTimer.current = null;
+      setIsTransitioning(false);
+      const previousQuestionIndex = currentQuestion - 1;
       const prevQuestionId = questions[currentQuestion - 1].id;
       const prevAnswerValue = answers[prevQuestionId];
-      if (prevAnswerValue) {
-        const prevOption = questions[currentQuestion - 1].options.find(
-          o => o.value === prevAnswerValue
-        );
-        if (prevOption) {
-          const newScores = { ...scores };
-          Object.entries(prevOption.weight).forEach(([key, value]) => {
-            newScores[key] = (newScores[key] || 0) - value;
-          });
-          setScores(newScores);
-        }
-      }
+      // Antworten ab der erneut angezeigten Frage werden neu gewählt. Die
+      // sichtbare Vorauswahl bleibt erhalten, zählt aber nicht doppelt.
+      setAnswers(previous =>
+        Object.fromEntries(
+          questions
+            .slice(0, previousQuestionIndex)
+            .flatMap(question =>
+              previous[question.id]
+                ? [[question.id, previous[question.id]]]
+                : []
+            )
+        )
+      );
       focusQuestionAfterChange.current = true;
-      setCurrentQuestion(currentQuestion - 1);
-      setSelectedOption(answers[prevQuestionId] || null);
+      setCurrentQuestion(previousQuestionIndex);
+      setSelectedOption(prevAnswerValue || null);
     }
   };
 
   const restart = () => {
     if (transitionTimer.current) clearTimeout(transitionTimer.current);
+    transitionTimer.current = null;
     setCurrentQuestion(0);
     setAnswers({});
-    setScores({});
     focusQuestionAfterChange.current = true;
     setShowResult(false);
     setSelectedOption(null);
@@ -693,36 +704,35 @@ export default function Selbsttest() {
         </div>
       </div>
 
-      <AnimatePresence mode="wait">
-        <m.div
-          key={question.id}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="space-y-6"
-        >
-          <header className="space-y-2">
-            <h2 ref={setQuestionHeadingRef} tabIndex={-1} style={questionStyle}>
-              {question.text}
-            </h2>
-            {question.subtext && <p style={subtextStyle}>{question.subtext}</p>}
-          </header>
+      {/* Alte Fragen werden sofort entfernt, damit ihre Antworten während
+          eines Rückwärtswechsels nicht mehr bedienbar bleiben. */}
+      <m.div
+        key={question.id}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="space-y-6"
+      >
+        <header className="space-y-2">
+          <h2 ref={setQuestionHeadingRef} tabIndex={-1} style={questionStyle}>
+            {question.text}
+          </h2>
+          {question.subtext && <p style={subtextStyle}>{question.subtext}</p>}
+        </header>
 
-          <fieldset className="m-0 space-y-3 border-0 p-0">
-            <legend className="sr-only">{question.text}</legend>
-            {question.options.map(option => (
-              <OptionButton
-                key={option.value}
-                label={option.text}
-                selected={selectedOption === option.value}
-                disabled={isTransitioning}
-                onClick={() => handleAnswer(option)}
-              />
-            ))}
-          </fieldset>
-        </m.div>
-      </AnimatePresence>
+        <fieldset className="m-0 space-y-3 border-0 p-0">
+          <legend className="sr-only">{question.text}</legend>
+          {question.options.map(option => (
+            <OptionButton
+              key={option.value}
+              label={option.text}
+              selected={selectedOption === option.value}
+              disabled={isTransitioning}
+              onClick={() => handleAnswer(option)}
+            />
+          ))}
+        </fieldset>
+      </m.div>
     </form>
   );
 }

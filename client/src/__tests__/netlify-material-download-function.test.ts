@@ -10,6 +10,99 @@ afterEach(() => {
 });
 
 describe("netlify material-download function adapter", () => {
+  it.each(["POST", "PUT", "DELETE", "PATCH", "OPTIONS"])(
+    "rejects %s before reading or redirecting a PDF",
+    async method => {
+      const existsSync = vi.spyOn(fs, "existsSync").mockReturnValue(false);
+      const fetchPdf = vi.fn();
+      vi.stubGlobal("fetch", fetchPdf);
+      const response = await materialDownloadFunction(
+        new Request(
+          "https://example.com/api/material-download/4-arten-von-grenzen",
+          { method }
+        ),
+        { params: { id: "4-arten-von-grenzen" } }
+      );
+
+      expect(response.status).toBe(405);
+      expect(response.headers.get("Allow")).toBe("GET, HEAD");
+      expect(response.headers.get("Location")).toBeNull();
+      expect(existsSync).not.toHaveBeenCalled();
+      expect(fetchPdf).not.toHaveBeenCalled();
+      for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
+        expect(response.headers.get(header)).toBe(value);
+      }
+    }
+  );
+
+  it.each(["attachment", "inline"])(
+    "returns HEAD metadata without the %s PDF body",
+    async disposition => {
+      const url = `https://example.com/api/material-download/4-arten-von-grenzen?disposition=${disposition}`;
+      const context = { params: { id: "4-arten-von-grenzen" } };
+      const getResponse = await materialDownloadFunction(
+        new Request(url),
+        context
+      );
+      const headResponse = await materialDownloadFunction(
+        new Request(url, { method: "HEAD" }),
+        context
+      );
+
+      expect(getResponse.status).toBe(200);
+      expect((await getResponse.arrayBuffer()).byteLength).toBeGreaterThan(
+        1024
+      );
+      expect(headResponse.status).toBe(getResponse.status);
+      expect(headResponse.statusText).toBe(getResponse.statusText);
+      expect(Object.fromEntries(headResponse.headers)).toEqual(
+        Object.fromEntries(getResponse.headers)
+      );
+      expect(headResponse.body).toBeNull();
+      await expect(headResponse.text()).resolves.toBe("");
+    }
+  );
+
+  it("preserves the private 307 fallback for HEAD without a body", async () => {
+    vi.spyOn(fs, "existsSync").mockReturnValue(false);
+    const fetchPdf = vi.fn();
+    vi.stubGlobal("fetch", fetchPdf);
+    const response = await materialDownloadFunction(
+      new Request("https://preview.example.com/api/material-download/kinder", {
+        method: "HEAD",
+      }),
+      { params: { id: "kinder" } }
+    );
+
+    expect(response.status).toBe(307);
+    expect(response.headers.get("Location")).toBe(
+      "/infografiken/manus-kinder-v3.pdf"
+    );
+    expect(response.headers.get("Cache-Control")).toBe("private, no-store");
+    expect(fetchPdf).not.toHaveBeenCalled();
+    for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
+      expect(response.headers.get(header)).toBe(value);
+    }
+    expect(response.body).toBeNull();
+    await expect(response.text()).resolves.toBe("");
+  });
+
+  it.each([undefined, "warnsignale", "unknown"])(
+    "returns a bodyless HEAD 404 for missing or unpublished id %s",
+    async id => {
+      const response = await materialDownloadFunction(
+        new Request("https://example.com/api/material-download/test", {
+          method: "HEAD",
+        }),
+        { params: { id } }
+      );
+
+      expect(response.status).toBe(404);
+      expect(response.body).toBeNull();
+      await expect(response.text()).resolves.toBe("");
+    }
+  );
+
   it.each([
     ["kinder", "kinder"],
     ["genesung-zahlen", "genesung-zahlen"],

@@ -9,12 +9,17 @@ import {
   STATIC_ROUTE_REDIRECTS,
 } from "../shared/staticRouteShells";
 import { createMaterialDownloadResponse } from "./material-download";
+import { resolvePublicFilePath } from "./public-file-path";
+import { getRedirectLocation } from "./redirect-location";
 
 const SERVER_MODULE_FILENAME = fileURLToPath(import.meta.url);
 const SERVER_MODULE_DIRNAME = path.dirname(SERVER_MODULE_FILENAME);
-async function startServer() {
+export function createApp(
+  staticPath = process.env.NODE_ENV === "production"
+    ? path.resolve(SERVER_MODULE_DIRNAME, "public")
+    : path.resolve(SERVER_MODULE_DIRNAME, "..", "dist", "public")
+) {
   const app = express();
-  const server = createServer(app);
 
   // Security headers (aligned with Netlify config)
   app.disable("x-powered-by");
@@ -37,16 +42,10 @@ async function startServer() {
     await sendResponse(res, response);
   });
 
-  // Serve static files from dist/public in production
-  const staticPath =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(SERVER_MODULE_DIRNAME, "public")
-      : path.resolve(SERVER_MODULE_DIRNAME, "..", "dist", "public");
-
   const resolveStaticHtmlFile = (pathname: string) => {
     for (const candidate of getStaticHtmlCandidates(pathname)) {
-      const absolutePath = path.join(staticPath, candidate);
-      if (fs.existsSync(absolutePath)) {
+      const absolutePath = resolvePublicFilePath(staticPath, candidate);
+      if (absolutePath && fs.existsSync(absolutePath)) {
         return absolutePath;
       }
     }
@@ -56,20 +55,26 @@ async function startServer() {
 
   // Serve prerendered HTML shells without directory redirects.
   app.get("/{*splat}", (req, res, next) => {
+    const pathname = req.path === "/" ? "/" : req.path.replace(/\/$/, "");
     const redirect = STATIC_ROUTE_REDIRECTS.find(
-      route => route.from === req.path
+      route => route.from === pathname
     );
     if (redirect) {
-      return res.redirect(redirect.status, redirect.to);
+      return res.redirect(
+        redirect.status,
+        getRedirectLocation(redirect.to, req.originalUrl)
+      );
     }
 
-    if (req.path === "/" || req.path.endsWith("/") || path.extname(req.path)) {
+    if (pathname === "/" || path.extname(pathname)) {
       return next();
     }
 
-    const staticHtmlFile = resolveStaticHtmlFile(req.path);
+    const staticHtmlFile = resolveStaticHtmlFile(pathname);
     if (staticHtmlFile) {
-      return res.sendFile(staticHtmlFile);
+      return res
+        .status(pathname === "/404" ? 404 : 200)
+        .sendFile(staticHtmlFile);
     }
 
     return next();
@@ -91,6 +96,11 @@ async function startServer() {
     return res.status(404).send("Seite nicht gefunden.");
   });
 
+  return app;
+}
+
+async function startServer() {
+  const server = createServer(createApp());
   const port = process.env.PORT || 3000;
 
   server.listen(port, () => {
@@ -98,7 +108,13 @@ async function startServer() {
   });
 }
 
-startServer().catch(console.error);
+// Importing the app for HTTP tests must not start a second listening server.
+if (
+  process.argv[1] &&
+  path.resolve(process.argv[1]) === SERVER_MODULE_FILENAME
+) {
+  startServer().catch(console.error);
+}
 
 async function sendResponse(res: express.Response, response: Response) {
   res.status(response.status);

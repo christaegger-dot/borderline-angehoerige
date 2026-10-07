@@ -204,4 +204,84 @@ describe("Selbsttest", () => {
       screen.getByRole("link", { name: "Diagnostik einordnen" })
     ).toHaveAttribute("href", "/verstehen/diagnostik");
   });
+
+  it("bricht eine ausstehende Antwort beim Zurückgehen ab und gewichtet die erneute Auswahl nur einmal", () => {
+    vi.useFakeTimers();
+    render(<Selbsttest />);
+    fireEvent.click(screen.getByRole("button", { name: /Hohe Anspannung/ }));
+    act(() => vi.advanceTimersByTime(300));
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: "Ich verstehe nicht, was in meinem Angehörigen vorgeht",
+      })
+    );
+    act(() => vi.advanceTimersByTime(100));
+    fireEvent.click(screen.getByRole("button", { name: "Eine Frage zurück" }));
+
+    expect(screen.getByText("Frage 1 von 5")).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", {
+        name: "Ich verstehe nicht, was in meinem Angehörigen vorgeht",
+      })
+    ).not.toBeInTheDocument();
+    act(() => vi.advanceTimersByTime(1000));
+    expect(screen.getByText("Frage 1 von 5")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /Hohe Anspannung/ })
+    ).toBeEnabled();
+
+    for (const name of [
+      /Hohe Anspannung/,
+      /Ich verstehe nicht, was in meinem Angehörigen vorgeht/,
+      /Deutlich spürbar/,
+      /Eine Borderline-Diagnose wurde fachlich gestellt/,
+      /Gut – ich habe Energie und Ressourcen/,
+    ]) {
+      fireEvent.click(screen.getByRole("button", { name }));
+      act(() => vi.advanceTimersByTime(300));
+    }
+    expect(
+      screen.getByRole("heading", { name: "Kommunikation verbessern" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Kommunikationstechniken entdecken" })
+    ).toHaveAttribute("href", "/kommunizieren");
+  });
+
+  it("entfernt alte Fragen beim Zurückgehen sofort und verwendet nur die neu gewählten Antworten", () => {
+    vi.useFakeTimers();
+    render(<Selbsttest />);
+    for (const name of [
+      /Relativ stabil/,
+      /Die Kommunikation ist schwierig/,
+      /Deutlich spürbar/,
+    ]) {
+      fireEvent.click(screen.getByRole("button", { name }));
+      act(() => vi.advanceTimersByTime(300));
+    }
+    fireEvent.click(screen.getByRole("button", { name: "Eine Frage zurück" }));
+    expect(
+      screen.queryByRole("button", {
+        name: /Eine Borderline-Diagnose wurde fachlich gestellt/,
+      })
+    ).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Eine Frage zurück" }));
+    expect(screen.getByText("Frage 2 von 5")).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /Deutlich spürbar/ })
+    ).not.toBeInTheDocument();
+
+    for (const name of [
+      /Ich verstehe nicht, was in meinem Angehörigen vorgeht/,
+      /Deutlich spürbar/,
+      /Eine Borderline-Diagnose wurde fachlich gestellt/,
+      /Gut – ich habe Energie und Ressourcen/,
+    ]) {
+      fireEvent.click(screen.getByRole("button", { name }));
+      act(() => vi.advanceTimersByTime(300));
+    }
+    expect(
+      screen.getByRole("heading", { name: "Borderline verstehen" })
+    ).toBeInTheDocument();
+  });
 });

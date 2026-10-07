@@ -109,4 +109,37 @@ describe("Search", () => {
 
     expect(screen.getByText(/suchindex wird geladen/i)).toBeInTheDocument();
   });
+
+  it("does not open a stale selected result after the query changes", async () => {
+    const onClose = vi.fn();
+    render(
+      <Router>
+        <Search isOpen onClose={onClose} />
+      </Router>
+    );
+    await act(async () => {
+      await Promise.resolve();
+    });
+    const input = screen.getByRole("combobox");
+    fireEvent.change(input, { target: { value: "Validierung" } });
+    act(() => {
+      vi.advanceTimersByTime(200);
+    });
+    fireEvent.keyDown(input, { key: "ArrowDown" });
+    expect(input).toHaveAttribute("aria-activedescendant", "search-result-0");
+
+    fireEvent.change(input, { target: { value: "Krise" } });
+    fireEvent.keyDown(input, { key: "Enter" });
+    expect(onClose).not.toHaveBeenCalled();
+    expect(input).not.toHaveAttribute("aria-activedescendant");
+    expect(screen.queryAllByRole("option")).toHaveLength(0);
+
+    act(() => {
+      vi.advanceTimersByTime(200);
+    });
+    expect(screen.getAllByRole("option").length).toBeGreaterThan(0);
+    fireEvent.keyDown(input, { key: "ArrowDown" });
+    fireEvent.keyDown(input, { key: "Enter" });
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
 });

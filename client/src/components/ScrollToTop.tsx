@@ -20,6 +20,10 @@ function decodeUriComponentSafely(value: string) {
  * 1. Deaktiviert die automatische Scroll-Restoration des Browsers
  * 2. Scrollt bei jedem Route-Wechsel nach oben (0, 0)
  * 3. Behandelt auch den iOS/Safari bfcache via pageshow-Event
+ *
+ * Muss innerhalb der Router-Suspense nach dem Seiteninhalt gerendert werden:
+ * Erst beim Commit der geladenen Zielseite existiert deren Hauptinhalt und
+ * kann den Fokus erhalten. Ein Lade-Fallback ist noch keine fertige Route.
  */
 export default function ScrollToTop() {
   const [location] = useLocation();

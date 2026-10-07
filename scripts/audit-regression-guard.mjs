@@ -389,11 +389,20 @@ async function checkContainerPageWidth(page) {
 async function checkSkipLink(page) {
   await page.setViewportSize({ width: 1280, height: 800 });
   await gotoIdle(page, "/");
+  await page.waitForFunction(
+    () =>
+      document.body.dataset.appReady === "true" &&
+      document.getElementById("main-content")
+  );
   await page.evaluate(() => {
-    // Fokus zuruecksetzen, damit Tab am Body startet.
-    if (document.activeElement instanceof HTMLElement) {
-      document.activeElement.blur();
-    }
+    // blur() laesst Chromiums sequenziellen Tab-Start am zuletzt fokussierten
+    // MAIN. Den Body explizit fokussieren und sein urspruengliches Attribut
+    // wiederherstellen, damit der erste Tab wirklich am Dokumentanfang startet.
+    const originalTabIndex = document.body.getAttribute("tabindex");
+    document.body.setAttribute("tabindex", "-1");
+    document.body.focus({ preventScroll: true });
+    if (originalTabIndex === null) document.body.removeAttribute("tabindex");
+    else document.body.setAttribute("tabindex", originalTabIndex);
     window.scrollTo(0, 0);
   });
   await page.keyboard.press("Tab");

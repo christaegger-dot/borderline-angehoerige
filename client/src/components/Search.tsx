@@ -60,7 +60,8 @@ function levenshtein(a: string, b: string): number {
 
 export default function Search({ isOpen, onClose }: SearchProps) {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchEntry[]>([]);
+  const [resolvedResults, setResults] = useState<SearchEntry[]>([]);
+  const [resultsQuery, setResultsQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(-1);
   const [searchIndex, setSearchIndex] = useState<
     NormalizedSearchEntry[] | null
@@ -84,6 +85,10 @@ export default function Search({ isOpen, onClose }: SearchProps) {
     [deferredQuery]
   );
   const hasSearchTerms = searchTerms.length > 0;
+  const currentQuery = normalizeSearchQuery(query);
+  // Debounced results belong to the query that produced them. Hide them as
+  // soon as the input changes so Enter cannot activate an old selection.
+  const results = resultsQuery === currentQuery ? resolvedResults : [];
 
   useEffect(() => {
     if (!isOpen) return;
@@ -194,6 +199,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
 
       startTransition(() => {
         setResults(matches.slice(0, 8).map(({ item }) => item));
+        setResultsQuery(normalizedQuery);
         setActiveIndex(-1);
       });
     }, 150);
@@ -354,10 +360,14 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                       ))}
                     </div>
                   </div>
-                ) : searchIndexState === "loading" ? (
+                ) : searchIndexState === "loading" ||
+                  (searchIndexState === "ready" &&
+                    resultsQuery !== currentQuery) ? (
                   <div className="px-4 py-8 text-center">
                     <p className="text-muted-foreground">
-                      Suchindex wird geladen…
+                      {searchIndexState === "loading"
+                        ? "Suchindex wird geladen…"
+                        : "Suchergebnisse werden geladen…"}
                     </p>
                   </div>
                 ) : searchIndexState === "error" ? (

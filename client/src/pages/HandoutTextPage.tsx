@@ -72,10 +72,12 @@ export default function HandoutTextPage({
   const [handout, setHandout] = useState<HandoutTextVersion | null>(() =>
     getHandoutTextVersion(handoutId)
   );
+  const [failedHandoutId, setFailedHandoutId] = useState<string | null>(null);
 
   useEffect(() => {
     const cachedHandout = getHandoutTextVersion(handoutId);
     setHandout(cachedHandout);
+    setFailedHandoutId(null);
 
     if (!handoutMeta || cachedHandout) {
       return;
@@ -83,11 +85,16 @@ export default function HandoutTextPage({
 
     let cancelled = false;
 
-    void loadHandoutTextVersion(handoutId).then(version => {
-      if (!cancelled) {
-        setHandout(version);
-      }
-    });
+    void loadHandoutTextVersion(handoutId)
+      .then(version => {
+        if (!cancelled) {
+          setHandout(version);
+          if (!version) setFailedHandoutId(handoutId ?? null);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setFailedHandoutId(handoutId ?? null);
+      });
 
     return () => {
       cancelled = true;
@@ -98,12 +105,16 @@ export default function HandoutTextPage({
     return <NotFound />;
   }
 
+  const loadFailed = failedHandoutId === handoutId;
   const pageTitle = handout?.title ?? handoutMeta.title;
   const pageDescription =
     handout?.description ??
     `${handoutMeta.description} Diese Seite bietet eine lesbare Textversion des Handouts.`;
   const pageSummary =
-    handout?.summary ?? "Die Textversion dieses Handouts wird geladen.";
+    handout?.summary ??
+    (loadFailed
+      ? "Die Textversion konnte nicht geladen werden."
+      : "Die Textversion dieses Handouts wird geladen.");
   const pageTopicLabel = handout?.topicLabel ?? handoutMeta.topicLabel;
   const pageTopicHref = handout?.topicHref ?? handoutMeta.topicHref;
   const pageKind = handout?.kind ?? handoutMeta.kind;
@@ -174,6 +185,18 @@ export default function HandoutTextPage({
             {pageTitle}
           </DisplayHeading>
           <Lede className="mt-6">{pageSummary}</Lede>
+
+          {loadFailed && (
+            <div role="alert" className="mt-6 border-l pl-4" style={bodyStyle}>
+              <p>
+                Bitte prüfen Sie Ihre Internetverbindung und laden Sie diese
+                Seite erneut.
+              </p>
+              <Button asChild variant="outline" className="mt-4">
+                <a href={handoutMeta.path}>Seite erneut laden</a>
+              </Button>
+            </div>
+          )}
 
           {approvalStatus === "draft-editorial-review-pending" ? (
             <p
@@ -257,7 +280,7 @@ export default function HandoutTextPage({
 
           {semanticVisualization ? (
             <HandoutSemanticVisual visualization={semanticVisualization} />
-          ) : hasSemanticVisualization ? (
+          ) : hasSemanticVisualization && !loadFailed ? (
             <div className="mt-10 flex items-center gap-3" style={bodyStyle}>
               <Spinner className="size-5 text-[color:var(--accent-primary)]" />
               <p>Die barrierefreie Darstellung wird geladen.</p>
@@ -285,7 +308,7 @@ export default function HandoutTextPage({
           ) : null}
         </header>
 
-        {!semanticVisualization ? (
+        {!semanticVisualization && !loadFailed ? (
           <EditorialSectionBlock
             label="Überblick"
             title="Worum es in diesem Handout geht"
@@ -382,14 +405,14 @@ export default function HandoutTextPage({
               </p>
             </EditorialSectionBlock>
           </>
-        ) : (
+        ) : !loadFailed ? (
           <EditorialSectionBlock title="Textversion lädt" rule>
             <div className="flex items-center gap-3" style={bodyStyle}>
               <Spinner className="size-5 text-[color:var(--accent-primary)]" />
               <p>Die Abschnitte dieser Textversion werden geladen.</p>
             </div>
           </EditorialSectionBlock>
-        )}
+        ) : null}
 
         <RelatedLinksEditorial
           links={[

@@ -6,6 +6,8 @@ import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 import { createMaterialDownloadResponse } from "./server/material-download";
+import { resolvePublicFilePath } from "./server/public-file-path";
+import { getRedirectLocation } from "./server/redirect-location";
 import {
   getGeneratedStaticHtmlOutputPath,
   getGeneratedStaticRouteHeadMetadata,
@@ -164,13 +166,13 @@ function writeToLogFile(source: LogSource, entries: unknown[]) {
 
 function normalizeRequestPath(reqUrl?: string) {
   const pathname = new URL(reqUrl ?? "/", "http://localhost").pathname;
-  return pathname !== "/" ? pathname.replace(/\/+$/, "") : pathname;
+  return pathname !== "/" ? pathname.replace(/\/$/, "") : pathname;
 }
 
 function resolveStaticHtmlFile(rootDir: string, pathname: string) {
   for (const candidate of getStaticHtmlCandidates(pathname)) {
-    const absoluteFilePath = path.join(rootDir, candidate);
-    if (fs.existsSync(absoluteFilePath)) {
+    const absoluteFilePath = resolvePublicFilePath(rootDir, candidate);
+    if (absoluteFilePath && fs.existsSync(absoluteFilePath)) {
       return absoluteFilePath;
     }
   }
@@ -213,13 +215,25 @@ function createStaticHtmlRouteMiddleware(
       return next();
     }
 
-    const pathname = normalizeRequestPath(req.url);
+    let pathname: string;
+    try {
+      pathname = normalizeRequestPath(req.url);
+    } catch {
+      res.writeHead(400, {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-store",
+      });
+      res.end("Ungültige Anfrage.");
+      return;
+    }
 
     const redirect = STATIC_ROUTE_REDIRECTS.find(
       route => route.from === pathname
     );
     if (redirect) {
-      res.writeHead(redirect.status, { Location: redirect.to });
+      res.writeHead(redirect.status, {
+        Location: getRedirectLocation(redirect.to, req.url ?? pathname),
+      });
       res.end();
       return;
     }
@@ -326,10 +340,19 @@ function vitePluginManusDebugCollector(): Plugin {
             return next();
           }
 
-          const requestUrl = new URL(req.url ?? "/", "http://localhost");
-          const id = decodeURIComponent(
-            requestUrl.pathname.replace(/^\/+/, "")
-          );
+          let requestUrl: URL;
+          let id: string;
+          try {
+            requestUrl = new URL(req.url ?? "/", "http://localhost");
+            id = decodeURIComponent(requestUrl.pathname.replace(/^\/+/, ""));
+          } catch {
+            res.writeHead(400, {
+              "Content-Type": "text/plain; charset=utf-8",
+              "Cache-Control": "no-store",
+            });
+            res.end("Ungültige Material-ID.");
+            return;
+          }
           if (!id) {
             return next();
           }

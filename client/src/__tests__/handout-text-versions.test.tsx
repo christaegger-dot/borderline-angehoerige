@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { genesungItems } from "@/content/genesung";
 import { grenzenItems } from "@/content/grenzen";
 import { isHandoutVisualPublished } from "@/content/handoutGovernance";
@@ -204,5 +204,25 @@ describe("handout text versions", () => {
     expect(getHandoutTextVersion("grenzen-spickzettel")?.id).toBe(
       "grenzen-spickzettel"
     );
+  });
+
+  it("allows a category to load again after an import fails", async () => {
+    const contentModule =
+      "@/content/handoutTextVersionContent/selbstfuersorge.content.ts";
+    vi.doMock(contentModule, () => {
+      throw new Error("Content chunk unavailable");
+    });
+
+    try {
+      await expect(loadHandoutTextVersion("warnsignale")).rejects.toThrow();
+      expect(getHandoutTextVersion("warnsignale")).toBeNull();
+    } finally {
+      vi.doUnmock(contentModule);
+    }
+
+    expect((await loadHandoutTextVersion("sauerstoffmaske"))?.id).toBe(
+      "sauerstoffmaske"
+    );
+    expect(getHandoutTextVersion("warnsignale")?.id).toBe("warnsignale");
   });
 });

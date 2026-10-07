@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import guides from "@/content/learningGuides.json";
 import { createHandoutTextVersionMeta } from "@/content/handoutTextVersionRegistry";
 import { getHandoutOpenHref } from "@/content/handouts";
@@ -15,6 +15,7 @@ export default function LearningGuide({
   id: string;
 }) {
   const [selected, setSelected] = useState(0);
+  const allDetailsRef = useRef<HTMLDetailsElement>(null);
   const uid = useId();
   const guide = guides[kind];
   const cards = guide.sections[0].cards!;
@@ -22,6 +23,26 @@ export default function LearningGuide({
   const note = guide.sections[1];
   const meta = createHandoutTextVersionMeta(kind);
   const pdfHref = getHandoutOpenHref(meta.pdfSourceUrl);
+  useEffect(() => {
+    const details = allDetailsRef.current;
+    if (!details) return;
+    let previousOpen: boolean | null = null;
+    const beforePrint = () => {
+      if (previousOpen === null) previousOpen = details.open;
+      details.open = true;
+    };
+    const afterPrint = () => {
+      if (previousOpen === null) return;
+      details.open = previousOpen;
+      previousOpen = null;
+    };
+    window.addEventListener("beforeprint", beforePrint);
+    window.addEventListener("afterprint", afterPrint);
+    return () => {
+      window.removeEventListener("beforeprint", beforePrint);
+      window.removeEventListener("afterprint", afterPrint);
+    };
+  }, []);
   return (
     <section
       id={id}
@@ -81,7 +102,7 @@ export default function LearningGuide({
         </div>
       </div>
       <p className="learning-tool__note">{note.calloutText}</p>
-      <details className="learning-tool__all">
+      <details ref={allDetailsRef} className="learning-tool__all">
         <summary>
           Alle {kind === "dear" ? "Schritte" : "Bereiche"} zusammen lesen
         </summary>

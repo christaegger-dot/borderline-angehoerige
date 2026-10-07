@@ -1,7 +1,15 @@
 import { Suspense, lazy, useEffect } from "react";
-import { Route, Switch, Redirect, useLocation } from "wouter";
+import {
+  Route,
+  Switch,
+  Redirect,
+  matchRoute,
+  useLocation,
+  useRouter,
+} from "wouter";
 import { routes } from "@/app/routes";
 import NotFound from "@/pages/NotFound";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const DeferredRouteStyles = lazy(() => import("@/app/DeferredRouteStyles"));
 const MotionProviders = lazy(() => import("@/app/MotionProviders"));
@@ -36,7 +44,12 @@ function AppReady() {
 
 export default function Router() {
   const [location] = useLocation();
-  const currentRoute = routes.find(route => route.path === location);
+  const { parser } = useRouter();
+  // Use the same match as Switch, including parameters and optional trailing
+  // slashes, so a rendered page always receives its required motion context.
+  const currentRoute = routes.find(
+    route => matchRoute(parser, route.path, location)[0]
+  );
   const routeContent = (
     <Switch>
       {routes.map(route =>
@@ -72,6 +85,7 @@ export default function Router() {
   return (
     <Suspense fallback={<PageLoader location={location} />}>
       {styledRouteContent}
+      <ScrollToTop />
       <AppReady />
     </Suspense>
   );

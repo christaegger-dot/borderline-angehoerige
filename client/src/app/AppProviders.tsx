@@ -1,6 +1,5 @@
 import { Toaster } from "@/components/ui/sonner";
 import ErrorBoundary from "@/components/ErrorBoundary";
-import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 
 export default function AppProviders({
@@ -12,7 +11,6 @@ export default function AppProviders({
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <Toaster />
-        <ScrollToTop />
         {children}
       </ThemeProvider>
     </ErrorBoundary>

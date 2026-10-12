@@ -1123,15 +1123,24 @@ html.puk-scroll-lock{overflow:hidden}
    klein Station und Modellbegriff; Felder mit weichen Ecken (radius-md, Entscheid auf Rückfrage 10.10.2026). */
 .bl-cycle--5 li{border-radius:var(--radius-md)}
 /* Mit dem Beispielsatz in Seitenschrift sind die Felder höher; damit zwischen Station 4 und 5 Platz für den Pfeil bleibt,
-   ist die Schleife breit bis 640 px statt 600 px gross (gleiche Zeichnung, gleichmässig skaliert; gemessen mit abgleich/bedienung.mjs). */
-.puk-vis-cycle.bl-cycle--5{max-width:640px}
+   ist die Schleife breit bis 640 px statt 600 px gross (gleiche Zeichnung, gleichmässig skaliert; gemessen mit abgleich/bedienung.mjs).
+   Korrektur SP2-K-16 (SPZ-3): Höchstbreite in rem wie die Schwelle, damit die Zeichnung mit der Schrift wächst;
+   40rem = 640 px bei Standardschrift (16 px). Die heutigen 640 px bleiben Untergrenze, damit sich bei kleinerer Wurzelschrift
+   nichts ändert (Druck: html 81.25 %, components/bundle.css; 40rem wären dort 520 px). */
+.puk-vis-cycle.bl-cycle--5{max-width:max(640px,40rem)}
 .bl-cycle__who{font:var(--type-body-sm);font-weight:var(--fw-medium);color:var(--text-default)}
 .bl-cycle__ex{font:var(--type-body);color:var(--text-default)}
 /* Mit fünf Stationen trägt die Kreisanordnung nur bei voller Breite (Muster 600 px, hier 640 px): darunter überlappen
    Station 4 und 5, und der Pfeil 4 → 5 verschwindet. Deshalb gilt die Liste des Musters hier schon bis 700 px
    Containerbreite (Regeln wie im Muster, Masse über Tokens; bis Korrektur 1g 660 px, mit den höheren Feldern aus 1h
-   begann der Pfeil 4 → 5 bei 720 px Fensterbreite sonst im Feld von Station 4). */
-@container (max-width:700px){
+   begann der Pfeil 4 → 5 bei 720 px Fensterbreite sonst im Feld von Station 4).
+   Korrektur SP2-K-16 (SPZ-3): Ab 150 % Schrift steht die Schleife als gestufte Liste mit «zurück zu Station 1», bei 100 %
+   Schrift wie bisher. Die blosse Umrechnung (43.75rem) reicht dafür nicht: bei 150 % (24 px) 1050 px, unter der Breite des
+   Containers bei 1280 und 1440 px Fenster (1104 px). Deshalb wächst die Schwelle stärker als die Schrift:
+   43.75rem + (1rem − 16 px) × 100, bei 16 px Wurzelschrift 700 px wie bisher, bei 20 px 1275 px, bei 24 px 1850 px.
+   Die heutige Schwelle (700 px) gilt weiter bei kleinerer Wurzelschrift (Druck: 81.25 %, sonst Kreis statt Liste bei
+   A4 mit 1 cm Rand). Wertet ein Browser die Rechnung nicht aus, gelten 700 px und die blosse Umrechnung (43.75rem). */
+@container (max-width:700px) or (max-width:43.75rem) or (max-width:calc(43.75rem + (1rem - 16px) * 100)){
   .bl-cycle--5>svg{display:none}
   .bl-cycle--5{aspect-ratio:auto}
   .bl-cycle--5 ol{position:relative;display:flex;flex-direction:column;padding-right:var(--space-10)}
@@ -1191,7 +1200,10 @@ html.puk-scroll-lock{overflow:hidden}
 .bl-sicht>h3{grid-column:1/-1;margin:0}
 .bl-sicht .puk-vis-compare__col p:not(.puk-vis-compare__key){margin:var(--space-2) 0 0;font-size:var(--web-size-body);font-weight:var(--web-fw-body);line-height:var(--lh-body);color:var(--text-default)}
 
-@container (max-width:560px){
+/* Korrektur SP2-K-17 (SPZ-38): Schwelle in rem, damit «Zwei Sichten» bei grosser Schrift in eine Spalte wechselt;
+   35rem = 560 px bei Standardschrift (16 px), 1120 px bei 200 % Schrift. Die heutigen 560 px bleiben Untergrenze für kleinere
+   Wurzelschrift (Druck). Die Regel der Anspannungskurve (oben) bleibt in px (RF-1). */
+@container (max-width:560px) or (max-width:35rem){
   .bl-sicht{grid-template-columns:minmax(0,1fr)}
 }
 
@@ -1207,8 +1219,13 @@ html.puk-scroll-lock{overflow:hidden}
    Die Wörter stehen als HTML-Text im Eisberg, Lage in Prozent der Zeichnung; die Gruppenüberschriften nur für Screenreader.
    Schmal: Zeichnung ohne Wörter über die ganze Breite, darunter beide Gruppen als Listen und die Frage. Die schmale Darstellung
    gilt schon unter 800 px Containerbreite (Auftrag: 560 px): Darunter ragen Wörter in type-body-sm über den Umriss
-   (gemessen bei 754 px: «Vorwürfe», bei 644 px drei Wörter), und kleiner als type-body-sm darf die Schrift nicht werden. */
-.bl-eis{position:relative;max-width:760px;aspect-ratio:760/400;margin:0 auto var(--space-6)}
+   (gemessen bei 754 px: «Vorwürfe», bei 644 px drei Wörter), und kleiner als type-body-sm darf die Schrift nicht werden.
+   Korrektur SP2-K-15 (SPZ-2): Schwelle und Höchstbreite in rem, damit die Figur bei grosser Schrift in die Listenansicht wechselt
+   und die Zeichnung mit der Schrift wächst; 50rem = 800 px und 47.5rem = 760 px bei Standardschrift (16 px), bei 150 % Schrift
+   1200 px und bei 200 % 1600 px Schwelle, beides über der Breite des Containers bei 1280 und 1440 px Fenster (1104 px).
+   Die heutigen 800 px und 760 px bleiben Untergrenze, damit sich bei kleinerer Wurzelschrift nichts ändert (Druck: html 81.25 %,
+   components/bundle.css; mit 50rem stünde der Eisberg im Druck als Zeichnung statt als Liste). */
+.bl-eis{position:relative;max-width:max(760px,47.5rem);aspect-ratio:760/400;margin:0 auto var(--space-6)}
 .bl-eis__art{position:absolute;inset:0;display:block;width:100%;height:100%}
 .bl-eis__zone ul{margin:0;padding:0;list-style:none}
 .bl-eis__key{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
@@ -1224,7 +1241,7 @@ html.puk-scroll-lock{overflow:hidden}
 .bl-eis__w--9{left:50%;top:71.5%}
 .bl-eis__w--10{left:50.5%;top:81.5%}
 .bl-eis__frage{position:absolute;left:78.9%;top:14.5%;max-width:21%}
-@container (max-width:800px){
+@container (max-width:800px) or (max-width:50rem){
   .bl-eis{aspect-ratio:auto;max-width:none}
   .bl-eis__art{position:static;height:auto}
   .bl-eis__key{position:static;width:auto;height:auto;margin:var(--space-4) 0 var(--space-2);overflow:visible;clip:auto;white-space:normal;font:var(--type-body);font-weight:var(--fw-medium);color:var(--text-default)}
@@ -1325,4 +1342,26 @@ html.puk-scroll-lock{overflow:hidden}
   .puk-longform__kicker{break-after:avoid}
   .puk-longform__section-heading{break-inside:avoid}
   .bl-buecher>li,.bl-sicht,.bl-rollen>li{break-inside:avoid}
+  /* Korrektur SP2-K-19 (SPZ-43): Bedeutungsschleife. Die Kennzeichnung stand im Druck allein auf der nächsten Seite
+     (`beziehungen`, A4, Chromium: Titel bis Ansatzpunkt Seite 3, Kennzeichnung Seite 4); die Figur ist mit dem Kasten
+     «Ansatzpunkt für Angehörige» fast so hoch wie eine A4-Seite. Die Kennzeichnung folgt im Druck direkt auf die Darstellung
+     und bleibt mit ihr zusammen (break-after:avoid der Figurteile, components/bundle.css); der Kasten steht danach und darf
+     wie die Vertiefung auf die nächste Seite fliessen. So stehen Titel, Kernaussage, Darstellung und Kennzeichnung auf einer
+     A4-Seite. Nur diese Abbildung; für die Anspannungskurve und «Zwei Sichten» gilt die begründete Ausnahme im Prüfbericht
+     (SPZ-F-32). */
+  [data-visual-id="v-bz-schleife"]>.puk-vis-ansatz{order:1}
+  /* NSK-1 (Nachprüfung SP2-K, korrigiert im Auftrag der Fachstelle 12.10.2026): «Zwei Sichten» ist mit allen Schritten länger
+     als eine A4-Seite (begründete Ausnahme, SPZ-F-32). Die Hülle .puk-vis-wide ist im Druck sonst unteilbar
+     (components/bundle.css); dann schob Chromium die ganze Figur auf eine neue Seite und liess davor eine leere oder fast
+     leere Seite stehen (`beziehungen`, A4: vorher eine leere Seite in 6 von 6 Einstellungen, bei 15 mm Rand dazu eine Seite
+     mit zwei Zeilen). Hier darf die Figur zwischen den Schritten umbrechen; jeder Schritt bleibt zusammen (.bl-sicht oben),
+     Titel, Kernaussage und Kurztext bleiben beim ersten Schritt (break-after:avoid, components/bundle.css). */
+  .puk-vis-wide:has(>[data-visual-id="v-bz-sichten"]),[data-visual-id="v-bz-sichten"]>.bl-sichten{break-inside:auto}
 }
+
+/* NSK-2 (Nachprüfung SP2-K, korrigiert im Auftrag der Fachstelle 12.10.2026): Bei sehr grosser Schrift auf schmalem Bildschirm
+   (360 px mit 200 % Schrift) brachen lange Wörter in Figuren ohne Trennstrich, z. B. «Bedeutungsschl|eife», «Unterstützu|ng».
+   Silbentrennung nur, wenn die Figur höchstens 12rem breit ist: bei Standardschrift nie (Container mindestens 280 px,
+   12rem = 192 px), bei 200 % Schrift (12rem = 384 px) bei 320 und 360 px Fensterbreite. Bei 100 % ändert sich nichts.
+   Wirkt in Browsern mit deutscher Silbentrennung; das Profil (SPZ-40, Entscheide 5.6) bleibt unverändert. */
+@container (max-width:12rem){.puk-vis-figure{hyphens:auto}}

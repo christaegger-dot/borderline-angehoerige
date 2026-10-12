@@ -1,0 +1,8 @@
+# Sicherheits-Header für Netlify (Abschnitt «Technische Qualität», D). Bei anderem Hosting sinngemäss übernehmen.
+# Nur eigene Quellen: keine externen Schriften, Skripte, Bilder oder Rahmen. Inline-Skripte und style-Attribute sind ausgeschlossen.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  X-Frame-Options: DENY

@@ -1,0 +1,102 @@
+# Weiterleitungen der alten Borderline-Website (React-Fassung) auf die neue Website, Netlify, Status 301.
+# UMBAUPLAN, Abschnitt 7. Erstellt in Etappe 3-1 (11.10.2026), bauende Sitzung. Wirksam erst nach dem Umzug (Etappe 3-2):
+# Netlify liest _redirects nur im veröffentlichten Stamm. tools/export.mjs kopiert die Datei nicht; beim Umzug (Etappe 3-2)
+# von Hand in den Zielordner kopieren. Ziel ist die neue Seite und, wo möglich, der Abschnitt, in den der Inhalt eingegangen ist.
+# Alte Routen mit gleichem Namen wie eine neue Seite (/verstehen, /grenzen, /kommunizieren, /selbstfuersorge, /genesung,
+# /quellen) brauchen keine Regel: Netlify liefert verstehen.html auch unter /verstehen aus.
+
+# Krisenzugang entfällt (Profil): auf die Startseite, deren Fusszeile den Zuständigkeitsverweis enthält
+/soforthilfe                                 /index.html                                  301
+/soforthilfe/*                               /index.html                                  301
+/notfall                                     /index.html                                  301
+/notfallkarte                                /index.html                                  301
+/notfallkarte.html                           /index.html                                  301
+/materialien/text/notfallplan-krise          /index.html                                  301
+/notfallplan-krise-v04.pdf                   /index.html                                  301
+/Notfallkarte-Zuerich-Psychische-Krise.pdf   /index.html                                  301
+/notfallkarte-preview.webp                   /index.html                                  301
+/notfallplan-krise-v04-preview.webp          /index.html                                  301
+
+# Seiten
+/verstehen/diagnostik                        /diagnose.html                               301
+/verstehen/begleiterkrankungen               /diagnose.html#begleiterkrankungen           301
+/verstehen/beziehungen                       /beziehungen.html                            301
+/unterstuetzen/uebersicht                    /rolle.html                                  301
+/unterstuetzen/alltag                        /rolle.html#alltag                           301
+/unterstuetzen/therapie                      /behandlung.html                             301
+/unterstuetzen/krise                         /krise.html                                  301
+/uebungen                                    /kommunizieren.html#beispiele                301
+/selbsttest                                  /index.html#einstiege                        301
+/wegweiser                                   /index.html#einstiege                        301
+/materialien                                 /index.html#einstiege                        301
+/fachstelle                                  /unterstuetzung.html#beratung                301
+/beratung                                    /unterstuetzung.html#beratung                301
+/buchempfehlungen                            /unterstuetzung.html#buecher                 301
+/faq                                         /fragen.html                                 301
+/glossar                                     /quellen.html#begriffe                       301
+/ueber-uns                                   /ueber.html                                  301
+/barrierefreiheit                            /ueber.html#barrierefreiheit                 301
+/feedback                                    /ueber.html#rueckmeldung                     301
+/impressum                                   /impressum-datenschutz.html#impressum        301
+/datenschutz                                 /impressum-datenschutz.html#datenschutz      301
+
+# Weiterleitungen der alten Website (shared/redirects.ts, netlify.toml), direkt auf das neue Ziel
+/unterstuetzen                               /rolle.html                                  301
+/diagnostik                                  /diagnose.html                               301
+/begleiterkrankungen                         /diagnose.html#begleiterkrankungen           301
+/selbsthilfegruppen                          /unterstuetzung.html#selbsthilfe             301
+/therapieangebote                            /behandlung.html#angebote                    301
+
+# Textfassungen der Handouts: Abschnitt mit den meisten Zeilen des Handouts im Abgleich (abgleich/<seite>.md)
+/materialien/text/4-alltags-tipps            /rolle.html#anbieten                         301
+/materialien/text/4-arten-von-grenzen        /grenzen.html#arten                          301
+/materialien/text/5-faktoren-genesung        /genesung.html#einfluesse                    301
+/materialien/text/6-leitlinien               /rolle.html#alltag                           301
+/materialien/text/alarm-modus                /verstehen.html#anspannung                   301
+/materialien/text/anspannungskurve           /verstehen.html#anspannung                   301
+/materialien/text/beispiel-dialog            /kommunizieren.html#kippen                   301
+/materialien/text/beziehungs-achtsamkeit     /selbstfuersorge.html#zu-viel                301
+/materialien/text/bruecke-gelaender          /grenzen.html#bruecke                        301
+/materialien/text/dear                       /grenzen.html#dear                           301
+/materialien/text/drei-saeulen               /rolle.html#anbieten                         301
+/materialien/text/eisberg                    /verstehen.html#eisberg                      301
+/materialien/text/energie-konto              /selbstfuersorge.html#kraft                  301
+/materialien/text/erlaubnis-karte            /selbstfuersorge.html#eigenes-leben          301
+/materialien/text/fortschritt-paradox        /genesung.html#verlauf                       301
+/materialien/text/garten                     /rolle.html#anbieten                         301
+/materialien/text/gehirn                     /verstehen.html#anspannung                   301
+/materialien/text/genesung-zahlen            /genesung.html#forschung                     301
+/materialien/text/gespraeche-kippen          /kommunizieren.html#kippen                   301
+/materialien/text/grenzen-erkennen           /grenzen.html#erkennen                       301
+/materialien/text/grenzen-ohne-eskalation    /kommunizieren.html#kippen                   301
+/materialien/text/grenzen-spickzettel        /grenzen.html#dear                           301
+/materialien/text/kinder                     /rolle.html#kinder                           301
+/materialien/text/konsistenz-prinzip         /rolle.html#alltag                           301
+/materialien/text/krisenkommunikation        /krise.html#sagen                            301
+/materialien/text/leuchtturm                 /rolle.html#anbieten                         301
+/materialien/text/lmk                        /grenzen.html#konsequenz                     301
+/materialien/text/pause-statt-streit         /kommunizieren.html#moment                   301
+/materialien/text/radikale-akzeptanz         /selbstfuersorge.html#akzeptanz              301
+/materialien/text/remission-heilung          /genesung.html#begriffe                      301
+/materialien/text/rolle-genesungsprozess     /genesung.html#freiwillig                    301
+/materialien/text/rolle-klaeren              /rolle.html#anbieten                         301
+/materialien/text/sauerstoffmaske            /selbstfuersorge.html#unterstuetzung         301
+/materialien/text/schuld-verantwortung       /rolle.html#schuld                           301
+/materialien/text/spaltung                   /verstehen.html#bewertungen                  301
+/materialien/text/spiegeln-statt-aufsaugen   /kommunizieren.html#anerkennen               301
+/materialien/text/stopp-technik              /selbstfuersorge.html#zu-viel                301
+/materialien/text/warnsignale                /selbstfuersorge.html#warnsignale            301
+/materialien/text/wenn-worte-treffen         /kommunizieren.html#worte                    301
+/materialien/text/zuhoeren-ohne-zustimmen    /kommunizieren.html#anerkennen               301
+/materialien/text/zustands-landkarte         /verstehen.html#anspannung                   301
+/materialien/text/*                          /index.html#einstiege                        301
+
+# Veröffentlichte PDFs der alten Website (INVENTAR, Abschnitt 3.2) auf den Abschnitt ihres Handouts; übrige Dateien und
+# die Download-Funktion auf die Startseite
+/infografiken/puk-garten-v1.pdf              /rolle.html#anbieten                         301
+/infografiken/manus-genesung-zahlen-v3.pdf   /genesung.html#forschung                     301
+/infografiken/manus-kinder-v3.pdf            /rolle.html#kinder                           301
+/infografiken/puk-4-arten-von-grenzen-v1.pdf /grenzen.html#arten                          301
+/infografiken/manus-stopp-technik-v3.pdf     /selbstfuersorge.html#zu-viel                301
+/infografiken/*                              /index.html                                  301
+/api/material-download/*                     /index.html                                  301

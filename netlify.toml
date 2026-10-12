@@ -1,35 +1,18 @@
 # Borderline – Orientierung für Angehörige · neue Website nach dem PUK Website-Profil 2026.10.1 (Etappe 3-2).
 # Statische Website ohne Build. Die Seiten entstehen im Repository puk-website-profil
-# (templates/website/borderline-angehoerige, node tools/export.mjs) und liegen hier im Stamm.
-# Sicherheits-Header stehen in _headers, die Weiterleitungen der alten Routen in _redirects.
-# Ersetzt die netlify.toml der React-Fassung (Branch react-archiv); deren Weiterleitungen stehen in _redirects.
+# (templates/website/borderline-angehoerige, node tools/export.mjs) und liegen hier im Ordner site/.
+# Sicherheits-Header stehen in site/_headers, die Weiterleitungen der alten Routen in site/_redirects.
+# Ersetzt die netlify.toml der React-Fassung (Branch react-archiv); deren Weiterleitungen stehen in site/_redirects.
+# Der Publish-Ordner ist ein Unterordner: Fällt er mit dem Stamm zusammen, nimmt Netlify beim Hochladen den
+# Publish-Ordner aus den Projekteinstellungen (dist/public der React-Fassung).
 
 [build]
-  publish = "."
+  publish = "site"
   command = "echo 'Statische Website: kein Build'"
 
 # /404 antwortet mit Status 404, nicht 200 (wie in der netlify.toml der React-Fassung)
 [[redirects]]
   from = "/404"
-  to = "/404.html"
-  status = 404
-  force = true
-
-# Dateien des Repositorys, die keine Seiten sind, nicht ausliefern
-[[redirects]]
-  from = "/README.md"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/CLAUDE.md"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/netlify.toml"
   to = "/404.html"
   status = 404
   force = true

@@ -8,6 +8,13 @@
   publish = "."
   command = "echo 'Statische Website: kein Build'"
 
+# /404 antwortet mit Status 404, nicht 200 (wie in der netlify.toml der React-Fassung)
+[[redirects]]
+  from = "/404"
+  to = "/404.html"
+  status = 404
+  force = true
+
 # Dateien des Repositorys, die keine Seiten sind, nicht ausliefern
 [[redirects]]
   from = "/README.md"

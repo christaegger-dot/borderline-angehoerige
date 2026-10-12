@@ -1,1 +1,24 @@
+# Abhängigkeiten und Build-Ausgaben, auch aus älteren Checkouts der React-Fassung (Branch react-archiv)
+**/node_modules
+.pnpm-store/
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+
+# Umgebungsvariablen
+.env
+.env.*
+
+# Lokale Werkzeuge
+.netlify
+.claude/
+.vscode/
+.idea/
+*.log
+
+# Betriebssystem
 .DS_Store
+._*
+Thumbs.db

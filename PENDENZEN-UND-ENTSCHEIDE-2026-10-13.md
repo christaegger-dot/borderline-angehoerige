@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Stand: 13. Oktober 2026**
+**Stand: 14. Oktober 2026**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -30,17 +30,9 @@ PR #674 wurde als Merge-Commit `1cb33e0a1bd499c7b8367213851373b6dd027ab5` übern
 
 ## Aktuell sofort umsetzbare Pendenzen
 
-Die technische und redaktionelle Umsetzung der visuellen Befunde A04-008 bis A04-013 liegt lokal als r4-22 vor. Es besteht keine weitere eigenständig umsetzbare Codependenz aus diesem Paket. Der veröffentlichte Stand bleibt r4-21; `site/` wurde noch nicht neu erzeugt.
+Die technische und redaktionelle Umsetzung der visuellen Befunde A04-008 bis A04-013 liegt als r4-22 vor. Die unabhängige Delta-Prüfung fand für A04-009 bis A04-013 keinen fachlichen, rechtlichen, sicherheitsbezogenen oder didaktischen Korrekturbedarf. Der Auftraggeber bestätigte am 14. Oktober 2026 ausdrücklich im Namen der PUK die institutionelle Freigabe dieser fünf Befunde. Der Nachweis liegt unter `audit-results/2026-10-14-delta-review-r4-22/`.
 
-Vor einem Produktionsbuild sind folgende institutionellen Prüfungen zu dokumentieren:
-
-- Safety-/Fachreview der abgestuften Krisenhinweise (A04-009);
-- fachlich-didaktischer Delta-Review von `v-vs-eisberg` (A04-010);
-- Rechts- und Fachreview von `v-be-kontakt` (A04-011);
-- Kinderschutz- und Fachreview von `v-ki-alltag` (A04-012);
-- fachlicher Delta-Review von `v-ge-einfluesse` (A04-013).
-
-Das Produktionsgate blockiert die vier Visualisierungen bis zu dieser Freigabe. Der lokale Draft-Build und die technische Delta-Nachprüfung sind bestanden; der Nachweis liegt unter `audit-results/2026-10-13-delta-visual-r4-22/`. Nach den Freigaben folgen Produktionsbuild, Exportparität und ein vollständiger Delta-Smoke-Test.
+Die vier zuvor blockierenden Visualisierungen sind damit freigegeben. Der anschliessende Produktionsbuild meldete 22 Seiten, 0 Blocker und 0 Hinweise; 33 Dateien sind bytegleich. Der vollständige lokale Delta-Smoke-Test umfasste 110 Seiten-/Viewport-Läufe, 66 axe-Läufe, 22 Prüfungen bei 200 Prozent Basisschrift, 140 vertiefte Zustandsprüfungen der geänderten Seiten und 36 Such-Ersttreffer. Es gab keinen blockierenden Befund und keine Suchregression. Aus diesem Paket besteht keine weitere inhaltliche oder institutionelle Pendenz. CI und Deploy-Preview werden nach Push, die Produktion nach Merge separat nachgeprüft.
 
 Die nachfolgenden Punkte sind entweder terminiert und noch nicht fällig, von einer internen institutionellen Prüfung abhängig, nur nach neuen bestätigten Angaben umsetzbar oder als Evidenzgrenze bewusst akzeptiert. Sie dürfen nicht als von der Website-Entwicklung eigenständig lösbare Restarbeiten behandelt werden.
 

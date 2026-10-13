@@ -2,23 +2,46 @@
   "schema": "website-audit-v1.2",
   "lauf_id": "2026-10-14-delta-review-r4-22",
   "modus": "delta",
-  "status": "inhaltlich_nachgeprueft_institutionelle_freigabe_offen",
+  "status": "institutionell_freigegeben_lokal_releasebereit",
   "datum": "2026-10-14",
   "projekt": {
     "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
     "branch": "codex/pendenzenbereinigung-2026-10-13",
-    "commit": "168d7e0d9dd958aef27818d33a3042eee9afd8bc",
+    "review_basis": "168d7e0d9dd958aef27818d33a3042eee9afd8bc",
+    "freigabe_basis": "42db3898b4c62119120346ed9ad430e40956866e",
     "pull_request": "https://github.com/christaegger-dot/borderline-angehoerige/pull/676",
     "buildmarker": "r4-22"
   },
   "deployment": {
     "produktion": "r4-21, unverändert",
     "preview": "https://deploy-preview-676--borderline-angehoerige.netlify.app",
-    "preview_status": "Netlify-Check erfolgreich; Produktionsgate wegen offener institutioneller Freigaben blockiert"
+    "preview_status": "Netlify-Check vor institutioneller Freigabe erfolgreich; erneute CI- und Preview-Prüfung erfolgt nach Push"
   },
   "entscheidung": {
     "korrekturbedarf": false,
     "freigabefaehig": true,
-    "institutionell_freigegeben": false
+    "institutionell_freigegeben": true,
+    "institutionell_bestaetigt_am": "2026-10-14",
+    "institutionell_bestaetigt_durch": "Auftraggeber im Namen der PUK",
+    "freigabeumfang": [
+      "A04-009",
+      "A04-010",
+      "A04-011",
+      "A04-012",
+      "A04-013"
+    ]
+  },
+  "technischer_nachtest": {
+    "production_build": "22 Seiten; 0 Blocker; 0 Hinweise",
+    "exportparitaet": "33 Dateien bytegleich",
+    "browsermatrix": "110 Seiten-/Viewport-Läufe; 0 blockierende Befunde",
+    "axe": "66 Chromium-Läufe; 0 erkannte Verstösse im geprüften Regelumfang",
+    "text_200_prozent": "22 Seiten; kein horizontaler Überlauf",
+    "visualisierungszustaende": "140 Prüfungen; 0 Überläufe oder Laufzeitfehler",
+    "suchregression": "36/36 Ersttreffer gegenüber Produktion r4-21 unverändert",
+    "reale_screenreader": false,
+    "reale_geraete": false,
+    "firefox_safari": false,
+    "reale_nutzende": false
   }
 }

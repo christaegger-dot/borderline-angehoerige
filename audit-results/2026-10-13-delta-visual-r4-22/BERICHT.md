@@ -17,16 +17,9 @@ Die Browsermatrix umfasste 140 Layoutzustände. Es gab keinen horizontalen Über
 
 Die beiden zuvor versteckten Figuren sind bei geschlossenem Ausgangszustand sichtbar. Auf der Krisenseite wurden bei 375 und 1440 CSS-Pixel exakt ein primärer und sechs reduzierte Hinweise mit identischem Wortlaut verifiziert. Die sechs Wissensdarstellungen wurden bei beiden Breiten visuell kontrolliert. Ein dabei festgestellter unschöner Wortumbruch von «Behandlungsteam» wurde vor dem finalen Regressionslauf korrigiert.
 
-## Verbleibende Freigaben
+## Freigabe
 
-Der Produktionsbuild blockiert r4-22 absichtlich an vier Stellen:
-
-1. `v-vs-eisberg`: fachlich-didaktischer Delta-Review;
-2. `v-be-kontakt`: Rechts- und Fachreview;
-3. `v-ki-alltag`: Kinderschutz- und Fachreview;
-4. `v-ge-einfluesse`: fachlicher Delta-Review.
-
-Diese Sperren sind kein technischer Fehler, sondern die vorgesehene Trennung zwischen Umsetzung und institutioneller Freigabe. A04-009 benötigt zusätzlich die dokumentierte Safety-/Fachbestätigung der abgestuften Darstellung, auch wenn dafür keine eigene Visualisierungs-ID existiert.
+Die unabhängige fachliche, rechtliche, sicherheitsbezogene und didaktische Delta-Prüfung vom 14. Oktober 2026 stellte für A04-009 bis A04-013 keinen Korrekturbedarf fest. Der Auftraggeber bestätigte anschliessend am selben Tag ausdrücklich im Namen der PUK die institutionelle Freigabe aller fünf Befunde. Die vier zuvor blockierenden Visualisierungsstatus dürfen damit auf `freigegeben` gesetzt werden.
 
 ## Evidenzgrenzen
 
@@ -34,4 +27,4 @@ Automatisierte Browser- und axe-Prüfungen belegen weder vollständige WCAG-Konf
 
 ## Status
 
-**Lokal technisch verifiziert, noch nicht veröffentlichungsfähig.** `site/`, Preview und Produktion wurden nicht verändert. Nach dokumentierter Freigabe der fünf Prüfpunkte sind Produktionsbuild, Exportparität, vollständiger Delta-Smoke-Test und erst danach ein Merge beziehungsweise Deployment zulässig.
+**Institutionell freigegeben und lokal releasebereit.** Der nach der Freigabe ausgeführte Produktionsbuild erzeugte 22 Seiten mit 0 Blockern und 0 Hinweisen; 33 Exportdateien sind bytegleich. Die Gesamtbrowsermatrix umfasste 110 Seiten-/Viewport-Läufe, 66 axe-Läufe und 22 zusätzliche 200-Prozent-Textprüfungen ohne blockierenden Befund. Die vertiefte Matrix der sieben betroffenen Seiten blieb in 140 Zustandsprüfungen ohne Überlauf oder Laufzeitfehler. Alle 36 Such-Ersttreffer blieben gegenüber r4-21 unverändert. CI, Preview und Produktion werden getrennt nach Push beziehungsweise Merge verifiziert.

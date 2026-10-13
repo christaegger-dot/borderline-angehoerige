@@ -4,7 +4,7 @@
 
 Für A04-009 bis A04-013 wurde kein fachlicher, rechtlicher, sicherheitsbezogener oder didaktischer Korrekturbedarf festgestellt. Alle fünf Umsetzungen sind auf Grundlage der geprüften Quellen **freigabefähig**.
 
-Dieses Urteil ist eine unabhängige Qualitätsprüfung. Es ist keine tatsächliche medizinisch-fachliche, juristische, Kinderschutz- oder Produktionsfreigabe der PUK. Der Status `freigegeben` darf erst nach einem dokumentierten institutionellen Entscheid gesetzt werden.
+Dieses Urteil ist eine unabhängige Qualitätsprüfung. Die institutionelle Freigabe wurde anschliessend am 14. Oktober 2026 vom Auftraggeber ausdrücklich im Namen der PUK für A04-009 bis A04-013 bestätigt. Sie ist von der hier dokumentierten unabhängigen Prüfung und vom technischen Nachtest zu unterscheiden.
 
 ## A04-009 · Krisenhinweise
 
@@ -24,7 +24,7 @@ Art. 321 StGB schützt Berufsgeheimnisse und nennt Einwilligung sowie gesetzlich
 
 Die PUK beschreibt die Angehörigenberatung als separaten geschützten Raum ohne Informationsfluss zwischen Behandlungsteam und Fachstelle. Die Aussage, dass eigene Angehörigenberatung unabhängig von vertraulichen Behandlungsauskünften möglich ist, stimmt damit überein.
 
-Die Darstellung behauptet weder einen absoluten Geheimnisschutz noch einen allgemeinen Auskunftsanspruch und verweist auf die notwendige Einzelfallklärung. Kein Korrekturbedarf; formelle Rechtsfreigabe bleibt institutionell.
+Die Darstellung behauptet weder einen absoluten Geheimnisschutz noch einen allgemeinen Auskunftsanspruch und verweist auf die notwendige Einzelfallklärung. Kein Korrekturbedarf.
 
 ## A04-012 · Kinder und Erwachsenenaufgaben
 
@@ -32,7 +32,7 @@ Art. 296 ZGB richtet die elterliche Sorge am Kindeswohl aus. Art. 301 ZGB weist 
 
 Die PUK und Pro Juventute empfehlen verständliche Information, weitere vertraute Bezugspersonen, geregelte Betreuung und die Entlastung von Erwachsenenaufgaben. Pro Juventute hält ausdrücklich fest, dass Kinder Kinder bleiben sollen, Erwachsene Unterstützung organisieren und Krisenbetreuung möglichst vorab geklärt wird.
 
-Die Grafik formuliert keine starre gesetzliche Zuständigkeit: Sie spricht von vertrauten Erwachsenen und Fachpersonen, nennt situationsabhängige Unterstützung und grenzt sich von einer individuellen Kindeswohlbeurteilung ab. Kein Korrekturbedarf; formelle Kinderschutzfreigabe bleibt institutionell.
+Die Grafik formuliert keine starre gesetzliche Zuständigkeit: Sie spricht von vertrauten Erwachsenen und Fachpersonen, nennt situationsabhängige Unterstützung und grenzt sich von einer individuellen Kindeswohlbeurteilung ab. Kein Korrekturbedarf.
 
 ## A04-013 · Einflüsse auf Genesung
 
@@ -40,6 +40,18 @@ NICE CG78 berücksichtigt Behandlung, körperliche und psychische Begleiterkrank
 
 Sie enthält keine Pfeile, Rangfolge, Formel oder persönliche Prognose. Der Begleittext bezeichnet die Auswahl ausdrücklich als eigene Zusammenstellung und nicht als geprüftes Modell. Angehörige werden nicht für Genesung verantwortlich gemacht. Kein Korrekturbedarf.
 
-## Empfehlung
+## Institutioneller Entscheid und nächster Nachweis
 
-Die fünf Reviewpunkte können institutionell freigegeben werden. Nach einer ausdrücklichen Bestätigung sind die vier `approvalStatus`-Einträge auf `freigegeben` zu setzen und A04-009 im Delta-Nachweis als freigegeben zu dokumentieren. Anschliessend sind Produktionsbuild, Export nach `site/`, Paritätsprüfung, vollständiger Delta-Smoke-Test und Merge von PR #676 durchzuführen.
+Der Auftraggeber bestätigte am 14. Oktober 2026 ausdrücklich im Namen der PUK die Freigabe von A04-009 bis A04-013. Die vier zugehörigen `approvalStatus`-Einträge dürfen daher auf `freigegeben` gesetzt und A04-009 im Delta-Nachweis als freigegeben dokumentiert werden.
+
+Der institutionelle Entscheid ersetzt nicht den technischen Veröffentlichungsnachweis. Dieser wurde anschliessend lokal erbracht:
+
+- Produktionsbuild: 22 Seiten, 0 Blocker, 0 Hinweise;
+- Exportparität: 33 Dateien bytegleich;
+- Gesamtbrowsermatrix: 110 Läufe über alle 22 Seiten und fünf Breiten ohne blockierenden Befund;
+- 66 axe-Läufe ohne automatisiert erkannten Verstoss im geprüften Regelumfang;
+- 22 Seiten bei 200 Prozent Basisschrift ohne horizontalen Seitenüberlauf;
+- 140 Zustandsprüfungen der sieben betroffenen Seiten ohne Überlauf oder Laufzeitfehler;
+- 36 von 36 Such-Ersttreffern gegenüber Produktion r4-21 unverändert.
+
+Damit ist r4-22 lokal releasebereit. CI, Deploy-Preview und Produktions-Smoke-Test sind getrennte Nachweise und erfolgen nach Push beziehungsweise Merge.

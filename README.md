@@ -1,15 +1,39 @@
-# Borderline – Orientierung für Angehörige
+# borderline-angehoerige – eigenständige Website-Quellen
 
-Psychoedukative Website der Fachstelle Angehörigenarbeit, Psychiatrische Universitätsklinik Zürich, nach dem PUK Website-Profil 2026.10.1. Kontakt: angehoerigenarbeit@pukzh.ch
+Die Website kann **direkt in diesem Repository** bearbeitet werden. Das PUK-Website-Profil ist weiterhin gemeinsame Gestaltungs- und Qualitätsreferenz, aber **nicht mehr** der Bearbeitungsort für die Inhalte dieser Website.
 
-## Inhalt dieses Repositorys
+## Struktur
+- `authoring/content/*.html`: bearbeitbare Inhaltsfragmente (eine Datei pro Seite).
+- `authoring/site.config.json`: Navigation, Seitentitel, Metadaten, Freigabe- und Zuständigkeitsangaben.
+- `authoring/css/site.css`: eigenständig gepflegte Website-Styles.
+- `authoring/js/interaktion.js`: eigenständige JavaScript-Interaktionen.
+- `authoring/assets/` und `authoring/fonts/`: lokale Grafik- und Schriftressourcen.
+- `authoring/tools/`: Seitenrenderer mit übernommenem Prüfgate.
+- `authoring/PRUEFBERICHT.md`: historischer Quell-Prüfbericht; er ersetzt **keine** erneute Freigabe fachlicher Änderungen.
+- `site/`: versionierter, von Netlify veröffentlichter Build. HTML dort nicht von Hand bearbeiten.
 
-Die veröffentlichbare Website liegt im Ordner `site/`: 22 Seiten einschliesslich 404-Seite, `css/site.css`, Schriften, `js/interaktion.js`, `assets/`, `_headers`, `_redirects` und `robots.txt`. Netlify liefert `site/` ohne Build aus (`netlify.toml`). Die Website ist mit `noindex, nofollow`, dem HTTP-Header `X-Robots-Tag` und `robots.txt` von der Suchmaschinenaufnahme ausgeschlossen; deshalb wird keine Sitemap ausgeliefert. Im Stamm liegen nur diese Datei, `CLAUDE.md`, `netlify.toml` und `.gitignore`.
+## Prüfen und Bauen
+Voraussetzung: Node.js ab Version 18, keine Installation weiterer Pakete nötig.
 
-- **Quelle:** Repository `puk-website-profil`, Ordner `templates/website/borderline-angehoerige`. Dort stehen Inhalte, Visualisierungsplan, Prüfbericht und Abgleich. Hier wird nichts von Hand geändert.
-- **Entstehung:** im Ordner der Website `node tools/export.mjs <ziel>`, für die Veröffentlichung mit `--production`. Den Export nach `site/` schreiben, danach `_redirects` von Hand nach `site/` kopieren (UMBAUPLAN, Abschnitt 7), weil `tools/export.mjs` die Datei nicht kopiert.
-- **Frühere Fassung:** Die React-Fassung steht im Branch `react-archiv`.
+```bash
+node authoring/tools/build.mjs --production --verify-site
+node authoring/tools/build.mjs --production --out=dist/site
+# Nach redaktioneller Prüfung und ausdrücklicher Freigabe:
+node authoring/tools/build.mjs --production --out=site --write-site
+```
 
-## Stand
+Der erste Befehl baut nach `dist/site` und vergleicht **alle erzeugten Dateien byteweise** mit dem eingecheckten Stand in `site/`. Der zweite erstellt eine unabhängige Vorschau. Der letzte schreibt `site/` für einen separaten, kontrollierten Pull Request neu. Bei Inhaltsänderungen vor Aktualisierung von `site/` muss die Paritätsprüfung erwartungsgemäss fehlschlagen.
 
-Produktions-Export vom 13.10.2026 aus dem Quellenstand `4a6764a` nach dem Zero-Participant-Audit: aufgabenbezogene Startseite, lokale Abschnittssuche, konsistenter Bereich «Fragen und Nachschlagen», kanonische Kinderseite, verbindliches Begriffssystem und die global erreichbare Kurzübersicht «Kurz und klar». Zehn dynamische Beratungs-, Austausch- und Behandlungsangebote zeigen ihr redaktionelles Prüfdatum; ein halbjährlicher Pflegeprozess und das Produktions-Gate sichern die Fälligkeit ab. Jede Seite führt in der Fusszeile zu «Über diese Website», «Barrierefreiheit» und «Rückmeldung»; die Ziele und ihre Vollständigkeit sind im Produktions-Gate abgesichert. Institutionelle Verantwortung der PUK ist bestätigt. Die Kurzübersicht ist ausdrücklich keine geprüfte Fassung in Leichter Sprache. Die Entscheidung, keine Stichprobe mit realen Teilnehmenden durchzuführen, sowie die Grenzen der Ersatzprüfung sind im Quellen-Repository dokumentiert. Reale Screenreader- und Geräteprüfungen bleiben ebenfalls offen; der Export mit `--production` ist ohne blockierende Befunde durchgelaufen.
+Die Netlify-Konfiguration bleibt unverändert: Der veröffentlichte Ordner ist weiterhin `site/`, und ein Build erfolgt nicht automatisch. Erst der nach Prüfung gemergte Export wird veröffentlicht. `main` und Produktionskonfiguration werden durch die Migration nicht verändert.
+
+## Qualitätsprozess
+1. Änderungen ausschliesslich in `authoring/` vornehmen.
+2. Erneut bauen, Gate und Preview prüfen.
+3. Fachlich sensible Aussagen und Grafiken von zuständigen Personen freigeben lassen; historischen Prüfbericht um aktuelle Nachweise ergänzen.
+4. Freigegebenen Stand nach `site/` bauen, generierte Änderungen überprüfen.
+5. Paritätsprüfung ausführen; erst danach Pull Request und Veröffentlichung.
+6. Keine stillen Änderungen am Designprofil als Nebenwirkung.
+
+**Provenienz:** Übernommen aus `christaegger-dot/puk-website-profil`, Quell-Commit [`4a6764a`](https://github.com/christaegger-dot/puk-website-profil/commit/4a6764ac2bad6c9538a1340fc0a2d691d22dd5df), Ordner `templates/website/borderline-angehoerige/`. Das veröffentlichte Release diente als Ausgangsstand. Ursprüngliche Berichte und Freigaben bleiben versionsgebunden.
+
+**Migration:** Ausschliesslich auf dem Branch `refactor/standalone-authoring-2026-10-13` vorbereitet. Diese Dateien stellen selbst keine neue fachliche oder technische Freigabe dar.

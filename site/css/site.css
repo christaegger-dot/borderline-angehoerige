@@ -1,4 +1,4 @@
-/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-15 */
+/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-18 */
 
 /* ===== ../../../styles.css ===== */
 /* ../../../tokens/fonts.css */
@@ -1078,7 +1078,12 @@ html.puk-scroll-lock{overflow:hidden}
 /* Hauptnavigation unter 760 px zweispaltig (Prüfbefund BD-05/W3-06, 11.10.2026); bei grosser Schrift einspaltig, weil die Spaltenbreite in rem wächst. */
 @media (max-width:760px){.puk-web-nav__list{grid-template-columns:repeat(auto-fit,minmax(min(100%,8.25rem),1fr))}}
 .puk-web-nav__link,.puk-longform__roadmap a,.puk-link--action{min-width:0;max-width:100%;overflow-wrap:anywhere}
-.puk-longform__section[tabindex="-1"]:focus{outline:none}
+/* Direkt verlinkte Abschnitte und Überschriften erhalten vorübergehend tabindex=-1.
+   Der Fokus muss trotz des aus der Tab-Reihenfolge ausgeschlossenen Ziels sichtbar
+   bleiben; main ist absichtlich ausgenommen, damit der Skip-Link den Inhaltsbereich
+   nicht mit einem seitenbreiten Ring umgibt. */
+.puk-longform :where(section,h2,h3,h4)[tabindex="-1"]:focus{outline:none;box-shadow:var(--focus-ring);border-radius:var(--radius-sm)}
+@media (forced-colors:active){.puk-longform :where(section,h2,h3,h4)[tabindex="-1"]:focus{outline:2px solid CanvasText;outline-offset:2px;box-shadow:none}}
 /* Sprungziel am Seitenende: Ein Abschnitt, auf den ein Link springt und der zuletzt steht, braucht genug Höhe,
    damit er an die Oberkante scrollen kann (sonst endet die Seite vorher). Nur an solchen Abschnitten setzen. */
 .puk-site-anchor-end{min-height:calc(100svh - 32px)}

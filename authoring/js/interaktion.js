@@ -214,13 +214,13 @@
     }
     var stopwords = new Set(('aber als am an auf aus bei bis brauche das dass dem den der des die darf ein eine einer einem einen er erlebt es fuer finde gefunden geht gibt hat haben helfen ich im in ist ja kann koennen lassen man mein meine meiner meinem meinen mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur').split(' '));
     var synonymSets = [
-      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'leben nehmen', 'nicht mehr leben'],
+      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein'],
       ['arzt', 'aerztin', 'behandler', 'behandlerin', 'therapeut', 'therapeutin', 'fachperson', 'fachpersonen', 'behandlungsteam'],
       ['ablehnen', 'abgelehnt', 'lehnt', 'verweigern', 'verweigert', 'keine', 'will', 'moechte', 'nicht wollen', 'will nicht', 'moechte nicht'],
       ['normal', 'stabil', 'stabiler', 'ruhig', 'ruhiger', 'unauffaellig', 'anders'],
       ['hilfe', 'unterstuetzung', 'beratung', 'angehoerigenberatung', 'entlastung'],
       ['streit', 'konflikt', 'konflikte', 'eskalation', 'eskaliert', 'kippt'],
-      ['erschoepft', 'ueberfordert', 'belastet', 'kraft', 'am ende', 'keine kraft'],
+      ['erschoepft', 'ueberfordert', 'belastet', 'kraft', 'am ende', 'keine kraft', 'kann nicht mehr', 'ich kann nicht mehr'],
       ['kind', 'kinder', 'jugendliche'],
       ['einweisen', 'einweisung', 'fuersorgerisch', 'fuersorgerische', 'fu'],
       ['medikament', 'medikamente', 'tabletten', 'antidepressivum'],
@@ -232,12 +232,25 @@
       ['kosten', 'bezahlt', 'bezahlen', 'krankenkasse', 'finanzierung']
     ];
     var synonyms = {};
+    var phraseGroups = [];
     synonymSets.forEach(function (set) {
       var values = set.map(normalized);
-      values.forEach(function (value) { if (value.indexOf(' ') === -1) synonyms[value] = values; });
+      values.forEach(function (value) {
+        if (value.indexOf(' ') === -1) synonyms[value] = values;
+        else phraseGroups.push({ phrase: value, group: values });
+      });
     });
     function queryGroups(query) {
-      var words = normalized(query).split(/\s+/).filter(Boolean);
+      var normalizedQuery = normalized(query);
+      var paddedQuery = ' ' + normalizedQuery + ' ';
+      var phraseHit = phraseGroups.filter(function (entry) {
+        return paddedQuery.indexOf(' ' + entry.phrase + ' ') !== -1;
+      }).sort(function (a, b) { return b.phrase.length - a.phrase.length; })[0];
+      /* Eine erkannte Mehrwort-Intention hat Vorrang vor einzelnen, mehrdeutigen
+         Wörtern. So wird etwa «will nicht mehr leben» als Sicherheitsfrage und
+         nicht als Kombination aus Ablehnung, «mehr» und «leben» bewertet. */
+      if (phraseHit) return [phraseHit.group];
+      var words = normalizedQuery.split(/\s+/).filter(Boolean);
       var meaningful = words.filter(function (word) { return !stopwords.has(word) && word !== 'droht' && word !== 'drohen' && word !== 'sprechen'; });
       if (!meaningful.length) meaningful = words;
       var seen = {};

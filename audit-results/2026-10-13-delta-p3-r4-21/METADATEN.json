@@ -8,10 +8,12 @@
     "branch": "codex/p3-optimierungen-2026-10-13",
     "basis": "ad0023db8c325ded93d3f48f732406b01107aace",
     "gepruefter_commit": "a61a602fdc2e108a9e289e4bbc81e174940f2ff6",
+    "pull_request": "https://github.com/christaegger-dot/borderline-angehoerige/pull/674",
     "buildmarker": "r4-21"
   },
   "deployment": {
     "produktion": "https://borderline-angehoerige.netlify.app / r4-20",
+    "preview": "https://deploy-preview-674--borderline-angehoerige.netlify.app / Netlify-Check erfolgreich / ausserhalb Teamzugang HTTP 401",
     "r4_21": "nicht veröffentlicht"
   },
   "tests": {

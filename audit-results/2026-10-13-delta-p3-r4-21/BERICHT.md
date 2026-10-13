@@ -27,4 +27,4 @@ Nicht durchgeführt wurden reale Screenreader-, Hardwaregeräte-, Firefox-, Safa
 
 ## Status
 
-**Lokal vollständig nachgeprüft; Merge, Deployment und Produktionsnachtest ausstehend.**
+**Lokal und im PR vollständig nachgeprüft; Merge, Deployment und Produktionsnachtest ausstehend.** PR #674 ist mergebar. GitHub-Build sowie Netlify Header-, Redirect- und Preview-Checks sind erfolgreich. Das Preview antwortet ausserhalb des Netlify-Teamzugangs mit HTTP 401; diese Sperre wurde nicht umgangen.

@@ -12,4 +12,5 @@
 "P3-011";"P3 Sprache";"A03-010 bis A03-018";"Akzeptanzkriterien erfüllt";"bestanden"
 "P3-012";"P3 visuelle Didaktik";"A04-005 bis A04-007";"Akzeptanzkriterien erfüllt";"bestanden"
 "P3-013";"Nutzendenwirkung";"A03-H01 Titel Krisen begleiten";"ohne reale Nutzendentests nicht empirisch prüfbar";"nicht geprüft"
-"P3-014";"Produktion";"r4-21 nach Merge";"noch nicht veröffentlicht";"ausstehend"
+"P3-014";"PR";"GitHub-Build sowie Netlify Header-, Redirect- und Preview-Checks";"erfolgreich; Preview ausserhalb Teamzugang HTTP 401";"bestanden mit Zugriffseinschränkung"
+"P3-015";"Produktion";"r4-21 nach Merge";"noch nicht veröffentlicht";"ausstehend"

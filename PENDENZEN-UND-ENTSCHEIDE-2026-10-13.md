@@ -28,7 +28,7 @@ Der lokale Produktions-Build meldet 22 Seiten, 0 Blocker und 0 Hinweise; 33 Date
 
 A03-H01 bleibt als nicht empirisch überprüfte Wirkungshypothese dokumentiert. Der Titel «Krisen begleiten» wurde nicht geändert; ohne reale Nutzendentests wird weder eine belastende noch eine entlastende Wirkung behauptet.
 
-Build r4-21 ist noch nicht gemergt oder veröffentlicht. Nach einem Merge sind ein Produktions-Smoke-Test und der Abgleich des Buildmarkers erforderlich.
+Build r4-21 ist mit PR #674 zur Prüfung bereit, aber noch nicht gemergt oder veröffentlicht. GitHub-Build sowie Netlify Header-, Redirect- und Preview-Checks sind erfolgreich; das Preview selbst ist ausserhalb des Netlify-Teamzugangs mit HTTP 401 geschützt. Nach einem Merge sind ein Produktions-Smoke-Test und der Abgleich des Buildmarkers erforderlich.
 
 ## Übergreifend offen
 

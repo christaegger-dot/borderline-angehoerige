@@ -14,4 +14,5 @@
 "V22-013";"Exportparität";"authoring gegen site/";"33 Dateien bytegleich";"bestanden"
 "V22-014";"Gesamtbrowsermatrix";"22 Seiten bei fünf Breiten sowie 200-Prozent-Textprüfung";"110 Läufe und 22 Textprüfungen ohne blockierenden Befund";"bestanden"
 "V22-015";"Suchregression";"36 Ersttreffer r4-21 gegen r4-22";"36 unverändert; Safety- und Überlastungsziele korrekt";"bestanden"
+"V22-016";"Produktion";"Smoke-Test nach Merge-Commit 7864dab";"169/169 Browserprüfungen, 0 Laufzeitfehler; Header, Robots und Weiterleitungen bestätigt";"bestanden"
 "V22-012";"Reale assistive Technik";"Screenreader, reale Geräte, Firefox/Safari, Hochkontrast";"nicht durchgeführt";"nicht geprüft"

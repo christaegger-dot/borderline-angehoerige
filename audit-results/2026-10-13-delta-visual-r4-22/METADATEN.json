@@ -2,7 +2,7 @@
   "schema": "website-audit-v1.2",
   "lauf_id": "2026-10-13-delta-visual-r4-22",
   "modus": "delta",
-  "status": "institutionell_freigegeben_lokal_releasebereit",
+  "status": "veroeffentlicht_und_nachgeprueft",
   "projekt": {
     "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
     "branch": "codex/pendenzenbereinigung-2026-10-13",
@@ -11,9 +11,9 @@
     "buildmarker": "r4-22"
   },
   "deployment": {
-    "produktion": "unverändert r4-21; Produktions-Smoke-Test folgt nach Merge",
+    "produktion": "r4-22 nach Merge-Commit 7864dab veröffentlicht; 169/169 Produktionsprüfungen bestanden",
     "preview": "https://deploy-preview-676--borderline-angehoerige.netlify.app",
-    "r4_22": "lokaler Produktionsbuild und Exportparität bestanden; CI-/Preview-Nachweis folgt nach Push"
+    "r4_22": "Produktionsbuild, Exportparität, CI, Netlify-Regeln und Produktions-Smoke-Test bestanden"
   },
   "tests": {
     "draft_build": "22 Seiten; 0 Blocker; 4 erwartete Freigabehinweise vor institutioneller Freigabe",

@@ -165,6 +165,37 @@
     render(false);
   }
 
+  /* Lokale Listen durchsuchen, ohne Inhalte nachzuladen. Ohne JavaScript bleiben
+     alle Einträge sichtbar. Mehrere Suchwörter werden als UND-Suche behandelt. */
+  function filterList(root) {
+    var input = root.querySelector('[data-filter-input]');
+    var selector = root.getAttribute('data-filter-selector') || '[data-filter-item]';
+    var items = [].slice.call(root.querySelectorAll(selector));
+    var status = root.querySelector('[data-filter-status]');
+    var empty = root.querySelector('[data-filter-empty]');
+    if (!input || !items.length) return;
+    root.setAttribute('data-filter-enhanced', '');
+    function normalized(value) {
+      return String(value || '').toLocaleLowerCase('de-CH').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+    function renderFilter() {
+      var terms = normalized(input.value).trim().split(/\s+/).filter(Boolean);
+      var visible = 0;
+      items.forEach(function (item) {
+        var match = !terms.length || terms.every(function (term) { return normalized(item.textContent).indexOf(term) !== -1; });
+        item.hidden = !match;
+        if (match) {
+          visible++;
+          if (terms.length) [].forEach.call(item.querySelectorAll('details'), function (details) { details.open = true; });
+        }
+      });
+      if (status) status.textContent = terms.length ? visible + ' von ' + items.length + ' Treffern sichtbar.' : items.length + ' Einträge verfügbar.';
+      if (empty) empty.hidden = visible !== 0;
+    }
+    input.addEventListener('input', renderFilter);
+    renderFilter();
+  }
+
   function init(scope) {
     scope = scope || document;
     document.documentElement.setAttribute('data-puk-js', '');
@@ -173,6 +204,9 @@
       [].forEach.call(scope.querySelectorAll(sel), function (el) {
         if (el.hasAttribute('data-enhanced')) return; map[sel](el); el.setAttribute('data-enhanced', '');
       });
+    });
+    [].forEach.call(scope.querySelectorAll('[data-puk-filter]'), function (el) {
+      if (!el.hasAttribute('data-filter-enhanced')) filterList(el);
     });
     dialogs(scope);
   }
@@ -183,7 +217,8 @@
   window.addEventListener('beforeprint', function () { printed = [].filter.call(document.querySelectorAll('details:not([open])'), function (d) { d.open = true; return true; }); });
   window.addEventListener('afterprint', function () { printed.forEach(function (d) { d.open = false; }); printed = []; });
 
-  /* Ein direkter Link auf einen Begriff muss dessen geschlossene Details-Box öffnen. */
+  /* Ein direkter Link muss eine geschlossene Details-Box öffnen und den Fokus an
+     das Ziel setzen. Das macht Sprunglinks auch per Tastatur nachvollziehbar. */
   function revealHashTarget() {
     if (!window.location.hash) return;
     var target;
@@ -191,6 +226,14 @@
     if (!target) return;
     var details = target.closest('details');
     if (details) details.open = true;
+    var focusTarget = target.matches('summary, a, button, input, select, textarea, [tabindex]') ? target : (details ? details.querySelector('summary') : target);
+    if (!focusTarget) return;
+    var addedTabindex = !focusTarget.matches('summary, a, button, input, select, textarea, [tabindex]');
+    if (addedTabindex) focusTarget.setAttribute('tabindex', '-1');
+    window.requestAnimationFrame(function () {
+      focusTarget.focus({ preventScroll: true });
+      if (addedTabindex) focusTarget.addEventListener('blur', function () { focusTarget.removeAttribute('tabindex'); }, { once: true });
+    });
   }
   window.addEventListener('hashchange', revealHashTarget);
 

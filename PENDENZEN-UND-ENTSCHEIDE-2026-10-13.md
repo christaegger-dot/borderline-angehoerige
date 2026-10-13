@@ -4,15 +4,17 @@
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
-## Lokal umgesetzt, noch nicht veröffentlicht
+## Produktionsstand und offener Hotfix
 
-### Korrekturpaket r4-19 aus Audit 01–05
+### r4-19 veröffentlicht; Safety-Suchhotfix r4-20 in PR #673
 
-Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 sind in Commit `475d3f2` und PR #672 umgesetzt. Der generierte Export unter `site/` ist bytegleich zum Produktions-Build. Die Delta-Prüfung umfasst alle 22 Seiten, vier Breiten, 100/200 Prozent Text, natürliche Suchfragen, JavaScript-Fallbacks, Tastatur-Basiswege und 44 Browser-PDFs.
+Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 wurden mit PR #672 gemergt. Die Produktion unter `https://borderline-angehoerige.netlify.app` liefert seit dem 13. Oktober 2026 Build r4-19.
 
-Audit 06 wurde auf dem fixierten Commit und einem deployten Netlify-Prüfstand durchgeführt. Ergebnis: **CONDITIONAL GO**. GitHub-Build, Netlify Deploy Preview, Header- und Redirectregeln sowie 220 deployte Browserfälle bestanden. Das echte PR-Preview ist ausserhalb des Netlify-Teamzugangs mit HTTP 401 geschützt; der funktionale Browsernachtest erfolgte deshalb zusätzlich auf einem temporären passwortgeschützten Netlify-Draft desselben sauberen Artefakts. Der vollständige Nachweis liegt unter `audit-results/2026-10-13-abschluss-475d3f2/`.
+Der anschliessende Produktions-Smoke-Test bestätigte Seiten, Nutzerwege, 404, Weiterleitungen, Header, Robots-Steuerung, Cache-Regeln und Buildparität. Er fand jedoch eine P1-Suchlücke: direkte Begriffe wie «Suizidgedanken» funktionierten, gleichbedeutende Mehrwortformulierungen wie «Mein Kind will nicht mehr leben» führten nicht zuverlässig zu den Kriseninhalten. Damit war die Produktionsbedingung aus Audit 06 nicht vollständig erfüllt.
 
-Noch nicht erfolgt sind Merge und Produktionsdeployment. Nach dem Produktionsdeployment ist der in `FREIGABE.md` beschriebene Runtime-Smoke-Test zwingend; bis dahin bleibt das CONDITIONAL GO bedingt.
+Der eng begrenzte Hotfix ist in Commit `6f3f5fa` und PR #673 umgesetzt. Build r4-20 erkennt Mehrwort-Intentionen vor Einzelwörtern und priorisiert die längste passende Phrase. Der lokale Delta-Smoke-Test bestand 134 von 134 Prüfungen; 14 von 14 gezielten Safety-/Überlastungssuchen führen zum vorgesehenen Ersttreffer. Im Vergleich von 36 Suchfragen blieben 31 Ersttreffer unverändert, fünf wurden gezielt korrigiert. GitHub-Build, Netlify Header-/Redirect-Prüfungen und Deploy-Preview-Status sind erfolgreich; das Preview selbst bleibt ausserhalb des Netlify-Teamzugangs mit HTTP 401 geschützt.
+
+PR #673 ist noch nicht gemergt und r4-20 noch nicht in Produktion. Nach dem Produktionsdeployment ist ein gezielter Runtime-Smoke-Test der korrigierten Suchformulierungen sowie von Buildmarker und JavaScript-Asset zwingend. Der Nachweis liegt unter `audit-results/2026-10-13-delta-suche-r4-20/`.
 
 Die Rechts-/Datenschutzdurchsicht bleibt zudem als Evidenzgrenze bestehen: Die Texte sind am Zürcher IDG ausgerichtet, aber noch nicht nachweislich durch die zuständige interne Stelle geprüft. Die technische Umsetzung ist dadurch nicht blockiert; eine vollständige Schliessung der rechtlichen Audit-Akzeptanzkriterien wäre ohne diesen Nachweis jedoch falsch.
 
@@ -66,4 +68,4 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Suche, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuell veröffentlichte Stand bleibt Build r4-18; das lokal geprüfte, noch nicht veröffentlichte Korrekturpaket ist Build r4-19.
+Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuell veröffentlichte Stand ist Build r4-19. Die im Produktions-Smoke-Test gefundene Suchlücke ist in r4-20 lokal behoben und über PR #673 zur Veröffentlichung vorbereitet.

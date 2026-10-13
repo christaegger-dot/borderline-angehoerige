@@ -1,0 +1,30 @@
+{
+  "schema": "website-audit-v1.2",
+  "lauf_id": "2026-10-13-delta-suche-r4-20",
+  "modus": "delta",
+  "status": "hotfix_im_pr_verifiziert_produktionstest_ausstehend",
+  "projekt": {
+    "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
+    "branch": "codex/search-safety-hotfix-2026-10-13",
+    "basis": "origin/main nach Merge von PR #672",
+    "gepruefter_commit": "6f3f5fa3caa39051e5fd9f9f652dd35430608e77",
+    "pull_request": "https://github.com/christaegger-dot/borderline-angehoerige/pull/673",
+    "buildmarker": "r4-20"
+  },
+  "deployment": {
+    "produktion": "https://borderline-angehoerige.netlify.app / r4-19",
+    "preview": "https://deploy-preview-673--borderline-angehoerige.netlify.app",
+    "preview_zugriff": "HTTP 401 ausserhalb Netlify-Teamzugang",
+    "github_build": "bestanden",
+    "netlify_header_redirect_checks": "bestanden"
+  },
+  "tests": {
+    "delta_smoke": "134/134 bestanden",
+    "gezielte_suchfaelle": "14/14 bestanden",
+    "rankingvergleich": "36 Fragen; 31 unverändert, 5 gezielt korrigiert",
+    "reale_screenreader": false,
+    "reale_geraete": false,
+    "firefox_safari": false,
+    "reale_nutzende": false
+  }
+}

@@ -1,118 +1,18 @@
+# Borderline – Orientierung für Angehörige · neue Website nach dem PUK Website-Profil 2026.10.1 (Etappe 3-2).
+# Statische Website ohne Build. Die Seiten entstehen im Repository puk-website-profil
+# (templates/website/borderline-angehoerige, node tools/export.mjs) und liegen hier im Ordner site/.
+# Sicherheits-Header stehen in site/_headers, die Weiterleitungen der alten Routen in site/_redirects.
+# Ersetzt die netlify.toml der React-Fassung (Branch react-archiv); deren Weiterleitungen stehen in site/_redirects.
+# Der Publish-Ordner ist ein Unterordner: Fällt er mit dem Stamm zusammen, nimmt Netlify beim Hochladen den
+# Publish-Ordner aus den Projekteinstellungen (dist/public der React-Fassung).
+
 [build]
-  command = "pnpm check && pnpm test && pnpm lint && pnpm build"
-  publish = "dist/public"
+  publish = "site"
+  command = "echo 'Statische Website: kein Build'"
 
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.woff2"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/index.html"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=(self)"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; form-action 'self'; manifest-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'"
-
-[[redirects]]
-  from = "/notfallkarte"
-  to = "/soforthilfe"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/notfallkarte.html"
-  to = "/soforthilfe"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/notfallkarte/erstellen"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/notfallkarte-print.html"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/soforthilfe-print.html"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/notfall"
-  to = "/soforthilfe"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/unterstuetzen"
-  to = "/unterstuetzen/uebersicht"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/diagnostik"
-  to = "/verstehen/diagnostik"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/begleiterkrankungen"
-  to = "/verstehen/begleiterkrankungen"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/selbsthilfegruppen"
-  to = "/beratung"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/therapieangebote"
-  to = "/unterstuetzen/therapie#therapieangebote"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/soforthilfe"
-  to = "/soforthilfe/index.html"
-  status = 200
-  force = true
-
+# /404 antwortet mit Status 404, nicht 200 (wie in der netlify.toml der React-Fassung)
 [[redirects]]
   from = "/404"
   to = "/404.html"
   status = 404
-  force = true
-
-[[redirects]]
-  from = "/*.pdf"
-  to = "/:splat.pdf"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/*.webp"
-  to = "/:splat.webp"
-  status = 200
   force = true

@@ -1,84 +1,15 @@
-# Borderline · Hilfe für Angehörige
+# Borderline – Orientierung für Angehörige
 
-Psychoedukatives Informationsangebot für Angehörige von Menschen mit
-Borderline-Muster / Borderline-Persönlichkeitsstörung in der Schweiz.
+Psychoedukative Website der Fachstelle Angehörigenarbeit, Psychiatrische Universitätsklinik Zürich, nach dem PUK Website-Profil 2026.10.1. Kontakt: angehoerigenarbeit@pukzh.ch
 
-## Zielgruppe
+## Inhalt dieses Repositorys
 
-Die Website richtet sich an Angehörige, nahestehende Personen und
-Mitbetroffene, die Orientierung zu Krise, Kommunikation, Grenzen,
-Selbstfürsorge, Diagnostik und Unterstützungsangeboten im Schweizer
-Kontext suchen.
+Die veröffentlichbare Website liegt im Ordner `site/`: 17 Seiten, `css/site.css`, Schriften, `js/interaktion.js`, `assets/`, `_headers`, `_redirects` und `sitemap.xml`. Netlify liefert `site/` ohne Build aus (`netlify.toml`). Im Stamm liegen nur diese Datei, `CLAUDE.md`, `netlify.toml` und `.gitignore`.
 
-## Technischer Stack
+- **Quelle:** Repository `puk-website-profil`, Ordner `templates/website/borderline-angehoerige`. Dort stehen Inhalte, Visualisierungsplan, Prüfbericht und Abgleich. Hier wird nichts von Hand geändert.
+- **Entstehung:** im Ordner der Website `node tools/export.mjs <ziel>`, für die Veröffentlichung mit `--production`. Den Export nach `site/` schreiben, danach `_redirects` von Hand nach `site/` kopieren (UMBAUPLAN, Abschnitt 7), weil `tools/export.mjs` die Datei nicht kopiert.
+- **Frühere Fassung:** Die React-Fassung steht im Branch `react-archiv`.
 
-- React 19 + Vite
-- TypeScript
-- Wouter
-- Tailwind CSS 4
-- Express
-- Vitest, Playwright, ESLint, Prettier
+## Stand
 
-## Lokales Setup
-
-```sh
-pnpm install
-pnpm dev
-pnpm build
-pnpm preview
-```
-
-## Qualitätschecks
-
-```sh
-pnpm lint
-pnpm check
-pnpm test
-pnpm build
-```
-
-Weiterführende QA-Dokumentation:
-
-- [qa/README.md](./qa/README.md)
-
-## Governance und fachliche Freigabe
-
-Medizinische, krisenbezogene und kontaktkritische Inhalte dürfen nicht
-ohne fachliche Prüfung veröffentlicht werden. Hochrisiko-Seiten werden
-zentral in
-[client/src/data/pageGovernance.ts](./client/src/data/pageGovernance.ts)
-geführt.
-
-Wichtige Referenzen:
-
-- [docs/governance/06-release-checkliste.md](./docs/governance/06-release-checkliste.md)
-- [docs/governance/10-fachliche-freigabe-vorlage.md](./docs/governance/10-fachliche-freigabe-vorlage.md)
-
-## Release-Gates
-
-Vor einem Release müssen mindestens die dokumentierten technischen,
-inhaltlichen und fachlichen Gates geprüft werden. Dazu gehören
-insbesondere:
-
-- die Release-Checkliste unter
-  [docs/governance/06-release-checkliste.md](./docs/governance/06-release-checkliste.md)
-- die Geräte- und Browser-Matrix unter
-  [qa/release-browser-matrix.md](./qa/release-browser-matrix.md)
-
-## Datenschutz
-
-Die persönliche Notfallkarte kann sensible Angaben enthalten und speichert
-diese lokal im Browser auf dem Gerät der Nutzer:innen. Die Inhalte werden
-nicht an einen Server der Website übertragen. Details stehen in
-[client/src/pages/Datenschutz.tsx](./client/src/pages/Datenschutz.tsx).
-
-Die Website verzichtet bewusst auf Analyse- und Tracking-Tools; maßgeblich
-ist die aktuelle Datenschutzerklärung im Produkt.
-
-## Gültige Projektzuordnung
-
-- **Geschützte Arbeitswebsite:** [https://borderline-angehoerige.netlify.app/](https://borderline-angehoerige.netlify.app/) – nicht als öffentlich freigegebene Website behandeln
-- **Netlify-Site:** `borderline-angehoerige`
-- **Kanonische Arbeitsgrundlage:** Branch `main` dieses Repositories
-
-Stand der Zuordnung: 1. Oktober 2026. Andere Deployments oder Branches gelten nicht automatisch als freigegebene Hauptversion.
+Etappe 3-2 des UMBAUPLAN (12.10.2026): Entwurfs-Export. Die Prüfstufen im Prüfbericht sind offen; veröffentlicht wird erst, wenn der Prüfbericht vollständig ist und der Export mit `--production` durchläuft.

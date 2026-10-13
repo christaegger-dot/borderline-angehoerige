@@ -183,6 +183,17 @@
   window.addEventListener('beforeprint', function () { printed = [].filter.call(document.querySelectorAll('details:not([open])'), function (d) { d.open = true; return true; }); });
   window.addEventListener('afterprint', function () { printed.forEach(function (d) { d.open = false; }); printed = []; });
 
+  /* Ein direkter Link auf einen Begriff muss dessen geschlossene Details-Box öffnen. */
+  function revealHashTarget() {
+    if (!window.location.hash) return;
+    var target;
+    try { target = document.getElementById(decodeURIComponent(window.location.hash.slice(1))); } catch (e) { return; }
+    if (!target) return;
+    var details = target.closest('details');
+    if (details) details.open = true;
+  }
+  window.addEventListener('hashchange', revealHashTarget);
+
   window.PUKInteraktion = { init: init, reducedMotion: reduced };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { init(); }); else init();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { init(); revealHashTarget(); }); else { init(); revealHashTarget(); }
 })();

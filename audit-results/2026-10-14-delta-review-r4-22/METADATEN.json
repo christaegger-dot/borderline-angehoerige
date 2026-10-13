@@ -1,0 +1,24 @@
+{
+  "schema": "website-audit-v1.2",
+  "lauf_id": "2026-10-14-delta-review-r4-22",
+  "modus": "delta",
+  "status": "inhaltlich_nachgeprueft_institutionelle_freigabe_offen",
+  "datum": "2026-10-14",
+  "projekt": {
+    "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
+    "branch": "codex/pendenzenbereinigung-2026-10-13",
+    "commit": "168d7e0d9dd958aef27818d33a3042eee9afd8bc",
+    "pull_request": "https://github.com/christaegger-dot/borderline-angehoerige/pull/676",
+    "buildmarker": "r4-22"
+  },
+  "deployment": {
+    "produktion": "r4-21, unverändert",
+    "preview": "https://deploy-preview-676--borderline-angehoerige.netlify.app",
+    "preview_status": "Netlify-Check erfolgreich; Produktionsgate wegen offener institutioneller Freigaben blockiert"
+  },
+  "entscheidung": {
+    "korrekturbedarf": false,
+    "freigabefaehig": true,
+    "institutionell_freigegeben": false
+  }
+}

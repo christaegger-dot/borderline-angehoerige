@@ -1,9 +1,20 @@
-# Audit-Agent – Projektanweisung
+# Website-Audit-Agent – borderline-angehoerige
 
-Repository: `christaegger-dot/borderline-angehoerige`
+## Quellenmodell nach Migration
 
-Modus bestand/delta; Export unter site/ prüfen. Kanonische Quelle: christaegger-dot/puk-website-profil, templates/website/borderline-angehoerige. Bereits dokumentierte Prüfungen nach exaktem Quell-/Exportcommit einordnen. Keine handschriftlichen Inhaltsfixes im Export.
+**Vorrang hat der eigenständige Website-Quellordner `authoring/` dieses Repositories.** Sobald PR #671 gemergt ist, liegen alle bearbeitbaren Inhalte, CSS, JavaScript, Konfiguration und lokale Ressourcen hier.
 
-Starte in Codex mit: `$website-audit: Prüfe dieses Repository im Bestandsmodus. Ermittle zuerst Branch, Commit, tatsächlichen Deploymentstand und vorhandene Auditberichte. Liefere nur Befunde und priorisierte Nachprüfungen. Keine Änderungen an Produktdateien, keine Commits oder Deployments.`
+- `authoring/content/`: Kapitel und Informationen
+- `authoring/site.config.json`: Seitenvertrag, Navigation, Zuständigkeit, Veröffentlichungsdaten
+- `authoring/css/site.css`, `authoring/js/interaktion.js`: Design- und Bediencode
+- `site/`: generierte, von Netlify veröffentlichte Dateien
+- `authoring/PRUEFBERICHT.md`: historische, versionsgebundene Freigabeunterlage; bei Änderungen nicht automatisch aktuell
 
-Für vier parallele Projekte: **je ein eigenständiger Codex-Chat pro Repository**, getrennte Befundmatrizen und unabhängige Reports. Audit 06 nach korrigiertem, nachgeprüftem Stand.
+Das separate Repository `christaegger-dot/puk-website-profil` dient künftig als **Design- und Qualitätsreferenz**. Inhaltliche Korrekturen NICHT mehr dort verorten und NICHT ausschliesslich in den generierten `site/`-Dateien vornehmen.
+
+Falls die Migration noch nicht gemergt wurde, markiere die fehlende `authoring/`-Struktur ausdrücklich und führe das Audit nur im Bestand-/read-only-Modus durch. Die Migration nicht eigenmächtig mergen.
+
+## Startauftrag
+Verwende `$website-audit` im Modus `bestand`. Ermittle die aktuelle Repository-Version und den Deployment-Stand, inventarisiere alle bisherigen Audit-/Freigabenachweise und prüfe offen gebliebene Befunde. Starte keine automatische Korrektur, keinen Merge oder Veröffentlichung.
+
+Bei einem späteren Korrekturauftrag müssen die freigegebenen Änderungen in `authoring/` erfolgen, die Website durch `node authoring/tools/build.mjs --production --out=site --write-site` erzeugt und mit `--verify-site` gegen den generierten Export geprüft werden.

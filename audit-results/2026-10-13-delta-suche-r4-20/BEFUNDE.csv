@@ -1,0 +1,2 @@
+"id";"prioritaet";"status_vor_hotfix";"korrektur";"nachtest";"restpunkt"
+"A01-001-R1";"P1";"bestätigt in Produktion r4-19: Mehrwort-Safety-Fragen falsch gerankt";"Mehrwort-Intentionen erkennen, längste Phrase priorisieren, Safety- und Überlastungsphrasen ergänzen";"14/14 Zieltreffer; 134/134 Delta-Prüfungen";"Produktions-Smoke-Test nach Merge von PR #673"

@@ -1,0 +1,31 @@
+{
+  "schema": "website-audit-v1.2",
+  "lauf_id": "2026-10-13-delta-p3-r4-21",
+  "modus": "delta",
+  "status": "lokal_verifiziert_merge_und_produktionstest_ausstehend",
+  "projekt": {
+    "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
+    "branch": "codex/p3-optimierungen-2026-10-13",
+    "basis": "ad0023db8c325ded93d3f48f732406b01107aace",
+    "gepruefter_commit": "a61a602fdc2e108a9e289e4bbc81e174940f2ff6",
+    "pull_request": "https://github.com/christaegger-dot/borderline-angehoerige/pull/674",
+    "buildmarker": "r4-21"
+  },
+  "deployment": {
+    "produktion": "https://borderline-angehoerige.netlify.app / r4-20",
+    "preview": "https://deploy-preview-674--borderline-angehoerige.netlify.app / Netlify-Check erfolgreich / ausserhalb Teamzugang HTTP 401",
+    "r4_21": "nicht veröffentlicht"
+  },
+  "tests": {
+    "build": "22 Seiten; 0 Blocker; 0 Hinweise",
+    "paritaet": "33 Dateien bytegleich",
+    "browsermatrix": "176 Seiten-Viewport-Textgrössen-Kombinationen; 1150/1150 Einzelprüfungen",
+    "suchregression": "36/36 Ersttreffer unverändert",
+    "altersrestriktionen_beratung": 0,
+    "visuelle_kontrolle": "3 Figuren bei 320 und 1440 CSS-Pixel",
+    "reale_screenreader": false,
+    "reale_geraete": false,
+    "firefox_safari": false,
+    "reale_nutzende": false
+  }
+}

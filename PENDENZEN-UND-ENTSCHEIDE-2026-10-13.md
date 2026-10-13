@@ -4,19 +4,31 @@
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
-## Produktionsstand und offener Hotfix
+## Produktionsstand
 
-### r4-19 veröffentlicht; Safety-Suchhotfix r4-20 in PR #673
+### r4-20 veröffentlicht
 
 Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 wurden mit PR #672 gemergt. Die Produktion unter `https://borderline-angehoerige.netlify.app` liefert seit dem 13. Oktober 2026 Build r4-19.
 
 Der anschliessende Produktions-Smoke-Test bestätigte Seiten, Nutzerwege, 404, Weiterleitungen, Header, Robots-Steuerung, Cache-Regeln und Buildparität. Er fand jedoch eine P1-Suchlücke: direkte Begriffe wie «Suizidgedanken» funktionierten, gleichbedeutende Mehrwortformulierungen wie «Mein Kind will nicht mehr leben» führten nicht zuverlässig zu den Kriseninhalten. Damit war die Produktionsbedingung aus Audit 06 nicht vollständig erfüllt.
 
-Der eng begrenzte Hotfix ist in Commit `6f3f5fa` und PR #673 umgesetzt. Build r4-20 erkennt Mehrwort-Intentionen vor Einzelwörtern und priorisiert die längste passende Phrase. Der lokale Delta-Smoke-Test bestand 134 von 134 Prüfungen; 14 von 14 gezielten Safety-/Überlastungssuchen führen zum vorgesehenen Ersttreffer. Im Vergleich von 36 Suchfragen blieben 31 Ersttreffer unverändert, fünf wurden gezielt korrigiert. GitHub-Build, Netlify Header-/Redirect-Prüfungen und Deploy-Preview-Status sind erfolgreich; das Preview selbst bleibt ausserhalb des Netlify-Teamzugangs mit HTTP 401 geschützt.
-
-PR #673 ist noch nicht gemergt und r4-20 noch nicht in Produktion. Nach dem Produktionsdeployment ist ein gezielter Runtime-Smoke-Test der korrigierten Suchformulierungen sowie von Buildmarker und JavaScript-Asset zwingend. Der Nachweis liegt unter `audit-results/2026-10-13-delta-suche-r4-20/`.
+Der eng begrenzte Hotfix wurde mit PR #673 gemergt. Build r4-20 erkennt Mehrwort-Intentionen vor Einzelwörtern und priorisiert die längste passende Phrase. Der lokale Delta-Smoke-Test bestand 134 von 134 Prüfungen; der anschliessende Produktions-Smoke-Test bestand 154 von 154 Prüfungen. Alle 14 gezielten Safety-/Überlastungssuchen führen zum vorgesehenen Ersttreffer. Der P1-Suchbefund ist damit geschlossen. Der Nachweis liegt unter `audit-results/2026-10-13-delta-suche-r4-20/`; das Produktionsergebnis ist zusätzlich in PR #673 dokumentiert.
 
 Die Rechts-/Datenschutzdurchsicht bleibt zudem als Evidenzgrenze bestehen: Die Texte sind am Zürcher IDG ausgerichtet, aber noch nicht nachweislich durch die zuständige interne Stelle geprüft. Die technische Umsetzung ist dadurch nicht blockiert; eine vollständige Schliessung der rechtlichen Audit-Akzeptanzkriterien wäre ohne diesen Nachweis jedoch falsch.
+
+## Lokal umgesetzt, noch nicht veröffentlicht
+
+### P3-Optimierungspaket r4-21
+
+Auf Branch `codex/p3-optimierungen-2026-10-13` sind die redaktionellen Befunde A03-010 bis A03-018 und die visuell-didaktischen Befunde A04-005 bis A04-007 umgesetzt. Die Änderungen vereinfachen Schnellorientierungen, bereinigen Grammatik und Satzzeichen, entlasten dichte Passagen und schärfen die Aussagen der drei betroffenen Wissensdarstellungen. Der Krisenhinweis beim DEAR-Modell steht nun ausserhalb der Figur im zugehörigen Abschnitt.
+
+Die Altersinklusion der Angehörigenberatung wurde über alle 22 ausgelieferten Seiten und die kanonischen Quellen geprüft. Es gibt keine Aussage, welche die Beratung auf Erwachsene begrenzt. Der bestätigte Satz steht im Footer nun auch typografisch als eigener vollständiger Satz: «Die Fachstelle Angehörigenarbeit der PUK berät Angehörige kostenlos und vertraulich.»
+
+Der lokale Produktions-Build meldet 22 Seiten, 0 Blocker und 0 Hinweise; 33 Dateien sind bytegleich zum generierten Export. Eine Browsermatrix aus 22 Seiten, vier Breiten und zwei Textgrössen bestand 1150 von 1150 Einzelprüfungen ohne Laufzeitfehler. Alle 36 Such-Ersttreffer sind gegenüber der Produktion r4-20 unverändert; die sechs Safety- und drei Überlastungssuchen bleiben korrekt. Die drei geänderten Wissensdarstellungen wurden bei 320 und 1440 CSS-Pixel visuell kontrolliert.
+
+A03-H01 bleibt als nicht empirisch überprüfte Wirkungshypothese dokumentiert. Der Titel «Krisen begleiten» wurde nicht geändert; ohne reale Nutzendentests wird weder eine belastende noch eine entlastende Wirkung behauptet.
+
+Build r4-21 ist mit PR #674 zur Prüfung bereit, aber noch nicht gemergt oder veröffentlicht. GitHub-Build sowie Netlify Header-, Redirect- und Preview-Checks sind erfolgreich; das Preview selbst ist ausserhalb des Netlify-Teamzugangs mit HTTP 401 geschützt. Nach einem Merge sind ein Produktions-Smoke-Test und der Abgleich des Buildmarkers erforderlich.
 
 ## Übergreifend offen
 
@@ -58,7 +70,13 @@ Folgende Angaben fehlen nicht versehentlich. Sie werden erst veröffentlicht, we
 - eine garantierbare oder typische Antwortzeit;
 - bestätigte Angaben zur baulichen Zugänglichkeit des Beratungsorts.
 
-## Bewusster Institutionsentscheid · keine Pendenz
+## Bewusste Institutionsentscheide · keine Pendenz
+
+### Altersinklusive Angehörigenberatung
+
+Die Angehörigenberatung der Fachstelle ist nicht auf Erwachsene begrenzt; auch junge Angehörige werden beraten. Der öffentliche Satz «Die Fachstelle Angehörigenarbeit der PUK berät Angehörige kostenlos und vertraulich.» ist absichtlich altersinklusiv. Eine Kennzeichnung als Erwachsenenangebot darf nicht ergänzt werden. Die vollständige Fundstellenprüfung vom 13. Oktober 2026 fand in den Beratungs- und Fachstellentexten keine ausdrückliche oder indirekte Altersbegrenzung.
+
+### Keine Krisenintervention
 
 Die Fachstelle bietet keine Krisenintervention. Die Website enthält deshalb keine Krisennummern, keine `tel:`-Links und keinen globalen Notfallblock. Die ursprünglichen Auditkriterien P0-01 und P0-02 bleiben formal unerfüllt, widersprechen aber dem geltenden Angebotsprofil. Eine Änderung verlangt einen neuen Institutionsentscheid und eine fachliche Prüfung.
 
@@ -68,4 +86,4 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuell veröffentlichte Stand ist Build r4-19. Die im Produktions-Smoke-Test gefundene Suchlücke ist in r4-20 lokal behoben und über PR #673 zur Veröffentlichung vorbereitet.
+Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuell veröffentlichte Stand ist Build r4-20. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist in r4-20 behoben und produktiv nachgeprüft.

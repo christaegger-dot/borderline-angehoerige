@@ -1,4 +1,4 @@
-/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-12 */
+/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-13 */
 
 /* ===== ../../../styles.css ===== */
 /* ../../../tokens/fonts.css */
@@ -1427,6 +1427,8 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-site-offer dl{display:grid;grid-template-columns:minmax(6rem,auto) 1fr;gap:var(--space-1) var(--space-3)}
 .puk-site-offer dt{font-weight:var(--fw-medium)}
 .puk-site-offer dd{margin:0}
+.puk-site-service{margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--ui-hairline)}
+.puk-site-reviewed{margin-top:var(--space-3);font:var(--type-body-sm);color:var(--text-muted)}
 .puk-site-depth{margin:var(--space-5) 0;border-top:1px solid var(--ui-hairline);border-bottom:1px solid var(--ui-hairline)}
 .puk-site-depth>summary{position:relative;box-sizing:border-box;width:100%;max-width:var(--web-container-max);margin-inline:auto;padding:var(--space-4) var(--space-10) var(--space-4) var(--web-gutter-inline);cursor:pointer;font:var(--type-title-3);list-style:none}
 .puk-site-depth>summary::-webkit-details-marker{display:none}

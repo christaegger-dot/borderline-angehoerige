@@ -12,6 +12,7 @@ Ausgeführt wurden:
 - Prüfung auf HTTP-Erfolg, genau eine H1, `main`, Buildmarker r4-21, horizontalen Überlauf und den vollständigen altersinklusiven Beratungssatz;
 - Laufzeitprüfung auf `pageerror`, Konsolenfehler und fehlgeschlagene Ressourcen;
 - visueller Vergleich der Figuren `v-vs-bewertungen`, `v-ko-tassen` und `v-gr-dear` bei 320 und 1440 CSS-Pixel;
-- Vergleich von 36 Such-Ersttreffern zwischen der Produktion r4-20 und dem lokalen Stand r4-21.
+- Vergleich von 36 Such-Ersttreffern zwischen der Produktion r4-20 und dem lokalen Stand r4-21;
+- Produktions-Smoke-Test von r4-21 mit 21 regulären Seiten, eigener 404-Seite, 320-Pixel-Reflow, Tastaturbasis, No-JavaScript-Fallback, 36 Suchfragen, Sicherheitsheadern, Robots-Steuerung und repräsentativen Weiterleitungen.
 
-Nicht ausgeführt wurden reale Screenreader-, Geräte-, Firefox-, Safari-, Windows-Hochkontrast- oder Nutzendentests. Das Produktionsdeployment r4-21 kann erst nach Merge geprüft werden.
+Nicht ausgeführt wurden reale Screenreader-, Geräte-, Firefox-, Safari-, Windows-Hochkontrast- oder Nutzendentests.

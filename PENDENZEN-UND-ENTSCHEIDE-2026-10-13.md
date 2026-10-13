@@ -6,7 +6,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
-### r4-20 veröffentlicht
+### r4-21 veröffentlicht und nachgeprüft
 
 Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 wurden mit PR #672 gemergt. Die Produktion unter `https://borderline-angehoerige.netlify.app` liefert seit dem 13. Oktober 2026 Build r4-19.
 
@@ -16,11 +16,9 @@ Der eng begrenzte Hotfix wurde mit PR #673 gemergt. Build r4-20 erkennt Mehrwort
 
 Die Rechts-/Datenschutzdurchsicht bleibt zudem als Evidenzgrenze bestehen: Die Texte sind am Zürcher IDG ausgerichtet, aber noch nicht nachweislich durch die zuständige interne Stelle geprüft. Die technische Umsetzung ist dadurch nicht blockiert; eine vollständige Schliessung der rechtlichen Audit-Akzeptanzkriterien wäre ohne diesen Nachweis jedoch falsch.
 
-## Lokal umgesetzt, noch nicht veröffentlicht
-
 ### P3-Optimierungspaket r4-21
 
-Auf Branch `codex/p3-optimierungen-2026-10-13` sind die redaktionellen Befunde A03-010 bis A03-018 und die visuell-didaktischen Befunde A04-005 bis A04-007 umgesetzt. Die Änderungen vereinfachen Schnellorientierungen, bereinigen Grammatik und Satzzeichen, entlasten dichte Passagen und schärfen die Aussagen der drei betroffenen Wissensdarstellungen. Der Krisenhinweis beim DEAR-Modell steht nun ausserhalb der Figur im zugehörigen Abschnitt.
+Mit PR #674 wurden die redaktionellen Befunde A03-010 bis A03-018 und die visuell-didaktischen Befunde A04-005 bis A04-007 umgesetzt. Die Änderungen vereinfachen Schnellorientierungen, bereinigen Grammatik und Satzzeichen, entlasten dichte Passagen und schärfen die Aussagen der drei betroffenen Wissensdarstellungen. Der Krisenhinweis beim DEAR-Modell steht nun ausserhalb der Figur im zugehörigen Abschnitt.
 
 Die Altersinklusion der Angehörigenberatung wurde über alle 22 ausgelieferten Seiten und die kanonischen Quellen geprüft. Es gibt keine Aussage, welche die Beratung auf Erwachsene begrenzt. Der bestätigte Satz steht im Footer nun auch typografisch als eigener vollständiger Satz: «Die Fachstelle Angehörigenarbeit der PUK berät Angehörige kostenlos und vertraulich.»
 
@@ -28,7 +26,7 @@ Der lokale Produktions-Build meldet 22 Seiten, 0 Blocker und 0 Hinweise; 33 Date
 
 A03-H01 bleibt als nicht empirisch überprüfte Wirkungshypothese dokumentiert. Der Titel «Krisen begleiten» wurde nicht geändert; ohne reale Nutzendentests wird weder eine belastende noch eine entlastende Wirkung behauptet.
 
-Build r4-21 ist mit PR #674 zur Prüfung bereit, aber noch nicht gemergt oder veröffentlicht. GitHub-Build sowie Netlify Header-, Redirect- und Preview-Checks sind erfolgreich; das Preview selbst ist ausserhalb des Netlify-Teamzugangs mit HTTP 401 geschützt. Nach einem Merge sind ein Produktions-Smoke-Test und der Abgleich des Buildmarkers erforderlich.
+PR #674 wurde als Merge-Commit `1cb33e0a1bd499c7b8367213851373b6dd027ab5` übernommen. Die öffentliche Website liefert r4-21. Der anschliessende Produktions-Smoke-Test bestand 169 von 169 Browserprüfungen ohne Laufzeitfehler. Alle 21 regulären Seiten, die eigene 404-Seite, Tastaturbasis, No-JavaScript-Fallback, alle 36 festgeschriebenen Such-Ersttreffer, Sicherheitsheader, Robots-Steuerung und repräsentative Weiterleitungen wurden bestätigt. Das Produktionsergebnis ist in PR #674 dokumentiert.
 
 ## Übergreifend offen
 
@@ -86,4 +84,4 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuell veröffentlichte Stand ist Build r4-20. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist in r4-20 behoben und produktiv nachgeprüft.
+Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuell veröffentlichte und nachgeprüfte Stand ist Build r4-21. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.

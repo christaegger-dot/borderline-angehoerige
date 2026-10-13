@@ -12,6 +12,7 @@ Der geprüfte Implementierungsstand ist Commit `a61a602fdc2e108a9e289e4bbc81e174
 - Alle 36 Such-Ersttreffer sind gegenüber der Produktion r4-20 unverändert. Sechs Safety- und drei Überlastungsformulierungen führen weiterhin zu den vorgesehenen Inhalten.
 - Die drei geänderten Wissensdarstellungen wurden bei 320 und 1440 CSS-Pixel visuell geprüft. Sie sind lesbar, ohne horizontalen Überlauf und inhaltlich kongruent.
 - Produktions-Build und Exportvergleich melden 22 Seiten, 0 Blocker, 0 Hinweise und 33 bytegleiche Dateien.
+- Nach Merge-Commit `1cb33e0a1bd499c7b8367213851373b6dd027ab5` liefert die öffentliche Website r4-21. Der Produktions-Smoke-Test bestand 169 von 169 Browserprüfungen ohne Laufzeitfehler; alle 36 Such-Ersttreffer, Sicherheitsheader, Robots-Steuerung und repräsentative Weiterleitungen wurden bestätigt.
 
 ## Einordnung der Altersfundstellen
 
@@ -23,8 +24,8 @@ Die Bezeichnungen «Erwachsenes Kind», «Leitlinie für Erwachsene» und Angabe
 
 A03-H01 bleibt eine nicht empirisch überprüfte Wirkungshypothese. Der Titel «Krisen begleiten» wurde nicht geändert. Ohne reale Nutzendentests wird keine Wirkung des Titels behauptet.
 
-Nicht durchgeführt wurden reale Screenreader-, Hardwaregeräte-, Firefox-, Safari-, Windows-Hochkontrast- oder Nutzendentests. Der Lauf belegt daher keine vollständige WCAG- oder ISO-Konformität. Die Produktion liefert weiterhin r4-20; r4-21 benötigt nach einem Merge einen Produktions-Smoke-Test.
+Nicht durchgeführt wurden reale Screenreader-, Hardwaregeräte-, Firefox-, Safari-, Windows-Hochkontrast- oder Nutzendentests. Der Lauf belegt daher keine vollständige WCAG- oder ISO-Konformität.
 
 ## Status
 
-**Lokal und im PR vollständig nachgeprüft; Merge, Deployment und Produktionsnachtest ausstehend.** PR #674 ist mergebar. GitHub-Build sowie Netlify Header-, Redirect- und Preview-Checks sind erfolgreich. Das Preview antwortet ausserhalb des Netlify-Teamzugangs mit HTTP 401; diese Sperre wurde nicht umgangen.
+**Lokal, im PR und in Produktion nachgeprüft.** PR #674 ist gemergt, die öffentliche Website liefert r4-21 und der Produktions-Smoke-Test ist bestanden. Die dokumentierten Evidenzgrenzen bleiben bestehen.

@@ -196,6 +196,63 @@
     renderFilter();
   }
 
+  /* Abschnittssuche: Der Build legt einen lokalen Index in data-Attributen an.
+     Es werden keine Eingaben übertragen oder gespeichert. Ohne JavaScript bleibt
+     das kurze Seitenverzeichnis sichtbar. */
+  function siteSearch(root) {
+    var input = root.querySelector('[data-search-input]');
+    var status = root.querySelector('[data-search-status]');
+    var empty = root.querySelector('[data-search-empty]');
+    var directory = root.querySelector('[data-search-directory]');
+    var results = root.querySelector('[data-search-results]');
+    var items = [].slice.call(root.querySelectorAll('[data-search-item]'));
+    var limit = +(root.getAttribute('data-search-limit') || 20);
+    if (!input || !results || !items.length) return;
+    root.setAttribute('data-search-enhanced', '');
+    function normalized(value) {
+      return String(value || '').toLocaleLowerCase('de-CH').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+    function score(item, query, terms) {
+      var title = normalized(item.getAttribute('data-search-title'));
+      var haystack = normalized(item.getAttribute('data-search-text'));
+      var keywords = normalized(item.getAttribute('data-search-keywords'));
+      if (!terms.every(function (term) { return haystack.indexOf(term) !== -1; })) return -1;
+      var value = item.getAttribute('data-search-level') === 'section' ? 20 : 0;
+      if (title === query) value += 600;
+      else if (title.indexOf(query) !== -1) value += 300;
+      terms.forEach(function (term) {
+        if (title.indexOf(term) !== -1) value += 80;
+        if (keywords.indexOf(term) !== -1) value += 140;
+        var first = haystack.indexOf(term);
+        if (first !== -1) value += Math.max(0, 30 - Math.floor(first / 120));
+      });
+      return value;
+    }
+    function renderSearch() {
+      var query = normalized(input.value).trim();
+      var terms = query.split(/\s+/).filter(Boolean);
+      if (!terms.length) {
+        items.forEach(function (item) { item.hidden = true; });
+        results.hidden = true;
+        if (directory) directory.hidden = false;
+        if (empty) empty.hidden = true;
+        if (status) status.textContent = 'Alle Themenseiten sind unten aufgeführt.';
+        return;
+      }
+      var matches = items.map(function (item) { return { item: item, score: score(item, query, terms), order: +(item.getAttribute('data-search-order') || 0) }; })
+        .filter(function (entry) { return entry.score >= 0; })
+        .sort(function (a, b) { return b.score - a.score || a.order - b.order; });
+      items.forEach(function (item) { item.hidden = true; });
+      matches.slice(0, limit).forEach(function (entry) { entry.item.hidden = false; results.appendChild(entry.item); });
+      results.hidden = matches.length === 0;
+      if (directory) directory.hidden = true;
+      if (empty) empty.hidden = matches.length !== 0;
+      if (status) status.textContent = matches.length === 0 ? 'Keine passenden Inhalte gefunden.' : (matches.length > limit ? limit + ' von ' + matches.length + ' passenden Inhalten sichtbar.' : matches.length + (matches.length === 1 ? ' passender Inhalt.' : ' passende Inhalte.'));
+    }
+    input.addEventListener('input', renderSearch);
+    renderSearch();
+  }
+
   function init(scope) {
     scope = scope || document;
     document.documentElement.setAttribute('data-puk-js', '');
@@ -207,6 +264,9 @@
     });
     [].forEach.call(scope.querySelectorAll('[data-puk-filter]'), function (el) {
       if (!el.hasAttribute('data-filter-enhanced')) filterList(el);
+    });
+    [].forEach.call(scope.querySelectorAll('[data-puk-search]'), function (el) {
+      if (!el.hasAttribute('data-search-enhanced')) siteSearch(el);
     });
     dialogs(scope);
   }

@@ -34,6 +34,6 @@ Die Netlify-Konfiguration bleibt unverändert: Der veröffentlichte Ordner ist w
 5. Paritätsprüfung ausführen; erst danach Pull Request und Veröffentlichung.
 6. Keine stillen Änderungen am Designprofil als Nebenwirkung.
 
-**Provenienz:** Übernommen aus `christaegger-dot/puk-website-profil`, Quell-Commit [`4a6764a`](https://github.com/christaegger-dot/puk-website-profil/commit/4a6764ac2bad6c9538a1340fc0a2d691d22dd5df), Ordner `templates/website/borderline-angehoerige/`. Das veröffentlichte Release diente als Ausgangsstand. Ursprüngliche Berichte und Freigaben bleiben versionsgebunden.
+**Provenienz:** Übernommen aus `christaegger-dot/puk-website-profil`, Quell-Commit [`2bfda22`](https://github.com/christaegger-dot/puk-website-profil/commit/2bfda22ce3abb845fabb4459660f48960a9daec4), Ordner `templates/website/borderline-angehoerige/`. Das veröffentlichte Release diente als Ausgangsstand. Ursprüngliche Berichte und Freigaben bleiben versionsgebunden.
 
 **Migration:** Ausschliesslich auf dem Branch `refactor/standalone-authoring-2026-10-13` vorbereitet. Diese Dateien stellen selbst keine neue fachliche oder technische Freigabe dar.

@@ -82,6 +82,18 @@ Gehört zur Website in diesem Ordner. Wer den Starter kopiert, übernimmt diese 
 
 **Aussagegrenze:** Dies ist eine Selbstprüfung der bauenden Sitzung und keine erneute unabhängige Prüfung. Reale Screenreader-, Hardwaretastatur-, Touch- und Zielgruppentests bleiben gemäss dokumentiertem Entscheid nicht durchgeführt. Vollständiger Plan und Akzeptanzkriterien: `VERTRAUENSWEGE-MASSNAHMENPLAN-2026-10-13.md`.
 
+### Selbstprüfung · konsistente Sprungziele · 13.10.2026
+
+**Überprüfter Ausgangsbefund:** Der Suchindex enthält 160 eindeutige Abschnittstreffer. 19 davon führten auf fünf Seiten ohne eingebundenes Interaktionsskript (`index`, `kurz`, `unterstuetzung`, `ueber`, `impressum-datenschutz`). Der Browser scrollte zum Fragment, die vorhandene Funktion `revealHashTarget` konnte dort aber keinen nachvollziehbaren Tastaturfokus setzen.
+
+**Umgesetzt:** `deepLinkFocus` ist im Seitenvertrag verbindlich aktiviert. Alle 22 veröffentlichten Seiten laden die bestehende progressive Fokuslogik. Sie öffnet bei Bedarf eine umgebende Vertiefung und fokussiert das Ziel beziehungsweise deren Zusammenfassung. Programmatisch fokussierte Abschnitte und Überschriften erhalten einen sichtbaren Fokusindikator sowie bei erzwungenen Systemfarben einen systemfarbenen Outline-Fallback. Ohne JavaScript bleiben Inhalt, Links und nativer Fragmentsprung erhalten. Inhalte, Nutzerinteraktionen und das institutionelle Krisenprofil wurden nicht verändert.
+
+**Konstruktive Sicherung:** Das Produktions-Gate blockiert eine gelöschte `deepLinkFocus`-Konfiguration, ein fehlendes Interaktionsskript sowie eine einzelne veröffentlichte Seite ohne Skript. Zwei neue Gegenproben belegen die Erkennung der Konfigurations- und Seitenfehler; der Gate-Selbsttest besteht mit 73/73 Fällen. `node abgleich/sprungziele.mjs` bestätigt 22/22 Seiten mit Fokuslogik, 160/160 Such-Sprungziele und 507/507 interne Fragmentlinks ohne Fehler.
+
+**Browser- und Regressionsprüfung:** Chromium fokussiert bei 1280 CSS-Pixeln alle 160 Such-Sprungziele sichtbar; 53 umgebende Vertiefungen werden dabei geöffnet. Die 19 zuvor betroffenen Ziele bestehen zusätzlich bei 360 CSS-Pixeln mit sichtbarem Fokus. Alle 160 Ziele bestehen ausserdem bei erzwungenen Systemfarben mit sichtbarem Fokus. Die drei Läufe melden null Laufzeitfehler. Die vollständige Regression umfasst 22 Seiten in vier Darstellungen, also 88 Läufe, ohne Axe-Verletzung, horizontalen Überlauf, Laufzeit- oder Ressourcenfehler. Der Tastaturdurchgang meldet auf allen 22 Seiten «Zum Hauptinhalt» als ersten Stopp und null Fokusstellen ohne sichtbaren Fokus. Der Produktions-Export enthält 22 Seiten, alle 22 mit dem gebündelten lokalen Interaktionsskript, gebündeltes CSS, drei lokale Schriftdateien und `robots.txt`; eine Sitemap wird weiterhin nicht erzeugt.
+
+**Aussagegrenze:** Automatisierte Chromium-Prüfungen belegen die technische Fokusbewegung, nicht die tatsächliche Screenreader-Ankündigung oder Verständlichkeit. Reale Screenreader-, Hardwaretastatur-, Touch- und Zielgruppentests bleiben gemäss dokumentiertem Entscheid nicht durchgeführt. Vollständiger Plan und Akzeptanzkriterien: `SPRUNGZIELE-MASSNAHMENPLAN-2026-10-13.md`.
+
 - **Bauen und Prüfen sind getrennt.** Die Stufen unten prüft eine Sitzung oder Person, die die Website nicht gebaut hat. Die bauende Sitzung macht nur die Selbstprüfung (unten) und trägt keine Stufe als «erledigt» ein.
 - **Jeder Punkt braucht einen Beleg** (Seite und Abschnitt, Figur, Zitat). Ein Punkt ohne Beleg gilt als nicht geprüft. Ein Gesamturteil ersetzt keine Einzelprüfung.
 - **Kein Merge ohne Prüfbericht.** Ein Pull Request mit einer neuen oder geänderten Website enthält diesen Bericht im aktuellen Stand und verweist in der Beschreibung darauf.

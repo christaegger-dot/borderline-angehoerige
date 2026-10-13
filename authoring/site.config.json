@@ -1,8 +1,8 @@
 {
-  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Export-Baseline: christaegger-dot/puk-website-profil@4a6764ac2bad6c9538a1340fc0a2d691d22dd5df. Projektdateien künftig hier pflegen; PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für ihren dokumentierten Stand.",
+  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter r4-18-Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4 für bytegleiche Reproduktion der aktuellen site/. PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände.",
   "kitRevision": "PUK Website Kit 1.10.1-r4 · abgeleitet",
   "canonicalSource": "PUK Zürich Design System 1.10.1 (unverändert)",
-  "assetVersion": "r4-15",
+  "assetVersion": "r4-18",
   "siteTitle": "Borderline – Orientierung für Angehörige",
   "shortDescription": "Psychoedukative Website der Fachstelle Angehörigenarbeit PUK für Angehörige von Menschen mit Borderline.",
   "language": "de-CH",
@@ -2039,5 +2039,6 @@
     }
   ],
   "siteUrl": "https://borderline-angehoerige.netlify.app",
+  "deepLinkFocus": true,
   "interactionScript": "js/interaktion.js"
 }

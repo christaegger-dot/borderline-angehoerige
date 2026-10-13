@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-15';
+const BUILD = 'r4-18';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -156,7 +156,12 @@ function renderPage(cfg, page, content) {
   const navHtml = menu
     ? `<nav class="puk-web-nav puk-site-nav--menu" aria-label="Hauptnavigation"><div class="puk-disclosure puk-site-menu" data-puk-disclosure><span class="puk-disclosure__label">Menü</span><ul class="puk-web-nav__list puk-disclosure__panel" role="list">\n${navItems}\n</ul></div></nav>`
     : `<nav class="puk-web-nav" aria-label="Hauptnavigation"><ul class="puk-web-nav__list" role="list">\n${navItems}\n</ul></nav>`;
-  const script = cfg.interactionScript && (menu || needsScript(body));
+  /* Direkte Abschnittslinks entstehen nicht nur in Kapitelwegen, sondern auch in der
+     Website-Suche. Bei deepLinkFocus lädt deshalb jede Seite die kleine progressive
+     Verbesserung: Das vorhandene revealHashTarget öffnet nötigenfalls details und
+     setzt den Tastaturfokus auf das sichtbare Ziel. Ohne Skript bleibt der Inhalt
+     vollständig vorhanden und der Browser springt weiterhin nativ zum Fragment. */
+  const script = cfg.interactionScript && (cfg.deepLinkFocus || menu || needsScript(body));
   const lg = cfg.legal || {}; const legalLinks = [];
   for (const [k] of LEGAL) { const e = lg[k]; if (!e || !e.href || !e.label) continue; const same = legalLinks.find(x => x.href === e.href); if (same) same.label += ' und ' + e.label; else legalLinks.push({ href: e.href, label: e.label }); }
   const legalMissing = cfg.legal ? LEGAL.filter(([k]) => !(lg[k] && lg[k].href)).map(([, n]) => n) : [];
@@ -256,6 +261,8 @@ function gate(cfg, files, opts = {}) {
   }
   const pages = Array.isArray(cfg.pages) ? cfg.pages : [];
   if (!pages.length) add('block', 'site', 'config', 'pages fehlt');
+  if (cfg.deepLinkFocus !== true) add('block', 'site', 'deep-link-focus', 'deepLinkFocus muss true sein: Such- und Querverweise auf Abschnitte brauchen auf jeder Zielseite einen nachvollziehbaren Tastaturfokus');
+  if (cfg.deepLinkFocus && !cfg.interactionScript) add('block', 'site', 'deep-link-focus', 'deepLinkFocus braucht site.config.json › interactionScript');
   if (cfg.utilityNav !== undefined) {
     if (!Array.isArray(cfg.utilityNav) || !cfg.utilityNav.length) add('block', 'site', 'utility-nav', 'utilityNav muss mindestens einen Direkteinstieg enthalten');
     else {
@@ -394,9 +401,9 @@ function gate(cfg, files, opts = {}) {
     if (main && all(main, y => !!y.attrs.style).length) add('warn', pid, 'inline-style', 'style-Attribute im Inhalt: mit strenger Content-Security-Policy nicht zulässig – Klassen verwenden');
     for (const a of all(doc, y => y.tag === 'a' && y.attrs.target === '_blank')) if (!/noopener/.test(a.attrs.rel || '')) add('block', pid, 'blank-target', 'Link mit target="_blank" ohne rel="noopener noreferrer": ' + (a.attrs.href || ''));
     const hasDetails = !!one(doc, y => y.tag === 'details');
-    if (INTERACTIVE.some(at => one(doc, y => has(y, at))) || hasDetails) {
+    if (cfg.deepLinkFocus || INTERACTIVE.some(at => one(doc, y => has(y, at))) || hasDetails) {
       const sc = one(doc, y => y.tag === 'script' && /interaktion\.js(\?|$)/.test(y.attrs.src || ''));
-      if (!sc) add('block', pid, 'interaction-script', INTERACTIVE.some(at => one(doc, y => has(y, at))) ? 'Interaktive Komponente ohne components/interaktion.js – ohne Skript bleibt sie statisch (site.config.interactionScript)' : 'Vertiefung (details) ohne components/interaktion.js – sie wird sonst nicht vollständig gedruckt (Abschnitt «Technische Qualität», F)');
+      if (!sc) add('block', pid, 'interaction-script', cfg.deepLinkFocus ? 'Site-weite Sprungzielfokussierung ohne components/interaktion.js – direkte Abschnittslinks setzen sonst keinen nachvollziehbaren Tastaturfokus' : (INTERACTIVE.some(at => one(doc, y => has(y, at))) ? 'Interaktive Komponente ohne components/interaktion.js – ohne Skript bleibt sie statisch (site.config.interactionScript)' : 'Vertiefung (details) ohne components/interaktion.js – sie wird sonst nicht vollständig gedruckt (Abschnitt «Technische Qualität», F)'));
       else if (!exists(resolve(path, sc.attrs.src).path)) add('block', pid, 'interaction-script', 'Interaktionsskript nicht lokal vorhanden: ' + sc.attrs.src);
     }
     for (const cl of main ? all(main, y => cls(y, 'puk-web-card-list')) : []) { const n = cl.children.filter(y => y.tag === 'li').length; if (n >= 4) add('warn', pid, 'card-grid', `Kartenraster mit ${n} Karten: prüfen, ob eine Anordnung mit Beziehungen erklären müsste (Kartenraster-Check, Abschnitt «Visualisierung umsetzen»)`); }
@@ -555,6 +562,8 @@ function gate(cfg, files, opts = {}) {
 const INLINE_T = 'Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.';
 const MUTATIONS = [
   ['Direkteinstieg verweist auf fehlende Seite', ['utility-nav'], c => { c.utilityNav = [{ pageId: 'fehlt', label: 'Fehlt' }]; }],
+  ['Site-weite Sprungzielfokussierung deaktiviert', ['deep-link-focus'], c => { delete c.deepLinkFocus; }],
+  ['Statische Seite ohne Skript für Sprungzielfokus', ['interaction-script'], (c, f) => rex(f, 'index.html', /<script src="[^"]*interaktion\.js[^"]*" defer><\/script>\n?/, '')],
   ['Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite)', ['nav-target', 'nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link" href="beziehungen-verstehen.html"', 'class="puk-web-nav__link" href="beziehungen.html"')],
   ['Seitenvertrag verweist auf fehlende Datei', ['page-file'], c => { pg(c, 'behandlung-verstehen').href = 'behandlung.html'; }],
   ['lang fehlt', ['lang'], (c, f) => rep(f, 'behandlung-verstehen.html', '<html lang="de-CH"', '<html')],

@@ -1,5 +1,7 @@
 # Prüfbericht · Borderline – Orientierung für Angehörige
 
+> **Historischer Nachweis:** Dieser Bericht dokumentiert die Entstehungs- und Prüfgeschichte bis zur Migration. Der aktuelle operative Status, einschliesslich des späteren Institutionsentscheids zu AR3-3, steht in `../PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`. Historische Fristen und Zwischenstände in diesem Bericht sind nicht automatisch aktuelle Pendenzen.
+
 Gehört zur Website in diesem Ordner. Wer den Starter kopiert, übernimmt diese Vorlage: Titel anpassen, alle Stufen stehen auf «offen». Ohne vollständigen Prüfbericht blockiert `node tools/gate.mjs --production` die Veröffentlichung (Abschnitt «Prüfung und Freigabe»).
 
 **Regeln**

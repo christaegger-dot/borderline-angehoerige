@@ -7,6 +7,7 @@
 - Übernahme des vorhandenen Seitenrenderers, des Gate-Codes, des ursprünglichen Prüfberichts und der lokalen Assets.
 - Der vorhandene Stand unter `site/` bleibt unverändert, um das Deployment nicht zu verändern.
 - Netlify veröffentlicht weiterhin ausschliesslich `site/`. Es gibt keine automatische Umstellung des produktiven Builds.
+- `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md` trennt den aktuellen operativen Status vom historischen Prüfbericht.
 
 ## Versionsbezug
 Ursprünglicher Exportstand 4a6764a; für den aktuellen veröffentlichten r4-18-Renderer und die Freigabeunterlagen mit Quellstand 2bfda22 abgeglichen.
@@ -26,6 +27,7 @@ Künftige Änderungen zuerst unter `authoring/` bearbeiten, anschliessend unabh�
 
 ## Weiteres Vorgehen
 1. Draft-PR fachlich/technisch prüfen.
-2. Erst nach ausdrücklicher Freigabe mergen.
-3. Danach den separat vorbereiteten Audit-Agent-PR mit der eigenständigen Quellenstruktur zusammenführen.
-4. Änderungen an veröffentlichten Inhalten weiterhin über kontrollierte PRs ausliefern.
+2. Das frühere Borderline-Quellverzeichnis im Profil-Repository als Archiv kennzeichnen.
+3. Erst nach ausdrücklicher Freigabe mergen.
+4. Danach den separat vorbereiteten Audit-Agent-PR mit der eigenständigen Quellenstruktur zusammenführen.
+5. Änderungen an veröffentlichten Inhalten weiterhin über kontrollierte PRs ausliefern.

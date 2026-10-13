@@ -10,6 +10,7 @@ Die Website kann **direkt in diesem Repository** bearbeitet werden. Das PUK-Webs
 - `authoring/assets/` und `authoring/fonts/`: lokale Grafik- und Schriftressourcen.
 - `authoring/tools/`: Seitenrenderer mit übernommenem Prüfgate.
 - `authoring/PRUEFBERICHT.md`: historischer Quell-Prüfbericht; er ersetzt **keine** erneute Freigabe fachlicher Änderungen.
+- `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`: verbindlicher aktueller Status der offenen, abgeschlossenen und bewusst nicht vorgesehenen Arbeiten.
 - `site/`: versionierter, von Netlify veröffentlichter Build. HTML dort nicht von Hand bearbeiten.
 
 ## Prüfen und Bauen
@@ -27,6 +28,8 @@ Der erste Befehl baut nach `dist/site` und vergleicht **alle erzeugten Dateien b
 Die Netlify-Konfiguration bleibt unverändert: Der veröffentlichte Ordner ist weiterhin `site/`, und ein Build erfolgt nicht automatisch. Erst der nach Prüfung gemergte Export wird veröffentlicht. `main` und Produktionskonfiguration werden durch die Migration nicht verändert.
 
 ## Qualitätsprozess
+Vor einer Änderung zuerst `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md` lesen. Es ist die aktuelle operative Übersicht; historische Fristen und Zwischenstände im Prüfbericht begründen keine neue Pendenz.
+
 1. Änderungen ausschliesslich in `authoring/` vornehmen.
 2. Erneut bauen, Gate und Preview prüfen.
 3. Fachlich sensible Aussagen und Grafiken von zuständigen Personen freigeben lassen; historischen Prüfbericht um aktuelle Nachweise ergänzen.

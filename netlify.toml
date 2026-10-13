@@ -1,6 +1,7 @@
 # Borderline – Orientierung für Angehörige · neue Website nach dem PUK Website-Profil 2026.10.1 (Etappe 3-2).
-# Statische Website ohne Build. Die Seiten entstehen im Repository puk-website-profil
-# (templates/website/borderline-angehoerige, node tools/export.mjs) und liegen hier im Ordner site/.
+# Statische Website ohne automatischen Build. Die bearbeitbaren Quellen liegen jetzt
+# hier im Verzeichnis authoring/; der kontrollierte lokale Build erzeugt site/.
+# Befehl: node authoring/tools/build.mjs --production --out=site --write-site
 # Sicherheits-Header stehen in site/_headers, die Weiterleitungen der alten Routen in site/_redirects.
 # Ersetzt die netlify.toml der React-Fassung (Branch react-archiv); deren Weiterleitungen stehen in site/_redirects.
 # Der Publish-Ordner ist ein Unterordner: Fällt er mit dem Stamm zusammen, nimmt Netlify beim Hochladen den

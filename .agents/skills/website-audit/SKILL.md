@@ -48,7 +48,7 @@ Berichte in `audit-results/<lauf-id>/` als Arbeitsartefakte erzeugen, wenn der A
 Innerhalb eines Projekts dürfen unabhängige Prüfmodule an Subagenten verteilt werden, wenn verfügbar. Der Koordinator vereinigt und überprüft ihre Ergebnisse. Nicht vier Repositories in einem Arbeitsbaum mischen.
 
 ## Exportquellen
-Bei migrierten Export-Repositories ist \`authoring/\` im **aktuellen Repo** die kanonische Inhaltsquelle; \`site/\` ist nur die erzeugte Version. Wo noch kein \`authoring/\` existiert, den bisherigen externen Quellenort erfassen, aber keine Migration eigenmächtig starten. PUK-Website-Profil dient nach Migration ausschliesslich als Design- und Qualitätsreferenz.
+Bei migrierten Export-Repositories ist `authoring/` im **aktuellen Repo** die kanonische Inhaltsquelle; `site/` ist nur die erzeugte Version. Wo noch kein `authoring/` existiert, den bisherigen externen Quellenort erfassen, aber keine Migration eigenmächtig starten. PUK-Website-Profil dient nach Migration ausschliesslich als Design- und Qualitätsreferenz.
 
 ## Nach der Analyse
 Zuerst konsolidierte Auditberichte liefern. Änderungen nur nach separater konkreter Freigabe auf eigenem Branch. Eine tatsächliche medizinisch-fachliche, juristische, Datenschutz- oder Produktionsfreigabe wird von einem Agenten nicht ersetzt.

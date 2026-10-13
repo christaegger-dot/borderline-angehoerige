@@ -1,0 +1,69 @@
+{
+  "schema": "website-audit-v1.2",
+  "lauf_id": "2026-10-13-bestand-13a7e4f",
+  "modus": "bestand",
+  "status": "abgeschlossen_mit_offenen_befunden",
+  "auditmodule": ["A01", "A02", "A03", "A04", "A05"],
+  "audit_06_durchgefuehrt": false,
+  "projekt": {
+    "name": "Borderline – Orientierung für Angehörige",
+    "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
+    "lokaler_pfad": "/workspace/borderline-angehoerige",
+    "branch": "main",
+    "commit": "13a7e4f62754ab3c1c68c49329d88be3e0845912",
+    "commit_zeit": "2026-10-13T17:41:06+02:00",
+    "buildmarker": "r4-18",
+    "kanonische_quelle": "authoring/",
+    "publikationsartefakt": "site/"
+  },
+  "deployment": {
+    "url": "https://borderline-angehoerige.netlify.app",
+    "anbieter": "Netlify",
+    "projekt_id": "73a027a4-ef26-4767-b8c7-2784a75bb421",
+    "deploy_id": "6ace511614762f5a379993dd",
+    "deploy_commit": "13a7e4f62754ab3c1c68c49329d88be3e0845912",
+    "deploy_status": "ready",
+    "publiziert_am": "2026-10-13T15:41:25.305Z",
+    "produktionszugang": "öffentlich per Link, nicht für Suchmaschinen bestimmt",
+    "suchmaschinensteuerung": "robots.txt Disallow / sowie Meta- und HTTP-X-Robots-Tag noindex,nofollow"
+  },
+  "zeitraum": {
+    "auditdatum": "2026-10-13",
+    "abgeschlossen_utc": "2026-10-13T16:23:20Z",
+    "zeitzone": "Etc/UTC"
+  },
+  "zielgruppe": "Angehörige und Bezugspersonen von Menschen mit psychischen Erkrankungen, mit Schwerpunkt Borderline, einschliesslich emotional belasteter Personen und Personen mit unterschiedlicher Gesundheits- und Digitalkompetenz",
+  "testumgebung": {
+    "browser": "Chromium 151, headless über Playwright",
+    "accessibility_engine": "axe-core 4.10.3, WCAG-2.x-AA-Tags",
+    "viewports_css_px": [320, 375, 768, 1024, 1440],
+    "textvergroesserung": "skriptierte 200-Prozent-Textvergrösserung, kein physischer Browserzoom",
+    "javascript_aus": true,
+    "tastatur_automatisiert": true,
+    "externe_links": "68 eindeutige URLs per curl/Browser geprüft",
+    "reale_geraete": false,
+    "reale_screenreader": false,
+    "reale_nutzende": false
+  },
+  "aenderungen": {
+    "website_oder_anwendungscode": false,
+    "commits": false,
+    "pull_requests": false,
+    "merges": false,
+    "deployments": false,
+    "netlify_einstellungen": false,
+    "audit_arbeitsartefakte": true
+  },
+  "ergebnis": {
+    "p0": 0,
+    "p1": 3,
+    "p2": 18,
+    "p3": 14,
+    "unabhaengige_offene_oder_zurueckgestellte_befunde": 35,
+    "zusaetzliche_moduluebergreifende_querverweise": 2,
+    "wcag_freigabe": false,
+    "fachliche_freigabe": false,
+    "juristische_freigabe": false,
+    "produktionsfreigabe": false
+  }
+}

@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-18';
+const BUILD = 'r4-19';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -234,6 +234,9 @@ function gate(cfg, files, opts = {}) {
   const prod = (page, id, msg) => add(mode === 'production' ? 'block' : 'warn', page, id, msg);
   const cache = {}; const docOf = p => files[p] == null ? null : (cache[p] = cache[p] || parse(files[p]));
   for (const k of ['siteTitle', 'shortDescription', 'language', 'favicon', 'contentOwner', 'editorialStatus']) if (!cfg[k]) add('block', 'site', 'config', `site.config: «${k}» fehlt`);
+  const editorialStatus = norm(cfg.editorialStatusLabel || cfg.editorialStatus);
+  const datedEditorialStatus = /(?:\b\d{1,2}\.\d{1,2}\.\d{4}\b|\b(?:Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s+\d{4}\b)/i.test(editorialStatus);
+  if (/Entwurf/i.test(editorialStatus) || !datedEditorialStatus) prod('site', 'editorial-status', 'Der sichtbare Redaktionsstatus darf in der Produktion kein «Entwurf» enthalten und muss ein Datum nennen');
   if (cfg.language && !/^de(-|$)/i.test(cfg.language)) add('block', 'site', 'lang', 'language muss deutsch sein (de, de-CH)');
   const s = cfg.sender || {};
   if (!s.orgUnit || !s.institution) add('block', 'site', 'sender', 'sender.orgUnit und sender.institution sind Pflicht');
@@ -479,7 +482,7 @@ function gate(cfg, files, opts = {}) {
     /* Keine Krisennummern, kein Notfallblock (Profilentscheid 06.10.2026) */
     for (const a of all(doc, x => x.tag === 'a' && /^tel:/i.test(x.attrs.href || ''))) add('block', pid, 'crisis-number', 'Telefonlink auf psychoedukativer Seite: ' + a.attrs.href);
     { const fullText = norm(txt(doc)); const ph = fullText.match(/(?:\+41|0041|\b0)\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}\b|\b0800\s?\d{3}\s?\d{3}\b/); if (ph) add('block', pid, 'crisis-number', `Telefonnummer im Text: «${ph[0]}» – psychoedukative Seiten nennen keine Nummern`);
-      const sh = fullText.match(/(?:^|[^\d.,:\/-])(112|117|118|143|144|145|147)(?![\d]|[.,:\/-]\d)/); if (sh) add('warn', pid, 'crisis-number-check', `Mögliche Notrufnummer «${sh[1]}» im Text – prüfen; Krisennummern sind auf psychoedukativen Seiten nicht zulässig`); }
+      const sh = fullText.match(/(?:^|[^\d.,:\/–—-])(112|117|118|143|144|145|147)(?![\d]|[.,:\/–—-]\d)/); if (sh) add('warn', pid, 'crisis-number-check', `Mögliche Notrufnummer «${sh[1]}» im Text – prüfen; Krisennummern sind auf psychoedukativen Seiten nicht zulässig`); }
     for (const el of all(doc, x => LEGACY_SAFETY.includes(x.attrs['data-safety-access']) || cls(x, 'puk-site-safety--direct'))) add('block', pid, 'crisis-block', 'Notfallblock auf psychoedukativer Seite (' + (el.attrs['data-safety-access'] || 'puk-site-safety--direct') + ')');
     if (sa.variant === 'responsibility') {
       const el = one(doc, x => x.attrs['data-safety-access'] === 'responsibility');
@@ -647,6 +650,14 @@ function selftest(cfg, files, opts = {}) {
   const rows = []; const base = opts.exists || (p => Object.prototype.hasOwnProperty.call(files, p));
   const b0 = gate(cfg, files, { mode: 'draft', exists: base });
   rows.push({ name: 'Ausgangslage Entwurf: 0 blockierende Befunde', expected: '0', got: String(b0.blocks), ok: b0.blocks === 0 });
+  { const c = JSON.parse(JSON.stringify(cfg)); c.editorialStatus = 'Entwurf – fachliche Prüfung ausstehend'; delete c.editorialStatusLabel;
+    const hitDraft = gate(c, files, { mode: 'production', exists: base }).findings.some(x => x.level === 'block' && x.id === 'editorial-status');
+    rows.push({ name: 'Produktion blockiert sichtbaren Redaktionsstatus «Entwurf»', expected: 'editorial-status', got: hitDraft ? 'editorial-status' : 'nicht erkannt', ok: hitDraft }); }
+  { const c = JSON.parse(JSON.stringify(cfg)); c.editorialStatus = 'Inhaltlicher Stand'; delete c.editorialStatusLabel;
+    const hitDate = gate(c, files, { mode: 'production', exists: base }).findings.some(x => x.level === 'block' && x.id === 'editorial-status');
+    rows.push({ name: 'Produktion blockiert Redaktionsstatus ohne Datum', expected: 'editorial-status', got: hitDate ? 'editorial-status' : 'nicht erkannt', ok: hitDate }); }
+  { const hitCurrent = gate(cfg, files, { mode: 'production', exists: base }).findings.some(x => x.id === 'editorial-status');
+    rows.push({ name: 'Aktueller datierter Redaktionsstatus besteht das Produktionsgate', expected: 'kein editorial-status', got: hitCurrent ? 'editorial-status' : 'kein editorial-status', ok: !hitCurrent }); }
   const unreviewed = {}; for (const [k, v] of Object.entries(files)) unreviewed[k] = typeof v === 'string' ? v.split('data-review-status="geprueft"').join('data-review-status="ausstehend"') : v;
   const bp = gate(Object.assign({}, cfg, { sender: Object.assign({}, cfg.sender, { status: 'placeholder' }), responsibility: cfg.responsibility && Object.assign({}, cfg.responsibility, { reviewStatus: 'ausstehend', reviewedBy: undefined, reviewedAt: undefined }) }), unreviewed, { mode: 'production', exists: base }); /* Absenderin und Zuständigkeitsverweis hier absichtlich ungeklärt, damit die Prüfung belegt bleibt, auch wenn beide freigegeben sind */ const need = ['sender-status', 'safety-review', 'placeholder-approval', 'visual-approval'];
   /* Offene Angaben vor der Veröffentlichung (Impressum, Datenschutzerklärung, 404-Seite) gelten wie offene Freigaben, nicht als Strukturfehler. */

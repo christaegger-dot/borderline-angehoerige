@@ -4,11 +4,25 @@
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
-## Offen und terminiert
+## Lokal umgesetzt, noch nicht veröffentlicht
+
+### Korrekturpaket r4-19 aus Audit 01–05
+
+Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 sind in Commit `475d3f2` und PR #672 umgesetzt. Der generierte Export unter `site/` ist bytegleich zum Produktions-Build. Die Delta-Prüfung umfasst alle 22 Seiten, vier Breiten, 100/200 Prozent Text, natürliche Suchfragen, JavaScript-Fallbacks, Tastatur-Basiswege und 44 Browser-PDFs.
+
+Audit 06 wurde auf dem fixierten Commit und einem deployten Netlify-Prüfstand durchgeführt. Ergebnis: **CONDITIONAL GO**. GitHub-Build, Netlify Deploy Preview, Header- und Redirectregeln sowie 220 deployte Browserfälle bestanden. Das echte PR-Preview ist ausserhalb des Netlify-Teamzugangs mit HTTP 401 geschützt; der funktionale Browsernachtest erfolgte deshalb zusätzlich auf einem temporären passwortgeschützten Netlify-Draft desselben sauberen Artefakts. Der vollständige Nachweis liegt unter `audit-results/2026-10-13-abschluss-475d3f2/`.
+
+Noch nicht erfolgt sind Merge und Produktionsdeployment. Nach dem Produktionsdeployment ist der in `FREIGABE.md` beschriebene Runtime-Smoke-Test zwingend; bis dahin bleibt das CONDITIONAL GO bedingt.
+
+Die Rechts-/Datenschutzdurchsicht bleibt zudem als Evidenzgrenze bestehen: Die Texte sind am Zürcher IDG ausgerichtet, aber noch nicht nachweislich durch die zuständige interne Stelle geprüft. Die technische Umsetzung ist dadurch nicht blockiert; eine vollständige Schliessung der rechtlichen Audit-Akzeptanzkriterien wäre ohne diesen Nachweis jedoch falsch.
+
+## Übergreifend offen
 
 ### AR3-5 · gemeinsames Profilpaket P-1 bis P-15
 
-Die beschlossenen Änderungen am gemeinsamen PUK-Website-Profil bleiben offen. Sie betreffen unter anderem Typografie, Worttrennung, Druckdarstellung, Zielflächen und Prüfwerkzeuge für die Borderline- und die Depressions-Website.
+Die für diese Website relevanten Entscheidungen P-1 bis P-15 wurden in r4-19 lokal vorgezogen und nachgeprüft. P-8 ist in diesem eigenständigen Repository nicht anwendbar; P-13 bleibt aufgrund des bestätigten Institutionsentscheids zu `noindex, nofollow` und `Disallow: /` bewusst eine websitespezifische Ausnahme.
+
+Offen bleibt die Übernahme in das gemeinsame PUK-Website-Profil sowie die getrennte Prüfung und Übernahme für die Depressions-Website. Diese Arbeiten dürfen nicht aus dem lokalen Nachweis dieser Website abgeleitet werden.
 
 - Umsetzung nach der Veröffentlichung der Depressions-Website, spätestens ab **16. November 2026**
 - Abschlussfrist: **13. Januar 2027**
@@ -52,4 +66,4 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Suche, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuelle veröffentlichte Stand wurde als Build r4-18 geprüft.
+Die Informationsarchitektur, Suche, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuell veröffentlichte Stand bleibt Build r4-18; das lokal geprüfte, noch nicht veröffentlichte Korrekturpaket ist Build r4-19.

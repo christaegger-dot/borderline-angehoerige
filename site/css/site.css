@@ -1,4 +1,4 @@
-/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-11 */
+/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-12 */
 
 /* ===== ../../../styles.css ===== */
 /* ../../../tokens/fonts.css */
@@ -1406,7 +1406,10 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-site-glossary__content{padding:0 0 var(--space-5)}
 .puk-site-glossary__content>:first-child{margin-top:0}
 .puk-site-glossary>summary:target{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}
-.puk-site-search-link{display:inline-flex;align-items:center;min-height:2.75rem;margin-left:auto;padding:var(--space-2) 0;font:var(--type-body-sm);font-weight:var(--fw-medium)}
+.puk-site-utility{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2) var(--space-4);margin-left:auto}
+.puk-site-utility__link{display:inline-flex;align-items:center;min-height:2.75rem;padding:var(--space-2) 0;font:var(--type-body-sm);font-weight:var(--fw-medium)}
+.puk-site-utility__link[aria-current="page"]{text-decoration-thickness:var(--border-width-strong);text-underline-offset:var(--space-1)}
+.puk-site-quick-entry{margin-top:var(--space-5);padding:var(--space-4);border-left:var(--border-width-strong) solid var(--puk-blue-100);background:var(--surface-subtle)}
 .puk-site-quick{margin-block:var(--space-6) var(--space-8);padding:var(--space-5);border-left:var(--border-width-strong) solid var(--puk-blue-100);background:var(--surface-subtle)}
 .puk-site-quick h2{margin-top:0}
 .puk-site-quick ol,.puk-site-quick ul{margin-bottom:0}
@@ -1431,5 +1434,5 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-site-depth[open]>summary::after{content:"−"}
 .puk-site-depth__content>.puk-longform__section{margin-top:0}
 [data-filter-item][hidden],[data-search-item][hidden]{display:none!important}
-@media (max-width:759px){.puk-site-search-link{margin-left:0}.puk-site-offer dl{grid-template-columns:1fr}.puk-site-offer dd+dt{margin-top:var(--space-2)}}
-@media print{.puk-site-breadcrumb,.puk-site-related,.puk-site-filter,.puk-site-search-link,.puk-site-depth>summary,[data-search-results]{display:none!important}.puk-site-result[hidden],.puk-site-offer[hidden],[data-filter-item][hidden]{display:block!important}}
+@media (max-width:759px){.puk-site-utility{width:100%;margin-left:0}.puk-site-offer dl{grid-template-columns:1fr}.puk-site-offer dd+dt{margin-top:var(--space-2)}}
+@media print{.puk-site-breadcrumb,.puk-site-related,.puk-site-filter,.puk-site-utility,.puk-site-depth>summary,[data-search-results]{display:none!important}.puk-site-result[hidden],.puk-site-offer[hidden],[data-filter-item][hidden]{display:block!important}}

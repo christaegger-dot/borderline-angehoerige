@@ -15,3 +15,6 @@
 "R22-014";"Interaktionen";"Tastatur, Sprungziele, Suche, Filter, Akkordeon und erzwungene Farben";"alle festgeschriebenen Zustände erreicht";"bestanden"
 "R22-015";"Suchregression";"36 Ersttreffer r4-21 gegen r4-22";"36 unverändert; Safety- und Überlastungsziele korrekt";"bestanden"
 "R22-016";"Geänderte Visualisierungen";"7 Seiten, 5 Breiten, 2 Schriftgrössen und 2 Details-Zustände";"140 Zustandsprüfungen; 0 Überläufe, Laufzeit- oder axe-Befunde";"bestanden"
+"R22-017";"CI und Netlify-Regeln";"Commit 23236b6 in PR #676";"Buildvergleich, Headerregeln, Redirectregeln und Deploy-Build erfolgreich";"bestanden"
+"R22-018";"Deploy-Preview";"externer Browserzugriff";"HTTP 401 wegen Netlify-Teamzugang; Zugriffsschutz nicht umgangen";"nicht prüfbar"
+"R22-019";"Produktion";"Smoke-Test nach Merge-Commit 7864dab";"169/169 Browserprüfungen, 0 Laufzeitfehler; Header, Robots und Weiterleitungen bestätigt";"bestanden"

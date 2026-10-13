@@ -6,6 +6,10 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
+### r4-22 veröffentlicht und nachgeprüft
+
+PR #676 wurde als Merge-Commit `7864dab6f48ef4e52db1e783387032a0c0de8e93` übernommen. Die öffentliche Website liefert r4-22. Der anschliessende Produktions-Smoke-Test bestand 169 von 169 Browserprüfungen ohne Laufzeitfehler. Bestätigt wurden alle 21 regulären Seiten, die eigene 404-Seite, 320-Pixel-Reflow, Tastaturbasis, No-JavaScript-Fallback, alle 36 festgeschriebenen Such-Ersttreffer, Sicherheitsheader, Robots-Steuerung und repräsentative Weiterleitungen. Das Produktionsergebnis ist in PR #676 und unter `audit-results/2026-10-14-delta-review-r4-22/` dokumentiert.
+
 ### r4-21 veröffentlicht und nachgeprüft
 
 Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 wurden mit PR #672 gemergt. Die Produktion unter `https://borderline-angehoerige.netlify.app` lieferte danach zunächst Build r4-19; der aktuelle, nachgeprüfte Produktionsstand ist Build r4-21.
@@ -32,7 +36,7 @@ PR #674 wurde als Merge-Commit `1cb33e0a1bd499c7b8367213851373b6dd027ab5` übern
 
 Die technische und redaktionelle Umsetzung der visuellen Befunde A04-008 bis A04-013 liegt als r4-22 vor. Die unabhängige Delta-Prüfung fand für A04-009 bis A04-013 keinen fachlichen, rechtlichen, sicherheitsbezogenen oder didaktischen Korrekturbedarf. Der Auftraggeber bestätigte am 14. Oktober 2026 ausdrücklich im Namen der PUK die institutionelle Freigabe dieser fünf Befunde. Der Nachweis liegt unter `audit-results/2026-10-14-delta-review-r4-22/`.
 
-Die vier zuvor blockierenden Visualisierungen sind damit freigegeben. Der anschliessende Produktionsbuild meldete 22 Seiten, 0 Blocker und 0 Hinweise; 33 Dateien sind bytegleich. Der vollständige lokale Delta-Smoke-Test umfasste 110 Seiten-/Viewport-Läufe, 66 axe-Läufe, 22 Prüfungen bei 200 Prozent Basisschrift, 140 vertiefte Zustandsprüfungen der geänderten Seiten und 36 Such-Ersttreffer. Es gab keinen blockierenden Befund und keine Suchregression. Aus diesem Paket besteht keine weitere inhaltliche oder institutionelle Pendenz. CI und Deploy-Preview werden nach Push, die Produktion nach Merge separat nachgeprüft.
+Die vier zuvor blockierenden Visualisierungen sind damit freigegeben. Der anschliessende Produktionsbuild meldete 22 Seiten, 0 Blocker und 0 Hinweise; 33 Dateien sind bytegleich. Der vollständige lokale Delta-Smoke-Test umfasste 110 Seiten-/Viewport-Läufe, 66 axe-Läufe, 22 Prüfungen bei 200 Prozent Basisschrift, 140 vertiefte Zustandsprüfungen der geänderten Seiten und 36 Such-Ersttreffer. Es gab keinen blockierenden Befund und keine Suchregression. GitHub-Build, Netlify-Regelprüfungen und Deploy-Build waren erfolgreich; der externe Preview-Browsertest blieb wegen des vorgesehenen Netlify-Teamzugangs mit HTTP 401 nicht durchführbar. Die Produktion wurde nach dem Merge vollständig nachgeprüft. Aus diesem Paket besteht keine weitere inhaltliche, institutionelle oder technische Pendenz.
 
 Die nachfolgenden Punkte sind entweder terminiert und noch nicht fällig, von einer internen institutionellen Prüfung abhängig, nur nach neuen bestätigten Angaben umsetzbar oder als Evidenzgrenze bewusst akzeptiert. Sie dürfen nicht als von der Website-Entwicklung eigenständig lösbare Restarbeiten behandelt werden.
 
@@ -94,6 +98,6 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuell veröffentlichte und nachgeprüfte Stand ist Build r4-21. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
+Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuell veröffentlichte und nachgeprüfte Stand ist Build r4-22. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
 
 Die früheren GitHub-Issues #631, #641 und #645 bis #651 bezogen sich auf die abgelöste React-/Handout-Architektur. Sie wurden nach dem Abgleich mit dem aktuellen statischen Neubau, den Audits 01–06, den Delta-Prüfungen und den dokumentierten Institutionsentscheiden als überholt geschlossen. Noch gültige Aussage- und Evidenzgrenzen bleiben in diesem Dokument erhalten; die Schliessung der alten Issues ist keine nachträgliche Behauptung einer Rechts-, Fach-, WCAG- oder Nutzendenfreigabe.

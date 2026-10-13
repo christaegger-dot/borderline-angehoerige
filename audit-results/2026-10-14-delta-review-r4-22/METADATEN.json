@@ -2,7 +2,7 @@
   "schema": "website-audit-v1.2",
   "lauf_id": "2026-10-14-delta-review-r4-22",
   "modus": "delta",
-  "status": "institutionell_freigegeben_lokal_releasebereit",
+  "status": "veroeffentlicht_und_nachgeprueft",
   "datum": "2026-10-14",
   "projekt": {
     "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
@@ -13,9 +13,10 @@
     "buildmarker": "r4-22"
   },
   "deployment": {
-    "produktion": "r4-21, unverändert",
+    "produktion": "r4-22, veröffentlicht und nachgeprüft",
+    "merge_commit": "7864dab6f48ef4e52db1e783387032a0c0de8e93",
     "preview": "https://deploy-preview-676--borderline-angehoerige.netlify.app",
-    "preview_status": "Netlify-Check vor institutioneller Freigabe erfolgreich; erneute CI- und Preview-Prüfung erfolgt nach Push"
+    "preview_status": "Deploy-Build erfolgreich; externer funktionaler Preview-Test wegen Netlify-Teamzugang mit HTTP 401 nicht durchführbar"
   },
   "entscheidung": {
     "korrekturbedarf": false,
@@ -42,6 +43,7 @@
     "reale_screenreader": false,
     "reale_geraete": false,
     "firefox_safari": false,
-    "reale_nutzende": false
+    "reale_nutzende": false,
+    "produktion": "169/169 Browserprüfungen; 0 Laufzeitfehler; 21 reguläre Seiten, 404, 36 Suchfragen, Tastaturbasis, No-JS, Header, Robots und Weiterleitungen bestanden"
   }
 }

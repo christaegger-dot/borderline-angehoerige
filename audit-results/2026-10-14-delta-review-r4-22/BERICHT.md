@@ -54,4 +54,8 @@ Der institutionelle Entscheid ersetzt nicht den technischen Veröffentlichungsna
 - 140 Zustandsprüfungen der sieben betroffenen Seiten ohne Überlauf oder Laufzeitfehler;
 - 36 von 36 Such-Ersttreffern gegenüber Produktion r4-21 unverändert.
 
-Damit ist r4-22 lokal releasebereit. CI, Deploy-Preview und Produktions-Smoke-Test sind getrennte Nachweise und erfolgen nach Push beziehungsweise Merge.
+GitHub-Build, Netlify-Header- und Redirect-Prüfungen sowie der Deploy-Build waren erfolgreich. Der Deploy-Preview blieb ausserhalb des Netlify-Teamzugangs mit HTTP 401 geschützt; ein externer funktionaler Preview-Browsertest wurde deshalb nicht als durchgeführt behauptet.
+
+PR #676 wurde als Merge-Commit `7864dab6f48ef4e52db1e783387032a0c0de8e93` übernommen. Die öffentliche Website liefert r4-22. Der anschliessende Produktions-Smoke-Test bestand 169 von 169 Browserprüfungen ohne Laufzeitfehler. Alle 21 regulären Seiten, die eigene 404-Seite, 320-Pixel-Reflow, Tastaturbasis, No-JavaScript-Fallback, alle 36 Such-Ersttreffer, Sicherheitsheader, Robots-Steuerung und drei repräsentative Weiterleitungen wurden bestätigt.
+
+Damit ist r4-22 veröffentlicht und technisch nachgeprüft. Die dokumentierten Evidenzgrenzen zu realen Screenreader-, Geräte- und Nutzendentests bleiben unverändert.

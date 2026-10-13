@@ -1,4 +1,4 @@
-/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-10 */
+/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-11 */
 
 /* ===== ../../../styles.css ===== */
 /* ../../../tokens/fonts.css */
@@ -1420,6 +1420,7 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-site-result,.puk-site-offer{padding:var(--space-5);border:1px solid var(--ui-hairline)}
 .puk-site-result h2,.puk-site-offer h3{margin-top:0}
 .puk-site-result p:last-child,.puk-site-offer p:last-child,.puk-site-offer dl:last-child{margin-bottom:0}
+.puk-site-result__context{margin-top:calc(var(--space-2) * -1);color:var(--text-muted);font:var(--type-body-sm)}
 .puk-site-offer dl{display:grid;grid-template-columns:minmax(6rem,auto) 1fr;gap:var(--space-1) var(--space-3)}
 .puk-site-offer dt{font-weight:var(--fw-medium)}
 .puk-site-offer dd{margin:0}
@@ -1429,6 +1430,6 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-site-depth>summary::after{content:"+";position:absolute;right:var(--space-5)}
 .puk-site-depth[open]>summary::after{content:"−"}
 .puk-site-depth__content>.puk-longform__section{margin-top:0}
-[data-filter-item][hidden]{display:none!important}
+[data-filter-item][hidden],[data-search-item][hidden]{display:none!important}
 @media (max-width:759px){.puk-site-search-link{margin-left:0}.puk-site-offer dl{grid-template-columns:1fr}.puk-site-offer dd+dt{margin-top:var(--space-2)}}
-@media print{.puk-site-breadcrumb,.puk-site-related,.puk-site-filter,.puk-site-search-link,.puk-site-depth>summary{display:none}.puk-site-result[hidden],.puk-site-offer[hidden],[data-filter-item][hidden]{display:block!important}}
+@media print{.puk-site-breadcrumb,.puk-site-related,.puk-site-filter,.puk-site-search-link,.puk-site-depth>summary,[data-search-results]{display:none!important}.puk-site-result[hidden],.puk-site-offer[hidden],[data-filter-item][hidden]{display:block!important}}

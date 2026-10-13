@@ -1,8 +1,8 @@
 {
-  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter r4-18-Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4 für bytegleiche Reproduktion der aktuellen site/. PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände.",
+  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4. Lokale Änderungen ab r4-19 sind in diesem Repository dokumentiert; das PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände.",
   "kitRevision": "PUK Website Kit 1.10.1-r4 · abgeleitet",
   "canonicalSource": "PUK Zürich Design System 1.10.1 (unverändert)",
-  "assetVersion": "r4-18",
+  "assetVersion": "r4-19",
   "siteTitle": "Borderline – Orientierung für Angehörige",
   "shortDescription": "Psychoedukative Website der Fachstelle Angehörigenarbeit PUK für Angehörige von Menschen mit Borderline.",
   "language": "de-CH",
@@ -112,7 +112,11 @@
       "status": "published",
       "primaryTask": "Einen Einstieg nach dem eigenen Anliegen wählen",
       "description": "Orientierung für Angehörige von Menschen mit Borderline: Einstiege nach Anliegen, von Verstehen und Grenzen bis Genesung und Unterstützung, und die kostenlose Beratung der Fachstelle Angehörigenarbeit PUK.",
-      "sensitiveTopics": [],
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "akute-krise"
+      ],
       "visualPlan": [
         {
           "id": "v-ix-einstiege",
@@ -179,6 +183,7 @@
         "einfach",
         "schnell",
         "Überblick",
+        "kurze Übersicht",
         "wenig Zeit",
         "wenig Kraft",
         "wo anfangen"
@@ -267,6 +272,14 @@
       "status": "published",
       "primaryTask": "Borderline, Erleben und mögliche Kontexte einordnen, ohne aus der Diagnose Motive oder Gefahr abzuleiten",
       "description": "Was die Diagnose Borderline beschreiben kann, was unter sichtbarem Verhalten liegen kann, wie Anspannung Gespräche verengt und welche verbreiteten Annahmen zu kurz greifen.",
+      "searchAliases": [
+        "Was bedeutet Borderline Borderline erklärt Definition Diagnose verstehen"
+      ],
+      "sectionSearchAliases": {
+        "borderline-title": [
+          "Was bedeutet Borderline Borderline erklärt Definition"
+        ]
+      },
       "sensitiveTopics": [
         "selbstgefaehrdung",
         "gewalt",
@@ -361,7 +374,7 @@
           "statement": "–",
           "source": "–",
           "alternative": "–",
-          "reason": "Text ist klarer: Abschluss, was Verstehen leistet und was nicht, mit dem Merksatz für Angehörige als hervorgehobenem Kasten (puk-longform__reflection) und Verweis auf «Was zwischen Ihnen geschieht» und «Grenzen setzen»; keine Beziehung, die eine Darstellung zeigen müsste. Merksatz und Absätze aus dem Bestand «Verstehen hat Grenzen» wieder aufgenommen (Korrektur 1d, D-4).",
+          "reason": "Text ist klarer: Abschluss, was Verstehen leistet und was nicht, mit dem Merksatz für Angehörige als hervorgehobenem Kasten (puk-longform__reflection) und Verweis auf «Alltag und Beziehungen» und «Grenzen setzen»; keine Beziehung, die eine Darstellung zeigen müsste. Merksatz und Absätze aus dem Bestand «Verstehen hat Grenzen» wieder aufgenommen (Korrektur 1d, D-4).",
           "approvalStatus": "freigegeben"
         },
         {
@@ -499,6 +512,17 @@
       "status": "published",
       "primaryTask": "Freiwillige Unterstützung, eigene Verantwortung und Aufgaben von Fachpersonen unterscheiden",
       "description": "Was Sie anbieten können und was nicht Ihre Aufgabe ist, Schuld und Verantwortung, Unterstützung im Alltag und nach Konflikten, mehrere Angehörige, Kinder und wann Unterstützung an Grenzen kommt.",
+      "searchAliases": [
+        "Schuld Verantwortung Aufgabe helfen unterstützen"
+      ],
+      "sectionSearchAliases": {
+        "anbieten-title": [
+          "Was ist meine Aufgabe als Mutter Vater Partnerin Partner Angehörige Rolle was soll ich tun"
+        ],
+        "schuld-title": [
+          "Bin ich schuld Schuldgefühl Verantwortung"
+        ]
+      },
       "sensitiveTopics": [
         "selbstgefaehrdung",
         "gewalt",
@@ -614,6 +638,14 @@
       "status": "published",
       "primaryTask": "Eigene Grenzen erkennen und formulieren und bei Bedrohung den Schutz vorziehen",
       "description": "Woran Sie merken, dass eine Grenze nötig ist, vier Arten von Grenzen, DEAR in vier Schritten, Sätze für typische Situationen und Schutz bei Gewalt oder Bedrohung.",
+      "searchAliases": [
+        "Nein sagen Kontakt pausieren Kontaktpause Abstand Trennung Grenze setzen"
+      ],
+      "sectionSearchAliases": {
+        "dear-title": [
+          "Wie setze ich eine Grenze Grenze aussprechen formulieren"
+        ]
+      },
       "sensitiveTopics": [
         "gewalt",
         "akute-krise"
@@ -765,6 +797,14 @@
       "status": "published",
       "primaryTask": "Verstehen, wie eine Borderline-Abklärung abläuft, was eine Diagnose bedeuten kann und was Begleiterkrankungen sind",
       "description": "Der Weg zur Abklärung in fünf Schritten mit Ihrer Rolle, was eine Diagnose für Angehörige bedeuten kann, was möglich ist, wenn die Diagnose nicht geteilt wird oder noch fehlt, und was Begleiterkrankungen wie eine Depression bedeuten.",
+      "searchAliases": [
+        "Borderline und Depression Begleiterkrankung Komorbidität Abklärung Diagnose"
+      ],
+      "sectionSearchAliases": {
+        "begleiterkrankungen-title": [
+          "Borderline und Depression depressive Erkrankung Begleiterkrankung Komorbidität"
+        ]
+      },
       "sensitiveTopics": [
         "selbstgefaehrdung",
         "akute-krise"
@@ -860,6 +900,26 @@
       "status": "published",
       "primaryTask": "Die eigene Rolle in der Behandlung klären: wer was beitragen kann, wie der Kontakt zum Behandlungsteam geht und wo es Angebote gibt",
       "description": "Wer in der Behandlung was beitragen kann, Kontakt zum Behandlungsteam mit Musterbrief, Therapieformen und Medikamente, Unterbrüche und Rückschläge, Angebote im Kanton Zürich und was hilft, wenn kein Therapieplatz frei ist.",
+      "searchAliases": [
+        "Arzt Ärztin Fachperson Behandlungsteam sprechen Kontakt Therapie Psychotherapie Medikamente"
+      ],
+      "sectionSearchAliases": {
+        "behandlung-schnell": [
+          "eigene Belastung Beratung Rolle Behandlung"
+        ],
+        "kontakt-title": [
+          "mit Arzt sprechen mit Ärztin sprechen Behandlungsteam kontaktieren Schweigepflicht Auskunft Beobachtungen mitteilen"
+        ],
+        "therapieformen-title": [
+          "Welche Medikamente helfen Medikamente Wirkung DBT Therapieform"
+        ],
+        "angebote-title": [
+          "Wer bezahlt die Therapie Kosten Krankenkasse Finanzierung"
+        ],
+        "rueckschlaege-title": [
+          "Therapie schwierig Behandlung ablehnen keine Therapie wollen"
+        ]
+      },
       "sensitiveTopics": [
         "selbstgefaehrdung",
         "gewalt",
@@ -967,6 +1027,14 @@
       "status": "published",
       "primaryTask": "Zuhören, anerkennen und die eigene Sicht behalten, auch wenn Gespräche kippen",
       "description": "Zuhören und die eigene Sicht behalten, anerkennen ohne zuzustimmen, der richtige Moment, wenn Gespräche kippen, wenn Worte treffen, Beispiele und Kommunikation je nach Rolle.",
+      "searchAliases": [
+        "Gespräch kippt was sagen Streit Konflikt reden"
+      ],
+      "sectionSearchAliases": {
+        "kippen-title": [
+          "Gespräch kippt nächster Satz Streit stoppen Pause"
+        ]
+      },
       "sensitiveTopics": [
         "selbstgefaehrdung",
         "gewalt",
@@ -1309,6 +1377,14 @@
       "status": "published",
       "primaryTask": "Eigene Belastung, Bedürfnisse und erreichbare Unterstützung ernst nehmen",
       "description": "Was Ihnen erlaubt bleibt, was Kraft kostet und was entlastet, Warnsignale für Überlastung, kurze Übungen, eigene Unterstützung, radikale Akzeptanz und Beratung.",
+      "searchAliases": [
+        "erschöpft keine Kraft überfordert belastet selbst zu kurz"
+      ],
+      "sectionSearchAliases": {
+        "warnsignale-title": [
+          "erschöpft keine Kraft überfordert Warnsignale Überlastung"
+        ]
+      },
       "sensitiveTopics": [
         "selbstgefaehrdung",
         "gewalt",
@@ -1424,6 +1500,14 @@
       "status": "published",
       "primaryTask": "Hoffnung realistisch einordnen: unterschiedliche Verläufe verstehen und den eigenen Einfluss begrenzen",
       "description": "Was die Forschung zu Genesung zeigt, was Remission, Alltag und persönliche Recovery bedeuten, warum Veränderung unterschiedlich verläuft, was Genesung beeinflussen kann und welche Unterstützung freiwillig ist.",
+      "searchAliases": [
+        "Kann Borderline besser werden Genesung Heilung Recovery Remission Verlauf"
+      ],
+      "sectionSearchAliases": {
+        "verlauf-title": [
+          "Kann Borderline besser werden Veränderung Verlauf"
+        ]
+      },
       "sensitiveTopics": [],
       "visualPlan": [
         {
@@ -1511,6 +1595,17 @@
       "status": "published",
       "primaryTask": "Beratung, Austausch mit anderen Angehörigen und Selbsthilfe finden",
       "description": "Beratung für Angehörige bei der Fachstelle Angehörigenarbeit der PUK und bei Pro Mente Sana, Austausch mit anderen Angehörigen, Selbsthilfegruppen und Hinweise für andere Kantone.",
+      "searchAliases": [
+        "Angehörigengruppe Selbsthilfegruppe Austausch Gruppe Beratung Entlastung"
+      ],
+      "sectionSearchAliases": {
+        "beratung-title": [
+          "Angehörigenberatung Beratung für Angehörige finden"
+        ],
+        "austausch-title": [
+          "Angehörigengruppe Selbsthilfegruppe Austausch mit anderen Gruppe"
+        ]
+      },
       "sensitiveTopics": [
         "akute-krise"
       ],
@@ -1619,6 +1714,15 @@
       "sectionSearchAliases": {
         "f-einweisung": [
           "Einweisung fürsorgerische Unterbringung FU"
+        ],
+        "f-keine-therapie": [
+          "Therapie ablehnen Behandlung ablehnen keine Therapie wollen verweigern"
+        ],
+        "f-medikamente": [
+          "Medikamente gegen Borderline Tabletten Antidepressivum helfen"
+        ],
+        "f-stabiler": [
+          "bei anderen normal bei anderen ruhiger bei anderen unauffällig verhält sich anders"
         ],
         "f-sprache": [
           "Dolmetschen Dolmetscher Übersetzung andere Sprache"

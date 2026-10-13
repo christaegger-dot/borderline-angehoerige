@@ -37,10 +37,16 @@ export function buildSearchIndex(cfg, fragments) {
       const body = text(html.slice(heading.end, end));
       const excerpt = body.length > 220 ? body.slice(0, 217).replace(/\s+\S*$/, '') + '…' : body;
       const aliases = (page.sectionSearchAliases || {})[heading.id] || [];
+      const sectionStart = html.lastIndexOf('<section', heading.start);
+      const sectionOpenEnd = sectionStart === -1 ? -1 : html.indexOf('>', sectionStart);
+      const sectionOpen = sectionStart !== -1 && sectionOpenEnd < heading.start ? html.slice(sectionStart, sectionOpenEnd + 1) : '';
+      const sectionId = (sectionOpen.match(/\bid="([^"]+)"/i) || [])[1] || '';
+      const labelledBy = (sectionOpen.match(/\baria-labelledby="([^"]+)"/i) || [])[1] || '';
+      const targetId = sectionId && labelledBy === heading.id ? sectionId : heading.id;
       items.push({
         title: heading.title,
         page: page.title,
-        href: `${page.href}#${heading.id}`,
+        href: `${page.href}#${targetId}`,
         excerpt,
         terms: [heading.title, basePageTerms, body, ...aliases].join(' '),
         keywords: aliases.join(' '),

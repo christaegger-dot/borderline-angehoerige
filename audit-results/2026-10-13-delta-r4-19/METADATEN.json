@@ -1,0 +1,47 @@
+{
+  "schema": "website-audit-v1.2",
+  "lauf_id": "2026-10-13-delta-r4-19",
+  "modus": "delta",
+  "status": "korrekturen_lokal_verifiziert_nicht_deployed",
+  "auditmodule": ["A01", "A02", "A03", "A04", "A05"],
+  "audit_06_durchgefuehrt": false,
+  "projekt": {
+    "name": "Borderline – Orientierung für Angehörige",
+    "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
+    "branch": "codex/implement-audit-2026-10-13",
+    "basis_commit": "13a7e4f62754ab3c1c68c49329d88be3e0845912",
+    "korrektur_commit": null,
+    "buildmarker": "r4-19",
+    "kanonische_quelle": "authoring/",
+    "publikationsartefakt": "site/"
+  },
+  "deployment": {
+    "url": "https://borderline-angehoerige.netlify.app",
+    "gepruefter_produktionsstand": "13a7e4f62754ab3c1c68c49329d88be3e0845912 / r4-18",
+    "enthaelt_korrekturpaket_r4_19": false,
+    "deployment_im_lauf_geaendert": false
+  },
+  "testumgebung": {
+    "browser": "System-Chromium, headless über Playwright",
+    "viewports_css_px": [320, 390, 768, 1440],
+    "textgroessen_root_px": [16, 32],
+    "matrixfaelle": 176,
+    "javascript_aus": true,
+    "tastatur_automatisiert": true,
+    "browser_pdf": true,
+    "reale_geraete": false,
+    "reale_screenreader": false,
+    "reale_nutzende": false,
+    "firefox_safari": false,
+    "physischer_druck": false
+  },
+  "aenderungen": {
+    "website_oder_anwendungscode": true,
+    "generierter_export": true,
+    "commits": false,
+    "pull_requests": false,
+    "merges": false,
+    "deployments": false,
+    "netlify_einstellungen": false
+  }
+}

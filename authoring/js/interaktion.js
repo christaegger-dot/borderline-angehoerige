@@ -210,28 +210,71 @@
     if (!input || !results || !items.length) return;
     root.setAttribute('data-search-enhanced', '');
     function normalized(value) {
-      return String(value || '').toLocaleLowerCase('de-CH').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      return String(value || '').toLocaleLowerCase('de-CH').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
     }
-    function score(item, query, terms) {
+    var stopwords = new Set(('aber als am an auf aus bei bis brauche das dass dem den der des die darf ein eine einer einem einen er erlebt es fuer finde gefunden geht gibt hat haben helfen ich im in ist ja kann koennen lassen man mein meine meiner meinem meinen mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur').split(' '));
+    var synonymSets = [
+      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'leben nehmen', 'nicht mehr leben'],
+      ['arzt', 'aerztin', 'behandler', 'behandlerin', 'therapeut', 'therapeutin', 'fachperson', 'fachpersonen', 'behandlungsteam'],
+      ['ablehnen', 'abgelehnt', 'lehnt', 'verweigern', 'verweigert', 'keine', 'will', 'moechte', 'nicht wollen', 'will nicht', 'moechte nicht'],
+      ['normal', 'stabil', 'stabiler', 'ruhig', 'ruhiger', 'unauffaellig', 'anders'],
+      ['hilfe', 'unterstuetzung', 'beratung', 'angehoerigenberatung', 'entlastung'],
+      ['streit', 'konflikt', 'konflikte', 'eskalation', 'eskaliert', 'kippt'],
+      ['erschoepft', 'ueberfordert', 'belastet', 'kraft', 'am ende', 'keine kraft'],
+      ['kind', 'kinder', 'jugendliche'],
+      ['einweisen', 'einweisung', 'fuersorgerisch', 'fuersorgerische', 'fu'],
+      ['medikament', 'medikamente', 'tabletten', 'antidepressivum'],
+      ['pause', 'pausieren', 'kontaktpause', 'abstand'],
+      ['selbstverletzung', 'selbstverletzen', 'verletzt', 'ritzen'],
+      ['angehoerigengruppe', 'selbsthilfegruppe', 'gruppe', 'austausch'],
+      ['gespraech', 'reden', 'kommunikation'],
+      ['genesung', 'recovery', 'remission', 'besser', 'bessern', 'verbessern'],
+      ['kosten', 'bezahlt', 'bezahlen', 'krankenkasse', 'finanzierung']
+    ];
+    var synonyms = {};
+    synonymSets.forEach(function (set) {
+      var values = set.map(normalized);
+      values.forEach(function (value) { if (value.indexOf(' ') === -1) synonyms[value] = values; });
+    });
+    function queryGroups(query) {
+      var words = normalized(query).split(/\s+/).filter(Boolean);
+      var meaningful = words.filter(function (word) { return !stopwords.has(word) && word !== 'droht' && word !== 'drohen' && word !== 'sprechen'; });
+      if (!meaningful.length) meaningful = words;
+      var seen = {};
+      return meaningful.map(function (word) { return synonyms[word] || [word]; }).filter(function (group) {
+        var key = group.join('|');
+        if (seen[key]) return false;
+        seen[key] = true;
+        return true;
+      });
+    }
+    function matches(field, group) {
+      return group.some(function (term) { return field.indexOf(term) !== -1; });
+    }
+    function score(item, query, groups, relaxed) {
       var title = normalized(item.getAttribute('data-search-title'));
       var haystack = normalized(item.getAttribute('data-search-text'));
       var keywords = normalized(item.getAttribute('data-search-keywords'));
-      if (!terms.every(function (term) { return haystack.indexOf(term) !== -1; })) return -1;
+      var hitCount = groups.filter(function (group) { return matches(haystack, group); }).length;
+      var required = relaxed && groups.length > 1 ? Math.max(1, Math.ceil(groups.length * .6)) : groups.length;
+      if (hitCount < required) return -1;
       var value = item.getAttribute('data-search-level') === 'section' ? 20 : 0;
       if (title === query) value += 600;
       else if (title.indexOf(query) !== -1) value += 300;
-      terms.forEach(function (term) {
-        if (title.indexOf(term) !== -1) value += 80;
-        if (keywords.indexOf(term) !== -1) value += 140;
-        var first = haystack.indexOf(term);
+      groups.forEach(function (group) {
+        if (matches(title, group)) value += 80;
+        if (matches(keywords, group)) value += 140;
+        var positions = group.map(function (term) { return haystack.indexOf(term); }).filter(function (position) { return position !== -1; });
+        var first = positions.length ? Math.min.apply(Math, positions) : -1;
         if (first !== -1) value += Math.max(0, 30 - Math.floor(first / 120));
       });
+      if (relaxed) value -= (groups.length - hitCount) * 120;
       return value;
     }
     function renderSearch() {
       var query = normalized(input.value).trim();
-      var terms = query.split(/\s+/).filter(Boolean);
-      if (!terms.length) {
+      var groups = queryGroups(query);
+      if (!query) {
         items.forEach(function (item) { item.hidden = true; });
         results.hidden = true;
         if (directory) directory.hidden = false;
@@ -239,9 +282,14 @@
         if (status) status.textContent = 'Alle Themenseiten sind unten aufgeführt.';
         return;
       }
-      var matches = items.map(function (item) { return { item: item, score: score(item, query, terms), order: +(item.getAttribute('data-search-order') || 0) }; })
+      var matches = items.map(function (item) { return { item: item, score: score(item, query, groups, false), order: +(item.getAttribute('data-search-order') || 0) }; })
         .filter(function (entry) { return entry.score >= 0; })
         .sort(function (a, b) { return b.score - a.score || a.order - b.order; });
+      if (!matches.length && groups.length > 1) {
+        matches = items.map(function (item) { return { item: item, score: score(item, query, groups, true), order: +(item.getAttribute('data-search-order') || 0) }; })
+          .filter(function (entry) { return entry.score >= 0; })
+          .sort(function (a, b) { return b.score - a.score || a.order - b.order; });
+      }
       items.forEach(function (item) { item.hidden = true; });
       matches.slice(0, limit).forEach(function (entry) { entry.item.hidden = false; results.appendChild(entry.item); });
       results.hidden = matches.length === 0;

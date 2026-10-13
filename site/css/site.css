@@ -1,4 +1,4 @@
-/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-18 */
+/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-19 */
 
 /* ===== ../../../styles.css ===== */
 /* ../../../tokens/fonts.css */
@@ -439,7 +439,7 @@ a:hover{color:var(--text-link-hover)}
 .puk-longform__hero{padding-block:clamp(48px,7vw,88px) clamp(40px,6vw,72px)}
 .puk-longform__hero .puk-web-h1{max-width:16ch}
 .puk-longform__intro{max-width:62ch;margin:var(--space-6) 0 0;font-size:clamp(21px,2.1vw,var(--web-size-lead));line-height:1.35}
-.puk-longform__boundary{max-width:72ch;margin:var(--space-6) 0 0;padding:var(--space-4) var(--space-5);border-left:3px solid var(--puk-blue-100);background:var(--status-info-bg);font-size:16px;font-weight:var(--fw-regular)}
+.puk-longform__boundary{max-width:72ch;margin:var(--space-6) 0 0;padding:var(--space-4) var(--space-5);border-left:3px solid var(--puk-blue-100);background:var(--status-info-bg);font-size:var(--puk-read-size,var(--web-size-body));line-height:1.55;font-weight:var(--fw-regular)}
 
 .puk-longform__roadmap{padding-block:var(--space-6);border-block:1px solid var(--border-hairline)}
 .puk-longform__roadmap-label{margin:0 0 var(--space-3);font-size:14px;font-weight:var(--fw-medium);letter-spacing:.06em;text-transform:uppercase}
@@ -658,7 +658,7 @@ html.puk-scroll-lock{overflow:hidden}
   .puk-disclosure__panel{position:static!important;box-shadow:none!important}
   .puk-carousel__track{display:block!important;overflow:visible!important}
   .puk-carousel__slide{break-inside:avoid;margin-bottom:var(--space-4)}
-  .puk-vis-figure,.puk-vis-wide,figure,table{break-inside:avoid}
+  .puk-vis-figure,figure,table{break-inside:avoid}
   .puk-web-page a[href^="http"]::after{content:" (" attr(href) ")";font-size:.85em;color:var(--text-muted);word-break:break-all}
   .puk-web-band,.surface-brand{background:none!important;color:var(--text-default)!important}
   body{background:#fff}
@@ -710,7 +710,7 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-web-media{font-size:.75rem}
 .puk-web-footer{font-size:var(--web-size-body)}
 .puk-longform__intro{font-size:clamp(1.3125rem,2.1vw,var(--web-size-lead))}
-.puk-longform__boundary,.puk-longform__roadmap a,.puk-longform__figure-relation{font-size:1rem}
+.puk-longform__roadmap a,.puk-longform__figure-relation{font-size:1rem}
 .puk-longform__roadmap-label,.puk-longform__kicker,.puk-longform__privacy{font-size:.875rem}
 .puk-longform__figure figcaption,.puk-longform__source-use{font-size:.9375rem}
 @media (max-width:760px){.puk-web-page{font-size:1.1875rem;--puk-read-size:1.1875rem}.puk-web-footer{font-size:1.1875rem}}
@@ -725,7 +725,8 @@ html.puk-scroll-lock{overflow:hidden}
      im Druck nach der Kennzeichnung und darf auf die nächste Seite fliessen. */
   .puk-vis-figure{display:flex;flex-direction:column;break-inside:auto}
   .puk-vis-figure>*{width:100%;break-inside:avoid}
-  .puk-vis-figure>:not(.puk-vis-more):not(figcaption){break-after:avoid}
+  .puk-vis-figure>.puk-vis-label,.puk-vis-figure>.puk-vis-kern,.puk-vis-figure>.puk-vis-short{break-after:avoid}
+  .puk-vis-caption{break-before:avoid}
   .puk-vis-figure>.puk-vis-more{order:1}
 }
 @media print{details::details-content{content-visibility:visible;display:block}}
@@ -885,7 +886,7 @@ html.puk-scroll-lock{overflow:hidden}
 /* Drei Erklärungsebenen für alle Muster A–K (Profilentscheid 08.10.2026):
    1 Kernaussage (.puk-vis-kern) · 2 Darstellung + kurzer Erklärtext (.puk-vis-short) · 3 Vertiefung (details.puk-vis-more) */
 .puk-vis-kern{margin:0 0 var(--space-3);font:var(--type-title-3);font-weight:var(--fw-medium);color:var(--text-default);max-width:38ch;text-wrap:balance}
-.puk-vis-short{margin:0 0 var(--space-6);font:var(--type-body-sm);color:var(--text-default);max-width:62ch}
+.puk-vis-short{margin:0 0 var(--space-6);font:var(--puk-read-font,var(--type-body));color:var(--text-default);max-width:62ch}
 .puk-vis-more{margin-top:var(--space-5);border-top:1px solid var(--border-default);max-width:80ch}
 .puk-vis-more>summary{display:flex;align-items:center;gap:var(--space-2);min-height:44px;cursor:pointer;font:var(--type-body-sm);font-weight:var(--fw-medium);color:var(--puk-blue-125);list-style:none}
 /* Prüfbefund 09.10.2026: Blau 100 auf dem Figurengrund #F7F7F7 hatte 4,4:1; Blau 125 hat 5,9:1. */
@@ -940,8 +941,8 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-vis-build__art{margin:0 auto;width:100%;max-width:340px}
 .puk-vis-build__art svg{display:block;width:100%;height:auto}
 .puk-vis-build__steps{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-4)}
-.puk-vis-build__steps li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0 var(--space-2) var(--space-3);border-left:4px solid transparent}
-.puk-vis-build__n{display:grid;place-items:center;width:28px;height:28px;border:2px solid var(--puk-blue-100);border-radius:50%;background:var(--puk-white);font:var(--type-caption);font-weight:var(--fw-medium);color:var(--text-default)}
+.puk-vis-build__steps li{display:grid;grid-template-columns:2rem minmax(0,1fr);gap:var(--space-3);padding:var(--space-2) 0 var(--space-2) var(--space-3);border-left:4px solid transparent}
+.puk-vis-build__n{display:grid;place-items:center;width:1.75rem;height:1.75rem;border:2px solid var(--puk-blue-100);border-radius:50%;background:var(--puk-white);font:var(--type-caption);font-weight:var(--fw-medium);color:var(--text-default)}
 .puk-vis-build__steps h3{margin:0;font:var(--type-body);font-weight:var(--fw-medium);color:var(--text-default)}
 .puk-vis-build__steps p{margin:var(--space-1) 0 0;font:var(--type-body-sm);color:var(--text-default)}
 .puk-vis-build__controls{display:none;flex-wrap:wrap;align-items:center;gap:var(--space-3);margin-top:var(--space-6)}
@@ -1262,7 +1263,7 @@ html.puk-scroll-lock{overflow:hidden}
 
 /* Momentaufnahmen (Korrektur 1i, P4-F-4): Zeile über den beiden Sätzen, wer spricht; über die ganze Breite der Szene,
    schmal (eine Spalte) steht sie ebenfalls über den Sätzen. Ohne Rahmen, Farbe und Schrift über Tokens. */
-.bl-scene__lead{grid-column:1/-1;margin:0 0 var(--space-2);font:var(--type-body-sm);color:var(--text-default)}
+.bl-scene__lead{grid-column:1/-1;margin:0 0 var(--space-2);font:var(--puk-read-font,var(--type-body));color:var(--text-default)}
 
 /* Auf sich achten, Abschnitt 02 (Etappe 2a): Text direkt nach der Abbildung «Ein freier Abend» (Bauauftrag 2a, Abschnitt 4).
    Zweites Raster im selben Abschnitt, linke Spalte leer; Abstand zur Figur wie .puk-vis-wide über der Figur. */
@@ -1345,6 +1346,7 @@ html.puk-scroll-lock{overflow:hidden}
    jeder Schritt zusammen. */
 @media print{
   .puk-longform__section-grid{display:block}
+  .puk-longform__section-heading{position:static}
   .puk-longform__section-heading:not(:empty){margin-bottom:var(--space-8)}
   main h2,main h3,main h4,main h5,main dt,.puk-acc__heading,.puk-longform__section-heading{break-after:avoid}
   /* Etappe 2c-2: Auch der Kicker über dem Abschnittstitel steht nicht allein am Seitenende (gemessen: «02 · Behandlungsteam»
@@ -1360,13 +1362,9 @@ html.puk-scroll-lock{overflow:hidden}
      A4-Seite. Nur diese Abbildung; für die Anspannungskurve und «Zwei Sichten» gilt die begründete Ausnahme im Prüfbericht
      (SPZ-F-32). */
   [data-visual-id="v-bz-schleife"]>.puk-vis-ansatz{order:1}
-  /* NSK-1 (Nachprüfung SP2-K, korrigiert im Auftrag der Fachstelle 12.10.2026): «Zwei Sichten» ist mit allen Schritten länger
-     als eine A4-Seite (begründete Ausnahme, SPZ-F-32). Die Hülle .puk-vis-wide ist im Druck sonst unteilbar
-     (components/bundle.css); dann schob Chromium die ganze Figur auf eine neue Seite und liess davor eine leere oder fast
-     leere Seite stehen (`beziehungen`, A4: vorher eine leere Seite in 6 von 6 Einstellungen, bei 15 mm Rand dazu eine Seite
-     mit zwei Zeilen). Hier darf die Figur zwischen den Schritten umbrechen; jeder Schritt bleibt zusammen (.bl-sicht oben),
-     Titel, Kernaussage und Kurztext bleiben beim ersten Schritt (break-after:avoid, components/bundle.css). */
-  .puk-vis-wide:has(>[data-visual-id="v-bz-sichten"]),[data-visual-id="v-bz-sichten"]>.bl-sichten{break-inside:auto}
+  /* Lange Darstellungen dürfen allgemein zwischen ihren in sich geschützten Teilen umbrechen.
+     So bleiben Titel und Kernaussage beim Anfang, ohne vor der Figur eine Leerseite zu erzeugen. */
+  .puk-vis-wide,.puk-vis-figure,[data-visual-id="v-bz-sichten"]>.bl-sichten{break-inside:auto}
 }
 
 /* NSK-2 (Nachprüfung SP2-K, korrigiert im Auftrag der Fachstelle 12.10.2026): Bei sehr grosser Schrift auf schmalem Bildschirm
@@ -1374,7 +1372,10 @@ html.puk-scroll-lock{overflow:hidden}
    Silbentrennung nur, wenn die Figur höchstens 12rem breit ist: bei Standardschrift nie (Container mindestens 280 px,
    12rem = 192 px), bei 200 % Schrift (12rem = 384 px) bei 320 und 360 px Fensterbreite. Bei 100 % ändert sich nichts.
    Wirkt in Browsern mit deutscher Silbentrennung; das Profil (SPZ-40, Entscheide 5.6) bleibt unverändert. */
-@container (max-width:12rem){.puk-vis-figure{hyphens:auto}}
+@container (max-width:192px) or (max-width:12rem){
+  .puk-vis-figure{min-width:0;max-width:100%}
+  .puk-vis-figure :where(h2,h3,h4,p,li,dt,dd,strong,span){min-width:0;hyphens:auto;overflow-wrap:anywhere}
+}
 
 /* IA-Überarbeitung 13.10.2026: Bereichskontext, Brotkrümel und nächste sinnvolle Wege. */
 .puk-web-nav__link[aria-current="location"]{font-weight:var(--fw-medium);text-decoration-thickness:var(--border-width-strong);text-underline-offset:var(--space-1)}
@@ -1387,8 +1388,9 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-site-related h2{margin-top:0}
 .puk-site-related ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--space-3) var(--space-6);margin:var(--space-5) 0 0;padding:0;list-style:none}
 .puk-site-related li{margin:0}
-.puk-site-related a{display:inline-block;padding-block:var(--space-1)}
+.puk-site-related a{display:inline-block;max-width:100%;padding-block:var(--space-1);overflow-wrap:anywhere}
 .puk-site-sender__contact{margin-left:var(--space-2)}
+[data-sender-email]{display:inline-flex;align-items:center;min-height:var(--web-touch-target);max-width:100%;margin-block:calc((var(--web-touch-target) - 1.5em)/-2);overflow-wrap:anywhere}
 .puk-longform address{font-style:normal}
 .puk-site-faq{border-top:1px solid var(--ui-hairline)}
 .puk-site-faq:last-child{border-bottom:1px solid var(--ui-hairline)}
@@ -1424,6 +1426,7 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-site-quick h2{margin-top:0}
 .puk-site-quick ol,.puk-site-quick ul{margin-bottom:0}
 .puk-site-filter{margin-block:var(--space-5);padding:var(--space-5);background:var(--surface-subtle)}
+[data-puk-filter]:not([data-filter-enhanced]) .puk-site-filter,[data-puk-search]:not([data-search-enhanced]) .puk-site-filter{display:none}
 .puk-site-filter label{display:block;margin-bottom:var(--space-2);font-weight:var(--fw-medium)}
 .puk-site-filter input[type="search"]{box-sizing:border-box;width:100%;min-height:2.75rem;padding:var(--space-2) var(--space-3);border:var(--border-width) solid var(--border-hairline);border-radius:var(--radius-md);background:var(--ui-field);color:var(--text-default)}
 .puk-site-filter input[type="search"]:focus-visible{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}

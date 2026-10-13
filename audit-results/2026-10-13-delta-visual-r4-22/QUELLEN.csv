@@ -1,0 +1,6 @@
+"id";"quelle";"verwendung"
+"Q-001";"Vom Auftraggeber bereitgestellter Bericht AUDIT 04 – Visuelle Wissensvermittlung, Layout, Design und Designsystem, Stand 13.10.2026";"Befunde A04-008 bis A04-013 und Akzeptanzrichtung"
+"Q-002";"authoring/site.config.json";"Visualisierungsplan, Freigabestatus und Buildmarker r4-22"
+"Q-003";"authoring/content/*.html und authoring/css/site.css";"kanonischer Implementierungsstand"
+"Q-004";"authoring/tools/contract.js und authoring/tools/build.mjs";"Build-, Struktur- und Freigabegate"
+"Q-005";"axe-core im lokalen Chromium-Prüflauf";"automatisierte WCAG-Regelprüfung, kein Vollständigkeitsnachweis"

@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-21';
+const BUILD = 'r4-22';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -142,7 +142,14 @@ function renderPage(cfg, page, content) {
   const direct = '';
   /* Profilentscheid 09.10.2026: Verweis im Text auf die zuständigen Stellen. Der Platzhalter <p data-responsibility-inline></p> wird mit dem geprüften Wortlaut aus site.config.json › responsibility.inline gefüllt; Seiten schreiben ihn nie selbst. */
   const inl = cfg.responsibility && cfg.responsibility.inline;
-  const contentWithResponsibility = inl && inl.text ? content.replace(INLINE_RE, `<p class="puk-longform__boundary puk-site-inline-ref" data-responsibility-inline>${esc(inl.text)}</p>`) : content;
+  let responsibilityInlineIndex = 0;
+  const contentWithResponsibility = inl && inl.text ? content.replace(INLINE_RE, () => {
+    responsibilityInlineIndex += 1;
+    const tier = page.responsibilityInlineStyle === 'tiered'
+      ? (responsibilityInlineIndex === 1 ? ' puk-longform__boundary--primary' : ' puk-longform__boundary--repeat')
+      : '';
+    return `<p class="puk-longform__boundary puk-site-inline-ref${tier}" data-responsibility-inline>${esc(inl.text)}</p>`;
+  }) : content;
   const faqBody = page.id === 'fragen' ? foldFaqAnswers(contentWithResponsibility) : contentWithResponsibility;
   const body = foldDepthSections(faqBody, page.collapsedSections);
   const subdued = sa.variant === 'responsibility' ? `<section class="puk-site-safety puk-site-safety--responsibility" data-safety-access="responsibility" data-review-status="${esc(sa.reviewStatus)}" aria-labelledby="puk-safety-title"><h2 class="puk-web-footer__heading" id="puk-safety-title">${esc(sa.label || 'Zuständigkeit')}</h2><p class="puk-web-footer__copy">${esc(sa.text)}</p>${sa.targetHref ? `<p class="puk-web-footer__copy"><a href="${esc(sa.targetHref)}">${esc(sa.targetLabel)}</a></p>` : ''}${review ? `<p class="puk-web-footer__copy puk-site-review">${review}</p>` : ''}</section>` : '';

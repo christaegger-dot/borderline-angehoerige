@@ -8,9 +8,11 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ### Korrekturpaket r4-19 aus Audit 01–05
 
-Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 sind im Korrekturbranch umgesetzt. Der generierte Export unter `site/` ist bytegleich zum Produktions-Build. Die Delta-Prüfung umfasst alle 22 Seiten, vier Breiten, 100/200 Prozent Text, natürliche Suchfragen, JavaScript-Fallbacks, Tastatur-Basiswege und 44 Browser-PDFs.
+Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 sind in Commit `475d3f2` und PR #672 umgesetzt. Der generierte Export unter `site/` ist bytegleich zum Produktions-Build. Die Delta-Prüfung umfasst alle 22 Seiten, vier Breiten, 100/200 Prozent Text, natürliche Suchfragen, JavaScript-Fallbacks, Tastatur-Basiswege und 44 Browser-PDFs.
 
-Noch nicht erfolgt sind Commit/PR, Merge und Deployment. Audit 06 benötigt einen fixierten korrigierten Commit und das dazugehörige tatsächliche Deployment; es darf deshalb erst danach als Abschlussaudit durchgeführt werden.
+Audit 06 wurde auf dem fixierten Commit und einem deployten Netlify-Prüfstand durchgeführt. Ergebnis: **CONDITIONAL GO**. GitHub-Build, Netlify Deploy Preview, Header- und Redirectregeln sowie 220 deployte Browserfälle bestanden. Das echte PR-Preview ist ausserhalb des Netlify-Teamzugangs mit HTTP 401 geschützt; der funktionale Browsernachtest erfolgte deshalb zusätzlich auf einem temporären passwortgeschützten Netlify-Draft desselben sauberen Artefakts. Der vollständige Nachweis liegt unter `audit-results/2026-10-13-abschluss-475d3f2/`.
+
+Noch nicht erfolgt sind Merge und Produktionsdeployment. Nach dem Produktionsdeployment ist der in `FREIGABE.md` beschriebene Runtime-Smoke-Test zwingend; bis dahin bleibt das CONDITIONAL GO bedingt.
 
 Die Rechts-/Datenschutzdurchsicht bleibt zudem als Evidenzgrenze bestehen: Die Texte sind am Zürcher IDG ausgerichtet, aber noch nicht nachweislich durch die zuständige interne Stelle geprüft. Die technische Umsetzung ist dadurch nicht blockiert; eine vollständige Schliessung der rechtlichen Audit-Akzeptanzkriterien wäre ohne diesen Nachweis jedoch falsch.
 

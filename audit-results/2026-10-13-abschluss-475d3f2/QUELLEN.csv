@@ -1,0 +1,7 @@
+"id";"quelle";"verwendung";"stand"
+"A06-Q01";"Commit 475d3f2e29b595c9614cdd208c25bec0a98a5777";"fixierter Korrekturstand";"2026-10-13"
+"A06-Q02";"GitHub PR #672 und Actions-Lauf 38439601582";"Build-/Paritätsnachweis";"2026-10-13"
+"A06-Q03";"Netlify Deploy 6ace6b622bbd419e7c9384eb";"Deploy-, Header- und Redirectchecks";"2026-10-13"
+"A06-Q04";"audit-results/2026-10-13-bestand-13a7e4f";"Ausgangsbefunde A01 bis A05";"2026-10-13"
+"A06-Q05";"audit-results/2026-10-13-delta-r4-19";"Korrektur- und Delta-Nachweise";"2026-10-13"
+"A06-Q06";"Website-Audit-Koordinator V1.2";"Prüfregeln und Entscheidlogik";"2026-10-13"

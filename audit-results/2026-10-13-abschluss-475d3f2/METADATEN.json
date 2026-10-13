@@ -1,0 +1,29 @@
+{
+  "schema": "website-audit-v1.2",
+  "lauf_id": "2026-10-13-abschluss-475d3f2",
+  "modus": "abschluss",
+  "status": "abgeschlossen_conditional_go",
+  "auditmodul": "A06",
+  "audit_06_durchgefuehrt": true,
+  "projekt": {
+    "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
+    "branch": "codex/implement-audit-2026-10-13",
+    "gepruefter_commit": "475d3f2e29b595c9614cdd208c25bec0a98a5777",
+    "pull_request": "https://github.com/christaegger-dot/borderline-angehoerige/pull/672",
+    "buildmarker": "r4-19"
+  },
+  "deployment": {
+    "pr_preview_url": "https://deploy-preview-672--borderline-angehoerige.netlify.app",
+    "pr_preview_deploy_id": "6ace6b622bbd419e7c9384eb",
+    "pr_preview_zugriff": "HTTP 401 / Netlify-Teamzugang; Netlify-Checks bestanden",
+    "funktionaler_spiegel": "temporärer passwortgeschützter anonymer Netlify-Draft aus dem sauberen Commit-Artefakt",
+    "produktion_unveraendert": "https://borderline-angehoerige.netlify.app / r4-18"
+  },
+  "zeitraum": {
+    "auditdatum": "2026-10-13",
+    "abgeschlossen_utc": "2026-10-13T17:46:06Z",
+    "zeitzone": "Etc/UTC"
+  },
+  "entscheidung": "CONDITIONAL GO",
+  "keine_behauptete_freigabe": ["medizinisch-fachlich", "juristisch", "Datenschutz", "WCAG-Gesamtkonformität"]
+}

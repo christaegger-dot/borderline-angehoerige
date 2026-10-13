@@ -1,0 +1,2044 @@
+{
+  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter r4-18-Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4 für bytegleiche Reproduktion der aktuellen site/. PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände.",
+  "kitRevision": "PUK Website Kit 1.10.1-r4 · abgeleitet",
+  "canonicalSource": "PUK Zürich Design System 1.10.1 (unverändert)",
+  "assetVersion": "r4-18",
+  "siteTitle": "Borderline – Orientierung für Angehörige",
+  "shortDescription": "Psychoedukative Website der Fachstelle Angehörigenarbeit PUK für Angehörige von Menschen mit Borderline.",
+  "language": "de-CH",
+  "favicon": "assets/favicon.svg",
+  "logo": "assets/logo.svg",
+  "stylesheets": [
+    "css/site.css"
+  ],
+  "utilityNav": [
+    {
+      "pageId": "kurz",
+      "label": "Kurz und klar"
+    },
+    {
+      "pageId": "suche",
+      "label": "Website durchsuchen"
+    }
+  ],
+  "contentOwner": "Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK)",
+  "editorialStatus": "Inhaltlicher Stand: Oktober 2026",
+  "robots": "noindex, nofollow",
+  "releaseApproval": {
+    "institutionalResponsibility": "bestaetigt",
+    "independentReview": "bestaetigt"
+  },
+  "serviceReview": {
+    "$comment": "Dynamische Beratungs- und Behandlungsangebote müssen mindestens halbjährlich redaktionell geprüft werden. Das Produktions-Gate blockiert fehlende, zukünftige oder mehr als 183 Tage alte Prüfdaten.",
+    "maxAgeDays": 183,
+    "requiredIds": [
+      "hype-zueri",
+      "puk-erwachsene",
+      "ipw-junge-erwachsene",
+      "clienia-a2",
+      "dbt-therapeutensuche",
+      "pro-mente-sana",
+      "stand-by-you",
+      "vask-zuerich",
+      "puk-elterngruppe-jugendliche",
+      "selbsthilfe-schweiz"
+    ]
+  },
+  "disclaimer": "Diese Website ersetzt keine individuelle Abklärung, Beratung oder Behandlung.",
+  "footer": {
+    "heading": "Informationen zur Website",
+    "about": "Diese Website ist eine Orientierungshilfe der Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK). Sie wird Angehörigen und Bezugspersonen im Rahmen der Beratung auf Anfrage zur Verfügung gestellt.",
+    "editorialCredit": "Fachliche Redaktion: Ch. Egger, Soziale Arbeit, Fachstelle Angehörigenarbeit PUK.",
+    "serviceBoundary": "Die Fachstelle Angehörigenarbeit bietet keine Krisenintervention.",
+    "contentDate": "Inhaltlicher Stand: Oktober 2026.",
+    "links": [
+      {
+        "label": "Über diese Website",
+        "href": "ueber.html"
+      },
+      {
+        "label": "Barrierefreiheit",
+        "href": "ueber.html#barrierefreiheit"
+      },
+      {
+        "label": "Rückmeldung",
+        "href": "ueber.html#rueckmeldung"
+      }
+    ]
+  },
+  "responsibility": {
+    "label": "Zuständigkeit",
+    "text": "Die Fachstelle Angehörigenarbeit der PUK berät Angehörige kostenlos und vertraulich: angehoerigenarbeit@pukzh.ch. Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.",
+    "owner": "Fachstelle Angehörigenarbeit PUK",
+    "reviewStatus": "geprueft",
+    "reviewedBy": "Fachstelle Angehörigenarbeit PUK",
+    "reviewedAt": "09.10.2026",
+    "inline": {
+      "text": "Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.",
+      "reviewStatus": "geprueft",
+      "reviewedBy": "Fachstelle Angehörigenarbeit PUK",
+      "reviewedAt": "09.10.2026",
+      "$comment": "Verweis im Text (Profilentscheid 09.10.2026): nur über den Platzhalter <p data-responsibility-inline></p>, nur bei Selbstgefährdung, Gewalt oder akuter Krise. Wortlaut von der Fachstelle fachlich geprüft am 09.10.2026."
+    }
+  },
+  "sender": {
+    "orgUnit": "Fachstelle Angehörigenarbeit",
+    "institution": "Psychiatrische Universitätsklinik Zürich",
+    "displayLabel": "Eine Orientierungshilfe der",
+    "displayName": "Fachstelle Angehörigenarbeit der PUK",
+    "contactLabel": "Beratung",
+    "email": "angehoerigenarbeit@pukzh.ch",
+    "status": "freigegeben",
+    "statusLabel": "Freigegeben"
+  },
+  "legal": {
+    "$comment": "Prüfbefund W3-05 (11.10.2026): Impressum und Datenschutzerklärung in jeder Fusszeile. Institutionsentscheid 13.10.2026: Anbieterin und verantwortlich ist die Psychiatrische Universitätsklinik Zürich, Fachstelle Angehörigenarbeit; Ch. Egger wird als fachliche Redaktorin genannt. Die organisatorische Verantwortung muss vor der Veröffentlichung formell durch die PUK bestätigt sein. Die Angaben zum Datenschutz beschreiben, was der Code tut; bei Änderungen am Code mitprüfen.",
+    "imprint": {
+      "label": "Impressum",
+      "href": "impressum-datenschutz.html#impressum"
+    },
+    "privacy": {
+      "label": "Datenschutz",
+      "href": "impressum-datenschutz.html#datenschutz"
+    }
+  },
+  "pages": [
+    {
+      "id": "index",
+      "title": "Startseite",
+      "href": "index.html",
+      "navLabel": "Übersicht",
+      "groupRootId": "index",
+      "status": "published",
+      "primaryTask": "Einen Einstieg nach dem eigenen Anliegen wählen",
+      "description": "Orientierung für Angehörige von Menschen mit Borderline: Einstiege nach Anliegen, von Verstehen und Grenzen bis Genesung und Unterstützung, und die kostenlose Beratung der Fachstelle Angehörigenarbeit PUK.",
+      "sensitiveTopics": [],
+      "visualPlan": [
+        {
+          "id": "v-ix-einstiege",
+          "section": "Einstiege",
+          "sectionId": "einstiege",
+          "goal": "Einen passenden Einstieg nach dem eigenen Anliegen wählen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: gleichwertige Einstiege ohne feste Reihenfolge («die Reihenfolge ist ein Angebot»), formuliert als Anliegen der Lesenden (Korrektur W2-6, 09.10.2026); eine Darstellung würde nur Links in Kästen verteilen. Ersetzt Selbsttest und Wegweiser des Bestands («sichtbar vor versteckt»).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ix-orientierung",
+          "section": "Verstehen und finden",
+          "sectionId": "orientierung",
+          "goal": "Eine passende Wissens- oder Nachschlageseite wählen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Getrennte zweite Einstiegsebene für Verstehen, Diagnose, Beziehungen, Behandlung, Genesung und Nachschlagen; dadurch konkurrieren Wissensaufgaben nicht mit unmittelbar handlungsbezogenen Anliegen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ix-beratung",
+          "section": "Beratung für Sie",
+          "sectionId": "beratung",
+          "goal": "Wissen, wer die Beratung der Fachstelle nutzen kann, zu welchen Bedingungen und wie sie erreichbar ist",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Angebot und Kontaktweg ohne Beziehung. Wortlaut der Fachstelle vom 09.10.2026 (Korrektur W1-4). Die Beratung der Fachstelle steht auf `index`, `unterstuetzung` wiederholt Kosten und Vertraulichkeit (wie `v-un-beratung` › `reason` seit der Freigabe 2c; SPZ-8).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ix-haltung",
+          "section": "Mitgefühl und Selbstschutz",
+          "sectionId": "haltung",
+          "goal": "Mitgefühl und Selbstschutz als vereinbar verstehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: kurze Haltungsaussage; hier genügt der Satz (SPZ-9).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "kurz",
+      "title": "Kurz und klar",
+      "href": "kurz.html",
+      "navLabel": null,
+      "groupRootId": "index",
+      "showInSectionNav": false,
+      "status": "published",
+      "primaryTask": "Mit wenig Zeit oder Kraft die wichtigsten nächsten Schritte finden",
+      "description": "Eine kurze Orientierung zu Gesprächen, Rolle, Grenzen, Erschöpfung, Kindern, Sicherheit und den wichtigsten nächsten Schritten.",
+      "searchAliases": [
+        "kurz",
+        "einfach",
+        "schnell",
+        "Überblick",
+        "wenig Zeit",
+        "wenig Kraft",
+        "wo anfangen"
+      ],
+      "sectionSearchAliases": {
+        "jetzt-title": [
+          "was tun",
+          "sofort orientieren",
+          "nächster Schritt"
+        ],
+        "borderline-title": [
+          "Borderline einfach erklärt",
+          "Diagnose kurz"
+        ],
+        "grundsaetze-title": [
+          "Grundregeln",
+          "Merksätze"
+        ],
+        "weiter-title": [
+          "wie weiter",
+          "Hilfe finden"
+        ]
+      },
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-ku-jetzt",
+          "section": "Was ist jetzt wichtig?",
+          "sectionId": "jetzt",
+          "goal": "Mit wenig Zeit einen passenden nächsten Schritt finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Kurze Situationsüberschriften, ein Handlungssatz und je ein primäres Ziel sind bei hoher Belastung klarer als eine zusätzliche Darstellung.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ku-borderline",
+          "section": "Borderline kurz erklärt",
+          "sectionId": "borderline",
+          "goal": "Die Diagnose in fünf Sätzen einordnen, ohne Menschen darauf zu reduzieren",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Fünf eigenständige Klartextsätze sind kürzer und eindeutiger als ein Modell; vertiefende Zusammenhänge bleiben auf der Hauptseite «Verstehen».",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ku-grundsaetze",
+          "section": "Drei Grundsätze",
+          "sectionId": "grundsaetze",
+          "goal": "Drei übertragbare Orientierungen erinnern",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Eine nummerierte Liste macht die drei Merksätze ohne zusätzliche Legende direkt zugänglich.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ku-weiter",
+          "section": "Wie geht es weiter?",
+          "sectionId": "weiter",
+          "goal": "Genau einen passenden Vertiefungsweg wählen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Vier sprechende Links reichen als Abschluss; Karten oder eine Weggrafik würden die Auswahl unnötig aufblasen.",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "verstehen",
+      "title": "Borderline verstehen",
+      "href": "verstehen.html",
+      "navLabel": "Verstehen",
+      "groupRootId": "verstehen",
+      "status": "published",
+      "primaryTask": "Borderline, Erleben und mögliche Kontexte einordnen, ohne aus der Diagnose Motive oder Gefahr abzuleiten",
+      "description": "Was die Diagnose Borderline beschreiben kann, was unter sichtbarem Verhalten liegen kann, wie Anspannung Gespräche verengt und welche verbreiteten Annahmen zu kurz greifen.",
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-vs-erleben",
+          "section": "01 Erleben",
+          "sectionId": "erleben",
+          "goal": "Eigene Erfahrungen und Ambivalenz als verständlich einordnen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Einstieg aus der Sicht der Angehörigen, Aufzählung von Erfahrungen ohne darzustellende Beziehung.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-vs-borderline",
+          "section": "02 Diagnose",
+          "sectionId": "borderline",
+          "goal": "Wissen, was die Diagnose beschreiben kann und was nicht",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Begriffsklärung mit gezielten Einschränkungen. Kriterien und Begleiterkrankungen stehen auf «Diagnose und Begleiterkrankungen»; ein Verweissatz nach «Die Diagnose allein sagt nichts darüber, ob von einem Menschen Gefahr ausgeht.» verlinkt dort den Abschnitt «Der Weg zur Abklärung» (Freigabe 2c und 3-1, P2c-F-16).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-vs-eisberg",
+          "section": "03 Sichtbar und verborgen",
+          "sectionId": "eisberg",
+          "goal": "Verstehen, dass Verhalten nur einen Teil zeigt und das Darunter offenbleibt",
+          "format": "layer-model",
+          "statement": "Eisberg an einer weichen Wasserlinie, eigene Linienzeichnung: Über dem Wasser stehen im Eisberg Wut, Vorwürfe, Lautwerden, Rückzug; darunter Angst, Scham, Trauer, Einsamkeit, Anspannung – oder ganz andere Erfahrungen. Daneben die Frage «Wie ist es gerade für dich?». Keine Zuordnung zwischen oben und unten.",
+          "understood": "Dass Verhalten nur die Oberfläche zeigt und das Darunter offenbleibt; die Schichten zeigen das auf einen Blick, auch die Grenze des Wissens.",
+          "source": "Eigene didaktische Darstellung nach der Eisberg-Metapher (Handout «Eisberg»); Bezugspunkt Linehan (1993)",
+          "alternative": "Schmal: Zeichnung ohne Wörter, darunter beide Gruppen als Listen und die Frage; Textfassung über aria-describedby",
+          "reason": "Sichtbar und verborgen ist eine räumliche Beziehung. Zwei getrennte Schichten ohne Verbindungslinien zeigen zugleich, dass es keine Zuordnung gibt. Überarbeitet nach dem Bildsprache-Audit (BS-2), Entscheid Fachstelle 10.10.2026.",
+          "resonance": "Entlastung: Hinter einem heftigen Moment kann mehr stecken, und ich darf nachfragen, statt zu raten.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-vs-anspannung",
+          "section": "04 Anspannung",
+          "sectionId": "anspannung",
+          "goal": "Erkennen, wann Reden hilft und wann eine Pause besser ist, und wissen, was an welcher Stelle hilft",
+          "format": "figure",
+          "statement": "Die Anspannungskurve (Muster A, freie Figur): eine ruhige Kurve über den Gesprächsverlauf, links tief, dann steigend, oben ein Scheitel, rechts wieder sinkend; keine Skala, keine Zahlen, keine Achse. Vier nummerierte Stellen mit Alltagsworten: 1 «Wir können sprechen», 2 «Es wird eng» (Ansatzpunkt, doppelter Ring), 3 «Es ist gerade zu viel», 4 «Es kann wieder ruhiger werden.». Darunter in allen Breiten die Liste der vier Stellen mit Erklärsatz, «Was hilft», Ansatzpunkt und Beispielsätzen aus dem Handout; Stelle 2 hat nur den Ansatzpunkt, ohne eigenes «Was hilft» (Korrektur 1e, Abschnitt 3). Kurztext: Anspannung kann ansteigen und wieder sinken, bei der anderen Person und bei Ihnen, und ist von aussen nicht sicher erkennbar. Ersetzt die Achse mit drei Bereichen (Entscheid der Fachstelle, 09.10.2026; Korrektur 1d, D-3). «Bei Gefahr hat Schutz Vorrang» steht im Abschnittstext (Korrektur 1b, A-2).",
+          "understood": "Wann Reden hilft und wann eine Pause besser ist: Die Kurve zeigt, dass Anspannung im Gespräch ansteigen und wieder sinken kann und dass dasselbe Gespräch je nach Stelle etwas anderes braucht. Als Text blieben die vier Stellen eine Aufzählung; die Kurve zeigt ihren Zusammenhang im Verlauf.",
+          "source": "Eigene didaktische Darstellung nach dem früheren Handout «Die Anspannungskurve – Wann Reden hilft», mit Inhalten aus drei weiteren Handouts zur Anspannung (vereinfachtes Stressmodell, Hohe Anspannung, Zustands-Landkarte); Bezugspunkte Linehan (1993, 2015), Shields et al. (2016), Degasperi et al. (2021), Baranger et al. (2020), Santangelo et al. (2014), NICE CG78 (2009)",
+          "alternative": "Die vier Stellen als geordnete Liste mit Nummer, Überschrift, Erklärsatz und Beispiel unter der Zeichnung, in allen Breiten; Beschriftungen als HTML-Text über der Zeichnung, unter 560 px entfallen nur diese, die Nummern bleiben; Textfassung über aria-describedby (p.puk-sr)",
+          "reason": "Ein Verlauf im Gespräch lässt sich als Kurve zeigen. Alltagsworte statt Fachbegriffen, weil die Achse mit drei Bereichen für Laien verwirrend war (Rückmeldung der Fachstelle, 09.10.2026). Vier Handouts zum selben Mechanismus bleiben in einer Darstellung verbunden.",
+          "resonance": "Wiedererkennen und Erlaubnis: So kann ein Gespräch kippen, und ich darf eine Pause machen.",
+          "approvalStatus": "freigegeben",
+          "entryPoint": "Stelle 2 «Es wird eng»: nicht weiter argumentieren, weniger Druck machen, das eigene Tempo senken, auf die eigene Anspannung achten und eine Pause anbieten; die andere Person müssen Sie nicht beruhigen (in der Figur mit doppeltem Ring markiert)."
+        },
+        {
+          "id": "v-vs-bewertungen",
+          "section": "05 Bewertungen",
+          "sectionId": "bewertungen",
+          "goal": "Verstehen, dass ein einzelner heller oder dunkler Moment nicht die ganze Beziehung oder Person beschreibt",
+          "format": "illustration",
+          "statement": "Offenes Fotoalbum mit kleinen Fotos; zwei Fotos sind herausgenommen: ein helles mit Sonne und dem Satz «Du bist die Einzige, die mich versteht.», ein dunkles mit Regenwolke und dem Satz «Du bist genau wie alle anderen.». Darüber die Zeile «Sätze, die Angehörige hören können:».",
+          "understood": "Dass ein einzelner heller oder dunkler Moment nicht die ganze Beziehung beschreibt: Das Album zeigt auf einen Blick, dass es mehr als zwei Bilder gibt.",
+          "source": "Eigene didaktische Darstellung (Bild «Momentaufnahmen»); Grundlage: Linehan (1993); Hoffman et al. (2005)",
+          "alternative": "Sätze als HTML-Text über der Zeichnung, schmal untereinander; Textfassung über aria-describedby",
+          "reason": "Ersetzt das Pendel (Bildsprache-Audit BS-1: wirkte wie eine Physikskizze, schmal ohne Beschriftung). Das Bild nimmt das Wort «Momentaufnahme» aus dem Handout auf: ein Bild, eine Idee (Entscheid Fachstelle 10.10.2026).",
+          "resonance": "Entlastung: Ein harter Satz in einem schwierigen Moment ist nicht unser ganzes Album.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-vs-mythen",
+          "section": "06 Annahmen",
+          "sectionId": "mythen",
+          "goal": "Verbreitete Annahmen durch eine realistischere Einordnung ersetzen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Annahme und Einordnung sind Paare ohne Bildform; als Liste im Abschnittstext statt als Abbildung (Bildsprache-Audit BS-3).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-vs-einordnung",
+          "section": "07 Einordnung",
+          "sectionId": "einordnung",
+          "goal": "Wissen, was Verstehen leistet und wo es endet",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Abschluss, was Verstehen leistet und was nicht, mit dem Merksatz für Angehörige als hervorgehobenem Kasten (puk-longform__reflection) und Verweis auf «Was zwischen Ihnen geschieht» und «Grenzen setzen»; keine Beziehung, die eine Darstellung zeigen müsste. Merksatz und Absätze aus dem Bestand «Verstehen hat Grenzen» wieder aufgenommen (Korrektur 1d, D-4).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-vs-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Nachsehen, auf welche Quellen sich die Abschnitte der Seite stützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "beziehungen",
+      "title": "Alltag und Beziehungen",
+      "href": "beziehungen.html",
+      "navLabel": "Alltag und Beziehungen",
+      "groupRootId": "beziehungen",
+      "status": "published",
+      "primaryTask": "Wechselwirkungen in der Beziehung erkennen und einordnen, ohne Schuld zu verteilen",
+      "description": "Alltag und Beziehungen: Bedeutungsschleife, zwei Sichten auf dieselbe Situation und was Verbindung tragfähiger machen kann – ohne Motive zu unterstellen.",
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-bz-verbindung",
+          "section": "01 Was verbindet",
+          "sectionId": "verbindung",
+          "goal": "Ressourcen der Beziehung sehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Aufzählung eigenständiger Ressourcen ohne Beziehung untereinander. Die Personenillustration des Bestands entfällt (Entscheid der Fachstelle).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-bz-schleife",
+          "section": "02 Bedeutungsschleife",
+          "sectionId": "schleife",
+          "goal": "Verstehen, dass eine Reaktion beim Gegenüber zum neuen Anlass wird",
+          "format": "cycle",
+          "statement": "Ereignis → Bedeutung → Gefühl → Reaktion → Wirkung beim Gegenüber → neues Ereignis. Durchgehendes Beispiel: Die Schwester sagt einen Besuch ab. Jede Station nennt, wer handelt: Station 1 und 5 die Schwester, Station 2 bis 4 die betroffene Person (Korrektur V-3, 09.10.2026). Kurztext mit der Grenze des Modells: «Das Modell ist eine mögliche Erklärung, keine sichere Aussage …» (Korrektur 1b, C-2; Wortlaut Korrektur 1e).",
+          "understood": "Dass eine Reaktion beim Gegenüber zum neuen Anlass wird. Die Schleife zeigt das sofort, ein Text nur nacheinander.",
+          "source": "Eigene didaktische Darstellung (Bedeutungsschleife des Bestands) mit erfundenem Beispiel; Quellen der Seite: APA (2024), NICE CG78 (2009), Foxhall et al. (2019), McLaren et al. (2022)",
+          "alternative": "Stationen als geordnete Liste mit Leserichtung breit und schmal, sichtbarem Rücksprung zu Station 1 und Textfassung über aria-describedby",
+          "reason": "Eine Rückkopplung ist im Fliesstext nur nacheinander zu beschreiben. Die fünf Reiter des Bestands werden zu einer sichtbaren Schleife; das Beispiel verbindet sie mit dem Vergleich in Abschnitt 04.",
+          "resonance": "Entlastung: Ich sehe, wie wir uns gegenseitig in eine Schleife bringen können, und wo ich anders reagieren kann.",
+          "approvalStatus": "freigegeben",
+          "entryPoint": "Station 5 «Wirkung» (Schwester): Statt sich weiter zu verteidigen, können Sie das Gefühl anerkennen, nachfragen, wie die Absage angekommen ist, und Ihre eigene Grenze halten (Korrektur V-1, 09.10.2026; ganze Sätze laut Korrektur 1b, D-2; Wortlaut und Beispielfrage Korrektur 1e)."
+        },
+        {
+          "id": "v-bz-verstaerker",
+          "section": "03 Was Reaktionen verschärfen kann",
+          "sectionId": "verstaerker",
+          "goal": "Einflüsse kennen, die den Spielraum zwischen Anlass und Reaktion verengen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: höchstens fünf Einflüsse, je einer Station derselben Schleife (Abbildung 1) zugeordnet; eine zweite Grafik würde denselben Mechanismus doppeln. Als Begriffsliste (dl), vom Profil gestaltet (Korrektur V-8, 09.10.2026). Jeder Punkt mit «Was Sie tun können» und Beispielsatz als zweitem Absatz (Korrektur 1e).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-bz-sichten",
+          "section": "04 Zwei Sichten",
+          "sectionId": "zwei-sichten",
+          "goal": "Beide Perspektiven im selben Ablauf sehen",
+          "format": "comparison",
+          "statement": "Dieselben vier Schritte des Beispiels, je Schritt die mögliche Sicht der betroffenen Person und die mögliche Sicht der Schwester; Schritte: Zu Station 1 und 2 · Absage, Station 4 · Nachrichten, Station 5 · Verteidigung, Zurück zu Station 1 · Gespräch endet (Korrektur V-3, 09.10.2026). Bezeichnungen «Mögliche Sicht der betroffenen Person» und «Mögliche Sicht der Schwester» (Korrektur 1c, K-3). Breit stehen beide Sichten eines Schritts nebeneinander, schmal nacheinander.",
+          "understood": "Dass beide in jedem Schritt etwas Verständliches versuchen und sich trotzdem verfehlen; Schritt für Schritt nebeneinander (schmal direkt nacheinander) wird das sichtbar.",
+          "source": "Eigene didaktische Darstellung mit erfundenem Beispiel (Bestand «Beide versuchen etwas Verständliches – und verfehlen sich»)",
+          "alternative": "Je Schritt eine Überschrift und zwei beschriftete Sichten; Textfassung über aria-describedby",
+          "reason": "Gleiche Schritte nebeneinander zeigen, dass beide Sichten zugleich verständlich sind. Dasselbe Beispiel wie in der Schleife: verbunden, nicht gedoppelt.",
+          "resonance": "Verständnis: Beide Sichten können gleichzeitig wahr sein.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-bz-was-hilft",
+          "section": "05 Was helfen kann",
+          "sectionId": "was-hilft",
+          "goal": "Möglichkeiten kennen, die die Beziehung stärken",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: drei Stellen, an denen sich die Schleife unterbrechen lässt, als kurze Liste, dann unabhängige Möglichkeiten mit Formulierungsbeispielen (Inhaltscontainer, keine Beziehung untereinander; Korrektur 1e).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-bz-verantwortung",
+          "section": "06 Verantwortung und Schutz",
+          "sectionId": "verantwortung",
+          "goal": "Verstehen von Verantwortung und Schutz trennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Leitfragen und Schutzhinweise; bei möglicher Gefahr braucht es kurze, direkte Sätze ohne Grafik.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-bz-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Nachsehen, auf welche Quellen sich die Abschnitte der Seite stützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "rolle",
+      "title": "Ihre Rolle klären",
+      "href": "rolle.html",
+      "navLabel": null,
+      "groupRootId": "beziehungen",
+      "collapsedSections": [
+        "schuld",
+        "alltag",
+        "nach-konflikten",
+        "mehrere"
+      ],
+      "status": "published",
+      "primaryTask": "Freiwillige Unterstützung, eigene Verantwortung und Aufgaben von Fachpersonen unterscheiden",
+      "description": "Was Sie anbieten können und was nicht Ihre Aufgabe ist, Schuld und Verantwortung, Unterstützung im Alltag und nach Konflikten, mehrere Angehörige, Kinder und wann Unterstützung an Grenzen kommt.",
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-ro-weg",
+          "section": "01 Ihre Rolle",
+          "sectionId": "anbieten",
+          "goal": "Verstehen, dass Angehörige begleiten können, ohne Genesung herstellen zu müssen",
+          "format": "illustration",
+          "statement": "Zwei Menschen gehen nebeneinander auf einem Weg, von hinten gesehen, in leichter Schrittstellung; der Weg führt durch eine Hügellandschaft in die Ferne. Beide wirken gleichwertig: Niemand führt, zieht oder trägt den anderen. Darüber der Satz «Ich kann diesen Weg begleiten, aber nicht für dich gehen.».",
+          "understood": "Dass Begleiten und den Weg selbst gehen zwei verschiedene Dinge sind: Das Bild zeigt auf einen Blick, wer neben wem geht, ohne eine Liste von Aufgaben.",
+          "source": "Eigene didaktische Darstellung nach dem früheren Handout «Der Garten»; Bezug: NICE CG78 (2009)",
+          "alternative": "Satz als HTML-Text über der Zeichnung, schmal darüber; Kurzbeschreibung über aria-describedby",
+          "reason": "Entscheid der Fachstelle 10.10.2026 (Bauauftrag 2a, Anhang A): Skizze «Ein Stück Weg». Ersetzt das geplante Garten-Bild mit drei Zonen (Bildsprache-Audit: wirkt wie eine Zielscheibe, die betroffene Person darf nicht als Pflanze erscheinen). Ein Bild, eine Idee: begleiten, nicht für jemanden gehen. Korrektur 2a-K: steht direkt nach dem ersten Absatz von `anbieten` (P2a-V-1); verfeinert nach P2a-V-2 (die Wegkanten berühren die Köpfe nicht mehr, leichte Schrittstellung, Arme bei 360 px vom Körper getrennt). «Drei Fragen zur Selbstklärung» steht in diesem Abschnitt als Vertiefung (Akkordeon, K-R-b3). Korrektur 2a-2: Der Weg ist wieder gewunden wie in der gewählten Skizze (weiche Kurven, eine Biegung in der Ferne); die Figuren aus 2a-K bleiben.",
+          "resonance": "Entlastung: Ich darf begleiten, ohne den Weg für die andere Person gehen zu müssen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ro-schuld",
+          "section": "02 Schuld und Verantwortung",
+          "sectionId": "schuld",
+          "goal": "Schuldgefühle, Schuld und konkrete Verantwortung unterscheiden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Die fünf Sätze sind Zitate mit je einer Einordnung; eine Figur würde sie nur umrahmen. Warum Angehörige nicht schuld sind, steht auf `verstehen` (`mythen`) und wird verlinkt (Verlinken statt wiederholen, P2a-F-8).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ro-alltag",
+          "section": "03 Im Alltag",
+          "sectionId": "alltag",
+          "goal": "Freiwillige, hilfreiche Unterstützung im Alltag kennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: unabhängige Möglichkeiten mit Beispielsätzen, ohne Beziehung untereinander. Je Seite genau eine Abbildung (Bauauftrag 2a). Korrektur 2a-K: «Kleine gute Momente schaffen» steht als Vertiefung (Akkordeon, K-R-b4); statt der vier Schritte «Innehalten» verweist ein Satz auf STOPP (`selbstfuersorge` › `zu-viel`, K-R-b2).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ro-konflikte",
+          "section": "04 Nach Konflikten",
+          "sectionId": "nach-konflikten",
+          "goal": "Nach einem Konflikt ein Kontaktangebot machen, ohne zu drängen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: zwei kurze Listen und ein Beispielsatz; ein Ablauf in Schritten würde eine feste Reihenfolge nahelegen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ro-mehrere",
+          "section": "05 Mehrere Angehörige",
+          "sectionId": "mehrere",
+          "goal": "Unterschiedliche Haltungen in Familien einordnen und Absprachen treffen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: was belastet als Liste, was hilft im Handlungssatz (K-R-a7); eine Beziehungskarte bliebe ohne konkrete Beteiligte eine leere Form.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ro-kinder",
+          "section": "06 Kinder",
+          "sectionId": "kinder",
+          "goal": "Verantwortung der Erwachsenen benennen und zur kanonischen Kinderseite führen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Kurzer Kontextsatz im Rollenthema; Erklärung, Betreuung, Eskalation und Hilfe werden auf der kanonischen Seite `kinder` vollständig gepflegt.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ro-grenzen",
+          "section": "07 An Grenzen",
+          "sectionId": "an-grenzen",
+          "goal": "Erkennen, wann Unterstützung an Grenzen kommt, und bei Gefahr Hilfe holen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Beobachtungen und Situationen sind Aufzählungen. Schutz und Gefahr stehen im Text mit Verweis im Text, nicht in einer Figur. Korrektur 2a-K: Grosse Ausgaben und plötzliche Entscheidungen stehen als Vertiefung (Akkordeon, K-R-b1); Substanzkonsum und riskantes Verhalten bleiben sichtbar.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ro-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Nachsehen, auf welche Quellen sich die Abschnitte der Seite stützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "grenzen",
+      "title": "Grenzen setzen",
+      "href": "grenzen.html",
+      "navLabel": null,
+      "groupRootId": "beziehungen",
+      "status": "published",
+      "primaryTask": "Eigene Grenzen erkennen und formulieren und bei Bedrohung den Schutz vorziehen",
+      "description": "Woran Sie merken, dass eine Grenze nötig ist, vier Arten von Grenzen, DEAR in vier Schritten, Sätze für typische Situationen und Schutz bei Gewalt oder Bedrohung.",
+      "sensitiveTopics": [
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-gr-erkennen",
+          "section": "01 Erkennen",
+          "sectionId": "erkennen",
+          "goal": "Anlässe und Fragen für eine eigene Grenze kennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Signale und Fragen sind Aufzählungen ohne Beziehung; eine Skala würde eine Selbstdiagnose nahelegen (Muster J: nie als Selbstdiagnose-Skala).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-gr-bruecke",
+          "section": "02 Grenze und Kontakt",
+          "sectionId": "bruecke",
+          "goal": "Verstehen, dass Grenzen Kontakt schützen können",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Die Fachstelle hat die Zeichnung als zu technisch und die Erklärungen als zu abstrakt beurteilt (Durchsicht 10.10.2026). Das Bild der Brücke steht als ein Satz im Text; zwei Beispielsätze aus dem Handout zeigen, was Angehörige tun können (Korrektur 1g).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-gr-arten",
+          "section": "03 Bereiche",
+          "sectionId": "arten",
+          "goal": "Grenzen in vier Lebensbereichen benennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: vier gleichrangige Bereiche ohne Beziehung untereinander; eine Figur würde nur eine Liste umrahmen (Korrektur V-5, 09.10.2026). Als Begriffsliste (dl), vom Profil gestaltet.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-gr-reihenfolge",
+          "section": "04 Reihenfolge",
+          "sectionId": "reihenfolge",
+          "goal": "Wissen, mit welcher Grenze Sie beginnen können",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Im Bau geprüft (UMBAUPLAN, Abschnitt 3: Raster 2×2 oder Text): Text ist klarer. Die Liste nennt die vier Felder des Rasters aus der Quelle als vier Punkte: dringend oder langfristig, emotional hoch oder niedriger (Korrektur 1b, B-4). Die Quelle nennt das Raster selbst «keine fachliche Einstufung»; gezeichnet würde es eine feste Einordnung der Beispiele nahelegen. Die Seite sagt dazu «Die Reihenfolge ist eine Orientierung, keine fachliche Einstufung.» Schutz bei Bedrohung oder Gewalt steht im Kopf und im Abschnitt «Schutz» (Korrektur W2-4, 09.10.2026).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-gr-dear",
+          "section": "05 Formulieren",
+          "sectionId": "dear",
+          "goal": "Ein Anliegen in vier Schritten vorbereiten",
+          "format": "process",
+          "statement": "D Beschreiben · E Empfinden ausdrücken · A Anliegen nennen · R Verstärken (positive Folgen benennen); vier Schritte helfen, ein Anliegen vorzubereiten. Je Schritt Aufgabe in ganzen Sätzen und abgesetzter Beispielsatz (.puk-say). Kurztext mit dem Inhalt der vier Schritte und dem Kürzel (Korrektur R2-K, R2-6, 13.10.2026), danach die Grenze des Modells und der Hinweis auf vereinbarte Anlaufstellen für Krisen (Korrektur W1-7, V-12, 09.10.2026; Korrektur 1b, A-5, B-4, D-2). Fachmodell aus der DBT.",
+          "understood": "Dass ein Anliegen in vier Schritten vorbereitet werden kann und jeder Schritt eine eigene Aufgabe hat; Aufgabe und Beispielsatz stehen je Schritt sichtbar getrennt.",
+          "source": "Fachmodell: Linehan (2015), DBT Skills Training Manual, 2. Auflage (DEAR MAN); deutschsprachige redaktionelle Anpassung mit eigenen Beispielen",
+          "alternative": "Geordnete Liste mit Schrittnummer, Aufgabe und Beispielsatz; Textfassung über aria-describedby",
+          "reason": "Reihenfolge und Aufgabe jedes Schritts werden auf einen Blick sichtbar; die Auswahl-Schaltflächen des Bestands werden zu einem sichtbaren Pfad.",
+          "resonance": "Sicherheit: Ich kann mein Anliegen in Ruhe vorbereiten.",
+          "approvalStatus": "freigegeben",
+          "entryPoint": "entfällt: Der ganze Ablauf beschreibt das eigene Handeln der Angehörigen."
+        },
+        {
+          "id": "v-gr-saetze",
+          "section": "06 So könnte es klingen",
+          "sectionId": "saetze",
+          "goal": "Passende Sätze für typische Situationen finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: drei Situationen mit Gegenüberstellung «eher problematisch / eher hilfreich» als Komponente .puk-say (Leitlinie 06, Formulierungsbeispiele). Die für «Zugewandt und klar sprechen» vorgemerkten Beispiele des Bestands stehen dort im Abschnitt «So könnte es klingen» (Etappe 2b; vorgemerkt mit Korrektur W2-2, W2-3, 09.10.2026; SPZ-9).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-gr-konsequenz",
+          "section": "07 Dranbleiben",
+          "sectionId": "konsequenz",
+          "goal": "Wissen, wie eine Grenze umsetzbar bleibt",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Hinweise zur Umsetzung ohne darzustellende Beziehung.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-gr-kontakt",
+          "section": "08 Kontakt",
+          "sectionId": "kontakt",
+          "goal": "Wissen, dass zwischen «wie bisher» und einer Trennung mehrere Möglichkeiten liegen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Im Bau geprüft (UMBAUPLAN, Abschnitt 3: Kontinuum J, Steigerung?): Text ist klarer. Die vier Möglichkeiten liegen nicht auf einer Achse – eine vereinbarte Pause kann weniger Kontakt bedeuten als getrenntes Wohnen –, und ein Kontinuum mit wachsender Linienstärke würde eine Steigerung und eine Reihenfolge nahelegen, die der Text nicht meint («Die Beziehung zu erhalten, ist kein Ziel, das Sie erreichen müssen.», und welche Möglichkeit passt, ergibt sich nicht aus der Diagnose allein; Wortlaut Korrektur 1f). Die Liste trägt die Aussage, dass es mehrere Möglichkeiten gibt.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-gr-rollen",
+          "section": "09 Rollen",
+          "sectionId": "rollen",
+          "goal": "Grenzen in der eigenen Angehörigenrolle einordnen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: drei Rollen ohne Beziehung untereinander (Korrektur W2-2, 09.10.2026), seit Korrektur 1f als Begriffsliste (dl) mit einem Schlusssatz.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-gr-gewalt",
+          "section": "10 Schutz",
+          "sectionId": "gewalt",
+          "goal": "Bei Gewalt oder Bedrohung die eigene Sicherheit vorziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: In einer möglichen Gefahrensituation braucht es kurze, direkte Hinweise ohne Grafik.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-gr-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Nachsehen, auf welche Quellen sich die Abschnitte der Seite stützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "diagnose",
+      "title": "Diagnose und Begleiterkrankungen",
+      "href": "diagnose.html",
+      "navLabel": null,
+      "groupRootId": "verstehen",
+      "status": "published",
+      "primaryTask": "Verstehen, wie eine Borderline-Abklärung abläuft, was eine Diagnose bedeuten kann und was Begleiterkrankungen sind",
+      "description": "Der Weg zur Abklärung in fünf Schritten mit Ihrer Rolle, was eine Diagnose für Angehörige bedeuten kann, was möglich ist, wenn die Diagnose nicht geteilt wird oder noch fehlt, und was Begleiterkrankungen wie eine Depression bedeuten.",
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-di-abklaerung",
+          "section": "01 Abklärung",
+          "sectionId": "abklaerung",
+          "goal": "Verstehen, wie eine Abklärung in Schritten abläuft und welche Rolle Angehörige dabei haben können",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Entscheid der Fachstelle 11.10.2026: Textdarstellung als nummerierte Schritte statt Abbildung (UMBAUPLAN: `process`). Fünf Schritte aus der alten Infografik «Den Weg zur Abklärung begleiten» als gestaltete Liste wie «Die sechs Stufen» auf `kommunizieren` (ol.bl-stufen, «Schritt n»), je Name, was geschieht und, wo der Bestand es sagt, die abgesetzte Zeile «Ihre Rolle». Kein figure, keine Abbildungsnummer (Bauauftrag 2c-2, Abschnitt 3). «Bei Jugendlichen» sichtbar, «Wie die Diagnose beschrieben wird» als Vertiefung (Akkordeon).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-di-bedeutung",
+          "section": "02 Bedeutung",
+          "sectionId": "bedeutung",
+          "goal": "Einordnen, was eine Diagnose leisten kann und was nicht",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: zwei Absätze und «Was eine Diagnose nicht leistet»; was die Diagnose beschreiben kann und was die Forschung zu Genesung zeigt, steht über Verweissätze auf `verstehen` › `borderline` und `genesung` › `forschung` (Verlinken statt wiederholen, Bauauftrag 2c-2, Abschnitt 2).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-di-zweifel",
+          "section": "03 Zweifel",
+          "sectionId": "zweifel",
+          "goal": "Wissen, was hilft und was nicht, wenn die betroffene Person die Diagnose nicht teilt",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: «Was nicht hilft» und «Was möglich ist» als zwei Listen nebeneinander, schmal untereinander (Bauauftrag 2c-2, Abschnitt 3); kein Vergleichsmuster (E), weil die Listen nicht Punkt für Punkt einander gegenüberstehen. Danach die Handlungsanleitung bei akuter Gefahr mit dem Verweis im Text.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-di-ohne-diagnose",
+          "section": "04 Ohne Diagnose",
+          "sectionId": "ohne-diagnose",
+          "goal": "Erste Anlaufstellen kennen, wenn noch keine Diagnose gestellt ist, und die eigene Belastung ernst nehmen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: vier kurze Zwischentitel (Hausarztpraxis, nicht warten, spezialisierte Stellen, «Bin ich auch betroffen?») mit Verweissätzen auf `index` › `beratung`, `behandlung` › `angebote`, `selbstfuersorge` › `warnsignale` und `unterstuetzung` › `beratung` (Bauauftrag 2c-2, Abschnitt 3).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-di-begleiterkrankungen",
+          "section": "05 Begleiterkrankungen",
+          "sectionId": "begleiterkrankungen",
+          "goal": "Verstehen, was Begleiterkrankungen sind, ohne sie selbst zuordnen zu müssen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer (UMBAUPLAN, Etappe 2: `text`): Die alte Grafik war eine Liste von sechs gleich grossen, unverbundenen Diagnosen und zeigte keine Beziehung. Die sechs Beispiele stehen als Liste mit dem Satz, dass die Reihenfolge keine Rangfolge ist. «Depression» und «Wenn Suizidgedanken dazukommen» sichtbar, «Mögliche Hinweise auf eine depressive Phase» und «Weitere Begleiterkrankungen kurz» als Vertiefungen (Akkordeon, Bauauftrag 2c-2, Abschnitt 3).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-di-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Nachsehen, auf welche Quellen sich die Abschnitte der Seite stützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4; Bauauftrag 2c-2, Abschnitt 2).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "behandlung",
+      "title": "Behandlung und Ihre Rolle darin",
+      "href": "behandlung.html",
+      "navLabel": "Behandlung",
+      "groupRootId": "behandlung",
+      "filterSelector": ".puk-site-offer",
+      "collapsedSections": [
+        "rollen",
+        "therapieformen",
+        "rueckschlaege",
+        "angebote"
+      ],
+      "status": "published",
+      "primaryTask": "Die eigene Rolle in der Behandlung klären: wer was beitragen kann, wie der Kontakt zum Behandlungsteam geht und wo es Angebote gibt",
+      "description": "Wer in der Behandlung was beitragen kann, Kontakt zum Behandlungsteam mit Musterbrief, Therapieformen und Medikamente, Unterbrüche und Rückschläge, Angebote im Kanton Zürich und was hilft, wenn kein Therapieplatz frei ist.",
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-be-rollen",
+          "section": "01 Rollen",
+          "sectionId": "rollen",
+          "goal": "Sehen, was die betroffene Person, Fachpersonen und Angehörige in der Behandlung beitragen können und was nicht zu erwarten ist",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Entscheid der Fachstelle 11.10.2026: drei Rollen nebeneinander als Text statt Abbildung (UMBAUPLAN: `relationship-map`). Grundlage ist die alte Klick-Grafik «Rollen im Therapiesystem»; alles steht sichtbar, ohne Auswahl-Schaltflächen und ohne figure. Je Rolle «Mögliche Beiträge» und «Nicht zu erwarten» als zwei kurze Listen (ul.bl-rollen über die volle Breite), drei Spalten ab 860 px Containerbreite, schmal untereinander (Bauauftrag 2c-2, Abschnitt 4 a).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-be-kontakt",
+          "section": "02 Behandlungsteam",
+          "sectionId": "kontakt",
+          "goal": "Drei Informationswege unterscheiden und die eigene Rolle gegenüber dem Behandlungsteam klären",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: die drei Informationswege als Begriffsliste, danach die Handlungsanleitung bei akuter Gefahr mit dem Verweis im Text und die vier Fragen sichtbar. Die Situationen des Bestands und der Musterbrief stehen in fünf Vertiefungen (Akkordeon), damit man nur die gesuchte öffnet (Bauauftrag 2c-2, Abschnitt 4). Die Vertiefung «Was kann ich in einem vereinbarten Kontakt mitteilen?» entfällt, ihr Beispielsatz steht im Begriff «Beobachtungen mitteilen» (Korrektur 2c-K, P2c2-F-14).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-be-therapieformen",
+          "section": "03 Therapieformen",
+          "sectionId": "therapieformen",
+          "goal": "Die wichtigsten Therapieformen, die drei Rahmen der Behandlung und die Regeln zu Medikamenten kennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer (Entscheid von Claude, Bauauftrag 2c-2, Abschnitt 1): Die Therapieformen stehen als Begriffsliste mit je einem Satz. Ein Vergleich nach Ziel, Form und Einbezug (UMBAUPLAN: `comparison`) entfällt, weil der Bestand je Form nur den Schwerpunkt nennt. Die drei Rahmen als Begriffsliste, «Begleiterkrankungen und Medikamente» als Zwischentitel, «Programme für Angehörige» als Vertiefung.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-be-rueckschlaege",
+          "section": "04 Rückschläge",
+          "sectionId": "rueckschlaege",
+          "goal": "Unterbrüche und Rückschläge einordnen, ohne den Verlauf bewerten zu müssen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: kurze Absätze, ein Beispielsatz (.puk-say), «Was Sie tun können» als Liste und ein Verweissatz auf `genesung` › `verlauf` (Bauauftrag 2c-2, Abschnitt 4).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-be-angebote",
+          "section": "05 Angebote",
+          "sectionId": "angebote",
+          "goal": "Angebote für Abklärung und Therapie im Kanton Zürich finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Angebotsliste mit Name, einem Satz, «Für: …» und Link auf die Website, ohne Telefonnummern und ohne E-Mail-Adressen (Entscheid der Fachstelle 11.10.2026, Bauauftrag 2c-2, Abschnitt 5).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-be-wartezeit",
+          "section": "06 Wartezeit",
+          "sectionId": "wartezeit",
+          "goal": "Wissen, was man klären kann, wenn kein Therapieplatz frei ist",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: vier nummerierte Schritte des Bestands; bei Schritt 4 die Handlungsanleitung bei akuter Gefahr mit dem Verweis im Text. «In anderen Kantonen» und «Eigene Unterstützung» als Verweissätze auf `unterstuetzung` (Bauauftrag 2c-2, Abschnitt 4).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-be-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Nachsehen, auf welche Quellen sich die Abschnitte der Seite stützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4; Bauauftrag 2c-2, Abschnitt 2).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "kommunizieren",
+      "title": "Zugewandt und klar sprechen",
+      "href": "kommunizieren.html",
+      "navLabel": null,
+      "groupRootId": "beziehungen",
+      "collapsedSections": [
+        "anerkennen",
+        "moment",
+        "beispiele",
+        "rollen"
+      ],
+      "status": "published",
+      "primaryTask": "Zuhören, anerkennen und die eigene Sicht behalten, auch wenn Gespräche kippen",
+      "description": "Zuhören und die eigene Sicht behalten, anerkennen ohne zuzustimmen, der richtige Moment, wenn Gespräche kippen, wenn Worte treffen, Beispiele und Kommunikation je nach Rolle.",
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-ko-zuhoeren",
+          "section": "01 Zuhören",
+          "sectionId": "zuhoeren",
+          "goal": "Erkennen, dass Zuhören und die eigene Sicht zusammen möglich sind",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Haltung und Erlaubnis als kurze Sätze und eine Liste mit drei Punkten. Die Bildunterschrift des Bestands steht als Satz im Text (Bauauftrag 2b, Abschnitt 3); das Personenbild entfällt. Die Fragen zum Innehalten stehen als Vertiefung (Akkordeon).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ko-tassen",
+          "section": "02 Anerkennen",
+          "sectionId": "anerkennen",
+          "goal": "Verstehen, dass Anerkennen nicht Zustimmen heisst",
+          "format": "illustration",
+          "statement": "Zwei gleich grosse Tassen Tee stehen nebeneinander auf einem Tisch. Über der linken steht der Satz «Du verstehst mich sowieso nicht.», über der rechten «Vielleicht verstehe ich nicht alles. Wenn du möchtest, sag mir, was dir gerade besonders wichtig ist.».",
+          "understood": "Wie Anerkennen ohne Zustimmen klingt: Auf einen harten Satz folgt eine Antwort, die das Gefühl ernst nimmt, ohne die Deutung zu übernehmen oder sich zu verteidigen. Zwei gleiche Tassen auf einem Tisch zeigen zwei gleichwertige Menschen im selben Gespräch.",
+          "source": "Eigene didaktische Darstellung nach den früheren Handouts «Zuhören ohne Zustimmen» und «Wenn Worte treffen»; Bezug: Fruzzetti (2006); Mason und Kreger (2014)",
+          "alternative": "Sätze als HTML-Text über der Zeichnung, schmal untereinander; Kurzbeschreibung über aria-describedby",
+          "reason": "Entscheid der Fachstelle 10.10.2026 (Bauauftrag 2b, Abschnitt 4 und Anhang A): Zeichnung «Zwei Tassen» im Stil von «Ein freier Abend» (Muster D), direkt nach dem ersten Absatz des Abschnitts. Die Transformationen der Skizze sind in feste Pfade umgerechnet. Seit Korrektur 2b-K (P2b-F-11 b) stehen die zwei Tassen näher zur Tischmitte, spiegelgleich zu x = 320: Tassenkörper bei x 190–258 und 382–450, dazwischen 124 Einheiten frei; Henkel aussen. Tisch und Bildausschnitt unverändert. Die sechs Stufen der Validierung stehen als gestaltete Liste ohne Treppenbild, keine Abbildung: alle sechs sichtbar mit Leitsatz, Ziel und einem Beispiel (Korrektur 2b-2, Abschnitt 3). Die Einzelheiten stehen unter dem Zwischentitel «Die sechs Stufen im Detail» in einer Vertiefung mit sechs Einträgen, einer je Stufe, damit man nur die gesuchte Stufe öffnet (Freigabe 2b, Abschnitt 3 a). «Mitgefühl heisst nicht übernehmen» ist ein eigener Zwischentitel (Freigabe 2b, Abschnitt 3 b).",
+          "resonance": "Wiedererkennen und Entlastung: Ich kann zuhören und anerkennen, ohne mich zu verteidigen und ohne zuzustimmen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ko-moment",
+          "section": "03 Der richtige Moment",
+          "sectionId": "moment",
+          "goal": "Einschätzen, wann ein Gespräch gerade möglich ist und wann eine Pause besser ist",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer (Bauauftrag 2b, Abschnitt 2e): «Pause statt Streit» mit den drei Sätzen der Anspannungskurve («Wir können sprechen.», «Es wird eng.», «Es ist gerade zu viel.») als Begriffsliste, mit Verweis auf die Anspannungskurve auf `verstehen` (Korrektur 2b-K, P2b-F-5); keine zweite Kurve. «Eher jetzt» und «Eher später» als zwei kurze Listen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ko-kippen",
+          "section": "04 Wenn es kippt",
+          "sectionId": "kippen",
+          "goal": "In einem kippenden Gespräch das Tempo senken, verbinden und die eigene Grenze schützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer (Bauauftrag 2b, Abschnitt 2e): die drei Schritte als nummerierte Liste; die Grenze in drei Teilen als Begriffsliste; der Beispiel-Dialog als Vertiefung (Akkordeon). Schutz bei Bedrohung oder Gewalt steht vor den Schritten, mit Verweis im Text.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ko-worte",
+          "section": "05 Wenn Worte treffen",
+          "sectionId": "worte",
+          "goal": "Harte Sätze einordnen, ohne sie zu übernehmen, und ein Sicherheitssignal davon trennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: vier Aussagen mit möglichen Antworten als Begriffsliste. Das Sicherheitssignal (Suizid) steht sichtbar unter einer eigenen Zwischenüberschrift, mit Verweis im Text und Verweissatz auf `krise`.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ko-beispiele",
+          "section": "06 Beispiele",
+          "sectionId": "beispiele",
+          "goal": "Sehen, wie zugewandte und klare Sätze im Alltag klingen können",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Formulierungsbeispiele mit der Komponente `.puk-say` (Profil). Drei Beispiele ersetzen die interaktiven Szenarien von `/uebungen` (Entscheid der Fachstelle 08.10.2026); die übrigen Szenarien entfallen im Abgleich. Typische schwierige Situationen als Begriffsliste.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ko-rollen",
+          "section": "07 Je nach Rolle",
+          "sectionId": "rollen",
+          "goal": "Erkennen, dass die eigene Rolle Ton und Belastung im Gespräch mitprägt",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: drei Rollen als Vertiefung (Akkordeon), wie im Bestand.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ko-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Nachsehen, auf welche Quellen sich die Abschnitte der Seite stützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "krise",
+      "title": "Krisen begleiten",
+      "href": "krise.html",
+      "navLabel": null,
+      "groupRootId": "beziehungen",
+      "showInSectionNav": false,
+      "status": "published",
+      "primaryTask": "Sich in Krisen schützen, passende Hilfe holen und die eigenen Möglichkeiten kennen",
+      "description": "Wenn Belastung zunimmt, während einer Krise, was Sie sagen können, Suizidgedanken ansprechen, was Sie vermeiden sollten, nach der Krise und wenn Belastung oder Gefahr bleibt.",
+      "searchAliases": [
+        "Notfall Polizei Lebensgefahr unmittelbare Gefahr akute Hilfe Suizid Selbstmord Selbsttötung Selbstverletzung Drohung Krise Eskalation"
+      ],
+      "sectionSearchAliases": {
+        "krise-schnell": [
+          "Notfall Polizei Lebensgefahr unmittelbare Gefahr akute Hilfe"
+        ],
+        "suizid-title": [
+          "Suizid Selbstmord Selbsttötung Selbstverletzung"
+        ]
+      },
+      "sensitiveTopics": [
+        "akute-krise",
+        "selbstgefaehrdung",
+        "gewalt"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-kr-belastung",
+          "section": "01 Belastung",
+          "sectionId": "belastung",
+          "goal": "Einordnen, wie weit die eigenen Mittel gerade tragen, ohne daraus eine Sicherheitsbewertung zu machen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Entscheid der Fachstelle 10.10.2026 (Bauauftrag 2b): kein Bild. Die drei Bereiche stehen als kurze Liste (Begriffsliste) je mit «Eher hilfreich». Keine Ampel, keine Skala und keine Stufen als Bild, weil die Bereiche keine Sicherheitsbewertung sind; das steht sichtbar im Text.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-kr-waehrend",
+          "section": "02 Während der Krise",
+          "sectionId": "waehrend",
+          "goal": "In einer Krise Sicherheit vorziehen und mit wenigen Worten bleiben",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Handlungsanleitung «Sicherheit prüfen» im Wortlaut des Bestands, der Verweis im Text folgt direkt danach. Drei Gesprächsvorschläge als Begriffsliste.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-kr-sagen",
+          "section": "03 Was Sie sagen können",
+          "sectionId": "sagen",
+          "goal": "Kurze Sätze für Präsenz, Anerkennung, Hoffnung und eine Grenze zur Hand haben",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Handlungsanleitung für Bedrohung am Anfang, der Verweis im Text folgt direkt danach (Korrektur 2b-K, P2b-F-1). Beispielsätze als Begriffsliste. Wenn ein Gespräch kippt: der Standardsatz und die Ausstiegssätze aus dem Handout «Krisenkommunikation»; die Schritte sind auf `kommunizieren` verlinkt statt als zweite Schrittfolge wiederholt (P2b-F-8), ebenso Anerkennen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-kr-suizid",
+          "section": "04 Suizidgedanken",
+          "sectionId": "suizid",
+          "goal": "Suizidgedanken direkt ansprechen und professionelle Einschätzung holen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Handlungsanleitung mit Verweis im Text (Profilentscheid 09.10.2026), Wortlaut wie auf `verstehen`, wo dieselbe Aussage steht.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-kr-vermeiden",
+          "section": "05 Was Sie vermeiden",
+          "sectionId": "vermeiden",
+          "goal": "Erkennen, was Sie in einer Krise vermeiden sollten",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: kurze Liste wie im Bestand.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-kr-danach",
+          "section": "06 Nach der Krise",
+          "sectionId": "danach",
+          "goal": "Nach einer Krise Erholung, eigene Belastung und spätere Klärung ernst nehmen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Sicherheitshinweis als Handlungsanleitung mit Verweis im Text vor den Vertiefungen (Korrektur 2b-K, P2b-F-1), «Für die betroffene Person» und «Für Sie» im Lesefluss; Nachbesprechung, Vertrauen, drei mögliche Anliegen und Früherkennung als Vertiefung (Akkordeon mit vier Einträgen).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-kr-bleibt",
+          "section": "07 Wenn Gefahr bleibt",
+          "sectionId": "bleibt",
+          "goal": "Hinweise erkennen, dass Belastung oder Gefahr bestehen bleibt, und Kinder schützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: vier Hinweise als Liste und Handlungsanleitung mit Verweis im Text. Für Kinder bleibt der unmittelbar nötige Schutzsatz sichtbar; Erklärung, Betreuungsplan und weitere Unterstützung stehen kanonisch auf `kinder`.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-kr-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Nachsehen, auf welche Quellen sich die Abschnitte der Seite stützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "kinder",
+      "title": "Wenn Kinder mitbetroffen sind",
+      "href": "kinder.html",
+      "navLabel": null,
+      "groupRootId": "beziehungen",
+      "status": "published",
+      "primaryTask": "Kindern psychische Belastung verständlich erklären, Betreuung organisieren und sie bei Eskalation oder Gefahr schützen",
+      "description": "Orientierung für Angehörige, wenn Kinder psychische Belastung oder Konflikte miterleben: erklären, Alltag und Betreuung organisieren, bei Eskalation schützen und Unterstützung finden.",
+      "searchAliases": [
+        "Kind Kinder Jugendliche Tochter Sohn Geschwister Eltern Familie Betreuung Kindesschutz Kindeswohl KESB Meldepflicht schulpsychologischer Dienst Mütterberatung Väterberatung"
+      ],
+      "sectionSearchAliases": {
+        "eskalation-title": [
+          "Meldung Gefährdungsmeldung KESB Meldepflicht Gewalt Notfall akute Gefahr"
+        ]
+      },
+      "sensitiveTopics": [
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-ki-schnell",
+          "section": "Nächste Schritte",
+          "sectionId": "schnell",
+          "goal": "Die drei unmittelbar wichtigsten Schritte kennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Kurze geordnete Liste: entlastende Erklärung, Betreuung und Schutz lassen sich ohne zusätzliche Darstellung erfassen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ki-erklaeren",
+          "section": "01 Erklären",
+          "sectionId": "erklaeren",
+          "goal": "Kindern die Situation altersgerecht erklären, ohne ihnen Verantwortung zu übertragen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Beispielsätze und zwei Altersgruppen sind als Text eindeutiger als eine Darstellung.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ki-alltag",
+          "section": "02 Alltag und Betreuung",
+          "sectionId": "alltag",
+          "goal": "Eine konkrete Betreuungskette vorbereiten",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Checkliste der zu klärenden Angaben; keine feste Reihenfolge oder Beziehung, die eine Grafik erklären müsste.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ki-eskalation",
+          "section": "03 Schutz",
+          "sectionId": "eskalation",
+          "goal": "Alltagsbelastung, wiederholte Eskalation und akute Gefahr unterscheiden und Schutz vorziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Die drei Situationen werden sprachlich abgegrenzt; keine Ampel oder Skala, weil daraus keine Sicherheitsbewertung entstehen darf.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ki-hilfe",
+          "section": "04 Unterstützung",
+          "sectionId": "hilfe",
+          "goal": "Mögliche Unterstützung für das Kind und für Angehörige kennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Kurze Liste möglicher fachlicher Zugänge und zwei direkte Übergänge.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ki-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Quellen zu Erklärung, Betreuung und Kindesschutz nachvollziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Kurze Quellenliste mit Angabe der verwendeten Abschnitte.",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "selbstfuersorge",
+      "title": "Auf sich achten",
+      "href": "selbstfuersorge.html",
+      "navLabel": null,
+      "groupRootId": "unterstuetzung",
+      "collapsedSections": [
+        "kraft",
+        "unterstuetzung",
+        "akzeptanz",
+        "beratung"
+      ],
+      "status": "published",
+      "primaryTask": "Eigene Belastung, Bedürfnisse und erreichbare Unterstützung ernst nehmen",
+      "description": "Was Ihnen erlaubt bleibt, was Kraft kostet und was entlastet, Warnsignale für Überlastung, kurze Übungen, eigene Unterstützung, radikale Akzeptanz und Beratung.",
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-sf-leben",
+          "section": "01 Ihr Leben",
+          "sectionId": "eigenes-leben",
+          "goal": "Eigene Bedürfnisse als berechtigt erkennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Die Erlaubnis-Sätze sind eine Liste zum Auswählen; eine Karte als Bild würde nur die Liste umrahmen. Die Bildunterschrift des Bestands steht als Satz im Text. Korrektur 2a-K: «Je nach Ihrer Situation» steht als Akkordeon (Varianten für einzelne Situationen, K-S-b3).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-sf-abend",
+          "section": "02 Kraft",
+          "sectionId": "kraft",
+          "goal": "Erkennen, dass ständige Bereitschaft Kraft kosten kann, auch wenn nichts passiert",
+          "format": "illustration",
+          "statement": "Tisch am Abend mit einer Tasse Tee, einem Mobiltelefon und einem geschlossenen Buch; im Fenster steht der Mond. Über dem Telefon der Gedanke «Vielleicht kommt gleich eine Nachricht.», über dem Buch «Eigentlich wollte ich lesen.».",
+          "understood": "Was ständige Erreichbarkeit im Alltag heisst: Zwei Gedanken am selben Abend zeigen, dass ein Teil der Aufmerksamkeit beim Telefon bleibt, ohne dass etwas geschieht.",
+          "source": "Eigene didaktische Darstellung; Bezug: früheres Handout «Energie-Konto»",
+          "alternative": "Sätze als HTML-Text über der Zeichnung, schmal untereinander; Kurzbeschreibung über aria-describedby",
+          "reason": "Entscheid der Fachstelle 10.10.2026 (Bauauftrag 2a): Zeichnung und Satzpaar aus dem Profilbeispiel (Muster D), Kernaussage und Kurztext abgesichert wie der Bestand. Ersetzt das geplante Spannungsfeld (Bildsprache-Audit: eine Waage kann nach Urteil aussehen). Das Energie-Konto steht als Text, ohne Konto- oder Bilanzbild. Korrektur 2a-K: steht direkt nach dem ersten Absatz von `kraft` (P2a-V-1); Gedanke «Vielleicht kommt gleich eine Nachricht.» (P2a-T-2); Zeichnung unverändert (P2a-V-3). «Langfristig für sich sorgen» steht in diesem Abschnitt als Akkordeon (K-S-b2).",
+          "resonance": "Wiedererkennen und Erlaubnis: So fühlt sich ständige Bereitschaft an, und ich darf meine Erreichbarkeit begrenzen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-sf-warnsignale",
+          "section": "03 Warnsignale",
+          "sectionId": "warnsignale",
+          "goal": "Anzeichen von Überlastung ernst nehmen und Unterstützung früh nutzen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: fünf Bereiche als Liste ohne Stufen; keine Skala, keine Ampel und kein Selbsttest (Muster J: nie als Selbstdiagnose-Skala).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-sf-zu-viel",
+          "section": "04 Wenn es zu viel ist",
+          "sectionId": "zu-viel",
+          "goal": "Eine kurze Übung kennen und wissen, dass Schutz vorgeht",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: STOPP als nummerierte Liste im Wortlaut der Schritte, ohne Prozesspfad (Bildsprache-Audit: wieder ein Stepper wie bei DEAR). Atem- und Sinnesübung als Text.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-sf-unterstuetzung",
+          "section": "05 Unterstützung",
+          "sectionId": "unterstuetzung",
+          "goal": "Eigene Unterstützung als berechtigt erkennen und einen Schritt wählen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: vier unabhängige Möglichkeiten mit Beispielsatz. Die Sauerstoffmaske steht nur als Satz, nicht als Bild (Bildsprache-Audit: Ein Flugzeugnotfall ist ein Krisenbild).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-sf-akzeptanz",
+          "section": "06 Akzeptanz",
+          "sectionId": "akzeptanz",
+          "goal": "Radikale Akzeptanz als freiwillige Haltung kennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: zwei kurze Listen und eine Übung in vier Schritten als Vertiefung (Akkordeon, K-S-b4); eine Figur würde die Listen nur umrahmen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-sf-beratung",
+          "section": "07 Beratung",
+          "sectionId": "beratung",
+          "goal": "Eigene Beratung und Austausch als Möglichkeit kennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: kurze Hinweise und Verweis auf `index` (`beratung`); weitere Angebote stehen auf `unterstuetzung`, verlinkt beim Begriff «Austausch mit anderen Angehörigen» (Freigabe 2c und 3-1, P2c-F-16).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-sf-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Nachsehen, auf welche Quellen sich die Abschnitte der Seite stützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "genesung",
+      "title": "Genesung",
+      "href": "genesung.html",
+      "navLabel": null,
+      "groupRootId": "verstehen",
+      "status": "published",
+      "primaryTask": "Hoffnung realistisch einordnen: unterschiedliche Verläufe verstehen und den eigenen Einfluss begrenzen",
+      "description": "Was die Forschung zu Genesung zeigt, was Remission, Alltag und persönliche Recovery bedeuten, warum Veränderung unterschiedlich verläuft, was Genesung beeinflussen kann und welche Unterstützung freiwillig ist.",
+      "sensitiveTopics": [],
+      "visualPlan": [
+        {
+          "id": "v-ge-forschung",
+          "section": "01 Forschung",
+          "sectionId": "forschung",
+          "goal": "Die Zahlen der Langzeitstudie realistisch einordnen: was sie zeigen und was nicht",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer (Entscheid von Claude, Bauauftrag 2c-1, Abschnitt 1): Datenbotschaft des Profils ohne Diagramm. Kernaussage zuerst, danach die drei Werte (93 %, 50 %, 10 Jahre) als hervorgehobene Begriffsliste mit Erklärung, direkt dabei die Stichprobe und «Was die Zahlen nicht sagen». Ein Balkendiagramm würde zwei Werte vergleichen, die Verschiedenes messen (Remission und Recovery), und die Einschränkungen von den Zahlen trennen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ge-begriffe",
+          "section": "02 Begriffe",
+          "sectionId": "begriffe",
+          "goal": "Remission, Alltag und Teilhabe und persönliche Recovery unterscheiden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: drei Begriffe als Begriffsliste nebeneinander, je mit Erklärung (Bauauftrag 2c-1, Abschnitt 3). Ein Vergleich (Muster E) würde gleiche Merkmale je Begriff verlangen, die Begriffe beschreiben aber verschiedene Seiten einer Veränderung. «Zum Begriff «Heilung»» als Vertiefung (Akkordeon).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ge-trieb",
+          "section": "03 Verläufe",
+          "sectionId": "verlauf",
+          "goal": "Verstehen, dass eine schwierigere Phase nicht alles Erreichte aufhebt",
+          "format": "illustration",
+          "statement": "Eine Topfpflanze steht auf einem Fenstersims. Ein Blatt ist abgefallen und liegt am Topf, oben wächst ein neuer, heller Trieb. Über der Zeichnung stehen zwei Haltungen, bezeichnet wie die Gegenüberstellung darunter: «Weniger hilfreich» mit «Eine schwierigere Phase entwertet alles.» und «Tragfähiger» mit «Schwierigere Phasen kommen vor und müssen nicht alles kippen.».",
+          "understood": "Dass Rückschritt und neues Wachsen zugleich da sein können: Das abgefallene Blatt und der neue Trieb an derselben Pflanze zeigen auf einen Blick, dass eine schwierigere Phase das Erreichte nicht aufhebt.",
+          "source": "Eigene didaktische Darstellung nach den früheren Handouts «Veränderung verläuft unterschiedlich» und «Der Garten»; Bezug: Zanarini et al. (2012); NICE CG78 (2009)",
+          "alternative": "Sätze als HTML-Text über der Zeichnung, schmal untereinander; Kurzbeschreibung über aria-describedby",
+          "reason": "Entscheid der Fachstelle 11.10.2026 (Bauauftrag 2c-1, Abschnitt 4 und Anhang A): Zeichnung «Ein neuer Trieb» im Stil von «Zwei Tassen» (Muster D), direkt nach dem ersten Absatz von `verlauf`. Korrektur 2c-K (P2c2-F-2 und P2c2-V-3; P2c-T-1, P2c2-T-1): Die Giesskanne ist entfernt. Das abgefallene Blatt liegt direkt unter der Pflanze, an den Topf gelehnt, und ist etwas grösser; die zwei Blätter des neuen Triebs sind heller als die übrigen (`puk-vis-scene__paper` statt `puk-vis-scene__soft`). Die übrigen Pfade sind wie in der Skizze. Bildausschnitt `60 44 420 214`, enger und mit der Pflanze in der Mitte (2c-1: `60 44 530 214`, Skizze: `0 40 640 220`). Die Zahlen der Langzeitstudie stehen als hervorgehobener Text ohne Diagramm (`forschung`, Entscheid von Claude im Bauauftrag); der Garten-Text steht auf `rolle` › `anbieten` und ist verlinkt, nicht wiederholt. Freigabe 2c und 3-1 (NK2c-2): In der Szene hat der Satz unter «Weniger hilfreich» dieselbe graue Linie wie «Weniger hilfreich» in der Gegenüberstellung `.puk-say` desselben Abschnitts (Regel in `borderline.css`); Wortlaut, Bezeichnungen, Zeichnung und Kurzbeschreibung unverändert.",
+          "resonance": "Entlastung und realistische Hoffnung: Ein Rückschritt macht nicht alles zunichte.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ge-einfluesse",
+          "section": "04 Einflüsse",
+          "sectionId": "einfluesse",
+          "goal": "Erkennen, dass Genesung von mehreren Bereichen abhängt, ohne Reihenfolge und ohne Formel",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: fünf Bereiche als Begriffsliste, ausdrücklich ohne Reihenfolge und ohne Formel (Bauauftrag 2c-1, Abschnitt 3). Eine Figur mit fünf gleichen Feldern wäre ein Kartenraster und könnte ein Modell nahelegen, das die Bereiche nicht sind.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ge-freiwillig",
+          "section": "05 Ihre Unterstützung",
+          "sectionId": "freiwillig",
+          "goal": "Freiwillige Unterstützung von Verantwortung für Genesung unterscheiden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: kurz, mit Verweis auf `rolle` › `anbieten` (Verlinken statt wiederholen); die Selbstfrage, der Satz zur eigenen Gesundheit und die Hinweise zu Beratung und Auskünften stehen sichtbar. Eltern Minderjähriger und Beistandschaft als Vertiefung (Akkordeon).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ge-quellen",
+          "section": "Quellen",
+          "sectionId": "quellen",
+          "goal": "Nachsehen, auf welche Quellen sich die Abschnitte der Seite stützen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4; Bauauftrag 2c-1, Abschnitt 2).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "unterstuetzung",
+      "title": "Unterstützung finden",
+      "href": "unterstuetzung.html",
+      "navLabel": "Eigene Entlastung",
+      "groupRootId": "unterstuetzung",
+      "status": "published",
+      "primaryTask": "Beratung, Austausch mit anderen Angehörigen und Selbsthilfe finden",
+      "description": "Beratung für Angehörige bei der Fachstelle Angehörigenarbeit der PUK und bei Pro Mente Sana, Austausch mit anderen Angehörigen, Selbsthilfegruppen und Hinweise für andere Kantone.",
+      "sensitiveTopics": [
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-un-beratung",
+          "section": "01 Beratung",
+          "sectionId": "beratung",
+          "goal": "Passende Beratung für Angehörige finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Angebote mit Name, kurzer Beschreibung und Link auf die offizielle Website (Muster «Kontakt und Übergabe» ohne Telefonnummern, Bauauftrag 2c-1, Abschnitt 5). Kontakt und Bedingungen der Fachstelle sind auf `index` › `beratung` verlinkt; wiederholt ist nur, dass die Beratung der Fachstelle nichts kostet und nicht an Krankenkassen weitergegeben wird (P2c-F-14).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-un-austausch",
+          "section": "02 Austausch",
+          "sectionId": "austausch",
+          "goal": "Organisationen für den Austausch mit anderen Angehörigen kennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: zwei Organisationen und die Gruppe für Eltern von Jugendlichen an der PUK, je mit kurzer Beschreibung und Link auf die Website, ohne Telefonnummern, HelpLine-Zeiten und Termine (Bauauftrag 2c-1, Abschnitt 5; Gruppe für Eltern seit Bauauftrag 2c-2, Abschnitt 6).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-un-selbsthilfe",
+          "section": "03 Selbsthilfegruppen",
+          "sectionId": "selbsthilfe",
+          "goal": "Den Weg zu einer Selbsthilfegruppe kennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: eine Vermittlungsstelle mit kurzer Beschreibung und Link auf die Website.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-un-kantone",
+          "section": "04 Andere Kantone",
+          "sectionId": "kantone",
+          "goal": "Auch ausserhalb des Kantons Zürich Unterstützung finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: ein kurzer Hinweis aus dem Bestand (Regional-Hinweis).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-un-buecher",
+          "section": "05 Bücher",
+          "sectionId": "buecher",
+          "goal": "Die getrennte Buchauswahl öffnen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Kurzer Übergang zur eigenständigen, nach Zielgruppen geordneten Buchauswahl. Die Trennung reduziert Seitenlänge und erleichtert einen gezielten Einstieg.",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "buecher",
+      "title": "Bücher für Angehörige",
+      "href": "buecher.html",
+      "navLabel": null,
+      "groupRootId": "unterstuetzung",
+      "status": "published",
+      "primaryTask": "Ein passendes Buch nach Zielgruppe und Bedarf finden",
+      "description": "Eingeordnete Buchauswahl für Partnerinnen und Partner, Eltern, Kinder und weitere Angehörige, ergänzt um kritisch zu lesende Titel.",
+      "sensitiveTopics": [
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-bu-auswahl",
+          "section": "Auswahl nach Zielgruppe",
+          "sectionId": "auswahl",
+          "goal": "Ein passendes Buch nach Zielgruppe finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Eigenständige, aufklappbare Auswahl nach Zielgruppe; Angaben je Titel und gesonderte kritische Einordnung historisch einflussreicher Titel.",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "fragen",
+      "title": "Fragen und Nachschlagen",
+      "href": "fragen.html",
+      "navLabel": "Fragen & Nachschlagen",
+      "groupRootId": "fragen",
+      "status": "published",
+      "primaryTask": "Eine kurze Antwort auf eine häufige Frage finden und zur ausführlichen Stelle weitergehen",
+      "description": "Kurze Antworten auf häufige Fragen sowie Einstiege in Website-Suche, verständliche Begriffserklärungen und Quellen.",
+      "searchAliases": [
+        "Einweisung fürsorgerische Unterbringung FU Medikamente Heilung erblich Schuld Trennung Eifersucht Dolmetschen Übersetzung"
+      ],
+      "sectionSearchAliases": {
+        "f-einweisung": [
+          "Einweisung fürsorgerische Unterbringung FU"
+        ],
+        "f-sprache": [
+          "Dolmetschen Dolmetscher Übersetzung andere Sprache"
+        ]
+      },
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "zwang",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-fr-nachschlagen",
+          "section": "Nachschlagen",
+          "sectionId": "nachschlagen",
+          "goal": "Zwischen Suche, Begriffserklärung und Quellen wählen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Drei klar benannte Zugänge als kurze Linkliste; keine Darstellung nötig.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-fr-diagnose",
+          "section": "01 Diagnose",
+          "sectionId": "diagnose",
+          "goal": "Fragen zur Diagnose kurz beantwortet finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Frage und kurze Antwort mit Verweis auf die ausführliche Stelle. Keine Beziehung und kein Ablauf, den eine Darstellung erklären müsste. Der Weg zur Abklärung steht als nummerierte Schritte auf `diagnose`.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-fr-verlauf",
+          "section": "02 Ursachen und Verlauf",
+          "sectionId": "verlauf",
+          "goal": "Fragen zu Ursachen, Begleiterkrankungen und Verlauf kurz beantwortet finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: kurze Antworten mit Verweis. Die Darstellungen zum Verlauf stehen auf `genesung` (Abbildung «Ein neuer Trieb»), hier nicht wiederholt (Verbinden statt doppeln).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-fr-gespraeche",
+          "section": "03 Gespräche",
+          "sectionId": "gespraeche",
+          "goal": "Fragen zu Gesprächen und Konflikten kurz beantwortet finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: kurze Antworten mit Beispielsätzen und Verweis. Die Darstellungen zu Gesprächen stehen auf `kommunizieren` und `verstehen`.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-fr-behandlung",
+          "section": "04 Behandlung",
+          "sectionId": "behandlung",
+          "goal": "Fragen zu Therapie, Medikamenten und Einweisung kurz beantwortet finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: kurze Antworten mit Verweis. Die Rollen in der Behandlung stehen als Textdarstellung auf `behandlung`.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-fr-schutz",
+          "section": "05 Schutz",
+          "sectionId": "schutz",
+          "goal": "Fragen zu Schutz, Kindern und Trennung kurz beantwortet finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Handlungsanleitungen für akute Lagen stehen sichtbar im Fliesstext, nicht in einer Darstellung oder Vertiefung.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-fr-leben",
+          "section": "06 Ihr Leben",
+          "sectionId": "eigenes-leben",
+          "goal": "Fragen zum eigenen Leben und zum Umfeld kurz beantwortet finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: kurze Antworten mit Beispielsätzen und Verweis.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-fr-weitere",
+          "section": "07 Weitere Fragen",
+          "sectionId": "weitere",
+          "goal": "Wissen, wo es weitere Antworten gibt",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: zwei Verweise.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-fr-quellen",
+          "section": "Quellen zu dieser Seite",
+          "sectionId": "quellen",
+          "goal": "Quellen der Antworten nachvollziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Liste der Quellen mit Abschnitten (Akkordeon des Profils wie auf den übrigen Seiten).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "begriffe",
+      "title": "Begriffe verständlich erklärt",
+      "href": "begriffe.html",
+      "navLabel": null,
+      "groupRootId": "fragen",
+      "filterSelector": ".puk-site-glossary",
+      "status": "published",
+      "primaryTask": "Einen Fachbegriff schnell nachschlagen und im Kontext verstehen",
+      "description": "Zentrale Fachbegriffe mit vereinfachten Erklärungen, Beispielen und Verweisen auf die passenden Themenseiten.",
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-be-begriffe",
+          "section": "Begriffe von A bis Z",
+          "sectionId": "begriffe",
+          "goal": "Einen Fachbegriff verstehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Jeder Begriff ist einzeln aufklappbar und enthält Erklärung, Beispiel und thematischen Verweis. Das reduziert die sichtbare Informationsmenge beim Nachschlagen.",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "quellen",
+      "title": "Quellen",
+      "href": "quellen.html",
+      "navLabel": null,
+      "groupRootId": "fragen",
+      "filterSelector": ".puk-longform__section:not(#einordnung)",
+      "status": "published",
+      "primaryTask": "Eine Quelle der Website nachvollziehen und fachlich einordnen",
+      "description": "Vollständige Quellenliste mit Einordnung, nach Funktion geordnet.",
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-qu-einordnung",
+          "section": "01 Einordnung",
+          "sectionId": "einordnung",
+          "goal": "Wissen, wie die Quellen eingeordnet sind",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: vier kurze Absätze.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-qu-forschung",
+          "section": "02 Forschung",
+          "sectionId": "forschung",
+          "goal": "Quellen dieser Gruppe nachvollziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Literaturliste mit Angabe, kurzer Einordnung und den Seiten, auf denen die Quelle verwendet wird.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-qu-therapie",
+          "section": "03 Therapie",
+          "sectionId": "therapie",
+          "goal": "Quellen dieser Gruppe nachvollziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Literaturliste mit Angabe, kurzer Einordnung und den Seiten, auf denen die Quelle verwendet wird.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-qu-angehoerige",
+          "section": "04 Angehörige",
+          "sectionId": "angehoerige",
+          "goal": "Quellen dieser Gruppe nachvollziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Literaturliste mit Angabe, kurzer Einordnung und den Seiten, auf denen die Quelle verwendet wird.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-qu-diagnostik",
+          "section": "05 Diagnostik",
+          "sectionId": "diagnostik",
+          "goal": "Quellen dieser Gruppe nachvollziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Literaturliste mit Angabe, kurzer Einordnung und den Seiten, auf denen die Quelle verwendet wird.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-qu-versorgung",
+          "section": "06 Versorgung",
+          "sectionId": "versorgung",
+          "goal": "Quellen dieser Gruppe nachvollziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Literaturliste mit Angabe, kurzer Einordnung und den Seiten, auf denen die Quelle verwendet wird.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-qu-leitlinien",
+          "section": "07 Leitlinien",
+          "sectionId": "leitlinien",
+          "goal": "Quellen dieser Gruppe nachvollziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Literaturliste mit Angabe, kurzer Einordnung und den Seiten, auf denen die Quelle verwendet wird.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-qu-schweiz",
+          "section": "08 Schweiz",
+          "sectionId": "schweiz",
+          "goal": "Quellen dieser Gruppe nachvollziehen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Literaturliste mit Angabe, kurzer Einordnung und den Seiten, auf denen die Quelle verwendet wird.",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "suche",
+      "title": "Website durchsuchen",
+      "href": "suche.html",
+      "navLabel": null,
+      "groupRootId": "fragen",
+      "status": "published",
+      "primaryTask": "Mit eigenen Suchwörtern einen passenden Abschnitt oder eine Themenseite finden",
+      "description": "Seiten und Abschnitte der Orientierungshilfe lokal nach eigenen Suchwörtern und alternativen Begriffen durchsuchen.",
+      "sensitiveTopics": [
+        "selbstgefaehrdung",
+        "gewalt",
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-su-suche",
+          "section": "Seitensuche",
+          "sectionId": "seitensuche",
+          "goal": "Mit eigenen Suchwörtern eine passende Themenseite finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Eine lokale Abschnittssuche führt möglichst direkt zur Fundstelle. Ohne JavaScript bleibt ein vollständiges Verzeichnis der Themenseiten sichtbar; Eingaben werden nicht übertragen oder gespeichert.",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "ueber",
+      "title": "Über diese Website",
+      "href": "ueber.html",
+      "navLabel": null,
+      "groupRootId": "ueber",
+      "status": "published",
+      "primaryTask": "Wissen, warum es die Website gibt, nach welchen Grundsätzen die Texte geschrieben sind und wie man eine Rückmeldung gibt",
+      "description": "Warum es die Website gibt, Grundsätze der Texte, Barrierefreiheit und Rückmeldungen an die Fachstelle.",
+      "sensitiveTopics": [
+        "akute-krise"
+      ],
+      "visualPlan": [
+        {
+          "id": "v-ue-warum",
+          "section": "01 Warum",
+          "sectionId": "warum",
+          "goal": "Wissen, wozu die Website da ist",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: drei kurze Absätze.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ue-grundsaetze",
+          "section": "02 Grundsätze",
+          "sectionId": "grundsaetze",
+          "goal": "Die Grundsätze der Texte kennen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: vier Grundsätze als Begriffsliste, gleichwertig und ohne Beziehung untereinander.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ue-barrierefreiheit",
+          "section": "03 Barrierefreiheit",
+          "sectionId": "barrierefreiheit",
+          "goal": "Wissen, wie zugänglich die Website ist und wo es Einschränkungen gibt",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Ziel, Liste und bekannte Einschränkungen.",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ue-rueckmeldung",
+          "section": "04 Rückmeldung",
+          "sectionId": "rueckmeldung",
+          "goal": "Eine Rückmeldung geben können",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: Kontakt und kurze Hinweise.",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "impressum-datenschutz",
+      "title": "Impressum und Datenschutz",
+      "href": "impressum-datenschutz.html",
+      "navLabel": null,
+      "groupRootId": "ueber",
+      "status": "published",
+      "primaryTask": "Wissen, wer die Website herausgibt und welche Daten beim Besuch anfallen",
+      "description": "Anbieterin, fachliche Redaktion, Kontakt und Datenschutz: keine Cookies, keine Auswertung, beim Lesen keine Daten an andere Anbieter als den Dienst, der die Website ausliefert.",
+      "sensitiveTopics": [],
+      "visualPlan": [
+        {
+          "id": "v-imp-impressum",
+          "section": "Impressum",
+          "sectionId": "impressum",
+          "goal": "Anbieterin, fachliche Redaktion und Kontakt finden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: wenige Angaben, keine Beziehung, die eine Darstellung erklären müsste (wie Vorlage des Starters).",
+          "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-imp-datenschutz",
+          "section": "Datenschutz",
+          "sectionId": "datenschutz",
+          "goal": "Wissen, welche Daten anfallen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: einzelne Angaben zu Daten, kein Ablauf und keine Beziehung (wie Vorlage des Starters).",
+          "approvalStatus": "freigegeben"
+        }
+      ]
+    },
+    {
+      "id": "404",
+      "role": "not-found",
+      "title": "Seite nicht gefunden",
+      "href": "404.html",
+      "navLabel": null,
+      "status": "published",
+      "primaryTask": "Von einer nicht vorhandenen Adresse zur Startseite zurückfinden",
+      "description": "Diese Seite gibt es nicht. Von der Startseite aus erreichen Sie alle Seiten.",
+      "sensitiveTopics": [],
+      "visualPlan": [
+        {
+          "id": "v-404-text",
+          "section": "Seite nicht gefunden",
+          "goal": "Zur Startseite zurückfinden",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer: ein Hinweis und ein Link, nichts zu erklären.",
+          "approvalStatus": "entfällt"
+        }
+      ]
+    }
+  ],
+  "siteUrl": "https://borderline-angehoerige.netlify.app",
+  "deepLinkFocus": true,
+  "interactionScript": "js/interaktion.js"
+}

@@ -1,0 +1,25 @@
+name: Standalone authoring verification
+on:
+  pull_request:
+    paths:
+      - 'authoring/**'
+      - 'site/**'
+      - '.github/workflows/verify-authoring.yml'
+  workflow_dispatch:
+jobs:
+  build-and-compare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Produce site and verify all generated assets against committed release
+        run: node authoring/tools/build.mjs --production --verify-site
+      - name: Diagnose mismatch on failure
+        if: failure()
+        run: |
+          diff -u site/index.html dist/site/index.html | head -90 || true
+          diff -u site/404.html dist/site/404.html | head -65 || true

@@ -1,0 +1,30 @@
+{
+  "schema": "website-audit-v1.2",
+  "lauf_id": "2026-10-13-delta-visual-r4-22",
+  "modus": "delta",
+  "status": "lokal_technisch_verifiziert_freigaben_offen",
+  "projekt": {
+    "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
+    "branch": "codex/pendenzenbereinigung-2026-10-13",
+    "basis": "e7a11453a7a3dea1298ff9f98c6b9733af3f29a4",
+    "gepruefter_arbeitsstand": "nicht commitierter lokaler Arbeitsbaum auf e7a11453a7a3dea1298ff9f98c6b9733af3f29a4",
+    "buildmarker": "r4-22"
+  },
+  "deployment": {
+    "produktion": "unverändert r4-21",
+    "preview": null,
+    "r4_22": "nur lokaler Draft-Build; Produktionsbuild erwartungsgemäss blockiert"
+  },
+  "tests": {
+    "draft_build": "22 Seiten; 0 Blocker; 4 erwartete Freigabehinweise",
+    "production_gate": "4 erwartete Blocker: v-vs-eisberg, v-be-kontakt, v-ki-alltag, v-ge-einfluesse",
+    "browsermatrix": "7 Seiten × 5 Breiten × 2 Schriftgrössen × 2 Zustände; 140 Layoutprüfungen",
+    "axe": "14 Chromium-Läufe; 0 erkannte WCAG-2.2-AA-Verstösse",
+    "laufzeitfehler": 0,
+    "horizontaler_ueberlauf": 0,
+    "reale_screenreader": false,
+    "reale_geraete": false,
+    "firefox_safari": false,
+    "reale_nutzende": false
+  }
+}

@@ -1,8 +1,8 @@
 {
-  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4. Lokale Änderungen ab r4-19 sind in diesem Repository dokumentiert; das PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände. r4-20 ergänzt die Phrasenerkennung der lokalen Suche nach dem Produktions-Smoke-Test vom 13.10.2026. r4-21 enthält das nachgeprüfte P3-Paket für Sprache und visuelle Didaktik.",
+  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4. Lokale Änderungen ab r4-19 sind in diesem Repository dokumentiert; das PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände. r4-20 ergänzt die Phrasenerkennung der lokalen Suche nach dem Produktions-Smoke-Test vom 13.10.2026. r4-21 enthält das nachgeprüfte P3-Paket für Sprache und visuelle Didaktik. r4-22 setzt die Befunde A04-008 bis A04-013 des visuellen Audits vom 13.10.2026 lokal um; fachliche, rechtliche und visuelle Delta-Nachprüfung bleibt vor Veröffentlichung erforderlich.",
   "kitRevision": "PUK Website Kit 1.10.1-r4 · abgeleitet",
   "canonicalSource": "PUK Zürich Design System 1.10.1 (unverändert)",
-  "assetVersion": "r4-21",
+  "assetVersion": "r4-22",
   "siteTitle": "Borderline – Orientierung für Angehörige",
   "shortDescription": "Psychoedukative Website der Fachstelle Angehörigenarbeit PUK für Angehörige von Menschen mit Borderline.",
   "language": "de-CH",
@@ -313,17 +313,17 @@
         },
         {
           "id": "v-vs-eisberg",
-          "section": "03 Sichtbar und verborgen",
+          "section": "03 Beobachten und nachfragen",
           "sectionId": "eisberg",
-          "goal": "Verstehen, dass Verhalten nur einen Teil zeigt und das Darunter offenbleibt",
-          "format": "layer-model",
-          "statement": "Eisberg an einer weichen Wasserlinie, eigene Linienzeichnung: Über dem Wasser stehen im Eisberg Wut, Vorwürfe, Lautwerden, Rückzug; darunter Angst, Scham, Trauer, Einsamkeit, Anspannung – oder ganz andere Erfahrungen. Daneben die Frage «Wie ist es gerade für dich?». Keine Zuordnung zwischen oben und unten.",
-          "understood": "Dass Verhalten nur die Oberfläche zeigt und das Darunter offenbleibt; die Schichten zeigen das auf einen Blick, auch die Grenze des Wissens.",
-          "source": "Eigene didaktische Darstellung nach der Eisberg-Metapher (Handout «Eisberg»); Bezugspunkt Linehan (1993)",
-          "alternative": "Schmal: Zeichnung ohne Wörter, darunter beide Gruppen als Listen und die Frage; Textfassung über aria-describedby",
-          "reason": "Sichtbar und verborgen ist eine räumliche Beziehung. Zwei getrennte Schichten ohne Verbindungslinien zeigen zugleich, dass es keine Zuordnung gibt. Überarbeitet nach dem Bildsprache-Audit (BS-2), Entscheid Fachstelle 10.10.2026.",
-          "resonance": "Entlastung: Hinter einem heftigen Moment kann mehr stecken, und ich darf nachfragen, statt zu raten.",
-          "approvalStatus": "freigegeben"
+          "goal": "Beobachtung, Vermutung und offene Frage unterscheiden, ohne verborgenes Erleben aus Verhalten abzuleiten",
+          "format": "comparison",
+          "statement": "Drei gleichwertige Felder unterscheiden Beobachtbares, die offenbleibende Bedeutung und eine mögliche offene Frage. Keine Schicht, kein Kausalpfeil und keine feste Gefühlsliste.",
+          "understood": "Dass Lautwerden oder Rückzug beobachtbar ist, Gefühl, Bedürfnis und Motiv aber nicht sicher bekannt sind; eine Vermutung bleibt korrigierbar.",
+          "source": "Eigene didaktische Darstellung; Bezugspunkt: Emotionsregulation und Validierung nach Linehan (1993)",
+          "alternative": "Alle drei Felder sind echter HTML-Text; vollständige lineare Textfassung über aria-describedby",
+          "reason": "A04-010: Die Eisbergkonvention konnte trotz Caveat eine Ursache-Wirkungs-Lesart nahelegen. Das neue Modell zeigt dieselbe praktische Lernbotschaft ohne vertikale Schicht- oder Kausalitätsmetapher.",
+          "resonance": "Entlastung und Klarheit: Ich muss inneres Erleben nicht erraten; ich kann beobachten, offen fragen und mich korrigieren lassen.",
+          "approvalStatus": "umgesetzt; fachlich-didaktischer Delta-Review ausstehend"
         },
         {
           "id": "v-vs-anspannung",
@@ -944,12 +944,14 @@
           "section": "02 Behandlungsteam",
           "sectionId": "kontakt",
           "goal": "Drei Informationswege unterscheiden und die eigene Rolle gegenüber dem Behandlungsteam klären",
-          "format": "text",
-          "statement": "–",
-          "source": "–",
-          "alternative": "–",
-          "reason": "Text ist klarer: die drei Informationswege als Begriffsliste, danach die Handlungsanleitung bei akuter Gefahr mit dem Verweis im Text und die vier Fragen sichtbar. Die Situationen des Bestands und der Musterbrief stehen in fünf Vertiefungen (Akkordeon), damit man nur die gesuchte öffnet (Bauauftrag 2c-2, Abschnitt 4). Die Vertiefung «Was kann ich in einem vereinbarten Kontakt mitteilen?» entfällt, ihr Beispielsatz steht im Begriff «Beobachtungen mitteilen» (Korrektur 2c-K, P2c2-F-14).",
-          "approvalStatus": "freigegeben"
+          "format": "relationship-map",
+          "statement": "Zwei getrennte Richtungen zeigen: Angehörige können eigene Beobachtungen mitteilen; vertrauliche Auskünfte des Behandlungsteams setzen grundsätzlich Einwilligung oder eine andere Rechtsgrundlage voraus. Eigene Beratung ist unabhängig davon möglich.",
+          "understood": "Dass eine Mitteilung an das Behandlungsteam nicht automatisch einen Anspruch auf vertrauliche Auskunft erzeugt und beide Informationsrichtungen getrennt geklärt werden müssen.",
+          "source": "Eigene didaktische Darstellung der auf dieser Seite erläuterten Informationswege",
+          "alternative": "Beide Richtungen und Voraussetzungen als vollständiger HTML-Text sowie lineare Textfassung über aria-describedby",
+          "reason": "A04-011: Die Richtung der Information ist die zentrale, im Fliesstext leicht verwechselbare Beziehung. Die Figur ergänzt die weiterhin vollständige Begriffsliste und macht keine absolute Einzelfallregel.",
+          "resonance": "Orientierung: Ich darf Beobachtungen mitteilen und kann zugleich verstehen, warum das Team nicht automatisch Auskunft geben darf.",
+          "approvalStatus": "umgesetzt; Rechts- und Fachreview ausstehend"
         },
         {
           "id": "v-be-therapieformen",
@@ -1020,7 +1022,7 @@
       "navLabel": null,
       "groupRootId": "beziehungen",
       "collapsedSections": [
-        "anerkennen",
+        "validierung",
         "moment",
         "beispiele",
         "rollen"
@@ -1067,6 +1069,18 @@
           "reason": "Entscheid der Fachstelle 10.10.2026 (Bauauftrag 2b, Abschnitt 4 und Anhang A): Zeichnung «Zwei Tassen» im Stil von «Ein freier Abend» (Muster D), direkt nach dem ersten Absatz des Abschnitts. Die Transformationen der Skizze sind in feste Pfade umgerechnet. Seit Korrektur 2b-K (P2b-F-11 b) stehen die zwei Tassen näher zur Tischmitte, spiegelgleich zu x = 320: Tassenkörper bei x 190–258 und 382–450, dazwischen 124 Einheiten frei; Henkel aussen. Tisch und Bildausschnitt unverändert. Die sechs Stufen der Validierung stehen als gestaltete Liste ohne Treppenbild, keine Abbildung: alle sechs sichtbar mit Leitsatz, Ziel und einem Beispiel (Korrektur 2b-2, Abschnitt 3). Die Einzelheiten stehen unter dem Zwischentitel «Die sechs Stufen im Detail» in einer Vertiefung mit sechs Einträgen, einer je Stufe, damit man nur die gesuchte Stufe öffnet (Freigabe 2b, Abschnitt 3 a). «Mitgefühl heisst nicht übernehmen» ist ein eigener Zwischentitel (Freigabe 2b, Abschnitt 3 b).",
           "resonance": "Wiedererkennen und Entlastung: Ich kann zuhören und anerkennen, ohne mich zu verteidigen und ohne zuzustimmen.",
           "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-ko-validierung",
+          "section": "Vertiefung Validierung",
+          "sectionId": "validierung",
+          "goal": "Validierungsstufen und weitere Beispiele bei Bedarf vertiefen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Die zentrale Aussage und die Zwei-Tassen-Illustration sind im offenen Abschnitt sichtbar. Die ausführlichen Stufen und Beispiele bleiben als freiwillige Vertiefung geschlossen, damit der Erstaufruf nicht textlastiger wird.",
+          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
         },
         {
           "id": "v-ko-moment",
@@ -1146,6 +1160,7 @@
       "id": "krise",
       "title": "Krisen begleiten",
       "href": "krise.html",
+      "responsibilityInlineStyle": "tiered",
       "navLabel": null,
       "groupRootId": "beziehungen",
       "showInSectionNav": false,
@@ -1318,12 +1333,14 @@
           "section": "02 Alltag und Betreuung",
           "sectionId": "alltag",
           "goal": "Eine konkrete Betreuungskette vorbereiten",
-          "format": "text",
-          "statement": "–",
-          "source": "–",
-          "alternative": "–",
-          "reason": "Checkliste der zu klärenden Angaben; keine feste Reihenfolge oder Beziehung, die eine Grafik erklären müsste.",
-          "approvalStatus": "freigegeben"
+          "format": "relationship-map",
+          "statement": "Drei Rollen zeigen: Vertraute Erwachsene organisieren Alltag und Sicherheit; Fachpersonen beraten, klären ab und behandeln; Kinder und Jugendliche erhalten Schutz und verständliche Information und tragen keine Krisenverantwortung.",
+          "understood": "Wer die Erwachsenenaufgaben trägt und dass das Kind weder Streit schlichten noch Krisen überwachen oder Behandlung organisieren muss.",
+          "source": "Eigene didaktische Darstellung der auf dieser Seite beschriebenen Zuständigkeiten",
+          "alternative": "Alle Rollen und Aufgaben als echter HTML-Text; vollständige lineare Textfassung über aria-describedby",
+          "reason": "A04-012: Die Beziehung der Zuständigkeiten lässt sich schneller erfassen als in der Checkliste allein. Die Grafik verwendet positive Zuständigkeiten statt dramatischer Verbotszeichen.",
+          "resonance": "Schutz und Entlastung: Das Kind ist nicht schuld und muss die Erwachsenenaufgaben nicht tragen.",
+          "approvalStatus": "umgesetzt; Kinderschutz- und Fachreview ausstehend"
         },
         {
           "id": "v-ki-eskalation",
@@ -1370,7 +1387,7 @@
       "navLabel": null,
       "groupRootId": "unterstuetzung",
       "collapsedSections": [
-        "kraft",
+        "kraft-vertiefung",
         "unterstuetzung",
         "akzeptanz",
         "beratung"
@@ -1417,6 +1434,18 @@
           "reason": "Entscheid der Fachstelle 10.10.2026 (Bauauftrag 2a): Zeichnung und Satzpaar aus dem Profilbeispiel (Muster D), Kernaussage und Kurztext abgesichert wie der Bestand. Ersetzt das geplante Spannungsfeld (Bildsprache-Audit: eine Waage kann nach Urteil aussehen). Das Energie-Konto steht als Text, ohne Konto- oder Bilanzbild. Korrektur 2a-K: steht direkt nach dem ersten Absatz von `kraft` (P2a-V-1); Gedanke «Vielleicht kommt gleich eine Nachricht.» (P2a-T-2); Zeichnung unverändert (P2a-V-3). «Langfristig für sich sorgen» steht in diesem Abschnitt als Akkordeon (K-S-b2).",
           "resonance": "Wiedererkennen und Erlaubnis: So fühlt sich ständige Bereitschaft an, und ich darf meine Erreichbarkeit begrenzen.",
           "approvalStatus": "freigegeben"
+        },
+        {
+          "id": "v-sf-kraft-vertiefung",
+          "section": "Vertiefung Belastung und Entlastung",
+          "sectionId": "kraft-vertiefung",
+          "goal": "Mögliche Belastungen und konkrete Entlastungen bei Bedarf vertiefen",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Die Alltagsszene und ihre Kernaussage sind im offenen Hauptpfad sichtbar. Umfangreiche Listen und Alltagshinweise bleiben als freiwillige Vertiefung geschlossen.",
+          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
         },
         {
           "id": "v-sf-warnsignale",
@@ -1554,12 +1583,14 @@
           "section": "04 Einflüsse",
           "sectionId": "einfluesse",
           "goal": "Erkennen, dass Genesung von mehreren Bereichen abhängt, ohne Reihenfolge und ohne Formel",
-          "format": "text",
-          "statement": "–",
-          "source": "–",
-          "alternative": "–",
-          "reason": "Text ist klarer: fünf Bereiche als Begriffsliste, ausdrücklich ohne Reihenfolge und ohne Formel (Bauauftrag 2c-1, Abschnitt 3). Eine Figur mit fünf gleichen Feldern wäre ein Kartenraster und könnte ein Modell nahelegen, das die Bereiche nicht sind.",
-          "approvalStatus": "freigegeben"
+          "format": "relationship-map",
+          "statement": "Fünf gleichwertige Bereiche stehen ohne Pfeile und Rangfolge neben dem Ausdruck «Individueller Weg»: Behandlung, Gesundheit, gewählte Beziehungen und Unterstützung, Lebensbedingungen und Teilhabe sowie Zeit und individueller Verlauf.",
+          "understood": "Dass mehrere Bereiche unterschiedlich bedeutsam sein können und weder ein einzelner Bereich noch Angehörige Genesung bestimmen.",
+          "source": "Eigene didaktische Darstellung auf Grundlage der im Abschnitt genannten Leitlinien",
+          "alternative": "Alle fünf Bereiche als echter HTML-Text; vollständige lineare Textfassung über aria-describedby",
+          "reason": "A04-013: Die offene Konstellation zeigt Mehrfaktorialität. Sie verzichtet bewusst auf Pfeile, Grössenwerte, Rangfolge und Prognose und wird durch die bestehende ausführliche Begriffsliste erklärt.",
+          "resonance": "Realistische Hoffnung: Genesung ist individuell und keine Leistung eines einzelnen Menschen oder der Familie.",
+          "approvalStatus": "umgesetzt; fachlicher Delta-Review ausstehend"
         },
         {
           "id": "v-ge-freiwillig",

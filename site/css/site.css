@@ -1,4 +1,4 @@
-/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-8 */
+/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-9 */
 
 /* ===== ../../../styles.css ===== */
 /* ../../../tokens/fonts.css */
@@ -1365,3 +1365,36 @@ html.puk-scroll-lock{overflow:hidden}
    12rem = 192 px), bei 200 % Schrift (12rem = 384 px) bei 320 und 360 px Fensterbreite. Bei 100 % ändert sich nichts.
    Wirkt in Browsern mit deutscher Silbentrennung; das Profil (SPZ-40, Entscheide 5.6) bleibt unverändert. */
 @container (max-width:12rem){.puk-vis-figure{hyphens:auto}}
+
+/* IA-Überarbeitung 13.10.2026: Bereichskontext, Brotkrümel und nächste sinnvolle Wege. */
+.puk-web-nav__link[aria-current="location"]{font-weight:var(--fw-medium);text-decoration-thickness:var(--border-width-strong);text-underline-offset:var(--space-1)}
+.puk-site-breadcrumb{border-bottom:1px solid var(--ui-hairline);background:var(--surface-subtle)}
+.puk-site-breadcrumb ol{display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-2);margin:0;padding:var(--space-3) 0;font:var(--type-body-sm)}
+.puk-site-breadcrumb li{display:flex;align-items:center;min-width:0;margin:0}
+.puk-site-breadcrumb li+li::before{content:"/";margin-right:var(--space-2);color:var(--text-muted)}
+.puk-site-breadcrumb a,.puk-site-breadcrumb span{overflow-wrap:anywhere}
+.puk-site-related{margin-top:var(--space-12);padding:var(--space-10) 0;background:var(--surface-subtle)}
+.puk-site-related h2{margin-top:0}
+.puk-site-related ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--space-3) var(--space-6);margin:var(--space-5) 0 0;padding:0;list-style:none}
+.puk-site-related li{margin:0}
+.puk-site-related a{display:inline-block;padding-block:var(--space-1)}
+.puk-site-sender__contact{margin-left:var(--space-2)}
+.puk-longform address{font-style:normal}
+.puk-site-faq{border-top:1px solid var(--ui-hairline)}
+.puk-site-faq:last-child{border-bottom:1px solid var(--ui-hairline)}
+.puk-site-faq summary{position:relative;padding:var(--space-4) var(--space-8) var(--space-4) 0;cursor:pointer;list-style:none}
+.puk-site-faq summary::-webkit-details-marker{display:none}
+.puk-site-faq summary::after{content:"+";position:absolute;right:0;top:var(--space-4);font:var(--type-title-3)}
+.puk-site-faq[open] summary::after{content:"−"}
+.puk-site-faq summary h3{display:inline;margin:0}
+.puk-site-faq__answer{padding:0 0 var(--space-5)}
+.puk-site-faq__answer>:first-child{margin-top:0}
+.puk-site-faq:has(h3:target)>.puk-site-faq__answer{display:block}
+.puk-site-faq:has(h3:target)>summary{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}
+.puk-site-resource{margin-top:var(--space-5);border-top:1px solid var(--ui-hairline);border-bottom:1px solid var(--ui-hairline)}
+.puk-site-resource>summary{position:relative;padding:var(--space-4) var(--space-8) var(--space-4) 0;cursor:pointer;font:var(--type-title-3);list-style:none}
+.puk-site-resource>summary::-webkit-details-marker{display:none}
+.puk-site-resource>summary::after{content:"+";position:absolute;right:0}
+.puk-site-resource[open]>summary::after{content:"−"}
+.puk-site-resource__content{padding-bottom:var(--space-5)}
+@media print{.puk-site-breadcrumb,.puk-site-related{display:none}}

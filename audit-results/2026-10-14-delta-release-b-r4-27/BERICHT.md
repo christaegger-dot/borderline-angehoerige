@@ -2,7 +2,7 @@
 
 ## Ergebnis
 
-r4-27 setzt die Pakete 2, 3, 5 und 7 des Massnahmenplans vom 14. Oktober 2026 um und zieht M6.7 aus Paket 6 vor. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`, Wortlaut in `FREIGABE-VORLAGE.md`). Paket 3 (Schweizer Recht) hat der Auftraggeber ohne Prüfung durch den Rechtsdienst freigegeben. Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der Delta-Test auf dem erzeugten `site/`-Export. Der Pull Request #684 ist offen und nicht gemergt.
+r4-27 setzt die Pakete 2, 3, 5 und 7 des Massnahmenplans vom 14. Oktober 2026 um und zieht M6.7 aus Paket 6 vor. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`, Wortlaut in `FREIGABE-VORLAGE.md`). Paket 3 (Schweizer Recht) hat der Auftraggeber ohne Prüfung durch den Rechtsdienst freigegeben. Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der Delta-Test auf dem erzeugten `site/`-Export. Pull Request #684 wurde am 14. Oktober 2026 gemergt; r4-27 ist veröffentlicht und hat den Produktionstest bestanden. Fünf Aussagen hat das Codex-Review beanstandet; sie sind in r4-28 korrigiert.
 
 ## Änderungen
 
@@ -66,6 +66,20 @@ r4-27 fügt ohne Quellenblöcke 1312 Wörter hinzu (31 613 auf 32 925). Am stär
 - **R27-O04:** Die Kurzsuche «FU» trifft jedes «für», weil die Suche Teilwörter vergleicht; exakte Titeltreffer bestimmen die Rangfolge stark.
 - **R27-O05:** ipw.ch nur über ein Abrufwerkzeug gelesen (Bot-Sperre); das iks-Angebot nur über die Website bestätigt.
 - **R26-O04** bleibt: Das Gate prüft «Verwendet auf» nicht.
+
+## Produktionsnachweis
+
+PR #684 wurde am 14. Oktober 2026 als Merge-Commit `8dbf1be6b291cb3fd8f5daa5db5202e9f8eac3fb` übernommen. Netlify veröffentlichte den Produktionsdeploy `6acfebd961b825c290b87077` um 20:53 UTC. Der anschliessende Test gegen `https://borderline-angehoerige.netlify.app` bestand:
+
+- 44 von 44 Läufen über 22 Seiten einschliesslich der 404-Seite bei 320 und 1440 CSS-Pixel, alle mit Buildmarker r4-27, Assets r4-27 und ohne Lade- oder Laufzeitfehler;
+- 54 von 54 Such-Ersttreffern wie im lokalen Export und 26 von 26 Suchintentionen;
+- 40 von 40 neuen und 14 von 14 entfernten Formulierungen; 8 von 8 Sprungziele vorhanden;
+- No-JavaScript-Fallback auf vier Seiten, eigene 404-Seite, unveränderte Sicherheitsheader und `robots.txt`, 0 `tel:`-Links;
+- 9 von 9 ausgelieferten Nicht-HTML-Dateien bytegleich mit `site/`. Die HTML-Dateien schreibt Netlify beim Ausliefern auf saubere Pfade um; sie sind deshalb nicht bytegleich.
+
+## Codex-Review
+
+Das automatische Codex-Review zu PR #684 erschien um 20:53:02 UTC, 41 Sekunden vor dem Merge, und war beim Merge noch nicht geprüft. Es meldete fünf Befunde: Fristbeginn und Höchstdauer beim Gewaltschutz (Grenzen), die Aussage zur ipw (Behandlung), die Definition hinter 85 % Remission (Genesung), die neun Kriterien ohne DSM-5-TR (Verstehen) und die fehlende Einschränkung zu Blades et al. (Krisen begleiten). Vier bestätigte die Prüfung vollständig, den Gewaltschutz beim Fristbeginn. Den falschen Fristbeginn brachte die Einarbeitung der unabhängigen Prüfung hinein. Die Korrekturen hat die PUK am 14. Oktober 2026 freigegeben; sie folgen als r4-28 (`audit-results/2026-10-14-delta-codex-r4-28/`). Bis zu dessen Veröffentlichung enthält die Produktion die beanstandeten Stellen.
 
 ## Evidenzgrenzen
 

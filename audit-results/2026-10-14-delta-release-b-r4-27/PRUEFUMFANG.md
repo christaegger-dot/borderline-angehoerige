@@ -15,6 +15,7 @@ Geprüft wurde Release B des Massnahmenplans vom 14. Oktober 2026 auf dem Branch
 - Skriptvergleich aller Quellenblöcke mit «Verwendet auf» und den Gruppenzählern; Volltextprüfung auf `tel:`-Links;
 - Wortzählung der Fragmente;
 - Bildschirmaufnahmen der neuen Elemente bei 320 und 1440 CSS-Pixel.
+- nach dem Merge: Produktionstest gegen `https://borderline-angehoerige.netlify.app` (44 Chromium-Läufe, Suche, Texte, Sprungziele, No-JavaScript, 404, Header, Bytegleichheit der Nicht-HTML-Dateien) und Prüfung der fünf Codex-Befunde an den Primärquellen.
 
 ## Nicht ausgeführt oder nicht behauptet
 

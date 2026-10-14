@@ -6,7 +6,7 @@
   "basisCommit": "6a0f8cc64db6a410ad0ffc1d6e75932a7e6d9825",
   "basisRelease": "r4-26",
   "freigabevorlage": "9a07502",
-  "status": "PUK-Freigabe dokumentiert; Pull Request #684 offen, nicht gemergt",
+  "status": "PUK-Freigabe dokumentiert; mit PR #684 gemergt und veröffentlicht; Produktionsnachtest bestanden; fünf Codex-Befunde, korrigiert in r4-28",
   "entscheide": {
     "E2": "Auftraggeber, 14.10.2026: «rund 40 bis 50 %» mit Einordnung",
     "E3": "Auftraggeber, 14.10.2026: ICD-10-GM-Wortlaut",
@@ -98,5 +98,30 @@
   "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
   "siteExportUpdated": true,
   "deploymentChanged": false,
-  "pullRequest": 684
+  "pullRequest": 684,
+  "produktion": {
+    "pullRequest": 684,
+    "mergeCommit": "8dbf1be6b291cb3fd8f5daa5db5202e9f8eac3fb",
+    "netlifyDeploy": "6acfebd961b825c290b87077",
+    "veroeffentlicht": "2026-10-14T20:53:55Z",
+    "smokeTest": {
+      "seitenLaeufe": "44/44",
+      "suche": "54/54 wie lokal",
+      "suchintentionen": "26/26",
+      "texte": "40/40 neu, 14/14 entfernt",
+      "anker": "8/8",
+      "noJs": "4/4",
+      "seite404": "bestanden",
+      "header": "unverändert",
+      "telLinks": 0,
+      "nichtHtmlBytegleich": "9/9"
+    }
+  },
+  "codexReview": {
+    "review": 5524520770,
+    "veroeffentlicht": "2026-10-14T20:53:02Z",
+    "befunde": 5,
+    "bestaetigt": "4 vollständig, 1 zur Hälfte",
+    "korrigiertIn": "r4-28"
+  }
 }

@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-23';
+const BUILD = 'r4-24';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -195,9 +195,15 @@ function renderPage(cfg, page, content) {
   const footer = cfg.footer || {};
   const footerLinks = Array.isArray(footer.links) ? footer.links.filter(link => link && link.label && link.href) : [];
   const footerLinksHtml = footerLinks.length ? `<nav class="puk-site-info-links" aria-label="Informationen zur Website" data-site-info-links><ul role="list">${footerLinks.map(link => `<li><a href="${esc(link.href)}">${esc(link.label)}</a></li>`).join('')}</ul></nav>` : '';
-  const footerHtml = footer.about || footer.editorialCredit || footer.serviceBoundary || footer.contentDate || footerLinks.length
-    ? `<section aria-labelledby="puk-site-info-title"><h2 class="puk-web-footer__heading" id="puk-site-info-title">${esc(footer.heading || 'Über diese Website')}</h2>${footer.about ? `<p class="puk-web-footer__copy">${esc(footer.about)}</p>` : ''}${footer.editorialCredit ? `<p class="puk-web-footer__copy">${esc(footer.editorialCredit)}</p>` : ''}${cfg.disclaimer ? `<p class="puk-web-footer__copy" data-disclaimer>${esc(cfg.disclaimer)}</p>` : ''}${footer.serviceBoundary ? `<p class="puk-web-footer__copy">${esc(footer.serviceBoundary)}</p>` : ''}${footer.contentDate ? `<p class="puk-web-footer__copy">${esc(footer.contentDate)}</p>` : ''}${footerLinksHtml}${legalHtml}</section>`
-    : `<section aria-labelledby="puk-site-info-title"><h2 class="puk-web-footer__heading" id="puk-site-info-title">Über diese Seiten</h2>${cfg.disclaimer ? `<p class="puk-web-footer__copy" data-disclaimer>${esc(cfg.disclaimer)}</p>` : ''}<p class="puk-web-footer__copy">Inhaltsverantwortung: ${esc(cfg.contentOwner)}</p><p class="puk-web-footer__copy">${esc(cfg.editorialStatusLabel || `Redaktioneller Status: ${cfg.editorialStatus}`)}</p>${legalHtml}</section>`;
+  const footerBoundaryHtml = cfg.disclaimer || footer.serviceBoundary
+    ? `<div class="puk-web-footer__boundary">${cfg.disclaimer ? `<p class="puk-web-footer__copy" data-disclaimer>${esc(cfg.disclaimer)}</p>` : ''}${footer.serviceBoundary ? `<p class="puk-web-footer__copy">${esc(footer.serviceBoundary)}</p>` : ''}</div>`
+    : '';
+  const footerMetaHtml = footer.editorialCredit || footer.contentDate || legalHtml
+    ? `<div class="puk-web-footer__details">${footer.editorialCredit ? `<p class="puk-web-footer__meta">${esc(footer.editorialCredit)}</p>` : ''}${footer.contentDate ? `<p class="puk-web-footer__meta">${esc(footer.contentDate)}</p>` : ''}${legalHtml}</div>`
+    : '';
+  const footerHtml = footer.about || footer.editorialCredit || footer.serviceBoundary || footer.contentDate || footerLinks.length || cfg.disclaimer || legalHtml
+    ? `<section class="puk-web-footer__about" aria-labelledby="puk-site-info-title"><h2 class="puk-web-footer__heading" id="puk-site-info-title">${esc(footer.heading || 'Über diese Website')}</h2>${footer.about ? `<p class="puk-web-footer__copy">${esc(footer.about)}</p>` : ''}${footerBoundaryHtml}${footerLinksHtml}${footerMetaHtml}</section>`
+    : `<section class="puk-web-footer__about" aria-labelledby="puk-site-info-title"><h2 class="puk-web-footer__heading" id="puk-site-info-title">Über diese Seiten</h2>${cfg.disclaimer ? `<div class="puk-web-footer__boundary"><p class="puk-web-footer__copy" data-disclaimer>${esc(cfg.disclaimer)}</p></div>` : ''}<div class="puk-web-footer__details"><p class="puk-web-footer__meta">Inhaltsverantwortung: ${esc(cfg.contentOwner)}</p><p class="puk-web-footer__meta">${esc(cfg.editorialStatusLabel || `Redaktioneller Status: ${cfg.editorialStatus}`)}</p>${legalHtml}</div></section>`;
   return `<!DOCTYPE html>
 <html lang="${esc(cfg.language)}" data-puk-site-build="${BUILD}" data-page-id="${esc(page.id)}">
 <head>

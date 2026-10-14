@@ -1,4 +1,4 @@
-/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-23 */
+/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-24 */
 
 /* ===== ../../../styles.css ===== */
 /* ../../../tokens/fonts.css */
@@ -349,16 +349,16 @@
 .puk-web-card-list>li{display:flex;min-width:0}
 .puk-web-band{padding-block:64px;background:var(--puk-blue-100);color:var(--puk-white)}
 .puk-web-band__inner{display:flex;align-items:flex-end;justify-content:space-between;gap:32px 48px;flex-wrap:wrap}
-.puk-web-footer{border-top:1px solid var(--border-hairline);padding-block:56px;font-size:var(--web-size-body);line-height:1.5}
-.puk-web-footer__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:32px}
-.puk-web-footer__heading{margin:0;font-weight:var(--fw-medium)}
-.puk-web-footer__copy{margin:8px 0 0;color:var(--puk-black-75)}
+.puk-web-footer{border-top:1px solid var(--border-default);padding-block:var(--space-8);background:var(--surface-sunken);font-size:1rem;line-height:1.5}
+.puk-web-footer__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,30rem),1fr));align-items:start;gap:var(--space-6) var(--space-8)}
+.puk-web-footer__heading{margin:0;color:var(--text-muted);font-size:.875rem;font-weight:var(--fw-medium);line-height:1.4;letter-spacing:.06em;text-transform:uppercase}
+.puk-web-footer__copy{max-width:62ch;margin:var(--space-2) 0 0;color:var(--text-muted);font-size:1rem}
 /* Nur Datums-, Versions- und Designmetadaten; keine Hinweise oder Kontakttexte. */
-.puk-web-footer__meta{font:var(--type-caption);color:var(--puk-black-75)}
-.puk-web-footer a{color:var(--puk-black-75);text-decoration:underline;text-underline-offset:.18em}
+.puk-web-footer__meta{margin:0;color:var(--text-muted);font-size:.875rem;line-height:1.5}
+.puk-web-footer a{color:var(--text-muted);text-decoration:underline;text-underline-offset:.18em}
 
 @media (max-width:760px){
-  .puk-web-page,.puk-web-footer{font-size:19px}
+  .puk-web-page{font-size:19px}
   .puk-web-header__inner{align-items:flex-start;flex-direction:column}
   .puk-web-nav{width:100%}
   .puk-web-nav__list{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:2px 12px}
@@ -709,12 +709,12 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-web-nav__link{font-size:1.125rem;hyphens:auto}
 .puk-web-eyebrow{font-size:.875rem}
 .puk-web-media{font-size:.75rem}
-.puk-web-footer{font-size:var(--web-size-body)}
+.puk-web-footer{font-size:1rem}
 .puk-longform__intro{font-size:clamp(1.3125rem,2.1vw,var(--web-size-lead))}
 .puk-longform__roadmap a,.puk-longform__figure-relation{font-size:1rem}
 .puk-longform__roadmap-label,.puk-longform__kicker,.puk-longform__privacy{font-size:.875rem}
 .puk-longform__figure figcaption,.puk-longform__source-use{font-size:.9375rem}
-@media (max-width:760px){.puk-web-page{font-size:1.1875rem;--puk-read-size:1.1875rem}.puk-web-footer{font-size:1.1875rem}}
+@media (max-width:760px){.puk-web-page{font-size:1.1875rem;--puk-read-size:1.1875rem}.puk-web-footer{padding-block:var(--space-6)}}
 @media (forced-colors:active){
   :focus-visible:not([tabindex="-1"]){outline:2px solid CanvasText!important;outline-offset:2px!important}
 }
@@ -1109,12 +1109,21 @@ html.puk-scroll-lock{overflow:hidden}
   .puk-site-menu .puk-web-nav__list[hidden]{display:flex}
 }
 
+/* Der Footer bleibt eine ruhige Sekundärebene: Zuständigkeit und Abgrenzung sind klar getrennt,
+   redaktionelle Angaben und rechtliche Wege bilden eine kompakte Metadatengruppe. */
+.puk-site-safety--responsibility{padding-inline-start:var(--space-4);border-inline-start:2px solid var(--border-default)}
+.puk-web-footer__boundary{max-width:62ch;margin-block-start:var(--space-4);padding-block-start:var(--space-3);border-top:1px solid var(--border-default)}
+.puk-web-footer__boundary .puk-web-footer__copy{margin-block-start:var(--space-1);font-size:.875rem}
+.puk-web-footer__details{max-width:62ch;margin-block-start:var(--space-3);padding-block-start:var(--space-3);border-top:1px solid var(--border-default)}
+.puk-web-footer__details .puk-web-footer__meta+.puk-web-footer__meta{margin-block-start:var(--space-1)}
+
 /* Impressum und Datenschutzerklärung in der Fusszeile (Prüfbefund W3-05, site.config.json › legal) */
-.puk-site-legal a{display:inline-block;max-width:100%;min-height:var(--web-touch-target);padding-block:.6em}
+.puk-site-legal{margin:var(--space-1) 0 0;font-size:.875rem;line-height:1.5}
+.puk-site-legal a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target);padding-block:.35em}
 
 /* Globale Wege zu Grundsätzen, Barrierefreiheit und Rückmeldung (site.config.json › footer.links) */
-.puk-site-info-links{margin-block-start:16px}
-.puk-site-info-links ul{display:flex;flex-wrap:wrap;gap:0 24px;margin:0;padding:0;list-style:none}
+.puk-site-info-links{margin-block-start:var(--space-3);font-size:.875rem;line-height:1.5}
+.puk-site-info-links ul{display:flex;flex-wrap:wrap;gap:0 var(--space-6);margin:0;padding:0;list-style:none}
 .puk-site-info-links a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target);padding-block:.35em}
 
 /* ===== borderline.css ===== */

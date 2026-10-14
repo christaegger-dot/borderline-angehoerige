@@ -1,0 +1,101 @@
+{
+  "paket": "Release B · Pakete 2, 3, 5 und 7 des Massnahmenplans vom 14.10.2026",
+  "datum": "2026-10-14",
+  "release": "r4-27",
+  "branch": "claude/release-b-r4-27-1792000693",
+  "basisCommit": "6a0f8cc64db6a410ad0ffc1d6e75932a7e6d9825",
+  "basisRelease": "r4-26",
+  "freigabevorlage": "9a07502",
+  "status": "PUK-Freigabe dokumentiert; Pull Request offen, nicht gemergt",
+  "entscheide": {
+    "E2": "Auftraggeber, 14.10.2026: «rund 40 bis 50 %» mit Einordnung",
+    "E3": "Auftraggeber, 14.10.2026: ICD-10-GM-Wortlaut",
+    "E6": "Claude, vom Auftraggeber am 14.10.2026 delegiert: ins interne Prüfprotokoll",
+    "E8": "Claude, vom Auftraggeber am 14.10.2026 delegiert: A03-019 verschieben (M3.4), A03-025 nur ergänzen (M3.5), A03-026 nicht geöffnet",
+    "E10": "Claude, vom Auftraggeber am 14.10.2026 delegiert: ersetzen",
+    "paket3": "Auftraggeber, 14.10.2026: in Release B, ohne Rechtsdienst, Freigabe durch den Auftraggeber"
+  },
+  "massnahmen": {
+    "erfuellt": [
+      "M2.1",
+      "M2.2",
+      "M2.3",
+      "M2.4",
+      "M2.5",
+      "M2.7",
+      "M2.8",
+      "M2.9",
+      "M2.10",
+      "M3.2",
+      "M3.4",
+      "M3.5",
+      "M3.6",
+      "M5.1",
+      "M5.3",
+      "M5.4",
+      "M5.5",
+      "M5.6",
+      "M5.7",
+      "M7.1",
+      "M7.2",
+      "M7.3",
+      "M7.4",
+      "M7.5",
+      "M7.6",
+      "M7.7",
+      "M6.7"
+    ],
+    "teilweise": {
+      "M2.6": "R2 offen",
+      "M3.1": "ohne Rechtsdienst",
+      "M3.3": "ohne Rechtsdienst",
+      "M5.2": "nur über die iks-Website bestätigt"
+    },
+    "offen": [
+      "R27-O01",
+      "R27-O02",
+      "R27-O03",
+      "R27-O04",
+      "R27-O05",
+      "R26-O04"
+    ]
+  },
+  "tests": {
+    "draftBuild": "22 Seiten, 0 Blocker, 4 erwartete Hinweise",
+    "productionBuild": "22 Seiten, 0 Blocker, 0 Hinweise",
+    "exportParity": "33/33 Dateien bytegleich",
+    "browserRunsAllPages": 44,
+    "browserRunsChangedPages": 150,
+    "axeRuns": 150,
+    "searchRegression": "53/54 unverändert, 1 beabsichtigt geändert («Gewalt»)",
+    "searchIntents": "26/26",
+    "textChecks": "40/40 neu vorhanden, 14/14 ersetzt",
+    "visibility": "18/18",
+    "deepLinks": "8/8",
+    "noJs": "4/4",
+    "quellenKonsistenz": "82 Einträge, 0 Abweichungen",
+    "runtimeErrors": 0,
+    "horizontalOverflow": 0
+  },
+  "wortbilanz": {
+    "ohneQuellenbloecke": {
+      "vorher": 31613,
+      "nachher": 32925,
+      "differenz": 1312
+    },
+    "behandlung": {
+      "vorher": 2789,
+      "nachher": 3145,
+      "zielNachReleaseC": 2400
+    }
+  },
+  "unabhaengigePruefung": {
+    "befunde": 29,
+    "eingearbeitet": "3 bis 29",
+    "durchEntscheidGetragen": "1",
+    "imNachweisErledigt": "2"
+  },
+  "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
+  "siteExportUpdated": true,
+  "deploymentChanged": false
+}

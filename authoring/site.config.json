@@ -1,8 +1,8 @@
 {
-  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4. Lokale Änderungen ab r4-19 sind in diesem Repository dokumentiert; das PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände. r4-20 ergänzt die Phrasenerkennung der lokalen Suche nach dem Produktions-Smoke-Test vom 13.10.2026. r4-21 enthält das nachgeprüfte P3-Paket für Sprache und visuelle Didaktik. r4-22 setzt die Befunde A04-008 bis A04-013 des visuellen Audits vom 13.10.2026 um. r4-23 setzt die Sprachbefunde A03-019 bis A03-038 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-24 gestaltet den Footer als kompakte visuelle Sekundärebene, ohne seinen Wortlaut oder seine Pflichtangaben zu verändern. r4-25 setzt Paket 1 (Sicherheit: Suizidalität und Selbstverletzung) des Massnahmenplans vom 14.10.2026 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-26 schliesst die nach Release A offenen Abnahmekriterien zu M1.1, M1.5, M1.6 und M1.8 sowie R25-O01 und R25-O03; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben.",
+  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4. Lokale Änderungen ab r4-19 sind in diesem Repository dokumentiert; das PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände. r4-20 ergänzt die Phrasenerkennung der lokalen Suche nach dem Produktions-Smoke-Test vom 13.10.2026. r4-21 enthält das nachgeprüfte P3-Paket für Sprache und visuelle Didaktik. r4-22 setzt die Befunde A04-008 bis A04-013 des visuellen Audits vom 13.10.2026 um. r4-23 setzt die Sprachbefunde A03-019 bis A03-038 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-24 gestaltet den Footer als kompakte visuelle Sekundärebene, ohne seinen Wortlaut oder seine Pflichtangaben zu verändern. r4-25 setzt Paket 1 (Sicherheit: Suizidalität und Selbstverletzung) des Massnahmenplans vom 14.10.2026 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-26 schliesst die nach Release A offenen Abnahmekriterien zu M1.1, M1.5, M1.6 und M1.8 sowie R25-O01 und R25-O03; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-27 setzt Release B des Massnahmenplans vom 14.10.2026 um (Pakete 2, 3, 5 und 7: Kernwissen, Schweizer Recht, Anlaufstellen und Literatur, Quellen); die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben, Paket 3 ohne Prüfung durch den Rechtsdienst.",
   "kitRevision": "PUK Website Kit 1.10.1-r4 · abgeleitet",
   "canonicalSource": "PUK Zürich Design System 1.10.1 (unverändert)",
-  "assetVersion": "r4-26",
+  "assetVersion": "r4-27",
   "siteTitle": "Borderline – Orientierung für Angehörige",
   "shortDescription": "Psychoedukative Website der Fachstelle Angehörigenarbeit PUK für Angehörige von Menschen mit Borderline.",
   "language": "de-CH",
@@ -29,7 +29,7 @@
     "independentReview": "bestaetigt",
     "reviewedBy": "PUK",
     "reviewedAt": "2026-10-14",
-    "reviewScope": "Release A2 (r4-26): Nachbesserung M1.1, M1.5, M1.6 und M1.8 (Quelle NICE NG225) sowie R25-O01 («Kurz und klar», «Über diese Website») und R25-O03 (Suchalias FAQ «Darf ich die betroffene Person verlassen?») aus dem Massnahmenplan vom 14.10.2026"
+    "reviewScope": "Release B (r4-27): Pakete 2 (Kernwissen, M2.1 bis M2.10), 3 (Schweizer Recht, M3.1 bis M3.6, ohne Prüfung durch den Rechtsdienst), 5 (Anlaufstellen und Literatur, M5.1 bis M5.7) und 7 (Quellen, M7.1 bis M7.7) des Massnahmenplans vom 14.10.2026, dazu M6.7 vorgezogen; Entscheide E2, E3, E6, E8 und E10"
   },
   "serviceReview": {
     "$comment": "Dynamische Beratungs- und Behandlungsangebote müssen mindestens halbjährlich redaktionell geprüft werden. Das Produktions-Gate blockiert fehlende, zukünftige oder mehr als 183 Tage alte Prüfdaten.",
@@ -44,7 +44,9 @@
       "stand-by-you",
       "vask-zuerich",
       "puk-elterngruppe-jugendliche",
-      "selbsthilfe-schweiz"
+      "selbsthilfe-schweiz",
+      "nap-angehoerige",
+      "iks-kinderseele"
     ]
   },
   "disclaimer": "Diese Website ersetzt keine individuelle Abklärung, Beratung oder Behandlung.",
@@ -281,7 +283,7 @@
       ],
       "sectionSearchAliases": {
         "borderline-title": [
-          "Was bedeutet Borderline Borderline erklärt Definition"
+          "Was bedeutet Borderline Borderline erklärt Definition Wie häufig ist Borderline Häufigkeit Merkmale Symptome Anzeichen"
         ]
       },
       "sensitiveTopics": [
@@ -311,7 +313,7 @@
           "statement": "–",
           "source": "–",
           "alternative": "–",
-          "reason": "Text ist klarer: Begriffsklärung mit gezielten Einschränkungen. Kriterien und Begleiterkrankungen stehen auf «Diagnose und Begleiterkrankungen»; ein Verweissatz nach «Die Diagnose allein sagt nichts darüber, ob von einem Menschen Gefahr ausgeht.» verlinkt dort den Abschnitt «Der Weg zur Abklärung» (Freigabe 2c und 3-1, P2c-F-16).",
+          "reason": "Text ist klarer: Begriffsklärung mit sechs Kernmerkmalen in Alltagssprache als Liste (M2.1), Verweis auf die neun Kriterien im Glossar und Häufigkeit (M2.7); danach die Einordnung zur Gefahr und ein Verweissatz auf «Der Weg zur Abklärung» auf `diagnose`. Begleiterkrankungen stehen auf «Diagnose und Begleiterkrankungen» (Freigabe 2c und 3-1, P2c-F-16; Release B, r4-27).",
           "approvalStatus": "freigegeben"
         },
         {
@@ -322,9 +324,9 @@
           "format": "comparison",
           "statement": "Drei gleichwertige Felder unterscheiden Beobachtbares, die offenbleibende Bedeutung und eine mögliche offene Frage. Keine Schicht, kein Kausalpfeil und keine feste Gefühlsliste.",
           "understood": "Dass Lautwerden oder Rückzug beobachtbar ist, Gefühl, Bedürfnis und Motiv aber nicht sicher bekannt sind; eine Vermutung bleibt korrigierbar.",
-          "source": "Eigene didaktische Darstellung; Bezugspunkt: Emotionsregulation und Validierung nach Linehan (1993)",
+          "source": "Eigene didaktische Darstellung; Bezug: Haltung des Nicht-Wissens nach Bateman und Fonagy (2013)",
           "alternative": "Alle drei Felder sind echter HTML-Text; vollständige lineare Textfassung über aria-describedby",
-          "reason": "A04-010: Die Eisbergkonvention konnte trotz Caveat eine Ursache-Wirkungs-Lesart nahelegen. Das neue Modell zeigt dieselbe praktische Lernbotschaft ohne vertikale Schicht- oder Kausalitätsmetapher.",
+          "reason": "A04-010: Die Eisbergkonvention konnte trotz Caveat eine Ursache-Wirkungs-Lesart nahelegen. Das neue Modell zeigt dieselbe praktische Lernbotschaft ohne vertikale Schicht- oder Kausalitätsmetapher. M7.6 (14.10.2026): Die Quelle ist von Linehan (1993) auf Bateman und Fonagy (2013) umgestellt, weil Beobachten, offene Bedeutung und Nachfragen die Haltung des Nicht-Wissens der Mentalisierung beschreiben.",
           "resonance": "Entlastung und Klarheit: Ich muss inneres Erleben nicht erraten; ich kann beobachten, offen fragen und mich korrigieren lassen.",
           "approvalStatus": "freigegeben"
         },
@@ -648,6 +650,9 @@
       "sectionSearchAliases": {
         "dear-title": [
           "Wie setze ich eine Grenze Grenze aussprechen formulieren"
+        ],
+        "gewalt-title": [
+          "Polizei Wohnung wegweisen Wegweisung Kontaktverbot Rayonverbot Gewaltschutzgesetz Schutzmassnahmen Stalking Drohungen"
         ]
       },
       "sensitiveTopics": [
@@ -871,7 +876,7 @@
           "statement": "–",
           "source": "–",
           "alternative": "–",
-          "reason": "Text ist klarer (UMBAUPLAN, Etappe 2: `text`): Die alte Grafik war eine Liste von sechs gleich grossen, unverbundenen Diagnosen und zeigte keine Beziehung. Die sechs Beispiele stehen als Liste mit dem Satz, dass die Reihenfolge keine Rangfolge ist. «Depression» und «Wenn Suizidgedanken dazukommen» sichtbar, «Mögliche Hinweise auf eine depressive Phase» und «Weitere Begleiterkrankungen kurz» als Vertiefungen (Akkordeon, Bauauftrag 2c-2, Abschnitt 3). Seit r4-25 (Release A, 14.10.2026) ersetzt der Zwischentitel «Suizidgedanken und Selbstverletzung» vor «Depression» den früheren Block «Wenn Suizidgedanken dazukommen».",
+          "reason": "Text ist klarer (UMBAUPLAN, Etappe 2: `text`): Die alte Grafik war eine Liste von sechs gleich grossen, unverbundenen Diagnosen und zeigte keine Beziehung. Die sechs Beispiele stehen als Liste; seit r4-27 (M2.3) nennt ein Absatz danach die häufigsten Begleiterkrankungen und ihren Rückgang, wenn sich Borderline bessert. «Depression» und «Wenn Suizidgedanken dazukommen» sichtbar, «Mögliche Hinweise auf eine depressive Phase» und «Weitere Begleiterkrankungen kurz» als Vertiefungen (Akkordeon, Bauauftrag 2c-2, Abschnitt 3). Seit r4-25 (Release A, 14.10.2026) ersetzt der Zwischentitel «Suizidgedanken und Selbstverletzung» vor «Depression» den früheren Block «Wenn Suizidgedanken dazukommen».",
           "approvalStatus": "freigegeben"
         },
         {
@@ -915,13 +920,16 @@
           "mit Arzt sprechen mit Ärztin sprechen Behandlungsteam kontaktieren Schweigepflicht Auskunft Beobachtungen mitteilen"
         ],
         "therapieformen-title": [
-          "Welche Medikamente helfen Medikamente Wirkung DBT Therapieform"
+          "Welche Medikamente helfen Medikamente Wirkung DBT Therapieform Family Connections Angehörigenprogramm Angehörigenprogramme"
         ],
         "angebote-title": [
           "Wer bezahlt die Therapie Kosten Krankenkasse Finanzierung"
         ],
         "rueckschlaege-title": [
           "Therapie schwierig Behandlung ablehnen keine Therapie wollen"
+        ],
+        "auskunft": [
+          "Beistandschaft Vertrauensperson Vertretung urteilsunfähig Patientenverfügung minderjährig Eltern Einwilligung Entbindung"
         ]
       },
       "sensitiveTopics": [
@@ -948,11 +956,11 @@
           "sectionId": "kontakt",
           "goal": "Drei Informationswege unterscheiden und die eigene Rolle gegenüber dem Behandlungsteam klären",
           "format": "relationship-map",
-          "statement": "Zwei getrennte Richtungen zeigen: Angehörige können eigene Beobachtungen mitteilen; vertrauliche Auskünfte des Behandlungsteams setzen grundsätzlich Einwilligung oder eine andere Rechtsgrundlage voraus. Eigene Beratung ist unabhängig davon möglich.",
+          "statement": "Zwei getrennte Richtungen zeigen: Angehörige können eigene Beobachtungen mitteilen; vertrauliche Auskünfte des Behandlungsteams setzen grundsätzlich eine Einwilligung der betroffenen Person oder eine gesetzliche Grundlage voraus. Eigene Beratung ist unabhängig davon möglich.",
           "understood": "Dass eine Mitteilung an das Behandlungsteam nicht automatisch einen Anspruch auf vertrauliche Auskunft erzeugt und beide Informationsrichtungen getrennt geklärt werden müssen.",
           "source": "Eigene didaktische Darstellung der auf dieser Seite erläuterten Informationswege",
           "alternative": "Beide Richtungen und Voraussetzungen als vollständiger HTML-Text sowie lineare Textfassung über aria-describedby",
-          "reason": "A04-011: Die Richtung der Information ist die zentrale, im Fliesstext leicht verwechselbare Beziehung. Die Figur ergänzt die weiterhin vollständige Begriffsliste und macht keine absolute Einzelfallregel.",
+          "reason": "A04-011: Die Richtung der Information ist die zentrale, im Fliesstext leicht verwechselbare Beziehung. Die Figur ergänzt die weiterhin vollständige Begriffsliste und macht keine absolute Einzelfallregel. M3.2 (r4-27): «andere Rechtsgrundlage» ist durch «wenn das Gesetz es vorsieht» ersetzt; die Fälle stehen im Zwischentitel «Wann Sie Auskunft erhalten können» unter der Abbildung.",
           "resonance": "Orientierung: Ich darf Beobachtungen mitteilen und kann zugleich verstehen, warum das Team nicht automatisch Auskunft geben darf.",
           "approvalStatus": "freigegeben"
         },
@@ -1370,7 +1378,7 @@
           "statement": "–",
           "source": "–",
           "alternative": "–",
-          "reason": "Kurze Liste möglicher fachlicher Zugänge und zwei direkte Übergänge.",
+          "reason": "Kurze Liste möglicher fachlicher Zugänge, das Angebot des Instituts Kinderseele Schweiz mit Prüfdatum (M5.2) und zwei direkte Übergänge.",
           "approvalStatus": "freigegeben"
         },
         {
@@ -1545,19 +1553,23 @@
           "Kann Borderline besser werden Veränderung Verlauf"
         ]
       },
-      "sensitiveTopics": [],
+      "sensitiveTopics": [
+        "selbstgefaehrdung"
+      ],
       "visualPlan": [
         {
           "id": "v-ge-forschung",
           "section": "01 Forschung",
           "sectionId": "forschung",
           "goal": "Die Zahlen der Langzeitstudie realistisch einordnen: was sie zeigen und was nicht",
-          "format": "text",
-          "statement": "–",
-          "source": "–",
-          "alternative": "–",
-          "reason": "Text ist klarer (Entscheid von Claude, Bauauftrag 2c-1, Abschnitt 1): Datenbotschaft des Profils ohne Diagramm. Kernaussage zuerst, danach die drei Werte (93 %, 50 %, 10 Jahre) als hervorgehobene Begriffsliste mit Erklärung, direkt dabei die Stichprobe und «Was die Zahlen nicht sagen». Ein Balkendiagramm würde zwei Werte vergleichen, die Verschiedenes messen (Remission und Recovery), und die Einschränkungen von den Zahlen trennen.",
-          "approvalStatus": "freigegeben"
+          "format": "comparison",
+          "statement": "Zwei Spalten nebeneinander mit denselben Merkmalen («Zum Beispiel», «Im Verlauf»): links «Bessert sich oft früher» mit impulsiven Handlungen (Selbstverletzungen, Suizidversuche, andere impulsive Handlungen), rechts «Bleibt oft länger» mit belastenden Gefühlen und Beziehungsängsten (Wut, Leere und Einsamkeit, Angst vor dem Verlassenwerden, Mühe, allein zu sein). Die Vertiefung nennt die Grenzen: Stichprobe der Zehnjahresstudie und abweichender Befund der zweiten Langzeitstudie.",
+          "source": "Eigene didaktische Darstellung nach Zanarini et al. (2007); Grenzen nach Gunderson et al. (2011)",
+          "alternative": "Beide Spalten als echter HTML-Text mit gleicher Merkmalsfolge; vollständige lineare Textfassung über aria-describedby",
+          "reason": "E10 (Entscheid 14.10.2026, an Claude delegiert; M2.5 und M2.6): Der Unterschied zwischen dem, was sich früh bessert, und dem, was länger bleibt, ist ein Vergleich (Muster E). Die Abbildung ersetzt die frühere Abbildung 2 «Verschiedene Einflüsse, ein individueller Weg», die die Begriffsliste in `einfluesse` nur wiederholte. Die Zahlen der Langzeitstudie bleiben als hervorgehobener Text ohne Diagramm (Bauauftrag 2c-1). «Ein neuer Trieb» in `verlauf` ist jetzt Abbildung 2.",
+          "approvalStatus": "freigegeben",
+          "understood": "Dass sich Beschwerden unterschiedlich schnell bessern: Die zwei Spalten zeigen nebeneinander, was oft zuerst zurückgeht und was länger bleibt. So lassen sich eine ruhigere Phase und weiter bestehende schwierige Gefühle zusammen einordnen, ohne das eine gegen das andere auszuspielen.",
+          "resonance": "Realistische Hoffnung: Es kann besser werden, auch wenn nicht alles gleichzeitig verschwindet, und ein schwieriges Gefühl heisst nicht, dass nichts erreicht wurde."
         },
         {
           "id": "v-ge-begriffe",
@@ -1590,13 +1602,11 @@
           "section": "04 Einflüsse",
           "sectionId": "einfluesse",
           "goal": "Erkennen, dass Genesung von mehreren Bereichen abhängt, ohne Reihenfolge und ohne Formel",
-          "format": "relationship-map",
-          "statement": "Fünf gleichwertige Bereiche stehen ohne Pfeile und Rangfolge neben dem Ausdruck «Individueller Weg»: Behandlung, Gesundheit, gewählte Beziehungen und Unterstützung, Lebensbedingungen und Teilhabe sowie Zeit und individueller Verlauf.",
-          "understood": "Dass mehrere Bereiche unterschiedlich bedeutsam sein können und weder ein einzelner Bereich noch Angehörige Genesung bestimmen.",
-          "source": "Eigene didaktische Darstellung auf Grundlage der im Abschnitt genannten Leitlinien",
-          "alternative": "Alle fünf Bereiche als echter HTML-Text; vollständige lineare Textfassung über aria-describedby",
-          "reason": "A04-013: Die offene Konstellation zeigt Mehrfaktorialität. Sie verzichtet bewusst auf Pfeile, Grössenwerte, Rangfolge und Prognose und wird durch die bestehende ausführliche Begriffsliste erklärt.",
-          "resonance": "Realistische Hoffnung: Genesung ist individuell und keine Leistung eines einzelnen Menschen oder der Familie.",
+          "format": "text",
+          "statement": "–",
+          "source": "–",
+          "alternative": "–",
+          "reason": "Text ist klarer (E10, Entscheid 14.10.2026, an Claude delegiert; M2.6): Die frühere Abbildung 2 stellte fünf Bereiche ohne Beziehung um «Individueller Weg» und wiederholte die Begriffsliste darunter wörtlich. Die Begriffsliste mit Erklärung bleibt; die neue Abbildung zum Verlauf steht in `forschung`.",
           "approvalStatus": "freigegeben"
         },
         {
@@ -1608,7 +1618,7 @@
           "statement": "–",
           "source": "–",
           "alternative": "–",
-          "reason": "Text ist klarer: kurz, mit Verweis auf `rolle` › `anbieten` (Verlinken statt wiederholen); die Selbstfrage, der Satz zur eigenen Gesundheit und die Hinweise zu Beratung und Auskünften stehen sichtbar. Eltern Minderjähriger und Beistandschaft als Vertiefung (Akkordeon).",
+          "reason": "Text ist klarer: kurz, mit Verweis auf `rolle` › `anbieten` (Verlinken statt wiederholen); die Selbstfrage, der Satz zur eigenen Gesundheit und die Hinweise zu Beratung und Auskünften stehen sichtbar. Seit r4-27 (M3.4, E8) steht zu Auskünften, Minderjährigen und Beistandschaft nur noch ein Verweis auf `behandlung` › `kontakt` («Wann Sie Auskunft erhalten können»).",
           "approvalStatus": "freigegeben"
         },
         {
@@ -1643,6 +1653,9 @@
         ],
         "austausch-title": [
           "Angehörigengruppe Selbsthilfegruppe Austausch mit anderen Gruppe"
+        ],
+        "kantone-title": [
+          "anderer Kanton andere Kantone ausserhalb Zürich Angehörigenberatung Schweiz Netzwerk Angehörigenarbeit Psychiatrie NAP"
         ]
       },
       "sensitiveTopics": [
@@ -1694,7 +1707,7 @@
           "statement": "–",
           "source": "–",
           "alternative": "–",
-          "reason": "Text ist klarer: ein kurzer Hinweis aus dem Bestand (Regional-Hinweis).",
+          "reason": "Text ist klarer: das Netzwerk Angehörigenarbeit Psychiatrie als erster Weg für andere Kantone und andere Zürcher Kliniken, als Angebot mit Prüfdatum (M5.1); Selbsthilfe Schweiz bleibt für Gruppen, mit Verweis auf `selbsthilfe`.",
           "approvalStatus": "freigegeben"
         },
         {
@@ -1752,7 +1765,7 @@
       ],
       "sectionSearchAliases": {
         "f-einweisung": [
-          "Einweisung fürsorgerische Unterbringung FU"
+          "Einweisung fürsorgerische Unterbringung FU Rechte Angehörige nahestehende Person Gericht anrufen Entlassung"
         ],
         "f-keine-therapie": [
           "Therapie ablehnen Behandlung ablehnen keine Therapie wollen verweigern"

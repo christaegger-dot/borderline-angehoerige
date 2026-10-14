@@ -6,6 +6,10 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
+### r4-27 freigegeben, PR #684 offen
+
+Release B (r4-27) setzt die Pakete 2 (Kernwissen), 3 (Schweizer Recht), 5 (Anlaufstellen und Literatur) und 7 (Quellen) des Massnahmenplans vom 14. Oktober 2026 um und zieht M6.7 vor. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben; Paket 3 hat der Auftraggeber ohne Prüfung durch den Rechtsdienst freigegeben. Der Produktionsbuild meldet 22 Seiten, 0 Blocker und 0 Hinweise; 33 Dateien sind bytegleich. PR #684 ist offen und nicht gemergt. Der Nachweis liegt unter `audit-results/2026-10-14-delta-release-b-r4-27/`. Offen bleiben R27-O01 bis R27-O05: die juristische Prüfung der Rechtstexte, R2 für die neue Abbildung auf «Genesung», die Wortbilanz (+1312 Wörter; «Behandlung» 3145, Ziel nach Release C unter 2400), die Teilwortsuche bei «FU» und die direkte Bestätigung der Angebote von ipw und iks.
+
 ### r4-26 veröffentlicht und nachgeprüft
 
 Die Nachbesserung von Release A (r4-26) wurde mit PR #682 als Merge-Commit `b1815260ff77901e29fdfcd001a92391aa907b77` übernommen. Netlify veröffentlichte am 14. Oktober 2026 um 17:12 UTC den Produktionsdeploy `6acfb7f924705af6e61b1e33`. Der anschliessende Produktionstest bestand 42 von 42 Seitenläufen mit Buildmarker und Assets r4-26, 54 von 54 Such-Ersttreffer wie lokal, 11 von 11 festgeschriebene Suchintentionen, alle neuen und entfernten Formulierungen, den No-JavaScript-Fallback, die 404-Seite, Sicherheitsheader und `robots.txt`; die 9 ausgelieferten Nicht-HTML-Dateien sind bytegleich mit `site/`. r4-26 schliesst die nur teilweise erfüllten Abnahmekriterien von M1.1, M1.5, M1.6 und M1.8 sowie R25-O01 und R25-O03. Der Nachweis liegt unter `audit-results/2026-10-14-delta-nachbesserung-r4-26/`. Offen bleiben R26-O01 bis R26-O04, darunter die Wortbilanz von «Krisen begleiten» (1949 Wörter, Ziel nach Release C höchstens 1800).
@@ -53,15 +57,17 @@ PR #674 wurde als Merge-Commit `1cb33e0a1bd499c7b8367213851373b6dd027ab5` übern
 | Nr. | Frage | Stand | Datum | Entschieden von |
 | --- | --- | --- | --- | --- |
 | E1 | Zahl zu Suizidversuchen nennen? | entschieden: keine Zahl, qualitativ «häufig» | 14.10.2026 | Auftraggeber, Fachstelle Angehörigenarbeit |
-| E2 | Erblichkeit beziffern? | offen; Empfehlung: «rund 40 bis 50 %» mit Einordnung | – | – |
-| E3 | Bezeichnung zu F60.31 ergänzen (Neuentscheid zu V-1)? | offen; Empfehlung: offizielle ICD-10-GM-Bezeichnung ergänzen | – | – |
+| E2 | Erblichkeit beziffern? | entschieden: «rund 40 bis 50 %» mit Einordnung (M2.8, r4-27) | 14.10.2026 | Auftraggeber |
+| E3 | Bezeichnung zu F60.31 ergänzen (Neuentscheid zu V-1)? | entschieden: ICD-10-GM-Wortlaut ergänzt (M2.2, r4-27) | 14.10.2026 | Auftraggeber |
 | E4 | Wie Eltern von Jugendlichen ansprechen? | offen; Empfehlung: eigene kurze Seite, im W2-Durchgang bestätigen | – | – |
 | E5 | Mason und Kreger als Beleg? | entschieden: (a) auf «Krisen begleiten» ersetzt, sonst als Praxisanregung kennzeichnen | 14.10.2026 | Claude, vom Auftraggeber delegiert |
-| E6 | Nicht zitierte Quellen im öffentlichen Verzeichnis? | offen; Empfehlung: ins interne Prüfprotokoll verschieben | – | – |
+| E6 | Nicht zitierte Quellen im öffentlichen Verzeichnis? | entschieden: ins interne Prüfprotokoll `authoring/QUELLEN-HINTERGRUND.md` verschoben (M7.2, r4-27) | 14.10.2026 | Claude, vom Auftraggeber delegiert |
 | E7 | Zuständigkeitssatz auf «Krisen begleiten» | offen; Empfehlung: höchstens zweimal | – | – |
-| E8 | Am 14.10.2026 freigegebene Stellen wieder öffnen? | offen; Empfehlung: einzeln entscheiden (A03-019, A03-025, A03-026) | – | – |
+| E8 | Am 14.10.2026 freigegebene Stellen wieder öffnen? | entschieden: A03-019 nach «Behandlung» verschoben (M3.4), A03-025 nur ergänzt (M3.5), A03-026 nicht geöffnet (r4-27) | 14.10.2026 | Claude, vom Auftraggeber delegiert |
 | E9 | Redaktionsregel für Vorbehalte | offen; Empfehlung: höchstens ein Vorbehalt pro Abschnitt, ausgenommen Sicherheits- und Rechtsgrenzen | – | – |
-| E10 | Abbildung 2 auf «Genesung» | offen; Empfehlung: ersetzen durch «Was sich zuerst bessert, was länger bleibt» | – | – |
+| E10 | Abbildung 2 auf «Genesung» | entschieden: ersetzt durch «Was sich oft zuerst bessert, was länger bleibt» (M2.6, r4-27; R2 offen) | 14.10.2026 | Claude, vom Auftraggeber delegiert |
+
+Zu Paket 3 (Schweizer Recht) entschied der Auftraggeber am 14. Oktober 2026, es in Release B umzusetzen und die Fassungen selbst freizugeben, ohne Prüfung durch den Rechtsdienst. Das Abnahmekriterium «Rechtsdienst hat den Wortlaut bestätigt» (M3.1, M3.3) ist damit nicht erfüllt; die juristische Prüfung bleibt als R27-O01 empfohlen.
 
 ### r4-22 · visuelle Befunde A04-008 bis A04-013, abgeschlossen
 

@@ -35,6 +35,10 @@ Das Codex-Review wurde um 20:53:02 UTC veröffentlicht, 41 Sekunden vor dem Merg
   - Alt: «… eher eine leichte Abnahme (Dazzi et al., 2014; Blades et al., 2018). Das garantiert keine bestimmte Wirkung im einzelnen Gespräch.»
   - Neu: «… eher eine leichte Abnahme (Dazzi et al., 2014; Blades et al., 2018). Untersucht wurden Befragungen in Studien, nicht Gespräche unter Angehörigen; eine bestimmte Wirkung im einzelnen Gespräch ist damit nicht garantiert.»
 
+## Unabhängige Prüfung
+
+Das Codex-Review von PR #685 prüfte r4-28 unabhängig von der bauenden Sitzung. Es meldete keinen Befund zu den fünf Inhaltskorrekturen und drei zur Dokumentation. Eingearbeitet sind der Abschlussstand im Pendenzendokument und der Freigabewortlaut als `FREIGABE-VORLAGE.md`. `independentReview` stand bei Beginn der Runde schon auf `bestaetigt`; es beruht jetzt auf diesem Review (Begründung in `FREIGABE.md`). Ein erneutes Review auf dem letzten Stand ist angefordert.
+
 ## Technischer Nachtest
 
 - Produktionsbuild: 22 Seiten, 0 Blocker, 0 Hinweise. Exportparität 33 von 33 Dateien. Ausser dem Buildmarker unterscheiden sich gegenüber r4-27 nur «Verstehen», «Behandlung», «Genesung», «Grenzen», «Krisen begleiten», «Quellen» und der Suchindex.

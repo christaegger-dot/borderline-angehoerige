@@ -13,3 +13,4 @@
 "R28-012";"Quellenkonsistenz";"Skriptvergleich «Verwendet auf» gegen die Quellenblöcke";"82 Einträge, 0 Abweichungen";"bestanden"
 "R28-013";"Krisennummern";"Volltextprüfung site/ und Gate";"0 tel:-Links";"bestanden"
 "R28-014";"Wortbilanz";"Wortzählung der Fragmente r4-27 gegen r4-28";"+40 Wörter ohne Quellenblöcke; behandlung 3157";"dokumentiert; R27-O03 offen"
+"R28-015";"Unabhängige Prüfung";"Codex-Review von PR #685 auf Commit df746e7 (abgeschlossen 14.10.2026, 21:15 UTC)";"0 Befunde zu den fünf Inhaltskorrekturen; 3 Befunde zur Dokumentation (Abschlussstand Pendenzen, Freigabewortlaut, independentReview), eingearbeitet bzw. begründet";"bestanden; erneutes Review auf dem letzten Stand angefordert"

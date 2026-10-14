@@ -56,5 +56,13 @@
   "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
   "siteExportUpdated": true,
   "deploymentChanged": false,
-  "pullRequest": 685
+  "pullRequest": 685,
+  "unabhaengigePruefung": {
+    "art": "Codex-Review PR #685",
+    "commit": "df746e7",
+    "abgeschlossen": "2026-10-14T21:15:25Z",
+    "befundeInhalt": 0,
+    "befundeDokumentation": 3,
+    "erneutesReview": "angefordert"
+  }
 }

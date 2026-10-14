@@ -3,6 +3,7 @@
 Internes Prüfprotokoll zu Massnahme M7.2 des Massnahmenplans vom 14. Oktober 2026 (Entscheid E6, an Claude delegiert).
 Diese Einträge standen bis Release r4-26 im öffentlichen Quellenverzeichnis mit dem Vermerk «Hintergrund, auf den Seiten nicht einzeln zitiert».
 Seit r4-27 enthält das öffentliche Verzeichnis nur noch Quellen, die auf den Seiten verwendet werden. Der Eintrag des Bundesamts für Gesundheit zur Neuregelung der psychologischen Psychotherapie blieb im Verzeichnis, weil die Seite «Behandlung und Ihre Rolle darin» darauf verlinkt.
+Zählung: Der Massnahmenplan nannte 18 nicht zitierte Einträge (Stand Review r4-24). In r4-26 trugen noch 17 Einträge den Vermerk, weil Project Air seit Release A verwendet wird. Davon sind 16 hier verschoben; der BAG-Eintrag ist neu als verwendet geführt.
 Die Datei liegt unter `authoring/` und wird nicht veröffentlicht. Einträge unverändert übernommen, einschliesslich der damaligen Einordnung.
 
 - **Maslach, C. und Leiter, M. P. (2016).** [Understanding the burnout experience: recent research and its implications for psychiatry](https://pubmed.ncbi.nlm.nih.gov/27265691/). World Psychiatry 15(2), 103–111.

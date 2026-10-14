@@ -1,6 +1,6 @@
 # Migration zur eigenständigen Website-Bearbeitung – Prüfnachweis
 
-**13. Oktober 2026 · Draft-PR [#671](https://github.com/christaegger-dot/borderline-angehoerige/pull/671)**
+**13. Oktober 2026 · PR [#671](https://github.com/christaegger-dot/borderline-angehoerige/pull/671), gemergt am 13. Oktober 2026 (Merge-Commit `14f097d`)**
 
 ## Ziel und Umsetzung
 - Direkte Bearbeitung im eigenen Repository mit `authoring/content/`, `authoring/site.config.json`, `authoring/css/` und `authoring/js/`.
@@ -26,8 +26,4 @@ Die technische Prüfung bestätigt Reproduzierbarkeit und Artefaktgleichheit. Si
 Künftige Änderungen zuerst unter `authoring/` bearbeiten, anschliessend unabhängig prüfen, freigeben, mit `--out=site --write-site` regenerieren und mit `--verify-site` den PR abgleichen. Keine direkte Handbearbeitung der erzeugten HTML-Dateien in `site/`.
 
 ## Weiteres Vorgehen
-1. Draft-PR fachlich/technisch prüfen.
-2. Das frühere Borderline-Quellverzeichnis im Profil-Repository als Archiv kennzeichnen.
-3. Erst nach ausdrücklicher Freigabe mergen.
-4. Danach den separat vorbereiteten Audit-Agent-PR mit der eigenständigen Quellenstruktur zusammenführen.
-5. Änderungen an veröffentlichten Inhalten weiterhin über kontrollierte PRs ausliefern.
+Die Migration ist abgeschlossen. Änderungen an veröffentlichten Inhalten werden weiterhin über kontrollierte PRs ausgeliefert. Den aktuellen Arbeitsstand führt `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`.

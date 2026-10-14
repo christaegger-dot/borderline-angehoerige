@@ -2,7 +2,7 @@
 
 ## Quellenmodell nach Migration
 
-**Vorrang hat der eigenständige Website-Quellordner `authoring/` dieses Repositories.** Sobald PR #671 gemergt ist, liegen alle bearbeitbaren Inhalte, CSS, JavaScript, Konfiguration und lokale Ressourcen hier.
+**Vorrang hat der eigenständige Website-Quellordner `authoring/` dieses Repositories.** Seit dem Merge von PR #671 am 13. Oktober 2026 liegen alle bearbeitbaren Inhalte, CSS, JavaScript, Konfiguration und lokale Ressourcen hier.
 
 - `authoring/content/`: Kapitel und Informationen
 - `authoring/site.config.json`: Seitenvertrag, Navigation, Zuständigkeit, Veröffentlichungsdaten
@@ -12,7 +12,7 @@
 
 Das separate Repository `christaegger-dot/puk-website-profil` dient künftig als **Design- und Qualitätsreferenz**. Inhaltliche Korrekturen NICHT mehr dort verorten und NICHT ausschliesslich in den generierten `site/`-Dateien vornehmen.
 
-Falls die Migration noch nicht gemergt wurde, markiere die fehlende `authoring/`-Struktur ausdrücklich und führe das Audit nur im Bestand-/read-only-Modus durch. Die Migration nicht eigenmächtig mergen.
+Fehlt die `authoring/`-Struktur in einem geprüften Stand, markiere das ausdrücklich und führe das Audit nur im Bestand-/read-only-Modus durch.
 
 ## Startauftrag
 Verwende `$website-audit` im Modus `bestand`. Ermittle die aktuelle Repository-Version und den Deployment-Stand, inventarisiere alle bisherigen Audit-/Freigabenachweise und prüfe offen gebliebene Befunde. Starte keine automatische Korrektur, keinen Merge oder Veröffentlichung.

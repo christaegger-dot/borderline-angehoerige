@@ -1,0 +1,68 @@
+{
+  "paket": "Release A · Paket 1 Sicherheit: Suizidalität und Selbstverletzung",
+  "datum": "2026-10-14",
+  "release": "r4-25",
+  "branch": "claude/release-a-sicherheit-r4-25-1791988026",
+  "basisCommit": "38007a024e73703b132ab7ae9e34c6b4623e54b5",
+  "basisRelease": "r4-24",
+  "status": "PUK-Freigabe dokumentiert; Produktionsbuild, Exportparität und lokaler Delta-Test abgeschlossen; Vorlage als Pull Request ohne Merge",
+  "entscheide": {
+    "E1": "keine Zahl zu Suizidversuchen, qualitativ «häufig» (Fachstelle, 14.10.2026)",
+    "E5": "(a) Mason und Kreger auf «Krisen begleiten» ersetzt (an Claude delegiert, 14.10.2026)"
+  },
+  "massnahmen": {
+    "umgesetzt": [
+      "M1.1",
+      "M1.2",
+      "M1.3",
+      "M1.4",
+      "M1.5",
+      "M1.6",
+      "M1.7",
+      "M1.8",
+      "M1.9",
+      "M7.1 (Teil Krise)"
+    ],
+    "teilweise": [
+      "M7.4 (Teil A)"
+    ],
+    "technisch": [
+      "R25-T01 Suchaliase"
+    ],
+    "offen": [
+      "R25-O01",
+      "R25-O02",
+      "R25-O03",
+      "R25-O04",
+      "R25-O05"
+    ]
+  },
+  "tests": {
+    "draftBuild": "22 Seiten, 0 Blocker, 1 erwarteter Hinweis change-review",
+    "productionBuild": "22 Seiten, 0 Blocker, 0 Hinweise",
+    "exportParity": "33/33 Dateien bytegleich",
+    "browserRunsAllPages": 44,
+    "browserRunsChangedPages": 56,
+    "axeRuns": 56,
+    "searchRegression": "54/54 Ersttreffer unverändert gegenüber r4-24",
+    "safetySearches": "14/14 unverändert",
+    "newSearchIntents": "9/9 mit vorgesehenem Ersttreffer",
+    "textChecks": "14/14 neu vorhanden, 5/5 ersetzt",
+    "deepLinks": "3/3",
+    "runtimeErrors": 0,
+    "horizontalOverflow": 0
+  },
+  "wortbilanz": {
+    "fliesstextThemenseiten": 255,
+    "quellenbloecke": 171,
+    "quellenverzeichnis": 179,
+    "kriseMitQuellenblock": {
+      "vorher": 1717,
+      "nachher": 1934,
+      "zielNachReleaseC": 1800
+    }
+  },
+  "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
+  "siteExportUpdated": true,
+  "deploymentChanged": false
+}

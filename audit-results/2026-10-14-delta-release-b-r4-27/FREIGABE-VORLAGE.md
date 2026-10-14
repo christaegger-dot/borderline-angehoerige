@@ -1,6 +1,6 @@
 # Freigabevorlage Release B (r4-27)
 
-Stand: 14. Oktober 2026, Branch `claude/release-b-r4-27-1792000693`, Commit `45ae850`, Vergleich mit `origin/main` (r4-26).
+Stand: 14. Oktober 2026, Branch `claude/release-b-r4-27-1792000693`, Commit `9a07502` (Wortlaut; die Vorlage selbst liegt im Folgecommit), Vergleich mit `origin/main` (r4-26).
 
 Diese Vorlage zeigt jeden neuen oder geänderten Wortlaut von Release B im sichtbaren Text der Website, je Seite in der Reihenfolge auf der Seite. Durchgestrichen steht der bisherige Wortlaut, darunter der neue. Listenpunkte erscheinen als eigene Zeilen. Ein Absatz mit Verweis enthält nur den Linktext, nicht die Linkadresse.
 

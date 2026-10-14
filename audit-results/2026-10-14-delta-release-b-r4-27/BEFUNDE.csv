@@ -35,4 +35,4 @@
 "R27-O03";"Wortbilanz";"alle";"31613 Wörter ohne Quellenblöcke";"32925 Wörter (+1312); Behandlung 3145 (Ziel nach Release C unter 2400)";"Ausgleich in Release C";"offen"
 "R27-O04";"Suche";"suche";"–";"Die Kurzsuche «FU» trifft jedes «für» (Teilwortvergleich); exakte Titeltreffer bestimmen die Rangfolge stark";"Suchlogik in W3 prüfen";"offen"
 "R27-O05";"Angebote";"behandlung; kinder";"–";"ipw nur über ein Abrufwerkzeug gelesen (Bot-Sperre); iks nur über die Website bestätigt";"Bestätigung bei der nächsten Angebotsprüfung";"offen"
-"R27-O06";"Codex-Review PR #684";"grenzen; behandlung; genesung; verstehen; krise; quellen";"–";"Fünf Codex-Befunde, beim Merge noch nicht geprüft; danach an den Primärquellen geprüft";"Korrekturen freigegeben";"korrigiert in r4-28"
+"R27-O06";"Codex-Review PR #684";"grenzen; behandlung; genesung; verstehen; krise; quellen";"–";"Fünf Codex-Befunde, beim Merge noch nicht geprüft; danach an den Primärquellen geprüft";"Korrekturen freigegeben";"korrigiert in r4-28 (PR #685 offen)"

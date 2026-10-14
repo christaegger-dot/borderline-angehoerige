@@ -2,7 +2,7 @@
 
 ## Ergebnis
 
-r4-28 korrigiert fünf Aussagen aus r4-27, die das automatische Codex-Review von Pull Request #684 beanstandet hat. Die Prüfung an den Primärquellen bestätigte vier Befunde vollständig und einen zur Hälfte. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`). Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der Delta-Test auf dem erzeugten `site/`-Export. Der Pull Request ist offen und nicht gemergt.
+r4-28 korrigiert fünf Aussagen aus r4-27, die das automatische Codex-Review von Pull Request #684 beanstandet hat. Die Prüfung an den Primärquellen bestätigte vier Befunde vollständig und einen zur Hälfte. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`). Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der Delta-Test auf dem erzeugten `site/`-Export. Der Pull Request #685 ist offen und nicht gemergt.
 
 Das Codex-Review wurde um 20:53:02 UTC veröffentlicht, 41 Sekunden vor dem Merge von PR #684 um 20:53:43 UTC; geprüft war es beim Merge noch nicht. Seit der Veröffentlichung von r4-27 (14. Oktober 2026, 20:53 UTC) stehen die fünf beanstandeten Stellen auf der öffentlichen Website, bis r4-28 veröffentlicht ist. Am schwersten wiegt der Fristbeginn beim Gewaltschutz. Er entstand bei der Einarbeitung der unabhängigen Prüfung von r4-27.
 

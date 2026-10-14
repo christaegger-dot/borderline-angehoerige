@@ -6,7 +6,7 @@
   "basisCommit": "8dbf1be6b291cb3fd8f5daa5db5202e9f8eac3fb",
   "basisRelease": "r4-27",
   "freigabevorlage": "1845c6b",
-  "status": "PUK-Freigabe dokumentiert; Pull Request offen, nicht gemergt",
+  "status": "PUK-Freigabe dokumentiert; Pull Request #685 offen, nicht gemergt",
   "befunde": {
     "erfuellt": [
       "R28-C01",
@@ -56,5 +56,5 @@
   "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
   "siteExportUpdated": true,
   "deploymentChanged": false,
-  "pullRequest": null
+  "pullRequest": 685
 }

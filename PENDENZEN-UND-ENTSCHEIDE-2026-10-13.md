@@ -6,9 +6,9 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
-### r4-28 freigegeben, Pull Request offen
+### r4-28 freigegeben, PR #685 offen
 
-r4-28 korrigiert fünf Aussagen aus r4-27, die das Codex-Review von PR #684 beanstandet hat: den Fristbeginn für das Verlängerungsgesuch beim Gewaltschutz (§ 6 Abs. 1 GSG) und die Höchstdauer im Gesetzeswortlaut (§ 6 Abs. 3 GSG), die Aussage zur ipw, die Definition hinter 85 % Remission, die neun Kriterien nach DSM-5-TR und die Einschränkung von Blades et al. (2018) auf Befragungen in Studien. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben. Der Produktionsbuild meldet 22 Seiten, 0 Blocker und 0 Hinweise; 33 Dateien sind bytegleich. Der Pull Request ist offen und nicht gemergt. Bis zu seiner Veröffentlichung enthält die Produktion die fünf beanstandeten Stellen. Der Nachweis liegt unter `audit-results/2026-10-14-delta-codex-r4-28/`. Neu offen ist R28-O01: einen Pull Request erst nach abgeschlossenem und geprüftem Codex-Review mergen.
+r4-28 korrigiert fünf Aussagen aus r4-27, die das Codex-Review von PR #684 beanstandet hat: den Fristbeginn für das Verlängerungsgesuch beim Gewaltschutz (§ 6 Abs. 1 GSG) und die Höchstdauer im Gesetzeswortlaut (§ 6 Abs. 3 GSG), die Aussage zur ipw, die Definition hinter 85 % Remission, die neun Kriterien nach DSM-5-TR und die Einschränkung von Blades et al. (2018) auf Befragungen in Studien. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben. Der Produktionsbuild meldet 22 Seiten, 0 Blocker und 0 Hinweise; 33 Dateien sind bytegleich. PR #685 ist offen und nicht gemergt. Bis zu seiner Veröffentlichung enthält die Produktion die fünf beanstandeten Stellen. Der Nachweis liegt unter `audit-results/2026-10-14-delta-codex-r4-28/`. Neu offen ist R28-O01: einen Pull Request erst nach abgeschlossenem und geprüftem Codex-Review mergen.
 
 ### r4-27 veröffentlicht und nachgeprüft
 

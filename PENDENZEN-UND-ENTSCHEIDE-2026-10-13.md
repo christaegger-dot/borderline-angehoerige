@@ -10,6 +10,8 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 PR #676 wurde als Merge-Commit `7864dab6f48ef4e52db1e783387032a0c0de8e93` übernommen. Die öffentliche Website liefert r4-22. Der anschliessende Produktions-Smoke-Test bestand 169 von 169 Browserprüfungen ohne Laufzeitfehler. Bestätigt wurden alle 21 regulären Seiten, die eigene 404-Seite, 320-Pixel-Reflow, Tastaturbasis, No-JavaScript-Fallback, alle 36 festgeschriebenen Such-Ersttreffer, Sicherheitsheader, Robots-Steuerung und repräsentative Weiterleitungen. Das Produktionsergebnis ist in PR #676 und unter `audit-results/2026-10-14-delta-review-r4-22/` dokumentiert.
 
+Das abschliessende Audit 06 wurde auf dem aktuellen `main`-Commit `160a42f92eb78e4a0af806fc74babea1ab712937` und der öffentlichen Produktion wiederholt. Es fand keine neuen P0-/P1-Befunde oder Release-Blocker und bestätigt ein **CONDITIONAL GO** für den fortgesetzten Betrieb von r4-22. Die Einschränkung betrifft weiterhin die fehlende interne Rechts-/Datenschutz-Gesamtprüfung und die bewusst nicht durchgeführten realen Screenreader-, Geräte- und Nutzendentests; sie ist keine technische Releaseblockade. Der aktuelle Abschlussnachweis liegt unter `audit-results/2026-10-14-abschluss-r4-22/`.
+
 ### r4-21 veröffentlicht und nachgeprüft
 
 Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 wurden mit PR #672 gemergt. Die Produktion unter `https://borderline-angehoerige.netlify.app` lieferte danach zunächst Build r4-19; der aktuelle, nachgeprüfte Produktionsstand ist Build r4-21.

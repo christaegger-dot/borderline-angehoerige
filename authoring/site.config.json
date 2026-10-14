@@ -1,8 +1,8 @@
 {
-  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4. Lokale Änderungen ab r4-19 sind in diesem Repository dokumentiert; das PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände. r4-20 ergänzt die Phrasenerkennung der lokalen Suche nach dem Produktions-Smoke-Test vom 13.10.2026. r4-21 enthält das nachgeprüfte P3-Paket für Sprache und visuelle Didaktik. r4-22 setzt die Befunde A04-008 bis A04-013 des visuellen Audits vom 13.10.2026 um. r4-23 setzt die Sprachbefunde A03-019 bis A03-038 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-24 gestaltet den Footer als kompakte visuelle Sekundärebene, ohne seinen Wortlaut oder seine Pflichtangaben zu verändern. r4-25 setzt Paket 1 (Sicherheit: Suizidalität und Selbstverletzung) des Massnahmenplans vom 14.10.2026 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben.",
+  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4. Lokale Änderungen ab r4-19 sind in diesem Repository dokumentiert; das PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände. r4-20 ergänzt die Phrasenerkennung der lokalen Suche nach dem Produktions-Smoke-Test vom 13.10.2026. r4-21 enthält das nachgeprüfte P3-Paket für Sprache und visuelle Didaktik. r4-22 setzt die Befunde A04-008 bis A04-013 des visuellen Audits vom 13.10.2026 um. r4-23 setzt die Sprachbefunde A03-019 bis A03-038 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-24 gestaltet den Footer als kompakte visuelle Sekundärebene, ohne seinen Wortlaut oder seine Pflichtangaben zu verändern. r4-25 setzt Paket 1 (Sicherheit: Suizidalität und Selbstverletzung) des Massnahmenplans vom 14.10.2026 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-26 schliesst die nach Release A offenen Abnahmekriterien zu M1.1, M1.5, M1.6 und M1.8 sowie R25-O01; die Fassungen warten auf die fachliche Freigabe der PUK.",
   "kitRevision": "PUK Website Kit 1.10.1-r4 · abgeleitet",
   "canonicalSource": "PUK Zürich Design System 1.10.1 (unverändert)",
-  "assetVersion": "r4-25",
+  "assetVersion": "r4-26",
   "siteTitle": "Borderline – Orientierung für Angehörige",
   "shortDescription": "Psychoedukative Website der Fachstelle Angehörigenarbeit PUK für Angehörige von Menschen mit Borderline.",
   "language": "de-CH",
@@ -26,10 +26,9 @@
   "robots": "noindex, nofollow",
   "releaseApproval": {
     "institutionalResponsibility": "bestaetigt",
-    "independentReview": "bestaetigt",
+    "independentReview": "ausstehend",
     "reviewedBy": "PUK",
-    "reviewedAt": "2026-10-14",
-    "reviewScope": "Release A (r4-25): Massnahmen M1.1 bis M1.9 sowie M7.1 und M7.4 (Teil «Krisen begleiten») aus dem Massnahmenplan vom 14.10.2026"
+    "reviewScope": "Release A2 (r4-26): Nachbesserung M1.1, M1.5, M1.6 und M1.8 (Quelle NICE NG225) sowie R25-O01 («Kurz und klar», «Über diese Website») aus dem Massnahmenplan vom 14.10.2026"
   },
   "serviceReview": {
     "$comment": "Dynamische Beratungs- und Behandlungsangebote müssen mindestens halbjährlich redaktionell geprüft werden. Das Produktions-Gate blockiert fehlende, zukünftige oder mehr als 183 Tage alte Prüfdaten.",
@@ -1765,6 +1764,9 @@
         ],
         "f-sprache": [
           "Dolmetschen Dolmetscher Übersetzung andere Sprache"
+        ],
+        "f-verlassen": [
+          "Darf ich gehen Muss ich bleiben"
         ]
       },
       "sensitiveTopics": [

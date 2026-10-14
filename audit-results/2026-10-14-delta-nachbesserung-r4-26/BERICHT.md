@@ -4,7 +4,7 @@
 
 Eine Prüfung am 14. Oktober 2026 ergab, dass Release A (r4-25) die Abnahmekriterien des Massnahmenplans nicht vollständig erfüllte: M1.1, M1.5, M1.6 und M1.8 waren nur teilweise erfüllt. Ausserdem waren R25-O01 (missverständlicher Gefährlichkeitssatz auf «Kurz und klar») und R25-O03 (Suche «Darf ich gehen») offen. r4-26 schliesst diese Punkte.
 
-Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`). Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der Delta-Test auf dem erzeugten `site/`-Export. Merge und Veröffentlichung erfolgen nur auf separaten Auftrag.
+Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`). Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der Delta-Test auf dem erzeugten `site/`-Export. r4-26 wurde am 14. Oktober 2026 mit PR #682 gemergt und veröffentlicht; der Produktionsnachtest bestand (siehe unten).
 
 ## Änderungen
 
@@ -47,6 +47,16 @@ r4-26 fügt 164 Wörter hinzu, davon 62 auf «Beziehungen». «Krisen begleiten�
 - R26-O02: Die gelockerte Suche verlangt bei zwei Wörtern weiterhin beide Treffer.
 - R26-O03: Wortbilanz «Krisen begleiten», siehe oben.
 - R26-O04: Das Gate prüft «Verwendet auf» nicht.
+
+## Produktionsnachweis
+
+PR #682 wurde am 14. Oktober 2026 als Merge-Commit `b1815260ff77901e29fdfcd001a92391aa907b77` übernommen. Netlify veröffentlichte den Produktionsdeploy `6acfb7f924705af6e61b1e33` um 17:12 UTC. Der anschliessende Test gegen `https://borderline-angehoerige.netlify.app` bestand:
+
+- 42 von 42 Läufen über 21 Seiten bei 320 und 1440 CSS-Pixel, alle mit Buildmarker r4-26, Assets r4-26 und ohne Lade- oder Laufzeitfehler;
+- 54 von 54 Such-Ersttreffern wie im lokalen Export und 11 von 11 festgeschriebenen Suchintentionen, darunter «Darf ich gehen» und «Muss ich bleiben»;
+- 14 von 14 neuen und 3 von 3 entfernten Formulierungen;
+- No-JavaScript-Fallback auf «Krisen begleiten», eigene 404-Seite, unveränderte Sicherheitsheader und `robots.txt`;
+- 9 von 9 ausgelieferten Nicht-HTML-Dateien bytegleich mit `site/`. Die HTML-Dateien schreibt Netlify beim Ausliefern auf saubere Pfade um; sie sind deshalb nicht bytegleich.
 
 ## Evidenzgrenzen
 

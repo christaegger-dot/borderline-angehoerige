@@ -6,7 +6,7 @@
   "basisCommit": "d29ca85d207ae9162bda329bec3d9073748e50ab",
   "basisRelease": "r4-25",
   "freigabevorlage": "ac7db14",
-  "status": "PUK-Freigabe dokumentiert; Produktionsbuild, Exportparität und lokaler Delta-Test abgeschlossen; Vorlage als Pull Request ohne Merge",
+  "status": "PUK-Freigabe dokumentiert; mit PR #682 gemergt und veröffentlicht; Produktionsnachtest bestanden",
   "massnahmen": {
     "erfuellt": [
       "M1.1",
@@ -47,5 +47,21 @@
   },
   "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
   "siteExportUpdated": true,
-  "deploymentChanged": false
+  "deploymentChanged": false,
+  "produktion": {
+    "pullRequest": 682,
+    "mergeCommit": "b1815260ff77901e29fdfcd001a92391aa907b77",
+    "netlifyDeploy": "6acfb7f924705af6e61b1e33",
+    "veroeffentlicht": "2026-10-14T17:12:39Z",
+    "smokeTest": {
+      "seitenLaeufe": "42/42",
+      "suche": "54/54 wie lokal",
+      "suchintentionen": "11/11",
+      "texte": "14/14 neu, 3/3 entfernt",
+      "noJs": "bestanden",
+      "seite404": "bestanden",
+      "header": "unverändert",
+      "nichtHtmlBytegleich": "9/9"
+    }
+  }
 }

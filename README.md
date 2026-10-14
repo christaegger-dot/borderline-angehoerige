@@ -39,4 +39,4 @@ Vor einer Änderung zuerst `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md` lesen. Es is
 
 **Provenienz:** Übernommen aus `christaegger-dot/puk-website-profil`, Quell-Commit [`2bfda22`](https://github.com/christaegger-dot/puk-website-profil/commit/2bfda22ce3abb845fabb4459660f48960a9daec4), Ordner `templates/website/borderline-angehoerige/`. Das veröffentlichte Release diente als Ausgangsstand. Ursprüngliche Berichte und Freigaben bleiben versionsgebunden.
 
-**Migration:** Ausschliesslich auf dem Branch `refactor/standalone-authoring-2026-10-13` vorbereitet. Diese Dateien stellen selbst keine neue fachliche oder technische Freigabe dar.
+**Migration:** Auf dem Branch `refactor/standalone-authoring-2026-10-13` vorbereitet und am 13. Oktober 2026 mit PR #671 gemergt (Merge-Commit `14f097d`). Diese Dateien stellen selbst keine neue fachliche oder technische Freigabe dar.

@@ -6,15 +6,19 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
+### r4-23 und r4-24 gemergt und ausgeliefert
+
+PR #679 (r4-23, Sprachmassnahmen A03-019 bis A03-038) wurde als Merge-Commit `9dad4ba9b5b24b055ce0defb23e9de32b7e8f5ad` übernommen, PR #680 (r4-24, Footer als visuelle Sekundärebene) als Merge-Commit `38007a024e73703b132ab7ae9e34c6b4623e54b5`. Laut Netlify ist seit dem 14. Oktober 2026, 12:26 UTC, der Produktionsdeploy `6acf74dbec424b04acd344d1` mit Commit `38007a0` aktiv. Ein Produktions-Smoke-Test für r4-23 und r4-24 ist nicht dokumentiert; der zuletzt in der Produktion nachgeprüfte Stand bleibt r4-22. Der Nachweis zu r4-23 liegt unter `audit-results/2026-10-14-delta-sprach-r4-23/`.
+
 ### r4-22 veröffentlicht und nachgeprüft
 
-PR #676 wurde als Merge-Commit `7864dab6f48ef4e52db1e783387032a0c0de8e93` übernommen. Die öffentliche Website liefert r4-22. Der anschliessende Produktions-Smoke-Test bestand 169 von 169 Browserprüfungen ohne Laufzeitfehler. Bestätigt wurden alle 21 regulären Seiten, die eigene 404-Seite, 320-Pixel-Reflow, Tastaturbasis, No-JavaScript-Fallback, alle 36 festgeschriebenen Such-Ersttreffer, Sicherheitsheader, Robots-Steuerung und repräsentative Weiterleitungen. Das Produktionsergebnis ist in PR #676 und unter `audit-results/2026-10-14-delta-review-r4-22/` dokumentiert.
+PR #676 wurde als Merge-Commit `7864dab6f48ef4e52db1e783387032a0c0de8e93` übernommen. Die öffentliche Website lieferte danach r4-22. Der anschliessende Produktions-Smoke-Test bestand 169 von 169 Browserprüfungen ohne Laufzeitfehler. Bestätigt wurden alle 21 regulären Seiten, die eigene 404-Seite, 320-Pixel-Reflow, Tastaturbasis, No-JavaScript-Fallback, alle 36 festgeschriebenen Such-Ersttreffer, Sicherheitsheader, Robots-Steuerung und repräsentative Weiterleitungen. Das Produktionsergebnis ist in PR #676 und unter `audit-results/2026-10-14-delta-review-r4-22/` dokumentiert.
 
-Das abschliessende Audit 06 wurde auf dem aktuellen `main`-Commit `160a42f92eb78e4a0af806fc74babea1ab712937` und der öffentlichen Produktion wiederholt. Es fand keine neuen P0-/P1-Befunde oder Release-Blocker und bestätigt ein **CONDITIONAL GO** für den fortgesetzten Betrieb von r4-22. Die Einschränkung betrifft weiterhin die fehlende interne Rechts-/Datenschutz-Gesamtprüfung und die bewusst nicht durchgeführten realen Screenreader-, Geräte- und Nutzendentests; sie ist keine technische Releaseblockade. Der aktuelle Abschlussnachweis liegt unter `audit-results/2026-10-14-abschluss-r4-22/`.
+Das abschliessende Audit 06 wurde auf dem damals aktuellen `main`-Commit `160a42f92eb78e4a0af806fc74babea1ab712937` und der öffentlichen Produktion wiederholt. Es fand keine neuen P0-/P1-Befunde oder Release-Blocker und bestätigt ein **CONDITIONAL GO** für den fortgesetzten Betrieb von r4-22. Die Einschränkung betrifft weiterhin die fehlende interne Rechts-/Datenschutz-Gesamtprüfung und die bewusst nicht durchgeführten realen Screenreader-, Geräte- und Nutzendentests; sie ist keine technische Releaseblockade. Der aktuelle Abschlussnachweis liegt unter `audit-results/2026-10-14-abschluss-r4-22/`.
 
 ### r4-21 veröffentlicht und nachgeprüft
 
-Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 wurden mit PR #672 gemergt. Die Produktion unter `https://borderline-angehoerige.netlify.app` lieferte danach zunächst Build r4-19; der aktuelle, nachgeprüfte Produktionsstand ist Build r4-21.
+Die P1- sowie die fachlichen, rechtlichen, sprachlichen und visuellen P2-Korrekturen des Bestandsaudits vom 13. Oktober 2026 wurden mit PR #672 gemergt. Die Produktion unter `https://borderline-angehoerige.netlify.app` lieferte danach zunächst Build r4-19; der danach nachgeprüfte Produktionsstand war Build r4-21.
 
 Der anschliessende Produktions-Smoke-Test bestätigte Seiten, Nutzerwege, 404, Weiterleitungen, Header, Robots-Steuerung, Cache-Regeln und Buildparität. Er fand jedoch eine P1-Suchlücke: direkte Begriffe wie «Suizidgedanken» funktionierten, gleichbedeutende Mehrwortformulierungen wie «Mein Kind will nicht mehr leben» führten nicht zuverlässig zu den Kriseninhalten. Damit war die Produktionsbedingung aus Audit 06 nicht vollständig erfüllt.
 
@@ -32,17 +36,21 @@ Der lokale Produktions-Build meldet 22 Seiten, 0 Blocker und 0 Hinweise; 33 Date
 
 A03-H01 bleibt als nicht empirisch überprüfte Wirkungshypothese dokumentiert. Der Titel «Krisen begleiten» wurde nicht geändert; ohne reale Nutzendentests wird weder eine belastende noch eine entlastende Wirkung behauptet.
 
-PR #674 wurde als Merge-Commit `1cb33e0a1bd499c7b8367213851373b6dd027ab5` übernommen. Die öffentliche Website liefert r4-21. Der anschliessende Produktions-Smoke-Test bestand 169 von 169 Browserprüfungen ohne Laufzeitfehler. Alle 21 regulären Seiten, die eigene 404-Seite, Tastaturbasis, No-JavaScript-Fallback, alle 36 festgeschriebenen Such-Ersttreffer, Sicherheitsheader, Robots-Steuerung und repräsentative Weiterleitungen wurden bestätigt. Das Produktionsergebnis ist in PR #674 dokumentiert.
+PR #674 wurde als Merge-Commit `1cb33e0a1bd499c7b8367213851373b6dd027ab5` übernommen. Die öffentliche Website lieferte danach r4-21. Der anschliessende Produktions-Smoke-Test bestand 169 von 169 Browserprüfungen ohne Laufzeitfehler. Alle 21 regulären Seiten, die eigene 404-Seite, Tastaturbasis, No-JavaScript-Fallback, alle 36 festgeschriebenen Such-Ersttreffer, Sicherheitsheader, Robots-Steuerung und repräsentative Weiterleitungen wurden bestätigt. Das Produktionsergebnis ist in PR #674 dokumentiert.
 
 ## Aktuell sofort umsetzbare Pendenzen
 
-### r4-23 · Sprachmassnahmen A03-019 bis A03-038
+### r4-25 · Release A Sicherheit, Pull Request offen
 
-Die 20 bestätigten Befunde des unabhängigen Audit 03 vom 14. Oktober 2026 sind auf dem Branch `codex/audit-03-massnahmen-r4-23` in der kanonischen Quelle `authoring/` umgesetzt. Dazu gehören die Korrektur der versehentlichen Erwachsenenbegrenzung, die motivneutrale Formulierung zu Absicht, die institutionelle Buchauswahl, präzisere Krisen-, Grenz- und Dialogtexte, die Verdichtung von «Nach der Krise» sowie die P3-Redaktionspolitur. A03-H01 und A03-H02 bleiben als ungetestete Wirkungshypothesen bewusst unverändert.
+Grundlage ist der inhaltliche Review W1 vom 14. Oktober 2026 auf Stand r4-24 mit 63 Befunden (2 kritisch, 28 wichtig, 33 optional). Er liegt mit Befund-IDs unter `audit-results/2026-10-14-inhalt-w1-r4-24/`. Der darauf aufbauende Massnahmenplan ordnet die Befunde drei Releases zu: A (Sicherheit), B (Ergänzungen ohne Strukturumbau) und C (Kürzung und Umbau nach W2).
 
-Der Draft-Build meldete vor der Freigabe 22 Seiten, 0 Blocker und den erwarteten Hinweis zum ausstehenden Änderungsreview. Der Abschnitt «Nach der Krise» wurde von 749 auf 379 Wörter reduziert; die Sicherheits- und Zuständigkeitsgrenzen bleiben sichtbar. Der Nachweis liegt unter `audit-results/2026-10-14-delta-sprach-r4-23/`.
+Release A setzt Paket 1 um: «Verstehen», «Diagnose» und «Krisen begleiten» nennen Suizidgedanken und Selbstverletzung als häufig bei Borderline; «Krisen begleiten» hat einen neuen Block «Wenn Sie eine Selbstverletzung bemerken». «Beziehungen», «Kommunizieren» und «Ihre Rolle» sagen genauer, wie Angehörige reagieren und wann sie Hilfe holen dürfen. Umgesetzt sind M1.1 bis M1.9, der Teil «Krisen begleiten» von M7.1 und der Release-A-Teil von M7.4. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben. Produktionsbuild 22 Seiten, 0 Blocker, 0 Hinweise; Parität 33 von 33 Dateien; Suche 54 von 54 Ersttreffer unverändert. Der Nachweis liegt unter `audit-results/2026-10-14-delta-sicherheit-r4-25/`.
 
-Die konkreten r4-23-Fassungen zu A03-019 bis A03-038 wurden am 14. Oktober 2026 im Namen der PUK geprüft und freigegeben. Das Produktionsgate besteht danach mit 22 Seiten, 0 Blockern und 0 Hinweisen; 33 Exportdateien sind bytegleich reproduzierbar. Der vollständige Delta-Smoke-Test auf dem erzeugten `site/`-Export bestand 44 von 44 Seiten-/Viewport-Läufe, 28 von 28 axe-Läufe, 36 von 36 unveränderte Such-Ersttreffer, sechs Safety-/Überlastungssuchen, zwölf Textnachweise, Akkordeon, Deep-Link und No-JavaScript-Fallback. r4-23 ist lokal releasebereit. Commit, Pull Request, Merge und Veröffentlichung sind noch nicht erfolgt und benötigen einen separaten Auftrag; die öffentliche Produktion bleibt bis dahin auf r4-22.
+Der Branch ist `claude/release-a-sicherheit-r4-25-1791988026`. Merge und Veröffentlichung brauchen einen separaten Auftrag; danach sind Buildmarker, Assets und die neuen Suchintentionen in der Produktion nachzuprüfen.
+
+Entschieden sind E1 (keine Zahl zu Suizidversuchen, qualitativ «häufig») und E5 (Mason und Kreger auf «Krisen begleiten» als Beleg ersetzt). Offen sind E2 bis E4 und E6 bis E10 des Massnahmenplans. Aus Release A bleiben R25-O01 bis R25-O05 offen, darunter der analoge Gefährlichkeitssatz auf «Kurz und klar» und die Wortbilanz von «Krisen begleiten» (1934 Wörter, Ziel nach Release C höchstens 1800).
+
+### r4-22 · visuelle Befunde A04-008 bis A04-013, abgeschlossen
 
 Die technische und redaktionelle Umsetzung der visuellen Befunde A04-008 bis A04-013 liegt als r4-22 vor. Die unabhängige Delta-Prüfung fand für A04-009 bis A04-013 keinen fachlichen, rechtlichen, sicherheitsbezogenen oder didaktischen Korrekturbedarf. Der Auftraggeber bestätigte am 14. Oktober 2026 ausdrücklich im Namen der PUK die institutionelle Freigabe dieser fünf Befunde. Der Nachweis liegt unter `audit-results/2026-10-14-delta-review-r4-22/`.
 
@@ -108,6 +116,6 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der aktuell veröffentlichte und nachgeprüfte Stand ist Build r4-22. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
+Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Ausgeliefert ist seit dem 14. Oktober 2026 Build r4-24; der zuletzt in der Produktion nachgeprüfte Stand ist r4-22. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
 
 Die früheren GitHub-Issues #631, #641 und #645 bis #651 bezogen sich auf die abgelöste React-/Handout-Architektur. Sie wurden nach dem Abgleich mit dem aktuellen statischen Neubau, den Audits 01–06, den Delta-Prüfungen und den dokumentierten Institutionsentscheiden als überholt geschlossen. Noch gültige Aussage- und Evidenzgrenzen bleiben in diesem Dokument erhalten; die Schliessung der alten Issues ist keine nachträgliche Behauptung einer Rechts-, Fach-, WCAG- oder Nutzendenfreigabe.

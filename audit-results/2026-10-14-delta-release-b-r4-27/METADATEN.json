@@ -6,7 +6,7 @@
   "basisCommit": "6a0f8cc64db6a410ad0ffc1d6e75932a7e6d9825",
   "basisRelease": "r4-26",
   "freigabevorlage": "9a07502",
-  "status": "PUK-Freigabe dokumentiert; Pull Request offen, nicht gemergt",
+  "status": "PUK-Freigabe dokumentiert; Pull Request #684 offen, nicht gemergt",
   "entscheide": {
     "E2": "Auftraggeber, 14.10.2026: «rund 40 bis 50 %» mit Einordnung",
     "E3": "Auftraggeber, 14.10.2026: ICD-10-GM-Wortlaut",
@@ -97,5 +97,6 @@
   },
   "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
   "siteExportUpdated": true,
-  "deploymentChanged": false
+  "deploymentChanged": false,
+  "pullRequest": 684
 }

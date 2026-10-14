@@ -6,9 +6,9 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
-### r4-27 freigegeben, Pull Request offen
+### r4-27 freigegeben, PR #684 offen
 
-Release B (r4-27) setzt die Pakete 2 (Kernwissen), 3 (Schweizer Recht), 5 (Anlaufstellen und Literatur) und 7 (Quellen) des Massnahmenplans vom 14. Oktober 2026 um und zieht M6.7 vor. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben; Paket 3 hat der Auftraggeber ohne Prüfung durch den Rechtsdienst freigegeben. Der Produktionsbuild meldet 22 Seiten, 0 Blocker und 0 Hinweise; 33 Dateien sind bytegleich. Der Pull Request ist offen und nicht gemergt. Der Nachweis liegt unter `audit-results/2026-10-14-delta-release-b-r4-27/`. Offen bleiben R27-O01 bis R27-O05: die juristische Prüfung der Rechtstexte, R2 für die neue Abbildung auf «Genesung», die Wortbilanz (+1312 Wörter; «Behandlung» 3145, Ziel nach Release C unter 2400), die Teilwortsuche bei «FU» und die direkte Bestätigung der Angebote von ipw und iks.
+Release B (r4-27) setzt die Pakete 2 (Kernwissen), 3 (Schweizer Recht), 5 (Anlaufstellen und Literatur) und 7 (Quellen) des Massnahmenplans vom 14. Oktober 2026 um und zieht M6.7 vor. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben; Paket 3 hat der Auftraggeber ohne Prüfung durch den Rechtsdienst freigegeben. Der Produktionsbuild meldet 22 Seiten, 0 Blocker und 0 Hinweise; 33 Dateien sind bytegleich. PR #684 ist offen und nicht gemergt. Der Nachweis liegt unter `audit-results/2026-10-14-delta-release-b-r4-27/`. Offen bleiben R27-O01 bis R27-O05: die juristische Prüfung der Rechtstexte, R2 für die neue Abbildung auf «Genesung», die Wortbilanz (+1312 Wörter; «Behandlung» 3145, Ziel nach Release C unter 2400), die Teilwortsuche bei «FU» und die direkte Bestätigung der Angebote von ipw und iks.
 
 ### r4-26 veröffentlicht und nachgeprüft
 

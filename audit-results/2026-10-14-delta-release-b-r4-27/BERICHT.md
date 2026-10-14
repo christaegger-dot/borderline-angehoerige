@@ -2,7 +2,7 @@
 
 ## Ergebnis
 
-r4-27 setzt die Pakete 2, 3, 5 und 7 des Massnahmenplans vom 14. Oktober 2026 um und zieht M6.7 aus Paket 6 vor. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`, Wortlaut in `FREIGABE-VORLAGE.md`). Paket 3 (Schweizer Recht) hat der Auftraggeber ohne Prüfung durch den Rechtsdienst freigegeben. Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der Delta-Test auf dem erzeugten `site/`-Export. Der Pull Request ist offen und nicht gemergt.
+r4-27 setzt die Pakete 2, 3, 5 und 7 des Massnahmenplans vom 14. Oktober 2026 um und zieht M6.7 aus Paket 6 vor. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`, Wortlaut in `FREIGABE-VORLAGE.md`). Paket 3 (Schweizer Recht) hat der Auftraggeber ohne Prüfung durch den Rechtsdienst freigegeben. Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der Delta-Test auf dem erzeugten `site/`-Export. Der Pull Request #684 ist offen und nicht gemergt.
 
 ## Änderungen
 

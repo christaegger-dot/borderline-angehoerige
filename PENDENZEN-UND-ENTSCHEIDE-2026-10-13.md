@@ -6,9 +6,13 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
+### r4-25 veröffentlicht und nachgeprüft
+
+Release A (r4-25, Paket 1 Sicherheit: Suizidalität und Selbstverletzung) wurde mit PR #681 als Merge-Commit `d29ca85d207ae9162bda329bec3d9073748e50ab` übernommen. Netlify veröffentlichte am 14. Oktober 2026 um 15:18 UTC den Produktionsdeploy `6acf9d4d6d2b65496d1a1775`. Der anschliessende Produktionstest bestand 42 von 42 Seitenläufen mit Buildmarker und Assets r4-25, 54 von 54 Such-Ersttreffer wie lokal, 9 von 9 neue Suchintentionen, alle neuen und entfernten Formulierungen, den No-JavaScript-Fallback, die 404-Seite, Sicherheitsheader und `robots.txt`. Grundlage sind der inhaltliche Review W1 (`audit-results/2026-10-14-inhalt-w1-r4-24/`) und der Massnahmenplan vom 14. Oktober 2026; der Nachweis liegt unter `audit-results/2026-10-14-delta-sicherheit-r4-25/`.
+
 ### r4-23 und r4-24 gemergt und ausgeliefert
 
-PR #679 (r4-23, Sprachmassnahmen A03-019 bis A03-038) wurde als Merge-Commit `9dad4ba9b5b24b055ce0defb23e9de32b7e8f5ad` übernommen, PR #680 (r4-24, Footer als visuelle Sekundärebene) als Merge-Commit `38007a024e73703b132ab7ae9e34c6b4623e54b5`. Laut Netlify ist seit dem 14. Oktober 2026, 12:26 UTC, der Produktionsdeploy `6acf74dbec424b04acd344d1` mit Commit `38007a0` aktiv. Ein Produktions-Smoke-Test für r4-23 und r4-24 ist nicht dokumentiert; der zuletzt in der Produktion nachgeprüfte Stand bleibt r4-22. Der Nachweis zu r4-23 liegt unter `audit-results/2026-10-14-delta-sprach-r4-23/`.
+PR #679 (r4-23, Sprachmassnahmen A03-019 bis A03-038) wurde als Merge-Commit `9dad4ba9b5b24b055ce0defb23e9de32b7e8f5ad` übernommen, PR #680 (r4-24, Footer als visuelle Sekundärebene) als Merge-Commit `38007a024e73703b132ab7ae9e34c6b4623e54b5`. Laut Netlify war vom 14. Oktober 2026, 12:26 UTC, bis zur Veröffentlichung von r4-25 der Produktionsdeploy `6acf74dbec424b04acd344d1` mit Commit `38007a0` aktiv. Ein eigener Produktions-Smoke-Test für r4-23 und r4-24 ist nicht dokumentiert; ihre Seiten wurden im Produktionstest von r4-25 strukturell mitgeprüft. Der Nachweis zu r4-23 liegt unter `audit-results/2026-10-14-delta-sprach-r4-23/`.
 
 ### r4-22 veröffentlicht und nachgeprüft
 
@@ -40,15 +44,26 @@ PR #674 wurde als Merge-Commit `1cb33e0a1bd499c7b8367213851373b6dd027ab5` übern
 
 ## Aktuell sofort umsetzbare Pendenzen
 
-### r4-25 · Release A Sicherheit, Pull Request offen
+### r4-26 · Nachbesserung von Release A, Pull Request offen
 
-Grundlage ist der inhaltliche Review W1 vom 14. Oktober 2026 auf Stand r4-24 mit 63 Befunden (2 kritisch, 28 wichtig, 33 optional). Er liegt mit Befund-IDs unter `audit-results/2026-10-14-inhalt-w1-r4-24/`. Der darauf aufbauende Massnahmenplan ordnet die Befunde drei Releases zu: A (Sicherheit), B (Ergänzungen ohne Strukturumbau) und C (Kürzung und Umbau nach W2).
+Eine Prüfung der Abnahmekriterien am 14. Oktober 2026 ergab, dass Release A M1.1, M1.5, M1.6 und M1.8 nur teilweise erfüllte. r4-26 schliesst diese Kriterien sowie R25-O01 (Gefährlichkeitssatz auf «Kurz und klar» und «Über diese Website») und R25-O03 (Suche «Darf ich gehen»). Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben. Produktionsbuild 22 Seiten, 0 Blocker, 0 Hinweise; Parität 33 von 33 Dateien; Suche 53 von 54 Ersttreffer unverändert, eine Änderung beabsichtigt. Der Nachweis liegt unter `audit-results/2026-10-14-delta-nachbesserung-r4-26/`.
 
-Release A setzt Paket 1 um: «Verstehen», «Diagnose» und «Krisen begleiten» nennen Suizidgedanken und Selbstverletzung als häufig bei Borderline; «Krisen begleiten» hat einen neuen Block «Wenn Sie eine Selbstverletzung bemerken». «Beziehungen», «Kommunizieren» und «Ihre Rolle» sagen genauer, wie Angehörige reagieren und wann sie Hilfe holen dürfen. Umgesetzt sind M1.1 bis M1.9, der Teil «Krisen begleiten» von M7.1 und der Release-A-Teil von M7.4. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben. Produktionsbuild 22 Seiten, 0 Blocker, 0 Hinweise; Parität 33 von 33 Dateien; Suche 54 von 54 Ersttreffer unverändert. Der Nachweis liegt unter `audit-results/2026-10-14-delta-sicherheit-r4-25/`.
+Der Branch ist `claude/release-a2-nachbesserung-r4-26-1791994180`. Merge und Veröffentlichung brauchen einen separaten Auftrag; danach ist r4-26 in der Produktion nachzuprüfen. Offen bleiben R26-O01 bis R26-O04, darunter die Wortbilanz von «Krisen begleiten» (1949 Wörter, Ziel nach Release C höchstens 1800).
 
-Der Branch ist `claude/release-a-sicherheit-r4-25-1791988026`. Merge und Veröffentlichung brauchen einen separaten Auftrag; danach sind Buildmarker, Assets und die neuen Suchintentionen in der Produktion nachzuprüfen.
+### Entscheide zum Massnahmenplan vom 14. Oktober 2026
 
-Entschieden sind E1 (keine Zahl zu Suizidversuchen, qualitativ «häufig») und E5 (Mason und Kreger auf «Krisen begleiten» als Beleg ersetzt). Offen sind E2 bis E4 und E6 bis E10 des Massnahmenplans. Aus Release A bleiben R25-O01 bis R25-O05 offen, darunter der analoge Gefährlichkeitssatz auf «Kurz und klar» und die Wortbilanz von «Krisen begleiten» (1934 Wörter, Ziel nach Release C höchstens 1800).
+| Nr. | Frage | Stand | Datum | Entschieden von |
+| --- | --- | --- | --- | --- |
+| E1 | Zahl zu Suizidversuchen nennen? | entschieden: keine Zahl, qualitativ «häufig» | 14.10.2026 | Auftraggeber, Fachstelle Angehörigenarbeit |
+| E2 | Erblichkeit beziffern? | offen; Empfehlung: «rund 40 bis 50 %» mit Einordnung | – | – |
+| E3 | Bezeichnung zu F60.31 ergänzen (Neuentscheid zu V-1)? | offen; Empfehlung: offizielle ICD-10-GM-Bezeichnung ergänzen | – | – |
+| E4 | Wie Eltern von Jugendlichen ansprechen? | offen; Empfehlung: eigene kurze Seite, im W2-Durchgang bestätigen | – | – |
+| E5 | Mason und Kreger als Beleg? | entschieden: (a) auf «Krisen begleiten» ersetzt, sonst als Praxisanregung kennzeichnen | 14.10.2026 | Claude, vom Auftraggeber delegiert |
+| E6 | Nicht zitierte Quellen im öffentlichen Verzeichnis? | offen; Empfehlung: ins interne Prüfprotokoll verschieben | – | – |
+| E7 | Zuständigkeitssatz auf «Krisen begleiten» | offen; Empfehlung: höchstens zweimal | – | – |
+| E8 | Am 14.10.2026 freigegebene Stellen wieder öffnen? | offen; Empfehlung: einzeln entscheiden (A03-019, A03-025, A03-026) | – | – |
+| E9 | Redaktionsregel für Vorbehalte | offen; Empfehlung: höchstens ein Vorbehalt pro Abschnitt, ausgenommen Sicherheits- und Rechtsgrenzen | – | – |
+| E10 | Abbildung 2 auf «Genesung» | offen; Empfehlung: ersetzen durch «Was sich zuerst bessert, was länger bleibt» | – | – |
 
 ### r4-22 · visuelle Befunde A04-008 bis A04-013, abgeschlossen
 
@@ -116,6 +131,6 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Ausgeliefert ist seit dem 14. Oktober 2026 Build r4-24; der zuletzt in der Produktion nachgeprüfte Stand ist r4-22. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
+Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Ausgeliefert und in der Produktion nachgeprüft ist seit dem 14. Oktober 2026 Build r4-25. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
 
 Die früheren GitHub-Issues #631, #641 und #645 bis #651 bezogen sich auf die abgelöste React-/Handout-Architektur. Sie wurden nach dem Abgleich mit dem aktuellen statischen Neubau, den Audits 01–06, den Delta-Prüfungen und den dokumentierten Institutionsentscheiden als überholt geschlossen. Noch gültige Aussage- und Evidenzgrenzen bleiben in diesem Dokument erhalten; die Schliessung der alten Issues ist keine nachträgliche Behauptung einer Rechts-, Fach-, WCAG- oder Nutzendenfreigabe.

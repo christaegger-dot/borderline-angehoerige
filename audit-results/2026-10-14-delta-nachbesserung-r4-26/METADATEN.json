@@ -1,0 +1,51 @@
+{
+  "paket": "Release A2 · Nachbesserung der Abnahmekriterien aus Release A",
+  "datum": "2026-10-14",
+  "release": "r4-26",
+  "branch": "claude/release-a2-nachbesserung-r4-26-1791994180",
+  "basisCommit": "d29ca85d207ae9162bda329bec3d9073748e50ab",
+  "basisRelease": "r4-25",
+  "freigabevorlage": "ac7db14",
+  "status": "PUK-Freigabe dokumentiert; Produktionsbuild, Exportparität und lokaler Delta-Test abgeschlossen; Vorlage als Pull Request ohne Merge",
+  "massnahmen": {
+    "erfuellt": [
+      "M1.1",
+      "M1.5",
+      "M1.6",
+      "M1.8",
+      "R25-O01",
+      "R25-O03"
+    ],
+    "offen": [
+      "R26-O01",
+      "R26-O02",
+      "R26-O03",
+      "R26-O04"
+    ]
+  },
+  "tests": {
+    "draftBuild": "22 Seiten, 0 Blocker, 1 erwarteter Hinweis change-review",
+    "productionBuild": "22 Seiten, 0 Blocker, 0 Hinweise",
+    "exportParity": "33/33 Dateien bytegleich",
+    "browserRunsAllPages": 44,
+    "browserRunsChangedPages": 56,
+    "axeRuns": 56,
+    "searchRegression": "53/54 unverändert, 1 beabsichtigt geändert («gefährlich»)",
+    "searchIntents": "11/11",
+    "textChecks": "14/14 neu vorhanden, 3/3 ersetzt",
+    "deepLinks": "3/3",
+    "runtimeErrors": 0,
+    "horizontalOverflow": 0
+  },
+  "wortbilanz": {
+    "gesamt": 164,
+    "kriseMitQuellenblock": {
+      "vorher": 1934,
+      "nachher": 1949,
+      "zielNachReleaseC": 1800
+    }
+  },
+  "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
+  "siteExportUpdated": true,
+  "deploymentChanged": false
+}

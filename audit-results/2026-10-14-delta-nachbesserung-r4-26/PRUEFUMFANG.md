@@ -13,11 +13,12 @@ Geprüft wurde die Nachbesserung von Release A auf dem Branch `claude/release-a2
 - 14 Textnachweise für neue und 3 für entfernte Formulierungen; Sichtbarkeit mit Öffnen von Aufklappteil und Quellenakkordeon per Tastatur;
 - 3 Deep-Link-Klicks und No-JavaScript-Fallback auf «Krisen begleiten»;
 - Skriptvergleich «Verwendet auf» für fünf betroffene Quellen; Volltextprüfung auf `tel:`-Links;
-- Wortzählung der geänderten Fragmente.
+- Wortzählung der geänderten Fragmente;
+- Produktionstest nach dem Merge gegen `https://borderline-angehoerige.netlify.app` (Netlify-Deploy `6acfb7f924705af6e61b1e33`), siehe `BERICHT.md`, Abschnitt «Produktionsnachweis».
 
 ## Nicht ausgeführt oder nicht behauptet
 
-- kein Merge und kein Deployment;
+- kein Merge und kein Deployment durch Claude; den Merge von PR #682 hat der Auftraggeber ausgelöst;
 - keine realen Screenreader-, Hardwaregeräte- oder Nutzendentests;
 - keine Textvergrösserung über die Browsereinstellung;
 - keine vollständige WCAG-, ISO-, fachmedizinische oder rechtliche Gesamtfreigabe.

@@ -15,11 +15,12 @@ Geprüft wurde die Umsetzung von Paket 1 des Massnahmenplans vom 14. Oktober 202
 - 3 Deep-Link-Klicks und No-JavaScript-Fallback auf «Krisen begleiten» bei 320 CSS-Pixel;
 - Volltextprüfung auf interne Links, Anker und `tel:`-Links;
 - Skriptvergleich von «Verwendet auf» im Quellenverzeichnis mit den Quellenblöcken für die geänderten Einträge;
-- Wortzählung der Fragmente vor und nach dem Release.
+- Wortzählung der Fragmente vor und nach dem Release;
+- Produktionstest nach dem Merge gegen `https://borderline-angehoerige.netlify.app` (Netlify-Deploy `6acf9d4d6d2b65496d1a1775`), siehe `BERICHT.md`, Abschnitt «Produktionsnachweis».
 
 ## Nicht ausgeführt oder nicht behauptet
 
-- kein Merge und kein Deployment;
+- kein Merge und kein Deployment durch Claude; den Merge von PR #681 hat der Auftraggeber ausgelöst;
 - keine realen Screenreader-, Hardwaregeräte- oder Nutzendentests;
 - keine Textvergrösserung über die Browsereinstellung, nur über die Wurzelschrift;
 - kein Vergleich mit den 36 festgeschriebenen Suchfragen früherer Releases, weil sie nicht im Repository liegen;

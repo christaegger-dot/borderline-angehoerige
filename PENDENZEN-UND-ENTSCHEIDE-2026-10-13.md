@@ -6,6 +6,10 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
+### r4-26 veröffentlicht und nachgeprüft
+
+Die Nachbesserung von Release A (r4-26) wurde mit PR #682 als Merge-Commit `b1815260ff77901e29fdfcd001a92391aa907b77` übernommen. Netlify veröffentlichte am 14. Oktober 2026 um 17:12 UTC den Produktionsdeploy `6acfb7f924705af6e61b1e33`. Der anschliessende Produktionstest bestand 42 von 42 Seitenläufen mit Buildmarker und Assets r4-26, 54 von 54 Such-Ersttreffer wie lokal, 11 von 11 festgeschriebene Suchintentionen, alle neuen und entfernten Formulierungen, den No-JavaScript-Fallback, die 404-Seite, Sicherheitsheader und `robots.txt`; die 9 ausgelieferten Nicht-HTML-Dateien sind bytegleich mit `site/`. r4-26 schliesst die nur teilweise erfüllten Abnahmekriterien von M1.1, M1.5, M1.6 und M1.8 sowie R25-O01 und R25-O03. Der Nachweis liegt unter `audit-results/2026-10-14-delta-nachbesserung-r4-26/`. Offen bleiben R26-O01 bis R26-O04, darunter die Wortbilanz von «Krisen begleiten» (1949 Wörter, Ziel nach Release C höchstens 1800).
+
 ### r4-25 veröffentlicht und nachgeprüft
 
 Release A (r4-25, Paket 1 Sicherheit: Suizidalität und Selbstverletzung) wurde mit PR #681 als Merge-Commit `d29ca85d207ae9162bda329bec3d9073748e50ab` übernommen. Netlify veröffentlichte am 14. Oktober 2026 um 15:18 UTC den Produktionsdeploy `6acf9d4d6d2b65496d1a1775`. Der anschliessende Produktionstest bestand 42 von 42 Seitenläufen mit Buildmarker und Assets r4-25, 54 von 54 Such-Ersttreffer wie lokal, 9 von 9 neue Suchintentionen, alle neuen und entfernten Formulierungen, den No-JavaScript-Fallback, die 404-Seite, Sicherheitsheader und `robots.txt`. Grundlage sind der inhaltliche Review W1 (`audit-results/2026-10-14-inhalt-w1-r4-24/`) und der Massnahmenplan vom 14. Oktober 2026; der Nachweis liegt unter `audit-results/2026-10-14-delta-sicherheit-r4-25/`.
@@ -43,12 +47,6 @@ A03-H01 bleibt als nicht empirisch überprüfte Wirkungshypothese dokumentiert. 
 PR #674 wurde als Merge-Commit `1cb33e0a1bd499c7b8367213851373b6dd027ab5` übernommen. Die öffentliche Website lieferte danach r4-21. Der anschliessende Produktions-Smoke-Test bestand 169 von 169 Browserprüfungen ohne Laufzeitfehler. Alle 21 regulären Seiten, die eigene 404-Seite, Tastaturbasis, No-JavaScript-Fallback, alle 36 festgeschriebenen Such-Ersttreffer, Sicherheitsheader, Robots-Steuerung und repräsentative Weiterleitungen wurden bestätigt. Das Produktionsergebnis ist in PR #674 dokumentiert.
 
 ## Aktuell sofort umsetzbare Pendenzen
-
-### r4-26 · Nachbesserung von Release A, Pull Request offen
-
-Eine Prüfung der Abnahmekriterien am 14. Oktober 2026 ergab, dass Release A M1.1, M1.5, M1.6 und M1.8 nur teilweise erfüllte. r4-26 schliesst diese Kriterien sowie R25-O01 (Gefährlichkeitssatz auf «Kurz und klar» und «Über diese Website») und R25-O03 (Suche «Darf ich gehen»). Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben. Produktionsbuild 22 Seiten, 0 Blocker, 0 Hinweise; Parität 33 von 33 Dateien; Suche 53 von 54 Ersttreffer unverändert, eine Änderung beabsichtigt. Der Nachweis liegt unter `audit-results/2026-10-14-delta-nachbesserung-r4-26/`.
-
-Der Branch ist `claude/release-a2-nachbesserung-r4-26-1791994180`. Merge und Veröffentlichung brauchen einen separaten Auftrag; danach ist r4-26 in der Produktion nachzuprüfen. Offen bleiben R26-O01 bis R26-O04, darunter die Wortbilanz von «Krisen begleiten» (1949 Wörter, Ziel nach Release C höchstens 1800).
 
 ### Entscheide zum Massnahmenplan vom 14. Oktober 2026
 
@@ -131,6 +129,6 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Ausgeliefert und in der Produktion nachgeprüft ist seit dem 14. Oktober 2026 Build r4-25. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
+Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Ausgeliefert und in der Produktion nachgeprüft ist seit dem 14. Oktober 2026 Build r4-26. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
 
 Die früheren GitHub-Issues #631, #641 und #645 bis #651 bezogen sich auf die abgelöste React-/Handout-Architektur. Sie wurden nach dem Abgleich mit dem aktuellen statischen Neubau, den Audits 01–06, den Delta-Prüfungen und den dokumentierten Institutionsentscheiden als überholt geschlossen. Noch gültige Aussage- und Evidenzgrenzen bleiben in diesem Dokument erhalten; die Schliessung der alten Issues ist keine nachträgliche Behauptung einer Rechts-, Fach-, WCAG- oder Nutzendenfreigabe.

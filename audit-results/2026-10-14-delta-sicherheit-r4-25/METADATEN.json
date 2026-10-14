@@ -5,7 +5,7 @@
   "branch": "claude/release-a-sicherheit-r4-25-1791988026",
   "basisCommit": "38007a024e73703b132ab7ae9e34c6b4623e54b5",
   "basisRelease": "r4-24",
-  "status": "PUK-Freigabe dokumentiert; Produktionsbuild, Exportparität und lokaler Delta-Test abgeschlossen; Vorlage als Pull Request ohne Merge",
+  "status": "PUK-Freigabe dokumentiert; mit PR #681 gemergt und veröffentlicht; Produktionsnachtest bestanden",
   "entscheide": {
     "E1": "keine Zahl zu Suizidversuchen, qualitativ «häufig» (Fachstelle, 14.10.2026)",
     "E5": "(a) Mason und Kreger auf «Krisen begleiten» ersetzt (an Claude delegiert, 14.10.2026)"
@@ -64,5 +64,20 @@
   },
   "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
   "siteExportUpdated": true,
-  "deploymentChanged": false
+  "deploymentChanged": false,
+  "produktion": {
+    "pullRequest": 681,
+    "mergeCommit": "d29ca85d207ae9162bda329bec3d9073748e50ab",
+    "netlifyDeploy": "6acf9d4d6d2b65496d1a1775",
+    "veroeffentlicht": "2026-10-14T15:18:54Z",
+    "smokeTest": {
+      "seitenLaeufe": "42/42",
+      "suche": "54/54 wie lokal",
+      "neueSuchintentionen": "9/9",
+      "texte": "14/14 neu, 5/5 entfernt",
+      "noJs": "bestanden",
+      "seite404": "bestanden",
+      "header": "unverändert"
+    }
+  }
 }

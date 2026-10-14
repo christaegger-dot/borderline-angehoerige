@@ -6,7 +6,7 @@ Release A setzt Paket 1 des Massnahmenplans vom 14. Oktober 2026 um. «Verstehen
 
 Umgesetzt sind M1.1 bis M1.9, der Teil «Krisen begleiten» von M7.1 und der Release-A-Teil von M7.4. Grundlage sind die Entscheide E1 (keine Zahl zu Suizidversuchen, qualitativ «häufig») und E5 (Mason und Kreger auf «Krisen begleiten» als Beleg ersetzt). Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`).
 
-Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der erweiterte Delta-Test auf dem erzeugten `site/`-Export. r4-25 wird als Pull Request vorgelegt; gemergt und veröffentlicht ist es nicht.
+Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der erweiterte Delta-Test auf dem erzeugten `site/`-Export. r4-25 wurde am 14. Oktober 2026 mit PR #681 gemergt und veröffentlicht; der Produktionsnachtest bestand (siehe unten).
 
 ## Wesentliche Änderungen
 
@@ -52,6 +52,17 @@ Der Fliesstext der sechs Themenseiten wächst um 255 Wörter; der Plan rechnete 
 
 Nicht behauptet werden reale Screenreader-, Hardwaregeräte- oder Nutzendentests, eine vollständige WCAG-, ISO-, fachmedizinische oder rechtliche Gesamtfreigabe und ein Produktionsnachweis. Die 200-Prozent-Textgrösse ist über die Wurzelschrift simuliert, nicht über die Browsereinstellung. Die 36 festgeschriebenen Suchfragen früherer Releases liegen nicht im Repository; verglichen wurde mit einer eigenen Liste von 54 Fragen.
 
-## Nächster administrativer Schritt
+## Produktionsnachweis
 
-Merge und Deployment erfolgen nur auf separaten Auftrag. Danach sind Buildmarker r4-25, die Assets r4-25 und die neuen Suchintentionen auf der öffentlichen URL nachzuprüfen.
+PR #681 wurde am 14. Oktober 2026 als Merge-Commit `d29ca85d207ae9162bda329bec3d9073748e50ab` übernommen. Netlify veröffentlichte den Produktionsdeploy `6acf9d4d6d2b65496d1a1775` um 15:18 UTC. Der anschliessende Test gegen `https://borderline-angehoerige.netlify.app` bestand:
+
+- 42 von 42 Läufen über 21 Seiten bei 320 und 1440 CSS-Pixel, alle mit Buildmarker r4-25, Assets r4-25 und ohne Lade- oder Laufzeitfehler;
+- 54 von 54 Such-Ersttreffern wie im lokalen Export und 9 von 9 neuen Suchintentionen;
+- 14 von 14 neuen und 5 von 5 entfernten Formulierungen;
+- No-JavaScript-Fallback auf «Krisen begleiten», eigene 404-Seite, unveränderte Sicherheitsheader und `robots.txt`.
+
+Netlify schreibt beim Ausliefern die internen Links der HTML-Seiten auf saubere Pfade um. Die 23 HTML-Dateien sind deshalb nicht bytegleich mit `site/`; die übrigen 9 ausgelieferten Dateien (CSS, JavaScript, Schriften, Bilder, `robots.txt`) sind es. `_headers` und `_redirects` sind Konfigurationsdateien und werden nicht ausgeliefert.
+
+## Nachfolgende Nachbesserung
+
+R25-O01 und R25-O03 sowie die nur teilweise erfüllten Abnahmekriterien von M1.1, M1.5, M1.6 und M1.8 behandelt r4-26 (`audit-results/2026-10-14-delta-nachbesserung-r4-26/`).

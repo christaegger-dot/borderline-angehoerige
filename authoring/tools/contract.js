@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-22';
+const BUILD = 'r4-23';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -560,7 +560,7 @@ function gate(cfg, files, opts = {}) {
   if (inlineUsed && cfg.responsibility && cfg.responsibility.inline && cfg.responsibility.inline.reviewStatus !== 'geprueft') prod('site', 'inline-review', `Verweis im Text nicht fachlich geprüft (responsibility.inline.reviewStatus: ${cfg.responsibility.inline.reviewStatus || 'fehlt'})`);
   const ra = cfg.releaseApproval;
   if (ra && ra.institutionalResponsibility !== 'bestaetigt') prod('site', 'institutional-approval', 'Die organisatorische Verantwortung der PUK ist noch nicht formell bestätigt.');
-  if (ra && ra.independentReview !== 'bestaetigt') prod('site', 'change-review', 'Die Änderungsrunde IA 13.10.2026 wurde noch nicht unabhängig geprüft.');
+  if (ra && ra.independentReview !== 'bestaetigt') prod('site', 'change-review', 'Die aktuelle Änderungsrunde wurde noch nicht unabhängig geprüft.');
   if (opts.report !== undefined) {
     if (opts.report === null) prod('site', 'review-report', 'PRUEFBERICHT.md fehlt – ohne Prüfbericht keine Veröffentlichung (Abschnitt «Prüfung und Freigabe»)');
     else { const rs = reportStatus(opts.report); if (rs.open.length) prod('site', 'review-report', `Prüfbericht: offene Stufen ${rs.open.join(', ')} – Status «erledigt» oder «entfällt: Begründung»`); }

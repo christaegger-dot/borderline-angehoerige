@@ -1,0 +1,31 @@
+{
+  "paket": "Delta-Umsetzung Audit 03",
+  "datum": "2026-10-14",
+  "release": "r4-23",
+  "branch": "codex/audit-03-massnahmen-r4-23",
+  "basisCommit": "5b92474bb971092b5453533060641cdbb3c96f4e",
+  "basisRelease": "r4-22",
+  "status": "PUK-Freigabe dokumentiert; Produktionsbuild, Exportparität und lokaler Delta-Test abgeschlossen",
+  "befunde": {
+    "umgesetzt": 20,
+    "p1": 2,
+    "p2": 8,
+    "p3": 10,
+    "hypothesenUnveraendert": 2
+  },
+  "tests": {
+    "draftBuild": "22 Seiten, 0 Blocker, 1 erwarteter Hinweis change-review",
+    "productionBuild": "22 Seiten, 0 Blocker, 0 Hinweise",
+    "exportParity": "33/33 Dateien bytegleich",
+    "browserRuns": 44,
+    "axeRuns": 28,
+    "searchRegression": "36/36 Ersttreffer unverändert gegenüber r4-22",
+    "safetySearches": "6/6 bestanden",
+    "textChecks": "12/12 bestanden",
+    "runtimeErrors": 0,
+    "horizontalOverflow": 0
+  },
+  "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
+  "siteExportUpdated": true,
+  "deploymentChanged": false
+}

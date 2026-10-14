@@ -1,0 +1,49 @@
+{
+  "schema": "website-audit-v1.2",
+  "lauf_id": "2026-10-14-abschluss-r4-22",
+  "modus": "abschluss",
+  "status": "abgeschlossen_conditional_go",
+  "auditmodul": "A06",
+  "audit_06_durchgefuehrt": true,
+  "projekt": {
+    "repository": "https://github.com/christaegger-dot/borderline-angehoerige.git",
+    "branch": "codex/audit-06-r4-22",
+    "gepruefter_commit": "160a42f92eb78e4a0af806fc74babea1ab712937",
+    "release_merge_commit": "7864dab6f48ef4e52db1e783387032a0c0de8e93",
+    "release_pull_request": "https://github.com/christaegger-dot/borderline-angehoerige/pull/676",
+    "produktionsnachweis_pull_request": "https://github.com/christaegger-dot/borderline-angehoerige/pull/677",
+    "buildmarker": "r4-22"
+  },
+  "deployment": {
+    "produktion": "https://borderline-angehoerige.netlify.app",
+    "produktion_status": "r4-22 live und funktional nachgeprueft",
+    "pr_preview_zugriff": "HTTP 401 / Netlify-Teamzugang; nicht umgangen",
+    "artefaktbezug": "site/ und authoring/ sind zwischen Release-Merge 7864dab und aktuellem main 160a42f unveraendert"
+  },
+  "zeitraum": {
+    "auditdatum": "2026-10-14",
+    "zeitzone_fachlicher_stand": "Europe/Zurich"
+  },
+  "tests": {
+    "production_build": "22 Seiten; 0 Blocker; 0 Hinweise",
+    "exportparitaet": "33 Dateien bytegleich",
+    "produktions_smoke": "169/169 Browserpruefungen; 0 Laufzeitfehler",
+    "live_browsermatrix": "110/110 Seiten-/Viewport-Laeufe ohne blockierenden Befund",
+    "axe": "66 Chromium-Laeufe; 0 erkannte Verstoesse im geprueften Regelumfang",
+    "text_200_prozent": "22 Seiten; kein horizontaler Seitenueberlauf",
+    "nutzerreisen": "6/6 bestanden",
+    "suchregression": "36/36 festgeschriebene Ersttreffer korrekt",
+    "reale_screenreader": false,
+    "reale_geraete": false,
+    "firefox_safari": false,
+    "reale_nutzende": false
+  },
+  "entscheidung": "CONDITIONAL GO",
+  "keine_behauptete_freigabe": [
+    "medizinisch-fachliche Gesamtfreigabe",
+    "juristische Gesamtfreigabe",
+    "Datenschutz-Gesamtfreigabe",
+    "WCAG-Gesamtkonformitaet",
+    "ISO-Gesamtkonformitaet"
+  ]
+}

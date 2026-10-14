@@ -1,0 +1,8 @@
+"id";"quelle";"fundstelle";"stand";"verwendung"
+"Q06-001";"Repository-Hauptstand";"christaegger-dot/borderline-angehoerige, Commit 160a42f92eb78e4a0af806fc74babea1ab712937";"14.10.2026";"fixierter Prüfstand"
+"Q06-002";"Öffentliche Produktion";"https://borderline-angehoerige.netlify.app";"14.10.2026";"Live-Browser-, Header-, Robots- und Redirectprüfung"
+"Q06-003";"Aktueller Pendenzen- und Entscheidstatus";"PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md";"14.10.2026";"geltende Institutionsentscheide, Termine und Evidenzgrenzen"
+"Q06-004";"Bestandsaudit 01 bis 05";"audit-results/2026-10-13-bestand-13a7e4f/";"13.10.2026";"stabile Befund-IDs und Ausgangsakzeptanzkriterien"
+"Q06-005";"Delta- und Produktionsnachweise r4-19 bis r4-22";"audit-results/2026-10-13-delta-r4-19/, 2026-10-13-delta-suche-r4-20/, 2026-10-13-delta-p3-r4-21/, 2026-10-13-delta-visual-r4-22/, 2026-10-14-delta-review-r4-22/";"13.–14.10.2026";"Nachtest der Korrekturpakete und Produktion"
+"Q06-006";"Früheres Audit 06";"audit-results/2026-10-13-abschluss-475d3f2/";"13.10.2026";"A06-IDs und frühere Bedingungen"
+"Q06-007";"Institutionelle Freigabe A04-009 bis A04-013";"dokumentierter Entscheid des Auftraggebers im Namen der PUK und PR #676";"14.10.2026";"Freigabestatus der letzten visuellen Korrekturen"

@@ -54,7 +54,7 @@ Wortbilanz mit Quellenblock: «Behandlung» 2399 (Ziel < 2400), «Fragen» 2398 
 Die unabhängige Delta-Prüfung (`PRUEFUNG.md`, Stand `9f5ebfe`) ergab «freigabefähig mit Auflagen». Kritische Befunde gab es keine. Umgesetzt ist:
 
 - **D30-01 (wichtig):** Die ersten Gewaltphrasen leiteten Ich-Aussagen («ich will mich umbringen») auf «Gewalt». Neu gehören Ich-Aussagen als Phrase zur Suizidgruppe («ich will mich umbringen», «mich umbringen», «mich zu töten» usw.). Zur Gewaltgruppe gehören nur Drohungen und Taten anderer («droht mich umzubringen», «will mich umbringen», «er bringt mich um», «mit dem Tod bedroht»). Das galt nur für die aufgezählten Phrasen; nicht aufgezählte Formen blieben falsch zugeordnet (D30-09, Nachtrag 2). Die längere Phrase gewinnt. Gestrichen sind «droht mich» und «mit dem Tod» allein. Nachprüfung durch die Prüfsitzung: siehe `PRUEFUNG.md`, Nachprüfung.
-- **D30-03 (wichtig):** Die Anfragen sind festgeschrieben in `authoring/tests/suche-ersttreffer.tsv`, damals 168 Anfragen (nach Nachtrag 6: 258) mit erwartetem Ersttreffer. Die Prüfung läuft mit `node authoring/tools/suchtest.mjs <site-ordner>` (Playwright, nicht in der CI).
+- **D30-03 (wichtig):** Die Anfragen sind festgeschrieben in `authoring/tests/suche-ersttreffer.tsv`, damals 168 Anfragen (nach Nachtrag 7: 266) mit erwartetem Ersttreffer. Die Prüfung läuft mit `node authoring/tools/suchtest.mjs <site-ordner>` (Playwright, nicht in der CI).
 - **D30-04, teilweise:** ergänzt sind «gewürgt», «Frauenhaus», «Angst vor meinem Partner/Mann, meiner Partnerin/Frau», Pluralformen («Abschiedsbriefe», «Selbstmordversuche», «Todeswünsche», «Suiziddrohungen», «Suizidandrohungen», «Überdosen»), «lebensmüder», «ist lebensmüde», «sich umbringen», «bringt sich um», «Tabletten geschluckt». (Überholt für «sich umbringen» und «bringt sich um»: Diese Phrasen sind seit Nachtrag 2 durch die Regel für Tötungsverben ersetzt; «bringt sie sich um» bleibt nach R25-010 bei «Wenn Worte treffen».) Offen bleiben «Sorgerecht», «Klinik sagt mir nichts», «sie trinkt jeden Abend» und «er zerstört Sachen in der Wohnung» (R30-P01).
 - **D30-08:** Im Code ist vermerkt, dass der Zwischenspeicher unveränderte Attribute voraussetzt. «Überdosis Alkohol» ist nicht festgeschrieben, weil der Treffer schwach ist (R30-P01).
 - **D30-06:** Die Herkunft der gekürzten Fassung und die Zeitzonen sind berichtigt.
@@ -138,3 +138,18 @@ Umgesetzt ist Korrektur G der Prüfsitzung:
 Ergebnis auf dem Entwurf: «Suchtest: 258 von 258 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind die sieben Zeilen, die die Prüfsitzung verlangt hat. Gegen `site/` (r4-29) weichen 108 Anfragen ab, keine aus dem Bestand (91 und 54). Mechanischer Abgleich mit der Nachbildung von G durch die Prüfsitzung: `q-alle2.txt` 492 von 492 und `q-fuenft3.txt` 8 von 8 Ersttreffern gleich wie in `q-alle2.resultG.tsv` und `q-fuenft3.resultG.tsv`, keine Abweichung. Die beiden ungenauen Sätze in Nachtrag 5 sind markiert.
 
 Die Bestätigung des Abgleichs durch die Prüfsitzung steht aus; `releaseApproval.independentReview` bleibt bis dahin «ausstehend».
+
+## Nachtrag 7 · Abschlussbestätigung, Export und Codex-Review von #689 (15.10.2026)
+
+Die Prüfsitzung bestätigte den Stand `a8fe194` als «freigabefähig» (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung»); den mechanischen Abgleich hat sie selbst durchgeführt. Danach wurde `releaseApproval.independentReview` auf «bestaetigt» gesetzt und exportiert (`085c732`: 23 Seiten · 0 Blocker · 0 Hinweise, Parität 34 Dateien, `suchtest.mjs site` 258/258, axe und Überlauf auf allen 23 Seiten ohne Befund). Pull Request #689 wurde um 13:11 UTC eröffnet; er ist der einzige offene Pull Request.
+
+Das Codex-Review von #689 (13:17 UTC, Stand `085c732`) meldete zwei P1-Befunde, beide in der heiklen Richtung:
+
+| Befund | Inhalt | Korrektur |
+| --- | --- | --- |
+| P1 (Suizid-Phrase) | Enthält eine Anfrage eine Suizid-Phrase und eine längere Phrase einer anderen Gruppe, gewinnt die längere: «ich will sterben und habe Angst vor meiner Partnerin» → «Gewalt». | Eine Suizid-Phrase oder ein eindeutiges Suizidwort («Suizidgedanken», «Selbstmord» …; nicht «sterben», «umbringen») in der Anfrage geht jeder anderen Phrase vor. Eine verneinte Phrase («ich will nicht tot sein») zählt nicht. |
+| P1 (Beiwort) | Nach «mich» wird die Person nur direkt nach dem Artikel erkannt: «Ich habe Angst, dass mich mein eigener Mann umbringt» → «Suizid». | Nach dem Artikel dürfen bis zu zwei Wörter vor der Person stehen; die Suche bricht beim Verb, bei «und» und bei einem Einleitewort ab. |
+
+Ergebnis auf dem Entwurf: «Suchtest: 266 von 266 Ersttreffern wie festgeschrieben · JS-Fehler 0» (acht neue Zeilen zu den beiden Befunden, darunter zwei Gegenproben). Die 500 Proben der Prüfsitzung (alle `q-*.txt`) ergeben gegenüber dem Export `085c732` dieselben Ersttreffer.
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung die Korrektur nachgeprüft hat; `site/` ist bis zum neuen Export der Stand `085c732`. Danach folgen der neue Export und ein neues Codex-Review auf dem vollständigen Stand.

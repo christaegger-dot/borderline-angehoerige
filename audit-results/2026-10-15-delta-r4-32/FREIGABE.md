@@ -139,3 +139,33 @@ Produktionsexport (`--production --out=site --write-site`):
 
 Vor dem Merge muss das Codex-Review auf dem endgültigen Kopf des Pull Requests abgeschlossen und geprüft sein (R28-O01, R29-P20). Nach der Auslieferung ist in der Produktion von Hand zu prüfen, dass bei einer Anfrage mit Tötungswort Suizid und Gewalt oben stehen (`suchtest.mjs` läuft nicht gegen Pretty URLs, R31-P01).
 
+## Nachtrag 3 · Codex-Review von #694 (15.10.2026)
+
+Pull Request #694 wurde um 19:28 UTC mit Stand `37b963f` eröffnet, dem Export nach der Abschlussbestätigung. Um 19:32 UTC meldete das Codex-Review zwei P1-Befunde und einen P2-Befund. Geprüft wurde jeweils gegen die Produktion r4-31 (`ef645fa`) und gegen `37b963f`:
+
+| Befund | Beispiel | r4-31 | `37b963f` | Bewertung |
+| --- | --- | --- | --- | --- |
+| P1 Sechs-Wörter-Grenze bei «bring… um» | «Mein Mann bringt mich heute Nacht in unserer Wohnung um» | Gewalt | kein Treffer | **blockierend**: Die Anfrage verliert ihren Treffer gegenüber der Produktion, und Entscheid (1) ist verletzt. |
+| | «ich bringe mich heute Nacht in meiner Wohnung um» | kein Treffer | kein Treffer | nicht schlechter als die Produktion, aber eine klare Ich-Aussage ohne Treffer |
+| P1 Beugungsformen | «Er tötete mich fast», «Sie brachten ihn um» | kein Treffer | kein Treffer | nicht schlechter als die Produktion; Entscheid (1) verlangt sie |
+| | «mein Sohn brachte sich um» | «Vertrauensperson» | «Vertrauensperson» | ebenso |
+| P2 Sohn und Tochter als Kinder | «Er droht, meine Tochter umzubringen» | Gewalt | Gewalt › Suizid | nicht blockierend: Gewalt und Suizid stehen oben. Ob erwachsene Söhne und Töchter auf «Kinder › Eskalation» gehören, ist eine fachliche Zuordnung; als Pendenz R32-P01 an die Auftraggeberin. |
+
+Nach beiden Lesarten von R31-P03 blockiert der erste P1-Befund. Die anderen Fälle sind keine Verschlechterung gegenüber der Produktion, aber Lücken, die Entscheid (1) ausdrücklich schliessen soll. Die Korrektur ist klein, deshalb ist sie in diesem Pull Request enthalten.
+
+Korrektur (Erweiterung von P1):
+
+- «um» gehört zu «bring… um», solange es im selben Teilsatz steht. Der Teilsatz endet an einer Satzmarke, einem Komma oder an «dass», «wenn», «weil», «ob», «falls», «denn», «aber», «oder», «sondern», «obwohl» oder «damit». Dazu kommt eine Obergrenze von zwölf Wörtern statt sechs.
+- «sie» und «ihr» gelten nach «um» nicht mehr als neues Subjekt, weil «Sorgen um sie» und «sich um ihr Kind kümmern» viel häufiger sind.
+- Neue Wortformen: «tötest», «tötete», «töteten», «tötetest», «umbrachten», «umbrachtest» sowie «brachte», «brachten» und «brachtest» als trennbares Verb.
+- Die Druck-Variante (R25-010, «Wenn Suizid angesprochen wird» zuerst) gilt nur für Gegenwartsformen. «mein Sohn brachte sich um» beginnt mit Suizid.
+
+Ergebnis auf dem Entwurf:
+
+- «Suchtest: 204 von 204 Erwartungen wie festgeschrieben · JS-Fehler 0»; sieben neue Zeilen.
+- Die 885 Proben haben dieselben ersten drei Treffer wie `306c4e4` (0 Abweichungen).
+- Die 21 gezielten Proben und die Randfälle der Prüfsitzung (`d32/q-r32a.txt`, `d32/q-edge.txt`) sind unverändert gegenüber `37b963f`.
+- 19 harmlose Sätze mit «bring…» und «um» bleiben ohne Anheftung (Scratchpad `harmlos.q`). Beispiele: «um 10 Uhr», «um Hilfe zu bitten», «kümmert sich nicht um sie», «Sorgen um sie» ohne Komma.
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung den neuen Stand bestätigt hat. CI (`build-and-compare`) ist auf diesem Zwischenstand erwartungsgemäss rot, bis neu exportiert ist.
+

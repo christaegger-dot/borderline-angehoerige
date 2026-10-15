@@ -202,3 +202,10 @@ Wer bringt die Kinder um acht Uhr zur Schule, wenn ich in der Klinik bin?	!kinde
 Die Therapie bringt nichts, ich mache mir Sorgen um sie.	behandlung.html#rollen	R32-01 «um» über Satzzeichen
 Was tun, wenn mein Kind sich umbringen will?	krise.html#suizid > grenzen.html#gewalt	R32-02 Kind als Subjekt
 Ich habe Angst, dass mein Kind sich umbringt.	krise.html#suizid > grenzen.html#gewalt	R32-02 Kind als Subjekt
+Mein Mann bringt mich heute Nacht in unserer Wohnung um	grenzen.html#gewalt > krise.html#suizid	Codex P1 auf #694 (trennbares Verb, langer Abstand)
+ich bringe mich heute Nacht in meiner Wohnung um	kommunizieren.html#suizid-angesprochen > krise.html#suizid > grenzen.html#gewalt	Codex P1 auf #694 (trennbares Verb, langer Abstand; R25-010)
+Er tötete mich fast	grenzen.html#gewalt > krise.html#suizid	Codex P1 auf #694 (Beugungsform)
+Sie brachten ihn um	grenzen.html#gewalt > krise.html#suizid	Codex P1 auf #694 (Beugungsform)
+mein Sohn brachte sich um	krise.html#suizid > grenzen.html#gewalt	r4-32 Vergangenheit, kein Druck
+er bringt nichts zustande und kümmert sich nicht um sie	!kommunizieren.html#suizid-angesprochen	r4-32 «um sie» als Präposition
+die Therapie bringt nichts ich mache mir Sorgen um sie	behandlung.html#rollen	r4-32 «um sie» als Präposition, ohne Komma

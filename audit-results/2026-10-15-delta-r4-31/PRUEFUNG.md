@@ -310,3 +310,30 @@ Dann kann `independentReview` gesetzt werden. Vor dem Merge braucht es wieder ei
 **Hinweis zu `n7f7/*.result5.tsv`:** In diesen Dateien sind die Spalten anders belegt, als die Kopfzeile sagt. «1ac» steht für `ebe8a30`, «neu» für `7f7ee0f` und «K» für die Nachbildung L.
 
 **Belege (Scratchpad `d31/`):** `suchtest-7f7ee0f.txt`, `suchtest-ebe-on-300.txt`, `suchtest-varL.txt`; `n7f7/` (Listen und `*.result5.tsv`); `sebe/site` (`ebe8a30`); `varL/`, `varL.diff`; `prodcopy5/`, `prod5-a.log`, `d31e.sha`, `prod5.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31e` (von `.gitignore` erfasst). Lokale Server beendet.
+
+## Abschlussbestätigung 4 (Stand 93d972b)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-31-suche-codex-1792072594`, Commit `93d972b`, auf `origin` gleich und Kopf von #690 (offen, nicht gemergt). Arbeitsbaum gleich `93d972b`. Diff zu `7f7ee0f`: `authoring/js/interaktion.js` (Variante L), Testliste (+5), `reviewScope`, `FREIGABE.md` r4-31 (Nachtrag 7, Markierung in Nachtrag 6, Testlistenzeile), Pendenzen (R3C-A9, R30-P01), diese Datei (unverändert committet). `site/` unverändert (`ebe8a30`), `independentReview` «ausstehend» |
+| Prüfobjekt | eigener Entwurf `node authoring/tools/build.mjs --out=dist/d31f` |
+| Art | nur mechanischer Abgleich, wie verlangt; keine neue Probenrunde, nichts geändert ausser diesem Abschnitt |
+| Zeitpunkt | 15.10.2026, etwa 18:10 bis 18:20 MESZ |
+
+**Ergebnis: bestätigt.** Alle fünf Punkte sind ohne Abweichung erfüllt, R31-07 ist behoben. Nach R31-P02 ist mir dabei nichts Blockierendes aufgefallen.
+
+**`independentReview` kann jetzt auf «bestaetigt» gesetzt werden.** Die Bestätigung gilt für den Inhalt von `93d972b`. Ändern sich danach Code, Testliste oder Seiteninhalt, braucht es einen neuen Abgleich; reine Nachweis-Nachträge sind davon nicht betroffen. Vor dem Merge braucht es das Codex-Review auf dem exportierten Kopf, und es muss geprüft sein (R28-O01, R29-P20). Neue Befunde werden nach R31-P02 eingestuft.
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | Suchtest 100 % | **erfüllt** | Entwurf «23 Seiten · 0 Blocker · 1 Hinweise» (nur change-review). `suchtest.mjs dist/d31f`: «Suchtest: 305 von 305 Ersttreffern wie festgeschrieben · JS-Fehler 0», Exit 0. Die 5 neuen Zeilen haben die vorgeschlagenen Erwartungen. `suchtest.mjs` füllt das Suchfeld mit dem Text aus der Testliste (`page.fill`), also mit Satzzeichen. Seit L1 prüfen die Zeilen mit Satzzeichen deshalb tatsächlich den Satzzeichen-Fall. |
+| 2 | Abgleich mit L | **erfüllt, 998/998** | `authoring/js/interaktion.js` ist zeichengleich mit meiner Nachbildung `d31/varL/site/js/interaktion.js`. `dist/d31f` ist als Ganzes bytegleich mit `d31/varL/site`. Neu im Browser abgefragt, gegen Spalte «K» (= L) in `n7f7/*.result5.tsv`: `q-alle5` 617, `q-r690` 86, `q-r690b` 74, `q-all91` 91, `q-54` 54, `q-r31p3` 58, `q-r31p3b` 18, zusammen 998 von 998. Die neu abgefragte Nachbildung ergibt dasselbe, und die Spalte r4-29 ist überall unverändert. 0 JS-Fehler. |
+| 3 | 91/54 gleich r4-29 | **erfüllt** | 91/91 und 54/54. |
+| 4 | Nachtrag 7 und Markierung in Nachtrag 6 | **erfüllt** | Nachtrag 7 gibt R31-07, die Herkunft aus K (b), «in `ebe8a30`, nicht in der Produktion» und die Satzzeichen-Feststellung richtig wieder. Die Beschreibung von L1 und L2 entspricht dem Code. Die Abgleichzahlen 998/998 sind durch Punkt 2 nun von mir bestätigt. «305 Anfragen, 33 davon neu» stimmt (272 + 33), R3C-A9 nennt 305. Die Markierung in Nachtrag 6 ist sachlich richtig. **Kleinigkeit in R30-P01:** «G5 (mit Variante L behoben, wenn Satzzeichen stehen)» ist zu vorsichtig. Nach dem Code behebt L2 G5 auch ohne Satzzeichen, weil der Infinitiv dort nicht am Anfang des Abschnitts steht. Geprüft habe ich das nur am Code, eine neue Probe habe ich nicht gemacht. |
+| 5 | Produktionsbuild bytegleich | **erfüllt** | 23/23 Seiten `data-puk-site-build="r4-31"`, 46 × `?v=r4-31`, CSS-Kopf, `BUILD`, `assetVersion` r4-31. `dist/d31f` unterscheidet sich von `dist/d31e` nur in `js/interaktion.js`. `node --check` ohne Fehler, 0 `tel:`. In einer Kopie (`git archive 93d972b`) blockiert «ausstehend» (Exit 1). Mit «bestaetigt»: «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», bytegleich mit `dist/d31f` (`diff -rq` ohne Ausgabe, SHA-256 von 34 Dateien gleich). |
+
+**Zur Frage nach M′:** L genügt R31-P02 auf allen meinen Proben, und ich sehe keinen Grund, jetzt zu wechseln. M′ wäre an dieser Stelle robuster: Nach einem Infinitiv kann die Prüfung nach dem Verb dort nie «Gewalt» ergeben, also auch nie einen Rückschritt nach R31-P02. Der Preis wäre, dass richtige Gewaltsätze wie «umbringen will er mich» ihre Wertung verlieren. L behält sie und hat als bekannten Rest nur den blossen Infinitiv am Anfang ohne Satzzeichen («umbringen wird er mich vermissen», in R30-P01). Meldet Codex an dieser Stelle noch einmal einen Rückschritt, würde ich auf M′ wechseln, statt L weiter zu verfeinern.
+
+**Nach dem Export:** `site/` muss bytegleich mit dem Produktionsbuild sein. Erst dann «@codex review» anfordern.
+
+**Belege (Scratchpad `d31/`):** `suchtest-93d972b.txt`; `n93d/*.result3.tsv` (r4-29, Nachbildung L, `93d972b`); `prodcopy6/` (Kopie mit «bestaetigt», `dist/prod`), `prod6-a.log` (Gegenprobe), `d31f.sha`, `prod6.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31f` (von `.gitignore` erfasst). Lokale Server beendet.

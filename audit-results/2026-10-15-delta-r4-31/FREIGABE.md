@@ -132,3 +132,11 @@ Die bauende Sitzung hat als Alternative eine einseitige Form geprüft: nach Infi
 Ergebnis auf dem Entwurf: «Suchtest: 305 von 305 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind fünf Zeilen, wie verlangt. Der Suchtest füllt das Suchfeld mit dem Rohtext, also mit Satzzeichen. Mechanischer Abgleich mit der Nachbildung L (Spalte «K» in `n7f7/*.result5.tsv`): 998 von 998 ohne Abweichung (`q-alle5` 617, `q-r690` 86, `q-r690b` 74, `q-all91` 91, `q-54` 54, `q-r31p3` 58, `q-r31p3b` 18). Weitere Grenzfälle (G5, G6, Infinitiv am Anfang ohne Satzzeichen) stehen in R30-P01.
 
 `releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.
+
+## Nachtrag 8 · Abschlussbestätigung 4 und neuer Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `93d972b` bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 4»). Den mechanischen Abgleich hat sie selbst gemacht: Suchtest 305 von 305, 998 von 998 Proben gleich der Nachbildung L, Bestand 91/91 und 54/54 wie r4-29, Produktionsbuild in einer Kopie bytegleich. Nach R31-P02 fand sie nichts Blockierendes.
+
+`releaseApproval.independentReview` steht auf «bestaetigt», danach folgt der Produktionsexport. Erst auf dem exportierten Kopf wird ein neues Codex-Review angefordert. Gemergt wird erst, wenn dieses Review geprüft ist.
+
+Hinweis der Prüfsitzung: Meldet Codex an der Stelle «Infinitiv mit Hilfsverb» nochmals einen Rückschritt, wird auf die einseitige Form M′ gewechselt, statt L weiter zu verfeinern.

@@ -398,3 +398,68 @@ Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8
 - `suchtest-site-ca8.txt`: Suchtest gegen `site/` (99 Abweichungen)
 - `prodcopy8/`: Produktion mit «bestaetigt»
 - Entwurf: `/home/claude/borderline-angehoerige/dist/d30e` (von `.gitignore` erfasst)
+
+*Nachtrag:* Die bauende Sitzung hat den Abschnitt «Vierte Nachprüfung» unverändert in `f8c8ce2` committet. Der folgende Abschnitt ist nicht committet.
+
+## Fünfte Nachprüfung (Stand f8c8ce2)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-30-suche-links-1792061353`, Commit `f8c8ce2` (15.10.2026, 14:53 MESZ). Diff zu `ca89da2`: `interaktion.js` (Suizid-Vorrang bei «sich», Subjekt nach «mich», Suizid-Phrase vor Gewalt), Testliste (251 Anfragen), `FREIGABE.md` (Nachtrag 5, Nachtrag 4 Punkt 2 markiert), Pendenzen, dieser Bericht |
+| Prüfobjekt | frischer Entwurf `node authoring/tools/build.mjs --out=dist/d30f`. Verglichen mit `site/` (r4-29) und meiner Nachbildung von Variante F (`varF/site`). Zusätzlich eine Variante G, die ich nur im Scratchpad auf `dist/d30f` nachgebildet habe |
+| Prüfsitzung | dieselbe unabhängige Prüfsitzung; nichts gebaut, korrigiert oder entschieden; nur diese Datei geändert; keine git-Schreibbefehle; Netlify nicht angefasst |
+| Zeitpunkt | 15.10.2026, etwa 14:55 bis 15:25 MESZ |
+
+### Ergebnis der fünften Nachprüfung
+
+**Freigabefähig mit Auflagen:** Variante F ist mit der Ergänzung richtig umgesetzt. Die Ergänzung (Suizid-Phrase geht vor Gewalt) wirkt nur in der sicheren Richtung und stellt r4-29 wieder her. Es bleibt aber ein Fehler in der heiklen Richtung, den es schon seit `43d6b21` gibt und den ich bisher nicht geprüft hatte. Steht «Familie», «Kind» oder «Kinder» zwischen «mich» und dem Verb, zählt dieses Wort als Objekt vor «mich». Ich-Aussagen gehen dann auf «Gewalt», etwa «ich will mich wegen meiner Familie umbringen» oder «ich will mich der Familie zuliebe nicht umbringen» (D30-19). Auflage vor dem Export ist D30-19; die Korrektur ist klein und nachgebildet (Variante G).
+
+**`independentReview` jetzt noch nicht auf «bestaetigt» setzen und noch nicht exportieren.** Das ist möglich, sobald Variante G umgesetzt ist und eine kurze Nachprüfung bestätigt: `suchtest.mjs` mit 100 % und die Ersttreffer meiner Probelisten gleich wie in der Nachbildung von G. Sonst fand ich nichts, was gegen den Export spricht.
+
+### Beleg je Punkt
+
+| Nr. | Punkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| a | `suchtest.mjs` auf eigenem Entwurf | **erfüllt** | Entwurf `dist/d30f`: «23 Seiten · 0 Blocker · 1 Hinweise». `suchtest.mjs dist/d30f`: «251 von 251 … JS-Fehler 0». Gegen `site/`: 148 von 251, also 103 Abweichungen, keine im Bestand. |
+| b | 91/54 wie r4-29 | **erfüllt** | 91/91 und 54/54 gleich `site/`. |
+| c | Probelisten und neue Proben | **F richtig umgesetzt; neuer Befund D30-19** | **Abgleich mit F:** Die 458 Proben aus `q-alle.txt` ergeben dieselben Ersttreffer wie meine Nachbildung von F, ausser der Probe zu Punkt 3 («ich will nicht mehr leben er droht mich umzubringen» → `krise#suizid`, wie r4-29). Keine Anfrage mit «sich» und Tötungsverb geht auf «Gewalt». <br>**Punkt 2 (Artikel und Person nach «mich»), 55 neue Proben (`q-fuenft.txt`, `q-fuenft2.txt`, `q-fuenft3.txt`):** richtig auf Gewalt: «ich habe Angst dass mich mein Mann umbringt», «dass mich ein Mann umbringt», «wenn mich jemand umbringen will», «ob mich meine Tochter umbringen will», «will mich mein Sohn umbringen», «was tun wenn mich mein Ex umbringen will», «dass mich der Vater umbringt», «dass mich die Mutter umbringen will». Richtig auf Suizid: «ich will mich wegen meinem Mann umbringen», «ich will mich umbringen mein Mann weiss es nicht», «ich hasse mich mein Mann sagt ich soll mich umbringen», «ich will mich vor meinem Mann umbringen», «ich habe mich die ganze Nacht gefragt ob ich mich umbringen soll». <br>**Punkt 3 (Suizid-Phrase und Drohung):** «ich will nicht mehr leben er droht mich umzubringen», «er droht mich umzubringen ich will nicht mehr leben», «er sagt er will sterben und mich umbringen», «mein Mann will sterben und droht mich umzubringen», «ich will sterben weil er mich umbringen will», «sie hat Tabletten genommen und droht mich umzubringen» → `krise#suizid`. Das sind fünfmal dieselben Ersttreffer wie in r4-29; einmal ist es besser (r4-29: `quellen#forschung`). «er will mich umbringen ich will nicht tot sein» → Gewalt (richtig: «will nicht» ist die längere Phrase, keine Suizid-Phrase). Die Ergänzung verschiebt nur in Richtung Suizid. <br>**D30-19 (schlechter als r4-29, heikle Richtung):** Steht «Familie», «Kind» oder «Kinder» zwischen «mich» und dem Verb, prüft die Objektschleife das Wort vor «mich» und meldet Gewalt: «ich will mich wegen meiner Familie umbringen», «ich will mich der Familie zuliebe nicht umbringen» (r4-29: `krise#suizid`), «ich will mich meiner Familie zuliebe nicht umbringen» (r4-29: `krise#suizid`), «soll ich mich der Familie zuliebe nicht umbringen», «ich würde mich der Kinder wegen nie umbringen», «ich habe mich der Familie zuliebe nicht umgebracht», «ich will mich vor dem Kind umbringen» (r4-29: `krise#bleibt`), «er sagt ich will mich wegen der Kinder umbringen», «meine Mutter sagt ich will mich wegen der Familie umbringen», «ich möchte mich für meine Familie nicht umbringen», «ich will mich und die Kinder umbringen» → `grenzen#gewalt`. Bei «der Familie zuliebe» greift zusätzlich die neue Prüfung «Artikel + Person nach ‹mich›», weil «der» auch Dativ ist. Die Objektschleife gibt es seit `43d6b21`. <br>**Hinnehmbar:** Beim Muster «bringt … um» gilt der Suizid-Vorrang nicht. «er bringt sich und mich um», «wenn ich gehe bringt er sich und mich um», «mein Sohn ritzt sich und sagt er bringt mich um» → Gewalt; das sind Drohungen gegen die eigene Person. <br>**Gesamtvergleich mit r4-29** (500 Proben in der Nachbildung von G, siehe unten): Mit G geht keine Ich-Aussage und keine Anfrage mit «sich» und Tötungsverb mehr auf «Gewalt». Ausnahmen sind die drei Drohungen «bringt … sich und mich um». Was ausserhalb von D30-19 schlechter liegt als in r4-29, liegt in der sicheren Richtung: Redewendungen und Verneinungen → Suizid (D30-14) sowie Drohungen mit reflexivem Verb in einem früheren Teilsatz (R30-P01). |
+| d | Nachweise | **weitgehend richtig** | Richtig: Nachtrag 4 Punkt 2 markiert; Nachtrag 5 beschreibt F und die Ergänzung so, wie der Code sie umsetzt; Zahlen (251/251, 103 Abweichungen, keine im Bestand; `q-alle` gleich F ausser der Probe zu Punkt 3); R30-P01 mit den Grenzen und der offenen Zuordnung des erweiterten Suizids; `independentReview` auf «ausstehend». **Ungenau:** «Keine Anfrage mit ‹sich› geht auf ‹Gewalt›» gilt nur für Tötungsverben, nicht für «bringt … sich und mich um». «Bekannte Grenzen, alle in der sicheren Richtung» stimmt wegen D30-19 nicht. |
+| – | Build | **erfüllt** | Produktionsbuild in einer Kopie mit «bestaetigt»: 0 Blocker, 0 Hinweise, bytegleich mit `dist/d30f`. Gegenüber `ca89da2` ist nur `js/interaktion.js` verschieden. Wortbilanz unverändert; `node --check` ohne Fehler; 0 Skriptfehler. |
+
+### Neuer Befund und Korrektur (Variante G)
+
+| ID | Priorität | Befund | Vorschlag (nicht umgesetzt) |
+| --- | --- | --- | --- |
+| D30-19 | **wichtig, Auflage vor dem Export** | Ich-Aussagen mit «Familie», «Kind» oder «Kinder» zwischen «mich» und dem Verb gehen auf «Gewalt» (11 Proben, mindestens drei schlechter als r4-29). Ursache 1: Die Objektschleife in `killIntent()` prüft «mich» und «Familie/Kind/Kinder» in einem Durchgang und nimmt das Wort, das näher am Verb steht. Ursache 2: Die neue Prüfung «Artikel + Person nach ‹mich›» läuft vor der Suche nach «ich», und «der» ist auch Dativ («mich der Familie zuliebe»). | **Variante G**, zwei Änderungen: (1) Steht «mich» im Teilsatz, entscheidet `michIntent()`; erst danach zählen «uns», «dich», «ihn», «euch», «Kind(er)», «Familie». (2) `michIntent()` sucht zuerst das nächste Subjekt links von «mich» im Teilsatz («ich» → Suizid, Dritte → Gewalt). Erst wenn dort keines steht, folgt die Prüfung «Subjekt nach ‹mich›», danach die Suche links vom Teilsatz und das Drohwort wie bisher. |
+
+**Beleg für G (nur nachgebildet):** Ich habe G in einer Kopie von `dist/d30f` im Scratchpad gepatcht (`varG/site/js/interaktion.js`). Im Repository ist nichts geändert.
+
+- `suchtest.mjs varG/site`: 251 von 251, 0 Skriptfehler.
+- 492 verschiedene Proben (`q-alle2.txt`): gegenüber `f8c8ce2` ändern sich nur 5 Ersttreffer, alle aus D30-19, alle → `krise#suizid`.
+- 8 weitere Proben (`q-fuenft3.txt`): die Ich-Aussagen mit «wegen meiner Familie», «vor dem Kind», «für meine Familie», «mich und die Kinder» → Suizid. Fremdbedrohungen bleiben bei Gewalt: «er will mich und die Kinder umbringen», «ich habe Angst er will mich und die Kinder umbringen».
+- Mit G geht in allen 500 Proben keine Ich-Aussage und keine Anfrage mit «sich» und Tötungsverb auf «Gewalt», ausser den drei Drohungen «bringt … sich und mich um».
+
+Für den Export:
+1. G im Repository umsetzen.
+2. In die Testliste aufnehmen, mindestens:
+   - «ich will mich wegen meiner Familie umbringen» → `krise.html#suizid`
+   - «ich will mich vor dem Kind umbringen» → `krise.html#suizid`
+   - «er sagt ich will mich wegen der Kinder umbringen» → `krise.html#suizid`
+   - «ich will mich der Familie zuliebe nicht umbringen» → `!grenzen.html#gewalt`
+   - «ich würde mich der Kinder wegen nie umbringen» → `!grenzen.html#gewalt`
+   - «ich will mich und die Kinder umbringen» → `krise.html#suizid`
+   - «er will mich und die Kinder umbringen» → `grenzen.html#gewalt`
+3. Danach prüfen: `suchtest.mjs` 100 %; die Ersttreffer von `q-alle2.txt` und `q-fuenft3.txt` gleich wie in `q-alle2.resultG.tsv` und `q-fuenft3.resultG.tsv` (Spalte G); 91/54 gleich r4-29. Das ist ein mechanischer Abgleich. Fällt er ohne Abweichung aus, ist die Auflage erfüllt, und `independentReview` kann auf «bestaetigt» gesetzt werden.
+
+Nachweise dazu: In Nachtrag 5 den Satz «Keine Anfrage mit ‹sich› …» auf Tötungsverben eingrenzen und D30-19 nennen.
+
+### Belege der fünften Nachprüfung
+
+Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8-de06005eb532/scratchpad/d30/`:
+
+- `q-fuenft.txt`, `q-fuenft2.txt`, `q-fuenft3.txt` (55 neue Proben); `q-alle2.txt` (492 verschiedene Proben)
+- `q-alle.result3.tsv`, `q-fuenft*.result3.tsv` (r4-29, Nachbildung F, `f8c8ce2`); `q-alle2.resultG.tsv`, `q-fuenft3.resultG.tsv` (r4-29, `f8c8ce2`, Nachbildung G)
+- `varG/site/`: nachgebildete Variante G (nur Scratchpad); `searchG.cjs`
+- `suchtest-site-f8c.txt`: Suchtest gegen `site/` (103 Abweichungen)
+- `prodcopy9/`: Produktion mit «bestaetigt»
+- Entwurf: `/home/claude/borderline-angehoerige/dist/d30f` (von `.gitignore` erfasst)

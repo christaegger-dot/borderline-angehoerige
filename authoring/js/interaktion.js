@@ -237,9 +237,9 @@
        als umgekehrt.
        1. Steht «sich» irgendwo in der Anfrage → Suizid, auch beim erweiterten Suizid («sich und die Kinder»).
        2. Sonst das nächste Objekt vor dem Verb im Teilsatz (Grenze: «dass», «wenn», «weil», «warum» usw.):
-          «mich» → steht direkt danach ein Subjekt («mich mein Mann») → Gewalt; sonst entscheidet das nächste Subjekt davor
-          («ich» → Suizid; «er», «sie», «du», «jemand», «mein Mann», «mein Kind» … → Gewalt; ohne Subjekt bei einem Drohwort
-          Gewalt, sonst Suizid);
+          «mich» geht anderen Objekten vor: Es entscheidet das nächste Subjekt davor im Teilsatz («ich» → Suizid; «er», «sie»,
+          «du», «jemand», «mein Mann», «mein Kind» … → Gewalt), sonst ein Subjekt direkt danach («mich mein Mann») → Gewalt,
+          sonst ein Subjekt in einem früheren Teilsatz, sonst bei einem Drohwort Gewalt, sonst Suizid;
           «uns», «dich», «ihn», «euch», «die Kinder», «das Kind», «meine Familie» → Gewalt.
        3. Sonst «sie» oder eine Person als Objekt («meine Mutter», «meinen Vater») → Gewalt, aber nur mit einem Subjekt davor
           im Teilsatz («er will meine Mutter umbringen»); ohne Subjekt («Tochter umbringen») gilt die übliche Suche.
@@ -256,11 +256,22 @@
     var threatWords = { droht: 1, drohen: 1, gedroht: 1, drohte: 1, drohung: 1, drohungen: 1 };
     var nominativeArticles = { mein: 1, meine: 1, dein: 1, deine: 1, sein: 1, seine: 1, ihr: 1, ihre: 1, unser: 1, unsere: 1, der: 1, die: 1, das: 1, ein: 1, eine: 1 };
     var nominativeSubjects = { er: 1, du: 1, jemand: 1, man: 1 };
+    function clauseStart(words, index) {
+      for (var i = index - 1; i >= 0; i--) if (clauseWords[words[i]]) return i + 1;
+      return 0;
+    }
+    /* «mich»: zuerst das nächste Subjekt davor im Teilsatz, dann ein Subjekt direkt danach («dass mich mein Mann …»),
+       dann ein Subjekt in einem früheren Teilsatz, zuletzt ein Drohwort (D30-18, D30-19). */
     function michIntent(words, objectIndex) {
+      var start = clauseStart(words, objectIndex), i;
+      for (i = objectIndex - 1; i >= start; i--) {
+        if (words[i] === 'ich') return 'suizid';
+        if (thirdParty[words[i]]) return 'gewalt';
+      }
       var next = objectIndex + 1;
       if (nominativeArticles[words[next]]) next++;
       if (nominativeSubjects[words[next]] || persons[words[next]]) return 'gewalt';
-      for (var i = objectIndex - 1; i >= 0; i--) {
+      for (i = start - 1; i >= 0; i--) {
         if (words[i] === 'ich') return 'suizid';
         if (thirdParty[words[i]]) return 'gewalt';
       }
@@ -278,12 +289,10 @@
         return null;
       }
       if (words.indexOf('sich') !== -1) return 'suizid';
-      var start = 0;
-      for (i = verb - 1; i >= 0; i--) if (clauseWords[words[i]]) { start = i + 1; break; }
-      for (i = verb - 1; i >= start; i--) {
-        if (words[i] === 'mich') return michIntent(words, i);
-        if (plainObjects[words[i]]) return 'gewalt';
-      }
+      var start = clauseStart(words, verb);
+      /* «mich» im Teilsatz geht anderen Objekten vor («ich will mich wegen meiner Familie umbringen», D30-19). */
+      for (i = verb - 1; i >= start; i--) if (words[i] === 'mich') return michIntent(words, i);
+      for (i = verb - 1; i >= start; i--) if (plainObjects[words[i]]) return 'gewalt';
       for (i = verb - 1; i >= start; i--) {
         if (words[i] === 'sie' || persons[words[i]]) {
           for (var j = i - 1; j >= start; j--) if (words[j] === 'ich' || thirdParty[words[j]]) return 'gewalt';

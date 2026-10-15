@@ -54,7 +54,7 @@ Wortbilanz mit Quellenblock: «Behandlung» 2399 (Ziel < 2400), «Fragen» 2398 
 Die unabhängige Delta-Prüfung (`PRUEFUNG.md`, Stand `9f5ebfe`) ergab «freigabefähig mit Auflagen». Kritische Befunde gab es keine. Umgesetzt ist:
 
 - **D30-01 (wichtig):** Die ersten Gewaltphrasen leiteten Ich-Aussagen («ich will mich umbringen») auf «Gewalt». Neu gehören Ich-Aussagen als Phrase zur Suizidgruppe («ich will mich umbringen», «mich umbringen», «mich zu töten» usw.). Zur Gewaltgruppe gehören nur Drohungen und Taten anderer («droht mich umzubringen», «will mich umbringen», «er bringt mich um», «mit dem Tod bedroht»). Das galt nur für die aufgezählten Phrasen; nicht aufgezählte Formen blieben falsch zugeordnet (D30-09, Nachtrag 2). Die längere Phrase gewinnt. Gestrichen sind «droht mich» und «mit dem Tod» allein. Nachprüfung durch die Prüfsitzung: siehe `PRUEFUNG.md`, Nachprüfung.
-- **D30-03 (wichtig):** Die Anfragen sind festgeschrieben in `authoring/tests/suche-ersttreffer.tsv`, damals 168 Anfragen (nach Nachtrag 5: 251) mit erwartetem Ersttreffer. Die Prüfung läuft mit `node authoring/tools/suchtest.mjs <site-ordner>` (Playwright, nicht in der CI).
+- **D30-03 (wichtig):** Die Anfragen sind festgeschrieben in `authoring/tests/suche-ersttreffer.tsv`, damals 168 Anfragen (nach Nachtrag 6: 258) mit erwartetem Ersttreffer. Die Prüfung läuft mit `node authoring/tools/suchtest.mjs <site-ordner>` (Playwright, nicht in der CI).
 - **D30-04, teilweise:** ergänzt sind «gewürgt», «Frauenhaus», «Angst vor meinem Partner/Mann, meiner Partnerin/Frau», Pluralformen («Abschiedsbriefe», «Selbstmordversuche», «Todeswünsche», «Suiziddrohungen», «Suizidandrohungen», «Überdosen»), «lebensmüder», «ist lebensmüde», «sich umbringen», «bringt sich um», «Tabletten geschluckt». (Überholt für «sich umbringen» und «bringt sich um»: Diese Phrasen sind seit Nachtrag 2 durch die Regel für Tötungsverben ersetzt; «bringt sie sich um» bleibt nach R25-010 bei «Wenn Worte treffen».) Offen bleiben «Sorgerecht», «Klinik sagt mir nichts», «sie trinkt jeden Abend» und «er zerstört Sachen in der Wohnung» (R30-P01).
 - **D30-08:** Im Code ist vermerkt, dass der Zwischenspeicher unveränderte Attribute voraussetzt. «Überdosis Alkohol» ist nicht festgeschrieben, weil der Treffer schwach ist (R30-P01).
 - **D30-06:** Die Herkunft der gekürzten Fassung und die Zeitzonen sind berichtigt.
@@ -120,8 +120,21 @@ Umgesetzt ist Variante F mit einer Ergänzung:
 4. **Ergänzung der bauenden Sitzung:** Enthält die Anfrage eine Suizid-Phrase der Suche («will nicht mehr leben» u. a.), gilt Suizid, auch wenn die Regel sonst Gewalt ergäbe. Beispiel: «ich will nicht mehr leben er droht mich umzubringen» → Suizid; in F wäre das Gewalt.
 5. Alles Übrige bleibt wie in `ca89da2`: Teilsatz, Objekte, Subjekte, Drohwörter.
 
-Ergebnis auf dem Entwurf: «Suchtest: 251 von 251 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind acht Zeilen: drei aus D30-17 (`!grenzen.html#gewalt`), vier aus D30-18 und die Probe zu Punkt 4. Gegen `site/` (r4-29) weichen 103 Anfragen ab, keine aus dem Bestand (91 und 54). Die 458 Proben der Prüfsitzung (`q-alle.txt`) ergeben dieselben Ersttreffer wie ihre Nachbildung von F, mit einer Ausnahme: die Probe zu Punkt 4. Keine Anfrage mit «sich» geht auf «Gewalt».
+Ergebnis auf dem Entwurf: «Suchtest: 251 von 251 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind acht Zeilen: drei aus D30-17 (`!grenzen.html#gewalt`), vier aus D30-18 und die Probe zu Punkt 4. Gegen `site/` (r4-29) weichen 103 Anfragen ab, keine aus dem Bestand (91 und 54). Die 458 Proben der Prüfsitzung (`q-alle.txt`) ergeben dieselben Ersttreffer wie ihre Nachbildung von F, mit einer Ausnahme: die Probe zu Punkt 4. ~~Keine Anfrage mit «sich» geht auf «Gewalt».~~ Ungenau: Das gilt nur für Tötungsverben; beim Muster «bringt … um» gehen Drohungen wie «er bringt sich und mich um» auf «Gewalt» (hinnehmbar, Drohung gegen die eigene Person).
 
-Bekannte Grenzen, alle in der sicheren Richtung (wie r4-29 oder besser), in R30-P01: Drohungen mit einem reflexiven Verb in einem früheren Teilsatz («er regt sich auf und droht mich umzubringen») und der erweiterte Suizid gehen auf «Suizid». Ob der erweiterte Suizid dorthin gehört, entscheidet die Fachstelle.
+Bekannte Grenzen ~~, alle in der sicheren Richtung (wie r4-29 oder besser),~~ in R30-P01 (ungenau: wegen D30-19 nicht alle in der sicheren Richtung, siehe Nachtrag 6): Drohungen mit einem reflexiven Verb in einem früheren Teilsatz («er regt sich auf und droht mich umzubringen») und der erweiterte Suizid gehen auf «Suizid». Ob der erweiterte Suizid dorthin gehört, entscheidet die Fachstelle.
 
 Die Nachprüfung dieser Änderung steht aus; `releaseApproval.independentReview` bleibt bis dahin «ausstehend».
+
+## Nachtrag 6 · Fünfte Nachprüfung und D30-19 (15.10.2026)
+
+Die fünfte Nachprüfung (`PRUEFUNG.md`, Abschnitt «Fünfte Nachprüfung», Stand `f8c8ce2`) ergab «freigabefähig mit Auflagen». Variante F und die Ergänzung (Suizid-Phrase) sind richtig umgesetzt. Auflage vor dem Export war D30-19: Steht «Familie», «Kind» oder «Kinder» zwischen «mich» und dem Verb, gingen Ich-Aussagen auf «Gewalt» («ich will mich wegen meiner Familie umbringen»), 11 Proben, einige schlechter als r4-29. Die Objektschleife bestand seit `43d6b21`.
+
+Umgesetzt ist Korrektur G der Prüfsitzung:
+
+1. Steht «mich» im Teilsatz, entscheidet die «mich»-Wertung. Erst danach zählen «uns», «dich», «ihn», «euch», «Kind(er)» und «Familie» als Objekt.
+2. Die «mich»-Wertung sucht zuerst das nächste Subjekt vor «mich» im Teilsatz («ich» → Suizid, Dritte → Gewalt). Steht dort keines, folgt ein Subjekt direkt nach «mich» («dass mich mein Mann …»), dann ein Subjekt in einem früheren Teilsatz, dann ein Drohwort.
+
+Ergebnis auf dem Entwurf: «Suchtest: 258 von 258 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind die sieben Zeilen, die die Prüfsitzung verlangt hat. Gegen `site/` (r4-29) weichen 108 Anfragen ab, keine aus dem Bestand (91 und 54). Mechanischer Abgleich mit der Nachbildung von G durch die Prüfsitzung: `q-alle2.txt` 492 von 492 und `q-fuenft3.txt` 8 von 8 Ersttreffern gleich wie in `q-alle2.resultG.tsv` und `q-fuenft3.resultG.tsv`, keine Abweichung. Die beiden ungenauen Sätze in Nachtrag 5 sind markiert.
+
+Die Bestätigung des Abgleichs durch die Prüfsitzung steht aus; `releaseApproval.independentReview` bleibt bis dahin «ausstehend».

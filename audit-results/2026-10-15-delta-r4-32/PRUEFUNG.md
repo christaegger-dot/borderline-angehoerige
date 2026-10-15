@@ -127,3 +127,33 @@ Im Scratchpad der Prüfsitzung (`/tmp/claude-0/-home-claude-borderline-angehoeri
 - `d32/varP/`, `d32/varP.diff`; `d32/suchtest-varP.txt`; `d31/suchtest-138033d.txt`.
 - `d32/prodcopy/`, `d32/prod-a.log`, `d32/d32a.sha`, `d32/prod.sha`.
 - Entwurf: `/home/claude/borderline-angehoerige/dist/d32a` (von `.gitignore` erfasst).
+
+## Abschlussbestätigung (Stand 306c4e4)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-32-suche-1792088993`, Commit `306c4e4`, auf `origin` gleich. Diff zu `19cd451`: `authoring/js/interaktion.js` (Korrektur P), Testliste (+5, jetzt 197), `reviewScope`, `FREIGABE.md` (Nachtrag 1). `site/` und Seiteninhalt unverändert, `independentReview` «ausstehend», diese Datei unverändert |
+| Prüfobjekt | eigener Entwurf `node authoring/tools/build.mjs --out=dist/d32b` |
+| Art | nur mechanischer Abgleich; keine neue Probenrunde, nichts geändert ausser diesem Abschnitt |
+| Zeitpunkt | 15.10.2026, etwa 21:20 bis 21:30 MESZ |
+
+**Ergebnis: bestätigt.** Die Auflagen R32-01 und R32-02 sind erfüllt; alle Punkte sind ohne Abweichung durchgelaufen.
+
+- **Code:** `authoring/js/interaktion.js` ist zeichengleich mit meiner Nachbildung `d32/varP/site/js/interaktion.js`. `dist/d32b` ist als Ganzes bytegleich mit `d32/varP/site` und unterscheidet sich von `dist/d32a` (`138033d`) nur in `js/interaktion.js`.
+- **Suchtest:** «Suchtest: 197 von 197 Erwartungen wie festgeschrieben · JS-Fehler 0», Exit 0. Gegenprobe auf `138033d`: 192 von 197; die 5 Abweichungen sind genau die fünf neuen Zeilen.
+- **885 Proben:** Neu im Browser abgefragt, sind die ersten drei Treffer bytegleich mit `d32/p_P.tsv` und mit dem Lauf auf `138033d` (`cmp` ohne Abweichung). Die Zahlen in `FREIGABE.md` gelten damit unverändert.
+- **21 gezielte Proben:** bytegleich mit `d32/a_P.tsv`.
+- **Randfälle:** 0 JS-Fehler. Einzige Änderung gegenüber `138033d` ist die Unsinnseingabe «bring bring um um», die jetzt nicht mehr angeheftet wird.
+- **Build:** 23/23 Seiten `data-puk-site-build="r4-32"`, 46 × `?v=r4-32`, `node --check` ohne Fehler, 0 `tel:`. In einer Kopie (`git archive 306c4e4`) blockiert «ausstehend» (Exit 1). Mit «bestaetigt»: «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», bytegleich mit `dist/d32b` (SHA-256 von 34 Dateien gleich).
+- **Nachtrag 1:** gibt R32-01, R32-02, P1, P2, die Testliste und den Abgleich richtig wieder, ebenso meine Empfehlung zu R31-P03.
+
+**Urteil: freigabefähig.** **`independentReview` kann auf «bestaetigt» gesetzt werden.** Die Bestätigung gilt für den Inhalt von `306c4e4`. Ändern sich danach Code, Testliste oder Seiteninhalt, braucht es einen neuen Abgleich; reine Nachweis-Nachträge sind davon nicht betroffen. Vor dem Merge kommen:
+
+1. der Export;
+2. die Prüfung, dass `site/` bytegleich mit dem Produktionsbuild ist;
+3. «@codex review» auf dem exportierten Kopf und dessen Prüfung (R28-O01, R29-P20);
+4. nach der Auslieferung eine Sichtprüfung in der Produktion: Bei einer Anfrage mit Tötungswort stehen Suizid und Gewalt oben.
+
+Neue Befunde werden nach R31-P03 eingestuft; die Lesart muss die Auftraggeberin noch bestätigen.
+
+**Belege (Scratchpad der Prüfsitzung, `d32/`):** `suchtest-306c4e4.txt`, `suchtest-d32a-on-197.txt`; `p_306.tsv`, `a_306.tsv`, `e_306.tsv`; `prodcopy2/`, `prod2-a.log`, `d32b.sha`, `prod2.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d32b` (von `.gitignore` erfasst).

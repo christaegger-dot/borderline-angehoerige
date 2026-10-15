@@ -96,7 +96,7 @@ Antwort: «PR, Merge nach Meldung (Recommended)». Die bauende Sitzung eröffnet
 
 Antwort: «r4-32, Suizid unter Top 2 (Recommended)». Der Bezugsstand ist r4-32 (`37b963f`). Ein Befund blockiert in drei Fällen:
 
-- Suizid fällt aus den ersten zwei Treffern, ausser Kinder stehen zuerst.
+- Bei einer Anfrage mit Tötungswort fällt Suizid aus den ersten zwei Treffern, ausser Kinder stehen zuerst. Reine Gewaltanfragen ohne Tötungswort («er schlägt mich») sind nicht gemeint.
 - Eine Anheftung geht verloren.
 - Eine klare Ich-Aussage hat keinen Treffer.
 
@@ -106,5 +106,5 @@ Andere Befunde werden gemeldet und kommen in den nächsten Patch.
 
 Antwort: «Nein, so lassen (Recommended)». Der Kinder-Abschnitt gilt für minderjährige Kinder; Sohn und Tochter können erwachsen sein.
 
-Mit dieser Stopp-Regel geprüft (971 + 10 Proben): Bei allen angehefteten Anfragen ohne Kinder zuerst steht Suizid unter den ersten zwei Treffern. Gegenüber r4-32 geht keine Anheftung verloren (Nachtrag 1).
+Mit dieser Stopp-Regel geprüft (971 + 10 Proben): Von den 666 Anfragen mit Tötungswort oder Anheftung steht bei allen ohne Kinder zuerst Suizid unter den ersten zwei Treffern. Gegenüber r4-32 geht keine Anheftung verloren (Nachtrag 1).
 

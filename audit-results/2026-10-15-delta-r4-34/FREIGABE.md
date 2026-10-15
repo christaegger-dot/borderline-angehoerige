@@ -84,3 +84,27 @@ Produktionsexport (`--production --out=site --write-site`):
 
 Den Pull Request eröffnet die bauende Sitzung erst, wenn die Auftraggeberin über den Merge-Ablauf entschieden hat.
 
+## Nachtrag 2 · Entscheide der Auftraggeberin (15.10.2026)
+
+Die Fragen an die Auftraggeberin lauteten, ihre Antworten folgen jeweils wörtlich:
+
+> «r4-34 ist geprüft und exportiert. In der Produktion stehen noch die drei Rückschritte von r4-33, etwa «Mein Mann bringt mich um sie sieht es» ohne Treffer. #689, #694 und #695 wurden jeweils Sekunden nach dem Codex-Review gemergt, bevor ich es geprüft hatte. Wie soll es mit r4-34 laufen?»
+
+Antwort: «PR, Merge nach Meldung (Recommended)». Die bauende Sitzung eröffnet den Pull Request und prüft das Codex-Review nach der Stopp-Regel. Danach meldet sie «mergen» oder «nicht mergen», und erst dann mergt die Auftraggeberin.
+
+> «Mit welchem Stand vergleicht die Stopp-Regel R31-P03 ab jetzt, und wann blockiert ein Codex-Befund?»
+
+Antwort: «r4-32, Suizid unter Top 2 (Recommended)». Der Bezugsstand ist r4-32 (`37b963f`). Ein Befund blockiert in drei Fällen:
+
+- Suizid fällt aus den ersten zwei Treffern, ausser Kinder stehen zuerst.
+- Eine Anheftung geht verloren.
+- Eine klare Ich-Aussage hat keinen Treffer.
+
+Andere Befunde werden gemeldet und kommen in den nächsten Patch.
+
+> «R32-P01: Sollen Drohungen gegen Sohn oder Tochter («er droht, meine Tochter umzubringen») zuerst auf «Kinder › Bei Eskalation, Gewalt oder fehlender Betreuung» führen? Heute steht dort Gewalt › Suizid.»
+
+Antwort: «Nein, so lassen (Recommended)». Der Kinder-Abschnitt gilt für minderjährige Kinder; Sohn und Tochter können erwachsen sein.
+
+Mit dieser Stopp-Regel geprüft (971 + 10 Proben): Bei allen angehefteten Anfragen ohne Kinder zuerst steht Suizid unter den ersten zwei Treffern. Gegenüber r4-32 geht keine Anheftung verloren (Nachtrag 1).
+

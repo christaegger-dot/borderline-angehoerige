@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-28';
+const BUILD = 'r4-29';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -102,7 +102,9 @@ const has = (nd, k) => !!nd.attrs && Object.prototype.hasOwnProperty.call(nd.att
 const cls = (nd, c) => (' ' + ((nd.attrs && nd.attrs.class) || '') + ' ').includes(' ' + c + ' ');
 const up = (nd, pred) => { for (let p = nd.parent; p; p = p.parent) if (p.attrs && pred(p)) return p; return null; };
 const byId = (doc, id) => id ? one(doc, x => x.attrs.id === id) : null;
-const foldFaqAnswers = html => String(html || '').replace(/(<h3\s+class="puk-site-subheading"\s+id="f-[^"]+">[\s\S]*?<\/h3>)([\s\S]*?)(?=<h3\s+class="puk-site-subheading"\s+id="f-|<\/div><\/div><\/section>)/g, (m, heading, answer) => answer.includes('data-responsibility-inline') ? m : `<details class="puk-site-faq"><summary>${heading}</summary><div class="puk-site-faq__answer">${answer.trim()}</div></details>\n`);
+// Antworten bleiben offen, wenn sie einen Verweis im Text enthalten oder in «openFaqIds» der Seite stehen
+// (kritische Information nie nur hinter einem Aufklappteil, PUK Website-Profil).
+const foldFaqAnswers = (html, openIds = []) => String(html || '').replace(/(<h3\s+class="puk-site-subheading"\s+id="(f-[^"]+)">[\s\S]*?<\/h3>)([\s\S]*?)(?=<h3\s+class="puk-site-subheading"\s+id="f-|<\/div><\/div><\/section>)/g, (m, heading, id, answer) => answer.includes('data-responsibility-inline') || openIds.includes(id) ? m : `<details class="puk-site-faq"><summary>${heading}</summary><div class="puk-site-faq__answer">${answer.trim()}</div></details>\n`);
 const foldDepthSections = (html, ids) => (ids || []).reduce((out, id) => {
   const safeId = String(id).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const re = new RegExp(`(<section\\b[^>]*\\bid="${safeId}"[^>]*>[\\s\\S]*?<\\/section>)`);
@@ -150,7 +152,7 @@ function renderPage(cfg, page, content) {
       : '';
     return `<p class="puk-longform__boundary puk-site-inline-ref${tier}" data-responsibility-inline>${esc(inl.text)}</p>`;
   }) : content;
-  const faqBody = page.id === 'fragen' ? foldFaqAnswers(contentWithResponsibility) : contentWithResponsibility;
+  const faqBody = page.id === 'fragen' ? foldFaqAnswers(contentWithResponsibility, page.openFaqIds) : contentWithResponsibility;
   const body = foldDepthSections(faqBody, page.collapsedSections);
   const subdued = sa.variant === 'responsibility' ? `<section class="puk-site-safety puk-site-safety--responsibility" data-safety-access="responsibility" data-review-status="${esc(sa.reviewStatus)}" aria-labelledby="puk-safety-title"><h2 class="puk-web-footer__heading" id="puk-safety-title">${esc(sa.label || 'Zuständigkeit')}</h2><p class="puk-web-footer__copy">${esc(sa.text)}</p>${sa.targetHref ? `<p class="puk-web-footer__copy"><a href="${esc(sa.targetHref)}">${esc(sa.targetLabel)}</a></p>` : ''}${review ? `<p class="puk-web-footer__copy puk-site-review">${review}</p>` : ''}</section>` : '';
   const draftbar = page.status === 'draft' ? `<p class="puk-site-draftbar" data-page-status="draft"><span class="puk-web-container">Entwurf · nicht in der Navigation · nicht veröffentlichen</span></p>` : '';

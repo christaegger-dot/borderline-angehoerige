@@ -1,0 +1,68 @@
+{
+  "paket": "r4-28 · Korrekturen nach dem Codex-Review von PR #684",
+  "datum": "2026-10-14",
+  "release": "r4-28",
+  "branch": "claude/r4-28-codex-korrekturen-1792011773",
+  "basisCommit": "8dbf1be6b291cb3fd8f5daa5db5202e9f8eac3fb",
+  "basisRelease": "r4-27",
+  "freigabevorlage": "1845c6b",
+  "status": "PUK-Freigabe dokumentiert; Pull Request #685 offen, nicht gemergt",
+  "befunde": {
+    "erfuellt": [
+      "R28-C01",
+      "R28-C02",
+      "R28-C03",
+      "R28-C04",
+      "R28-C05"
+    ],
+    "offen": [
+      "R28-O01",
+      "R27-O01",
+      "R27-O02",
+      "R27-O03",
+      "R27-O04",
+      "R27-O05",
+      "R26-O04"
+    ]
+  },
+  "tests": {
+    "draftBuild": "22 Seiten, 0 Blocker, 0 Hinweise",
+    "productionBuild": "22 Seiten, 0 Blocker, 0 Hinweise",
+    "exportParity": "33/33 Dateien bytegleich",
+    "browserRunsChangedPages": 60,
+    "axeRuns": 60,
+    "searchRegression": "54/54 unverändert",
+    "searchIntents": "26/26",
+    "textChecks": "7/7 neu vorhanden, 5/5 ersetzt",
+    "visibility": "7/7",
+    "deepLinks": "8/8",
+    "noJs": "4/4",
+    "quellenKonsistenz": "82 Einträge, 0 Abweichungen",
+    "runtimeErrors": 0,
+    "horizontalOverflow": 0
+  },
+  "wortbilanz": {
+    "ohneQuellenbloecke": {
+      "vorher": 32925,
+      "nachher": 32965,
+      "differenz": 40
+    },
+    "behandlung": {
+      "vorher": 3145,
+      "nachher": 3157,
+      "zielNachReleaseC": 2400
+    }
+  },
+  "productionGate": "bestanden nach dokumentierter PUK-Freigabe",
+  "siteExportUpdated": true,
+  "deploymentChanged": false,
+  "pullRequest": 685,
+  "unabhaengigePruefung": {
+    "art": "Codex-Review PR #685",
+    "commit": "df746e7",
+    "abgeschlossen": "2026-10-14T21:15:25Z",
+    "befundeInhalt": 0,
+    "befundeDokumentation": 3,
+    "erneutesReview": "angefordert"
+  }
+}

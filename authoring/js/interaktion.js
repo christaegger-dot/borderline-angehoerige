@@ -210,9 +210,9 @@
     if (!input || !results || !items.length) return;
     root.setAttribute('data-search-enhanced', '');
     function normalized(value) {
-      return String(value || '').toLocaleLowerCase('de-CH').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+      return String(value || '').normalize('NFC').toLocaleLowerCase('de-CH').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
     }
-    var stopwords = new Set(('aber als am an auf aus bei bis brauche das dass dem den der des die darf ein eine einer einem einen er erlebt es fuer finde gefunden geht gibt hat haben helfen ich im in ist ja kann koennen lassen man mein meine meiner meinem meinen mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur').split(' '));
+    var stopwords = new Set(('aber als am an auf aus bei bin bis brauche das dass dem den der des die darf dich dir ein eine einer einem einen er erlebt es fuer finde gefunden geht gibt hat haben helfen ich ihm ihn im in ist ja kann koennen lassen man mein meine meiner meinem meinen mich mir mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur').split(' '));
     var synonymSets = [
       ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein'],
       ['arzt', 'aerztin', 'behandler', 'behandlerin', 'therapeut', 'therapeutin', 'fachperson', 'fachpersonen', 'behandlungsteam'],
@@ -229,7 +229,8 @@
       ['angehoerigengruppe', 'selbsthilfegruppe', 'gruppe', 'austausch'],
       ['gespraech', 'reden', 'kommunikation'],
       ['genesung', 'recovery', 'remission', 'besser', 'bessern', 'verbessern'],
-      ['kosten', 'bezahlt', 'bezahlen', 'krankenkasse', 'finanzierung']
+      ['kosten', 'bezahlt', 'bezahlen', 'krankenkasse', 'finanzierung'],
+      ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'angst vor ihm', 'angst vor ihr']
     ];
     var synonyms = {};
     var phraseGroups = [];
@@ -269,7 +270,7 @@
       var haystack = normalized(item.getAttribute('data-search-text'));
       var keywords = normalized(item.getAttribute('data-search-keywords'));
       var hitCount = groups.filter(function (group) { return matches(haystack, group); }).length;
-      var required = relaxed && groups.length > 1 ? Math.max(1, Math.ceil(groups.length * .6)) : groups.length;
+      var required = relaxed && groups.length > 1 ? Math.max(1, Math.min(groups.length - 1, Math.ceil(groups.length * .6))) : groups.length;
       if (hitCount < required) return -1;
       var value = item.getAttribute('data-search-level') === 'section' ? 20 : 0;
       if (title === query) value += 600;
@@ -346,12 +347,15 @@
     try { target = document.getElementById(decodeURIComponent(window.location.hash.slice(1))); } catch (e) { return; }
     if (!target) return;
     var details = target.closest('details');
-    if (details) details.open = true;
+    var opened = false;
+    for (var d = details; d; d = d.parentElement && d.parentElement.closest('details')) { if (!d.open) { d.open = true; opened = true; } }
     var focusTarget = target.matches('summary, a, button, input, select, textarea, [tabindex]') ? target : (details ? details.querySelector('summary') : target);
     if (!focusTarget) return;
     var addedTabindex = !focusTarget.matches('summary, a, button, input, select, textarea, [tabindex]');
     if (addedTabindex) focusTarget.setAttribute('tabindex', '-1');
     window.requestAnimationFrame(function () {
+      /* Browser ohne natives Aufklappen beim Fragment-Sprung (z. B. Safari vor 26.2) scrollen nicht zum Ziel */
+      if (opened) target.scrollIntoView({ block: 'start' });
       focusTarget.focus({ preventScroll: true });
       if (addedTabindex) focusTarget.addEventListener('blur', function () { focusTarget.removeAttribute('tabindex'); }, { once: true });
     });

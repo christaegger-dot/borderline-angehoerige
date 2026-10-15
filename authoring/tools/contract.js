@@ -406,6 +406,11 @@ function gate(cfg, files, opts = {}) {
         for (const label of ['Zielgruppe', 'Region', 'Art', 'Zugang und Kosten']) if (!body.includes(label)) add('block', pid, 'service-review', `${sid || 'Angebot'}: Pflichtangabe «${label}» fehlt`);
       }
     }
+    /* Aufklapp-Konfiguration (Release C): Jede ID muss ein Ziel haben, sonst bleibt eine als kritisch offen
+       gehaltene Antwort stillschweigend eingeklappt oder eine Vertiefung stillschweigend offen. */
+    for (const sid of p.collapsedSections || []) if (!one(doc, x => x.tag === 'section' && x.attrs.id === sid && !!up(x, y => y.tag === 'details'))) add('block', pid, 'fold-config', `collapsedSections: Abschnitt #${sid} fehlt oder ist nicht eingeklappt`);
+    for (const fid of p.openFaqIds || []) { const q = byId(doc, fid); if (!q || q.tag !== 'h3' || up(q, y => y.tag === 'details')) add('block', pid, 'fold-config', `openFaqIds: Frage #${fid} fehlt oder ist eingeklappt`); }
+    if ((p.openFaqIds || []).length && p.id !== 'fragen') add('warn', pid, 'fold-config', 'openFaqIds wirkt nur auf der Seite «fragen»');
     const h1 = all(doc, x => x.tag === 'h1'); if (h1.length !== 1) add('block', pid, 'h1', h1.length + ' h1-Elemente statt 1');
     const skip = one(doc, x => x.tag === 'a' && cls(x, 'puk-web-skip'));
     if (!skip || skip.attrs.href !== '#main-content') add('block', pid, 'skip', 'Skip-Link auf #main-content fehlt');

@@ -1,4 +1,4 @@
-# Festgeschriebene Such-Ersttreffer (R3C-A9, D30-03). Stand r4-32, 15.10.2026.
+# Festgeschriebene Such-Ersttreffer (R3C-A9, D30-03). Stand r4-33, 15.10.2026.
 # Spalten: Anfrage, erwarteter Ersttreffer (href; «–» = kein Treffer; «!href» = nicht dieser Treffer), Herkunft.
 # «href1 > href2 > …» = die ersten Treffer in genau dieser Reihenfolge (Sicherheitsabschnitte zuoberst, r4-32).
 # Prüfen: PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers node authoring/tools/suchtest.mjs <site-ordner>
@@ -202,3 +202,15 @@ Wer bringt die Kinder um acht Uhr zur Schule, wenn ich in der Klinik bin?	!kinde
 Die Therapie bringt nichts, ich mache mir Sorgen um sie.	behandlung.html#rollen	R32-01 «um» über Satzzeichen
 Was tun, wenn mein Kind sich umbringen will?	krise.html#suizid > grenzen.html#gewalt	R32-02 Kind als Subjekt
 Ich habe Angst, dass mein Kind sich umbringt.	krise.html#suizid > grenzen.html#gewalt	R32-02 Kind als Subjekt
+Mein Mann bringt mich heute Nacht in unserer Wohnung um	grenzen.html#gewalt > krise.html#suizid	Codex P1 auf #694 (trennbares Verb, langer Abstand)
+ich bringe mich heute Nacht in meiner Wohnung um	kommunizieren.html#suizid-angesprochen > krise.html#suizid > grenzen.html#gewalt	Codex P1 auf #694 (trennbares Verb, langer Abstand; R25-010)
+Er tötete mich fast	grenzen.html#gewalt > krise.html#suizid	Codex P1 auf #694 (Beugungsform)
+Sie brachten ihn um	grenzen.html#gewalt > krise.html#suizid	Codex P1 auf #694 (Beugungsform)
+mein Sohn brachte sich um	krise.html#suizid > grenzen.html#gewalt	r4-32 Vergangenheit, kein Druck
+er bringt nichts zustande und kümmert sich nicht um sie	!kommunizieren.html#suizid-angesprochen	r4-32 «um sie» als Präposition
+die Therapie bringt nichts ich mache mir Sorgen um sie	behandlung.html#rollen	r4-32 «um sie» als Präposition, ohne Komma
+Was bringt eine Kontaktpause und wie gehe ich mit ihr um?	!krise.html#suizid	R32-03 «um-» in neuem Satz
+Die Therapie bringt nichts und wir stellen die Medikamente um	!krise.html#suizid	R32-03 «um-» in neuem Satz
+Meine Tochter bringt mich jeden Abend zum Weinen und dreht sich dann einfach um	!kommunizieren.html#suizid-angesprochen	R32-03 «um-» in neuem Satz
+Ich bringe die Kinder zur Schule und sie zieht sich um	!kommunizieren.html#suizid-angesprochen	R32-03 «und sie» als neuer Satz
+er bringt mich und die Kinder um	kinder.html#eskalation > grenzen.html#gewalt > krise.html#suizid	R32-03 Gegenprobe «und» verbindet Objekte

@@ -28,7 +28,7 @@ Zur Frage, ob der nach dem Merge versehentlich neu angelegte Branch `claude/r4-3
 | --- | --- | --- |
 | Codex P1 (mehrere Tötungsverben) | Gewertet wird jedes Tötungsverb. Ergibt eines «Suizid», gilt Suizid. Beispiel: «er will mich umbringen und ich will mich töten» → «Suizid» (r4-30: «Gewalt», r4-29: «Suizid»). | nur Suchtreffer |
 | Codex P1 (früheres «mich»), R31-01 | Fall (a) der Infinitivregel (D30-20) greift nur, wenn beim früheren «mich» ein Steuerverb steht (ab zwei Wörtern davor bis zum späteren «mich») und zwischen den beiden «mich» kein «und». Beispiel: «er hat mich geschlagen und will mich umzubringen» → «Gewalt» (r4-30: «Suizid»). | nur Suchtreffer |
-| Testliste | 314 Anfragen, 42 davon neu (Stand Nachtrag 10) | nein |
+| Testliste | 317 Anfragen, 45 davon neu (Stand Nachtrag 12) | nein |
 | Build | r4-31, Assetversion r4-31 | nein |
 
 Die Einzelheiten stehen in `2026-10-15-delta-r4-30/FREIGABE.md`, Nachtrag 9.
@@ -204,3 +204,15 @@ Die Prüfsitzung hat den Stand `800a729` nach R31-P03 bestätigt (`PRUEFUNG.md`,
 Für R31-P04, nicht blockierend: Etwa zehn der 60 Wechsel auf «Suizid» sind reine Gewaltaussagen. Sie gehen in der sicheren Richtung auf «Suizid», z. B. «er schwört mir mich umzubringen».
 
 `releaseApproval.independentReview` steht auf «bestaetigt». Danach folgen der Produktionsexport und ein neues Codex-Review auf dem exportierten Kopf. Gemergt wird erst, wenn dieses Review nach R31-P03 geprüft ist.
+
+## Nachtrag 12 · Viertes Codex-Review von #690 (15.10.2026)
+
+Das vierte Codex-Review von #690 lief auf Anforderung auf dem Stand `09e05f2`, dem Export nach der Abschlussbestätigung 6. Es war um 17:06 UTC fertig und meldete einen P1-Befund:
+
+| Befund | Beispiel | Produktion r4-30 | `09e05f2` | Einstufung nach R31-P03 | Korrektur |
+| --- | --- | --- | --- | --- | --- |
+| Nominales Suizidsignal in einem späteren Satz | «Umbringen will er mich. Ich habe Gedanken ans Umbringen.» | Krisenplan | **Gewalt** | Gegenüber der Produktion schlechter (Suizidsorge → Gewalt): **blockierend** | «ans Umbringen» und «ans Töten» stehen jetzt als Phrasen in der Suizidgruppe. Damit greift der Suizid-Vorrang (Suizidsignal schlägt «Gewalt»). |
+
+Ergebnis auf dem Entwurf: «Suchtest: 317 von 317 Ersttreffern wie festgeschrieben · JS-Fehler 0». Drei Zeilen sind neu. In den 885 Anfragen der Prüfsitzung (`n800/q-union.txt`) haben gegenüber `09e05f2` 13 einen anderen Ersttreffer. Alle 13 sind Ich-Aussagen mit «ans Umbringen» oder «ans Töten» und gehen jetzt auf «Suizid», zum Beispiel «Gedanken ans Umbringen, er hat mich verlassen». Gegenüber der Produktion gehen weiterhin nur die 25 Drohungen anderer neu auf «Gewalt», und keine Anfrage verliert ihren Treffer.
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung die Änderung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `09e05f2`.

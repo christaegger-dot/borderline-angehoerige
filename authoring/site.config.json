@@ -26,10 +26,10 @@
   "robots": "noindex, nofollow",
   "releaseApproval": {
     "institutionalResponsibility": "bestaetigt",
-    "independentReview": "ausstehend",
+    "independentReview": "bestaetigt",
     "reviewedBy": "PUK",
     "reviewedAt": "2026-10-15",
-    "reviewScope": "Release C (r4-29): Paket 4 (M4.1 bis M4.4, neue Seite «Wenn Ihr jugendliches Kind betroffen ist») und Paket 6 (M6.1 bis M6.24 ohne M6.7) des Massnahmenplans vom 14.10.2026, Befunde W2-001 bis W2-023, Entscheide E4, E7 und E9 vom 15.10.2026, Selbstbeschreibung der Fusszeile; Wortlaut von der PUK am 15.10.2026 freigegeben (audit-results/2026-10-15-release-c-r4-29/FREIGABE.md, F0 bis F14)"
+    "reviewScope": "Release C (r4-29): Paket 4 (M4.1 bis M4.4, neue Seite «Wenn Ihr jugendliches Kind betroffen ist») und Paket 6 (M6.1 bis M6.24 ohne M6.7) des Massnahmenplans vom 14.10.2026, Befunde W2-001 bis W2-023, Entscheide E4, E7 und E9 vom 15.10.2026, Selbstbeschreibung der Fusszeile; Wortlaut von der PUK am 15.10.2026 freigegeben (audit-results/2026-10-15-release-c-r4-29/FREIGABE.md, F0 bis F14); unabhängig geprüft in eigenen Sitzungen: W2 (2026-10-15-struktur-w2-r4-28), Sprach-Review S (2026-10-15-sprache-s-r4-29, drei Sitzungen), Rechtsabgleich und W3 (2026-10-15-release-c-r4-29), W3-Korrekturen W3C-01 bis -03, -06, -08 und -09 nach Freigabe umgesetzt"
   },
   "serviceReview": {
     "$comment": "Dynamische Beratungs- und Behandlungsangebote müssen mindestens halbjährlich redaktionell geprüft werden. Das Produktions-Gate blockiert fehlende, zukünftige oder mehr als 183 Tage alte Prüfdaten.",

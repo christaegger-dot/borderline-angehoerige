@@ -1,4 +1,4 @@
-/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-28 */
+/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-29 */
 
 /* ===== ../../../styles.css ===== */
 /* ../../../tokens/fonts.css */
@@ -1456,3 +1456,19 @@ html.puk-scroll-lock{overflow:hidden}
 [data-filter-item][hidden],[data-search-item][hidden]{display:none!important}
 @media (max-width:759px){.puk-site-utility{width:100%;margin-left:0}.puk-site-offer dl{grid-template-columns:1fr}.puk-site-offer dd+dt{margin-top:var(--space-2)}}
 @media print{.puk-site-breadcrumb,.puk-site-related,.puk-site-filter,.puk-site-utility,.puk-site-depth>summary,[data-search-results]{display:none!important}.puk-site-result[hidden],.puk-site-offer[hidden],[data-filter-item][hidden]{display:block!important}}
+
+/* Validierungsstufen als Tabelle (kommunizieren › anerkennen, M6.3, Release C) */
+.bl-tabelle{width:100%;border-collapse:collapse;font:var(--type-body-sm);color:var(--text-default)}
+.bl-tabelle th,.bl-tabelle td{padding:var(--space-3) var(--space-4);border-top:1px solid var(--border-hairline);text-align:left;vertical-align:top;hyphens:auto}
+.bl-tabelle thead th{border-top:0;background:var(--surface-structure);font-weight:var(--fw-medium)}
+.bl-tabelle tbody th{font-weight:var(--fw-medium)}
+.bl-tabelle .bl-stufen__n{font-weight:var(--fw-regular)}
+@media (max-width:760px){
+  .bl-tabelle thead{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .bl-tabelle,.bl-tabelle tbody,.bl-tabelle tr,.bl-tabelle th,.bl-tabelle td{display:block}
+  .bl-tabelle tr{border-top:1px solid var(--border-hairline);padding:var(--space-3) var(--space-4)}
+  .bl-tabelle tbody tr:first-child{border-top:0}
+  .bl-tabelle th,.bl-tabelle td{border-top:0;padding:0}
+  .bl-tabelle td{margin-top:var(--space-2)}
+  .bl-tabelle td::before{content:attr(data-label);display:block;font:var(--type-caption);color:var(--text-muted)}
+}

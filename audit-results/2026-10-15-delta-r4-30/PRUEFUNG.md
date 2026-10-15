@@ -516,3 +516,70 @@ Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8
 - `suchtest-site-a8f.txt`: Suchtest gegen `site/` (108 Abweichungen)
 - `prodcopy10/` (Produktion mit «bestaetigt»), `prodcopy11/` (Gegenprobe)
 - Entwurf: `/home/claude/borderline-angehoerige/dist/d30g` (von `.gitignore` erfasst)
+
+*Nachtrag:* Die bauende Sitzung hat den Abschnitt «Abschlussbestätigung» unverändert mitcommittet. Der folgende Abschnitt ist nicht committet.
+
+## Nachprüfung Codex #689 (Stand e93f9dd)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-30-suche-links-1792061353`, Commit `e93f9dd` (15.10.2026, 15:27 MESZ), auf `origin` gleich; Kopf des einzigen offenen Pull Requests #689. Diff zu `085c732` (Export nach der Abschlussbestätigung): `interaktion.js` (Suizid-Signal, Beiwörter nach «mich»), Testliste (266 Anfragen), `site.config.json` (`independentReview` «ausstehend», `reviewScope`), `FREIGABE.md` (Nachtrag 7), Pendenzen. `site/` ist unverändert `085c732` und bytegleich mit meinem Entwurf von `a8fe194` |
+| Anlass | Codex-Review von #689 auf `085c732` (13:17 UTC), zwei P1 (per `gh api` gelesen): (1) Die längste Phrase verdrängt eine Suizid-Phrase («ich will sterben und habe Angst vor meiner Partnerin» → Gewalt). (2) Nach «mich» wird nach dem Artikel kein Beiwort zugelassen («dass mich mein eigener Mann umbringt» → Suizid) |
+| Prüfobjekt | frischer Entwurf `node authoring/tools/build.mjs --out=dist/d30h`. Verglichen in drei Ständen: r4-29 (`site/` aus `53c5655`), `085c732` (`site/`) und `e93f9dd` |
+| Prüfsitzung | dieselbe unabhängige Prüfsitzung; nichts gebaut, korrigiert oder entschieden; nur diese Datei geändert; keine git-Schreibbefehle; Netlify nicht angefasst |
+| Zeitpunkt | 15.10.2026, etwa 15:30 bis 16:00 MESZ |
+
+### Ergebnis
+
+**Freigabefähig mit Auflagen:** Beide P1-Korrekturen sind richtig und ohne Nebenwirkung auf meine 500 bisherigen Proben. Die gezielten Proben zeigen aber eine weitere Klasse in der heiklen Richtung, die schon im Export `085c732` steckt (D30-20). Es geht um Ich-Aussagen mit Infinitiv: Eine Person hält, bittet, hindert oder überredet «mich», «mich (nicht) umzubringen». Diese Sätze gehen auf «Gewalt», darunter «meine Familie hält mich davon ab, mich umzubringen» und «er bittet mich, mich nicht umzubringen». In r4-29 gingen sie auf `krise#suizid`.
+
+**`independentReview` kann noch nicht wieder auf «bestaetigt» gesetzt werden.** Das geht, sobald D30-20 korrigiert ist und der mechanische Abgleich unten ohne Abweichung durchläuft. Vor dem Merge braucht es zusätzlich ein neues Codex-Review auf dem endgültigen Kopf von #689 (R29-P20). Das bisherige Review lief nur auf `085c732`.
+
+**Berichtigung:** Die Klasse D30-20 und der Fall aus Codex-P1 (1) waren schon in `a8fe194` vorhanden. Beide hatte ich in der Abschlussbestätigung nicht erkannt.
+
+### Beleg je Punkt
+
+| Nr. | Punkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| a | `suchtest.mjs` auf eigenem Entwurf | **erfüllt** | `dist/d30h`: «23 Seiten · 0 Blocker · 1 Hinweise». `suchtest.mjs dist/d30h`: «266 von 266 … JS-Fehler 0», Exit 0. Gegen `site/` (`085c732`): 261 von 266. Die 5 Abweichungen sind genau die neuen Fälle zu den beiden P1. |
+| b | Probelisten gegen `085c732` und resultG | **erfüllt, 0 Abweichungen** | `q-alle2.txt` (492) und `q-fuenft3.txt` (8): Ersttreffer von `e93f9dd` gleich `085c732` (500/500) und gleich Spalte G in den resultG-Dateien (500/500). `085c732` stimmt ebenfalls mit resultG überein. 91/91 und 54/54 gleich r4-29. 0 Skriptfehler. |
+| c | Gezielte Proben | **beide P1 behoben; neuer Befund D30-20; kleiner Befund D30-21** | 89 neue Proben (`q-codex.txt`, `q-codex2.txt`, `q-codex3.txt`). <br>**P1 (1):** «ich will sterben und habe Angst vor meiner Partnerin», «ich will nicht mehr leben und habe Angst vor meinem Mann», «Suizidgedanken und Angst vor meinem Partner», «lebensmüde und Angst vor ihm» → `krise#suizid` (in `085c732`: Gewalt). Ebenso besser: «ich bin lebensmüde ich kann nicht mehr» und «Suizidgedanken keine Kraft» → `krise#suizid` (r4-29: `selbstfuersorge#warnsignale`). <br>**Nebenwirkungen bei anderen Themen:** Ohne weitere Phrase bleibt die übliche Suche. «Suizid Kinder erklären» → `kinder`, «Suizidgedanken Medikamente» → `krise#waehrend`, «Suizid Jugendliche Eltern» → `jugendliche#schnell`, «Suizid Angehörige Hilfe» → `krise#suizid`, gleich wie in `085c732` und r4-29. «Selbstmord in der Familie Trauer» und «Selbstmord Trauer Geschwister» → 0 Treffer wie in r4-29 (Lücke, R30-P01). <br>**Verneinungen:** «er will mich umbringen ich will nicht tot sein», «… nie tot sein» und «ich will nicht sterben er droht mich umzubringen» → Gewalt (richtig). Verneinte Einzelwörter zählen dagegen als Suizid-Signal, siehe D30-21. <br>**P1 (2), Beiwörter:** «dass mich mein eigener Mann umbringt», «dass mich die ganze Familie umbringen will», «wenn mich mein neuer Freund umbringen will», «dass mich mein ehemaliger Partner umbringt», «ob mich mein eigener Sohn umbringen will» → Gewalt (in `085c732`: Suizid). Gegenproben bleiben bei Suizid: «ich will mich wegen meinem eigenen Mann umbringen», «ich will mich der Familie zuliebe nicht umbringen», «wenn mich die Kinder nicht bräuchten würde ich mich umbringen». <br>**«mich das»:** «wenn mich das alles umbringt», «mich das umbringt», «wenn mich das noch umbringt», «das bringt mich um», «das alles bringt mich noch um» → Suizid wie in `085c732` (Redewendung, sichere Richtung, D30-14). «dass mich das Kind umbringt» → Gewalt (richtig). Die Suche nach der Person endet nach drei Wörtern. «dass mich die Sorge um meine Tochter umbringt» und «dass mich die Angst vor meinem Mann umbringt» bleiben deshalb bei Suizid, wie in `085c732`. <br>**D30-20:** siehe unten. |
+| d | Nachweise | **erfüllt** | Nachtrag 7 gibt Abschlussbestätigung, Export `085c732`, #689 (13:11 UTC eröffnet, einziger offener Pull Request) und die zwei P1 (13:17 UTC, Stand `085c732`) richtig wieder. Das stimmt mit der GitHub-API überein. Die Korrekturen sind so beschrieben, wie der Code sie umsetzt (verneinte Phrase nur direkt nach «nicht» oder «nie»; bis zu zwei Wörter zwischen Artikel und Person). Die Zahlen stimmen: 266/266; 500 Proben gleich wie `085c732`. `independentReview` und `reviewScope` stehen wieder auf «ausstehend». Ein neues Codex-Review auf dem vollständigen Stand ist angekündigt. Pendenzen R3C-A9 mit 266 Anfragen. |
+| – | Build | **erfüllt** | Kopie (`git archive e93f9dd`) mit «bestaetigt»: 0 Blocker, 0 Hinweise, bytegleich mit `dist/d30h`. Gegenüber `site/` ist nur `js/interaktion.js` verschieden. Wortbilanz unverändert; `node --check` ohne Fehler. |
+
+### Neue Befunde
+
+| ID | Priorität | Befund | Vorschlag (nicht umgesetzt) |
+| --- | --- | --- | --- |
+| D30-20 | **wichtig, Auflage vor dem Export** | In Infinitivsätzen steht «mich» vor dem Tötungsverb für die sprechende Person selbst: «X hält mich davon ab, mich umzubringen» und «X bittet mich, mich nicht umzubringen». `michIntent()` findet links eine Person und meldet Gewalt. Betroffen sind 13 Ich-Aussagen. Schlechter als r4-29 (dort `krise#suizid`) sind «meine Familie hält mich davon ab mich umzubringen», «meine Tochter hat mich davon abgehalten mich umzubringen», «er bittet mich mich nicht umzubringen», «er hat mich überredet mich nicht umzubringen» und «sie hat mich angefleht mich nicht umzubringen». Ebenso betroffen: «nur meine Kinder halten mich davon ab mich umzubringen», «meine Kinder sind der (einzige) Grund mich nicht umzubringen», «mein Mann hindert mich daran mich umzubringen», «meine Mutter bittet mich mich nicht umzubringen», «mein Mann zwingt mich mich umzubringen», «er treibt mich dazu mich umzubringen», «mein Mann bringt mich dazu mich umzubringen». Gleich in `085c732` und `e93f9dd`. | **Variante I** in `michIntent()`, zu Beginn: Folgt auf «mich» innerhalb von vier Wörtern ein Tötungsverb, und kommt kein Drohwort und kein «versucht», «versuchte», «Versuch», «plant» oder «geplant» vor, dann gilt Suizid, (a) wenn das Verb ein zu-Infinitiv ist («umzubringen», «zu töten») und schon vorher ein «mich» steht, oder (b) wenn zwischen «mich» und dem Verb «nicht» oder «nie» steht. |
+| D30-21 | optional | Verneinte Einzelwörter zählen als Suizid-Signal. «er ist nicht suizidal aber droht mich umzubringen», «er hat keine Suizidgedanken aber droht mich umzubringen» und «kein Suizid sondern er droht mich umzubringen» gehen auf Suizid (in `085c732`: Gewalt; r4-29: Suizid oder schwach). Ebenso «… ich will auf keinen Fall tot sein» → Suizid. Die Richtung ist sicher. | Bei den Einzelwörtern ebenfalls «nicht», «nie», «kein», «keine», «keinen» direkt davor ausnehmen; bei Gelegenheit. |
+
+**Beleg für I (nur nachgebildet):** Ich habe I in einer Kopie von `dist/d30h` im Scratchpad gepatcht (`varI/site/js/interaktion.js`). Im Repository ist nichts geändert.
+
+- `suchtest.mjs varI/site`: 266 von 266, 0 Skriptfehler.
+- 575 verschiedene Proben (`q-alle4.txt`, alle bisherigen und die neuen): gegenüber `e93f9dd` ändern sich nur 15 Ersttreffer, alle → `krise#suizid`. Darunter sind die 13 Fälle aus D30-20. Dazu kommen zwei verneinte Fremdaussagen: «er will mich nicht umbringen sagt er» (r4-29: `beziehungen#verantwortung`) und «er hat versprochen mich nicht umzubringen» (r4-29: `krise#suizid`). Beides geht in die sichere Richtung.
+- Unverändert bei Gewalt bleiben: «er hat vor mich umzubringen», «er plant mich umzubringen», «er hat mich geschlagen und versucht mich umzubringen», «er schlägt mich und droht mich umzubringen», «er hasst mich und will mich umbringen», «er hat mir gesagt er will mich umbringen», «er versucht mich umzubringen» und alle festgeschriebenen Gewalt-Zeilen.
+
+**Für den neuen Export:**
+1. I im Repository umsetzen.
+2. Mindestens diese Zeilen in die Testliste aufnehmen:
+   - «meine Familie hält mich davon ab mich umzubringen» → `krise.html#suizid`
+   - «er bittet mich mich nicht umzubringen» → `krise.html#suizid`
+   - «meine Kinder sind der einzige Grund mich nicht umzubringen» → `krise.html#suizid`
+   - «mein Mann hindert mich daran mich umzubringen» → `!grenzen.html#gewalt`
+   - «er hat mich geschlagen und versucht mich umzubringen» → `grenzen.html#gewalt`
+   - «er plant mich umzubringen» → `grenzen.html#gewalt`
+3. Danach prüfen: `suchtest.mjs` 100 %; Ersttreffer von `q-alle4.txt` gleich Spalte I in `q-alle4.resultI.tsv` (575/575); 91/54 gleich r4-29.
+
+Fällt das ohne Abweichung aus, ist die Auflage erfüllt. Dann `independentReview` auf «bestaetigt», neu exportieren und ein Codex-Review auf dem neuen Kopf von #689 abwarten.
+
+### Belege dieser Nachprüfung
+
+Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8-de06005eb532/scratchpad/d30/`:
+
+- `q-codex.txt`, `q-codex2.txt`, `q-codex3.txt` (89 neue Proben); `q-alle4.txt` (575 verschiedene Proben)
+- `q-alle2.resultH.tsv`, `q-fuenft3.resultH.tsv`, `q-all91.resultH.tsv`, `q-54.resultH.tsv` (Spalten: r4-29, `085c732`, `e93f9dd`)
+- `q-codex*.result3.tsv` (r4-29, `085c732`, `e93f9dd`); `q-alle4.resultI.tsv` (r4-29, `e93f9dd`, Nachbildung I)
+- `varI/site/`: nachgebildete Variante I (nur Scratchpad); `searchI.cjs`
+- `suchtest-d30h.txt`; `prodcopy12/` (Produktion mit «bestaetigt»)
+- Entwurf: `/home/claude/borderline-angehoerige/dist/d30h` (von `.gitignore` erfasst)

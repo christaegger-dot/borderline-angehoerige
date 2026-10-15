@@ -54,7 +54,7 @@ Wortbilanz mit Quellenblock: «Behandlung» 2399 (Ziel < 2400), «Fragen» 2398 
 Die unabhängige Delta-Prüfung (`PRUEFUNG.md`, Stand `9f5ebfe`) ergab «freigabefähig mit Auflagen». Kritische Befunde gab es keine. Umgesetzt ist:
 
 - **D30-01 (wichtig):** Die ersten Gewaltphrasen leiteten Ich-Aussagen («ich will mich umbringen») auf «Gewalt». Neu gehören Ich-Aussagen als Phrase zur Suizidgruppe («ich will mich umbringen», «mich umbringen», «mich zu töten» usw.). Zur Gewaltgruppe gehören nur Drohungen und Taten anderer («droht mich umzubringen», «will mich umbringen», «er bringt mich um», «mit dem Tod bedroht»). Das galt nur für die aufgezählten Phrasen; nicht aufgezählte Formen blieben falsch zugeordnet (D30-09, Nachtrag 2). Die längere Phrase gewinnt. Gestrichen sind «droht mich» und «mit dem Tod» allein. Nachprüfung durch die Prüfsitzung: siehe `PRUEFUNG.md`, Nachprüfung.
-- **D30-03 (wichtig):** Die Anfragen sind festgeschrieben in `authoring/tests/suche-ersttreffer.tsv`, damals 168 Anfragen (nach Nachtrag 7: 266) mit erwartetem Ersttreffer. Die Prüfung läuft mit `node authoring/tools/suchtest.mjs <site-ordner>` (Playwright, nicht in der CI).
+- **D30-03 (wichtig):** Die Anfragen sind festgeschrieben in `authoring/tests/suche-ersttreffer.tsv`, damals 168 Anfragen (nach Nachtrag 8: 272) mit erwartetem Ersttreffer. Die Prüfung läuft mit `node authoring/tools/suchtest.mjs <site-ordner>` (Playwright, nicht in der CI).
 - **D30-04, teilweise:** ergänzt sind «gewürgt», «Frauenhaus», «Angst vor meinem Partner/Mann, meiner Partnerin/Frau», Pluralformen («Abschiedsbriefe», «Selbstmordversuche», «Todeswünsche», «Suiziddrohungen», «Suizidandrohungen», «Überdosen»), «lebensmüder», «ist lebensmüde», «sich umbringen», «bringt sich um», «Tabletten geschluckt». (Überholt für «sich umbringen» und «bringt sich um»: Diese Phrasen sind seit Nachtrag 2 durch die Regel für Tötungsverben ersetzt; «bringt sie sich um» bleibt nach R25-010 bei «Wenn Worte treffen».) Offen bleiben «Sorgerecht», «Klinik sagt mir nichts», «sie trinkt jeden Abend» und «er zerstört Sachen in der Wohnung» (R30-P01).
 - **D30-08:** Im Code ist vermerkt, dass der Zwischenspeicher unveränderte Attribute voraussetzt. «Überdosis Alkohol» ist nicht festgeschrieben, weil der Treffer schwach ist (R30-P01).
 - **D30-06:** Die Herkunft der gekürzten Fassung und die Zeitzonen sind berichtigt.
@@ -153,3 +153,15 @@ Das Codex-Review von #689 (13:17 UTC, Stand `085c732`) meldete zwei P1-Befunde, 
 Ergebnis auf dem Entwurf: «Suchtest: 266 von 266 Ersttreffern wie festgeschrieben · JS-Fehler 0» (acht neue Zeilen zu den beiden Befunden, darunter zwei Gegenproben). Die 500 Proben der Prüfsitzung (alle `q-*.txt`) ergeben gegenüber dem Export `085c732` dieselben Ersttreffer.
 
 `releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung die Korrektur nachgeprüft hat; `site/` ist bis zum neuen Export der Stand `085c732`. Danach folgen der neue Export und ein neues Codex-Review auf dem vollständigen Stand.
+
+## Nachtrag 8 · Nachprüfung der Codex-Korrektur und D30-20 (15.10.2026)
+
+Die Nachprüfung der Codex-Korrektur (`PRUEFUNG.md`, Abschnitt «Nachprüfung Codex #689», Stand `e93f9dd`) ergab «freigabefähig mit Auflagen»: Beide P1-Korrekturen sind richtig. Auflage vor dem Export war D30-20: In Infinitivsätzen («meine Familie hält mich davon ab, mich umzubringen», «er bittet mich, mich nicht umzubringen») fand die Regel links eine andere Person und meldete «Gewalt». Betroffen waren 13 Ich-Aussagen, fünf davon schlechter als r4-29. Die Klasse steckt schon im Export `085c732`. Die Prüfsitzung hat berichtigt, dass diese Klasse und der Fall aus Codex-P1 (1) schon in `a8fe194` vorhanden waren und in der Abschlussbestätigung nicht erkannt wurden.
+
+Umgesetzt ist Variante I der Prüfsitzung: Folgt auf «mich» innerhalb von vier Wörtern ein Tötungsverb und kommt weder ein Drohwort noch «versucht», «versuchte», «Versuch», «plant» oder «geplant» vor, gilt Suizid, wenn (a) das Verb ein zu-Infinitiv ist («umzubringen», «zu töten») und schon vorher ein «mich» steht, oder (b) «nicht» oder «nie» zwischen «mich» und dem Verb steht.
+
+Ergebnis auf dem Entwurf: «Suchtest: 272 von 272 Ersttreffern wie festgeschrieben · JS-Fehler 0» (sechs neue Zeilen, wie verlangt). Mechanischer Abgleich mit der Nachbildung von I durch die Prüfsitzung: `q-alle4.txt` 575 von 575 Ersttreffern gleich wie in `q-alle4.resultI.tsv`. Die Bestandszeilen (91 und 54) sind in der Testliste enthalten und bestehen.
+
+Offen und in R30-P01: D30-21 (optional, sichere Richtung): Verneinte Einzelwörter zählen als Suizid-Signal («er ist nicht suizidal aber droht mich umzubringen» → «Suizid»).
+
+`releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.

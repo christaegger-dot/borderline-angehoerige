@@ -262,8 +262,19 @@
     }
     /* «mich»: zuerst das nächste Subjekt davor im Teilsatz, dann ein Subjekt direkt danach («dass mich mein Mann …»),
        dann ein Subjekt in einem früheren Teilsatz, zuletzt ein Drohwort (D30-18, D30-19). */
+    var attemptWords = { versucht: 1, versuchte: 1, versuch: 1, plant: 1, geplant: 1 };
     function michIntent(words, objectIndex) {
       var start = clauseStart(words, objectIndex), i;
+      /* Reflexives «mich» im Infinitiv («meine Familie hält mich davon ab, mich umzubringen») oder verneint
+         («er bittet mich, mich nicht umzubringen») → Suizid, sofern kein Drohwort und kein «versucht», «plant» vorkommt
+         (D30-20, Variante I der Prüfsitzung). */
+      var killVerb = -1;
+      for (i = objectIndex + 1; i <= objectIndex + 4 && i < words.length; i++) if (killVerbs[words[i]]) { killVerb = i; break; }
+      if (killVerb !== -1 && !words.some(function (word) { return threatWords[word] || attemptWords[word]; })) {
+        var zuInfinitive = words[killVerb] === 'umzubringen' || (words[killVerb] === 'toeten' && words[killVerb - 1] === 'zu');
+        var negated = words.slice(objectIndex + 1, killVerb).some(function (word) { return word === 'nicht' || word === 'nie'; });
+        if ((zuInfinitive && words.indexOf('mich') < objectIndex) || negated) return 'suizid';
+      }
       for (i = objectIndex - 1; i >= start; i--) {
         if (words[i] === 'ich') return 'suizid';
         if (thirdParty[words[i]]) return 'gewalt';

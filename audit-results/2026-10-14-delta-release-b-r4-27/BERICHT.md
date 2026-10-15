@@ -79,7 +79,7 @@ PR #684 wurde am 14. Oktober 2026 als Merge-Commit `8dbf1be6b291cb3fd8f5daa5db52
 
 ## Codex-Review
 
-Das automatische Codex-Review zu PR #684 erschien um 20:53:02 UTC, 41 Sekunden vor dem Merge, und war beim Merge noch nicht geprüft. Es meldete fünf Befunde: Fristbeginn und Höchstdauer beim Gewaltschutz (Grenzen), die Aussage zur ipw (Behandlung), die Definition hinter 85 % Remission (Genesung), die neun Kriterien ohne DSM-5-TR (Verstehen) und die fehlende Einschränkung zu Blades et al. (Krisen begleiten). Vier bestätigte die Prüfung vollständig, den Gewaltschutz beim Fristbeginn. Den falschen Fristbeginn brachte die Einarbeitung der unabhängigen Prüfung hinein. Die Korrekturen hat die PUK am 14. Oktober 2026 freigegeben; sie folgen als r4-28 (`audit-results/2026-10-14-delta-codex-r4-28/`). Bis zu dessen Veröffentlichung enthält die Produktion die beanstandeten Stellen.
+Das automatische Codex-Review zu PR #684 erschien um 20:53:02 UTC, 41 Sekunden vor dem Merge, und war beim Merge noch nicht geprüft. Es meldete fünf Befunde: Fristbeginn und Höchstdauer beim Gewaltschutz (Grenzen), die Aussage zur ipw (Behandlung), die Definition hinter 85 % Remission (Genesung), die neun Kriterien ohne DSM-5-TR (Verstehen) und die fehlende Einschränkung zu Blades et al. (Krisen begleiten). Vier bestätigte die Prüfung vollständig, den Gewaltschutz beim Fristbeginn. Den falschen Fristbeginn brachte die Einarbeitung der unabhängigen Prüfung hinein. Die Korrekturen hat die PUK am 14. Oktober 2026 freigegeben; sie folgen als r4-28 (`audit-results/2026-10-14-delta-codex-r4-28/`). r4-28 ist seit dem 15. Oktober 2026, 04:37 UTC, veröffentlicht.
 
 ## Evidenzgrenzen
 

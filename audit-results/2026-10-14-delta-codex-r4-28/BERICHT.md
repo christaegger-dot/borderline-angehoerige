@@ -2,9 +2,9 @@
 
 ## Ergebnis
 
-r4-28 korrigiert fünf Aussagen aus r4-27, die das automatische Codex-Review von Pull Request #684 beanstandet hat. Die Prüfung an den Primärquellen bestätigte vier Befunde vollständig und einen zur Hälfte. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`). Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der Delta-Test auf dem erzeugten `site/`-Export. Der Pull Request #685 ist offen und nicht gemergt.
+r4-28 korrigiert fünf Aussagen aus r4-27, die das automatische Codex-Review von Pull Request #684 beanstandet hat. Die Prüfung an den Primärquellen bestätigte vier Befunde vollständig und einen zur Hälfte. Die konkreten Fassungen wurden am 14. Oktober 2026 im Namen der PUK freigegeben (`FREIGABE.md`). Danach bestanden der Produktionsbuild mit 22 Seiten, 0 Blockern und 0 Hinweisen, die bytegleiche Parität aller 33 Exportdateien und der Delta-Test auf dem erzeugten `site/`-Export. PR #685 wurde am 15. Oktober 2026 gemergt; r4-28 ist veröffentlicht und hat den Produktionstest bestanden.
 
-Das Codex-Review wurde um 20:53:02 UTC veröffentlicht, 41 Sekunden vor dem Merge von PR #684 um 20:53:43 UTC; geprüft war es beim Merge noch nicht. Seit der Veröffentlichung von r4-27 (14. Oktober 2026, 20:53 UTC) stehen die fünf beanstandeten Stellen auf der öffentlichen Website, bis r4-28 veröffentlicht ist. Am schwersten wiegt der Fristbeginn beim Gewaltschutz. Er entstand bei der Einarbeitung der unabhängigen Prüfung von r4-27.
+Das Codex-Review wurde um 20:53:02 UTC veröffentlicht, 41 Sekunden vor dem Merge von PR #684 um 20:53:43 UTC; geprüft war es beim Merge noch nicht. Die fünf beanstandeten Stellen standen vom 14. Oktober 2026, 20:53 UTC, bis zum 15. Oktober 2026, 04:37 UTC, auf der öffentlichen Website. Am schwersten wiegt der Fristbeginn beim Gewaltschutz. Er entstand bei der Einarbeitung der unabhängigen Prüfung von r4-27.
 
 ## Befunde und Korrekturen
 
@@ -37,7 +37,7 @@ Das Codex-Review wurde um 20:53:02 UTC veröffentlicht, 41 Sekunden vor dem Merg
 
 ## Unabhängige Prüfung
 
-Das Codex-Review von PR #685 prüfte r4-28 unabhängig von der bauenden Sitzung. Es meldete keinen Befund zu den fünf Inhaltskorrekturen und drei zur Dokumentation. Eingearbeitet sind der Abschlussstand im Pendenzendokument und der Freigabewortlaut als `FREIGABE-VORLAGE.md`. `independentReview` stand bei Beginn der Runde schon auf `bestaetigt`; es beruht jetzt auf diesem Review (Begründung in `FREIGABE.md`). Ein erneutes Review auf dem letzten Stand ist angefordert.
+Das Codex-Review von PR #685 prüfte r4-28 unabhängig von der bauenden Sitzung. Es meldete keinen Befund zu den fünf Inhaltskorrekturen und drei zur Dokumentation. Eingearbeitet sind der Abschlussstand im Pendenzendokument und der Freigabewortlaut als `FREIGABE-VORLAGE.md`. `independentReview` stand bei Beginn der Runde schon auf `bestaetigt`; es beruht jetzt auf diesem Review (Begründung in `FREIGABE.md`). Das erneute Review auf dem letzten Stand (b24bc43) wurde um 21:19 UTC ohne Befund abgeschlossen.
 
 ## Technischer Nachtest
 
@@ -56,6 +56,16 @@ r4-28 fügt ohne Quellenblöcke 40 Wörter hinzu (32 925 auf 32 965): «Genesung
 - **R27-O05** bleibt: Das ipw-Therapiekonzept ist über ein Abrufwerkzeug gelesen, nicht beim Anbieter bestätigt.
 - **R28-O01:** PR #684 wurde 41 Sekunden nach dem Codex-Review gemergt, bevor dessen Befunde geprüft waren. Empfehlung: einen Pull Request erst mergen, wenn das Codex-Review abgeschlossen ist und seine Befunde geprüft sind.
 - R27-O02 bis R27-O04 und R26-O04 bleiben unverändert.
+
+## Produktionsnachweis
+
+PR #685 wurde am 15. Oktober 2026 als Merge-Commit `86304d428e8fd7de7eb3d9a0d4b3d9ed13527b41` übernommen. Netlify veröffentlichte den Produktionsdeploy `6ad05887e9398ce80e74cab8` um 04:37 UTC. Der anschliessende Test gegen `https://borderline-angehoerige.netlify.app` bestand:
+
+- 44 von 44 Läufen über 22 Seiten einschliesslich der 404-Seite bei 320 und 1440 CSS-Pixel, alle mit Buildmarker r4-28, Assets r4-28 und ohne Lade- oder Laufzeitfehler;
+- 54 von 54 Such-Ersttreffern wie im lokalen Export und 26 von 26 Suchintentionen;
+- 7 von 7 neuen und 5 von 5 entfernten Formulierungen; 8 von 8 Sprungziele vorhanden;
+- No-JavaScript-Fallback auf vier Seiten, eigene 404-Seite, unveränderte Sicherheitsheader und `robots.txt`, 0 `tel:`-Links;
+- 9 von 9 ausgelieferten Nicht-HTML-Dateien bytegleich mit `site/`. Die HTML-Dateien schreibt Netlify beim Ausliefern auf saubere Pfade um; sie sind deshalb nicht bytegleich.
 
 ## Evidenzgrenzen
 

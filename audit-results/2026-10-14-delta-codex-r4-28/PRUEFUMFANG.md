@@ -10,7 +10,8 @@ Geprüft wurden die fünf Codex-Befunde zu Pull Request #684 und ihre Korrekture
 - 54 Such-Ersttreffer r4-27 gegen r4-28 und 26 Suchintentionen;
 - 12 Chromium- und axe-Läufe bei 320 und 1440 CSS-Pixel und 48 Läufe bei vier Breiten und zwei Wurzelschriftgrössen auf den sechs geänderten Seiten;
 - 7 Textnachweise mit Sichtbarkeit und 5 Nachweise für entfernte Formulierungen; 8 Deep-Links; No-JavaScript-Fallback auf vier Seiten;
-- Skriptvergleich der Quellenblöcke; Volltextprüfung auf `tel:`-Links; Wortzählung.
+- Skriptvergleich der Quellenblöcke; Volltextprüfung auf `tel:`-Links; Wortzählung;
+- nach dem Merge: Produktionstest gegen `https://borderline-angehoerige.netlify.app` (44 Chromium-Läufe, Suche, Texte, Sprungziele, No-JavaScript, 404, Header, Bytegleichheit der Nicht-HTML-Dateien).
 
 ## Nicht ausgeführt oder nicht behauptet
 

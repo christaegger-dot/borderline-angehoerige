@@ -169,3 +169,9 @@ Ergebnis auf dem Entwurf:
 
 `releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung den neuen Stand bestätigt hat. CI (`build-and-compare`) ist auf diesem Zwischenstand erwartungsgemäss rot, bis neu exportiert ist.
 
+## Nachtrag 4 · Merge von #694 (15.10.2026)
+
+#694 wurde um 19:32:36 UTC gemergt (Merge-Commit `4790653`, Stand `37b963f`). Das war 12 Sekunden nach dem Codex-Review (19:32:24 UTC) und vor dessen Prüfung. R28-O01 und R29-P20 sind damit nicht eingehalten. Nachtrag 3 entstand erst nach dem Merge. Er behandelt r4-31 noch als Produktion, und sein Satz «deshalb ist sie in diesem Pull Request enthalten» trifft nicht mehr zu.
+
+Veröffentlicht ist damit r4-32 auf Stand `37b963f`, also ohne die Korrekturen aus Nachtrag 3. Die Korrektur `ea8dc1a`, die Nachprüfung `5de69c8` und Variante Q der Prüfsitzung gehen in r4-33 (`2026-10-15-delta-r4-33/FREIGABE.md`). Die Produktionsprüfung von r4-32 ist offen.
+

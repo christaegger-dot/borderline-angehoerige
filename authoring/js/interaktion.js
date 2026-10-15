@@ -254,11 +254,20 @@
        Wohnung um»); nicht «um 9 Uhr», «um Hilfe zu bitten», «sich um … kümmern», «Sorgen um sie» */
     var particleNext = { und: 1, oder: 1, aber: 1, wenn: 1, falls: 1, weil: 1, dass: 1, ob: 1, sonst: 1, dann: 1, satzende0: 1,
       ich: 1, er: 1, du: 1, wir: 1, man: 1 }; /* nicht «sie», «ihr»: «Sorgen um sie», «sich um ihr Kind kümmern» */
-    var particleStops = { satzende0: 1, dass: 1, wenn: 1, weil: 1, ob: 1, falls: 1, denn: 1, aber: 1, oder: 1, sondern: 1, obwohl: 1, damit: 1 };
+    var particleStops = { satzende0: 1, dass: 1, wenn: 1, weil: 1, ob: 1, falls: 1, denn: 1, aber: 1, oder: 1, sondern: 1, obwohl: 1, damit: 1,
+      wie: 1, was: 1, warum: 1, wieso: 1, weshalb: 1, wo: 1, wann: 1, wer: 1 };
+    /* Variante Q: «und» beendet die Suche, ausser es verbindet Objekte («sich und mich», «mich und die Kinder»);
+       nicht «… und wie gehe ich mit ihr um», «… und stellen die Medikamente um», «… und ziehe mich um» */
+    var objectStarts = { mich: 1, dich: 1, sich: 1, ihn: 1, sie: 1, uns: 1, euch: 1, die: 1, den: 1, das: 1, der: 1, dem: 1,
+      ein: 1, eine: 1, einen: 1, mein: 1, meine: 1, meinen: 1, meinem: 1, dein: 1, deine: 1, deinen: 1, sein: 1, seine: 1, seinen: 1,
+      ihre: 1, ihren: 1, unser: 1, unsere: 1, unseren: 1 };
     function particleUm(words, i) {
+      var andAt = -1;
       for (var j = i + 1; j < words.length && j <= i + 12; j++) {
-        if (particleStops[words[j]]) return -1;
-        if (words[j] === 'um') return j === words.length - 1 || particleNext[words[j + 1]] ? j : -1;
+        if (particleStops[words[j]] || (words[j] === 'und' && !objectStarts[words[j + 1]])) return -1;
+        if (words[j] === 'und') andAt = j;
+        /* nach «und» höchstens drei Wörter bis «um» («sich und mich um», «mich und die Kinder um»), sonst neuer Satz */
+        if (words[j] === 'um') return (andAt === -1 || j - andAt <= 3) && (j === words.length - 1 || particleNext[words[j + 1]]) ? j : -1;
       }
       return -1;
     }

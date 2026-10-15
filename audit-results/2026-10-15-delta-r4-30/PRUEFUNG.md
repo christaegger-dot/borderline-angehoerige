@@ -463,3 +463,56 @@ Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8
 - `suchtest-site-f8c.txt`: Suchtest gegen `site/` (103 Abweichungen)
 - `prodcopy9/`: Produktion mit «bestaetigt»
 - Entwurf: `/home/claude/borderline-angehoerige/dist/d30f` (von `.gitignore` erfasst)
+
+*Nachtrag:* Die bauende Sitzung hat den Abschnitt «Fünfte Nachprüfung» unverändert in `a8fe194` committet. Der folgende Abschnitt ist nicht committet.
+
+## Abschlussbestätigung (Stand a8fe194)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-30-suche-links-1792061353`, Commit `a8fe194` (15.10.2026, 15:03 MESZ), auf `origin` gleich. Diff zu `f8c8ce2`: `interaktion.js` (Korrektur G, Hilfsfunktion `clauseStart`), Testliste (258 Anfragen), `FREIGABE.md` (Nachtrag 5 markiert, Nachtrag 6), Pendenzen (R3C-A9), dieser Bericht |
+| Prüfobjekt | frischer Entwurf `node authoring/tools/build.mjs --out=dist/d30g`. Abgleich gegen meine eigene Nachbildung von G (`varG/site`) und gegen `site/` (r4-29) |
+| Umfang | der mechanische Abgleich, den ich in der fünften Nachprüfung festgelegt habe, und die Nachweise; keine neuen Probenrunden. Ich habe den Abgleich selbst durchgeführt, nicht die bauende Sitzung |
+| Prüfsitzung | dieselbe unabhängige Prüfsitzung; nichts gebaut, korrigiert oder entschieden; nur diese Datei geändert; keine git-Schreibbefehle; Netlify nicht angefasst |
+| Zeitpunkt | 15.10.2026, etwa 15:05 bis 15:20 MESZ |
+
+### Ergebnis
+
+**Freigabefähig.** Der mechanische Abgleich ergibt keine Abweichung. **Die Auflage D30-19 ist erfüllt.** **`releaseApproval.independentReview` kann auf «bestaetigt» gesetzt werden, und r4-30 kann exportiert werden.**
+
+### Beleg je Punkt
+
+| Nr. | Punkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | `suchtest.mjs` zu 100 % | **erfüllt** | Entwurf `dist/d30g`: «23 Seiten · 0 Blocker · 1 Hinweise» (nur change-review). `node authoring/tools/suchtest.mjs dist/d30g`: «Suchtest: 258 von 258 Ersttreffern wie festgeschrieben · JS-Fehler 0», Exit 0. Die Testliste hat 258 Zeilen, darunter die sieben verlangten Zeilen zu D30-19 mit den verlangten Erwartungen. Gegen `site/` (r4-29): 150 von 258, also 108 Abweichungen, keine im Bestand. |
+| 2 | Abgleich mit den resultG-Dateien | **erfüllt, 0 Abweichungen** | Neuer Lauf in Chromium mit drei Ständen (r4-29, meine Nachbildung von G, `a8fe194`), Ergebnisse `q-alle2.resultA.tsv` und `q-fuenft3.resultA.tsv`. Ersttreffer von `a8fe194` gegen Spalte G in `q-alle2.resultG.tsv`: 492 von 492 gleich. Gegen `q-fuenft3.resultG.tsv`: 8 von 8 gleich. Gegen die Nachbildung von G im selben Lauf: ebenfalls 0 Abweichungen. 0 Skriptfehler. Die Umsetzung bestimmt den Teilsatz für «mich» mit `clauseStart` ab «mich», meine Nachbildung ab dem Verb. Auf allen 500 Proben ergibt das keinen Unterschied. |
+| 3 | 91/54 wie r4-29 | **erfüllt** | `queries_all.txt` 91 von 91 und `queries.txt` 54 von 54 Ersttreffer gleich `site/`. |
+| 4 | Nachtrag 6 und Markierungen in Nachtrag 5 | **erfüllt** | Nachtrag 5: «Keine Anfrage mit ‹sich› geht auf ‹Gewalt›» ist durchgestrichen und auf Tötungsverben eingegrenzt; «alle in der sicheren Richtung» ist durchgestrichen und mit Verweis auf D30-19 als ungenau markiert. Nachtrag 6 gibt Anlass (D30-19, 11 Proben, Objektschleife seit `43d6b21`), die beiden Änderungen von G und die Zahlen richtig wieder: 258/258; 108 Abweichungen gegen `site/`, keine im Bestand; 492/492 und 8/8. `independentReview` steht bis zu dieser Bestätigung auf «ausstehend». Die Pendenzen nennen bei R3C-A9 258 Anfragen und D30-16 bis -19. |
+| – | Build und Gate | **erfüllt** | Kopie (`git archive a8fe194`) mit «bestaetigt»: «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», bytegleich mit `dist/d30g`. Gegenprobe mit «ausstehend»: blockiert (change-review). Gegenüber `f8c8ce2` ist in der Ausgabe nur `js/interaktion.js` verschieden; Inhalt und sichtbarer Text sind damit gleich wie in der Nachprüfung belegt. Wortbilanz unverändert (2399 / 2398 / 898 / 30 667); 0 `tel:`, 0 «Notruf»; `node --check` ohne Fehler. |
+
+### Status der Befunde zum Abschluss
+
+| ID | Status |
+| --- | --- |
+| D30-01, -09, -13, -16, -17, -19 (Suche, Auflagen) | erledigt |
+| D30-02, -03, -05, -06, -08, -10, -11 | erledigt |
+| D30-18 | erledigt für «mich» vor dem Subjekt. Drohungen mit reflexivem Verb in einem früheren Teilsatz gehen bewusst auf Suizid (sichere Richtung, R30-P01) |
+| D30-04, -12, -15 | teilweise erledigt; Rest in R30-P01 |
+| D30-07 | vermerkt (R30-P02) |
+| D30-14 | offen, fachlich abwägen (R30-P01) |
+| Erweiterter Suizid → Suizid | Zuordnung durch die Fachstelle zu bestätigen (R30-P01) |
+
+Kein Befund ist offen, der den Export hindert.
+
+**Hinweis für das Setzen der Freigabe (kein Befund):** `releaseApproval.reviewScope` sagt noch «Unabhängige Prüfung ausstehend». Es nennt weder das EBG-Blatt A1 (D30-02) noch die Testliste. Beim Setzen von «bestaetigt» sollte es nachgeführt werden, z. B. mit Verweis auf `audit-results/2026-10-15-delta-r4-30/PRUEFUNG.md` (Delta-Prüfung, fünf Nachprüfungen, Abschlussbestätigung auf `a8fe194`). `releaseApproval` wird nicht gerendert; das ändert also nichts an `site/`. Nach dem Export folgt wie bei r4-29 die Produktionsprüfung auf der Ziel-Adresse; dazu gehört `suchtest.mjs site`, das dann 258/258 ergeben muss.
+
+### Belege der Abschlussbestätigung
+
+Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8-de06005eb532/scratchpad/d30/`:
+
+- `searchA.cjs`: Lauf mit drei Ständen (r4-29 Port 8129, Nachbildung G 8133, `a8fe194` 8130)
+- `q-alle2.resultA.tsv`, `q-fuenft3.resultA.tsv`, `q-all91.resultA.tsv`, `q-54.resultA.tsv`
+- Referenz: `q-alle2.resultG.tsv`, `q-fuenft3.resultG.tsv` (fünfte Nachprüfung)
+- `suchtest-site-a8f.txt`: Suchtest gegen `site/` (108 Abweichungen)
+- `prodcopy10/` (Produktion mit «bestaetigt»), `prodcopy11/` (Gegenprobe)
+- Entwurf: `/home/claude/borderline-angehoerige/dist/d30g` (von `.gitignore` erfasst)

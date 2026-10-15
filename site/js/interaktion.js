@@ -212,9 +212,9 @@
     function normalized(value) {
       return String(value || '').normalize('NFC').toLocaleLowerCase('de-CH').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
     }
-    var stopwords = new Set(('aber als am an auf aus bei bin bis brauche das dass dem den der des die darf dich dir ein eine einer einem einen er erlebt es fuer finde gefunden geht gibt hat haben helfen ich ihm ihn im in ist ja kann koennen lassen man mein meine meiner meinem meinen mich mir mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur').split(' '));
+    var stopwords = new Set(('aber als am an auf aus bei bin bis brauche das dass dem den der des die darf dich dir ein eine einer einem einen er erlebt es fuer finde gefunden gegen geht gibt hat haben helfen ich ihm ihn im in ist ja kann koennen lassen man mein meine meiner meinem meinen mich mir mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur').split(' '));
     var synonymSets = [
-      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein'],
+      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein', 'selbstmordgedanken', 'selbstmordversuch', 'suizidversuch', 'suizidalitaet', 'suizidgefahr', 'suizidandrohung', 'suiziddrohung', 'lebensmuede', 'lebensmuedigkeit', 'todeswunsch', 'abschiedsbrief', 'ueberdosis', 'tabletten genommen', 'zu viele tabletten', 'selbstmordversuche', 'suizidversuche', 'suiziddrohungen', 'suizidandrohungen', 'todeswuensche', 'abschiedsbriefe', 'ueberdosen', 'lebensmueder', 'ist lebensmuede', 'tabletten geschluckt'],
       ['arzt', 'aerztin', 'behandler', 'behandlerin', 'therapeut', 'therapeutin', 'fachperson', 'fachpersonen', 'behandlungsteam'],
       ['ablehnen', 'abgelehnt', 'lehnt', 'verweigern', 'verweigert', 'keine', 'will', 'moechte', 'nicht wollen', 'will nicht', 'moechte nicht'],
       ['normal', 'stabil', 'stabiler', 'ruhig', 'ruhiger', 'unauffaellig', 'anders'],
@@ -230,8 +230,77 @@
       ['gespraech', 'reden', 'kommunikation'],
       ['genesung', 'recovery', 'remission', 'besser', 'bessern', 'verbessern'],
       ['kosten', 'bezahlt', 'bezahlen', 'krankenkasse', 'finanzierung'],
-      ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'angst vor ihm', 'angst vor ihr']
+      ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'gewuergt', 'wuergt', 'frauenhaus', 'angst vor ihm', 'angst vor ihr', 'angst vor meinem partner', 'angst vor meiner partnerin', 'angst vor meinem mann', 'angst vor meiner frau', 'bedroht mich', 'mich bedroht', 'morddrohung', 'todesdrohung', 'wuergen', 'angst vor meinem sohn', 'angst vor meiner tochter', 'angst vor meinem vater', 'angst vor meiner mutter', 'angst vor meinem bruder', 'angst vor meiner schwester', 'mit dem tod bedroht', 'mit dem tod gedroht', 'droht mit dem tod', 'drohte mit dem tod', 'droht mit mord', 'mit mord gedroht', 'mit mord bedroht', 'angst vor meinem ex', 'angst vor meiner ex']
     ];
+    /* Tötungsverben («umbringen», «töten», «bringt … mich … um»): Wer gemeint ist, entscheidet die Gruppe (D30-01, D30-09, D30-13, D30-16).
+       Suizid hat Vorrang (D30-17, Variante F der Prüfsitzung): Eine Fehlleitung von Suizidsorge auf «Gewalt» wiegt schwerer
+       als umgekehrt.
+       1. Steht «sich» irgendwo in der Anfrage → Suizid, auch beim erweiterten Suizid («sich und die Kinder»).
+       2. Sonst das nächste Objekt vor dem Verb im Teilsatz (Grenze: «dass», «wenn», «weil», «warum» usw.):
+          «mich» geht anderen Objekten vor: Es entscheidet das nächste Subjekt davor im Teilsatz («ich» → Suizid; «er», «sie»,
+          «du», «jemand», «mein Mann», «mein Kind» … → Gewalt), sonst ein Subjekt direkt danach («mich mein Mann») → Gewalt,
+          sonst ein Subjekt in einem früheren Teilsatz, sonst bei einem Drohwort Gewalt, sonst Suizid;
+          «uns», «dich», «ihn», «euch», «die Kinder», «das Kind», «meine Familie» → Gewalt.
+       3. Sonst «sie» oder eine Person als Objekt («meine Mutter», «meinen Vater») → Gewalt, aber nur mit einem Subjekt davor
+          im Teilsatz («er will meine Mutter umbringen»); ohne Subjekt («Tochter umbringen») gilt die übliche Suche.
+       «bringe ich mich um» und «bringt sie sich um» bleiben bewusst aussen vor (Druck durch Suizidandrohung, Ersttreffer
+       «Zugewandt und klar sprechen» › «Wenn Worte treffen», festgelegt in R25-010). */
+    var killVerbs = { umbringen: 1, umzubringen: 1, umbringt: 1, umbringe: 1, umbringst: 1, umbrachte: 1, toeten: 1, toete: 1, toetet: 1, umgebracht: 1, getoetet: 1 };
+    var persons = { mann: 1, partner: 1, partnerin: 1, frau: 1, freund: 1, freundin: 1, sohn: 1, tochter: 1, vater: 1, mutter: 1, bruder: 1, schwester: 1, ex: 1,
+      kind: 1, kinder: 1, ehemann: 1, ehefrau: 1, exmann: 1, exfrau: 1, expartner: 1, expartnerin: 1, lebenspartner: 1, lebenspartnerin: 1,
+      eltern: 1, mama: 1, papa: 1, stiefvater: 1, stiefmutter: 1, familie: 1 };
+    var thirdParty = Object.assign({ er: 1, sie: 1, du: 1, jemand: 1, man: 1 }, persons);
+    var plainObjects = { mich: 1, uns: 1, dich: 1, ihn: 1, euch: 1, kinder: 1, kind: 1, familie: 1 };
+    var clauseWords = { dass: 1, wenn: 1, weil: 1, ob: 1, falls: 1, obwohl: 1, nachdem: 1, seit: 1, seitdem: 1, bevor: 1,
+      damit: 1, warum: 1, wieso: 1, weshalb: 1, was: 1, wie: 1, aber: 1, denn: 1, sonst: 1 };
+    var threatWords = { droht: 1, drohen: 1, gedroht: 1, drohte: 1, drohung: 1, drohungen: 1 };
+    var nominativeArticles = { mein: 1, meine: 1, dein: 1, deine: 1, sein: 1, seine: 1, ihr: 1, ihre: 1, unser: 1, unsere: 1, der: 1, die: 1, das: 1, ein: 1, eine: 1 };
+    var nominativeSubjects = { er: 1, du: 1, jemand: 1, man: 1 };
+    function clauseStart(words, index) {
+      for (var i = index - 1; i >= 0; i--) if (clauseWords[words[i]]) return i + 1;
+      return 0;
+    }
+    /* «mich»: zuerst das nächste Subjekt davor im Teilsatz, dann ein Subjekt direkt danach («dass mich mein Mann …»),
+       dann ein Subjekt in einem früheren Teilsatz, zuletzt ein Drohwort (D30-18, D30-19). */
+    function michIntent(words, objectIndex) {
+      var start = clauseStart(words, objectIndex), i;
+      for (i = objectIndex - 1; i >= start; i--) {
+        if (words[i] === 'ich') return 'suizid';
+        if (thirdParty[words[i]]) return 'gewalt';
+      }
+      var next = objectIndex + 1;
+      if (nominativeArticles[words[next]]) next++;
+      if (nominativeSubjects[words[next]] || persons[words[next]]) return 'gewalt';
+      for (i = start - 1; i >= 0; i--) {
+        if (words[i] === 'ich') return 'suizid';
+        if (thirdParty[words[i]]) return 'gewalt';
+      }
+      return words.some(function (word) { return threatWords[word]; }) ? 'gewalt' : 'suizid';
+    }
+    function killIntent(words) {
+      var verb = -1, i;
+      for (i = 0; i < words.length; i++) if (killVerbs[words[i]]) { verb = i; break; }
+      if (verb === -1) {
+        var bringt = words.indexOf('bringt');
+        var um = bringt === -1 ? -1 : words.indexOf('um', bringt + 1);
+        if (um === -1) return null;
+        /* nur «… bringt mich um» (Drohung gegen die eigene Person); «bringt sie sich um» bleibt bei der bisherigen Wertung (R25-010) */
+        for (i = bringt + 1; i < um; i++) if (words[i] === 'mich') return michIntent(words, i);
+        return null;
+      }
+      if (words.indexOf('sich') !== -1) return 'suizid';
+      var start = clauseStart(words, verb);
+      /* «mich» im Teilsatz geht anderen Objekten vor («ich will mich wegen meiner Familie umbringen», D30-19). */
+      for (i = verb - 1; i >= start; i--) if (words[i] === 'mich') return michIntent(words, i);
+      for (i = verb - 1; i >= start; i--) if (plainObjects[words[i]]) return 'gewalt';
+      for (i = verb - 1; i >= start; i--) {
+        if (words[i] === 'sie' || persons[words[i]]) {
+          for (var j = i - 1; j >= start; j--) if (words[j] === 'ich' || thirdParty[words[j]]) return 'gewalt';
+          return null;
+        }
+      }
+      return null;
+    }
     var synonyms = {};
     var phraseGroups = [];
     synonymSets.forEach(function (set) {
@@ -250,8 +319,12 @@
       /* Eine erkannte Mehrwort-Intention hat Vorrang vor einzelnen, mehrdeutigen
          Wörtern. So wird etwa «will nicht mehr leben» als Sicherheitsfrage und
          nicht als Kombination aus Ablehnung, «mehr» und «leben» bewertet. */
-      if (phraseHit) return [phraseHit.group];
       var words = normalizedQuery.split(/\s+/).filter(Boolean);
+      var intent = killIntent(words);
+      /* Suizid-Vorrang auch hier: Enthält die Anfrage eine Suizid-Phrase («will nicht mehr leben»), gilt Suizid. */
+      if (intent === 'gewalt' && phraseHit && phraseHit.group === synonyms.suizid) intent = 'suizid';
+      if (intent) return [synonyms[intent]];
+      if (phraseHit) return [phraseHit.group];
       var meaningful = words.filter(function (word) { return !stopwords.has(word) && word !== 'droht' && word !== 'drohen' && word !== 'sprechen'; });
       if (!meaningful.length) meaningful = words;
       var seen = {};
@@ -266,9 +339,9 @@
       return group.some(function (term) { return field.indexOf(term) !== -1; });
     }
     function score(item, query, groups, relaxed) {
-      var title = normalized(item.getAttribute('data-search-title'));
-      var haystack = normalized(item.getAttribute('data-search-text'));
-      var keywords = normalized(item.getAttribute('data-search-keywords'));
+      /* Zwischenspeicher (W3C-12): setzt voraus, dass sich die data-search-Attribute nach dem Laden nicht ändern. */
+      var cached = item.__pukSearch || (item.__pukSearch = { title: normalized(item.getAttribute('data-search-title')), haystack: normalized(item.getAttribute('data-search-text')), keywords: normalized(item.getAttribute('data-search-keywords')) });
+      var title = cached.title, haystack = cached.haystack, keywords = cached.keywords;
       var hitCount = groups.filter(function (group) { return matches(haystack, group); }).length;
       var required = relaxed && groups.length > 1 ? Math.max(1, Math.min(groups.length - 1, Math.ceil(groups.length * .6))) : groups.length;
       if (hitCount < required) return -1;

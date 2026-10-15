@@ -233,10 +233,13 @@
       ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'gewuergt', 'wuergt', 'frauenhaus', 'angst vor ihm', 'angst vor ihr', 'angst vor meinem partner', 'angst vor meiner partnerin', 'angst vor meinem mann', 'angst vor meiner frau', 'bedroht mich', 'mich bedroht', 'morddrohung', 'todesdrohung', 'wuergen', 'angst vor meinem sohn', 'angst vor meiner tochter', 'angst vor meinem vater', 'angst vor meiner mutter', 'angst vor meinem bruder', 'angst vor meiner schwester', 'mit dem tod bedroht', 'mit dem tod gedroht', 'droht mit dem tod', 'drohte mit dem tod', 'droht mit mord', 'mit mord gedroht', 'mit mord bedroht', 'angst vor meinem ex', 'angst vor meiner ex']
     ];
     /* Tötungsverben («umbringen», «töten», «bringt … mich … um»): Wer gemeint ist, entscheidet die Gruppe (D30-01, D30-09, D30-13, D30-16).
-       Gewertet wird der Teilsatz vor dem Verb (Grenze: «dass», «wenn», «weil», «warum» usw.).
-       1. Steht «sich» im Teilsatz → Suizid, ausser es ist mit weiteren Personen verbunden («sich und die Kinder») → Gewalt.
-       2. Sonst das nächste Objekt vor dem Verb: «mich» → das nächste Subjekt davor entscheidet («ich» → Suizid; «er», «sie», «du»,
-          «jemand», «mein Mann», «mein Kind» … → Gewalt; ohne Subjekt bei einem Drohwort Gewalt, sonst Suizid);
+       Suizid hat Vorrang (D30-17, Variante F der Prüfsitzung): Eine Fehlleitung von Suizidsorge auf «Gewalt» wiegt schwerer
+       als umgekehrt.
+       1. Steht «sich» irgendwo in der Anfrage → Suizid, auch beim erweiterten Suizid («sich und die Kinder»).
+       2. Sonst das nächste Objekt vor dem Verb im Teilsatz (Grenze: «dass», «wenn», «weil», «warum» usw.):
+          «mich» → steht direkt danach ein Subjekt («mich mein Mann») → Gewalt; sonst entscheidet das nächste Subjekt davor
+          («ich» → Suizid; «er», «sie», «du», «jemand», «mein Mann», «mein Kind» … → Gewalt; ohne Subjekt bei einem Drohwort
+          Gewalt, sonst Suizid);
           «uns», «dich», «ihn», «euch», «die Kinder», «das Kind», «meine Familie» → Gewalt.
        3. Sonst «sie» oder eine Person als Objekt («meine Mutter», «meinen Vater») → Gewalt, aber nur mit einem Subjekt davor
           im Teilsatz («er will meine Mutter umbringen»); ohne Subjekt («Tochter umbringen») gilt die übliche Suche.
@@ -251,7 +254,12 @@
     var clauseWords = { dass: 1, wenn: 1, weil: 1, ob: 1, falls: 1, obwohl: 1, nachdem: 1, seit: 1, seitdem: 1, bevor: 1,
       damit: 1, warum: 1, wieso: 1, weshalb: 1, was: 1, wie: 1, aber: 1, denn: 1, sonst: 1 };
     var threatWords = { droht: 1, drohen: 1, gedroht: 1, drohte: 1, drohung: 1, drohungen: 1 };
+    var nominativeArticles = { mein: 1, meine: 1, dein: 1, deine: 1, sein: 1, seine: 1, ihr: 1, ihre: 1, unser: 1, unsere: 1, der: 1, die: 1, das: 1, ein: 1, eine: 1 };
+    var nominativeSubjects = { er: 1, du: 1, jemand: 1, man: 1 };
     function michIntent(words, objectIndex) {
+      var next = objectIndex + 1;
+      if (nominativeArticles[words[next]]) next++;
+      if (nominativeSubjects[words[next]] || persons[words[next]]) return 'gewalt';
       for (var i = objectIndex - 1; i >= 0; i--) {
         if (words[i] === 'ich') return 'suizid';
         if (thirdParty[words[i]]) return 'gewalt';
@@ -269,13 +277,9 @@
         for (i = bringt + 1; i < um; i++) if (words[i] === 'mich') return michIntent(words, i);
         return null;
       }
+      if (words.indexOf('sich') !== -1) return 'suizid';
       var start = 0;
       for (i = verb - 1; i >= 0; i--) if (clauseWords[words[i]]) { start = i + 1; break; }
-      var clause = words.slice(start, verb);
-      var sich = clause.indexOf('sich');
-      if (sich !== -1) {
-        return clause[sich + 1] === 'und' || clause[sich - 1] === 'und' ? 'gewalt' : 'suizid';
-      }
       for (i = verb - 1; i >= start; i--) {
         if (words[i] === 'mich') return michIntent(words, i);
         if (plainObjects[words[i]]) return 'gewalt';
@@ -308,6 +312,8 @@
          nicht als Kombination aus Ablehnung, «mehr» und «leben» bewertet. */
       var words = normalizedQuery.split(/\s+/).filter(Boolean);
       var intent = killIntent(words);
+      /* Suizid-Vorrang auch hier: Enthält die Anfrage eine Suizid-Phrase («will nicht mehr leben»), gilt Suizid. */
+      if (intent === 'gewalt' && phraseHit && phraseHit.group === synonyms.suizid) intent = 'suizid';
       if (intent) return [synonyms[intent]];
       if (phraseHit) return [phraseHit.group];
       var meaningful = words.filter(function (word) { return !stopwords.has(word) && word !== 'droht' && word !== 'drohen' && word !== 'sprechen'; });

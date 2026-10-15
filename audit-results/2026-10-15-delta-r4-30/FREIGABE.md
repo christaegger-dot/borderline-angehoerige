@@ -54,7 +54,7 @@ Wortbilanz mit Quellenblock: «Behandlung» 2399 (Ziel < 2400), «Fragen» 2398 
 Die unabhängige Delta-Prüfung (`PRUEFUNG.md`, Stand `9f5ebfe`) ergab «freigabefähig mit Auflagen». Kritische Befunde gab es keine. Umgesetzt ist:
 
 - **D30-01 (wichtig):** Die ersten Gewaltphrasen leiteten Ich-Aussagen («ich will mich umbringen») auf «Gewalt». Neu gehören Ich-Aussagen als Phrase zur Suizidgruppe («ich will mich umbringen», «mich umbringen», «mich zu töten» usw.). Zur Gewaltgruppe gehören nur Drohungen und Taten anderer («droht mich umzubringen», «will mich umbringen», «er bringt mich um», «mit dem Tod bedroht»). Das galt nur für die aufgezählten Phrasen; nicht aufgezählte Formen blieben falsch zugeordnet (D30-09, Nachtrag 2). Die längere Phrase gewinnt. Gestrichen sind «droht mich» und «mit dem Tod» allein. Nachprüfung durch die Prüfsitzung: siehe `PRUEFUNG.md`, Nachprüfung.
-- **D30-03 (wichtig):** Die Anfragen sind festgeschrieben in `authoring/tests/suche-ersttreffer.tsv`, damals 168 Anfragen (nach Nachtrag 4: 243) mit erwartetem Ersttreffer. Die Prüfung läuft mit `node authoring/tools/suchtest.mjs <site-ordner>` (Playwright, nicht in der CI).
+- **D30-03 (wichtig):** Die Anfragen sind festgeschrieben in `authoring/tests/suche-ersttreffer.tsv`, damals 168 Anfragen (nach Nachtrag 5: 251) mit erwartetem Ersttreffer. Die Prüfung läuft mit `node authoring/tools/suchtest.mjs <site-ordner>` (Playwright, nicht in der CI).
 - **D30-04, teilweise:** ergänzt sind «gewürgt», «Frauenhaus», «Angst vor meinem Partner/Mann, meiner Partnerin/Frau», Pluralformen («Abschiedsbriefe», «Selbstmordversuche», «Todeswünsche», «Suiziddrohungen», «Suizidandrohungen», «Überdosen»), «lebensmüder», «ist lebensmüde», «sich umbringen», «bringt sich um», «Tabletten geschluckt». (Überholt für «sich umbringen» und «bringt sich um»: Diese Phrasen sind seit Nachtrag 2 durch die Regel für Tötungsverben ersetzt; «bringt sie sich um» bleibt nach R25-010 bei «Wenn Worte treffen».) Offen bleiben «Sorgerecht», «Klinik sagt mir nichts», «sie trinkt jeden Abend» und «er zerstört Sachen in der Wohnung» (R30-P01).
 - **D30-08:** Im Code ist vermerkt, dass der Zwischenspeicher unveränderte Attribute voraussetzt. «Überdosis Alkohol» ist nicht festgeschrieben, weil der Treffer schwach ist (R30-P01).
 - **D30-06:** Die Herkunft der gekürzten Fassung und die Zeitzonen sind berichtigt.
@@ -102,8 +102,26 @@ Die dritte Nachprüfung (`PRUEFUNG.md`, Abschnitt «Dritte Nachprüfung», Stand
 Umgesetzt ist die Regel nach Teilsätzen:
 
 1. Gewertet wird der Teilsatz vor dem Verb, begrenzt durch «dass», «wenn», «weil», «ob», «falls», «damit», «nachdem», «seit», «warum», «was», «wie» u. a.
-2. Steht «sich» im Teilsatz → Suizid. Ist «sich» mit «und» verbunden («sich und meine Mutter», «die Kinder und sich», «mich und sich») → Gewalt.
+2. ~~Steht «sich» im Teilsatz → Suizid. Ist «sich» mit «und» verbunden («sich und meine Mutter», «die Kinder und sich», «mich und sich») → Gewalt.~~ Unrichtig beschrieben und überholt: Der Code wertete jedes «und» neben dem ersten «sich» als Gewalt, auch bei reflexiven Verben («ritzt sich und will sich umbringen», D30-17). Ersetzt durch den Suizid-Vorrang (Nachtrag 5).
 3. Sonst das nächste Objekt vor dem Verb: «mich» → das nächste Subjekt davor entscheidet wie bisher; «uns», «dich», «ihn», «euch», «die Kinder», «das Kind», «meine Familie» → Gewalt.
 4. Sonst «sie» oder eine Person als Objekt → Gewalt, aber nur mit einem Subjekt davor im Teilsatz («er will meine Mutter umbringen»). Ohne Subjekt («Tochter umbringen») gilt die übliche Suche wie in r4-29.
 
 Ergebnis auf dem Entwurf: «Suchtest: 243 von 243 Ersttreffern wie festgeschrieben · JS-Fehler 0» (27 neue Zeilen: die 17 Sätze mit «sich» vor der Person, «wenn sich jemand umbringen will», drei Stichwortanfragen, drei Sätze mit «sich und …», drei Subjekte aus D30-13). Gegen `site/` (r4-29) weichen 99 Anfragen ab, keine aus dem Bestand (91 und 54). Alle 399 Proben der Prüfsitzung gegen `9299251`: 26 Ersttreffer anders, alle aus D30-16 oder der Ausnahme «sich und …»; dazu gehen «meine Mutter wurde umgebracht», «Angst Tochter umbringt sich» ohne Treffer aus (wie r4-29), «Mutter töten» und «Sohn umbringen Angst» wieder wie r4-29. Die Nachprüfung dieser Änderung steht aus; `releaseApproval.independentReview` bleibt bis dahin «ausstehend».
+
+## Nachtrag 5 · Vierte Nachprüfung, D30-17 und Suizid-Vorrang (15.10.2026)
+
+Die vierte Nachprüfung (`PRUEFUNG.md`, Abschnitt «Vierte Nachprüfung», Stand `ca89da2`) ergab «nicht freigabefähig in diesem Stand». D30-16 ist behoben, aber drei Anfragen zu Selbstverletzung mit Suizidgedanken («mein Sohn ritzt sich und will sich umbringen») gingen auf «Gewalt» statt wie in r4-29 auf «Krisen begleiten» (D30-17). Die Prüfsitzung hält die zweiseitige Regel für grundsätzlich zu fehleranfällig: In vier Runden brachte jede Korrektur eine neue Klasse von Fehlleitungen, dreimal in der Richtung «Suizidsorge → Gewalt». Sie hat eine einseitige Regel vorgeschlagen (Variante F) und im Scratchpad nachgebildet.
+
+Umgesetzt ist Variante F mit einer Ergänzung:
+
+1. **Suizid-Vorrang:** Steht «sich» irgendwo in der Anfrage, gilt bei Tötungsverben Suizid, ohne Ausnahme. Das gilt auch beim erweiterten Suizid («meine Frau will die Kinder und sich umbringen»); der Abschnitt «Wenn Suizidgedanken ein Thema sind» nennt ebenfalls Hilfe. Die drei Erwartungen «sich und …» in der Testliste stehen jetzt auf `krise.html#suizid`.
+2. «bringt … um» wird weiterhin nur mit «mich» gewertet (R25-010).
+3. **«mich» vor dem Subjekt (D30-18):** Steht direkt nach «mich» ein Subjekt, gilt Gewalt («dass mich mein Mann umbringt», «wenn mich mein Partner umbringen will»). Davor darf ein Wort wie «mein», «meine» oder «der» stehen.
+4. **Ergänzung der bauenden Sitzung:** Enthält die Anfrage eine Suizid-Phrase der Suche («will nicht mehr leben» u. a.), gilt Suizid, auch wenn die Regel sonst Gewalt ergäbe. Beispiel: «ich will nicht mehr leben er droht mich umzubringen» → Suizid; in F wäre das Gewalt.
+5. Alles Übrige bleibt wie in `ca89da2`: Teilsatz, Objekte, Subjekte, Drohwörter.
+
+Ergebnis auf dem Entwurf: «Suchtest: 251 von 251 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind acht Zeilen: drei aus D30-17 (`!grenzen.html#gewalt`), vier aus D30-18 und die Probe zu Punkt 4. Gegen `site/` (r4-29) weichen 103 Anfragen ab, keine aus dem Bestand (91 und 54). Die 458 Proben der Prüfsitzung (`q-alle.txt`) ergeben dieselben Ersttreffer wie ihre Nachbildung von F, mit einer Ausnahme: die Probe zu Punkt 4. Keine Anfrage mit «sich» geht auf «Gewalt».
+
+Bekannte Grenzen, alle in der sicheren Richtung (wie r4-29 oder besser), in R30-P01: Drohungen mit einem reflexiven Verb in einem früheren Teilsatz («er regt sich auf und droht mich umzubringen») und der erweiterte Suizid gehen auf «Suizid». Ob der erweiterte Suizid dorthin gehört, entscheidet die Fachstelle.
+
+Die Nachprüfung dieser Änderung steht aus; `releaseApproval.independentReview` bleibt bis dahin «ausstehend».

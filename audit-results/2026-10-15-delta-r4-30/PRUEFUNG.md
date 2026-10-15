@@ -328,3 +328,73 @@ Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8
 - `suchtest-site-929.txt`: Suchtest gegen `site/` (78 Abweichungen)
 - `prodcopy7/`: Produktion mit «bestaetigt»
 - Entwurf: `/home/claude/borderline-angehoerige/dist/d30d` (von `.gitignore` erfasst)
+
+*Nachtrag:* Die bauende Sitzung hat den Abschnitt «Dritte Nachprüfung» unverändert in `ca89da2` committet. Der folgende Abschnitt ist nicht committet.
+
+## Vierte Nachprüfung (Stand ca89da2)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-30-suche-links-1792061353`, Commit `ca89da2` (15.10.2026, 14:40 MESZ). Diff zu `9299251`: `interaktion.js` (`killIntent()` nach Teilsätzen, `michIntent()`), Testliste (243 Anfragen), `FREIGABE.md` (Nachtrag 4, Satz in Nachtrag 3 markiert), Pendenzen, dieser Bericht |
+| Prüfobjekt | frischer Entwurf `node authoring/tools/build.mjs --out=dist/d30e`. Verglichen in drei Ständen: `site/` (r4-29), `dist/d30d` (`9299251`) und `dist/d30e` (`ca89da2`). Zusätzlich eine Variante F, die ich nur im Scratchpad nachgebildet habe (siehe unten); im Repository ist nichts geändert |
+| Prüfsitzung | dieselbe unabhängige Prüfsitzung; nichts gebaut, korrigiert oder entschieden; nur diese Datei geändert; keine git-Schreibbefehle; Netlify nicht angefasst |
+| Zeitpunkt | 15.10.2026, etwa 14:45 bis 15:20 MESZ |
+
+### Ergebnis der vierten Nachprüfung
+
+**Nicht freigabefähig in diesem Stand:** D30-16 ist für alle 17 Sätze mit «sich» vor der Person behoben. Die neue Ausnahme «sich» neben «und» → Gewalt trifft aber auch reflexive Verben. Damit gehen drei typische Anfragen zu Selbstverletzung mit Suizidgedanken auf «Wenn Gewalt oder Bedrohung vorkommt», die in r4-29 auf `krise#selbstverletzung` gingen: «mein Sohn ritzt sich und will sich umbringen», «meine Tochter verletzt sich und will sich umbringen», «sie schneidet sich und spricht davon sich umzubringen» (D30-17). Nach dem Massstab dieser Nachprüfung ist das ein Befund, und zwar in der heiklen Richtung.
+
+**Grundsätzliche Einschätzung, ausdrücklich:** Die zweiseitige Regel ist grundsätzlich zu fehleranfällig. Sie soll aus der Satzstellung ableiten, ob ein Tötungswort Suizid oder Gewalt meint. In vier Runden hat jede Korrektur eine neue Klasse von Fehlleitungen erzeugt, dreimal in der heiklen Richtung «Suizidsorge → Gewalt»: D30-01 (Ich-Aussagen), D30-16 («sich» vor der Person), D30-17 (reflexive Verben vor «und»). Die deutsche Satzstellung, reflexive Verben («sich aufregen», «sich trennen», «ritzt sich»), Nebensätze ohne Einleitewort und Kurzanfragen lassen sich mit Wortlisten nicht zuverlässig fassen.
+
+Die beiden Fehlerrichtungen kosten nicht gleich viel. «Drohung → Suizidseite» ist der Zustand von r4-29 (Klasse R3C-02, «wichtig, nicht kritisch»). «Suizidsorge → Gewaltseite» ist der schädliche Fehler. Exportierbar ist deshalb nur eine einseitige Regel: «Gewalt» nur bei eindeutigem Fremdbezug, nie wenn «sich» in der Anfrage steht (Variante F, unten).
+
+### Beleg je Punkt
+
+| Nr. | Punkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| a | `suchtest.mjs` auf eigenem Entwurf | **erfüllt** | Entwurf `dist/d30e`: «23 Seiten · 0 Blocker · 1 Hinweise». `suchtest.mjs dist/d30e`: «243 von 243 … JS-Fehler 0». Gegen `site/`: 144 von 243, also 99 Abweichungen, keine im Bestand. |
+| b | 91/54 wie r4-29 | **erfüllt** | 91/91 und 54/54 gleich `site/`; R3-Liste 16/16 und Gegenproben 8/8 wie in `9299251`. |
+| c | Eigene Proben | **D30-16 behoben; neue Befunde D30-17 und D30-18** | 84 neue Proben (`q-viert.txt`); alle 458 verschiedenen Proben aus allen Listen in r4-29, `ca89da2` und Variante F. <br>**Richtig in `ca89da2`:** alle 17 Sätze mit «sich» vor der Person → `krise#suizid`. Inversion und Fragen → Gewalt: «hat er gedroht sie umzubringen», «droht er sie umzubringen», «will er sie umbringen», «will sie ihn umbringen», «will er mich umbringen», «bringt er mich um». Nebensatz ohne Einleitewort: «ich glaube sie will sich umbringen» → Suizid; «ich glaube er will sie/mich umbringen», «ich fürchte er bringt mich um» → Gewalt. «und» zwischen Teilsätzen: «er schlägt mich und will sich umbringen», «sie weint und sagt sie will sich umbringen», «er schlägt mich und ich will mich umbringen», «ich will mich umbringen und er lacht nur» → Suizid. Kurzanfragen «sich umbringen», «mich umbringen», «umbringen», «Tochter umbringen», «Sohn umbringen» → Suizid wie r4-29. <br>**D30-17 (schlechter als r4-29, heikle Richtung):** «mein Sohn ritzt sich und will sich umbringen», «meine Tochter verletzt sich und will sich umbringen», «sie schneidet sich und spricht davon sich umzubringen» → `grenzen#gewalt` (r4-29: `krise#selbstverletzung`; `9299251`: `krise#suizid`). Ursache: Der Code prüft nur das erste «sich» im Teilsatz und wertet jedes «und» daneben als «sich und andere». <br>**D30-18 (Fremdbedrohung → Suizid, Richtung wie r4-29):** «mich» vor dem Subjekt: «ich habe Angst dass mich mein Mann umbringt», «ich glaube dass mich mein Ex umbringen will» (r4-29: 0 Treffer), «wenn mich mein Partner umbringen will», «was tun wenn mich mein Sohn umbringen will» (r4-29: Suizid) → `krise#suizid`; in `9299251` gingen alle vier auf Gewalt. Ursache: `michIntent()` sucht das Subjekt nur links von «mich». Ein reflexives Verb in einem früheren Teilsatz macht die ganze Anfrage zu Suizid: «er regt sich auf und droht mich umzubringen», «er hat sich verändert und droht mich umzubringen», «er betrinkt sich jeden Abend und droht …», «er fühlt sich provoziert und droht …», «er kümmert sich nicht und will mich umbringen», «seit/nachdem/weil sie sich getrennt hat … droht er mich/will er sie umbringen». r4-29 gab hier Suizid, 0 Treffer oder einen schwachen Abschnitt. <br>**Erweiterter Suizid** («sich und die Kinder», «die Kinder und sich», «sich und meine Mutter», «mich und sich») → Gewalt, wie beabsichtigt. <br>**Weiter offen** (R30-P01, unverändert gegenüber r4-29): «ich habe Angst sie/er bringt sich um», «sie sagt sonst bringt sie sich um» → 0 Treffer; «sie hat sich das Leben genommen» → `verstehen#bewertungen`; «mein Bruder hat Suizid begangen» → 0 Treffer; «Ich bringe dich um wenn du gehst» → `kommunizieren#worte`; «er hat gesagt ich bring dich um» → `fragen#f-einweisung`. Auch «ich habe Angst ihn umzubringen» und «ich habe Angst meine Mutter umzubringen» (mögliche Zwangsgedanken) sowie «ich will meine Mutter nicht umbringen» → Gewalt (D30-14, fachlich abwägen). |
+| d | Nachweise | **teilweise richtig** | Richtig: Markierung in Nachtrag 3, Berichtigung zu `43d6b21`, Zahlen (243/243, 99 Abweichungen, keine im Bestand), R3C-A9 und R30-P01 nachgeführt, `independentReview` auf «ausstehend». **Unrichtig:** Nachtrag 4, Punkt 2, nennt als Ausnahme «sich und meine Mutter», «die Kinder und sich», «mich und sich». Der Code wertet aber jedes «und» neben dem ersten «sich» im Teilsatz als Gewalt, auch «ritzt sich und will …» (D30-17). |
+| – | Build | **erfüllt** | Produktionsbuild in einer Kopie mit «bestaetigt»: 0 Blocker, 0 Hinweise, bytegleich mit `dist/d30e`. Gegenüber `9299251` ist nur `js/interaktion.js` verschieden; `node --check` ohne Fehler; 0 Skriptfehler. |
+
+### Neue Befunde
+
+| ID | Priorität | Befund | Vorschlag (nicht umgesetzt) |
+| --- | --- | --- | --- |
+| D30-17 | **wichtig, Auflage vor dem Export** | Die Ausnahme «sich» neben «und» → Gewalt trifft reflexive Verben vor «und». Drei Anfragen zu Selbstverletzung mit Suizidgedanken gehen auf «Gewalt»; in r4-29 gingen sie auf `krise#selbstverletzung`. | Variante F (unten): «sich» in der Anfrage schliesst «Gewalt» ganz aus. Wenn die Fachstelle «erweiterter Suizid → Gewalt» behalten will: «Gewalt» nur, wenn auf der anderen Seite von «und» ein Objekt steht («die Kinder», «meine Mutter», «mich», «uns»), und jedes «sich» prüfen, nicht nur das erste. |
+| D30-18 | wichtig (nächster Patch; keine Auflage, Richtung wie r4-29) | Fremdbedrohung → Suizid in zwei Fällen. Steht «mich» vor dem Subjekt («dass mich mein Mann umbringt»), findet `michIntent()` das Subjekt nicht. Steht ein reflexives Verb in einem früheren Teilsatz («er regt sich auf und droht mich umzubringen»), gilt die ganze Anfrage als Suizid. | Prüfen, ob direkt nach «mich» ein Subjekt im Nominativ steht («mein», «meine», «dein», «sein», «ihr», «der», «die» + Person) → Gewalt. Das reflexive Verb in einem früheren Teilsatz bleibt bei Variante F bewusst bei «Suizid» (sichere Richtung). |
+
+### Exportierbare Rückfallvariante (meine Empfehlung)
+
+Die vorgeschlagene Rückfallvariante «Objektregel von `43d6b21` mit nur den neuen Subjekten» ist **ohne Zusatz nicht exportierbar**. In `43d6b21` zählen «Kind», «Kinder» und «Familie» als nächstes Objekt, auch wenn «sich» davor steht. «was tun wenn sich mein Kind umbringen will» und «Angst dass sich mein Kind umbringt» gehen dort auf «Gewalt» (Berichtigung in der dritten Nachprüfung).
+
+**Variante F (Suizid-Vorrang)**, auf `ca89da2` aufgesetzt:
+
+1. Steht «sich» irgendwo in der Anfrage, gilt bei Tötungsverben Suizid. Es gibt keine Ausnahme mit «und»; der erweiterte Suizid geht damit auf `krise#suizid`, wo die Hilfe ebenfalls steht.
+2. Bei «bringt … um» mit «sich» irgendwo in der Anfrage gilt die übliche Suche (R25-010 bleibt).
+3. `michIntent()`: Steht direkt nach «mich» ein Subjekt (optional nach «mein», «meine», «dein», «deine», «sein», «seine», «ihr», «ihre», «der», «die», «das»; nicht «sie»), gilt Gewalt; sonst wie bisher. Empfehlung für die Umsetzung: nur Nominativformen zulassen, damit «mich meiner Familie zuliebe» nicht als Subjekt zählt.
+4. Alles Übrige bleibt wie in `ca89da2`: Teilsatz, Objekte «mich», «uns», «dich», «ihn», «euch», «Kind(er)», «Familie», Personen und «sie» nur mit Subjekt davor.
+
+**Beleg (nur nachgebildet):** Ich habe F in einer Kopie von `dist/d30e` im Scratchpad gepatcht (`varF/site/js/interaktion.js`, 3 Ersetzungen) und lokal ausgeführt.
+
+- `suchtest.mjs varF/site`: 240 von 243. Die 3 Abweichungen sind die drei festgeschriebenen Fälle «sich und …» (erweiterter Suizid), die F bewusst auf `krise#suizid` leitet. 0 Skriptfehler.
+- Alle 458 verschiedenen Proben aus allen Listen (darunter die 91/54, die R3-Liste und die Gegenproben):
+  - Keine Anfrage mit «sich» geht auf «Gewalt».
+  - Alle Ich-Aussagen gehen auf Suizid.
+  - Die vier Fälle «mich mein …» aus D30-18 gehen auf Gewalt.
+  - Gegenüber `ca89da2` ändern sich nur 16 Ersttreffer: die drei aus D30-17 und «Angst Tochter umbringt sich» (→ Suizid, ca89da2 ohne Treffer), acht Fälle von erweitertem Suizid oder Drohung mit «sich» (→ Suizid), dazu die vier aus D30-18 (→ Gewalt).
+- Bekannte Grenzen von F, alle in der Richtung von r4-29 oder besser: Drohungen mit reflexivem Verb in einem früheren Teilsatz und der erweiterte Suizid gehen auf Suizid. Redewendungen und Verneinungen bleiben wie in D30-14.
+
+Für den Export: F im Repository umsetzen, die drei Erwartungen «sich und …» auf `krise#suizid` ändern und als Proben aufnehmen. Ebenfalls aufnehmen: die drei Sätze aus D30-17 (mindestens `!grenzen.html#gewalt`) und die vier aus D30-18. Dann `suchtest.mjs` (100 %) und eine kurze Nachprüfung mit meinen Probelisten.
+
+### Belege der vierten Nachprüfung
+
+Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8-de06005eb532/scratchpad/d30/`:
+
+- `q-viert.txt` (84 neue Proben); `q-viert.result3.tsv` (r4-29, `9299251`, `ca89da2`)
+- `q-alle.txt` (458 verschiedene Proben aus allen Listen); `q-alle.resultF.tsv` (r4-29, `ca89da2`, Variante F)
+- `varF/site/`: nachgebildete Variante F (nur Scratchpad); `searchF.cjs`
+- `suchtest-site-ca8.txt`: Suchtest gegen `site/` (99 Abweichungen)
+- `prodcopy8/`: Produktion mit «bestaetigt»
+- Entwurf: `/home/claude/borderline-angehoerige/dist/d30e` (von `.gitignore` erfasst)

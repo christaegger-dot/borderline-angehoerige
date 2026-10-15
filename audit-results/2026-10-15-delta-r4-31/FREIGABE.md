@@ -52,3 +52,17 @@ Ergebnis auf dem Entwurf: «Suchtest: 279 von 279 Ersttreffern wie festgeschrieb
 Die Prüfsitzung hat den Stand `57ddb4b` bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung»). Den mechanischen Abgleich hat sie selbst durchgeführt: Suchtest 279 von 279, `q-alle5` 617 von 617 gleich der Nachbildung J, Bestand 91/91 und 54/54 wie r4-29, Produktionsbuild in einer Kopie bytegleich. Die Auflage R31-01 ist erfüllt. Damit ist der letzte Satz von Nachtrag 1 überholt. `releaseApproval.independentReview` steht auf «bestaetigt», danach folgt der Produktionsexport.
 
 Vor dem Merge muss das Codex-Review auf dem endgültigen Kopf des Pull Requests abgeschlossen und geprüft sein (R28-O01, R29-P20).
+
+## Nachtrag 3 · Codex-Review von #690 (15.10.2026)
+
+Pull Request #690 wurde um 14:49:40 UTC eröffnet, mit Stand `1ac8f0b` (Export nach der Abschlussbestätigung). Um 14:55 UTC meldete das Codex-Review drei P1-Befunde. Wie r4-29, r4-30 (`0fda233`) und `1ac8f0b` diese Fälle behandeln:
+
+| Befund | Beispiel | r4-29 | r4-30 | `1ac8f0b` | Korrektur |
+| --- | --- | --- | --- | --- | --- |
+| Steuerverb fehlt in der Liste | «er hat mich überzeugt mich umzubringen», «er nötigt mich mich umzubringen» | Suizid | Suizid | **Gewalt** | Die Liste der Steuerverben aus r4-31 ist gestrichen. Fall (a) gilt bei jedem früheren «mich» im selben Abschnitt, also ohne «und» dazwischen. Das war ein Rückschritt durch r4-31. |
+| Drohwort in einem anderen Abschnitt | «er droht mich umzubringen und meine Kinder halten mich davon ab mich umzubringen» | Quellen | Gewalt | Gewalt | Drohwort, «versucht», «plant» und neu «bedroht» zählen nur noch im eigenen Abschnitt, ab dem letzten «und» vor «mich». |
+| «mich» nach dem Verb | «er will mich umbringen und danach töte ich mich» | kein Treffer | Gewalt | Gewalt | Folgt «mich» bis zu drei Wörter nach dem Verb, entscheidet das Subjekt dazwischen («töte ich mich» → Suizid, «umbringen will er mich» → Gewalt). Das gilt nur, wenn vor dem Verb im selben Abschnitt kein «mich» und kein «sich» steht. Sonst gehört das spätere «mich» zu einem neuen Satz, wie in «ich will mich umbringen er hat mich verlassen». |
+
+Ergebnis auf dem Entwurf: «Suchtest: 286 von 286 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind sieben Zeilen, darunter zwei Gegenproben für neue Sätze nach dem Verb. Von den 617 Proben der Prüfsitzung (`q-alle5.txt`) haben gegenüber `1ac8f0b` zwei einen anderen Ersttreffer. Beide gehen in die sichere Richtung, wie schon in r4-30: «er hasst mich will mich umzubringen» und «er schlägt mich jeden Tag will mich umzubringen» → «Suizid», weil kein «und» dazwischen steht.
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `1ac8f0b`.

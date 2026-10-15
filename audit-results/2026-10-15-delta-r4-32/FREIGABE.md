@@ -115,3 +115,27 @@ Zu R31-P03 empfiehlt die Prüfsitzung, die Lesart der bauenden Sitzung zu versch
 
 `releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Stand bestätigt hat.
 
+## Nachtrag 2 · Abschlussbestätigung und Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `306c4e4` bestätigt (`PRUEFUNG.md`, Abschlussbestätigung, Commit `9f7ecee`). Den Abgleich hat sie selbst durchgeführt:
+
+- Suchtest 197 von 197.
+- 885 Proben bytegleich mit `d32/p_P.tsv` und mit `138033d`.
+- 21 gezielte Proben bytegleich mit `d32/a_P.tsv`.
+- Randfälle ohne JS-Fehler.
+- Produktionsbuild in einer Kopie bytegleich (34 Dateien).
+
+Urteil: «freigabefähig». Damit ist der letzte Satz von Nachtrag 1 überholt. `releaseApproval.independentReview` steht auf «bestaetigt».
+
+Produktionsexport (`--production --out=site --write-site`):
+
+- 23 Seiten, 0 Blocker, 0 Hinweise.
+- «PARITÄT BESTANDEN: 34 Dateien byte-gleich mit site/».
+- `site/` ist dateigleich mit dem Entwurf `dist/d32b` der Prüfsitzung.
+- Suchtest gegen `site/`: 197 von 197, 0 JS-Fehler.
+- Build r4-32 auf 23 Seiten, 0 `tel:`.
+- axe (WCAG 2.2 AA) auf allen 23 Seiten bei 320 und 1280 px, auch mit aufgeklappten Details und auf der Suche mit «er droht mich umzubringen»: 0 Verstösse, kein Überlauf, keine JS-Fehler.
+- Tastatur: Mit derselben Anfrage ist der erste Treffer per Tab `grenzen.html#gewalt`; Enter führt dorthin, der Fokus liegt danach auf dem Abschnitt.
+
+Vor dem Merge muss das Codex-Review auf dem endgültigen Kopf des Pull Requests abgeschlossen und geprüft sein (R28-O01, R29-P20). Nach der Auslieferung ist in der Produktion von Hand zu prüfen, dass bei einer Anfrage mit Tötungswort Suizid und Gewalt oben stehen (`suchtest.mjs` läuft nicht gegen Pretty URLs, R31-P01).
+

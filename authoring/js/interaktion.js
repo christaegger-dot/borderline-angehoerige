@@ -214,7 +214,7 @@
     }
     var stopwords = new Set(('aber als am an auf aus bei bin bis brauche das dass dem den der des die darf dich dir ein eine einer einem einen er erlebt es fuer finde gefunden gegen geht gibt hat haben helfen ich ihm ihn im in ist ja kann koennen lassen man mein meine meiner meinem meinen mich mir mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur').split(' '));
     var synonymSets = [
-      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein', 'selbstmordgedanken', 'selbstmordversuch', 'suizidversuch', 'suizidalitaet', 'suizidgefahr', 'suizidandrohung', 'suiziddrohung', 'lebensmuede', 'lebensmuedigkeit', 'todeswunsch', 'abschiedsbrief', 'ueberdosis', 'tabletten genommen', 'zu viele tabletten', 'selbstmordversuche', 'suizidversuche', 'suiziddrohungen', 'suizidandrohungen', 'todeswuensche', 'abschiedsbriefe', 'ueberdosen', 'lebensmueder', 'ist lebensmuede', 'tabletten geschluckt', 'ich will mich umbringen', 'mich umbringen', 'mich umzubringen', 'mich toeten', 'mich zu toeten', 'sich umbringen', 'sich umzubringen', 'sich toeten', 'bringt sich um'],
+      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein', 'selbstmordgedanken', 'selbstmordversuch', 'suizidversuch', 'suizidalitaet', 'suizidgefahr', 'suizidandrohung', 'suiziddrohung', 'lebensmuede', 'lebensmuedigkeit', 'todeswunsch', 'abschiedsbrief', 'ueberdosis', 'tabletten genommen', 'zu viele tabletten', 'selbstmordversuche', 'suizidversuche', 'suiziddrohungen', 'suizidandrohungen', 'todeswuensche', 'abschiedsbriefe', 'ueberdosen', 'lebensmueder', 'ist lebensmuede', 'tabletten geschluckt'],
       ['arzt', 'aerztin', 'behandler', 'behandlerin', 'therapeut', 'therapeutin', 'fachperson', 'fachpersonen', 'behandlungsteam'],
       ['ablehnen', 'abgelehnt', 'lehnt', 'verweigern', 'verweigert', 'keine', 'will', 'moechte', 'nicht wollen', 'will nicht', 'moechte nicht'],
       ['normal', 'stabil', 'stabiler', 'ruhig', 'ruhiger', 'unauffaellig', 'anders'],
@@ -230,10 +230,39 @@
       ['gespraech', 'reden', 'kommunikation'],
       ['genesung', 'recovery', 'remission', 'besser', 'bessern', 'verbessern'],
       ['kosten', 'bezahlt', 'bezahlen', 'krankenkasse', 'finanzierung'],
-      ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'gewuergt', 'wuergt', 'frauenhaus', 'angst vor ihm', 'angst vor ihr', 'angst vor meinem partner', 'angst vor meiner partnerin', 'angst vor meinem mann', 'angst vor meiner frau', 'bedroht mich', 'mich bedroht', 'will mich umbringen', 'droht mich umzubringen', 'gedroht mich umzubringen', 'versucht mich umzubringen', 'droht mich zu toeten', 'er bringt mich um', 'sie bringt mich um', 'mit dem tod bedroht', 'mit dem tod gedroht']
+      ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'gewuergt', 'wuergt', 'frauenhaus', 'angst vor ihm', 'angst vor ihr', 'angst vor meinem partner', 'angst vor meiner partnerin', 'angst vor meinem mann', 'angst vor meiner frau', 'bedroht mich', 'mich bedroht', 'morddrohung', 'todesdrohung', 'wuergen', 'angst vor meinem sohn', 'angst vor meiner tochter', 'angst vor meinem vater', 'angst vor meiner mutter', 'angst vor meinem bruder', 'angst vor meiner schwester', 'mit dem tod bedroht', 'mit dem tod gedroht', 'droht mit dem tod', 'drohte mit dem tod']
     ];
-    /* Phrasen gehen den Einzelwörtern vor, die längste gewinnt: Ich-Aussagen («ich will mich umbringen», «mich zu töten») gehören zu Suizid,
-       Drohungen anderer («droht mich umzubringen», «will mich umbringen», «er bringt mich um») zu Gewalt. */
+    /* Tötungsverben («umbringen», «töten», «bringt … um»): Wer gemeint ist, entscheidet die Gruppe (D30-01, D30-09).
+       «sich» → Suizid; «uns», «dich», «ihn», «die Kinder», «meine Familie» → Gewalt; «mich»: das nächste Subjekt davor entscheidet
+       («ich» → Suizid; «er», «sie», «mein Mann» … → Gewalt); ohne Subjekt bei einem Drohwort Gewalt, sonst Suizid.
+       «bringe ich mich um» und «bringt sie sich um» bleiben bewusst aussen vor (Druck durch Suizidandrohung, Ersttreffer
+       «Zugewandt und klar sprechen» › «Wenn Worte treffen», festgelegt in R25-010). */
+    var killVerbs = { umbringen: 1, umzubringen: 1, umbringt: 1, toeten: 1, toetet: 1, umgebracht: 1, getoetet: 1 };
+    var thirdParty = { er: 1, sie: 1, mann: 1, partner: 1, partnerin: 1, frau: 1, freund: 1, freundin: 1, sohn: 1, tochter: 1, vater: 1, mutter: 1, bruder: 1, schwester: 1, ex: 1 };
+    var otherObjects = { uns: 1, dich: 1, ihn: 1, euch: 1, kinder: 1, kind: 1, familie: 1 };
+    var threatWords = { droht: 1, drohen: 1, gedroht: 1, drohte: 1, drohung: 1, drohungen: 1 };
+    function killIntent(words) {
+      var verb = -1, objectIndex = -1, i;
+      for (i = 0; i < words.length; i++) if (killVerbs[words[i]]) { verb = i; break; }
+      if (verb === -1) {
+        var bringt = words.indexOf('bringt');
+        if (bringt === -1 || words.indexOf('um', bringt + 1) === -1) return null;
+        /* nur «… bringt mich um» (Drohung gegen die eigene Person); «bringt sie sich um» bleibt bei der bisherigen Wertung (R25-010) */
+        for (i = bringt + 1; i < words.indexOf('um', bringt + 1); i++) if (words[i] === 'mich') { objectIndex = i; break; }
+        verb = bringt;
+      } else {
+        for (i = verb - 1; i >= Math.max(0, verb - 4); i--) if (words[i] === 'sich' || words[i] === 'mich' || otherObjects[words[i]]) { objectIndex = i; break; }
+      }
+      if (objectIndex === -1) return null;
+      var object = words[objectIndex];
+      if (object === 'sich') return 'suizid';
+      if (object !== 'mich') return 'gewalt';
+      for (i = objectIndex - 1; i >= 0; i--) {
+        if (words[i] === 'ich') return 'suizid';
+        if (thirdParty[words[i]]) return 'gewalt';
+      }
+      return words.some(function (word) { return threatWords[word]; }) ? 'gewalt' : 'suizid';
+    }
     var synonyms = {};
     var phraseGroups = [];
     synonymSets.forEach(function (set) {
@@ -252,8 +281,10 @@
       /* Eine erkannte Mehrwort-Intention hat Vorrang vor einzelnen, mehrdeutigen
          Wörtern. So wird etwa «will nicht mehr leben» als Sicherheitsfrage und
          nicht als Kombination aus Ablehnung, «mehr» und «leben» bewertet. */
-      if (phraseHit) return [phraseHit.group];
       var words = normalizedQuery.split(/\s+/).filter(Boolean);
+      var intent = killIntent(words);
+      if (intent) return [synonyms[intent]];
+      if (phraseHit) return [phraseHit.group];
       var meaningful = words.filter(function (word) { return !stopwords.has(word) && word !== 'droht' && word !== 'drohen' && word !== 'sprechen'; });
       if (!meaningful.length) meaningful = words;
       var seen = {};

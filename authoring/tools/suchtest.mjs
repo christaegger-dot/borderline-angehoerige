@@ -2,7 +2,9 @@
 // Die Suche läuft mit dem echten interaktion.js im Browser (Playwright mit Chromium).
 //
 // Aufruf: node authoring/tools/suchtest.mjs <site-ordner> [tsv]
-//   z. B. node authoring/tools/suchtest.mjs site
+//   vor dem Export gegen den Entwurf (z. B. dist/site), danach gegen site/
+// Erwartung «!href» heisst: Ersttreffer darf nicht href sein; «–» heisst: kein Treffer.
+// Playwright braucht PLAYWRIGHT_BROWSERS_PATH (hier /opt/pw-browsers).
 // Playwright: Modulpfad über PLAYWRIGHT_MODULE, sonst /opt/npm-tools/node_modules/playwright.
 // Nicht Teil der CI (dort fehlt Playwright); in jeder Änderungsrunde mit Änderungen an Suche oder Inhalt ausführen.
 import { createServer } from 'node:http';
@@ -38,7 +40,8 @@ const fails = [];
 for (const [query, expected] of rows) {
   await page.fill('#site-search', query);
   const got = await page.evaluate(() => { const a = document.querySelector('[data-search-results] > li:not([hidden]) a'); return a ? a.getAttribute('href') : '–'; });
-  if (got !== expected) fails.push({ query, expected, got });
+  const ok = expected.startsWith('!') ? got !== expected.slice(1) : got === expected;
+  if (!ok) fails.push({ query, expected, got });
 }
 await browser.close();
 server.close();

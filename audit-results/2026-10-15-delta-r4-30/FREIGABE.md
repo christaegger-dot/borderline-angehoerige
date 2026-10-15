@@ -172,7 +172,7 @@ Nach der Abschlussbestätigung 2 (`PRUEFUNG.md`, Stand `0c711b8`, «freigabefäh
 
 | Befund | Inhalt | Korrektur |
 | --- | --- | --- |
-| P1 (früheres «mich») | Variante I wertete jedes frühere «mich» als Infinitivsatz: «er hat mich geschlagen und will mich umzubringen» → «Suizid». | Fall (a) von Variante I gilt nur, wenn zwischen dem früheren und diesem «mich» kein «und» und kein Einleitewort steht und in diesem Bereich ein Steuerverb vorkommt («hält … davon ab», «bittet», «hindert … daran», «zwingt», «treibt … dazu», «überredet», «angefleht» u. a.). |
+| P1 (früheres «mich») | Variante I wertete jedes frühere «mich» als Infinitivsatz: «er hat mich geschlagen und will mich umzubringen» → «Suizid». | Fall (a) von Variante I gilt nur, wenn beim früheren «mich» ein Steuerverb vorkommt («hält … davon ab», «bittet», «hindert … daran», «zwingt», «treibt … dazu», «überredet», «angefleht» u. a.). In der ersten Fassung durfte das frühere «mich» höchstens fünf Wörter zurückliegen, und zwischen den beiden «mich» durfte kein «und» und kein Einleitewort stehen. Seit R31-01 (r4-31) gilt nur noch: kein «und». |
 | P1 (mehrere Tötungsverben) | Nur das erste Tötungsverb wurde gewertet: «er will mich umbringen und ich will mich töten» → «Gewalt». | Jedes Tötungsverb wird gewertet; ergibt eines «Suizid», gilt Suizid. |
 
 Ergebnis auf dem Entwurf: «Suchtest: 277 von 277 Ersttreffern wie festgeschrieben · JS-Fehler 0» (fünf neue Zeilen). Die 575 Proben der Prüfsitzung (`q-alle4.txt`) ergeben dieselben Ersttreffer wie der Export `615bdd3`; die 13 Fälle aus D30-20 bleiben bei «Suizid».

@@ -27,10 +27,22 @@ Zur Frage, ob der nach dem Merge versehentlich neu angelegte Branch `claude/r4-3
 | Punkt | Änderung | sichtbar |
 | --- | --- | --- |
 | Codex P1 (mehrere Tötungsverben) | Gewertet wird jedes Tötungsverb. Ergibt eines «Suizid», gilt Suizid. Beispiel: «er will mich umbringen und ich will mich töten» → «Suizid» (r4-30: «Gewalt», r4-29: «Suizid»). | nur Suchtreffer |
-| Codex P1 (früheres «mich») | Fall (a) der Infinitivregel (D30-20) greift nur, wenn zwischen dem früheren und dem späteren «mich» ein Steuerverb steht, kein «und» und kein Einleitewort. Beispiel: «er hat mich geschlagen und will mich umzubringen» → «Gewalt» (r4-30: «Suizid»). | nur Suchtreffer |
-| Testliste | 277 Anfragen, fünf davon neu | nein |
+| Codex P1 (früheres «mich»), R31-01 | Fall (a) der Infinitivregel (D30-20) greift nur, wenn beim früheren «mich» ein Steuerverb steht (ab zwei Wörtern davor bis zum späteren «mich») und zwischen den beiden «mich» kein «und». Beispiel: «er hat mich geschlagen und will mich umzubringen» → «Gewalt» (r4-30: «Suizid»). | nur Suchtreffer |
+| Testliste | 279 Anfragen, sieben davon neu | nein |
 | Build | r4-31, Assetversion r4-31 | nein |
 
 Die Einzelheiten stehen in `2026-10-15-delta-r4-30/FREIGABE.md`, Nachtrag 9.
 
 `releaseApproval.independentReview` steht auf «ausstehend», bis die unabhängige Prüfung von r4-31 vorliegt. Erst danach kommt der Produktionsexport.
+
+## Nachtrag 1 · Unabhängige Prüfung und R31-01 (15.10.2026)
+
+Die unabhängige Prüfung (`PRUEFUNG.md`, Stand `adba309`) ergab «freigabefähig mit Auflagen». Beide Codex-Korrekturen wirken wie beabsichtigt. Die Bedingung für das Steuerverb war aber zu eng: Das frühere «mich» wurde nur fünf Wörter zurück gesucht, und die Suche brach bei Einleitewörtern wie «seit» ab. Zwei Ich-Aussagen gingen deshalb auf «Gewalt», eine davon schlechter als r4-29 (R31-01): «nur meine Kinder halten mich seit Jahren immer wieder davon ab mich umzubringen».
+
+Umgesetzt ist Korrektur J der Prüfsitzung: Das frühere «mich» wird ohne Wortgrenze gesucht, und nur «und» beendet die Suche. Die beiden Sätze aus R31-01 stehen in der Testliste.
+
+Ergebnis auf dem Entwurf: «Suchtest: 279 von 279 Ersttreffern wie festgeschrieben · JS-Fehler 0». Beim mechanischen Abgleich mit der Nachbildung von J durch die Prüfsitzung stimmen in `q-alle5.txt` 617 von 617 Ersttreffern mit `q-alle5.resultJ.tsv` überein (Spalte «r30 Ersttreffer»). Die Bestandszeilen (91 und 54) gehören zur Testliste und bestehen.
+
+**Produktionsprüfung r4-30:** Bestanden mit Hinweisen (`2026-10-15-delta-r4-30/PRODUKTIONSPRUEFUNG.md`, eigene Sitzung, 13:59 bis 14:25 UTC). Auf der Produktion ergeben 272 von 272 Anfragen den gleichen Ersttreffer wie die lokale Kopie von `0fda233`. Die beiden Codex-Fälle sind dort so veröffentlicht wie beschrieben.
+
+`releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.

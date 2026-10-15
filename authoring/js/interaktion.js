@@ -276,11 +276,11 @@
       if (killVerb !== -1 && !words.some(function (word) { return threatWords[word] || attemptWords[word]; })) {
         var zuInfinitive = words[killVerb] === 'umzubringen' || (words[killVerb] === 'toeten' && words[killVerb - 1] === 'zu');
         var negated = words.slice(objectIndex + 1, killVerb).some(function (word) { return word === 'nicht' || word === 'nie'; });
-        /* (a) nur mit einem Steuerverb zwischen dem früheren «mich» und diesem («hält mich davon ab, mich …», «bittet mich, mich …»);
-           «er hat mich geschlagen und will mich umzubringen» bleibt Gewalt (Codex P1 auf #689) */
+        /* (a) nur mit einem Steuerverb beim früheren «mich» («hält mich davon ab, mich …», «bittet mich, mich …»); zwischen den
+           beiden «mich» darf kein «und» stehen. «er hat mich geschlagen und will mich umzubringen» bleibt Gewalt (Codex P1 auf #689, R31-01) */
         var steered = false;
-        for (i = objectIndex - 1; i >= Math.max(0, objectIndex - 5); i--) {
-          if (words[i] === 'und' || clauseWords[words[i]]) break;
+        for (i = objectIndex - 1; i >= 0; i--) {
+          if (words[i] === 'und') break;
           if (words[i] === 'mich') {
             for (var k = Math.max(0, i - 2); k < objectIndex; k++) if (controlWords[words[k]]) steered = true;
             break;

@@ -177,4 +177,6 @@ Nach der Abschlussbestätigung 2 (`PRUEFUNG.md`, Stand `0c711b8`, «freigabefäh
 
 Ergebnis auf dem Entwurf: «Suchtest: 277 von 277 Ersttreffern wie festgeschrieben · JS-Fehler 0» (fünf neue Zeilen). Die 575 Proben der Prüfsitzung (`q-alle4.txt`) ergeben dieselben Ersttreffer wie der Export `615bdd3`; die 13 Fälle aus D30-20 bleiben bei «Suizid».
 
-`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung die Korrektur nachgeprüft hat; `site/` ist bis zum neuen Export der Stand `615bdd3`.
+**Merge von #689:** Das Konto `christaegger-dot` hat #689 am 15.10.2026 um 13:50:44 UTC gemergt (Merge-Commit `0fda233`), mit dem Stand `615bdd3`. Das war 13 Sekunden nach den beiden Codex-Befunden (13:50:31 UTC) und bevor sie geprüft waren. R28-O01 und R29-P20 («Codex-Review abgeschlossen und geprüft») sind damit nicht eingehalten. Veröffentlicht ist r4-30 im Stand der Abschlussbestätigung 2, ohne die Korrektur oben. In der Produktion gehen deshalb Anfragen wie «er will mich umbringen und ich will mich töten» auf «Gewalt» (r4-29: «Suizid»).
+
+Die Korrektur oben kommt als r4-31 auf einem neuen Branch (Entscheid der Auftraggeberin, 15.10.2026: «r4-31 jetzt (Recommended)»). Nachweis: `audit-results/2026-10-15-delta-r4-31/FREIGABE.md`.

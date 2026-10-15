@@ -6,9 +6,20 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
-### r4-30 in Arbeit
+### r4-31 in Arbeit
 
-r4-30 korrigiert drei Punkte aus r4-29 und kommt nach der unabhängigen Prüfung als eigener Pull Request:
+r4-31 korrigiert zwei P1-Befunde aus dem zweiten Codex-Review von #689. Beide betreffen nur die Suche:
+
+- Jedes Tötungsverb wird gewertet, und Suizid hat Vorrang. Bisher ging «er will mich umbringen und ich will mich töten» in r4-30 auf «Gewalt».
+- Die Infinitivregel gilt nur noch mit Steuerverb. Bisher ging «er hat mich geschlagen und will mich umzubringen» auf «Suizid».
+
+Den Entscheid hat die Auftraggeberin am 15. Oktober 2026 gefällt: «r4-31 jetzt». Nachweis: `audit-results/2026-10-15-delta-r4-31/`.
+
+### r4-30 veröffentlicht, Produktionsprüfung ausstehend
+
+#689 wurde am 15. Oktober 2026 um 13:50:44 UTC gemergt (Merge-Commit `0fda233`, Stand `615bdd3`). Das war 13 Sekunden nach den zwei Codex-Befunden auf diesem Stand und bevor sie geprüft waren. R28-O01 und R29-P20 sind damit nicht eingehalten. Der veröffentlichte Stand ist von der Prüfsitzung bestätigt (Abschlussbestätigung 2, `0c711b8`). Die zwei Codex-Befunde behebt r4-31.
+
+r4-30 korrigiert drei Punkte aus r4-29:
 
 - den P1-Befund aus dem Codex-Review von #687: «die sorgeberechtigten Eltern» auf «Fragen», «Behandlung» und der Jugendlichen-Seite; der Wortlaut ist von der Auftraggeberin am 15. Oktober 2026 um 13:13 Uhr freigegeben;
 - die Suchlücken aus R3 (R3C-A9);
@@ -147,7 +158,7 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | R29-P17 | R3C-05 `responsibility.reviewedAt` nachführen; R3C-07 «Quellen» beim nächsten S lesen; R3C-08 Alias-Anker `begriffe#b-set` nur bei Bedarf | optional | bauende Sitzung |
 | R29-P18 | PC29-1: Netlify setzt die Kopfzeilen aus `_headers` auf 301-Antworten nur teilweise (114 von 440 Abrufen); Seiten und Dateien nicht betroffen. PC29-2: Netlify liefert `Strict-Transport-Security` mit `preload`, das in `_headers` nicht steht (strenger). | optional, nur vermerken | – |
 | R29-P19 | P1 aus #687 (sorgeberechtigte Eltern) | in r4-30 korrigiert; offen bis zur Veröffentlichung | bauende Sitzung |
-| R29-P20 | Vor jedem Merge prüfen, dass genau ein Pull Request für die Änderung offen ist und das Codex-Review auf dessen Stand mit dem vollständigen Inhalt lief. Die bauende Sitzung holt `main` jeweils frisch (Fetch ohne veraltete Branches). | ab sofort | bauende Sitzung, Auftraggeberin |
+| R29-P20 | Vor jedem Merge prüfen, dass genau ein Pull Request für die Änderung offen ist und das Codex-Review auf dessen Stand mit dem vollständigen Inhalt lief. Die bauende Sitzung holt `main` jeweils frisch (Fetch ohne veraltete Branches). | ab sofort; bei #689 nicht eingehalten (Merge 13 s nach den Codex-Befunden, siehe r4-31) | bauende Sitzung, Auftraggeberin |
 | R30-P01 | Weitere Suchlücken aus D30-04, D30-08 und D30-12: «Sorgerecht», «Klinik sagt mir nichts», «sie trinkt jeden Abend», «er zerstört Sachen in der Wohnung», «er hat mir gedroht», «er sagt ich bringe mich um», «lebensmüde Frau» (Ersttreffer «Quellen»); schwache Treffer «Überdosis Alkohol», «Medikamente gegen Angst»; mehrdeutig «sie hat ihre Tabletten genommen» (→ «Suizid») und «Mord» allein (→ «Suizid», weil «mord» in «Selbstmord» steckt). Aus D30-14 (fachlich abwägen): Redewendungen «das bringt mich um», «der Stress bringt mich um» → «Suizid»; «ich will mich nicht umbringen aber ich kann nicht mehr» → «Suizid» (r4-29: «Warnsignale»). Aus D30-15: Zitate mit «bringe … mich … um» («sie hat geschrieben ich bringe mich um», «er sagt ich bringe mich um») und «bringt … sich … um» mit Nebensatz («Mein Sohn hat gesagt er bringt sich um wenn ich ausziehe») ohne Treffer; «töten» und «umgebracht» allein ohne Treffer. Aus der dritten Nachprüfung: «meine Mutter wurde umgebracht», «Angst Tochter umbringt sich» ohne Treffer; «er sagt ich bringe dich um», «er hat gesagt ich bring dich um» ohne Treffer oder unpassend; «dass sich meine Mutter etwas antut» → «Schuld»; Stichwörter «Mutter töten», «Sohn umbringen Angst» unpassend (wie r4-29). Aus der vierten Nachprüfung, bewusst in der sicheren Richtung: Drohungen mit reflexivem Verb in einem früheren Teilsatz («er regt sich auf und droht mich umzubringen», «seit sie sich getrennt hat droht er mich umzubringen») → «Suizid»; erweiterter Suizid («meine Frau will die Kinder und sich umbringen») → «Suizid» statt «Gewalt», Zuordnung durch die Fachstelle zu bestätigen. D30-21 (optional): verneinte Suizidwörter zählen als Suizid-Signal («er ist nicht suizidal aber droht mich umzubringen» → «Suizid»). Die in r4-30 schon zugeordneten Fälle aus D30-12 (Drohungen gegen «uns», «die Kinder», «meine Familie»; «Angst vor meinem Sohn, meiner Tochter, meinem Vater …»; «Morddrohung», «Todesdrohung», «Würgen», «droht mit dem Tod», «droht mit Mord», «Angst vor meinem Ex») führen zu «Grenzen setzen» › Gewalt; die fachliche Zuordnung bestätigt die Fachstelle. Synonyme auch über Wortanfang oder Beugung prüfen | offen | bauende Sitzung; Nachprüfung durch Prüfsitzung; Zuordnung: Fachstelle |
 | R30-P02 | D30-07: «entscheidet die betroffene Person» gilt nur für Urteilsfähige; der Fall des Vormunds (Art. 327a ZGB) fehlt | optional | Auftraggeberin |
 

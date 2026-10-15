@@ -214,7 +214,7 @@
     }
     var stopwords = new Set(('aber als am an auf aus bei bin bis brauche das dass dem den der des die darf dich dir ein eine einer einem einen er erlebt es fuer finde gefunden gegen geht gibt hat haben helfen ich ihm ihn im in ist ja kann koennen lassen man mein meine meiner meinem meinen mich mir mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur').split(' '));
     var synonymSets = [
-      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein', 'selbstmordgedanken', 'selbstmordversuch', 'suizidversuch', 'suizidalitaet', 'suizidgefahr', 'suizidandrohung', 'suiziddrohung', 'lebensmuede', 'lebensmuedigkeit', 'todeswunsch', 'abschiedsbrief', 'ueberdosis', 'tabletten genommen', 'zu viele tabletten', 'selbstmordversuche', 'suizidversuche', 'suiziddrohungen', 'suizidandrohungen', 'todeswuensche', 'abschiedsbriefe', 'ueberdosen', 'lebensmueder', 'ist lebensmuede', 'tabletten geschluckt'],
+      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein', 'selbstmordgedanken', 'selbstmordversuch', 'suizidversuch', 'suizidalitaet', 'suizidgefahr', 'suizidandrohung', 'suiziddrohung', 'lebensmuede', 'lebensmuedigkeit', 'todeswunsch', 'abschiedsbrief', 'ueberdosis', 'tabletten genommen', 'zu viele tabletten', 'selbstmordversuche', 'suizidversuche', 'suiziddrohungen', 'suizidandrohungen', 'todeswuensche', 'abschiedsbriefe', 'ueberdosen', 'lebensmueder', 'ist lebensmuede', 'tabletten geschluckt', 'ans umbringen', 'ans toeten'],
       ['arzt', 'aerztin', 'behandler', 'behandlerin', 'therapeut', 'therapeutin', 'fachperson', 'fachpersonen', 'behandlungsteam'],
       ['ablehnen', 'abgelehnt', 'lehnt', 'verweigern', 'verweigert', 'keine', 'will', 'moechte', 'nicht wollen', 'will nicht', 'moechte nicht'],
       ['normal', 'stabil', 'stabiler', 'ruhig', 'ruhiger', 'unauffaellig', 'anders'],
@@ -252,7 +252,11 @@
     var thirdParty = Object.assign({ er: 1, sie: 1, du: 1, jemand: 1, man: 1 }, persons);
     var plainObjects = { mich: 1, uns: 1, dich: 1, ihn: 1, euch: 1, kinder: 1, kind: 1, familie: 1 };
     var clauseWords = { dass: 1, wenn: 1, weil: 1, ob: 1, falls: 1, obwohl: 1, nachdem: 1, seit: 1, seitdem: 1, bevor: 1,
-      damit: 1, warum: 1, wieso: 1, weshalb: 1, was: 1, wie: 1, aber: 1, denn: 1, sonst: 1 };
+      damit: 1, warum: 1, wieso: 1, weshalb: 1, was: 1, wie: 1, aber: 1, denn: 1, sonst: 1, satzende0: 1 };
+    /* «satzende0» steht für «.», «?», «!», «;» im Rohtext (siehe queryGroups); es trennt wie «und» und ist zugleich eine harte
+       Satzgrenze für die Suche nach dem Subjekt (Codex P1 auf #690, Runde 3) */
+    var sentenceMark = 'satzende0';
+    var copulaWords = { ist: 1, waere: 1, war: 1, scheint: 1, bleibt: 1 }; /* Variante N2 */
     var threatWords = { droht: 1, drohen: 1, gedroht: 1, drohte: 1, drohung: 1, drohungen: 1 };
     var nominativeArticles = { mein: 1, meine: 1, dein: 1, deine: 1, sein: 1, seine: 1, ihr: 1, ihre: 1, unser: 1, unsere: 1, der: 1, die: 1, das: 1, ein: 1, eine: 1 };
     var nominativeSubjects = { er: 1, du: 1, jemand: 1, man: 1 };
@@ -262,7 +266,10 @@
     }
     /* «mich»: zuerst das nächste Subjekt davor im Teilsatz, dann ein Subjekt direkt danach («dass mich mein Mann …»),
        dann ein Subjekt in einem früheren Teilsatz, zuletzt ein Drohwort (D30-18, D30-19). */
-    var attemptWords = { versucht: 1, versuchte: 1, versuch: 1, plant: 1, geplant: 1 };
+    var auxiliaryWords = { will: 1, willst: 1, wollen: 1, wollt: 1, wollte: 1, wollten: 1, wuerde: 1, wuerdest: 1, wird: 1, wirst: 1,
+      kann: 1, kannst: 1, koennte: 1, koenntest: 1, muss: 1, musst: 1, soll: 1, sollst: 1, moechte: 1, moechtest: 1,
+      hat: 1, hast: 1, hatte: 1, haette: 1, wurde: 1 };
+    var attemptWords = { versucht: 1, versuchte: 1, versuch: 1, plant: 1, geplant: 1, bedroht: 1, bedrohen: 1, bedrohte: 1 };
     function michIntent(words, objectIndex) {
       var start = clauseStart(words, objectIndex), i;
       /* Reflexives «mich» im Infinitiv («meine Familie hält mich davon ab, mich umzubringen») oder verneint
@@ -270,10 +277,24 @@
          (D30-20, Variante I der Prüfsitzung). */
       var killVerb = -1;
       for (i = objectIndex + 1; i <= objectIndex + 4 && i < words.length; i++) if (killVerbs[words[i]]) { killVerb = i; break; }
-      if (killVerb !== -1 && !words.some(function (word) { return threatWords[word] || attemptWords[word]; })) {
+      /* Drohwort und «versucht» zählen nur im eigenen Abschnitt (ab dem letzten «und» vor «mich»), Codex P1 auf #690 */
+      var segmentStart = 0;
+      for (i = objectIndex - 1; i >= 0; i--) if (words[i] === 'und') { segmentStart = i + 1; break; }
+      /* Variante K (a): Drohwort und «versucht» nur zwischen dem früheren «mich» und dem Verb */
+      var earlier = words.slice(segmentStart, objectIndex).lastIndexOf('mich');
+      earlier = earlier === -1 ? -1 : segmentStart + earlier;
+      var guardStart = earlier === -1 ? segmentStart : earlier + 1;
+      var segment = killVerb === -1 ? [] : words.slice(guardStart, killVerb + 1);
+      if (killVerb !== -1 && !segment.some(function (word) { return threatWords[word] || attemptWords[word]; })) {
         var zuInfinitive = words[killVerb] === 'umzubringen' || (words[killVerb] === 'toeten' && words[killVerb - 1] === 'zu');
         var negated = words.slice(objectIndex + 1, killVerb).some(function (word) { return word === 'nicht' || word === 'nie'; });
-        if ((zuInfinitive && words.indexOf('mich') < objectIndex) || negated) return 'suizid';
+        /* (a) ein früheres «mich» im selben Abschnitt («hält mich davon ab, mich …», «hat mich überzeugt, mich …»); zwischen den
+           beiden «mich» darf kein «und» stehen. «er hat mich geschlagen und will mich umzubringen» bleibt Gewalt (Codex P1 auf #689).
+           Ohne Liste der Steuerverben, weil jede Liste Lücken hat (Codex P1 auf #690); im Zweifel Suizid. */
+        var steered = earlier !== -1 || words.slice(segmentStart, objectIndex).indexOf('mir') !== -1; /* Variante K (a): auch «mir» */
+        /* Variante N2: «mich umzubringen ist …», «mich zu töten wäre …» am Anfang des Abschnitts oder Satzes: der Infinitiv ist Subjekt */
+        if (zuInfinitive && copulaWords[words[killVerb + 1]] && (objectIndex === segmentStart || words[objectIndex - 1] === sentenceMark)) return 'suizid';
+        if ((zuInfinitive && steered) || negated) return 'suizid';
       }
       for (i = objectIndex - 1; i >= start; i--) {
         if (words[i] === 'ich') return 'suizid';
@@ -288,27 +309,55 @@
           if (killVerbs[words[i]] || clauseWords[words[i]] || words[i] === 'und') break;
         }
       }
-      for (i = start - 1; i >= 0; i--) {
+      var sentenceStart = words.lastIndexOf(sentenceMark, objectIndex) + 1;
+      for (i = start - 1; i >= sentenceStart; i--) {
         if (words[i] === 'ich') return 'suizid';
         if (thirdParty[words[i]]) return 'gewalt';
       }
-      return words.some(function (word) { return threatWords[word]; }) ? 'gewalt' : 'suizid';
+      /* Variante N1: Drohwort nur im eigenen Satz und Teilsatz, nicht in einem späteren */
+      var clauseEnd = words.length;
+      for (i = objectIndex + 1; i < words.length; i++) if (words[i] === 'und' || clauseWords[words[i]]) { clauseEnd = i; break; }
+      return words.slice(sentenceStart, clauseEnd).some(function (word) { return threatWords[word]; }) ? 'gewalt' : 'suizid';
     }
-    function killIntent(words) {
-      var verb = -1, i;
-      for (i = 0; i < words.length; i++) if (killVerbs[words[i]]) { verb = i; break; }
-      if (verb === -1) {
-        var bringt = words.indexOf('bringt');
-        var um = bringt === -1 ? -1 : words.indexOf('um', bringt + 1);
-        if (um === -1) return null;
-        /* nur «… bringt mich um» (Drohung gegen die eigene Person); «bringt sie sich um» bleibt bei der bisherigen Wertung (R25-010) */
-        for (i = bringt + 1; i < um; i++) if (words[i] === 'mich') return michIntent(words, i);
-        return null;
+    function verbIntent(words, verb) {
+      var start = clauseStart(words, verb), i;
+      /* «mich» nach dem Verb («danach töte ich mich», «umbringen will er mich»): das Subjekt dazwischen entscheidet (Codex P1 auf #690).
+         Nur wenn vor dem Verb im selben Abschnitt (ab dem letzten «und» oder Einleitewort) kein «mich» oder «sich» steht; sonst gehört
+         ein späteres «mich» zu einem neuen Satz («ich will mich umbringen er hat mich verlassen»). */
+      /* Variante K (d): «ich töte mich», «töte ich mich» gelten immer; «dann», «danach» trennen wie «und» */
+      if ((words[verb - 1] === 'ich' && words[verb + 1] === 'mich') || (words[verb + 1] === 'ich' && words[verb + 2] === 'mich')) return 'suizid';
+      var segmentStart = start;
+      for (i = verb - 1; i >= start; i--) if (words[i] === 'und' || words[i] === 'dann' || words[i] === 'danach') { segmentStart = i + 1; break; }
+      var objectBefore = words.slice(segmentStart, verb).some(function (word) { return word === 'mich' || word === 'sich'; });
+      for (i = verb + 1; !objectBefore && i <= verb + 3 && i < words.length; i++) {
+        if (words[i] === 'und' || clauseWords[words[i]] || killVerbs[words[i]]) break;
+        if (words[i] === 'mich') {
+          /* Variante K (b): «mich» direkt nach dem Verb → Subjekt davor im Abschnitt («und ich töte mich») */
+          if (i === verb + 1) {
+            for (var s = verb - 1; s >= segmentStart; s--) {
+              if (words[s] === 'ich') return 'suizid';
+              if (thirdParty[words[s]]) return 'gewalt';
+            }
+            break;
+          }
+          /* Variante K (b): beim Infinitiv zählt ein Subjekt erst nach dem finiten Verb («umbringen will er mich»);
+             «umbringen er versteht mich» ist ein neuer Satz */
+          var infinite = words[verb] === 'umbringen' || words[verb] === 'umzubringen' || words[verb] === 'toeten' || words[verb] === 'umgebracht' || words[verb] === 'getoetet';
+          /* Nach Infinitiv oder Partizip nur mit Hilfs- oder Modalverb direkt danach («umbringen will er mich», «umgebracht hat er mich»);
+             sonst beginnt ein neuer Satz («Gedanken ans Umbringen. Versteht er mich?», Codex P1 auf #690) */
+          if (infinite && (verb !== segmentStart || !auxiliaryWords[words[verb + 1]])) break; /* Variante L2: Infinitiv nur am Anfang des Abschnitts */
+          for (var m = infinite ? verb + 2 : verb + 1; m < i; m++) {
+            if (words[m] === 'ich') return 'suizid';
+            if (thirdParty[words[m]]) return 'gewalt';
+          }
+          break;
+        }
       }
-      if (words.indexOf('sich') !== -1) return 'suizid';
-      var start = clauseStart(words, verb);
       /* «mich» im Teilsatz geht anderen Objekten vor («ich will mich wegen meiner Familie umbringen», D30-19). */
       for (i = verb - 1; i >= start; i--) if (words[i] === 'mich') return michIntent(words, i);
+      /* Variante K (c): «du … dich» ist reflexiv («willst du dich umbringen») */
+      var clauseBefore = words.slice(start, verb);
+      if (clauseBefore.indexOf('dich') !== -1 && clauseBefore.indexOf('du') !== -1) return 'suizid';
       for (i = verb - 1; i >= start; i--) if (plainObjects[words[i]]) return 'gewalt';
       for (i = verb - 1; i >= start; i--) {
         if (words[i] === 'sie' || persons[words[i]]) {
@@ -318,6 +367,25 @@
       }
       return null;
     }
+    function killIntent(words) {
+      var verbs = [], i;
+      for (i = 0; i < words.length; i++) if (killVerbs[words[i]]) verbs.push(i);
+      if (!verbs.length) {
+        var bringt = words.indexOf('bringt');
+        var um = bringt === -1 ? -1 : words.indexOf('um', bringt + 1);
+        if (um === -1) return null;
+        /* nur «… bringt mich um» (Drohung gegen die eigene Person); «bringt sie sich um» bleibt bei der bisherigen Wertung (R25-010) */
+        for (i = bringt + 1; i < um; i++) if (words[i] === 'mich') return michIntent(words, i);
+        return null;
+      }
+      if (words.indexOf('sich') !== -1) return 'suizid';
+      /* Jedes Tötungsverb wird gewertet; ergibt eines Suizid, gilt Suizid («er will mich umbringen und ich will mich töten»,
+         Codex P1 auf #689). */
+      var intents = verbs.map(function (verb) { return verbIntent(words, verb); });
+      if (intents.indexOf('suizid') !== -1) return 'suizid';
+      return intents.indexOf('gewalt') !== -1 ? 'gewalt' : null;
+    }
+
     var synonyms = {};
     var phraseGroups = [];
     var suicideWords = {};
@@ -353,7 +421,8 @@
         return before !== 'nicht' && before !== 'nie';
       }) ||
         words.some(function (word) { return suicideWords[word]; });
-      var intent = killIntent(words);
+      /* Variante L1: Satzzeichen trennen für die Tötungsverb-Regel wie «und» */
+      var intent = killIntent(normalized(String(query).replace(/[.?!;]+/g, ' und ' + sentenceMark + ' ')).split(/\s+/).filter(Boolean));
       if (intent === 'gewalt' && suicideSignal) intent = 'suizid';
       if (intent) return [synonyms[intent]];
       if (phraseHit && phraseHit.group !== suicideGroup && suicideSignal) return [suicideGroup];
@@ -393,7 +462,7 @@
     }
     function renderSearch() {
       var query = normalized(input.value).trim();
-      var groups = queryGroups(query);
+      var groups = queryGroups(input.value); /* Variante L1: Rohtext, damit Satzzeichen die Tötungsverb-Regel erreichen */
       if (!query) {
         items.forEach(function (item) { item.hidden = true; });
         results.hidden = true;

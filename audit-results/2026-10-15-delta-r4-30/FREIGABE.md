@@ -54,7 +54,7 @@ Wortbilanz mit Quellenblock: «Behandlung» 2399 (Ziel < 2400), «Fragen» 2398 
 Die unabhängige Delta-Prüfung (`PRUEFUNG.md`, Stand `9f5ebfe`) ergab «freigabefähig mit Auflagen». Kritische Befunde gab es keine. Umgesetzt ist:
 
 - **D30-01 (wichtig):** Die ersten Gewaltphrasen leiteten Ich-Aussagen («ich will mich umbringen») auf «Gewalt». Neu gehören Ich-Aussagen als Phrase zur Suizidgruppe («ich will mich umbringen», «mich umbringen», «mich zu töten» usw.). Zur Gewaltgruppe gehören nur Drohungen und Taten anderer («droht mich umzubringen», «will mich umbringen», «er bringt mich um», «mit dem Tod bedroht»). Das galt nur für die aufgezählten Phrasen; nicht aufgezählte Formen blieben falsch zugeordnet (D30-09, Nachtrag 2). Die längere Phrase gewinnt. Gestrichen sind «droht mich» und «mit dem Tod» allein. Nachprüfung durch die Prüfsitzung: siehe `PRUEFUNG.md`, Nachprüfung.
-- **D30-03 (wichtig):** Die Anfragen sind festgeschrieben in `authoring/tests/suche-ersttreffer.tsv`, damals 168 Anfragen (nach Nachtrag 8: 272) mit erwartetem Ersttreffer. Die Prüfung läuft mit `node authoring/tools/suchtest.mjs <site-ordner>` (Playwright, nicht in der CI).
+- **D30-03 (wichtig):** Die Anfragen sind festgeschrieben in `authoring/tests/suche-ersttreffer.tsv`, damals 168 Anfragen (nach Nachtrag 9: 277) mit erwartetem Ersttreffer. Die Prüfung läuft mit `node authoring/tools/suchtest.mjs <site-ordner>` (Playwright, nicht in der CI).
 - **D30-04, teilweise:** ergänzt sind «gewürgt», «Frauenhaus», «Angst vor meinem Partner/Mann, meiner Partnerin/Frau», Pluralformen («Abschiedsbriefe», «Selbstmordversuche», «Todeswünsche», «Suiziddrohungen», «Suizidandrohungen», «Überdosen»), «lebensmüder», «ist lebensmüde», «sich umbringen», «bringt sich um», «Tabletten geschluckt». (Überholt für «sich umbringen» und «bringt sich um»: Diese Phrasen sind seit Nachtrag 2 durch die Regel für Tötungsverben ersetzt; «bringt sie sich um» bleibt nach R25-010 bei «Wenn Worte treffen».) Offen bleiben «Sorgerecht», «Klinik sagt mir nichts», «sie trinkt jeden Abend» und «er zerstört Sachen in der Wohnung» (R30-P01).
 - **D30-08:** Im Code ist vermerkt, dass der Zwischenspeicher unveränderte Attribute voraussetzt. «Überdosis Alkohol» ist nicht festgeschrieben, weil der Treffer schwach ist (R30-P01).
 - **D30-06:** Die Herkunft der gekürzten Fassung und die Zeitzonen sind berichtigt.
@@ -165,3 +165,18 @@ Ergebnis auf dem Entwurf: «Suchtest: 272 von 272 Ersttreffern wie festgeschrieb
 Offen und in R30-P01: D30-21 (optional, sichere Richtung): Verneinte Einzelwörter zählen als Suizid-Signal («er ist nicht suizidal aber droht mich umzubringen» → «Suizid»).
 
 `releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.
+
+## Nachtrag 9 · Neuer Export und zweites Codex-Review von #689 (15.10.2026)
+
+Nach der Abschlussbestätigung 2 (`PRUEFUNG.md`, Stand `0c711b8`, «freigabefähig») wurde `releaseApproval.independentReview` auf «bestaetigt» gesetzt und neu exportiert (`615bdd3`: 23 Seiten · 0 Blocker · 0 Hinweise, Parität 34 Dateien, `suchtest.mjs site` 272/272, axe und Überlauf auf allen 23 Seiten ohne Befund). Das zweite Codex-Review von #689 (13:50 UTC, Stand `615bdd3`, auf Anforderung) meldete zwei weitere P1-Befunde:
+
+| Befund | Inhalt | Korrektur |
+| --- | --- | --- |
+| P1 (früheres «mich») | Variante I wertete jedes frühere «mich» als Infinitivsatz: «er hat mich geschlagen und will mich umzubringen» → «Suizid». | Fall (a) von Variante I gilt nur, wenn beim früheren «mich» ein Steuerverb vorkommt («hält … davon ab», «bittet», «hindert … daran», «zwingt», «treibt … dazu», «überredet», «angefleht» u. a.). In der ersten Fassung durfte das frühere «mich» höchstens fünf Wörter zurückliegen, und zwischen den beiden «mich» durfte kein «und» und kein Einleitewort stehen. Seit R31-01 (r4-31) gilt nur noch: kein «und». |
+| P1 (mehrere Tötungsverben) | Nur das erste Tötungsverb wurde gewertet: «er will mich umbringen und ich will mich töten» → «Gewalt». | Jedes Tötungsverb wird gewertet; ergibt eines «Suizid», gilt Suizid. |
+
+Ergebnis auf dem Entwurf: «Suchtest: 277 von 277 Ersttreffern wie festgeschrieben · JS-Fehler 0» (fünf neue Zeilen). Die 575 Proben der Prüfsitzung (`q-alle4.txt`) ergeben dieselben Ersttreffer wie der Export `615bdd3`; die 13 Fälle aus D30-20 bleiben bei «Suizid».
+
+**Merge von #689:** Das Konto `christaegger-dot` hat #689 am 15.10.2026 um 13:50:44 UTC gemergt (Merge-Commit `0fda233`), mit dem Stand `615bdd3`. Das war 13 Sekunden nach den beiden Codex-Befunden (13:50:31 UTC) und bevor sie geprüft waren. R28-O01 und R29-P20 («Codex-Review abgeschlossen und geprüft») sind damit nicht eingehalten. Veröffentlicht ist r4-30 im Stand der Abschlussbestätigung 2, ohne die Korrektur oben. In der Produktion gehen deshalb Anfragen wie «er will mich umbringen und ich will mich töten» auf «Gewalt» (r4-29: «Suizid»).
+
+Die Korrektur oben kommt als r4-31 auf einem neuen Branch (Entscheid der Auftraggeberin, 15.10.2026: «r4-31 jetzt (Recommended)»). Nachweis: `audit-results/2026-10-15-delta-r4-31/FREIGABE.md`.

@@ -1,0 +1,233 @@
+# Freigabe r4-31
+
+r4-31 ist die Korrektur nach r4-30. Sie behebt die zwei P1-Befunde aus dem zweiten Codex-Review von Pull Request #689. Beide betreffen nur die Suche. Inhalte und Texte der Seiten ändern sich nicht.
+
+Zeiten: GitHub-Zeiten in UTC, Antworten der Auftraggeberin in Schweizer Ortszeit (MESZ, UTC+2).
+
+## Anlass
+
+- Das zweite Codex-Review von #689 lief auf Anforderung auf dem Stand `615bdd3`, dem Produktionsexport nach der Abschlussbestätigung 2. Um 13:50:31 UTC meldete es zwei P1-Befunde.
+- Um 13:50:44 UTC hat das Konto `christaegger-dot` #689 gemergt (Merge-Commit `0fda233`). Die Befunde waren zu diesem Zeitpunkt nicht geprüft. R28-O01 und R29-P20 sind damit nicht eingehalten. Die bauende Sitzung hatte vorher mitgeteilt, #689 noch nicht zu mergen.
+- Die bauende Sitzung hatte die Korrektur zu dieser Zeit schon auf dem alten Branch committet (`be53f5f`). Sie ist hier übernommen (`01bd44a`).
+
+## Entscheid (15.10.2026)
+
+Die Frage an die Auftraggeberin lautete:
+
+> «#689 ist mit Stand 615bdd3 gemergt, 13 Sekunden nachdem Codex zwei neue P1-Befunde gemeldet hatte (R28-O01/R29-P20 damit nicht eingehalten). Einer davon wirkt jetzt in der Produktion in der heiklen Richtung: «er will mich umbringen und ich will mich töten» landet auf «Gewalt» (r4-29: «Suizid»). Die Korrektur ist fertig (277/277, 575 Proben unverändert). Wie weiter?»
+
+Ihre Antwort, wörtlich:
+
+> «r4-31 jetzt (Recommended)»
+
+Zur Frage, ob der nach dem Merge versehentlich neu angelegte Branch `claude/r4-30-suche-links-1792061353` gelöscht werden soll, antwortete sie: «Löschen (Recommended)». Löschen kann die bauende Sitzung den Branch nicht, weil der Zugang über den Proxy das nicht erlaubt. Die Auftraggeberin löscht ihn selbst.
+
+## Umfang von r4-31
+
+| Punkt | Änderung | sichtbar |
+| --- | --- | --- |
+| Codex P1 (mehrere Tötungsverben) | Gewertet wird jedes Tötungsverb. Ergibt eines «Suizid», gilt Suizid. Beispiel: «er will mich umbringen und ich will mich töten» → «Suizid» (r4-30: «Gewalt», r4-29: «Suizid»). | nur Suchtreffer |
+| Codex P1 (früheres «mich»), R31-01 | Fall (a) der Infinitivregel (D30-20) greift nur, wenn beim früheren «mich» ein Steuerverb steht (ab zwei Wörtern davor bis zum späteren «mich») und zwischen den beiden «mich» kein «und». Beispiel: «er hat mich geschlagen und will mich umzubringen» → «Gewalt» (r4-30: «Suizid»). | nur Suchtreffer |
+| Testliste | 317 Anfragen, 45 davon neu (Stand Nachtrag 12) | nein |
+| Build | r4-31, Assetversion r4-31 | nein |
+
+Die Einzelheiten stehen in `2026-10-15-delta-r4-30/FREIGABE.md`, Nachtrag 9.
+
+`releaseApproval.independentReview` steht auf «ausstehend», bis die unabhängige Prüfung von r4-31 vorliegt. Erst danach kommt der Produktionsexport.
+
+## Nachtrag 1 · Unabhängige Prüfung und R31-01 (15.10.2026)
+
+Die unabhängige Prüfung (`PRUEFUNG.md`, Stand `adba309`) ergab «freigabefähig mit Auflagen». Beide Codex-Korrekturen wirken wie beabsichtigt. Die Bedingung für das Steuerverb war aber zu eng: Das frühere «mich» wurde nur fünf Wörter zurück gesucht, und die Suche brach bei Einleitewörtern wie «seit» ab. Zwei Ich-Aussagen gingen deshalb auf «Gewalt», eine davon schlechter als r4-29 (R31-01): «nur meine Kinder halten mich seit Jahren immer wieder davon ab mich umzubringen».
+
+Umgesetzt ist Korrektur J der Prüfsitzung: Das frühere «mich» wird ohne Wortgrenze gesucht, und nur «und» beendet die Suche. Die beiden Sätze aus R31-01 stehen in der Testliste.
+
+Ergebnis auf dem Entwurf: «Suchtest: 279 von 279 Ersttreffern wie festgeschrieben · JS-Fehler 0». Beim mechanischen Abgleich mit der Nachbildung von J durch die Prüfsitzung stimmen in `q-alle5.txt` 617 von 617 Ersttreffern mit `q-alle5.resultJ.tsv` überein (Spalte «r30 Ersttreffer»). Die Bestandszeilen (91 und 54) gehören zur Testliste und bestehen.
+
+**Produktionsprüfung r4-30:** Bestanden mit Hinweisen (`2026-10-15-delta-r4-30/PRODUKTIONSPRUEFUNG.md`, eigene Sitzung, 13:59 bis 14:25 UTC). Auf der Produktion ergeben 272 von 272 Anfragen den gleichen Ersttreffer wie die lokale Kopie von `0fda233`. Die beiden Codex-Fälle sind dort so veröffentlicht wie beschrieben.
+
+`releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.
+
+## Nachtrag 2 · Abschlussbestätigung und Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `57ddb4b` bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung»). Den mechanischen Abgleich hat sie selbst durchgeführt: Suchtest 279 von 279, `q-alle5` 617 von 617 gleich der Nachbildung J, Bestand 91/91 und 54/54 wie r4-29, Produktionsbuild in einer Kopie bytegleich. Die Auflage R31-01 ist erfüllt. Damit ist der letzte Satz von Nachtrag 1 überholt. `releaseApproval.independentReview` steht auf «bestaetigt», danach folgt der Produktionsexport.
+
+Vor dem Merge muss das Codex-Review auf dem endgültigen Kopf des Pull Requests abgeschlossen und geprüft sein (R28-O01, R29-P20).
+
+## Nachtrag 3 · Codex-Review von #690 (15.10.2026)
+
+Pull Request #690 wurde um 14:49:40 UTC eröffnet, mit Stand `1ac8f0b` (Export nach der Abschlussbestätigung). Um 14:55 UTC meldete das Codex-Review drei P1-Befunde. Wie r4-29, r4-30 (`0fda233`) und `1ac8f0b` diese Fälle behandeln:
+
+| Befund | Beispiel | r4-29 | r4-30 | `1ac8f0b` | Korrektur |
+| --- | --- | --- | --- | --- | --- |
+| Steuerverb fehlt in der Liste | «er hat mich überzeugt mich umzubringen», «er nötigt mich mich umzubringen» | Suizid | Suizid | **Gewalt** | Die Liste der Steuerverben aus r4-31 ist gestrichen. Fall (a) gilt bei jedem früheren «mich» im selben Abschnitt, also ohne «und» dazwischen. Das war ein Rückschritt durch r4-31. |
+| Drohwort in einem anderen Abschnitt | «er droht mich umzubringen und meine Kinder halten mich davon ab mich umzubringen» | Quellen | Gewalt | Gewalt | Drohwort, «versucht», «plant» und neu «bedroht» zählen nur noch im eigenen Abschnitt, ab dem letzten «und» vor «mich». |
+| «mich» nach dem Verb | «er will mich umbringen und danach töte ich mich» | kein Treffer | Gewalt | Gewalt | Folgt «mich» bis zu drei Wörter nach dem Verb, entscheidet das Subjekt dazwischen («töte ich mich» → Suizid, «umbringen will er mich» → Gewalt). Das gilt nur, wenn vor dem Verb im selben Abschnitt kein «mich» und kein «sich» steht. Sonst gehört das spätere «mich» zu einem neuen Satz, wie in «ich will mich umbringen er hat mich verlassen». |
+
+Ergebnis auf dem Entwurf: «Suchtest: 286 von 286 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind sieben Zeilen, darunter zwei Gegenproben für neue Sätze nach dem Verb. Von den 617 Proben der Prüfsitzung (`q-alle5.txt`) haben gegenüber `1ac8f0b` zwei einen anderen Ersttreffer. Beide gehen in die sichere Richtung, wie schon in r4-30: «er hasst mich will mich umzubringen» und «er schlägt mich jeden Tag will mich umzubringen» → «Suizid», weil kein «und» dazwischen steht.
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `1ac8f0b`.
+
+**Entscheid zur Stopp-Regel (15.10.2026):** Die Frage an die Auftraggeberin lautete:
+
+> «Jede Codex-Runde findet neue Grenzfälle der Suchregel (#689: 2+2, #690: 3 P1). Die Regel ist eine Heuristik und wird nie vollständig sein. Die drei aus #690 sind korrigiert (286/286). Nach welcher Regel soll ab jetzt ein Codex-Befund zur Suche den Merge aufhalten?»
+
+Ihre Antwort, wörtlich:
+
+> «Nur Rückschritte blockieren (Recommended)»
+
+Das heisst: Ein Codex-Befund zur Suchregel blockiert den Merge nur, wenn eine Anfrage schlechter liegt als in r4-29, also wenn Suizidsorge auf «Gewalt» führt oder eine klare Ich-Aussage ohne Treffer bleibt. Andere Grenzfälle werden als Testzeile in R30-P01 aufgenommen und im nächsten Patch bearbeitet. Prüfsitzung und bauende Sitzung prüfen jeden Befund gegen r4-29 und melden das Ergebnis.
+
+## Nachtrag 4 · Nachprüfung der Codex-Korrektur, R31-02 bis R31-06 (15.10.2026)
+
+Die Nachprüfung (`PRUEFUNG.md`, Abschnitt «Nachprüfung Codex #690», Stand `17b5786`) ergab nach R31-P02 «nicht freigabefähig». Die drei Codex-Korrekturen wirken für die gemeldeten Beispiele, aber es gibt fünf Rückschritte gegenüber r4-29 (blockierend):
+
+| Befund | Beispiel | seit |
+| --- | --- | --- |
+| R31-02 | «ich denke ans Umbringen er versteht mich nicht» → «Gewalt»: nach einem Infinitiv wurde ein neuer Satz «er … mich» als Objekt gelesen | neu durch Korrektur (3) aus Nachtrag 3 |
+| R31-03 | **«willst du dich umbringen»**, «denkst du daran dich umzubringen» → «Gewalt»: «dich» galt immer als Fremdobjekt. Das ist die direkte Frage, zu der die Website Angehörige ermutigt. | r4-30, in der Produktion |
+| R31-04 | «er befiehlt mir mich umzubringen» → «Gewalt»: ein früheres «mir» zählte nicht | r4-30, in der Produktion |
+| R31-05 | «meine Familie versucht mich davon abzuhalten mich umzubringen» → «Gewalt»: «versucht» gehörte zu einem anderen Verb | r4-30, in der Produktion |
+| R31-06 | «er will mich umbringen und ich töte mich vorher», «… dann töte ich mich» → «Gewalt» | r4-30, in der Produktion |
+
+Umgesetzt ist Variante K der Prüfsitzung (`interaktion.js`, wörtlich nach ihrem Diff):
+
+- (a) Drohwort und «versucht» zählen nur zwischen dem früheren «mich» und dem Verb; auch ein früheres «mir» gilt als Steuerung.
+- (b) Steht «mich» direkt nach dem Verb, entscheidet das Subjekt davor im Abschnitt («und ich töte mich»). Bei einem Infinitiv zählt ein Subjekt erst nach dem finiten Verb («umbringen will er mich»); «umbringen er versteht mich» ist ein neuer Satz.
+- (c) «du … dich» vor dem Verb ist reflexiv → Suizid («willst du dich umbringen»).
+- (d) «ich töte mich» und «töte ich mich» gelten immer als Suizid; «dann» und «danach» trennen wie «und».
+
+Ergebnis auf dem Entwurf: «Suchtest: 297 von 297 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind 11 Zeilen, wie verlangt. Mechanischer Abgleich mit der Nachbildung K der Prüfsitzung (Spalte «K» in `n690/*.result5.tsv`): `q-r690` 86/86, `q-r690b` 74/74, `q-alle5` 617/617, `q-all91` 91/91, `q-54` 54/54, zusammen 922 von 922 ohne Abweichung. Der Preis sind fünf Gewaltsätze, die in die sichere Richtung auf «Suizid» gehen, z. B. «er schwört mir mich umzubringen». Sie und die Grenzfälle G1 bis G4 stehen in R30-P01.
+
+`releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.
+
+## Nachtrag 5 · Abschlussbestätigung 2 und neuer Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `b9c510f` bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 2»). Den mechanischen Abgleich hat sie selbst durchgeführt: Suchtest 297 von 297, 922 von 922 Proben gleich der Nachbildung K, Bestand 91/91 und 54/54 wie r4-29, Produktionsbuild in einer Kopie bytegleich. Nach R31-P02 hat sie nichts Blockierendes gefunden. `releaseApproval.independentReview` steht auf «bestaetigt». Danach folgt der Produktionsexport. Erst auf dem exportierten Kopf wird ein neues Codex-Review angefordert. Gemergt wird erst, wenn dieses Review geprüft ist (R28-O01, R29-P20, R31-P02).
+
+## Nachtrag 6 · Zweites Codex-Review von #690 (15.10.2026)
+
+Das zweite Codex-Review von #690 lief auf Anforderung auf dem Stand `ebe8a30`, dem Export nach der Abschlussbestätigung 2, und war um 15:48 UTC fertig. Es meldete einen neuen P1-Befund. Die beiden älteren Inline-Kommentare aus der ersten Runde sind auf den neuen Stand übertragen; ihr Inhalt ist mit Nachtrag 3 behoben und in der Testliste festgeschrieben.
+
+| Befund | Beispiel | r4-29 | `ebe8a30` | Einstufung nach R31-P02 | Korrektur |
+| --- | --- | --- | --- | --- | --- |
+| Neuer Satz nach dem Infinitiv | «Ich habe Gedanken ans Umbringen. Versteht er mich?» | Suizid | **Gewalt** | Rückschritt gegenüber r4-29, **blockierend** | Nach einem Infinitiv oder Partizip wird «mich» nach dem Verb nur noch gewertet, wenn direkt danach ein Hilfs- oder Modalverb steht («umbringen will er mich», «umgebracht hat er mich»). Sonst beginnt ein neuer Satz, auch ohne Satzzeichen. (Ungenau: Beginnt der neue Satz mit einem Hilfs- oder Modalverb, galt das nicht; R31-07, Nachtrag 7.) |
+
+Ergebnis auf dem Entwurf: «Suchtest: 300 von 300 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind drei Zeilen: die Codex-Probe, dieselbe ohne Satzzeichen und eine Gegenprobe. Die 922 Proben der Prüfsitzung (`n690/`) ergeben dieselben Ersttreffer wie der Export `ebe8a30`.
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `ebe8a30`.
+
+## Nachtrag 7 · Abschlussbestätigung 3, R31-07 und Variante L (15.10.2026)
+
+Die Prüfsitzung hat den Stand `7f7ee0f` geprüft (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 3»). Ihr Ergebnis nach R31-P02: «nicht freigabefähig». Der Codex-Fall ist behoben, aber es bleibt ein Rückschritt gegenüber r4-29 (R31-07, blockierend). Beginnt die nächste Frage mit einem Hilfs- oder Modalverb, wurde sie als Umstellung gelesen, wie bei «umbringen will er mich». Beispiele: «Ich denke ans Umbringen. Kann er mich verstehen?» → «Gewalt» (r4-29: «Suizid»). Eingeführt hatte den Fehler Variante K (b). Im Export `ebe8a30` steckt er, in der Produktion (r4-30) nicht.
+
+Die Prüfsitzung hat ausserdem festgestellt: Bisher erreichten Satzzeichen die Suchregel nie, weil die Anfrage schon ohne Satzzeichen ankam. Testzeilen mit Satzzeichen prüften deshalb dasselbe wie Testzeilen ohne.
+
+Umgesetzt ist Variante L der Prüfsitzung, wörtlich nach ihrem Diff:
+
+- **L1:** Die Suche gibt der Regel für Tötungsverben den Rohtext. «.», «?», «!» und «;» trennen dort wie «und». Für alle übrigen Teile der Suche bleibt die Anfrage normalisiert.
+- **L2:** Ein Hilfs- oder Modalverb nach einem Infinitiv gilt nur als Umstellung, wenn der Infinitiv am Anfang seines Abschnitts steht.
+
+Die bauende Sitzung hat als Alternative eine einseitige Form geprüft: nach Infinitiv mit Hilfsverb nur «ich» → Suizid. Sie hätte keinen Rückschritt gebracht, aber die beiden Gegenproben der Prüfsitzung nicht erfüllt. Deshalb ist es L.
+
+Ergebnis auf dem Entwurf: «Suchtest: 305 von 305 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind fünf Zeilen, wie verlangt. Der Suchtest füllt das Suchfeld mit dem Rohtext, also mit Satzzeichen. Mechanischer Abgleich mit der Nachbildung L (Spalte «K» in `n7f7/*.result5.tsv`): 998 von 998 ohne Abweichung (`q-alle5` 617, `q-r690` 86, `q-r690b` 74, `q-all91` 91, `q-54` 54, `q-r31p3` 58, `q-r31p3b` 18). Weitere Grenzfälle (G5, G6, Infinitiv am Anfang ohne Satzzeichen) stehen in R30-P01.
+
+`releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.
+
+## Nachtrag 8 · Abschlussbestätigung 4 und neuer Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `93d972b` bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 4»). Den mechanischen Abgleich hat sie selbst gemacht: Suchtest 305 von 305, 998 von 998 Proben gleich der Nachbildung L, Bestand 91/91 und 54/54 wie r4-29, Produktionsbuild in einer Kopie bytegleich. Nach R31-P02 fand sie nichts Blockierendes.
+
+`releaseApproval.independentReview` steht auf «bestaetigt», danach folgt der Produktionsexport. Erst auf dem exportierten Kopf wird ein neues Codex-Review angefordert. Gemergt wird erst, wenn dieses Review geprüft ist.
+
+Hinweis der Prüfsitzung: Meldet Codex an der Stelle «Infinitiv mit Hilfsverb» nochmals einen Rückschritt, wird auf die einseitige Form M′ gewechselt, statt L weiter zu verfeinern.
+
+## Nachtrag 9 · Drittes Codex-Review von #690 (15.10.2026)
+
+Das dritte Codex-Review von #690 lief auf Anforderung auf dem Stand `d4d452f`, dem Export nach der Abschlussbestätigung 4. Es war um 16:25 UTC fertig und meldete einen P1-Befund:
+
+| Befund | Beispiel | r4-29 | r4-30 | `d4d452f` | Einstufung nach R31-P02 | Korrektur |
+| --- | --- | --- | --- | --- | --- | --- |
+| Rückwärtssuche über das Satzende | «Er hat mich verlassen. Mich umzubringen ist mein Plan.» | Verlassen (FAQ) | Suizid | **Gewalt** | Suizidaussage → «Gewalt», **blockierend** (eingeführt durch L1) | Satzzeichen ergeben jetzt «und» plus eine eigene Satzmarke. Diese ist eine Teilsatzgrenze und beendet auch die Suche nach dem Subjekt in früheren Teilsätzen und nach einem Drohwort. Was L1 mit «und» bewirkt, bleibt gleich. |
+
+Ergebnis auf dem Entwurf: «Suchtest: 308 von 308 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind drei Zeilen: die Codex-Probe, eine zweite Form und eine Gegenprobe («Er hat mich geschlagen. Er will mich umbringen.» → Gewalt). Die 998 Proben der Prüfsitzung (`n7f7/`) ergeben dieselben Ersttreffer wie der Export `d4d452f`.
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `d4d452f`.
+
+## Nachtrag 10 · Abschlussbestätigung 5, Entscheid und Variante N (15.10.2026)
+
+Die Prüfsitzung hat den Stand `77614a9` geprüft (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 5»). Nach R31-P02 ist er nicht freigabefähig. Der Codex-Fall ist behoben, aber zwei Klassen führen weiterhin Suizidaussagen auf «Gewalt»:
+
+- **R31-08**, seit r4-30 in der Produktion: Ein Drohwort aus einem späteren Satz entscheidet. «Mich umzubringen ist mein Plan. Er droht mir.» geht auf «Gewalt», in r4-29 auf «Suizid».
+- **R31-09**, seit `adba309`, nicht in der Produktion: «Er hat mich verlassen und mich umzubringen ist mein Plan.» geht auf «Gewalt».
+
+Die Prüfsitzung schlägt Variante N vor:
+
+- **N1:** Das Drohwort zählt nur bis zum Ende des Teilsatzes von «mich».
+- **N2:** «mich» am Anfang eines Abschnitts mit zu-Infinitiv und danach «ist», «wäre» usw. gilt als Suizid.
+
+Ausserdem regt sie an, dass die Auftraggeberin über ein Sicherheitsnetz entscheidet.
+
+**Vergleich mit der Produktion:** Die bauende Sitzung hat N über alle 852 verschiedenen Proben der Prüfsitzung mit r4-29 und mit der Produktion r4-30 (`0fda233`) verglichen:
+
+- 60 Anfragen, die in der Produktion auf «Gewalt» gehen, gehen mit N auf «Suizid». Darunter sind «Willst du dich umbringen?», «Denkst du daran, dich umzubringen?», «er droht mich umzubringen und ich will mich töten» und «er befiehlt mir mich umzubringen».
+- 25 Anfragen gehen mit N neu auf «Gewalt». Alle sind Drohungen anderer, z. B. «er hasst mich und will mich umzubringen», «umbringen will er mich», «mein Mann tötet mich».
+- Keine Suizidaussage geht mit N auf «Gewalt», wenn sie in der Produktion nicht schon dort war.
+
+**Entscheid (15.10.2026):** Die Frage an die Auftraggeberin lautete:
+
+> «Die Prüfsitzung findet nach jeder Korrektur der Suchregel eine neue Satzform, die gegenüber r4-29 schlechter liegt. Zwei davon sind seit r4-30 in der Produktion, etwa «Willst du dich umbringen?» → «Gewalt». Variante N (fertig nachgebildet) liegt auf 852 Proben in keinem Fall schlechter als die Produktion und behebt 60 Fälle. Wie soll es weitergehen?»
+
+Ihre Antwort, wörtlich:
+
+> «N veröffentlichen (Recommended)»
+
+Zur Antwort gehörte die Beschreibung: «N umsetzen, mechanisch bestätigen lassen, exportieren, Codex. Neu blockiert nur, was die PR gegenüber der Produktion verschlechtert; ältere Abweichungen gegenüber r4-29 gehen sofort in r4-32.»
+
+Das ist neu R31-P03 und ersetzt R31-P02 als Massstab für den Merge. Die verbleibenden Abweichungen und das Sicherheitsnetz stehen in R31-P04.
+
+Variante N ist umgesetzt, wörtlich nach dem Diff der Prüfsitzung. Ergebnis auf dem Entwurf: «Suchtest: 314 von 314 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind sechs Zeilen, wie verlangt. Beim mechanischen Abgleich mit der Nachbildung N (Spalte «K» in `n776/*.result5.tsv`) stimmen 1047 von 1047 Proben überein.
+
+`releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.
+
+## Nachtrag 11 · Abschlussbestätigung 6, Berichtigung und neuer Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `800a729` nach R31-P03 bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 6»). Ihre Prüfung im Einzelnen:
+
+- Suchtest 314 von 314; die Produktion erreicht auf derselben Liste 295 von 314.
+- 1047 von 1047 Proben gleich der Nachbildung N.
+- Bestand 91/91 und 54/54 wie r4-29.
+- Vergleich mit der Produktion auf 885 verschiedenen Anfragen: 60 gehen von «Gewalt» auf «Suizid», 8 von keinem Treffer oder «Behandlung» auf «Suizid», 25 neu auf «Gewalt». Alle 25 hat sie einzeln angesehen, alle sind Drohungen anderer. Keine Anfrage verliert ihren Treffer.
+- Produktionsbuild in einer Kopie bytegleich.
+
+**Berichtigung:** In der Frage an die Auftraggeberin (Nachtrag 10) stand «Zwei davon sind seit r4-30 in der Produktion». Das stimmt nicht: Es waren fünf Klassen, R31-03 bis R31-06 und R31-08. N behebt alle fünf; am Inhalt des Entscheids ändert das nach Einschätzung der Prüfsitzung nichts. Die Auftraggeberin wird darüber informiert.
+
+Für R31-P04, nicht blockierend: Etwa zehn der 60 Wechsel auf «Suizid» sind reine Gewaltaussagen. Sie gehen in der sicheren Richtung auf «Suizid», z. B. «er schwört mir mich umzubringen».
+
+`releaseApproval.independentReview` steht auf «bestaetigt». Danach folgen der Produktionsexport und ein neues Codex-Review auf dem exportierten Kopf. Gemergt wird erst, wenn dieses Review nach R31-P03 geprüft ist.
+
+## Nachtrag 12 · Viertes Codex-Review von #690 (15.10.2026)
+
+Das vierte Codex-Review von #690 lief auf Anforderung auf dem Stand `09e05f2`, dem Export nach der Abschlussbestätigung 6. Es war um 17:06 UTC fertig und meldete einen P1-Befund:
+
+| Befund | Beispiel | Produktion r4-30 | `09e05f2` | Einstufung nach R31-P03 | Korrektur |
+| --- | --- | --- | --- | --- | --- |
+| Nominales Suizidsignal in einem späteren Satz | «Umbringen will er mich. Ich habe Gedanken ans Umbringen.» | Krisenplan | **Gewalt** | Gegenüber der Produktion schlechter (Suizidsorge → Gewalt): **blockierend** | «ans Umbringen» und «ans Töten» stehen jetzt als Phrasen in der Suizidgruppe. Damit greift der Suizid-Vorrang (Suizidsignal schlägt «Gewalt»). |
+
+Ergebnis auf dem Entwurf: «Suchtest: 317 von 317 Ersttreffern wie festgeschrieben · JS-Fehler 0». Drei Zeilen sind neu. In den 885 Anfragen der Prüfsitzung (`n800/q-union.txt`) haben gegenüber `09e05f2` 13 einen anderen Ersttreffer. Alle 13 sind Ich-Aussagen mit «ans Umbringen» oder «ans Töten» und gehen jetzt auf «Suizid», zum Beispiel «Gedanken ans Umbringen, er hat mich verlassen». Gegenüber der Produktion gehen weiterhin nur die 25 Drohungen anderer neu auf «Gewalt», und keine Anfrage verliert ihren Treffer.
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung die Änderung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `09e05f2`.
+
+## Nachtrag 13 · Abschlussbestätigung 7 und neuer Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `120370e` nach R31-P03 bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 7»). Geprüft hat sie:
+
+- Suchtest: 317 von 317.
+- `q-union`: gegenüber `09e05f2` genau die 13 erwarteten Wechsel auf «Suizid».
+- Bestand: 91/91 und 54/54 wie in r4-29.
+- Vergleich mit der Produktion: Neu auf «Gewalt» gehen dieselben 25 Drohungen anderer. Keine Suizidaussage kommt dazu, keine Anfrage verliert ihren Treffer.
+- 27 Proben zu Nebenwirkungen: alle in der sicheren Richtung.
+- Produktionsbuild in einer Kopie: bytegleich.
+
+Zu R31-P04 hält sie fest: Die Phrase «ans Umbringen» wirkt unabhängig davon, wer «ans Umbringen» denkt. Gewaltsorgen mit dieser Wendung gehen deshalb auf «Suizid».
+
+`releaseApproval.independentReview` steht auf «bestaetigt». Danach folgen der Produktionsexport und ein neues Codex-Review auf dem exportierten Kopf. Gemergt wird erst, wenn dieses Review nach R31-P03 geprüft ist.

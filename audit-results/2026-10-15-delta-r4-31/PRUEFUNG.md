@@ -207,3 +207,28 @@ Fällt das ohne Abweichung aus, kann `independentReview` gesetzt werden. Vor dem
 **Nicht geprüft:** Produktion (r4-31 ist nicht ausgeliefert); axe und Überlauf (`site/` unverändert, im Entwurf ist nur `js/interaktion.js` anders); nur Chromium.
 
 **Belege (Scratchpad `d31/`):** `suchtest-17b5786.txt`, `suchtest-1ac-on-286.txt`, `suchtest-varK.txt`; `n690/q-alle5.result3.tsv`, `n690/q-all91.result3.tsv`, `n690/q-54.result3.tsv` (r4-29, `1ac8f0b`, `17b5786`); `n690/*.result5.tsv` (r4-29, r4-30, `1ac8f0b`, `17b5786`, K); `search5.cjs`; `s0fd/site` (r4-30), `s1ac/site` (`1ac8f0b`); `varK/`, `varK.diff`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31c` (von `.gitignore` erfasst). Lokale Server beendet.
+
+## Abschlussbestätigung 2 (Stand b9c510f)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-31-suche-codex-1792072594`, Commit `b9c510f`, auf `origin` gleich und Kopf von #690 (offen, nicht gemergt). Arbeitsbaum gleich `b9c510f`. Diff zu `17b5786`: `authoring/js/interaktion.js` (Variante K), Testliste (+11), `reviewScope`, `FREIGABE.md` r4-31 (Nachtrag 4, Testlistenzeile), Pendenzen (R3C-A9, R30-P01), diese Datei (unverändert committet). `site/` unverändert (`1ac8f0b`) |
+| Prüfobjekt | eigener Entwurf `node authoring/tools/build.mjs --out=dist/d31d` |
+| Art | nur mechanischer Abgleich, wie verlangt; keine neue Probenrunde, nichts geändert ausser diesem Abschnitt |
+| Zeitpunkt | 15.10.2026, etwa 17:35 bis 17:50 MESZ |
+
+**Ergebnis: bestätigt.** Alle fünf Punkte sind ohne Abweichung erfüllt, R31-02 bis R31-06 sind behoben. Nach R31-P02 ist mir dabei nichts Blockierendes aufgefallen.
+
+**`independentReview` kann jetzt auf «bestaetigt» gesetzt werden.** Die Bestätigung gilt für den Inhalt von `b9c510f`. Ändern sich danach Code, Testliste oder Seiteninhalt, braucht es einen neuen Abgleich; reine Nachweis-Nachträge sind davon nicht betroffen. Vor dem Merge braucht es das Codex-Review auf dem endgültigen Kopf (nach dem Export), und es muss geprüft sein (R28-O01, R29-P20). Bisher gibt es auf #690 nur das Review auf `1ac8f0b`. Neue Codex-Befunde werden nach R31-P02 eingestuft.
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | Suchtest 100 % | **erfüllt** | Entwurf «23 Seiten · 0 Blocker · 1 Hinweise» (nur change-review). `suchtest.mjs dist/d31d`: «Suchtest: 297 von 297 Ersttreffern wie festgeschrieben · JS-Fehler 0», Exit 0. Die 11 neuen Zeilen sind die vorgeschlagenen, mit den vorgeschlagenen Erwartungen. |
+| 2 | Abgleich mit K | **erfüllt, 922/922** | `authoring/js/interaktion.js` ist zeichengleich mit meiner Nachbildung `d31/varK/site/js/interaktion.js` (`diff` ohne Ausgabe). `dist/d31d` ist als Ganzes bytegleich mit `d31/varK/site` (`diff -rq` ohne Ausgabe). Neu im Browser abgefragt, gegen Spalte «K» in `n690/*.result5.tsv`: `q-r690` 86/86, `q-r690b` 74/74, `q-alle5` 617/617, `q-all91` 91/91, `q-54` 54/54. Gegenprobe: Die neu abgefragte Nachbildung ergibt dasselbe, und die Spalte r4-29 ist überall unverändert. 0 JS-Fehler. |
+| 3 | 91/54 gleich r4-29 | **erfüllt** | `q-all91` 91/91 und `q-54` 54/54 mit gleichem Ersttreffer wie r4-29 (`53c5655`). |
+| 4 | Nachtrag 4 | **erfüllt** | Die fünf Befunde, ihre Beispiele und «seit» sind richtig wiedergegeben. Die Beschreibung von K (a) bis (d) entspricht dem Code. «297 Anfragen, 25 davon neu» stimmt gegenüber r4-30 (272 + 7 + 7 + 11). Die Abgleichzahlen 922/922 sind durch Punkt 2 nun von mir bestätigt. R3C-A9 nennt 297. R30-P01 ist um G1 bis G4 und die fünf Gewaltsätze in sicherer Richtung ergänzt, je Klasse mit einem Beispiel; die vollständigen Sätze stehen in der Nachprüfung oben. |
+| 5 | Produktionsbuild bytegleich | **erfüllt** | 23/23 Seiten `data-puk-site-build="r4-31"`, 46 × `?v=r4-31`. CSS-Kopf «Build r4-31», `BUILD = 'r4-31'`, `assetVersion` «r4-31». `dist/d31d` unterscheidet sich von `dist/d31c` nur in `js/interaktion.js`. `node --check` ohne Fehler, 0 `tel:`. In einer Kopie (`git archive b9c510f`) blockiert «ausstehend» mit «BLOCK … change-review», Exit 1. Mit «bestaetigt» (einzige Änderung in `site.config.json`): «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», Exit 0. Das Ergebnis ist mit `dist/d31d` bytegleich: `diff -rq` ohne Ausgabe, SHA-256 von 34 Dateien gleich. |
+
+**Nach dem Export:** `site/` muss bytegleich mit dem Produktionsbuild sein, wie bei `1ac8f0b`. Erst dann «@codex review» anfordern, damit das Review den exportierten Kopf sieht.
+
+**Belege (Scratchpad `d31/`):** `suchtest-b9c510f.txt`; `nb9c/*.result3.tsv` (r4-29, Nachbildung K, `b9c510f`); `prodcopy4/` (Kopie mit «bestaetigt», `dist/prod`), `prod4-a.log` (Gegenprobe), `d31d.sha`, `prod4.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31d` (von `.gitignore` erfasst). Lokale Server beendet.

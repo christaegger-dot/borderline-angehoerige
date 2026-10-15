@@ -99,3 +99,7 @@ Umgesetzt ist Variante K der Prüfsitzung (`interaktion.js`, wörtlich nach ihre
 Ergebnis auf dem Entwurf: «Suchtest: 297 von 297 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind 11 Zeilen, wie verlangt. Mechanischer Abgleich mit der Nachbildung K der Prüfsitzung (Spalte «K» in `n690/*.result5.tsv`): `q-r690` 86/86, `q-r690b` 74/74, `q-alle5` 617/617, `q-all91` 91/91, `q-54` 54/54, zusammen 922 von 922 ohne Abweichung. Der Preis sind fünf Gewaltsätze, die in die sichere Richtung auf «Suizid» gehen, z. B. «er schwört mir mich umzubringen». Sie und die Grenzfälle G1 bis G4 stehen in R30-P01.
 
 `releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.
+
+## Nachtrag 5 · Abschlussbestätigung 2 und neuer Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `b9c510f` bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 2»). Den mechanischen Abgleich hat sie selbst durchgeführt: Suchtest 297 von 297, 922 von 922 Proben gleich der Nachbildung K, Bestand 91/91 und 54/54 wie r4-29, Produktionsbuild in einer Kopie bytegleich. Nach R31-P02 hat sie nichts Blockierendes gefunden. `releaseApproval.independentReview` steht auf «bestaetigt». Danach folgt der Produktionsexport. Erst auf dem exportierten Kopf wird ein neues Codex-Review angefordert. Gemergt wird erst, wenn dieses Review geprüft ist (R28-O01, R29-P20, R31-P02).

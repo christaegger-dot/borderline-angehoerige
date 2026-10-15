@@ -337,3 +337,87 @@ Dann kann `independentReview` gesetzt werden. Vor dem Merge braucht es wieder ei
 **Nach dem Export:** `site/` muss bytegleich mit dem Produktionsbuild sein. Erst dann «@codex review» anfordern.
 
 **Belege (Scratchpad `d31/`):** `suchtest-93d972b.txt`; `n93d/*.result3.tsv` (r4-29, Nachbildung L, `93d972b`); `prodcopy6/` (Kopie mit «bestaetigt», `dist/prod`), `prod6-a.log` (Gegenprobe), `d31f.sha`, `prod6.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31f` (von `.gitignore` erfasst). Lokale Server beendet.
+
+## Abschlussbestätigung 5 (Stand 77614a9)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-31-suche-codex-1792072594`, Commit `77614a9`, auf `origin` gleich und Kopf von #690 (offen, nicht gemergt). Arbeitsbaum gleich `77614a9`. Diff zu `d4d452f`: `authoring/js/interaktion.js` (Satzmarke `satzende0`), Testliste (+3), `reviewScope`, `independentReview` «ausstehend», `FREIGABE.md` r4-31 (Nachtrag 9), R3C-A9. `site/` ist `d4d452f` und bytegleich mit meinem `dist/d31f` |
+| Anlass | Drittes Codex-Review von #690 auf `d4d452f` (16:25:10 UTC, per `gh api` gelesen), ein P1: «Keep backward subject scans within punctuation boundaries». Beispiel «Er hat mich verlassen. Mich umzubringen ist mein Plan.» → Gewalt |
+| Prüfobjekt | eigener Entwurf `node authoring/tools/build.mjs --out=dist/d31g`; verglichen mit r4-29, r4-30 (`0fda233`), `d4d452f` und meiner Nachbildung N (unten) |
+| Massstab | R31-P02 |
+| Zeitpunkt | 15.10.2026, etwa 18:25 bis 18:45 MESZ |
+
+**Ergebnis nach R31-P02: nicht freigabefähig.** Die mechanischen Punkte 1, 2, 3 und 6 sind erfüllt, und der Codex-Fall ist behoben. Die Satzmarke behebt auch eine Reihe weiterer Fälle, die L1 eingeführt hatte. Zwei Klassen führen aber weiterhin Suizidaussagen auf «Gewalt» (R31-08, R31-09):
+
+- R31-08 ist seit r4-30 in der Produktion.
+- R31-09 ist seit `adba309` in r4-31, nicht in der Produktion. Mit r4-31 würde sie also neu veröffentlicht.
+
+**`independentReview` kann nicht auf «bestaetigt» gesetzt werden.**
+
+### Ergebnis je Prüfpunkt
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | Suchtest 100 % | **erfüllt** | Entwurf «23 Seiten · 0 Blocker · 1 Hinweise» (nur change-review). `suchtest.mjs dist/d31g`: «Suchtest: 308 von 308 Ersttreffern wie festgeschrieben · JS-Fehler 0», Exit 0. Gegenprobe auf `d4d452f`: 306 von 308; die 2 Abweichungen sind die beiden Codex-Zeilen. |
+| 2 | 998 Proben gegen `d4d452f` | **erfüllt, 998/998** | Neu im Browser abgefragt: `q-alle5` 617, `q-r690` 86, `q-r690b` 74, `q-all91` 91, `q-54` 54, `q-r31p3` 58, `q-r31p3b` 18 sind gleich wie `d4d452f` und gleich der Spalte «K» (= L) in `n7f7/*.result5.tsv`. 0 JS-Fehler. |
+| 3 | 91/54 wie r4-29 | **erfüllt** | 91/91 und 54/54. |
+| 4 | Gezielte Proben zur Satzmarke | **Codex-Fall behoben; Befunde R31-08, R31-09** | 49 Proben (`n776/q-r31p5.txt`) in vier Ständen. <br>**Richtig:** <br>• Die Codex-Probe und «… Mich zu töten wäre einfacher.» gehen auf Suizid; die Gegenprobe «Er hat mich geschlagen. Er will mich umbringen.» geht auf Gewalt. <br>• Drohung zuerst, dann die Suizidaussage → Suizid: «Er droht mir. Mich umzubringen ist mein Plan.», «Er hat mir gedroht. Mich zu töten wäre einfacher.», «Er droht mir. Ich habe Angst. Mich umzubringen wäre einfacher.». <br>• Mit «ich» in beiden Reihenfolgen → Suizid: «Er droht mich umzubringen. Ich will mich töten.» und umgekehrt, «Er will mich umbringen. Ich will mich umbringen.» und umgekehrt, die Dreiersätze mit «Er schlägt mich». <br>• Fragen: «Er droht mir. Soll ich mich umbringen?» und umgekehrt → Suizid; «Will er mich umbringen? Ich habe Angst.» und «Warum will er mich töten?» → Gewalt. <br>• Satzzeichen mitten im Infinitivsatz → Suizid: «Meine Kinder halten mich davon ab; mich umzubringen.», dasselbe mit Punkt, «Er hat mich überzeugt; mich umzubringen.», «Er droht mir; meine Kinder halten mich davon ab; mich umzubringen.», «Er bittet mich; mich nicht umzubringen.». In `d4d452f` gingen die ersten vier auf Gewalt: L1 hatte sie eingeführt, die Satzmarke behebt sie. <br>• «Sie hat mich verlassen! Mich umzubringen …» und «Er hat mich verlassen? Mich umzubringen …» → Suizid. <br>**Nicht behoben:** R31-08 und R31-09 unten. <br>**«mich» am Satzanfang:** «Mich umzubringen ist mein Plan.» → Suizid; «Mich umzubringen hat er gedroht.» → Gewalt, richtig. «Mich umbringen will er.», «Mich will er umbringen.», «Mich hat er fast umgebracht.» → Suizid wie in r4-30 (G8). |
+| 5 | Nachtrag 9 | **erfüllt, mit einer Ungenauigkeit** | Zeit, Stand, Beispiel und die Werte für r4-29 (`fragen#f-verlassen`), r4-30 (Suizid) und `d4d452f` (Gewalt) stimmen. «eingeführt durch L1» stimmt. «308 Anfragen, 36 davon neu» stimmt (272 + 36), R3C-A9 nennt 308. **Ungenau:** «beendet auch die Suche … nach einem Drohwort» gilt nur rückwärts. Ein Drohwort in einem späteren Satz zählt weiter (R31-08). |
+| 6 | Produktionsbuild bytegleich | **erfüllt** | 23/23 Seiten `data-puk-site-build="r4-31"`, 46 × `?v=r4-31`, CSS-Kopf r4-31. `dist/d31g` unterscheidet sich von `dist/d31f` nur in `js/interaktion.js`. `node --check` ohne Fehler. In einer Kopie (`git archive 77614a9`) blockiert «ausstehend» (Exit 1). Mit «bestaetigt»: «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», bytegleich mit `dist/d31g` (SHA-256 von 34 Dateien gleich). |
+
+### Befunde
+
+| ID | Einstufung | Befund | Beispiele (r4-29 / r4-30 → `77614a9`; `d4d452f` gleich) |
+| --- | --- | --- | --- |
+| R31-08 | **Rückschritt gegenüber r4-29 (blockierend)**; seit r4-30 in der Produktion | Findet `michIntent()` kein Subjekt, entscheidet zuletzt ein Drohwort. Gesucht wird es ab dem Satz von «mich» bis zum Ende der Anfrage, also auch in einem späteren Satz oder Teilsatz. Die Korrektur in `77614a9` begrenzt die Suche nur nach vorne, zum Anfang hin. | «Mich umzubringen ist mein Plan. Er droht mir.»: Suizid / Gewalt → **Gewalt**. «Mich umzubringen wäre einfacher. Er hat mir gedroht.» und «Mich umzubringen wäre einfacher. Ich habe Angst. Er droht mir.»: kein Treffer / Gewalt → **Gewalt**. «Mich umzubringen ist mein Plan, seit er mir droht.»: `krise#krisenplan` / Gewalt → **Gewalt**. |
+| R31-09 | **Rückschritt gegenüber r4-29 (blockierend)**; seit `adba309`, nicht in der Produktion, also schlechter als r4-30 | Die Codex-Aussage mit «und» statt Punkt. Fall (a) gilt nach dem Codex-Befund auf #689 nicht über «und». Danach entscheidet das Subjekt «er» vor dem «und», wie es für «er hat mich geschlagen und will mich umzubringen» gewollt ist. | «Er hat mich verlassen und mich umzubringen ist mein Plan.»: `fragen#f-verlassen` / Suizid → **Gewalt**. «Er hat mich verlassen und mich zu töten wäre einfacher.»: kein Treffer / Suizid → **Gewalt**. |
+
+Auch nach der strengen Lesart blockiert R31-08: «Mich umzubringen ist mein Plan. Er droht mir.» war in r4-29 Suizid. R31-09 blockiert nach meiner Lesart, also «Suizidaussage → Gewalt», wie du den Codex-Fall eingestuft hast. Ausserdem wäre es ein Rückschritt gegenüber der Produktion.
+
+**Grenzfälle (R30-P01):**
+
+- **G7, neu durch die Satzmarke, Gewalt → Suizid:** Eine Drohung, die durch ein Satzzeichen geteilt ist, gilt jetzt als Suizidaussage: «Er droht. Mich umzubringen.», «Er droht; mich umzubringen.», «Er hat gedroht. Mich umzubringen.», «Er droht mir. Mich umzubringen.», «Er hat versucht; mich umzubringen.». Die Werte sind r4-29 Suizid, r4-30 Gewalt. Das ist die sichere Richtung. «Er droht. Mich umzubringen …» ist ohne Fortsetzung mehrdeutig.
+- **G8:** «Mich umbringen will er.», «Mich will er umbringen.», «Mich hat er fast umgebracht.» → Suizid wie in r4-30. Das Subjekt nach dem Hilfsverb wird nicht gelesen.
+
+**Selbstkritik:** L1 stammte von mir. In der Abschlussbestätigung 4 habe ich wie verlangt nur mechanisch geprüft. L1 hatte aber ausser dem Codex-Fall auch die Infinitivsätze mit Satzzeichen in der Mitte auf «Gewalt» gebracht (Punkt 4, «Satzzeichen mitten im Infinitivsatz»). Das hätte ich beim Entwurf von L mit Proben finden müssen.
+
+### Vorschlag: Variante N (nur nachgebildet, nicht umgesetzt)
+
+Gepatcht in einer Kopie von `dist/d31g` im Scratchpad (`d31/varM/site/js/interaktion.js`, Diff in `d31/varN.diff`, 8 geänderte Zeilen). Im Repository ist nichts geändert.
+
+- **N1, in `michIntent()`, letzte Zeile:** Das Drohwort zählt nur ab dem Satz von «mich» bis zum Ende seines Teilsatzes, also bis zum nächsten «und», Einleitewort oder Satzende. (R31-08)
+- **N2, in `michIntent()`, im Block der Variante I:** Steht «mich» am Anfang des Abschnitts oder Satzes, folgt ein zu-Infinitiv und danach «ist», «wäre», «war», «scheint» oder «bleibt», ist der Infinitiv das Subjekt → Suizid («… und mich umzubringen ist mein Plan»). Ein Drohwort vor dem Verb schliesst das wie bisher aus. (R31-09)
+
+Ergebnis:
+
+- Suchtest 308 von 308, 0 JS-Fehler.
+- Die 998 Proben sind 998/998 gleich wie `77614a9`.
+- In den 49 gezielten Proben gehen alle Fälle aus R31-08 und R31-09 auf Suizid.
+- Gegenproben bleiben Gewalt: «Mich umzubringen hat er gedroht.», «Er hat mich geschlagen und will mich umzubringen.», «Er hat mich geschlagen. Er will mich umbringen.».
+- Preis, sichere Richtung: «Mich umbringen? Warum droht er mir?» → Suizid (r4-29 Suizid). Nach dem Code würde auch «mich umzubringen ist sein Plan» auf Suizid gehen; das habe ich nicht als Probe geprüft.
+
+**Für den Export:**
+
+1. N oder Gleichwertiges umsetzen.
+2. In die Testliste aufnehmen:
+
+   | Anfrage | Erwartung |
+   | --- | --- |
+   | «Mich umzubringen ist mein Plan. Er droht mir.» | `krise.html#suizid` |
+   | «Mich umzubringen wäre einfacher. Er hat mir gedroht.» | `krise.html#suizid` |
+   | «Mich umzubringen ist mein Plan, seit er mir droht.» | `krise.html#suizid` |
+   | «Er hat mich verlassen und mich umzubringen ist mein Plan.» | `krise.html#suizid` |
+   | «Meine Kinder halten mich davon ab; mich umzubringen.» | `krise.html#suizid` |
+   | Gegenprobe «Mich umzubringen hat er gedroht.» | `grenzen.html#gewalt` |
+
+3. Danach mechanisch prüfen:
+   - Suchtest 100 %.
+   - `n776/q-r31p5.txt` gleich Spalte «K» (= N) in `n776/q-r31p5.result5.tsv`.
+   - Die 998 Proben unverändert gegenüber `77614a9`.
+
+   In `n776/*.result5.tsv` steht «1ac» für `d4d452f`, «neu» für `77614a9` und «K» für N.
+
+**Zur Lage:** Jede Codex-Runde und jede meiner Proberunden findet in dieser Regel eine neue Satzform. Bisher lag fast jede neue Form in der gefährlichen Richtung. Die Korrekturen sind klein, aber sie greifen ineinander. Darum sollte die Auftraggeberin entscheiden, ob vor dem Merge ein Sicherheitsnetz dazukommt: Ergibt die Regel «Gewalt», während die Anfrage eine Suizidaussage in der ersten Person enthält, gilt Suizid. Eine Suizidaussage wäre dabei «mich» mit einem zu-Infinitiv oder mit «ich» im selben Satz. So eine Regel liesse sich mit den vorhandenen 1047 Proben gut absichern. Ich schlage sie hier nur vor und habe sie nicht nachgebildet.
+
+**Belege (Scratchpad `d31/`):** `suchtest-77614a9.txt`, `suchtest-d4d-on-308.txt`, `suchtest-varN.txt`; `n776/` (Listen und `*.result5.tsv`); `sd4d/site` (`d4d452f`); `varM/site` (Nachbildung N), `varN.diff`; `prodcopy7/`, `prod7-a.log`, `d31g.sha`, `prod7.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31g` (von `.gitignore` erfasst). Lokale Server beendet.

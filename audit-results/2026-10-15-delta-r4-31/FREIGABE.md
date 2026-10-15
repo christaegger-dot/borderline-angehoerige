@@ -28,7 +28,7 @@ Zur Frage, ob der nach dem Merge versehentlich neu angelegte Branch `claude/r4-3
 | --- | --- | --- |
 | Codex P1 (mehrere Tötungsverben) | Gewertet wird jedes Tötungsverb. Ergibt eines «Suizid», gilt Suizid. Beispiel: «er will mich umbringen und ich will mich töten» → «Suizid» (r4-30: «Gewalt», r4-29: «Suizid»). | nur Suchtreffer |
 | Codex P1 (früheres «mich»), R31-01 | Fall (a) der Infinitivregel (D30-20) greift nur, wenn beim früheren «mich» ein Steuerverb steht (ab zwei Wörtern davor bis zum späteren «mich») und zwischen den beiden «mich» kein «und». Beispiel: «er hat mich geschlagen und will mich umzubringen» → «Gewalt» (r4-30: «Suizid»). | nur Suchtreffer |
-| Testliste | 308 Anfragen, 36 davon neu (Stand Nachtrag 9) | nein |
+| Testliste | 314 Anfragen, 42 davon neu (Stand Nachtrag 10) | nein |
 | Build | r4-31, Assetversion r4-31 | nein |
 
 Die Einzelheiten stehen in `2026-10-15-delta-r4-30/FREIGABE.md`, Nachtrag 9.
@@ -152,3 +152,39 @@ Das dritte Codex-Review von #690 lief auf Anforderung auf dem Stand `d4d452f`, d
 Ergebnis auf dem Entwurf: «Suchtest: 308 von 308 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind drei Zeilen: die Codex-Probe, eine zweite Form und eine Gegenprobe («Er hat mich geschlagen. Er will mich umbringen.» → Gewalt). Die 998 Proben der Prüfsitzung (`n7f7/`) ergeben dieselben Ersttreffer wie der Export `d4d452f`.
 
 `releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `d4d452f`.
+
+## Nachtrag 10 · Abschlussbestätigung 5, Entscheid und Variante N (15.10.2026)
+
+Die Prüfsitzung hat den Stand `77614a9` geprüft (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 5»). Nach R31-P02 ist er nicht freigabefähig. Der Codex-Fall ist behoben, aber zwei Klassen führen weiterhin Suizidaussagen auf «Gewalt»:
+
+- **R31-08**, seit r4-30 in der Produktion: Ein Drohwort aus einem späteren Satz entscheidet. «Mich umzubringen ist mein Plan. Er droht mir.» geht auf «Gewalt», in r4-29 auf «Suizid».
+- **R31-09**, seit `adba309`, nicht in der Produktion: «Er hat mich verlassen und mich umzubringen ist mein Plan.» geht auf «Gewalt».
+
+Die Prüfsitzung schlägt Variante N vor:
+
+- **N1:** Das Drohwort zählt nur bis zum Ende des Teilsatzes von «mich».
+- **N2:** «mich» am Anfang eines Abschnitts mit zu-Infinitiv und danach «ist», «wäre» usw. gilt als Suizid.
+
+Ausserdem regt sie an, dass die Auftraggeberin über ein Sicherheitsnetz entscheidet.
+
+**Vergleich mit der Produktion:** Die bauende Sitzung hat N über alle 852 verschiedenen Proben der Prüfsitzung mit r4-29 und mit der Produktion r4-30 (`0fda233`) verglichen:
+
+- 60 Anfragen, die in der Produktion auf «Gewalt» gehen, gehen mit N auf «Suizid». Darunter sind «Willst du dich umbringen?», «Denkst du daran, dich umzubringen?», «er droht mich umzubringen und ich will mich töten» und «er befiehlt mir mich umzubringen».
+- 25 Anfragen gehen mit N neu auf «Gewalt». Alle sind Drohungen anderer, z. B. «er hasst mich und will mich umzubringen», «umbringen will er mich», «mein Mann tötet mich».
+- Keine Suizidaussage geht mit N auf «Gewalt», wenn sie in der Produktion nicht schon dort war.
+
+**Entscheid (15.10.2026):** Die Frage an die Auftraggeberin lautete:
+
+> «Die Prüfsitzung findet nach jeder Korrektur der Suchregel eine neue Satzform, die gegenüber r4-29 schlechter liegt. Zwei davon sind seit r4-30 in der Produktion, etwa «Willst du dich umbringen?» → «Gewalt». Variante N (fertig nachgebildet) liegt auf 852 Proben in keinem Fall schlechter als die Produktion und behebt 60 Fälle. Wie soll es weitergehen?»
+
+Ihre Antwort, wörtlich:
+
+> «N veröffentlichen (Recommended)»
+
+Zur Antwort gehörte die Beschreibung: «N umsetzen, mechanisch bestätigen lassen, exportieren, Codex. Neu blockiert nur, was die PR gegenüber der Produktion verschlechtert; ältere Abweichungen gegenüber r4-29 gehen sofort in r4-32.»
+
+Das ist neu R31-P03 und ersetzt R31-P02 als Massstab für den Merge. Die verbleibenden Abweichungen und das Sicherheitsnetz stehen in R31-P04.
+
+Variante N ist umgesetzt, wörtlich nach dem Diff der Prüfsitzung. Ergebnis auf dem Entwurf: «Suchtest: 314 von 314 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind sechs Zeilen, wie verlangt. Beim mechanischen Abgleich mit der Nachbildung N (Spalte «K» in `n776/*.result5.tsv`) stimmen 1047 von 1047 Proben überein.
+
+`releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.

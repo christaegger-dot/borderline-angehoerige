@@ -256,6 +256,7 @@
     /* «satzende0» steht für «.», «?», «!», «;» im Rohtext (siehe queryGroups); es trennt wie «und» und ist zugleich eine harte
        Satzgrenze für die Suche nach dem Subjekt (Codex P1 auf #690, Runde 3) */
     var sentenceMark = 'satzende0';
+    var copulaWords = { ist: 1, waere: 1, war: 1, scheint: 1, bleibt: 1 }; /* Variante N2 */
     var threatWords = { droht: 1, drohen: 1, gedroht: 1, drohte: 1, drohung: 1, drohungen: 1 };
     var nominativeArticles = { mein: 1, meine: 1, dein: 1, deine: 1, sein: 1, seine: 1, ihr: 1, ihre: 1, unser: 1, unsere: 1, der: 1, die: 1, das: 1, ein: 1, eine: 1 };
     var nominativeSubjects = { er: 1, du: 1, jemand: 1, man: 1 };
@@ -291,6 +292,8 @@
            beiden «mich» darf kein «und» stehen. «er hat mich geschlagen und will mich umzubringen» bleibt Gewalt (Codex P1 auf #689).
            Ohne Liste der Steuerverben, weil jede Liste Lücken hat (Codex P1 auf #690); im Zweifel Suizid. */
         var steered = earlier !== -1 || words.slice(segmentStart, objectIndex).indexOf('mir') !== -1; /* Variante K (a): auch «mir» */
+        /* Variante N2: «mich umzubringen ist …», «mich zu töten wäre …» am Anfang des Abschnitts oder Satzes: der Infinitiv ist Subjekt */
+        if (zuInfinitive && copulaWords[words[killVerb + 1]] && (objectIndex === segmentStart || words[objectIndex - 1] === sentenceMark)) return 'suizid';
         if ((zuInfinitive && steered) || negated) return 'suizid';
       }
       for (i = objectIndex - 1; i >= start; i--) {
@@ -311,7 +314,10 @@
         if (words[i] === 'ich') return 'suizid';
         if (thirdParty[words[i]]) return 'gewalt';
       }
-      return words.slice(sentenceStart).some(function (word) { return threatWords[word]; }) ? 'gewalt' : 'suizid';
+      /* Variante N1: Drohwort nur im eigenen Satz und Teilsatz, nicht in einem späteren */
+      var clauseEnd = words.length;
+      for (i = objectIndex + 1; i < words.length; i++) if (words[i] === 'und' || clauseWords[words[i]]) { clauseEnd = i; break; }
+      return words.slice(sentenceStart, clauseEnd).some(function (word) { return threatWords[word]; }) ? 'gewalt' : 'suizid';
     }
     function verbIntent(words, verb) {
       var start = clauseStart(words, verb), i;

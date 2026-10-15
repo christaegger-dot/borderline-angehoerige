@@ -213,3 +213,62 @@ Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8
 - `text2.cjs` und `text2/`: sichtbarer Text
 - `prodcopy3/` (Produktion mit «bestaetigt»), `prodcopy4/` (Gegenprobe), `wb30b.txt`
 - `tsv91.txt` und `qa91.txt`: Abgleich der Bestandszeilen
+
+*Nachtrag:* Die bauende Sitzung hat den Abschnitt «Nachprüfung» unverändert in `43d6b21` committet. Der folgende Abschnitt ist nicht committet.
+
+## Zweite Nachprüfung (Stand 43d6b21)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-30-suche-links-1792061353`, Commit `43d6b21` (15.10.2026, 14:19 MESZ). Diff zu `cc370c4`: `interaktion.js` (Regel `killIntent()` statt Tötungsphrasen, neue Gewaltwörter), Testliste (194 Anfragen), `suchtest.mjs` (verneinende Erwartung), `FREIGABE.md` (Nachtrag 2), Pendenzen, dieser Bericht |
+| Prüfobjekt | frischer Entwurf `node authoring/tools/build.mjs --out=dist/d30c`. Verglichen in drei Ständen: `site/` (r4-29, Port 8129), `dist/d30b` (`cc370c4`, Port 8132) und `dist/d30c` (`43d6b21`, Port 8130) |
+| Prüfsitzung | dieselbe unabhängige Prüfsitzung; nichts gebaut, korrigiert oder entschieden; nur diese Datei geändert; keine git-Schreibbefehle; Netlify nicht angefasst |
+| Zeitpunkt | 15.10.2026, etwa 14:25 bis 14:55 MESZ |
+
+### Ergebnis der zweiten Nachprüfung
+
+**Freigabefähig:** Die Auflage D30-09 ist erfüllt. Alle Fälle daraus werden jetzt richtig zugeordnet. Keine Ich-Aussage mit Suizidbezug geht mehr auf «Gewalt», und in keiner Probe ist der Entwurf schlechter als die Produktion (r4-29).
+
+Offen bleiben Lücken der Regel: Für Subjekte und Objekte, die die Regel nicht kennt, gilt weiter «Suizid» (D30-13), dazu Redewendungen und fehlende Verbformen (D30-14, D30-15). Sie sind keine Auflage, weil r4-29 dieselben Anfragen ebenso falsch oder gar nicht zuordnet. D30-13 enthält aber vier Rückschritte gegenüber `cc370c4`, darunter «mein Kind will mich umbringen». Die Korrektur ist klein. Ich empfehle sie vor dem Export, sonst im nächsten Patch.
+
+### Beleg je Punkt
+
+| Nr. | Punkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| a | `suchtest.mjs` auf eigenem Entwurf | **erfüllt** | `node authoring/tools/build.mjs --out=dist/d30c`: «23 Seiten · 0 Blocker · 1 Hinweise» (change-review). `node authoring/tools/suchtest.mjs dist/d30c`: «Suchtest: 194 von 194 Ersttreffern wie festgeschrieben · JS-Fehler 0», Exit 0. Gegen `site/` (r4-29): 132 von 194, 62 Abweichungen, keine aus dem Bestand. Die Bestandszeilen sind weiter genau `queries_all.txt` (90 als «Bestand r4-28 (91)» bezeichnet, «Wenn ich gehe bringt sie sich um» neu als «Bestand Produktion (54), R25-010»). Die verneinende Erwartung (`!href`) ist richtig umgesetzt: Sie besteht, wenn der Ersttreffer nicht `href` ist. |
+| b | 91/54 wie r4-29 | **erfüllt** | `queries_all.txt` 91/91 und `queries.txt` 54/54 Ersttreffer gleich `site/`. R3-Liste 16/16 und Gegenproben 8/8 wie in `cc370c4`. 0 Skriptfehler. |
+| c | Eigene Proben gegen die Regel | **erfüllt für D30-09; Lücken in D30-13 bis -15** | 97 neue Proben (`q-zweit.txt` 77, `q-zweit2.txt` 20) in drei Ständen; dazu alle früheren Listen erneut. <br>**Richtig:** <br>– Ich-Aussagen, auch in Zitaten, in der Vergangenheit und im Konjunktiv → `krise#suizid`: «ich habe versucht/gedroht mich umzubringen», «ich habe/hätte mich fast umgebracht», «ich würde mich am liebsten umbringen», «ich möchte mich töten», «Meine Tochter sagt ich will mich umbringen», «seit er mich schlägt will ich mich umbringen», «Mein Mann hat mich verlassen ich will mich umbringen», «ich glaube ich will mich umbringen», «manchmal denke ich daran mich umzubringen». <br>– Drohungen und Taten anderer → `grenzen#gewalt`: «er will/wollte/würde/könnte mich umbringen», «will er mich umbringen», «er/sie/meine Tochter will mich töten», «er versucht mich zu töten», «er hat gedroht mich zu töten», «mein Sohn droht mich zu töten», «er hat/hätte mich fast umgebracht», «ich habe Angst dass er mich umbringt», «ich habe Angst mein Mann bringt mich um», «wenn ich gehe bringt er mich um», «Mein Sohn hat gesagt er bringt mich um wenn ich ausziehe», «ich glaube meine Tochter will mich umbringen», «der Vater meiner Kinder will mich umbringen», «mein Ex-Mann will mich umbringen», «mein Kind droht mich umzubringen». <br>– Fragen: «was tun wenn er droht mich umzubringen» → Gewalt, «was tun wenn mein Kind droht sich umzubringen» und «was mache ich wenn sie sich umbringen will» → Suizid. <br>– Drohungen gegen Dritte und neue Wörter: «er droht uns umzubringen», «er droht die Kinder umzubringen», «er will uns alle umbringen», «Morddrohung», «Todesdrohung (per SMS)», «er droht mit dem Tod», «sie drohte mit dem Tod», «Würgen», «Angst vor meinem Bruder/meiner Schwester/meiner Mutter» → Gewalt. <br>– Suizid anderer und Verlust: «sie hat sich umgebracht», «mein Bruder hat sich umgebracht», «er hat sich getötet», «er hat versucht sich zu töten», «ich habe Angst dass er sich umbringt» → Suizid. «Wenn du gehst bringe ich mich um», «Wenn ich gehe bringt sie sich um» und «er sagt wenn ich gehe bringt er sich um» → `kommunizieren#worte` (R25-010). <br>– Gegenproben ohne Tötungsabsicht: «Zeit totschlagen» → `kurz`, «die Stimmung umbringen» → `fragen#f-depression`, also weder «Gewalt» noch «Suizid». «er spielt mit dem Tod» → 0 Treffer. <br>**Falsch oder schwach:** siehe D30-13 bis D30-15. Eine Ich-Aussage auf «Gewalt» gibt es in keiner Probe. Gegenüber r4-29 wird keine Probe falsch, die dort richtig war. Einzige Verschiebung von einem passenden auf einen weniger passenden Treffer: «ich will mich nicht umbringen aber ich kann nicht mehr» (`selbstfuersorge#warnsignale` → `krise#suizid`, also vorsichtiger; D30-14). <br>**Code:** `killIntent()` läuft einmal je Anfrage (keine Leistungsfrage). `synonyms['suizid']` und `synonyms['gewalt']` sind definiert. `node --check` ohne Fehler. Gegenüber `cc370c4` ist in der Ausgabe nur `js/interaktion.js` verschieden. |
+| d | Nachweise | **erfüllt, mit einer Kleinigkeit** | **`FREIGABE.md`:** Die R3C-A9-Zeile ist durchgestrichen und als überholt markiert. Der Satz «nur Drohungen und Taten anderer» ist eingeschränkt. Nachtrag 2 beschreibt die Regel so, wie der Code sie umsetzt (Objekte, Subjekt, Drohwort, Ausnahme R25-010). Die Zahlen stimmen: 194/194; gegen `site/` 62 Abweichungen, keine im Bestand. `independentReview` steht auf «ausstehend». Kleinigkeit: Im Nachtrag 1 stehen unter D30-04 noch «sich umbringen» und «bringt sich um» als ergänzte Phrasen. «bringt sich um» ist seit Nachtrag 2 bewusst nicht mehr «Suizid», «sich umbringen» geht über die Regel; der Nachtrag 1 ist damit überholt, aber nicht markiert (optional). **Pendenzen:** R3C-A9 mit 194 Anfragen und der Regel; R30-P01 mit den offenen D30-12-Lücken, den schwachen und den mehrdeutigen Treffern und der Bestätigung der Zuordnung durch die Fachstelle; Reihenfolge jetzt R29-P20, R30-P01, R30-P02. D30-13 bis -15 fehlen naturgemäss noch. |
+| – | Build und Wortbilanz | **erfüllt** | Kopie (`git archive 43d6b21`) mit «bestaetigt»: «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», bytegleich mit `dist/d30c`. Mit «ausstehend» blockiert der Build. Wortbilanz unverändert (2399 / 2398 / 898 / 30 667); 0 `tel:`. Inhalt und sichtbarer Text unverändert gegenüber `cc370c4` (nur `interaktion.js` geändert). |
+
+### Status der Befunde
+
+| ID | Status |
+| --- | --- |
+| D30-01 | erledigt (mit D30-09) |
+| D30-02, -03, -05, -06, -08 | erledigt (wie in der Nachprüfung) |
+| D30-04 | teilweise erledigt; Rest in R30-P01 |
+| D30-07 | vermerkt (R30-P02) |
+| D30-09 | **erledigt**: alle 12 Fälle aus der Nachprüfung, Punkt 1, richtig und festgeschrieben |
+| D30-10 | erledigt; Kleinigkeit zu Nachtrag 1 siehe Punkt d |
+| D30-11 | erledigt: schwache Treffer nicht mehr festgeschrieben, verneinende Erwartung, Kopfzeile mit Browser-Variable und Entwurfsordner |
+| D30-12 | teilweise erledigt: «Morddrohung», «Todesdrohung», «Würgen», «droht mit dem Tod», «Angst vor meinem Sohn/meiner Tochter/…», Drohungen gegen «uns», «die Kinder», «meine Familie»; Rest in R30-P01 |
+
+### Neue Befunde
+
+| ID | Priorität | Befund | Vorschlag (nicht umgesetzt) |
+| --- | --- | --- | --- |
+| D30-13 | wichtig (vor dem Export empfohlen, keine Auflage) | **Drohungen anderer gehen auf «Suizid», wenn die Regel Subjekt oder Objekt nicht kennt.** <br>Subjekt nicht in der Liste, deshalb «ohne Subjekt, ohne Drohwort → Suizid»: «mein Ehemann will mich umbringen», «mein Exmann will mich umbringen», «mein Kind will mich umbringen», «jemand will mich umbringen». Diese vier waren in `cc370c4` auf «Gewalt»; in r4-29 sind sie ebenfalls falsch. Ebenso «du willst mich umbringen». <br>Objekt nicht in der Liste: «er droht sie umzubringen», «er will sie umbringen», «er hat gedroht sie umzubringen», «er will meine Mutter umbringen» → Suizid; «er droht meine Frau umzubringen» → `quellen#leitlinien`; «mein Sohn will meinen Vater töten» → `rolle#schuld`. Diese Fälle sind gleich wie in r4-29. <br>Auch «er droht mit Mord» und «Mord» → Suizid: Die Wörter «mord» und «toetung» finden die Textstellen mit «Selbstmord» und «Selbsttötung», wie schon in r4-29. | In `thirdParty` ergänzen: «kind», «ehemann», «ehefrau», «exmann», «exfrau», «lebenspartner», «jemand», «du» usw. Besser: Steht links von «mich» irgendein Wort, aber kein «ich», gilt Gewalt; Suizid nur bei «ich» oder ganz ohne weiteres Wort («mich umbringen»). Als Objekt direkt vor dem Verb auch «sie» und Personen («meine Mutter», «meine Frau», «meinen Vater» …) werten; «sich» geht vor, weil es näher am Verb steht. «Mord», «Morddrohung» und «droht mit Mord» der Gewaltgruppe zuordnen. Die Proben in die Testliste aufnehmen. |
+| D30-14 | optional | **Redewendungen und Verneinung.** «das bringt mich um», «der Stress bringt mich um», «die Arbeit bringt mich noch um» → Suizid; in r4-29 gingen sie auf `kommunizieren#worte` oder `behandlung#rollen`, also auch nicht passend. «ich will mich nicht umbringen aber ich kann nicht mehr» → Suizid (r4-29: `selbstfuersorge#warnsignale`). Ärger-Redewendungen: «ich könnte ihn umbringen», «ich würde ihn am liebsten umbringen», «er bringt mich noch um» → Gewalt; «ich könnte sie umbringen» → Suizid. | Fachlich abwägen. Die Vorsicht in Richtung Suizid ist bei einer Sicherheitssuche vertretbar. Möglich: «nicht» direkt vor dem Verb und Sachsubjekte («das», «Stress», «Arbeit») als Überlastung werten (`selbstfuersorge#warnsignale`). |
+| D30-15 | wichtig (nächster Patch) | **Fehlende Verbformen und Zitate.** «ich habe Angst dass ich mich umbringe» → 0 Treffer («umbringe» ist kein Tötungsverb der Regel); «sie hat geschrieben ich bringe mich um» und «er sagt ich bringe mich um» → 0 Treffer; «Mein Sohn hat gesagt er bringt sich um wenn ich ausziehe» → 0 Treffer (in `cc370c4` noch `krise#suizid`, in r4-29 ebenfalls 0); «er will dass ich mich umbringe» → `behandlung#keine-behandlung`; «Angst vor meinem Ex» → `begriffe#b-borderline`; «töten» und «umgebracht» allein → 0 Treffer. | «umbringe», «umbringst», «umbrachte», «toete» in die Verbliste; «bringe … mich … um» bei einem Zitat («sagt», «schreibt», «hat gesagt») wie R25-010 auf `kommunizieren#worte` oder `krise#suizid`; «bringt … sich … um» mit Nebensatz wie «Wenn ich gehe bringt sie sich um» behandeln; «Angst vor meinem Ex» ergänzen. In R30-P01 aufnehmen. |
+
+Kein kritischer Befund.
+
+### Belege der zweiten Nachprüfung
+
+Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8-de06005eb532/scratchpad/d30/`:
+
+- `q-zweit.txt` und `q-zweit2.txt` (97 neue Proben); Ergebnisse `q-zweit.result3.tsv`, `q-zweit2.result3.tsv` und alle früheren Listen als `*.result3.tsv` (Spalten: r4-29, `cc370c4`, `43d6b21`)
+- `suchtest-site-43d.txt`: Suchtest gegen `site/` (62 Abweichungen)
+- `prodcopy5/` (Produktion mit «bestaetigt»), `prodcopy6/` (Gegenprobe)
+- Entwurf: `/home/claude/borderline-angehoerige/dist/d30c` (von `.gitignore` erfasst)

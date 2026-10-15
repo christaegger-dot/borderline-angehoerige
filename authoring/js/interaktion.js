@@ -230,16 +230,19 @@
       ['gespraech', 'reden', 'kommunikation'],
       ['genesung', 'recovery', 'remission', 'besser', 'bessern', 'verbessern'],
       ['kosten', 'bezahlt', 'bezahlen', 'krankenkasse', 'finanzierung'],
-      ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'gewuergt', 'wuergt', 'frauenhaus', 'angst vor ihm', 'angst vor ihr', 'angst vor meinem partner', 'angst vor meiner partnerin', 'angst vor meinem mann', 'angst vor meiner frau', 'bedroht mich', 'mich bedroht', 'morddrohung', 'todesdrohung', 'wuergen', 'angst vor meinem sohn', 'angst vor meiner tochter', 'angst vor meinem vater', 'angst vor meiner mutter', 'angst vor meinem bruder', 'angst vor meiner schwester', 'mit dem tod bedroht', 'mit dem tod gedroht', 'droht mit dem tod', 'drohte mit dem tod']
+      ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'gewuergt', 'wuergt', 'frauenhaus', 'angst vor ihm', 'angst vor ihr', 'angst vor meinem partner', 'angst vor meiner partnerin', 'angst vor meinem mann', 'angst vor meiner frau', 'bedroht mich', 'mich bedroht', 'morddrohung', 'todesdrohung', 'wuergen', 'angst vor meinem sohn', 'angst vor meiner tochter', 'angst vor meinem vater', 'angst vor meiner mutter', 'angst vor meinem bruder', 'angst vor meiner schwester', 'mit dem tod bedroht', 'mit dem tod gedroht', 'droht mit dem tod', 'drohte mit dem tod', 'droht mit mord', 'mit mord gedroht', 'mit mord bedroht', 'angst vor meinem ex', 'angst vor meiner ex']
     ];
     /* Tötungsverben («umbringen», «töten», «bringt … um»): Wer gemeint ist, entscheidet die Gruppe (D30-01, D30-09).
-       «sich» → Suizid; «uns», «dich», «ihn», «die Kinder», «meine Familie» → Gewalt; «mich»: das nächste Subjekt davor entscheidet
-       («ich» → Suizid; «er», «sie», «mein Mann» … → Gewalt); ohne Subjekt bei einem Drohwort Gewalt, sonst Suizid.
+       das nächste Objekt vor dem Verb zählt: «sich» → Suizid; «uns», «dich», «ihn», «sie», «die Kinder», «meine Mutter» … → Gewalt; «mich»: das nächste Subjekt davor entscheidet
+       («ich» → Suizid; «er», «sie», «du», «jemand», «mein Mann», «mein Kind» … → Gewalt); ohne Subjekt bei einem Drohwort Gewalt, sonst Suizid.
        «bringe ich mich um» und «bringt sie sich um» bleiben bewusst aussen vor (Druck durch Suizidandrohung, Ersttreffer
        «Zugewandt und klar sprechen» › «Wenn Worte treffen», festgelegt in R25-010). */
-    var killVerbs = { umbringen: 1, umzubringen: 1, umbringt: 1, toeten: 1, toetet: 1, umgebracht: 1, getoetet: 1 };
-    var thirdParty = { er: 1, sie: 1, mann: 1, partner: 1, partnerin: 1, frau: 1, freund: 1, freundin: 1, sohn: 1, tochter: 1, vater: 1, mutter: 1, bruder: 1, schwester: 1, ex: 1 };
-    var otherObjects = { uns: 1, dich: 1, ihn: 1, euch: 1, kinder: 1, kind: 1, familie: 1 };
+    var killVerbs = { umbringen: 1, umzubringen: 1, umbringt: 1, umbringe: 1, umbringst: 1, umbrachte: 1, toeten: 1, toete: 1, toetet: 1, umgebracht: 1, getoetet: 1 };
+    var persons = { mann: 1, partner: 1, partnerin: 1, frau: 1, freund: 1, freundin: 1, sohn: 1, tochter: 1, vater: 1, mutter: 1, bruder: 1, schwester: 1, ex: 1,
+      kind: 1, kinder: 1, ehemann: 1, ehefrau: 1, exmann: 1, exfrau: 1, expartner: 1, expartnerin: 1, lebenspartner: 1, lebenspartnerin: 1,
+      eltern: 1, mama: 1, papa: 1, stiefvater: 1, stiefmutter: 1, familie: 1 };
+    var thirdParty = Object.assign({ er: 1, sie: 1, du: 1, jemand: 1, man: 1 }, persons);
+    var otherObjects = Object.assign({ uns: 1, dich: 1, ihn: 1, sie: 1, euch: 1 }, persons);
     var threatWords = { droht: 1, drohen: 1, gedroht: 1, drohte: 1, drohung: 1, drohungen: 1 };
     function killIntent(words) {
       var verb = -1, objectIndex = -1, i;

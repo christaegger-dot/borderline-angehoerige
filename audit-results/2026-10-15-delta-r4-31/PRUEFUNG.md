@@ -232,3 +232,81 @@ Fällt das ohne Abweichung aus, kann `independentReview` gesetzt werden. Vor dem
 **Nach dem Export:** `site/` muss bytegleich mit dem Produktionsbuild sein, wie bei `1ac8f0b`. Erst dann «@codex review» anfordern, damit das Review den exportierten Kopf sieht.
 
 **Belege (Scratchpad `d31/`):** `suchtest-b9c510f.txt`; `nb9c/*.result3.tsv` (r4-29, Nachbildung K, `b9c510f`); `prodcopy4/` (Kopie mit «bestaetigt», `dist/prod`), `prod4-a.log` (Gegenprobe), `d31d.sha`, `prod4.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31d` (von `.gitignore` erfasst). Lokale Server beendet.
+
+## Abschlussbestätigung 3 (Stand 7f7ee0f)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-31-suche-codex-1792072594`, Commit `7f7ee0f`, auf `origin` gleich und Kopf von #690 (offen, nicht gemergt). Arbeitsbaum gleich `7f7ee0f`. Diff zu `ebe8a30`: `authoring/js/interaktion.js` (`auxiliaryWords` und eine Zeile in `verbIntent()`), Testliste (+3), `reviewScope`, `independentReview` «ausstehend», `FREIGABE.md` r4-31 (Nachtrag 6), R3C-A9. `site/` ist `ebe8a30` und bytegleich mit meinem `dist/d31d` |
+| Anlass | Zweites Codex-Review von #690 auf `ebe8a30` (15:48:01 UTC, per `gh api` gelesen), ein P1: «Stop scanning into the following question». Beispiel «Ich habe Gedanken ans Umbringen. Versteht er mich?» → Gewalt, r4-29 Suizid |
+| Prüfobjekt | eigener Entwurf `node authoring/tools/build.mjs --out=dist/d31e`; verglichen mit r4-29, r4-30 (`0fda233`), `ebe8a30` und meiner Nachbildung L (unten) |
+| Massstab | R31-P02 |
+| Zeitpunkt | 15.10.2026, etwa 17:55 bis 18:15 MESZ |
+
+**Ergebnis nach R31-P02: nicht freigabefähig.** Die mechanischen Punkte 1, 2, 3, 5 und 6 sind erfüllt, und der Codex-Fall ist behoben. Die Korrektur deckt aber nur Fragen ab, die mit einem Vollverb beginnen («Versteht er mich?»). Beginnt die nächste Frage mit einem Hilfs- oder Modalverb («Kann er mich verstehen?», «Würde er mich vermissen?»), gilt sie weiter als Umstellung «umbringen will er mich», und die Suche geht auf Gewalt. Das ist ein Rückschritt gegenüber r4-29 (R31-07, blockierend). Diesen Fehler hat meine Variante K (b) eingeführt. Ich hätte ihn in der Nachprüfung von `17b5786` finden müssen. In der Produktion (r4-30) ist er nicht; `ebe8a30` hat ihn.
+
+**`independentReview` kann nicht auf «bestaetigt» gesetzt werden.**
+
+### Ergebnis je Prüfpunkt
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | Suchtest 100 % | **erfüllt** | Entwurf «23 Seiten · 0 Blocker · 1 Hinweise» (nur change-review). `suchtest.mjs dist/d31e`: «Suchtest: 300 von 300 Ersttreffern wie festgeschrieben · JS-Fehler 0», Exit 0. Gegenprobe auf `ebe8a30`: 298 von 300; die 2 Abweichungen sind die beiden Codex-Zeilen. |
+| 2 | 922 Proben gegen `ebe8a30` | **erfüllt, 922/922** | Neu im Browser abgefragt: `q-r690` 86/86, `q-r690b` 74/74, `q-alle5` 617/617, `q-all91` 91/91 und `q-54` 54/54 sind gleich wie `ebe8a30` und gleich der Spalte «K» in `n690/*.result5.tsv`. 0 JS-Fehler. |
+| 3 | 91/54 wie r4-29 | **erfüllt** | 91/91 und 54/54. |
+| 4 | Gezielte Proben zur Änderung | **Codex-Fall behoben; Befund R31-07** | 58 Proben (`n7f7/q-r31p3.txt`) in vier Ständen. <br>**Behoben (Vollverb am Anfang der nächsten Frage):** «Ich habe Gedanken ans Umbringen. Versteht er mich?» und dasselbe ohne Satzzeichen, «Umbringen. Liebt sie mich noch?», «Gedanken ans Umbringen. Hasst er mich?» → Suizid wie in r4-29. «Ich denke ans Umbringen. Liebt er mich noch?» und «ich denke ans Töten versteht sie mich» haben wie in r4-29 keinen Treffer. «ans Umbringen denken hilft er mir» ist unverändert. <br>**Gegenproben mit Hilfs- oder Modalverb, richtig:** «umbringen wird er mich», «töten will sie mich», «umbringen könnte er mich», «töten würde er mich», «umbringen wollte sie mich», «töten kann er mich nicht», «umgebracht hat er mich fast», «umgebracht hätte er mich fast» → Gewalt. «töten will ich mich», «umbringen soll ich mich», «umbringen möchte ich mich», «töten würde ich mich nie» → Suizid. <br>**Nicht behoben (Hilfs- oder Modalverb am Anfang der nächsten Frage):** R31-07 und G5 unten. <br>**Hilfs- und Modalverben, die in `auxiliaryWords` fehlen:** «werde», «werden», «sollte», «habe», «darf», «mag». Mit ihnen gilt die Wertung von vor K: «umbringen werde ich mich» → `krise#waehrend`, «töten sollte ich mich» → `krise#vermeiden`, «umgebracht habe ich mich fast» → kein Treffer, jeweils wie r4-29. In `ebe8a30` gingen sie auf Suizid. Das ist nicht schlechter als r4-29, also ein Grenzfall (G6). |
+| 5 | Nachtrag 6 | **erfüllt, mit einer Einschränkung** | Zeit, Stand, Beispiel und Einstufung stimmen mit der GitHub-API und meinen Messungen überein. «300 Anfragen, 28 davon neu» stimmt (272 + 28), R3C-A9 nennt 300. **Einschränkung:** Der Satz «Sonst beginnt ein neuer Satz, auch ohne Satzzeichen» gilt nicht, wenn der neue Satz mit einem Hilfs- oder Modalverb beginnt (R31-07). |
+| 6 | Produktionsbuild bytegleich | **erfüllt** | 23/23 Seiten `data-puk-site-build="r4-31"`, 46 × `?v=r4-31`, CSS-Kopf, `BUILD`, `assetVersion` r4-31. `dist/d31e` unterscheidet sich von `dist/d31d` nur in `js/interaktion.js`. In einer Kopie (`git archive 7f7ee0f`) blockiert «ausstehend» (Exit 1). Mit «bestaetigt»: «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», bytegleich mit `dist/d31e` (`diff -rq` ohne Ausgabe, SHA-256 von 34 Dateien gleich). |
+
+### Befund
+
+| ID | Einstufung | Befund | Beispiele (r4-29 → `7f7ee0f`; `ebe8a30` gleich, r4-30 wie r4-29) |
+| --- | --- | --- | --- |
+| R31-07 | **Rückschritt gegenüber r4-29 (blockierend)**; eingeführt mit K (b) in `b9c510f`, mit `7f7ee0f` nur teilweise behoben; nicht in der Produktion | Nach einem Infinitiv wird ein Hilfs- oder Modalverb direkt danach als Umstellung gelesen («umbringen will er mich»), auch wenn damit eine neue Frage beginnt. | «Ich denke ans Umbringen. Kann er mich verstehen?» und dasselbe ohne Satzzeichen, «Ich habe Gedanken ans Umbringen. Hat er mich je geliebt?», «Gedanken ans Umbringen. Will er mich noch?», «ich denke ans Umbringen will er mich überhaupt», «Ich denke ans Umbringen. Muss er mich so behandeln?»: Suizid → **Gewalt**. «Gedanken ans Umbringen. Hat sie mich verlassen?», «Umbringen. Wird er mich vermissen?»: «Worte» → **Gewalt**. «Ich denke ans Umbringen. Würde er mich vermissen?»: kein Treffer → **Gewalt**. Mehrdeutig: «Ich denke ans Töten. Wird sie mich verlassen?»: «Anspannung» → Gewalt. |
+
+**Grenzfälle (R30-P01):**
+
+- **G5, neu mit K (b), Gewalt → Suizid:** «Er will die Kinder umbringen. Kann ich mich schützen?», «Er droht sie umzubringen. Soll ich mich trennen?», «Mein Sohn will seinen Vater töten. Muss ich mich einmischen?» → Suizid. In r4-30 gehen sie auf Gewalt. Diese Fragen von Angehörigen sind naheliegend; die Richtung ist sicher, die Zuordnung aber falsch.
+- **G6:** In `auxiliaryWords` fehlen «werde», «werden», «sollte», «habe», «darf», «mag» und weitere Formen (siehe Punkt 4); die Wertung ist dort wie in r4-29.
+- **Bleibt auch mit L:** Ein blosser Infinitiv am Anfang ohne Satzzeichen, etwa «umbringen wird er mich vermissen», lässt sich nicht von «umbringen wird er mich» unterscheiden und geht auf Gewalt.
+
+**Wichtig zu den Satzzeichen:** Sie erreichen die Suchregel nie. `renderSearch()` übergibt `queryGroups()` die schon normalisierte Anfrage, und `normalized()` macht aus jedem Satzzeichen ein Leerzeichen. Deshalb sind «Kann er mich verstehen?» und «kann er mich verstehen» für die Regel gleich. Die Testzeilen mit Satzzeichen prüfen nichts anderes als die ohne.
+
+### Vorschlag: Variante L (nur nachgebildet, nicht umgesetzt)
+
+Gepatcht in einer Kopie von `dist/d31e` im Scratchpad (`d31/varL/site/js/interaktion.js`, Diff in `d31/varL.diff`, drei geänderte Zeilen). Im Repository ist nichts geändert.
+
+- **L1:** `renderSearch()` übergibt `queryGroups()` den Rohtext (`input.value`). `queryGroups()` normalisiert ihn wie bisher. Nur für `killIntent()` werden vorher «.», «?», «!» und «;» durch «und» ersetzt. Ein Satzende trennt damit wie «und». Alle anderen Teile der Suche sehen dieselbe Anfrage wie bisher.
+- **L2:** Nach einem Infinitiv oder Partizip zählt ein Hilfs- oder Modalverb nur dann als Umstellung, wenn der Infinitiv am Anfang seines Abschnitts steht: am Anfang der Anfrage oder nach «und», «dann», «danach», einem Einleitewort oder (mit L1) einem Satzzeichen. «ich denke ans Umbringen kann er mich verstehen» ist damit auch ohne Satzzeichen ein neuer Satz; «umbringen will er mich» bleibt Gewalt.
+
+Ergebnis:
+
+- Suchtest 300 von 300, 0 JS-Fehler.
+- Die 922 Proben sind 922/922 gleich wie `7f7ee0f`.
+- In den 58 gezielten Proben gehen alle Fälle aus R31-07 auf den Treffer aus r4-29: Suizid, «Worte», «Anspannung» oder kein Treffer.
+- G5 geht wieder auf Gewalt wie in r4-30. Alle Gegenproben mit Hilfs- oder Modalverb bleiben richtig.
+- 18 weitere Proben mit Satzzeichen (`n7f7/q-r31p3b.txt`): unverändert, mit einer Ausnahme. «Er hat mich geschlagen. Er will mich umzubringen.» geht jetzt auf Gewalt (vorher Suizid, r4-29 «Worte»). Inhaltlich ist das richtig; mit «und» war es schon so.
+
+**Für den Export:**
+
+1. L oder Gleichwertiges umsetzen.
+2. In die Testliste aufnehmen:
+
+   | Anfrage | Erwartung |
+   | --- | --- |
+   | «Ich denke ans Umbringen. Kann er mich verstehen?» | `krise.html#suizid` |
+   | «ich denke ans Umbringen will er mich überhaupt» | `krise.html#suizid` |
+   | «Ich denke ans Umbringen. Würde er mich vermissen?» | `!grenzen.html#gewalt` |
+   | Gegenprobe «Er will die Kinder umbringen. Kann ich mich schützen?» | `grenzen.html#gewalt` |
+   | Gegenprobe «Ich habe Angst. Umbringen will er mich.» | `grenzen.html#gewalt` |
+
+3. Danach mechanisch prüfen:
+   - Suchtest 100 %.
+   - `n7f7/q-r31p3.txt` und `n7f7/q-r31p3b.txt` gleich Spalte «K» (= L) in `n7f7/*.result5.tsv`.
+   - Die 922 Proben gleich wie `7f7ee0f`.
+
+Dann kann `independentReview` gesetzt werden. Vor dem Merge braucht es wieder ein Codex-Review auf dem exportierten Kopf, und es muss geprüft sein.
+
+**Hinweis zu `n7f7/*.result5.tsv`:** In diesen Dateien sind die Spalten anders belegt, als die Kopfzeile sagt. «1ac» steht für `ebe8a30`, «neu» für `7f7ee0f` und «K» für die Nachbildung L.
+
+**Belege (Scratchpad `d31/`):** `suchtest-7f7ee0f.txt`, `suchtest-ebe-on-300.txt`, `suchtest-varL.txt`; `n7f7/` (Listen und `*.result5.tsv`); `sebe/site` (`ebe8a30`); `varL/`, `varL.diff`; `prodcopy5/`, `prod5-a.log`, `d31e.sha`, `prod5.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31e` (von `.gitignore` erfasst). Lokale Server beendet.

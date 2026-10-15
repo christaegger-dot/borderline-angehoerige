@@ -335,7 +335,7 @@
           var infinite = words[verb] === 'umbringen' || words[verb] === 'umzubringen' || words[verb] === 'toeten' || words[verb] === 'umgebracht' || words[verb] === 'getoetet';
           /* Nach Infinitiv oder Partizip nur mit Hilfs- oder Modalverb direkt danach («umbringen will er mich», «umgebracht hat er mich»);
              sonst beginnt ein neuer Satz («Gedanken ans Umbringen. Versteht er mich?», Codex P1 auf #690) */
-          if (infinite && !auxiliaryWords[words[verb + 1]]) break;
+          if (infinite && (verb !== segmentStart || !auxiliaryWords[words[verb + 1]])) break; /* Variante L2: Infinitiv nur am Anfang des Abschnitts */
           for (var m = infinite ? verb + 2 : verb + 1; m < i; m++) {
             if (words[m] === 'ich') return 'suizid';
             if (thirdParty[words[m]]) return 'gewalt';
@@ -411,7 +411,8 @@
         return before !== 'nicht' && before !== 'nie';
       }) ||
         words.some(function (word) { return suicideWords[word]; });
-      var intent = killIntent(words);
+      /* Variante L1: Satzzeichen trennen für die Tötungsverb-Regel wie «und» */
+      var intent = killIntent(normalized(String(query).replace(/[.?!;]+/g, ' und ')).split(/\s+/).filter(Boolean));
       if (intent === 'gewalt' && suicideSignal) intent = 'suizid';
       if (intent) return [synonyms[intent]];
       if (phraseHit && phraseHit.group !== suicideGroup && suicideSignal) return [suicideGroup];
@@ -451,7 +452,7 @@
     }
     function renderSearch() {
       var query = normalized(input.value).trim();
-      var groups = queryGroups(query);
+      var groups = queryGroups(input.value); /* Variante L1: Rohtext, damit Satzzeichen die Tötungsverb-Regel erreichen */
       if (!query) {
         items.forEach(function (item) { item.hidden = true; });
         results.hidden = true;

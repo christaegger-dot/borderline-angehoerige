@@ -28,7 +28,7 @@ Zur Frage, ob der nach dem Merge versehentlich neu angelegte Branch `claude/r4-3
 | --- | --- | --- |
 | Codex P1 (mehrere Tötungsverben) | Gewertet wird jedes Tötungsverb. Ergibt eines «Suizid», gilt Suizid. Beispiel: «er will mich umbringen und ich will mich töten» → «Suizid» (r4-30: «Gewalt», r4-29: «Suizid»). | nur Suchtreffer |
 | Codex P1 (früheres «mich»), R31-01 | Fall (a) der Infinitivregel (D30-20) greift nur, wenn beim früheren «mich» ein Steuerverb steht (ab zwei Wörtern davor bis zum späteren «mich») und zwischen den beiden «mich» kein «und». Beispiel: «er hat mich geschlagen und will mich umzubringen» → «Gewalt» (r4-30: «Suizid»). | nur Suchtreffer |
-| Testliste | 300 Anfragen, 28 davon neu (Stand Nachtrag 6) | nein |
+| Testliste | 305 Anfragen, 33 davon neu (Stand Nachtrag 7) | nein |
 | Build | r4-31, Assetversion r4-31 | nein |
 
 Die Einzelheiten stehen in `2026-10-15-delta-r4-30/FREIGABE.md`, Nachtrag 9.
@@ -110,8 +110,25 @@ Das zweite Codex-Review von #690 lief auf Anforderung auf dem Stand `ebe8a30`, d
 
 | Befund | Beispiel | r4-29 | `ebe8a30` | Einstufung nach R31-P02 | Korrektur |
 | --- | --- | --- | --- | --- | --- |
-| Neuer Satz nach dem Infinitiv | «Ich habe Gedanken ans Umbringen. Versteht er mich?» | Suizid | **Gewalt** | Rückschritt gegenüber r4-29, **blockierend** | Nach einem Infinitiv oder Partizip wird «mich» nach dem Verb nur noch gewertet, wenn direkt danach ein Hilfs- oder Modalverb steht («umbringen will er mich», «umgebracht hat er mich»). Sonst beginnt ein neuer Satz, auch ohne Satzzeichen. |
+| Neuer Satz nach dem Infinitiv | «Ich habe Gedanken ans Umbringen. Versteht er mich?» | Suizid | **Gewalt** | Rückschritt gegenüber r4-29, **blockierend** | Nach einem Infinitiv oder Partizip wird «mich» nach dem Verb nur noch gewertet, wenn direkt danach ein Hilfs- oder Modalverb steht («umbringen will er mich», «umgebracht hat er mich»). Sonst beginnt ein neuer Satz, auch ohne Satzzeichen. (Ungenau: Beginnt der neue Satz mit einem Hilfs- oder Modalverb, galt das nicht; R31-07, Nachtrag 7.) |
 
 Ergebnis auf dem Entwurf: «Suchtest: 300 von 300 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind drei Zeilen: die Codex-Probe, dieselbe ohne Satzzeichen und eine Gegenprobe. Die 922 Proben der Prüfsitzung (`n690/`) ergeben dieselben Ersttreffer wie der Export `ebe8a30`.
 
 `releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `ebe8a30`.
+
+## Nachtrag 7 · Abschlussbestätigung 3, R31-07 und Variante L (15.10.2026)
+
+Die Prüfsitzung hat den Stand `7f7ee0f` geprüft (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 3»). Ihr Ergebnis nach R31-P02: «nicht freigabefähig». Der Codex-Fall ist behoben, aber es bleibt ein Rückschritt gegenüber r4-29 (R31-07, blockierend). Beginnt die nächste Frage mit einem Hilfs- oder Modalverb, wurde sie als Umstellung gelesen, wie bei «umbringen will er mich». Beispiele: «Ich denke ans Umbringen. Kann er mich verstehen?» → «Gewalt» (r4-29: «Suizid»). Eingeführt hatte den Fehler Variante K (b). Im Export `ebe8a30` steckt er, in der Produktion (r4-30) nicht.
+
+Die Prüfsitzung hat ausserdem festgestellt: Bisher erreichten Satzzeichen die Suchregel nie, weil die Anfrage schon ohne Satzzeichen ankam. Testzeilen mit Satzzeichen prüften deshalb dasselbe wie Testzeilen ohne.
+
+Umgesetzt ist Variante L der Prüfsitzung, wörtlich nach ihrem Diff:
+
+- **L1:** Die Suche gibt der Regel für Tötungsverben den Rohtext. «.», «?», «!» und «;» trennen dort wie «und». Für alle übrigen Teile der Suche bleibt die Anfrage normalisiert.
+- **L2:** Ein Hilfs- oder Modalverb nach einem Infinitiv gilt nur als Umstellung, wenn der Infinitiv am Anfang seines Abschnitts steht.
+
+Die bauende Sitzung hat als Alternative eine einseitige Form geprüft: nach Infinitiv mit Hilfsverb nur «ich» → Suizid. Sie hätte keinen Rückschritt gebracht, aber die beiden Gegenproben der Prüfsitzung nicht erfüllt. Deshalb ist es L.
+
+Ergebnis auf dem Entwurf: «Suchtest: 305 von 305 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind fünf Zeilen, wie verlangt. Der Suchtest füllt das Suchfeld mit dem Rohtext, also mit Satzzeichen. Mechanischer Abgleich mit der Nachbildung L (Spalte «K» in `n7f7/*.result5.tsv`): 998 von 998 ohne Abweichung (`q-alle5` 617, `q-r690` 86, `q-r690b` 74, `q-all91` 91, `q-54` 54, `q-r31p3` 58, `q-r31p3b` 18). Weitere Grenzfälle (G5, G6, Infinitiv am Anfang ohne Satzzeichen) stehen in R30-P01.
+
+`releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.

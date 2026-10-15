@@ -40,6 +40,7 @@ Variante R stammt von der Prüfsitzung und ist unverändert übernommen. `intera
 **Gegenüber der Produktion r4-33 (`ce56c1d`):** 9 Anfragen in den 971 Proben und 3 in `q-r33b` anders:
 
 - Wieder angeheftet wie in r4-32 sind die drei Rückschritte, dazu neu «Ihr tötetet mich» und «Ihr brachtet mich um».
+- Neu mit Kinder › Eskalation zuerst (vorher Suizid oder Gewalt zuerst, beide bleiben oben): «Er tötete die Kinder», «er tötet die Kinder», «er tötet mich und die Kinder schauen zu».
 - Nicht mehr angeheftet ist «Die Therapie bringt nichts ich stelle … meine Medikamente um» (harmlos).
 - Wieder angeheftet wie in r4-32 sind zwei harmlose Sätze ohne Satzzeichen, «die Therapie bringt nichts ich mache mir Sorgen um sie» und «Er bringt die Kinder und zieht sich um». Das ist der Preis dafür, dass der Nahbereich genau r4-32 entspricht. Mit Komma bleiben beide richtig.
 - **Nicht mehr angeheftet ist «Er bringt mich nach dem Streit in der Küche er sagt es um».** Der Satz ist konstruiert, und r4-32 hat ihn auch nicht erkannt. Gegenüber der Produktion r4-33 ist das ein Rückschritt.
@@ -56,3 +57,30 @@ R31-P03 vergleicht mit «der Produktion». Seit dem Merge von #695 ist das r4-33
 Den Bezugsstand muss die Auftraggeberin bestätigen.
 
 `releaseApproval.independentReview` steht auf «ausstehend», bis die Prüfsitzung den Stand bestätigt hat.
+
+## Nachtrag 1 · Unabhängige Prüfung und Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `e4a4013` geprüft (`PRUEFUNG.md`, Commit `c3034ca`). Urteil: «freigabefähig».
+
+Den Abgleich hat sie selbst durchgeführt:
+
+- Suchtest 216 von 216; auf r4-33 sind es 209, auf r4-32 208.
+- `all33.q` und `q-r33b` sind bytegleich mit ihren Nachbildungen.
+- Gegenüber r4-32 sind 16 von 981 Proben anders. Davon sind 13 neu angeheftet, und bei 3 steht jetzt Kinder zuerst. Keine Anheftung und kein Treffer geht verloren.
+- Der Produktionsbuild ist in einer Kopie bytegleich (34 Dateien).
+
+Nach ihrer Einschätzung blockiert r4-34 auch dann nicht, wenn r4-33 der Bezugsstand ist. Der konstruierte Satz ist weder eine Suizidaussage noch eine Ich-Aussage ohne Treffer. Ihren Hinweis auf die drei Sätze mit Kinder zuerst hat die bauende Sitzung in die Liste oben aufgenommen.
+
+`releaseApproval.independentReview` steht damit auf «bestaetigt».
+
+Produktionsexport (`--production --out=site --write-site`):
+
+- 23 Seiten, 0 Blocker, 0 Hinweise.
+- «PARITÄT BESTANDEN: 34 Dateien byte-gleich mit site/».
+- `site/` ist dateigleich mit dem Entwurf `dist/d34a` der Prüfsitzung.
+- Suchtest gegen `site/`: 216 von 216, 0 JS-Fehler.
+- Build r4-34 auf 23 Seiten, 0 `tel:`.
+- axe (WCAG 2.2 AA) auf allen 23 Seiten bei 320 und 1280 px, auch auf der Suche mit «Mein Mann bringt mich um sie sieht es»: 0 Verstösse, kein Überlauf, keine JS-Fehler. Der erste Treffer per Tab ist dort `grenzen.html#gewalt`.
+
+Den Pull Request eröffnet die bauende Sitzung erst, wenn die Auftraggeberin über den Merge-Ablauf entschieden hat.
+

@@ -6,7 +6,7 @@
   "basisCommit": "8dbf1be6b291cb3fd8f5daa5db5202e9f8eac3fb",
   "basisRelease": "r4-27",
   "freigabevorlage": "1845c6b",
-  "status": "PUK-Freigabe dokumentiert; Pull Request #685 offen, nicht gemergt",
+  "status": "PUK-Freigabe dokumentiert; mit PR #685 gemergt und veröffentlicht; Produktionsnachtest bestanden",
   "befunde": {
     "erfuellt": [
       "R28-C01",
@@ -63,6 +63,24 @@
     "abgeschlossen": "2026-10-14T21:15:25Z",
     "befundeInhalt": 0,
     "befundeDokumentation": 3,
-    "erneutesReview": "angefordert"
+    "erneutesReview": "b24bc43 ohne Befund, 2026-10-14T21:19:27Z"
+  },
+  "produktion": {
+    "pullRequest": 685,
+    "mergeCommit": "86304d428e8fd7de7eb3d9a0d4b3d9ed13527b41",
+    "netlifyDeploy": "6ad05887e9398ce80e74cab8",
+    "veroeffentlicht": "2026-10-15T04:37:36Z",
+    "smokeTest": {
+      "seitenLaeufe": "44/44",
+      "suche": "54/54 wie lokal",
+      "suchintentionen": "26/26",
+      "texte": "7/7 neu, 5/5 entfernt",
+      "anker": "8/8",
+      "noJs": "4/4",
+      "seite404": "bestanden",
+      "header": "unverändert",
+      "telLinks": 0,
+      "nichtHtmlBytegleich": "9/9"
+    }
   }
 }

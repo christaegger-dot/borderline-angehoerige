@@ -5,6 +5,7 @@
 //   vor dem Export gegen den Entwurf (z. B. dist/site), danach gegen site/
 // Erwartung «!href» heisst: Ersttreffer darf nicht href sein; «–» heisst: kein Treffer;
 // «href1 > href2 > …» heisst: die ersten Treffer in genau dieser Reihenfolge (Sicherheitsabschnitte, r4-32).
+// «!sicher» heisst: unter den ersten zwei Treffern steht keiner der vier Sicherheitsabschnitte (harmlose Gegenproben, r4-33).
 // Playwright braucht PLAYWRIGHT_BROWSERS_PATH (hier /opt/pw-browsers).
 // Playwright: Modulpfad über PLAYWRIGHT_MODULE, sonst /opt/npm-tools/node_modules/playwright.
 // Nicht Teil der CI (dort fehlt Playwright); in jeder Änderungsrunde mit Änderungen an Suche oder Inhalt ausführen.
@@ -37,13 +38,14 @@ const page = await browser.newPage();
 const errors = [];
 page.on('pageerror', e => errors.push(String(e)));
 await page.goto(`http://127.0.0.1:${port}/suche.html`, { waitUntil: 'networkidle' });
+const safety = new Set(['krise.html#suizid', 'grenzen.html#gewalt', 'kinder.html#eskalation', 'kommunizieren.html#suizid-angesprochen']);
 const fails = [];
 for (const [query, expected] of rows) {
   await page.fill('#site-search', query);
   const hrefs = await page.evaluate(() => [...document.querySelectorAll('[data-search-results] > li:not([hidden]) a')].map(a => a.getAttribute('href')));
   const sequence = expected.includes(' > ') ? expected.split(' > ') : null;
-  const got = sequence ? hrefs.slice(0, sequence.length).join(' > ') || '–' : (hrefs[0] || '–');
-  const ok = sequence ? got === expected : expected.startsWith('!') ? got !== expected.slice(1) : got === expected;
+  const got = sequence ? hrefs.slice(0, sequence.length).join(' > ') || '–' : expected === '!sicher' ? hrefs.slice(0, 2).join(' > ') || '–' : (hrefs[0] || '–');
+  const ok = sequence ? got === expected : expected === '!sicher' ? !hrefs.slice(0, 2).some(h => safety.has(h)) : expected.startsWith('!') ? got !== expected.slice(1) : got === expected;
   if (!ok) fails.push({ query, expected, got });
 }
 await browser.close();

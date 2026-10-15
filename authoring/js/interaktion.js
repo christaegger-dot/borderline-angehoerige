@@ -263,6 +263,9 @@
     /* «mich»: zuerst das nächste Subjekt davor im Teilsatz, dann ein Subjekt direkt danach («dass mich mein Mann …»),
        dann ein Subjekt in einem früheren Teilsatz, zuletzt ein Drohwort (D30-18, D30-19). */
     var attemptWords = { versucht: 1, versuchte: 1, versuch: 1, plant: 1, geplant: 1 };
+    var controlWords = { haelt: 1, halten: 1, abhalten: 1, abgehalten: 1, ab: 1, hindert: 1, hindern: 1, gehindert: 1, daran: 1, davon: 1, dazu: 1,
+      bittet: 1, bitten: 1, gebeten: 1, bat: 1, zwingt: 1, zwingen: 1, gezwungen: 1, treibt: 1, treiben: 1, getrieben: 1,
+      ueberredet: 1, ueberreden: 1, angefleht: 1, anfleht: 1, fleht: 1, draengt: 1, gedraengt: 1, ermutigt: 1, aufgefordert: 1, fordert: 1 };
     function michIntent(words, objectIndex) {
       var start = clauseStart(words, objectIndex), i;
       /* Reflexives «mich» im Infinitiv («meine Familie hält mich davon ab, mich umzubringen») oder verneint
@@ -273,7 +276,17 @@
       if (killVerb !== -1 && !words.some(function (word) { return threatWords[word] || attemptWords[word]; })) {
         var zuInfinitive = words[killVerb] === 'umzubringen' || (words[killVerb] === 'toeten' && words[killVerb - 1] === 'zu');
         var negated = words.slice(objectIndex + 1, killVerb).some(function (word) { return word === 'nicht' || word === 'nie'; });
-        if ((zuInfinitive && words.indexOf('mich') < objectIndex) || negated) return 'suizid';
+        /* (a) nur mit einem Steuerverb zwischen dem früheren «mich» und diesem («hält mich davon ab, mich …», «bittet mich, mich …»);
+           «er hat mich geschlagen und will mich umzubringen» bleibt Gewalt (Codex P1 auf #689) */
+        var steered = false;
+        for (i = objectIndex - 1; i >= Math.max(0, objectIndex - 5); i--) {
+          if (words[i] === 'und' || clauseWords[words[i]]) break;
+          if (words[i] === 'mich') {
+            for (var k = Math.max(0, i - 2); k < objectIndex; k++) if (controlWords[words[k]]) steered = true;
+            break;
+          }
+        }
+        if ((zuInfinitive && steered) || negated) return 'suizid';
       }
       for (i = objectIndex - 1; i >= start; i--) {
         if (words[i] === 'ich') return 'suizid';
@@ -294,19 +307,8 @@
       }
       return words.some(function (word) { return threatWords[word]; }) ? 'gewalt' : 'suizid';
     }
-    function killIntent(words) {
-      var verb = -1, i;
-      for (i = 0; i < words.length; i++) if (killVerbs[words[i]]) { verb = i; break; }
-      if (verb === -1) {
-        var bringt = words.indexOf('bringt');
-        var um = bringt === -1 ? -1 : words.indexOf('um', bringt + 1);
-        if (um === -1) return null;
-        /* nur «… bringt mich um» (Drohung gegen die eigene Person); «bringt sie sich um» bleibt bei der bisherigen Wertung (R25-010) */
-        for (i = bringt + 1; i < um; i++) if (words[i] === 'mich') return michIntent(words, i);
-        return null;
-      }
-      if (words.indexOf('sich') !== -1) return 'suizid';
-      var start = clauseStart(words, verb);
+    function verbIntent(words, verb) {
+      var start = clauseStart(words, verb), i;
       /* «mich» im Teilsatz geht anderen Objekten vor («ich will mich wegen meiner Familie umbringen», D30-19). */
       for (i = verb - 1; i >= start; i--) if (words[i] === 'mich') return michIntent(words, i);
       for (i = verb - 1; i >= start; i--) if (plainObjects[words[i]]) return 'gewalt';
@@ -318,6 +320,25 @@
       }
       return null;
     }
+    function killIntent(words) {
+      var verbs = [], i;
+      for (i = 0; i < words.length; i++) if (killVerbs[words[i]]) verbs.push(i);
+      if (!verbs.length) {
+        var bringt = words.indexOf('bringt');
+        var um = bringt === -1 ? -1 : words.indexOf('um', bringt + 1);
+        if (um === -1) return null;
+        /* nur «… bringt mich um» (Drohung gegen die eigene Person); «bringt sie sich um» bleibt bei der bisherigen Wertung (R25-010) */
+        for (i = bringt + 1; i < um; i++) if (words[i] === 'mich') return michIntent(words, i);
+        return null;
+      }
+      if (words.indexOf('sich') !== -1) return 'suizid';
+      /* Jedes Tötungsverb wird gewertet; ergibt eines Suizid, gilt Suizid («er will mich umbringen und ich will mich töten»,
+         Codex P1 auf #689). */
+      var intents = verbs.map(function (verb) { return verbIntent(words, verb); });
+      if (intents.indexOf('suizid') !== -1) return 'suizid';
+      return intents.indexOf('gewalt') !== -1 ? 'gewalt' : null;
+    }
+
     var synonyms = {};
     var phraseGroups = [];
     var suicideWords = {};

@@ -70,3 +70,37 @@ Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8
 - `q-alle5.txt`, `q-alle5.resultJ.tsv` (r4-29, `adba309`, Nachbildung J); `varJ/site/`; `searchJ.cjs`
 - `suchtest-d31a.txt`; `prodcopy/` (Produktion mit «bestaetigt»), `prodcopy2/` (Gegenprobe)
 - Entwurf: `/home/claude/borderline-angehoerige/dist/d31a` (von `.gitignore` erfasst)
+
+## Abschlussbestätigung (Stand 57ddb4b)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-31-suche-codex-1792072594`, Commit `57ddb4b`, auf `origin` gleich, Arbeitsbaum gleich `57ddb4b`. Diff zu `adba309`: `authoring/js/interaktion.js` (Korrektur J), Testliste (+2), `reviewScope`, die zwei `FREIGABE.md`, Pendenzen, diese Datei (unverändert committet) und `PRODUKTIONSPRUEFUNG.md` der anderen Sitzung |
+| Prüfobjekt | eigener Entwurf `node authoring/tools/build.mjs --out=dist/d31b` |
+| Art | nur mechanischer Abgleich, wie verlangt; keine neue Probenrunde, nichts geändert ausser diesem Abschnitt |
+| Zeitpunkt | 15.10.2026, etwa 16:30 bis 16:50 MESZ |
+
+**Ergebnis: bestätigt.** Alle fünf Punkte sind ohne Abweichung erfüllt. Die Auflage R31-01 ist erfüllt.
+
+**`independentReview` kann jetzt auf «bestaetigt» gesetzt werden.** Das gilt für den Inhalt von `57ddb4b`. Ändert sich danach Code, Testliste oder Seiteninhalt, gilt die Bestätigung nicht mehr; dann braucht es einen neuen Abgleich. Reine Nachweis-Nachträge sind davon nicht betroffen.
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | `suchtest.mjs` 100 % | **erfüllt** | Entwurf: «23 Seiten · 0 Blocker · 1 Hinweise» (nur change-review). `suchtest.mjs dist/d31b`: «Suchtest: 279 von 279 Ersttreffern wie festgeschrieben · JS-Fehler 0», Exit 0. Testliste gegenüber `0fda233`: 7 Zeilen neu, 0 entfernt. Die zwei neuen Zeilen sind die aus R31-01 mit den vorgeschlagenen Erwartungen. |
+| 2 | `q-alle5` gleich `resultJ` | **erfüllt, 617/617** | Ersttreffer von `dist/d31b` gleich Spalte «r30 Ersttreffer» in `q-alle5.resultJ.tsv`: 617 von 617, 0 Abweichungen. Platz 2 und 3 sind ebenfalls 617/617 gleich. Gegenproben: Meine Nachbildung `varJ/site`, neu abgefragt, ergibt dieselben 617/617; die Spalte r4-29 ist 617/617 unverändert. 0 JS-Fehler. Der Code in `57ddb4b` ist bis auf die Kommentare zeichengleich mit meiner Nachbildung J (`diff` der beiden `interaktion.js`). Die Schleife hat keine Wortgrenze mehr; nur «und» bricht ab. Das Fenster für das Steuerverb ist unverändert: ab zwei Wörtern vor dem früheren «mich» bis zum späteren. |
+| 3 | 91/54 gleich r4-29 | **erfüllt** | `q-all91.txt` 91/91 und `q-54.txt` 54/54 mit gleichem Ersttreffer wie r4-29 (`53c5655`). Alle 145 Anfragen stehen auch in der Testliste, wie es Nachtrag 1 sagt. |
+| 4 | Nachtrag 1 und Beschreibungen | **erfüllt** | **Tabelle in `FREIGABE.md` r4-31:** «beim früheren ‹mich› ein Steuerverb (ab zwei Wörtern davor bis zum späteren ‹mich›) und zwischen den beiden ‹mich› kein ‹und›». Das entspricht dem Code genau. «279 Anfragen, sieben davon neu» stimmt. <br>**Nachtrag 9 r4-30:** Er beschreibt die erste Fassung richtig: fünf Wörter, «und» und Einleitewort. Er nennt auch, dass seit R31-01 nur noch «und» gilt. Das Fenster von zwei Wörtern nennt er nicht; das ist vertretbar, weil die r4-31-Tabelle es genau nennt. <br>**Nachtrag 1 r4-31:** Er gibt meinen Befund richtig wieder; der Satz «schlechter als r4-29» steht beim richtigen Satz. Die Zahlen 279/279 und 617/617 sind durch diesen Abgleich nun von mir bestätigt. Die Angaben zur Produktionsprüfung r4-30 in Nachtrag 1 und in den Pendenzen stimmen mit `PRODUKTIONSPRUEFUNG.md` überein: 13:59 bis 14:25 UTC, 207/207, 9/9, 44/44, 88/88, 272/272, PC30-1, PC30-2. Ich habe diese Datei nur gelesen. R31-P01 ist eingetragen. |
+| 5 | Build und Produktionsbuild | **erfüllt** | 23/23 Seiten `data-puk-site-build="r4-31"`, 46 × `?v=r4-31`, kein anderer Wert. CSS-Kopf «Build r4-31», `BUILD = 'r4-31'`, `assetVersion` «r4-31». `dist/d31b` unterscheidet sich von `dist/d31a` (`adba309`) nur in `js/interaktion.js`. `node --check` ohne Fehler, 0 `tel:`. In einer Kopie (`git archive 57ddb4b`) blockiert «ausstehend» mit «BLOCK … change-review», Exit 1. Mit «bestaetigt» (einzige Änderung in `site.config.json`): «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», Exit 0. Das Ergebnis ist mit `dist/d31b` bytegleich: `diff -rq` ohne Ausgabe, SHA-256 von 34 Dateien gleich. |
+
+**Heikel, vor dem Merge:**
+
+- Für den Branch ist noch kein Pull Request offen (`gh api`, nur gelesen). Vor dem Merge braucht es ein Codex-Review auf dem endgültigen Kopf des Pull Requests, mit dem vollständigen Inhalt. Gemergt wird erst, wenn dieses Review geprüft ist (R28-O01, R29-P20). Bei #689 kamen die zwei P1 13 Sekunden vor dem Merge. Das darf sich nicht wiederholen. Meldet Codex einen neuen Befund in der Suche, gilt diese Bestätigung erst nach einem neuen Abgleich wieder.
+- Der Produktionsexport ändert `site/` und `site.config.json`. Danach muss `site/` bytegleich mit dem Produktionsbuild sein, so wie bei `615bdd3`. Diesen Vergleich lege ich der bauenden Sitzung nahe; geprüft habe ich ihn nicht, weil der Export noch nicht vorliegt.
+
+**Hinweise (optional, ohne Einfluss auf die Bestätigung):**
+
+- Der letzte Satz von Nachtrag 1 («bleibt ‹ausstehend›, bis …») ist nach dem Setzen überholt. Ein kurzer Nachtrag 2 mit Verweis auf diesen Abschnitt hält das fest.
+- In den Pendenzen steht bei R3C-A9 und R3C-A10 noch «offen bis zur Veröffentlichung von r4-30». r4-30 ist aber veröffentlicht und nachgeprüft, und R3C-A9 hängt jetzt an r4-31.
+- Die zweite R31-01-Zeile prüft nur `!grenzen.html#gewalt`. So habe ich sie selbst vorgeschlagen, weil r4-29 dort keinen Treffer hatte. J liefert `krise.html#suizid`. Ein Rückfall auf «kein Treffer» würde der Suchtest deshalb nicht melden. Eine strengere Erwartung ist möglich, aber nicht nötig.
+
+**Belege (Scratchpad `d31/`):** `suchtest-57ddb4b.txt`; `final/q-alle5.result3.tsv`, `final/q-all91.result3.tsv`, `final/q-54.result3.tsv` (Spalten r4-29, Nachbildung J, `57ddb4b`); `prodcopy3/` (Kopie mit «bestaetigt», `dist/prod`); `prod-a.log` (Gegenprobe); `d31b.sha`, `prod3.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31b` (von `.gitignore` erfasst). Lokale Server beendet.

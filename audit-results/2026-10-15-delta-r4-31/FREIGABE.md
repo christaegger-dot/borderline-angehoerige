@@ -46,3 +46,9 @@ Ergebnis auf dem Entwurf: «Suchtest: 279 von 279 Ersttreffern wie festgeschrieb
 **Produktionsprüfung r4-30:** Bestanden mit Hinweisen (`2026-10-15-delta-r4-30/PRODUKTIONSPRUEFUNG.md`, eigene Sitzung, 13:59 bis 14:25 UTC). Auf der Produktion ergeben 272 von 272 Anfragen den gleichen Ersttreffer wie die lokale Kopie von `0fda233`. Die beiden Codex-Fälle sind dort so veröffentlicht wie beschrieben.
 
 `releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.
+
+## Nachtrag 2 · Abschlussbestätigung und Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `57ddb4b` bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung»). Den mechanischen Abgleich hat sie selbst durchgeführt: Suchtest 279 von 279, `q-alle5` 617 von 617 gleich der Nachbildung J, Bestand 91/91 und 54/54 wie r4-29, Produktionsbuild in einer Kopie bytegleich. Die Auflage R31-01 ist erfüllt. Damit ist der letzte Satz von Nachtrag 1 überholt. `releaseApproval.independentReview` steht auf «bestaetigt», danach folgt der Produktionsexport.
+
+Vor dem Merge muss das Codex-Review auf dem endgültigen Kopf des Pull Requests abgeschlossen und geprüft sein (R28-O01, R29-P20).

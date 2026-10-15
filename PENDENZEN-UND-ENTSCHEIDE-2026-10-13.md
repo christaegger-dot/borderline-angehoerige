@@ -10,7 +10,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 #696 wurde am 15. Oktober 2026 um 20:51:27 UTC gemergt (Merge-Commit `4abe92c`, Stand `46442fb`). Das war nach dem Codex-Review (20:40:27 UTC) und nach der Meldung «mergen» der bauenden Sitzung (etwa 20:42 UTC). R28-O01 und R29-P20 sind damit eingehalten. Keiner der fünf Codex-Befunde blockiert nach R34-P01; sie stehen in R34-P02.
 
-Die Produktionsprüfung lief am 15. Oktober 2026 von 20:54 bis 21:26 UTC in einer eigenen Sitzung (`audit-results/2026-10-15-delta-r4-34/PRODUKTIONSPRUEFUNG.md`). Sie deckt r4-32 bis r4-34 gemeinsam ab. Ergebnis: bestanden mit Hinweisen, kein Befund.
+Die Produktionsprüfung lief am 15. Oktober 2026 von 20:54 bis 21:26 UTC in einer eigenen Sitzung (`audit-results/2026-10-15-delta-r4-34/PRODUKTIONSPRUEFUNG.md`). Sie prüft r4-34. Ergebnis: bestanden mit Hinweisen, kein Befund.
 
 - 23 Seiten mit Build r4-34; `interaktion.js` bytegleich mit `4abe92c`, auch unter alten Adressen
 - Seiten inhaltlich gleich r4-31, ausser Buildmarker, `id="suizid-angesprochen"` und dem Suchindex
@@ -32,7 +32,7 @@ Offen für die Auftraggeberin: Den Branch `claude/r4-30-suche-links-1792061353` 
 
 #695 wurde am 15. Oktober 2026 um 20:06:30 UTC gemergt (Merge-Commit `7bd5e6a`, Stand `ce56c1d`). Acht Sekunden vorher war der Entwurf auf «ready for review» gesetzt worden. Das war eine Minute nach dem Codex-Review und vor dessen Prüfung. R28-O01 und R29-P20 sind damit zum dritten Mal nicht eingehalten (#689, #694, #695). Ein Entwurf allein verhindert den Merge nicht.
 
-r4-33 hat den Rückschritt aus r4-32 behoben, aber drei neue Rückschritte gebracht. Diese sind mit r4-34 behoben. Eine eigene Produktionsprüfung entfällt; r4-33 ist in der Prüfung von r4-34 mitgeprüft, soweit das rückwirkend möglich ist.
+r4-33 hat den Rückschritt aus r4-32 behoben, aber drei neue Rückschritte gebracht. Diese sind mit r4-34 behoben. Eine Produktionsprüfung von r4-33 wurde nicht durchgeführt und ist rückwirkend nicht mehr möglich. Die Seiteninhalte von r4-33 sind über die Prüfung von r4-34 abgedeckt, weil sich `site/` nur in `interaktion.js` unterscheidet. Für das Suchskript von r4-33 gibt es nur eine Stichprobe (20:18 UTC: Marker r4-33, `interaktion.js` gleich `ce56c1d`).
 
 ### r4-32 veröffentlicht, abgelöst durch r4-33 und r4-34
 
@@ -40,7 +40,7 @@ r4-33 hat den Rückschritt aus r4-32 behoben, aber drei neue Rückschritte gebra
 
 r4-32 heftet bei Anfragen mit Tötungswort «Suizid» und «Gewalt» oben an (R31-P05). Ein Befund aus diesem Codex-Review blockiert nach R31-P03: «Mein Mann bringt mich heute Nacht in unserer Wohnung um» hat in der Produktion keinen Treffer, in r4-31 kam «Gewalt».
 
-Die Korrektur kam mit r4-33 und r4-34. Nachweise: `audit-results/2026-10-15-delta-r4-32/` und `audit-results/2026-10-15-delta-r4-33/`. Die Produktionsprüfung von r4-32 ist in derjenigen von r4-34 aufgegangen.
+Die Korrektur kam mit r4-33 und r4-34. Nachweise: `audit-results/2026-10-15-delta-r4-32/` und `audit-results/2026-10-15-delta-r4-33/`. Eine Produktionsprüfung von r4-32 wurde nicht durchgeführt und ist rückwirkend nicht mehr möglich. Die Seiteninhalte sind über die Prüfung von r4-34 abgedeckt. Für das Suchskript von r4-32 gibt es nur eine Stichprobe (19:44 UTC: Marker r4-32, `interaktion.js` gleich `37b963f`).
 
 ### r4-31 veröffentlicht und nachgeprüft
 

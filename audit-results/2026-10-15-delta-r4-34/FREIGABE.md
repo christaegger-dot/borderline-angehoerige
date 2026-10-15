@@ -128,5 +128,5 @@ Die bauende Sitzung hat die fünf Threads um 20:41 UTC beantwortet und der Auftr
 - r4-34 ist vollständig ausgeliefert: `site/` aus `4abe92c` auf allen 23 Seiten, `interaktion.js` bytegleich, auch unter alten Adressen.
 - 216 von 216 Anfragen der Testliste stimmen über die Pretty URLs.
 - 12 von 12 Handproben stimmen. Dazu gehören die Codex-Fälle von #694 und #695, «er will die Kinder umbringen» mit Kinder zuerst, «Wenn du gehst bringe ich mich um» mit «Wenn Suizid angesprochen wird» zuerst und zwei harmlose Sätze ohne Anheftung.
-- r4-32 und r4-33 sind darin mitgeprüft, soweit das rückwirkend möglich ist. Ihr `site/` unterscheidet sich von r4-34 nur in `interaktion.js`.
+- r4-32 und r4-33 sind nicht nachgeprüft; das ist rückwirkend nicht mehr möglich. Ihre Seiteninhalte sind über r4-34 abgedeckt, weil sich ihr `site/` nur in `interaktion.js` unterscheidet. Für ihr Suchskript gibt es nur je eine Stichprobe aus den Prüfrunden (19:44 und 20:18 UTC).
 

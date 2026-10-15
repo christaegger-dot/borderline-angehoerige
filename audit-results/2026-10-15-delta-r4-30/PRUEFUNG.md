@@ -1,0 +1,145 @@
+# Unabhängige Prüfung r4-30 (Delta)
+
+| | |
+| --- | --- |
+| Gegenstand | Website «Borderline – Orientierung für Angehörige» (Fachstelle Angehörigenarbeit PUK), Entwurf r4-30 |
+| Stand | Branch `claude/r4-30-suche-links-1792061353`, Commit `9f5ebfe` (15.10.2026, 13:21 MESZ). Basis `origin/main` = `53c5655` (r4-29, live). Diff `git diff 53c5655 9f5ebfe`: 11 Dateien |
+| Prüfobjekt | Entwurf aus `node authoring/tools/build.mjs --out=dist/d30`, verglichen mit `site/` (r4-29) |
+| Auftrag | Delta-Prüfung nach `FREIGABE.md` (r4-30), acht Prüfpunkte |
+| Prüfsitzung | Unabhängige Prüfsitzung. Sie hat nichts gebaut, nichts korrigiert und nichts entschieden. Keine Datei im Repository geändert ausser diesem Bericht; keine git-Schreibbefehle; Netlify nicht angefasst. GitHub nur lesend (`gh api`). |
+| Zeitpunkt | 15.10.2026, etwa 13:25 bis 13:50 MESZ |
+| Werkzeuge | Node 22.22, Playwright mit Chromium 1194 (lokal und über den Proxy), axe-core (WCAG 2.2 AA), curl, pdftotext/pdftoppm, Python 3, `python3 -m http.server` für `site/` (Port 8129) und `dist/d30` (Port 8130) |
+
+## Ergebnis
+
+**Freigabefähig mit Auflagen:** Wortlaut, Rechtsbezug, Linkentfernung, Gate, Build, Barrierefreiheit und Wortbilanz sind in Ordnung; aber die neuen Gewaltphrasen der Suche leiten Ich-Aussagen mit Suizidbezug («ich will mich umbringen») neu auf «Wenn Gewalt oder Bedrohung vorkommt» (D30-01), und ein weiterer Link auf «Quellen» verletzt die Linkregel (D30-02). Deshalb soll r4-30 erst nach Korrektur und Nachprüfung von D30-01 exportiert werden.
+
+## Ergebnis je Prüfpunkt
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | Freigabe gegen Umsetzung | **erfüllt** | **Wortlaut:** Die drei freigegebenen Sätze stehen wörtlich und je 1-mal in `authoring/content` und im Entwurf: `fragen` «Ob jemand eine Therapie beginnt, entscheidet die betroffene Person, bei einem nicht urteilsfähigen Kind die sorgeberechtigten Eltern.», `behandlung` «Ob jemand eine Therapie beginnt oder weiterführt, … die sorgeberechtigten Eltern.» mit «etwa Scham» statt «zum Beispiel Scham», `jugendliche` «Ist Ihr Kind für eine Behandlungsfrage nicht urteilsfähig, entscheiden die sorgeberechtigten Eltern über die Einwilligung.» Die alten Fassungen («… Kind die Eltern», «entscheiden Sie als Eltern») kommen nicht mehr vor. <br>**Sichtbarer Text aller 23 Seiten** (Chromium, 1280 px, alle `details` offen; verglichen `innerText` von `body`, Titel, Meta-Angaben, alle Links mit Ziel, Text und `aria-label`, alle `aria-label`): 19 Seiten gleich; 4 Seiten verschieden, jede Differenz zugeordnet: `behandlung` (P1 und «etwa»), `fragen` (P1), `jugendliche` (P1), `quellen` (kein Textunterschied; 105 statt 102 Links: die drei entfernten Links, dazu entfällt das `aria-label` «Schutz, Informationsseite der Opferhilfe Schweiz»). <br>**Quelltext** (Buildmarker vereinheitlicht): sonst nur Unterschiede im verborgenen Suchindex von `suche` (Auszüge der drei geänderten Abschnitte, Aliase «trinkt trinken» und «Psychiatrie Notfall psychiatrischer Notfall») und in `js/interaktion.js`. `css/site.css` nur Buildkommentar; `_headers`, `_redirects`, `robots.txt`, `assets/`, `fonts/` bytegleich. |
+| 2 | Rechtlich (nur Gesetzeswortlaut) | **erfüllt** | Fedlex, ZGB Stand 1.7.2026 (Abruf 15.10.2026): Art. 19c Abs. 2 «Für urteilsunfähige Personen handelt der gesetzliche Vertreter …»; Art. 304 Abs. 1 «Die Eltern haben von Gesetzes wegen die Vertretung des Kindes gegenüber Drittpersonen im Umfang der ihnen zustehenden elterlichen Sorge.»; Art. 296 Abs. 2 und 3 (gemeinsame Sorge als Grundsatz; minderjährige Eltern und Eltern unter umfassender Beistandschaft ohne Sorge). «die sorgeberechtigten Eltern» entspricht damit Art. 304 Abs. 1 und dem Vorschlag des Rechtsabgleichs Nr. 8; für Nr. 10b schliesst die neue Fassung jetzt auch Eltern ohne Sorge aus, was der Befund P1 verlangt. **Widerspruchsfrei** zum übrigen Text: `jugendliche` › «Ihre Rolle als Mutter oder Vater» sagt «meist gemeinsam im Rahmen der elterlichen Sorge» und mit 18 «endet» die Sorge; `behandlung` › «Wann Sie Auskunft erhalten können» sagt «Als Eltern eines minderjährigen Kindes: Ist das Kind für die konkrete Frage nicht urteilsfähig, vertreten Sie es im Rahmen der elterlichen Sorge.» Beides passt. Restunschärfen ausserhalb von P1 siehe D30-07. |
+| 3 | Linkregel | **erfüllt für die drei Links; neuer Verstoss gefunden (D30-02)** | **Umsetzung:** Pro Juventute «Wenn ein Elternteil psychisch krank ist», Kanton Zürich «Opferbetreuung durch Forensic Nurses» und Opferhilfe Schweiz «Schutz» stehen ohne Link, der Text ist unverändert; «Für wen ist die Opferhilfe?» bleibt verlinkt (auf `quellen` und `grenzen`). Keine andere Seite verlinkt eine der drei Adressen. Die Entfernung ist weiter begründet (Abruf 15.10.2026): Pro Juventute zeigt in der Navigation «147 – für Kinder & Jugendliche … Die Notrufnummer für Kinder und Jugendliche»; Forensic Nurses «Brauchen Sie dringend Hilfe? 24/7-Nummer der Opferhilfe 142 anrufen» und `tel:`-Links; «Schutz» «… akuter Gefahr … rufen Sie die Polizei an (117)». <br>**Alle externen Links des Entwurfs:** 88 Adressen (91 in r4-29 minus 3): 23 PubMed, 18 DOI, 47 weitere. Die 47 mit curl abgerufen (42 × 200, 5 × 403), die 40 HTML-Ziele zusätzlich in Chromium über den Proxy (erster Bildschirm 1280 × 900 und ganze Seite, Suche nach Notrufnummern und `tel:`), die 7 PDF mit pdftotext und Seitenbild. Ergebnis: <br>– **Verstoss:** EBG-Informationsblatt A1 (PDF, auf `quellen`): Seite 16 von 17, blauer Kasten «Hilfsangebote bei häuslicher Gewalt … Im Notfall: Polizei … Telefon 117, Medizinische Hilfe … Telefon 144» (D30-02). <br>– **Zur Auslegung:** die 4 PUK-Adressen haben oben rechts einen fixierten Notfall-Knopf; die 24-Stunden-Nummern erscheinen erst nach Klick (D30-05). <br>– **Regelkonform nach Wortlaut:** `angehoerige.ch` (fetter Satz «Im Notfall … Sanitätsnotruf 144.» in der Seitenmitte, kein Kasten), `kinderseele.ch` (143 im Fliesstext unten, wie R3), NICE NG225 («call 111 or 999» im Fliesstext); Beratungs- und Kontakttelefone: Stand by You (HelpLine oben in einem Kreis), VASK, Pro Mente Sana («Rat & Hilfe» im Menü), Selbsthilfe Schweiz, ipw (Stationstelefon, Knopf «Soforthilfe» ohne Nummer), Clienia (Menüpunkt «Eintritt / Notfall» ohne Nummer), Budget- und Schuldenberatung (Adresslisten). Übrige Ziele ohne Notrufnummer. <br>– **Nicht prüfbar:** siehe Abschnitt «Nicht prüfbar». |
+| 4 | Suche (Code-Review und Test) | **erfüllt für die Vorgaben; Nebenwirkungen gefunden (D30-01)** | **Code:** Diff gelesen (`interaktion.js`: 14 neue Suizidbegriffe, 7 neue Gewaltphrasen, «gegen» als Stoppwort, Zwischenspeicher; `site.config.json`: zwei Aliase). <br>**Vorgaben (Chromium, beide Stände):** `queries_all.txt` 91/91 und `queries.txt` 54/54 Ersttreffer gleich wie r4-29. R3-Lücken 16/16 mit passendem Ersttreffer: 11 Suizidanfragen (darunter «Lebensmüdigkeit») → `krise#suizid`, «Psychiatrie Notfall» → `krise#krise-schnell`, «er droht mich umzubringen», «bedroht mich mit dem Tod», «fühle mich bedroht» → `grenzen#gewalt`, «Gewalt gegen Kinder» → `kinder#eskalation`. Gegenproben 8/8 unverändert («er droht sich umzubringen», «sie droht mit Suizid», «Suizid», «Selbstmord», «Mein Kind will nicht mehr leben» → `krise#suizid`; «Wenn du gehst bringe ich mich um» → `kommunizieren#worte`; «Tabletten» → `fragen#f-medikamente`; «Medikamente gegen Angst» → `behandlung#keine-behandlung`, schon in r4-29 schwach). <br>**Eigene Anfragen (87):** 43 realistische Anfragen belasteter Angehöriger: r4-29 17 passend, 7 teilweise, 8 unpassend, 11 ohne Treffer; r4-30 20, 7, 7, 9; schlechter nur «meine Frau ist lebensmüde» (vorher 0 Treffer, jetzt unpassend `quellen#leitlinien`). 25 Proben auf Nebenwirkungen: 11 schlechter, 4 besser, 2 gleichwertig anders, 8 gleich. 19 Proben zu Beugung und Ich-Form: 4 besser, 15 gleich. Tabellen im Anhang. <br>**Nebenwirkungen:** «mich umbringen», «mich umzubringen», «mich zu toeten» erfassen Ich-Aussagen; «droht mich» erfasst «droht mich zu verlassen»; «mit dem tod» erfasst «Umgang mit dem Tod» (D30-01). «gegen» als Stoppwort: unauffällig, nur Verschiebungen bei schwachen Treffern (D30-08). <br>**Zwischenspeicher `item.__pukSearch`:** korrekt, solange die `data-search-*`-Attribute nach dem ersten Suchen nicht ändern; im Code ändert sie nichts (kein `setAttribute`, `cloneNode` oder `innerHTML` darauf). Ein nachträglich geändertes Attribut bleibt unberücksichtigt (im Browser nachgestellt). Laufzeit je Eingabe (516 Eingaben, 207 Einträge): Mittel 14,2 → 1,9 ms, Median 12,4 → 0,8 ms, 95 % 23,3 → 6,0 ms. |
+| 5 | Gate und Build | **erfüllt** | Entwurf: «23 Seiten · 0 Blocker · 1 Hinweise», einziger Hinweis `WARN … change-review`. Kopie ausserhalb des Repositorys (`git archive 9f5ebfe`), nur `independentReview` auf «bestaetigt»: «Build production: 23 Seiten · 0 Blocker · 0 Hinweise». Diese Produktionsausgabe ist bytegleich mit `dist/d30` (`diff -rq` leer). Gegenprobe: dieselbe Kopie mit «ausstehend» blockiert («BLOCK … change-review»). `BUILD = 'r4-30'` in `contract.js`, `assetVersion` «r4-30»; 23/23 Seiten `data-puk-site-build="r4-30"`, 46 × `?v=r4-30`, CSS-Kopf «Build r4-30». |
+| 6 | Barrierefreiheit und Layout | **erfüllt** | axe (wcag2a, 2aa, 21a, 21aa, 22aa) auf `quellen`, `behandlung`, `fragen`, `jugendliche`, `suche` bei 320 und 1280 px mit offenen `details`: 0 Verstösse; dazu `suche` mit Treffern («Selbstmordgedanken») 0 Verstösse. «Unvollständig» nur `color-contrast` (2) auf `behandlung`, gleich in r4-29. Kein waagrechter Überlauf (`scrollWidth` = Breite, geschlossen und offen). **Tastatur:** Suchfeld nach 14 × Tab erreicht, Eingabe «Tabletten genommen», Status `role=status`, `aria-live=polite` («20 von 37 passenden Inhalten sichtbar.»), Tab auf den ersten Treffer `krise.html#suizid` mit sichtbarem Fokusring, Enter öffnet das Ziel, Fokus auf `section#suizid`. 0 Skriptfehler und 0 Konsolenfehler in allen Läufen. |
+| 7 | Wortbilanz und Zuständigkeit | **erfüllt** | `wortbilanz.mjs` (mit Quellenblock): `behandlung` 2399 (< 2400; r4-29 2399), `fragen` 2398 (≤ 2400; 2397), `jugendliche` 898 (≤ 900; 898), Website 30 667 (≤ 33 000; 30 666). Alle übrigen Seiten gleich; `quellen` 5418 statt 5420, weil nach dem entfernten `</a>` der Punkt nicht mehr als eigene Einheit zählt. 0 `tel:` und 0 «Notruf» im Quelltext aller 23 Seiten. Zuständigkeitssatz «Sorgen Sie sich akut um …» im `main` je 1-mal auf `diagnose`, `grenzen`, `kinder`, `kommunizieren`, `krise`, `kurz`, `verstehen`, wie in r4-29. |
+| 8 | Nachweise | **teilweise erfüllt** | **GitHub-API (lesend):** #687 eröffnet 09:48:26 UTC, gemergt 09:49:24 UTC durch `christaegger-dot`, Kopf `a7c5ec1`, Merge-Commit `0fc0474`; Codex-Review eingereicht 09:53:27 UTC, Zusammenfassung «Completed» 09:53:30 UTC, zwei Befunde P2 und P1 mit dem in `FREIGABE.md` wiedergegebenen Inhalt. #688 eröffnet 10:05:09 UTC, gemergt 10:11:46 UTC, Merge-Commit `53c5655`, 2 Commits (`76a3c3f`, `be3fbe1`), 6 Dateien; Codex «Completed» 10:06:51 UTC, 👍 um 10:06:55 UTC, keine Befunde. Kein Pull Request für r4-30 offen; `origin/main` = `53c5655`; Fetch-Refspec nur noch `main` und der r4-30-Branch. **Pendenzen:** Die Angaben zur Produktionsprüfung r4-29 (10:18 bis 10:44 UTC, 11 Punkte, 207/207, 9/9, 36/36, 88/88, 102/102) stimmen mit `PRODUKTIONSPRUEFUNG.md` überein; R29-P18 bis -P20 sind sachlich richtig. **Ungenau:** R3C-A9 «umgesetzt», obwohl die Anfragen nicht festgeschrieben sind (D30-03); «die Seite ist regelkonform» für `quellen` (D30-02); Herkunft der gekürzten Fassung und Zeitzonen (D30-06). |
+
+## Befunde
+
+| ID | Priorität | Befund | Beleg | Vorschlag (nicht umgesetzt) |
+| --- | --- | --- | --- | --- |
+| D30-01 | **wichtig, Auflage vor dem Export** | **Neue Fehlleitungen der Suche durch die Gewaltphrasen.** Weil eine erkannte Phrase allein gewertet wird, gehen Ich-Aussagen mit Suizidbezug jetzt auf «Wenn Gewalt oder Bedrohung vorkommt». Das trifft auch Zitate der betroffenen Person, wie sie Angehörige eintippen (vgl. die Gegenprobe «Wenn du gehst bringe ich mich um»). Ausserdem erfasst «droht mich» eine Trennungsdrohung, und «mit dem tod» erfasst allgemeine Wendungen. | r4-29 → r4-30, Ersttreffer: «ich will mich umbringen», «ich denke daran mich umzubringen», «manchmal möchte ich mich umbringen», «ich könnte mich umbringen»: `krise#suizid` → `grenzen#gewalt`; «ich habe Gedanken mich zu töten»: `verstehen#eisberg` → `grenzen#gewalt`; «er/sie droht mich zu verlassen»: `fragen#f-verlassen` → `grenzen#gewalt`; «er spielt mit dem Tod», «Umgang mit dem Tod», «Konfrontation mit dem Tod»: 0 Treffer → `grenzen#gewalt`. Ursache in `queryGroups`: Phrase vor Einzelwort, längste Phrase gewinnt; «mich umbringen» (14) usw. stehen nur in der Gewaltgruppe. Die Fusszeile der Suchseite zeigt weiter «holen Sie sofort Hilfe»; deshalb nicht kritisch. Es ist aber eine Verschlechterung genau in der Sicherheitssuche, die r4-30 verbessern soll. | Gewaltphrasen nur mit Drohungs- oder Fremdbezug werten, z. B. «droht mich umzubringen», «gedroht mich umzubringen», «versucht mich umzubringen», «bedroht mich», «mich bedroht», «mit dem tod bedroht», «mit dem tod gedroht». Enthält die Anfrage «ich» und reflexiv «mich umbringen», «mich umzubringen», «mich zu toeten» oder «mich toeten» ohne Drohungswort, die Suizidgruppe werten. «droht mich» und «mit dem tod» allein streichen; die R3-Anfragen bleiben über «bedroht mich» und «mich umzubringen» mit Drohungsbezug gedeckt. Danach 91 + 54 + R3-Liste + Gegenproben + die Proben dieses Berichts erneut prüfen (Nachprüfung durch eine Prüfsitzung, nur Suche). |
+| D30-02 | **wichtig, Auflage vor dem Export (Entscheid)** | **Weiterer Link auf «Quellen» verletzt die Linkregel.** Der Eintrag EBG «Häusliche Gewalt» verlinkt das Informationsblatt A1 «Definition, Formen und Folgen häuslicher Gewalt» (PDF). Das PDF zeigt auf Seite 16 einen hervorgehobenen Kasten mit Notrufnummern. Nach Entscheid E1 (AR3-4) blieben B1 und B2 aus genau diesem Grund unverlinkt. Der Satz in `FREIGABE.md` «die Seite ist regelkonform» stimmt deshalb nicht. | `https://www.ebg.admin.ch/dam/de/sd-web/RAHHlO0AJ0IV/A1%20Definition%2C%20Formen%20und%20Folgen_EBG_2020.pdf`, Abruf 15.10.2026, 17 Seiten; Seite 16: blauer Kasten «HILFSANGEBOTE BEI HÄUSLICHER GEWALT · Für gewaltbetroffene Personen · Im Notfall · Polizei: www.polizei.ch, Telefon 117 · Medizinische Hilfe: www.erstehilfe.ch, Telefon 144». Link seit Release B (`41920bb`, r4-27); in R3 nicht als Verstoss genannt. `authoring/PRUEFBERICHT.md` › «Freigabe AR3-4», E1: B1 und B2 «nicht verlinkt, weil die PDF am Ende 117 und 144 nennen». | Fachstelle entscheidet wie bei R3C-A10. Bei «Link entfernen»: A1 als Text ohne Link, wie B1; in r4-30 mitnehmen (kein sichtbarer Textunterschied). `FREIGABE.md` und R3C-A10 in den Pendenzen berichtigen. |
+| D30-03 | wichtig | **R3C-A9 «Anfragen festschreiben» ist nicht umgesetzt.** Die Anfragen und die erwarteten Ersttreffer stehen weder im Repository noch in `FREIGABE.md`; die Pendenzen melden R3C-A9 trotzdem als «in r4-30 umgesetzt». Die Testlisten liegen nur im Scratchpad der Sitzung und gehen mit ihr verloren. Das war schon R25 bekannt («liegen nicht im Repository»). | `git diff --stat 53c5655 9f5ebfe`: keine Testdatei; `FREIGABE.md` nennt nur die Wörter, keine Ersttreffer; R3-BERICHT R3C-A9: «die Anfragen in die festgeschriebenen Suchtests aufnehmen». | Eine Datei mit Anfrage → erwartetem Ersttreffer ins Repository (z. B. unter `authoring/tools/` oder im Nachweisordner): R3-Liste, Gegenproben, 91/54-Liste und die Proben aus D30-01. Mit einem kleinen Skript in jeder Delta-Prüfung ausführen. Pendenz R3C-A9 bis dahin offen lassen. |
+| D30-04 | wichtig (nächster Patch, keine Auflage für r4-30) | **Weitere sicherheitsrelevante Suchlücken**, schon in r4-29, keine Verschlechterung. | 0 Treffer: «er hat mich gewürgt», «Frauenhaus», «er zerstört Sachen in der Wohnung», «Sorgerecht», «Klinik sagt mir nichts», «sie trinkt jeden Abend»; Beugung der neuen Begriffe: «Abschiedsbriefe», «Selbstmordversuche», «Todeswünsche», «Suiziddrohungen», «Suizidandrohungen», «Überdosen», «lebensmüder Sohn». Schwacher Ersttreffer: «ich habe Angst vor meinem Partner» → `ueber#warum`, «meine Frau ist lebensmüde» → `quellen#leitlinien`, «Freundin schreibt dass sie sich umbringen will» → `quellen#leitlinien`, «Er sagt er will sich umbringen» → `beziehungen#verantwortung`, «er sagt er bringt mich um» und «sie sagt sie bringt sich um» → `kommunizieren#worte`, «Sohn hat Tabletten geschluckt» → `fragen#f-medikamente`, «ich will mich töten» → `behandlung#keine-behandlung`. Ursache: Synonyme gelten nur für das exakte Wort, und jede weitere Wortgruppe muss im Abschnitt vorkommen. | Synonymsuche auch über den Wortanfang (z. B. ab 7 Zeichen) oder Pluralformen ergänzen; Wörter der Gruppen Suizid und Gewalt wie eine Phrase vorrangig werten, damit Zusätze wie «Frau», «Freundin», «Sohn» den Treffer nicht verdrängen; «gewürgt/würgen», «Frauenhaus», «Angst vor meinem/meiner», «sich umbringen», «bringt mich um», «bringt sich um» ergänzen. Fachliche Zuordnung von «Frauenhaus» und «gewürgt» durch die Fachstelle. |
+| D30-05 | optional | **PUK-Seiten mit Notfall-Knopf.** Die 4 verlinkten PUK-Seiten (`quellen`, `behandlung`, `unterstuetzung`, `impressum-datenschutz`) zeigen oben rechts einen fixierten roten Knopf mit dem Namen «Notfall». Nach Klick erscheint «Benötigen Sie Hilfe? Wir sind 24 Stunden für Sie da» mit drei 24-Stunden-Nummern. Ohne Klick ist keine Nummer sichtbar; nach dem Wortlaut der Regel («zeigt») ist das wohl regelkonform. Der Nachweis zu R3C-A4 («keine hat einen Notfallblock», WebFetch) ist aber unvollständig. | Chromium über den Proxy, 1280 und 390 px: `.float-popup` bei x 1207, y 132 (1280 px), Text «Notfall Anmeldung»; `.float-popup-content` vor dem Klick 0 px sichtbar, nach dem Klick 1280 px breit, mit +41 58 384 66 66, +41 58 384 20 00, +41 58 384 46 82 (Bildschirmfoto `extshots/puk-1-1280-nach.png`). Ähnlich zur Auslegung: Stand by You zeigt die Beratungs-HelpLine oben in einem hervorgehobenen Kreis. | Fachstelle hält die Auslegung fest: zählen eingeklappte Notfall-Knöpfe und hervorgehobene Beratungstelefone oben als Notfallblock? Nachweis R3C-A4 präzisieren. Keine Änderung nötig, wenn die Auslegung «nein» lautet. |
+| D30-06 | optional | **Ungenauigkeiten in `FREIGABE.md`.** (a) Die P1-Zeile sagt für alle drei Stellen, die bauende Sitzung habe «die sorgeberechtigten Eltern» wegen des Wortziels gekürzt. Das gilt für «Fragen» und «Behandlung» (Rechtsabgleich Nr. 8). Für die Jugendlichen-Seite stammt «entscheiden Sie als Eltern» wörtlich aus dem Rechtsabgleich Nr. 10b. (b) Die Zeiten mischen UTC («09:48 UTC») und Ortszeit ohne Angabe («13:13 Uhr», «11:59 Uhr» = MESZ). | `RECHTSABGLEICH.md` Nr. 10b; `2026-10-15-release-c-r4-29/FREIGABE-VORLAGE.md`, Zeilen 48 und 56; Commit `9f5ebfe` 13:21 MESZ (nach der Freigabe 13:13 MESZ, also stimmig). | Satz präzisieren; Zeiten einheitlich mit Zone angeben. |
+| D30-07 | optional | **Restunschärfen im Rechtsbezug, ausserhalb von P1.** (a) «entscheidet die betroffene Person» gilt nur für Urteilsfähige; der Rechtsabgleich Nr. 8 schlug «Ob eine urteilsfähige Person … entscheidet sie selbst» vor. Auf `behandlung` deckt «Wann Sie Auskunft erhalten können» die urteilsunfähige erwachsene Person ab, ein Widerspruch besteht nicht. (b) Hat kein Elternteil die Sorge, entscheidet der Vormund (Art. 327a ZGB); der Satz nennt ihn nicht. Er ist dadurch nicht falsch. | ZGB Art. 19c, 327a; `behandlung` › `#auskunft` «Ist die Person für eine medizinische Entscheidung nicht urteilsfähig …». | Bei der nächsten Rechtsrunde mit R29-P02 prüfen; für r4-30 nichts ändern. |
+| D30-08 | optional | **Kleinere Verschiebungen und Wartung der Suche.** «gegen» als Stoppwort und «Überdosis» in der Suizidgruppe verschieben einzelne schwache Treffer. Der Zwischenspeicher wird nicht ungültig, wenn Attribute später ändern. | «Was hilft gegen Wut»: `selbstfuersorge#akzeptanz` → `verstehen#erleben`; «Überdosis Alkohol»: `grenzen#riskant` → `verstehen#borderline`; «Medikamente gegen Angst» in beiden Ständen `behandlung#keine-behandlung` statt `fragen#f-medikamente`. Zwischenspeicher: Schlüsselwort nach dem ersten Suchen per `setAttribute` gesetzt → bleibt unberücksichtigt. | Mit D30-04 betrachten. Im Code kurz vermerken, dass `__pukSearch` statische Attribute voraussetzt (bei späterer Änderung löschen). |
+
+Kein kritischer Befund.
+
+**Auflagen vor dem Export von r4-30:** D30-01 korrigieren und die Suche nachprüfen lassen; zu D30-02 entscheidet die Fachstelle, und `FREIGABE.md` wird berichtigt; D30-03 (Anfragen festschreiben) am besten zusammen mit D30-01. Erst danach `independentReview` auf «bestaetigt» setzen.
+
+## Nicht prüfbar oder nicht geprüft
+
+- **PubMed (23 Adressen):** Der Proxy liefert nur eine Platzhalterseite (Status 203); die Artikelseiten waren nicht auf Notfallblöcke prüfbar.
+- **DOI (18):** 9 lösen auf Verlagsseiten mit Status 200 auf (Text ohne Notrufnummer, nur Zitatnummern); 9 antworten mit 403 (Bot-Schutz) und waren nicht prüfbar.
+- **Nur Text, kein Bild:** Die 4 BAG-Seiten und die EBG-Seite «Häusliche Gewalt» antworteten in Chromium mit 502, NHS inform mit 403. Ihr Text ist über curl geprüft (keine Notrufnummer; beim BAG nur die Kontaktnummer in der Fusszeile); der erste Bildschirm ist nicht gesehen.
+- **Rechtsbezug:** nur Gesetzeswortlaut (ZGB Art. 19c, 296, 301, 304, 327a); keine Rechtsprechung, Lehre oder PUK-Praxis; keine Prüfung durch den Rechtsdienst.
+- **Browser und Hilfsmittel:** nur Chromium; Firefox, Safari und Screenreader nicht geprüft. Die Laufzeit der Suche ist auf einem Rechner gemessen, nicht auf einem schwachen Smartphone.
+- **Produktion:** r4-30 ist nicht ausgeliefert; geprüft ist nur der Entwurf lokal. Netlify wurde nicht angefasst.
+- **Ansicht ohne JavaScript und Druck:** nicht erneut geprüft (r4-30 ändert daran nichts ausser drei Sätzen und drei Links).
+
+## Anhang: eigene Suchanfragen (Ersttreffer)
+
+**43 realistische Anfragen** (Bewertung: + passend, ~ teilweise, − unpassend, 0 ohne Treffer):
+
+| Anfrage | r4-29 | r4-30 | Bewertung r4-29 → r4-30 |
+| --- | --- | --- | --- |
+| «mein Mann bedroht mich» | `grenzen#gewalt` | `grenzen#gewalt` | + → + |
+| «meine Tochter hat Abschiedsbriefe geschrieben» | 0 Treffer | 0 Treffer | 0 → 0 |
+| «Sohn hat Tabletten geschluckt» | `fragen#f-medikamente` | `fragen#f-medikamente` | − → − |
+| «sie hat zu viele Tabletten genommen» | `quellen#forschung` | `krise#suizid` | − → + |
+| «er hat eine Überdosis genommen» | 0 Treffer | `krise#krisenplan` | 0 → ~ |
+| «meine Frau ist lebensmüde» | 0 Treffer | `quellen#leitlinien` | 0 → − |
+| «mein Sohn sagt er will nicht mehr leben» | `krise#suizid` | `krise#suizid` | + → + |
+| «Freundin schreibt dass sie sich umbringen will» | `quellen#leitlinien` | `quellen#leitlinien` | − → − |
+| «er schlägt mich» | `grenzen#gewalt` | `grenzen#gewalt` | + → + |
+| «ich habe Angst vor meinem Partner» | `ueber#warum` | `ueber#warum` | − → − |
+| «er hat mich gewürgt» | 0 Treffer | 0 Treffer | 0 → 0 |
+| «Polizei rufen» | `krise#krise-schnell` | `krise#krise-schnell` | + → + |
+| «er zerstört Sachen in der Wohnung» | 0 Treffer | 0 Treffer | 0 → 0 |
+| «Gewalt gegen mich» | `fragen#f-medikamente` | `grenzen#gewalt` | − → + |
+| «Schutz vor Gewalt» | `grenzen#gewalt` | `grenzen#gewalt` | + → + |
+| «Frauenhaus» | 0 Treffer | 0 Treffer | 0 → 0 |
+| «ich bin völlig erschöpft» | `selbstfuersorge#unterstuetzung` | `selbstfuersorge#unterstuetzung` | + → + |
+| «ich schaffe das nicht mehr» | `verstehen#einordnung` | `verstehen#einordnung` | − → − |
+| «Burnout Angehörige» | `unterstuetzung#beratung` | `unterstuetzung#beratung` | + → + |
+| «meine 15-jährige Tochter ritzt sich» | `jugendliche` | `jugendliche` | ~ → ~ |
+| «Tochter 16 Borderline Diagnose» | `verstehen#einordnung` | `verstehen#einordnung` | ~ → ~ |
+| «Jugendliche Borderline Eltern» | `grenzen#rollen` | `grenzen#rollen` | ~ → ~ |
+| «Schule und Borderline» | `kurz#borderline` | `kurz#borderline` | ~ → ~ |
+| «Kind will keine Therapie» | `behandlung#keine-behandlung` | `behandlung#keine-behandlung` | + → + |
+| «Mein Sohn ist 14 und verweigert die Therapie» | `behandlung#angebote` | `behandlung#angebote` | ~ → ~ |
+| «Elterliche Sorge» | `jugendliche#rolle` | `jugendliche#rolle` | + → + |
+| «Sorgerecht» | 0 Treffer | 0 Treffer | 0 → 0 |
+| «geschiedene Eltern Auskunft» | `behandlung#auskunft` | `behandlung#auskunft` | + → + |
+| «darf ich als Vater informiert werden» | 0 Treffer | 0 Treffer | 0 → 0 |
+| «Klinik sagt mir nichts» | 0 Treffer | 0 Treffer | 0 → 0 |
+| «Wartezeit Therapieplatz» | `behandlung#wartezeit` | `behandlung#wartezeit` | + → + |
+| «DBT Therapie Zürich» | `behandlung#therapieformen` | `behandlung#therapieformen` | + → + |
+| «Wer bezahlt die Therapie» | `behandlung#angebote` | `behandlung#angebote` | ~ → ~ |
+| «Einweisung gegen seinen Willen» | `begriffe#b-fu` | `begriffe#b-fu` | + → + |
+| «gegen ihren Willen in die Klinik» | 0 Treffer | 0 Treffer | 0 → 0 |
+| «fürsorgerische Unterbringung» | `begriffe#b-fu` | `begriffe#b-fu` | + → + |
+| «er trinkt zu viel» | `grenzen#kontakt` | `grenzen#riskant` | ~ → + |
+| «sie trinkt jeden Abend» | 0 Treffer | 0 Treffer | 0 → 0 |
+| «Schulden» | `grenzen#riskant` | `grenzen#riskant` | + → + |
+| «Notfall» | `krise#krise-schnell` | `krise#krise-schnell` | + → + |
+| «psychiatrischer Notfall» | `krise#krise-schnell` | `krise#krise-schnell` | + → + |
+| «Notfall Psychiatrie Zürich» | `unterstuetzung#kantone` | `unterstuetzung#kantone` | − → − |
+| «Krise in der Nacht» | `grenzen#saetze` | `grenzen#saetze` | − → − |
+
+**Proben auf Nebenwirkungen** (Auswahl der Änderungen; alle 25 Proben und 19 Beugungsproben in den Ergebnisdateien):
+
+| Anfrage | r4-29 | r4-30 | Wertung |
+| --- | --- | --- | --- |
+| «ich will mich umbringen» | `krise#suizid` | `grenzen#gewalt` | schlechter (D30-01) |
+| «ich denke daran mich umzubringen» | `krise#suizid` | `grenzen#gewalt` | schlechter (D30-01) |
+| «manchmal möchte ich mich umbringen» | `krise#suizid` | `grenzen#gewalt` | schlechter (D30-01) |
+| «ich könnte mich umbringen» | `krise#suizid` | `grenzen#gewalt` | schlechter (D30-01) |
+| «ich habe Gedanken mich zu töten» | `verstehen#eisberg` | `grenzen#gewalt` | schlechter (D30-01) |
+| «er droht mich zu verlassen» | `fragen#f-verlassen` | `grenzen#gewalt` | schlechter (D30-01) |
+| «sie droht mich zu verlassen» | `fragen#f-verlassen` | `grenzen#gewalt` | schlechter (D30-01) |
+| «er spielt mit dem Tod» | 0 Treffer | `grenzen#gewalt` | schlechter (D30-01) |
+| «Umgang mit dem Tod» | 0 Treffer | `grenzen#gewalt` | schlechter (D30-01) |
+| «Konfrontation mit dem Tod» | 0 Treffer | `grenzen#gewalt` | schlechter (D30-01) |
+| «Überdosis Alkohol» | `grenzen#riskant` | `verstehen#borderline` | schlechter (D30-08) |
+| «Was hilft gegen Wut» | `selbstfuersorge#akzeptanz` | `verstehen#erleben` | gleichwertig |
+| «Selbstmordgedanken Jugendliche» | `kinder` | `fragen#schutz` | gleichwertig, beide schwach |
+| «er droht mit dem Tod» | `krise#selbstverletzung` | `grenzen#gewalt` | besser |
+| «er hat versucht mich umzubringen» | `krise#suizid` | `grenzen#gewalt` | besser |
+| «er will mich umbringen», «sie will mich umbringen», «mein Vater droht mich umzubringen», «er hat gedroht mich umzubringen» | `krise#suizid` | `grenzen#gewalt` | besser |
+| «sie nimmt zu viele Tabletten» | `begriffe#begriffe` | `krise#suizid` | besser |
+| «Lebensmüde Angehörige» | `unterstuetzung#beratung` | `krise#suizid` | besser |
+| «er droht sich umzubringen», «er will sich umbringen», «er hat versucht sich umzubringen», «ich will nicht mehr leben» | `krise#suizid` | `krise#suizid` | gleich, passend |
+| «bedroht mich mit einem Messer» | `grenzen#gewalt` | `grenzen#gewalt` | gleich, passend |
+
+## Vorgehen und Belege
+
+Skripte und Ergebnisse liegen ausserhalb des Repositorys unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8-de06005eb532/scratchpad/d30/`:
+
+- `text.cjs`, `text/`: sichtbarer Text, Links und `aria-label` aller 23 Seiten in beiden Ständen
+- `search.cjs`: Suche in beiden Ständen; Listen `q-all91.txt`, `q-54.txt`, `q-r3.txt`, `q-gegen.txt`, `q-eigen.txt`, `q-neben.txt`, `q-flex.txt`, Ergebnisse `*.result.tsv`
+- `perf.cjs`: Laufzeit und Zwischenspeicher
+- `a11y.cjs`, `a11y-r29.txt`, `a11y-r30.txt`: axe, Überlauf, Tastatur
+- `ext-by-page.tsv`, `fetch/`, `fetch2/`, `phones.py`, `phones2.txt`: externe Links mit curl und PDF-Text; `extshot.cjs`, `extshots/`, `findtext.cjs`, `puk2.cjs`: externe Ziele in Chromium; `a1-notfall-16.png`: Seite 16 des EBG-Blatts A1
+- `dl-zgb/`: ZGB von Fedlex
+- `prodcopy/`, `prodcopy2/`: Produktionsbuild mit «bestaetigt» und Gegenprobe mit «ausstehend»
+- `wb29.txt`, `wb30.txt`: Wortbilanz beider Stände
+
+Im Repository ist nur diese Datei neu; sie ist nicht committet. Der Entwurf liegt in `dist/d30` (von `.gitignore` erfasst).

@@ -12,9 +12,11 @@ r4-30 korrigiert drei Punkte aus r4-29 und kommt nach der unabhängigen Prüfung
 
 - den P1-Befund aus dem Codex-Review von #687: «die sorgeberechtigten Eltern» auf «Fragen», «Behandlung» und der Jugendlichen-Seite; der Wortlaut ist von der Auftraggeberin am 15. Oktober 2026 um 13:13 Uhr freigegeben;
 - die Suchlücken aus R3 (R3C-A9);
-- die Linkregel auf «Quellen» (R3C-A10).
+- die Linkregel auf «Quellen» (R3C-A10), dazu nach D30-02 das EBG-Blatt A1 ohne Link.
 
-Dazu kommt der Zwischenspeicher der Suche (W3C-12). Nachweis: `audit-results/2026-10-15-delta-r4-30/`.
+Dazu kommen der Zwischenspeicher der Suche (W3C-12) und die festgeschriebenen Suchtests (`authoring/tests/suche-ersttreffer.tsv`, `authoring/tools/suchtest.mjs`). Nachweis: `audit-results/2026-10-15-delta-r4-30/`.
+
+Auslegung der Linkregel (Entscheid vom 15. Oktober 2026, D30-05): Ein eingeklappter Notfall-Knopf, dessen Nummern erst nach einem Klick erscheinen, gilt nicht als Notfallblock. Die PUK-Seiten bleiben deshalb verlinkt.
 
 ### r4-29 (Release C) veröffentlicht und nachgeprüft
 
@@ -123,8 +125,8 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | R3C-A5 | Codex-Review abschliessen und prüfen; Merge nur auf ausdrücklichen Auftrag (wie R28-O01) | bei #687 nicht eingehalten (siehe «r4-29 veröffentlicht»); gilt weiter für jeden Pull Request | bauende Sitzung, Auftraggeberin |
 | R3C-A6 | Produktionsprüfung r4-29 | erledigt 15.10.2026: bestanden mit Hinweisen (`PRODUKTIONSPRUEFUNG.md`) | Prüfsitzung, die nicht gebaut hat |
 | R3C-A8 | Visualisierungs-Check und R2 für die 12 Abbildungen mit neuem Wortlaut und für `v-ge-forschung` (R27-O02) | 31.10.2026 | Prüfsitzung; Korrekturen nur nach Freigabe |
-| R3C-A9 | Suchlücken schliessen: «Selbstmordgedanken», «Selbstmordversuch», «lebensmüde», «Todeswunsch», «Suizidandrohung», «Überdosis» u. a. ohne Treffer; «er droht mich umzubringen» auf Gewalt statt Suizid; Anfragen festschreiben | in r4-30 umgesetzt; offen bis zur Veröffentlichung von r4-30 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
-| R3C-A10 | Drei Links auf «Quellen» entfernen (Forensic Nurses, Opferhilfe «Schutz», Pro Juventute); Angabe bleibt als Text, Linkregel bleibt | in r4-30 umgesetzt; offen bis zur Veröffentlichung von r4-30 | bauende Sitzung |
+| R3C-A9 | Suchlücken schliessen: «Selbstmordgedanken», «Selbstmordversuch», «lebensmüde», «Todeswunsch», «Suizidandrohung», «Überdosis» u. a. ohne Treffer; «er droht mich umzubringen» auf Gewalt statt Suizid; Anfragen festschreiben | in r4-30 umgesetzt; festgeschrieben in `authoring/tests/suche-ersttreffer.tsv` (168 Anfragen); offen bis zur Veröffentlichung von r4-30 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
+| R3C-A10 | Drei Links auf «Quellen» entfernen (Forensic Nurses, Opferhilfe «Schutz», Pro Juventute), nach D30-02 auch EBG-Blatt A1; Angabe bleibt als Text, Linkregel bleibt | in r4-30 umgesetzt; offen bis zur Veröffentlichung von r4-30 | bauende Sitzung |
 | R3C-A11 | Selbsttest des Gates auf diese Website umstellen, Aufruf über Schalter und CI; R3 im Gate an die Änderungsrunde binden (W3C-07, R3C-04) | 13.11.2026 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
 | R29-P01 | PatG ZH § 15 Abs. 2 (vermutetes Einverständnis gegenüber Bezugspersonen in Spitälern): mit der PUK klären; Musterbrief auf «Behandlung» allenfalls anpassen | offen | Auftraggeberin, PUK |
 | R29-P02 | Mögliche Ergänzungen aus dem Rechtsabgleich: Bezugsperson und Patientenverfügung ab 18, gewaltfreie Erziehung (Art. 302 ZGB), Auskunft für Eltern ohne elterliche Sorge (Art. 275a ZGB) | offen | Auftraggeberin |
@@ -145,6 +147,8 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | R29-P17 | R3C-05 `responsibility.reviewedAt` nachführen; R3C-07 «Quellen» beim nächsten S lesen; R3C-08 Alias-Anker `begriffe#b-set` nur bei Bedarf | optional | bauende Sitzung |
 | R29-P18 | PC29-1: Netlify setzt die Kopfzeilen aus `_headers` auf 301-Antworten nur teilweise (114 von 440 Abrufen); Seiten und Dateien nicht betroffen. PC29-2: Netlify liefert `Strict-Transport-Security` mit `preload`, das in `_headers` nicht steht (strenger). | optional, nur vermerken | – |
 | R29-P19 | P1 aus #687 (sorgeberechtigte Eltern) | in r4-30 korrigiert; offen bis zur Veröffentlichung | bauende Sitzung |
+| R30-P01 | Weitere Suchlücken aus D30-04 und D30-08: «Sorgerecht», «Klinik sagt mir nichts», «sie trinkt jeden Abend», «er zerstört Sachen in der Wohnung», «Überdosis Alkohol», «Medikamente gegen Angst»; Synonyme auch über Wortanfang oder Beugung prüfen | offen | bauende Sitzung; Nachprüfung durch Prüfsitzung |
+| R30-P02 | D30-07: «entscheidet die betroffene Person» gilt nur für Urteilsfähige; der Fall des Vormunds (Art. 327a ZGB) fehlt | optional | Auftraggeberin |
 | R29-P20 | Vor jedem Merge prüfen, dass genau ein Pull Request für die Änderung offen ist und das Codex-Review auf dessen Stand mit dem vollständigen Inhalt lief. Die bauende Sitzung holt `main` jeweils frisch (Fetch ohne veraltete Branches). | ab sofort | bauende Sitzung, Auftraggeberin |
 
 ### r4-22 · visuelle Befunde A04-008 bis A04-013, abgeschlossen

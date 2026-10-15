@@ -583,3 +583,42 @@ Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8
 - `varI/site/`: nachgebildete Variante I (nur Scratchpad); `searchI.cjs`
 - `suchtest-d30h.txt`; `prodcopy12/` (Produktion mit «bestaetigt»)
 - Entwurf: `/home/claude/borderline-angehoerige/dist/d30h` (von `.gitignore` erfasst)
+
+*Nachtrag:* Die bauende Sitzung hat den Abschnitt «Nachprüfung Codex #689» unverändert mitcommittet. Der folgende Abschnitt ist nicht committet.
+
+## Abschlussbestätigung 2 (Stand 0c711b8)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-30-suche-links-1792061353`, Commit `0c711b8` (15.10.2026, 15:40 MESZ), auf `origin` gleich; Kopf des einzigen offenen Pull Requests #689. Diff zu `e93f9dd`: `interaktion.js` (Variante I in `michIntent()`), Testliste (272 Anfragen), `FREIGABE.md` (Nachtrag 8), Pendenzen (R3C-A9, R30-P01), dieser Bericht. `site/` ist unverändert `085c732`; `independentReview` steht auf «ausstehend» |
+| Prüfobjekt | frischer Entwurf `node authoring/tools/build.mjs --out=dist/d30i`; Abgleich gegen meine Nachbildung von I (`varI/site`) und gegen r4-29 (`site/` aus `53c5655`) |
+| Umfang | nur der mechanische Abgleich und Nachtrag 8; keine neue Probenrunde. Den Abgleich habe ich selbst durchgeführt |
+| Prüfsitzung | dieselbe unabhängige Prüfsitzung; nichts gebaut, korrigiert oder entschieden; nur diese Datei geändert; keine git-Schreibbefehle; Netlify nicht angefasst |
+| Zeitpunkt | 15.10.2026, etwa 15:45 bis 15:55 MESZ |
+
+### Ergebnis
+
+**Freigabefähig.** Der Abgleich ergibt keine Abweichung. **Die Auflage D30-20 ist erfüllt.** **`releaseApproval.independentReview` kann auf «bestaetigt» gesetzt werden.** Danach folgen der neue Export und, vor dem Merge, ein Codex-Review auf dem neuen Kopf von #689 (R29-P20). Das bisherige Codex-Review lief nur auf `085c732`.
+
+### Beleg je Punkt
+
+| Nr. | Punkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | `suchtest.mjs` 100 % | **erfüllt** | Entwurf `dist/d30i`: «23 Seiten · 0 Blocker · 1 Hinweise» (nur change-review). `node authoring/tools/suchtest.mjs dist/d30i`: «Suchtest: 272 von 272 Ersttreffern wie festgeschrieben · JS-Fehler 0», Exit 0. Die sechs verlangten Zeilen zu D30-20 stehen mit den verlangten Erwartungen in der Testliste. |
+| 2 | `q-alle4` gleich resultI | **erfüllt, 0 Abweichungen** | Neuer Lauf in Chromium mit drei Ständen (r4-29, Nachbildung I, `0c711b8`). 575 von 575 Ersttreffern von `0c711b8` sind gleich Spalte I in `q-alle4.resultI.tsv`, und gleich der Nachbildung von I im selben Lauf. 0 Skriptfehler. Der Code entspricht der Nachbildung (gleiche Bedingungen, ausgeschriebene Namen; `attemptWords` liegt ausserhalb der Funktion). |
+| 3 | 91/54 wie r4-29 | **erfüllt** | `queries_all.txt` 91 von 91 und `queries.txt` 54 von 54 Ersttreffer gleich r4-29. |
+| 4 | Nachtrag 8 | **erfüllt** | Nachtrag 8 gibt Auflage D30-20 richtig wieder: 13 Ich-Aussagen, fünf schlechter als r4-29, schon im Export `085c732`. Auch meine Berichtigung zu `a8fe194`, die Bedingungen von Variante I und die Zahlen stimmen (272/272; 575/575). `independentReview` bleibt bis zu dieser Bestätigung «ausstehend». R30-P01 ist um D30-21 ergänzt; R3C-A9 nennt 272 Anfragen und D30-20. |
+| – | Build | **erfüllt** | Kopie (`git archive 0c711b8`) mit «bestaetigt»: «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», bytegleich mit `dist/d30i`. Gegenüber `e93f9dd` ist in der Ausgabe nur `js/interaktion.js` verschieden. Wortbilanz unverändert; `node --check` ohne Fehler. |
+
+**Beim Abgleich aufgefallen:** nichts Neues. Ein Hinweis zur Einordnung, kein Befund: Die Suchregel für Tötungsverben bleibt eine Heuristik. In dieser Prüfung sind in mehreren Runden neue Satzmuster aufgetaucht, zuletzt durch Codex. Festgeschrieben sind jetzt 272 Erwartungen, und meine 575 Proben haben keine Fehlleitung von Suizidsorge auf «Gewalt» mehr ergeben. Dass keine weiteren solchen Muster existieren, belegt das nicht. Neue Funde sollten deshalb weiter als Zeile in die Testliste kommen, mit dem Massstab dieser Prüfung: nie schlechter als r4-29, in Zweifelsfällen Suizid vor Gewalt.
+
+Offen und ohne Einfluss auf den Export bleiben R30-P01 (darin D30-14, D30-15 und D30-21), R30-P02 und die Bestätigung der Fachstelle zum erweiterten Suizid.
+
+### Belege der Abschlussbestätigung 2
+
+Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8-de06005eb532/scratchpad/d30/`:
+
+- `q-alle4b.resultJ.tsv` (575 Proben: r4-29, Nachbildung I, `0c711b8`), Referenz `q-alle4.resultI.tsv`
+- `q-all91.resultJ.tsv`, `q-54.resultJ.tsv`
+- `suchtest-d30i.txt`; `prodcopy13/` (Produktion mit «bestaetigt»)
+- Entwurf: `/home/claude/borderline-angehoerige/dist/d30i` (von `.gitignore` erfasst)

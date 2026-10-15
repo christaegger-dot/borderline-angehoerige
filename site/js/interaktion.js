@@ -262,15 +262,32 @@
     }
     /* «mich»: zuerst das nächste Subjekt davor im Teilsatz, dann ein Subjekt direkt danach («dass mich mein Mann …»),
        dann ein Subjekt in einem früheren Teilsatz, zuletzt ein Drohwort (D30-18, D30-19). */
+    var attemptWords = { versucht: 1, versuchte: 1, versuch: 1, plant: 1, geplant: 1 };
     function michIntent(words, objectIndex) {
       var start = clauseStart(words, objectIndex), i;
+      /* Reflexives «mich» im Infinitiv («meine Familie hält mich davon ab, mich umzubringen») oder verneint
+         («er bittet mich, mich nicht umzubringen») → Suizid, sofern kein Drohwort und kein «versucht», «plant» vorkommt
+         (D30-20, Variante I der Prüfsitzung). */
+      var killVerb = -1;
+      for (i = objectIndex + 1; i <= objectIndex + 4 && i < words.length; i++) if (killVerbs[words[i]]) { killVerb = i; break; }
+      if (killVerb !== -1 && !words.some(function (word) { return threatWords[word] || attemptWords[word]; })) {
+        var zuInfinitive = words[killVerb] === 'umzubringen' || (words[killVerb] === 'toeten' && words[killVerb - 1] === 'zu');
+        var negated = words.slice(objectIndex + 1, killVerb).some(function (word) { return word === 'nicht' || word === 'nie'; });
+        if ((zuInfinitive && words.indexOf('mich') < objectIndex) || negated) return 'suizid';
+      }
       for (i = objectIndex - 1; i >= start; i--) {
         if (words[i] === 'ich') return 'suizid';
         if (thirdParty[words[i]]) return 'gewalt';
       }
       var next = objectIndex + 1;
-      if (nominativeArticles[words[next]]) next++;
       if (nominativeSubjects[words[next]] || persons[words[next]]) return 'gewalt';
+      /* Artikel und bis zu zwei Beiwörter vor der Person («dass mich mein eigener Mann …», Codex P1 auf #689) */
+      if (nominativeArticles[words[next]]) {
+        for (i = next + 1; i <= next + 3 && i < words.length; i++) {
+          if (persons[words[i]]) return 'gewalt';
+          if (killVerbs[words[i]] || clauseWords[words[i]] || words[i] === 'und') break;
+        }
+      }
       for (i = start - 1; i >= 0; i--) {
         if (words[i] === 'ich') return 'suizid';
         if (thirdParty[words[i]]) return 'gewalt';
@@ -303,6 +320,7 @@
     }
     var synonyms = {};
     var phraseGroups = [];
+    var suicideWords = {};
     synonymSets.forEach(function (set) {
       var values = set.map(normalized);
       values.forEach(function (value) {
@@ -310,20 +328,35 @@
         else phraseGroups.push({ phrase: value, group: values });
       });
     });
+    /* eindeutige Suizidwörter; «sterben» und «umbringen» sind mehrdeutig und laufen über Phrasen und die Regel für Tötungsverben */
+    synonyms.suizid.forEach(function (value) {
+      if (value.indexOf(' ') === -1 && value !== 'sterben' && value !== 'umbringen' && value !== 'umzubringen') suicideWords[value] = 1;
+    });
     function queryGroups(query) {
       var normalizedQuery = normalized(query);
       var paddedQuery = ' ' + normalizedQuery + ' ';
-      var phraseHit = phraseGroups.filter(function (entry) {
+      var phraseHits = phraseGroups.filter(function (entry) {
         return paddedQuery.indexOf(' ' + entry.phrase + ' ') !== -1;
-      }).sort(function (a, b) { return b.phrase.length - a.phrase.length; })[0];
+      }).sort(function (a, b) { return b.phrase.length - a.phrase.length; });
+      var phraseHit = phraseHits[0];
       /* Eine erkannte Mehrwort-Intention hat Vorrang vor einzelnen, mehrdeutigen
          Wörtern. So wird etwa «will nicht mehr leben» als Sicherheitsfrage und
          nicht als Kombination aus Ablehnung, «mehr» und «leben» bewertet. */
       var words = normalizedQuery.split(/\s+/).filter(Boolean);
+      /* Suizid-Vorrang: Eine Suizid-Phrase («will sterben») oder ein eindeutiges Suizidwort («Suizidgedanken») in der Anfrage
+         geht jeder anderen Phrase und der Gewalt-Wertung vor (D30-17, Codex P1 auf #689). */
+      var suicideGroup = synonyms.suizid;
+      /* verneinte Phrase («ich will nicht tot sein») zählt nicht */
+      var suicideSignal = phraseHits.some(function (entry) {
+        if (entry.group !== suicideGroup) return false;
+        var before = paddedQuery.slice(0, paddedQuery.indexOf(' ' + entry.phrase + ' ')).trim().split(' ').pop();
+        return before !== 'nicht' && before !== 'nie';
+      }) ||
+        words.some(function (word) { return suicideWords[word]; });
       var intent = killIntent(words);
-      /* Suizid-Vorrang auch hier: Enthält die Anfrage eine Suizid-Phrase («will nicht mehr leben»), gilt Suizid. */
-      if (intent === 'gewalt' && phraseHit && phraseHit.group === synonyms.suizid) intent = 'suizid';
+      if (intent === 'gewalt' && suicideSignal) intent = 'suizid';
       if (intent) return [synonyms[intent]];
+      if (phraseHit && phraseHit.group !== suicideGroup && suicideSignal) return [suicideGroup];
       if (phraseHit) return [phraseHit.group];
       var meaningful = words.filter(function (word) { return !stopwords.has(word) && word !== 'droht' && word !== 'drohen' && word !== 'sprechen'; });
       if (!meaningful.length) meaningful = words;

@@ -1,0 +1,278 @@
+# Festgeschriebene Such-Ersttreffer (R3C-A9, D30-03). Stand r4-30, 15.10.2026.
+# Spalten: Anfrage, erwarteter Ersttreffer (href; «–» = kein Treffer; «!href» = nicht dieser Treffer), Herkunft.
+# Prüfen: PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers node authoring/tools/suchtest.mjs <site-ordner>
+# Vor dem Export den Entwurf prüfen (z. B. dist/site); site/ enthält bis zum Export noch die veröffentlichte Fassung.
+# Schwache Treffer werden nicht festgeschrieben (z. B. «Überdosis Alkohol», «Medikamente gegen Angst»; R30-P01).
+anfrage	erwartet	herkunft
+Suizidgedanken	krise.html#suizid	Bestand r4-28 (91)
+Mein Kind will nicht mehr leben	krise.html#suizid	Bestand r4-28 (91)
+Sie möchte nicht mehr leben	krise.html#suizid	Bestand r4-28 (91)
+Er will sterben	krise.html#suizid	Bestand r4-28 (91)
+Wenn du gehst bringe ich mich um	kommunizieren.html#worte	Bestand r4-28 (91)
+droht sich umzubringen	krise.html#suizid	Bestand r4-28 (91)
+Selbstmord	krise.html#suizid	Bestand r4-28 (91)
+Selbstverletzung	krise.html#selbstverletzung	Bestand r4-28 (91)
+ritzen	krise.html#selbstverletzung	Bestand r4-28 (91)
+sie verletzt sich	krise.html#selbstverletzung	Bestand r4-28 (91)
+Ich kann nicht mehr	selbstfuersorge.html#warnsignale	Bestand r4-28 (91)
+Keine Kraft	selbstfuersorge.html#warnsignale	Bestand r4-28 (91)
+Am Ende	selbstfuersorge.html#warnsignale	Bestand r4-28 (91)
+erschöpft	selbstfuersorge.html#warnsignale	Bestand r4-28 (91)
+Grenzen setzen	grenzen.html	Bestand r4-28 (91)
+Nein sagen	grenzen.html	Bestand r4-28 (91)
+Kontaktpause	kommunizieren.html#kippen	Bestand r4-28 (91)
+Trennung	fragen.html#schutz	Bestand r4-28 (91)
+Gewalt	grenzen.html#gewalt	Bestand r4-28 (91)
+Polizei	krise.html#krise-schnell	Bestand r4-28 (91)
+Kinder erklären	kinder.html	Bestand r4-28 (91)
+KESB	kinder.html#eskalation	Bestand r4-28 (91)
+Diagnose	diagnose.html	Bestand r4-28 (91)
+Abklärung	diagnose.html#abklaerung	Bestand r4-28 (91)
+Depression	fragen.html#f-depression	Bestand r4-28 (91)
+ADHS	diagnose.html#begleiterkrankungen	Bestand r4-28 (91)
+PTBS	fragen.html#f-mehrere	Bestand r4-28 (91)
+Trauma	fragen.html#f-mehrere	Bestand r4-28 (91)
+DBT	begriffe.html#b-dbt	Bestand r4-28 (91)
+Validierung	begriffe.html#b-validierung	Bestand r4-28 (91)
+Skills	begriffe.html#b-skills	Bestand r4-28 (91)
+Medikamente	fragen.html#f-medikamente	Bestand r4-28 (91)
+Therapie verweigert	behandlung.html#keine-behandlung	Bestand r4-28 (91)
+Schweigepflicht	behandlung.html#kontakt	Bestand r4-28 (91)
+Behandlungsteam	behandlung.html#kontakt	Bestand r4-28 (91)
+Wartezeit	behandlung.html#wartezeit	Bestand r4-28 (91)
+Kosten Krankenkasse	behandlung.html#angebote	Bestand r4-28 (91)
+Genesung	genesung.html	Bestand r4-28 (91)
+heilbar	fragen.html#f-heilbar	Bestand r4-28 (91)
+Remission	begriffe.html#b-remission	Bestand r4-28 (91)
+Schuld	rolle.html#schuld	Bestand r4-28 (91)
+erblich	fragen.html#f-erblich	Bestand r4-28 (91)
+Manipulation	fragen.html#f-stabiler	Bestand r4-28 (91)
+Beratung	unterstuetzung.html#beratung	Bestand r4-28 (91)
+Selbsthilfegruppe	unterstuetzung.html#selbsthilfe	Bestand r4-28 (91)
+Bücher	unterstuetzung.html#buecher	Bestand r4-28 (91)
+Dissoziation	begriffe.html#b-dissoziation	Bestand r4-28 (91)
+Einweisung	fragen.html#f-einweisung	Bestand r4-28 (91)
+Eifersucht	fragen.html#f-eifersucht	Bestand r4-28 (91)
+Geld leihen	grenzen.html#arten	Bestand r4-28 (91)
+Streit eskaliert	kommunizieren.html#kippen	Bestand r4-28 (91)
+Wut	verstehen.html#erleben	Bestand r4-28 (91)
+gefährlich	krise.html#waehrend	Bestand r4-28 (91)
+Geheimnis	fragen.html#weitere	Bestand r4-28 (91)
+Selbstverletzung entdeckt	krise.html#selbstverletzung	Bestand r4-28 (91)
+Selbstverletzung bemerkt	krise.html#selbstverletzung	Bestand r4-28 (91)
+ritzt sich	krise.html#selbstverletzung	Bestand r4-28 (91)
+schneidet sich	krise.html#selbstverletzung	Bestand r4-28 (91)
+Suizidversuch	krise.html#suizid	Bestand r4-28 (91)
+kündigt immer wieder Suizid an	krise.html#suizid	Bestand r4-28 (91)
+Suizidgedanken geheim halten	krise.html#suizid	Bestand r4-28 (91)
+droht sich umzubringen, wenn ich gehe	krise.html#suizid	Bestand r4-28 (91)
+Wenn ich gehe bringt sie sich um	kommunizieren.html#worte	Bestand Produktion (54), R25-010
+Borderline gefährlich	verstehen.html#borderline	Bestand r4-28 (91)
+Darf ich gehen	fragen.html#f-verlassen	Bestand r4-28 (91)
+Muss ich bleiben	fragen.html#f-verlassen	Bestand r4-28 (91)
+Polizei Wohnung wegweisen	grenzen.html#gewalt	Bestand r4-28 (91)
+FU Rechte Angehörige	fragen.html#f-einweisung	Bestand r4-28 (91)
+Vertrauensperson	begriffe.html#b-vertrauensperson	Bestand r4-28 (91)
+emotional instabil	begriffe.html#b-emotional-instabil	Bestand r4-28 (91)
+F60.31	begriffe.html#b-emotional-instabil	Bestand r4-28 (91)
+Beistandschaft	behandlung.html#auskunft	Bestand r4-28 (91)
+Schuldenberatung	grenzen.html#riskant	Bestand r4-28 (91)
+Kinderseele	kinder.html#hilfe	Bestand r4-28 (91)
+Angehörigenberatung anderer Kanton	unterstuetzung.html#kantone	Bestand r4-28 (91)
+Wie häufig ist Borderline	verstehen.html#borderline	Bestand r4-28 (91)
+Ist Borderline erblich	fragen.html#f-erblich	Bestand r4-28 (91)
+Was bessert sich zuerst	genesung.html#forschung	Bestand r4-28 (91)
+Family Connections	behandlung.html#therapieformen	Bestand r4-28 (91)
+Stalking	grenzen.html#gewalt	Bestand r4-28 (91)
+Tochter 15 Borderline	jugendliche.html	Bestand r4-28 (91)
+Bruder hat Borderline	grenzen.html#rollen	Bestand r4-28 (91)
+volljährig	jugendliche.html#volljaehrig	Bestand r4-28 (91)
+will keine Hilfe	behandlung.html#keine-behandlung	Bestand r4-28 (91)
+Eltern Jugendliche	jugendliche.html	Bestand r4-28 (91)
+Krisenplan	krise.html#krisenplan	Bestand r4-28 (91)
+Anspannungskurve	verstehen.html#anspannung	Bestand r4-28 (91)
+Krisen	krise.html	Bestand r4-28 (91)
+Geld	grenzen.html#riskant	Bestand r4-28 (91)
+Substanzen	grenzen.html#riskant	Bestand r4-28 (91)
+Geschwister	jugendliche.html#geschwister	Bestand r4-28 (91)
+Selbstmordgedanken	krise.html#suizid	R3C-A9
+Selbstmordversuch	krise.html#suizid	R3C-A9
+lebensmüde	krise.html#suizid	R3C-A9
+Lebensmüdigkeit	krise.html#suizid	R3C-A9
+Todeswunsch	krise.html#suizid	R3C-A9
+Suizidandrohung	krise.html#suizid	R3C-A9
+Abschiedsbrief	krise.html#suizid	R3C-A9
+Überdosis	krise.html#suizid	R3C-A9
+Suizidalität	krise.html#suizid	R3C-A9
+Suizidgefahr	krise.html#suizid	R3C-A9
+Tabletten genommen	krise.html#suizid	R3C-A9
+Psychiatrie Notfall	krise.html#krise-schnell	R3C-A9
+er droht mich umzubringen	grenzen.html#gewalt	R3C-A9
+bedroht mich mit dem Tod	grenzen.html#gewalt	R3C-A9
+Gewalt gegen Kinder	kinder.html#eskalation	R3C-A9
+fühle mich bedroht	grenzen.html#gewalt	R3C-A9
+er droht sich umzubringen	krise.html#suizid	Gegenprobe (D30-01)
+sie droht mit Suizid	krise.html#suizid	Gegenprobe (D30-01)
+Tabletten	fragen.html#f-medikamente	Gegenprobe (D30-01)
+Suizid	krise.html#suizid	Gegenprobe (D30-01)
+ich will mich umbringen	krise.html#suizid	Gegenprobe (D30-01)
+ich denke daran mich umzubringen	krise.html#suizid	Gegenprobe (D30-01)
+manchmal möchte ich mich umbringen	krise.html#suizid	Gegenprobe (D30-01)
+ich könnte mich umbringen	krise.html#suizid	Gegenprobe (D30-01)
+er droht mich zu verlassen	fragen.html#f-verlassen	Gegenprobe (D30-01)
+sie droht mich zu verlassen	fragen.html#f-verlassen	Gegenprobe (D30-01)
+er spielt mit dem Tod	!grenzen.html#gewalt	Gegenprobe (D30-01)
+Umgang mit dem Tod	!grenzen.html#gewalt	Gegenprobe (D30-01)
+Konfrontation mit dem Tod	!grenzen.html#gewalt	Gegenprobe (D30-01)
+schlägt mich	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+er schlägt mich	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+bedroht mich	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+sie bedroht mich	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Angst vor ihm	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+gewalttätig	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+wird gewalttätig	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+häusliche Gewalt	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+riskantes Verhalten	grenzen.html#riskant	r4-29/r4-30 Gewalt, Umlaut, D30-04
+nimmt Drogen	grenzen.html#riskant	r4-29/r4-30 Gewalt, Umlaut, D30-04
+trinkt zu viel	grenzen.html#riskant	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Lügen erzählt	fragen.html#f-luegen	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Sohn ritzt sich	krise.html#selbstverletzung	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Wutausbruch Tochter	verstehen.html#erleben	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Ich bin überfordert	selbstfuersorge.html#warnsignale	r4-29/r4-30 Gewalt, Umlaut, D30-04
+überfordert	selbstfuersorge.html#warnsignale	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Selbsttötung	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Ich bin erschöpft	selbstfuersorge.html#warnsignale	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Ärztin	behandlung.html#kontakt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Gespräch	kommunizieren.html#kippen	r4-29/r4-30 Gewalt, Umlaut, D30-04
+möchte sterben	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Fürsorgerische Unterbringung	begriffe.html#b-fu	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Unterstützung	unterstuetzung.html	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Angehörigengruppe	unterstuetzung.html#austausch	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Krankenkasse Kosten	behandlung.html#angebote	r4-29/r4-30 Gewalt, Umlaut, D30-04
+ich habe Gedanken mich zu töten	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+ich will mich töten	krise.html#suizid	D30-09, D30-12
+er hat mich gewürgt	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Frauenhaus	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Abschiedsbriefe	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Selbstmordversuche	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Todeswünsche	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Suiziddrohungen	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Suizidandrohungen	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Überdosen	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+lebensmüder Sohn	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+ich habe Angst vor meinem Partner	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+meine Frau ist lebensmüde	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Freundin schreibt dass sie sich umbringen will	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Er sagt er will sich umbringen	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+er sagt er bringt mich um	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+sie sagt sie bringt sich um	kommunizieren.html#worte	D30-04 (wie R25-010)
+Sohn hat Tabletten geschluckt	krise.html#suizid	r4-29/r4-30 Gewalt, Umlaut, D30-04
+mein Mann will mich umbringen	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+er will mich umbringen	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+er hat mich mit dem Tod bedroht	grenzen.html#gewalt	r4-29/r4-30 Gewalt, Umlaut, D30-04
+Was hilft gegen Wut	verstehen.html#erleben	r4-29/r4-30 Gewalt, Umlaut, D30-04
+er will mich töten	grenzen.html#gewalt	D30-09, D30-12
+er versucht mich zu töten	grenzen.html#gewalt	D30-09, D30-12
+er hat gedroht mich zu töten	grenzen.html#gewalt	D30-09, D30-12
+er würde mich umbringen	grenzen.html#gewalt	D30-09, D30-12
+er könnte mich umbringen	grenzen.html#gewalt	D30-09, D30-12
+er wollte mich umbringen	grenzen.html#gewalt	D30-09, D30-12
+er droht mir mich umzubringen	grenzen.html#gewalt	D30-09, D30-12
+Drohung mich umzubringen	grenzen.html#gewalt	D30-09, D30-12
+ich habe Angst dass er mich umbringt	grenzen.html#gewalt	D30-09, D30-12
+mein Mann will mich töten	grenzen.html#gewalt	D30-09, D30-12
+ich würde mich umbringen	krise.html#suizid	D30-09, D30-12
+ich habe versucht mich umzubringen	krise.html#suizid	D30-09, D30-12
+ich habe gedroht mich umzubringen	krise.html#suizid	D30-09, D30-12
+sie hat gesagt ich will mich umbringen	krise.html#suizid	D30-09, D30-12
+Morddrohung	grenzen.html#gewalt	D30-09, D30-12
+Todesdrohung	grenzen.html#gewalt	D30-09, D30-12
+Würgen	grenzen.html#gewalt	D30-09, D30-12
+ich habe Angst vor meinem Sohn	grenzen.html#gewalt	D30-09, D30-12
+ich habe Angst vor meiner Tochter	grenzen.html#gewalt	D30-09, D30-12
+er droht uns umzubringen	grenzen.html#gewalt	D30-09, D30-12
+er droht die Kinder umzubringen	!krise.html#suizid	D30-09, D30-12
+er droht mit dem Tod	grenzen.html#gewalt	D30-12
+er droht meine Familie umzubringen	grenzen.html#gewalt	D30-12
+ich habe Angst vor meinem Vater	grenzen.html#gewalt	D30-12
+er will uns alle umbringen	grenzen.html#gewalt	D30-12
+ich habe mich fast umgebracht	krise.html#suizid	D30-12
+ich will mich jetzt umbringen	krise.html#suizid	D30-12
+mein Ehemann will mich umbringen	grenzen.html#gewalt	D30-13
+mein Exmann will mich umbringen	grenzen.html#gewalt	D30-13
+mein Kind will mich umbringen	grenzen.html#gewalt	D30-13
+jemand will mich umbringen	grenzen.html#gewalt	D30-13
+du willst mich umbringen	grenzen.html#gewalt	D30-13
+er droht sie umzubringen	grenzen.html#gewalt	D30-13
+er will sie umbringen	grenzen.html#gewalt	D30-13
+er will meine Mutter umbringen	grenzen.html#gewalt	D30-13
+er droht meine Frau umzubringen	grenzen.html#gewalt	D30-13
+mein Sohn will meinen Vater töten	grenzen.html#gewalt	D30-13
+er droht mit Mord	grenzen.html#gewalt	D30-13
+ich habe Angst dass ich mich umbringe	krise.html#suizid	D30-15
+Angst vor meinem Ex	grenzen.html#gewalt	D30-15
+sie will sich umbringen	krise.html#suizid	Gegenprobe D30-13
+meine Mutter hat sich umgebracht	krise.html#suizid	Gegenprobe D30-13
+mein Sohn hat versucht sich umzubringen	krise.html#suizid	Gegenprobe D30-13
+ich habe Angst dass sie sich umbringt	krise.html#suizid	Gegenprobe D30-13
+will sie sich umbringen	krise.html#suizid	Gegenprobe D30-13
+mein Mann droht sich umzubringen	krise.html#suizid	Gegenprobe D30-13
+was tun wenn er droht mich umzubringen	grenzen.html#gewalt	Gegenprobe
+Zeit totschlagen	!krise.html#suizid	Gegenprobe
+die Stimmung umbringen	!grenzen.html#gewalt	Gegenprobe
+ich habe Angst dass sich meine Tochter umbringt	krise.html#suizid	D30-16 («sich» vor der Person)
+was tun wenn sich mein Kind umbringen will	krise.html#suizid	D30-16 («sich» vor der Person)
+wenn sich mein Sohn umbringen will	krise.html#suizid	D30-16 («sich» vor der Person)
+dass sich mein Mann umbringt	krise.html#suizid	D30-16 («sich» vor der Person)
+ich fürchte dass sich meine Frau umbringt	krise.html#suizid	D30-16 («sich» vor der Person)
+was kann ich tun damit sich meine Schwester nicht umbringt	krise.html#suizid	D30-16 («sich» vor der Person)
+will sich meine Tochter umbringen	krise.html#suizid	D30-16 («sich» vor der Person)
+wird sich mein Sohn umbringen	krise.html#suizid	D30-16 («sich» vor der Person)
+hat sich mein Vater umgebracht	krise.html#suizid	D30-16 («sich» vor der Person)
+warum hat sich meine Mutter umgebracht	krise.html#suizid	D30-16 («sich» vor der Person)
+ob sich meine Tochter umbringt	krise.html#suizid	D30-16 («sich» vor der Person)
+falls sich mein Mann umbringt	krise.html#suizid	D30-16 («sich» vor der Person)
+nachdem sich mein Vater umgebracht hat	krise.html#suizid	D30-16 («sich» vor der Person)
+seit sich meine Schwester umgebracht hat	krise.html#suizid	D30-16 («sich» vor der Person)
+wie verhindere ich dass sich mein Sohn umbringt	krise.html#suizid	D30-16 («sich» vor der Person)
+Angst dass sich mein Kind umbringt	krise.html#suizid	D30-16 («sich» vor der Person)
+was tun wenn sich die Partnerin umbringen will	krise.html#suizid	D30-16 («sich» vor der Person)
+wenn sich jemand umbringen will	krise.html#suizid	D30-16
+Tochter umbringen	krise.html#suizid	D30-16 (Stichwort, wie r4-29)
+Sohn umbringen Angst	!grenzen.html#gewalt	D30-16 (Stichwort)
+Mutter töten	!grenzen.html#gewalt	D30-16 (Stichwort)
+mein Vater hat sich und meine Mutter umgebracht	krise.html#suizid	D30-16, D30-17 (Suizid-Vorrang, erweiterter Suizid)
+meine Frau will die Kinder und sich umbringen	krise.html#suizid	D30-16, D30-17 (Suizid-Vorrang, erweiterter Suizid)
+ich habe Angst dass meine Frau sich und die Kinder umbringt	krise.html#suizid	D30-16, D30-17 (Suizid-Vorrang, erweiterter Suizid)
+meine Eltern wollen mich umbringen	grenzen.html#gewalt	D30-13
+mein Stiefvater will mich töten	grenzen.html#gewalt	D30-13
+man will mich umbringen	grenzen.html#gewalt	D30-13
+mein Sohn ritzt sich und will sich umbringen	!grenzen.html#gewalt	D30-17
+meine Tochter verletzt sich und will sich umbringen	!grenzen.html#gewalt	D30-17
+sie schneidet sich und spricht davon sich umzubringen	!grenzen.html#gewalt	D30-17
+ich habe Angst dass mich mein Mann umbringt	grenzen.html#gewalt	D30-18
+wenn mich mein Partner umbringen will	grenzen.html#gewalt	D30-18
+ich glaube dass mich mein Ex umbringen will	grenzen.html#gewalt	D30-18
+was tun wenn mich mein Sohn umbringen will	grenzen.html#gewalt	D30-18
+ich will nicht mehr leben er droht mich umzubringen	krise.html#suizid	D30-17 (Suizid-Vorrang bei Suizid-Phrase)
+ich will mich wegen meiner Familie umbringen	krise.html#suizid	D30-19
+ich will mich vor dem Kind umbringen	krise.html#suizid	D30-19
+er sagt ich will mich wegen der Kinder umbringen	krise.html#suizid	D30-19
+ich will mich der Familie zuliebe nicht umbringen	!grenzen.html#gewalt	D30-19
+ich würde mich der Kinder wegen nie umbringen	!grenzen.html#gewalt	D30-19
+ich will mich und die Kinder umbringen	krise.html#suizid	D30-19
+er will mich und die Kinder umbringen	grenzen.html#gewalt	D30-19
+ich will sterben und habe Angst vor meiner Partnerin	krise.html#suizid	Codex P1 auf #689 (Suizid-Phrase vor längerer Phrase)
+Suizidgedanken und Angst vor meinem Partner	krise.html#suizid	Codex P1 auf #689 (Suizidwort vor Phrase)
+mein Sohn will nicht mehr leben und ich habe Angst vor ihm	krise.html#suizid	Codex P1 auf #689
+er will mich umbringen ich will nicht tot sein	grenzen.html#gewalt	Codex P1 auf #689 (verneinte Phrase zählt nicht)
+Ich habe Angst, dass mich mein eigener Mann umbringt	grenzen.html#gewalt	Codex P1 auf #689 (Beiwort vor der Person)
+dass mich die ganze Familie umbringen will	grenzen.html#gewalt	Codex P1 auf #689
+wenn mich mein neuer Freund umbringen will	grenzen.html#gewalt	Codex P1 auf #689
+ich will mich wegen meinem eigenen Mann umbringen	krise.html#suizid	Codex P1 auf #689 (Gegenprobe)
+meine Familie hält mich davon ab mich umzubringen	krise.html#suizid	D30-20
+er bittet mich mich nicht umzubringen	krise.html#suizid	D30-20
+meine Kinder sind der einzige Grund mich nicht umzubringen	krise.html#suizid	D30-20
+mein Mann hindert mich daran mich umzubringen	!grenzen.html#gewalt	D30-20
+er hat mich geschlagen und versucht mich umzubringen	grenzen.html#gewalt	D30-20 (Gegenprobe)
+er plant mich umzubringen	grenzen.html#gewalt	D30-20 (Gegenprobe)

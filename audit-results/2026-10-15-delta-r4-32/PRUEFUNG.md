@@ -157,3 +157,94 @@ Im Scratchpad der Prüfsitzung (`/tmp/claude-0/-home-claude-borderline-angehoeri
 Neue Befunde werden nach R31-P03 eingestuft; die Lesart muss die Auftraggeberin noch bestätigen.
 
 **Belege (Scratchpad der Prüfsitzung, `d32/`):** `suchtest-306c4e4.txt`, `suchtest-d32a-on-197.txt`; `p_306.tsv`, `a_306.tsv`, `e_306.tsv`; `prodcopy2/`, `prod2-a.log`, `d32b.sha`, `prod2.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d32b` (von `.gitignore` erfasst).
+
+## Nachprüfung Codex #694 (Stand ea8dc1a)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-32-suche-1792088993`, Commit `ea8dc1a`, auf `origin` gleich. Diff zu `37b963f`: `authoring/js/interaktion.js` (Erweiterung von P1, neue Wortformen, Druck nur in der Gegenwart), Testliste (+7, jetzt 204), `reviewScope`, `independentReview` «ausstehend», `FREIGABE.md` (Nachträge 2 und 3), R32-P01. `site/` ist `37b963f` und bytegleich mit meinem `dist/d32b` |
+| Prüfobjekt | eigener Entwurf `node authoring/tools/build.mjs --out=dist/d32c`, verglichen mit r4-31 (`bd3d903`), `37b963f` und meiner Nachbildung Q (unten) |
+| Zeitpunkt | 15.10.2026, etwa 21:35 bis 21:55 MESZ |
+
+### Heikel, vorab: #694 ist gemergt, und die Produktion ist r4-32 auf Stand `37b963f`
+
+- **Merge vor geprüftem Codex-Review:** Laut `gh api` hat `christaegger-dot` #694 um **19:32:36 UTC** gemergt (Merge-Commit `4790653`, Kopf `37b963f`). Das war 12 Sekunden nach dem Codex-Review um 19:32:24 UTC und vor dessen Prüfung. R28-O01 und R29-P20 sind damit wieder nicht eingehalten, wie bei #689.
+- **Was jetzt veröffentlicht ist:** Die öffentliche Seite (`/suche`, per GET gelesen, 19:44 UTC) trägt `data-puk-site-build="r4-32"`. Ihr `interaktion.js` ist bytegleich mit `37b963f`.
+- **Folgen für die Produktion:**
+  - Der Codex-Fall, den Nachtrag 3 als blockierend einstuft, ist in der Produktion: «Mein Mann bringt mich heute Nacht in unserer Wohnung um» hat dort keinen Treffer, in r4-31 Gewalt.
+  - Ebenso ein Fehler meiner Variante P, den die bauende Sitzung jetzt behoben hat: «die Therapie bringt nichts ich mache mir Sorgen um sie» (ohne Komma) heftet Gewalt an. Bei meiner Prüfung von P hatte ich diese Form nicht.
+- **Ungenaue Nachweise:** Nachtrag 3 und der Auftrag nennen den Merge nicht und behandeln r4-31 noch als Produktion. Für die Korrektur ist der Vergleichsstand nach R31-P03 jetzt die Produktion `37b963f`. Gegenüber r4-31 bleiben die Aussagen von Nachtrag 3 richtig.
+- **Nächster Pull Request:** `ea8dc1a` liegt einen Commit vor `main`. Nach `CLAUDE.md` braucht der nächste Pull Request einen neuen Branch-Namen mit Zeitstempel.
+
+### Ergebnis
+
+**Freigabefähig mit Auflagen.** Die drei Codex-Befunde sind richtig bewertet. Beide P1 sind behoben:
+
+- Der lange Abstand wird erkannt.
+- Die Beugungsformen werden erkannt.
+- «mein Sohn brachte sich um» beginnt mit Suizid.
+
+Die Bestandsproben sind unverändert. Der grössere Abstand bringt aber neue Fehlanheftungen (R32-03): «… und wie gehe ich mit ihr um» oder «… und stellen die Medikamente um» nach einem «bring…» gelten jetzt als Tötungswort. Meine Nachbildung Q behebt das, ohne eine andere Probe zu ändern.
+
+**`independentReview` kann noch nicht auf «bestaetigt» gesetzt werden.** Das geht, sobald Q oder Gleichwertiges umgesetzt ist und der Abgleich unten ohne Abweichung durchläuft. Weil der Codex-Fall in der Produktion steht, ist die Korrektur dringend.
+
+| Punkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Suchtest | **erfüllt** | `suchtest.mjs dist/d32c`: «204 von 204 Erwartungen wie festgeschrieben · JS-Fehler 0», Exit 0. |
+| 885 Proben | **erfüllt** | Die ersten drei Treffer sind bytegleich mit `d32/p_P.tsv`, also gleich wie `306c4e4` und `37b963f`. |
+| Gezielte Proben und Randfälle | **erfüllt** | `q-r32a` (21) und `q-edge` (11) gleich wie `37b963f`. 0 JS-Fehler. |
+| `harmlos.q` (19) | **erfüllt** | Alle ohne Anheftung. Gegenüber `37b963f` ist nur «die Therapie bringt nichts ich mache mir Sorgen um sie» anders: vorher Gewalt, jetzt `behandlung#rollen`, wie in r4-31. |
+| Codex-Fälle `cx694.q` (15) | **erfüllt** | Alle mit Tötungswort angeheftet. <br>• «Mein Mann bringt mich heute Nacht in unserer Wohnung um», «er bringt mich irgendwann noch im Streit um», «Er tötete mich fast», «Du tötest mich», «Sie brachten ihn um» → Gewalt › Suizid. <br>• «ich bringe mich heute Nacht in meiner Wohnung um», «… bald irgendwo im Wald um», «sie bringt sich bestimmt bald irgendwann einmal um» → «Wenn Suizid angesprochen wird» › Suizid › Gewalt (R25-010). <br>• «er brachte sich um», «mein Sohn brachte sich um», «ich tötete mich fast» → Suizid › Gewalt. <br>• «Er droht, meine Tochter umzubringen» und «Sie will meinen Sohn töten» → Gewalt › Suizid. Das ist die richtige Grundlage für R32-P01. |
+| Neue Fehlanheftungen | **Befund R32-03** | 11 eigene harmlose Sätze. 8 bekommen jetzt Suizid und Gewalt angeheftet, einer davon mit «Wenn Suizid angesprochen wird» zuerst. Auf `37b963f` war das bei keinem der Fall. |
+| Produktionsbuild | **erfüllt** | 23/23 Seiten r4-32, 46 × `?v=r4-32`, `node --check` ohne Fehler, 0 `tel:`. In einer Kopie (`git archive ea8dc1a`) blockiert «ausstehend» (Exit 1). Mit «bestaetigt»: «23 Seiten · 0 Blocker · 0 Hinweise», bytegleich mit `dist/d32c` (SHA-256 von 34 Dateien gleich). |
+| Nachträge 2 und 3 | **richtig, eine Lücke** | Zeiten, Beispiele, Werte und Bewertungen stimmen mit `gh api` und meinen Messungen überein. Es fehlen der Merge um 19:32:36 UTC und der neue Produktionsstand (siehe oben). |
+
+### Befund
+
+| ID | Priorität | Befund | Belege (Produktion `37b963f` → `ea8dc1a`, erste Treffer) |
+| --- | --- | --- | --- |
+| R32-03 | **wichtig, Auflage vor dem Export** | Der Teilsatz endet bei der neuen Suche nicht an «und» und nicht an Fragewörtern; das Fenster ist zwölf Wörter lang. Folgt einem «bring…»/«bracht…» ein zweiter Hauptsatz mit einem anderen Verb auf «um-» (umgehen, umstellen, umziehen, umdrehen, umschauen), gilt dessen «um» als Teil von «bring… um». Das verletzt Kriterium 2 gegenüber der Produktion und zeigt Suizid und Gewalt bei Alltagsfragen. Nach R31-P03 (beide Lesarten) blockiert es nicht, weil keine Suizidsorge betroffen ist. | <br>• «Was bringt eine Kontaktpause und wie gehe ich mit ihr um?»: `kommunizieren#kippen` → **Suizid › Gewalt**. <br>• «Was bringt eine Klinik wie geht man dort mit Angehörigen um»: `behandlung#therapieformen` → **Suizid › Gewalt**. <br>• «Meine Tochter bringt mich jeden Abend zum Weinen und dreht sich dann einfach um»: kein Treffer → **«Wenn Suizid angesprochen wird» › Suizid › Gewalt**. <br>• Kein Treffer → **Suizid › Gewalt**: «Die Therapie bringt nichts und wir stellen die Medikamente um», «Ich bringe die Kinder zur Schule und ziehe mich danach um», «Er brachte die Einkäufe herein und drehte sich wortlos um», «Ich brachte ihn in die Klinik und schaute mich dort um», «Was bringt Validierung und wie gehe ich mit seiner Wut um». |
+
+**Hinweise:**
+
+- **«sie» nicht mehr als neues Subjekt:** Ohne Komma wird ein Satz wie «er bringt mich um sie weiss es» nicht mehr erkannt. Das ist selten; mit Komma oder Punkt wird er erkannt.
+- **Entfernter Alias:** Bei harmlosen «Was bringt …»-Fragen fehlt jetzt ein zufälliger Treffer. In r4-31 trafen sie wegen des Wortes «bringt» im Alias «Wenn Worte treffen» (etwa «Was bringt es mir wenn ich mich umstelle»). Das folgt aus der gewollten Entfernung des Alias und ist kein Rückschritt nach R31-P03.
+
+### Vorschlag: Variante Q (nur nachgebildet, nicht umgesetzt)
+
+Gepatcht in einer Kopie von `dist/d32c` im Scratchpad der Prüfsitzung (`d32/varQ/site/js/interaktion.js`, Diff in `d32/varQ.diff`, 15 geänderte Zeilen). Im Repository ist nichts geändert.
+
+- Fragewörter beenden in `particleUm` den Teilsatz: «wie», «was», «warum», «wieso», «weshalb», «wo», «wann», «wer».
+- «und» beendet ihn ebenfalls, ausser es verbindet Objekte. Dann folgt ein Pronomen, Artikel oder Possessiv («sich und mich um», «mich und die Kinder um»), und «um» steht höchstens drei Wörter nach dem «und».
+
+Ergebnis:
+
+- Suchtest 204 von 204, 0 JS-Fehler.
+- 885 Proben bytegleich mit `d32/p_P.tsv`.
+- `q-r32a`, `q-edge`, `harmlos.q` und alle 15 Codex-Fälle gleich wie `ea8dc1a`; der lange Abstand und die Beugungsformen bleiben erkannt.
+- Die 8 Fehlanheftungen aus R32-03 sind weg, dazu zwei weitere mit «und sie …» bzw. «und die Ärztin …» als neuem Satz.
+- «er bringt mich und die Kinder um» → Kinder › Gewalt › Suizid und «er bringt sich und mich um» → «Wenn Suizid angesprochen wird» › Suizid › Gewalt bleiben wie bisher.
+
+**Für den Export:**
+
+1. Q oder Gleichwertiges umsetzen.
+2. In die Testliste aufnehmen:
+
+   | Anfrage | Erwartung |
+   | --- | --- |
+   | «Was bringt eine Kontaktpause und wie gehe ich mit ihr um?» | `!krise.html#suizid` |
+   | «Die Therapie bringt nichts und wir stellen die Medikamente um» | `!krise.html#suizid` |
+   | «Meine Tochter bringt mich jeden Abend zum Weinen und dreht sich dann einfach um» | `!kommunizieren.html#suizid-angesprochen` |
+   | «Ich bringe die Kinder zur Schule und sie zieht sich um» | `!kommunizieren.html#suizid-angesprochen` |
+   | Gegenprobe «er bringt mich und die Kinder um» | `kinder.html#eskalation > grenzen.html#gewalt > krise.html#suizid` |
+
+3. Danach mechanisch prüfen:
+   - Suchtest 100 %.
+   - 885 Proben gleich `d32/p_P.tsv`.
+   - `q-r32a`, `q-edge`, `harmlos.q`, `cx694.q` gleich `d32/ea_*.tsv`.
+   - `q-r32c`, `q-r32d` gleich `d32/Q2_*.tsv`.
+   - Produktionsbuild in einer Kopie bytegleich.
+
+Dann kann `independentReview` gesetzt werden. Danach kommen der neue Pull Request auf einem neuen Branch, das Codex-Review auf dessen exportiertem Kopf und die Prüfung dieses Reviews. **Gemergt wird erst danach.** Die Sichtprüfung in der Produktion steht noch aus; sie sollte auch «Mein Mann bringt mich heute Nacht in unserer Wohnung um» enthalten.
+
+**Belege (Scratchpad der Prüfsitzung, `d32/`):** `suchtest-ea8dc1a.txt`, `suchtest-varQ.txt`; `ea_*.tsv` (`ea8dc1a`), `37b_*.tsv` (`37b963f`), `prod_*.tsv` (r4-31, `bd3d903`), `Q2_*.tsv` (Nachbildung Q); `q-r32c.txt`, `q-r32d.txt` (eigene harmlose Sätze und Gegenproben); `varQ/`, `varQ.diff`; `prodcopy3/`, `prod3-a.log`, `d32c.sha`, `prod3.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d32c` (von `.gitignore` erfasst).

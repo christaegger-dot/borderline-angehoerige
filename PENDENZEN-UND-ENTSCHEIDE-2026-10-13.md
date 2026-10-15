@@ -1,10 +1,27 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Stand: 14. Oktober 2026**
+**Stand: 15. Oktober 2026**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 ## Produktionsstand
+
+### r4-29 (Release C) bereit, noch nicht gemergt
+
+Release C (r4-29) setzt die Pakete 4 und 6 des Massnahmenplans vom 14. Oktober 2026 um, dazu die Befunde W2-001 bis W2-023 und die Entscheide E4, E7 und E9:
+
+- neue Seite «Wenn Ihr jugendliches Kind betroffen ist»
+- Kürzungen und Umbau auf fast allen Seiten; Website 30 666 statt 35 422 Wörter
+- Verweis im Text 7-mal statt 28-mal
+
+Die Auftraggeberin hat die Fassungen am 15. Oktober 2026 im Namen der PUK freigegeben («Freigegeben mit allen Empfehlungen»). Die Prüfungen:
+
+- Rechtsabgleich statt Rechtsdienst
+- Sprach-Review S in drei Sitzungen
+- W3 Code-Review; die Korrekturen W3C-01, -02, -03, -06, -08 und -09 sind nach Freigabe umgesetzt
+- R3 Freigabe-Audit: «Go mit Auflagen», von der PUK am 15. Oktober 2026 angenommen
+
+Der Produktionsbuild meldet 23 Seiten, 0 Blocker und 0 Hinweise; 34 Dateien sind bytegleich. Vor dem Merge fehlen noch das abgeschlossene und geprüfte Codex-Review und der ausdrückliche Merge-Auftrag (R3C-A5, R28-O01). Am Tag des Merge folgt die Produktionsprüfung (R3C-A6). Nachweis: `audit-results/2026-10-15-release-c-r4-29/`.
 
 ### r4-28 veröffentlicht und nachgeprüft
 
@@ -63,15 +80,54 @@ PR #674 wurde als Merge-Commit `1cb33e0a1bd499c7b8367213851373b6dd027ab5` übern
 | E1 | Zahl zu Suizidversuchen nennen? | entschieden: keine Zahl, qualitativ «häufig» | 14.10.2026 | Auftraggeber, Fachstelle Angehörigenarbeit |
 | E2 | Erblichkeit beziffern? | entschieden: «rund 40 bis 50 %» mit Einordnung (M2.8, r4-27) | 14.10.2026 | Auftraggeber |
 | E3 | Bezeichnung zu F60.31 ergänzen (Neuentscheid zu V-1)? | entschieden: ICD-10-GM-Wortlaut ergänzt (M2.2, r4-27) | 14.10.2026 | Auftraggeber |
-| E4 | Wie Eltern von Jugendlichen ansprechen? | offen; Empfehlung: eigene kurze Seite, im W2-Durchgang bestätigen | – | – |
+| E4 | Wie Eltern von Jugendlichen ansprechen? | entschieden: eigene Seite «Wenn Ihr jugendliches Kind betroffen ist» (r4-29) | 15.10.2026 | Auftraggeberin |
 | E5 | Mason und Kreger als Beleg? | entschieden: (a) auf «Krisen begleiten» ersetzt, sonst als Praxisanregung kennzeichnen | 14.10.2026 | Claude, vom Auftraggeber delegiert |
 | E6 | Nicht zitierte Quellen im öffentlichen Verzeichnis? | entschieden: ins interne Prüfprotokoll `authoring/QUELLEN-HINTERGRUND.md` verschoben (M7.2, r4-27) | 14.10.2026 | Claude, vom Auftraggeber delegiert |
-| E7 | Zuständigkeitssatz auf «Krisen begleiten» | offen; Empfehlung: höchstens zweimal | – | – |
+| E7 | Zuständigkeitssatz im Text | entschieden: höchstens einmal pro Seite, nur auf Seiten zu Selbstgefährdung, Gewalt oder akuter Krise (sieben Seiten, r4-29) | 15.10.2026 | Auftraggeberin |
 | E8 | Am 14.10.2026 freigegebene Stellen wieder öffnen? | entschieden: A03-019 nach «Behandlung» verschoben (M3.4), A03-025 nur ergänzt (M3.5), A03-026 nicht geöffnet (r4-27) | 14.10.2026 | Claude, vom Auftraggeber delegiert |
-| E9 | Redaktionsregel für Vorbehalte | offen; Empfehlung: höchstens ein Vorbehalt pro Abschnitt, ausgenommen Sicherheits- und Rechtsgrenzen | – | – |
+| E9 | Redaktionsregel für Vorbehalte | entschieden: höchstens ein Vorbehalt pro Abschnitt, ausgenommen Sicherheits- und Rechtsgrenzen; dieselbe Regel für Entlastungssätze, ein Kernsatz pro Seite (r4-29) | 15.10.2026 | Auftraggeberin |
 | E10 | Abbildung 2 auf «Genesung» | entschieden: ersetzt durch «Was sich oft zuerst bessert, was länger bleibt» (M2.6, r4-27; R2 offen) | 14.10.2026 | Claude, vom Auftraggeber delegiert |
 
 Zu Paket 3 (Schweizer Recht) entschied der Auftraggeber am 14. Oktober 2026, es in Release B umzusetzen und die Fassungen selbst freizugeben, ohne Prüfung durch den Rechtsdienst. Das Abnahmekriterium «Rechtsdienst hat den Wortlaut bestätigt» (M3.1, M3.3) ist damit nicht erfüllt; die juristische Prüfung bleibt als R27-O01 empfohlen.
+
+Für Release C hat die Auftraggeberin am 15. Oktober 2026 ausserdem entschieden:
+
+- Selbstbeschreibung in der Fusszeile: «Sie richtet sich an Angehörige und Bezugspersonen und ergänzt die Beratung der Fachstelle.» (W2-012)
+- neue Seite ohne vorherige KJPP-Abstimmung veröffentlichen (F0, Option A)
+- W3-Korrekturen «Suche und Kleines jetzt»
+- R3 «Go mit Auflagen» annehmen; W1 und R1 für r4-29 «entfällt»
+- drei Links auf «Quellen» entfernen, die auf Seiten mit Notfallblock führen
+- Suchlücken und Linkentfernung in r4-30 direkt nach dem Merge
+
+Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträgen 1 und 2.
+
+### Release C (r4-29) · Auflagen aus R3 und neue Pendenzen
+
+| Nr. | Pendenz | Frist | Wer |
+| --- | --- | --- | --- |
+| R3C-A5 | Codex-Review abschliessen und prüfen; Merge nur auf ausdrücklichen Auftrag (wie R28-O01) | vor dem Merge | bauende Sitzung, Auftraggeberin |
+| R3C-A6 | Produktionsprüfung r4-29: Buildmarker, `jugendliche`, Sprungziele mit neuen und Alias-Ankern unter Pretty URLs, 88 Weiterleitungen, 404, Header, Robots, Suchtests mit Gewalt- und Umlaut-Anfragen | am Tag des Merge | Prüfsitzung, die nicht gebaut hat |
+| R3C-A8 | Visualisierungs-Check und R2 für die 12 Abbildungen mit neuem Wortlaut und für `v-ge-forschung` (R27-O02) | 31.10.2026 | Prüfsitzung; Korrekturen nur nach Freigabe |
+| R3C-A9 | Suchlücken schliessen: «Selbstmordgedanken», «Selbstmordversuch», «lebensmüde», «Todeswunsch», «Suizidandrohung», «Überdosis» u. a. ohne Treffer; «er droht mich umzubringen» auf Gewalt statt Suizid; Anfragen festschreiben | r4-30 direkt nach dem Merge, spätestens 31.10.2026 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
+| R3C-A10 | Drei Links auf «Quellen» entfernen (Forensic Nurses, Opferhilfe «Schutz», Pro Juventute); Angabe bleibt als Text, Linkregel bleibt | r4-30 direkt nach dem Merge | bauende Sitzung |
+| R3C-A11 | Selbsttest des Gates auf diese Website umstellen, Aufruf über Schalter und CI; R3 im Gate an die Änderungsrunde binden (W3C-07, R3C-04) | 13.11.2026 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
+| R29-P01 | PatG ZH § 15 Abs. 2 (vermutetes Einverständnis gegenüber Bezugspersonen in Spitälern): mit der PUK klären; Musterbrief auf «Behandlung» allenfalls anpassen | offen | Auftraggeberin, PUK |
+| R29-P02 | Mögliche Ergänzungen aus dem Rechtsabgleich: Bezugsperson und Patientenverfügung ab 18, gewaltfreie Erziehung (Art. 302 ZGB), Auskunft für Eltern ohne elterliche Sorge (Art. 275a ZGB) | offen | Auftraggeberin |
+| R29-P03 | KJPP-Abstimmung der Seite «Wenn Ihr jugendliches Kind betroffen ist» (M4.3) | offen | Auftraggeberin, KJPP |
+| R29-P04 | Impressum: rechtliche Bezeichnung der PUK; wessen «schriftliche Zustimmung» | offen | Auftraggeberin |
+| R29-P05 | Bücher › Aguirre: ist «leitet das McLean-Hospital-Programm» aktuell? | offen | bauende Sitzung |
+| R29-P06 | Stellen mit Platzbedarf aus S: «Remission» und DBT, MBT, TFP auf «Fragen», DSM-5-TR und ICD-11 im Glossar, zwei Verweise auf «Grenzen setzen» | offen | bauende Sitzung, Freigabe |
+| R29-P07 | Quellenzuordnung: äussere Zeichen der Anspannungskurve; Mason und Kreger auf «Auf sich achten» | offen | bauende Sitzung, Freigabe |
+| R29-P08 | Angebote für junge Erwachsene auf «Behandlung» (M5.5) | offen | Auftraggeberin |
+| R29-P09 | W3C-04 Validierungstabelle: ARIA-Rollen, doppelte Ansage, Container-Abfrage | Profilentscheid | Auftraggeberin (Profil) |
+| R29-P10 | W3C-05 Silbentrennung in Überschriften und `-webkit-hyphens` (dazu R3C-06 «Behandlungsteam») | Profilentscheid | Auftraggeberin (Profil) |
+| R29-P11 | W3C-07 Selbsttest (siehe R3C-A11) | 13.11.2026 | bauende Sitzung |
+| R29-P12 | W3C-10 Kopfbereich auf dem Smartphone (`NAV_MAX`) | Profilentscheid | Auftraggeberin (Profil) |
+| R29-P13 | W3C-11 Strategie für `aria-label` an Inhaltslinks | Wartung | bauende Sitzung |
+| R29-P14 | W3C-12 Leistung der Suche (Zwischenspeicher) | mit r4-30 | bauende Sitzung |
+| R29-P15 | W3C-13 Kommentare im ausgelieferten CSS und JS | Wartung | bauende Sitzung |
+| R29-P16 | W2-017 Begriffe in «Wann Sie Auskunft erhalten können»: Reihenfolge nach Häufigkeit prüfen | offen | bauende Sitzung, Freigabe |
+| R29-P17 | R3C-05 `responsibility.reviewedAt` nachführen; R3C-07 «Quellen» beim nächsten S lesen; R3C-08 Alias-Anker `begriffe#b-set` nur bei Bedarf | optional | bauende Sitzung |
 
 ### r4-22 · visuelle Befunde A04-008 bis A04-013, abgeschlossen
 
@@ -108,6 +164,8 @@ Damit ist AR3-3 **materiell nicht erfüllt, aber organisatorisch abgeschlossen**
 
 Eine WCAG- oder ISO-Gesamtkonformität wird nicht behauptet. Eine erneute operative Pendenz entsteht nur durch einen neuen Institutionsentscheid.
 
+Im Auftrag für R3 vom 15. Oktober 2026 nannte die bauende Sitzung für AR3-3 irrtümlich noch die Frist 13. Januar 2027. R3 ist diesem Dokument gefolgt und hat keine Frist gesetzt. Es gilt der Text oben.
+
 ## Empfohlen, nicht blockierend
 
 ### Rechtliche Durchsicht
@@ -139,6 +197,6 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Ausgeliefert und in der Produktion nachgeprüft ist seit dem 15. Oktober 2026 Build r4-28. Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
+Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Ausgeliefert und in der Produktion nachgeprüft ist seit dem 15. Oktober 2026 Build r4-28. AR3-4 (Quellenangaben vollständig, mit Jahr und Abrufdatum) ist seit dem 13. Oktober 2026 erfüllt (`authoring/PRUEFBERICHT.md`, «Freigabe AR3-4»). R3 vom 15. Oktober 2026 hat das bestätigt (Punkt 14: 82 Einträge, alle mit Jahr oder «laufend»). Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
 
 Die früheren GitHub-Issues #631, #641 und #645 bis #651 bezogen sich auf die abgelöste React-/Handout-Architektur. Sie wurden nach dem Abgleich mit dem aktuellen statischen Neubau, den Audits 01–06, den Delta-Prüfungen und den dokumentierten Institutionsentscheiden als überholt geschlossen. Noch gültige Aussage- und Evidenzgrenzen bleiben in diesem Dokument erhalten; die Schliessung der alten Issues ist keine nachträgliche Behauptung einer Rechts-, Fach-, WCAG- oder Nutzendenfreigabe.

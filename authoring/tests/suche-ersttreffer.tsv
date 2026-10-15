@@ -1,4 +1,4 @@
-# Festgeschriebene Such-Ersttreffer (R3C-A9, D30-03). Stand r4-30, 15.10.2026.
+# Festgeschriebene Such-Ersttreffer (R3C-A9, D30-03). Stand r4-31, 15.10.2026 (317 Anfragen).
 # Spalten: Anfrage, erwarteter Ersttreffer (href; «–» = kein Treffer; «!href» = nicht dieser Treffer), Herkunft.
 # Prüfen: PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers node authoring/tools/suchtest.mjs <site-ordner>
 # Vor dem Export den Entwurf prüfen (z. B. dist/site); site/ enthält bis zum Export noch die veröffentlichte Fassung.

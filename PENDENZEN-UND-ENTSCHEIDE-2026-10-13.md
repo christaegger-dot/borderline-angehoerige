@@ -6,9 +6,23 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
-### r4-31 in Arbeit
+### r4-31 veröffentlicht und nachgeprüft
 
-r4-31 korrigiert zwei P1-Befunde aus dem zweiten Codex-Review von #689. Beide betreffen nur die Suche:
+#690 wurde am 15. Oktober 2026 um 17:28:49 UTC gemergt (Merge-Commit `5776316`, Stand `bd3d903`). Das fünfte Codex-Review war zu diesem Zeitpunkt noch nicht abgeschlossen; es endete 39 Sekunden später. R28-O01 und R29-P20 sind damit erneut nicht eingehalten. Der einzige Befund dieses Reviews ist nach R31-P03 nicht blockierend: «du sagst er will dich umbringen» geht auf Suizid statt Gewalt, also in die sichere Richtung. Er steht in R31-P04.
+
+Die Produktionsprüfung lief am 15. Oktober 2026 von 17:35 bis 18:00 UTC in einer eigenen Sitzung (`audit-results/2026-10-15-delta-r4-31/PRODUKTIONSPRUEFUNG.md`). Ergebnis: bestanden mit Hinweisen, alle 11 Punkte erfüllt.
+
+- 23 Seiten mit Build r4-31; `interaktion.js` bytegleich
+- 207 von 207 Textvergleichen gleich
+- 9 von 9 Dateien bytegleich, 44 von 44 Sprungziele, 88 von 88 Weiterleitungen
+- 317 von 317 Such-Ersttreffer wie festgeschrieben, darunter 19 Anfragen mit Satzzeichen
+- Header, Robots und kein `Set-Cookie` wie entschieden; 0 `tel:`
+
+Ablauf von r4-31: neun Runden mit Prüfsitzung und Codex, Varianten J, K, L und N der Prüfsitzung, Stopp-Regeln R31-P02 und R31-P03. Nachweis: `audit-results/2026-10-15-delta-r4-31/FREIGABE.md`, Nachträge 1 bis 14.
+
+Offen für die Auftraggeberin: Den Branch `claude/r4-30-suche-links-1792061353` löschen; die bauende Sitzung kann es über den Proxy nicht. Den Pull Request #691 schliessen, einen leeren Copilot-Entwurf ohne Änderungen.
+
+Inhalt von r4-31: zwei P1-Befunde aus dem zweiten Codex-Review von #689 korrigiert. Beide betreffen nur die Suche:
 
 - Jedes Tötungsverb wird gewertet, und Suizid hat Vorrang. Bisher ging «er will mich umbringen und ich will mich töten» in r4-30 auf «Gewalt».
 - Die Infinitivregel gilt nur noch mit Steuerverb. Bisher ging «er hat mich geschlagen und will mich umzubringen» auf «Suizid».
@@ -176,7 +190,8 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | R31-P01 | PC30-2: `suchtest.mjs` um eine Basis-URL und die Umrechnung `.html` → Pretty URL ergänzen, damit die Produktionsprüfung die Testliste direkt nutzen kann | optional | bauende Sitzung |
 | R31-P02 | Stopp-Regel für Codex-Befunde zur Suchregel (Entscheid vom 15.10.2026, «Nur Rückschritte blockieren»): blockierend nur, wenn eine Anfrage schlechter liegt als in r4-29 (Suizidsorge → Gewalt oder klare Ich-Aussage ohne Treffer). Andere Grenzfälle kommen als Testzeile in R30-P01. Jeder Befund wird gegen r4-29 geprüft und gemeldet. | ersetzt durch R31-P03 | bauende Sitzung, Prüfsitzung |
 | R31-P03 | Stopp-Regel ab 15.10.2026 abends (Entscheid «N veröffentlichen»): Ein Pull Request mit Änderungen an der Suchregel blockiert nur, wenn er eine Anfrage gegenüber der Produktion verschlechtert (Suizidsorge → Gewalt oder klare Ich-Aussage ohne Treffer). Abweichungen gegenüber r4-29, die schon in der Produktion stehen, gehen sofort in den nächsten Patch (r4-32). | ab sofort | bauende Sitzung, Prüfsitzung |
-| R31-P04 | r4-32: die in der Produktion verbliebenen Abweichungen gegenüber r4-29, etwa zehn reine Gewaltaussagen, die mit N in sicherer Richtung auf «Suizid» gehen («er schwört mir mich umzubringen»), die Phrase «ans Umbringen»/«ans Töten», die auch Gewaltsorgen («er denkt ans Töten und bedroht mich») in sicherer Richtung auf «Suizid» führt, und die Idee eines Sicherheitsnetzes (ergibt die Regel «Gewalt» und enthält die Anfrage eine Suizidaussage in der ersten Person, gilt Suizid) | als Nächstes nach r4-31 | bauende Sitzung; Prüfsitzung; Entscheid zum Sicherheitsnetz: Auftraggeberin |
+| R31-P04 | r4-32: «du … dich» mit anderem Subjekt dazwischen («du sagst er will dich umbringen» → Suizid; Codex auf #690, Runde 5), die in der Produktion verbliebenen Abweichungen gegenüber r4-29, etwa zehn reine Gewaltaussagen, die mit N in sicherer Richtung auf «Suizid» gehen («er schwört mir mich umzubringen»), die Phrase «ans Umbringen»/«ans Töten», die auch Gewaltsorgen («er denkt ans Töten und bedroht mich») in sicherer Richtung auf «Suizid» führt, und die Idee eines Sicherheitsnetzes (ergibt die Regel «Gewalt» und enthält die Anfrage eine Suizidaussage in der ersten Person, gilt Suizid) | als Nächstes nach r4-31 | bauende Sitzung; Prüfsitzung; Entscheid zum Sicherheitsnetz: Auftraggeberin |
+| R31-P05 | Vorschläge der bauenden Sitzung vom 15.10.2026 zu R31-P04, zur Entscheidung: (1) Statt eines Sicherheitsnetzes bei jeder Anfrage mit Tötungsverb beide Abschnitte oben zeigen («Wenn Suizidgedanken ein Thema sind» und «Wenn Gewalt oder Bedrohung vorkommt»); die Regel bestimmt nur die Reihenfolge. (2) Erweiterter Suizid und Drohungen gegen Kinder zuerst auf «Kinder» › «Bei Eskalation, Gewalt oder fehlender Betreuung», dann «Gewalt», dann «Suizid». (3) R25-010 beibehalten; der Teil «Wenn Suizid angesprochen wird» in «Wenn Worte treffen» erhält einen eigenen Anker und Sucheintrag (Markup, Freigabe nötig). (4) Prüfbedarf: «Würgen» als Warnzeichen im Gewalt-Abschnitt. | Entscheid offen | Auftraggeberin, Fachstelle |
 
 ### r4-22 · visuelle Befunde A04-008 bis A04-013, abgeschlossen
 

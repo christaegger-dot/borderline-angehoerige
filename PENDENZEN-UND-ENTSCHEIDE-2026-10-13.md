@@ -6,22 +6,37 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
-### r4-29 (Release C) bereit, noch nicht gemergt
+### r4-30 in Arbeit
 
-Release C (r4-29) setzt die Pakete 4 und 6 des Massnahmenplans vom 14. Oktober 2026 um, dazu die Befunde W2-001 bis W2-023 und die Entscheide E4, E7 und E9:
+r4-30 korrigiert drei Punkte aus r4-29 und kommt nach der unabhängigen Prüfung als eigener Pull Request:
 
-- neue Seite «Wenn Ihr jugendliches Kind betroffen ist»
-- Kürzungen und Umbau auf fast allen Seiten; Website 30 666 statt 35 422 Wörter
-- Verweis im Text 7-mal statt 28-mal
+- den P1-Befund aus dem Codex-Review von #687: «die sorgeberechtigten Eltern» auf «Fragen», «Behandlung» und der Jugendlichen-Seite; der Wortlaut ist von der Auftraggeberin am 15. Oktober 2026 um 13:13 Uhr freigegeben;
+- die Suchlücken aus R3 (R3C-A9);
+- die Linkregel auf «Quellen» (R3C-A10).
 
-Die Auftraggeberin hat die Fassungen am 15. Oktober 2026 im Namen der PUK freigegeben («Freigegeben mit allen Empfehlungen»). Die Prüfungen:
+Dazu kommt der Zwischenspeicher der Suche (W3C-12). Nachweis: `audit-results/2026-10-15-delta-r4-30/`.
 
-- Rechtsabgleich statt Rechtsdienst
-- Sprach-Review S in drei Sitzungen
-- W3 Code-Review; die Korrekturen W3C-01, -02, -03, -06, -08 und -09 sind nach Freigabe umgesetzt
-- R3 Freigabe-Audit: «Go mit Auflagen», von der PUK am 15. Oktober 2026 angenommen
+### r4-29 (Release C) veröffentlicht und nachgeprüft
 
-Der Produktionsbuild meldet 23 Seiten, 0 Blocker und 0 Hinweise; 34 Dateien sind bytegleich. Vor dem Merge fehlen noch das abgeschlossene und geprüfte Codex-Review und der ausdrückliche Merge-Auftrag (R3C-A5, R28-O01). Am Tag des Merge folgt die Produktionsprüfung (R3C-A6). Nachweis: `audit-results/2026-10-15-release-c-r4-29/`.
+Release C (r4-29) setzt die Pakete 4 und 6 des Massnahmenplans vom 14. Oktober 2026 um, dazu die Befunde W2-001 bis W2-023 und die Entscheide E4, E7 und E9: neue Seite «Wenn Ihr jugendliches Kind betroffen ist», Kürzungen auf fast allen Seiten (30 666 statt 35 422 Wörter), Verweis im Text 7-mal statt 28-mal. Die Fassungen hat die Auftraggeberin am 15. Oktober 2026 freigegeben. Geprüft wurde in eigenen Sitzungen: Rechtsabgleich, Sprach-Review S, W3 und R3 («Go mit Auflagen», angenommen).
+
+Ablauf des Merge:
+
+- Pull Request #687 (Stand `a7c5ec1`, Produktionsexport) wurde am 15. Oktober 2026 um 09:48 UTC eröffnet und um 09:49:24 UTC gemergt (Merge-Commit `0fc0474`). Das war vor der Annahme von R3 und bevor das Codex-Review fertig war (09:53:30 UTC). R28-O01 ist damit nicht eingehalten.
+- Codex meldete danach zwei Befunde. Der P2-Befund (Pendenzen nicht nachgeführt) ist mit #688 erledigt. Der P1-Befund («die Eltern» statt «die sorgeberechtigten Eltern») wird in r4-30 korrigiert.
+- Die Nachweise kamen mit #688 (Merge-Commit `53c5655`, 10:11:46 UTC); `site/` blieb dabei unverändert. Das Codex-Review von #688 sah nur die Nachweis-Commits.
+
+Die Produktionsprüfung (R3C-A6) lief am 15. Oktober 2026 von 10:18 bis 10:44 UTC in einer eigenen Sitzung. Ergebnis: bestanden mit Hinweisen, alle 11 Punkte erfüllt.
+
+- 23 Seiten mit Build r4-29
+- 207 von 207 Textvergleichen gleich
+- 9 von 9 Nicht-HTML-Dateien bytegleich
+- 36 von 36 Sprungziele
+- 88 von 88 Weiterleitungen
+- 102 von 102 Such-Ersttreffer wie lokal
+- Header, Robots und kein `Set-Cookie` wie entschieden
+
+Nachweis: `audit-results/2026-10-15-release-c-r4-29/`, darin `PRODUKTIONSPRUEFUNG.md`.
 
 ### r4-28 veröffentlicht und nachgeprüft
 
@@ -105,11 +120,11 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 
 | Nr. | Pendenz | Frist | Wer |
 | --- | --- | --- | --- |
-| R3C-A5 | Codex-Review abschliessen und prüfen; Merge nur auf ausdrücklichen Auftrag (wie R28-O01) | vor dem Merge | bauende Sitzung, Auftraggeberin |
-| R3C-A6 | Produktionsprüfung r4-29: Buildmarker, `jugendliche`, Sprungziele mit neuen und Alias-Ankern unter Pretty URLs, 88 Weiterleitungen, 404, Header, Robots, Suchtests mit Gewalt- und Umlaut-Anfragen | am Tag des Merge | Prüfsitzung, die nicht gebaut hat |
+| R3C-A5 | Codex-Review abschliessen und prüfen; Merge nur auf ausdrücklichen Auftrag (wie R28-O01) | bei #687 nicht eingehalten (siehe «r4-29 veröffentlicht»); gilt weiter für jeden Pull Request | bauende Sitzung, Auftraggeberin |
+| R3C-A6 | Produktionsprüfung r4-29 | erledigt 15.10.2026: bestanden mit Hinweisen (`PRODUKTIONSPRUEFUNG.md`) | Prüfsitzung, die nicht gebaut hat |
 | R3C-A8 | Visualisierungs-Check und R2 für die 12 Abbildungen mit neuem Wortlaut und für `v-ge-forschung` (R27-O02) | 31.10.2026 | Prüfsitzung; Korrekturen nur nach Freigabe |
-| R3C-A9 | Suchlücken schliessen: «Selbstmordgedanken», «Selbstmordversuch», «lebensmüde», «Todeswunsch», «Suizidandrohung», «Überdosis» u. a. ohne Treffer; «er droht mich umzubringen» auf Gewalt statt Suizid; Anfragen festschreiben | r4-30 direkt nach dem Merge, spätestens 31.10.2026 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
-| R3C-A10 | Drei Links auf «Quellen» entfernen (Forensic Nurses, Opferhilfe «Schutz», Pro Juventute); Angabe bleibt als Text, Linkregel bleibt | r4-30 direkt nach dem Merge | bauende Sitzung |
+| R3C-A9 | Suchlücken schliessen: «Selbstmordgedanken», «Selbstmordversuch», «lebensmüde», «Todeswunsch», «Suizidandrohung», «Überdosis» u. a. ohne Treffer; «er droht mich umzubringen» auf Gewalt statt Suizid; Anfragen festschreiben | in r4-30 umgesetzt; offen bis zur Veröffentlichung von r4-30 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
+| R3C-A10 | Drei Links auf «Quellen» entfernen (Forensic Nurses, Opferhilfe «Schutz», Pro Juventute); Angabe bleibt als Text, Linkregel bleibt | in r4-30 umgesetzt; offen bis zur Veröffentlichung von r4-30 | bauende Sitzung |
 | R3C-A11 | Selbsttest des Gates auf diese Website umstellen, Aufruf über Schalter und CI; R3 im Gate an die Änderungsrunde binden (W3C-07, R3C-04) | 13.11.2026 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
 | R29-P01 | PatG ZH § 15 Abs. 2 (vermutetes Einverständnis gegenüber Bezugspersonen in Spitälern): mit der PUK klären; Musterbrief auf «Behandlung» allenfalls anpassen | offen | Auftraggeberin, PUK |
 | R29-P02 | Mögliche Ergänzungen aus dem Rechtsabgleich: Bezugsperson und Patientenverfügung ab 18, gewaltfreie Erziehung (Art. 302 ZGB), Auskunft für Eltern ohne elterliche Sorge (Art. 275a ZGB) | offen | Auftraggeberin |
@@ -124,10 +139,13 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | R29-P11 | W3C-07 Selbsttest (siehe R3C-A11) | 13.11.2026 | bauende Sitzung |
 | R29-P12 | W3C-10 Kopfbereich auf dem Smartphone (`NAV_MAX`) | Profilentscheid | Auftraggeberin (Profil) |
 | R29-P13 | W3C-11 Strategie für `aria-label` an Inhaltslinks | Wartung | bauende Sitzung |
-| R29-P14 | W3C-12 Leistung der Suche (Zwischenspeicher) | mit r4-30 | bauende Sitzung |
+| R29-P14 | W3C-12 Leistung der Suche (Zwischenspeicher) | in r4-30 umgesetzt | bauende Sitzung |
 | R29-P15 | W3C-13 Kommentare im ausgelieferten CSS und JS | Wartung | bauende Sitzung |
 | R29-P16 | W2-017 Begriffe in «Wann Sie Auskunft erhalten können»: Reihenfolge nach Häufigkeit prüfen | offen | bauende Sitzung, Freigabe |
 | R29-P17 | R3C-05 `responsibility.reviewedAt` nachführen; R3C-07 «Quellen» beim nächsten S lesen; R3C-08 Alias-Anker `begriffe#b-set` nur bei Bedarf | optional | bauende Sitzung |
+| R29-P18 | PC29-1: Netlify setzt die Kopfzeilen aus `_headers` auf 301-Antworten nur teilweise (114 von 440 Abrufen); Seiten und Dateien nicht betroffen. PC29-2: Netlify liefert `Strict-Transport-Security` mit `preload`, das in `_headers` nicht steht (strenger). | optional, nur vermerken | – |
+| R29-P19 | P1 aus #687 (sorgeberechtigte Eltern) | in r4-30 korrigiert; offen bis zur Veröffentlichung | bauende Sitzung |
+| R29-P20 | Vor jedem Merge prüfen, dass genau ein Pull Request für die Änderung offen ist und das Codex-Review auf dessen Stand mit dem vollständigen Inhalt lief. Die bauende Sitzung holt `main` jeweils frisch (Fetch ohne veraltete Branches). | ab sofort | bauende Sitzung, Auftraggeberin |
 
 ### r4-22 · visuelle Befunde A04-008 bis A04-013, abgeschlossen
 
@@ -197,6 +215,6 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Ausgeliefert und in der Produktion nachgeprüft ist seit dem 15. Oktober 2026 Build r4-28. AR3-4 (Quellenangaben vollständig, mit Jahr und Abrufdatum) ist seit dem 13. Oktober 2026 erfüllt (`authoring/PRUEFBERICHT.md`, «Freigabe AR3-4»). R3 vom 15. Oktober 2026 hat das bestätigt (Punkt 14: 82 Einträge, alle mit Jahr oder «laufend»). Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
+Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Ausgeliefert und in der Produktion nachgeprüft ist seit dem 15. Oktober 2026 Build r4-29. AR3-4 (Quellenangaben vollständig, mit Jahr und Abrufdatum) ist seit dem 13. Oktober 2026 erfüllt (`authoring/PRUEFBERICHT.md`, «Freigabe AR3-4»). R3 vom 15. Oktober 2026 hat das bestätigt (Punkt 14: 82 Einträge, alle mit Jahr oder «laufend»). Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
 
 Die früheren GitHub-Issues #631, #641 und #645 bis #651 bezogen sich auf die abgelöste React-/Handout-Architektur. Sie wurden nach dem Abgleich mit dem aktuellen statischen Neubau, den Audits 01–06, den Delta-Prüfungen und den dokumentierten Institutionsentscheiden als überholt geschlossen. Noch gültige Aussage- und Evidenzgrenzen bleiben in diesem Dokument erhalten; die Schliessung der alten Issues ist keine nachträgliche Behauptung einer Rechts-, Fach-, WCAG- oder Nutzendenfreigabe.

@@ -28,8 +28,8 @@
     "institutionalResponsibility": "bestaetigt",
     "independentReview": "ausstehend",
     "reviewedBy": "PUK",
-    "reviewedAt": "2026-10-14",
-    "reviewScope": "Release C (r4-29): Paket 4 (M4.1 bis M4.4, neue Seite «Wenn Ihr jugendliches Kind betroffen ist») und Paket 6 (M6.1 bis M6.24 ohne M6.7) des Massnahmenplans vom 14.10.2026, Befunde W2-001 bis W2-023, Entscheide E4, E7 und E9 vom 15.10.2026, Selbstbeschreibung der Fusszeile"
+    "reviewedAt": "2026-10-15",
+    "reviewScope": "Release C (r4-29): Paket 4 (M4.1 bis M4.4, neue Seite «Wenn Ihr jugendliches Kind betroffen ist») und Paket 6 (M6.1 bis M6.24 ohne M6.7) des Massnahmenplans vom 14.10.2026, Befunde W2-001 bis W2-023, Entscheide E4, E7 und E9 vom 15.10.2026, Selbstbeschreibung der Fusszeile; Wortlaut von der PUK am 15.10.2026 freigegeben (audit-results/2026-10-15-release-c-r4-29/FREIGABE.md, F0 bis F14)"
   },
   "serviceReview": {
     "$comment": "Dynamische Beratungs- und Behandlungsangebote müssen mindestens halbjährlich redaktionell geprüft werden. Das Produktions-Gate blockiert fehlende, zukünftige oder mehr als 183 Tage alte Prüfdaten.",
@@ -792,7 +792,7 @@
           "source": "–",
           "alternative": "–",
           "reason": "Text ist klarer: drei kurze Zwischentitel mit Handlungssätzen; aus «Ihre Rolle klären» verschoben (W2-005, M6.6).",
-          "approvalStatus": "entwurf"
+          "approvalStatus": "freigegeben"
         },
         {
           "id": "v-gr-gewalt",
@@ -900,7 +900,7 @@
           "source": "–",
           "alternative": "–",
           "reason": "Text ist klarer: die in r4-25 freigegebenen Sätze (M1.2) als eigener kurzer Abschnitt vor «Begleiterkrankungen» (W2-018), damit Suizidalität als Merkmal und nicht als Folge einer Begleiterkrankung gegliedert ist; Handlungssatz, Verweis im Text (E7) und Links auf  ›  und  › . Keine Skala oder Ampel, weil daraus keine Gefährdungseinschätzung entstehen darf.",
-          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
+          "approvalStatus": "freigegeben"
         },
         {
           "id": "v-di-begleiterkrankungen",
@@ -1459,7 +1459,7 @@
           "source": "–",
           "alternative": "–",
           "reason": "Kurze geordnete Liste wie auf `kinder`: Abklärung vor 18, Sicherheit bei Suizid oder Selbstverletzung, eigene Unterstützung; eine Darstellung würde nichts ordnen, was die Liste nicht schon ordnet. Kein Eintrag in der Sprungliste (W2-015).",
-          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
+          "approvalStatus": "freigegeben"
         },
         {
           "id": "v-ju-rolle",
@@ -1471,7 +1471,7 @@
           "source": "–",
           "alternative": "–",
           "reason": "Text ist klarer: zwei Absätze und ein Handlungssatz; Schuld und Verantwortung als ein Satz mit Link auf `rolle` › `schuld` (E9). Eine Rollenkarte gibt es auf `kinder` (v-ki-alltag) für Kinder psychisch belasteter Eltern; sie hier zu wiederholen hiesse doppeln.",
-          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
+          "approvalStatus": "freigegeben"
         },
         {
           "id": "v-ju-abklaerung",
@@ -1483,7 +1483,7 @@
           "source": "–",
           "alternative": "–",
           "reason": "Text ist klarer: Inhalt aus `diagnose` › «Bei Jugendlichen» (M4.4), erste Anlaufstellen und Link auf die fünf Schritte in `diagnose` › `abklaerung`; die Schrittfolge nicht doppeln (Verlinken statt wiederholen).",
-          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
+          "approvalStatus": "freigegeben"
         },
         {
           "id": "v-ju-auskunft",
@@ -1495,7 +1495,7 @@
           "source": "–",
           "alternative": "–",
           "reason": "Text ist klarer: Die Rechtsregeln stehen einmal auf `behandlung` › `auskunft` mit Abbildung «Informationen mitteilen und erhalten»; hier nur Einordnung, Link und der Übergang zur Volljährigkeit (Zwischentitel `volljaehrig`). Keine zweite Darstellung derselben Regeln (W2-002).",
-          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
+          "approvalStatus": "freigegeben"
         },
         {
           "id": "v-ju-grenzen",
@@ -1507,7 +1507,7 @@
           "source": "–",
           "alternative": "–",
           "reason": "Text ist klarer: kurzer Abschnitt mit Link auf `grenzen` (Rollenblock und DEAR) und `grenzen` › `gewalt`; eine eigene Darstellung würde den einzigen Rollenblock der Website doppeln.",
-          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
+          "approvalStatus": "freigegeben"
         },
         {
           "id": "v-ju-geschwister",
@@ -1519,7 +1519,7 @@
           "source": "–",
           "alternative": "–",
           "reason": "Text ist klarer: zwei Absätze; für das Erklären verweist der Abschnitt auf `kinder` › `erklaeren` statt die Beispielsätze zu wiederholen.",
-          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
+          "approvalStatus": "freigegeben"
         },
         {
           "id": "v-ju-unterstuetzung",
@@ -1531,7 +1531,7 @@
           "source": "–",
           "alternative": "–",
           "reason": "Text ist klarer: vier Verweissätze auf die kanonischen Einträge (`behandlung` › `angebote`, `unterstuetzung` › `austausch`, `buecher`, `unterstuetzung` › `beratung`); keine Angebotseinträge doppeln (M4.4, W2 7.2), daher keine Karten und keine Prüfdaten auf dieser Seite.",
-          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
+          "approvalStatus": "freigegeben"
         },
         {
           "id": "v-ju-quellen",
@@ -1543,7 +1543,7 @@
           "source": "–",
           "alternative": "–",
           "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt im Akkordeon «Quellen zu dieser Seite», wie auf den übrigen Themenseiten.",
-          "approvalStatus": "umgesetzt; redaktioneller Delta-Review ausstehend"
+          "approvalStatus": "freigegeben"
         }
       ]
     },

@@ -63,7 +63,7 @@ P = {
   ('quellen.html', '«Verstehen ist keine Pflicht, alles auszuhalten»', '«Verstehen heisst nicht, alles auszuhalten»', 'all')],
  'F14': [('unterstuetzung.html',
    'Die Beratung ist kostenlos, wird nicht an Krankenkassen weitergegeben und untersteht der Schweigepflicht.',
-   'Die Beratung ist kostenlos, läuft nicht über die Krankenkasse und untersteht der Schweigepflicht.')],
+   'Die Beratung ist kostenlos; Angaben daraus gehen nicht an Krankenkassen, und sie untersteht der Schweigepflicht.')],  # Ausweichfassung, siehe FREIGABE.md
 }
 
 def apply(root, ids):

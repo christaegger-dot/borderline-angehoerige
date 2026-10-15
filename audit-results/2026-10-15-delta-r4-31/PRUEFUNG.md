@@ -104,3 +104,106 @@ Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8
 - Die zweite R31-01-Zeile prüft nur `!grenzen.html#gewalt`. So habe ich sie selbst vorgeschlagen, weil r4-29 dort keinen Treffer hatte. J liefert `krise.html#suizid`. Ein Rückfall auf «kein Treffer» würde der Suchtest deshalb nicht melden. Eine strengere Erwartung ist möglich, aber nicht nötig.
 
 **Belege (Scratchpad `d31/`):** `suchtest-57ddb4b.txt`; `final/q-alle5.result3.tsv`, `final/q-all91.result3.tsv`, `final/q-54.result3.tsv` (Spalten r4-29, Nachbildung J, `57ddb4b`); `prodcopy3/` (Kopie mit «bestaetigt», `dist/prod`); `prod-a.log` (Gegenprobe); `d31b.sha`, `prod3.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31b` (von `.gitignore` erfasst). Lokale Server beendet.
+
+## Nachprüfung Codex #690 (Stand 17b5786)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-31-suche-codex-1792072594`, Commit `17b5786`, auf `origin` gleich; Kopf von #690 (offen, nicht gemergt). `authoring/` und `site/` sind gleich wie in `4658f6d`. `site/` ist `1ac8f0b` |
+| Anlass | Codex-Review von #690 auf `1ac8f0b` (14:55:09 UTC), drei P1 als Inline-Kommentare (per `gh api` gelesen): «Handle all governing verbs in repeated-object suicide queries», «Isolate each killing verb before applying threat exclusions», «Inspect post-verbal objects for every killing verb». Inhalt wie vom Koordinator beschrieben |
+| Prüfobjekt | eigener Entwurf `node authoring/tools/build.mjs --out=dist/d31c`. Er unterscheidet sich von `dist/d31b` (`57ddb4b`) nur in `js/interaktion.js` |
+| Verglichen | fünf Stände: r4-29 (`53c5655`), r4-30 in der Produktion (`site/` aus `0fda233`), `1ac8f0b` (`site/`), `17b5786` und meine Nachbildung K (unten) |
+| Massstab | R31-P02 («Nur Rückschritte blockieren»): Ein Befund blockiert nur, wenn eine Anfrage schlechter liegt als in r4-29 (Suizidsorge → Gewalt oder klare Ich-Aussage ohne Treffer); sonst Grenzfall (R30-P01) |
+| Zeitpunkt | 15.10.2026, etwa 16:55 bis 17:30 MESZ |
+
+**Gesamturteil nach R31-P02: nicht freigabefähig.** Die drei Codex-Korrekturen wirken für die gemeldeten Beispiele und für nahe Varianten. Korrektur (3) bringt aber einen neuen Rückschritt gegenüber r4-29 (R31-02): «ich denke ans Umbringen er versteht mich nicht» geht von Suizid auf Gewalt. Das ist auch schlechter als die Produktion. Dazu kommen vier Rückschritte gegenüber r4-29, die seit r4-30 schon in der Produktion sind (R31-03 bis R31-06). Drei davon sind Reste genau der Klassen, die Codex in #690 gemeldet hat. Der heikelste ist R31-03: Die direkte Frage «denkst du daran, dich umzubringen» führt auf «Gewalt».
+
+**`independentReview` kann nicht auf «bestaetigt» gesetzt werden.** R31-03 bis R31-06 sind schon veröffentlicht. Wird r4-31 zurückgehalten, bleiben sie in der Produktion. Am schnellsten hilft deshalb, sie in r4-31 mitzukorrigieren. Meine Nachbildung K zeigt, dass das mit vier kleinen Änderungen geht, ohne dass sich eine meiner 762 Bestandsproben ändert.
+
+### Ergebnis je Prüfpunkt
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| a | `suchtest.mjs` 100 % | **erfüllt** | Entwurf «23 Seiten · 0 Blocker · 1 Hinweise» (nur change-review). `suchtest.mjs dist/d31c`: «Suchtest: 286 von 286 Ersttreffern wie festgeschrieben · JS-Fehler 0», Exit 0. Gegenprobe auf `1ac8f0b`: 281 von 286. Die 5 Abweichungen sind die vier Codex-Zeilen und «umbringen will er mich»; die beiden Gegenproben für neue Sätze bestehen dort schon. |
+| b | Listen gegen `1ac8f0b` und r4-29 | **erfüllt, jede Abweichung begründet** | `q-alle5.txt` (617): gegenüber `1ac8f0b` 2 Ersttreffer anders, genau die gemeldeten. «er hasst mich will mich umzubringen» (r4-29 und r4-30 Suizid) und «er schlägt mich jeden Tag will mich umzubringen» (r4-29 `kinder#eskalation`, r4-30 Suizid) gehen auf Suizid. Grund: Für Fall (a) genügt jetzt ein früheres «mich» ohne «und» dazwischen. Einstufung: Grenzfall (G2), sichere Richtung. Gegenüber r4-29 liegen 56 Anfragen nicht mehr auf Suizid. Alle 56 sind Drohungen Dritter, die nach R3C-A9 bewusst auf Gewalt gehen, gleich wie in `1ac8f0b` und r4-30; keine davon ist Suizidsorge. Keine Anfrage mit Treffer in r4-29 ist jetzt ohne Treffer. Gegenüber der Produktion (r4-30) sind 9 Ersttreffer anders, das sind genau die Codex-Fälle aus #689. `q-all91` 91/91 und `q-54` 54/54 gleich r4-29 und `1ac8f0b`. 0 JS-Fehler. |
+| c | Gezielte Proben | **Korrekturen wirksam; Befunde R31-02 bis R31-06** | 130 neue Proben (`n690/q-r690.txt`, `q-r690b.txt`) in allen fünf Ständen. <br>**Korrektur (1):** «überzeugt», «nötigt», «angestiftet», «erpresst», «so weit gebracht», «provoziert», «stachelt an», «ermuntert» → Suizid; r4-29 hatte alle ausser «so weit gebracht» auf Suizid. <br>**Korrektur (2):** Sie wirkt nur mit «und»: Das P1-Beispiel geht auf Suizid, ebenso «mein Mann hat versucht mich umzubringen und jetzt hält mich nur meine Tochter davon ab mich umzubringen». Mit «aber», «doch», «nur» oder ohne Bindewort bleibt Gewalt (R31-05). <br>**Korrektur (3), Fragen und Umstellungen:** «umbringen will er mich», «töten willst du mich», «tötet er mich» → Gewalt, richtig. «töte ich mich», «danach töte ich mich», «töten will ich mich (nicht)» → Suizid; vorher ergaben sie keinen Treffer oder «Behandlung». «bringst du mich um» und «bringst du dich um» bleiben bei `grenzen#riskant`, wie in r4-29. Die Gegenproben «Ich will mich umbringen er hat mich verlassen» und «ich will mich töten er hat mich verlassen» bleiben bei Suizid. <br>**Korrektur (3), «mich» zwei bis drei Wörter nach dem Verb in einem neuen Satz:** Bei einem «mich» vor dem Verb ist das abgesichert. Ohne ein solches «mich» wird ein neuer Satz «er … mich» nach einem Infinitiv als Objekt des Tötungsverbs gelesen (R31-02). Ein neuer Satz «ich … mich» wird ebenso gelesen und kippt Gewaltsätze auf Suizid (G1). |
+| d | Nachweise | **erfüllt, eine Kleinigkeit** | Nachtrag 2 stimmt mit meiner Abschlussbestätigung überein. Die Tabelle in Nachtrag 3 stimmt in allen neun Feldern (r4-29, r4-30, `1ac8f0b`, je drei Befunde) mit meinen Messungen überein. Die Zeiten stimmen mit der GitHub-API: eröffnet 14:49:40 UTC, Review 14:55:09 UTC auf `1ac8f0b`, offen, nicht gemergt. Der Entscheid R31-P02 steht gleichlautend in Nachtrag 3 und in den Pendenzen. R3C-A9, R3C-A10 und R29-P19 sind nachgeführt. `site/` von `1ac8f0b` ist bytegleich mit meinem Produktionsbuild von `57ddb4b`; damit ist mein Hinweis aus der Abschlussbestätigung erledigt. **Kleinigkeit:** R3C-A9 nennt noch «279 Anfragen», es sind jetzt 286. **Wichtig für den Merge:** Codex hat nur `1ac8f0b` geprüft. Auf `17b5786` lief kein Review, weil Codex nur beim Eröffnen, bei «ready» oder auf «@codex review» prüft. |
+
+### Befunde
+
+Einstufung nach R31-P02. Spalten: r4-29 → `17b5786`; r4-30 und `1ac8f0b` ergeben dasselbe wie `17b5786`, wo nichts anderes steht.
+
+| ID | Einstufung | Befund | Beispiele |
+| --- | --- | --- | --- |
+| R31-02 | **Rückschritt gegenüber r4-29 (blockierend)**; neu durch Korrektur (3), auch schlechter als r4-30 und `1ac8f0b` | Nach einem Infinitiv («umbringen», «töten») ohne «mich» davor wird ein neuer Satz «er … mich» als Objekt des Tötungsverbs gelesen. Das «ich» vor dem Verb zählt dann nicht mehr. | «ich denke ans Umbringen er versteht mich nicht»: Suizid (auch r4-30, `1ac8f0b`) → **Gewalt**. «ich will mir umbringen er hat mich verlassen», «Gedanken ans Umbringen er hat mich verlassen»: `kommunizieren#worte` (auch r4-30, `1ac8f0b`) → **Gewalt**. Gleicher Mechanismus, mehrdeutig: «ich will umbringen er hat mich verlassen», «umbringen er hat mich verlassen», «ich denke ans Töten er versteht mich nicht» → Gewalt (r4-29, r4-30 und `1ac8f0b`: «Worte» bzw. «Anspannung»). |
+| R31-03 | **Rückschritt gegenüber r4-29 (blockierend)**; seit r4-30 in der Produktion | «du … dich» zählt als Gewalt, weil «dich» als fremdes Objekt gilt. | «denkst du daran dich umzubringen», «hast du vor dich umzubringen»: Suizid → **Gewalt**. «willst du dich umbringen», «warum willst du dich umbringen», «wie frage ich willst du dich umbringen», «ich frage ob du dich umbringen willst»: `fragen#gespraeche` → **Gewalt**. «willst du dich töten»: kein Treffer → Gewalt. Heikel: Das ist die direkte Frage, zu der Angehörige ermutigt werden. Wer sie in die Suche übernimmt, landet bei «Gewalt». |
+| R31-04 | **Rückschritt gegenüber r4-29 (blockierend)**; seit r4-30 | Fall (a) zählt nur ein früheres «mich», nicht «mir». Das ist dieselbe Klasse wie Codex P1 (1). | «er befiehlt mir mich umzubringen»: Suizid → **Gewalt**. «er rät mir mich umzubringen», «er hat mir geraten mich umzubringen», «sie empfiehlt mir mich umzubringen»: andere Treffer → **Gewalt**. |
+| R31-05 | **Rückschritt gegenüber r4-29 (blockierend)**; seit r4-30 | Drohwort und «versucht» zählen im ganzen Abschnitt bis zum letzten «und», auch wenn sie zu einem anderen Verb gehören. Das ist der Rest von Codex P1 (2). | «meine Familie versucht mich davon abzuhalten mich umzubringen», «er hat versucht mich davon abzuhalten mich umzubringen», «meine Tochter versucht mich zu überzeugen mich nicht umzubringen»: kein Treffer → **Gewalt**. «er droht mich umzubringen aber/doch/nur die Kinder halten mich davon ab mich umzubringen» und dasselbe ohne Bindewort: `quellen#forschung` → **Gewalt**. |
+| R31-06 | **Rückschritt gegenüber r4-29 (blockierend)**; seit r4-30 | Nach einer Drohung übernimmt «töte» das «mich» der Drohung. Korrektur (3) greift nur, wenn ein Subjekt zwischen Verb und «mich» steht; bei «ich töte mich» steht keines dazwischen. Das ist der Rest von Codex P1 (3). | «er will mich umbringen und ich töte mich vorher», ebenso ohne «und»: Suizid → **Gewalt**. «er schlägt mich und ich töte mich bald»: kein Treffer → **Gewalt**. «er will mich umbringen danach töte ich mich» und «… dann töte ich mich» (ohne «und»): kein Treffer bzw. «Diagnose» → **Gewalt**. |
+
+**Wie ich R31-P02 lese:** Als Rückschritt zähle ich jede Suizidsorge, die auf «Gewalt» führt, auch wenn r4-29 einen anderen oder keinen Treffer hatte. r4-29 hat keinen dieser Sätze auf «Gewalt» geführt, und die Tabelle in Nachtrag 3 behandelt Codex P1 (3) genauso (r4-29: kein Treffer). Das Urteil hängt aber nicht an dieser Lesart. Auch wenn nur Fälle mit Suizid in r4-29 zählen, bleibt in jeder Klasse ausser R31-05 ein Beispiel: «ich denke ans Umbringen er versteht mich nicht», «denkst du daran dich umzubringen», «er befiehlt mir mich umzubringen», «er will mich umbringen und ich töte mich vorher». Für sich allein blockiert also schon der neue Befund R31-02.
+
+**Grenzfälle (R30-P01), nicht blockierend:**
+
+- **G1, neu durch Korrektur (3), Gewalt → Suizid:** «er will die Kinder umbringen ich fürchte mich», «er will meine Mutter umbringen ich fürchte mich», «mein Sohn droht seinen Vater umzubringen ich ängstige mich», «sie will ihn töten ich halte mich raus», «er will töten ich habe mich versteckt». In r4-29 ergaben sie keinen Treffer, in `1ac8f0b` Gewalt.
+- **G2, Korrektur (1), Gewalt → Suizid wie in r4-30:**
+  - die zwei Sätze aus Punkt b;
+  - «er schlägt mich er will mich umzubringen», «er hat mich geschlagen er will mich umzubringen»;
+  - «er hat mich eingesperrt um mich umzubringen», «er sucht mich um mich umzubringen», «er vergiftet mich langsam um mich umzubringen».
+- **G3, «bringe ich mich um» nach einer Drohung:** «er will mich umbringen (und) dann bringe ich mich um» → Gewalt (r4-29: «Worte»). «bringe ich mich um» ist nach R25-010 bewusst ausgenommen. Die Zuordnung soll die Fachstelle bestätigen.
+- **G4, mehrdeutig:** Jetzt Gewalt statt keinem Treffer bzw. «Worte»: «töten er hasst mich», «ich will töten sie hat mich verlassen», «ich habe Angst zu töten er provoziert mich», «umbringen er schlägt mich».
+
+### Vorschlag: Variante K (nur nachgebildet, nicht umgesetzt)
+
+Gepatcht in einer Kopie von `dist/d31c` im Scratchpad (`d31/varK/site/js/interaktion.js`, Diff in `d31/varK.diff`, 62 Zeilen). Im Repository ist nichts geändert.
+
+- **(a) in `michIntent()`:** Drohwort und Versuchswort zählen nur zwischen dem früheren «mich» und dem Tötungsverb. Ohne früheres «mich» zählen sie wie bisher ab dem letzten «und». Als früheres Objekt zählt auch «mir». (R31-04, R31-05)
+- **(b) in `verbIntent()`, Prüfung nach dem Verb:**
+  - Steht «mich» direkt nach dem Verb, entscheidet das nächste Subjekt vor dem Verb im Abschnitt («und ich töte mich»).
+  - Beim Infinitiv zählt ein Subjekt erst nach dem finiten Verb («umbringen will er mich»). Steht es direkt nach dem Infinitiv, beginnt ein neuer Satz («umbringen er versteht mich»). (R31-02, R31-06, G1)
+- **(c):** Stehen «du» und «dich» im Teilsatz vor dem Verb, gilt das als reflexiv, also Suizid. (R31-03)
+- **(d):** «ich töte mich» und «töte ich mich» gelten immer als Suizid. «dann» und «danach» trennen für die Prüfung nach dem Verb wie «und». (R31-06 ohne «und»)
+
+Ergebnis:
+
+- Suchtest 286 von 286, 0 JS-Fehler.
+- `q-alle5` 617/617, `q-all91` 91/91 und `q-54` 54/54 sind gleich wie `17b5786`.
+- In den 130 gezielten Proben gehen alle Beispiele aus R31-02 bis R31-06 auf Suizid. Die mehrdeutigen Sätze aus R31-02 haben wieder den Treffer aus r4-29.
+- G1 geht wieder auf Gewalt wie in `1ac8f0b`, G4 wieder auf r4-29.
+- Neu richtig: «ich töte mich», «ich töte mich bald» → Suizid; «mein Mann tötet mich», «ich glaube er tötet mich» → Gewalt (vorher kein Treffer).
+- **Preis, sichere Richtung (Grenzfälle):** «er hat mir versprochen mich umzubringen», «er schwört mir mich umzubringen», «er lauert mir auf um mich umzubringen» (r4-29 Suizid) sowie «er bedroht mich ständig mich umzubringen» und «er bedroht mich er will mich umzubringen» (r4-30 Suizid) gehen auf Suizid. G3 bleibt.
+
+**Für den Export:**
+
+1. K oder Gleichwertiges umsetzen.
+2. Mindestens diese Zeilen in die Testliste aufnehmen:
+
+   | Anfrage | Erwartung |
+   | --- | --- |
+   | «ich denke ans Umbringen er versteht mich nicht» | `krise.html#suizid` |
+   | «ich will mir umbringen er hat mich verlassen» | `!grenzen.html#gewalt` |
+   | «denkst du daran dich umzubringen» | `krise.html#suizid` |
+   | «willst du dich umbringen» | `krise.html#suizid` |
+   | «er befiehlt mir mich umzubringen» | `krise.html#suizid` |
+   | «meine Familie versucht mich davon abzuhalten mich umzubringen» | `krise.html#suizid` |
+   | «er droht mich umzubringen aber meine Kinder halten mich davon ab mich umzubringen» | `krise.html#suizid` |
+   | «er will mich umbringen und ich töte mich vorher» | `krise.html#suizid` |
+   | «er will mich umbringen dann töte ich mich» | `krise.html#suizid` |
+   | Gegenprobe «er will die Kinder umbringen ich fürchte mich» | `grenzen.html#gewalt` |
+   | Gegenprobe «mein Mann tötet mich» | `grenzen.html#gewalt` |
+
+3. Danach mechanisch prüfen:
+   - Suchtest 100 %.
+   - `n690/q-r690.txt` und `n690/q-r690b.txt` gleich Spalte «K» in den `*.result5.tsv`.
+   - `q-alle5`, `q-all91` und `q-54` unverändert gegenüber `17b5786`.
+
+Fällt das ohne Abweichung aus, kann `independentReview` gesetzt werden. Vor dem Merge braucht es ein neues Codex-Review auf dem endgültigen Kopf («@codex review» in #690), und dieses Review muss geprüft sein (R28-O01, R29-P20). Neue Codex-Befunde werden nach R31-P02 eingestuft.
+
+**Zu meinen früheren Prüfungen:**
+
+- In der Prüfung von `adba309` habe ich «er hat mich (davon) überzeugt …» unter Suizid aufgeführt. Geprüft hatte ich aber nur den Satz mit «davon» und die verneinte Form. Den Satz ohne «davon», das Beispiel von Codex P1 (1), hatte ich nicht geprüft.
+- R31-03 bis R31-06 sind seit r4-30 veröffentlicht. Sie sind in allen meinen r4-30-Runden durchgegangen. Ich hatte weder «du … dich» noch «mir» als früheres Objekt noch «versucht» vor einem anderen Infinitiv geprüft.
+
+**Nicht geprüft:** Produktion (r4-31 ist nicht ausgeliefert); axe und Überlauf (`site/` unverändert, im Entwurf ist nur `js/interaktion.js` anders); nur Chromium.
+
+**Belege (Scratchpad `d31/`):** `suchtest-17b5786.txt`, `suchtest-1ac-on-286.txt`, `suchtest-varK.txt`; `n690/q-alle5.result3.tsv`, `n690/q-all91.result3.tsv`, `n690/q-54.result3.tsv` (r4-29, `1ac8f0b`, `17b5786`); `n690/*.result5.tsv` (r4-29, r4-30, `1ac8f0b`, `17b5786`, K); `search5.cjs`; `s0fd/site` (r4-30), `s1ac/site` (`1ac8f0b`); `varK/`, `varK.diff`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31c` (von `.gitignore` erfasst). Lokale Server beendet.

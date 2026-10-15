@@ -273,14 +273,18 @@
       /* Drohwort und «versucht» zählen nur im eigenen Abschnitt (ab dem letzten «und» vor «mich»), Codex P1 auf #690 */
       var segmentStart = 0;
       for (i = objectIndex - 1; i >= 0; i--) if (words[i] === 'und') { segmentStart = i + 1; break; }
-      var segment = killVerb === -1 ? [] : words.slice(segmentStart, killVerb + 1);
+      /* Variante K (a): Drohwort und «versucht» nur zwischen dem früheren «mich» und dem Verb */
+      var earlier = words.slice(segmentStart, objectIndex).lastIndexOf('mich');
+      earlier = earlier === -1 ? -1 : segmentStart + earlier;
+      var guardStart = earlier === -1 ? segmentStart : earlier + 1;
+      var segment = killVerb === -1 ? [] : words.slice(guardStart, killVerb + 1);
       if (killVerb !== -1 && !segment.some(function (word) { return threatWords[word] || attemptWords[word]; })) {
         var zuInfinitive = words[killVerb] === 'umzubringen' || (words[killVerb] === 'toeten' && words[killVerb - 1] === 'zu');
         var negated = words.slice(objectIndex + 1, killVerb).some(function (word) { return word === 'nicht' || word === 'nie'; });
         /* (a) ein früheres «mich» im selben Abschnitt («hält mich davon ab, mich …», «hat mich überzeugt, mich …»); zwischen den
            beiden «mich» darf kein «und» stehen. «er hat mich geschlagen und will mich umzubringen» bleibt Gewalt (Codex P1 auf #689).
            Ohne Liste der Steuerverben, weil jede Liste Lücken hat (Codex P1 auf #690); im Zweifel Suizid. */
-        var steered = words.slice(segmentStart, objectIndex).indexOf('mich') !== -1;
+        var steered = earlier !== -1 || words.slice(segmentStart, objectIndex).indexOf('mir') !== -1; /* Variante K (a): auch «mir» */
         if ((zuInfinitive && steered) || negated) return 'suizid';
       }
       for (i = objectIndex - 1; i >= start; i--) {
@@ -307,13 +311,26 @@
       /* «mich» nach dem Verb («danach töte ich mich», «umbringen will er mich»): das Subjekt dazwischen entscheidet (Codex P1 auf #690).
          Nur wenn vor dem Verb im selben Abschnitt (ab dem letzten «und» oder Einleitewort) kein «mich» oder «sich» steht; sonst gehört
          ein späteres «mich» zu einem neuen Satz («ich will mich umbringen er hat mich verlassen»). */
+      /* Variante K (d): «ich töte mich», «töte ich mich» gelten immer; «dann», «danach» trennen wie «und» */
+      if ((words[verb - 1] === 'ich' && words[verb + 1] === 'mich') || (words[verb + 1] === 'ich' && words[verb + 2] === 'mich')) return 'suizid';
       var segmentStart = start;
-      for (i = verb - 1; i >= start; i--) if (words[i] === 'und') { segmentStart = i + 1; break; }
+      for (i = verb - 1; i >= start; i--) if (words[i] === 'und' || words[i] === 'dann' || words[i] === 'danach') { segmentStart = i + 1; break; }
       var objectBefore = words.slice(segmentStart, verb).some(function (word) { return word === 'mich' || word === 'sich'; });
       for (i = verb + 1; !objectBefore && i <= verb + 3 && i < words.length; i++) {
         if (words[i] === 'und' || clauseWords[words[i]] || killVerbs[words[i]]) break;
         if (words[i] === 'mich') {
-          for (var m = verb + 1; m < i; m++) {
+          /* Variante K (b): «mich» direkt nach dem Verb → Subjekt davor im Abschnitt («und ich töte mich») */
+          if (i === verb + 1) {
+            for (var s = verb - 1; s >= segmentStart; s--) {
+              if (words[s] === 'ich') return 'suizid';
+              if (thirdParty[words[s]]) return 'gewalt';
+            }
+            break;
+          }
+          /* Variante K (b): beim Infinitiv zählt ein Subjekt erst nach dem finiten Verb («umbringen will er mich»);
+             «umbringen er versteht mich» ist ein neuer Satz */
+          var infinite = words[verb] === 'umbringen' || words[verb] === 'umzubringen' || words[verb] === 'toeten' || words[verb] === 'umgebracht' || words[verb] === 'getoetet';
+          for (var m = infinite ? verb + 2 : verb + 1; m < i; m++) {
             if (words[m] === 'ich') return 'suizid';
             if (thirdParty[words[m]]) return 'gewalt';
           }
@@ -322,6 +339,9 @@
       }
       /* «mich» im Teilsatz geht anderen Objekten vor («ich will mich wegen meiner Familie umbringen», D30-19). */
       for (i = verb - 1; i >= start; i--) if (words[i] === 'mich') return michIntent(words, i);
+      /* Variante K (c): «du … dich» ist reflexiv («willst du dich umbringen») */
+      var clauseBefore = words.slice(start, verb);
+      if (clauseBefore.indexOf('dich') !== -1 && clauseBefore.indexOf('du') !== -1) return 'suizid';
       for (i = verb - 1; i >= start; i--) if (plainObjects[words[i]]) return 'gewalt';
       for (i = verb - 1; i >= start; i--) {
         if (words[i] === 'sie' || persons[words[i]]) {

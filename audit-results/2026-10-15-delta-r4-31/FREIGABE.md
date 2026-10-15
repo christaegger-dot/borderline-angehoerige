@@ -28,7 +28,7 @@ Zur Frage, ob der nach dem Merge versehentlich neu angelegte Branch `claude/r4-3
 | --- | --- | --- |
 | Codex P1 (mehrere Tötungsverben) | Gewertet wird jedes Tötungsverb. Ergibt eines «Suizid», gilt Suizid. Beispiel: «er will mich umbringen und ich will mich töten» → «Suizid» (r4-30: «Gewalt», r4-29: «Suizid»). | nur Suchtreffer |
 | Codex P1 (früheres «mich»), R31-01 | Fall (a) der Infinitivregel (D30-20) greift nur, wenn beim früheren «mich» ein Steuerverb steht (ab zwei Wörtern davor bis zum späteren «mich») und zwischen den beiden «mich» kein «und». Beispiel: «er hat mich geschlagen und will mich umzubringen» → «Gewalt» (r4-30: «Suizid»). | nur Suchtreffer |
-| Testliste | 279 Anfragen, sieben davon neu | nein |
+| Testliste | 297 Anfragen, 25 davon neu (Stand Nachtrag 4) | nein |
 | Build | r4-31, Assetversion r4-31 | nein |
 
 Die Einzelheiten stehen in `2026-10-15-delta-r4-30/FREIGABE.md`, Nachtrag 9.
@@ -76,3 +76,26 @@ Ihre Antwort, wörtlich:
 > «Nur Rückschritte blockieren (Recommended)»
 
 Das heisst: Ein Codex-Befund zur Suchregel blockiert den Merge nur, wenn eine Anfrage schlechter liegt als in r4-29, also wenn Suizidsorge auf «Gewalt» führt oder eine klare Ich-Aussage ohne Treffer bleibt. Andere Grenzfälle werden als Testzeile in R30-P01 aufgenommen und im nächsten Patch bearbeitet. Prüfsitzung und bauende Sitzung prüfen jeden Befund gegen r4-29 und melden das Ergebnis.
+
+## Nachtrag 4 · Nachprüfung der Codex-Korrektur, R31-02 bis R31-06 (15.10.2026)
+
+Die Nachprüfung (`PRUEFUNG.md`, Abschnitt «Nachprüfung Codex #690», Stand `17b5786`) ergab nach R31-P02 «nicht freigabefähig». Die drei Codex-Korrekturen wirken für die gemeldeten Beispiele, aber es gibt fünf Rückschritte gegenüber r4-29 (blockierend):
+
+| Befund | Beispiel | seit |
+| --- | --- | --- |
+| R31-02 | «ich denke ans Umbringen er versteht mich nicht» → «Gewalt»: nach einem Infinitiv wurde ein neuer Satz «er … mich» als Objekt gelesen | neu durch Korrektur (3) aus Nachtrag 3 |
+| R31-03 | **«willst du dich umbringen»**, «denkst du daran dich umzubringen» → «Gewalt»: «dich» galt immer als Fremdobjekt. Das ist die direkte Frage, zu der die Website Angehörige ermutigt. | r4-30, in der Produktion |
+| R31-04 | «er befiehlt mir mich umzubringen» → «Gewalt»: ein früheres «mir» zählte nicht | r4-30, in der Produktion |
+| R31-05 | «meine Familie versucht mich davon abzuhalten mich umzubringen» → «Gewalt»: «versucht» gehörte zu einem anderen Verb | r4-30, in der Produktion |
+| R31-06 | «er will mich umbringen und ich töte mich vorher», «… dann töte ich mich» → «Gewalt» | r4-30, in der Produktion |
+
+Umgesetzt ist Variante K der Prüfsitzung (`interaktion.js`, wörtlich nach ihrem Diff):
+
+- (a) Drohwort und «versucht» zählen nur zwischen dem früheren «mich» und dem Verb; auch ein früheres «mir» gilt als Steuerung.
+- (b) Steht «mich» direkt nach dem Verb, entscheidet das Subjekt davor im Abschnitt («und ich töte mich»). Bei einem Infinitiv zählt ein Subjekt erst nach dem finiten Verb («umbringen will er mich»); «umbringen er versteht mich» ist ein neuer Satz.
+- (c) «du … dich» vor dem Verb ist reflexiv → Suizid («willst du dich umbringen»).
+- (d) «ich töte mich» und «töte ich mich» gelten immer als Suizid; «dann» und «danach» trennen wie «und».
+
+Ergebnis auf dem Entwurf: «Suchtest: 297 von 297 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind 11 Zeilen, wie verlangt. Mechanischer Abgleich mit der Nachbildung K der Prüfsitzung (Spalte «K» in `n690/*.result5.tsv`): `q-r690` 86/86, `q-r690b` 74/74, `q-alle5` 617/617, `q-all91` 91/91, `q-54` 54/54, zusammen 922 von 922 ohne Abweichung. Der Preis sind fünf Gewaltsätze, die in die sichere Richtung auf «Suizid» gehen, z. B. «er schwört mir mich umzubringen». Sie und die Grenzfälle G1 bis G4 stehen in R30-P01.
+
+`releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.

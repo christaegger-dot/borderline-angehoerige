@@ -66,3 +66,13 @@ Pull Request #690 wurde um 14:49:40 UTC eröffnet, mit Stand `1ac8f0b` (Export n
 Ergebnis auf dem Entwurf: «Suchtest: 286 von 286 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind sieben Zeilen, darunter zwei Gegenproben für neue Sätze nach dem Verb. Von den 617 Proben der Prüfsitzung (`q-alle5.txt`) haben gegenüber `1ac8f0b` zwei einen anderen Ersttreffer. Beide gehen in die sichere Richtung, wie schon in r4-30: «er hasst mich will mich umzubringen» und «er schlägt mich jeden Tag will mich umzubringen» → «Suizid», weil kein «und» dazwischen steht.
 
 `releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `1ac8f0b`.
+
+**Entscheid zur Stopp-Regel (15.10.2026):** Die Frage an die Auftraggeberin lautete:
+
+> «Jede Codex-Runde findet neue Grenzfälle der Suchregel (#689: 2+2, #690: 3 P1). Die Regel ist eine Heuristik und wird nie vollständig sein. Die drei aus #690 sind korrigiert (286/286). Nach welcher Regel soll ab jetzt ein Codex-Befund zur Suche den Merge aufhalten?»
+
+Ihre Antwort, wörtlich:
+
+> «Nur Rückschritte blockieren (Recommended)»
+
+Das heisst: Ein Codex-Befund zur Suchregel blockiert den Merge nur, wenn eine Anfrage schlechter liegt als in r4-29, also wenn Suizidsorge auf «Gewalt» führt oder eine klare Ich-Aussage ohne Treffer bleibt. Andere Grenzfälle werden als Testzeile in R30-P01 aufgenommen und im nächsten Patch bearbeitet. Prüfsitzung und bauende Sitzung prüfen jeden Befund gegen r4-29 und melden das Ergebnis.

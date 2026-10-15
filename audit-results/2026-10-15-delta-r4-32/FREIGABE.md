@@ -90,3 +90,28 @@ R31-P03 blockiert eine Änderung der Suchregel nur, wenn eine Anfrage gegenüber
 Nach dieser Lesart verschlechtert r4-32 keine Probe. Nach der wörtlichen Lesart (Ersttreffer) wären es 15 + 4 Proben, darunter die Ich-Aussage «ich will mich und die Kinder umbringen», die nach Entscheid (2) auf Kinder › Eskalation geht.
 
 `releaseApproval.independentReview` steht auf «ausstehend», bis die unabhängige Prüfung von r4-32 vorliegt. Erst danach kommt der Produktionsexport.
+
+## Nachtrag 1 · Unabhängige Prüfung, R32-01 und R32-02 (15.10.2026)
+
+Die unabhängige Prüfung (`PRUEFUNG.md`, Stand `138033d`) ergab «freigabefähig mit Auflagen». Die Prüfsitzung hat die 885 Proben selbst abgefragt und alle Zahlen dieser Freigabe bestätigt. Sie fand zwei Fehler:
+
+- **R32-01:** Jedes «bring…» mit einem späteren «um» galt als Tötungswort, ohne Abstand und über Satzzeichen hinweg. Harmlose Fragen bekamen dadurch Suizid und Gewalt angeheftet, zum Beispiel «Wer bringt die Kinder um acht Uhr zur Schule, wenn ich in der Klinik bin?» (Kinder › Gewalt › Suizid). Damit stimmte die Aussage «ohne Tötungswort 0 Änderungen» nur für die 885 Proben, nicht allgemein.
+- **R32-02:** «mein Kind sich umbringen» galt als Kind als Betroffene. Die Sorge um ein suizidales Kind begann dadurch mit «Kinder › Eskalation» und «Gewalt», Suizid stand an dritter Stelle, zum Beispiel bei «Was tun, wenn mein Kind sich umbringen will?».
+
+Umgesetzt ist Korrektur P der Prüfsitzung, unverändert übernommen (`interaktion.js` bytegleich mit ihrer Nachbildung):
+
+- **P1:** «um» zählt nur dann als Teil von «bring… um», wenn es höchstens sechs Wörter nach dem Verb steht, ohne Satzzeichen oder Komma dazwischen. Ausserdem muss es am Ende stehen oder vor einer Satzgrenze, einem Bindewort oder einem Subjekt.
+- **P2:** «sich» und «mich» gelten nur nach «und» als Bindeglied zwischen «Kind» und Tötungswort («die Kinder und sich»).
+
+Die Testliste enthält die fünf vorgeschlagenen Zeilen, jetzt 197 Anfragen.
+
+Ergebnis auf dem Entwurf:
+
+- «Suchtest: 197 von 197 Erwartungen wie festgeschrieben · JS-Fehler 0».
+- Die ersten drei Treffer der 885 Proben sind gleich `d32/p_P.tsv` der Prüfsitzung und gleich `138033d`, ohne Abweichung. Die Zahlen oben gelten damit unverändert.
+- Die 21 gezielten Proben der Prüfsitzung sind gleich `d32/a_P.tsv`.
+
+Zu R31-P03 empfiehlt die Prüfsitzung, die Lesart der bauenden Sitzung zu verschärfen: Suizid soll unter den ersten zwei Treffern stehen, ausser wenn nach Entscheid (2) Kinder zuerst stehen. Mit P gilt das für alle Proben. Die Bestätigung der Auftraggeberin steht für beide Lesarten aus.
+
+`releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Stand bestätigt hat.
+

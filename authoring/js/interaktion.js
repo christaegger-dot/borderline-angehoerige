@@ -247,15 +247,27 @@
       sohn: 1, tochter: 1, bruder: 1, schwester: 1, freund: 1, freundin: 1, kind: 1, eltern: 1, familie: 1, nachbar: 1, nachbarin: 1 };
     var threatWords = { droht: 1, drohen: 1, drohte: 1, gedroht: 1, drohung: 1, bedroht: 1, bedrohte: 1 };
     var clauseWords = { dass: 1, wenn: 1, ob: 1, weil: 1, falls: 1, damit: 1, seit: 1, seitdem: 1, warum: 1 };
+    /* Variante P (R32-01): «um» gilt nur als Teil von «bring… um», wenn es höchstens sechs Wörter danach im selben Satzteil steht
+       und am Ende oder vor einer Satzgrenze, einem Bindewort oder einem neuen Subjekt («bringt sie sich um, wenn …»);
+       nicht «um 9 Uhr», «um Hilfe zu bitten», «sich um … kümmern», «Sorgen um sie» */
+    var particleNext = { und: 1, oder: 1, aber: 1, wenn: 1, falls: 1, weil: 1, dass: 1, ob: 1, sonst: 1, dann: 1, satzende0: 1,
+      ich: 1, er: 1, sie: 1, du: 1, wir: 1, ihr: 1, man: 1 };
+    function particleUm(words, i) {
+      for (var j = i + 1; j < words.length && j <= i + 6; j++) {
+        if (words[j] === 'satzende0') return -1;
+        if (words[j] === 'um') return j === words.length - 1 || particleNext[words[j + 1]] ? j : -1;
+      }
+      return -1;
+    }
     function hasKill(words) {
       if (words.some(function (word) { return killWords[word]; })) return true;
-      for (var i = 0; i < words.length; i++) if (separableVerbs[words[i]] && words.indexOf('um', i + 1) !== -1) return true;
+      for (var i = 0; i < words.length; i++) if (separableVerbs[words[i]] && particleUm(words, i) !== -1) return true;
       return false;
     }
     function killIndex(words) {
       for (var i = 0; i < words.length; i++) {
         if (killWords[words[i]]) return i;
-        if (separableVerbs[words[i]] && words.indexOf('um', i + 1) !== -1) return words.indexOf('um', i + 1);
+        if (separableVerbs[words[i]] && particleUm(words, i) !== -1) return particleUm(words, i);
       }
       return -1;
     }
@@ -325,14 +337,14 @@
        («die Kinder umbringen», «mich und die Kinder», «die Kinder und sich»); nicht «vor dem Kind», «der Kinder wegen»,
        «der Vater meiner Kinder», «mich das Kind», «sich mein Kind», «die Kinder halten mich davon ab, mich umzubringen» */
     var childWords = { kind: 1, kinder: 1 };
-    var childLinks = { und: 1, sich: 1, mich: 1, auch: 1, zu: 1, dann: 1, selbst: 1 };
+    var childLinks = { und: 1, auch: 1, zu: 1, dann: 1, selbst: 1 }; /* Variante P (R32-02): «sich», «mich» nur nach «und» */
     var childGuards = { sich: 1, vor: 1, wegen: 1, von: 1, mit: 1, ohne: 1, fuer: 1, bei: 1, mich: 1, meiner: 1, deiner: 1, seiner: 1, ihrer: 1, unserer: 1, eurer: 1 };
     function childVictim(words) {
       for (var k = 0; k < words.length; k++) {
-        var separable = words[k] === 'um' && words.slice(0, k).some(function (word) { return separableVerbs[word]; });
+        var separable = words[k] === 'um' && words.some(function (word, i) { return separableVerbs[word] && particleUm(words, i) === k; });
         if (!killWords[words[k]] && !separable) continue;
         var c = k - 1;
-        while (c >= 0 && childLinks[words[c]]) c--;
+        while (c >= 0 && (childLinks[words[c]] || ((words[c] === 'sich' || words[c] === 'mich') && words[c - 1] === 'und'))) c--;
         if (c >= 0 && childWords[words[c]] && !childGuards[words[c - 1]] && !childGuards[words[c - 2]]) return true;
       }
       return false;
@@ -344,7 +356,7 @@
       if (childVictim(words)) return ['kinder', 'gewalt', 'suizid'];
       if (!suicideFirst(query)) return ['gewalt', 'suizid'];
       /* Suiziddrohung als Druck mit trennbarem Verb («bringe ich mich um», «bringt sie sich um»), R25-010 */
-      var separable = words.some(function (word, i) { return separableVerbs[word] && words.indexOf('um', i + 1) !== -1; });
+      var separable = words.some(function (word, i) { return separableVerbs[word] && particleUm(words, i) !== -1; });
       var ichMich = lastMich !== -1 && words.slice(Math.max(0, lastMich - 3), lastMich).indexOf('ich') !== -1;
       return separable && (hasSich || ichMich) ? ['druck', 'suizid', 'gewalt'] : ['suizid', 'gewalt'];
     }
@@ -384,7 +396,8 @@
         return before !== 'nicht' && before !== 'nie';
       }) ||
         words.some(function (word) { return suicideWords[word]; });
-      var order = safetyOrder(query, words);
+      /* Variante P: Satzzeichen und Komma als Satzgrenze für «bring… um» */
+      var order = safetyOrder(query, normalized(String(query).replace(/[.?!;:,]+/g, ' satzende0 ')).split(/\s+/).filter(Boolean));
       var violenceGroup = synonyms.gewalt;
       var violenceSignal = phraseHits.some(function (entry) { return entry.group === violenceGroup; }) ||
         words.some(function (word) { return synonyms[word] === violenceGroup; });

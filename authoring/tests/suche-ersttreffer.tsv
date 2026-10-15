@@ -1,4 +1,4 @@
-# Festgeschriebene Such-Ersttreffer (R3C-A9, D30-03). Stand r4-33, 15.10.2026.
+# Festgeschriebene Such-Ersttreffer (R3C-A9, D30-03). Stand r4-34, 15.10.2026.
 # Spalten: Anfrage, erwarteter Ersttreffer (href; «–» = kein Treffer; «!href» = nicht dieser Treffer), Herkunft.
 # «href1 > href2 > …» = die ersten Treffer in genau dieser Reihenfolge (Sicherheitsabschnitte zuoberst, r4-32).
 # «!sicher» = unter den ersten zwei Treffern keiner der vier Sicherheitsabschnitte (harmlose Gegenproben, r4-33).
@@ -220,3 +220,5 @@ Ihr brachtet mich um	grenzen.html#gewalt > krise.html#suizid	Codex P1 auf #695 (
 Die Therapie bringt nichts ich stelle wegen der starken Nebenwirkungen meine Medikamente um	!sicher	Codex P1 auf #695 (neuer Satz mit «um-»)
 Mein Mann bringt mich um sie sieht es	grenzen.html#gewalt > krise.html#suizid	Codex P1 auf #695 («um sie» nach Tötungsphrase)
 Er bringt mich und auch die Kinder um	kinder.html#eskalation > grenzen.html#gewalt > krise.html#suizid	Codex P1 auf #695 («und auch»)
+ich töte mich und die Kinder wissen nichts davon	krise.html#suizid > grenzen.html#gewalt	R33-01 Ich-Aussage, Kinder nicht Opfer
+er tötet die Kinder	kinder.html#eskalation > grenzen.html#gewalt > krise.html#suizid	R33-01 Gegenprobe, Opfer nach gebeugtem Verb

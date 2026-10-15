@@ -6,7 +6,17 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
-### r4-32 veröffentlicht, nicht nachgeprüft; r4-33 in Arbeit
+### r4-33 veröffentlicht, nicht nachgeprüft; r4-34 in Arbeit
+
+#695 wurde am 15. Oktober 2026 um 20:06:30 UTC gemergt (Merge-Commit `7bd5e6a`, Stand `ce56c1d`). Acht Sekunden vorher war der Entwurf auf «ready for review» gesetzt worden. Das war eine Minute nach dem Codex-Review und vor dessen Prüfung. R28-O01 und R29-P20 sind damit zum dritten Mal nicht eingehalten (#689, #694, #695). Ein Entwurf allein verhindert den Merge nicht.
+
+r4-33 behebt den Rückschritt aus r4-32 («Mein Mann bringt mich heute Nacht in unserer Wohnung um»). Es bringt aber drei neue Rückschritte gegenüber r4-32, die das Codex-Review von #695 gefunden hat, etwa «Mein Mann bringt mich um sie sieht es» ohne Treffer. Die Korrektur folgt mit r4-34 (`audit-results/2026-10-15-delta-r4-34/`).
+
+Offen für die Auftraggeberin:
+- Wie sie Merges vor geprüftem Review künftig verhindern will, zum Beispiel mit einer Branch-Regel auf `main`.
+- Für R31-P03 den Bezugsstand (r4-32 oder r4-33) und die Lesart unter «beide oben» bestätigen.
+
+### r4-32 veröffentlicht, nicht nachgeprüft; ersetzt durch r4-33
 
 #694 wurde am 15. Oktober 2026 um 19:32:36 UTC gemergt (Merge-Commit `4790653`, Stand `37b963f`). Das war 12 Sekunden nach dem Codex-Review und vor dessen Prüfung. R28-O01 und R29-P20 sind damit erneut nicht eingehalten.
 

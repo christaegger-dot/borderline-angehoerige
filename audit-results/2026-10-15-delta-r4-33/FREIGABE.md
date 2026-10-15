@@ -122,3 +122,11 @@ Ergebnis auf dem Entwurf:
 
 `releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung den neuen Stand bestätigt hat. Danach wird neu exportiert, und auf dem exportierten Kopf folgt ein neues Codex-Review. #695 bleibt bis dahin ein Entwurf.
 
+## Nachtrag 3 · Merge von #695 (15.10.2026)
+
+Das Konto `christaegger-dot` hat den Entwurf #695 um 20:06:22 UTC auf «ready for review» gesetzt und um 20:06:30 UTC gemergt (Merge-Commit `7bd5e6a`, Stand `ce56c1d`). Das geschah nicht über den Zugang der bauenden Sitzung; im Verlauf des Pull Requests ist keine App angegeben. Es war eine Minute nach dem Codex-Review (20:05:31 UTC) und vor dessen Prüfung. R28-O01 und R29-P20 sind damit zum dritten Mal nicht eingehalten (#689, #694, #695).
+
+Die Sätze «#695 bleibt bis dahin ein Entwurf» (Nachtrag 2) und «Ein Entwurf lässt sich nicht mergen. So ist R28-O01/R29-P20 auch technisch gesichert» (Nachtrag 1) treffen nicht zu. Ein Entwurf verhindert keinen Merge, wenn er von Hand freigegeben wird.
+
+Veröffentlicht ist r4-33 auf Stand `ce56c1d`. Damit sind die drei blockierenden Rückschritte aus Nachtrag 2 in der Produktion. Die Korrektur `8f605a8` und die Nachprüfung `6ea195a` gehen in r4-34 (`2026-10-15-delta-r4-34/FREIGABE.md`).
+

@@ -378,7 +378,8 @@
         while (c >= 0 && (childLinks[words[c]] || ((words[c] === 'sich' || words[c] === 'mich') && words[c - 1] === 'und'))) c--;
         if (c >= 0 && childWords[words[c]] && !childGuards[words[c - 1]] && !childGuards[words[c - 2]]) return true;
         /* gebeugte Form mit Opfer danach: «er tötete die Kinder», «er tötet mich und die Kinder» */
-        if (finiteKill[words[k]]) {
+        /* Variante R: nicht nach einer Ich-Form («ich töte mich und die Kinder wissen nichts», «töte ich mich …») */
+        if (finiteKill[words[k]] && words.slice(Math.max(0, k - 3), k).indexOf('ich') === -1 && words[k + 1] !== 'ich') {
           for (c = k + 1; c < words.length && c <= k + 4; c++) {
             if (childWords[words[c]]) return true;
             if (!objectStarts[words[c]] && words[c] !== 'und' && words[c] !== 'auch') break;

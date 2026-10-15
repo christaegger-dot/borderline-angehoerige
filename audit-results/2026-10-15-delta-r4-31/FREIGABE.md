@@ -216,3 +216,18 @@ Das vierte Codex-Review von #690 lief auf Anforderung auf dem Stand `09e05f2`, d
 Ergebnis auf dem Entwurf: «Suchtest: 317 von 317 Ersttreffern wie festgeschrieben · JS-Fehler 0». Drei Zeilen sind neu. In den 885 Anfragen der Prüfsitzung (`n800/q-union.txt`) haben gegenüber `09e05f2` 13 einen anderen Ersttreffer. Alle 13 sind Ich-Aussagen mit «ans Umbringen» oder «ans Töten» und gehen jetzt auf «Suizid», zum Beispiel «Gedanken ans Umbringen, er hat mich verlassen». Gegenüber der Produktion gehen weiterhin nur die 25 Drohungen anderer neu auf «Gewalt», und keine Anfrage verliert ihren Treffer.
 
 `releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung die Änderung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `09e05f2`.
+
+## Nachtrag 13 · Abschlussbestätigung 7 und neuer Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `120370e` nach R31-P03 bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 7»). Geprüft hat sie:
+
+- Suchtest: 317 von 317.
+- `q-union`: gegenüber `09e05f2` genau die 13 erwarteten Wechsel auf «Suizid».
+- Bestand: 91/91 und 54/54 wie in r4-29.
+- Vergleich mit der Produktion: Neu auf «Gewalt» gehen dieselben 25 Drohungen anderer. Keine Suizidaussage kommt dazu, keine Anfrage verliert ihren Treffer.
+- 27 Proben zu Nebenwirkungen: alle in der sicheren Richtung.
+- Produktionsbuild in einer Kopie: bytegleich.
+
+Zu R31-P04 hält sie fest: Die Phrase «ans Umbringen» wirkt unabhängig davon, wer «ans Umbringen» denkt. Gewaltsorgen mit dieser Wendung gehen deshalb auf «Suizid».
+
+`releaseApproval.independentReview` steht auf «bestaetigt». Danach folgen der Produktionsexport und ein neues Codex-Review auf dem exportierten Kopf. Gemergt wird erst, wenn dieses Review nach R31-P03 geprüft ist.

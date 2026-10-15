@@ -3,7 +3,8 @@
 //
 // Aufruf: node authoring/tools/suchtest.mjs <site-ordner> [tsv]
 //   vor dem Export gegen den Entwurf (z. B. dist/site), danach gegen site/
-// Erwartung «!href» heisst: Ersttreffer darf nicht href sein; «–» heisst: kein Treffer.
+// Erwartung «!href» heisst: Ersttreffer darf nicht href sein; «–» heisst: kein Treffer;
+// «href1 > href2 > …» heisst: die ersten Treffer in genau dieser Reihenfolge (Sicherheitsabschnitte, r4-32).
 // Playwright braucht PLAYWRIGHT_BROWSERS_PATH (hier /opt/pw-browsers).
 // Playwright: Modulpfad über PLAYWRIGHT_MODULE, sonst /opt/npm-tools/node_modules/playwright.
 // Nicht Teil der CI (dort fehlt Playwright); in jeder Änderungsrunde mit Änderungen an Suche oder Inhalt ausführen.
@@ -39,12 +40,14 @@ await page.goto(`http://127.0.0.1:${port}/suche.html`, { waitUntil: 'networkidle
 const fails = [];
 for (const [query, expected] of rows) {
   await page.fill('#site-search', query);
-  const got = await page.evaluate(() => { const a = document.querySelector('[data-search-results] > li:not([hidden]) a'); return a ? a.getAttribute('href') : '–'; });
-  const ok = expected.startsWith('!') ? got !== expected.slice(1) : got === expected;
+  const hrefs = await page.evaluate(() => [...document.querySelectorAll('[data-search-results] > li:not([hidden]) a')].map(a => a.getAttribute('href')));
+  const sequence = expected.includes(' > ') ? expected.split(' > ') : null;
+  const got = sequence ? hrefs.slice(0, sequence.length).join(' > ') || '–' : (hrefs[0] || '–');
+  const ok = sequence ? got === expected : expected.startsWith('!') ? got !== expected.slice(1) : got === expected;
   if (!ok) fails.push({ query, expected, got });
 }
 await browser.close();
 server.close();
 for (const f of fails) console.log(`ABWEICHUNG | ${f.query} | erwartet ${f.expected} | erhalten ${f.got}`);
-console.log(`Suchtest: ${rows.length - fails.length} von ${rows.length} Ersttreffern wie festgeschrieben · JS-Fehler ${errors.length}`);
+console.log(`Suchtest: ${rows.length - fails.length} von ${rows.length} Erwartungen wie festgeschrieben · JS-Fehler ${errors.length}`);
 process.exitCode = fails.length || errors.length ? 1 : 0;

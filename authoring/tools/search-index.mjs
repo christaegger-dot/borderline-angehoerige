@@ -64,7 +64,7 @@ export function buildSearchIndex(cfg, fragments) {
       items.push({ title, page: page.title, href: `${page.href}#${id}`, excerpt, terms: [title, basePageTerms, body, ...aliases].join(' '), keywords: aliases.join(' '), level: 'section' });
     }
   }
-  return items.map((item, index) => `<li class="puk-site-result" data-search-item data-search-order="${index}" data-search-level="${item.level}" data-search-title="${esc(item.title)}" data-search-keywords="${esc(item.keywords || '')}" data-search-text="${esc(item.terms)}" hidden><h2 class="puk-web-h3"><a href="${esc(item.href)}" aria-label="${esc(`${item.title}: Fundstelle auf der Seite ${item.page} öffnen`)}">${esc(item.title)}</a></h2>${item.level === 'section' ? `<p class="puk-site-result__context">Auf der Seite «${esc(item.page)}»</p>` : ''}<p>${esc(item.excerpt)}</p></li>`).join('\n');
+  return items.map((item, index) => `<li class="puk-site-result" data-search-item data-search-order="${index}" data-search-level="${item.level}" data-search-target="${esc(item.href)}" data-search-title="${esc(item.title)}" data-search-keywords="${esc(item.keywords || '')}" data-search-text="${esc(item.terms)}" hidden><h2 class="puk-web-h3"><a href="${esc(item.href)}" aria-label="${esc(`${item.title}: Fundstelle auf der Seite ${item.page} öffnen`)}">${esc(item.title)}</a></h2>${item.level === 'section' ? `<p class="puk-site-result__context">Auf der Seite «${esc(item.page)}»</p>` : ''}<p>${esc(item.excerpt)}</p></li>`).join('\n');
 }
 
 export function injectSearchIndex(cfg, fragments) {

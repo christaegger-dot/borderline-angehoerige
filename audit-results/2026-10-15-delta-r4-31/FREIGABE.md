@@ -231,3 +231,24 @@ Die Prüfsitzung hat den Stand `120370e` nach R31-P03 bestätigt (`PRUEFUNG.md`,
 Zu R31-P04 hält sie fest: Die Phrase «ans Umbringen» wirkt unabhängig davon, wer «ans Umbringen» denkt. Gewaltsorgen mit dieser Wendung gehen deshalb auf «Suizid».
 
 `releaseApproval.independentReview` steht auf «bestaetigt». Danach folgen der Produktionsexport und ein neues Codex-Review auf dem exportierten Kopf. Gemergt wird erst, wenn dieses Review nach R31-P03 geprüft ist.
+
+## Nachtrag 14 · Merge von #690, fünftes Codex-Review und Produktionsprüfung (15.10.2026)
+
+**Merge:** Das Konto `christaegger-dot` hat #690 am 15.10.2026 um 17:28:49 UTC gemergt (Merge-Commit `5776316`, Stand `bd3d903`). Das fünfte Codex-Review auf `bd3d903` war zu diesem Zeitpunkt noch nicht abgeschlossen; es endete um 17:29:28 UTC, 39 Sekunden nach dem Merge. R28-O01 und R29-P20 («Codex-Review abgeschlossen und geprüft») sind damit nicht eingehalten.
+
+**Fünftes Codex-Review, nachträglich nach R31-P03 eingestuft:**
+
+| Befund | Beispiel | r4-29 | Produktion r4-30 | r4-31 | Einstufung |
+| --- | --- | --- | --- | --- | --- |
+| P1: «du … dich» wird auch mit einem anderen Subjekt dazwischen als reflexiv gewertet | «du sagst er will dich umbringen», «glaubst du er will dich umbringen» | Gespräche bzw. Suizid | Gewalt | Suizid | Gewalt → Suizid, sichere Richtung: **nicht blockierend**, in R31-P04 (r4-32) |
+
+Inhaltlich ist der veröffentlichte Stand damit nach R31-P03 freigabefähig. Der Ablauf war es nicht.
+
+**Produktionsprüfung r4-31:** bestanden mit Hinweisen (`PRODUKTIONSPRUEFUNG.md`, eigene Sitzung, 17:35 bis 18:00 UTC). Die Produktion liefert `site/` aus `5776316` vollständig und unverändert aus:
+
+- `js/interaktion.js` ist bytegleich, auch unter `?v=r4-31` und mit gzip und br.
+- 207 von 207 Textvergleichen sind gleich, 9 von 9 Dateien, 44 von 44 Sprungziele und 88 von 88 Weiterleitungen.
+- 317 von 317 Such-Ersttreffern entsprechen der Festschreibung, auch die 19 Anfragen mit Satzzeichen.
+- Es gibt 0 fremde Hosts, 0 Cookies und 0 `tel:`.
+
+Optional ist PC31-1: In der Kopfzeile der Testliste stand noch «Stand r4-30». Das ist jetzt nachgeführt.

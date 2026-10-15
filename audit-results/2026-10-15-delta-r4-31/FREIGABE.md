@@ -28,7 +28,7 @@ Zur Frage, ob der nach dem Merge versehentlich neu angelegte Branch `claude/r4-3
 | --- | --- | --- |
 | Codex P1 (mehrere Tötungsverben) | Gewertet wird jedes Tötungsverb. Ergibt eines «Suizid», gilt Suizid. Beispiel: «er will mich umbringen und ich will mich töten» → «Suizid» (r4-30: «Gewalt», r4-29: «Suizid»). | nur Suchtreffer |
 | Codex P1 (früheres «mich»), R31-01 | Fall (a) der Infinitivregel (D30-20) greift nur, wenn beim früheren «mich» ein Steuerverb steht (ab zwei Wörtern davor bis zum späteren «mich») und zwischen den beiden «mich» kein «und». Beispiel: «er hat mich geschlagen und will mich umzubringen» → «Gewalt» (r4-30: «Suizid»). | nur Suchtreffer |
-| Testliste | 305 Anfragen, 33 davon neu (Stand Nachtrag 7) | nein |
+| Testliste | 308 Anfragen, 36 davon neu (Stand Nachtrag 9) | nein |
 | Build | r4-31, Assetversion r4-31 | nein |
 
 Die Einzelheiten stehen in `2026-10-15-delta-r4-30/FREIGABE.md`, Nachtrag 9.
@@ -140,3 +140,15 @@ Die Prüfsitzung hat den Stand `93d972b` bestätigt (`PRUEFUNG.md`, Abschnitt «
 `releaseApproval.independentReview` steht auf «bestaetigt», danach folgt der Produktionsexport. Erst auf dem exportierten Kopf wird ein neues Codex-Review angefordert. Gemergt wird erst, wenn dieses Review geprüft ist.
 
 Hinweis der Prüfsitzung: Meldet Codex an der Stelle «Infinitiv mit Hilfsverb» nochmals einen Rückschritt, wird auf die einseitige Form M′ gewechselt, statt L weiter zu verfeinern.
+
+## Nachtrag 9 · Drittes Codex-Review von #690 (15.10.2026)
+
+Das dritte Codex-Review von #690 lief auf Anforderung auf dem Stand `d4d452f`, dem Export nach der Abschlussbestätigung 4. Es war um 16:25 UTC fertig und meldete einen P1-Befund:
+
+| Befund | Beispiel | r4-29 | r4-30 | `d4d452f` | Einstufung nach R31-P02 | Korrektur |
+| --- | --- | --- | --- | --- | --- | --- |
+| Rückwärtssuche über das Satzende | «Er hat mich verlassen. Mich umzubringen ist mein Plan.» | Verlassen (FAQ) | Suizid | **Gewalt** | Suizidaussage → «Gewalt», **blockierend** (eingeführt durch L1) | Satzzeichen ergeben jetzt «und» plus eine eigene Satzmarke. Diese ist eine Teilsatzgrenze und beendet auch die Suche nach dem Subjekt in früheren Teilsätzen und nach einem Drohwort. Was L1 mit «und» bewirkt, bleibt gleich. |
+
+Ergebnis auf dem Entwurf: «Suchtest: 308 von 308 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind drei Zeilen: die Codex-Probe, eine zweite Form und eine Gegenprobe («Er hat mich geschlagen. Er will mich umbringen.» → Gewalt). Die 998 Proben der Prüfsitzung (`n7f7/`) ergeben dieselben Ersttreffer wie der Export `d4d452f`.
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `d4d452f`.

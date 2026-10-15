@@ -252,7 +252,11 @@
     var thirdParty = Object.assign({ er: 1, sie: 1, du: 1, jemand: 1, man: 1 }, persons);
     var plainObjects = { mich: 1, uns: 1, dich: 1, ihn: 1, euch: 1, kinder: 1, kind: 1, familie: 1 };
     var clauseWords = { dass: 1, wenn: 1, weil: 1, ob: 1, falls: 1, obwohl: 1, nachdem: 1, seit: 1, seitdem: 1, bevor: 1,
-      damit: 1, warum: 1, wieso: 1, weshalb: 1, was: 1, wie: 1, aber: 1, denn: 1, sonst: 1 };
+      damit: 1, warum: 1, wieso: 1, weshalb: 1, was: 1, wie: 1, aber: 1, denn: 1, sonst: 1, satzende0: 1 };
+    /* «satzende0» steht für «.», «?», «!», «;» im Rohtext (siehe queryGroups); es trennt wie «und» und ist zugleich eine harte
+       Satzgrenze für die Suche nach dem Subjekt (Codex P1 auf #690, Runde 3) */
+    var sentenceMark = 'satzende0';
+    var copulaWords = { ist: 1, waere: 1, war: 1, scheint: 1, bleibt: 1 }; /* Variante N2 */
     var threatWords = { droht: 1, drohen: 1, gedroht: 1, drohte: 1, drohung: 1, drohungen: 1 };
     var nominativeArticles = { mein: 1, meine: 1, dein: 1, deine: 1, sein: 1, seine: 1, ihr: 1, ihre: 1, unser: 1, unsere: 1, der: 1, die: 1, das: 1, ein: 1, eine: 1 };
     var nominativeSubjects = { er: 1, du: 1, jemand: 1, man: 1 };
@@ -288,6 +292,8 @@
            beiden «mich» darf kein «und» stehen. «er hat mich geschlagen und will mich umzubringen» bleibt Gewalt (Codex P1 auf #689).
            Ohne Liste der Steuerverben, weil jede Liste Lücken hat (Codex P1 auf #690); im Zweifel Suizid. */
         var steered = earlier !== -1 || words.slice(segmentStart, objectIndex).indexOf('mir') !== -1; /* Variante K (a): auch «mir» */
+        /* Variante N2: «mich umzubringen ist …», «mich zu töten wäre …» am Anfang des Abschnitts oder Satzes: der Infinitiv ist Subjekt */
+        if (zuInfinitive && copulaWords[words[killVerb + 1]] && (objectIndex === segmentStart || words[objectIndex - 1] === sentenceMark)) return 'suizid';
         if ((zuInfinitive && steered) || negated) return 'suizid';
       }
       for (i = objectIndex - 1; i >= start; i--) {
@@ -303,11 +309,15 @@
           if (killVerbs[words[i]] || clauseWords[words[i]] || words[i] === 'und') break;
         }
       }
-      for (i = start - 1; i >= 0; i--) {
+      var sentenceStart = words.lastIndexOf(sentenceMark, objectIndex) + 1;
+      for (i = start - 1; i >= sentenceStart; i--) {
         if (words[i] === 'ich') return 'suizid';
         if (thirdParty[words[i]]) return 'gewalt';
       }
-      return words.some(function (word) { return threatWords[word]; }) ? 'gewalt' : 'suizid';
+      /* Variante N1: Drohwort nur im eigenen Satz und Teilsatz, nicht in einem späteren */
+      var clauseEnd = words.length;
+      for (i = objectIndex + 1; i < words.length; i++) if (words[i] === 'und' || clauseWords[words[i]]) { clauseEnd = i; break; }
+      return words.slice(sentenceStart, clauseEnd).some(function (word) { return threatWords[word]; }) ? 'gewalt' : 'suizid';
     }
     function verbIntent(words, verb) {
       var start = clauseStart(words, verb), i;
@@ -412,7 +422,7 @@
       }) ||
         words.some(function (word) { return suicideWords[word]; });
       /* Variante L1: Satzzeichen trennen für die Tötungsverb-Regel wie «und» */
-      var intent = killIntent(normalized(String(query).replace(/[.?!;]+/g, ' und ')).split(/\s+/).filter(Boolean));
+      var intent = killIntent(normalized(String(query).replace(/[.?!;]+/g, ' und ' + sentenceMark + ' ')).split(/\s+/).filter(Boolean));
       if (intent === 'gewalt' && suicideSignal) intent = 'suizid';
       if (intent) return [synonyms[intent]];
       if (phraseHit && phraseHit.group !== suicideGroup && suicideSignal) return [suicideGroup];

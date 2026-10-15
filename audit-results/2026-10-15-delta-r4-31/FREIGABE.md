@@ -188,3 +188,19 @@ Das ist neu R31-P03 und ersetzt R31-P02 als Massstab für den Merge. Die verblei
 Variante N ist umgesetzt, wörtlich nach dem Diff der Prüfsitzung. Ergebnis auf dem Entwurf: «Suchtest: 314 von 314 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind sechs Zeilen, wie verlangt. Beim mechanischen Abgleich mit der Nachbildung N (Spalte «K» in `n776/*.result5.tsv`) stimmen 1047 von 1047 Proben überein.
 
 `releaseApproval.independentReview` bleibt «ausstehend», bis die Prüfsitzung den Abgleich bestätigt hat.
+
+## Nachtrag 11 · Abschlussbestätigung 6, Berichtigung und neuer Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `800a729` nach R31-P03 bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 6»). Ihre Prüfung im Einzelnen:
+
+- Suchtest 314 von 314; die Produktion erreicht auf derselben Liste 295 von 314.
+- 1047 von 1047 Proben gleich der Nachbildung N.
+- Bestand 91/91 und 54/54 wie r4-29.
+- Vergleich mit der Produktion auf 885 verschiedenen Anfragen: 60 gehen von «Gewalt» auf «Suizid», 8 von keinem Treffer oder «Behandlung» auf «Suizid», 25 neu auf «Gewalt». Alle 25 hat sie einzeln angesehen, alle sind Drohungen anderer. Keine Anfrage verliert ihren Treffer.
+- Produktionsbuild in einer Kopie bytegleich.
+
+**Berichtigung:** In der Frage an die Auftraggeberin (Nachtrag 10) stand «Zwei davon sind seit r4-30 in der Produktion». Das stimmt nicht: Es waren fünf Klassen, R31-03 bis R31-06 und R31-08. N behebt alle fünf; am Inhalt des Entscheids ändert das nach Einschätzung der Prüfsitzung nichts. Die Auftraggeberin wird darüber informiert.
+
+Für R31-P04, nicht blockierend: Etwa zehn der 60 Wechsel auf «Suizid» sind reine Gewaltaussagen. Sie gehen in der sicheren Richtung auf «Suizid», z. B. «er schwört mir mich umzubringen».
+
+`releaseApproval.independentReview` steht auf «bestaetigt». Danach folgen der Produktionsexport und ein neues Codex-Review auf dem exportierten Kopf. Gemergt wird erst, wenn dieses Review nach R31-P03 geprüft ist.

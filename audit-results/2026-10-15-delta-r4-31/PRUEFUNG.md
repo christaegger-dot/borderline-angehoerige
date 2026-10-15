@@ -421,3 +421,41 @@ Ergebnis:
 **Zur Lage:** Jede Codex-Runde und jede meiner Proberunden findet in dieser Regel eine neue Satzform. Bisher lag fast jede neue Form in der gefährlichen Richtung. Die Korrekturen sind klein, aber sie greifen ineinander. Darum sollte die Auftraggeberin entscheiden, ob vor dem Merge ein Sicherheitsnetz dazukommt: Ergibt die Regel «Gewalt», während die Anfrage eine Suizidaussage in der ersten Person enthält, gilt Suizid. Eine Suizidaussage wäre dabei «mich» mit einem zu-Infinitiv oder mit «ich» im selben Satz. So eine Regel liesse sich mit den vorhandenen 1047 Proben gut absichern. Ich schlage sie hier nur vor und habe sie nicht nachgebildet.
 
 **Belege (Scratchpad `d31/`):** `suchtest-77614a9.txt`, `suchtest-d4d-on-308.txt`, `suchtest-varN.txt`; `n776/` (Listen und `*.result5.tsv`); `sd4d/site` (`d4d452f`); `varM/site` (Nachbildung N), `varN.diff`; `prodcopy7/`, `prod7-a.log`, `d31g.sha`, `prod7.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31g` (von `.gitignore` erfasst). Lokale Server beendet.
+
+## Abschlussbestätigung 6 (Stand 800a729)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-31-suche-codex-1792072594`, Commit `800a729`, auf `origin` gleich und Kopf von #690 (offen, nicht gemergt). Arbeitsbaum gleich `800a729`. Diff zu `77614a9`: `authoring/js/interaktion.js` (Variante N), Testliste (+6), `reviewScope`, `FREIGABE.md` r4-31 (Nachtrag 10), Pendenzen (R3C-A9, R31-P02 «ersetzt durch R31-P03», neu R31-P03 und R31-P04), diese Datei (unverändert committet). `site/` unverändert (`d4d452f`), `independentReview` «ausstehend» |
+| Prüfobjekt | eigener Entwurf `node authoring/tools/build.mjs --out=dist/d31h` |
+| Massstab | **R31-P03** (Entscheid «N veröffentlichen»): Es blockiert nur, was r4-31 gegenüber der Produktion r4-30 (`0fda233`) verschlechtert, also Suizidsorge → Gewalt oder eine klare Ich-Aussage ohne Treffer. Was in der Produktion schon genauso steht, geht in R31-P04 (r4-32) |
+| Art | mechanischer Abgleich und Vergleich mit der Produktion über alle vorhandenen Proben; keine neue Probenrunde, nichts geändert ausser diesem Abschnitt |
+| Zeitpunkt | 15.10.2026, etwa 18:45 bis 19:00 MESZ |
+
+**Ergebnis nach R31-P03: bestätigt.** Alle sechs Punkte sind ohne Abweichung erfüllt. Gegenüber der Produktion verschlechtert r4-31 auf keiner meiner Proben eine Suizidaussage zu «Gewalt», und keine Anfrage verliert ihren Treffer. Nach R31-P03 ist mir nichts Blockierendes aufgefallen.
+
+**`independentReview` kann jetzt auf «bestaetigt» gesetzt werden.** Die Bestätigung gilt für den Inhalt von `800a729`. Ändern sich danach Code, Testliste oder Seiteninhalt, braucht es einen neuen Abgleich; reine Nachweis-Nachträge sind davon nicht betroffen. Vor dem Merge kommen:
+
+1. der Export;
+2. die Prüfung, dass `site/` bytegleich mit dem Produktionsbuild ist;
+3. «@codex review» auf dem exportierten Kopf;
+4. die Prüfung dieses Reviews nach R31-P03 (R28-O01, R29-P20).
+
+| Nr. | Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| 1 | Suchtest 100 % | **erfüllt** | Entwurf «23 Seiten · 0 Blocker · 1 Hinweise» (nur change-review). `suchtest.mjs dist/d31h`: «Suchtest: 314 von 314 Ersttreffern wie festgeschrieben · JS-Fehler 0», Exit 0. Die 6 neuen Zeilen haben die vorgeschlagenen Erwartungen. Zum Vergleich ergibt die Produktion (`0fda233`) auf dieser Testliste 295 von 314. |
+| 2 | Abgleich mit N | **erfüllt, 1047/1047** | `authoring/js/interaktion.js` ist zeichengleich mit meiner Nachbildung. `dist/d31h` ist als Ganzes bytegleich mit `d31/varM/site`. Neu im Browser abgefragt, gegen Spalte «K» (= N) in `n776/*.result5.tsv`: `q-alle5` 617, `q-r690` 86, `q-r690b` 74, `q-all91` 91, `q-54` 54, `q-r31p3` 58, `q-r31p3b` 18, `q-r31p5` 49, zusammen 1047 von 1047. Die Spalten r4-29 und r4-30 sind überall unverändert. 0 JS-Fehler. |
+| 3 | 91/54 gleich r4-29 | **erfüllt** | 91/91 und 54/54. |
+| 4 | Keine Verschlechterung gegenüber der Produktion | **erfüllt** | Abgefragt habe ich alle 885 verschiedenen Anfragen: 852 aus meinen 65 Probelisten (`d30/q-*`, `d31/q-*`, `d31/*/q-*`) und 33 Zeilen, die nur in der Testliste stehen. Je in r4-29, Produktion (`0fda233`) und `800a729` (`n800/q-union.result5.tsv`). Gegenüber der Produktion sind 93 Ersttreffer anders: <br>• **60** gehen von Gewalt auf Suizid. <br>• **8** gehen von keinem Treffer oder «Behandlung» auf Suizid («ich töte mich», «töte ich mich», «töten will ich mich» u. a.). <br>• **25** gehen neu auf Gewalt. Ich habe alle einzeln angesehen: Alle sind Drohungen anderer gegen die fragende Person, z. B. «er hasst mich und will mich umzubringen», «umbringen will er mich», «mein Mann tötet mich», «Er hat mich geschlagen. Er will mich umzubringen.». Keine ist eine Suizidaussage. <br>• **0** Anfragen verlieren ihren Treffer. <br>Damit liegt keine Suizidaussage, die in der Produktion nicht auf Gewalt lag, jetzt auf Gewalt. Das bestätigt deine Zahlen (852 Proben, 60, 25). |
+| 5 | Nachtrag 10, R31-P03, R31-P04 | **erfüllt, ein Hinweis** | Nachtrag 10 gibt R31-08, R31-09, N1, N2, den Vergleich mit der Produktion (60/25/0) und den Entscheid samt Begleittext richtig wieder. R31-P03 entspricht dem Entscheid. R31-P02 ist als «ersetzt durch R31-P03» markiert. R31-P04 nennt die verbliebenen Abweichungen und das Sicherheitsnetz zum Entscheid durch die Auftraggeberin. «314 Anfragen, 42 davon neu» stimmt (272 + 42), R3C-A9 nennt 314. **Hinweis:** In der Frage an die Auftraggeberin steht «Zwei davon sind seit r4-30 in der Produktion». Tatsächlich standen fünf Klassen schon in der Produktion: R31-03, R31-04, R31-05, R31-06 und R31-08. Am Entscheid ändert das nichts, denn N behebt alle fünf, und R31-P03 vergleicht ohnehin mit der Produktion. |
+| 6 | Produktionsbuild bytegleich | **erfüllt** | 23/23 Seiten `data-puk-site-build="r4-31"`, 46 × `?v=r4-31`, CSS-Kopf r4-31. `dist/d31h` unterscheidet sich von `dist/d31g` nur in `js/interaktion.js`. `node --check` ohne Fehler, 0 `tel:`. In einer Kopie (`git archive 800a729`) blockiert «ausstehend» (Exit 1). Mit «bestaetigt»: «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», bytegleich mit `dist/d31h` (SHA-256 von 34 Dateien gleich). |
+
+**Für R31-P04 (nicht blockierend):** Von den 60 Anfragen, die von Gewalt auf Suizid gehen, sind die meisten Suizidaussagen oder gemischte Anfragen. Etwa zehn sind reine Gewaltaussagen und gehen jetzt in der sicheren Richtung auf Suizid:
+
+- «er lauert mir auf um mich umzubringen», «er hat mir versprochen mich umzubringen», «er schwört mir mich umzubringen»;
+- die durch ein Satzzeichen geteilten Drohungen aus G7 («Er droht. Mich umzubringen.» u. a.);
+- «Mich umbringen? Warum droht er mir?».
+
+Sie stehen schon in R30-P01 bzw. in meinen Abschnitten oben und gehören in die Arbeit an r4-32.
+
+**Belege (Scratchpad `d31/`):** `suchtest-800a729.txt`, `suchtest-r30-on-314.txt`; `n800/` (Listen, `q-union.txt` mit 885 Anfragen, `*.result5.tsv`; dort «1ac» = `d4d452f`, «neu» = `800a729`, «K» = N); `prodcopy8/`, `prod8-a.log`, `d31h.sha`, `prod8.sha`. Entwurf: `/home/claude/borderline-angehoerige/dist/d31h` (von `.gitignore` erfasst). Lokale Server beendet.

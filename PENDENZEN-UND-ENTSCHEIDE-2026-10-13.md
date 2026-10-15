@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ### r4-34 veröffentlicht und nachgeprüft
 
-#696 wurde am 15. Oktober 2026 um 20:51:27 UTC gemergt (Merge-Commit `4abe92c`, Stand `46442fb`). Das war nach dem Codex-Review (20:40:27 UTC) und nach der Meldung «mergen» der bauenden Sitzung (etwa 20:42 UTC). R28-O01 und R29-P20 sind damit eingehalten. Keiner der fünf Codex-Befunde blockiert nach R34-P01; sie stehen in R34-P02.
+#696 wurde am 15. Oktober 2026 um 20:51:27 UTC gemergt (Merge-Commit `4abe92c`, Stand `46442fb`). Das war nach dem Codex-Review (20:40:27 UTC) und nach der Meldung «mergen» der bauenden Sitzung (etwa 20:42 UTC). R28-O01 und R29-P20 sind damit eingehalten. Keiner der fünf Codex-Befunde blockiert nach R34-P01. Die vier Befunde zur Suche stehen in R34-P02; der fünfte betraf dieses Dokument und ist im Nachweis-PR #697 korrigiert.
 
 Die Produktionsprüfung lief am 15. Oktober 2026 von 20:54 bis 21:26 UTC in einer eigenen Sitzung (`audit-results/2026-10-15-delta-r4-34/PRODUKTIONSPRUEFUNG.md`). Sie prüft r4-34. Ergebnis: bestanden mit Hinweisen, kein Befund.
 

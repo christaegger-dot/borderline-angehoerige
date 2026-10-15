@@ -272,3 +272,59 @@ Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8
 - `suchtest-site-43d.txt`: Suchtest gegen `site/` (62 Abweichungen)
 - `prodcopy5/` (Produktion mit «bestaetigt»), `prodcopy6/` (Gegenprobe)
 - Entwurf: `/home/claude/borderline-angehoerige/dist/d30c` (von `.gitignore` erfasst)
+
+*Nachtrag:* Die bauende Sitzung hat den Abschnitt «Zweite Nachprüfung» unverändert in `9299251` committet. Der folgende Abschnitt ist nicht committet.
+
+## Dritte Nachprüfung (Stand 9299251)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/r4-30-suche-links-1792061353`, Commit `9299251` (15.10.2026, 14:30 MESZ). Diff zu `43d6b21`: `interaktion.js` (mehr Subjekte und Objekte in `killIntent()`, neue Verbformen, Wörter zu «Mord» und «Ex»), Testliste (216 Anfragen), `FREIGABE.md` (Nachtrag 3, Nachtrag 1 markiert), Pendenzen, dieser Bericht |
+| Prüfobjekt | frischer Entwurf `node authoring/tools/build.mjs --out=dist/d30d`. Verglichen in drei Ständen: `site/` (r4-29, Port 8129), `dist/d30c` (`43d6b21`, Port 8132), `dist/d30d` (`9299251`, Port 8130) |
+| Prüfsitzung | dieselbe unabhängige Prüfsitzung; nichts gebaut, korrigiert oder entschieden; nur diese Datei geändert; keine git-Schreibbefehle; Netlify nicht angefasst |
+| Zeitpunkt | 15.10.2026, etwa 14:35 bis 15:00 MESZ |
+
+### Ergebnis der dritten Nachprüfung
+
+**Freigabefähig mit Auflagen:** D30-13 ist für die genannten Fälle behoben. Die neue Regel «Personen als Objekt» leitet aber die häufigste Satzstellung besorgter Angehöriger auf «Gewalt». Steht «sich» vor der Person, zählt die Person als Objekt, zum Beispiel «ich habe Angst, dass sich meine Tochter umbringt», «wenn sich mein Sohn umbringen will», «warum hat sich meine Mutter umgebracht». Das ist dieselbe Art von Fehler wie D30-01, nur in der umgekehrten Satzstellung (D30-16). Der Stand `9299251` darf so nicht exportiert werden. Auflage vor dem Export ist D30-16.
+
+**Berichtigung zur zweiten Nachprüfung:** Diese Satzstellung hatte ich für `43d6b21` nicht geprüft. Dort betrifft sie schon «Kind», «Kinder» und «Familie», weil diese damals als Objekte galten: «was tun wenn sich mein Kind umbringen will» und «Angst dass sich mein Kind umbringt» gehen auch in `43d6b21` auf `grenzen#gewalt`. Mein Urteil «freigabefähig» für `43d6b21` war deshalb zu günstig.
+
+### Beleg je Punkt
+
+| Nr. | Punkt | Ergebnis | Beleg |
+| --- | --- | --- | --- |
+| a | `suchtest.mjs` auf eigenem Entwurf | **erfüllt** | Entwurf: «23 Seiten · 0 Blocker · 1 Hinweise» (change-review). `suchtest.mjs dist/d30d`: «Suchtest: 216 von 216 Ersttreffern wie festgeschrieben · JS-Fehler 0». Gegen `site/`: 138 von 216, also 78 Abweichungen, keine im Bestand. |
+| b | 91/54 wie r4-29 | **erfüllt** | 91/91 und 54/54 Ersttreffer gleich `site/`; R3-Liste 16/16 und Gegenproben 8/8 unverändert. |
+| c | Eigene Proben | **D30-13 behoben; neuer Fehler D30-16** | 75 neue Proben (`q-dritt.txt` 65, `q-dritt2.txt` 10) in drei Ständen; dazu alle 346 früheren Proben erneut. <br>**Frühere Proben:** gegenüber `43d6b21` 16 Ersttreffer anders, wie die bauende Sitzung angibt. Darunter sind alle D30-13-Fälle, die jetzt auf `grenzen#gewalt` gehen: «mein Ehemann/Exmann/Kind will mich umbringen», «jemand/du …», «er droht sie umzubringen», «er will meine Mutter umbringen», «er droht meine Frau umzubringen», «mein Sohn will meinen Vater töten», «er droht mit Mord». Aus D30-15: «ich habe Angst dass ich mich umbringe» → Suizid, «Angst vor meinem Ex» → Gewalt. Ausserdem «ich könnte sie umbringen» → Gewalt (D30-14) und «er will dass ich mich umbringe» → Suizid. <br>**Richtig bei «sich» direkt vor dem Verb:** «(meine) Mutter hat sich umgebracht», «meine Frau will sich das Leben nehmen und sich umbringen», «Angst dass meine Tochter sich umbringt», «ich habe Angst dass sie sich irgendwann wirklich umbringt», «will sie sich wirklich umbringen», «sie hat versucht sich mit Tabletten umzubringen», «meine Schwester hat versucht sich zu töten», «meine Freundin redet davon sich umzubringen», «meine Tochter droht sich umzubringen wenn wir sie in die Klinik bringen» → `krise#suizid`. Ebenso richtig auf `grenzen#gewalt`: «meine Mutter/meine Eltern will/wollen mich umbringen», «mein Stiefvater will mich töten», «man will mich umbringen», «er hat gedroht er bringt mich um», «mein Vater hat meine Mutter umgebracht», «er hat mir mit Mord gedroht». <br>**Falsch, «sich» vor der Person** (17 Proben, alle in `9299251` → `grenzen#gewalt`): «ich habe Angst dass sich meine Tochter umbringt», «ob sich meine Tochter umbringt», «wenn sich mein Sohn umbringen will», «wie verhindere ich dass sich mein Sohn umbringt», «wird sich mein Sohn umbringen», «dass sich mein Mann umbringt», «falls sich mein Mann umbringt», «ich fürchte dass sich meine Frau umbringt», «was kann ich tun damit sich meine Schwester nicht umbringt», «will sich meine Tochter umbringen», «hat sich mein Vater umgebracht», «nachdem sich mein Vater umgebracht hat», «warum hat sich meine Mutter umgebracht», «seit sich meine Schwester umgebracht hat», «was tun wenn sich die Partnerin umbringen will», «was tun wenn sich mein Kind umbringen will», «Angst dass sich mein Kind umbringt». In `43d6b21` gingen 15 davon auf `krise#suizid`; die zwei mit «Kind» schon dort auf «Gewalt». **Gegenüber r4-29 schlechter:** «wenn sich mein Sohn umbringen will», «will sich meine Tochter umbringen», «was tun wenn sich die Partnerin umbringen will» (r4-29: `krise#suizid`). <br>**Falsch bei Stichwortanfragen ohne Subjekt:** «Tochter umbringen» (r4-29 und `43d6b21`: Suizid), «Sohn umbringen Angst», «Angst Tochter umbringt sich» → Gewalt. <br>**Hinnehmbar:** «mein Vater hat sich und meine Mutter umgebracht» und «… sich und die Kinder umbringt» → Gewalt (erweiterter Suizid, Gefahr für andere); «meine Frau will die Kinder und sich umbringen» → Suizid. Uneinheitlich, aber beides führt zu Hilfe. <br>**Unverändert offen** (R30-P01): «er sagt ich bringe dich um» → 0 Treffer, «er hat gesagt ich bring dich um» → `fragen#f-einweisung`, «Mein Sohn hat gesagt er bringt sich um wenn ich ausziehe» → 0, «meine Tochter will sich in den nächsten Tagen umbringen» und «… mit einer Überdosis Tabletten umzubringen» → 0 Treffer, weil «sich» mehr als vier Wörter vor dem Verb steht. Redewendungen «der Stress bringt mich um» → Suizid (D30-14). |
+| d | Nachweise | **teilweise richtig** | Richtig: Zahlen (216/216; gegen `site/` 78 Abweichungen, keine im Bestand; 16 geänderte Ersttreffer in den 346 Proben), Nachtrag 1 als überholt markiert, R30-P01 mit D30-14, D30-15 und «Mord» ergänzt, `independentReview` auf «ausstehend». **Unrichtig:** Nachtrag 3 sagt «‹sich› geht vor, weil es näher am Verb steht». Das gilt nur, wenn «sich» direkt vor dem Verb steht. In Nebensätzen und Fragen steht «sich» vor dem Subjekt («dass sich meine Tochter umbringt»), dann gewinnt die Person (D30-16). Die sechs neuen Gegenproben mit «sich» haben alle «sich» direkt vor dem Verb und decken diesen Fall nicht ab. |
+| – | Build und Wortbilanz | **erfüllt** | Produktionsbuild in einer Kopie mit «bestaetigt»: 0 Blocker, 0 Hinweise, bytegleich mit `dist/d30d`. Gegenüber `43d6b21` ist nur `js/interaktion.js` verschieden; Inhalt, Text und Wortbilanz sind unverändert; `node --check` ohne Fehler; 0 Skriptfehler in allen Läufen. |
+
+### Status der Befunde
+
+| ID | Status |
+| --- | --- |
+| D30-09 | erledigt (wie in der zweiten Nachprüfung) |
+| D30-13 | **erledigt** für alle genannten Fälle, aber mit der Nebenwirkung D30-16 |
+| D30-14 | offen (R30-P01), fachlich abwägen |
+| D30-15 | teilweise erledigt («umbringe», «Angst vor meinem Ex»); Rest in R30-P01 |
+| übrige D30-Befunde | wie in der zweiten Nachprüfung |
+
+### Neuer Befund
+
+| ID | Priorität | Befund | Vorschlag (nicht umgesetzt) |
+| --- | --- | --- | --- |
+| D30-16 | **wichtig, Auflage vor dem Export** | **«sich» vor dem Subjekt wird als Gewalt gewertet.** `killIntent()` nimmt das nächste Objekt links vom Verb. Seit `9299251` gelten Personen und «sie» als Objekte. In der deutschen Satzstellung «dass/wenn/ob/falls/damit/nachdem/seit + sich + Person + Verb» und in Fragen («will sich meine Tochter umbringen», «warum hat sich meine Mutter umgebracht») steht die Person näher am Verb als «sich». Die Person ist dort aber das Subjekt, nicht das Opfer. Betroffen sind 17 von 17 geprüften Sätzen dieser Form, darunter typische Anfragen besorgter Angehöriger. Drei davon sind schlechter als die Produktion (r4-29). Stichwortanfragen ohne Subjekt («Tochter umbringen») gehen ebenfalls auf «Gewalt». Die Fusszeile zeigt weiter «holen Sie sofort Hilfe»; deshalb nicht kritisch. | Kommt «sich» im Teilsatz vor dem Verb vor (bis zum letzten «dass», «wenn», «ob», «falls», «damit», «nachdem», «seit», «weil», «wie» oder bis zum Satzanfang), gilt Suizid. Ausnahme: Ist «sich» mit «und» an eine andere Person oder «die Kinder» gebunden («sich und meine Mutter», «die Kinder und sich»), gilt Gewalt. Personen und «sie» zählen nur als Objekt, wenn im Teilsatz weder «sich» noch «mich» steht und ein Subjekt davor steht («er will meine Mutter umbringen»). Ohne Subjekt bleibt es bei der bisherigen Wertung («Tochter umbringen» → Suizid). Wenn das vor dem Export nicht gehen soll: die Objektregel von `43d6b21` nehmen und nur die neuen Subjekte übernehmen. Dann bleiben «er droht sie umzubringen» usw. wie in r4-29, und «Kind», «Kinder» und «Familie» als Objekte nur mit vorangehendem Subjekt werten. Die 17 Proben und die drei Stichwortanfragen in die Testliste aufnehmen; danach `suchtest.mjs` (100 %) und die 91/54 erneut. |
+
+Kein kritischer Befund.
+
+**Auflage vor dem Export:** D30-16 korrigieren und mit `suchtest.mjs` samt den neuen Zeilen nachprüfen lassen. Erst danach `independentReview` auf «bestaetigt».
+
+### Belege der dritten Nachprüfung
+
+Unter `/tmp/claude-0/-home-claude-borderline-angehoerige/5152fc6f-3c7f-59d2-afb8-de06005eb532/scratchpad/d30/`:
+
+- `q-dritt.txt` und `q-dritt2.txt` (75 neue Proben); Ergebnisse `q-dritt.result3.tsv`, `q-dritt2.result3.tsv` und alle früheren Listen als `*.result3.tsv` (Spalten: r4-29, `43d6b21`, `9299251`)
+- `suchtest-site-929.txt`: Suchtest gegen `site/` (78 Abweichungen)
+- `prodcopy7/`: Produktion mit «bestaetigt»
+- Entwurf: `/home/claude/borderline-angehoerige/dist/d30d` (von `.gitignore` erfasst)

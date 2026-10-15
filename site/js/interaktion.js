@@ -239,23 +239,35 @@
        Gewalt oder fehlender Betreuung» zuerst. Eine Suiziddrohung als Druck («Wenn du gehst, bringe ich mich um», «bringt sie sich
        um») beginnt mit «Wenn Suizid angesprochen wird» (R25-010). Enthält eine Anfrage ohne Tötungswort zugleich ein Suizid- und
        ein Gewaltsignal, stehen ebenfalls beide oben, Suizid zuerst. */
-    var killWords = { umbringen: 1, umzubringen: 1, umbringt: 1, umbringe: 1, umbringst: 1, umbrachte: 1, umgebracht: 1, toeten: 1, toete: 1, toetet: 1, getoetet: 1 };
-    var separableVerbs = { bring: 1, bringe: 1, bringt: 1, bringst: 1, bringen: 1 };
+    var killWords = { umbringen: 1, umzubringen: 1, umbringt: 1, umbringe: 1, umbringst: 1, umbrachte: 1, umbrachten: 1, umbrachtest: 1,
+      umgebracht: 1, toeten: 1, toete: 1, toetest: 1, toetet: 1, toetete: 1, toeteten: 1, toetetest: 1, getoetet: 1 };
+    var separableVerbs = { bring: 1, bringe: 1, bringt: 1, bringst: 1, bringen: 1, brachte: 1, brachten: 1, brachtest: 1 };
     var safetyTargets = { suizid: 'krise.html#suizid', gewalt: 'grenzen.html#gewalt', kinder: 'kinder.html#eskalation', druck: 'kommunizieren.html#suizid-angesprochen' };
     var actors = { er: 1, sie: 1, du: 1, jemand: 1, man: 1, ihr: 1, mann: 1, frau: 1, partner: 1, partnerin: 1, ex: 1, exmann: 1, exfrau: 1,
       ehemann: 1, ehefrau: 1, lebenspartner: 1, lebenspartnerin: 1, vater: 1, mutter: 1, stiefvater: 1, stiefmutter: 1, mama: 1, papa: 1,
       sohn: 1, tochter: 1, bruder: 1, schwester: 1, freund: 1, freundin: 1, kind: 1, eltern: 1, familie: 1, nachbar: 1, nachbarin: 1 };
     var threatWords = { droht: 1, drohen: 1, drohte: 1, gedroht: 1, drohung: 1, bedroht: 1, bedrohte: 1 };
     var clauseWords = { dass: 1, wenn: 1, ob: 1, weil: 1, falls: 1, damit: 1, seit: 1, seitdem: 1, warum: 1 };
-    /* Variante P (R32-01): «um» gilt nur als Teil von «bring… um», wenn es höchstens sechs Wörter danach im selben Satzteil steht
-       und am Ende oder vor einer Satzgrenze, einem Bindewort oder einem neuen Subjekt («bringt sie sich um, wenn …»);
-       nicht «um 9 Uhr», «um Hilfe zu bitten», «sich um … kümmern», «Sorgen um sie» */
+    /* Variante P (R32-01), erweitert nach dem Codex-Review von #694: «um» gilt nur als Teil von «bring… um», wenn es im selben
+       Teilsatz steht (keine Satzmarke, kein Komma, kein «dass», «wenn», «weil» u. a. dazwischen, höchstens zwölf Wörter) und am
+       Ende oder vor einer Satzgrenze, einem Bindewort oder einem neuen Subjekt («Mein Mann bringt mich heute Nacht in unserer
+       Wohnung um»); nicht «um 9 Uhr», «um Hilfe zu bitten», «sich um … kümmern», «Sorgen um sie» */
     var particleNext = { und: 1, oder: 1, aber: 1, wenn: 1, falls: 1, weil: 1, dass: 1, ob: 1, sonst: 1, dann: 1, satzende0: 1,
-      ich: 1, er: 1, sie: 1, du: 1, wir: 1, ihr: 1, man: 1 };
+      ich: 1, er: 1, du: 1, wir: 1, man: 1 }; /* nicht «sie», «ihr»: «Sorgen um sie», «sich um ihr Kind kümmern» */
+    var particleStops = { satzende0: 1, dass: 1, wenn: 1, weil: 1, ob: 1, falls: 1, denn: 1, aber: 1, oder: 1, sondern: 1, obwohl: 1, damit: 1,
+      wie: 1, was: 1, warum: 1, wieso: 1, weshalb: 1, wo: 1, wann: 1, wer: 1 };
+    /* Variante Q: «und» beendet die Suche, ausser es verbindet Objekte («sich und mich», «mich und die Kinder»);
+       nicht «… und wie gehe ich mit ihr um», «… und stellen die Medikamente um», «… und ziehe mich um» */
+    var objectStarts = { mich: 1, dich: 1, sich: 1, ihn: 1, sie: 1, uns: 1, euch: 1, die: 1, den: 1, das: 1, der: 1, dem: 1,
+      ein: 1, eine: 1, einen: 1, mein: 1, meine: 1, meinen: 1, meinem: 1, dein: 1, deine: 1, deinen: 1, sein: 1, seine: 1, seinen: 1,
+      ihre: 1, ihren: 1, unser: 1, unsere: 1, unseren: 1 };
     function particleUm(words, i) {
-      for (var j = i + 1; j < words.length && j <= i + 6; j++) {
-        if (words[j] === 'satzende0') return -1;
-        if (words[j] === 'um') return j === words.length - 1 || particleNext[words[j + 1]] ? j : -1;
+      var andAt = -1;
+      for (var j = i + 1; j < words.length && j <= i + 12; j++) {
+        if (particleStops[words[j]] || (words[j] === 'und' && !objectStarts[words[j + 1]])) return -1;
+        if (words[j] === 'und') andAt = j;
+        /* nach «und» höchstens drei Wörter bis «um» («sich und mich um», «mich und die Kinder um»), sonst neuer Satz */
+        if (words[j] === 'um') return (andAt === -1 || j - andAt <= 3) && (j === words.length - 1 || particleNext[words[j + 1]]) ? j : -1;
       }
       return -1;
     }
@@ -355,8 +367,9 @@
       var lastMich = words.slice(0, killIndex(words)).lastIndexOf('mich');
       if (childVictim(words)) return ['kinder', 'gewalt', 'suizid'];
       if (!suicideFirst(query)) return ['gewalt', 'suizid'];
-      /* Suiziddrohung als Druck mit trennbarem Verb («bringe ich mich um», «bringt sie sich um»), R25-010 */
-      var separable = words.some(function (word, i) { return separableVerbs[word] && particleUm(words, i) !== -1; });
+      /* Suiziddrohung als Druck mit trennbarem Verb in der Gegenwart («bringe ich mich um», «bringt sie sich um»), R25-010;
+         nicht «brachte sich um» */
+      var separable = words.some(function (word, i) { return separableVerbs[word] && word.indexOf('bracht') !== 0 && particleUm(words, i) !== -1; });
       var ichMich = lastMich !== -1 && words.slice(Math.max(0, lastMich - 3), lastMich).indexOf('ich') !== -1;
       return separable && (hasSich || ichMich) ? ['druck', 'suizid', 'gewalt'] : ['suizid', 'gewalt'];
     }

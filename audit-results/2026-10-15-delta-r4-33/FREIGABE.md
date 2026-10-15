@@ -58,3 +58,28 @@ Testliste auf dem Entwurf: «Suchtest: 209 von 209 Erwartungen wie festgeschrieb
 Nach R31-P03 (beide Lesarten) verschlechtert r4-33 keine Probe gegenüber der Produktion.
 
 `releaseApproval.independentReview` steht auf «ausstehend», bis die Prüfsitzung den Stand bestätigt hat. Erst danach kommt der Produktionsexport.
+
+## Nachtrag 1 · Unabhängige Prüfung und Export (15.10.2026)
+
+Die Prüfsitzung hat den Stand `ca2a601` geprüft (`PRUEFUNG.md`, Commit `76780fb`). Urteil: «freigabefähig».
+
+Den Abgleich hat sie selbst durchgeführt:
+- Suchtest 209 von 209; auf der Produktion sind es 203 von 209.
+- 885 Proben bytegleich mit `d32/p_P.tsv`; die übrigen Probenmengen bytegleich mit ihren Nachbildungen.
+- Über alle 966 Proben sind gegenüber `37b963f` nur die neun beabsichtigten Anfragen anders.
+- Produktionsbuild in einer Kopie bytegleich (34 Dateien).
+
+`releaseApproval.independentReview` steht damit auf «bestaetigt».
+
+Produktionsexport (`--production --out=site --write-site`):
+
+- 23 Seiten, 0 Blocker, 0 Hinweise.
+- «PARITÄT BESTANDEN: 34 Dateien byte-gleich mit site/».
+- `site/` ist dateigleich mit dem Entwurf `dist/d33a` der Prüfsitzung.
+- Suchtest gegen `site/`: 209 von 209, 0 JS-Fehler.
+- Build r4-33 auf 23 Seiten, 0 `tel:`.
+- axe (WCAG 2.2 AA) auf allen 23 Seiten bei 320 und 1280 px, auch auf der Suche mit «Mein Mann bringt mich heute Nacht in unserer Wohnung um»: 0 Verstösse, kein Überlauf, keine JS-Fehler.
+- Tastatur: Bei derselben Anfrage ist der erste Treffer per Tab `grenzen.html#gewalt`.
+
+Der Pull Request wird als Entwurf eröffnet und bleibt einer, bis das Codex-Review auf dem exportierten Kopf geprüft ist. Ein Entwurf lässt sich nicht mergen. So ist R28-O01/R29-P20 auch technisch gesichert, nachdem #689 und #694 Sekunden nach dem Review gemergt wurden.
+

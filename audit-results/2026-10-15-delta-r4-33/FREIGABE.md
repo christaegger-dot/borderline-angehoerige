@@ -83,3 +83,42 @@ Produktionsexport (`--production --out=site --write-site`):
 
 Der Pull Request wird als Entwurf eröffnet und bleibt einer, bis das Codex-Review auf dem exportierten Kopf geprüft ist. Ein Entwurf lässt sich nicht mergen. So ist R28-O01/R29-P20 auch technisch gesichert, nachdem #689 und #694 Sekunden nach dem Review gemergt wurden.
 
+## Nachtrag 2 · Codex-Review von #695 (15.10.2026)
+
+Entwurf #695 wurde um 19:59 UTC mit Stand `ce56c1d` eröffnet. Um 20:05:35 UTC meldete das Codex-Review sechs P1-Befunde und einen P2-Befund. Geprüft ist jeder gegen die Produktion r4-32 (`37b963f`, Merge-Commit `4790653`):
+
+| Befund | Beispiel | Produktion | `ce56c1d` | Bewertung |
+| --- | --- | --- | --- | --- |
+| P1 eingeschobener Nebensatz | «Er bringt mich wenn ich ihn verlasse um» | Gewalt › Suizid | «Darf ich verlassen?» | **blockierend**, Rückschritt |
+| P1 «sie» nach «um» | «Mein Mann bringt mich um sie sieht es» | Gewalt › Suizid | kein Treffer | **blockierend**, Rückschritt |
+| P1 Zusatz nach «und» | «Er bringt mich und auch die Kinder um» | Kinder › Gewalt › Suizid | Jugendliche | **blockierend**, Rückschritt |
+| P1 neuer Satz mit «um-» | «Die Therapie bringt nichts ich stelle wegen der starken Nebenwirkungen meine Medikamente um» | kein Treffer | Suizid › Gewalt | neue Fehlanheftung (Kriterium 2) |
+| P1 Opfer nach gebeugtem Verb | «Er tötete die Kinder» | «Kinder» (Seite) | Suizid › Gewalt | Kinder fallen aus den ersten drei |
+| P1 Pluralformen | «Ihr brachtet mich um» | kein passender Treffer | ebenso | Lücke, kein Rückschritt |
+| P2 Gegenproben mit «!href» | Testliste | – | – | Testlücke |
+
+Ursache der drei Rückschritte sind die Verschärfungen im Nahbereich: Nach dem Codex-Review von #694 kamen Wortgrenzen dazu, mit Variante Q weitere für «und» und Fragewörter, ausserdem fiel «sie» als Folgewort weg. Damit dieses Hin und Her aufhört, gilt jetzt eine einfache Garantie: **Was die Produktion erkennt, erkennt r4-33 auch.**
+
+Die Korrektur ist zweistufig:
+
+- **Nahbereich (bis sechs Wörter nach dem Verb):** genau wie in r4-32, also Variante P mit «sie» und «ihr» als Folgewort.
+- **Erweiterung (sieben bis zwölf Wörter):** nur im selben Teilsatz. Es gelten die Grenzen aus Nachtrag 3 von r4-32 und Variante Q, dazu ein neues Subjekt («ich», «du», «wir», «er», «man») als Grenze. Damit ist auch die Fehlanheftung «… ich stelle … meine Medikamente um» behoben.
+
+Weitere Änderungen:
+
+- Steht nach einer gebeugten Form ein Kind als Opfer («er tötete die Kinder», «er tötet mich und die Kinder»), kommt Kinder › Eskalation zuerst.
+- Neue Formen: «tötetet», «umbrachtet», «brachtet».
+- `suchtest.mjs` kennt die Erwartung «!sicher»: Unter den ersten zwei Treffern darf keiner der vier Sicherheitsabschnitte stehen. Die sieben harmlosen Gegenproben prüfen jetzt so.
+
+Nicht mehr gelöst ist «die Therapie bringt nichts ich mache mir Sorgen um sie» ohne Komma: Der Satz heftet wie in der Produktion Gewalt und Suizid an. Mit Komma bleibt er richtig. Das ist der Preis dafür, dass «Mein Mann bringt mich um sie sieht es» erkannt bleibt. Die Testzeile ohne Komma ist entfernt.
+
+Ergebnis auf dem Entwurf:
+
+- «Suchtest: 214 von 214 Erwartungen wie festgeschrieben · JS-Fehler 0». Auf der Produktion sind es 207 von 214; abweichend sind nur die Verbesserungen.
+- 971 Proben, zusammengeführt aus allen Mengen inklusive der Codex-Fälle von #694 und #695 (Scratchpad `all33.q`):
+  - Gegenüber der Produktion sind genau 12 Anfragen anders, alle Verbesserungen.
+  - Bei keiner der 971 Proben geht eine Anheftung verloren, die die Produktion hat.
+  - Gegenüber `ce56c1d` sind 9 Anfragen anders: die 7 Codex-Fälle, «er tötet die Kinder» und die Zeile «Sorgen um sie».
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung den neuen Stand bestätigt hat. Danach wird neu exportiert, und auf dem exportierten Kopf folgt ein neues Codex-Review. #695 bleibt bis dahin ein Entwurf.
+

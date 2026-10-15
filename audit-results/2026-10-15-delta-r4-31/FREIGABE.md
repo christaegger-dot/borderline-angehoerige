@@ -28,7 +28,7 @@ Zur Frage, ob der nach dem Merge versehentlich neu angelegte Branch `claude/r4-3
 | --- | --- | --- |
 | Codex P1 (mehrere Tötungsverben) | Gewertet wird jedes Tötungsverb. Ergibt eines «Suizid», gilt Suizid. Beispiel: «er will mich umbringen und ich will mich töten» → «Suizid» (r4-30: «Gewalt», r4-29: «Suizid»). | nur Suchtreffer |
 | Codex P1 (früheres «mich»), R31-01 | Fall (a) der Infinitivregel (D30-20) greift nur, wenn beim früheren «mich» ein Steuerverb steht (ab zwei Wörtern davor bis zum späteren «mich») und zwischen den beiden «mich» kein «und». Beispiel: «er hat mich geschlagen und will mich umzubringen» → «Gewalt» (r4-30: «Suizid»). | nur Suchtreffer |
-| Testliste | 297 Anfragen, 25 davon neu (Stand Nachtrag 4) | nein |
+| Testliste | 300 Anfragen, 28 davon neu (Stand Nachtrag 6) | nein |
 | Build | r4-31, Assetversion r4-31 | nein |
 
 Die Einzelheiten stehen in `2026-10-15-delta-r4-30/FREIGABE.md`, Nachtrag 9.
@@ -103,3 +103,15 @@ Ergebnis auf dem Entwurf: «Suchtest: 297 von 297 Ersttreffern wie festgeschrieb
 ## Nachtrag 5 · Abschlussbestätigung 2 und neuer Export (15.10.2026)
 
 Die Prüfsitzung hat den Stand `b9c510f` bestätigt (`PRUEFUNG.md`, Abschnitt «Abschlussbestätigung 2»). Den mechanischen Abgleich hat sie selbst durchgeführt: Suchtest 297 von 297, 922 von 922 Proben gleich der Nachbildung K, Bestand 91/91 und 54/54 wie r4-29, Produktionsbuild in einer Kopie bytegleich. Nach R31-P02 hat sie nichts Blockierendes gefunden. `releaseApproval.independentReview` steht auf «bestaetigt». Danach folgt der Produktionsexport. Erst auf dem exportierten Kopf wird ein neues Codex-Review angefordert. Gemergt wird erst, wenn dieses Review geprüft ist (R28-O01, R29-P20, R31-P02).
+
+## Nachtrag 6 · Zweites Codex-Review von #690 (15.10.2026)
+
+Das zweite Codex-Review von #690 lief auf Anforderung auf dem Stand `ebe8a30`, dem Export nach der Abschlussbestätigung 2, und war um 15:48 UTC fertig. Es meldete einen neuen P1-Befund. Die beiden älteren Inline-Kommentare aus der ersten Runde sind auf den neuen Stand übertragen; ihr Inhalt ist mit Nachtrag 3 behoben und in der Testliste festgeschrieben.
+
+| Befund | Beispiel | r4-29 | `ebe8a30` | Einstufung nach R31-P02 | Korrektur |
+| --- | --- | --- | --- | --- | --- |
+| Neuer Satz nach dem Infinitiv | «Ich habe Gedanken ans Umbringen. Versteht er mich?» | Suizid | **Gewalt** | Rückschritt gegenüber r4-29, **blockierend** | Nach einem Infinitiv oder Partizip wird «mich» nach dem Verb nur noch gewertet, wenn direkt danach ein Hilfs- oder Modalverb steht («umbringen will er mich», «umgebracht hat er mich»). Sonst beginnt ein neuer Satz, auch ohne Satzzeichen. |
+
+Ergebnis auf dem Entwurf: «Suchtest: 300 von 300 Ersttreffern wie festgeschrieben · JS-Fehler 0». Neu sind drei Zeilen: die Codex-Probe, dieselbe ohne Satzzeichen und eine Gegenprobe. Die 922 Proben der Prüfsitzung (`n690/`) ergeben dieselben Ersttreffer wie der Export `ebe8a30`.
+
+`releaseApproval.independentReview` steht wieder auf «ausstehend», bis die Prüfsitzung nachgeprüft hat. `site/` bleibt bis zum neuen Export auf dem Stand `ebe8a30`.

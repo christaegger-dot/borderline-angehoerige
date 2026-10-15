@@ -262,6 +262,9 @@
     }
     /* «mich»: zuerst das nächste Subjekt davor im Teilsatz, dann ein Subjekt direkt danach («dass mich mein Mann …»),
        dann ein Subjekt in einem früheren Teilsatz, zuletzt ein Drohwort (D30-18, D30-19). */
+    var auxiliaryWords = { will: 1, willst: 1, wollen: 1, wollt: 1, wollte: 1, wollten: 1, wuerde: 1, wuerdest: 1, wird: 1, wirst: 1,
+      kann: 1, kannst: 1, koennte: 1, koenntest: 1, muss: 1, musst: 1, soll: 1, sollst: 1, moechte: 1, moechtest: 1,
+      hat: 1, hast: 1, hatte: 1, haette: 1, wurde: 1 };
     var attemptWords = { versucht: 1, versuchte: 1, versuch: 1, plant: 1, geplant: 1, bedroht: 1, bedrohen: 1, bedrohte: 1 };
     function michIntent(words, objectIndex) {
       var start = clauseStart(words, objectIndex), i;
@@ -330,6 +333,9 @@
           /* Variante K (b): beim Infinitiv zählt ein Subjekt erst nach dem finiten Verb («umbringen will er mich»);
              «umbringen er versteht mich» ist ein neuer Satz */
           var infinite = words[verb] === 'umbringen' || words[verb] === 'umzubringen' || words[verb] === 'toeten' || words[verb] === 'umgebracht' || words[verb] === 'getoetet';
+          /* Nach Infinitiv oder Partizip nur mit Hilfs- oder Modalverb direkt danach («umbringen will er mich», «umgebracht hat er mich»);
+             sonst beginnt ein neuer Satz («Gedanken ans Umbringen. Versteht er mich?», Codex P1 auf #690) */
+          if (infinite && !auxiliaryWords[words[verb + 1]]) break;
           for (var m = infinite ? verb + 2 : verb + 1; m < i; m++) {
             if (words[m] === 'ich') return 'suizid';
             if (thirdParty[words[m]]) return 'gewalt';

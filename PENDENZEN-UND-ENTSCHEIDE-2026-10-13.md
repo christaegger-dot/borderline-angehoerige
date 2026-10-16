@@ -21,7 +21,7 @@ Die Produktionsprüfung lief am 16. Oktober 2026 von 16:59:48 bis 17:11:58 UTC i
 
 Nachweise: `audit-results/2026-10-16-r3c-a8/` und `audit-results/2026-10-16-delta-r4-35/`.
 
-#700 (Nachweise zu Audit 03 und zur Produktionsprüfung r4-35, keine Website-Dateien) wurde am 16. Oktober 2026 um 17:36:38 UTC gemergt. Das war 17 Sekunden nach dem Start des Codex-Reviews und vor der Meldung «mergen» der bauenden Sitzung; R28-O01 und R29-P20 sind damit nicht eingehalten. Das Review endete um 17:43:54 UTC mit sechs P2-Befunden zu den Nachweisen, keiner betraf die Website. Behoben sind sie im Folge-PR vom Branch `claude/a03-nachweise-korrektur-1792172998`.
+#700 (Nachweise zu Audit 03 und zur Produktionsprüfung r4-35, keine Website-Dateien) wurde am 16. Oktober 2026 um 17:36:38 UTC gemergt. Das war 28 Sekunden nach dem Eröffnen des PR (17:36:10 UTC, Auslöser des Codex-Reviews), 11 Sekunden nach dem ersten Codex-Kommentar (17:36:27 UTC) und vor der Meldung «mergen» der bauenden Sitzung; R28-O01 und R29-P20 sind damit nicht eingehalten. Das Review endete um 17:43:54 UTC mit sechs P2-Befunden zu den Nachweisen, keiner betraf die Website. Behoben sind sie im Folge-PR #701 (Branch `claude/a03-nachweise-korrektur-1792172998`). Auf #701 scheiterte das Codex-Review am Nutzungslimit; an seiner Stelle prüfte auf Entscheid der Auftraggeberin eine eigene Review-Sitzung.
 
 ### r4-34 veröffentlicht und nachgeprüft
 

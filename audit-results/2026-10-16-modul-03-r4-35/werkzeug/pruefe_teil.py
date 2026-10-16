@@ -1,7 +1,9 @@
 """Mechanische Prüfung einer Teil-CSV: Spalten, Pflichtfelder, Original im Quelltext (Text ohne Tags).
-Aufruf: python3 -I pruefe_teil.py [--repo <pfad>] <teil.csv> [...]
+Aufruf: python3 -I pruefe_teil.py [--repo <pfad>] <teil.csv> [...]   (--repo an beliebiger Stelle)
 Ohne --repo sucht das Skript das Repository ab seinem eigenen Ordner aufwärts (Ordner mit authoring/site.config.json),
 sonst ab dem aktuellen Arbeitsverzeichnis.
+Erwartet für teile/G1 bis G6: 24 Teilbefunde «nicht wörtlich gefunden», Liste in LIESMICH.md. Sie verbinden mehrere
+Fundstellen in einem Feld oder umschreiben eine Vorlage; in BEFUNDE.csv sind sie je Fundstelle aufgeteilt.
 Durchsucht: authoring/content/<seite>.html (Text und aria-label, alt, title), authoring/site.config.json,
 authoring/js/interaktion.js und authoring/tools/search-index.mjs.
 """
@@ -49,11 +51,15 @@ def main(p):
     print('  fehlende Pflichtfelder',miss or 'keine')
     print('  Original nicht wörtlich gefunden',nf or 'keine')
 if __name__=='__main__':
-    args=sys.argv[1:]
-    if args[:1]==['--repo']:
-        R=os.path.abspath(args[1]); args=args[2:]
+    import argparse
+    ap=argparse.ArgumentParser(description='Mechanische Prüfung einer Teil-CSV von Audit 03.')
+    ap.add_argument('--repo',help='Repository-Wurzel (Ordner mit authoring/site.config.json)')
+    ap.add_argument('csv',nargs='+',help='Teil-CSV, z. B. teile/G1-befunde.csv')
+    a=ap.parse_intermixed_args()
+    if a.repo:
+        R=os.path.abspath(a.repo)
     else:
         R=find_repo(os.path.dirname(os.path.abspath(__file__))) or find_repo(os.getcwd())
     if not R or not os.path.exists(os.path.join(R,'authoring','site.config.json')):
         sys.exit('Repository nicht gefunden: --repo <pfad> angeben')
-    for p in args: main(p)
+    for p in a.csv: main(p)

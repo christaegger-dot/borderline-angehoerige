@@ -1,4 +1,4 @@
-/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-34 */
+/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-35 */
 
 /* ===== ../../../styles.css ===== */
 /* ../../../tokens/fonts.css */
@@ -1187,7 +1187,10 @@ html.puk-scroll-lock{overflow:hidden}
 @container (max-width:35rem){.bl-observe{grid-template-columns:minmax(0,1fr)}}
 .bl-infoflow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6)}
 .bl-infoflow__route{min-width:0;padding:var(--space-5);background:var(--puk-white);border:1px solid var(--border-default);border-top:4px solid var(--puk-blue-100)}
-.bl-infoflow__direction{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:var(--space-2);align-items:center;margin:0 0 var(--space-4);font:var(--type-caption);font-weight:var(--fw-medium);color:var(--text-default);text-align:center}
+/* A8-01 (= R3C-06): Umbruch zwischen den Wörtern statt im Wort (break-word statt des geerbten anywhere);
+   ein Wort bricht nur, wenn es allein breiter ist als die Karte. */
+.bl-infoflow__direction{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:var(--space-2);margin:0 0 var(--space-4);font:var(--type-caption);font-weight:var(--fw-medium);color:var(--text-default);text-align:center;overflow-wrap:break-word}
+.bl-infoflow__direction>span{min-width:0}
 .bl-infoflow__direction span[aria-hidden]{font:var(--type-title-3);color:var(--puk-blue-100)}
 .bl-infoflow h3{margin:0 0 var(--space-3);font:var(--type-body);font-weight:var(--fw-medium);color:var(--text-default)}
 .bl-infoflow__route>p:last-child{margin:0;font:var(--type-body-sm);color:var(--text-default)}
@@ -1203,7 +1206,7 @@ html.puk-scroll-lock{overflow:hidden}
 .bl-influences li{min-width:0;padding:var(--space-4);background:var(--puk-white);border:1px solid var(--border-default);border-left:4px solid var(--puk-blue-100);font:var(--type-body-sm);color:var(--text-default)}
 @container (max-width:40rem){
   .bl-infoflow,.bl-caremap,.bl-influences{grid-template-columns:minmax(0,1fr)}
-  .bl-infoflow__direction{grid-template-columns:minmax(0,1fr);justify-items:start;text-align:left}
+  .bl-infoflow__direction{flex-direction:column;align-items:flex-start;text-align:left}
   .bl-infoflow__direction span[aria-hidden]{transform:rotate(90deg)}
   .bl-influences ul{grid-template-columns:minmax(0,1fr)}
   .bl-influences__center{place-items:start;text-align:left}

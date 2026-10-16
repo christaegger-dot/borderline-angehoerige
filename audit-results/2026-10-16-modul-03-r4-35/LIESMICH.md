@@ -48,7 +48,8 @@ Die Berichte nennen Pfade im Scratchpad der Sitzung, meist abgekürzt als `S/…
 | `S/AUFTRAG.md`, `S/KONSOLIDIERUNG.md` | `auftrag/` |
 | `S/werkzeug/` | `werkzeug/` |
 | `S/ergebnis/arbeit/` | `arbeit/` (Auswahl) |
-| `S/text-v2/`, `S/ergebnis/arbeit/text-neu/` | nicht abgelegt; die Lesefassung lässt sich neu erzeugen, siehe unten |
+| `S/text-v2/<seite>.md`, `S/ergebnis/arbeit/text-neu/` | nicht abgelegt; die Lesefassung der Seiten lässt sich neu erzeugen, siehe unten |
+| `S/text/_seitenweit.md`, `S/text-v2/_seitenweit.md` | `werkzeug/_seitenweit.md` (abgelegt) und Erzeuger `werkzeug/seitenweit.py` |
 | `S/leitlinien/` | Design-System-Artefakt «PUK Zürich Website-Profil», Fassung `1792129173-abbb`, `project/guidelines/` |
 
 ## Wiederholen
@@ -60,6 +61,22 @@ python3 -I audit-results/2026-10-16-modul-03-r4-35/werkzeug/kennzahlen_v2.py --a
 ```
 
 `textfassung_v2.py` braucht BeautifulSoup 4. Die Ausgangswerte für `ff5016b` stehen in `werkzeug/kennzahlen-ff5016b-v2.csv`. Die Lesefassung nummeriert die Blöcke je Abschnitt (`§n`); daraus sind die Fundstellen der Befunde.
+
+**Seitenweite Texte.** `textfassung_v2.py` liest nur die 23 Seiten. Die seitenweiten Texte (Titel, Navigation, Seitenbeschreibungen, `primaryTask`, Kopf und Fusszeile, Bedientexte aus `interaktion.js`) stehen in `werkzeug/_seitenweit.md`; das ist die Datei, mit der der Lauf gearbeitet hat. `werkzeug/seitenweit.py` erzeugt sie neu und ergibt auf `ff5016b` dieselbe Datei, Byte für Byte:
+
+```sh
+python3 -I audit-results/2026-10-16-modul-03-r4-35/werkzeug/seitenweit.py . /tmp/_seitenweit.md
+```
+
+`authoring/tools/search-index.mjs` ist darin nicht enthalten. Die Konsolidierung hat es direkt im Quelltext gelesen (A03-220).
+
+**Mechanische Prüfung der Teil-CSV.**
+
+```sh
+python3 -I audit-results/2026-10-16-modul-03-r4-35/werkzeug/pruefe_teil.py audit-results/2026-10-16-modul-03-r4-35/teile/G1-befunde.csv
+```
+
+Das Skript findet das Repository selbst, ab seinem eigenen Ordner oder dem Arbeitsverzeichnis; sonst gilt `--repo <pfad>`. Es sucht in den Seiten, in `site.config.json`, `interaktion.js` und `search-index.mjs`. Teilbefunde, die mehrere Fundstellen in einem Feld verbinden («§25: … §26: …») oder eine Code-Vorlage umschreiben, meldet es als «nicht wörtlich gefunden». Die Konsolidierung hat sie in `BEFUNDE.csv` je Fundstelle aufgeteilt, und dort steht jedes Original wörtlich in der Quelle.
 
 ## Korrektur am Auftrag
 

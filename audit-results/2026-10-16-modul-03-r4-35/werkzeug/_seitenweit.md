@@ -1,0 +1,254 @@
+# Seitenweite Texte (Stand ff5016b, r4-35)
+
+Quellen: authoring/site.config.json, gebaute Kopf- und Fusszeile in site/index.html und site/behandlung.html, Bedientexte in authoring/js/interaktion.js.
+
+
+## site.config.json · allgemeine Textfelder
+
+- `siteTitle`: «Borderline – Orientierung für Angehörige»
+- `shortDescription`: «Psychoedukative Website der Fachstelle Angehörigenarbeit PUK für Angehörige von Menschen mit Borderline.»
+- `utilityNav.0.label`: «Kurz und klar»
+- `utilityNav.1.label`: «Website durchsuchen»
+- `contentOwner`: «Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK)»
+- `disclaimer`: «Diese Website ersetzt keine individuelle Abklärung, Beratung oder Behandlung.»
+- `footer.heading`: «Informationen zur Website»
+- `footer.about`: «Diese Website ist eine Orientierungshilfe der Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK). Sie richtet sich an Angehörige und Bezugspersonen und ergänzt die Beratung der Fachstelle.»
+- `footer.serviceBoundary`: «Die Fachstelle Angehörigenarbeit bietet keine Krisenintervention.»
+- `footer.links.0.label`: «Über diese Website»
+- `responsibility.text`: «Die Fachstelle Angehörigenarbeit der PUK berät Angehörige kostenlos und vertraulich. Kontakt: angehoerigenarbeit@pukzh.ch. Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.»
+- `responsibility.inline.text`: «Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.»
+- `sender.displayLabel`: «Eine Orientierungshilfe der»
+- `sender.displayName`: «Fachstelle Angehörigenarbeit der PUK»
+
+## site.config.json · je Seite: Titel, Navigation, Beschreibung, Einstiege
+
+- `index.title`: «Startseite»
+- `index.navLabel`: «Übersicht»
+- `index.description`: «Orientierung für Angehörige von Menschen mit Borderline: Einstiege nach Anliegen, von Verstehen und Grenzen bis Genesung und Unterstützung, und die kostenlose Beratung der Fachstelle Angehörigenarbeit PUK.»
+- `index.primaryTask`: «Einen Einstieg nach dem eigenen Anliegen wählen»
+- `kurz.title`: «Kurz und klar»
+- `kurz.description`: «Eine kurze Orientierung zu Gesprächen, Rolle, Grenzen, Erschöpfung, Kindern, Sicherheit und den wichtigsten nächsten Schritten.»
+- `kurz.primaryTask`: «Mit wenig Zeit oder Kraft die wichtigsten nächsten Schritte finden»
+- `verstehen.title`: «Borderline verstehen»
+- `verstehen.navLabel`: «Verstehen»
+- `verstehen.description`: «Was die Diagnose Borderline beschreiben kann, was unter sichtbarem Verhalten liegen kann, wie Anspannung Gespräche verengt und welche verbreiteten Annahmen zu kurz greifen.»
+- `verstehen.primaryTask`: «Borderline, Erleben und mögliche Kontexte einordnen, ohne aus der Diagnose Motive oder Gefahr abzuleiten»
+- `beziehungen.title`: «Alltag und Beziehungen»
+- `beziehungen.navLabel`: «Alltag und Beziehungen»
+- `beziehungen.description`: «Alltag und Beziehungen: Bedeutungsschleife, zwei Sichten auf dieselbe Situation und was Verbindung tragfähiger machen kann – ohne Motive zu unterstellen.»
+- `beziehungen.primaryTask`: «Wechselwirkungen in der Beziehung erkennen und einordnen, ohne Schuld zu verteilen»
+- `rolle.title`: «Ihre Rolle klären»
+- `rolle.description`: «Was Sie anbieten können und was nicht Ihre Aufgabe ist, Schuld und Verantwortung, Unterstützung im Alltag und nach Konflikten, mehrere Angehörige, Kinder und wann Unterstützung an Grenzen kommt.»
+- `rolle.primaryTask`: «Freiwillige Unterstützung, eigene Verantwortung und Aufgaben von Fachpersonen unterscheiden»
+- `grenzen.title`: «Grenzen setzen»
+- `grenzen.description`: «Woran Sie merken, dass eine Grenze nötig ist, vier Arten von Grenzen, DEAR in vier Schritten, Sätze für typische Situationen, Grenzen in fünf Angehörigenrollen, riskante Entscheidungen (Geld, plötzliche Entscheidungen, Substanzen) und Schutz bei Gewalt oder Bedrohung.»
+- `grenzen.primaryTask`: «Eigene Grenzen erkennen und formulieren und bei Bedrohung den Schutz vorziehen»
+- `diagnose.title`: «Diagnose und Begleiterkrankungen»
+- `diagnose.description`: «Der Weg zur Abklärung in fünf Schritten mit Ihrer Rolle, was eine Diagnose für Angehörige bedeuten kann, was möglich ist, wenn die Diagnose nicht geteilt wird oder noch fehlt, Suizidgedanken und Selbstverletzung und was Begleiterkrankungen wie eine Depression bedeuten.»
+- `diagnose.primaryTask`: «Verstehen, wie eine Borderline-Abklärung abläuft, was eine Diagnose bedeuten kann und was Begleiterkrankungen sind»
+- `behandlung.title`: «Behandlung und Ihre Rolle darin»
+- `behandlung.navLabel`: «Behandlung»
+- `behandlung.description`: «Therapieformen und Medikamente, Angebote im Kanton Zürich, was bei langer Wartezeit hilft, Ihre Rolle und Kontakt zum Behandlungsteam mit Musterbrief, wann Sie Auskunft erhalten und was Sie tun können, wenn die Person keine Behandlung möchte oder abbricht.»
+- `behandlung.primaryTask`: «Wissen, welche Behandlung hilft und wo es sie gibt, und die eigene Rolle gegenüber dem Behandlungsteam klären»
+- `kommunizieren.title`: «Zugewandt und klar sprechen»
+- `kommunizieren.description`: «Zuhören und die eigene Sicht behalten, anerkennen ohne zuzustimmen mit den sechs Stufen der Validierung, der richtige Moment, wenn Gespräche kippen, wenn Worte treffen und Beispiele.»
+- `kommunizieren.primaryTask`: «Zuhören, anerkennen und die eigene Sicht behalten, auch wenn Gespräche kippen»
+- `krise.title`: «Krisen begleiten»
+- `krise.description`: «Während einer Krise, Suizidgedanken ansprechen, wenn Sie eine Selbstverletzung bemerken, was Sie sagen können, was Sie vermeiden sollten, wenn Belastung zunimmt, nach der Krise mit Krisenplan und wenn Belastung oder Gefahr bleibt.»
+- `krise.primaryTask`: «Sich in Krisen schützen, passende Hilfe holen und die eigenen Möglichkeiten kennen»
+- `kinder.title`: «Wenn Kinder mitbetroffen sind»
+- `kinder.description`: «Orientierung für Angehörige, wenn Kinder psychische Belastung oder Konflikte miterleben: erklären, Alltag und Betreuung organisieren, bei Eskalation schützen und Unterstützung finden.»
+- `kinder.primaryTask`: «Kindern psychische Belastung verständlich erklären, Betreuung organisieren und sie bei Eskalation oder Gefahr schützen»
+- `jugendliche.title`: «Wenn Ihr jugendliches Kind betroffen ist»
+- `jugendliche.description`: «Für Eltern von Jugendlichen: Ihre Rolle mit elterlicher Sorge, Abklärung und Behandlung vor dem 18. Geburtstag, Vertraulichkeit und Auskunft auch ab 18, Grenzen im Familienalltag, Geschwister im Haushalt und Unterstützung für Ihr Kind und für Sie.»
+- `jugendliche.primaryTask`: «Als Eltern eines minderjährigen Kindes mit Borderline oder Verdacht darauf die eigene Rolle, Abklärung, Auskunft und Grenzen einordnen und passende Unterstützung finden»
+- `selbstfuersorge.title`: «Auf sich achten»
+- `selbstfuersorge.description`: «Was Ihnen erlaubt bleibt, was Kraft kostet und was entlastet, Warnsignale für Überlastung, kurze Übungen, eigene Unterstützung, radikale Akzeptanz und Beratung.»
+- `selbstfuersorge.primaryTask`: «Eigene Belastung, Bedürfnisse und erreichbare Unterstützung ernst nehmen»
+- `genesung.title`: «Genesung»
+- `genesung.description`: «Was die Forschung zu Genesung zeigt, was Remission, Alltag und persönliche Recovery bedeuten, warum Veränderung unterschiedlich verläuft, was Genesung beeinflussen kann und welche Unterstützung freiwillig ist.»
+- `genesung.primaryTask`: «Hoffnung realistisch einordnen: unterschiedliche Verläufe verstehen und den eigenen Einfluss begrenzen»
+- `unterstuetzung.title`: «Unterstützung finden»
+- `unterstuetzung.navLabel`: «Unterstützung»
+- `unterstuetzung.description`: «Beratung für Angehörige bei der Fachstelle Angehörigenarbeit der PUK und bei Pro Mente Sana, Austausch mit anderen Angehörigen, Selbsthilfegruppen und Hinweise für andere Kantone.»
+- `unterstuetzung.primaryTask`: «Beratung, Austausch mit anderen Angehörigen und Selbsthilfe finden»
+- `buecher.title`: «Bücher für Angehörige»
+- `buecher.description`: «Eingeordnete Buchauswahl für Partnerinnen und Partner, Eltern, Kinder und weitere Angehörige, ergänzt um kritisch zu lesende Titel.»
+- `buecher.primaryTask`: «Ein passendes Buch nach Zielgruppe und Bedarf finden»
+- `fragen.title`: «Fragen und Nachschlagen»
+- `fragen.navLabel`: «Fragen und Nachschlagen»
+- `fragen.description`: «Kurze Antworten auf häufige Fragen sowie Einstiege in Website-Suche, verständliche Begriffserklärungen und Quellen.»
+- `fragen.primaryTask`: «Eine kurze Antwort auf eine häufige Frage finden und zur ausführlichen Stelle weitergehen»
+- `begriffe.title`: «Begriffe verständlich erklärt»
+- `begriffe.description`: «Zentrale Fachbegriffe mit vereinfachten Erklärungen, Beispielen und Verweisen auf die passenden Themenseiten.»
+- `begriffe.primaryTask`: «Einen Fachbegriff schnell nachschlagen und im Kontext verstehen»
+- `quellen.title`: «Quellen»
+- `quellen.description`: «Vollständige Quellenliste mit Einordnung, nach Funktion geordnet.»
+- `quellen.primaryTask`: «Eine Quelle der Website nachvollziehen und fachlich einordnen»
+- `suche.title`: «Website durchsuchen»
+- `suche.description`: «Seiten und Abschnitte der Orientierungshilfe lokal nach eigenen Suchwörtern und alternativen Begriffen durchsuchen.»
+- `suche.primaryTask`: «Mit eigenen Suchwörtern einen passenden Abschnitt oder eine Themenseite finden»
+- `ueber.title`: «Über diese Website»
+- `ueber.description`: «Warum es die Website gibt, Grundsätze der Texte, Barrierefreiheit und Rückmeldungen an die Fachstelle.»
+- `ueber.primaryTask`: «Wissen, warum es die Website gibt, nach welchen Grundsätzen die Texte geschrieben sind und wie man eine Rückmeldung gibt»
+- `impressum-datenschutz.title`: «Impressum und Datenschutz»
+- `impressum-datenschutz.description`: «Anbieterin, fachliche Redaktion, Kontakt und Datenschutz: keine Cookies, keine Auswertung, beim Lesen keine Daten an andere Anbieter als den Dienst, der die Website ausliefert.»
+- `impressum-datenschutz.primaryTask`: «Wissen, wer die Website herausgibt und welche Daten beim Besuch anfallen»
+- `404.title`: «Seite nicht gefunden»
+- `404.description`: «Diese Seite gibt es nicht. Von der Startseite aus erreichen Sie alle Seiten.»
+- `404.primaryTask`: «Von einer nicht vorhandenen Adresse zur Startseite zurückfinden»
+
+## site/index.html · Kopf
+
+- [li] Übersicht
+- [a] Übersicht
+- [li] Verstehen
+- [a] Verstehen
+- [li] Alltag und Beziehungen
+- [a] Alltag und Beziehungen
+- [li] Behandlung
+- [a] Behandlung
+- [li] Unterstützung
+- [a] Unterstützung
+- [li] Fragen und Nachschlagen
+- [a] Fragen und Nachschlagen
+- [a] Kurz und klar
+- [a] Website durchsuchen
+- [p] Eine Orientierungshilfe der Fachstelle Angehörigenarbeit der PUK Beratung: angehoerigenarbeit@pukzh.ch
+- [span] Eine Orientierungshilfe der
+- [span] Fachstelle Angehörigenarbeit der PUK
+- [span] Beratung:
+- [a] angehoerigenarbeit@pukzh.ch
+  - aria-label an <a>: «Psychiatrische Universitätsklinik Zürich – Startseite Borderline – Orientierung für Angehörige»
+  - alt an <img>: «Psychiatrische Universitätsklinik Zürich»
+  - aria-label an <nav>: «Hauptnavigation»
+  - aria-label an <nav>: «Direkteinstiege»
+
+## site/index.html · Fusszeile
+
+- [h2] Zuständigkeit
+- [p] Die Fachstelle Angehörigenarbeit der PUK berät Angehörige kostenlos und vertraulich. Kontakt: angehoerigenarbeit@pukzh.ch. Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.
+- [h2] Informationen zur Website
+- [p] Diese Website ist eine Orientierungshilfe der Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK). Sie richtet sich an Angehörige und Bezugspersonen und ergänzt die Beratung der Fachstelle.
+- [p] Diese Website ersetzt keine individuelle Abklärung, Beratung oder Behandlung.
+- [p] Die Fachstelle Angehörigenarbeit bietet keine Krisenintervention.
+- [li] Über diese Website
+- [a] Über diese Website
+- [li] Barrierefreiheit
+- [a] Barrierefreiheit
+- [li] Rückmeldung
+- [a] Rückmeldung
+- [p] Fachliche Redaktion: Ch. Egger, Soziale Arbeit, Fachstelle Angehörigenarbeit PUK.
+- [p] Inhaltlicher Stand: Oktober 2026.
+- [p] Impressum · Datenschutz
+- [a] Impressum
+- [span] ·
+- [a] Datenschutz
+  - aria-label an <nav>: «Informationen zur Website»
+
+## site/behandlung.html · Kopf
+
+- [li] Übersicht
+- [a] Übersicht
+- [li] Verstehen
+- [a] Verstehen
+- [li] Alltag und Beziehungen
+- [a] Alltag und Beziehungen
+- [li] Behandlung
+- [a] Behandlung
+- [li] Unterstützung
+- [a] Unterstützung
+- [li] Fragen und Nachschlagen
+- [a] Fragen und Nachschlagen
+- [a] Kurz und klar
+- [a] Website durchsuchen
+- [p] Eine Orientierungshilfe der Fachstelle Angehörigenarbeit der PUK Beratung: angehoerigenarbeit@pukzh.ch
+- [span] Eine Orientierungshilfe der
+- [span] Fachstelle Angehörigenarbeit der PUK
+- [span] Beratung:
+- [a] angehoerigenarbeit@pukzh.ch
+  - aria-label an <a>: «Psychiatrische Universitätsklinik Zürich – Startseite Borderline – Orientierung für Angehörige»
+  - alt an <img>: «Psychiatrische Universitätsklinik Zürich»
+  - aria-label an <nav>: «Hauptnavigation»
+  - aria-label an <nav>: «Direkteinstiege»
+
+## site/behandlung.html · Fusszeile
+
+- [h2] Zuständigkeit
+- [p] Die Fachstelle Angehörigenarbeit der PUK berät Angehörige kostenlos und vertraulich. Kontakt: angehoerigenarbeit@pukzh.ch. Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.
+- [h2] Informationen zur Website
+- [p] Diese Website ist eine Orientierungshilfe der Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK). Sie richtet sich an Angehörige und Bezugspersonen und ergänzt die Beratung der Fachstelle.
+- [p] Diese Website ersetzt keine individuelle Abklärung, Beratung oder Behandlung.
+- [p] Die Fachstelle Angehörigenarbeit bietet keine Krisenintervention.
+- [li] Über diese Website
+- [a] Über diese Website
+- [li] Barrierefreiheit
+- [a] Barrierefreiheit
+- [li] Rückmeldung
+- [a] Rückmeldung
+- [p] Fachliche Redaktion: Ch. Egger, Soziale Arbeit, Fachstelle Angehörigenarbeit PUK.
+- [p] Inhaltlicher Stand: Oktober 2026.
+- [p] Impressum · Datenschutz
+- [a] Impressum
+- [span] ·
+- [a] Datenschutz
+  - aria-label an <nav>: «Informationen zur Website»
+
+## authoring/js/interaktion.js · sichtbare oder vorgelesene Texte (Auswahl nach Muster, bitte im Quelltext nachprüfen)
+
+- « Einträge verfügbar.»
+- « Treffern sichtbar.»
+- « passenden Inhalten sichtbar.»
+- «Alle Themenseiten sind unten aufgeführt.»
+- «Ganzes Modell zeigen»
+- «Keine passenden Inhalte gefunden.»
+- «Schritt für Schritt aufbauen»
+- «aber als am an auf aus bei bin bis brauche das dass dem den der des die darf dich dir ein eine einer einem einen er erlebt es fuer finde gefunden gegen geht gibt hat haben helfen ich ihm ihn im in ist ja kann koennen lassen man mein meine meiner meinem meinen mich mir mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur»
+- «angst vor ihm»
+- «angst vor ihr»
+- «angst vor meinem bruder»
+- «angst vor meinem ex»
+- «angst vor meinem mann»
+- «angst vor meinem partner»
+- «angst vor meinem sohn»
+- «angst vor meinem vater»
+- «angst vor meiner ex»
+- «angst vor meiner frau»
+- «angst vor meiner mutter»
+- «angst vor meiner partnerin»
+- «angst vor meiner schwester»
+- «angst vor meiner tochter»
+- «ans toeten»
+- «ans umbringen»
+- «bedroht mich»
+- «das leben nehmen»
+- «droht mit dem tod»
+- «droht mit mord»
+- «drohte mit dem tod»
+- «ich kann nicht mehr»
+- «ist lebensmuede»
+- «kann nicht mehr»
+- «keine kraft»
+- «leben nehmen»
+- «mich bedroht»
+- «mit dem tod bedroht»
+- «mit dem tod gedroht»
+- «mit mord bedroht»
+- «mit mord gedroht»
+- «moechte nicht»
+- «moechte sterben»
+- «nicht mehr aufwachen»
+- «nicht mehr da sein»
+- «nicht mehr leben»
+- «nicht weiter leben»
+- «nicht weiterleben»
+- «nicht wollen»
+- «sich das leben nehmen»
+- «sterben wollen»
+- «tabletten genommen»
+- «tabletten geschluckt»
+- «tot sein»
+- «use strict»
+- «will nicht»
+- «will sterben»
+- «zu viele tabletten»

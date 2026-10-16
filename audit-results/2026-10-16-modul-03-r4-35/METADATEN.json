@@ -15,10 +15,10 @@
   "zeit": {
     "teilpruefungen": "2026-10-16",
     "konsolidierung_abschluss": "2026-10-16T18:55+02:00",
-    "nachbesserung": "Nachbesserung 16.10.2026 nach dem Codex-Review von #700, Commit d5706c7"
+    "nachbesserung": "Nachbesserung 16.10.2026 nach dem Codex-Review von #700, Commit d5706c7; Nachbesserung 16.10.2026 nach dem Review statt Codex zu #701"
   },
   "testbedingungen": {
-    "pruefgegenstand": "Quelltexte authoring/content/*.html (23 Seiten), authoring/site.config.json, authoring/js/interaktion.js, authoring/tools/search-index.mjs; Lesefassung scratchpad/a03/text-v2/ (2389 nummerierte Blöcke) und _seitenweit.md",
+    "pruefgegenstand": "Quelltexte authoring/content/*.html (23 Seiten), authoring/site.config.json, authoring/js/interaktion.js, authoring/tools/search-index.mjs; Lesefassung text-v2 (2389 nummerierte Blöcke; im Lauf unter scratchpad/a03/text-v2/, nicht abgelegt, neu erzeugbar mit werkzeug/textfassung_v2.py) und die seitenweiten Texte (im Lauf scratchpad/a03/text-v2/_seitenweit.md; im Repository werkzeug/_seitenweit.md, ohne die internen Suchdaten, siehe LIESMICH.md)",
     "kennzahlen": "scratchpad/a03/werkzeug/kennzahlen_v2.py, Ausgangswerte kennzahlen-ff5016b-v2.csv (massgebend); Simulation auf einer Kopie von text-v2 in scratchpad/a03/ergebnis/arbeit/text-neu/",
     "wortzahlen": "node authoring/tools/wortbilanz.mjs (nur lesend ausgeführt, kein Build ins Repository)",
     "werkzeuge": "Python 3.13.16 mit BeautifulSoup 4.15.0; Node v22.22.0",
@@ -40,7 +40,7 @@
     "nach_prioritaet": {"P0": 0, "P1": 1, "P2": 41, "P3": 140},
     "ids": "A03-039 bis A03-220",
     "ersatzfassungen": {"bestanden": 136, "ueberarbeitet": 32, "neu_aus_konsolidierung": 14, "verworfen": 5},
-    "pruefbedarf": {"gesamt": 38, "fachlich": 29, "recht": 9},
+    "pruefbedarf": {"gesamt": 39, "fachlich": 30, "recht": 9},
     "muster": 12
   },
   "hinweise": [

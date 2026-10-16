@@ -8,7 +8,7 @@ Das Profil gilt für alle Texte der Website: Seitentexte, Navigation, Überschri
 
 Status: Entwurf aus dem Audit. Verbindlich wird das Profil, wenn die Fachstelle Angehörigenarbeit PUK es freigibt. Die Entscheide E7 und E9, der Entscheid «Kein Krisenzugang» und freigegebene Wortlaute aus den Releases gehen ihm vor.
 
-Nachbesserung am 16.10.2026 nach dem Codex-Review von #700: Regel zu Verbindlichkeit und Zuständigkeit (Abschnitte 4 und 12), Prüffrage 10, Hinweise zu den Beispielen in Abschnitt 10 und 14.
+Nachbesserungen am 16.10.2026 nach dem Codex-Review von #700 und nach dem Review statt Codex zu #701: Regel zu Verbindlichkeit und Zuständigkeit (Abschnitte 4 und 12), Prüffrage 10, Hinweise zu den Beispielen in Abschnitt 10, 14 und 15.
 
 ## 2. Leserin und Leser
 
@@ -141,7 +141,7 @@ Zu vermeiden sind:
 - **Kennzeichnung.** «So könnte es klingen» oder «Zum Beispiel:»; Gegenüberstellungen in der Komponente `.puk-say` mit den Labels «Eher problematisch» und «Eher hilfreich». Auf «Genesung» stehen freigegeben «Weniger hilfreich» und «Tragfähiger»; auf einer Seite wird nur ein Paar verwendet.
 - **Laut-Lese-Probe.** Jedes Beispiel wird laut gesprochen: Würde eine Mutter, ein Partner oder eine Schwester das in dieser Lage so sagen? Vorher: «Ich höre, dass du enttäuscht bist. Ich sehe die Situation anders.» Nachher: «Du klingst enttäuscht. Ich sehe die Situation anders.» (A03-104)
 - **Keine Formeln.** Nicht «Ich höre, dass …», nicht «Das klingt … belastend» in jedem zweiten Beispiel, kein «– aber» zwischen Zuwendung und Grenze. Vorher: «Ich bin für dich da – aber ich kann das Problem nicht für dich lösen.» Nachher: «Ich bin für dich da. Lösen kann ich das Problem nicht für dich.» (A03-097)
-- **Keine Amtswörter.** «Elternteil», «tragfähige Lösung», «Erwachsene kümmern sich» gehören nicht in gesprochene Sätze. Vorher: «Du bist nicht schuld. Erwachsene kümmern sich um Hilfe und um dich.» Nachher: «Du bist nicht schuld. Wir Erwachsenen sorgen für Hilfe und kümmern uns um dich.» (A03-119). Mit «wir» sagt die sprechende Person selbst zu, sich zu kümmern; diese Fassung braucht die fachliche Bestätigung. Ohne sie bleibt die dritte Person: «Erwachsene sorgen für Hilfe und kümmern sich um dich.»
+- **Keine Amtswörter.** «Elternteil», «tragfähige Lösung» und das abstrakte «sich um Hilfe kümmern» gehören nicht in gesprochene Sätze. Vorher: «Du bist nicht schuld. Erwachsene kümmern sich um Hilfe und um dich.» Nachher: «Du bist nicht schuld. Wir Erwachsenen sorgen für Hilfe und kümmern uns um dich.» (A03-119). Mit «wir» sagt die sprechende Person selbst zu, sich zu kümmern; diese Fassung braucht die fachliche Bestätigung. Bis die Fachstelle entschieden hat, gilt vorläufig «Erwachsene sorgen für Hilfe und kümmern sich um dich.»: Die Fassung ersetzt nur das abstrakte Objekt und lässt die Zuständigkeit bei den Erwachsenen.
 - **Konkrete Personen.** Im Beispiel spricht man von «meinem Bruder», nicht von «der anderen Person» (A03-133).
 - **Zusagen nur im realen Umfang.** Ein Beispiel hebt die eigene Grenze nicht im nächsten Satz wieder auf. Vorher: «Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu.» Nachher: «Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es dir dann sehr schlecht geht, wende dich an die Stelle aus deinem Krisenplan.» (A03-130). Der Wortlaut ist auf «Grenzen setzen» freigegeben; hier legt er den nächsten Schritt neu fest und braucht deshalb die fachliche Bestätigung.
 - **Keine Absicherung im Beispiel.** «Möglicher Wortlaut, keine Erfolgsgarantie» gehört nicht in den Beispielsatz.
@@ -193,7 +193,7 @@ Zu vermeiden sind:
 
 | Muster | Vorher (Website) | Nachher |
 | --- | --- | --- |
-| Satzanfang «Wichtig ist, …» | «Wichtig ist, alltägliche Belastung, wiederholte Eskalation, eine mögliche Kindeswohlgefährdung und akute Gefahr auseinanderzuhalten.» | «Alltägliche Belastung, wiederholte Eskalation, eine mögliche Kindeswohlgefährdung und akute Gefahr verlangen unterschiedliche Schritte.» (A03-121) |
+| Satzanfang «Wichtig ist, …» | «Wichtig ist, alltägliche Belastung, wiederholte Eskalation, eine mögliche Kindeswohlgefährdung und akute Gefahr auseinanderzuhalten.» | «Alltägliche Belastung, wiederholte Eskalation, eine mögliche Kindeswohlgefährdung und akute Gefahr verlangen unterschiedliche Schritte.» (A03-121; im Schutzabschnitt entfällt damit die Aufforderung zum Unterscheiden, deshalb nur mit fachlicher Bestätigung) |
 | «Es geht nicht darum … Es geht darum …» | «Es geht nicht darum, eine Erkrankung von aussen zu «lösen». Es geht darum, wiederkehrende Abläufe besser einzuordnen, …» | «Diese Website möchte Angehörigen fachlich fundierte Orientierung geben, nicht eine Erkrankung von aussen «lösen». Sie soll helfen, wiederkehrende Abläufe besser einzuordnen, …» (A03-199) |
 | «X ist nicht dasselbe wie Y» | «Beruhigung ist nicht dasselbe wie Klärung.» | «Wenn sich die Lage beruhigt hat, ist damit noch nicht alles geklärt.» (A03-098) |
 | Doppelpunkt-Telegramm | «Was Sie tun können: Fragen Sie sich: «…»» | «Was Sie tun können: Fragen Sie sich, was Ihre Beziehung trägt und wann der Kontakt gelingt.» (A03-052) |

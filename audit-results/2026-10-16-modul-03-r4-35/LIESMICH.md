@@ -115,6 +115,25 @@ Die Konsolidierung hat diese Teilbefunde in `BEFUNDE.csv` je Fundstelle aufgetei
 
   Die Einzelheiten stehen in `BERICHT.md`, Abschnitt 10.
 
+## Nachbesserung nach dem Review zu #701
+
+Auf #701 scheiterte das Codex-Review am Nutzungslimit. An seiner Stelle prüfte auf Entscheid der Auftraggeberin eine eigene Review-Sitzung, die an Audit 03 nicht mitgearbeitet hat. Ihr Urteil auf `98e33ad` war «nicht mergen»: ein P1, drei P2, sieben P3.
+- **Werkzeuge, diese Datei und Pendenzen, behoben von der bauenden Sitzung** (`033f7d5` und der Commit danach):
+  - `seitenweit.py`: Der Stand ist nicht mehr fest eingetragen, interne Suchdaten fallen standardmässig weg, und `_seitenweit.md` ist neu abgelegt (siehe «Wiederholen»).
+  - `pruefe_teil.py`: `--repo` an beliebiger Stelle; ohne Argument bricht das Skript mit einer Meldung ab. Die erwarteten Treffer stehen oben.
+  - In diesem LIESMICH: Urheberschaft, Scratchpad und Zahlen.
+  - In den Pendenzen: Die Zeitangabe zum Merge von #700 ist belegt.
+- **Befunde, nachgebessert von der Konsolidierung** (`b42a46a`):
+  - `QUELLEN.csv` ist korrekt gequotet (P1). `arbeit/pruefe_befunde.py` prüft jetzt die Spaltenzahl und die Zeilenenden aller CSV im Ordner.
+  - A03-121 hat fachlichen Prüfbedarf; damit sind es 39 (30 fachlich, 9 Recht).
+  - A03-119 und A03-120 haben ein Akzeptanzkriterium mit zwei Zweigen.
+  - A03-147, A03-188 und A03-189: `bedeutung_erhalten` ist bereinigt.
+  - Wortangaben und Sprachprofil sind nachgeführt.
+
+  Die Einzelheiten stehen in `BERICHT.md`, Abschnitt 10, Teil «Nach dem Review statt Codex zu #701».
+
+`werkzeug/kennzahlen-ff5016b-v2.csv` hat als einzige CSV im Ordner LF statt CRLF. So gibt `kennzahlen_v2.py` sie aus, Byte für Byte; `arbeit/pruefe_befunde.py` meldet das als Hinweis.
+
 ## Korrektur am Auftrag
 
 `auftrag/AUFTRAG.md` sagt, `primaryTask` erscheine auf der Suchseite. Das ist falsch. G6 hat festgestellt, dass es nur im unsichtbaren Suchindex steht. Der Auftrag der Konsolidierung hält das fest, und `PRUEFUMFANG.md` gibt es richtig wieder.
@@ -124,5 +143,5 @@ Die Konsolidierung hat diese Teilbefunde in `BEFUNDE.csv` je Fundstelle aufgetei
 Siehe `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`, Pendenz A03-R35:
 - Entscheid über die Wortziele aus Release C;
 - Freigabe des Wortlauts, paketweise nach `BERICHT.md`, Abschnitt 5;
-- vorher Klärung des fachlichen und rechtlichen Prüfbedarfs (38 Befunde: 29 fachlich, 9 Recht, Stand nach der Nachbesserung);
+- vorher Klärung des fachlichen und rechtlichen Prüfbedarfs (39 Befunde: 30 fachlich, 9 Recht, Stand nach dem Review zu #701);
 - Freigabe des Sprachprofils.

@@ -1,0 +1,49 @@
+{
+  "lauf_id": "2026-10-16-modul-03-r4-35",
+  "projekt": "Borderline – Orientierung für Angehörige (Fachstelle Angehörigenarbeit PUK)",
+  "repository": "christaegger-dot/borderline-angehoerige",
+  "arbeitskopie": "/home/claude/borderline-angehoerige (nur gelesen)",
+  "branch": "claude/a8k-korrektur-1792143386",
+  "sha": "ff5016b",
+  "sha_voll": "ff5016b902fb87e20c4a50492f2268a86a0cd3c1",
+  "commit": "ff5016b, 2026-10-16 12:17:58 +0200, «r4-35, Produktionsexport nach unabhängiger Prüfung» (PR #699, noch nicht gemergt)",
+  "bezug_produktion": "baf366d (Merge PR #698, 2026-10-16 11:35:35 +0200)",
+  "deployment_url": "https://borderline-angehoerige.netlify.app",
+  "deployment_hinweis": "nur Bezug; die Website wurde in diesem Audit nicht abgerufen",
+  "modus": "modul-03",
+  "modul": "03 · Sprache, Tonalität, Empathie und Verständlichkeit",
+  "zeit": {
+    "teilpruefungen": "2026-10-16",
+    "konsolidierung_abschluss": "2026-10-16T18:55+02:00"
+  },
+  "testbedingungen": {
+    "pruefgegenstand": "Quelltexte authoring/content/*.html (23 Seiten), authoring/site.config.json, authoring/js/interaktion.js, authoring/tools/search-index.mjs; Lesefassung scratchpad/a03/text-v2/ (2389 nummerierte Blöcke) und _seitenweit.md",
+    "kennzahlen": "scratchpad/a03/werkzeug/kennzahlen_v2.py, Ausgangswerte kennzahlen-ff5016b-v2.csv (massgebend); Simulation auf einer Kopie von text-v2 in scratchpad/a03/ergebnis/arbeit/text-neu/",
+    "wortzahlen": "node authoring/tools/wortbilanz.mjs (nur lesend ausgeführt, kein Build ins Repository)",
+    "werkzeuge": "Python 3.13.16 mit BeautifulSoup 4.15.0; Node v22.22.0",
+    "browser": "keiner; kein Rendering, kein Screenreader, keine Live-Website",
+    "repository_unveraendert": "git status nach Abschluss ohne Änderungen; kein checkout, commit, push oder Build"
+  },
+  "sitzungen": [
+    {"id": "G1", "seiten": ["index", "kurz", "verstehen", "beziehungen", "404"], "unabhaengig": true},
+    {"id": "G2", "seiten": ["rolle", "grenzen", "diagnose"], "unabhaengig": true},
+    {"id": "G3", "seiten": ["behandlung", "kommunizieren"], "unabhaengig": true},
+    {"id": "G4", "seiten": ["krise", "kinder", "jugendliche", "selbstfuersorge"], "unabhaengig": true},
+    {"id": "G5", "seiten": ["genesung", "unterstuetzung", "buecher", "fragen"], "unabhaengig": true},
+    {"id": "G6", "seiten": ["begriffe", "quellen", "suche", "ueber", "impressum-datenschutz", "seitenweite Texte"], "unabhaengig": true},
+    {"id": "Konsolidierung", "aufgabe": "Nachprüfung aller Teilbefunde, Gegenprüfung jeder Ersatzfassung, Gegenprobe Lesefluss, Kalibrierung, Muster, Simulation, Sprachprofil", "unabhaengig": true, "hinweis": "hat weder gebaut noch korrigiert und an keiner Teilprüfung mitgearbeitet"}
+  ],
+  "ergebnis_kurz": {
+    "teilbefunde_eingang": 148,
+    "befunde": 182,
+    "nach_prioritaet": {"P0": 0, "P1": 1, "P2": 41, "P3": 140},
+    "ids": "A03-039 bis A03-220",
+    "ersatzfassungen": {"bestanden": 138, "ueberarbeitet": 30, "neu_aus_konsolidierung": 14, "verworfen": 5},
+    "muster": 12
+  },
+  "hinweise": [
+    "Kein Lesetest mit Menschen: weder mit Angehörigen noch mit Menschen mit Borderline-Erfahrung.",
+    "Keine fachliche, juristische oder Produktionsfreigabe; jede Ersatzfassung braucht die Freigabe des Wortlauts durch die Fachstelle.",
+    "Die Kennzahlen sind Hilfsgrössen ohne Normwerte; sie ersetzen kein Urteil über einzelne Stellen."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "website-audit-v1.2",
+  "lauf_id": "2026-10-16-r3c-a8",
+  "modus": "pruefung",
+  "auftrag": "R3C-A8 aus dem R3 von Release C (audit-results/2026-10-15-release-c-r4-29/R3-BERICHT.md): Visualisierungs-Check und R2 Visualisierung und Laienverständlichkeit, Teil 1 und Teil 2, für 13 Abbildungen und die Tabelle «Sechs Stufen der Validierung»; Teil 3 und Kennzahlen entfallen",
+  "datum": "2026-10-16",
+  "bericht": "authoring/PRUEFBERICHT.md, Abschnitt «Visualisierungs-Check und R2 der Abbildungen nach Release C (R3C-A8, Stand 03cb635)»",
+  "pruefsitzung": "Claude Code; hat die Website weder gebaut noch korrigiert, an keiner früheren Prüfung mitgearbeitet und nichts entschieden; gestartet von der bauenden Sitzung im Auftrag der Auftraggeberin",
+  "projekt": {
+    "repository": "https://github.com/christaegger-dot/borderline-angehoerige",
+    "branch": "claude/r3c-a8-visualisierung-1792132328",
+    "basis": "03cb635",
+    "buildmarker": "r4-34",
+    "diff_basis_release_c": "02dba06 (r4-28)",
+    "diff_basis_r2": "5d5aed4 (Kandidat des R2-K vom 13.10.2026)",
+    "pull_request": "#698 (eröffnet von der bauenden Sitzung)"
+  },
+  "deployment": {
+    "geprueft": "site/ aus 03cb635 über einen lokalen Server auf 127.0.0.1",
+    "produktion": "https://borderline-angehoerige.netlify.app nur gelesen: Text in main der neun Seiten mit Abbildungen und css/site.css gleich wie site/ (nur Pretty URLs der Links verschieden)",
+    "netlify_angefasst": false
+  },
+  "testbedingungen": {
+    "playwright": "1.56.0",
+    "chromium": "141.0.7390.37 (chromium-1194, neuer Headless-Modus, channel 'chromium') für 200 % und Gegenprobe; chromium_headless_shell-1194 für Standardfotos",
+    "breiten_px": [320, 360, 768, 1024, 1280, 1440],
+    "themes": ["Standard", "kontrast (data-theme am html-Element)"],
+    "schrift_200_prozent": "Browser-Einstellung «Schriftgrösse» 32 px über das Browserprofil (webkit.webprefs.default_font_size), Wurzelschrift in allen Messungen und nach jedem Foto geprüft",
+    "verworfen": "erste 200-%-Reihe mit CDP Page.setFontSizes: Playwright setzt den Wert beim Elementfoto zurück"
+  },
+  "umfang": {
+    "abbildungen": 13,
+    "textdarstellungen": 1,
+    "fotos": 133,
+    "fotos_gegenprobe": 28,
+    "fotos_im_repository": 0,
+    "messungen": 284
+  },
+  "ergebnis": {
+    "kritisch": 0,
+    "wichtig": 1,
+    "optional": 10,
+    "querverweise_auf_bekannte_befunde": ["A8-01 = R3C-06 (R29-P10)", "A8-07 = W3C-04 (R29-P09)"],
+    "pruefbedarf": ["A8-11"],
+    "abbildungen_tragen": 11,
+    "abbildungen_ueberarbeiten": ["v-be-kontakt", "v-vs-bewertungen"],
+    "status_spalte_geaendert": false
+  },
+  "nachbesserung": "16.10.2026 nach dem Codex-Review von PR #698: A8-01 als Querverweis auf R3C-06 mit Priorität optional, Prüfbedarf als eigener Eintrag A8-11 (wichtig), dieser Nachweisordner",
+  "nicht_geprueft": ["Lesetest mit Menschen", "fachliche Richtigkeit (Prüfbedarf A8-11)", "reale Screenreader und Geräte", "Firefox und WebKit", "Silbentrennung mit Trennwörterbuch", "Druckansicht"]
+}

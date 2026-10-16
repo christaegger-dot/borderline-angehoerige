@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Stand: 15. Oktober 2026**
+**Stand: 16. Oktober 2026**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -197,7 +197,9 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | --- | --- | --- | --- |
 | R3C-A5 | Codex-Review abschliessen und prüfen; Merge nur auf ausdrücklichen Auftrag (wie R28-O01) | bei #687 nicht eingehalten (siehe «r4-29 veröffentlicht»); gilt weiter für jeden Pull Request | bauende Sitzung, Auftraggeberin |
 | R3C-A6 | Produktionsprüfung r4-29 | erledigt 15.10.2026: bestanden mit Hinweisen (`PRODUKTIONSPRUEFUNG.md`) | Prüfsitzung, die nicht gebaut hat |
-| R3C-A8 | Visualisierungs-Check und R2 für die 12 Abbildungen mit neuem Wortlaut und für `v-ge-forschung` (R27-O02) | 31.10.2026 | Prüfsitzung; Korrekturen nur nach Freigabe |
+| R3C-A8 | Visualisierungs-Check und R2 für die 12 Abbildungen mit neuem Wortlaut und für `v-ge-forschung` (R27-O02) | erledigt 16.10.2026 (PR #698): 11 von 13 Abbildungen tragen, die Validierungstabelle trägt als Text; 1 wichtig (A8-11), 10 optional (A8-01 bis A8-10, davon A8-01 = R3C-06 und A8-07 = W3C-04 als Querverweise). Bericht in `authoring/PRUEFBERICHT.md`, Abschnitt «Visualisierungs-Check und R2 der Abbildungen nach Release C»; Nachweise und Skripte in `audit-results/2026-10-16-r3c-a8/`. Die Spalte «Status» beider Stufen bleibt «erledigt» (Entscheid 16.10.2026); die Korrekturen stehen in A8-K und A8-S | Prüfsitzung |
+| A8-K | Korrekturrunde aus R3C-A8: (1) A8-01 (= R3C-06, «Behandlungstea / m» bei 1280 und 1440 px in `v-be-kontakt`) technisch beheben, ohne neuen Wortlaut und ohne den Profilentscheid R29-P10 abzuwarten; (2) A8-02 (Bezug von «davon»), A8-08 («Garantie» statt «Versprechen») und A8-09 («zum Beispiel» an Stelle 2 der Anspannungskurve) mit genauem Wortlaut zur Freigabe vorlegen; (3) A8-11 (Suizidversuche unter «Impulsive Handlungen» in `v-ge-forschung`, Wortlaut vom 14.10.2026): Varianten vorlegen, die Fachstelle entscheidet am Wortlaut; (4) danach Nachprüfung durch eine Prüfsitzung, die nicht gebaut hat (1280, 1440 und 360 px, 200 %, Skripte aus `audit-results/2026-10-16-r3c-a8/skripte/`) | 31.10.2026 | bauende Sitzung; Freigabe: Auftraggeberin (Fachstelle); Nachprüfung: Prüfsitzung |
+| A8-S | Gesammelte optionale Befunde aus R3C-A8, ohne Frist: A8-03 (Kurztext von `v-ko-tassen` ohne «links … rechts»), A8-04 (Oberkante der Kindkarte in `v-ki-alltag`, «Verantwortung für Krisen»), A8-05 (Spaltentitel und Kurztext von `v-ge-forschung`), A8-06 (Einleitung der Validierungstabelle), «überarbeiten» für `v-vs-bewertungen` (Variante 1 aus dem R2 vom 13.10.2026). A8-07 gehört zu R29-P09, A8-10 zu R29-P10 | offen | bauende Sitzung, Freigabe |
 | R3C-A9 | Suchlücken schliessen: «Selbstmordgedanken», «Selbstmordversuch», «lebensmüde», «Todeswunsch», «Suizidandrohung», «Überdosis» u. a. ohne Treffer; «er droht mich umzubringen» auf Gewalt statt Suizid; Anfragen festschreiben | in r4-30 umgesetzt; festgeschrieben in `authoring/tests/suche-ersttreffer.tsv` (317 Anfragen); Tötungsverben nach Teilsatz, Sprecher und Objekt gewertet, mit Suizid-Vorrang bei «sich», Suizid-Phrasen und Suizidwörtern (D30-09, D30-13, D30-16 bis D30-20, Codex P1 auf #689); veröffentlicht mit r4-30 (#689) und in der Produktion nachgeprüft; Suchregel ergänzt in r4-31 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
 | R3C-A10 | Drei Links auf «Quellen» entfernen (Forensic Nurses, Opferhilfe «Schutz», Pro Juventute), nach D30-02 auch EBG-Blatt A1; Angabe bleibt als Text, Linkregel bleibt | in r4-30 umgesetzt; veröffentlicht mit r4-30 (#689) und in der Produktion nachgeprüft; Suchregel ergänzt in r4-31 | bauende Sitzung |
 | R3C-A11 | Selbsttest des Gates auf diese Website umstellen, Aufruf über Schalter und CI; R3 im Gate an die Änderungsrunde binden (W3C-07, R3C-04) | 13.11.2026 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
@@ -209,8 +211,8 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | R29-P06 | Stellen mit Platzbedarf aus S: «Remission» und DBT, MBT, TFP auf «Fragen», DSM-5-TR und ICD-11 im Glossar, zwei Verweise auf «Grenzen setzen» | offen | bauende Sitzung, Freigabe |
 | R29-P07 | Quellenzuordnung: äussere Zeichen der Anspannungskurve; Mason und Kreger auf «Auf sich achten» | offen | bauende Sitzung, Freigabe |
 | R29-P08 | Angebote für junge Erwachsene auf «Behandlung» (M5.5) | offen | Auftraggeberin |
-| R29-P09 | W3C-04 Validierungstabelle: ARIA-Rollen, doppelte Ansage, Container-Abfrage | Profilentscheid | Auftraggeberin (Profil) |
-| R29-P10 | W3C-05 Silbentrennung in Überschriften und `-webkit-hyphens` (dazu R3C-06 «Behandlungsteam») | Profilentscheid | Auftraggeberin (Profil) |
+| R29-P09 | W3C-04 Validierungstabelle: ARIA-Rollen, doppelte Ansage, Container-Abfrage (dazu A8-07: bei 200 % Schrift ab 761 px waagrechtes Scrollen) | Profilentscheid | Auftraggeberin (Profil) |
+| R29-P10 | W3C-05 Silbentrennung in Überschriften und `-webkit-hyphens` (dazu R3C-06 «Behandlungsteam», seit 16.10.2026 technisch in A8-K; A8-10: Wortbrüche in drei Kernaussagen bei 768 px mit 200 %, Vorschlag der Prüfsitzung: W3C-05 auf Kernaussagen und Schrittlisten ausdehnen) | Profilentscheid | Auftraggeberin (Profil) |
 | R29-P11 | W3C-07 Selbsttest (siehe R3C-A11) | 13.11.2026 | bauende Sitzung |
 | R29-P12 | W3C-10 Kopfbereich auf dem Smartphone (`NAV_MAX`) | Profilentscheid | Auftraggeberin (Profil) |
 | R29-P13 | W3C-11 Strategie für `aria-label` an Inhaltslinks | Wartung | bauende Sitzung |
@@ -231,6 +233,16 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | R32-P01 | Codex P2 auf #694: Sollen Drohungen gegen Sohn oder Tochter («Er droht, meine Tochter umzubringen») wie Drohungen gegen «die Kinder» zuerst auf «Kinder» › «Bei Eskalation, Gewalt oder fehlender Betreuung» gehen? Heute: Gewalt › Suizid. Offen ist, ob auch erwachsene Söhne und Töchter gemeint sind. | entschieden 15.10.2026: «Nein, so lassen» (Kinder-Abschnitt für minderjährige Kinder) | – |
 | R34-P01 | Stopp-Regel ab r4-34 (Entscheid vom 15.10.2026, «r4-32, Suizid unter Top 2»), ersetzt R31-P03: Bezugsstand r4-32 (`37b963f`). Ein Codex-Befund zur Suchregel blockiert nur in drei Fällen: Bei einer Anfrage mit Tötungswort fällt Suizid aus den ersten zwei Treffern (ausser Kinder stehen zuerst), eine Anheftung geht verloren, oder eine klare Ich-Aussage hat keinen Treffer. Andere Befunde werden gemeldet und kommen in den nächsten Patch. Gemergt wird erst nach der Meldung der bauenden Sitzung («PR, Merge nach Meldung»). | ab sofort | bauende Sitzung, Prüfsitzung, Auftraggeberin |
 | R34-P02 | Nicht blockierende Befunde aus dem Codex-Review von #696 für den nächsten Patch: «Er tötete sein kleines Kind» und «Er tötete die beiden Kinder» ohne Kinder zuerst (Adjektive, Zahlwörter vor «Kind»); «Ich tötete die Kinder» und «Ich töte meine Kinder» ohne Kinder zuerst (Ich-Form als Täterin gegen Ich-Form reflexiv); «weil ihr euch umbrachtet» mit Gewalt vor Suizid («ihr … euch» wie «du … dich»); «Mein Mann bringt mich in der Wohnung, die er gemietet hat, um» ohne Treffer (Relativsatz, wie in r4-32). Dazu bekannte Fehlanheftungen ohne Satzzeichen wie in r4-32 («die Therapie bringt nichts ich mache mir Sorgen um sie», «Er bringt die Kinder und zieht sich um») und der konstruierte Satz «Er bringt mich nach dem Streit in der Küche er sagt es um». | nächster Patch | bauende Sitzung; Prüfsitzung |
+
+Entscheide der Auftraggeberin vom 16. Oktober 2026 zu R3C-A8 (Antworten wörtlich):
+
+- A8-01: «Technisch, Wortlaut bleibt»
+- Spalte «Status» bis zur Korrektur von A8-01: «Bleibt ‹erledigt›, Pendenz»; dieselbe Antwort, gesondert gefragt, für A8-11, nachdem A8-01 als Querverweis auf R3C-06 optional wurde
+- A8-11 (vorher Prüfbedarf in A8-05): «Varianten vorlegen»
+- optionale Befunde: «Drei Rückschritte jetzt» (A8-02, A8-08, A8-09 mit A8-01, die übrigen gesammelt)
+- Frist der Korrekturrunde: «31.10.2026»
+
+Das Codex-Review von PR #698 hatte vorgeschlagen, beide Stufen bis zur Lösung von A8-01 und A8-05 auf «offen» zu setzen (P1). Die Auftraggeberin hat stattdessen die Empfehlung der bauenden Sitzung gewählt. Deren Begründung: Beide Stellen sind schon veröffentlicht (der Wortbruch aus R3C-06 spätestens seit r4-28, der Satz zu A8-11 seit Release B), und eine offene Stufe blockiert jede Veröffentlichung.
 
 ### r4-22 · visuelle Befunde A04-008 bis A04-013, abgeschlossen
 

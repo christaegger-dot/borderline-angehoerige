@@ -59,7 +59,8 @@ Geprüft von G6, nachgeprüft in der Konsolidierung. 18 Befunde (A03-203–220).
 - jede Ersatzfassung mit dem Block davor und danach in der Lesefassung;
 - die Gegenprobe zum Lesefluss in 70 Abschnitten (Auswahl nach Kennzahlen, `ergebnis/arbeit/gegenprobe-ergebnis.csv`);
 - den Musterabgleich über alle Seiten für M-01, M-09, M-10 und M-12 (Suche nach dem Muster im ganzen Text) und für die übrigen Muster beim Lesen;
-- die Simulation aller Ersatzfassungen auf einer Kopie der Lesefassung (`ergebnis/arbeit/text-neu/`).
+- die Simulation aller Ersatzfassungen auf einer Kopie der Lesefassung (`ergebnis/arbeit/text-neu/`);
+- bei der Nachbesserung vom 16.10.2026 (Codex-Review von #700): die Grundlage jedes Befunds (Spalte `quelle`, jedes Kürzel gegen `QUELLEN.csv`), jede Ersatzfassung in Sicherheits-, Schutz- und Rechtsabschnitten auf verschobene Verbindlichkeit oder Zuständigkeit und die geerbten Texte der aufgeteilten Befunde; nach dem Review statt Codex zu #701 zusätzlich die Spaltenzahl jeder Zeile in allen CSV des Ordners.
 
 ## Nicht geprüft
 

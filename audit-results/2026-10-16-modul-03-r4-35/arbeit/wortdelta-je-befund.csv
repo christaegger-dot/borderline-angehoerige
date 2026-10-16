@@ -1,0 +1,183 @@
+id;vorl_id;seite;prioritaet;woerter_original;woerter_ersatz;delta
+A03-039;G1-001;index;P3;9;8;-1
+A03-040;G1-002;index;P3;12;18;6
+A03-041;G1-003;kurz;P3;29;30;1
+A03-042;G1-004;kurz;P3;22;27;5
+A03-043;G1-005;kurz;P3;6;5;-1
+A03-044;G1-006;verstehen;P3;14;14;0
+A03-045;G1-008;verstehen;P3;7;4;-3
+A03-046;G1-013;verstehen;P3;47;47;0
+A03-047;G1-009;verstehen;P3;15;17;2
+A03-048;G1-010;verstehen;P3;12;15;3
+A03-049;G1-011;verstehen;P2;40;41;1
+A03-050;G1-012;verstehen;P3;11;16;5
+A03-051;G1-014;beziehungen;P2;6;8;2
+A03-052;G1-015;beziehungen;P3;23;23;0
+A03-053;G1-016;beziehungen;P3;36;24;-12
+A03-054;G1-017;beziehungen;P3;17;20;3
+A03-055;G1-018;beziehungen;P3;25;24;-1
+A03-056;G2-001;rolle;P3;9;8;-1
+A03-057;G2-002;rolle;P3;16;18;2
+A03-058;G2-003;rolle;P2;73;85;12
+A03-059;G2-004;rolle;P3;38;41;3
+A03-060;G2-005;rolle;P3;11;15;4
+A03-061;G2-006;rolle;P3;28;28;0
+A03-062;G2-007;rolle;P3;65;69;4
+A03-063;G2-008;rolle;P3;29;33;4
+A03-064;G2-009;rolle;P3;37;38;1
+A03-065;G2-010;rolle;P3;29;30;1
+A03-066;G2-011;rolle;P2;49;49;0
+A03-067;G2-012;rolle;P3;13;17;4
+A03-068;G2-014;grenzen;P3;61;61;0
+A03-069;G2-015;grenzen;P2;21;22;1
+A03-070;G2-016;grenzen;P3;44;40;-4
+A03-071;G2-017;grenzen;P3;2;2;0
+A03-072;G2-018;grenzen;P3;63;64;1
+A03-073;G2-019;grenzen;P3;45;36;-9
+A03-074;G2-020;grenzen;P3;2;5;3
+A03-075;G2-021;grenzen;P3;26;29;3
+A03-076;G2-022;grenzen;P3;37;38;1
+A03-077;G2-023;grenzen;P3;13;19;6
+A03-078;G2-025;diagnose;P3;30;40;10
+A03-079;G2-026;diagnose;P3;12;13;1
+A03-080;G2-027;diagnose;P3;27;30;3
+A03-081;G2-028;diagnose;P3;26;30;4
+A03-082;G2-029;diagnose;P3;11;18;7
+A03-083;G3-001;behandlung;P2;34;36;2
+A03-084;G3-002;behandlung;P2;20;24;4
+A03-085;G3-003 (a);behandlung;P3;35;37;2
+A03-086;G3-004;behandlung;P3;8;17;9
+A03-087;G3-003 (b);behandlung;P3;13;13;0
+A03-088;G3-006;behandlung;P2;26;25;-1
+A03-089;G3-007;behandlung;P2;7;16;9
+A03-090;G3-008;behandlung;P3;22;26;4
+A03-091;G3-009;behandlung;P3;62;66;4
+A03-092;G3-010;behandlung;P3;10;17;7
+A03-093;G3-011;behandlung;P2;15;14;-1
+A03-094;G3-012;behandlung;P3;23;27;4
+A03-095;G3-013;kommunizieren;P3;8;14;6
+A03-096;G3-015;kommunizieren;P3;41;41;0
+A03-097;G3-016;kommunizieren;P2;50;49;-1
+A03-098;G3-018;kommunizieren;P3;51;57;6
+A03-099;G3-019;kommunizieren;P3;9;8;-1
+A03-100;K-08;kommunizieren;P3;29;29;0
+A03-101;G3-020;kommunizieren;P3;19;21;2
+A03-102;G3-021;kommunizieren;P3;33;32;-1
+A03-103;G3-022 (a);kommunizieren;P2;24;26;2
+A03-104;G3-022 (b);kommunizieren;P2;13;10;-3
+A03-105;K-09;kommunizieren;P3;16;16;0
+A03-106;G3-023;kommunizieren;P3;25;24;-1
+A03-107;G4-006;krise;P3;16;17;1
+A03-108;G4-001;krise;P2;14;18;4
+A03-109;G4-005;krise;P3;23;23;0
+A03-110;G4-002 (a);krise;P3;25;26;1
+A03-111;G4-002 (b);krise;P3;14;14;0
+A03-112;G4-002 (c);krise;P3;16;14;-2
+A03-113;G4-004;krise;P3;31;20;-11
+A03-114;G4-007 (a);krise;P2;31;35;4
+A03-115;G4-007 (b);krise;P3;22;23;1
+A03-116;G4-003 (a);krise;P3;5;8;3
+A03-117;G4-003 (b);krise;P2;11;15;4
+A03-118;K-10;krise;P3;13;19;6
+A03-119;G4-008 (a);kinder;P2;19;21;2
+A03-120;G4-008 (b);kinder;P2;31;33;2
+A03-121;G4-009;kinder;P2;13;13;0
+A03-122;G4-010 (a);kinder;P2;9;9;0
+A03-123;G4-010 (b);kinder;P2;16;16;0
+A03-124;G4-010 (c);kinder;P2;15;15;0
+A03-125;G4-011;jugendliche;P2;15;15;0
+A03-126;G4-012;jugendliche;P2;32;34;2
+A03-127;G4-013;jugendliche;P3;30;30;0
+A03-128;G4-014;jugendliche;P3;21;21;0
+A03-129;G4-018;selbstfuersorge;P3;40;40;0
+A03-130;G4-016;selbstfuersorge;P2;53;59;6
+A03-131;G4-015;selbstfuersorge;P3;17;15;-2
+A03-132;G4-017;selbstfuersorge;P3;8;7;-1
+A03-133;G4-019;selbstfuersorge;P3;43;42;-1
+A03-134;G5-001 (a);genesung;P3;27;37;10
+A03-135;G5-002;genesung;P2;19;24;5
+A03-136;G5-001 (b);genesung;P3;10;0;-10
+A03-137;G5-003;genesung;P3;41;45;4
+A03-138;G5-004;genesung;P3;11;14;3
+A03-139;G5-005;genesung;P3;12;13;1
+A03-140;K-07;genesung;P3;22;23;1
+A03-141;G5-006 (a);genesung;P2;5;4;-1
+A03-142;G5-006 (b);genesung;P2;9;9;0
+A03-143;G5-006 (c);genesung;P3;46;45;-1
+A03-144;G5-009;genesung;P3;11;10;-1
+A03-145;G5-007 (a);genesung;P2;9;10;1
+A03-146;G5-008;genesung;P3;6;7;1
+A03-147;G5-010;genesung;P3;39;43;4
+A03-148;G5-011;genesung;P2;51;51;0
+A03-149;G5-012;genesung;P3;10;12;2
+A03-150;G5-014;unterstuetzung;P2;21;20;-1
+A03-151;G5-015;unterstuetzung;P3;15;14;-1
+A03-152;G5-016;unterstuetzung;P3;24;24;0
+A03-153;K-12;unterstuetzung;P3;13;13;0
+A03-154;K-13;unterstuetzung;P3;18;15;-3
+A03-155;G5-017;buecher;P3;10;14;4
+A03-156;G5-019;buecher;P3;10;12;2
+A03-157;G5-020;buecher;P3;10;16;6
+A03-158;G5-021 (a);buecher;P3;29;27;-2
+A03-159;G5-021 (b);buecher;P3;26;25;-1
+A03-160;G5-021 (c);buecher;P3;37;40;3
+A03-161;G5-021 (d);buecher;P3;32;36;4
+A03-162;K-04;fragen;P3;30;33;3
+A03-163;K-05;fragen;P3;50;54;4
+A03-164;G5-023;fragen;P2;11;20;9
+A03-165;G5-025;fragen;P2;25;25;0
+A03-166;G5-026;fragen;P3;25;28;3
+A03-167;G5-027;fragen;P2;36;50;14
+A03-168;G5-028;fragen;P2;46;44;-2
+A03-169;G5-029;fragen;P3;14;16;2
+A03-170;G5-024;fragen;P3;22;35;13
+A03-171;G5-030;fragen;P3;20;19;-1
+A03-172;K-06;fragen;P3;9;9;0
+A03-173;G5-031;fragen;P3;9;12;3
+A03-174;G6-002;begriffe;P2;23;37;14
+A03-175;K-01;begriffe;P3;17;18;1
+A03-176;G6-005 (a);begriffe;P3;42;44;2
+A03-177;G6-005 (b);begriffe;P3;30;33;3
+A03-178;G6-001;begriffe;P1;27;29;2
+A03-179;K-02;begriffe;P3;7;7;0
+A03-180;G6-006;begriffe;P3;22;25;3
+A03-181;G6-007 (a);begriffe;P3;54;54;0
+A03-182;G6-007 (b);begriffe;P3;22;22;0
+A03-183;G6-003;begriffe;P2;56;66;10
+A03-184;K-03;begriffe;P2;20;21;1
+A03-185;G6-008;begriffe;P3;41;41;0
+A03-186;G6-004;begriffe;P2;13;15;2
+A03-187;G6-010 (a);quellen;P3;17;18;1
+A03-188;G6-009 (a);quellen;P3;30;35;5
+A03-189;G6-009 (b);quellen;P3;26;31;5
+A03-190;G6-009 (c);quellen;P2;42;58;16
+A03-191;G6-012 (a);quellen;P3;31;44;13
+A03-192;G6-012 (b);quellen;P3;34;37;3
+A03-193;G6-013;quellen;P3;25;27;2
+A03-194;G6-011;quellen;P3;24;28;4
+A03-195;G6-014 (a);quellen;P3;13;13;0
+A03-196;G6-014 (b);quellen;P3;8;8;0
+A03-197;G6-014 (c);quellen;P3;10;10;0
+A03-198;G6-015;suche;P3;20;19;-1
+A03-199;K-11;ueber;P3;34;30;-4
+A03-200;G6-017;ueber;P3;15;19;4
+A03-201;G6-019;impressum-datenschutz;P3;6;5;-1
+A03-202;G6-018;impressum-datenschutz;P3;55;57;2
+A03-203;G1-020;seitenweit;P3;26;28;2
+A03-204;"G1-019; G6-023 (beziehungen)";seitenweit;P3;19;26;7
+A03-205;G2-013;seitenweit;P3;28;33;5
+A03-206;"G2-024; G6-023 (grenzen)";seitenweit;P3;36;42;6
+A03-207;"G2-030; G6-022 (diagnose)";seitenweit;P3;39;40;1
+A03-208;"G3-024; G6-022 (kommunizieren)";seitenweit;P3;26;29;3
+A03-209;G6-022 (krise);seitenweit;P3;32;40;8
+A03-210;K-14;seitenweit;P3;36;41;5
+A03-211;G6-023 (selbstfuersorge);seitenweit;P3;21;23;2
+A03-212;"G5-013; G6-023 (genesung)";seitenweit;P3;26;27;1
+A03-213;"G5-022; G6-023 (buecher)";seitenweit;P3;17;19;2
+A03-214;G6-023 (fragen);seitenweit;P3;13;16;3
+A03-215;G6-010 (b);seitenweit;P3;7;11;4
+A03-216;G6-023 (suche);seitenweit;P3;13;20;7
+A03-217;G6-023 (impressum);seitenweit;P3;24;25;1
+A03-218;"G3-005; G6-020";seitenweit;P2;12;18;6
+A03-219;G6-021;seitenweit;P3;7;15;8
+A03-220;G6-016;seitenweit;P3;11;16;5

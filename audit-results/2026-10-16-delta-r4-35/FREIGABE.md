@@ -92,3 +92,16 @@ Erst danach setzt die bauende Sitzung `independentReview` auf «bestaetigt» und
   - `--verify-site` meldet «PARITÄT BESTANDEN: 34 Dateien byte-gleich mit site/».
   - Der Suchtest auf `site/` ergibt «216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0».
   - `site/` ist bytegleich mit dem Entwurf `dist/b52`, an dem die Prüfsitzung die Abschlussbestätigung gemacht hat.
+
+## Nachtrag 2 · Veröffentlichung und Produktionsprüfung (16.10.2026)
+
+- **Codex-Review von #699:** auf dem Stand `ff5016b`, abgeschlossen um 10:19:59 UTC, ohne Befund. Danach meldete die bauende Sitzung «mergen».
+- **Merge:** #699 wurde um 16:57:03 UTC gemergt (Merge-Commit `8bbc8aa`), also nach dem Review und nach der Meldung. R28-O01 und R29-P20 sind eingehalten. Der Inhalt ist gleich `ff5016b`.
+- **Deploy:** Netlify veröffentlichte den Deploy `6ad25762cfc3b8d0e814847a` zu `8bbc8aa` um 16:57:17 UTC; nur lesend abgefragt.
+- **Produktionsprüfung (R35-P01):** in einer eigenen Sitzung, die nicht gebaut hat, von 16:59:48 bis 17:11:58 UTC (`PRODUKTIONSPRUEFUNG.md`). Ergebnis: **bestanden**, kein Befund.
+  - 46 von 46 Dokumenten tragen r4-35.
+  - Die fünf freigegebenen Stellen stehen wörtlich so, der alte Wortlaut kommt 0-mal vor.
+  - `css/site.css` und `js/interaktion.js` sind bytegleich mit `site/` aus `ff5016b`.
+  - `v-be-kontakt` zeigt bei 1280 und 1440 px keinen Wortbruch (12 Ansichten).
+  - Suche: 216 von 216 über die Pretty URLs, 17 von 17 Handproben.
+  - 0 `tel:`, kein Notfallblock.

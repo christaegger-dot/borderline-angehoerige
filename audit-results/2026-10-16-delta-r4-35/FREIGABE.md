@@ -75,3 +75,20 @@ Eine Sitzung, die nicht gebaut hat, prüft r4-35 nach. Sie prüft:
 - die Suche.
 
 Erst danach setzt die bauende Sitzung `independentReview` auf «bestaetigt» und schreibt den Produktionsexport nach `site/`.
+
+## Nachtrag 1 · Unabhängige Prüfung und Produktionsexport (16.10.2026)
+
+- **Prüfung:** Die Prüfsitzung, die R3C-A8 gemacht und r4-35 nicht gebaut hat, prüfte den Stand `56f29e1`. Urteil: «freigabefähig mit Auflagen» (`PRUEFUNG.md`, Commit `692bf37`).
+  - Wortlaut, CSS, 312 Ansichten je Stand, Fotos, Visualisierungs-Check 1 bis 19 der vier Figuren, A8-11 und die Suche sind ohne Befund.
+  - Einzige Auflage R35-01: Die Buildkennung `BUILD` in `authoring/tools/contract.js` und der Kopfkommentar von `authoring/css/site.css` standen noch auf r4-34.
+- **Korrektur:** Beide Stellen stehen jetzt auf r4-35 (`b52e875`).
+- **Abschlussbestätigung:** Stand `b52e875`, Urteil «freigabefähig» (`PRUEFUNG.md`, Commit `0e6c7dd`).
+  - Nur die zwei Zeilen haben sich geändert.
+  - Alle 23 Seiten tragen r4-35.
+  - Mit «bestaetigt» meldet der Produktionsbuild 0 Blocker und 0 Hinweise.
+- **Freigabe in `site.config.json`:** `releaseApproval.independentReview` steht danach auf «bestaetigt», `reviewedAt` auf 2026-10-16, und `reviewScope` nennt die Prüfung.
+- **Export:**
+  - `node authoring/tools/build.mjs --production --out=site --write-site` meldet «23 Seiten · 0 Blocker · 0 Hinweise».
+  - `--verify-site` meldet «PARITÄT BESTANDEN: 34 Dateien byte-gleich mit site/».
+  - Der Suchtest auf `site/` ergibt «216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0».
+  - `site/` ist bytegleich mit dem Entwurf `dist/b52`, an dem die Prüfsitzung die Abschlussbestätigung gemacht hat.

@@ -127,3 +127,25 @@ Im Scratchpad der Prüfsitzung (`/tmp/claude-0/-home-claude/5152fc6f-3c7f-59d2-a
 - Suche: `such/suchtest-56f29e1.txt`, `such/suchtest-site-baf366d.txt`.
 - Build: `prodcopy/` (`git archive 56f29e1`), `prod-ausstehend.log`, `prod-bestaetigt.log`, `prod-b35.log` (Gegenprobe mit `BUILD` r4-35), `prod.sha`, `draft.sha`.
 - Entwurf: `/home/claude/borderline-angehoerige/dist/site` (von `.gitignore` erfasst).
+
+## Abschlussbestätigung (Stand b52e875)
+
+| | |
+| --- | --- |
+| Stand | Branch `claude/a8k-korrektur-1792143386`, Commit `b52e875` («r4-35: Buildkennung nachgezogen (R35-01)»), auf `origin` gleich (`git fetch`, `git ls-remote`), direkt auf meinem Commit `692bf37` |
+| Prüfobjekt | eigener Entwurf `node authoring/tools/build.mjs --out=dist/b52` aus `b52e875`, verglichen mit dem Entwurf aus `56f29e1` |
+| Zeitpunkt | 16.10.2026, etwa 12:15 bis 12:25 MESZ |
+
+**Urteil: freigabefähig.** R35-01 ist erfüllt, die Auflage entfällt. `independentReview` kann auf «bestaetigt» gesetzt werden. Die Bestätigung gilt für den Inhalt von `b52e875`.
+
+| Punkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| 1 Diff | **erfüllt** | `git diff 692bf37 b52e875`: 2 Dateien, je 1 Zeile. In `authoring/tools/contract.js`, Zeile 11, steht jetzt `const BUILD = 'r4-35';`. In `authoring/css/site.css`, Zeile 1, sagt der Kopfkommentar jetzt «Build r4-35». Sonst ist nichts geändert, auch `PRUEFUNG.md` nicht. |
+| 2 Entwurf | **erfüllt** | «Build draft: 23 Seiten · 0 Blocker · 1 Hinweise»; einziger Hinweis `change-review`. 23 von 23 Seiten tragen `data-puk-site-build="r4-35"`, alle mit 46 × `?v=r4-35`. Verglichen mit dem Entwurf aus `56f29e1` (34 gleiche Dateipfade) sind 24 Dateien anders: Die 23 Seiten unterscheiden sich nur in `data-puk-site-build` (je 1-mal), `css/site.css` nur in der ersten Zeile. Die übrigen 10 Dateien sind bytegleich. `node --check js/interaktion.js` ohne Fehler, 0 `tel:`. Suchtest auf `dist/b52`: «216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0». |
+| 3 Produktion in der Kopie | **erfüllt** | Kopie ausserhalb des Repositorys (`git archive b52e875`). Mit «ausstehend» ist die Produktion blockiert («BLOCK \| site \| change-review», Exit 1). Mit «bestaetigt» meldet sie «Build production: 23 Seiten · 0 Blocker · 0 Hinweise», Exit 0. Die Ausgabe ist bytegleich mit `dist/b52` (SHA-256 von 34 Dateien gleich). |
+
+**Hinweis zum Vergleich:** `dist/site` ist um 12:14:50 MESZ neu gebaut worden, nicht von mir, und trägt jetzt r4-35. Als Bezug für `56f29e1` diente deshalb `prodcopy/dist/site` im Scratchpad. Dessen SHA-256-Liste ist gleich `draft.sha`, also gleich meinem Entwurf aus `56f29e1`. Der Punkt «Entwurf» unter «Belege» oben meint diesen früheren Stand von `dist/site`.
+
+**Belege** (Scratchpad wie oben, `…/scratchpad/r435/`): `entwurf-b52.log`, `draft-b52.sha`, `prodcopy-b52/` (`git archive b52e875`), `prod-b52-ausstehend.log`, `prod-b52-bestaetigt.log`, `prod-b52.sha`, `such/suchtest-b52e875.txt`. Den Entwurf `/home/claude/borderline-angehoerige/dist/b52` erfasst `.gitignore`.
+
+**Vor dem Merge** bleibt die Reihenfolge wie oben: `independentReview` auf «bestaetigt» setzen, den Produktionsexport nach `site/` mit `--verify-site` schreiben, dann Pull Request und Codex-Review auf dem exportierten Kopf.

@@ -8,6 +8,8 @@ Das Profil gilt für alle Texte der Website: Seitentexte, Navigation, Überschri
 
 Status: Entwurf aus dem Audit. Verbindlich wird das Profil, wenn die Fachstelle Angehörigenarbeit PUK es freigibt. Die Entscheide E7 und E9, der Entscheid «Kein Krisenzugang» und freigegebene Wortlaute aus den Releases gehen ihm vor.
 
+Nachbesserung am 16.10.2026 nach dem Codex-Review von #700: Regel zu Verbindlichkeit und Zuständigkeit (Abschnitte 4 und 12), Prüffrage 10, Hinweise zu den Beispielen in Abschnitt 10 und 14.
+
 ## 2. Leserin und Leser
 
 Es lesen Partnerinnen und Partner, Mütter und Väter, erwachsene Kinder, Geschwister, Freundinnen und Freunde von Menschen mit Borderline, dazu Fachpersonen, die Angehörige beraten. Viele lesen in einer belasteten Lage: nach einem Streit, spät am Abend, mit wenig Kraft, oft auf dem Handy. Viele steigen über die Suche mitten in einer Seite ein und haben den Anfang nicht gelesen. Psychologische, psychiatrische oder juristische Vorkenntnisse setzt die Website nicht voraus. Manche Leserinnen und Leser sind selbst erkrankt oder unsicher, ob sie es sind; die Website spricht sie als Angehörige an und urteilt nicht über sie.
@@ -24,6 +26,7 @@ Sie klingt nicht wie ein Lehrbuch, ein Therapiemanual, ein Amtsschreiben oder ei
 - Gesprächsbeispiele in der Anrede der Beziehung, unter Angehörigen «du». Ein Kind wird mit «du» angesprochen, die Fachperson im Musterbrief mit «Sie».
 - Allgemeine Aussagen über Angehörige stehen in der dritten Person oder mit «man»; sie dürfen den Lesenden kein Gefühl zuschreiben. Vorher: «Viele Angehörige erleben gemischte Gefühle: Sie wollen helfen und möchten zugleich weg …» Nachher: «… Man will helfen und möchte zugleich weg …» (A03-066).
 - **«Sie» am Satzanfang** ist in einem Sie-Text zuerst Anrede. Nimmt der Satz ein Nomen im Plural oder eine dritte Person auf, steht das Nomen oder «Diese …». Vorher: «Die folgenden Anzeichen können bei Überlastung auftreten. Sie können aber auch andere körperliche oder psychische Ursachen haben.» Nachher: «Die folgenden Anzeichen können bei Überlastung auftreten, aber auch andere körperliche oder psychische Ursachen haben.» (A03-131)
+- Wo eine Aufgabe ausdrücklich bei mehreren Personen liegt («Bei akuter Gefahr holen Erwachsene sofort Hilfe»), bleibt die dritte Person, auch wenn der Text sonst «Sie» sagt. Mit «Sie» übernähmen die Lesenden die Aufgabe allein; das entscheidet die Fachstelle (A03-122 bis A03-124, Prüfbedarf).
 
 ## 5. Satzbau und Rhythmus
 
@@ -138,9 +141,9 @@ Zu vermeiden sind:
 - **Kennzeichnung.** «So könnte es klingen» oder «Zum Beispiel:»; Gegenüberstellungen in der Komponente `.puk-say` mit den Labels «Eher problematisch» und «Eher hilfreich». Auf «Genesung» stehen freigegeben «Weniger hilfreich» und «Tragfähiger»; auf einer Seite wird nur ein Paar verwendet.
 - **Laut-Lese-Probe.** Jedes Beispiel wird laut gesprochen: Würde eine Mutter, ein Partner oder eine Schwester das in dieser Lage so sagen? Vorher: «Ich höre, dass du enttäuscht bist. Ich sehe die Situation anders.» Nachher: «Du klingst enttäuscht. Ich sehe die Situation anders.» (A03-104)
 - **Keine Formeln.** Nicht «Ich höre, dass …», nicht «Das klingt … belastend» in jedem zweiten Beispiel, kein «– aber» zwischen Zuwendung und Grenze. Vorher: «Ich bin für dich da – aber ich kann das Problem nicht für dich lösen.» Nachher: «Ich bin für dich da. Lösen kann ich das Problem nicht für dich.» (A03-097)
-- **Keine Amtswörter.** «Elternteil», «tragfähige Lösung», «Erwachsene kümmern sich» gehören nicht in gesprochene Sätze. Vorher: «Du bist nicht schuld. Erwachsene kümmern sich um Hilfe und um dich.» Nachher: «Du bist nicht schuld. Wir Erwachsenen sorgen für Hilfe und kümmern uns um dich.» (A03-119)
+- **Keine Amtswörter.** «Elternteil», «tragfähige Lösung», «Erwachsene kümmern sich» gehören nicht in gesprochene Sätze. Vorher: «Du bist nicht schuld. Erwachsene kümmern sich um Hilfe und um dich.» Nachher: «Du bist nicht schuld. Wir Erwachsenen sorgen für Hilfe und kümmern uns um dich.» (A03-119). Mit «wir» sagt die sprechende Person selbst zu, sich zu kümmern; diese Fassung braucht die fachliche Bestätigung. Ohne sie bleibt die dritte Person: «Erwachsene sorgen für Hilfe und kümmern sich um dich.»
 - **Konkrete Personen.** Im Beispiel spricht man von «meinem Bruder», nicht von «der anderen Person» (A03-133).
-- **Zusagen nur im realen Umfang.** Ein Beispiel hebt die eigene Grenze nicht im nächsten Satz wieder auf. Vorher: «Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu.» Nachher: «Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es dir dann sehr schlecht geht, wende dich an die Stelle aus deinem Krisenplan.» (A03-130)
+- **Zusagen nur im realen Umfang.** Ein Beispiel hebt die eigene Grenze nicht im nächsten Satz wieder auf. Vorher: «Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu.» Nachher: «Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es dir dann sehr schlecht geht, wende dich an die Stelle aus deinem Krisenplan.» (A03-130). Der Wortlaut ist auf «Grenzen setzen» freigegeben; hier legt er den nächsten Schritt neu fest und braucht deshalb die fachliche Bestätigung.
 - **Keine Absicherung im Beispiel.** «Möglicher Wortlaut, keine Erfolgsgarantie» gehört nicht in den Beispielsatz.
 - **Keine erfundenen Gewaltsätze.** Beispiele zu Gewalt, Töten oder Suizid werden nicht neu erfunden; wo nötig, wird Originaltext zitiert.
 
@@ -161,6 +164,7 @@ Zu vermeiden sind:
 - **E7.** Der Zuständigkeitssatz steht im Text höchstens einmal je Seite und nur auf Seiten zu Selbstgefährdung, Gewalt oder akuter Krise.
 - Schutzhinweise stehen bei der Handlung, auf die sie sich beziehen, nicht gesammelt am Seitenende.
 - Freigegebene Sicherheitswortlaute (etwa zu Suizidgedanken und Selbstverletzung auf «Krisen begleiten») werden nur mit Freigabe geändert, auch wenn es sprachlich glatter ginge.
+- **Verbindlichkeit und Zuständigkeit bleiben.** In Sicherheits-, Schutz- und Rechtssätzen bleibt eine Erlaubnis eine Erlaubnis und eine Aufforderung eine Aufforderung. Aus «kann» wird keine Pflicht, und eine Aufgabe, die bei «Erwachsenen», bei Fachpersonen oder bei «wir» liegt, geht nicht stillschweigend an die Lesenden über. Auch eine sprachlich bessere Fassung kann das tun: «Bei Sorge um Suizidgedanken dürfen Sie ruhig danach fragen.» erlaubt, «… fragen Sie ruhig danach.» fordert auf (A03-108). Solche Änderungen gehen nur mit fachlicher Bestätigung; bis dahin bleibt die Verbindlichkeit des Originals.
 - Einen Abschnitt zur eigenen Krise der Lesenden gibt es nicht; die Auftraggeberin hat ihn abgelehnt.
 
 ## 13. Schweizer Standarddeutsch
@@ -175,7 +179,7 @@ Zu vermeiden sind:
 ## 14. Website-Elemente
 
 - **Seitentitel und Navigation** sind kurz und bleiben über die Website gleich; Verweise nennen den Seitentitel wörtlich.
-- **Seitenbeschreibungen** (`description`) erscheinen als Auszug in der Suche und in Linkvorschauen. Sie sind ein lesbarer Satz oder eine Reihe gleichartiger Glieder in derselben Satzart, mit den Wörtern der Überschriften, ohne Wörter, die nur die Website kennt («Bedeutungsschleife», «Einstiege»), und selten länger als etwa 40 Wörter. Vorher: «Während einer Krise, Suizidgedanken ansprechen, wenn Sie eine Selbstverletzung bemerken, was Sie sagen können, …» Nachher: «Was Sie während einer Krise tun und sagen können und was Sie besser vermeiden, wie Sie Suizidgedanken ansprechen und auf eine Selbstverletzung reagieren, …» (A03-209). Nach jeder Änderung läuft der Suchtest.
+- **Seitenbeschreibungen** (`description`) erscheinen als Auszug in der Suche und in Linkvorschauen. Sie sind ein lesbarer Satz oder eine Reihe gleichartiger Glieder in derselben Satzart, mit den Wörtern der Überschriften, ohne Wörter, die nur die Website kennt («Bedeutungsschleife», «Einstiege»), und selten länger als etwa 40 Wörter. Vorher: «Während einer Krise, Suizidgedanken ansprechen, wenn Sie eine Selbstverletzung bemerken, was Sie sagen können, …» Nachher: «Was Sie während einer Krise tun und sagen können und was Sie vermeiden sollten, wie Sie Suizidgedanken ansprechen und auf eine Selbstverletzung reagieren, …» (A03-209). Wo die Beschreibung eine Überschrift aufnimmt, übernimmt sie auch deren Verbindlichkeit («vermeiden sollten», nicht «besser vermeiden»). Nach jeder Änderung läuft der Suchtest.
 - **`primaryTask`** ist unsichtbar und steuert nur die Suche; es folgt dennoch der Begriffsliste.
 - **Verweise** sind eigene, kurze Sätze mit dem Titel als Linktext in «»: «Mehr dazu auf der Seite «Wenn Ihr jugendliches Kind betroffen ist».» (A03-042). Ein Verweis hängt nicht nach Doppelpunkt oder in Klammern an einem Rechts- oder Sicherheitssatz und nennt höchstens ein Ziel je Satz.
 - **Schaltflächen** nennen die Handlung («Offizielle Angebotsseite der PUK öffnen»).
@@ -214,7 +218,7 @@ Dreierreihen sind kein Fehler, wenn jedes Glied eine eigene Aufgabe trägt («Ki
 7. Klingt jedes Gesprächsbeispiel laut gesprochen wie die Person in dieser Beziehung, ohne Formel und Amtswort?
 8. Verspricht ein Beispiel nur, was die Person wirklich geben kann?
 9. Wird ein Gefühl, ein Motiv oder eine Verantwortung unterstellt?
-10. Stehen alle Bedingungen, Einschränkungen und Warnungen des fachlichen Inhalts noch da, und ist aus «kann» kein «wird» geworden?
+10. Stehen alle Bedingungen, Einschränkungen und Warnungen des fachlichen Inhalts noch da? Ist aus «kann» kein «wird» geworden, aus einer Erlaubnis keine Aufforderung, und liegt jede Aufgabe noch bei denselben Personen?
 11. Sind Sicherheitssätze klar und direkt, ohne Krisennummer und mit dem Zuständigkeitssatz nur nach E7?
 12. Stimmen die Begriffe mit der Begriffsliste überein, auch in Beschreibung, Linktext und Code-Text?
 13. Ist der Verweis ein eigener Satz mit dem genauen Seiten- oder Abschnittstitel?

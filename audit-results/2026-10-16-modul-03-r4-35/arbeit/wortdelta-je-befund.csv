@@ -27,7 +27,7 @@ A03-063;G2-008;rolle;P3;29;33;4
 A03-064;G2-009;rolle;P3;37;38;1
 A03-065;G2-010;rolle;P3;29;30;1
 A03-066;G2-011;rolle;P2;49;49;0
-A03-067;G2-012;rolle;P3;13;17;4
+A03-067;G2-012;rolle;P3;13;18;5
 A03-068;G2-014;grenzen;P3;61;61;0
 A03-069;G2-015;grenzen;P2;21;22;1
 A03-070;G2-016;grenzen;P3;44;40;-4
@@ -86,7 +86,7 @@ A03-122;G4-010 (a);kinder;P2;9;9;0
 A03-123;G4-010 (b);kinder;P2;16;16;0
 A03-124;G4-010 (c);kinder;P2;15;15;0
 A03-125;G4-011;jugendliche;P2;15;15;0
-A03-126;G4-012;jugendliche;P2;32;34;2
+A03-126;G4-012;jugendliche;P2;32;35;3
 A03-127;G4-013;jugendliche;P3;30;30;0
 A03-128;G4-014;jugendliche;P3;21;21;0
 A03-129;G4-018;selbstfuersorge;P3;40;40;0

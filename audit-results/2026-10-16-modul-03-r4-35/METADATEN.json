@@ -14,7 +14,8 @@
   "modul": "03 · Sprache, Tonalität, Empathie und Verständlichkeit",
   "zeit": {
     "teilpruefungen": "2026-10-16",
-    "konsolidierung_abschluss": "2026-10-16T18:55+02:00"
+    "konsolidierung_abschluss": "2026-10-16T18:55+02:00",
+    "nachbesserung": "Nachbesserung 16.10.2026 nach dem Codex-Review von #700, Commit d5706c7"
   },
   "testbedingungen": {
     "pruefgegenstand": "Quelltexte authoring/content/*.html (23 Seiten), authoring/site.config.json, authoring/js/interaktion.js, authoring/tools/search-index.mjs; Lesefassung scratchpad/a03/text-v2/ (2389 nummerierte Blöcke) und _seitenweit.md",
@@ -38,7 +39,8 @@
     "befunde": 182,
     "nach_prioritaet": {"P0": 0, "P1": 1, "P2": 41, "P3": 140},
     "ids": "A03-039 bis A03-220",
-    "ersatzfassungen": {"bestanden": 138, "ueberarbeitet": 30, "neu_aus_konsolidierung": 14, "verworfen": 5},
+    "ersatzfassungen": {"bestanden": 136, "ueberarbeitet": 32, "neu_aus_konsolidierung": 14, "verworfen": 5},
+    "pruefbedarf": {"gesamt": 38, "fachlich": 29, "recht": 9},
     "muster": 12
   },
   "hinweise": [

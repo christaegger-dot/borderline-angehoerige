@@ -108,3 +108,25 @@ Antwort: «Nein, so lassen (Recommended)». Der Kinder-Abschnitt gilt für minde
 
 Mit dieser Stopp-Regel geprüft (971 + 10 Proben): Von den 666 Anfragen mit Tötungswort oder Anheftung steht bei allen ohne Kinder zuerst Suizid unter den ersten zwei Treffern. Gegenüber r4-32 geht keine Anheftung verloren (Nachtrag 1).
 
+## Nachtrag 3 · Codex-Review von #696, Merge und Produktionsprüfung (15.10.2026)
+
+Pull Request #696 wurde um 20:35 UTC mit Stand `46442fb` eröffnet. Um 20:40:27 UTC meldete das Codex-Review drei P1-Befunde und zwei P2-Befunde. Geprüft wurde nach R34-P01, mit Bezug r4-32:
+
+| Befund | Beispiel | r4-32 | r4-34 | Bewertung |
+| --- | --- | --- | --- | --- |
+| P1 Adjektive, Zahlwörter vor «Kind» | «Er tötete sein kleines Kind», «Er tötete die beiden Kinder» | kein Treffer | Suizid und Gewalt angeheftet, Kinder nicht zuerst | nicht blockierend |
+| P1 Ich-Form gegen Kinder | «Ich töte meine Kinder» | Suizid › Gewalt | Suizid › Gewalt | nicht blockierend, unverändert |
+| | «Ich tötete die Kinder» | Seite «Kinder» oben, ohne Anheftung | Suizid › Gewalt | nicht blockierend |
+| P1 Relativsatz in der Erweiterung | «Mein Mann bringt mich in der Wohnung, die er gemietet hat, um», mit und ohne Kommas | kein Treffer | kein Treffer | nicht blockierend, gleich wie r4-32 |
+| P2 «ihr … euch» | «weil ihr euch umbrachtet» | kein Treffer | Gewalt › Suizid | nicht blockierend |
+| P2 Pendenzen-Dokument | Lesart von R31-P03 noch als offen geführt | – | – | berechtigt; in diesem Nachweis-PR korrigiert |
+
+Die bauende Sitzung hat die fünf Threads um 20:41 UTC beantwortet und der Auftraggeberin um etwa 20:42 UTC «mergen» gemeldet (im Chat, nicht auf GitHub). Gemergt hat die Auftraggeberin um 20:51:27 UTC (Merge-Commit `4abe92c`). R28-O01 und R29-P20 sind damit eingehalten. Die vier P1- und P2-Fälle zur Suche stehen als R34-P02 in den Pendenzen.
+
+**Produktionsprüfung** (`PRODUKTIONSPRUEFUNG.md`, eigene Sitzung, 20:54 bis 21:26 UTC): bestanden mit Hinweisen, kein Befund.
+
+- r4-34 ist vollständig ausgeliefert: `site/` aus `4abe92c` auf allen 23 Seiten, `interaktion.js` bytegleich, auch unter alten Adressen.
+- 216 von 216 Anfragen der Testliste stimmen über die Pretty URLs.
+- 12 von 12 Handproben stimmen. Dazu gehören die Codex-Fälle von #694 und #695, «er will die Kinder umbringen» mit Kinder zuerst, «Wenn du gehst bringe ich mich um» mit «Wenn Suizid angesprochen wird» zuerst und zwei harmlose Sätze ohne Anheftung.
+- r4-32 und r4-33 sind nicht nachgeprüft; das ist rückwirkend nicht mehr möglich. Ihre Seiteninhalte sind über r4-34 abgedeckt: Nach Ersetzen der Build- und Assetmarker unterscheidet sich ihr `site/` von r4-34 nur in `interaktion.js` (lokaler Vergleich der Git-Stände). Für ihr Suchskript gibt es nur je eine Stichprobe aus den Prüfrunden (19:44 und 20:18 UTC).
+

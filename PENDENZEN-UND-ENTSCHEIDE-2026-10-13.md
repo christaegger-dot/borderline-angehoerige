@@ -6,25 +6,41 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Produktionsstand
 
-### r4-33 veröffentlicht, nicht nachgeprüft; r4-34 in Arbeit
+### r4-34 veröffentlicht und nachgeprüft
+
+#696 wurde am 15. Oktober 2026 um 20:51:27 UTC gemergt (Merge-Commit `4abe92c`, Stand `46442fb`). Das war nach dem Codex-Review (20:40:27 UTC) und nach der Meldung «mergen» der bauenden Sitzung (etwa 20:42 UTC). R28-O01 und R29-P20 sind damit eingehalten. Keiner der fünf Codex-Befunde blockiert nach R34-P01. Die vier Befunde zur Suche stehen in R34-P02; der fünfte betraf dieses Dokument und ist im Nachweis-PR #697 korrigiert.
+
+Die Produktionsprüfung lief am 15. Oktober 2026 von 20:54 bis 21:26 UTC in einer eigenen Sitzung (`audit-results/2026-10-15-delta-r4-34/PRODUKTIONSPRUEFUNG.md`). Sie prüft r4-34. Ergebnis: bestanden mit Hinweisen, kein Befund.
+
+- 23 Seiten mit Build r4-34; `interaktion.js` bytegleich mit `4abe92c`, auch unter alten Adressen
+- Seiten inhaltlich gleich r4-31, ausser Buildmarker, `id="suizid-angesprochen"` und dem Suchindex
+- 216 von 216 Anfragen der Testliste über die Pretty URLs, 12 von 12 Handproben (Codex-Fälle, Kinder, «Wenn Suizid angesprochen wird», harmlose Sätze)
+- 0 `tel:`; ein einmaliger Status 502 auf `interaktion.js`, bei der Wiederholung nicht mehr
+
+Ablauf r4-32 bis r4-34: Codex-Reviews von #694, #695 und #696, Varianten P, Q und R der Prüfsitzung, Stopp-Regel R34-P01. Nachweise: `audit-results/2026-10-15-delta-r4-32/` bis `…-r4-34/`.
+
+Entscheide vom 15.10.2026 (`audit-results/2026-10-15-delta-r4-34/FREIGABE.md`, Nachtrag 2):
+- «PR, Merge nach Meldung»: Die Auftraggeberin mergt erst nach der Meldung der bauenden Sitzung.
+- «r4-32, Suizid unter Top 2»: die Stopp-Regel R34-P01. Sie ersetzt R31-P03; damit ist auch dessen Lesart unter «beide oben» erledigt.
+- «Nein, so lassen» zu R32-P01.
+
+Eine Branch-Regel auf `main` bleibt eine Option der Auftraggeberin.
+
+Offen für die Auftraggeberin: Den Branch `claude/r4-30-suche-links-1792061353` löschen.
+
+### r4-33 veröffentlicht, abgelöst durch r4-34
 
 #695 wurde am 15. Oktober 2026 um 20:06:30 UTC gemergt (Merge-Commit `7bd5e6a`, Stand `ce56c1d`). Acht Sekunden vorher war der Entwurf auf «ready for review» gesetzt worden. Das war eine Minute nach dem Codex-Review und vor dessen Prüfung. R28-O01 und R29-P20 sind damit zum dritten Mal nicht eingehalten (#689, #694, #695). Ein Entwurf allein verhindert den Merge nicht.
 
-r4-33 behebt den Rückschritt aus r4-32 («Mein Mann bringt mich heute Nacht in unserer Wohnung um»). Es bringt aber drei neue Rückschritte gegenüber r4-32, die das Codex-Review von #695 gefunden hat, etwa «Mein Mann bringt mich um sie sieht es» ohne Treffer. Die Korrektur folgt mit r4-34 (`audit-results/2026-10-15-delta-r4-34/`).
+r4-33 hat den Rückschritt aus r4-32 behoben, aber drei neue Rückschritte gebracht. Diese sind mit r4-34 behoben. Eine Produktionsprüfung von r4-33 wurde nicht durchgeführt und ist rückwirkend nicht mehr möglich. Die Seiteninhalte von r4-33 sind über die Prüfung von r4-34 abgedeckt: Nach Ersetzen der Build- und Assetmarker unterscheidet sich `site/` von r4-34 nur in `interaktion.js` (lokaler Vergleich der Git-Stände). Für das Suchskript von r4-33 gibt es nur eine Stichprobe (20:18 UTC: Marker r4-33, `interaktion.js` gleich `ce56c1d`).
 
-Entscheide vom 15.10.2026 (`audit-results/2026-10-15-delta-r4-34/FREIGABE.md`, Nachtrag 2): «PR, Merge nach Meldung»: Die Auftraggeberin mergt erst nach der Meldung der bauenden Sitzung. Zur Stopp-Regel «r4-32, Suizid unter Top 2» (R34-P01). Zu R32-P01 «Nein, so lassen». Eine Branch-Regel auf `main` bleibt eine Option der Auftraggeberin.
-
-### r4-32 veröffentlicht, nicht nachgeprüft; ersetzt durch r4-33
+### r4-32 veröffentlicht, abgelöst durch r4-33 und r4-34
 
 #694 wurde am 15. Oktober 2026 um 19:32:36 UTC gemergt (Merge-Commit `4790653`, Stand `37b963f`). Das war 12 Sekunden nach dem Codex-Review und vor dessen Prüfung. R28-O01 und R29-P20 sind damit erneut nicht eingehalten.
 
 r4-32 heftet bei Anfragen mit Tötungswort «Suizid» und «Gewalt» oben an (R31-P05). Ein Befund aus diesem Codex-Review blockiert nach R31-P03: «Mein Mann bringt mich heute Nacht in unserer Wohnung um» hat in der Produktion keinen Treffer, in r4-31 kam «Gewalt».
 
-Die Korrektur kommt mit r4-33: zwei P1-Befunde von #694 und R32-03 der Prüfsitzung. Nachweise: `audit-results/2026-10-15-delta-r4-32/` und `audit-results/2026-10-15-delta-r4-33/`. Die Produktionsprüfung von r4-32 ist offen. Sie kann mit derjenigen von r4-33 zusammengelegt werden; bei der Handprüfung gehört der Codex-Fall dazu.
-
-Offen für die Auftraggeberin:
-- Die Lesart von R31-P03 unter «beide oben» bestätigen.
-- Den Branch `claude/r4-30-suche-links-1792061353` löschen.
+Die Korrektur kam mit r4-33 und r4-34. Nachweise: `audit-results/2026-10-15-delta-r4-32/` und `audit-results/2026-10-15-delta-r4-33/`. Eine Produktionsprüfung von r4-32 wurde nicht durchgeführt und ist rückwirkend nicht mehr möglich. Die Seiteninhalte sind über die Prüfung von r4-34 abgedeckt: Nach Ersetzen der Build- und Assetmarker unterscheidet sich `site/` von r4-34 nur in `interaktion.js` (lokaler Vergleich der Git-Stände). Für das Suchskript von r4-32 gibt es nur eine Stichprobe (19:44 UTC: Marker r4-32, `interaktion.js` gleich `37b963f`).
 
 ### r4-31 veröffentlicht und nachgeprüft
 
@@ -211,9 +227,10 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | R31-P02 | Stopp-Regel für Codex-Befunde zur Suchregel (Entscheid vom 15.10.2026, «Nur Rückschritte blockieren»): blockierend nur, wenn eine Anfrage schlechter liegt als in r4-29 (Suizidsorge → Gewalt oder klare Ich-Aussage ohne Treffer). Andere Grenzfälle kommen als Testzeile in R30-P01. Jeder Befund wird gegen r4-29 geprüft und gemeldet. | ersetzt durch R31-P03 | bauende Sitzung, Prüfsitzung |
 | R31-P03 | Stopp-Regel ab 15.10.2026 abends (Entscheid «N veröffentlichen»): Ein Pull Request mit Änderungen an der Suchregel blockiert nur, wenn er eine Anfrage gegenüber der Produktion verschlechtert (Suizidsorge → Gewalt oder klare Ich-Aussage ohne Treffer). Abweichungen gegenüber r4-29, die schon in der Produktion stehen, gehen sofort in den nächsten Patch (r4-32). Lesart ab r4-32 (R31-P05 (1), «beide oben»): schlechter liegt eine Anfrage, wenn Suizid nicht mehr unter den ersten drei Treffern steht oder eine klare Ich-Aussage keinen Treffer hat; eine andere Reihenfolge der Sicherheitsabschnitte wird gemeldet, blockiert aber nicht (`2026-10-15-delta-r4-32/FREIGABE.md`). | ersetzt durch R34-P01 | bauende Sitzung, Prüfsitzung |
 | R31-P04 | r4-32: «du … dich» mit anderem Subjekt dazwischen («du sagst er will dich umbringen» → Suizid; Codex auf #690, Runde 5), die in der Produktion verbliebenen Abweichungen gegenüber r4-29, etwa zehn reine Gewaltaussagen, die mit N in sicherer Richtung auf «Suizid» gehen («er schwört mir mich umzubringen»), die Phrase «ans Umbringen»/«ans Töten», die auch Gewaltsorgen («er denkt ans Töten und bedroht mich») in sicherer Richtung auf «Suizid» führt, und die Idee eines Sicherheitsnetzes (ergibt die Regel «Gewalt» und enthält die Anfrage eine Suizidaussage in der ersten Person, gilt Suizid) | in r4-32 aufgegangen: statt Sicherheitsnetz stehen Suizid und Gewalt bei jeder Anfrage mit Tötungswort oben (R31-P05); die Reihenfolge ist Best-Effort | bauende Sitzung; Prüfsitzung |
-| R31-P05 | Vorschläge der bauenden Sitzung vom 15.10.2026 zu R31-P04, zur Entscheidung: (1) Statt eines Sicherheitsnetzes bei jeder Anfrage mit Tötungsverb beide Abschnitte oben zeigen («Wenn Suizidgedanken ein Thema sind» und «Wenn Gewalt oder Bedrohung vorkommt»); die Regel bestimmt nur die Reihenfolge. (2) Erweiterter Suizid und Drohungen gegen Kinder zuerst auf «Kinder» › «Bei Eskalation, Gewalt oder fehlender Betreuung», dann «Gewalt», dann «Suizid». (3) R25-010 beibehalten; der Teil «Wenn Suizid angesprochen wird» in «Wenn Worte treffen» erhält einen eigenen Anker und Sucheintrag (Markup, Freigabe nötig). (4) Prüfbedarf: «Würgen» als Warnzeichen im Gewalt-Abschnitt. Entscheide vom 15.10.2026: (1) «Ja, beide oben», (2) «Kinder › Eskalation zuerst», (3) «Ja, eigener Anker», (4) «Nicht aufnehmen»; dazu «ja» zur radikalen Vereinfachung der Suchregel. Umgesetzt in r4-32 (`audit-results/2026-10-15-delta-r4-32/FREIGABE.md`). | entschieden; umgesetzt in r4-32 (veröffentlicht mit #694), Korrekturen in r4-33 | bauende Sitzung; Prüfsitzung |
+| R31-P05 | Vorschläge der bauenden Sitzung vom 15.10.2026 zu R31-P04, zur Entscheidung: (1) Statt eines Sicherheitsnetzes bei jeder Anfrage mit Tötungsverb beide Abschnitte oben zeigen («Wenn Suizidgedanken ein Thema sind» und «Wenn Gewalt oder Bedrohung vorkommt»); die Regel bestimmt nur die Reihenfolge. (2) Erweiterter Suizid und Drohungen gegen Kinder zuerst auf «Kinder» › «Bei Eskalation, Gewalt oder fehlender Betreuung», dann «Gewalt», dann «Suizid». (3) R25-010 beibehalten; der Teil «Wenn Suizid angesprochen wird» in «Wenn Worte treffen» erhält einen eigenen Anker und Sucheintrag (Markup, Freigabe nötig). (4) Prüfbedarf: «Würgen» als Warnzeichen im Gewalt-Abschnitt. Entscheide vom 15.10.2026: (1) «Ja, beide oben», (2) «Kinder › Eskalation zuerst», (3) «Ja, eigener Anker», (4) «Nicht aufnehmen»; dazu «ja» zur radikalen Vereinfachung der Suchregel. Umgesetzt in r4-32 (`audit-results/2026-10-15-delta-r4-32/FREIGABE.md`). | entschieden; umgesetzt in r4-32 (veröffentlicht mit #694), Korrekturen in r4-33 und r4-34 (veröffentlicht mit #696, nachgeprüft) | bauende Sitzung; Prüfsitzung |
 | R32-P01 | Codex P2 auf #694: Sollen Drohungen gegen Sohn oder Tochter («Er droht, meine Tochter umzubringen») wie Drohungen gegen «die Kinder» zuerst auf «Kinder» › «Bei Eskalation, Gewalt oder fehlender Betreuung» gehen? Heute: Gewalt › Suizid. Offen ist, ob auch erwachsene Söhne und Töchter gemeint sind. | entschieden 15.10.2026: «Nein, so lassen» (Kinder-Abschnitt für minderjährige Kinder) | – |
 | R34-P01 | Stopp-Regel ab r4-34 (Entscheid vom 15.10.2026, «r4-32, Suizid unter Top 2»), ersetzt R31-P03: Bezugsstand r4-32 (`37b963f`). Ein Codex-Befund zur Suchregel blockiert nur in drei Fällen: Bei einer Anfrage mit Tötungswort fällt Suizid aus den ersten zwei Treffern (ausser Kinder stehen zuerst), eine Anheftung geht verloren, oder eine klare Ich-Aussage hat keinen Treffer. Andere Befunde werden gemeldet und kommen in den nächsten Patch. Gemergt wird erst nach der Meldung der bauenden Sitzung («PR, Merge nach Meldung»). | ab sofort | bauende Sitzung, Prüfsitzung, Auftraggeberin |
+| R34-P02 | Nicht blockierende Befunde aus dem Codex-Review von #696 für den nächsten Patch: «Er tötete sein kleines Kind» und «Er tötete die beiden Kinder» ohne Kinder zuerst (Adjektive, Zahlwörter vor «Kind»); «Ich tötete die Kinder» und «Ich töte meine Kinder» ohne Kinder zuerst (Ich-Form als Täterin gegen Ich-Form reflexiv); «weil ihr euch umbrachtet» mit Gewalt vor Suizid («ihr … euch» wie «du … dich»); «Mein Mann bringt mich in der Wohnung, die er gemietet hat, um» ohne Treffer (Relativsatz, wie in r4-32). Dazu bekannte Fehlanheftungen ohne Satzzeichen wie in r4-32 («die Therapie bringt nichts ich mache mir Sorgen um sie», «Er bringt die Kinder und zieht sich um») und der konstruierte Satz «Er bringt mich nach dem Streit in der Küche er sagt es um». | nächster Patch | bauende Sitzung; Prüfsitzung |
 
 ### r4-22 · visuelle Befunde A04-008 bis A04-013, abgeschlossen
 

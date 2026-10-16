@@ -78,6 +78,18 @@ python3 -I audit-results/2026-10-16-modul-03-r4-35/werkzeug/pruefe_teil.py audit
 
 Das Skript findet das Repository selbst, ab seinem eigenen Ordner oder dem Arbeitsverzeichnis; sonst gilt `--repo <pfad>`. Es sucht in den Seiten, in `site.config.json`, `interaktion.js` und `search-index.mjs`. Teilbefunde, die mehrere Fundstellen in einem Feld verbinden («§25: … §26: …») oder eine Code-Vorlage umschreiben, meldet es als «nicht wörtlich gefunden». Die Konsolidierung hat sie in `BEFUNDE.csv` je Fundstelle aufgeteilt, und dort steht jedes Original wörtlich in der Quelle.
 
+## Nachbesserung nach dem Codex-Review von #700
+
+#700 wurde gemergt, bevor das Codex-Review fertig war. Es meldete sechs P2-Befunde zu diesen Nachweisen, keinen zur Website.
+- **Werkzeuge, behoben von der bauenden Sitzung** (`e4ce9a4`): `pruefe_teil.py` hat keinen festen Pfad mehr und liest `search-index.mjs` mit; `_seitenweit.md` und sein Erzeuger `seitenweit.py` sind abgelegt.
+- **Befunde, nachgebessert von der Konsolidierung** (`d5706c7`):
+  - eine Spalte `quelle` je Befund, mit Kürzeln in `QUELLEN.csv`;
+  - fachlicher Prüfbedarf für elf Befunde in Sicherheits- und Schutztexten, deren Ersatzfassung Verbindlichkeit oder Zuständigkeit verschiebt (z. B. A03-108, A03-122 bis A03-124);
+  - eigene Begründungen und Akzeptanzkriterien für aufgeteilte Befunde (z. B. A03-217);
+  - Skripte in `arbeit/` ohne feste Pfade.
+
+  Die Einzelheiten stehen in `BERICHT.md`, Abschnitt 10.
+
 ## Korrektur am Auftrag
 
 `auftrag/AUFTRAG.md` sagt, `primaryTask` erscheine auf der Suchseite. Das ist falsch. G6 hat festgestellt, dass es nur im unsichtbaren Suchindex steht. Der Auftrag der Konsolidierung hält das fest, und `PRUEFUMFANG.md` gibt es richtig wieder.
@@ -87,5 +99,5 @@ Das Skript findet das Repository selbst, ab seinem eigenen Ordner oder dem Arbei
 Siehe `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`, Pendenz A03-R35:
 - Entscheid über die Wortziele aus Release C;
 - Freigabe des Wortlauts, paketweise nach `BERICHT.md`, Abschnitt 5;
-- vorher Klärung des fachlichen und rechtlichen Prüfbedarfs (27 Befunde);
+- vorher Klärung des fachlichen und rechtlichen Prüfbedarfs (38 Befunde: 29 fachlich, 9 Recht, Stand nach der Nachbesserung);
 - Freigabe des Sprachprofils.

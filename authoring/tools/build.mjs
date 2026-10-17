@@ -11,6 +11,10 @@ const C = require("./contract.js");
 const sourceDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const repoDir = resolve(sourceDir, "..");
 const args = process.argv.slice(2);
+if (args.includes("--selftest")) {
+  await import("./selftest.mjs");
+  process.exit(process.exitCode || 0);
+}
 const production = args.includes("--production");
 const verifySite = args.includes("--verify-site");
 const outputFlag = args.find(arg => arg.startsWith("--out="));

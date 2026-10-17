@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Verify gate mutations
+        run: node authoring/tools/selftest.mjs
       - name: Produce site and verify all generated assets against committed release
         run: node authoring/tools/build.mjs --production --verify-site
       - name: Diagnose mismatch on failure
@@ -23,3 +25,11 @@ jobs:
         run: |
           diff -u site/index.html dist/site/index.html | head -90 || true
           diff -u site/404.html dist/site/404.html | head -65 || true
+      - name: Install pinned browser test tooling
+        run: |
+          npm install --prefix /tmp/borderline-browser --no-package-lock playwright@1.64.0
+          /tmp/borderline-browser/node_modules/.bin/playwright install --with-deps chromium
+      - name: Verify all fixed search expectations under production headers
+        env:
+          PLAYWRIGHT_MODULE: /tmp/borderline-browser/node_modules/playwright
+        run: node authoring/tools/suchtest.mjs site

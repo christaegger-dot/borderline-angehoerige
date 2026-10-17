@@ -1475,3 +1475,12 @@ html.puk-scroll-lock{overflow:hidden}
   .bl-tabelle td{margin-top:var(--space-2)}
   .bl-tabelle td::before{content:attr(data-label);display:block;font:var(--type-caption);color:var(--text-muted)}
 }
+
+/* Ruhiger Kontaktabschluss; situative Akuthinweise stehen im jeweiligen Thema. */
+.puk-web-footer{padding-block:28px;font-size:1rem}
+.puk-web-footer__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:28px}
+.puk-web-footer__links{display:flex;flex-wrap:wrap;gap:0 20px}
+.puk-web-footer__links a,.puk-web-footer [data-site-legal] a,.puk-site-safety--responsibility a{display:inline-flex;align-items:center;min-height:44px}
+.puk-web-footer__boundary{margin-top:12px;padding-top:0;border:0}
+.puk-web-footer__details{margin-top:8px;padding-top:8px}
+@media(max-width:759px){.puk-web-footer__grid{grid-template-columns:minmax(0,1fr);gap:20px}}

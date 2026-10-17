@@ -6,9 +6,13 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Aktueller Änderungsstand · r4-36
+## Gestaltung · r4-37
 
-Die Projektverantwortliche hat nach dem kritischen Audit die selbstständige Entscheidung und Umsetzung beauftragt. Korrigiert sind A03-178 (schriftliche gerichtliche Eingabe), A01-1001 (reguläre Telefonkontakte), A04-1001 (ruhiger Footer), der Selbsttest-Teil von R3C-A11/R29-P11 und R29-P12 (kompakter Mobilkopf). Nachweis: `audit-results/2026-10-17-umsetzung/BERICHT.md`. Dieser Absatz beschreibt den Kandidaten, bis der Veröffentlichungsnachweis ergänzt ist; die folgenden Produktionsprotokolle bleiben historisch.
+Auftrag der Projektverantwortlichen vom 17.10.2026: die optischen Verbesserungen selbstständig umsetzen. Proportionierte Bildschirmtitel, kompaktere Seitenköpfe und ein direkter Einstieg nach der eigenen Frage. Die lokale Grössenwahl bleibt innerhalb der Maximalgrade des PUK-Profils; Leseschrift, Fachtexte und Grafikaussagen bleiben erhalten. Nachweis und genaue Reichweite: `audit-results/2026-10-17-design/BERICHT.md`. Die Umsetzungssitzung bezeichnet ihren Nachtest als Selbstprüfung, nicht als unabhängige R3-Freigabe.
+
+## Reparaturrunde · r4-36
+
+Die Projektverantwortliche hat nach dem kritischen Audit die selbstständige Entscheidung und Umsetzung beauftragt. Korrigiert sind A03-178 (schriftliche gerichtliche Eingabe), A01-1001 (reguläre Telefonkontakte), A04-1001 (ruhiger Footer), der Selbsttest-Teil von R3C-A11/R29-P11 und R29-P12 (kompakter Mobilkopf). Nachweis: `audit-results/2026-10-17-umsetzung/BERICHT.md`. r4-36 wurde mit PR #703 gemergt; der Produktionsabgleich vom 17.10.2026 bestätigt 23/23 HTML-Seiten und 9/9 Nicht-HTML-Dateien. Die folgenden früheren Produktionsprotokolle bleiben historisch.
 
 Die lokale technische Selbstprüfung ist keine neue fachjuristische oder unabhängige R3-Freigabe. Der weitergehende Teil von R3C-A11 zur versionsgebundenen Freigabe bleibt als ausdrücklich begrenzter Prozesspunkt erhalten; er wird nicht durch das Umbenennen einer Selbstprüfung als erledigt ausgewiesen. Externe fachliche und institutionelle Tatsachen werden nicht erfunden.
 

@@ -1,0 +1,49 @@
+{
+  "project": "borderline-angehoerige",
+  "run": "2026-10-17-design",
+  "generated_utc": "2026-10-17T17:02:35.858854+00:00",
+  "mode": "modul-04 mit Delta-Regression Modul 05",
+  "review_kind": "Gestaltungsbewertung und technische Selbstprüfung",
+  "independent": false,
+  "baseline_sha": "616773c9d1f31cb04edc742d340f063cd29a1be1",
+  "branch": "codex/gestaltung-2026-10-17",
+  "deployment_url": "https://borderline-angehoerige.netlify.app/",
+  "tested_target": "lokaler Veröffentlichungsexport mit tatsächlichen Sicherheitsheadern",
+  "runtime_files_sha256": "0370db3693f62f0b6732b76af8efc3da94f52116f0d895db1604ed5f194bd79d",
+  "screenshots": "/workspace/scratch/design4/after",
+  "canonical_changes": [
+    "authoring/content/index.html",
+    "authoring/css/site.css",
+    "authoring/site.config.json"
+  ],
+  "homepage_metrics": [
+    {
+      "width": 375,
+      "before_header": 330,
+      "after_header": 278,
+      "before_title": "44px",
+      "after_title": "33.375px",
+      "before_first_entry": 857,
+      "after_first_entry": 646
+    },
+    {
+      "width": 1440,
+      "before_header": 184,
+      "after_header": 168,
+      "before_title": "114px",
+      "after_title": "60px",
+      "before_first_entry": 816,
+      "after_first_entry": 498
+    }
+  ],
+  "screen_widths": [
+    320,
+    375,
+    768,
+    1024,
+    1440
+  ],
+  "root200": "Wurzelschrift-Simulation, kein realer Browserzoom",
+  "production_comparison": "nach Merge gesondert dokumentiert",
+  "project_ci": "https://github.com/christaegger-dot/borderline-angehoerige/actions?query=branch%3Acodex%2Fgestaltung-2026-10-17"
+}

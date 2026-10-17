@@ -1,10 +1,16 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Stand: 16. Oktober 2026**
+**Stand: 17. Oktober 2026**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Aktueller Änderungsstand · r4-36
+
+Die Projektverantwortliche hat nach dem kritischen Audit die selbstständige Entscheidung und Umsetzung beauftragt. Korrigiert sind A03-178 (schriftliche gerichtliche Eingabe), A01-1001 (reguläre Telefonkontakte), A04-1001 (ruhiger Footer), der Selbsttest-Teil von R3C-A11/R29-P11 und R29-P12 (kompakter Mobilkopf). Nachweis: `audit-results/2026-10-17-umsetzung/BERICHT.md`. Dieser Absatz beschreibt den Kandidaten, bis der Veröffentlichungsnachweis ergänzt ist; die folgenden Produktionsprotokolle bleiben historisch.
+
+Die lokale technische Selbstprüfung ist keine neue fachjuristische oder unabhängige R3-Freigabe. Der weitergehende Teil von R3C-A11 zur versionsgebundenen Freigabe bleibt als ausdrücklich begrenzter Prozesspunkt erhalten; er wird nicht durch das Umbenennen einer Selbstprüfung als erledigt ausgewiesen. Externe fachliche und institutionelle Tatsachen werden nicht erfunden.
 
 ## Produktionsstand
 
@@ -232,8 +238,8 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | R29-P08 | Angebote für junge Erwachsene auf «Behandlung» (M5.5) | offen | Auftraggeberin |
 | R29-P09 | W3C-04 Validierungstabelle: ARIA-Rollen, doppelte Ansage, Container-Abfrage (dazu A8-07: bei 200 % Schrift ab 761 px waagrechtes Scrollen) | Profilentscheid | Auftraggeberin (Profil) |
 | R29-P10 | W3C-05 Silbentrennung in Überschriften und `-webkit-hyphens` (dazu R3C-06 «Behandlungsteam», in r4-35 technisch behoben (A8-K); A8-10: Wortbrüche in drei Kernaussagen bei 768 px mit 200 %, Vorschlag der Prüfsitzung: W3C-05 auf Kernaussagen und Schrittlisten ausdehnen) | Profilentscheid | Auftraggeberin (Profil) |
-| R29-P11 | W3C-07 Selbsttest (siehe R3C-A11) | 13.11.2026 | bauende Sitzung |
-| R29-P12 | W3C-10 Kopfbereich auf dem Smartphone (`NAV_MAX`) | Profilentscheid | Auftraggeberin (Profil) |
+| R29-P11 | W3C-07 Selbsttest (siehe R3C-A11) | umgesetzt am 17.10.2026: aktuelle Seiten statt fremder Vorlagenseiten; 79/79 Fälle, eigener CLI-Einstieg und CI | technische Selbstprüfung; Nachweise im Umsetzungslauf |
+| R29-P12 | W3C-10 Kopfbereich auf dem Smartphone (`NAV_MAX`) | umgesetzt am 17.10.2026: sechs Hauptpunkte im vorhandenen bedienbaren Mobilmenü; Desktop-Navigation unverändert | lokaler Nutzerauftrag, kein gemeinsamer Profilumbau |
 | R29-P13 | W3C-11 Strategie für `aria-label` an Inhaltslinks | Wartung | bauende Sitzung |
 | R29-P14 | W3C-12 Leistung der Suche (Zwischenspeicher) | in r4-30 umgesetzt | bauende Sitzung |
 | R29-P15 | W3C-13 Kommentare im ausgelieferten CSS und JS | Wartung | bauende Sitzung |
@@ -323,9 +329,9 @@ Folgende Angaben fehlen nicht versehentlich. Sie werden erst veröffentlicht, we
 
 Die Angehörigenberatung der Fachstelle ist nicht auf Erwachsene begrenzt; auch junge Angehörige werden beraten. Der öffentliche Satz «Die Fachstelle Angehörigenarbeit der PUK berät Angehörige kostenlos und vertraulich.» ist absichtlich altersinklusiv. Eine Kennzeichnung als Erwachsenenangebot darf nicht ergänzt werden. Die vollständige Fundstellenprüfung vom 13. Oktober 2026 fand in den Beratungs- und Fachstellentexten keine ausdrückliche oder indirekte Altersbegrenzung.
 
-### Keine Krisenintervention
+### Telefonkontakte und Krisenhinweise · Entscheid vom 17.10.2026
 
-Die Fachstelle bietet keine Krisenintervention. Die Website enthält deshalb keine Krisennummern, keine `tel:`-Links und keinen globalen Notfallblock. Die ursprünglichen Auditkriterien P0-01 und P0-02 bleiben formal unerfüllt, widersprechen aber dem geltenden Angebotsprofil. Eine Änderung verlangt einen neuen Institutionsentscheid und eine fachliche Prüfung.
+Die Auftraggeberin erlaubt hilfreiche reguläre Telefonnummern und `tel:`-Links ohne Sonderausnahme. Krisenangebote und ihre Platzierung werden je Thema bewusst gewählt; es gibt keine automatisch ergänzte globale Notrufliste. Die Fusszeile dient dem Kontakt und den Website-Angaben. Der situative Akutwortlaut bleibt in passenden Themenabschnitten erhalten. Diese aktuelle Vorgabe ersetzt das frühere pauschale Telefonverbot und die Pflicht zur Krisenabgrenzung im Footer; historische Nachweise bleiben versionsgebunden gültig.
 
 ## Wiederkehrende Wartung
 

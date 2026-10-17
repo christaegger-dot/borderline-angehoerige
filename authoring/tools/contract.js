@@ -8,15 +8,15 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-35';
+const BUILD = 'r4-36';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
 const INTERACTIVE = ['data-puk-accordion', 'data-puk-tabs', 'data-puk-disclosure', 'data-puk-dialog-open', 'data-vis-build', 'data-puk-filter', 'data-puk-search'];
 const DETAILS_RE = /<details[\s>]/i;
 const needsScript = html => INTERACTIVE.some(a => html.includes(a)) || DETAILS_RE.test(html);
-/* Interaktionskonzept: bis sechs Hauptpunkte sichtbar; darüber baut der Starter unter 760 px ein «Menü» (Dropdown-Menü, Profilentscheid 11.10.2026). */
-const NAV_MAX = 6;
+/* Interaktionskonzept: unter 760 px werden mehr als vier Hauptpunkte in einem bedienbaren Menü zusammengefasst (lokaler Nutzerauftrag 17.10.2026). */
+const NAV_MAX = 4; // Kompaktes Smartphone-Menü für die sechs Hauptthemen (17.10.2026).
 /* Prüfbefund BD-01 (11.10.2026, WCAG 2.5.3): Der Name des Logo-Links beginnt mit dem sichtbaren Logotext (sender.institution) und nennt danach das Ziel. */
 const logoName = cfg => `${(cfg.sender || {}).institution || ''} – Startseite ${cfg.siteTitle || ''}`.trim();
 /* Prüfbefund W3-08 (11.10.2026): Eine Seite mit role «not-found» ist die 404-Seite – ohne Navigation, Sitemap und kanonischen Link, nicht von der Startseite verlinkt. */
@@ -34,7 +34,7 @@ const DE_TERMS = /\b(Jugendamt|Betreuungsgerichts?|rechtliche[nr]? Betreuung|Bet
 const LABELS = /\b(?:die|der|den|des|dem|ein|eine|einen|einem|einer|als)\s+(Schizophrenen?|Psychotiker(?:in(?:nen)?)?|Borderliner(?:in(?:nen)?)?|Bipolaren|Süchtigen|Geisteskranken?|Irren)\b|\bpsychisch Kranken?\b/i;
 const INLINE_TOPICS = ['selbstgefaehrdung', 'gewalt', 'akute-krise'];
 const INLINE_RE = /<p data-responsibility-inline\s*>\s*<\/p>/g;
-const REVIEW_WARNINGS = ['orthography', 'swiss-context', 'person-first', 'card-grid', 'inline-style', 'figure-core', 'entry-point', 'plan-coverage', 'resonance', 'legal', 'not-found', 'lang-part'];
+const REVIEW_WARNINGS = ['crisis-number-check', 'orthography', 'swiss-context', 'person-first', 'card-grid', 'inline-style', 'figure-core', 'entry-point', 'plan-coverage', 'resonance', 'legal', 'not-found', 'lang-part'];
 /* Profilentscheid 10.10.2026: Jede Darstellung nennt im Plan ihre Wirkung («resonance»): Was soll eine Angehörige darin wiedererkennen oder spüren? Anlass: eine Metapher, die wie ein Bauplan wirkte. */
 /* Profilentscheid 08.10.2026: Erklärmodelle (Kreislauf, Prozesspfad, Modell in Schritten) prüfen, wo Angehörige ansetzen können – im Plan als «entryPoint» (Ansatzpunkt oder «entfällt: Begründung»), in der Figur als .puk-vis-ansatz. */
 const ENTRY_FORMATS = ['cycle', 'process', 'stepwise-model'];
@@ -499,10 +499,15 @@ function gate(cfg, files, opts = {}) {
       const de = mainText.match(DE_TERMS); if (de) add('warn', pid, 'swiss-context', `«${de[0]}» ist ein deutscher Rechtsbegriff oder ein deutsches Angebot – Schweizer Begriff und Zuständigkeit prüfen (z. B. KESB, Beistandschaft, fürsorgerische Unterbringung)`);
       const lb = mainText.match(LABELS); if (lb) add('warn', pid, 'person-first', `«${lb[0]}» etikettiert – personenzentriert formulieren («Person mit …», «Menschen mit einer psychischen Erkrankung»)`); }
     for (const [topic, re] of SENSITIVE) { const m = mainText.match(re); if (m && !(p.sensitiveTopics || []).includes(topic)) add('block', pid, 'safety-contract', `Inhalt nennt «${norm(m[0])}», sensitiveTopics enthält «${topic}» nicht (Vertragsprüfung, keine Triage)`); }
-    /* Keine Krisennummern, kein Notfallblock (Profilentscheid 06.10.2026) */
-    for (const a of all(doc, x => x.tag === 'a' && /^tel:/i.test(x.attrs.href || ''))) add('block', pid, 'crisis-number', 'Telefonlink auf psychoedukativer Seite: ' + a.attrs.href);
-    { const fullText = norm(txt(doc)); const ph = fullText.match(/(?:\+41|0041|\b0)\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}\b|\b0800\s?\d{3}\s?\d{3}\b/); if (ph) add('block', pid, 'crisis-number', `Telefonnummer im Text: «${ph[0]}» – psychoedukative Seiten nennen keine Nummern`);
-      const sh = fullText.match(/(?:^|[^\d.,:\/–—-])(112|117|118|143|144|145|147)(?![\d]|[.,:\/–—-]\d)/); if (sh) add('warn', pid, 'crisis-number-check', `Mögliche Notrufnummer «${sh[1]}» im Text – prüfen; Krisennummern sind auf psychoedukativen Seiten nicht zulässig`); }
+    /* Nutzerentscheid 17.10.2026: reguläre Telefonkontakte sind erlaubt.
+       Kurze Krisennummern erzeugen einen Hinweis zur bewussten Themenentscheidung. */
+    { const fullText = norm(txt(doc));
+      const sh = fullText.match(/(?:^|[^\d.,:\/–—-])(112|117|118|143|144|145|147)(?![\d]|[.,:\/–—-]\d)/);
+      if (sh) add('warn', pid, 'crisis-number-check', `Mögliche Krisennummer «${sh[1]}»: thematischen Nutzen und Platzierung bewusst prüfen`);
+      for (const a of all(doc, x => x.tag === 'a' && /^tel:/i.test(x.attrs.href || ''))) {
+        if (/^tel:(112|117|118|143|144|145|147)$/i.test(a.attrs.href)) add('warn', pid, 'crisis-number-check', 'Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen');
+      }
+    }
     for (const el of all(doc, x => LEGACY_SAFETY.includes(x.attrs['data-safety-access']) || cls(x, 'puk-site-safety--direct'))) add('block', pid, 'crisis-block', 'Notfallblock auf psychoedukativer Seite (' + (el.attrs['data-safety-access'] || 'puk-site-safety--direct') + ')');
     if (sa.variant === 'responsibility') {
       const el = one(doc, x => x.attrs['data-safety-access'] === 'responsibility');
@@ -587,59 +592,59 @@ const MUTATIONS = [
   ['Direkteinstieg verweist auf fehlende Seite', ['utility-nav'], c => { c.utilityNav = [{ pageId: 'fehlt', label: 'Fehlt' }]; }],
   ['Site-weite Sprungzielfokussierung deaktiviert', ['deep-link-focus'], c => { delete c.deepLinkFocus; }],
   ['Statische Seite ohne Skript für Sprungzielfokus', ['interaction-script'], (c, f) => rex(f, 'index.html', /<script src="[^"]*interaktion\.js[^"]*" defer><\/script>\n?/, '')],
-  ['Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite)', ['nav-target', 'nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link" href="beziehungen-verstehen.html"', 'class="puk-web-nav__link" href="beziehungen.html"')],
-  ['Seitenvertrag verweist auf fehlende Datei', ['page-file'], c => { pg(c, 'behandlung-verstehen').href = 'behandlung.html'; }],
-  ['lang fehlt', ['lang'], (c, f) => rep(f, 'behandlung-verstehen.html', '<html lang="de-CH"', '<html')],
-  ['CDN-React eingebunden', ['external'], (c, f) => rep(f, 'behandlung-verstehen.html', '</head>', '<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>\n</head>')],
+  ['Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite)', ['nav-target', 'nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link" href="beziehungen.html"', 'class="puk-web-nav__link" href="gibt-es-nicht.html"')],
+  ['Seitenvertrag verweist auf fehlende Datei', ['page-file'], c => { pg(c, 'behandlung').href = 'gibt-es-nicht.html'; }],
+  ['lang fehlt', ['lang'], (c, f) => rep(f, 'behandlung.html', '<html lang="de-CH"', '<html')],
+  ['CDN-React eingebunden', ['external'], (c, f) => rep(f, 'behandlung.html', '</head>', '<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>\n</head>')],
   ['Favicon fehlt', ['favicon'], (c, f) => rex(f, 'index.html', /<link rel="icon"[^>]*>\n?/, '')],
   ['Meta-Description fehlt', ['meta'], (c, f) => rex(f, 'index.html', /<meta name="description"[^>]*>\n?/, '')],
-  ['Fachstelle unsichtbar', ['sender'], (c, f) => rep(f, 'unterstuetzung-finden.html', '<p class="puk-site-sender" data-sender>', '<p class="puk-site-sender" data-sender hidden>')],
+  ['Fachstelle unsichtbar', ['sender'], (c, f) => rep(f, 'unterstuetzung.html', '<p class="puk-site-sender" data-sender>', '<p class="puk-site-sender" data-sender hidden>')],
   ['E-Mail der Absenderin fehlt', ['sender'], (c, f) => !!(c.sender && c.sender.email) && rex(f, 'index.html', /<a class="puk-link--inline" data-sender-email[^>]*>[^<]*<\/a>/, '')],
   ['Fachstelle fehlt', ['sender'], (c, f) => rex(f, 'index.html', /<p class="puk-site-sender" data-sender>[\s\S]*?<\/p>/, '')],
-  ['Telefonnummer im Text', ['crisis-number'], (c, f) => rep(f, 'behandlung-verstehen.html', '</main>', '<p>Telefon 058 000 00 00</p></main>')],
-  ['Telefonlink eingefügt', ['crisis-number'], (c, f) => rep(f, 'behandlung-verstehen.html', '</main>', '<p><a href="tel:0580000000">Anrufen</a></p></main>')],
-  ['Notfallblock eingefügt', ['crisis-block'], (c, f) => rep(f, 'behandlung-verstehen.html', '<main id="main-content"', '<aside data-safety-access="direct"><p>Akute Hilfe</p></aside><main id="main-content"')],
-  ['ß statt ss', ['orthography'], (c, f) => rep(f, 'behandlung-verstehen.html', '</main>', '<p>Eine große Hilfe.</p></main>')],
-  ['Deutscher Rechtsbegriff', ['swiss-context'], (c, f) => rep(f, 'behandlung-verstehen.html', '</main>', '<p>Das Jugendamt hilft weiter.</p></main>')],
-  ['Etikettierende Bezeichnung', ['person-first'], (c, f) => rep(f, 'behandlung-verstehen.html', '</main>', '<p>Für den Schizophrenen ist das schwer.</p></main>')],
-  ['Unzulässige Variante direct', ['safety-contract'], c => { pg(c, 'beziehungen-verstehen').safetyAccess = { variant: 'direct' }; }],
-  ['Zuständigkeitsverweis ausserhalb der Fusszeile', ['safety-position'], (c, f) => { const m = /<section class="puk-site-safety[\s\S]*?<\/section>/.exec(f['beziehungen-verstehen.html'] || ''); if (!m) return false; f['beziehungen-verstehen.html'] = f['beziehungen-verstehen.html'].replace(m[0], '').replace('<main id="main-content"', m[0] + '<main id="main-content"'); return true; }],
+  ['Krisennummer erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p>Telefon 144</p></main>')],
+  ['Krisentelefonlink erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p><a href="tel:144">Anrufen</a></p></main>')],
+  ['Notfallblock eingefügt', ['crisis-block'], (c, f) => rep(f, 'behandlung.html', '<main id="main-content"', '<aside data-safety-access="direct"><p>Akute Hilfe</p></aside><main id="main-content"')],
+  ['ß statt ss', ['orthography'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p>Eine große Hilfe.</p></main>')],
+  ['Deutscher Rechtsbegriff', ['swiss-context'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p>Das Jugendamt hilft weiter.</p></main>')],
+  ['Etikettierende Bezeichnung', ['person-first'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p>Für den Schizophrenen ist das schwer.</p></main>')],
+  ['Unzulässige Variante direct', ['safety-contract'], c => { pg(c, 'beziehungen').safetyAccess = { variant: 'direct' }; }],
+  ['Zuständigkeitsverweis ausserhalb der Fusszeile', ['safety-position'], (c, f) => { const m = /<section class="puk-site-safety[\s\S]*?<\/section>/.exec(f['beziehungen.html'] || ''); if (!m) return false; f['beziehungen.html'] = f['beziehungen.html'].replace(m[0], '').replace('<main id="main-content"', m[0] + '<main id="main-content"'); return true; }],
   ['Zuständigkeitsverweis als geprüft markiert ohne Dokumentation', ['review-doc'], c => { c.responsibility.reviewStatus = 'geprueft'; delete c.responsibility.reviewedBy; delete c.responsibility.reviewedAt; }],
-  ['Zuständigkeitsverweis fehlt auf einer Seite', ['safety-target'], (c, f) => rex(f, 'behandlung-verstehen.html', /<section class="puk-site-safety[\s\S]*?<\/section>/, '')],
+  ['Zuständigkeitsverweis fehlt auf einer Seite', ['safety-target'], (c, f) => rex(f, 'behandlung.html', /<section class="puk-site-safety[\s\S]*?<\/section>/, '')],
   ['Hinweis «ersetzt keine Abklärung» fehlt', ['disclaimer'], (c, f) => rex(f, 'index.html', /<p class="puk-web-footer__copy" data-disclaimer>[\s\S]*?<\/p>/, '')],
-  ['Seite nicht erreichbar', ['reachability'], (c, f) => { for (const k of Object.keys(f)) if (k !== 'unterstuetzung-finden.html') f[k] = f[k].split('href="unterstuetzung-finden.html').join('href="index.html'); return true; }],
-  ['Kreislauf linear (keine Bögen)', ['cycle-geometry'], (c, f) => rep(f, 'beziehungen-verstehen.html', 'class="puk-vis-arc"', 'class="x"', true)],
-  ['«Uhrzeigersinn» in schmaler Leserichtung', ['cycle-direction'], (c, f) => rep(f, 'beziehungen-verstehen.html', '<span data-cycle-narrow>', '<span data-cycle-narrow>im Uhrzeigersinn, ')],
-  ['Rücksprung zu Station 1 fehlt', ['cycle-return'], (c, f) => rep(f, 'beziehungen-verstehen.html', ' data-cycle-return', '')],
-  ['Figur ohne Bildlegende', ['figure-caption'], (c, f) => rex(f, 'behandlung-verstehen.html', /<figcaption[\s\S]*?<\/figcaption>/, '')],
-  ['Figur ohne Kennzeichnung', ['figure-source'], (c, f) => rep(f, 'behandlung-verstehen.html', 'Eigene didaktische Darstellung', 'Darstellung', true)],
-  ['Figur fehlt im Visualisierungsplan', ['visual-plan'], c => { const p = pg(c, 'behandlung-verstehen'); p.visualPlan = p.visualPlan.filter(v => v.format !== 'comparison'); }],
-  ['Bildplatzhalter ohne Freigabestatus', ['placeholder-status'], (c, f) => rep(f, 'beziehungen-verstehen.html', ' data-approval-status="ausstehend"', '')],
-  ['Illustration ohne eigene Zeichnung und ohne Bildstatus', ['placeholder-status'], (c, f) => rep(f, 'beziehungen-verstehen.html', ' data-placeholder="image"', '')],
-  ['Quellenlink ohne sprechendes aria-label', ['link-label'], (c, f) => rep(f, 'behandlung-verstehen.html', '</figcaption>', '<a href="#main-content">Quelle</a></figcaption>')],
-  ['Interner Link ins Leere', ['link-target'], (c, f) => rep(f, 'unterstuetzung-finden.html', 'class="puk-link--inline" href="behandlung-verstehen.html"', 'class="puk-link--inline" href="gibt-es-nicht.html"')],
+  ['Seite nicht erreichbar', ['reachability'], (c, f) => { for (const k of Object.keys(f)) if (k !== 'unterstuetzung.html') f[k] = f[k].split('href="unterstuetzung.html').join('href="index.html'); return true; }],
+  ['Kreislauf linear (keine Bögen)', ['cycle-geometry'], (c, f) => rep(f, 'beziehungen.html', 'puk-vis-arc', 'x', true)],
+  ['«Uhrzeigersinn» in schmaler Leserichtung', ['cycle-direction'], (c, f) => rep(f, 'beziehungen.html', '<span data-cycle-narrow>', '<span data-cycle-narrow>im Uhrzeigersinn, ')],
+  ['Rücksprung zu Station 1 fehlt', ['cycle-return'], (c, f) => rep(f, 'beziehungen.html', ' data-cycle-return', '')],
+  ['Figur ohne Bildlegende', ['figure-caption'], (c, f) => rex(f, 'behandlung.html', /<figcaption[\s\S]*?<\/figcaption>/, '')],
+  ['Figur ohne Kennzeichnung', ['figure-source'], (c, f) => rep(f, 'behandlung.html', 'Eigene didaktische Darstellung', 'Darstellung', true)],
+  ['Figur fehlt im Visualisierungsplan', ['visual-plan'], c => { const p = pg(c, 'behandlung'); p.visualPlan = p.visualPlan.filter(v => v.format === 'text'); }],
+  ['Bildplatzhalter ohne Freigabestatus', ['placeholder-status'], (c, f) => rep(f, 'beziehungen.html', '<figure class="puk-vis-figure"', '<figure class="puk-vis-figure" data-placeholder="image"')],
+  ['Illustration ohne eigene Zeichnung und ohne Bildstatus', ['placeholder-status'], (c, f) => rep(f, 'beziehungen.html', '<figure class="puk-vis-figure"', '<figure class="puk-vis-figure" data-placeholder="image"')],
+  ['Quellenlink ohne sprechendes aria-label', ['link-label'], (c, f) => rep(f, 'behandlung.html', '</figcaption>', '<a href="#main-content">Quelle</a></figcaption>')],
+  ['Interner Link ins Leere', ['link-target'], (c, f) => rep(f, 'unterstuetzung.html', '</main>', '<p><a href="gibt-es-nicht.html">Weitere Beratung</a></p></main>')],
   ['Zwei h1', ['h1'], (c, f) => rep(f, 'index.html', '</main>', '<h1>Zweite Überschrift</h1></main>')],
-  ['Visualisierungsplan ohne «understood»', ['visual-plan'], c => { const v = pg(c, 'behandlung-verstehen').visualPlan.find(x => x.format !== 'text'); if (!v) return false; delete v.understood; }],
-  ['Visualisierungsplan ohne Wirkung («resonance»)', ['resonance'], c => { const v = pg(c, 'unterstuetzung-finden').visualPlan.find(x => x.format !== 'text'); if (!v) return false; delete v.resonance; }],
-  ['Inline-Skript eingefügt', ['inline-script'], (c, f) => rep(f, 'behandlung-verstehen.html', '</main>', '<script>console.log(1)</script></main>')],
-  ['Externer Link in neuem Fenster ohne rel', ['blank-target'], (c, f) => rep(f, 'behandlung-verstehen.html', '</main>', '<p><a href="https://www.example.org" target="_blank">Weitere Informationen der Beispielorganisation</a></p></main>')],
-  ['Akkordeon ohne Interaktionsskript', ['interaction-script'], (c, f) => rex(f, 'unterstuetzung-finden.html', /<script src="[^"]*interaktion\.js[^"]*" defer><\/script>\n?/, '')],
-  ['Figur ohne Kernaussage', ['figure-core'], (c, f) => rep(f, 'behandlung-verstehen.html', 'class="puk-vis-kern"', 'class="puk-vis-x"')],
-  ['Abschnitt ohne Zeile im Visualisierungsplan', ['plan-coverage'], c => { const p = pg(c, 'behandlung-verstehen'); const n = p.visualPlan.length; p.visualPlan = p.visualPlan.filter(v => v.sectionId !== 'fragen'); return p.visualPlan.length < n; }],
-  ['Planzeile verweist auf fehlenden Abschnitt', ['plan-section'], c => { const v = pg(c, 'behandlung-verstehen').visualPlan.find(x => x.sectionId === 'fragen'); if (!v) return false; v.sectionId = 'gibt-es-nicht'; }],
-  ['Ansatzpunkt im Plan fehlt', ['entry-point'], c => { const v = pg(c, 'beziehungen-verstehen').visualPlan.find(x => x.format === 'cycle'); if (!v) return false; delete v.entryPoint; }],
-  ['Ansatzpunkt im Plan, nicht in der Figur', ['entry-point'], (c, f) => rex(f, 'beziehungen-verstehen.html', /<p class="puk-vis-ansatz"[\s\S]*?<\/p>/, '')],
-  ['Kartenraster mit vielen Karten', ['card-grid'], (c, f) => rep(f, 'behandlung-verstehen.html', '</main>', '<ul class="puk-web-card-list"><li>A</li><li>B</li><li>C</li><li>D</li></ul></main>')],
-  ['Verweis im Text mit eigenem Wortlaut', ['inline-ref'], (c, f) => { c.responsibility.inline = { text: INLINE_T, reviewStatus: 'ausstehend' }; return rep(f, 'beziehungen-verstehen.html', '</main>', '<p class="puk-longform__boundary" data-responsibility-inline>Rufen Sie sofort jemanden an.</p></main>'); }],
-  ['Verweis im Text auf Seite ohne sensibles Thema', ['inline-ref'], (c, f) => { c.responsibility.inline = { text: INLINE_T, reviewStatus: 'ausstehend' }; return rep(f, 'index.html', '</main>', `<p class="puk-longform__boundary" data-responsibility-inline>${INLINE_T}</p></main>`); }],
-  ['Verweis im Text versteckt in einer Vertiefung', ['inline-ref'], (c, f) => { c.responsibility.inline = { text: INLINE_T, reviewStatus: 'ausstehend' }; return rep(f, 'beziehungen-verstehen.html', '</summary>', `</summary><p class="puk-longform__boundary" data-responsibility-inline>${INLINE_T}</p>`); }],
-  ['Entwurf in der Navigation', ['nav', 'link-draft'], (c, f) => rep(f, 'index.html', '</ul></nav>', '<li><a class="puk-web-nav__link" href="seitenvorlage.html">Vorlage</a></li>\n</ul></nav>')],
+  ['Visualisierungsplan ohne «understood»', ['visual-plan'], c => { const v = pg(c, 'behandlung').visualPlan.find(x => x.format !== 'text'); if (!v) return false; delete v.understood; }],
+  ['Visualisierungsplan ohne Wirkung («resonance»)', ['resonance'], c => { const v = pg(c, 'beziehungen').visualPlan.find(x => x.format !== 'text'); if (!v) return false; delete v.resonance; }],
+  ['Inline-Skript eingefügt', ['inline-script'], (c, f) => rep(f, 'behandlung.html', '</main>', '<script>console.log(1)</script></main>')],
+  ['Externer Link in neuem Fenster ohne rel', ['blank-target'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p><a href="https://www.example.org" target="_blank">Weitere Informationen der Beispielorganisation</a></p></main>')],
+  ['Akkordeon ohne Interaktionsskript', ['interaction-script'], (c, f) => rex(f, 'unterstuetzung.html', /<script src="[^"]*interaktion\.js[^"]*" defer><\/script>\n?/, '')],
+  ['Figur ohne Kernaussage', ['figure-core'], (c, f) => rep(f, 'behandlung.html', 'class="puk-vis-kern"', 'class="puk-vis-x"')],
+  ['Abschnitt ohne Zeile im Visualisierungsplan', ['plan-coverage'], c => { const p = pg(c, 'behandlung'); const n = p.visualPlan.length; p.visualPlan = p.visualPlan.filter(v => v.sectionId !== 'kontakt'); return p.visualPlan.length < n; }],
+  ['Planzeile verweist auf fehlenden Abschnitt', ['plan-section'], c => { const v = pg(c, 'behandlung').visualPlan.find(x => x.sectionId === 'kontakt'); if (!v) return false; v.sectionId = 'gibt-es-nicht'; }],
+  ['Ansatzpunkt im Plan fehlt', ['entry-point'], c => { const v = pg(c, 'beziehungen').visualPlan.find(x => x.format === 'cycle'); if (!v) return false; delete v.entryPoint; }],
+  ['Ansatzpunkt im Plan, nicht in der Figur', ['entry-point'], (c, f) => rex(f, 'beziehungen.html', /<p class="puk-vis-ansatz"[\s\S]*?<\/p>/, '')],
+  ['Kartenraster mit vielen Karten', ['card-grid'], (c, f) => rep(f, 'behandlung.html', '</main>', '<ul class="puk-web-card-list"><li>A</li><li>B</li><li>C</li><li>D</li></ul></main>')],
+  ['Verweis im Text mit eigenem Wortlaut', ['inline-ref'], (c, f) => { c.responsibility.inline = { text: INLINE_T, reviewStatus: 'ausstehend' }; return rep(f, 'beziehungen.html', '</main>', '<p class="puk-longform__boundary" data-responsibility-inline>Rufen Sie sofort jemanden an.</p></main>'); }],
+  ['Verweis im Text auf Seite ohne sensibles Thema', ['inline-ref'], (c, f) => { c.responsibility.inline = { text: INLINE_T, reviewStatus: 'ausstehend' }; return rep(f, 'impressum-datenschutz.html', '</main>', `<p class="puk-longform__boundary" data-responsibility-inline>${INLINE_T}</p></main>`); }],
+  ['Verweis im Text versteckt in einer Vertiefung', ['inline-ref'], (c, f) => { c.responsibility.inline = { text: INLINE_T, reviewStatus: 'ausstehend' }; return rep(f, 'fragen.html', '</summary>', `</summary><p class="puk-longform__boundary" data-responsibility-inline>${INLINE_T}</p>`); }],
+  ['Entwurf in der Navigation', ['nav', 'link-draft'], (c, f) => (() => { pg(c, 'behandlung').status = 'draft'; return true; })()],
   /* Prüfbefunde 11.10.2026 (Website «Depression: Informationen für Angehörige») */
-  ['Vertiefung ohne Interaktionsskript (Druck)', ['interaction-script'], (c, f) => rex(f, 'behandlung-verstehen.html', /<script src="[^"]*interaktion\.js[^"]*" defer><\/script>\n?/, '')],
+  ['Vertiefung ohne Interaktionsskript (Druck)', ['interaction-script'], (c, f) => rex(f, 'behandlung.html', /<script src="[^"]*interaktion\.js[^"]*" defer><\/script>\n?/, '')],
   ['Name des Logo-Links ohne sichtbaren Logotext', ['logo-name'], (c, f) => rex(f, 'index.html', /(<a class="puk-web-logo"[^>]*aria-label=")[^"]*"/, '$1Startseite: Musterwebsite"')],
-  ['Mehr als sechs Hauptpunkte ohne Menü', ['nav-menu'], (c, f) => rep(f, 'index.html', '\n</ul></nav>', '\n<li><a class="puk-web-nav__link" href="index.html">A</a></li><li><a class="puk-web-nav__link" href="index.html">B</a></li><li><a class="puk-web-nav__link" href="index.html">C</a></li>\n</ul></nav>')],
+  ['Mehr als sechs Hauptpunkte ohne Menü', ['nav-menu'], (c, f) => rep(f, 'index.html', ' data-puk-disclosure', '')],
   ['Impressum und Datenschutzerklärung fehlen', ['legal'], c => { if (!c.legal) return false; delete c.legal; }],
-  ['Link auf das Impressum fehlt in der Fusszeile', ['legal'], (c, f) => rex(f, 'behandlung-verstehen.html', /<p class="puk-web-footer__copy puk-site-legal" data-site-legal>[\s\S]*?<\/p>/, '')],
+  ['Link auf das Impressum fehlt in der Fusszeile', ['legal'], (c, f) => rex(f, 'behandlung.html', /<p class="puk-web-footer__copy puk-site-legal" data-site-legal>[\s\S]*?<\/p>/, '')],
   ['Konfigurierte Website-Informationen fehlen in der Fusszeile', ['footer-links'], c => { c.footer = Object.assign({}, c.footer, { links: [{ label: 'Über diese Website', href: 'index.html' }] }); }],
   ['Footer-Link verweist auf ein fehlendes Sprungziel', ['footer-links'], c => { c.footer = Object.assign({}, c.footer, { links: [{ label: 'Fehlendes Ziel', href: 'index.html#fehlt' }] }); }],
   ['404-Seite fehlt', ['not-found'], c => { const n = c.pages.length; c.pages = c.pages.filter(p => !isNotFound(p)); return c.pages.length < n; }],
@@ -648,19 +653,19 @@ const MUTATIONS = [
   ['404-Seite als Entwurf (nicht im Export)', ['not-found'], c => { const p = c.pages.find(isNotFound); if (!p) return false; p.status = 'draft'; }],
   ['Impressum zeigt auf eine E-Mail-Adresse statt auf eine Seite', ['legal'], (c, f) => { const e = c.legal && c.legal.imprint; if (!e || !e.href) return false; const old = e.href; e.href = 'mailto:nobody@example.org'; let n = 0; for (const k of Object.keys(f)) if (rep(f, k, `href="${old}"`, `href="${e.href}"`, true)) n++; return n > 0; }],
   ['Externes Stylesheet als «alternate stylesheet»', ['external'], (c, f) => rep(f, 'index.html', '</head>', '<link rel="alternate stylesheet" href="https://www.example.org/x.css">\n</head>')],
-  ['Fremdsprachiger Quellentitel ohne lang', ['lang-part'], (c, f) => rep(f, 'behandlung-verstehen.html', '</main>', '<ol class="puk-longform__sources"><li>Muster A (2020): Supporting the families of people with depression: a review of the evidence.</li></ol></main>')],
+  ['Fremdsprachiger Quellentitel ohne lang', ['lang-part'], (c, f) => rep(f, 'behandlung.html', '</main>', '<ol class="puk-longform__sources"><li>Muster A (2020): Supporting the families of people with depression: a review of the evidence.</li></ol></main>')],
   ['Veraltetes Prüfdatum eines Angebots', ['service-review'], (c, f) => {
     c.serviceReview = { maxAgeDays: 183, requiredIds: ['test-service'] };
-    return rep(f, 'behandlung-verstehen.html', '</main>', '<article data-service-item data-service-id="test-service" data-reviewed="2020-01-01"><a href="https://example.org">Offizielle Angebotsseite</a><time datetime="2020-01-01">1. Januar 2020</time></article></main>');
+    return rep(f, 'behandlung.html', '</main>', '<article data-service-item data-service-id="test-service" data-reviewed="2020-01-01"><a href="https://example.org">Offizielle Angebotsseite</a><time datetime="2020-01-01">1. Januar 2020</time></article></main>');
   }],
   ['Angebot ohne serviceReview-Konfiguration', ['service-review'], (c, f) => {
     delete c.serviceReview;
-    return rep(f, 'behandlung-verstehen.html', '</main>', '<article data-service-item data-service-id="test-service" data-reviewed="2026-10-13"><a href="https://example.org">Offizielle Angebotsseite</a><time datetime="2026-10-13">13. Oktober 2026</time></article></main>');
+    return rep(f, 'behandlung.html', '</main>', '<article data-service-item data-service-id="test-service" data-reviewed="2026-10-13"><a href="https://example.org">Offizielle Angebotsseite</a><time datetime="2026-10-13">13. Oktober 2026</time></article></main>');
   }],
   ['Pflichtangebot nur auf einer Entwurfsseite', ['service-review'], (c, f) => {
     c.serviceReview = { maxAgeDays: 183, requiredIds: ['test-service'] };
-    pg(c, 'behandlung-verstehen').status = 'draft';
-    return rep(f, 'behandlung-verstehen.html', '</main>', '<article data-service-item data-service-id="test-service" data-reviewed="2026-10-13"><a href="https://example.org">Offizielle Angebotsseite</a><time datetime="2026-10-13">13. Oktober 2026</time></article></main>');
+    pg(c, 'behandlung').status = 'draft';
+    return rep(f, 'behandlung.html', '</main>', '<article data-service-item data-service-id="test-service" data-reviewed="2026-10-13"><a href="https://example.org">Offizielle Angebotsseite</a><time datetime="2026-10-13">13. Oktober 2026</time></article></main>');
   }]
 ];
 function pg(c, id) { const p = c.pages.find(x => x.id === id); if (!p) throw new Error('Seite ' + id + ' fehlt'); return p; }
@@ -679,10 +684,16 @@ function selftest(cfg, files, opts = {}) {
   { const hitCurrent = gate(cfg, files, { mode: 'production', exists: base }).findings.some(x => x.id === 'editorial-status');
     rows.push({ name: 'Aktueller datierter Redaktionsstatus besteht das Produktionsgate', expected: 'kein editorial-status', got: hitCurrent ? 'editorial-status' : 'kein editorial-status', ok: !hitCurrent }); }
   const unreviewed = {}; for (const [k, v] of Object.entries(files)) unreviewed[k] = typeof v === 'string' ? v.split('data-review-status="geprueft"').join('data-review-status="ausstehend"') : v;
-  const bp = gate(Object.assign({}, cfg, { sender: Object.assign({}, cfg.sender, { status: 'placeholder' }), responsibility: cfg.responsibility && Object.assign({}, cfg.responsibility, { reviewStatus: 'ausstehend', reviewedBy: undefined, reviewedAt: undefined }) }), unreviewed, { mode: 'production', exists: base }); /* Absenderin und Zuständigkeitsverweis hier absichtlich ungeklärt, damit die Prüfung belegt bleibt, auch wenn beide freigegeben sind */ const need = ['sender-status', 'safety-review', 'placeholder-approval', 'visual-approval'];
+  const pending = JSON.parse(JSON.stringify(cfg));
+  pending.sender.status = 'placeholder';
+  Object.assign(pending.responsibility, { reviewStatus: 'ausstehend', reviewedBy: undefined, reviewedAt: undefined });
+  const visual = pending.pages.flatMap(p => p.visualPlan || []).find(v => v.format !== 'text');
+  visual.approvalStatus = 'ausstehend';
+  const bp = gate(pending, unreviewed, { mode: 'production', exists: base });
+  const need = ['sender-status', 'safety-review', 'visual-approval'];
   /* Offene Angaben vor der Veröffentlichung (Impressum, Datenschutzerklärung, 404-Seite) gelten wie offene Freigaben, nicht als Strukturfehler. */
   const hit = need.filter(id => bp.findings.some(x => x.level === 'block' && x.id === id)); const structural = bp.findings.filter(x => x.level === 'block' && !need.includes(x.id) && !['legal', 'not-found'].includes(x.id));
-  rows.push({ name: 'Produktion blockiert ungeklärte Absenderin, Zuständigkeitsverweise, Platzhalter und Visualisierungen', expected: need.join(', ') + ' · keine Strukturfehler', got: hit.join(', ') + ' · ' + (structural.length ? structural.length + ' Strukturfehler' : 'keine Strukturfehler'), ok: hit.length === need.length && !structural.length });
+  rows.push({ name: 'Produktion blockiert ungeklärte Absenderin, Zuständigkeitsverweise und Visualisierungen', expected: need.join(', ') + ' · keine Strukturfehler', got: hit.join(', ') + ' · ' + (structural.length ? structural.length + ' Strukturfehler' : 'keine Strukturfehler'), ok: hit.length === need.length && !structural.length });
   const done = '| Stufe | Status |\n| --- | --- |\n' + REPORT_STAGES.map(([n]) => `| ${n} | erledigt |`).join('\n');
   const noRep = gate(cfg, files, { mode: 'production', exists: base, report: null }).findings.some(x => x.level === 'block' && x.id === 'review-report');
   rows.push({ name: 'Produktion ohne Prüfbericht blockiert', expected: 'review-report', got: noRep ? 'review-report' : 'nicht erkannt', ok: noRep });
@@ -695,9 +706,15 @@ function selftest(cfg, files, opts = {}) {
     const ext = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.id === 'external');
     rows.push({ name: 'Kanonischer Link (siteUrl) gilt nicht als externe Laufzeitquelle', expected: 'kein external', got: ok ? (ext ? 'external' : 'kein external') : 'Mutation nicht anwendbar', ok: ok && !ext }); }
   { const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files); c.responsibility = Object.assign({}, c.responsibility, { inline: { text: INLINE_T, reviewStatus: 'ausstehend' } });
-    const ok = rep(f, 'beziehungen-verstehen.html', '</main>', `<section id="x-inline"><p class="puk-longform__boundary" data-responsibility-inline>${INLINE_T}</p></section></main>`);
+    const ok = rep(f, 'beziehungen.html', '</main>', `<section id="x-inline"><p class="puk-longform__boundary" data-responsibility-inline>${INLINE_T}</p></section></main>`);
     const hitI = ok && gate(c, f, { mode: 'production', exists: base }).findings.some(x => x.level === 'block' && x.id === 'inline-review');
     rows.push({ name: 'Produktion blockiert ungeprüften Verweis im Text', expected: 'inline-review', got: hitI ? 'inline-review' : (ok ? 'nicht erkannt' : 'Mutation nicht anwendbar'), ok: !!hitI }); }
+  for (const phone of ['058 000 00 00', '+41 44 000 00 00', '0800 000 000']) {
+    const f = Object.assign({}, files);
+    const applied = rep(f, 'behandlung.html', '</main>', `<p>Beratung: <a href="tel:${phone.replace(/ /g, '')}">${phone}</a></p></main>`);
+    const result = gate(cfg, f, { mode: 'draft', exists: base });
+    rows.push({ name: 'Regulärer Kontakt ohne Krisenausnahme: ' + phone, expected: '0 Blocker', got: String(result.blocks), ok: applied && result.blocks === 0 });
+  }
   for (const [name, expect, mut] of MUTATIONS) {
     const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files);
     let applied; try { applied = mut(c, f) !== false; } catch (e) { applied = false; }

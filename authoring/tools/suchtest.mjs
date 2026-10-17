@@ -8,7 +8,7 @@
 // «!sicher» heisst: unter den ersten zwei Treffern steht keiner der vier Sicherheitsabschnitte (harmlose Gegenproben, r4-33).
 // Playwright braucht PLAYWRIGHT_BROWSERS_PATH (hier /opt/pw-browsers).
 // Playwright: Modulpfad über PLAYWRIGHT_MODULE, sonst /opt/npm-tools/node_modules/playwright.
-// Nicht Teil der CI (dort fehlt Playwright); in jeder Änderungsrunde mit Änderungen an Suche oder Inhalt ausführen.
+// Die CI installiert Playwright und führt dieselbe Suchregression aus. CHROMIUM_PATH erlaubt einen Systembrowser.
 import { createServer } from 'node:http';
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { join, dirname, extname, resolve } from 'node:path';
@@ -28,12 +28,13 @@ const server = createServer((req, res) => {
   if (p.endsWith('/')) p += 'index.html';
   const f = join(siteDir, p);
   if (!f.startsWith(siteDir) || !existsSync(f) || !statSync(f).isFile()) { res.writeHead(404); res.end(); return; }
-  res.writeHead(200, { 'Content-Type': types[extname(f)] || 'application/octet-stream' });
+  const headers = Object.fromEntries(readFileSync(join(siteDir, '_headers'), 'utf8').split('\n').filter(l => /^\s+[^#\s][^:]+:/.test(l)).map(l => { const at=l.indexOf(':'); return [l.slice(0,at).trim(),l.slice(at+1).trim()]; }));
+  res.writeHead(200, { ...headers, 'Content-Type': types[extname(f)] || 'application/octet-stream' });
   res.end(readFileSync(f));
 });
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 const port = server.address().port;
-const browser = await chromium.launch();
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 const page = await browser.newPage();
 const errors = [];
 page.on('pageerror', e => errors.push(String(e)));

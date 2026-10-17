@@ -1,0 +1,17 @@
+import { existsSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { injectSearchIndex } from './search-index.mjs';
+const require = createRequire(import.meta.url);
+const C = require('./contract.js');
+const source = dirname(dirname(fileURLToPath(import.meta.url)));
+const cfg = JSON.parse(readFileSync(join(source, 'site.config.json'), 'utf8'));
+const fragments = Object.fromEntries(cfg.pages.map(p => [p.id, readFileSync(join(source, 'content', p.id + '.html'), 'utf8')]));
+injectSearchIndex(cfg, fragments);
+const files = Object.fromEntries(cfg.pages.filter(p => p.status === 'published').map(p => [C.resolve('', p.href).path, C.renderPage(cfg, p, fragments[p.id])]));
+const rows = C.selftest(cfg, files, { exists: p => Object.hasOwn(files, p) || existsSync(join(source, p)) });
+for (const row of rows) console.log(`${row.ok ? 'PASS' : 'FAIL'} | ${row.name} | erwartet: ${row.expected} | erhalten: ${row.got}`);
+console.log(`Selbsttest: ${rows.filter(r => r.ok).length}/${rows.length} bestanden`);
+if (rows.some(r => !r.ok)) process.exitCode = 1;

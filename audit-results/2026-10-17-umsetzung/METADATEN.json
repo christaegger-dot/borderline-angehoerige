@@ -1,0 +1,37 @@
+{
+  "projekt": "Borderline – Orientierung für Angehörige",
+  "repository": "https://github.com/christaegger-dot/borderline-angehoerige",
+  "lauf_id": "2026-10-17-umsetzung",
+  "modus": "delta – technische und redaktionelle Selbstprüfung; kein unabhängiges Audit 06",
+  "erstellt_utc": "2026-10-17T16:07:16.580664+00:00",
+  "ausgangscommit": "6ac0255c23d09e63aeb4b2485fdf417b701839de",
+  "gepruefter_anwendungscode": "348507b465f8f3e149ce5271a45a527fae390083",
+  "dokumentationsstand": "348507b465f8f3e149ce5271a45a527fae390083",
+  "branch": "codex/abschluss-2026-10-17",
+  "deployment": "https://borderline-angehoerige.netlify.app",
+  "produkt_pruefziel": "lokaler Kandidat mit Produktionsheadern; Produktionsvergleich nach Merge gesondert",
+  "bedingungen": {
+    "browser": "151.0.7922.173",
+    "playwright_unabhaengiger_lauf": "1.62.1",
+    "axe": "4.14.0",
+    "node": "24.19.0",
+    "viewports_css_px": [
+      320,
+      375,
+      768,
+      1024,
+      1440
+    ],
+    "textgroessen": [
+      "100 %",
+      "200 % Wurzelschrift über Test-Stylesheet; kein nativer Browserzoom"
+    ],
+    "no_js_viewport": 375,
+    "locale": "de-CH",
+    "headless": true,
+    "runtime_csp": "tatsächliche lokale Netlify-Richtlinie; axe über eigenen lokalen Prüfpfad; keine produktive Schutzänderung",
+    "browsermatrix_von": "2026-10-17T14:46:55.933Z",
+    "browsermatrix_bis": "2026-10-17T14:57:55.546Z"
+  },
+  "hinweis": "Keine neue medizinische, juristische, Datenschutz- oder WCAG-Freigabe. Rohbelege ausserhalb des Repositorys."
+}

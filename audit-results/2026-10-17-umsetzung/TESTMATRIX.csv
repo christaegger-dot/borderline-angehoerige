@@ -1,0 +1,7 @@
+﻿id;pruefung;umfang;ergebnis;methode;beleg
+D-01;Layoutmatrix;230;"bestanden; 0 horizontaler Überlauf; keine unbeabsichtigte Abschneidung";Chromium, Produktionsheader, Wurzelschrift 100/200 %;/workspace/scratch/umsetzung4/browser/borderline-angehoerige.json
+D-02;axe;46;"0 gemeldete Verstösse; keine vollständige WCAG-Aussage";axe-core 4.14.0, Chromium;/workspace/scratch/umsetzung4/browser/borderline-angehoerige.json
+D-03;Nutzerwege;7;alle bestanden;Browser, Tastatur, relevante Zustände;/workspace/scratch/umsetzung4/borderline-angehoerige-journeys.json
+D-04;JavaScript aus;23;Hauptinhalte und Links erreichbar;eigener Browserkontext ohne JavaScript;/workspace/scratch/umsetzung4/browser/borderline-angehoerige.json
+D-05;Projektspezifische Regressionen;"79/79 Selbsttests, 216/216 Sucherwartungen ohne JS-Fehler und 34/34 bytegleiche Exportdateien. Neues Mobilmenü mit Enter, Escape, Fokusrückgabe und sechs sichtbaren Links geprüft; ohne JavaScript bleiben alle sechs Navigationslinks sichtbar.";tatsächliche Ergebnisse im Bericht;dokumentierte CLI-Befehle, technische Selbstprüfung;BERICHT.md
+D-06;Externe Freigaben und reale Nutzertests;nicht durchgeführt;nicht geprüft;keine erfundenen Nachweise;R3C-A11 ist im Selbsttest- und CI-Teil erledigt. Der weitergehende Prozesspunkt zur versionsgebundenen unabhängigen R3-Freigabe wird nicht durch eine als unabhängig umbenannte Selbstprüfung ersetzt.

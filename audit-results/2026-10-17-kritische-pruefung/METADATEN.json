@@ -1,0 +1,65 @@
+{
+  "projekt": "Borderline – Orientierung für Angehörige",
+  "repository": "https://github.com/christaegger-dot/borderline-angehoerige",
+  "repository_private": true,
+  "lauf_id": "2026-10-17-kritische-pruefung",
+  "erstellt_utc": "2026-10-17T15:27:20+00:00",
+  "branch": "main",
+  "commit": "6ac0255c23d09e63aeb4b2485fdf417b701839de",
+  "tree": "44054eed6bdf80750c7a0d85934f12408ba2e217",
+  "deployment": "https://borderline-angehoerige.netlify.app",
+  "modus": "Bestand und kritische Module 01–05; risikoorientierte Inhalts-/Quellenprüfung; kein Audit 06",
+  "kanonische_quelle": "authoring/content/, authoring/site.config.json, authoring/css/, authoring/js/; site/ ist Export",
+  "bedingungen": {
+    "browser": "151.0.7922.173",
+    "playwright_unabhaengiger_lauf": "1.62.1",
+    "axe": "4.14.0",
+    "node": "24.19.0",
+    "viewports_css_px": [
+      320,
+      375,
+      768,
+      1024,
+      1440
+    ],
+    "textgroessen": [
+      "100 %",
+      "200 % Wurzelschrift über Test-Stylesheet; kein nativer Browserzoom"
+    ],
+    "no_js_viewport": 375,
+    "locale": "de-CH",
+    "headless": true,
+    "runtime_csp": "tatsächliche lokale Netlify-Richtlinie; axe über eigenen lokalen Prüfpfad; keine produktive Schutzänderung",
+    "browsermatrix_von": "2026-10-17T14:46:55.933Z",
+    "browsermatrix_bis": "2026-10-17T14:57:55.546Z"
+  },
+  "umfang": {
+    "html_seiten": 23,
+    "layoutzustaende": 230,
+    "axe_zustaende": 46,
+    "no_js_seiten": 23,
+    "nutzerwege": 7,
+    "externe_urls_dieses_repos": 87,
+    "interne_linkvorkommen": 1130,
+    "tracked_dateien": 250,
+    "remote_branches": 32
+  },
+  "github_beim_abruf": {
+    "offene_issues": 0,
+    "offene_pull_requests": 0,
+    "main_protected": false,
+    "allow_squash_merge": true,
+    "allow_rebase_merge": true,
+    "delete_branch_on_merge": false
+  },
+  "abgrenzung": {
+    "runtime_unveraendert": true,
+    "commit_pr_merge_deploy": false,
+    "fachaerztliche_oder_juristische_freigabe": false,
+    "realer_screenreader_touch_hardware": false,
+    "vollstaendiger_paper_review": false,
+    "vollstaendiger_geheimnis_scan_der_git_historie": false
+  },
+  "evidenzverzeichnis": "/workspace/scratch/audit4",
+  "pruefrollen": "Aktuelle Sitzung hat die geprüften vier Runtime-Stände nicht erstellt; technische KI-Prüfung, keine menschliche Fachprüfung."
+}

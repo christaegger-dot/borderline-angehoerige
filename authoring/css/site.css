@@ -1484,3 +1484,19 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-web-footer__boundary{margin-top:12px;padding-top:0;border:0}
 .puk-web-footer__details{margin-top:8px;padding-top:8px}
 @media(max-width:759px){.puk-web-footer__grid{grid-template-columns:minmax(0,1fr);gap:20px}}
+
+/* Informationsseiten brauchen einen frühen Einstieg, keine Display-Titel.
+   Lokale Bildschirmproportionen; Schriftwahl, Lesetext und Druck bleiben erhalten. */
+.puk-site-start-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6)}
+@media screen{
+  .puk-web-header__inner{padding-block:var(--space-4);row-gap:var(--space-3)}
+  .puk-longform__hero{padding-block:clamp(2rem,4vw,3rem) clamp(2rem,3vw,2.5rem)}
+  .puk-longform__hero .puk-web-h1{max-width:24ch;margin-top:var(--space-4);font-size:clamp(2rem,1.5rem + 2.5vw,3.75rem);line-height:1.12;letter-spacing:normal}
+  .puk-longform__intro{margin-top:var(--space-5);font-size:clamp(1.25rem,1.125rem + .5vw,1.5rem);line-height:1.45}
+  .puk-site-start-actions+p{max-width:68ch;margin-top:var(--space-4);color:var(--text-muted);font-size:1rem;line-height:1.5}
+}
+@media screen and (max-width:760px){
+  .puk-web-header__inner{padding-block:var(--space-3);gap:var(--space-2)}
+  .puk-site-utility{gap:0 var(--space-4)}
+  .puk-site-sender{gap:var(--space-1) var(--space-3);padding-bottom:var(--space-3)}
+}

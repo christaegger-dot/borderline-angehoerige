@@ -1,0 +1,10 @@
+Test;Umfang;Ergebnis;Beleg
+Projektgates;"79/79 Selbsttests; Produktionsbuild und 34/34 Exportparität; 216/216 Sucherwartungen";bestanden;/workspace/scratch/design4
+Layout;230 Zustände, alle Seiten, fünf Breiten, zwei Schriftzustände;"kein horizontaler Überlauf; gemeldete 1x1-Textalternativen sind beabsichtigt";/workspace/scratch/design4/browser/borderline-angehoerige.json
+axe;46 Seitenzustände;"keine gemeldeten Verstösse; kein vollständiger WCAG-Nachweis";/workspace/scratch/design4/browser/borderline-angehoerige.json
+Nutzerwege;7/7 inklusive vorhandener Interaktionen und Druck;bestanden;/workspace/scratch/design4/journeys-retest.json
+Ohne JavaScript;23 Seiten;Inhalte lesbar, kein horizontaler Überlauf;/workspace/scratch/design4/browser/borderline-angehoerige.json
+Sichtung;"3 Seiten bei 375 und 1440 px; Einstiege, längere Abschnitte und vorhandene Grafiken";"visuell nachgesichtet; keine weitere Umgestaltung der erklärenden Grafiken begründet";/workspace/scratch/design4/after
+Reale Geräte, Screenreader, Zielgruppentest;nicht durchgeführt;"nicht geprüft; keine neue Freigabe behauptet";PRUEFUMFANG.md
+Ergänzende Projekt-CI;"bestehender versionsgebundener Projektworkflow; bei Loslassen 41 Prüfblöcke, bei Recht 15 Browserläufe";Abschliessender Workflowstatus und Produktionsabgleich werden im Abschlussbericht mit Commit und Lauf-URL belegt;https://github.com/christaegger-dot/borderline-angehoerige/actions?query=branch%3Acodex%2Fgestaltung-2026-10-17
+Direkter Frageeinstieg;4 Fälle: 375/1440 px, JS/No-JS;"Enter erreicht das korrekte Sprungziel; Tab setzt innerhalb des Ziels fort";/workspace/scratch/design4/entries.json

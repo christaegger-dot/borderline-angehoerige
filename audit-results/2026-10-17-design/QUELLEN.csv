@@ -1,0 +1,5 @@
+Quelle;Fundstelle;Stand;Verwendung
+PUK Website-Profil;christaegger-dot/puk-website-profil: templates/website/profile.json und Komponenten zur Webtypografie/visuellen Wissensvermittlung;lokale Referenz am 17.10.2026;"Maximalgrade, Typografie, Erklärnutzen und Mindestziele; Rechtswebsite mit dokumentierter eigener Gestaltung"
+Projektquelle;"authoring/content/index.html; authoring/css/site.css; authoring/site.config.json";616773c9d1f31cb04edc742d340f063cd29a1be1 plus dokumentierter Gestaltungs-Diff;tatsächliche Umsetzung und Quellenordnung
+Gerenderte Messung;/workspace/scratch/design4/before/metrics.json und /workspace/scratch/design4/after/metrics.json;17.10.2026;"gemessene Proportionen und Linkpositionen; kein gemessener Nutzererfolg"
+Nutzerauftrag;Projektchat vom 17.10.2026: «Einverstanden, leg los» nach konkreter Designbewertung;17.10.2026;autorisierte selbstständige Gestaltungsüberarbeitung

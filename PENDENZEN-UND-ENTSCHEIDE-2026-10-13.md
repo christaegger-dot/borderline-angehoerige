@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Stand: 17. Oktober 2026**
+**Dokumentationsstand: 18. Oktober 2026 · Anwendungsstand: r4-37 vom 17. Oktober 2026 (`2e668f7297b4f57e57f842ba8eab9ba14e7ac7ba`, PR #704).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -16,7 +16,9 @@ Die Projektverantwortliche hat nach dem kritischen Audit die selbstständige Ent
 
 Die lokale technische Selbstprüfung ist keine neue fachjuristische oder unabhängige R3-Freigabe. Der weitergehende Teil von R3C-A11 zur versionsgebundenen Freigabe bleibt als ausdrücklich begrenzter Prozesspunkt erhalten; er wird nicht durch das Umbenennen einer Selbstprüfung als erledigt ausgewiesen. Externe fachliche und institutionelle Tatsachen werden nicht erfunden.
 
-## Produktionsstand
+## Historische Produktionsnachweise
+
+Die nachfolgenden r4-35- und älteren Nachweise dokumentieren ihren damaligen Stand. Der aktuelle Anwendungsstand und seine Prüfungen stehen am Anfang dieser Datei; historische Versionsangaben und damalige Telefonzählungen sind keine heutigen Arbeitsvorgaben.
 
 ### r4-35 veröffentlicht und nachgeprüft
 
@@ -322,7 +324,7 @@ Die Durchsicht von Impressum und Datenschutz durch den Rechtsdienst bleibt empfo
 
 Folgende Angaben fehlen nicht versehentlich. Sie werden erst veröffentlicht, wenn die Fachstelle sie verbindlich bestätigt:
 
-- eine veröffentlichbare Telefonnummer, falls das geltende Verbot von Telefonnummern aufgehoben wird;
+- konkrete Telefonnummern mit belegter Zuständigkeit und Erreichbarkeit; die allgemeine Erlaubnis für hilfreiche Nummern gilt bereits nach dem Entscheid vom 17.10.2026;
 - verbindliche Erreichbarkeitszeiten;
 - eine garantierbare oder typische Antwortzeit;
 - bestätigte Angaben zur baulichen Zugänglichkeit des Beratungsorts.
@@ -343,6 +345,8 @@ Die zehn dynamischen Beratungs-, Austausch- und Behandlungsangebote wurden am 13
 
 ## Abgeschlossene Hauptarbeiten
 
-Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Ausgeliefert und in der Produktion nachgeprüft ist seit dem 15. Oktober 2026 Build r4-29. AR3-4 (Quellenangaben vollständig, mit Jahr und Abrufdatum) ist seit dem 13. Oktober 2026 erfüllt (`authoring/PRUEFBERICHT.md`, «Freigabe AR3-4»). R3 vom 15. Oktober 2026 hat das bestätigt (Punkt 14: 82 Einträge, alle mit Jahr oder «laufend»). Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
+Die Informationsarchitektur, Schnellorientierung, kanonischen Inhalte, Begriffskonsistenz, globale Kurzorientierung, Footer-Wege, Fokusführung und automatisierten Strukturprüfungen des bisherigen Massnahmenplans sind umgesetzt. Der historische Produktionsbeleg vom 15. Oktober 2026 betrifft Build r4-29; den aktuellen Stand r4-37 führt die Übersicht am Anfang dieser Datei. AR3-4 (Quellenangaben vollständig, mit Jahr und Abrufdatum) ist seit dem 13. Oktober 2026 erfüllt (`authoring/PRUEFBERICHT.md`, «Freigabe AR3-4»). R3 vom 15. Oktober 2026 hat das bestätigt (Punkt 14: 82 Einträge, alle mit Jahr oder «laufend»). Der im Produktions-Smoke-Test von r4-19 gefundene Suchbefund ist seit r4-20 behoben.
+
+Am 18.10.2026 wurden ausschliesslich Dokumentation und Agentenanweisungen bereinigt: gemeinsame Regelquelle, überprüfbare Branch-Konvention, Inhaltsvergleich möglicher Sync-Dubletten sowie die Einordnung historischer Produktions- und Telefonangaben. Websitequellen und Export bleiben unverändert; keine neue Fach- oder R3-Freigabe wird behauptet.
 
 Die früheren GitHub-Issues #631, #641 und #645 bis #651 bezogen sich auf die abgelöste React-/Handout-Architektur. Sie wurden nach dem Abgleich mit dem aktuellen statischen Neubau, den Audits 01–06, den Delta-Prüfungen und den dokumentierten Institutionsentscheiden als überholt geschlossen. Noch gültige Aussage- und Evidenzgrenzen bleiben in diesem Dokument erhalten; die Schliessung der alten Issues ist keine nachträgliche Behauptung einer Rechts-, Fach-, WCAG- oder Nutzendenfreigabe.

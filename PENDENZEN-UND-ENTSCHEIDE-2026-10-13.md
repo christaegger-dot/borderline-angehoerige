@@ -6,6 +6,20 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
+## Sprachliche Überarbeitung · r4-38 · Fachfreigabe vom 18.10.2026
+
+**GitHub:** [PR #706](https://github.com/christaegger-dot/borderline-angehoerige/pull/706), offen zur Schlussprüfung (Status geprüft am 18.10.2026). Umsetzungscommit: `968573fae9a5690b271704b4b535469b9e73e230`.
+
+Auftrag der Projektverantwortlichen vom 18.10.2026 nach Audit 03: «sehr gut, danke. Bitte überarbeite die Befunde direkt in github». Die 66 Befunde des Audits vom 18.10.2026 sind in den kanonischen Quellen umgesetzt, einschliesslich ihrer Querverweise. Nachweis, vollständige Befundzuordnung und Tests: [Überarbeitungsbericht](audit-results/2026-10-18-a03-umsetzung/BERICHT.md).
+
+**Fachliche Freigabe durch Christa Egger am 18.10.2026:** Die drei überarbeiteten Abbildungen `v-bz-sichten`, `v-gr-dear`, `v-ge-forschung` und der neue Akuthinweis von r4-38 sind ausdrücklich freigegeben. Originalerklärung, Bezugscommit und Umfang: [FREIGABE.md](audit-results/2026-10-18-a03-umsetzung/FREIGABE.md). Die vier Freigabefelder sind mit Name, Datum und Beleg aktualisiert; die freigegebenen Texte und Abbildungen bleiben unverändert.
+
+**Entscheid zur Gesamtprüfung, 18.10.2026, 19:49 Uhr:** Christa Egger verlangt keine unabhängige Gesamtprüfung mehr. Sie entfällt für r4-38; `releaseApproval.independentReview` ist als «entfaellt» mit versioniertem Entscheidbeleg dokumentiert. [Originalerklärung und Umsetzung](audit-results/2026-10-18-a03-umsetzung/VERZICHT-GESAMTPRUEFUNG.md). Die ursprünglichen fünf Freigabesperren in Prüflauf #58 und der einzelne Prüfpunkt nach der Fachfreigabe sind frühere Zwischenstände.
+
+Die lokale technische Selbstprüfung der Überarbeitung bestand mit 79 Selbsttests, 216 Suchfällen und 75 Browserprüfungen. Der Nachtest der Freigabefelder bestätigte erneut 79/79 Selbsttests und die Byte-Parität aller 34 Exportdateien: [Nachtest der Fachfreigabe](audit-results/2026-10-18-a03-umsetzung/NACHTEST-FACHFREIGABE.txt). Nach dem Entscheid zur Gesamtprüfung bestehen 82/82 Selbsttests und beide Produktionsaufrufe ohne Blocker; 34 Exportdateien sind bytegleich. [Aktueller Nachtest](audit-results/2026-10-18-a03-umsetzung/NACHTEST-VERZICHT.txt). Kein Merge oder Deployment durch diese Sitzung.
+
+Die frühere Tabelle mit 182 Sprachbefunden wird durch diese 66 gezielten Überarbeitungen nicht pauschal geschlossen. Der veröffentlichte Anwendungsstand bleibt bis zu einem überprüften Merge und Produktionsabgleich r4-37.
+
 ## Gestaltung · r4-37
 
 Auftrag der Projektverantwortlichen vom 17.10.2026: die optischen Verbesserungen selbstständig umsetzen. Proportionierte Bildschirmtitel, kompaktere Seitenköpfe und ein direkter Einstieg nach der eigenen Frage. Die lokale Grössenwahl bleibt innerhalb der Maximalgrade des PUK-Profils; Leseschrift, Fachtexte und Grafikaussagen bleiben erhalten. Nachweis und genaue Reichweite: `audit-results/2026-10-17-design/BERICHT.md`. Die Umsetzungssitzung bezeichnet ihren Nachtest als Selbstprüfung, nicht als unabhängige R3-Freigabe.

@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-36';
+const BUILD = 'r4-38';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -128,6 +128,11 @@ function resolve(from, href) {
   return { path: segs.join('/'), hash };
 }
 const reviewDocumented = sa => !!(sa && sa.reviewStatus === 'geprueft' && sa.reviewedBy && sa.reviewedAt);
+const reviewWaiverDocumented = ra => {
+  const waiver = ra && ra.independentReviewWaiver;
+  return !!(ra && ra.independentReview === 'entfaellt' && waiver && waiver.version === BUILD &&
+    waiver.decidedBy && /^\d{4}-\d{2}-\d{2}$/.test(waiver.decidedAt) && waiver.reference && waiver.statement);
+};
 const pagePath = p => resolve('', p.href).path;
 
 /* ---------- Build: Seitenrahmen konstruktiv aus dem Vertrag ---------- */
@@ -144,13 +149,17 @@ function renderPage(cfg, page, content) {
   const direct = '';
   /* Profilentscheid 09.10.2026: Verweis im Text auf die zuständigen Stellen. Der Platzhalter <p data-responsibility-inline></p> wird mit dem geprüften Wortlaut aus site.config.json › responsibility.inline gefüllt; Seiten schreiben ihn nie selbst. */
   const inl = cfg.responsibility && cfg.responsibility.inline;
+  const inlineText = inl && inl.text ? esc(inl.text).replace(/\b\d{3}\b/g, number => {
+    const phone = (inl.phoneLinks || []).find(entry => entry.number === number);
+    return phone ? `<a class="puk-link--inline" href="tel:${number}" aria-label="${esc(phone.label)}">${number}</a>` : number;
+  }) : '';
   let responsibilityInlineIndex = 0;
   const contentWithResponsibility = inl && inl.text ? content.replace(INLINE_RE, () => {
     responsibilityInlineIndex += 1;
     const tier = page.responsibilityInlineStyle === 'tiered'
       ? (responsibilityInlineIndex === 1 ? ' puk-longform__boundary--primary' : ' puk-longform__boundary--repeat')
       : '';
-    return `<p class="puk-longform__boundary puk-site-inline-ref${tier}" data-responsibility-inline>${esc(inl.text)}</p>`;
+    return `<p class="puk-longform__boundary puk-site-inline-ref${tier}" data-responsibility-inline>${inlineText}</p>`;
   }) : content;
   const faqBody = page.id === 'fragen' ? foldFaqAnswers(contentWithResponsibility, page.openFaqIds) : contentWithResponsibility;
   const body = foldDepthSections(faqBody, page.collapsedSections);
@@ -229,7 +238,7 @@ ${draftbar}<header class="puk-web-header"><div class="puk-web-container puk-web-
 ${navHtml}${utilityNav}</div>
 <div class="puk-web-container"><p class="puk-site-sender" data-sender><span class="puk-site-sender__label">${esc(senderLabel)}</span><span class="puk-site-sender__name" data-sender-unit>${esc(senderName)}</span>${senderInstitution}${s.email ? `${contactLabel}<a class="puk-link--inline" data-sender-email href="mailto:${esc(s.email)}">${esc(s.email)}</a>` : ''}${senderBadge}</p></div>
 </header>
-${breadcrumb}${direct}<main id="main-content" class="puk-web-main" tabindex="-1"${page.filterSelector ? ` data-puk-filter data-filter-selector="${esc(page.filterSelector)}"` : ''}>
+${breadcrumb}${direct}<main id="main-content" class="puk-web-main" tabindex="-1"${page.filterSelector ? ` data-puk-filter data-filter-selector="${esc(page.filterSelector)}" data-filter-label="${esc(page.filterLabel || 'Einträgen')}"` : ''}>
 ${body.trim()}
 ${sectionNav}
 </main>
@@ -273,7 +282,12 @@ function gate(cfg, files, opts = {}) {
     else if (rs.reviewStatus !== 'geprueft') prod('site', 'safety-review', `Zuständigkeitsverweis nicht fachlich geprüft (reviewStatus: ${rs.reviewStatus || 'fehlt'})`);
     if (rs.inline) {
       if (!rs.inline.text) add('block', 'site', 'inline-ref', 'responsibility.inline.text fehlt');
-      else if (/\d{3}/.test(rs.inline.text)) add('block', 'site', 'inline-ref', 'Verweis im Text nennt Nummern – zulässig sind nur Stellen ohne Nummern');
+      const phones = rs.inline.phoneLinks || [];
+      if (!Array.isArray(phones) || phones.some(phone => !/^\d{3}$/.test(phone.number) || !phone.label) || new Set(phones.map(phone => phone.number)).size !== phones.length) {
+        add('block', 'site', 'inline-ref', 'Telefonlinks im Verweis brauchen eindeutige dreistellige Nummern und verständliche Beschriftungen');
+      } else if ((String(rs.inline.text || '').match(/\d+/g) || []).some(number => !phones.some(phone => phone.number === number))) {
+        add('block', 'site', 'inline-ref', 'Nummer im Verweis ohne ausdrücklich konfigurierten Telefonlink');
+      }
       if (rs.inline.reviewStatus === 'geprueft' && !reviewDocumented(rs.inline)) add('block', 'site', 'review-doc', 'responsibility.inline: reviewStatus «geprueft» ohne reviewedBy und reviewedAt');
     }
   }
@@ -578,7 +592,7 @@ function gate(cfg, files, opts = {}) {
   if (inlineUsed && cfg.responsibility && cfg.responsibility.inline && cfg.responsibility.inline.reviewStatus !== 'geprueft') prod('site', 'inline-review', `Verweis im Text nicht fachlich geprüft (responsibility.inline.reviewStatus: ${cfg.responsibility.inline.reviewStatus || 'fehlt'})`);
   const ra = cfg.releaseApproval;
   if (ra && ra.institutionalResponsibility !== 'bestaetigt') prod('site', 'institutional-approval', 'Die organisatorische Verantwortung der PUK ist noch nicht formell bestätigt.');
-  if (ra && ra.independentReview !== 'bestaetigt') prod('site', 'change-review', 'Die aktuelle Änderungsrunde wurde noch nicht unabhängig geprüft.');
+  if (ra && ra.independentReview !== 'bestaetigt' && !reviewWaiverDocumented(ra)) prod('site', 'change-review', 'Unabhängige Gesamtprüfung oder dokumentierter Verzicht für diese Version fehlt.');
   if (opts.report !== undefined) {
     if (opts.report === null) prod('site', 'review-report', 'PRUEFBERICHT.md fehlt – ohne Prüfbericht keine Veröffentlichung (Abschnitt «Prüfung und Freigabe»)');
     else { const rs = reportStatus(opts.report); if (rs.open.length) prod('site', 'review-report', `Prüfbericht: offene Stufen ${rs.open.join(', ')} – Status «erledigt» oder «entfällt: Begründung»`); }
@@ -687,13 +701,30 @@ function selftest(cfg, files, opts = {}) {
   const pending = JSON.parse(JSON.stringify(cfg));
   pending.sender.status = 'placeholder';
   Object.assign(pending.responsibility, { reviewStatus: 'ausstehend', reviewedBy: undefined, reviewedAt: undefined });
+  Object.assign(pending.responsibility.inline, { reviewStatus: 'ausstehend', reviewedBy: undefined, reviewedAt: undefined });
+  pending.releaseApproval.independentReview = 'ausstehend';
   const visual = pending.pages.flatMap(p => p.visualPlan || []).find(v => v.format !== 'text');
   visual.approvalStatus = 'ausstehend';
   const bp = gate(pending, unreviewed, { mode: 'production', exists: base });
-  const need = ['sender-status', 'safety-review', 'visual-approval'];
+  const need = ['sender-status', 'safety-review', 'inline-review', 'visual-approval', 'change-review'];
   /* Offene Angaben vor der Veröffentlichung (Impressum, Datenschutzerklärung, 404-Seite) gelten wie offene Freigaben, nicht als Strukturfehler. */
   const hit = need.filter(id => bp.findings.some(x => x.level === 'block' && x.id === id)); const structural = bp.findings.filter(x => x.level === 'block' && !need.includes(x.id) && !['legal', 'not-found'].includes(x.id));
   rows.push({ name: 'Produktion blockiert ungeklärte Absenderin, Zuständigkeitsverweise und Visualisierungen', expected: need.join(', ') + ' · keine Strukturfehler', got: hit.join(', ') + ' · ' + (structural.length ? structural.length + ' Strukturfehler' : 'keine Strukturfehler'), ok: hit.length === need.length && !structural.length });
+  {
+    const waiver = { version: BUILD, decidedBy: 'Testperson', decidedAt: '2026-10-18', reference: 'test/freigabe.md', statement: 'Testfixture: Gesamtprüfung entfällt.' };
+    for (const [name, mutate, blocked] of [
+      ['Dokumentierter Verzicht auf Gesamtprüfung für aktuelle Version', () => {}, false],
+      ['Verzicht für andere Version hebt Prüfsperre nicht auf', w => { w.version = BUILD + '-andere'; }, true],
+      ['Verzicht ohne Beleg hebt Prüfsperre nicht auf', w => { delete w.reference; }, true]
+    ]) {
+      const c = JSON.parse(JSON.stringify(cfg));
+      c.releaseApproval.independentReview = 'entfaellt';
+      c.releaseApproval.independentReviewWaiver = { ...waiver };
+      mutate(c.releaseApproval.independentReviewWaiver);
+      const hit = gate(c, files, { mode: 'production', exists: base }).findings.some(x => x.level === 'block' && x.id === 'change-review');
+      rows.push({ name, expected: blocked ? 'change-review' : 'kein change-review', got: hit ? 'change-review' : 'kein change-review', ok: hit === blocked });
+    }
+  }
   const done = '| Stufe | Status |\n| --- | --- |\n' + REPORT_STAGES.map(([n]) => `| ${n} | erledigt |`).join('\n');
   const noRep = gate(cfg, files, { mode: 'production', exists: base, report: null }).findings.some(x => x.level === 'block' && x.id === 'review-report');
   rows.push({ name: 'Produktion ohne Prüfbericht blockiert', expected: 'review-report', got: noRep ? 'review-report' : 'nicht erkannt', ok: noRep });

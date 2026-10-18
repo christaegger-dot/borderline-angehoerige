@@ -173,6 +173,7 @@
     var items = [].slice.call(root.querySelectorAll(selector));
     var status = root.querySelector('[data-filter-status]');
     var empty = root.querySelector('[data-filter-empty]');
+    var label = root.getAttribute('data-filter-label') || 'Einträgen';
     if (!input || !items.length) return;
     root.setAttribute('data-filter-enhanced', '');
     function normalized(value) {
@@ -189,7 +190,9 @@
           if (terms.length) [].forEach.call(item.querySelectorAll('details'), function (details) { details.open = true; });
         }
       });
-      if (status) status.textContent = terms.length ? visible + ' von ' + items.length + ' Treffern sichtbar.' : items.length + ' Einträge verfügbar.';
+      if (status) status.textContent = terms.length
+        ? visible + ' von ' + items.length + ' ' + label + (visible === 1 ? ' passt' : ' passen') + ' zu Ihrer Suche.'
+        : items.length + ' Einträge verfügbar.';
       if (empty) empty.hidden = visible !== 0;
     }
     input.addEventListener('input', renderFilter);
@@ -514,7 +517,7 @@
       results.hidden = matches.length === 0;
       if (directory) directory.hidden = true;
       if (empty) empty.hidden = matches.length !== 0;
-      if (status) status.textContent = matches.length === 0 ? 'Keine passenden Inhalte gefunden.' : (matches.length > limit ? limit + ' von ' + matches.length + ' passenden Inhalten sichtbar.' : matches.length + (matches.length === 1 ? ' passender Inhalt.' : ' passende Inhalte.'));
+      if (status) status.textContent = matches.length === 0 ? 'Keine passenden Inhalte gefunden.' : (matches.length > limit ? 'Die ersten ' + limit + ' von ' + matches.length + ' passenden Inhalten werden angezeigt. Geben Sie einen genaueren Suchbegriff ein, um die Auswahl einzugrenzen.' : matches.length + (matches.length === 1 ? ' passender Inhalt.' : ' passende Inhalte.'));
     }
     input.addEventListener('input', renderSearch);
     renderSearch();

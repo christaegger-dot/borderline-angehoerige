@@ -13,6 +13,21 @@ const text = html => String(html || '')
   .replace(/\s+/g, ' ')
   .trim();
 
+const sentences = new Intl.Segmenter('de-CH', { granularity: 'sentence' });
+
+// Eine Aussage vollständig anzeigen, auch wenn schon ihr erster Satz länger ist.
+// Sicherheitsabschnitte können zusätzlich einen redaktionellen Ausschnitt erhalten.
+function excerptFor(body, page, id) {
+  const override = (page.sectionSearchExcerpts || {})[id];
+  if (override) return override;
+  let excerpt = '';
+  for (const { segment } of sentences.segment(body)) {
+    if (excerpt && (excerpt + segment).trim().length > 220) break;
+    excerpt += segment;
+  }
+  return excerpt.trim();
+}
+
 export function buildSearchIndex(cfg, fragments) {
   const items = [];
   for (const page of cfg.pages.filter(p => p.status === 'published' && !['404', 'suche'].includes(p.id))) {
@@ -35,7 +50,7 @@ export function buildSearchIndex(cfg, fragments) {
         if (headings[j].level <= heading.level) { end = headings[j].start; break; }
       }
       const body = text(html.slice(heading.end, end));
-      const excerpt = body.length > 220 ? body.slice(0, 217).replace(/\s+\S*$/, '') + '…' : body;
+      const excerpt = excerptFor(body, page, heading.id);
       const aliases = (page.sectionSearchAliases || {})[heading.id] || [];
       const sectionStart = html.lastIndexOf('<section', heading.start);
       const sectionOpenEnd = sectionStart === -1 ? -1 : html.indexOf('>', sectionStart);
@@ -59,7 +74,7 @@ export function buildSearchIndex(cfg, fragments) {
       if (!id || !title) continue;
       const closing = html.indexOf('</details>', match.index + match[0].length);
       const body = text(html.slice(match.index + match[0].length, closing === -1 ? html.length : closing));
-      const excerpt = body.length > 220 ? body.slice(0, 217).replace(/\s+\S*$/, '') + '…' : body;
+      const excerpt = excerptFor(body, page, id);
       const aliases = (page.sectionSearchAliases || {})[id] || [];
       items.push({ title, page: page.title, href: `${page.href}#${id}`, excerpt, terms: [title, basePageTerms, body, ...aliases].join(' '), keywords: aliases.join(' '), level: 'section' });
     }

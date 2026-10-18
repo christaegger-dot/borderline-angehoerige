@@ -1,0 +1,45 @@
+{
+  "datum": "2026-10-18",
+  "version": "r4-38",
+  "basis_commit": "086876611dbf2909e6d6f10824d05a0ecc4eed57",
+  "branch": "codex/a03-ueberarbeitung-2026-10-18",
+  "befunde": 66,
+  "audit_befunde_sha256": "53111c87b0fb6fdcd58bbf8e3e77c9cfa8dfe30644a7a08519b9f75eb8cd405f",
+  "pruefung": "Redaktionelle und technische Selbstprüfung; vier fachliche Freigaben durch Christa Egger; ausdrücklich dokumentierter Verzicht auf unabhängige Gesamtprüfung",
+  "status": "Fachfreigaben dokumentiert; unabhängige Gesamtprüfung entfällt nach Entscheid der Projektverantwortlichen; technische Produktionsprüfungen bestanden",
+  "tests": {
+    "selbsttest": "82/82",
+    "suchregression": "216/216",
+    "sprach_ui_test": "75/75",
+    "js_fehler": 0,
+    "paritaet_dateien": 34,
+    "entwurfsbuild_blocker": 0,
+    "produktionsgate_freigabeblocker": 0,
+    "nachtest_verzicht": "NACHTEST-VERZICHT.txt"
+  },
+  "referenz_notrufnummern": "https://www.zh.ch/de/gesundheit/notfall-rettung.html",
+  "pull_request_url": "https://github.com/christaegger-dot/borderline-angehoerige/pull/706",
+  "pull_request_number": 706,
+  "implementation_commit": "968573fae9a5690b271704b4b535469b9e73e230",
+  "fachfreigabe": {
+    "durch": "Christa Egger",
+    "datum": "2026-10-18",
+    "wortlaut": "Ich gebe die drei überarbeiteten Abbildungen und den neuen Akuthinweis von r4-38 fachlich frei.",
+    "umfang": [
+      "v-bz-sichten",
+      "v-ge-forschung",
+      "v-gr-dear",
+      "responsibility.inline"
+    ],
+    "bezugscommit": "43e954a0317055f7e529f2473e150d258dd202c7",
+    "beleg": "FREIGABE.md",
+    "nachtest": "NACHTEST-FACHFREIGABE.txt"
+  },
+  "verzicht_gesamtpruefung": {
+    "version": "r4-38",
+    "decidedBy": "Christa Egger",
+    "decidedAt": "2026-10-18",
+    "reference": "audit-results/2026-10-18-a03-umsetzung/VERZICHT-GESAMTPRUEFUNG.md",
+    "statement": "ich will keine unabhänige gesamtprüfung mehr machen"
+  }
+}

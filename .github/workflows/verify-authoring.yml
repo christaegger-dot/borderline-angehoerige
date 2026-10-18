@@ -19,7 +19,7 @@ jobs:
       - name: Verify gate mutations
         run: node authoring/tools/selftest.mjs
       - name: Produce site and verify all generated assets against committed release
-        run: node authoring/tools/build.mjs --production --verify-site
+        run: node authoring/tools/build.mjs --verify-site
       - name: Diagnose mismatch on failure
         if: failure()
         run: |

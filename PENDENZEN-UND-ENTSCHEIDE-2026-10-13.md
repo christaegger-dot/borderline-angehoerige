@@ -1,14 +1,24 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 18. Oktober 2026 · Anwendungsstand: r4-37 vom 17. Oktober 2026 (`2e668f7297b4f57e57f842ba8eab9ba14e7ac7ba`, PR #704).**
+**Dokumentationsstand: 18. Oktober 2026 · GitHub main: r4-38 (`c54139cd043ed1e2079306c4b98bcaf700d27be4`, PR #706 gemergt). Arbeitsentwurf: r4-39, Audit 04.**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
+## Audit 04 · Gestaltung und Didaktik · r4-39
+
+**GitHub:** [PR #707](https://github.com/christaegger-dot/borderline-angehoerige/pull/707), offen als Entwurf (Status geprüft am 18.10.2026). Umsetzungscommit: `a3f810be76a51c6370644ac2137c7fcdd0b8494e`.
+
+Die 16 Befunde A04-2003 bis A04-2018 sind technisch bearbeitet. Auftrag: «sehr gut. kannst du die Verbesserungen gleich direkt in github vornehmen?» [Umsetzungsbericht und Nachweise](audit-results/2026-10-18-a04-umsetzung/BERICHT.md).
+
+**Status:** Entwurf, noch nicht zur Veröffentlichung freigegeben. Sechs neue bzw. visuell neu angeordnete Darstellungen sind zur einzelnen Fachfreigabe ausstehend; der unveränderte Produktionsaufruf benennt ausschliesslich diese sechs. Die unabhängige Gesamtprüfung entfällt weiterhin nach dem ausdrücklichen Entscheid der Auftraggeberin. Keine neue Gesamtprüfung, keine erfundene Freigabe. [Umfang und Entscheide](audit-results/2026-10-18-a04-umsetzung/ENTSCHEIDE.md).
+
+Technische Selbstprüfung: 82/82 Selbsttests, 216/216 Suchfälle, 75 UI-Prüfungen, 230 responsive Browserzustände und 25 Bedienproben ohne Abweichung, 34 bytegleiche Exportdateien. Kein Merge oder Deployment durch diese Sitzung.
+
 ## Sprachliche Überarbeitung · r4-38 · Fachfreigabe vom 18.10.2026
 
-**GitHub:** [PR #706](https://github.com/christaegger-dot/borderline-angehoerige/pull/706), offen zur Schlussprüfung (Status geprüft am 18.10.2026). Umsetzungscommit: `968573fae9a5690b271704b4b535469b9e73e230`.
+**GitHub:** [PR #706](https://github.com/christaegger-dot/borderline-angehoerige/pull/706), gemergt als `c54139c` (Status geprüft am 18.10.2026). Umsetzungscommit: `968573fae9a5690b271704b4b535469b9e73e230`.
 
 Auftrag der Projektverantwortlichen vom 18.10.2026 nach Audit 03: «sehr gut, danke. Bitte überarbeite die Befunde direkt in github». Die 66 Befunde des Audits vom 18.10.2026 sind in den kanonischen Quellen umgesetzt, einschliesslich ihrer Querverweise. Nachweis, vollständige Befundzuordnung und Tests: [Überarbeitungsbericht](audit-results/2026-10-18-a03-umsetzung/BERICHT.md).
 
@@ -18,7 +28,7 @@ Auftrag der Projektverantwortlichen vom 18.10.2026 nach Audit 03: «sehr gut, da
 
 Die lokale technische Selbstprüfung der Überarbeitung bestand mit 79 Selbsttests, 216 Suchfällen und 75 Browserprüfungen. Der Nachtest der Freigabefelder bestätigte erneut 79/79 Selbsttests und die Byte-Parität aller 34 Exportdateien: [Nachtest der Fachfreigabe](audit-results/2026-10-18-a03-umsetzung/NACHTEST-FACHFREIGABE.txt). Nach dem Entscheid zur Gesamtprüfung bestehen 82/82 Selbsttests und beide Produktionsaufrufe ohne Blocker; 34 Exportdateien sind bytegleich. [Aktueller Nachtest](audit-results/2026-10-18-a03-umsetzung/NACHTEST-VERZICHT.txt). Kein Merge oder Deployment durch diese Sitzung.
 
-Die frühere Tabelle mit 182 Sprachbefunden wird durch diese 66 gezielten Überarbeitungen nicht pauschal geschlossen. Der veröffentlichte Anwendungsstand bleibt bis zu einem überprüften Merge und Produktionsabgleich r4-37.
+Die frühere Tabelle mit 182 Sprachbefunden wird durch diese 66 gezielten Überarbeitungen nicht pauschal geschlossen. Der Merge von PR #706 ist als `c54139c` bestätigt. Audit 04 hat die Live-Ausgabe dieses Standes geprüft; die früheren Produktionsprotokolle weiter unten bleiben historische Nachweise.
 
 ## Gestaltung · r4-37
 

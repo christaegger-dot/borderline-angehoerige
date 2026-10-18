@@ -782,7 +782,7 @@ html.puk-scroll-lock{overflow:hidden}
    Schmal (Spalten untereinander) gilt nur noch die gleiche Reihenfolge. Browser ohne subgrid zeigen die Spalten wie bisher. */
 @supports (grid-template-rows:subgrid){
   .puk-vis-compare{row-gap:0}
-  .puk-vis-compare__col{display:grid;grid-row:span 10;grid-template-rows:subgrid;align-content:start}
+  .puk-vis-compare>.puk-vis-compare__col{display:grid;grid-row:span 10;grid-template-rows:subgrid;align-content:start}
   .puk-vis-compare__key{grid-row:1}
   .puk-vis-compare__col>h3{grid-row:2}
   .puk-vis-compare__col>dl{grid-row:3/span 8;grid-template-rows:subgrid;gap:0;align-content:start}
@@ -1104,7 +1104,7 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-site-menu .puk-disclosure__button[data-current="true"]{color:var(--text-default)}
 .puk-site-menu .puk-disclosure__button[aria-expanded="true"]{color:var(--puk-blue-100)}
 .puk-site-menu .puk-disclosure__label{padding:6px 4px;font-size:1.125rem}
-@media not all and (max-width:760px){
+@media not all and (max-width:60rem){
   .puk-site-menu .puk-disclosure__label,.puk-site-menu .puk-disclosure__button{display:none}
   .puk-site-menu .puk-web-nav__list[hidden]{display:flex}
 }
@@ -1499,4 +1499,116 @@ html.puk-scroll-lock{overflow:hidden}
   .puk-web-header__inner{padding-block:var(--space-3);gap:var(--space-2)}
   .puk-site-utility{gap:0 var(--space-4)}
   .puk-site-sender{gap:var(--space-1) var(--space-3);padding-bottom:var(--space-3)}
+}
+
+/* Audit 04, r4-39: local layout extensions. No fixed heights or smaller body copy. */
+@media screen and (max-width:60rem){
+  .puk-web-header__inner{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:var(--space-2) var(--space-3);padding-block:var(--space-3)}
+  .puk-web-header__inner>.puk-web-logo{grid-column:1;grid-row:1}
+  .puk-web-logo img{width:min(var(--web-logo-width),100%);max-width:11rem}
+  .puk-site-nav--menu,.puk-site-menu{display:contents}
+  .puk-site-menu .puk-disclosure__button,.puk-site-menu .puk-disclosure__label{grid-column:2;grid-row:1;width:auto;min-height:2.75rem;border-top:0}
+  .puk-site-menu .puk-web-nav__list{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+  .puk-site-menu .puk-web-nav__list[hidden]{display:none}
+  .puk-site-utility{grid-column:1/-1;grid-row:3;width:auto;margin:0;gap:0 var(--space-4)}
+  .puk-site-sender{gap:0 var(--space-3);padding-bottom:var(--space-2)}
+  .puk-site-sender__label{display:none}
+  .puk-site-sender__contact{margin-left:0}
+}
+.puk-site-sender a{min-width:0;overflow-wrap:anywhere}
+/* A heading sidebar is useful only when the text beside it has sufficient measure.
+   rem responds to the browser's default font, including 200% text settings. */
+@media screen and (max-width:76rem){
+  .puk-longform__section-grid{grid-template-columns:minmax(0,1fr);gap:var(--space-5)}
+  .puk-longform__section-heading{position:static;container-type:normal}
+  .puk-longform__section-heading .puk-web-h2{font-size:var(--web-size-h2-fluid)}
+}
+.bl-crisis-intro{margin-block:var(--space-6)}
+.puk-longform__hero:has(+.puk-site-quick){padding-bottom:var(--space-3)}
+.puk-longform__hero+.puk-site-quick{margin-top:0}
+.puk-longform__hero:has(+[data-early-tool]){padding-bottom:0}
+[data-early-tool]{margin-top:var(--space-4);padding-top:0}
+[data-early-tool]>.puk-longform__section-grid{display:block}
+[data-early-tool] .puk-longform__copy{max-width:68ch}
+[data-early-tool] .puk-site-filter,.puk-longform__hero>.puk-site-filter{margin-top:var(--space-4);max-width:68ch}
+.bl-local-privacy{font:var(--type-body-sm);max-width:68ch;margin-block:var(--space-2)}
+.bl-followup{max-width:68ch;margin-top:var(--space-6)}
+.puk-site-filter .bl-local-privacy{margin-block:var(--space-3)}
+.bl-sicht .puk-vis-compare__col{display:block;grid-row:auto;grid-template-rows:none;align-self:start}
+.bl-sichten.puk-vis-compare{row-gap:var(--space-6)}
+.puk-longform__copy:has(>.puk-vis-tablewrap){container-type:inline-size}
+@container (max-width:42rem){
+  .bl-tabelle thead{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .bl-tabelle,.bl-tabelle tbody,.bl-tabelle tr,.bl-tabelle th,.bl-tabelle td{display:block;min-width:0;width:auto}
+  .bl-tabelle tr{border-top:1px solid var(--border-hairline);padding:var(--space-3) var(--space-4)}
+  .bl-tabelle tbody tr:first-child{border-top:0}
+  .bl-tabelle th,.bl-tabelle td{border:0;padding:0}
+  .bl-tabelle td{margin-top:var(--space-2)}
+  .bl-tabelle td::before{content:attr(data-label);display:block;font:var(--type-caption);color:var(--text-muted)}
+}
+/* Explanation and action are body text; short keys and captions keep their hierarchy. */
+.puk-vis-figure :is(.puk-vis-cycle__item p,.puk-vis-build__steps li p,.bl-infoflow__route>p:last-child,.bl-caremap article>p:last-child,.bl-observe__item>p:last-child){font-size:var(--web-size-body);line-height:var(--lh-body)}
+.puk-vis-figure :is(.puk-vis-cycle__name,.puk-vis-build__steps h3){font-size:var(--web-size-body)}
+@media screen and (max-width:47.5rem){
+  .puk-vis-figure{padding:var(--space-3);--web-size-body:1.1875rem}
+  .puk-vis-figure :is(.bl-observe__item,.bl-infoflow__route,.bl-caremap article){padding:var(--space-3)}
+}
+@container (max-width:35rem){
+  .puk-vis-figure :is(.bl-observe__item,.bl-infoflow__route,.bl-caremap article){padding:var(--space-3)}
+}
+/* A visible epistemic boundary, without a causal arrow to a presumed motive. */
+.bl-observe{grid-template-columns:minmax(0,1fr) minmax(0,.35fr) minmax(0,1fr);gap:var(--space-4)}
+.bl-knowledge-boundary{display:flex;align-items:center;justify-content:center;border-inline:2px dashed var(--puk-blue-100);padding:var(--space-3);text-align:center}
+.bl-knowledge-boundary p{margin:0;font:var(--type-body-sm)}
+.bl-observe__question{grid-column:1/-1;border-top:1px solid var(--border-default);background:none}
+@container(max-width:45rem){
+  .bl-observe{grid-template-columns:minmax(0,1fr)}
+  .bl-knowledge-boundary{border-inline:0;border-block:2px dashed var(--puk-blue-100)}
+}
+/* Two incoming contributions; the child never supplies care to the adults. */
+.bl-caremap--linked{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);align-items:start;gap:var(--space-3)}
+.bl-caremap--linked>.bl-caremap__source:first-child{grid-column:1;grid-row:1}
+.bl-caremap--linked>.bl-caremap__source:last-child{grid-column:3;grid-row:1}
+.bl-caremap--linked>.bl-caremap__child{grid-column:2;grid-row:2}
+.bl-caremap__link{margin:0;padding:var(--space-3);font:var(--type-body-sm);border-bottom:2px solid var(--puk-blue-100)}
+.bl-caremap__link span{display:block;font-size:1.5rem}
+.bl-caremap__link--adult{grid-column:1;grid-row:2}
+.bl-caremap__link--professional{grid-column:3;grid-row:2}
+.bl-caremap__link--professional span{transform:rotate(180deg)}
+@container(max-width:55rem){
+  .bl-caremap--linked{grid-template-columns:minmax(0,1fr)}
+  .bl-caremap--linked>*{grid-column:1!important;grid-row:auto!important}
+  .bl-caremap__link span{display:inline-block;transform:none}
+  .bl-caremap__link--adult span{transform:rotate(90deg)}
+  .bl-caremap__link--professional span{transform:rotate(-90deg)}
+}
+.bl-phase-actions{gap:var(--space-4)}
+.bl-phase-actions .bl-kurve__key{display:inline}
+.bl-phase-actions .bl-kurve__key::after{content:": "}
+.bl-phase-actions .puk-vis-ansatz__key{display:none}
+.bl-model-limit{margin-top:var(--space-5);padding-top:var(--space-4);border-top:1px solid var(--border-default)}
+.bl-model-limit p{font:var(--type-body-sm)}
+.bl-parallel-aspects,.bl-relief__branches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-5);align-items:start}
+.bl-parallel-aspects article{border-top:3px solid var(--puk-blue-100);padding-top:var(--space-4)}
+.bl-parallel-aspects h3,.bl-transition h3,.bl-relief h3{font-size:var(--web-size-body);line-height:var(--lh-subheading);margin:0 0 var(--space-3)}
+.bl-parallel-aspects p,.bl-transition p,.bl-relief p{font-size:var(--web-size-body);line-height:var(--lh-body)}
+.bl-transition{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6)}
+.bl-transition article{border-top:3px solid var(--puk-blue-100);padding-top:var(--space-4)}
+.bl-transition__adult{border-left:2px solid var(--puk-blue-100);padding-left:var(--space-4);margin-top:var(--space-5)}
+.bl-transition h4{font-size:var(--web-size-body);margin:0 0 var(--space-3)}
+.bl-relief__centre{max-width:38ch;margin:var(--space-5) auto;text-align:center}
+.bl-relief__branches{border-top:2px solid var(--puk-blue-100)}
+.bl-relief__branches article{padding-top:var(--space-5);position:relative}
+.bl-relief__branches article::before{content:"";position:absolute;top:0;left:1rem;height:var(--space-3);border-left:2px solid var(--puk-blue-100)}
+@container(max-width:55rem){
+  .bl-parallel-aspects,.bl-relief__branches,.bl-transition{grid-template-columns:minmax(0,1fr)}
+  .bl-relief__branches{border-top:0;border-left:2px solid var(--puk-blue-100);padding-left:var(--space-4)}
+  .bl-relief__branches article::before{left:calc(-1 * var(--space-4));top:var(--space-6);height:0;width:var(--space-3);border-left:0;border-top:2px solid var(--puk-blue-100)}
+}
+/* Wide selection pages use the available width, with the acute entry first in DOM. */
+@media screen and (min-width:76.01rem){
+  #einstiege>.puk-longform__section-grid{grid-template-columns:minmax(0,1fr);gap:var(--space-5)}
+  #einstiege .puk-longform__copy{max-width:none}
+  #einstiege .puk-site-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3) var(--space-8)}
+  #einstiege .puk-site-paths>li{margin:0;padding-block:var(--space-3)}
 }

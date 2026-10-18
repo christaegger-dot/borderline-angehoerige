@@ -8,6 +8,8 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Audit 04 · Gestaltung und Didaktik · r4-39
 
+**GitHub:** [PR #707](https://github.com/christaegger-dot/borderline-angehoerige/pull/707), offen als Entwurf (Status geprüft am 18.10.2026). Umsetzungscommit: `a3f810be76a51c6370644ac2137c7fcdd0b8494e`.
+
 Die 16 Befunde A04-2003 bis A04-2018 sind technisch bearbeitet. Auftrag: «sehr gut. kannst du die Verbesserungen gleich direkt in github vornehmen?» [Umsetzungsbericht und Nachweise](audit-results/2026-10-18-a04-umsetzung/BERICHT.md).
 
 **Status:** Entwurf, noch nicht zur Veröffentlichung freigegeben. Sechs neue bzw. visuell neu angeordnete Darstellungen sind zur einzelnen Fachfreigabe ausstehend; der unveränderte Produktionsaufruf benennt ausschliesslich diese sechs. Die unabhängige Gesamtprüfung entfällt weiterhin nach dem ausdrücklichen Entscheid der Auftraggeberin. Keine neue Gesamtprüfung, keine erfundene Freigabe. [Umfang und Entscheide](audit-results/2026-10-18-a04-umsetzung/ENTSCHEIDE.md).

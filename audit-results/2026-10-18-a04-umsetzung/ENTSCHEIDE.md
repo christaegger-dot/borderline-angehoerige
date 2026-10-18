@@ -1,5 +1,7 @@
 # Auftrag und Freigabegrenzen · r4-39
 
+**GitHub:** [PR #707](https://github.com/christaegger-dot/borderline-angehoerige/pull/707), offen als Entwurf (Status geprüft am 18.10.2026). Umsetzungscommit: `a3f810be76a51c6370644ac2137c7fcdd0b8494e`.
+
 Christa Egger beauftragt in dieser Sitzung ausdrücklich: «sehr gut. kannst du die Verbesserungen gleich direkt in github vornehmen?» Bezug: die 16 Befunde aus Audit 04 vom 18.10.2026 zum Stand c54139c.
 
 Der vorherige ausdrückliche Entscheid «ich will keine unabhänige gesamtprüfung mehr machen» gilt weiterhin. `releaseApproval.independentReview` bleibt `entfaellt`; der Versionsbezug des dokumentierten Verzichts wird für diese Umsetzungsrunde auf r4-39 fortgeschrieben. Eine unabhängige Prüfung wird nicht behauptet und nicht erneut verlangt. Der frühere Entscheidbeleg bleibt unter `audit-results/2026-10-18-a03-umsetzung/VERZICHT-GESAMTPRUEFUNG.md` erhalten.

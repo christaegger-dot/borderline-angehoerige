@@ -1,5 +1,7 @@
 # Audit 04 umgesetzt · r4-39
 
+**GitHub:** [PR #707](https://github.com/christaegger-dot/borderline-angehoerige/pull/707), offen als Entwurf (Status geprüft am 18.10.2026). Umsetzungscommit: `a3f810be76a51c6370644ac2137c7fcdd0b8494e`.
+
 Die 16 Befunde A04-2003 bis A04-2018 sind in den kanonischen Quellen bearbeitet. Die vollständige Zuordnung und verbleibende einzelne Fachfreigaben stehen in [UMSETZUNG.csv](UMSETZUNG.csv); die Ausgangsbefunde in [AUDIT-BEFUNDE.csv](AUDIT-BEFUNDE.csv). Die dortigen Screenshotpfade beziehen sich auf das vollständige ursprüngliche Auditpaket; ausgewählte neue Ansichten stehen hier unter `ansichten/`.
 
 Basis: `main` **c54139cd043ed1e2079306c4b98bcaf700d27be4**. Vor der Bearbeitung wurden alle vorhandenen kanonischen Quelldateien mit den Git-Blob-Hashes dieses Standes abgeglichen: keine Abweichung. Die bestehende lokale Arbeitskopie wurde erhalten; die Bearbeitung erfolgte separat. Das Referenzprofil wurde nicht verändert.

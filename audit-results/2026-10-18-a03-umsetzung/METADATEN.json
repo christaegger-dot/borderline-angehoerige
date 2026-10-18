@@ -5,16 +5,17 @@
   "branch": "codex/a03-ueberarbeitung-2026-10-18",
   "befunde": 66,
   "audit_befunde_sha256": "53111c87b0fb6fdcd58bbf8e3e77c9cfa8dfe30644a7a08519b9f75eb8cd405f",
-  "pruefung": "Redaktionelle und technische Selbstprüfung; fachliche Freigabe der vier bezeichneten Inhalte durch Christa Egger am 18.10.2026; unabhängige Gesamtprüfung ausstehend",
-  "status": "Fachfreigabe für drei Abbildungen und Akuthinweis dokumentiert; unabhängige Gesamtprüfung ausstehend",
+  "pruefung": "Redaktionelle und technische Selbstprüfung; vier fachliche Freigaben durch Christa Egger; ausdrücklich dokumentierter Verzicht auf unabhängige Gesamtprüfung",
+  "status": "Fachfreigaben dokumentiert; unabhängige Gesamtprüfung entfällt nach Entscheid der Projektverantwortlichen; technische Produktionsprüfungen bestanden",
   "tests": {
-    "selbsttest": "79/79",
+    "selbsttest": "82/82",
     "suchregression": "216/216",
     "sprach_ui_test": "75/75",
     "js_fehler": 0,
     "paritaet_dateien": 34,
     "entwurfsbuild_blocker": 0,
-    "produktionsgate_freigabeblocker": 1
+    "produktionsgate_freigabeblocker": 0,
+    "nachtest_verzicht": "NACHTEST-VERZICHT.txt"
   },
   "referenz_notrufnummern": "https://www.zh.ch/de/gesundheit/notfall-rettung.html",
   "pull_request_url": "https://github.com/christaegger-dot/borderline-angehoerige/pull/706",
@@ -33,5 +34,12 @@
     "bezugscommit": "43e954a0317055f7e529f2473e150d258dd202c7",
     "beleg": "FREIGABE.md",
     "nachtest": "NACHTEST-FACHFREIGABE.txt"
+  },
+  "verzicht_gesamtpruefung": {
+    "version": "r4-38",
+    "decidedBy": "Christa Egger",
+    "decidedAt": "2026-10-18",
+    "reference": "audit-results/2026-10-18-a03-umsetzung/VERZICHT-GESAMTPRUEFUNG.md",
+    "statement": "ich will keine unabhänige gesamtprüfung mehr machen"
   }
 }

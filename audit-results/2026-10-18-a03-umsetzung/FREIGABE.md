@@ -27,6 +27,6 @@ Die Telefonlinks bleiben `tel:144` und `tel:117`. Text, Rufnummern, Grafiktexte 
 
 Die drei `approvalStatus`-Felder werden auf `freigegeben` und `responsibility.inline.reviewStatus` auf `geprueft` gesetzt. Name, Datum, Umfang und Verweis auf dieses Dokument sind bei den vier Einträgen festgehalten.
 
-`releaseApproval.independentReview` bleibt **`ausstehend`**. Die Nachricht bescheinigt keine unabhängige Gesamtprüfung der Änderungsrunde und erteilt keinen Merge- oder Deploymentauftrag. Historische R3-Freigaben bleiben ihren damaligen Fassungen zugeordnet.
+Zum Zeitpunkt der Fachfreigabe blieb `releaseApproval.independentReview` zunächst ausstehend. **Nachtrag vom 18.10.2026, 19:49 Uhr:** Die Projektverantwortliche hat auf diese Gesamtprüfung ausdrücklich verzichtet; [Originalerklärung und Umsetzung](VERZICHT-GESAMTPRUEFUNG.md). Es wird keine durchgeführte unabhängige Prüfung bescheinigt. Ein Merge- oder Deploymentauftrag liegt damit nicht vor. Historische R3-Freigaben bleiben ihren damaligen Fassungen zugeordnet.
 
 Nachtest nach dieser Statusänderung: [NACHTEST-FACHFREIGABE.txt](NACHTEST-FACHFREIGABE.txt).

@@ -128,6 +128,11 @@ function resolve(from, href) {
   return { path: segs.join('/'), hash };
 }
 const reviewDocumented = sa => !!(sa && sa.reviewStatus === 'geprueft' && sa.reviewedBy && sa.reviewedAt);
+const reviewWaiverDocumented = ra => {
+  const waiver = ra && ra.independentReviewWaiver;
+  return !!(ra && ra.independentReview === 'entfaellt' && waiver && waiver.version === BUILD &&
+    waiver.decidedBy && /^\d{4}-\d{2}-\d{2}$/.test(waiver.decidedAt) && waiver.reference && waiver.statement);
+};
 const pagePath = p => resolve('', p.href).path;
 
 /* ---------- Build: Seitenrahmen konstruktiv aus dem Vertrag ---------- */
@@ -587,7 +592,7 @@ function gate(cfg, files, opts = {}) {
   if (inlineUsed && cfg.responsibility && cfg.responsibility.inline && cfg.responsibility.inline.reviewStatus !== 'geprueft') prod('site', 'inline-review', `Verweis im Text nicht fachlich geprüft (responsibility.inline.reviewStatus: ${cfg.responsibility.inline.reviewStatus || 'fehlt'})`);
   const ra = cfg.releaseApproval;
   if (ra && ra.institutionalResponsibility !== 'bestaetigt') prod('site', 'institutional-approval', 'Die organisatorische Verantwortung der PUK ist noch nicht formell bestätigt.');
-  if (ra && ra.independentReview !== 'bestaetigt') prod('site', 'change-review', 'Die aktuelle Änderungsrunde wurde noch nicht unabhängig geprüft.');
+  if (ra && ra.independentReview !== 'bestaetigt' && !reviewWaiverDocumented(ra)) prod('site', 'change-review', 'Unabhängige Gesamtprüfung oder dokumentierter Verzicht für diese Version fehlt.');
   if (opts.report !== undefined) {
     if (opts.report === null) prod('site', 'review-report', 'PRUEFBERICHT.md fehlt – ohne Prüfbericht keine Veröffentlichung (Abschnitt «Prüfung und Freigabe»)');
     else { const rs = reportStatus(opts.report); if (rs.open.length) prod('site', 'review-report', `Prüfbericht: offene Stufen ${rs.open.join(', ')} – Status «erledigt» oder «entfällt: Begründung»`); }
@@ -705,6 +710,21 @@ function selftest(cfg, files, opts = {}) {
   /* Offene Angaben vor der Veröffentlichung (Impressum, Datenschutzerklärung, 404-Seite) gelten wie offene Freigaben, nicht als Strukturfehler. */
   const hit = need.filter(id => bp.findings.some(x => x.level === 'block' && x.id === id)); const structural = bp.findings.filter(x => x.level === 'block' && !need.includes(x.id) && !['legal', 'not-found'].includes(x.id));
   rows.push({ name: 'Produktion blockiert ungeklärte Absenderin, Zuständigkeitsverweise und Visualisierungen', expected: need.join(', ') + ' · keine Strukturfehler', got: hit.join(', ') + ' · ' + (structural.length ? structural.length + ' Strukturfehler' : 'keine Strukturfehler'), ok: hit.length === need.length && !structural.length });
+  {
+    const waiver = { version: BUILD, decidedBy: 'Testperson', decidedAt: '2026-10-18', reference: 'test/freigabe.md', statement: 'Testfixture: Gesamtprüfung entfällt.' };
+    for (const [name, mutate, blocked] of [
+      ['Dokumentierter Verzicht auf Gesamtprüfung für aktuelle Version', () => {}, false],
+      ['Verzicht für andere Version hebt Prüfsperre nicht auf', w => { w.version = BUILD + '-andere'; }, true],
+      ['Verzicht ohne Beleg hebt Prüfsperre nicht auf', w => { delete w.reference; }, true]
+    ]) {
+      const c = JSON.parse(JSON.stringify(cfg));
+      c.releaseApproval.independentReview = 'entfaellt';
+      c.releaseApproval.independentReviewWaiver = { ...waiver };
+      mutate(c.releaseApproval.independentReviewWaiver);
+      const hit = gate(c, files, { mode: 'production', exists: base }).findings.some(x => x.level === 'block' && x.id === 'change-review');
+      rows.push({ name, expected: blocked ? 'change-review' : 'kein change-review', got: hit ? 'change-review' : 'kein change-review', ok: hit === blocked });
+    }
+  }
   const done = '| Stufe | Status |\n| --- | --- |\n' + REPORT_STAGES.map(([n]) => `| ${n} | erledigt |`).join('\n');
   const noRep = gate(cfg, files, { mode: 'production', exists: base, report: null }).findings.some(x => x.level === 'block' && x.id === 'review-report');
   rows.push({ name: 'Produktion ohne Prüfbericht blockiert', expected: 'review-report', got: noRep ? 'review-report' : 'nicht erkannt', ok: noRep });

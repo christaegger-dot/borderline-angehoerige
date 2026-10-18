@@ -4,7 +4,7 @@
 
 Die 66 Befunde des Sprach- und Didaktikaudits vom 18. Oktober 2026 sind in den kanonischen Quellen überarbeitet. Der Umsetzungsauftrag lautete: «sehr gut, danke. Bitte überarbeite die Befunde direkt in github». Ausgangspunkt ist `086876611dbf2909e6d6f10824d05a0ecc4eed57`; beim abschliessenden Abgleich stand `main` weiterhin auf diesem Commit.
 
-**Nachtrag vom 18.10.2026:** Christa Egger hat die drei geänderten Abbildungen und den neuen Akuthinweis ausdrücklich fachlich freigegeben. Der [Freigabenachweis](FREIGABE.md) hält Wortlaut, Datum und Umfang fest. Nach Aktualisierung der vier Felder bleibt genau eine Produktionssperre: die unabhängige Gesamtprüfung. [Nachtest der Freigabefelder](NACHTEST-FACHFREIGABE.txt).
+**Nachtrag vom 18.10.2026:** Christa Egger hat die drei geänderten Abbildungen und den neuen Akuthinweis ausdrücklich fachlich freigegeben. Der [Freigabenachweis](FREIGABE.md) hält Wortlaut, Datum und Umfang fest. Nach Aktualisierung der vier Felder blieb zunächst eine Produktionssperre; siehe [Nachtest der Freigabefelder](NACHTEST-FACHFREIGABE.txt). **Aktueller Entscheid, 19:49 Uhr:** Die unabhängige Gesamtprüfung entfällt auf ausdrücklichen Wunsch der Projektverantwortlichen; [Entscheidbeleg](VERZICHT-GESAMTPRUEFUNG.md). Der [aktuelle Nachtest](NACHTEST-VERZICHT.txt) besteht mit 82/82 Selbsttests, 0 Produktionsblockern und 34 bytegleichen Exportdateien.
 
 ## Umfang und Nachvollziehbarkeit
 
@@ -67,18 +67,18 @@ Die [fachliche Freigabe von Christa Egger](FREIGABE.md) gilt für die drei geän
 | `v-gr-dear` | fachlich freigegeben am 18.10.2026 |
 | `v-ge-forschung` | fachlich freigegeben am 18.10.2026 |
 | `responsibility.inline` | fachlich geprüft/freigegeben am 18.10.2026 |
-| `releaseApproval.independentReview` | weiterhin ausstehend |
+| `releaseApproval.independentReview` | entfällt nach Entscheid vom 18.10.2026, 19:49 Uhr; [Beleg](VERZICHT-GESAMTPRUEFUNG.md) |
 
-Die ursprünglichen fünf Sperren in [TESTERGEBNISSE.txt](TESTERGEBNISSE.txt) und im GitHub-Prüflauf #58 beschreiben den Stand vor dieser Fachfreigabe. Der [Nachtest](NACHTEST-FACHFREIGABE.txt) bestätigt nun genau eine Sperre, `change-review`, bei beiden vorgeschriebenen Produktionsaufrufen:
+Die ursprünglichen fünf Sperren in [TESTERGEBNISSE.txt](TESTERGEBNISSE.txt) und im GitHub-Prüflauf #58 beschreiben den Stand vor dieser Fachfreigabe. Der [Nachtest nach der Fachfreigabe](NACHTEST-FACHFREIGABE.txt) dokumentierte zunächst noch eine Sperre. Nach dem anschliessenden Entscheid zur Gesamtprüfung bestätigt der [aktuelle Nachtest](NACHTEST-VERZICHT.txt) 0 Blocker bei beiden vorgeschriebenen Produktionsaufrufen:
 
 ```sh
 node authoring/tools/build.mjs --production --out=site --write-site
 node authoring/tools/build.mjs --production --verify-site
 ```
 
-Die erneute Prüfung des Entwurfs bestätigt 34 bytegleiche Exportdateien und 79/79 Selbsttests. Die Freigabedokumentation verändert keine öffentlichen Texte, Grafiken oder Funktionen. Eine erneute Such- und Browserprüfung war deshalb für diese reine Statusänderung nicht erforderlich; deren Ergebnisse oben beziehen sich weiterhin auf den unveränderten Inhalt der ersten Überarbeitung.
+Die erneute Produktionsprüfung nach dem Entscheid zur Gesamtprüfung bestätigt 34 bytegleiche Exportdateien und 82/82 Selbsttests. Die Freigabedokumentation verändert keine öffentlichen Texte, Grafiken oder Funktionen. Eine erneute Such- und Browserprüfung war deshalb für diese reine Statusänderung nicht erforderlich; deren Ergebnisse oben beziehen sich weiterhin auf den unveränderten Inhalt der ersten Überarbeitung.
 
-Die unabhängige Gesamtprüfung ist nicht durch die Umsetzungs- oder Dokumentationssitzung ersetzt. Der Produktionsschutz und die historischen R3-Nachweise bleiben erhalten. Kein Merge, Deployment oder Eingriff in Netlify-Zugangsschutz und Datenschutzkonfiguration durch diese Sitzung.
+Die unabhängige Gesamtprüfung entfällt ausdrücklich nach [Entscheid der Projektverantwortlichen](VERZICHT-GESAMTPRUEFUNG.md). Die Sitzung bescheinigt keine durchgeführte unabhängige Prüfung. Die übrigen Produktionsprüfungen und die historischen R3-Nachweise bleiben erhalten. Kein Merge, Deployment oder Eingriff in Netlify-Zugangsschutz und Datenschutzkonfiguration durch diese Sitzung.
 
 ## Visuelle Belege
 

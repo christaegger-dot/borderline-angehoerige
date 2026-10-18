@@ -1,5 +1,7 @@
 # Überarbeitung der 66 Befunde aus Audit 03 · r4-38
 
+**GitHub:** [PR #706](https://github.com/christaegger-dot/borderline-angehoerige/pull/706), offen als Entwurf. Umsetzungscommit: `968573fae9a5690b271704b4b535469b9e73e230`.
+
 Die 66 Befunde des Sprach- und Didaktikaudits vom 18. Oktober 2026 sind in den kanonischen Quellen überarbeitet. Der Umsetzungsauftrag lautete: «sehr gut, danke. Bitte überarbeite die Befunde direkt in github». Ausgangspunkt ist `086876611dbf2909e6d6f10824d05a0ecc4eed57`; beim abschliessenden Abgleich stand `main` weiterhin auf diesem Commit.
 
 ## Umfang und Nachvollziehbarkeit

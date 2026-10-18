@@ -16,5 +16,8 @@
     "entwurfsbuild_blocker": 0,
     "produktionsgate_freigabeblocker": 5
   },
-  "referenz_notrufnummern": "https://www.zh.ch/de/gesundheit/notfall-rettung.html"
+  "referenz_notrufnummern": "https://www.zh.ch/de/gesundheit/notfall-rettung.html",
+  "pull_request_url": "https://github.com/christaegger-dot/borderline-angehoerige/pull/706",
+  "pull_request_number": 706,
+  "implementation_commit": "968573fae9a5690b271704b4b535469b9e73e230"
 }

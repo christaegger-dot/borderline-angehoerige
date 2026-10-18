@@ -8,6 +8,8 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Sprachliche Überarbeitung · r4-38 als PR-Entwurf
 
+**GitHub:** [PR #706](https://github.com/christaegger-dot/borderline-angehoerige/pull/706), offen als Entwurf (Status geprüft am 18.10.2026). Umsetzung: `968573fae9a5690b271704b4b535469b9e73e230`.
+
 Auftrag der Projektverantwortlichen vom 18.10.2026 nach Audit 03: «sehr gut, danke. Bitte überarbeite die Befunde direkt in github». Die 66 Befunde des Audits vom 18.10.2026 sind in den kanonischen Quellen umgesetzt, einschliesslich ihrer Querverweise. Nachweis, vollständige Befundzuordnung und Tests: [Überarbeitungsbericht](audit-results/2026-10-18-a03-umsetzung/BERICHT.md).
 
 Die lokale Selbstprüfung besteht: Entwurfsbuild für 23 Seiten, Parität aller 34 Exportdateien, 79 Selbsttests, 216 Suchfälle und 75 Browserprüfungen. Der Produktionsaufruf ist noch nicht freigegeben: die drei geänderten Abbildungen, der neue situationsbezogene Akuthinweis und die unabhängige Schlussprüfung stehen ausdrücklich auf «ausstehend». Frühere Freigaben werden nicht auf den neuen Wortlaut übertragen. Die erzeugten Dateien in `site/` sind ein Entwurf. Kein Merge und kein Deployment durch diese Umsetzungssitzung.

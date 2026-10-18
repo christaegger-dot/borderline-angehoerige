@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-36';
+const BUILD = 'r4-38';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -144,13 +144,17 @@ function renderPage(cfg, page, content) {
   const direct = '';
   /* Profilentscheid 09.10.2026: Verweis im Text auf die zuständigen Stellen. Der Platzhalter <p data-responsibility-inline></p> wird mit dem geprüften Wortlaut aus site.config.json › responsibility.inline gefüllt; Seiten schreiben ihn nie selbst. */
   const inl = cfg.responsibility && cfg.responsibility.inline;
+  const inlineText = inl && inl.text ? esc(inl.text).replace(/\b\d{3}\b/g, number => {
+    const phone = (inl.phoneLinks || []).find(entry => entry.number === number);
+    return phone ? `<a class="puk-link--inline" href="tel:${number}" aria-label="${esc(phone.label)}">${number}</a>` : number;
+  }) : '';
   let responsibilityInlineIndex = 0;
   const contentWithResponsibility = inl && inl.text ? content.replace(INLINE_RE, () => {
     responsibilityInlineIndex += 1;
     const tier = page.responsibilityInlineStyle === 'tiered'
       ? (responsibilityInlineIndex === 1 ? ' puk-longform__boundary--primary' : ' puk-longform__boundary--repeat')
       : '';
-    return `<p class="puk-longform__boundary puk-site-inline-ref${tier}" data-responsibility-inline>${esc(inl.text)}</p>`;
+    return `<p class="puk-longform__boundary puk-site-inline-ref${tier}" data-responsibility-inline>${inlineText}</p>`;
   }) : content;
   const faqBody = page.id === 'fragen' ? foldFaqAnswers(contentWithResponsibility, page.openFaqIds) : contentWithResponsibility;
   const body = foldDepthSections(faqBody, page.collapsedSections);
@@ -229,7 +233,7 @@ ${draftbar}<header class="puk-web-header"><div class="puk-web-container puk-web-
 ${navHtml}${utilityNav}</div>
 <div class="puk-web-container"><p class="puk-site-sender" data-sender><span class="puk-site-sender__label">${esc(senderLabel)}</span><span class="puk-site-sender__name" data-sender-unit>${esc(senderName)}</span>${senderInstitution}${s.email ? `${contactLabel}<a class="puk-link--inline" data-sender-email href="mailto:${esc(s.email)}">${esc(s.email)}</a>` : ''}${senderBadge}</p></div>
 </header>
-${breadcrumb}${direct}<main id="main-content" class="puk-web-main" tabindex="-1"${page.filterSelector ? ` data-puk-filter data-filter-selector="${esc(page.filterSelector)}"` : ''}>
+${breadcrumb}${direct}<main id="main-content" class="puk-web-main" tabindex="-1"${page.filterSelector ? ` data-puk-filter data-filter-selector="${esc(page.filterSelector)}" data-filter-label="${esc(page.filterLabel || 'Einträgen')}"` : ''}>
 ${body.trim()}
 ${sectionNav}
 </main>
@@ -273,7 +277,12 @@ function gate(cfg, files, opts = {}) {
     else if (rs.reviewStatus !== 'geprueft') prod('site', 'safety-review', `Zuständigkeitsverweis nicht fachlich geprüft (reviewStatus: ${rs.reviewStatus || 'fehlt'})`);
     if (rs.inline) {
       if (!rs.inline.text) add('block', 'site', 'inline-ref', 'responsibility.inline.text fehlt');
-      else if (/\d{3}/.test(rs.inline.text)) add('block', 'site', 'inline-ref', 'Verweis im Text nennt Nummern – zulässig sind nur Stellen ohne Nummern');
+      const phones = rs.inline.phoneLinks || [];
+      if (!Array.isArray(phones) || phones.some(phone => !/^\d{3}$/.test(phone.number) || !phone.label) || new Set(phones.map(phone => phone.number)).size !== phones.length) {
+        add('block', 'site', 'inline-ref', 'Telefonlinks im Verweis brauchen eindeutige dreistellige Nummern und verständliche Beschriftungen');
+      } else if ((String(rs.inline.text || '').match(/\d+/g) || []).some(number => !phones.some(phone => phone.number === number))) {
+        add('block', 'site', 'inline-ref', 'Nummer im Verweis ohne ausdrücklich konfigurierten Telefonlink');
+      }
       if (rs.inline.reviewStatus === 'geprueft' && !reviewDocumented(rs.inline)) add('block', 'site', 'review-doc', 'responsibility.inline: reviewStatus «geprueft» ohne reviewedBy und reviewedAt');
     }
   }
@@ -687,10 +696,12 @@ function selftest(cfg, files, opts = {}) {
   const pending = JSON.parse(JSON.stringify(cfg));
   pending.sender.status = 'placeholder';
   Object.assign(pending.responsibility, { reviewStatus: 'ausstehend', reviewedBy: undefined, reviewedAt: undefined });
+  Object.assign(pending.responsibility.inline, { reviewStatus: 'ausstehend', reviewedBy: undefined, reviewedAt: undefined });
+  pending.releaseApproval.independentReview = 'ausstehend';
   const visual = pending.pages.flatMap(p => p.visualPlan || []).find(v => v.format !== 'text');
   visual.approvalStatus = 'ausstehend';
   const bp = gate(pending, unreviewed, { mode: 'production', exists: base });
-  const need = ['sender-status', 'safety-review', 'visual-approval'];
+  const need = ['sender-status', 'safety-review', 'inline-review', 'visual-approval', 'change-review'];
   /* Offene Angaben vor der Veröffentlichung (Impressum, Datenschutzerklärung, 404-Seite) gelten wie offene Freigaben, nicht als Strukturfehler. */
   const hit = need.filter(id => bp.findings.some(x => x.level === 'block' && x.id === id)); const structural = bp.findings.filter(x => x.level === 'block' && !need.includes(x.id) && !['legal', 'not-found'].includes(x.id));
   rows.push({ name: 'Produktion blockiert ungeklärte Absenderin, Zuständigkeitsverweise und Visualisierungen', expected: need.join(', ') + ' · keine Strukturfehler', got: hit.join(', ') + ' · ' + (structural.length ? structural.length + ' Strukturfehler' : 'keine Strukturfehler'), ok: hit.length === need.length && !structural.length });

@@ -1,0 +1,20 @@
+{
+  "datum": "2026-10-18",
+  "version": "r4-38",
+  "basis_commit": "086876611dbf2909e6d6f10824d05a0ecc4eed57",
+  "branch": "codex/a03-ueberarbeitung-2026-10-18",
+  "befunde": 66,
+  "audit_befunde_sha256": "53111c87b0fb6fdcd58bbf8e3e77c9cfa8dfe30644a7a08519b9f75eb8cd405f",
+  "pruefung": "Redaktionelle und technische Selbstprüfung; keine unabhängige fachliche oder juristische Schlussfreigabe",
+  "status": "PR-Entwurf; Produktionsfreigabe ausstehend",
+  "tests": {
+    "selbsttest": "79/79",
+    "suchregression": "216/216",
+    "sprach_ui_test": "75/75",
+    "js_fehler": 0,
+    "paritaet_dateien": 34,
+    "entwurfsbuild_blocker": 0,
+    "produktionsgate_freigabeblocker": 5
+  },
+  "referenz_notrufnummern": "https://www.zh.ch/de/gesundheit/notfall-rettung.html"
+}

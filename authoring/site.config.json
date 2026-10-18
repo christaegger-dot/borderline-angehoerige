@@ -1,8 +1,8 @@
 {
-  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4. Lokale Änderungen ab r4-19 sind in diesem Repository dokumentiert; das PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände. r4-20 ergänzt die Phrasenerkennung der lokalen Suche nach dem Produktions-Smoke-Test vom 13.10.2026. r4-21 enthält das nachgeprüfte P3-Paket für Sprache und visuelle Didaktik. r4-22 setzt die Befunde A04-008 bis A04-013 des visuellen Audits vom 13.10.2026 um. r4-23 setzt die Sprachbefunde A03-019 bis A03-038 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-24 gestaltet den Footer als kompakte visuelle Sekundärebene, ohne seinen Wortlaut oder seine Pflichtangaben zu verändern. r4-25 setzt Paket 1 (Sicherheit: Suizidalität und Selbstverletzung) des Massnahmenplans vom 14.10.2026 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-26 schliesst die nach Release A offenen Abnahmekriterien zu M1.1, M1.5, M1.6 und M1.8 sowie R25-O01 und R25-O03; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-27 setzt Release B des Massnahmenplans vom 14.10.2026 um (Pakete 2, 3, 5 und 7: Kernwissen, Schweizer Recht, Anlaufstellen und Literatur, Quellen); die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben, Paket 3 ohne Prüfung durch den Rechtsdienst. r4-28 korrigiert fünf Aussagen aus r4-27 nach dem Codex-Review von Pull Request #684 (Gewaltschutz, ipw, Remissionsdefinition, DSM-5-TR-Kriterien, Fragen nach Suizidgedanken); die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-29 setzt Release C des Massnahmenplans vom 14.10.2026 um (Paket 4 Eltern minderjähriger Kinder mit neuer Seite «Wenn Ihr jugendliches Kind betroffen ist», Paket 6 Text entlasten) sowie die Befunde aus W2 vom 15.10.2026, mit den Entscheiden E4, E7, E9 und der neuen Selbstbeschreibung in der Fusszeile. r4-30 schliesst nach dem Merge von r4-29 drei Punkte: den P1-Befund des Codex-Reviews von #687 («sorgeberechtigte Eltern» auf «Fragen», «Behandlung» und der Jugendlichen-Seite), die Suchlücken aus R3 (R3C-A9) und die Linkregel auf «Quellen» (R3C-A10). r4-31 korrigiert nach dem Merge von r4-30 zwei P1-Befunde des zweiten Codex-Reviews von #689 in der Suche. r4-32 vereinfacht die Suchregel für Anfragen mit Tötungswort nach den Entscheiden der PUK vom 15.10.2026 zu R31-P05: «Suizid» und «Gewalt» stehen beide oben, bei genannten Kindern zuerst «Kinder › Eskalation»; neuer Anker «Wenn Suizid angesprochen wird» auf «Kommunizieren». r4-33 korrigiert nach dem Merge von r4-32 zwei P1-Befunde des Codex-Reviews von #694 (trennbares Verb mit langem Abstand, Beugungsformen) und R32-03 der Prüfsitzung. r4-34 korrigiert nach dem Merge von r4-33 drei Rückschritte aus dem Codex-Review von #695 (Nahbereich von «bring… um» wieder wie r4-32) und R33-01. r4-35 setzt die Korrekturrunde A8-K aus R3C-A8 um: Wortbruch «Behandlungsteam» in `v-be-kontakt` im CSS behoben (A8-01 = R3C-06), drei Sätze (A8-02, A8-08, A8-09) und die linke Spalte von `v-ge-forschung` (A8-11, Variante V1) nach Freigabe der PUK vom 16.10.2026.",
+  "$comment": "Eigenständig bearbeitbare Quelle in diesem Repository. Ursprünglicher Export aus christaegger-dot/puk-website-profil@4a6764a, anschliessend aktualisierter Renderer aus christaegger-dot/puk-website-profil@2bfda22ce3abb845fabb4459660f48960a9daec4. Lokale Änderungen ab r4-19 sind in diesem Repository dokumentiert; das PUK-Website-Profil bleibt Designreferenz. Historische Freigaben gelten nur für dokumentierte Stände. r4-20 ergänzt die Phrasenerkennung der lokalen Suche nach dem Produktions-Smoke-Test vom 13.10.2026. r4-21 enthält das nachgeprüfte P3-Paket für Sprache und visuelle Didaktik. r4-22 setzt die Befunde A04-008 bis A04-013 des visuellen Audits vom 13.10.2026 um. r4-23 setzt die Sprachbefunde A03-019 bis A03-038 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-24 gestaltet den Footer als kompakte visuelle Sekundärebene, ohne seinen Wortlaut oder seine Pflichtangaben zu verändern. r4-25 setzt Paket 1 (Sicherheit: Suizidalität und Selbstverletzung) des Massnahmenplans vom 14.10.2026 um; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-26 schliesst die nach Release A offenen Abnahmekriterien zu M1.1, M1.5, M1.6 und M1.8 sowie R25-O01 und R25-O03; die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-27 setzt Release B des Massnahmenplans vom 14.10.2026 um (Pakete 2, 3, 5 und 7: Kernwissen, Schweizer Recht, Anlaufstellen und Literatur, Quellen); die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben, Paket 3 ohne Prüfung durch den Rechtsdienst. r4-28 korrigiert fünf Aussagen aus r4-27 nach dem Codex-Review von Pull Request #684 (Gewaltschutz, ipw, Remissionsdefinition, DSM-5-TR-Kriterien, Fragen nach Suizidgedanken); die konkreten Fassungen wurden am 14.10.2026 im Namen der PUK geprüft und freigegeben. r4-29 setzt Release C des Massnahmenplans vom 14.10.2026 um (Paket 4 Eltern minderjähriger Kinder mit neuer Seite «Wenn Ihr jugendliches Kind betroffen ist», Paket 6 Text entlasten) sowie die Befunde aus W2 vom 15.10.2026, mit den Entscheiden E4, E7, E9 und der neuen Selbstbeschreibung in der Fusszeile. r4-30 schliesst nach dem Merge von r4-29 drei Punkte: den P1-Befund des Codex-Reviews von #687 («sorgeberechtigte Eltern» auf «Fragen», «Behandlung» und der Jugendlichen-Seite), die Suchlücken aus R3 (R3C-A9) und die Linkregel auf «Quellen» (R3C-A10). r4-31 korrigiert nach dem Merge von r4-30 zwei P1-Befunde des zweiten Codex-Reviews von #689 in der Suche. r4-32 vereinfacht die Suchregel für Anfragen mit Tötungswort nach den Entscheiden der PUK vom 15.10.2026 zu R31-P05: «Suizid» und «Gewalt» stehen beide oben, bei genannten Kindern zuerst «Kinder › Eskalation»; neuer Anker «Wenn Suizid angesprochen wird» auf «Kommunizieren». r4-33 korrigiert nach dem Merge von r4-32 zwei P1-Befunde des Codex-Reviews von #694 (trennbares Verb mit langem Abstand, Beugungsformen) und R32-03 der Prüfsitzung. r4-34 korrigiert nach dem Merge von r4-33 drei Rückschritte aus dem Codex-Review von #695 (Nahbereich von «bring… um» wieder wie r4-32) und R33-01. r4-35 setzt die Korrekturrunde A8-K aus R3C-A8 um: Wortbruch «Behandlungsteam» in `v-be-kontakt` im CSS behoben (A8-01 = R3C-06), drei Sätze (A8-02, A8-08, A8-09) und die linke Spalte von `v-ge-forschung` (A8-11, Variante V1) nach Freigabe der PUK vom 16.10.2026. r4-38 überarbeitet die 66 Befunde aus Audit 03 vom 18.10.2026 nach dem Umsetzungsauftrag der Projektverantwortlichen. Änderungen und Selbstprüfung: audit-results/2026-10-18-a03-umsetzung/. Frühere Fach- und R3-Freigaben werden damit nicht auf den neuen Wortlaut erweitert.",
   "kitRevision": "PUK Website Kit 1.10.1-r4 · abgeleitet",
   "canonicalSource": "PUK Zürich Design System 1.10.1 (unverändert)",
-  "assetVersion": "r4-37",
+  "assetVersion": "r4-38",
   "siteTitle": "Borderline – Orientierung für Angehörige",
   "shortDescription": "Psychoedukative Website der Fachstelle Angehörigenarbeit PUK für Angehörige von Menschen mit Borderline.",
   "language": "de-CH",
@@ -26,10 +26,11 @@
   "robots": "noindex, nofollow",
   "releaseApproval": {
     "institutionalResponsibility": "bestaetigt",
-    "independentReview": "bestaetigt",
+    "independentReview": "ausstehend",
     "reviewedBy": "PUK",
     "reviewedAt": "2026-10-16",
-    "reviewScope": "r4-35 (Korrekturrunde A8-K aus R3C-A8): A8-01 (= R3C-06) Richtungszeile von `v-be-kontakt` mit Umbruch zwischen den Wörtern statt im Wort, nur CSS; Wortlaut nach Freigabe der PUK vom 16.10.2026: A8-02 Kasten «Für Ihre eigene Belastung», A8-08 DEAR Schritt R «Garantie», A8-09 Anspannungskurve Stelle 2 «zum Beispiel», A8-11 Variante V1 «Selbstgefährdende und impulsive Handlungen» in `v-ge-forschung`; Freigabe audit-results/2026-10-16-delta-r4-35/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-16-delta-r4-35/PRUEFUNG.md, Stand 56f29e1 «freigabefähig mit Auflagen», Auflage R35-01 Buildkennung in b52e875 behoben, Abschlussbestätigung Stand b52e875 «freigabefähig»). Vorher: r4-34 (Korrektur nach r4-33): drei Rückschritte aus dem Codex-Review von #695 gegenüber r4-32 («bring… um» im Nahbereich bis sechs Wörter wieder genau wie r4-32, Erweiterung bis zwölf Wörter nur im selben Teilsatz mit Subjekt als Grenze), eine Fehlanheftung, Kind als Opfer nach gebeugtem Verb mit Variante R der Prüfsitzung (R33-01), Pluralformen, Erwartung «!sicher» in suchtest.mjs, Testliste authoring/tests/suche-ersttreffer.tsv (216 Anfragen); Freigabe audit-results/2026-10-15-delta-r4-34/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-34/PRUEFUNG.md, Stand e4a4013 «freigabefähig»). Vorher: r4-33 (Korrektur nach r4-32): zwei P1-Befunde des Codex-Reviews von #694 («bring… um» bis zum Ende des Teilsatzes statt sechs Wörter; Beugungsformen «tötete», «brachte … um» u. a.; Druck-Variante nur in der Gegenwart) und R32-03 der Prüfsitzung (Variante Q: «und» und Fragewörter beenden den Teilsatz), Testliste authoring/tests/suche-ersttreffer.tsv (209 Anfragen); Freigabe audit-results/2026-10-15-delta-r4-33/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-33/PRUEFUNG.md, Stand ca2a601 «freigabefähig»); veröffentlicht mit #695 (Merge-Commit 7bd5e6a, Stand ce56c1d), eine Minute nach dem Codex-Review und vor dessen Prüfung.  Vorher: r4-32 (Vereinfachung der Suche nach R31-P05): Entscheide der PUK vom 15.10.2026 «Ja, beide oben», «Kinder › Eskalation zuerst», «Ja, eigener Anker», «Nicht aufnehmen» (Würgen) und «ja» zur radikalen Vereinfachung; Anfragen mit Tötungswort heften «Suizid» und «Gewalt» oben an (bei genannten Kindern zuerst «Kinder › Eskalation»), Reihenfolge nach einfacher Faustregel als Best-Effort; neuer Anker kommunizieren.html#suizid-angesprochen mit eigenem Sucheintrag; Alias «Wenn ich gehe bringt sie sich um» entfernt; Testliste authoring/tests/suche-ersttreffer.tsv (197 Anfragen, Erwartung mit Reihenfolge «a > b»); Freigabe audit-results/2026-10-15-delta-r4-32/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-32/PRUEFUNG.md, Stand 138033d «freigabefähig mit Auflagen»), danach R32-01 und R32-02 mit Korrektur P der Prüfsitzung behoben, Abschlussbestätigung Stand 306c4e4 «freigabefähig» (ebenda); veröffentlicht mit #694 (Merge-Commit 4790653, Stand 37b963f), 12 Sekunden nach dem Codex-Review und vor dessen Prüfung.  Vorher: r4-31 (Korrektur nach r4-30): zwei P1-Befunde des zweiten Codex-Reviews von #689 in der Suche (jedes Tötungsverb wird gewertet, Suizid hat Vorrang; Infinitivregel D30-20 mit früherem «mich» ohne «und», R31-01; drei P1-Befunde des Codex-Reviews von #690, R31-02 bis R31-06 mit Variante K, u. a. «willst du dich umbringen» → Suizid), Testliste authoring/tests/suche-ersttreffer.tsv (317 Anfragen); Entscheid der PUK vom 15.10.2026 «r4-31 jetzt»; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-31/PRUEFUNG.md, Abschlussbestätigung Stand 57ddb4b), danach Codex-Befunde von #690 und R31-02 bis R31-06 korrigiert, Abschlussbestätigung 2 Stand b9c510f (ebenda); danach ein blockierender P1-Befund aus dem zweiten Codex-Review von #690 und R31-07 korrigiert (Variante L: Satzzeichen trennen), Abschlussbestätigung 4 Stand 93d972b (ebenda); danach ein blockierender P1-Befund aus dem dritten Codex-Review von #690 korrigiert (Satzende als harte Grenze) und R31-08/R31-09 mit Variante N; Entscheid der PUK vom 15.10.2026 «N veröffentlichen»; Abschlussbestätigung 6 Stand 800a729 (ebenda); danach ein blockierender P1-Befund aus dem vierten Codex-Review von #690 korrigiert («ans Umbringen» als Suizidsignal), Abschlussbestätigung 7 Stand 120370e (ebenda). Vorher: r4-30 (Korrektur nach r4-29): P1-Befund des Codex-Reviews von #687 («sorgeberechtigte Eltern», Wortlaut von der PUK am 15.10.2026 freigegeben), Suchlücken R3C-A9, Entfernen von vier Links auf «Quellen» nach R3C-A10 und D30-02 (drei Angaben und EBG-Informationsblatt A1; Entscheide der PUK vom 15.10.2026), Zwischenspeicher der Suche W3C-12, Suchregel für Tötungsverben mit Suizid-Vorrang (D30-09 bis D30-20) und Testliste authoring/tests/suche-ersttreffer.tsv (272 Anfragen); unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-30/PRUEFUNG.md: Delta-Prüfung, fünf Nachprüfungen, Abschlussbestätigung Stand a8fe194 «freigabefähig»); danach zwei P1-Befunde aus dem Codex-Review von #689 und D30-20 korrigiert, Abschlussbestätigung 2 Stand 0c711b8 «freigabefähig» (ebenda); veröffentlicht mit #689 (Merge-Commit 0fda233). Vorher: Release C (r4-29): Paket 4 (M4.1 bis M4.4, neue Seite «Wenn Ihr jugendliches Kind betroffen ist») und Paket 6 (M6.1 bis M6.24 ohne M6.7) des Massnahmenplans vom 14.10.2026, Befunde W2-001 bis W2-023, Entscheide E4, E7 und E9 vom 15.10.2026, Selbstbeschreibung der Fusszeile; Wortlaut von der PUK am 15.10.2026 freigegeben (audit-results/2026-10-15-release-c-r4-29/FREIGABE.md, F0 bis F14); unabhängig geprüft in eigenen Sitzungen: W2 (2026-10-15-struktur-w2-r4-28), Sprach-Review S (2026-10-15-sprache-s-r4-29, drei Sitzungen), Rechtsabgleich und W3 (2026-10-15-release-c-r4-29), W3-Korrekturen W3C-01 bis -03, -06, -08 und -09 nach Freigabe umgesetzt; R3 Freigabe-Audit (2026-10-15-release-c-r4-29/R3-BERICHT.md): «Go mit Auflagen», von der PUK am 15.10.2026 angenommen (FREIGABE.md, Nachtrag 2)"
+    "reviewScope": "r4-35 (Korrekturrunde A8-K aus R3C-A8): A8-01 (= R3C-06) Richtungszeile von `v-be-kontakt` mit Umbruch zwischen den Wörtern statt im Wort, nur CSS; Wortlaut nach Freigabe der PUK vom 16.10.2026: A8-02 Kasten «Für Ihre eigene Belastung», A8-08 DEAR Schritt R «Garantie», A8-09 Anspannungskurve Stelle 2 «zum Beispiel», A8-11 Variante V1 «Selbstgefährdende und impulsive Handlungen» in `v-ge-forschung`; Freigabe audit-results/2026-10-16-delta-r4-35/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-16-delta-r4-35/PRUEFUNG.md, Stand 56f29e1 «freigabefähig mit Auflagen», Auflage R35-01 Buildkennung in b52e875 behoben, Abschlussbestätigung Stand b52e875 «freigabefähig»). Vorher: r4-34 (Korrektur nach r4-33): drei Rückschritte aus dem Codex-Review von #695 gegenüber r4-32 («bring… um» im Nahbereich bis sechs Wörter wieder genau wie r4-32, Erweiterung bis zwölf Wörter nur im selben Teilsatz mit Subjekt als Grenze), eine Fehlanheftung, Kind als Opfer nach gebeugtem Verb mit Variante R der Prüfsitzung (R33-01), Pluralformen, Erwartung «!sicher» in suchtest.mjs, Testliste authoring/tests/suche-ersttreffer.tsv (216 Anfragen); Freigabe audit-results/2026-10-15-delta-r4-34/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-34/PRUEFUNG.md, Stand e4a4013 «freigabefähig»). Vorher: r4-33 (Korrektur nach r4-32): zwei P1-Befunde des Codex-Reviews von #694 («bring… um» bis zum Ende des Teilsatzes statt sechs Wörter; Beugungsformen «tötete», «brachte … um» u. a.; Druck-Variante nur in der Gegenwart) und R32-03 der Prüfsitzung (Variante Q: «und» und Fragewörter beenden den Teilsatz), Testliste authoring/tests/suche-ersttreffer.tsv (209 Anfragen); Freigabe audit-results/2026-10-15-delta-r4-33/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-33/PRUEFUNG.md, Stand ca2a601 «freigabefähig»); veröffentlicht mit #695 (Merge-Commit 7bd5e6a, Stand ce56c1d), eine Minute nach dem Codex-Review und vor dessen Prüfung.  Vorher: r4-32 (Vereinfachung der Suche nach R31-P05): Entscheide der PUK vom 15.10.2026 «Ja, beide oben», «Kinder › Eskalation zuerst», «Ja, eigener Anker», «Nicht aufnehmen» (Würgen) und «ja» zur radikalen Vereinfachung; Anfragen mit Tötungswort heften «Suizid» und «Gewalt» oben an (bei genannten Kindern zuerst «Kinder › Eskalation»), Reihenfolge nach einfacher Faustregel als Best-Effort; neuer Anker kommunizieren.html#suizid-angesprochen mit eigenem Sucheintrag; Alias «Wenn ich gehe bringt sie sich um» entfernt; Testliste authoring/tests/suche-ersttreffer.tsv (197 Anfragen, Erwartung mit Reihenfolge «a > b»); Freigabe audit-results/2026-10-15-delta-r4-32/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-32/PRUEFUNG.md, Stand 138033d «freigabefähig mit Auflagen»), danach R32-01 und R32-02 mit Korrektur P der Prüfsitzung behoben, Abschlussbestätigung Stand 306c4e4 «freigabefähig» (ebenda); veröffentlicht mit #694 (Merge-Commit 4790653, Stand 37b963f), 12 Sekunden nach dem Codex-Review und vor dessen Prüfung.  Vorher: r4-31 (Korrektur nach r4-30): zwei P1-Befunde des zweiten Codex-Reviews von #689 in der Suche (jedes Tötungsverb wird gewertet, Suizid hat Vorrang; Infinitivregel D30-20 mit früherem «mich» ohne «und», R31-01; drei P1-Befunde des Codex-Reviews von #690, R31-02 bis R31-06 mit Variante K, u. a. «willst du dich umbringen» → Suizid), Testliste authoring/tests/suche-ersttreffer.tsv (317 Anfragen); Entscheid der PUK vom 15.10.2026 «r4-31 jetzt»; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-31/PRUEFUNG.md, Abschlussbestätigung Stand 57ddb4b), danach Codex-Befunde von #690 und R31-02 bis R31-06 korrigiert, Abschlussbestätigung 2 Stand b9c510f (ebenda); danach ein blockierender P1-Befund aus dem zweiten Codex-Review von #690 und R31-07 korrigiert (Variante L: Satzzeichen trennen), Abschlussbestätigung 4 Stand 93d972b (ebenda); danach ein blockierender P1-Befund aus dem dritten Codex-Review von #690 korrigiert (Satzende als harte Grenze) und R31-08/R31-09 mit Variante N; Entscheid der PUK vom 15.10.2026 «N veröffentlichen»; Abschlussbestätigung 6 Stand 800a729 (ebenda); danach ein blockierender P1-Befund aus dem vierten Codex-Review von #690 korrigiert («ans Umbringen» als Suizidsignal), Abschlussbestätigung 7 Stand 120370e (ebenda). Vorher: r4-30 (Korrektur nach r4-29): P1-Befund des Codex-Reviews von #687 («sorgeberechtigte Eltern», Wortlaut von der PUK am 15.10.2026 freigegeben), Suchlücken R3C-A9, Entfernen von vier Links auf «Quellen» nach R3C-A10 und D30-02 (drei Angaben und EBG-Informationsblatt A1; Entscheide der PUK vom 15.10.2026), Zwischenspeicher der Suche W3C-12, Suchregel für Tötungsverben mit Suizid-Vorrang (D30-09 bis D30-20) und Testliste authoring/tests/suche-ersttreffer.tsv (272 Anfragen); unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-30/PRUEFUNG.md: Delta-Prüfung, fünf Nachprüfungen, Abschlussbestätigung Stand a8fe194 «freigabefähig»); danach zwei P1-Befunde aus dem Codex-Review von #689 und D30-20 korrigiert, Abschlussbestätigung 2 Stand 0c711b8 «freigabefähig» (ebenda); veröffentlicht mit #689 (Merge-Commit 0fda233). Vorher: Release C (r4-29): Paket 4 (M4.1 bis M4.4, neue Seite «Wenn Ihr jugendliches Kind betroffen ist») und Paket 6 (M6.1 bis M6.24 ohne M6.7) des Massnahmenplans vom 14.10.2026, Befunde W2-001 bis W2-023, Entscheide E4, E7 und E9 vom 15.10.2026, Selbstbeschreibung der Fusszeile; Wortlaut von der PUK am 15.10.2026 freigegeben (audit-results/2026-10-15-release-c-r4-29/FREIGABE.md, F0 bis F14); unabhängig geprüft in eigenen Sitzungen: W2 (2026-10-15-struktur-w2-r4-28), Sprach-Review S (2026-10-15-sprache-s-r4-29, drei Sitzungen), Rechtsabgleich und W3 (2026-10-15-release-c-r4-29), W3-Korrekturen W3C-01 bis -03, -06, -08 und -09 nach Freigabe umgesetzt; R3 Freigabe-Audit (2026-10-15-release-c-r4-29/R3-BERICHT.md): «Go mit Auflagen», von der PUK am 15.10.2026 angenommen (FREIGABE.md, Nachtrag 2)",
+    "pendingScope": "r4-38: die aktuelle Überarbeitung der 66 A03-Befunde vom 18.10.2026 ist lokal selbstgeprüft und zur unabhängigen Schlussprüfung vorgelegt. reviewedAt und reviewScope dokumentieren weiterhin ausschliesslich den früheren freigegebenen Stand."
   },
   "serviceReview": {
     "$comment": "Dynamische Beratungs- und Behandlungsangebote müssen mindestens halbjährlich redaktionell geprüft werden. Das Produktions-Gate blockiert fehlende, zukünftige oder mehr als 183 Tage alte Prüfdaten.",
@@ -80,11 +81,19 @@
     "reviewedBy": "Fachstelle Angehörigenarbeit PUK",
     "reviewedAt": "09.10.2026",
     "inline": {
-      "text": "Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.",
-      "reviewStatus": "geprueft",
-      "reviewedBy": "Fachstelle Angehörigenarbeit PUK",
-      "reviewedAt": "09.10.2026",
-      "$comment": "Verweis im Text (Profilentscheid 09.10.2026): nur über den Platzhalter <p data-responsibility-inline></p>, nur bei Selbstgefährdung, Gewalt oder akuter Krise. Wortlaut von der Fachstelle fachlich geprüft am 09.10.2026."
+      "text": "Bei unmittelbarer Lebensgefahr rufen Sie in der Schweiz den Rettungsdienst unter 144. Bei akuter Bedrohung oder Gewalt rufen Sie die Polizei unter 117. Wenn Sie die Dringlichkeit nicht einschätzen können, holen Sie sofort eine ärztliche Einschätzung. Warten Sie nicht auf eine Antwort der Fachstelle per E-Mail.",
+      "reviewStatus": "ausstehend",
+      "$comment": "A03-231: thematischer Akuthinweis an den bestehenden Stellen; keine globale Notrufliste. Nummern und Zuordnung am 18.10.2026 anhand https://www.zh.ch/de/gesundheit/notfall-rettung.html geprüft. Umsetzungsauftrag am 18.10.2026; fachliche Schlussfreigabe des neuen Wortlauts ausstehend. Die Freigabe vom 09.10.2026 betraf ausschliesslich den vorherigen Wortlaut.",
+      "phoneLinks": [
+        {
+          "number": "144",
+          "label": "Rettungsdienst 144 anrufen"
+        },
+        {
+          "number": "117",
+          "label": "Polizei 117 anrufen"
+        }
+      ]
     },
     "targetHref": "unterstuetzung.html#beratung",
     "targetLabel": "Kontakt und Beratungsangebot"
@@ -471,7 +480,7 @@
           "alternative": "Je Schritt eine Überschrift und zwei beschriftete Sichten; Textfassung über aria-describedby",
           "reason": "Gleiche Schritte nebeneinander zeigen, dass beide Sichten zugleich verständlich sind. Dasselbe Beispiel wie in der Schleife: verbunden, nicht gedoppelt.",
           "resonance": "Verständnis: Beide Sichten können gleichzeitig wahr sein.",
-          "approvalStatus": "freigegeben"
+          "approvalStatus": "ausstehend"
         },
         {
           "id": "v-bz-was-hilft",
@@ -727,13 +736,13 @@
           "sectionId": "dear",
           "goal": "Ein Anliegen in vier Schritten vorbereiten",
           "format": "process",
-          "statement": "D Beschreiben · E Empfinden ausdrücken · A Anliegen nennen · R Verstärken (positive Folgen benennen); vier Schritte helfen, ein Anliegen vorzubereiten. Je Schritt Aufgabe in ganzen Sätzen und abgesetzter Beispielsatz (.puk-say). Der Kurztext behandelt den Inhalt der vier Schritte, das Kürzel und die Grenze des Modells. Der fachlich erforderliche Hinweis auf den Krisenplan steht ausserhalb der Figur im Abschnittstext. Fachmodell aus der DBT.",
+          "statement": "D Beschreiben · E Empfinden ausdrücken · A Anliegen nennen · R Den möglichen Nutzen erklären (positive Folgen benennen); vier Schritte helfen, ein Anliegen vorzubereiten. Je Schritt Aufgabe in ganzen Sätzen und abgesetzter Beispielsatz (.puk-say). Der Kurztext behandelt den Inhalt der vier Schritte, das Kürzel und die Grenze des Modells. Der fachlich erforderliche Hinweis auf den Krisenplan steht ausserhalb der Figur im Abschnittstext. Fachmodell aus der DBT.",
           "understood": "Dass ein Anliegen in vier Schritten vorbereitet werden kann und jeder Schritt eine eigene Aufgabe hat; Aufgabe und Beispielsatz stehen je Schritt sichtbar getrennt.",
           "source": "Fachmodell: Linehan (2015), DBT Skills Training Manual, 2. Auflage (DEAR MAN); deutschsprachige redaktionelle Anpassung mit eigenen Beispielen",
           "alternative": "Geordnete Liste mit Schrittnummer, Aufgabe und Beispielsatz; Textfassung über aria-describedby",
           "reason": "Reihenfolge und Aufgabe jedes Schritts werden auf einen Blick sichtbar; die Auswahl-Schaltflächen des Bestands werden zu einem sichtbaren Pfad.",
           "resonance": "Sicherheit: Ich kann mein Anliegen in Ruhe vorbereiten.",
-          "approvalStatus": "freigegeben",
+          "approvalStatus": "ausstehend",
           "entryPoint": "entfällt: Der ganze Ablauf beschreibt das eigene Handeln der Angehörigen."
         },
         {
@@ -820,7 +829,10 @@
           "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4).",
           "approvalStatus": "freigegeben"
         }
-      ]
+      ],
+      "sectionSearchExcerpts": {
+        "gewalt-title": "Bei Bedrohung oder Gewalt hat Ihre Sicherheit Vorrang. Eine Borderline-Diagnose entschuldigt keine Gewalt. Im Abschnitt finden Sie Hinweise zu Schutz und Hilfe."
+      }
     },
     {
       "id": "diagnose",
@@ -830,7 +842,7 @@
       "groupRootId": "verstehen",
       "status": "published",
       "primaryTask": "Verstehen, wie eine Borderline-Abklärung abläuft, was eine Diagnose bedeuten kann und was Begleiterkrankungen sind",
-      "description": "Der Weg zur Abklärung in fünf Schritten mit Ihrer Rolle, was eine Diagnose für Angehörige bedeuten kann, was möglich ist, wenn die Diagnose nicht geteilt wird oder noch fehlt, Suizidgedanken und Selbstverletzung und was Begleiterkrankungen wie eine Depression bedeuten.",
+      "description": "Wer eine Borderline-Abklärung durchführt, wie sie abläuft und welche Rolle Angehörige haben können. Ausserdem finden Sie Informationen zu Unsicherheit über die Diagnose und zu weiteren psychischen Erkrankungen, die gleichzeitig vorkommen können.",
       "searchAliases": [
         "Borderline und Depression Begleiterkrankung Komorbidität Abklärung Diagnose"
       ],
@@ -841,7 +853,8 @@
       },
       "sensitiveTopics": [
         "selbstgefaehrdung",
-        "akute-krise"
+        "akute-krise",
+        "gewalt"
       ],
       "visualPlan": [
         {
@@ -1060,7 +1073,8 @@
           "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4; Bauauftrag 2c-2, Abschnitt 2).",
           "approvalStatus": "freigegeben"
         }
-      ]
+      ],
+      "filterLabel": "Angeboten"
     },
     {
       "id": "kommunizieren",
@@ -1177,7 +1191,10 @@
           "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4).",
           "approvalStatus": "freigegeben"
         }
-      ]
+      ],
+      "sectionSearchExcerpts": {
+        "suizid-angesprochen": "Nehmen Sie Suizidäusserungen ernst und holen Sie professionelle Hilfe. Sie müssen eine Partnerschaft nicht fortführen, um eine Krise allein abzufangen. Notwendige Versorgungspflichten bleiben bestehen."
+      }
     },
     {
       "id": "krise",
@@ -1189,7 +1206,7 @@
       "showInSectionNav": false,
       "status": "published",
       "primaryTask": "Sich in Krisen schützen, passende Hilfe holen und die eigenen Möglichkeiten kennen",
-      "description": "Während einer Krise, Suizidgedanken ansprechen, wenn Sie eine Selbstverletzung bemerken, was Sie sagen können, was Sie vermeiden sollten, wenn Belastung zunimmt, nach der Krise mit Krisenplan und wenn Belastung oder Gefahr bleibt.",
+      "description": "Wie Sie in einer Krise Hilfe holen und auf Ihre eigene Sicherheit achten können. Die Seite erklärt auch, wie Sie Suizidgedanken ansprechen, bei Selbstverletzung reagieren und Unterstützung nach einer Krise organisieren können.",
       "searchAliases": [
         "Notfall Polizei Lebensgefahr unmittelbare Gefahr akute Hilfe Suizid Selbstmord Selbsttötung Selbstverletzung Drohung Krise Krisen Eskalation"
       ],
@@ -1307,7 +1324,19 @@
           "reason": "Text ist klarer: Quellenliste des Profils (ul.puk-longform__sources) als letzter Abschnitt, jede Quelle einmal mit «Verwendet in», in einem Akkordeon mit dem Eintrag «Quellen zu dieser Seite», ohne Skript offen und im Druck vollständig; nicht in der Kapitelübersicht (Entscheid der Fachstelle 11.10.2026, Korrektur 2b-2, Abschnitt 4).",
           "approvalStatus": "freigegeben"
         }
-      ]
+      ],
+      "sectionSearchExcerpts": {
+        "krise-schnell": "Bei unmittelbarer Lebensgefahr rufen Sie in der Schweiz 144, bei akuter Bedrohung oder Gewalt 117. Warten Sie nicht auf eine Antwort der Fachstelle per E-Mail.",
+        "selbstverletzung": "Selbstverletzung schliesst Suizidgefahr nicht aus. Leisten Sie Erste Hilfe, soweit das sicher möglich ist, und holen Sie bei tiefen, stark blutenden oder unklaren Verletzungen ärztliche Hilfe.",
+        "sagen-title": "Hier finden Sie mögliche Sätze für eine Krise. Bei Bedrohung oder Gewalt bringen Sie sich in Sicherheit und holen Hilfe; ein Gespräch ersetzt das nicht.",
+        "vermeiden-title": "Lange Überzeugungsversuche und Druck können ein Krisengespräch erschweren. Klare Informationen, eigene Grenzen und notwendige Hilfe bleiben wichtig.",
+        "belastung-title": "Prüfen Sie, was für Sie noch möglich ist und welche Entlastung Sie brauchen. Das schätzt keine Gefahr ein. Bei Sorge um die Sicherheit holen Sie professionelle Hilfe.",
+        "danach-title": "Nach einer Krise können Erholung, medizinische oder psychiatrische Nachsorge und eigene Unterstützung nötig sein. Eine gemeinsame Nachbesprechung ist freiwillig und darf notwendige Hilfe nicht verzögern.",
+        "krisenplan": "Ein Krisenplan hält auf Wunsch der betroffenen Person hilfreiche Schritte und professionelle Kontakte fest. Er ersetzt keine sofortige Hilfe bei akuter Gefahr.",
+        "waehrend-title": "In einer Krise achten Sie zuerst auf Ihre eigene Sicherheit. Bei unmittelbarer Lebensgefahr rufen Sie in der Schweiz 144, bei akuter Bedrohung oder Gewalt 117. Holen Sie bei unklarer Dringlichkeit sofort eine ärztliche Einschätzung.",
+        "suizid-title": "Suizidgedanken können Sie direkt ansprechen. Antworten ersetzen keine fachliche Einschätzung. Bei möglicher akuter Gefahr holen Sie sofort Hilfe und achten auf Ihre eigene Sicherheit.",
+        "bleibt-title": "Wenn Belastung oder Sorge um die Sicherheit bleibt, holen Sie eine professionelle Einschätzung. Bei möglicher unmittelbarer Gefahr holen Sie sofort Hilfe."
+      }
     },
     {
       "id": "kinder",
@@ -1405,7 +1434,10 @@
           "reason": "Kurze Quellenliste mit Angabe der verwendeten Abschnitte.",
           "approvalStatus": "freigegeben"
         }
-      ]
+      ],
+      "sectionSearchExcerpts": {
+        "eskalation-title": "Kinder brauchen Schutz und verlässliche Betreuung. Bei wiederholter Eskalation holen Erwachsene Beratung; bei akuter Gefahr bringen sie das Kind aus der Situation und holen sofort Hilfe."
+      }
     },
     {
       "id": "jugendliche",
@@ -1557,7 +1589,7 @@
       ],
       "status": "published",
       "primaryTask": "Eigene Belastung, Bedürfnisse und erreichbare Unterstützung ernst nehmen",
-      "description": "Was Ihnen erlaubt bleibt, was Kraft kostet und was entlastet, Warnsignale für Überlastung, kurze Übungen, eigene Unterstützung, radikale Akzeptanz und Beratung.",
+      "description": "Die eigene Belastung wahrnehmen, Grenzen erkennen und Entlastung finden. Mit Anregungen für Pausen und Unterstützung sowie freiwilligen Übungen für angespannte Momente.",
       "searchAliases": [
         "erschöpft keine Kraft überfordert belastet selbst zu kurz"
       ],
@@ -1687,6 +1719,9 @@
       "sectionSearchAliases": {
         "verlauf-title": [
           "Kann Borderline besser werden Veränderung Verlauf"
+        ],
+        "forschung-title": [
+          "Was bessert sich zuerst"
         ]
       },
       "sensitiveTopics": [
@@ -1699,12 +1734,12 @@
           "sectionId": "forschung",
           "goal": "Die Zahlen der Langzeitstudie realistisch einordnen: was sie zeigen und was nicht",
           "format": "comparison",
-          "statement": "Zwei Spalten nebeneinander mit denselben Merkmalen («Zum Beispiel», «Im Verlauf»): links «Bessert sich oft früher» mit selbstgefährdenden und impulsiven Handlungen (Selbstverletzungen, Suizidversuche, impulsive Handlungen; Überschrift nach A8-11, Variante V1, Freigabe 16.10.2026), rechts «Bleibt oft länger» mit belastenden Gefühlen und Beziehungsängsten (Wut, Leere und Einsamkeit, Angst vor dem Verlassenwerden, Mühe, allein zu sein). Die Vertiefung nennt die Grenzen: Stichprobe der Zehnjahresstudie und abweichender Befund der zweiten Langzeitstudie.",
+          "statement": "Zwei Spalten zeigen das unterschiedliche Tempo von Veränderungen in einer einzelnen Zehnjahresstudie. Die Kernaussage und Kurzbeschreibung nennen sichtbar, dass eine andere Studie kein solches Muster fand. Keine persönliche Prognose.",
           "source": "Eigene didaktische Darstellung nach Zanarini et al. (2007); Grenzen nach Gunderson et al. (2011)",
           "alternative": "Beide Spalten als echter HTML-Text mit gleicher Merkmalsfolge; vollständige lineare Textfassung über aria-describedby",
           "reason": "E10 (Entscheid 14.10.2026, an Claude delegiert; M2.5 und M2.6): Der Unterschied zwischen dem, was sich früh bessert, und dem, was länger bleibt, ist ein Vergleich (Muster E). Die Abbildung ersetzt die frühere Abbildung 2 «Verschiedene Einflüsse, ein individueller Weg», die die Begriffsliste in `einfluesse` nur wiederholte. Die Zahlen der Langzeitstudie bleiben als hervorgehobener Text ohne Diagramm (Bauauftrag 2c-1). «Ein neuer Trieb» in `verlauf` ist jetzt Abbildung 2.",
-          "approvalStatus": "freigegeben",
-          "understood": "Dass sich Beschwerden unterschiedlich schnell bessern: Die zwei Spalten zeigen nebeneinander, was oft zuerst zurückgeht und was länger bleibt. So lassen sich eine ruhigere Phase und weiter bestehende schwierige Gefühle zusammen einordnen, ohne das eine gegen das andere auszuspielen.",
+          "approvalStatus": "ausstehend",
+          "understood": "Die Spalten vergleichen Ergebnisse einer einzelnen Studie. Sie zeigen keinen allgemein gültigen Verlauf.",
           "resonance": "Realistische Hoffnung: Es kann besser werden, auch wenn nicht alles gleichzeitig verschwindet, und ein schwieriges Gefühl heisst nicht, dass nichts erreicht wurde."
         },
         {
@@ -1907,7 +1942,8 @@
           "Medikamente gegen Borderline Tabletten Antidepressivum helfen"
         ],
         "f-stabiler": [
-          "bei anderen normal bei anderen ruhiger bei anderen unauffällig verhält sich anders"
+          "bei anderen normal bei anderen ruhiger bei anderen unauffällig verhält sich anders",
+          "Manipulation"
         ],
         "f-sprache": [
           "Dolmetschen Dolmetscher Übersetzung andere Sprache"
@@ -2035,7 +2071,10 @@
       "openFaqIds": [
         "f-bedrohlich",
         "f-einweisung"
-      ]
+      ],
+      "sectionSearchExcerpts": {
+        "f-verlassen": "Sie können eine Partnerschaft beenden und sich in Sicherheit bringen. Bestehende Schutz- und Versorgungspflichten müssen weiter erfüllt werden; holen Sie dafür Unterstützung. Bei akuter Gefahr holen Sie sofort Hilfe."
+      }
     },
     {
       "id": "begriffe",
@@ -2064,7 +2103,8 @@
           "reason": "Jeder Begriff ist einzeln aufklappbar und enthält Erklärung, Beispiel und thematischen Verweis. Das reduziert die sichtbare Informationsmenge beim Nachschlagen.",
           "approvalStatus": "freigegeben"
         }
-      ]
+      ],
+      "filterLabel": "Begriffen"
     },
     {
       "id": "quellen",
@@ -2178,7 +2218,8 @@
           "reason": "Text ist klarer: Literaturliste mit Angabe, kurzer Einordnung und den Seiten, auf denen die Quelle verwendet wird.",
           "approvalStatus": "freigegeben"
         }
-      ]
+      ],
+      "filterLabel": "Quellengruppen"
     },
     {
       "id": "suche",
@@ -2280,7 +2321,7 @@
       "groupRootId": "ueber",
       "status": "published",
       "primaryTask": "Wissen, wer die Website herausgibt und welche Daten beim Besuch anfallen",
-      "description": "Anbieterin, fachliche Redaktion, Kontakt und Datenschutz: keine Cookies, keine Auswertung, beim Lesen keine Daten an andere Anbieter als den Dienst, der die Website ausliefert.",
+      "description": "Angaben zur Anbieterin, zur Redaktion und zum Datenschutz. Die Seite erklärt, welche technischen Daten beim Hostingdienst anfallen können und wie Ihre Angaben bei einer E-Mail-Anfrage verwendet werden.",
       "sensitiveTopics": [],
       "visualPlan": [
         {

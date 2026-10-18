@@ -1,0 +1,260 @@
+r4-39 · technische Selbstprüfung, 18.10.2026
+Basis c54139cd043ed1e2079306c4b98bcaf700d27be4
+
+Aufrufe im Repository:
+node authoring/tools/build.mjs --selftest
+node authoring/tools/build.mjs --production --out=site --write-site
+node authoring/tools/build.mjs --production --verify-site
+node authoring/tools/build.mjs --out=site --write-site
+node authoring/tools/build.mjs --verify-site
+PLAYWRIGHT_MODULE=<playwright-Modulpfad> CHROMIUM_PATH=<Chromium-Pfad> node authoring/tools/suchtest.mjs site
+PLAYWRIGHT_MODULE=<playwright-Modulpfad> CHROMIUM_PATH=<Chromium-Pfad> node authoring/tools/sprachtest.mjs site
+PLAYWRIGHT_MODULE=<playwright-Modulpfad> CHROMIUM_PATH=<Chromium-Pfad> node authoring/tools/layouttest.cjs audit-results/2026-10-18-a04-umsetzung
+
+Chromium 153.0.8010.0, headless, locale de-CH. Basis 16px und defaultFontSize=32 (Root-Schriftgrad protokolliert).
+Produktionsaufrufe Exit 1 wegen sechs offenen Visualfreigaben; übrige Aufrufe Exit 0.
+
+
+## Selbsttest
+PASS | Ausgangslage Entwurf: 0 blockierende Befunde | erwartet: 0 | erhalten: 0
+PASS | Produktion blockiert sichtbaren Redaktionsstatus «Entwurf» | erwartet: editorial-status | erhalten: editorial-status
+PASS | Produktion blockiert Redaktionsstatus ohne Datum | erwartet: editorial-status | erhalten: editorial-status
+PASS | Aktueller datierter Redaktionsstatus besteht das Produktionsgate | erwartet: kein editorial-status | erhalten: kein editorial-status
+PASS | Produktion blockiert ungeklärte Absenderin, Zuständigkeitsverweise und Visualisierungen | erwartet: sender-status, safety-review, inline-review, visual-approval, change-review · keine Strukturfehler | erhalten: sender-status, safety-review, inline-review, visual-approval, change-review · keine Strukturfehler
+PASS | Dokumentierter Verzicht auf Gesamtprüfung für aktuelle Version | erwartet: kein change-review | erhalten: kein change-review
+PASS | Verzicht für andere Version hebt Prüfsperre nicht auf | erwartet: change-review | erhalten: change-review
+PASS | Verzicht ohne Beleg hebt Prüfsperre nicht auf | erwartet: change-review | erhalten: change-review
+PASS | Produktion ohne Prüfbericht blockiert | erwartet: review-report | erhalten: review-report
+PASS | Vollständiger Prüfbericht gibt die Veröffentlichung frei | erwartet: kein review-report | erhalten: kein review-report
+PASS | Produktion blockiert ohne «Go» im Freigabe-Audit R3 | erwartet: review-report (R3) | erhalten: review-report (R3)
+PASS | Kanonischer Link (siteUrl) gilt nicht als externe Laufzeitquelle | erwartet: kein external | erhalten: kein external
+PASS | Produktion blockiert ungeprüften Verweis im Text | erwartet: inline-review | erhalten: inline-review
+PASS | Regulärer Kontakt ohne Krisenausnahme: 058 000 00 00 | erwartet: 0 Blocker | erhalten: 0
+PASS | Regulärer Kontakt ohne Krisenausnahme: +41 44 000 00 00 | erwartet: 0 Blocker | erhalten: 0
+PASS | Regulärer Kontakt ohne Krisenausnahme: 0800 000 000 | erwartet: 0 Blocker | erhalten: 0
+PASS | Direkteinstieg verweist auf fehlende Seite | erwartet: utility-nav | erhalten: utility-nav, crisis-number-check
+PASS | Site-weite Sprungzielfokussierung deaktiviert | erwartet: deep-link-focus | erhalten: deep-link-focus, crisis-number-check
+PASS | Statische Seite ohne Skript für Sprungzielfokus | erwartet: interaction-script | erhalten: interaction-script, crisis-number-check
+PASS | Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite) | erwartet: nav-target oder nav | erhalten: nav-target, nav, link-target, crisis-number-check
+PASS | Seitenvertrag verweist auf fehlende Datei | erwartet: page-file | erhalten: page-file, nav, crisis-number-check, service-review, reachability
+PASS | lang fehlt | erwartet: lang | erhalten: crisis-number-check, lang
+PASS | CDN-React eingebunden | erwartet: external | erhalten: crisis-number-check, external
+PASS | Favicon fehlt | erwartet: favicon | erhalten: favicon, crisis-number-check
+PASS | Meta-Description fehlt | erwartet: meta | erhalten: meta, crisis-number-check
+PASS | Fachstelle unsichtbar | erwartet: sender | erhalten: crisis-number-check, sender
+PASS | E-Mail der Absenderin fehlt | erwartet: sender | erhalten: sender, crisis-number-check
+PASS | Fachstelle fehlt | erwartet: sender | erhalten: sender, crisis-number-check
+PASS | Krisennummer erzeugt Prüfhinweis | erwartet: crisis-number-check | erhalten: crisis-number-check
+PASS | Krisentelefonlink erzeugt Prüfhinweis | erwartet: crisis-number-check | erhalten: crisis-number-check
+PASS | Notfallblock eingefügt | erwartet: crisis-block | erhalten: crisis-number-check, crisis-block
+PASS | ß statt ss | erwartet: orthography | erhalten: crisis-number-check, orthography
+PASS | Deutscher Rechtsbegriff | erwartet: swiss-context | erhalten: crisis-number-check, swiss-context
+PASS | Etikettierende Bezeichnung | erwartet: person-first | erhalten: crisis-number-check, person-first
+PASS | Unzulässige Variante direct | erwartet: safety-contract | erhalten: safety-contract, crisis-number-check
+PASS | Zuständigkeitsverweis ausserhalb der Fusszeile | erwartet: safety-position | erhalten: crisis-number-check, safety-position
+PASS | Zuständigkeitsverweis als geprüft markiert ohne Dokumentation | erwartet: review-doc | erhalten: review-doc, crisis-number-check
+PASS | Zuständigkeitsverweis fehlt auf einer Seite | erwartet: safety-target | erhalten: crisis-number-check, safety-target
+PASS | Hinweis «ersetzt keine Abklärung» fehlt | erwartet: disclaimer | erhalten: disclaimer, crisis-number-check
+PASS | Seite nicht erreichbar | erwartet: reachability | erhalten: nav, safety-target, crisis-number-check, link-target, reachability
+PASS | Kreislauf linear (keine Bögen) | erwartet: cycle-geometry | erhalten: crisis-number-check, cycle-geometry
+PASS | «Uhrzeigersinn» in schmaler Leserichtung | erwartet: cycle-direction | erhalten: crisis-number-check, cycle-direction
+PASS | Rücksprung zu Station 1 fehlt | erwartet: cycle-return | erhalten: crisis-number-check, cycle-return
+PASS | Figur ohne Bildlegende | erwartet: figure-caption | erhalten: crisis-number-check, figure-caption, figure-alt, figure-source
+PASS | Figur ohne Kennzeichnung | erwartet: figure-source | erhalten: crisis-number-check, figure-source
+PASS | Figur fehlt im Visualisierungsplan | erwartet: visual-plan | erhalten: crisis-number-check, visual-plan, plan-coverage
+PASS | Bildplatzhalter ohne Freigabestatus | erwartet: placeholder-status | erhalten: crisis-number-check, placeholder-status
+PASS | Illustration ohne eigene Zeichnung und ohne Bildstatus | erwartet: placeholder-status | erhalten: crisis-number-check, placeholder-status
+PASS | Quellenlink ohne sprechendes aria-label | erwartet: link-label | erhalten: crisis-number-check, link-label
+PASS | Interner Link ins Leere | erwartet: link-target | erhalten: crisis-number-check, link-target
+PASS | Zwei h1 | erwartet: h1 | erhalten: h1, crisis-number-check
+PASS | Visualisierungsplan ohne «understood» | erwartet: visual-plan | erhalten: visual-plan, crisis-number-check
+PASS | Visualisierungsplan ohne Wirkung («resonance») | erwartet: resonance | erhalten: resonance, crisis-number-check
+PASS | Inline-Skript eingefügt | erwartet: inline-script | erhalten: crisis-number-check, inline-script
+PASS | Externer Link in neuem Fenster ohne rel | erwartet: blank-target | erhalten: crisis-number-check, blank-target
+PASS | Akkordeon ohne Interaktionsskript | erwartet: interaction-script | erhalten: crisis-number-check, interaction-script
+PASS | Figur ohne Kernaussage | erwartet: figure-core | erhalten: crisis-number-check, figure-core
+PASS | Abschnitt ohne Zeile im Visualisierungsplan | erwartet: plan-coverage | erhalten: crisis-number-check, visual-plan, plan-coverage
+PASS | Planzeile verweist auf fehlenden Abschnitt | erwartet: plan-section | erhalten: crisis-number-check, plan-coverage, plan-section
+PASS | Ansatzpunkt im Plan fehlt | erwartet: entry-point | erhalten: entry-point, crisis-number-check
+PASS | Ansatzpunkt im Plan, nicht in der Figur | erwartet: entry-point | erhalten: crisis-number-check, entry-point
+PASS | Kartenraster mit vielen Karten | erwartet: card-grid | erhalten: crisis-number-check, card-grid
+PASS | Verweis im Text mit eigenem Wortlaut | erwartet: inline-ref | erhalten: inline-ref, crisis-number-check
+PASS | Verweis im Text auf Seite ohne sensibles Thema | erwartet: inline-ref | erhalten: inline-ref, crisis-number-check, safety-contract
+PASS | Verweis im Text versteckt in einer Vertiefung | erwartet: inline-ref | erhalten: inline-ref, crisis-number-check
+PASS | Entwurf in der Navigation | erwartet: nav oder link-draft | erhalten: nav, link-draft, crisis-number-check, service-review
+PASS | Vertiefung ohne Interaktionsskript (Druck) | erwartet: interaction-script | erhalten: crisis-number-check, interaction-script
+PASS | Name des Logo-Links ohne sichtbaren Logotext | erwartet: logo-name | erhalten: logo-name, crisis-number-check
+PASS | Mehr als sechs Hauptpunkte ohne Menü | erwartet: nav-menu | erhalten: nav-menu, crisis-number-check
+PASS | Impressum und Datenschutzerklärung fehlen | erwartet: legal | erhalten: legal, crisis-number-check
+PASS | Link auf das Impressum fehlt in der Fusszeile | erwartet: legal | erhalten: crisis-number-check, legal
+PASS | Konfigurierte Website-Informationen fehlen in der Fusszeile | erwartet: footer-links | erhalten: footer-links, crisis-number-check
+PASS | Footer-Link verweist auf ein fehlendes Sprungziel | erwartet: footer-links | erhalten: footer-links, crisis-number-check
+PASS | 404-Seite fehlt | erwartet: not-found | erhalten: not-found, crisis-number-check
+PASS | 404-Seite in der Navigation | erwartet: not-found | erhalten: not-found, nav, crisis-number-check
+PASS | 404-Seite als Entwurf (nicht im Export) | erwartet: not-found | erhalten: not-found, crisis-number-check
+PASS | Impressum zeigt auf eine E-Mail-Adresse statt auf eine Seite | erwartet: legal | erhalten: legal, crisis-number-check
+PASS | Externes Stylesheet als «alternate stylesheet» | erwartet: external | erhalten: external, crisis-number-check
+PASS | Fremdsprachiger Quellentitel ohne lang | erwartet: lang-part | erhalten: crisis-number-check, lang-part
+PASS | Veraltetes Prüfdatum eines Angebots | erwartet: service-review | erhalten: crisis-number-check, service-review
+PASS | Angebot ohne serviceReview-Konfiguration | erwartet: service-review | erhalten: crisis-number-check, service-review
+PASS | Pflichtangebot nur auf einer Entwurfsseite | erwartet: service-review | erhalten: nav, link-draft, crisis-number-check, service-review
+Selbsttest: 82/82 bestanden
+
+
+## Entwurfsbuild
+WARN | verstehen | visual-approval | Visualisierung v-vs-eisberg nicht freigegeben (ausstehend)
+WARN | verstehen | visual-approval | Visualisierung v-vs-anspannung nicht freigegeben (ausstehend)
+WARN | kinder | visual-approval | Visualisierung v-ki-alltag nicht freigegeben (ausstehend)
+WARN | jugendliche | visual-approval | Visualisierung v-ju-uebergang nicht freigegeben (ausstehend)
+WARN | selbstfuersorge | visual-approval | Visualisierung v-sf-entlastung nicht freigegeben (ausstehend)
+WARN | genesung | visual-approval | Visualisierung v-ge-aspekte nicht freigegeben (ausstehend)
+WARN | kurz | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kurz | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kurz | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | quellen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | suche | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+Build draft: 23 Seiten · 0 Blocker · 29 Hinweise · Ziel site
+
+
+## Quell-Export-Paritaet
+WARN | verstehen | visual-approval | Visualisierung v-vs-eisberg nicht freigegeben (ausstehend)
+WARN | verstehen | visual-approval | Visualisierung v-vs-anspannung nicht freigegeben (ausstehend)
+WARN | kinder | visual-approval | Visualisierung v-ki-alltag nicht freigegeben (ausstehend)
+WARN | jugendliche | visual-approval | Visualisierung v-ju-uebergang nicht freigegeben (ausstehend)
+WARN | selbstfuersorge | visual-approval | Visualisierung v-sf-entlastung nicht freigegeben (ausstehend)
+WARN | genesung | visual-approval | Visualisierung v-ge-aspekte nicht freigegeben (ausstehend)
+WARN | kurz | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kurz | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kurz | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | quellen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | suche | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+PARITÄT BESTANDEN: 34 Dateien byte-gleich mit site/
+Build draft: 23 Seiten · 0 Blocker · 29 Hinweise · Ziel dist/site
+
+
+## Suchtest
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+
+
+## Sprach-UI-Test
+Sprach-/UI-Test: 75 Prüfungen bestanden · JS-Fehler 0
+
+
+## Layouttest
+Audit-04-Layouttest: 230 Seitenzustände, 25 Bedienproben, 0 Abweichungen.
+
+
+## Produktionsbuild (erwartete Freigabesperren)
+BLOCK | verstehen | visual-approval | Visualisierung v-vs-eisberg nicht freigegeben (ausstehend)
+BLOCK | verstehen | visual-approval | Visualisierung v-vs-anspannung nicht freigegeben (ausstehend)
+BLOCK | kinder | visual-approval | Visualisierung v-ki-alltag nicht freigegeben (ausstehend)
+BLOCK | jugendliche | visual-approval | Visualisierung v-ju-uebergang nicht freigegeben (ausstehend)
+BLOCK | selbstfuersorge | visual-approval | Visualisierung v-sf-entlastung nicht freigegeben (ausstehend)
+BLOCK | genesung | visual-approval | Visualisierung v-ge-aspekte nicht freigegeben (ausstehend)
+WARN | kurz | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kurz | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kurz | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | quellen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | suche | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+file:///workspace/scratch/375e33e938e6/a04-implementation/authoring/tools/build.mjs:64
+  throw new Error("Build blockiert: " + gate.blocks + " Befund(e)");
+        ^
+
+Error: Build blockiert: 6 Befund(e)
+    at file:///workspace/scratch/375e33e938e6/a04-implementation/authoring/tools/build.mjs:64:9
+
+Node.js v24.19.0
+
+
+## Produktionsabgleich (erwartete Freigabesperren)
+BLOCK | verstehen | visual-approval | Visualisierung v-vs-eisberg nicht freigegeben (ausstehend)
+BLOCK | verstehen | visual-approval | Visualisierung v-vs-anspannung nicht freigegeben (ausstehend)
+BLOCK | kinder | visual-approval | Visualisierung v-ki-alltag nicht freigegeben (ausstehend)
+BLOCK | jugendliche | visual-approval | Visualisierung v-ju-uebergang nicht freigegeben (ausstehend)
+BLOCK | selbstfuersorge | visual-approval | Visualisierung v-sf-entlastung nicht freigegeben (ausstehend)
+BLOCK | genesung | visual-approval | Visualisierung v-ge-aspekte nicht freigegeben (ausstehend)
+WARN | kurz | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kurz | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kurz | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | verstehen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | grenzen | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | diagnose | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kommunizieren | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | krise | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | kinder | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | quellen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | suche | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+file:///workspace/scratch/375e33e938e6/a04-implementation/authoring/tools/build.mjs:64
+  throw new Error("Build blockiert: " + gate.blocks + " Befund(e)");
+        ^
+
+Error: Build blockiert: 6 Befund(e)
+    at file:///workspace/scratch/375e33e938e6/a04-implementation/authoring/tools/build.mjs:64:9
+
+Node.js v24.19.0

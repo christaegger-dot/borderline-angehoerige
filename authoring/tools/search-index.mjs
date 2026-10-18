@@ -7,6 +7,7 @@ const text = html => String(html || '')
   .replace(/&#x([0-9a-f]+);/gi, (_, value) => String.fromCodePoint(Number.parseInt(value, 16)))
   .replace(/&#(\d+);/g, (_, value) => String.fromCodePoint(Number.parseInt(value, 10)))
   .replace(/&nbsp;/gi, ' ')
+  .replace(/&shy;|\u00ad/gi, '')
   .replace(/&amp;/gi, '&')
   .replace(/&quot;/gi, '"')
   .replace(/&#39;|&apos;/gi, "'")
@@ -48,6 +49,12 @@ export function buildSearchIndex(cfg, fragments) {
       let end = html.length;
       for (let j = i + 1; j < headings.length; j++) {
         if (headings[j].level <= heading.level) { end = headings[j].start; break; }
+      }
+      // The early quick orientation ends before the general introduction and
+      // roadmap. Keep its established search scope after that layout move.
+      if (page.id === 'krise' && heading.id === 'krise-schnell') {
+        const sectionEnd = html.indexOf('</section>', heading.end);
+        if (sectionEnd !== -1) end = Math.min(end, sectionEnd);
       }
       const body = text(html.slice(heading.end, end));
       const excerpt = excerptFor(body, page, heading.id);

@@ -30,7 +30,7 @@
     "reviewedBy": "PUK",
     "reviewedAt": "2026-10-16",
     "reviewScope": "r4-35 (Korrekturrunde A8-K aus R3C-A8): A8-01 (= R3C-06) Richtungszeile von `v-be-kontakt` mit Umbruch zwischen den Wörtern statt im Wort, nur CSS; Wortlaut nach Freigabe der PUK vom 16.10.2026: A8-02 Kasten «Für Ihre eigene Belastung», A8-08 DEAR Schritt R «Garantie», A8-09 Anspannungskurve Stelle 2 «zum Beispiel», A8-11 Variante V1 «Selbstgefährdende und impulsive Handlungen» in `v-ge-forschung`; Freigabe audit-results/2026-10-16-delta-r4-35/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-16-delta-r4-35/PRUEFUNG.md, Stand 56f29e1 «freigabefähig mit Auflagen», Auflage R35-01 Buildkennung in b52e875 behoben, Abschlussbestätigung Stand b52e875 «freigabefähig»). Vorher: r4-34 (Korrektur nach r4-33): drei Rückschritte aus dem Codex-Review von #695 gegenüber r4-32 («bring… um» im Nahbereich bis sechs Wörter wieder genau wie r4-32, Erweiterung bis zwölf Wörter nur im selben Teilsatz mit Subjekt als Grenze), eine Fehlanheftung, Kind als Opfer nach gebeugtem Verb mit Variante R der Prüfsitzung (R33-01), Pluralformen, Erwartung «!sicher» in suchtest.mjs, Testliste authoring/tests/suche-ersttreffer.tsv (216 Anfragen); Freigabe audit-results/2026-10-15-delta-r4-34/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-34/PRUEFUNG.md, Stand e4a4013 «freigabefähig»). Vorher: r4-33 (Korrektur nach r4-32): zwei P1-Befunde des Codex-Reviews von #694 («bring… um» bis zum Ende des Teilsatzes statt sechs Wörter; Beugungsformen «tötete», «brachte … um» u. a.; Druck-Variante nur in der Gegenwart) und R32-03 der Prüfsitzung (Variante Q: «und» und Fragewörter beenden den Teilsatz), Testliste authoring/tests/suche-ersttreffer.tsv (209 Anfragen); Freigabe audit-results/2026-10-15-delta-r4-33/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-33/PRUEFUNG.md, Stand ca2a601 «freigabefähig»); veröffentlicht mit #695 (Merge-Commit 7bd5e6a, Stand ce56c1d), eine Minute nach dem Codex-Review und vor dessen Prüfung.  Vorher: r4-32 (Vereinfachung der Suche nach R31-P05): Entscheide der PUK vom 15.10.2026 «Ja, beide oben», «Kinder › Eskalation zuerst», «Ja, eigener Anker», «Nicht aufnehmen» (Würgen) und «ja» zur radikalen Vereinfachung; Anfragen mit Tötungswort heften «Suizid» und «Gewalt» oben an (bei genannten Kindern zuerst «Kinder › Eskalation»), Reihenfolge nach einfacher Faustregel als Best-Effort; neuer Anker kommunizieren.html#suizid-angesprochen mit eigenem Sucheintrag; Alias «Wenn ich gehe bringt sie sich um» entfernt; Testliste authoring/tests/suche-ersttreffer.tsv (197 Anfragen, Erwartung mit Reihenfolge «a > b»); Freigabe audit-results/2026-10-15-delta-r4-32/FREIGABE.md; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-32/PRUEFUNG.md, Stand 138033d «freigabefähig mit Auflagen»), danach R32-01 und R32-02 mit Korrektur P der Prüfsitzung behoben, Abschlussbestätigung Stand 306c4e4 «freigabefähig» (ebenda); veröffentlicht mit #694 (Merge-Commit 4790653, Stand 37b963f), 12 Sekunden nach dem Codex-Review und vor dessen Prüfung.  Vorher: r4-31 (Korrektur nach r4-30): zwei P1-Befunde des zweiten Codex-Reviews von #689 in der Suche (jedes Tötungsverb wird gewertet, Suizid hat Vorrang; Infinitivregel D30-20 mit früherem «mich» ohne «und», R31-01; drei P1-Befunde des Codex-Reviews von #690, R31-02 bis R31-06 mit Variante K, u. a. «willst du dich umbringen» → Suizid), Testliste authoring/tests/suche-ersttreffer.tsv (317 Anfragen); Entscheid der PUK vom 15.10.2026 «r4-31 jetzt»; unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-31/PRUEFUNG.md, Abschlussbestätigung Stand 57ddb4b), danach Codex-Befunde von #690 und R31-02 bis R31-06 korrigiert, Abschlussbestätigung 2 Stand b9c510f (ebenda); danach ein blockierender P1-Befund aus dem zweiten Codex-Review von #690 und R31-07 korrigiert (Variante L: Satzzeichen trennen), Abschlussbestätigung 4 Stand 93d972b (ebenda); danach ein blockierender P1-Befund aus dem dritten Codex-Review von #690 korrigiert (Satzende als harte Grenze) und R31-08/R31-09 mit Variante N; Entscheid der PUK vom 15.10.2026 «N veröffentlichen»; Abschlussbestätigung 6 Stand 800a729 (ebenda); danach ein blockierender P1-Befund aus dem vierten Codex-Review von #690 korrigiert («ans Umbringen» als Suizidsignal), Abschlussbestätigung 7 Stand 120370e (ebenda). Vorher: r4-30 (Korrektur nach r4-29): P1-Befund des Codex-Reviews von #687 («sorgeberechtigte Eltern», Wortlaut von der PUK am 15.10.2026 freigegeben), Suchlücken R3C-A9, Entfernen von vier Links auf «Quellen» nach R3C-A10 und D30-02 (drei Angaben und EBG-Informationsblatt A1; Entscheide der PUK vom 15.10.2026), Zwischenspeicher der Suche W3C-12, Suchregel für Tötungsverben mit Suizid-Vorrang (D30-09 bis D30-20) und Testliste authoring/tests/suche-ersttreffer.tsv (272 Anfragen); unabhängig geprüft in eigener Sitzung (audit-results/2026-10-15-delta-r4-30/PRUEFUNG.md: Delta-Prüfung, fünf Nachprüfungen, Abschlussbestätigung Stand a8fe194 «freigabefähig»); danach zwei P1-Befunde aus dem Codex-Review von #689 und D30-20 korrigiert, Abschlussbestätigung 2 Stand 0c711b8 «freigabefähig» (ebenda); veröffentlicht mit #689 (Merge-Commit 0fda233). Vorher: Release C (r4-29): Paket 4 (M4.1 bis M4.4, neue Seite «Wenn Ihr jugendliches Kind betroffen ist») und Paket 6 (M6.1 bis M6.24 ohne M6.7) des Massnahmenplans vom 14.10.2026, Befunde W2-001 bis W2-023, Entscheide E4, E7 und E9 vom 15.10.2026, Selbstbeschreibung der Fusszeile; Wortlaut von der PUK am 15.10.2026 freigegeben (audit-results/2026-10-15-release-c-r4-29/FREIGABE.md, F0 bis F14); unabhängig geprüft in eigenen Sitzungen: W2 (2026-10-15-struktur-w2-r4-28), Sprach-Review S (2026-10-15-sprache-s-r4-29, drei Sitzungen), Rechtsabgleich und W3 (2026-10-15-release-c-r4-29), W3-Korrekturen W3C-01 bis -03, -06, -08 und -09 nach Freigabe umgesetzt; R3 Freigabe-Audit (2026-10-15-release-c-r4-29/R3-BERICHT.md): «Go mit Auflagen», von der PUK am 15.10.2026 angenommen (FREIGABE.md, Nachtrag 2)",
-    "pendingScope": "r4-38: die aktuelle Überarbeitung der 66 A03-Befunde vom 18.10.2026 ist lokal selbstgeprüft und zur unabhängigen Schlussprüfung vorgelegt. reviewedAt und reviewScope dokumentieren weiterhin ausschliesslich den früheren freigegebenen Stand."
+    "pendingScope": "r4-38: Die drei geänderten Abbildungen und der neue Akuthinweis sind durch Christa Egger am 18.10.2026 fachlich freigegeben (audit-results/2026-10-18-a03-umsetzung/FREIGABE.md). Die unabhängige Schlussprüfung der gesamten Runde mit 66 A03-Befunden bleibt ausstehend. reviewedAt und reviewScope dokumentieren weiterhin ausschliesslich den früheren unabhängig geprüften Stand."
   },
   "serviceReview": {
     "$comment": "Dynamische Beratungs- und Behandlungsangebote müssen mindestens halbjährlich redaktionell geprüft werden. Das Produktions-Gate blockiert fehlende, zukünftige oder mehr als 183 Tage alte Prüfdaten.",
@@ -82,8 +82,8 @@
     "reviewedAt": "09.10.2026",
     "inline": {
       "text": "Bei unmittelbarer Lebensgefahr rufen Sie in der Schweiz den Rettungsdienst unter 144. Bei akuter Bedrohung oder Gewalt rufen Sie die Polizei unter 117. Wenn Sie die Dringlichkeit nicht einschätzen können, holen Sie sofort eine ärztliche Einschätzung. Warten Sie nicht auf eine Antwort der Fachstelle per E-Mail.",
-      "reviewStatus": "ausstehend",
-      "$comment": "A03-231: thematischer Akuthinweis an den bestehenden Stellen; keine globale Notrufliste. Nummern und Zuordnung am 18.10.2026 anhand https://www.zh.ch/de/gesundheit/notfall-rettung.html geprüft. Umsetzungsauftrag am 18.10.2026; fachliche Schlussfreigabe des neuen Wortlauts ausstehend. Die Freigabe vom 09.10.2026 betraf ausschliesslich den vorherigen Wortlaut.",
+      "reviewStatus": "geprueft",
+      "$comment": "A03-231: thematischer Akuthinweis an den bestehenden Stellen; keine globale Notrufliste. Nummern und Zuordnung am 18.10.2026 anhand https://www.zh.ch/de/gesundheit/notfall-rettung.html geprüft. Neuer Wortlaut r4-38 am 18.10.2026 ausdrücklich durch Christa Egger fachlich freigegeben; Wortlaut und Umfang der Freigabe in audit-results/2026-10-18-a03-umsetzung/FREIGABE.md. Die Freigabe vom 09.10.2026 bleibt ausschliesslich dem vorherigen Wortlaut zugeordnet.",
       "phoneLinks": [
         {
           "number": "144",
@@ -93,7 +93,11 @@
           "number": "117",
           "label": "Polizei 117 anrufen"
         }
-      ]
+      ],
+      "reviewedBy": "Christa Egger",
+      "reviewedAt": "2026-10-18",
+      "reviewRef": "audit-results/2026-10-18-a03-umsetzung/FREIGABE.md",
+      "reviewScope": "Fachliche Freigabe des unveränderten r4-38-Akuthinweises in 43e954a0317055f7e529f2473e150d258dd202c7"
     },
     "targetHref": "unterstuetzung.html#beratung",
     "targetLabel": "Kontakt und Beratungsangebot"
@@ -480,7 +484,11 @@
           "alternative": "Je Schritt eine Überschrift und zwei beschriftete Sichten; Textfassung über aria-describedby",
           "reason": "Gleiche Schritte nebeneinander zeigen, dass beide Sichten zugleich verständlich sind. Dasselbe Beispiel wie in der Schleife: verbunden, nicht gedoppelt.",
           "resonance": "Verständnis: Beide Sichten können gleichzeitig wahr sein.",
-          "approvalStatus": "ausstehend"
+          "approvalStatus": "freigegeben",
+          "approvedBy": "Christa Egger",
+          "approvedAt": "2026-10-18",
+          "approvalRef": "audit-results/2026-10-18-a03-umsetzung/FREIGABE.md",
+          "approvalScope": "Fachliche Freigabe der Fassung r4-38 in 43e954a0317055f7e529f2473e150d258dd202c7"
         },
         {
           "id": "v-bz-was-hilft",
@@ -742,8 +750,12 @@
           "alternative": "Geordnete Liste mit Schrittnummer, Aufgabe und Beispielsatz; Textfassung über aria-describedby",
           "reason": "Reihenfolge und Aufgabe jedes Schritts werden auf einen Blick sichtbar; die Auswahl-Schaltflächen des Bestands werden zu einem sichtbaren Pfad.",
           "resonance": "Sicherheit: Ich kann mein Anliegen in Ruhe vorbereiten.",
-          "approvalStatus": "ausstehend",
-          "entryPoint": "entfällt: Der ganze Ablauf beschreibt das eigene Handeln der Angehörigen."
+          "approvalStatus": "freigegeben",
+          "entryPoint": "entfällt: Der ganze Ablauf beschreibt das eigene Handeln der Angehörigen.",
+          "approvedBy": "Christa Egger",
+          "approvedAt": "2026-10-18",
+          "approvalRef": "audit-results/2026-10-18-a03-umsetzung/FREIGABE.md",
+          "approvalScope": "Fachliche Freigabe der Fassung r4-38 in 43e954a0317055f7e529f2473e150d258dd202c7"
         },
         {
           "id": "v-gr-saetze",
@@ -1738,9 +1750,13 @@
           "source": "Eigene didaktische Darstellung nach Zanarini et al. (2007); Grenzen nach Gunderson et al. (2011)",
           "alternative": "Beide Spalten als echter HTML-Text mit gleicher Merkmalsfolge; vollständige lineare Textfassung über aria-describedby",
           "reason": "E10 (Entscheid 14.10.2026, an Claude delegiert; M2.5 und M2.6): Der Unterschied zwischen dem, was sich früh bessert, und dem, was länger bleibt, ist ein Vergleich (Muster E). Die Abbildung ersetzt die frühere Abbildung 2 «Verschiedene Einflüsse, ein individueller Weg», die die Begriffsliste in `einfluesse` nur wiederholte. Die Zahlen der Langzeitstudie bleiben als hervorgehobener Text ohne Diagramm (Bauauftrag 2c-1). «Ein neuer Trieb» in `verlauf` ist jetzt Abbildung 2.",
-          "approvalStatus": "ausstehend",
+          "approvalStatus": "freigegeben",
           "understood": "Die Spalten vergleichen Ergebnisse einer einzelnen Studie. Sie zeigen keinen allgemein gültigen Verlauf.",
-          "resonance": "Realistische Hoffnung: Es kann besser werden, auch wenn nicht alles gleichzeitig verschwindet, und ein schwieriges Gefühl heisst nicht, dass nichts erreicht wurde."
+          "resonance": "Realistische Hoffnung: Es kann besser werden, auch wenn nicht alles gleichzeitig verschwindet, und ein schwieriges Gefühl heisst nicht, dass nichts erreicht wurde.",
+          "approvedBy": "Christa Egger",
+          "approvedAt": "2026-10-18",
+          "approvalRef": "audit-results/2026-10-18-a03-umsetzung/FREIGABE.md",
+          "approvalScope": "Fachliche Freigabe der Fassung r4-38 in 43e954a0317055f7e529f2473e150d258dd202c7"
         },
         {
           "id": "v-ge-begriffe",

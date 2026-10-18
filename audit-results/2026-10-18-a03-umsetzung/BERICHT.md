@@ -1,8 +1,10 @@
 # Überarbeitung der 66 Befunde aus Audit 03 · r4-38
 
-**GitHub:** [PR #706](https://github.com/christaegger-dot/borderline-angehoerige/pull/706), offen als Entwurf. Umsetzungscommit: `968573fae9a5690b271704b4b535469b9e73e230`.
+**GitHub:** [PR #706](https://github.com/christaegger-dot/borderline-angehoerige/pull/706), offen zur Schlussprüfung. Umsetzungscommit: `968573fae9a5690b271704b4b535469b9e73e230`.
 
 Die 66 Befunde des Sprach- und Didaktikaudits vom 18. Oktober 2026 sind in den kanonischen Quellen überarbeitet. Der Umsetzungsauftrag lautete: «sehr gut, danke. Bitte überarbeite die Befunde direkt in github». Ausgangspunkt ist `086876611dbf2909e6d6f10824d05a0ecc4eed57`; beim abschliessenden Abgleich stand `main` weiterhin auf diesem Commit.
+
+**Nachtrag vom 18.10.2026:** Christa Egger hat die drei geänderten Abbildungen und den neuen Akuthinweis ausdrücklich fachlich freigegeben. Der [Freigabenachweis](FREIGABE.md) hält Wortlaut, Datum und Umfang fest. Nach Aktualisierung der vier Felder bleibt genau eine Produktionssperre: die unabhängige Gesamtprüfung. [Nachtest der Freigabefelder](NACHTEST-FACHFREIGABE.txt).
 
 ## Umfang und Nachvollziehbarkeit
 
@@ -26,7 +28,7 @@ A03-083 lässt den Behandlungsgrundsatz absichtlich einmal in der Kurzbox stehen
 
 Bei A03-202 werden persönlicher nicht kommerzieller Gebrauch und Angehörigenberatung widerspruchsfrei benannt. Gesetzlich erlaubte Nutzungen bleiben vorbehalten; neue institutionelle Rechte oder Zusagen werden nicht behauptet. A03-252 beschreibt das Löschen der Daten dieser Website und fordert nicht zum Löschen der gesamten Browserchronik auf.
 
-## Prüfung
+## Technische Erstprüfung der Überarbeitung
 
 Die vollständigen Ausgaben stehen in [TESTERGEBNISSE.txt](TESTERGEBNISSE.txt).
 
@@ -55,28 +57,28 @@ node authoring/tools/sprachtest.mjs site
 
 In dieser Umgebung: `PLAYWRIGHT_MODULE` zeigte auf das vorhandene Playwright-Modul, `CHROMIUM_PATH` auf `/tmp/chromium` (Chromium 153.0.8010.0). Die Aufnahmen sind nach Öffnen der Vertiefungen entstanden. Der Versuch, einen weiteren Playwright-Browser herunterzuladen, scheiterte an einer unvollständigen Archivantwort; für die Tests wurde der bereits vorhandene Chromium verwendet.
 
-## Ausstehende Schlussfreigabe
+## Freigabestand nach der Erklärung vom 18.10.2026
 
-Das Ergebnis ist ein prüfbarer PR-Entwurf. Es ist eine redaktionelle und technische Selbstprüfung, keine neue unabhängige Fach-, Rechts- oder R3-Freigabe. Die historischen Freigaben werden nicht auf die Änderungen erweitert.
+Die [fachliche Freigabe von Christa Egger](FREIGABE.md) gilt für die drei geänderten Abbildungen und den neuen Akutwortlaut der unveränderten Fassung in `43e954a0317055f7e529f2473e150d258dd202c7`. Sie ist in der Seitenkonfiguration mit Name, Datum und Beleg dokumentiert.
 
-Beide gemäss AGENTS.md vorgeschriebenen Produktionsaufrufe wurden ausgeführt:
+| Prüfpunkt | Aktueller Stand |
+| --- | --- |
+| `v-bz-sichten` | fachlich freigegeben am 18.10.2026 |
+| `v-gr-dear` | fachlich freigegeben am 18.10.2026 |
+| `v-ge-forschung` | fachlich freigegeben am 18.10.2026 |
+| `responsibility.inline` | fachlich geprüft/freigegeben am 18.10.2026 |
+| `releaseApproval.independentReview` | weiterhin ausstehend |
+
+Die ursprünglichen fünf Sperren in [TESTERGEBNISSE.txt](TESTERGEBNISSE.txt) und im GitHub-Prüflauf #58 beschreiben den Stand vor dieser Fachfreigabe. Der [Nachtest](NACHTEST-FACHFREIGABE.txt) bestätigt nun genau eine Sperre, `change-review`, bei beiden vorgeschriebenen Produktionsaufrufen:
 
 ```sh
 node authoring/tools/build.mjs --production --out=site --write-site
 node authoring/tools/build.mjs --production --verify-site
 ```
 
-Sie blockieren erwartungsgemäss an genau fünf Freigabepunkten:
+Die erneute Prüfung des Entwurfs bestätigt 34 bytegleiche Exportdateien und 79/79 Selbsttests. Die Freigabedokumentation verändert keine öffentlichen Texte, Grafiken oder Funktionen. Eine erneute Such- und Browserprüfung war deshalb für diese reine Statusänderung nicht erforderlich; deren Ergebnisse oben beziehen sich weiterhin auf den unveränderten Inhalt der ersten Überarbeitung.
 
-1. `v-bz-sichten`: geänderte Erklärung des Beispiels, Freigabe ausstehend.
-2. `v-gr-dear`: verständlicher benannter Schritt R, Freigabe ausstehend.
-3. `v-ge-forschung`: studienspezifische Beschriftung, Freigabe ausstehend.
-4. `responsibility.inline`: neuer Akutwortlaut, fachliche Freigabe ausstehend.
-5. `releaseApproval.independentReview`: unabhängige Schlussprüfung der gesamten Runde ausstehend.
-
-Die Freigabefelder sind ausdrücklich auf «ausstehend» gesetzt. Das Gate wurde nicht umgangen. Die vorliegenden `site/`-Dateien stammen aus dem Entwurfsmodus und wurden erneut abgeglichen; eine bestandene Produktionsprüfung wird nicht behauptet. Die vorhandene r4-35-Freigabe bleibt historisch dokumentiert. Eine fachjuristische oder institutionelle Beurteilung der aktuellen Texte muss im Schlussreview erfolgen.
-
-Es wurden weder `main` gemergt noch ein Deployment oder Änderungen an Netlify-Zugangsschutz und Datenschutzkonfiguration vorgenommen.
+Die unabhängige Gesamtprüfung ist nicht durch die Umsetzungs- oder Dokumentationssitzung ersetzt. Der Produktionsschutz und die historischen R3-Nachweise bleiben erhalten. Kein Merge, Deployment oder Eingriff in Netlify-Zugangsschutz und Datenschutzkonfiguration durch diese Sitzung.
 
 ## Visuelle Belege
 

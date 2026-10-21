@@ -1612,3 +1612,130 @@ html.puk-scroll-lock{overflow:hidden}
   #einstiege .puk-site-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3) var(--space-8)}
   #einstiege .puk-site-paths>li{margin:0;padding-block:var(--space-3)}
 }
+
+/* ===== Gestaltung 2026-10-21 · Entwurf, nicht freigegeben =====
+   Quelle: Entwürfe «Borderline Startseite Entwurf» und «Borderline Verstehen Entwurf».
+   Nachgestellt, damit diese Regeln bei gleicher Spezifität gewinnen. Neue Klassen beginnen mit .bl-.
+   Prüfbedarf: Überschriften in Rubik Medium (500); das CD Manual nennt Light und Regular für Text. */
+:root{
+  /* Grundfläche: Schattierung von PUK-Blau unter 25 % («sämtliche Schattierungen zulässig», CD Manual). */
+  --bl-ground:#F5F7FF;
+  --bl-measure:46rem;
+}
+
+/* Volle Breite für Flächen innerhalb von .puk-web-container, ohne horizontales Scrollen */
+.puk-longform__hero,.bl-band,.puk-site-sender{box-shadow:0 0 0 100vmax var(--bl-surface,transparent);clip-path:inset(0 -100vmax)}
+
+/* Kopf kompakter, Absenderin als schmale Zeile */
+.puk-web-header__inner{padding-block:var(--space-3)}
+.puk-site-sender{--bl-surface:var(--ui-wash);background:var(--ui-wash);padding-block:var(--space-2);font-size:.875rem}
+
+/* Einstieg */
+.puk-longform__hero{--bl-surface:var(--bl-ground);background:var(--bl-ground);padding-block:clamp(2.5rem,5vw,4.5rem) clamp(2rem,4vw,3.5rem)}
+.puk-longform__hero .puk-web-h1{max-width:20ch;font-size:clamp(2.125rem,1.4rem + 2.6vw,3.25rem);font-weight:var(--fw-medium);line-height:1.12}
+.puk-longform__intro{max-width:38em;font-weight:var(--fw-light,300);line-height:1.55}
+.puk-site-start-actions .puk-link--action{background:var(--action-accent-bg);border-color:var(--action-accent-bg);color:var(--puk-white);font-weight:var(--fw-medium);padding:var(--space-3) var(--space-5);border-radius:var(--web-radius-btn-lg)}
+.puk-site-start-actions .puk-link--action:hover{background:var(--action-accent-bg-hover);border-color:var(--action-accent-bg-hover);color:var(--puk-white)}
+.puk-site-quick-entry{border-left:0;padding:0;background:none}
+
+/* Abschnitte einspaltig: Titel über dem Text statt leerer Titelspalte */
+.puk-longform__section-grid{grid-template-columns:minmax(0,1fr);gap:var(--space-5)}
+.puk-longform__section-heading{position:static}
+.puk-longform__section-heading .puk-web-h2{max-width:24ch;font-weight:var(--fw-medium)}
+.puk-longform__copy{max-width:var(--bl-measure)}
+.bl-section--wide .puk-longform__copy{max-width:none}
+.bl-section--wide .puk-longform__copy>p{max-width:var(--bl-measure)}
+
+/* Einstiege nach Anliegen als Karten; die ganze Karte ist der Link */
+.bl-paths-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:var(--space-4)}
+.bl-paths-cards li{position:relative;display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-5);border:1px solid transparent;border-radius:var(--web-radius-btn-lg);background:var(--bl-ground)}
+.bl-paths-cards li:hover{border-color:var(--puk-blue-100);background:var(--ui-field)}
+.bl-paths-cards li:focus-within{outline:3px solid var(--border-focus);outline-offset:2px}
+.bl-paths-cards a{color:var(--text-default);text-decoration:none;font-weight:var(--fw-medium);padding-block:0}
+.bl-paths-cards a::after{content:"";position:absolute;inset:0}
+.bl-paths-cards a:focus-visible{outline:none}
+.bl-paths-cards p{margin:0;color:var(--text-muted)}
+
+/* Themen als ruhiges, liniertes Raster */
+.bl-paths-lines{grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:0 var(--space-6);border-top:2px solid var(--border-strong)}
+.bl-paths-lines li{padding-block:var(--space-4);border-top:0;border-bottom:1px solid var(--border-default)}
+.bl-paths-lines a{color:var(--text-default);text-decoration:none;font-weight:var(--fw-medium)}
+.bl-paths-lines a:hover{color:var(--puk-blue-125);text-decoration:underline}
+.bl-paths-lines p{color:var(--text-muted)}
+
+/* Blaues Band (Haltung) */
+.bl-band{--bl-surface:var(--puk-blue-100);background:var(--puk-blue-100);color:var(--puk-white)}
+.bl-band+.puk-longform__section,.puk-longform__section+.bl-band{border-top:0}
+.bl-band .puk-longform__kicker,.bl-band .puk-web-h2{color:var(--puk-white)}
+.bl-band .puk-longform__copy p{font-size:clamp(1.1875rem,1rem + .6vw,1.375rem);line-height:1.55}
+
+/* Hauptaktion Beratung */
+.bl-action--primary{background:var(--action-primary-bg);border-color:var(--action-primary-bg);color:var(--action-primary-fg);font-weight:var(--fw-medium);text-decoration:none}
+.bl-action--primary:hover{background:var(--action-primary-bg-hover);border-color:var(--action-primary-bg-hover);color:var(--action-primary-fg)}
+
+/* «Auf dieser Seite» bleibt ab 760 px beim Scrollen sichtbar */
+@media (min-width:760px){
+  .puk-longform__roadmap{position:sticky;top:0;z-index:5;background:var(--puk-white);padding-block:var(--space-2)}
+  .puk-longform__roadmap .puk-web-container{display:flex;align-items:center;gap:var(--space-4);overflow-x:auto}
+  .puk-longform__roadmap-label{margin:0;flex:0 0 auto;text-transform:none;letter-spacing:0;color:var(--text-muted)}
+  .puk-longform__roadmap ol{flex-wrap:nowrap;gap:var(--space-1)}
+  .puk-longform__roadmap a{white-space:nowrap;padding-inline:var(--space-3);text-decoration:none;border-radius:var(--web-radius-btn-lg)}
+  .puk-longform__roadmap a:hover{background:var(--ui-field);color:var(--text-default)}
+  .puk-longform__section{scroll-margin-top:5rem}
+}
+
+/* «Was Sie tun können» als hervorgehobener Kasten im Text */
+.bl-tun{margin:var(--space-5) 0 0;padding:var(--space-5) var(--space-6);background:var(--ui-field);border-radius:var(--web-radius-btn-lg)}
+.bl-tun>*{margin:0}
+.bl-tun>*+*{margin-top:var(--space-3)}
+.bl-tun__label{font-size:.875rem;font-weight:var(--fw-medium);letter-spacing:.04em;text-transform:uppercase;color:var(--puk-blue-125)}
+
+/* Diagnose-Merkmale als Raster */
+.bl-merkmale{list-style:none;margin:var(--space-4) 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:var(--space-3)}
+.bl-merkmale li{margin:0;padding:var(--space-4) var(--space-5);background:var(--bl-ground);border-radius:var(--web-radius-btn-lg)}
+.bl-rule{padding-block:var(--space-5);border-top:2px solid var(--border-strong);border-bottom:1px solid var(--border-default)}
+
+/* Beispielsätze nebeneinander («So könnte es klingen») */
+.bl-say-title{margin:var(--space-6) 0 var(--space-2);font-size:.875rem;font-weight:var(--fw-medium);color:var(--text-muted)}
+.bl-say{grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--space-3)}
+.bl-say .puk-say__item{padding:var(--space-4) var(--space-5);border:1px solid var(--border-default);border-radius:var(--web-radius-btn-lg);color:var(--text-muted)}
+.bl-say .puk-say__item--hilfreich{border-color:var(--ui-field);background:var(--ui-field);color:var(--text-default);font-weight:var(--fw-medium)}
+
+/* Abbildungen auf heller Blaufläche */
+.puk-vis-figure:not(.puk-vis-figure--open){background:var(--bl-ground);border:0;border-radius:var(--web-radius-btn-lg)}
+.puk-vis-kern{font-weight:var(--fw-medium)}
+.puk-vis-figure .bl-phase-actions{display:grid;gap:var(--space-3);grid-template-columns:minmax(0,1fr)}
+@media (min-width:560px){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.puk-vis-figure .bl-phase-actions>li{margin:0;padding:var(--space-5);background:var(--puk-white);border-radius:var(--web-radius-btn-lg);display:flex;flex-direction:column;gap:var(--space-2)}
+.puk-vis-figure .bl-phase-actions>li>.puk-vis-build__n{grid-column:auto;grid-row:auto;position:static;align-self:flex-start;margin:0}
+.puk-vis-figure .bl-phase-actions>li>div{grid-column:auto;min-width:0}
+.puk-vis-figure .bl-phase-actions .puk-vis-ansatz{padding-left:0;border-left:0;margin:0;background:none;color:inherit}
+.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) :where(h3,p,span:not(.puk-vis-build__n)){color:var(--puk-white)}
+.puk-vis-figure .bl-phase-actions h3{margin:0 0 var(--space-2)}
+.puk-vis-figure .bl-phase-actions p{hyphens:manual}
+.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz){background:var(--puk-blue-100);color:var(--puk-white)}
+.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) .puk-vis-build__n{background:var(--puk-white);color:var(--puk-blue-100);border-color:var(--puk-white)}
+
+/* Häufige Annahmen: Annahme links, Einordnung rechts */
+.bl-annahmen{margin:var(--space-6) 0;border-top:2px solid var(--border-strong)}
+.bl-annahmen dt,.bl-annahmen dd{margin:0;padding-block:var(--space-5)}
+.bl-annahmen dt{color:var(--text-muted);font-size:clamp(1.1875rem,1rem + .6vw,1.375rem);line-height:1.35}
+.bl-annahmen dd{border-bottom:1px solid var(--border-default)}
+@media (min-width:900px){
+  .bl-section--wide .bl-annahmen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);column-gap:var(--space-8)}
+  .bl-annahmen dt{border-bottom:1px solid var(--border-default)}
+}
+
+/* Merksatz als blaue Fläche */
+.bl-merksatz{border-left:0;background:var(--puk-blue-100);color:var(--puk-white);border-radius:var(--web-radius-btn-lg)}
+.bl-merksatz h3{color:var(--puk-white);font-size:.9375rem;letter-spacing:.04em;text-transform:uppercase}
+.bl-merksatz p{margin:0;font-size:clamp(1.375rem,1.1rem + 1vw,1.875rem);line-height:1.3}
+
+@media (forced-colors:active){
+  .bl-paths-cards li,.bl-tun,.bl-merkmale li,.bl-merksatz,.bl-band,.puk-vis-figure .bl-phase-actions>li{border:1px solid CanvasText}
+}
+@media print{
+  .puk-longform__hero,.bl-band,.puk-site-sender{box-shadow:none;clip-path:none}
+  .puk-longform__roadmap{position:static}
+}

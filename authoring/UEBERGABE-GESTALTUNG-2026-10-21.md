@@ -24,7 +24,7 @@ Die Paritätsprüfung (`--verify-site`) schlägt erwartungsgemäss fehl, bis `si
 
 ## Prüfbedarf
 
-1. **Neuer Beispielsatz** «Du willst mich doch nur provozieren.» (verstehen › eisberg) ist als Musterentwurf gekennzeichnet und braucht die fachliche Freigabe.
+1. **Zwei neue Beispielsätze** (verstehen › eisberg): «Du willst mich doch nur provozieren.» und «Deine Stimme wird lauter. Wie ist es gerade für dich?». Beide sind als Musterentwurf gekennzeichnet und brauchen die fachliche Freigabe. Das Gate erkennt die ausstehende Freigabe nicht; vor dem Neuschreiben von `site/` von Hand prüfen.
 2. **Überschriften in Rubik Medium (500).** Das CD Manual nennt Light und Regular für Text.
 3. **Grundfläche #F5F7FF** ist eine Schattierung von PUK-Blau unter 25 %.
 4. **Einspaltige Abschnitte gelten für alle Seiten** (`.puk-longform__section-grid`). Alle übrigen Seiten bei 1280 px und 360 px ansehen, besonders Figuren und Akkordeons.
@@ -36,6 +36,14 @@ Die Paritätsprüfung (`--verify-site`) schlägt erwartungsgemäss fehl, bis `si
 10. **Prüfstufen** Visualisierungs-Check, Bedienung und Barrierefreiheit (Tastatur, 200 % Text, erzwungene Farben, reduzierte Bewegung) sowie W3 sind für diese Änderung offen. Sie werden in einer Sitzung geprüft, die nicht gebaut hat.
 11. **Dekorative Pfeile** «→» bei «Weitere Themen» und im Kontaktlink kommen aus dem CSS und haben einen leeren Alternativtext (`content:"→" / ""`). Mit einem Screenreader prüfen, dass sie nicht vorgelesen werden. Ältere Browser ohne diese Syntax lesen sie eventuell mit.
 12. **Bedienung und Barrierefreiheit** ist für den aktuellen CSS-Stand nicht geprüft (Tastatur, 200 % Text, erzwungene Farben, reduzierte Bewegung, Druck). Siehe auch `REVIEW-GESTALTUNG-2026-10-21.md`.
+
+## Nachbesserung nach Prüfung PR #708 (21.10.2026)
+- **Mitlaufende Leiste «Auf dieser Seite»:** entfernt. Sie verdeckte bei 1280 px Fokus und Sprungziele (WCAG 2.4.11). Die Leiste steht jetzt fest unter dem Einstieg.
+- **Fusszeilenlinks:** von `--text-link` auf `--puk-blue-125`; vorher 4,40:1 auf der hellen Blaufläche. Nachmessen.
+- **Vollbreite-Flächen:** mit `border-image` statt `box-shadow` und `clip-path`, damit Fokusringe (z. B. E-Mail-Link der Absenderzeile) nicht abgeschnitten werden.
+- **Druck:** Band, Merksatz und Phasenkarte 2 drucken dunklen Text mit blauem Rahmen statt weissem Text auf fehlender Fläche.
+- **Planzeile `v-vs-eisberg`:** nennt jetzt beide neuen Sätze.
+- **Offen, braucht eine Werkzeugänderung im Repository:** `sprachtest.mjs` erwartet auf «Verstehen» noch den Akuthinweis. Die Erwartung ist nach dem Entscheid vom 21.10.2026 anzupassen.
 
 ## Pull Request
 

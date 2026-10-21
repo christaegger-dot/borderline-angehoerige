@@ -29,11 +29,13 @@ Die Paritätsprüfung (`--verify-site`) schlägt erwartungsgemäss fehl, bis `si
 3. **Grundfläche #F5F7FF** ist eine Schattierung von PUK-Blau unter 25 %.
 4. **Einspaltige Abschnitte gelten für alle Seiten** (`.puk-longform__section-grid`). Alle übrigen Seiten bei 1280 px und 360 px ansehen, besonders Figuren und Akkordeons.
 5. **Kopf und Menü:** Nur die Abstände wurden verdichtet. Das Verhalten der Navigation (Menü) erzeugt der Renderer und wurde nicht geändert.
-6. **Fusszeile** wurde nicht umgestaltet. Der Entwurf zeigte sie dunkel; bei Bedarf als eigener Schritt.
+6. **Fusszeile** ist per CSS umgestaltet (helle Blaufläche, Kontakt als Karte), der Wortlaut ist unverändert. Wortlaut-Vorschläge: `WORTLAUT-VORSCHLAEGE-FUSSZEILE-2026-10-21.md` (Musterentwurf, nicht freigegeben).
 7. **Bild im Einstieg** der Startseite: Im Entwurf steht dort ein Platzhalter, die echte Website hat keinen. Erst mit einer freigegebenen Zeichnung ergänzen.
 8. **Anspannungskurve** ohne Achsen, wie im Plan festgehalten («keine Skala, keine Zahlen, keine Achse», Entscheid Fachstelle 09.10.2026).
 9. **Momentaufnahmen:** Eine Zeichnung durch eine Illustratorin wird empfohlen.
 10. **Prüfstufen** Visualisierungs-Check, Bedienung und Barrierefreiheit (Tastatur, 200 % Text, erzwungene Farben, reduzierte Bewegung) sowie W3 sind für diese Änderung offen. Sie werden in einer Sitzung geprüft, die nicht gebaut hat.
+11. **Dekorative Pfeile** «→» bei «Weitere Themen» und im Kontaktlink kommen aus dem CSS und haben einen leeren Alternativtext (`content:"→" / ""`). Mit einem Screenreader prüfen, dass sie nicht vorgelesen werden. Ältere Browser ohne diese Syntax lesen sie eventuell mit.
+12. **Bedienung und Barrierefreiheit** ist für den aktuellen CSS-Stand nicht geprüft (Tastatur, 200 % Text, erzwungene Farben, reduzierte Bewegung, Druck). Siehe auch `REVIEW-GESTALTUNG-2026-10-21.md`.
 
 ## Pull Request
 

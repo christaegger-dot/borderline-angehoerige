@@ -58,3 +58,23 @@ Christa Egger hat im laufenden Chat am **22.10.2026 kurz nach 09:19 Uhr (Europe/
 | 5 · Drei Aspekte von Genesung | `v-ge-aspekte` | **Entscheid «als Text belassen»** am 22.10.2026. Figur entfernt; ihre drei Erläuterungen stehen wörtlich als Unterabschnitte im Abschnitt `begriffe`, weil der Abschnitt sie vorher nicht als Text enthielt. Der einleitende Absatz endete schon mit «Diese verändern sich nicht unbedingt gleichzeitig.»; die gleichlautende Kernaussage der Figur entfällt deshalb, damit nichts doppelt steht. |
 
 Kein Merge- oder Deploymentauftrag. Veröffentlichung auf `main` erst, wenn das Produktionsgate ohne Blocker durchläuft.
+
+## Nachtrag: Freigabe der geänderten Fassungen · 22.10.2026, 12:17 Uhr
+
+Christa Egger hat auf die zweite Freigabeseite (Stand Commit `5b024ce`) geantwortet. Wortlaut, unverändert:
+
+> Alle drei Änderungen sind genau so umgesetzt, wie du sie verlangt hast. Ich sehe keinen Grund für eine weitere Runde. Die Pfeile bei Abbildung 2 führen jetzt sichtbar zur Kinderbox. Der leere Raum im linken Kasten kommt von den gleich hohen Kästen und ist vertretbar. Auch Abbildung 5 ist sauber als Text mit drei Zwischentiteln übernommen, ohne doppelten Satz.
+>
+> v-vs-anspannung (Die Anspannungskurve: wann Reden hilft): freigegeben
+> v-ki-alltag (Wer trägt welche Aufgabe?): freigegeben
+> v-sf-entlastung (Entlastung nach Ihrer eigenen Situation): freigegeben
+>
+> Die Umsetzung von Abbildung 3 (Nummer ergänzt) und Abbildung 5 (als Text) habe ich zur Kenntnis genommen. Beides ist in Ordnung.
+
+| Abbildung | Planzeile | Status |
+| --- | --- | --- |
+| 1 · Die Anspannungskurve | `v-vs-anspannung` | **freigegeben**, Fassung `5b024ce` |
+| 2 · Wer trägt welche Aufgabe? | `v-ki-alltag` | **freigegeben**, Fassung `5b024ce` |
+| 4 · Entlastung nach Ihrer eigenen Situation | `v-sf-entlastung` | **freigegeben**, Fassung `5b024ce` |
+
+Damit sind alle fünf Abbildungen aus r4-39 erledigt. In den drei Planzeilen sind `approvalStatus`, `approvedBy`, `approvedAt`, `approvalRef` (dieses Dokument) und `approvalScope` gesetzt. Kein Merge- oder Deploymentauftrag.

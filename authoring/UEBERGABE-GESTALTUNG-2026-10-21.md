@@ -112,6 +112,7 @@ Wortlaut der Rückmeldung und Status je Abbildung: `audit-results/2026-10-22-abb
 - **Abbildung 2 `v-ki-alltag`:** Fachpersonen «Kinderarztpraxis, Schulsozialarbeit, schulpsychologischer Dienst, Familienberatung oder Kinder- und Jugendpsychiatrie». Bei breiter Darstellung (Container über 55 rem) je eine Linie vom Kasten oben senkrecht hinunter und waagrecht bis zur Kinderbox, Pfeilspitze an der Kinderbox; die Kästen oben gleich hoch. Beschriftungen und schmale Fassung (↓, ↑) unverändert. Freigabe ausstehend.
 - **Abbildung 4 `v-sf-entlastung`:** Kernaussage «Sie dürfen für sich sorgen: begrenzen, abgeben oder sich beraten lassen.»; erste Frage «Was brauche ich für mich?», auch in der Screenreader-Fassung; «Abbildung 2» ergänzt. Plan-Eintrag mit eigenen Angaben. Freigabe ausstehend.
 - Produktionsgate danach: 3 BLOCK (Abbildungen 1, 2 und 4).
+- **Nachtrag 22.10.2026, 12:17 Uhr:** Christa gibt die geänderten Fassungen von `v-vs-anspannung`, `v-ki-alltag` und `v-sf-entlastung` frei (Stand `5b024ce`); Wortlaut im Nachweis. Produktionsgate: 0 BLOCK.
 
 ## Pull Request
 

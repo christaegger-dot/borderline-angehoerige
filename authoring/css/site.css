@@ -1679,7 +1679,7 @@ html.puk-scroll-lock{overflow:hidden}
   .puk-longform__roadmap .puk-web-container{display:flex;align-items:center;gap:0 var(--space-4)}
   .puk-longform__roadmap-label{margin:0;flex:0 0 auto;text-transform:none;letter-spacing:0;color:var(--text-muted)}
   .puk-longform__roadmap ol{flex-wrap:wrap;gap:0 var(--space-1)}
-  .puk-longform__roadmap a{white-space:nowrap;padding-inline:var(--space-3);text-decoration:none;border-radius:var(--web-radius-btn-lg)}
+  .puk-longform__roadmap a{padding-inline:var(--space-3);text-decoration:none;border-radius:var(--web-radius-btn-lg)}
   .puk-longform__roadmap a:hover{background:var(--ui-field);color:var(--text-default)}
 }
 
@@ -1786,6 +1786,8 @@ html.puk-scroll-lock{overflow:hidden}
 
 @media (forced-colors:active){
   .bl-paths-cards li,.bl-tun,.bl-merkmale li,.bl-merksatz,.bl-band,.puk-vis-figure .bl-phase-actions>li,.puk-site-quick,.puk-site-related a{border:1px solid CanvasText}
+  /* Der Browser ersetzt border-image nicht: ohne diese Regel bleiben Einstieg und Absenderzeile hell (Nachprüfung PR #708, N3) */
+  .puk-longform__hero,.puk-site-sender{border-image:none}
 }
 @media print{
   .puk-longform__hero,.bl-band,.puk-site-sender{border-image:none}

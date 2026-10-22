@@ -45,6 +45,15 @@ Die Paritätsprüfung (`--verify-site`) schlägt erwartungsgemäss fehl, bis `si
 - **Planzeile `v-vs-eisberg`:** nennt jetzt beide neuen Sätze.
 - **Offen, braucht eine Werkzeugänderung im Repository:** `sprachtest.mjs` erwartet auf «Verstehen» noch den Akuthinweis. Die Erwartung ist nach dem Entscheid vom 21.10.2026 anzupassen.
 
+## Nachbesserung 2 nach Nachprüfung PR #708 (22.10.2026)
+Grundlage: Nachbesserungsauftrag zur Nachprüfung (`PRUEFBERICHT.md`, Abschnitt «Nachprüfung PR #708 · 21.10.2026»). Die Kreuze im Auftrag hat Christa am 22.10.2026 delegiert: «ok, kreuze an und fahre fort». Gewählt sind Teil A, B1a, B2c sowie C1–C8 und C10. Ausgeführt hat die Nachprüfsitzung von Commit 7; die nächste Nachprüfung macht deshalb eine Sitzung, die an diesem PR weder gebaut noch geprüft hat.
+
+Alle Messwerte unten sind eine **Selbstprüfung, keine Prüfstufe**: Playwright 1.56.1 mit Chromium 141.0.7390.37, lokaler Server mit den Kopfzeilen aus `_headers`.
+
+**Teil A · Pflicht**
+- **N1 · Überlauf in «Auf dieser Seite»:** `white-space:nowrap` beim Link gestrichen (`site.css:1682`). Schrift 32 px, 760–1280 px in 8-px-Schritten, 23 Seiten: kein Überlauf mehr (vorher `beziehungen` 760–832 px, `scrollWidth` bis 838). Normalschrift: Lage und Höhe aller Links in «Auf dieser Seite» bei 1280, 1100, 1099, 924, 768 und 760 px auf allen 23 Seiten gleich wie vorher.
+- **N3 · Helle Flächen bei erzwungenen Farben:** im Block für erzwungene Farben `.puk-longform__hero,.puk-site-sender{border-image:none}` (`site.css:1789–1790`). Dunkles Schema: Einstieg und Absenderzeile `#000000` statt `#F5F7FF` bzw. `#F4F4F4`; helles Schema `#FFFFFF`.
+
 ## Pull Request
 
 Als Entwurf eröffnen, mit Verweis auf diese Datei und die offenen Stufen. `site/` erst nach Freigabe in einem separaten PR neu schreiben.

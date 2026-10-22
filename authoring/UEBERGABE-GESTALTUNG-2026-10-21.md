@@ -54,6 +54,13 @@ Alle Messwerte unten sind eine **Selbstprüfung, keine Prüfstufe**: Playwright 
 - **N1 · Überlauf in «Auf dieser Seite»:** `white-space:nowrap` beim Link gestrichen (`site.css:1682`). Schrift 32 px, 760–1280 px in 8-px-Schritten, 23 Seiten: kein Überlauf mehr (vorher `beziehungen` 760–832 px, `scrollWidth` bis 838). Normalschrift: Lage und Höhe aller Links in «Auf dieser Seite» bei 1280, 1100, 1099, 924, 768 und 760 px auf allen 23 Seiten gleich wie vorher.
 - **N3 · Helle Flächen bei erzwungenen Farben:** im Block für erzwungene Farben `.puk-longform__hero,.puk-site-sender{border-image:none}` (`site.css:1789–1790`). Dunkles Schema: Einstieg und Absenderzeile `#000000` statt `#F5F7FF` bzw. `#F4F4F4`; helles Schema `#FFFFFF`.
 
+**Teil B · Entscheide**
+- **B1a · Gate prüft die neuen Beispielsätze (P708-I1):** `contract.js` meldet jetzt auch eine Planzeile mit `format: text` im Produktionsgate, solange sie weder «freigegeben» noch «entfällt» ist. Heute betrifft das nur `v-vs-eisberg`. Neuer Selbsttest-Fall «Produktion blockiert ausstehende Textfassung im Visualisierungsplan».
+  - Selbsttest 83/83 (vorher 82). `--production`: 6 BLOCK / 20 WARN, neu `BLOCK | verstehen | visual-approval | Textfassung v-vs-eisberg nicht freigegeben (ausstehend)`. Entwurf: 0 Blocker / 26 Hinweise (vorher 25).
+  - Simulation in einer Wegwerfkopie: Mit den fünf übrigen Abbildungen auf «freigegeben» blockiert das Gate weiter (1 Befund, `v-vs-eisberg`). Erst mit `v-vs-eisberg` auf «freigegeben» läuft der Produktionsbuild durch.
+  - Nach der Freigabe von F1 und F2: in der Planzeile `approvalStatus` mit Name, Datum und Beleg setzen und das Etikett «Musterentwurf, nicht fachlich geprüft» in `verstehen` › `#eisberg` entfernen. Das Etikett selbst prüft das Gate nicht.
+- **B2c · Begründete Ausnahme zur Kurvenhöhe (NP708-N2):** Die Anspannungskurve ist bei 375 px als ganze Figur 1942 px hoch (`main` 1772 px); `layouttest.cjs` meldet deshalb `tension core exceeds 1800px`. Die Grenze stammt aus A04-2014: «Bei 375 px sind die vier Phasen und ihre grundlegenden Handlungsmöglichkeiten in höchstens 1800 px Figurhöhe ohne Aufklappen erfassbar.» Das ist erfüllt: Die vierte Phasenkarte endet bei 1508 px; danach folgen nur noch der Zugang zur Vertiefung, die Modellgrenze und die Kennzeichnung. Die Abweichung im Layouttest ist deshalb begründet und bleibt stehen; Werkzeug und Darstellung bleiben unverändert.
+
 ## Pull Request
 
 Als Entwurf eröffnen, mit Verweis auf diese Datei und die offenen Stufen. `site/` erst nach Freigabe in einem separaten PR neu schreiben.

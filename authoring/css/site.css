@@ -1705,7 +1705,7 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-vis-kern{font-weight:var(--fw-medium)}
 .puk-vis-figure .bl-phase-actions{display:grid;gap:var(--space-3);grid-template-columns:minmax(0,1fr)}
 @media (min-width:560px){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1100px){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:68.75em){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .puk-vis-figure .bl-phase-actions>li{margin:0;padding:var(--space-5);background:var(--puk-white);border-radius:var(--web-radius-btn-lg);display:flex;flex-direction:column;gap:var(--space-2)}
 .puk-vis-figure .bl-phase-actions>li>.puk-vis-build__n{grid-column:auto;grid-row:auto;position:static;align-self:flex-start;margin:0}
 .puk-vis-figure .bl-phase-actions>li>div{grid-column:auto;min-width:0}
@@ -1771,7 +1771,7 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-web-footer__details .puk-web-footer__meta,.puk-site-legal,.puk-site-legal a{color:var(--text-muted)}
 
 /* Prozesspfade (z. B. DEAR): Spaltenzahl = Anzahl Schritte; senkrecht, sobald die Spalten zu schmal würden */
-@container (min-width:62.01rem){
+@container (width > 62rem){
   .puk-vis-path:has(>li:nth-child(4):last-child){grid-template-columns:repeat(4,minmax(0,1fr))}
   .puk-vis-path:has(>li:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}
 }
@@ -1788,9 +1788,16 @@ html.puk-scroll-lock{overflow:hidden}
   .bl-paths-cards li,.bl-tun,.bl-merkmale li,.bl-merksatz,.bl-band,.puk-vis-figure .bl-phase-actions>li,.puk-site-quick,.puk-site-related a{border:1px solid CanvasText}
   /* Der Browser ersetzt border-image nicht: ohne diese Regel bleiben Einstieg und Absenderzeile hell (Nachprüfung PR #708, N3) */
   .puk-longform__hero,.puk-site-sender{border-image:none}
+  .puk-site-safety--responsibility,.puk-vis-figure:not(.puk-vis-figure--open){border:1px solid CanvasText}
+  .puk-longform__section+.bl-band{border-top:1px solid CanvasText}
+  .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz){border-width:3px}
 }
 @media print{
   .puk-longform__hero,.bl-band,.puk-site-sender{border-image:none}
   .bl-band,.bl-merksatz,.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz){background:none;color:var(--text-default);border:2px solid var(--puk-blue-100)}
   .bl-band :is(h2,p,.puk-longform__kicker),.bl-merksatz :is(h3,p),.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) :where(h3,p,span:not(.puk-vis-build__n)){color:var(--text-default)}
+  .puk-longform__section+.bl-band{border-top:2px solid var(--puk-blue-100)}
+  .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) .puk-vis-build__n{border-color:var(--puk-blue-100)}
+  .puk-site-start-actions .puk-link--action,.bl-action--primary{background:none;color:var(--text-default);border-color:var(--puk-blue-100)}
+  .bl-paths-cards li{break-inside:avoid}
 }

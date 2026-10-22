@@ -61,6 +61,35 @@ Alle Messwerte unten sind eine **Selbstprüfung, keine Prüfstufe**: Playwright 
   - Nach der Freigabe von F1 und F2: in der Planzeile `approvalStatus` mit Name, Datum und Beleg setzen und das Etikett «Musterentwurf, nicht fachlich geprüft» in `verstehen` › `#eisberg` entfernen. Das Etikett selbst prüft das Gate nicht.
 - **B2c · Begründete Ausnahme zur Kurvenhöhe (NP708-N2):** Die Anspannungskurve ist bei 375 px als ganze Figur 1942 px hoch (`main` 1772 px); `layouttest.cjs` meldet deshalb `tension core exceeds 1800px`. Die Grenze stammt aus A04-2014: «Bei 375 px sind die vier Phasen und ihre grundlegenden Handlungsmöglichkeiten in höchstens 1800 px Figurhöhe ohne Aufklappen erfassbar.» Das ist erfüllt: Die vierte Phasenkarte endet bei 1508 px; danach folgen nur noch der Zugang zur Vertiefung, die Modellgrenze und die Kennzeichnung. Die Abweichung im Layouttest ist deshalb begründet und bleibt stehen; Werkzeug und Darstellung bleiben unverändert.
 
+**Teil C · gering**
+- **C1 · Druck, obere Linie des Bands (N4a):** `.puk-longform__section+.bl-band{border-top:2px solid var(--puk-blue-100)}` im Druckblock (`site.css:1799`). Sie ist so spezifisch wie `site.css:1668` und steht später. PDF Start S. 3: Band ringsum gerahmt.
+- **C2 · Druck, Ring um «2» (N4b):** Rand der Nummer im Druck `--puk-blue-100` (`site.css:1800`). PDF Verstehen S. 5: «2» mit blauem Ring wie 1, 3 und 4.
+- **C3 · Druck, Aktionslinks der Startseite (N5):** «Mit meiner Frage beginnen» und «Beratung per E-Mail anfragen» drucken ohne Fläche, dunkel, mit blauem Rahmen (`site.css:1801`). PDF Start ohne Hintergrund: `#222222` auf Weiss, 15,91:1 (vorher `#ABABAB`, 2,30:1); mit Hintergrund ebenfalls `#222222`.
+- **C4 · Druck, Einstiegskarten (B7):** `.bl-paths-cards li{break-inside:avoid}` (`site.css:1802`). PDF Start: keine Karte mehr über zwei Seiten; weiterhin 4 Seiten, Verstehen 14.
+- **C5 · Erzwungene Farben, Rahmen (B6):** Kontaktkarte und Figurflächen mit Rahmen, Band auch oben, Phasenkarte 2 mit 3 px statt 1 px (`site.css:1791–1793`). Emulation hell und dunkel, 1280 und 360 px, 23 Seiten: alle Rahmen vorhanden.
+- **C6 · Container-Abfrage DEAR (V2):** `@container (min-width:62.01rem)` → `@container (width > 62rem)` (`site.css:1774`). Container auf 992,08 und 992,15 px gesetzt: 4 statt 5 Spalten. Fenster 1070 / 1080 / 1100 / 1280 px wie vorher.
+- **C7 · Phasenkarten bei grosser Schrift (V3):** `@media (min-width:1100px)` → `@media (min-width:68.75em)` (`site.css:1708`). Normalschrift: 4 Spalten ab 1100 px wie vorher. Schrift 32 px bei 1280 px: 2 Spalten, 0 Wortbrüche in Figuren (vorher «Argumentier / en»).
+- **C8 · Richtigstellung zu DEAR (V1):** DEAR wird erst ab etwa 1080 px Fensterbreite waagrecht, nicht «ab ~990 px» wie in `REVIEW-GESTALTUNG-2026-10-21.md` (Zeile zu «Grenzen»). Massgebend ist die Breite des Containers über 62 rem (992 px). Das Review bleibt als historische Selbstprüfung unverändert.
+- **C10 · Quellenseite (I3):** In `quellen` › `#versorgung` nennt «Notfall und Rettung» unter «Verwendet auf» nicht mehr «Borderline verstehen». Folgeänderung zum Entscheid vom 21.10.2026 (Akuthinweis auf «Verstehen» entfällt). Satzvergleich: 831 Sätze, genau dieser eine geändert.
+
+**Selbstprüfung nach Teil A–C**
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| Selbsttest | 83/83 |
+| `--production` | blockiert, 6 BLOCK / 20 WARN (fünf Abbildungen und `v-vs-eisberg`) |
+| Entwurf | 23 Seiten · 0 Blocker · 26 Hinweise |
+| Suchtest | 216/216, JS-Fehler 0 |
+| Sprach-/UI-Test | 73/73, JS-Fehler 0 |
+| Layouttest (unveränderte Kopie gegen den Entwurf) | 1 Abweichung: `tension core exceeds 1800px` (B2c) |
+| Tastatur | 23 Seiten bei 1280, 924 und 360 px, vorwärts und rückwärts: 5036 Fokusstellen, 0 verdeckt, alle mit Indikator, kein `fixed`/`sticky` |
+| Sprungziele | 684 Sprünge über «Auf dieser Seite» und 422 Fragment-Ladevorgänge: alle Ziele sichtbar |
+| Fusszeilenlinks | 5,95:1; Theme «kontrast» 11,85:1 |
+| Absenderzeile | Fokusring der E-Mail auf allen vier Seiten vollständig (1280, 924, 360, 320 px); Flächen in voller Breite; kein waagrechtes Scrollen |
+| Überlauf | 23 Seiten × 14 Bedingungen (7 Breiten, Zoom 200 und 400 %, Schrift 32 px bei 5 Breiten): kein waagrechtes Scrollen, keine innere Bildlaufleiste |
+
+**Nicht bearbeitet:** C9 (P708-W6, doppelter Fokusindikator an den Einstiegskarten, Gestaltungsentscheid), P708-W2, W3, W4 und V4 sowie F1–F4. Kein Screenreader verfügbar.
+
 ## Pull Request
 
 Als Entwurf eröffnen, mit Verweis auf diese Datei und die offenen Stufen. `site/` erst nach Freigabe in einem separaten PR neu schreiben.

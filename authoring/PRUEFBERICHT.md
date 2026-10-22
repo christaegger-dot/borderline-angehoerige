@@ -417,6 +417,139 @@ Dazu 5 leichte Befunde zu Bericht und Abgleich. Die erste und zweite Prüfrunde 
   - **Gültigkeit:** Die Freigabe AR3-4 umfasst auch die Runden 4 und 5. Sie gilt, sobald die Nachprüfung der Runde 5 bestätigt, dass nur diese Änderungen vorliegen.
 - Die Statustabelle bleibt unverändert.
 
+## Nachprüfung 3 PR #708 · 22.10.2026 (Stand 2089968)
+
+**Nachprüfsitzung 3 (Claude Code), 22.10.2026.** Grundlage ist der in der PR-Beschreibung festgehaltene Auftrag «Nachprüfung 3 des Stands nach Commit 17 (`2089968`) durch eine Sitzung, die an diesem PR weder gebaut noch geprüft hat. Nur die vier Punkte und ihr Umfeld.» Die Auftragsdatei der vorbereitenden Sitzung (`NACHPRUEFAUFTRAG-3-PR-708.md`) war in dieser Sitzung nicht mehr zugänglich; massgebend ist deshalb der Wortlaut in der PR-Beschreibung und im Kommentar «Nachbesserung 3». Diese Sitzung hat an [PR #708](https://github.com/christaegger-dot/borderline-angehoerige/pull/708) weder gebaut noch geprüft: Sie ist keine der Sitzungen der Commits 1–17 und hat vor diesem Auftrag keine Datei des Branches gesehen. Sie hat nichts entschieden und keine fachliche Aussage beurteilt; der Wortlaut von H1 gilt als von Christa Egger gesetzt, geprüft ist nur, ob der Build ihn genau zeigt. Geändert ist nur dieser Abschnitt. Die Statustabelle oben und die drei Abschnitte zu PR #708 vom 21. und 22.10.2026 bleiben unverändert.
+
+**Geprüfter Stand:**
+- Branch `gestaltung/2026-10-21`, Kopf `2089968` (Commit 17); `origin/gestaltung/2026-10-21` zeigte zu Beginn denselben Commit. Diff `27aac33..2089968`: `site.css` (+7/−5 Zeilen im Block `.bl-caremap--linked` und eine neue Hover-Regel), `contract.js` (+9/−2), `content/selbstfuersorge.html` (ein Satz), Übergabe, Nachweis mit drei Bildschirmfotos. `site.config.json`, Freigaben und `site/` unverändert.
+- Vergleich mit `45451ea` (Stand der Nachprüfung 2), aus einem eigenen Arbeitsbaum gleich gebaut. `main` wurde nicht gebaut; ausserhalb des Umfangs.
+- Nur der lokale Build (`dist/site`, Produktionsgate). Die Netlify-Vorschau wurde nicht verwendet.
+- `authoring/PRUEFBERICHT.md` ist seit `27aac33` unverändert (Commit 17 lässt ihn aus).
+
+**Gelesen:** `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`, Übergabe Abschnitt «Nachbesserung 3», Nachweis `audit-results/2026-10-22-nachbesserung-3/BERICHT.md`, Abschnitt «Nachprüfung 2 PR #708» (Befunde NP2-1 bis NP2-3, H1, Stufe 4), PR-Beschreibung und alle acht PR-Kommentare, der vollständige Diff `27aac33..2089968`.
+
+**Werkzeuge:** Node.js 22.22.0; Playwright 1.56.1 mit Chromium 141.0.7390.37 (headless, Linux), nicht die CI-Version 1.64.0; Python 3.13.16 mit Pillow 12.3.0; git 2.43.0. **Bedingungen** wie bei den drei Prüfungen zuvor: lokaler Server mit den Kopfzeilen aus `_headers` (aktive CSP), Fensterhöhe 900 px; Schrift 200 % als `--blink-settings=defaultFontSize=32`, Grundschrift 20 px entsprechend; erzwungene Farben als Emulation `forcedColors: active`, hell und dunkel, je eigener Browserkontext. Farbzustände erst nach Ablauf des Farbübergangs gemessen (`--dur-fast` 120 ms; Wartezeit 600 ms), weil `getComputedStyle` während des Übergangs Zwischenwerte liefert (ein erster Lauf mit 40 ms Wartezeit ist deshalb verworfen). Alle Skripte sind neu geschrieben; Skripte, Fotos und Messdaten liegen ausserhalb des Repositorys. **Nicht verfügbar:** Screenreader, Firefox, WebKit, echter Windows-Kontrastmodus.
+
+**Schwere** wie bisher: «blockierend» verletzt WCAG 2.2 AA neu, «wichtig» ist vor einer Freigabe zu beheben, «gering» betrifft Konsistenz oder Optionales.
+
+### Ergebnis in Kürze
+
+- **Empfehlung: ohne Blocker, weiter zu `site/` und Merge.**
+- **Alle vier Punkte der Nachbesserung 3 sind mit eigener Messung bestätigt:** NP2-1 (Linie an der Textunterkante, 521 Breiten ohne Berührung), NP2-2 (alle Zustände von «Zur Startseite» und aller 172 Links auf getönten Flächen mindestens 4,5:1), NP2-3 (klare FAIL-Meldung statt Laufzeitfehler, Exit 1), H1 (genau ein Satz geändert, alter Wortlaut nirgends mehr).
+- **Umfeld ohne Verschlechterung:** Figur bei 1280 px bis auf die Pfeilspitzen pixelgleich mit der freigegebenen Fassung; gestapelte Fassung, Grundschrift 20 px und erzwungene Farben unverändert; Startaktionen der Startseite unverändert; `v-sf-entlastung`, Screenreader-Fassung und Planzeilen unverändert.
+- **Neue Befunde: keine.** Blockierend 0, wichtig 0, gering 0. Dazu ein Hinweis ohne Befund (H2, Browserunterstützung der neuen Hover-Regel).
+- **Alte Befunde:** offen und gering bleiben W2, W3, W4 und V4; N2 steht als begründete Ausnahme (B2c).
+- **Kennzahlen der bauenden Sitzung nachgerechnet: stimmen** (84/84, 0 BLOCK / 20 WARN, Entwurf 0 / 20, `--verify-site` Exit 1 mit 24 Unterschieden, 216/216, 73/73, Layouttest 1 Abweichung).
+- Screenreader bleibt offen, wie bei allen Prüfungen dieses PR.
+
+### Kennzahlen nachgerechnet
+
+| Kennzahl | bauende Sitzung | nachgerechnet | Beleg |
+| --- | --- | --- | --- |
+| Selbsttest | 84/84 | **84/84** | `node authoring/tools/build.mjs --selftest`, Exit 0; darunter «Produktion blockiert ausstehende Textfassung im Visualisierungsplan» PASS und der neue Fall «Selbsttest meldet fehlende freigegebene Textfassung als Befund, nicht als Laufzeitfehler» PASS mit erhalten «keine freigegebene Textfassung im Visualisierungsplan – Fall nicht prüfbar» |
+| Produktionsgate | 0 Blocker / 20 Hinweise | **0 BLOCK / 20 WARN** | `--production --out=dist/site`, Exit 0, «23 Seiten · 0 Blocker · 20 Hinweise»; alle 20 `crisis-number-check` |
+| Entwurfsgate | 0 / 20 | **0 / 20** | `--out=dist/site-draft`, Exit 0 |
+| `--verify-site` | Exit 1, erwartet | **Exit 1**, 24 Unterschiede | `site/` wie beauftragt nicht neu geschrieben |
+| Suchtest | 216/216 | **216/216**, JS-Fehler 0 | `node authoring/tools/suchtest.mjs dist/site` (Playwright-Modul über `PLAYWRIGHT_MODULE`, weil der voreingestellte Pfad `/opt/npm-tools` in dieser Umgebung fehlt) |
+| Sprach-/UI-Test | 73/73 | **73/73**, JS-Fehler 0 | `node authoring/tools/sprachtest.mjs dist/site` |
+| Layouttest | 1 Abweichung | **1 Abweichung**, Exit 1: `tension core exceeds 1800px` | Unveränderte Kopie von `layouttest.cjs` (`cmp` gleich mit `main`) ausserhalb des Repositorys, `site/` dort = Kopie von `dist/site`: «230 Seitenzustände, 25 Bedienproben». Figur 1974 px bei 375 px wie in der Nachprüfung 2 (B2c). |
+
+### Punkt 1 · NP2-1: Beschriftung und Verbindungslinie in `v-ki-alltag`
+
+**Status: behoben, bestätigt.** `site.css:1582–1585`: `min-height:var(--bl-link-y)` (52 px statt 64 px), `::before` mit `top:-12px; bottom:0` statt fester Höhe, `::after` mit `bottom:calc(-.375rem + 1px)` statt festem `top`. Die waagrechte Linie ist die untere Rahmenlinie des `::before` und liegt damit an der Unterkante der Beschriftung (Innenabstand 12 px unter der letzten Textzeile); wächst die Beschriftung auf zwei Zeilen, wächst der Kasten und die Linie rückt mit. HTML, Wortlaut, `puk-sr`-Text, Pfeilzeichen der schmalen Fassung und Planzeile unverändert (Diff).
+
+| Messung | `2089968` | `45451ea` (Gegenprobe) |
+| --- | --- | --- |
+| Fenster 760–1280 px in 1-px-Schritten, `kinder.html` | 521 Breiten; breite Fassung mit Linien 957–1280 px (324 Breiten, 648 Beschriftungen); gestapelt 760–956 px | gleich |
+| Zweizeilige Beschriftung | «Unterstützung je nach Situation» bei 957–985 px (29 Breiten); links «Alltag und Sicherheit» immer einzeilig | gleich |
+| Abstand Textunterkante (Zeilenbox) zu Linienoberkante | **mindestens 13,3 px** (bei 957–985 px, zweizeilig), sonst 18 px; **0 Beschriftungen mit negativem Abstand** | **−5,2 px** bei allen 29 zweizeiligen Beschriftungen (Linie fest 52 px unter der Oberkante, Text 70,5 px hoch); einzeilig 18 px |
+| Pixelprüfung am Figurfoto, 970 px (Pillow, Zeilen mit ≥ 50 % Blau `#3C64FF` = Linie, Zeilen mit dunklen Pixeln = Text) | Linie 2 px hoch; letzte Textzeile endet **17 px** über der Linie (Glyphenunterkante); keine Textzeile auf oder unter der Linie | letzte Textzeile endet direkt an der Linie (**0 px**), Text und Linie berühren sich; so war der Befund fotografiert |
+| Pfeilspitze (Mitte der 12-px-Spitze zur Linienmitte) | **0 px** bei allen 648 Beschriftungen | 2 px unterhalb |
+| Linie trifft die Kinderbox | Linienhöhe innerhalb der Boxhöhe bei 648/648; Linienende genau an der Boxkante (Abweichung 0 px) | gleich |
+| Waagrechtes Scrollen, JS-/Konsolenfehler unter CSP | 0 / 0 | 0 / 0 |
+| Grundschrift 20 px, 760–1280 px in 4-px-Schritten | 131 Breiten, 44 Beschriftungen in breiter Fassung, keine zweizeilig, Mindestabstand 25 px, kein Überlauf | Mindestabstand 25 px |
+| Schrift 32 px bei 760, 924, 1280, 1440, 1920 px | gestapelte Fassung, Pfeilzeichen `inline-block`, keine Linien (`content:none`) | gleich |
+| Erzwungene Farben, 1280 px, hell und dunkel | breite Fassung mit Linien in Systemfarbe (`rgb(0,0,0)` bzw. `rgb(255,255,255)`) | gleich |
+| **1280 px, freigegebene Fassung** (Pixelvergleich der Figurfotos, 1104 × 1104 px) | **228 abweichende Pixel**, alle in einem 20 px hohen Band um die Linie (y 692–712), je 114 links und rechts im Bereich der Pfeilspitzen; sonst pixelgleich. Linie bei y ≈ 700 wie zuvor. | Bezug |
+
+Die 1-px-Schritte ergaben keine weitere Breite mit Umbruch. Die Fotos der bauenden Sitzung (970 px vorher/nachher, 1280 px) entsprechen dem Gemessenen.
+
+### Punkt 2 · NP2-2: Kontrast aller Zustände von «Zur Startseite» und der Links auf getönten Flächen
+
+**Status: behoben, bestätigt.** `site.css:1785`: `.puk-longform__hero .puk-link--action:not(.puk-site-start-actions .puk-link--action):hover{color:var(--puk-blue-125)}`. Die Regel steht hinter `.puk-link--action:hover` (`498`, Spezifität 0,2,0) und schlägt sie mit 0,5,0; die Startaktionen der Startseite bleiben durch `:not()` ausgenommen und zeigen weiterhin Weiss auf Blau. Betroffene Aktionslinks im Einstieg gibt es im Inhalt genau zwei: `404` «Zur Startseite» (neu erfasst) und `index` «Mit meiner Frage beginnen» (ausgenommen).
+
+**404-Seite, «Zur Startseite», 21 px, Schnitt 500, auf `#F5F7FF`, 1280 px** (nach Ablauf des Farbübergangs):
+
+| Zustand | `2089968` Standard | `2089968` Theme «kontrast» | `45451ea` Standard (Gegenprobe) |
+| --- | --- | --- | --- |
+| Ruhe | `#222222`, 14,87:1 | `#222222`, 14,87:1 | `#222222`, 14,87:1 |
+| Überfahren | **`#2B4FE0`, 5,95:1** | `#001F99`, 11,85:1 | **`#3C64FF`, 4,40:1** (Befund NP2-2) |
+| Gedrückt | `#2B4FE0`, 5,95:1 | `#001F99`, 11,85:1 | `#3C64FF`, 4,40:1 |
+| Tastaturfokus (`:focus-visible`, Ring `--focus-ring`) | `#222222`, 14,87:1; Ring sichtbar | `#222222`, 14,87:1 | `#222222`, 14,87:1 |
+| Fokus und überfahren | `#2B4FE0`, 5,95:1 | `#001F99`, 11,85:1 | `#3C64FF`, 4,40:1 |
+
+**Alle Links und Schaltflächen auf getönten Flächen, 23 Seiten, 1280 px:** sichtbare `a[href]`, `button`, `summary` und `[role=button]` mit Text, deren wirksamer Hintergrund (nächste nicht transparente Farbe in der Vorfahrenkette) nicht Weiss ist. **172 Elemente** (von 1015 sichtbaren Links und Schaltflächen; Flächen `#F5F7FF` 133, `#F4F4F4` 23, `#D8E0FF` 13, `#F0F3FF` 1, dazu die beiden Startaktionen auf `#3C64FF` und `#222222`), je in Ruhe, überfahren, gedrückt und im Tastaturfokus gemessen, Standard und Theme «kontrast» (1376 Messwerte): **0 unter 4,5:1**. Jeder Hover-Treffer, jeder `:active`- und jeder `:focus-visible`-Zustand ist im Lauf bestätigt (0 verfehlt). Kleinste Werte Standard: Weiss auf `#3C64FF` 4,71:1 (Startaktion «Mit meiner Frage beginnen» in Ruhe und im Fokus; «Beratung per E-Mail anfragen» überfahren und gedrückt), unverändert gegenüber `45451ea`. Kleinste Werte «kontrast»: «144» `#294CDC` auf `#D8E0FF` 5,07:1 in Ruhe, E-Mail-Link im Fokus 6,04:1. Derselbe Lauf auf `45451ea`: 2 Messwerte unter 4,5:1, beide «Zur Startseite» (überfahren und gedrückt, 4,40:1), sonst identisch. Die bauende Sitzung zählt 168 Elemente; die Differenz von 4 liegt an der Auswahl der Kandidaten (hier auch `summary` und `[role=button]`), nicht an den Werten. Für den Tastaturfokus nennt die bauende Sitzung «weiss auf `#3C64FF` 4,71:1»; gemessen bleibt der Text im Fokus `#222222` auf `#F5F7FF`, der Wert 4,71:1 beschreibt den zweifarbigen Fokusring selbst. Beides erfüllt die Schwelle.
+
+Wie in der Nachprüfung 2 bleibt Weiss auf `#3C64FF` (4,71:1) der kleinste Wert; er stammt von den Startaktionen der Startseite und ist unverändert gegenüber `main`.
+
+### Punkt 3 · NP2-3: Selbsttest ohne freigegebene Textfassung
+
+**Status: behoben, bestätigt.** `contract.js:702–711`: Der Fall «Produktion blockiert ausstehende Textfassung im Visualisierungsplan» steht in der Hilfsfunktion `textApprovalRow`; findet sie keine Planzeile mit `format: text` und `approvalStatus: freigegeben`, liefert sie eine Zeile mit `ok: false` und der Meldung «keine freigegebene Textfassung im Visualisierungsplan – Fall nicht prüfbar». Der neue Fall setzt in einer Kopie alle Textfassungen auf «entfällt», ruft die Hilfsfunktion in `try/catch` und erwartet den Anfang dieser Meldung.
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Selbsttest am Stand | **84/84**, beide Fälle PASS | siehe Kennzahlen; Planzeilen mit `format: text`: 117 «freigegeben», 1 «entfällt» |
+| Simulation A: alle 118 Textfassungen auf «entfällt» (Wegwerfkopie von `authoring/`) | **`FAIL \| Produktion blockiert ausstehende Textfassung im Visualisierungsplan \| erwartet: visual-approval \| erhalten: keine freigegebene Textfassung im Visualisierungsplan – Fall nicht prüfbar`**, «Selbsttest: 83/84 bestanden», **Exit 1**, kein Laufzeitfehler | `selftest.mjs` setzt `process.exitCode = 1`, sobald eine Zeile `ok: false` hat. Auf `45451ea` endete derselbe Lauf mit `TypeError` (Nachprüfung 2, Stufe 4). |
+| Simulation B: `v-vs-eisberg` auf «ausstehend» | `--production`: **`BLOCK \| verstehen \| visual-approval \| Textfassung v-vs-eisberg nicht freigegeben (ausstehend)`**, «Build blockiert: 1 Befund(e)», Exit 1; Entwurf: WARN, 21 Hinweise | Gate-Regel B1a weiterhin wirksam |
+| Code-Review | korrekt | Die Hilfsfunktion arbeitet auf einer tiefen Kopie und verändert `cfg` nicht; der zweite Fall ist von ihr unabhängig formuliert (`got.startsWith(...)`) und würde auch einen künftigen Laufzeitfehler als FAIL ausweisen («Laufzeitfehler: …»). Ohne Textfassung bleibt der Selbsttest rot, bis wieder eine freigegebene Textfassung existiert; das ist die sichere Seite und entspricht der Absicht. |
+
+### Punkt 4 · H1: Wortlaut «Auf sich achten»
+
+**Status: umgesetzt, bestätigt.** Vorgabe laut Übergabe und Nachweis: «Sie dürfen auch zuerst für sich sorgen.» statt «Sie dürfen zuerst oder ausschliesslich für sich sorgen.», nur dieser Satz.
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Wortdiff `content/selbstfuersorge.html` | **genau zwei Wortänderungen:** `{+auch+}` und `[-oder ausschliesslich-]`; sonst kein Zeichen geändert | `git diff --word-diff 27aac33 2089968`; die Figur `v-sf-entlastung` samt `puk-sr`-Text ist im Diff nicht berührt |
+| Build `dist/site/selbstfuersorge.html` | «… Das Bild steht dafür, die eigene Sicherheit und Gesundheit ernst zu nehmen. Sie dürfen auch zuerst für sich sorgen.» genau einmal | `grep`; auf `45451ea` steht an derselben Stelle der alte Satz |
+| Alter Wortlaut «zuerst oder ausschliesslich» | **0 Fundstellen** in allen 23 Seiten | `grep -rl` über `dist/site` |
+| Suchindex `suche.html` | Eintrag `selbstfuersorge.html#unterstuetzung` enthält den neuen Satz | `data-search-text` |
+| «ausschliesslich» im übrigen Build | nur `diagnose` («beobachtbares Verhalten ausschliesslich mit der Diagnose erklären») und `impressum-datenschutz` («… sind ausschliesslich deren Betreiber verantwortlich»), je einmal, dazu die Spiegelungen im Suchindex; beide in anderem Sinn, wie von der bauenden Sitzung gemeldet | `grep -o` mit Kontext über `dist/site` |
+| `site.config.json` | unverändert | `git diff --stat 27aac33 2089968 -- authoring/site.config.json` leer |
+
+### W3 Code-Review (Diff `27aac33..2089968`)
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| `site.css` `.bl-caremap--linked` | gültig | `::before` mit `top` und `bottom` statt `height` ist für absolut positionierte Pseudo-Elemente definiert (gemessen: Höhe 64 px bei einzeiliger Beschriftung, `bottom: 0px`). `::after` mit `bottom:-5px` und 12 × 12 px: Mitte der Spitze = Linienmitte (gemessen 0 px). Der Container-Block (`1593–1601`) setzt beide weiterhin auf `content:none`; er ist im Diff nicht berührt. Druck und erzwungene Farben: nicht berührt (keine Regel in diesen Blöcken geändert). |
+| `site.css:1785` neue Hover-Regel | gültig, **H2** | `:not()` mit zusammengesetztem Selektor (`.puk-site-start-actions .puk-link--action`) ist Selectors Level 4; Chromium ab 88, Firefox ab 84, Safari ab 9 werten die Regel aus. Ältere Browser verwerfen genau diese eine Regel und zeigen den Hover-Zustand wie vor der Nachbesserung (`#3C64FF`, 4,40:1), also keinen Rückschritt gegenüber `45451ea`. Nur in Chromium geprüft. |
+| `contract.js` | korrekt | siehe Punkt 3. Die Verschiebung des Falls in eine Funktion ändert die Reihenfolge der Zeilen im Selbsttest nicht (Fall 5 und neu 6). |
+| Inhalt `selbstfuersorge.html` | nur der genannte Satz | siehe Punkt 4 |
+| `style`-Attribute, Inline-Skripte, externe Ressourcen | keine | Diff: 0 hinzugefügte Zeilen mit `style=`, `<script`, `url(`, `@import` oder `http`; JS-/Konsolenfehler unter CSP in allen Läufen 0 |
+| Übergabe, Nachweis | konsistent | Die Angaben in Übergabe, Nachweis und PR-Beschreibung (13,3 px, 5,95:1, 84/84, 168 Elemente) stimmen mit dieser Messung überein oder sind durch die eigene Zählung erklärt (Elementzahl siehe Punkt 2). |
+
+### Befunde
+
+**Neu: keine.** Blockierend 0, wichtig 0, gering 0.
+
+**Hinweis H2, kein Befund:** Die neue Hover-Regel verlässt sich auf `:not()` mit zusammengesetztem Selektor. In den heute verbreiteten Browsern wirkt sie; wo nicht, bleibt der frühere Zustand (4,40:1 beim Überfahren) ohne weitere Folge. Eine Alternative ohne `:not()` wäre, die Startaktionen in einer eigenen Regel danach zurückzusetzen. Keine Änderung nötig.
+
+**Alte Befunde:** W2, W3, W4 und V4 bleiben offen und gering (wie angekündigt nicht bearbeitet); N2 ist begründete Ausnahme (B2c). NP2-1, NP2-2, NP2-3 behoben; H1 umgesetzt.
+
+### Status
+
+| Punkt | Status |
+| --- | --- |
+| NP2-1 Linie `v-ki-alltag` | behoben, bestätigt (521 Breiten, Pixelprüfung, Gegenprobe) |
+| NP2-2 Kontrast 404 und getönte Flächen | behoben, bestätigt (alle Zustände, beide Themes, Gegenprobe) |
+| NP2-3 Selbsttest ohne Textfassung | behoben, bestätigt (Simulation A und B) |
+| H1 Wortlaut | umgesetzt, bestätigt (Wortdiff, Build, Suchindex) |
+| Screenreader | offen (nicht verfügbar) |
+
+Diese Nachprüfung setzt keine Stufe der Statustabelle auf «erledigt» und ersetzt keine Fachfreigabe.
+
+**Empfehlung: weiter zu `site/` und Merge.** Der Stand `2089968` setzt die vier Punkte der Nachbesserung 3 vollständig um, zeigt im Umfeld keine Verschlechterung und bringt keinen neuen Befund. Nächste Schritte laut PR: `site/` neu schreiben (`--production --out=site --write-site`, `--verify-site`) und Merge auf `main`, beides auf ausdrücklichen Auftrag. Diese Sitzung mergt nicht und schreibt `site/` nicht neu.
+
 ## Nachprüfung 2 PR #708 · 22.10.2026 (Stand 45451ea)
 
 **Nachprüfsitzung 2 (Claude Code), 22.10.2026.** Grundlage ist der Nachprüfauftrag «PR #708 unabhängig nachprüfen (Stand 45451ea)» zu [PR #708](https://github.com/christaegger-dot/borderline-angehoerige/pull/708). Diese Sitzung hat an dem PR weder gebaut noch geprüft: Sie ist keine der Sitzungen der Commits 1–15 und hat vor diesem Auftrag keine Datei des Branches gesehen. Sie hat nichts entschieden und keine fachliche Aussage beurteilt. Die Freigaben und Entscheide von Christa Egger gelten als gesetzt; geprüft ist nur, ob der Build genau den freigegebenen Wortlaut zeigt. Geändert ist nur dieser Abschnitt. Die Statustabelle oben und die Abschnitte «Nachprüfung PR #708 · 21.10.2026» und «Prüfung PR #708 · 21.10.2026» bleiben unverändert.

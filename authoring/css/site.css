@@ -1653,7 +1653,8 @@ html.puk-scroll-lock{overflow:hidden}
 .bl-paths-cards li:focus-within{outline:3px solid var(--border-focus);outline-offset:2px}
 .bl-paths-cards a{color:var(--text-default);text-decoration:none;font-weight:var(--fw-medium);padding-block:0}
 .bl-paths-cards a::after{content:"";position:absolute;inset:0}
-.bl-paths-cards a:focus-visible{outline:none}
+/* Ein Fokusrahmen um die ganze Karte, nur bei Tastaturbedienung (P708-W6). Ohne :has() bleibt der Rahmen bei :focus-within samt Ring am Link */
+@supports selector(:has(*)){.bl-paths-cards li:focus-within{outline:none}.bl-paths-cards li:has(a:focus-visible){outline:3px solid var(--border-focus);outline-offset:2px}.bl-paths-cards a:focus-visible{box-shadow:none}}
 .bl-paths-cards p{margin:0;color:var(--text-muted)}
 
 /* Themen als ruhiges, liniertes Raster */
@@ -1759,6 +1760,9 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-web-footer__copy{color:var(--text-default)}
 .puk-web-footer a{color:var(--puk-blue-125)}
 .puk-web-footer a:hover{color:var(--text-link-hover)}
+/* Links auf getönten Flächen (Absenderzeile, Einstieg, «Was Sie tun können») im dunkleren Blau: mindestens 4,5:1 (Auflage zu F4) */
+.puk-site-sender a,.puk-longform__hero a.puk-link--inline,.bl-tun a{color:var(--puk-blue-125)}
+.puk-site-sender a:hover,.puk-longform__hero a.puk-link--inline:hover,.bl-tun a:hover{color:var(--text-link-hover)}
 .puk-site-safety--responsibility{padding:clamp(1.25rem,3vw,2rem);background:var(--puk-white);border:0;border-radius:var(--web-radius-btn-lg)}
 .puk-site-safety--responsibility .puk-web-footer__copy:first-of-type{font-size:clamp(1.125rem,1rem + .4vw,1.3125rem);line-height:1.45;font-weight:var(--fw-light,300)}
 .puk-site-safety--responsibility .puk-web-footer__copy a{font-weight:var(--fw-medium)}

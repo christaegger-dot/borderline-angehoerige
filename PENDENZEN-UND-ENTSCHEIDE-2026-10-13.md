@@ -1,18 +1,40 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 18. Oktober 2026 · GitHub main: r4-38 (`c54139cd043ed1e2079306c4b98bcaf700d27be4`, PR #706 gemergt). Arbeitsentwurf: r4-39, Audit 04.**
+**Dokumentationsstand: 22. Oktober 2026 · GitHub main: r4-40 (`670c29f91b0c8e2035e0fc9ca10030effde6e51c`, PR #708 gemergt am 22.10.2026, 19:32 UTC). Kein offener Arbeitsentwurf, kein offener Pull Request (Status geprüft am 22.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
+## Gestaltung 2026-10-21 · r4-40 · veröffentlicht am 22.10.2026
+
+**GitHub:** [PR #708](https://github.com/christaegger-dot/borderline-angehoerige/pull/708), gemergt als `670c29f` am 22.10.2026 um 19:32 UTC auf Auftrag von Christa Egger («kannst du die offenen PR mergen?»). Vorher [PR #709](https://github.com/christaegger-dot/borderline-angehoerige/pull/709) (Nachprüfbericht 3 und `site/`), gemergt als `3f4968e` in den Branch `gestaltung/2026-10-21`. Beide Merges nach grünem CI-Lauf `build-and-compare` auf dem jeweiligen Kopf. Die Live-Site lieferte um 19:33 UTC `site.css?v=r4-40` und den neuen Satz auf «Auf sich achten» aus (eigene Abfrage mit `curl`, keine Prüfstufe).
+
+**Inhalt:** Gestaltungsentwurf vom 21.10.2026 für die Startseite und «Borderline verstehen» (Dateien von Christa Egger ausserhalb des Repositorys vorbereitet), zwei neue Beispielsätze in `verstehen` › `#eisberg`, die fünf ausstehenden Abbildungen aus r4-39 (drei bestätigt, eine als Text, drei geändert), der Entscheid vom 21.10.2026 «Auf ‹Verstehen› entfällt der Akuthinweis; der Link ‹Wenn Suizidgedanken ein Thema sind› bleibt», drei Nachbesserungsrunden und der Satz «Sie dürfen auch zuerst für sich sorgen.» auf `selbstfuersorge`. Vollständige Beschreibung: `authoring/UEBERGABE-GESTALTUNG-2026-10-21.md`.
+
+**Prüfstufen und Freigaben (alle in `authoring/PRUEFBERICHT.md`, Abschnitte «Prüfung PR #708», «Nachprüfung PR #708», «Nachprüfung 2 PR #708», «Nachprüfung 3 PR #708»):**
+- Prüfung 21.10.2026 (Stand `3ae7916`): 20 Befunde, davon 3 blockierend; Nachbesserung 1 mit Commit `9f1eccd` und `d2dc969`.
+- Nachprüfung 21.10.2026 (Stand `d2dc969`): B1–B5 behoben, neu N1 und N3 wichtig; Nachbesserung 2 mit Commit `4af037f`, `c741fe9`, `f50536e` (Ankreuzen delegiert: «ok, kreuze an und fahre fort»).
+- **Fachfreigaben Christa Egger, 22.10.2026:** Beispielsätze F1 und F2 um 09:14 Uhr («ich gebe beide sätze frei», `audit-results/2026-10-22-v-vs-eisberg/FREIGABE.md`); Gestaltungsentscheide F3, F4 und W6 um 09:19 Uhr (`audit-results/2026-10-22-gestaltungsentscheide/ENTSCHEID.md`); die fünf Abbildungen aus r4-39 um 12:17 Uhr (`audit-results/2026-10-22-abbildungen/FREIGABE.md`). Produktionsgate danach 0 Blocker; `releaseApproval` unverändert.
+- Nachprüfung 2 (Stand `45451ea`): 0 blockierend, 0 wichtig, 3 gering (NP2-1 bis NP2-3) und Hinweis H1; Empfehlung «weiter zu `site/` und Merge». Entscheid Christa Egger: die vier Punkte vorher beheben; Nachbesserung 3 mit Commit `2089968` (`audit-results/2026-10-22-nachbesserung-3/BERICHT.md`).
+- Nachprüfung 3 (Stand `2089968`) durch eine Sitzung, die an PR #708 weder gebaut noch geprüft hatte: alle vier Punkte mit eigener Messung bestätigt, keine neuen Befunde, Empfehlung «weiter zu `site/` und Merge» (Commit `e01059f`).
+- Die unabhängige Gesamtprüfung entfällt weiterhin nach dem Entscheid vom 18.10.2026 (siehe r4-38). Ein Screenreader stand in keiner Prüfung zur Verfügung; dieser Teil bleibt offen.
+
+**Technischer Stand beim Merge:** Selbsttest 84/84; Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise (`crisis-number-check`, unverändert); `--verify-site` Parität 34 Dateien bytegleich; Suchtest 216/216; Sprach-/UI-Test 73/73; Audit-04-Layouttest 1 Abweichung (`tension core exceeds 1800px`, begründete Ausnahme B2c: die vier Phasen enden bei 375 px nach 1540 px, die Figur ist 1974 px hoch).
+
+**Offen nach r4-40:**
+- Screenreader-Prüfung der neuen Gestaltung (kein Screenreader verfügbar).
+- Geringe Befunde W2, W3, W4 (verwaiste CSS-Regeln, u. a. `.bl-parallel-aspects`, `bl-observe`, `bl-knowledge-boundary`) und V4 aus der Prüfung vom 21.10.2026; nicht bearbeitet, optional.
+- Hinweis H2 der Nachprüfung 3 ohne Befund: Die Hover-Regel für Aktionslinks im Einstieg nutzt `:not()` mit zusammengesetztem Selektor; ältere Browser zeigen den Zustand von vor der Nachbesserung 3 (4,40:1), keinen Rückschritt.
+- Profilentscheid F3 (Rubik Medium für `h1`/`h2`) und Profilton F4 (Grundfläche `#F5F7FF` mit Auflage «kein kleiner Text in `#3C64FF` auf getönten Flächen»): **nachgetragen** im Repository `christaegger-dot/puk-website-profil` als Profil 2026.10.8 ([PR #137](https://github.com/christaegger-dot/puk-website-profil/pull/137), gemergt als `365dbb3` am 22.10.2026, 10:12 UTC; Entscheiddokument `ENTSCHEIDE-PROFIL-2026-10-8.md`, Tokens `--ui-tint`, `--surface-tint`, `--text-link-on-tint`, `--web-fw-title`). Dort offen: die unabhängige Prüfung des Pakets `puk-website-profil-2026.10.8.zip` durch eine Sitzung, die es nicht gebaut hat.
+
 ## Audit 04 · Gestaltung und Didaktik · r4-39
 
-**GitHub:** [PR #707](https://github.com/christaegger-dot/borderline-angehoerige/pull/707), offen als Entwurf (Status geprüft am 18.10.2026). Umsetzungscommit: `a3f810be76a51c6370644ac2137c7fcdd0b8494e`.
+**GitHub:** [PR #707](https://github.com/christaegger-dot/borderline-angehoerige/pull/707), gemergt als `dccc8a3` (Status geprüft am 22.10.2026; am 18.10.2026 noch offen als Entwurf). Umsetzungscommit: `a3f810be76a51c6370644ac2137c7fcdd0b8494e`.
 
 Die 16 Befunde A04-2003 bis A04-2018 sind technisch bearbeitet. Auftrag: «sehr gut. kannst du die Verbesserungen gleich direkt in github vornehmen?» [Umsetzungsbericht und Nachweise](audit-results/2026-10-18-a04-umsetzung/BERICHT.md).
 
-**Status:** Entwurf, noch nicht zur Veröffentlichung freigegeben. Sechs neue bzw. visuell neu angeordnete Darstellungen sind zur einzelnen Fachfreigabe ausstehend; der unveränderte Produktionsaufruf benennt ausschliesslich diese sechs. Die unabhängige Gesamtprüfung entfällt weiterhin nach dem ausdrücklichen Entscheid der Auftraggeberin. Keine neue Gesamtprüfung, keine erfundene Freigabe. [Umfang und Entscheide](audit-results/2026-10-18-a04-umsetzung/ENTSCHEIDE.md).
+**Status:** Entwurf, noch nicht zur Veröffentlichung freigegeben. Sechs neue bzw. visuell neu angeordnete Darstellungen sind zur einzelnen Fachfreigabe ausstehend; der unveränderte Produktionsaufruf benennt ausschliesslich diese sechs. **Nachtrag 22.10.2026:** Die ausstehenden Fachfreigaben wurden am 22.10.2026 im Rahmen von PR #708 erteilt (Abbildungen und Textfassung `v-vs-eisberg`, Nachweise siehe Abschnitt r4-40); der Produktionsaufruf läuft seither ohne Blocker. Die unabhängige Gesamtprüfung entfällt weiterhin nach dem ausdrücklichen Entscheid der Auftraggeberin. Keine neue Gesamtprüfung, keine erfundene Freigabe. [Umfang und Entscheide](audit-results/2026-10-18-a04-umsetzung/ENTSCHEIDE.md).
 
 Technische Selbstprüfung: 82/82 Selbsttests, 216/216 Suchfälle, 75 UI-Prüfungen, 230 responsive Browserzustände und 25 Bedienproben ohne Abweichung, 34 bytegleiche Exportdateien. Kein Merge oder Deployment durch diese Sitzung.
 

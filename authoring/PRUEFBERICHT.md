@@ -417,6 +417,674 @@ Dazu 5 leichte Befunde zu Bericht und Abgleich. Die erste und zweite Prüfrunde 
   - **Gültigkeit:** Die Freigabe AR3-4 umfasst auch die Runden 4 und 5. Sie gilt, sobald die Nachprüfung der Runde 5 bestätigt, dass nur diese Änderungen vorliegen.
 - Die Statustabelle bleibt unverändert.
 
+## Nachprüfung 3 PR #708 · 22.10.2026 (Stand 2089968)
+
+**Nachprüfsitzung 3 (Claude Code), 22.10.2026.** Grundlage ist der in der PR-Beschreibung festgehaltene Auftrag «Nachprüfung 3 des Stands nach Commit 17 (`2089968`) durch eine Sitzung, die an diesem PR weder gebaut noch geprüft hat. Nur die vier Punkte und ihr Umfeld.» Die Auftragsdatei der vorbereitenden Sitzung (`NACHPRUEFAUFTRAG-3-PR-708.md`) war in dieser Sitzung nicht mehr zugänglich; massgebend ist deshalb der Wortlaut in der PR-Beschreibung und im Kommentar «Nachbesserung 3». Diese Sitzung hat an [PR #708](https://github.com/christaegger-dot/borderline-angehoerige/pull/708) weder gebaut noch geprüft: Sie ist keine der Sitzungen der Commits 1–17 und hat vor diesem Auftrag keine Datei des Branches gesehen. Sie hat nichts entschieden und keine fachliche Aussage beurteilt; der Wortlaut von H1 gilt als von Christa Egger gesetzt, geprüft ist nur, ob der Build ihn genau zeigt. Geändert ist nur dieser Abschnitt. Die Statustabelle oben und die drei Abschnitte zu PR #708 vom 21. und 22.10.2026 bleiben unverändert.
+
+**Geprüfter Stand:**
+- Branch `gestaltung/2026-10-21`, Kopf `2089968` (Commit 17); `origin/gestaltung/2026-10-21` zeigte zu Beginn denselben Commit. Diff `27aac33..2089968`: `site.css` (+7/−5 Zeilen im Block `.bl-caremap--linked` und eine neue Hover-Regel), `contract.js` (+9/−2), `content/selbstfuersorge.html` (ein Satz), Übergabe, Nachweis mit drei Bildschirmfotos. `site.config.json`, Freigaben und `site/` unverändert.
+- Vergleich mit `45451ea` (Stand der Nachprüfung 2), aus einem eigenen Arbeitsbaum gleich gebaut. `main` wurde nicht gebaut; ausserhalb des Umfangs.
+- Nur der lokale Build (`dist/site`, Produktionsgate). Die Netlify-Vorschau wurde nicht verwendet.
+- `authoring/PRUEFBERICHT.md` ist seit `27aac33` unverändert (Commit 17 lässt ihn aus).
+
+**Gelesen:** `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`, Übergabe Abschnitt «Nachbesserung 3», Nachweis `audit-results/2026-10-22-nachbesserung-3/BERICHT.md`, Abschnitt «Nachprüfung 2 PR #708» (Befunde NP2-1 bis NP2-3, H1, Stufe 4), PR-Beschreibung und alle acht PR-Kommentare, der vollständige Diff `27aac33..2089968`.
+
+**Werkzeuge:** Node.js 22.22.0; Playwright 1.56.1 mit Chromium 141.0.7390.37 (headless, Linux), nicht die CI-Version 1.64.0; Python 3.13.16 mit Pillow 12.3.0; git 2.43.0. **Bedingungen** wie bei den drei Prüfungen zuvor: lokaler Server mit den Kopfzeilen aus `_headers` (aktive CSP), Fensterhöhe 900 px; Schrift 200 % als `--blink-settings=defaultFontSize=32`, Grundschrift 20 px entsprechend; erzwungene Farben als Emulation `forcedColors: active`, hell und dunkel, je eigener Browserkontext. Farbzustände erst nach Ablauf des Farbübergangs gemessen (`--dur-fast` 120 ms; Wartezeit 600 ms), weil `getComputedStyle` während des Übergangs Zwischenwerte liefert (ein erster Lauf mit 40 ms Wartezeit ist deshalb verworfen). Alle Skripte sind neu geschrieben; Skripte, Fotos und Messdaten liegen ausserhalb des Repositorys. **Nicht verfügbar:** Screenreader, Firefox, WebKit, echter Windows-Kontrastmodus.
+
+**Schwere** wie bisher: «blockierend» verletzt WCAG 2.2 AA neu, «wichtig» ist vor einer Freigabe zu beheben, «gering» betrifft Konsistenz oder Optionales.
+
+### Ergebnis in Kürze
+
+- **Empfehlung: ohne Blocker, weiter zu `site/` und Merge.**
+- **Alle vier Punkte der Nachbesserung 3 sind mit eigener Messung bestätigt:** NP2-1 (Linie an der Textunterkante, 521 Breiten ohne Berührung), NP2-2 (alle Zustände von «Zur Startseite» und aller 172 Links auf getönten Flächen mindestens 4,5:1), NP2-3 (klare FAIL-Meldung statt Laufzeitfehler, Exit 1), H1 (genau ein Satz geändert, alter Wortlaut nirgends mehr).
+- **Umfeld ohne Verschlechterung:** Figur bei 1280 px bis auf die Pfeilspitzen pixelgleich mit der freigegebenen Fassung; gestapelte Fassung, Grundschrift 20 px und erzwungene Farben unverändert; Startaktionen der Startseite unverändert; `v-sf-entlastung`, Screenreader-Fassung und Planzeilen unverändert.
+- **Neue Befunde: keine.** Blockierend 0, wichtig 0, gering 0. Dazu ein Hinweis ohne Befund (H2, Browserunterstützung der neuen Hover-Regel).
+- **Alte Befunde:** offen und gering bleiben W2, W3, W4 und V4; N2 steht als begründete Ausnahme (B2c).
+- **Kennzahlen der bauenden Sitzung nachgerechnet: stimmen** (84/84, 0 BLOCK / 20 WARN, Entwurf 0 / 20, `--verify-site` Exit 1 mit 24 Unterschieden, 216/216, 73/73, Layouttest 1 Abweichung).
+- Screenreader bleibt offen, wie bei allen Prüfungen dieses PR.
+
+### Kennzahlen nachgerechnet
+
+| Kennzahl | bauende Sitzung | nachgerechnet | Beleg |
+| --- | --- | --- | --- |
+| Selbsttest | 84/84 | **84/84** | `node authoring/tools/build.mjs --selftest`, Exit 0; darunter «Produktion blockiert ausstehende Textfassung im Visualisierungsplan» PASS und der neue Fall «Selbsttest meldet fehlende freigegebene Textfassung als Befund, nicht als Laufzeitfehler» PASS mit erhalten «keine freigegebene Textfassung im Visualisierungsplan – Fall nicht prüfbar» |
+| Produktionsgate | 0 Blocker / 20 Hinweise | **0 BLOCK / 20 WARN** | `--production --out=dist/site`, Exit 0, «23 Seiten · 0 Blocker · 20 Hinweise»; alle 20 `crisis-number-check` |
+| Entwurfsgate | 0 / 20 | **0 / 20** | `--out=dist/site-draft`, Exit 0 |
+| `--verify-site` | Exit 1, erwartet | **Exit 1**, 24 Unterschiede | `site/` wie beauftragt nicht neu geschrieben |
+| Suchtest | 216/216 | **216/216**, JS-Fehler 0 | `node authoring/tools/suchtest.mjs dist/site` (Playwright-Modul über `PLAYWRIGHT_MODULE`, weil der voreingestellte Pfad `/opt/npm-tools` in dieser Umgebung fehlt) |
+| Sprach-/UI-Test | 73/73 | **73/73**, JS-Fehler 0 | `node authoring/tools/sprachtest.mjs dist/site` |
+| Layouttest | 1 Abweichung | **1 Abweichung**, Exit 1: `tension core exceeds 1800px` | Unveränderte Kopie von `layouttest.cjs` (`cmp` gleich mit `main`) ausserhalb des Repositorys, `site/` dort = Kopie von `dist/site`: «230 Seitenzustände, 25 Bedienproben». Figur 1974 px bei 375 px wie in der Nachprüfung 2 (B2c). |
+
+### Punkt 1 · NP2-1: Beschriftung und Verbindungslinie in `v-ki-alltag`
+
+**Status: behoben, bestätigt.** `site.css:1582–1585`: `min-height:var(--bl-link-y)` (52 px statt 64 px), `::before` mit `top:-12px; bottom:0` statt fester Höhe, `::after` mit `bottom:calc(-.375rem + 1px)` statt festem `top`. Die waagrechte Linie ist die untere Rahmenlinie des `::before` und liegt damit an der Unterkante der Beschriftung (Innenabstand 12 px unter der letzten Textzeile); wächst die Beschriftung auf zwei Zeilen, wächst der Kasten und die Linie rückt mit. HTML, Wortlaut, `puk-sr`-Text, Pfeilzeichen der schmalen Fassung und Planzeile unverändert (Diff).
+
+| Messung | `2089968` | `45451ea` (Gegenprobe) |
+| --- | --- | --- |
+| Fenster 760–1280 px in 1-px-Schritten, `kinder.html` | 521 Breiten; breite Fassung mit Linien 957–1280 px (324 Breiten, 648 Beschriftungen); gestapelt 760–956 px | gleich |
+| Zweizeilige Beschriftung | «Unterstützung je nach Situation» bei 957–985 px (29 Breiten); links «Alltag und Sicherheit» immer einzeilig | gleich |
+| Abstand Textunterkante (Zeilenbox) zu Linienoberkante | **mindestens 13,3 px** (bei 957–985 px, zweizeilig), sonst 18 px; **0 Beschriftungen mit negativem Abstand** | **−5,2 px** bei allen 29 zweizeiligen Beschriftungen (Linie fest 52 px unter der Oberkante, Text 70,5 px hoch); einzeilig 18 px |
+| Pixelprüfung am Figurfoto, 970 px (Pillow, Zeilen mit ≥ 50 % Blau `#3C64FF` = Linie, Zeilen mit dunklen Pixeln = Text) | Linie 2 px hoch; letzte Textzeile endet **17 px** über der Linie (Glyphenunterkante); keine Textzeile auf oder unter der Linie | letzte Textzeile endet direkt an der Linie (**0 px**), Text und Linie berühren sich; so war der Befund fotografiert |
+| Pfeilspitze (Mitte der 12-px-Spitze zur Linienmitte) | **0 px** bei allen 648 Beschriftungen | 2 px unterhalb |
+| Linie trifft die Kinderbox | Linienhöhe innerhalb der Boxhöhe bei 648/648; Linienende genau an der Boxkante (Abweichung 0 px) | gleich |
+| Waagrechtes Scrollen, JS-/Konsolenfehler unter CSP | 0 / 0 | 0 / 0 |
+| Grundschrift 20 px, 760–1280 px in 4-px-Schritten | 131 Breiten, 44 Beschriftungen in breiter Fassung, keine zweizeilig, Mindestabstand 25 px, kein Überlauf | Mindestabstand 25 px |
+| Schrift 32 px bei 760, 924, 1280, 1440, 1920 px | gestapelte Fassung, Pfeilzeichen `inline-block`, keine Linien (`content:none`) | gleich |
+| Erzwungene Farben, 1280 px, hell und dunkel | breite Fassung mit Linien in Systemfarbe (`rgb(0,0,0)` bzw. `rgb(255,255,255)`) | gleich |
+| **1280 px, freigegebene Fassung** (Pixelvergleich der Figurfotos, 1104 × 1104 px) | **228 abweichende Pixel**, alle in einem 20 px hohen Band um die Linie (y 692–712), je 114 links und rechts im Bereich der Pfeilspitzen; sonst pixelgleich. Linie bei y ≈ 700 wie zuvor. | Bezug |
+
+Die 1-px-Schritte ergaben keine weitere Breite mit Umbruch. Die Fotos der bauenden Sitzung (970 px vorher/nachher, 1280 px) entsprechen dem Gemessenen.
+
+### Punkt 2 · NP2-2: Kontrast aller Zustände von «Zur Startseite» und der Links auf getönten Flächen
+
+**Status: behoben, bestätigt.** `site.css:1785`: `.puk-longform__hero .puk-link--action:not(.puk-site-start-actions .puk-link--action):hover{color:var(--puk-blue-125)}`. Die Regel steht hinter `.puk-link--action:hover` (`498`, Spezifität 0,2,0) und schlägt sie mit 0,5,0; die Startaktionen der Startseite bleiben durch `:not()` ausgenommen und zeigen weiterhin Weiss auf Blau. Betroffene Aktionslinks im Einstieg gibt es im Inhalt genau zwei: `404` «Zur Startseite» (neu erfasst) und `index` «Mit meiner Frage beginnen» (ausgenommen).
+
+**404-Seite, «Zur Startseite», 21 px, Schnitt 500, auf `#F5F7FF`, 1280 px** (nach Ablauf des Farbübergangs):
+
+| Zustand | `2089968` Standard | `2089968` Theme «kontrast» | `45451ea` Standard (Gegenprobe) |
+| --- | --- | --- | --- |
+| Ruhe | `#222222`, 14,87:1 | `#222222`, 14,87:1 | `#222222`, 14,87:1 |
+| Überfahren | **`#2B4FE0`, 5,95:1** | `#001F99`, 11,85:1 | **`#3C64FF`, 4,40:1** (Befund NP2-2) |
+| Gedrückt | `#2B4FE0`, 5,95:1 | `#001F99`, 11,85:1 | `#3C64FF`, 4,40:1 |
+| Tastaturfokus (`:focus-visible`, Ring `--focus-ring`) | `#222222`, 14,87:1; Ring sichtbar | `#222222`, 14,87:1 | `#222222`, 14,87:1 |
+| Fokus und überfahren | `#2B4FE0`, 5,95:1 | `#001F99`, 11,85:1 | `#3C64FF`, 4,40:1 |
+
+**Alle Links und Schaltflächen auf getönten Flächen, 23 Seiten, 1280 px:** sichtbare `a[href]`, `button`, `summary` und `[role=button]` mit Text, deren wirksamer Hintergrund (nächste nicht transparente Farbe in der Vorfahrenkette) nicht Weiss ist. **172 Elemente** (von 1015 sichtbaren Links und Schaltflächen; Flächen `#F5F7FF` 133, `#F4F4F4` 23, `#D8E0FF` 13, `#F0F3FF` 1, dazu die beiden Startaktionen auf `#3C64FF` und `#222222`), je in Ruhe, überfahren, gedrückt und im Tastaturfokus gemessen, Standard und Theme «kontrast» (1376 Messwerte): **0 unter 4,5:1**. Jeder Hover-Treffer, jeder `:active`- und jeder `:focus-visible`-Zustand ist im Lauf bestätigt (0 verfehlt). Kleinste Werte Standard: Weiss auf `#3C64FF` 4,71:1 (Startaktion «Mit meiner Frage beginnen» in Ruhe und im Fokus; «Beratung per E-Mail anfragen» überfahren und gedrückt), unverändert gegenüber `45451ea`. Kleinste Werte «kontrast»: «144» `#294CDC` auf `#D8E0FF` 5,07:1 in Ruhe, E-Mail-Link im Fokus 6,04:1. Derselbe Lauf auf `45451ea`: 2 Messwerte unter 4,5:1, beide «Zur Startseite» (überfahren und gedrückt, 4,40:1), sonst identisch. Die bauende Sitzung zählt 168 Elemente; die Differenz von 4 liegt an der Auswahl der Kandidaten (hier auch `summary` und `[role=button]`), nicht an den Werten. Für den Tastaturfokus nennt die bauende Sitzung «weiss auf `#3C64FF` 4,71:1»; gemessen bleibt der Text im Fokus `#222222` auf `#F5F7FF`, der Wert 4,71:1 beschreibt den zweifarbigen Fokusring selbst. Beides erfüllt die Schwelle.
+
+Wie in der Nachprüfung 2 bleibt Weiss auf `#3C64FF` (4,71:1) der kleinste Wert; er stammt von den Startaktionen der Startseite und ist unverändert gegenüber `main`.
+
+### Punkt 3 · NP2-3: Selbsttest ohne freigegebene Textfassung
+
+**Status: behoben, bestätigt.** `contract.js:702–711`: Der Fall «Produktion blockiert ausstehende Textfassung im Visualisierungsplan» steht in der Hilfsfunktion `textApprovalRow`; findet sie keine Planzeile mit `format: text` und `approvalStatus: freigegeben`, liefert sie eine Zeile mit `ok: false` und der Meldung «keine freigegebene Textfassung im Visualisierungsplan – Fall nicht prüfbar». Der neue Fall setzt in einer Kopie alle Textfassungen auf «entfällt», ruft die Hilfsfunktion in `try/catch` und erwartet den Anfang dieser Meldung.
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Selbsttest am Stand | **84/84**, beide Fälle PASS | siehe Kennzahlen; Planzeilen mit `format: text`: 117 «freigegeben», 1 «entfällt» |
+| Simulation A: alle 118 Textfassungen auf «entfällt» (Wegwerfkopie von `authoring/`) | **`FAIL \| Produktion blockiert ausstehende Textfassung im Visualisierungsplan \| erwartet: visual-approval \| erhalten: keine freigegebene Textfassung im Visualisierungsplan – Fall nicht prüfbar`**, «Selbsttest: 83/84 bestanden», **Exit 1**, kein Laufzeitfehler | `selftest.mjs` setzt `process.exitCode = 1`, sobald eine Zeile `ok: false` hat. Auf `45451ea` endete derselbe Lauf mit `TypeError` (Nachprüfung 2, Stufe 4). |
+| Simulation B: `v-vs-eisberg` auf «ausstehend» | `--production`: **`BLOCK \| verstehen \| visual-approval \| Textfassung v-vs-eisberg nicht freigegeben (ausstehend)`**, «Build blockiert: 1 Befund(e)», Exit 1; Entwurf: WARN, 21 Hinweise | Gate-Regel B1a weiterhin wirksam |
+| Code-Review | korrekt | Die Hilfsfunktion arbeitet auf einer tiefen Kopie und verändert `cfg` nicht; der zweite Fall ist von ihr unabhängig formuliert (`got.startsWith(...)`) und würde auch einen künftigen Laufzeitfehler als FAIL ausweisen («Laufzeitfehler: …»). Ohne Textfassung bleibt der Selbsttest rot, bis wieder eine freigegebene Textfassung existiert; das ist die sichere Seite und entspricht der Absicht. |
+
+### Punkt 4 · H1: Wortlaut «Auf sich achten»
+
+**Status: umgesetzt, bestätigt.** Vorgabe laut Übergabe und Nachweis: «Sie dürfen auch zuerst für sich sorgen.» statt «Sie dürfen zuerst oder ausschliesslich für sich sorgen.», nur dieser Satz.
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Wortdiff `content/selbstfuersorge.html` | **genau zwei Wortänderungen:** `{+auch+}` und `[-oder ausschliesslich-]`; sonst kein Zeichen geändert | `git diff --word-diff 27aac33 2089968`; die Figur `v-sf-entlastung` samt `puk-sr`-Text ist im Diff nicht berührt |
+| Build `dist/site/selbstfuersorge.html` | «… Das Bild steht dafür, die eigene Sicherheit und Gesundheit ernst zu nehmen. Sie dürfen auch zuerst für sich sorgen.» genau einmal | `grep`; auf `45451ea` steht an derselben Stelle der alte Satz |
+| Alter Wortlaut «zuerst oder ausschliesslich» | **0 Fundstellen** in allen 23 Seiten | `grep -rl` über `dist/site` |
+| Suchindex `suche.html` | Eintrag `selbstfuersorge.html#unterstuetzung` enthält den neuen Satz | `data-search-text` |
+| «ausschliesslich» im übrigen Build | nur `diagnose` («beobachtbares Verhalten ausschliesslich mit der Diagnose erklären») und `impressum-datenschutz` («… sind ausschliesslich deren Betreiber verantwortlich»), je einmal, dazu die Spiegelungen im Suchindex; beide in anderem Sinn, wie von der bauenden Sitzung gemeldet | `grep -o` mit Kontext über `dist/site` |
+| `site.config.json` | unverändert | `git diff --stat 27aac33 2089968 -- authoring/site.config.json` leer |
+
+### W3 Code-Review (Diff `27aac33..2089968`)
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| `site.css` `.bl-caremap--linked` | gültig | `::before` mit `top` und `bottom` statt `height` ist für absolut positionierte Pseudo-Elemente definiert (gemessen: Höhe 64 px bei einzeiliger Beschriftung, `bottom: 0px`). `::after` mit `bottom:-5px` und 12 × 12 px: Mitte der Spitze = Linienmitte (gemessen 0 px). Der Container-Block (`1593–1601`) setzt beide weiterhin auf `content:none`; er ist im Diff nicht berührt. Druck und erzwungene Farben: nicht berührt (keine Regel in diesen Blöcken geändert). |
+| `site.css:1785` neue Hover-Regel | gültig, **H2** | `:not()` mit zusammengesetztem Selektor (`.puk-site-start-actions .puk-link--action`) ist Selectors Level 4; Chromium ab 88, Firefox ab 84, Safari ab 9 werten die Regel aus. Ältere Browser verwerfen genau diese eine Regel und zeigen den Hover-Zustand wie vor der Nachbesserung (`#3C64FF`, 4,40:1), also keinen Rückschritt gegenüber `45451ea`. Nur in Chromium geprüft. |
+| `contract.js` | korrekt | siehe Punkt 3. Die Verschiebung des Falls in eine Funktion ändert die Reihenfolge der Zeilen im Selbsttest nicht (Fall 5 und neu 6). |
+| Inhalt `selbstfuersorge.html` | nur der genannte Satz | siehe Punkt 4 |
+| `style`-Attribute, Inline-Skripte, externe Ressourcen | keine | Diff: 0 hinzugefügte Zeilen mit `style=`, `<script`, `url(`, `@import` oder `http`; JS-/Konsolenfehler unter CSP in allen Läufen 0 |
+| Übergabe, Nachweis | konsistent | Die Angaben in Übergabe, Nachweis und PR-Beschreibung (13,3 px, 5,95:1, 84/84, 168 Elemente) stimmen mit dieser Messung überein oder sind durch die eigene Zählung erklärt (Elementzahl siehe Punkt 2). |
+
+### Befunde
+
+**Neu: keine.** Blockierend 0, wichtig 0, gering 0.
+
+**Hinweis H2, kein Befund:** Die neue Hover-Regel verlässt sich auf `:not()` mit zusammengesetztem Selektor. In den heute verbreiteten Browsern wirkt sie; wo nicht, bleibt der frühere Zustand (4,40:1 beim Überfahren) ohne weitere Folge. Eine Alternative ohne `:not()` wäre, die Startaktionen in einer eigenen Regel danach zurückzusetzen. Keine Änderung nötig.
+
+**Alte Befunde:** W2, W3, W4 und V4 bleiben offen und gering (wie angekündigt nicht bearbeitet); N2 ist begründete Ausnahme (B2c). NP2-1, NP2-2, NP2-3 behoben; H1 umgesetzt.
+
+### Status
+
+| Punkt | Status |
+| --- | --- |
+| NP2-1 Linie `v-ki-alltag` | behoben, bestätigt (521 Breiten, Pixelprüfung, Gegenprobe) |
+| NP2-2 Kontrast 404 und getönte Flächen | behoben, bestätigt (alle Zustände, beide Themes, Gegenprobe) |
+| NP2-3 Selbsttest ohne Textfassung | behoben, bestätigt (Simulation A und B) |
+| H1 Wortlaut | umgesetzt, bestätigt (Wortdiff, Build, Suchindex) |
+| Screenreader | offen (nicht verfügbar) |
+
+Diese Nachprüfung setzt keine Stufe der Statustabelle auf «erledigt» und ersetzt keine Fachfreigabe.
+
+**Empfehlung: weiter zu `site/` und Merge.** Der Stand `2089968` setzt die vier Punkte der Nachbesserung 3 vollständig um, zeigt im Umfeld keine Verschlechterung und bringt keinen neuen Befund. Nächste Schritte laut PR: `site/` neu schreiben (`--production --out=site --write-site`, `--verify-site`) und Merge auf `main`, beides auf ausdrücklichen Auftrag. Diese Sitzung mergt nicht und schreibt `site/` nicht neu.
+
+## Nachprüfung 2 PR #708 · 22.10.2026 (Stand 45451ea)
+
+**Nachprüfsitzung 2 (Claude Code), 22.10.2026.** Grundlage ist der Nachprüfauftrag «PR #708 unabhängig nachprüfen (Stand 45451ea)» zu [PR #708](https://github.com/christaegger-dot/borderline-angehoerige/pull/708). Diese Sitzung hat an dem PR weder gebaut noch geprüft: Sie ist keine der Sitzungen der Commits 1–15 und hat vor diesem Auftrag keine Datei des Branches gesehen. Sie hat nichts entschieden und keine fachliche Aussage beurteilt. Die Freigaben und Entscheide von Christa Egger gelten als gesetzt; geprüft ist nur, ob der Build genau den freigegebenen Wortlaut zeigt. Geändert ist nur dieser Abschnitt. Die Statustabelle oben und die Abschnitte «Nachprüfung PR #708 · 21.10.2026» und «Prüfung PR #708 · 21.10.2026» bleiben unverändert.
+
+**Geprüfter Stand:**
+- Branch `gestaltung/2026-10-21`, Kopf `45451ea` (Commit 15); erster Schritt des Auftrags erfüllt: `git log -1 45451ea` und `origin/gestaltung/2026-10-21` zeigen denselben Commit.
+- Vergleich mit `d2dc969` (Stand der ersten Nachprüfung) und `main` = `dccc8a3` (r4-39), je aus einem eigenen Arbeitsbaum gleich gebaut.
+- Nur der lokale Build (`dist/site`, Produktionsgate). `dist/site` und `dist/site-draft` sind auf diesem Stand in allen 23 HTML-Dateien bytegleich. Die Netlify-Vorschau wurde nicht verwendet.
+- `authoring/PRUEFBERICHT.md` ist seit `366e4d1` unverändert (`git diff --stat 366e4d1 45451ea -- authoring/PRUEFBERICHT.md`: leer).
+
+**Gelesen:** `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`, `UEBERGABE-GESTALTUNG-2026-10-21.md` (alle Abschnitte vom 22.10.2026), die drei Nachweise `audit-results/2026-10-22-v-vs-eisberg/FREIGABE.md`, `audit-results/2026-10-22-gestaltungsentscheide/ENTSCHEID.md` und `audit-results/2026-10-22-abbildungen/FREIGABE.md`, die beiden Prüfabschnitte vom 21.10.2026, PR-Beschreibung und alle sechs PR-Kommentare, `git diff d2dc969 45451ea` für `content/`, `css/`, `tools/` und `site.config.json` (für `site.config.json` als Feldvergleich je Planzeile).
+
+**Werkzeuge:** Node.js 22.22.0; Playwright 1.56.1 mit Chromium 141.0.7390.37 (Build 1194, headless, Linux), nicht die CI-Version 1.64.0; Python 3.13.16 mit Pillow 12.3.0; poppler 24.02.0 (`pdftoppm`, `pdfinfo`, `pdftotext -bbox`); git 2.43.0.
+
+**Bedingungen** wie bei den beiden Prüfungen vom 21.10.2026: lokaler Server mit den Kopfzeilen aus `_headers` (aktive CSP), Fensterhöhe 900 px; Seitenzoom 200 % als 640 px mit Pixeldichte 2, 400 % als 320 px mit Pixeldichte 4; Schrift 200 % als `--blink-settings=defaultFontSize=32`; erzwungene Farben als Emulation `forcedColors: active`, helles und dunkles Schema, **neuer Browserkontext je Seite** (in einem gemeinsamen Kontext verlor Chromium die Emulation nach der ersten Seite; dieser Lauf ist verworfen); Druck A4 mit Rand 15 mm, je mit und ohne Hintergrundgrafik, aus frischen Kontexten, gerastert mit 200 dpi; Strichfarbe = Median der dunkelsten 3 % je Wortbox. Alle Skripte sind neu geschrieben, nicht von früheren Sitzungen übernommen. Skripte, Fotos und Messdaten liegen ausserhalb des Repositorys.
+
+**Nicht verfügbar:** kein Screenreader (NVDA, JAWS, VoiceOver, Orca), kein echter Windows-Kontrastmodus, kein Firefox, kein WebKit.
+
+**Schwere** wie am 21.10.2026: «blockierend» heisst, dass der PR ein Kriterium von WCAG 2.2 AA neu verletzt; «wichtig» ist vor einer Freigabe zu beheben; «gering» betrifft Konsistenz oder Optionales.
+
+### Ergebnis in Kürze
+
+- **Empfehlung: weiter zu `site/` und Merge.**
+- **Nachbesserung 2 ist vollständig umgesetzt:** N1, N3, B1a, B2c, C1–C8 und C10 sind mit eigener Messung bestätigt (Stufe 1).
+- **Alle Freigaben und Entscheide stehen genau so im Build:** beide Beispielsätze, die fünf Abbildungen samt Screenreader-Fassungen, der Umbau von `genesung` › `#begriffe` ohne Dublette und ohne Verlust, der Linkkontrast auf den getönten Flächen über alle 23 Seiten, ein Fokusrahmen an den Einstiegskarten, die Verbindungslinien bei `v-ki-alltag` (Stufe 2).
+- **Regression über 23 Seiten ohne Verschlechterung gegenüber `main`:** 598 Läufe ohne waagrechtes Scrollen, 5036 Fokusstellen ohne Verdeckung, 684 Sprünge mit sichtbarem Ziel, kein Textelement unter 4,5:1, erzwungene Farben und Druck wie beabsichtigt (Stufe 3).
+- **Blockierend: 0. Wichtig: 0. Neu, gering: 3** (NP2-1 Verbindungslinie unter einer umgebrochenen Beschriftung bei 958–984 px; NP2-2 Hover-Zustand von «Zur Startseite» auf der 404-Seite 4,40:1; NP2-3 Selbsttest bricht ohne freigegebene Textfassung mit einem Laufzeitfehler ab statt mit einem Befund). Dazu ein Hinweis an die Fachstelle ohne Befund (H1).
+- **Alte Befunde:** I1 jetzt vollständig behoben. Offen und gering bleiben W2, W3, W4 (jetzt auch `.bl-parallel-aspects`) und V4; N2 steht als begründete Ausnahme.
+- **Kennzahlen der bauenden Sitzung nachgerechnet: stimmen** (83/83, 0 BLOCK / 20 WARN, Entwurf 0 / 20, 216/216, 73/73, Layouttest 1 Abweichung).
+- Screenreader bleibt offen, wie bei beiden Prüfungen vom 21.10.2026.
+
+### Kennzahlen nachgerechnet
+
+| Kennzahl | bauende Sitzung (PR-Beschreibung) | nachgerechnet | Beleg |
+| --- | --- | --- | --- |
+| Selbsttest | 83/83 | **83/83** | `node authoring/tools/build.mjs --selftest`, Exit 0, «Selbsttest: 83/83 bestanden»; darunter der neue Fall «Produktion blockiert ausstehende Textfassung im Visualisierungsplan» |
+| Produktionsgate | 0 Blocker / 20 Hinweise | **0 BLOCK / 20 WARN** | `--production --out=dist/site`, Exit 0, «23 Seiten · 0 Blocker · 20 Hinweise»; alle 20 Hinweise sind `crisis-number-check` wie auf `main` |
+| Entwurfsgate | 0 / 20 | **0 / 20** | `--out=dist/site-draft`, Exit 0 |
+| `--verify-site` | Exit 1, erwartet | **Exit 1**, «Quell-/Export-Abgleich fehlgeschlagen (24 Unterschiede)» | 23 HTML-Seiten und `css/site.css`, weil `site/` wie beauftragt nicht neu geschrieben ist |
+| Suchtest | 216/216 | **216/216**, JS-Fehler 0 | `node authoring/tools/suchtest.mjs dist/site` |
+| Sprach-/UI-Test | 73/73 | **73/73**, JS-Fehler 0 | `node authoring/tools/sprachtest.mjs dist/site` |
+| Layouttest | 1 Abweichung | **1 Abweichung**, Exit 1: `tension core exceeds 1800px` | Unveränderte Kopie von `layouttest.cjs` (`cmp` gleich mit `main`) mit `site.config.json` in einem Ordner ausserhalb des Repositorys, `site/` dort = Kopie von `dist/site`. «230 Seitenzustände, 25 Bedienproben». Gemessen: Figur 1974 px bei 375 px (bauende Sitzung nach Commit 14: 1942 px; die Kernaussage ist seither um «vorerst» länger). Ende der vierten Phasenkarte: 1540 px, also innerhalb der 1800 px von A04-2014 (B2c). |
+
+### Stufe 1 · Nachbesserung 2 (Commit 8–10): Sind die Befunde der ersten Nachprüfung behoben?
+
+**Status: erledigt.** Jeder Punkt mit eigener Messung am Stand `45451ea`; Gegenprobe gegen den Build von `d2dc969`.
+
+| Punkt | Befund (Kurzform) | Status | Beleg |
+| --- | --- | --- | --- |
+| **N1** (wichtig) | Waagrechtes Scrollen in «Auf dieser Seite» bei Schrift 200 % | **behoben** | `site.css:1700` ohne `white-space:nowrap`. Schrift 32 px, 23 Seiten, Breiten 760 bis 840 px in 8-px-Schritten und 1280 px (276 Ladevorgänge): `scrollWidth` = Fensterbreite überall. Dazu die 322 Läufe der Stufe 3. Auf `d2dc969` war `beziehungen` bei 760–832 px betroffen. |
+| **N3** (wichtig) | Einstieg und Absenderzeile bleiben bei erzwungenen Farben hell | **behoben** | `site.css:1811` `border-image:none`. Emulation dunkel, 23 Seiten, 1280 und 360 px: `.puk-longform__hero` und `.puk-site-sender` je `background-color: rgb(0, 0, 0)`, `border-image-source: none`; Canvas schwarz. Gegenprobe `d2dc969`, gleicher Lauf: `rgb(245, 247, 255)` und `rgb(244, 244, 244)` mit `conic-gradient` auf allen 23 Seiten. Hell: beide weiss. Foto `index` 1280 px dunkel: schwarzer Einstieg, weisse Schrift, gelber Linkton. |
+| **B1a** (I1) | Gate erkennt eine ausstehende Textfassung nicht | **behoben** | `contract.js:377–378`: `format === 'text'` und `approvalStatus` weder «freigegeben» noch «entfällt» → `prod()` = BLOCK in Produktion, WARN im Entwurf. Simulation in einer Wegwerfkopie: `v-vs-eisberg` auf «ausstehend» → `--production` «BLOCK \| verstehen \| visual-approval \| Textfassung v-vs-eisberg nicht freigegeben (ausstehend)», Build abgebrochen; auf «entfällt» → 0 Blocker; `v-ge-aspekte` auf «ausstehend» → BLOCK `genesung`. Heute haben 117 der 118 Planzeilen mit `format: text` den Status «freigegeben», eine (`404`) «entfällt». Selbsttest-Fall vorhanden (83/83). Folge: NP2-3. |
+| **B2c** (N2) | Kurvenhöhe bei 375 px über 1800 px | **begründete Ausnahme, dokumentiert** | Übergabe, Abschnitt «Nachbesserung 2», Teil B. Gemessen bei 375 px: Figur 1974 px, vierte Phasenkarte endet bei 1540 px, «Mehr zu den vier Phasen» beginnt bei 1560 px. Das Kriterium A04-2014 (vier Phasen in höchstens 1800 px) ist erfüllt; der Layouttest misst die ganze Figur und bleibt rot. |
+| **C1** (N4a) | Druck: obere Linie des Bands | **behoben** | Druckmedium `index`: `.bl-band` `border-top 2px rgb(60, 100, 255)`, alle vier Seiten 2 px. PDF Start S. 3 mit und ohne Hintergrund: Band ringsum blau gerahmt (Foto). |
+| **C2** (N4b) | Druck: Ring um die Nummer «2» | **behoben** | Druckmedium `verstehen`: Nummer der Phasenkarte 2 `border-color rgb(60, 100, 255)`, Hintergrund weiss, Ziffer blau; Nummern 1, 3, 4 gleich. PDF Verstehen S. 5: alle vier Nummern mit blauem Ring (Foto). |
+| **C3** (N5) | Druck ohne Hintergrund: Aktionslinks der Startseite hellgrau | **behoben** | PDF Start ohne Hintergrund: «Mit meiner Frage beginnen» (S. 1) und «Beratung per E-Mail anfragen» (S. 4) je `#222222` auf Weiss, **15,91:1**, mit blauem 1-px-Rahmen; mit Hintergrund `#222222` auf `#F5F7FF` 14,87:1 bzw. auf Weiss. `d2dc969`: `#ABABAB`, 2,30:1. Hinweis zur Messung: Direkt nach `emulateMedia('print')` liefert `getComputedStyle` für 0,12 s einen Zwischenwert (`rgb(112, 112, 112)`), weil die Farbe mit `transition` wechselt; massgebend ist das PDF. |
+| **C4** (B7) | Druck: Einstiegskarten über zwei Seiten | **behoben** | Druckmedium: `.bl-paths-cards li` `break-inside: avoid`. PDF Start S. 1 und 2, mit und ohne Hintergrund: Jede Karte steht ganz auf einer Seite; Start weiterhin 4 Seiten, Verstehen 14. |
+| **C5** (B6) | Erzwungene Farben: Rahmen und Hervorhebung | **behoben** | Emulation hell und dunkel, 1280 und 360 px, 23 Seiten: Kontaktkarte `.puk-site-safety--responsibility` 1 px auf allen vier Seiten (23/23 Seiten); Figurflächen `.puk-vis-figure:not(.puk-vis-figure--open)` 1 px (alle 8 Seiten mit Figuren); Band 1 px auf allen vier Seiten, oben eingeschlossen; Phasenkarte 2 **3 px**, Karten 1, 3, 4 1 px. Fotos `index` (Band, Kontaktkarte), `verstehen` (Kurve), `kinder` (Figur mit weissen Linien und Pfeilspitzen). |
+| **C6** (V2) | Lücke zwischen den Container-Abfragen | **behoben** | `site.css:1795` `@container (width > 62rem)`. Container `.puk-vis-wide` auf `grenzen` gesetzt: 991,9 und 992,0 px eine Spalte; 992,08, 992,15, 992,19, 993 und 1000 px vier Spalten. Keine Breite mit fünf Spalten mehr. Fenster 1100 und 1280 px: 4 × 221 bzw. 4 × 244 px wie vorher; 990 px: eine Spalte. |
+| **C7** (V3) | Phasenkarten bei Schrift 200 % vierspaltig | **behoben** | `site.css:1726` `@media (min-width:68.75em)`. Normalschrift: 4 Spalten bei 1100 und 1280 px, 2 bei 990, 920 und 760 px, 1 bei 360 px. Schrift 32 px bei 1280 und 1440 px: **2 Spalten**; Wortbrüche in Figuren bei 1280 px mit Schrift 32 px: 0 (`d2dc969`: «Argumentier / en»). |
+| **C8** (V1) | Richtigstellung zu DEAR | **dokumentiert** | Übergabe Teil C nennt «ab etwa 1080 px Fensterbreite». Gemessen: 1100 px vierspaltig, 990 px einspaltig; massgebend ist die Containerbreite über 62 rem. Das historische Review bleibt unverändert, wie in der Übergabe gesagt. |
+| **C10** (I3) | Quellenseite nennt «Verstehen» bei «Notfall und Rettung» | **behoben** | `git diff d2dc969 45451ea -- authoring/content/quellen.html`: genau eine Zeichenfolge entfernt, «, «Borderline verstehen»» in «Verwendet auf» bei «Kanton Zürich … Notfall und Rettung». Sonst nichts geändert. |
+| nicht bearbeitet | W2, W3, W4, V4 | **offen, gering** | wie angekündigt; siehe Stufe 4 |
+
+### Stufe 2 · Freigaben und Entscheide von Christa Egger (Commit 11–15)
+
+**Status: erledigt.** Geprüft ist nur, ob der Build den freigegebenen Wortlaut zeigt. Vergleich: Nachweis-Dokumente → `authoring/content/` → `dist/site/` → Suchindex in `dist/site/suche.html`.
+
+**2a · Beispielsätze F1, F2 (`verstehen` › `#eisberg`)**
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Satz «Gedanken lesen» | **wörtlich** | `p.puk-say__item`: «Du willst mich doch nur provozieren.» = Nachweis `2026-10-22-v-vs-eisberg/FREIGABE.md` |
+| Satz «Beobachten und nachfragen» | **wörtlich** | `p.puk-say__item--hilfreich`: «Ich höre, dass du lauter wirst. Magst du mir sagen, was gerade in dir vorgeht?» = Nachweis. Der abgelehnte Satz «Deine Stimme wird lauter. Wie ist es gerade für dich?» kommt in keiner der 23 Seiten vor (`grep` über `dist/site`). |
+| Etikett «Musterentwurf» | **entfernt** | `p.bl-say-title` enthält nur «So könnte es klingen»; «Musterentwurf» steht in keiner Seite und nicht im Suchindex. |
+| Unverändert | erfüllt | Bezeichnungen «Gedanken lesen», «Beobachten und nachfragen», Kasten «Was Sie tun können» mit «Wie ist es gerade für dich?», Quellenzeile Bateman und Fonagy (2013): keine Änderung im Diff. |
+| Planzeile `v-vs-eisberg` | erfüllt | `approvalStatus: freigegeben`, `approvedBy: Christa Egger`, `approvedAt: 2026-10-22`, `approvalRef` auf den Nachweis, `approvalScope` «Fassung 176444c»; `reason` nennt beide Sätze, die Ablehnung und die Wahl. Die Sätze sind seit `176444c` unverändert. |
+| Suchindex | erfüllt | `suche.html`, Eintrag `verstehen.html#eisberg`: beide Sätze, kein Etikett. |
+
+**2b · Gestaltungsentscheide F3, F4, W6**
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| F3 Rubik Medium | keine Änderung, wie entschieden | `site.css`: `font-weight` 500 für `h1`/`h2` unverändert im Diff. |
+| F4 Auflage: Linkkontrast auf getönten Flächen, **alle 23 Seiten** | **erfüllt im Ruhezustand** | Kontrastmessung aller sichtbaren Textläufe bei 1280 px: **4236 Textläufe, 0 unter 4,5:1** (Grosstext 3:1). Die drei korrigierten Links: Absender-E-Mail `#2B4FE0` auf `#F4F4F4` **5,79:1** (23 Seiten); «Das Wichtigste kurz und klar lesen» auf `#F5F7FF` **5,95:1**; «Beratung» im Kasten «Was Sie tun können» auf `#F0F3FF` **5,75:1**. Beim Überfahren je `#222222` (14,47 / 14,87 / 14,37:1). Fusszeilenlinks weiterhin 5,95:1, Kontaktlink 6,37:1. Theme «kontrast» (`data-theme="kontrast"`), gleicher Lauf: 0 unter 4,5:1; E-Mail 11,53:1, Einstieg 11,85:1, «Beratung» 11,46:1. `site.css:1781–1782`. Gegenprobe `main`: E-Mail und Einstiegslink dort `#3C64FF` auf Weiss, 4,71:1. **Hover-Zustände:** alle `.puk-link--action` auf 23 Seiten überfahren; eine Stelle unter 4,5:1, siehe NP2-2. |
+| W6 ein Fokusrahmen | **erfüllt** | `site.css:1674` `@supports selector(:has(*))`. Tastaturfokus auf einer Einstiegskarte bei 1280, 924 und 360 px: `li` Umriss 3 px `#3C64FF`, Versatz 2 px; Link `box-shadow: none`, `outline: none`; `:focus-visible` wahr (Foto 1280 px: ein Rahmen um die ganze Karte). Mausklick auf die Karte: Link fokussiert, `:focus-visible` falsch, kein Umriss, kein Ring. Rückfall ohne `:has()` (die `@supports`-Regel per CSSOM entfernt): `li` Umriss 3 px und Ring am Link, Fokus sichtbar. Erzwungene Farben: Umriss 3 px in Systemfarbe am `li`, Link `outline 2px` ohne Ring. |
+
+**2c · Fünf Abbildungen aus r4-39 (Commit 14 und 15)**
+
+| Abbildung | Freigegebener Wortlaut (Nachweis) | Build | Screenreader-Fassung |
+| --- | --- | --- | --- |
+| 1 `v-vs-anspannung` (`verstehen`) | Kernaussage «Bei hoher Anspannung können Worte schwerer ankommen. Sie dürfen eine Pause machen oder das Gespräch vorerst beenden.»; Phase 3 «Für mich ist es gerade zu viel. Ich mache eine Pause.» | **wörtlich** (`p.puk-vis-kern`; Beispiel in der Vertiefung «Mehr zu den vier Phasen», Phase 3). `main`: «… das Gespräch beenden.» und «Ich merke, es ist gerade zu viel.». Sonst keine Änderung im Diff der Figur. | unverändert und weiterhin zutreffend (beschreibt Kurve und vier Stellen, nicht die Beispiele). |
+| 2 `v-ki-alltag` (`kinder`) | Fachpersonen «Je nach Situation unterstützen Kinderarztpraxis, Schulsozialarbeit, schulpsychologischer Dienst, Familienberatung oder Kinder- und Jugendpsychiatrie.»; «Schule» bleibt bei «Vertraute Erwachsene»; bei 1280 px sichtbare Verbindungen zur Kinderbox; Handy-Fassung mit ↓ und ↑ unverändert | **wörtlich**. «Schule» steht im Kasten «Vertraute Erwachsene» («Betreuung, Abholen, Essen, Schule, Übernachtung …») und im übrigen Seitentext, nicht mehr bei den Fachpersonen. Verbindungslinien: siehe 2e. | unverändert («Fachpersonen beraten, klären ab und behandeln»); nennt keine einzelnen Stellen, bleibt zutreffend. |
+| 3 `v-ju-uebergang` (`jugendliche`) | freigegeben wie gezeigt; Abbildungsnummer ergänzen | **wörtlich**: Beschriftung «Abbildung 1 · Zwei Fragen zum Übergang ins Erwachsenenalter»; einzige Figur der Seite; sonst keine Änderung im Diff. Plan-Eintrag mit eigenen Angaben zu `statement`, `source` (Art. 14 ZGB, Art. 296 Abs. 2 ZGB), `reason`, `resonance`; `approvalScope` nennt Fassung `176444c` und die Nummer als nicht inhaltliche Änderung. | unverändert. |
+| 4 `v-sf-entlastung` (`selbstfuersorge`) | Kernaussage «Sie dürfen für sich sorgen: begrenzen, abgeben oder sich beraten lassen.»; erste Frage «Was brauche ich für mich?»; Screenreader-Fassung anpassen; Abbildungsnummer ergänzen | **wörtlich**: Kernaussage, `h3` «Was brauche ich für mich?», Beschriftung «Abbildung 2 · Entlastung nach Ihrer eigenen Situation» (Abbildung 1 ist `v-sf-abend`). Die alten Fassungen «zuerst oder ausschliesslich» (in der Figur) und «Was bleibt bei mir?» kommen in Figur und Suchindex nicht mehr vor. Plan-Eintrag mit eigenen Angaben. Siehe Hinweis H1. | **angepasst**: `p.puk-sr` «… Was brauche ich für mich? Was kann jemand anderes übernehmen? Wo brauche ich Beratung? …». |
+| 5 `v-ge-aspekte` (`genesung`) | als Text belassen; drei kurze Unterabschnitte in dieser Reihenfolge; nichts doppelt, nichts verloren | **erfüllt**: siehe 2d. Plan-Eintrag `format: text`, `approvalStatus: freigegeben`, `reason` und `approvalScope` nennen den Entscheid. | entfällt (keine Figur mehr); der Text ist regulärer Fliesstext. |
+
+Alle fünf Planzeilen tragen `approvedBy`, `approvedAt: 2026-10-22` und `approvalRef` auf `audit-results/2026-10-22-abbildungen/FREIGABE.md`; die Nummerierung der Abbildungen ist auf allen Seiten lückenlos (14 Beschriftungen, je Seite ab 1).
+
+**2d · `genesung` › `#begriffe`: nichts doppelt, nichts verloren**
+
+| Element der entfernten Figur (`main`) | Verbleib im Build |
+| --- | --- |
+| Drei Erläuterungen «Symptomatische Remission», «Alltag und Teilhabe», «Persönliche Recovery» (je `h3` + `p`) | **wörtlich** als `h3.puk-site-subheading` + `p` in `.puk-longform__copy`, in dieser Reihenfolge. Der Wortdiff zeigt nur Tag-Änderungen (`<article>` entfernt, Klasse am `h3` ergänzt), kein Wort geändert. |
+| Kernaussage «Diese Aspekte verändern sich nicht unbedingt gleichzeitig.» | entfällt; der Einleitungsabsatz endet unverändert mit «Diese verändern sich nicht unbedingt gleichzeitig.» Der Satz steht damit **einmal**. Christa hat diese Lösung am 22.10.2026, 12:17 Uhr, ausdrücklich zur Kenntnis genommen («ohne doppelten Satz»). |
+| Beschriftung «Drei Aspekte von Genesung», Screenreader-Satz «Drei gleichwertige Aspekte stehen nebeneinander …», Quellenzeile «Eigene didaktische Darstellung» | entfallen; sie beschrieben die Figur, nicht den Inhalt. Keiner dieser Sätze kommt im Build vor. |
+| Folgeabsatz «Für Angehörige heisst das …» und Vertiefung «Zum Begriff «Heilung»» | unverändert, folgen direkt. |
+
+Suchindex: Eintrag `genesung.html#begriffe` enthält «Symptomatische Remission»; die Figurtexte fehlen. Foto 1280 px: Einleitung, drei Zwischentitel mit Text, Folgeabsatz, Akkordeon.
+
+**2e · Verbindungslinien bei `v-ki-alltag` (breite Darstellung)**
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Linienführung | **wie verlangt** | 1280 px (Container 1024 px): Die Kästen «Vertraute Erwachsene» und «Fachpersonen» sind gleich hoch (367,2 px, `align-items:stretch`), die Kinderbox darunter in der Mitte (`align-self:start`). Vom Kasten links führt eine Linie 20 px innerhalb der Kastenkante senkrecht hinunter (Oberkante der Linie = Unterkante des Kastens, 536,4 px) und waagrecht bis genau an die linke Kante der Kinderbox (473,3 px); die Pfeilspitze (12 × 12 px, gedreht) endet 1 px vor der Kante bei 472,3 px, Linie bei y ≈ 600 px innerhalb der Kinderbox (548–814 px). Rechts spiegelbildlich (Pfeilspitze bei 819,7 px, Kinderbox ab 806,7 px). Gleich bei 1100 und 990 px. Foto 1280 px: zwei blaue Winkel mit Pfeilspitzen an der Kinderbox, Beschriftungen «Alltag und Sicherheit» und «Unterstützung je nach Situation» über den Linien. |
+| Schmale Fassung | **unverändert** | Container ≤ 880 px (Fenster 920, 760, 360 px): eine Spalte, Linien `content: none`, Pfeilzeichen «↓» und «↑» `inline-block`; Fotos 360 px wie auf `main`. Schrift 32 px bei 1280 und 1440 px: eine Spalte mit Pfeilzeichen. |
+| Zugänglichkeit | erfüllt | Linien und Pfeilspitzen sind `::before`/`::after` mit `content:""`; der Pfeil-`span` ist `aria-hidden` und bei breiter Darstellung `display:none`. Der sichtbare Text der Beschriftungen ist unverändert. Erzwungene Farben: Linien und Pfeilspitzen in Systemfarbe (Foto dunkel). Druck: A4 bleibt unter 880 px Containerbreite, also die gestapelte Fassung mit Pfeilzeichen (PDF Kinder S. 4). |
+| Umbruch der Beschriftung | **NP2-1** | siehe unten |
+
+### Stufe 3 · Regression über alle 23 Seiten
+
+**Status: erledigt** (automatisiert, Chromium 141). **Screenreader offen.**
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Überlauf und Überlappung | **keine Verschlechterung** | 23 Seiten × 14 Bedingungen = 322 Läufe, alle Vertiefungen und Akkordeons geöffnet: Breiten 1280, 924, 920, 768, 760, 360, 320 px; Zoom 200 % und 400 %; Schrift 32 px bei 1280, 924, 768, 360, 320 px. Derselbe Lauf auf `main`. Waagrechtes Scrollen: **0** (`main` 0). Elemente über den rechten Rand: 0. Innere Bildlaufleisten: 0. JS- und Konsolenfehler unter CSP: 0. Textüberlappung nur `kommunizieren`, Tabellenkopf «Stufe» über «Stufe 1» (39 × 15 px), identisch auf `main`. Wortbrüche in Figuren, Tabellen und Pfaden: 0 bei 1280–360 px und Zoom 200 %; 1 bei 320 px und Zoom 400 % («Erwachsenenaufgaben», SPZ-40, wie `main`); Schrift 32 px: 0 bei 1280, 924 und 768 px, 52/110 bei 360/320 px (`main` 59/134). Textblöcke unter 140 px: nur «Behandlungsteam» 115 px auf `behandlung` (Inline-Element, identisch auf `main`); «Die Bedeutung bleibt offen» (82–119 px auf `main`) gibt es nicht mehr. Dazu N1-Reihe: 276 Ladevorgänge mit Schrift 32 px bei 760–840 und 1280 px ohne Überlauf. |
+| Tastatur, sichtbarer Fokus, nicht verdeckt (2.4.7, 2.4.11) | **erfüllt** | 23 Seiten bei 1280, 924 und 360 px, Tab bis zum Ende und Umschalt+Tab zurück: 916 / 801 / 801 Fokusstellen je Richtung, zusammen **5036**. Je Stelle 9 Punkte je Zeilenbox mit `elementFromPoint`: **0 ganz und 0 teilweise verdeckt**. Alle 5036 mit Indikator (Ring, Umriss oder Kartenrahmen). Kein sichtbares Element mit `position: fixed` oder `sticky` bei irgendeiner Stelle. |
+| Sprungziele | **erfüllt** | 114 Links in «Auf dieser Seite», je Klick und Enter, drei Breiten: **684 Sprünge**, Zieloberkante ≥ −0,3 px, `elementFromPoint` trifft das Ziel in 684/684. Fokus 654-mal auf dem Ziel, 30-mal auf der `summary` der Vertiefung (`rolle`, `kommunizieren`, `selbstfuersorge`, wie vorgesehen). `krise#selbstverletzung` bei 1280 px: −0,2 px, sichtbar; `buecher` `#partner` bis `#englisch` 0 bis 0,4 px, `#kritisch` 94,9 px. |
+| Absender-E-Mail, Fokusring (B4) | **erfüllt** | 23 Seiten × 1280, 924, 360, 320 px: Pixel 3 px ausserhalb jeder Kante oben, unten, links, rechts = `#3C64FF` in **92/92** Fällen (Pillow-Messung an Bildschirmfotos). Kein Vorfahre mit `clip-path`. |
+| 200 % Text | erfüllt | Zoom 200 % und 400 %, Schrift 32 px bei fünf Breiten: kein Überlauf, keine innere Bildlaufleiste (siehe oben). |
+| Erzwungene Farben | **erfüllt** | 23 Seiten × hell und dunkel × 1280 und 360 px = 92 Kontexte. Einstieg und Absender folgen dem Canvas (N3); Rahmen an Einstiegskarten, «Was Sie tun können», Merkmalen, Merksatz, Band (vier Seiten), Phasenkarten (Karte 2 mit 3 px), Kontaktkarte und Figurflächen (C5); Fokusrahmen der Einstiegskarte 3 px Systemfarbe. |
+| Druck | **erfüllt** | Start und Verstehen je mit und ohne Hintergrund (4 und 14 Seiten), dazu Kinder, Genesung, Selbstfürsorge: alle Flächen innerhalb der Seite (`maxRight` = 1280 im Druckmedium), `border-image: none` für Einstieg, Band und Absender, «Auf dieser Seite» `position: static`. B5 bleibt behoben (Band, Merksatz, Phasenkarte 2 `#222222`); C1–C4 siehe Stufe 1. Merksatz S. 11 mit blauem Rahmen (Foto). |
+| Reduzierte Bewegung | unverändert | Der Diff `d2dc969..45451ea` enthält kein `transition` und keine `animation`. |
+| Screenreader | **offen** | kein Screenreader verfügbar |
+
+### Stufe 4 · W3 Code-Review (Diff `d2dc969..45451ea`)
+
+**Status: erledigt.** Gelesen: `site.css` (+38/−5), `contract.js` (+5), `genesung.html`, `jugendliche.html`, `kinder.html`, `quellen.html`, `selbstfuersorge.html`, `verstehen.html`, `site.config.json` (Feldvergleich); Simulationen in Playwright und in Wegwerfkopien.
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| `contract.js`, neue Gate-Regel | korrekt, Folge NP2-3 | Zeile 378: `v.format === 'text' && !['freigegeben', 'entfällt'].includes(v.approvalStatus)` → `prod()`. Eine Planzeile ohne `approvalStatus` würde als «(undefined)» blockiert; das ist die sichere Seite. Der neue Selbsttest-Fall sucht die erste Planzeile mit `format: text` und `approvalStatus: freigegeben` und setzt sie auf «ausstehend»; gibt es keine, ist `v` `undefined` und der Selbsttest bricht mit `TypeError` ab (Simulation: alle 118 Textfassungen auf «entfällt»: `Cannot set properties of undefined`). |
+| `site.css`: Verbindungslinien `.bl-caremap--linked` | gültig, mit NP2-1 | 12 neue Regeln plus 4 im Container-Block. `--bl-link-y: 3.25rem` legt die Höhe der Beschriftungszeile fest; die Beschriftung ist nicht gegen Umbruch gesichert (NP2-1). `min-height` der Beschriftung `calc(3.25rem + var(--space-3))` = 64 px. Die Pseudo-Elemente haben `content:""` und `position:absolute` innerhalb `position:relative`; sie vergrössern den Scrollbereich nicht (Stufe 3: 0 Überlauf). Der Container-Block setzt beide auf `content:none` und stellt `border-bottom`, `padding`, `text-align` und das Pfeilzeichen wieder her. |
+| `site.css`: `@supports selector(:has(*))` (W6) | gültig | Innerhalb: `li:focus-within{outline:none}`, `li:has(a:focus-visible){outline:…}`, `a:focus-visible{box-shadow:none}`. Ohne `:has()`-Unterstützung gilt die ganze Gruppe nicht, der Doppelrahmen aus `li:focus-within` und dem Ring bleibt (simuliert, Stufe 2b). Die alte wirkungslose Regel `a:focus-visible{outline:none}` (P708-W6) ist entfernt. |
+| `site.css`: `@container (width > 62rem)` | gültig | Bereichssyntax in Container-Abfragen ist seit Chromium 105 und Safari 16 unterstützt; geprüft nur in Chromium (C6). |
+| `site.css`: `@media (min-width:68.75em)` | gültig | `em` in Media-Abfragen bezieht sich auf die Browser-Grundschrift: 1100 px bei 16 px, 2200 px bei 32 px (C7). |
+| `site.css`: Links auf getönten Flächen | gültig | `.puk-site-sender a,.puk-longform__hero a.puk-link--inline,.bl-tun a{color:var(--puk-blue-125)}` (0,1,1 bzw. 0,2,1 bzw. 0,1,1) mit `:hover`-Gegenstück. Die Regel erfasst nicht `.puk-link--action` im Einstieg (NP2-2). |
+| `site.css`: Druck- und Kontrastblock | gültig | Spezifitäten geprüft: `.puk-longform__section+.bl-band` (0,2,0) in beiden Blöcken schlägt jetzt die Bildschirmregel `1686` gleicher Spezifität, weil sie später steht (C1, C5). `.puk-vis-figure:not(.puk-vis-figure--open)` (0,3,0) schlägt `1722` (`border:0`, 0,2,0). Aktionslinks im Druck: `border-color` wirkt, weil `.puk-link--action` einen 1-px-Rahmen hat (`497`). |
+| Inhalt: `genesung.html` | sauber | `h3.puk-site-subheading` ist eine bestehende Klasse (16 Inhaltsdateien, `site.css:1096`). Überschriftenfolge `h2` → `h3` × 3 → `h3` (Akkordeon) bleibt gültig. |
+| Inhalt: `kinder.html`, `selbstfuersorge.html`, `verstehen.html`, `jugendliche.html` | nur die freigegebenen Wörter | Wortdiff: ausschliesslich die in Stufe 2 genannten Stellen. |
+| `site.config.json` | konsistent | 6 Planzeilen geändert, keine andere Einstellung. `v-ge-aspekte`: `format: text`, `statement`/`source`/`alternative` «–», `understood` und `resonance` entfernt wie bei den anderen Textfassungen; das Entwurfsgate meldet keinen Hinweis dazu. |
+| Verwaiste Regeln | W4 erweitert | `.bl-parallel-aspects` steht in 5 Zeilen von `site.css` (`1608–1621`) und in keiner Inhaltsdatei mehr; dazu weiterhin `bl-observe` (13 Fundstellen) und `bl-knowledge-boundary` (3). In der Übergabe angekündigt. |
+| `style`-Attribute, Inline-Skripte, externe Ressourcen | keine | Diff: 0 hinzugefügte Zeilen mit `style=`, `<script`, `url(`, `@import` oder `http`. Build: 0 Seiten mit `style=` oder `<style>`, Skripte nur `js/interaktion.js?v=r4-40`. JS- und Konsolenfehler unter CSP: 0 in 598 Läufen. |
+
+### Neue Befunde
+
+| Nr. | Befund | Beleg | Schwere |
+| --- | --- | --- | --- |
+| **NP2-1** | **`v-ki-alltag`: Zwischen 958 und 984 px Fensterbreite bricht die Beschriftung «Unterstützung je nach Situation» in zwei Zeilen um, und die zweite Zeile «nach Situation» liegt auf der waagrechten Verbindungslinie.** Die Linie sitzt fest bei 52 px unter der Oberkante der Beschriftung (`--bl-link-y`), die zweite Textzeile endet 3,3 px darunter. Lesbar bleibt der Text, die Linie schneidet ihn aber. Bei 1280 px (Fachfreigabe) und ab 986 px ist die Beschriftung einzeilig; ab 957 px abwärts gilt die gestapelte Fassung. | Fenstersweep 940–1010 px in 2-px-Schritten: betroffen 958–984 px (Container 881,4–905,3 px), Abstand Linie zu Textunterkante −3,3 px; links «Alltag und Sicherheit» einzeilig, Abstand 20 px. Foto 970 px. Mögliche Lösung: Beschriftung ohne Umbruch halten oder die Linie an der Textunterkante ausrichten; Entscheid Fachstelle/Gestaltung. | gering |
+| **NP2-2** | **404-Seite: «Zur Startseite» beim Überfahren `#3C64FF` auf `#F5F7FF`, 4,40:1** (21 px, Schnitt 500). Die Regel `.puk-link--action:hover{color:var(--text-link)}` (`site.css:498`) ist alt; neu ist die getönte Einstiegsfläche, auf der der Link liegt (`main`: Fläche transparent auf Weiss, 4,71:1). Das berührt 1.4.3 im Hover-Zustand und die Auflage zu F4 («kein kleiner Text in `#3C64FF` auf getönten Flächen»). Im Ruhezustand 14,87:1; der Zustand ist flüchtig und betrifft nur die 404-Seite, deshalb nicht blockierend. Die beiden Aktionslinks der Startseite sind nicht betroffen (überfahren 6,37:1 und 4,71:1 auf Blau). | Alle `.puk-link--action` auf 23 Seiten in Ruhe und überfahren gemessen; nur diese Stelle unter 4,5:1. Abhilfe mit einer Zeile, z. B. `.puk-longform__hero .puk-link--action:hover{color:var(--puk-blue-125)}` (5,95:1); oder bewusst belassen. | gering |
+| **NP2-3** | **Der neue Selbsttest-Fall bricht ohne freigegebene Textfassung mit einem Laufzeitfehler ab.** Heute gibt es 117 solche Planzeilen, der Fall läuft. Fehlt einmal jede, meldet der Selbsttest keinen Befund «nicht erkannt», sondern `TypeError`. | `contract.js:702–704`; Simulation siehe Stufe 4. Abhilfe: `if (v)`-Schutz oder einen Fall mit synthetischer Planzeile. | gering |
+
+**Hinweis an die Fachstelle, kein Befund (H1):** Im Fliesstext von `selbstfuersorge` › `#unterstuetzung`, direkt über Abbildung 2, steht unverändert «Sie dürfen zuerst oder ausschliesslich für sich sorgen.» Christa hat «ausschliesslich» nur aus der Kernaussage der Figur gestrichen und «Sonst nichts ändern» verlangt; die Umsetzung entspricht dem Auftrag. Einer ihrer beiden Gründe (die Seite lesen auch Eltern minderjähriger Kinder) gilt aber ebenso für diesen Satz. Ob er angepasst wird, entscheidet die Fachstelle; eine Änderung wäre eine neue Textänderung mit eigener Freigabe.
+
+### Status der alten Befunde (Stand nach Nachbesserung 2 und Entscheiden)
+
+| | behoben | begründete Ausnahme / entschieden | offen, gering |
+| --- | --- | --- | --- |
+| Prüfung 21.10. (20 Befunde) | B1, B2, B3, B4, B5, B6, B7, I1, I2, I3, V1 (Dokumentation), V2, V3, W1, W5, W6 | – | W2, W3, W4, V4 |
+| Nachprüfung 21.10. (6 Befunde) | N1, N3, N4a, N4b, N5 | N2 (B2c) | – |
+| Prüfbedarf Fachstelle | F1, F2 (freigegeben), F3, F4 (entschieden; Nachtrag im Design-System ausserhalb dieses Repositorys offen) | | |
+
+### Status je Stufe
+
+| Stufe | Status |
+| --- | --- |
+| 1 · Nachbesserung 2 | erledigt: alle Punkte bestätigt |
+| 2 · Freigaben und Entscheide | erledigt: Wortlaut überall genau wie freigegeben |
+| 3 · Regression über 23 Seiten | erledigt (automatisiert); Screenreader offen |
+| 4 · W3 Code-Review | erledigt |
+
+**Gesamtzahl:** blockierend 0, wichtig 0, gering 3 neu (NP2-1, NP2-2, NP2-3) und 4 alt (W2, W3, W4, V4). Dazu Hinweis H1. Die Statustabelle oben bleibt unverändert; diese Nachprüfung setzt keine Stufe auf «erledigt» und ersetzt keine Fachfreigabe.
+
+**Empfehlung: weiter zu `site/` und Merge.** Der Stand `45451ea` zeigt die freigegebenen Wortlaute genau, die Befunde der ersten Nachprüfung sind behoben, und die Regression zeigt gegenüber `main` keine Verschlechterung. Die drei neuen geringen Befunde und H1 sind optional; wird einer davon noch vor dem Neuschreiben von `site/` behoben, ist das eine neue Änderung mit eigener Kurzprüfung. Offen bleibt der Screenreader-Teil wie bei den Prüfungen vom 21.10.2026. Diese Sitzung mergt nicht und schreibt `site/` nicht neu.
+
+## Nachprüfung PR #708 · 21.10.2026
+
+**Nachprüfsitzung (Claude Code), 21.10.2026.** Grundlage ist der Nachprüfauftrag zu [PR #708](https://github.com/christaegger-dot/borderline-angehoerige/pull/708). Diese Sitzung hat an dem PR weder gebaut noch geprüft: Sie ist weder die bauende Sitzung der Commits 1–3 noch die Prüf- und Bausitzung von Commit 4–6. Sie hat nichts entschieden und keine fachliche Aussage abschliessend beurteilt. Geändert ist nur dieser Abschnitt. Die Statustabelle oben und der Abschnitt «Prüfung PR #708 · 21.10.2026» bleiben unverändert.
+
+**Geprüfter Stand:**
+- Branch `gestaltung/2026-10-21`, Kopf `d2dc969`
+- Vergleich mit `3ae7916` (Stand der ersten Prüfung) und `main` = `dccc8a3` (r4-39), je aus einem eigenen Arbeitsbaum gleich gebaut
+- nur der lokale Build; die Netlify-Vorschau wurde nicht verwendet
+- `authoring/content/` ist seit `3ae7916` unverändert (`git diff --stat 3ae7916 d2dc969`: nur `PRUEFBERICHT.md`, `UEBERGABE-…`, `site.css`, `site.config.json`, `sprachtest.mjs`). Der Inhaltsabgleich der ersten Prüfung gilt deshalb weiter.
+
+**Gelesen:**
+- `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`
+- `UEBERGABE-GESTALTUNG-2026-10-21.md`, besonders «Nachbesserung nach Prüfung PR #708»
+- Abschnitt «Prüfung PR #708 · 21.10.2026» (Grundlage der Befunde, kein Beleg für den neuen Stand)
+- PR-Beschreibung mit «Weitere Prüfungen nach Commit 6» und Selbstprüfung, nur als Hinweis
+- `git diff 3ae7916 d2dc969`
+
+**Werkzeuge** (gleich wie bei der ersten Prüfung):
+- Node.js 22.22.0
+- Playwright 1.56.1 mit Chromium 141.0.7390.37 (Build 1194, headless, Linux), nicht die CI-Version 1.64.0
+- Python 3.13.16 mit Pillow 12.3.0
+- poppler 24.02.0 (`pdftoppm`, `pdfinfo`, `pdftotext -bbox`)
+- git 2.43.0
+
+**Bedingungen wie bei der ersten Prüfung:**
+- Ein lokaler Server liefert `dist/site-draft` mit den Kopfzeilen aus `_headers` aus, also mit aktiver CSP. Fensterhöhe 900 px.
+- Seitenzoom 200 %: 640 px mit Pixeldichte 2. Dazu 400 %: 320 px mit Pixeldichte 4.
+- Schrift 200 %: `--blink-settings=defaultFontSize=32`.
+- Erzwungene Farben: Emulation `forcedColors: active`, helles und dunkles Schema, neuer Kontext je Seite.
+- Druck: A4, Rand 15 mm, je mit und ohne Hintergrundgrafik, gerastert mit 200 dpi.
+- Skripte, Fotos und Messdaten liegen ausserhalb des Repositorys.
+- **Gegenprobe der Werkzeuge:** Mit denselben Skripten zeigt `3ae7916` die alten Befunde B1, B2, B4 und B5 wieder, zum Beispiel 25 verdeckte Fokusstellen auf 16 Seiten. Die Messungen erkennen die Befunde also.
+- **Korrigierter Messfehler:** Ein erster Drucklauf erzeugte das PDF von «Verstehen» im selben Tab nach einer Bildschirm-Emulation. Playwright druckt dann mit Bildschirmstilen. Dieser Lauf ist verworfen; alle Druckwerte unten stammen aus frischen Kontexten.
+
+**Nicht verfügbar:**
+- kein Screenreader (NVDA, JAWS, VoiceOver, Orca)
+- kein echter Windows-Kontrastmodus, nur die Emulation
+- kein Firefox, kein WebKit
+
+**Schwere** wie in der ersten Prüfung: «blockierend» heisst, dass der PR ein Kriterium von WCAG 2.2 AA neu verletzt. «Wichtig» ist vor einer Freigabe zu beheben. «Gering» betrifft Konsistenz oder Optionales.
+
+### Ergebnis in Kürze
+
+- **Empfehlung: Nachbesserung nötig.**
+- **Alle drei blockierenden Befunde sind behoben** (P708-B1 bis B3). Ebenfalls behoben: B4, B5, I2, W1 und W5.
+- **Alte Befunde noch offen:** 0 blockierend, 1 wichtig (I1, teilweise: dokumentiert, Gate unverändert), 11 gering.
+- **Neue Befunde:** 0 blockierend, 2 wichtig (N1, N3), 4 gering (N2, N4a, N4b, N5). N4c entfällt.
+- **Wichtig und neu:**
+  - NP708-N1: waagrechtes Scrollen auf `beziehungen` bei 760–832 px mit Schrift 200 %. Seit Commit 2.
+  - NP708-N3: Im dunklen Kontrastschema bleiben Einstieg und Absenderzeile auf allen Seiten hell. Neu durch Commit 5.
+- **Die Kennzahlen der bauenden Sitzung stimmen:** 82/82, 5 BLOCK / 20 WARN, 216/216, 73/73, Layouttest 2 Abweichungen.
+
+### Kennzahlen nachgerechnet
+
+| Kennzahl | bauende Sitzung | nachgerechnet | Beleg |
+| --- | --- | --- | --- |
+| Selbsttest | 82/82 | **82/82** | `node authoring/tools/build.mjs --selftest` und `node authoring/tools/selftest.mjs`, je Exit 0, «Selbsttest: 82/82 bestanden» |
+| Produktionsgate | 5 BLOCK / 20 WARN | **5 BLOCK / 20 WARN** | `--production --out=dist/site`, Exit 1, «Build blockiert: 5 Befund(e)», `dist/site` nicht geschrieben. Die BLOCK-Zeilen betreffen dieselben fünf Planzeilen wie in der ersten Prüfung (`v-vs-anspannung`, `v-ki-alltag`, `v-ju-uebergang`, `v-sf-entlastung`, `v-ge-aspekte`). |
+| Entwurfsgate | 0 / 25 | **0 / 25** | `--out=dist/site-draft`: «23 Seiten · 0 Blocker · 25 Hinweise» |
+| Suchtest | 216/216 | **216/216**, JS-Fehler 0 | `PLAYWRIGHT_MODULE=… node authoring/tools/suchtest.mjs dist/site-draft` |
+| Sprach-/UI-Test | 73/73 | **73/73**, JS-Fehler 0 | `node authoring/tools/sprachtest.mjs dist/site-draft`. Zusammensetzung: 4 Filter × 6, Suche 7, sechs Seiten × 4, «Verstehen» 2, Überlauf 3 Breiten × 5 Seiten, Fehlerprüfung 1. Auf `main` 75, weil dort 7 Seiten × 4 statt 6 × 4 + 2 geprüft werden. |
+| Layouttest | 2 Abweichungen | **2 Abweichungen**, Exit 1 | Unveränderte Kopie von `layouttest.cjs` (`cmp` gleich) mit `site.config.json` in einem Ordner ausserhalb des Repositorys; `site/` dort = Kopie von `dist/site-draft`. «230 Seitenzustände, 25 Bedienproben, 2 Abweichungen»: `beziehungen 768px text200=true: horizontal overflow` und `tension core exceeds 1800px`. Gleich auf `3ae7916` und `9b99a57` (Commit 2). `251df1a` (Commit 1): Kurve ebenfalls 1942 px, kein Überlauf auf `beziehungen`, dafür Überlauf auf `fragen` und `quellen` bei 1440 px mit Schrift 200 %; diesen hat Commit 2 behoben. `main`: 0 Abweichungen. |
+
+### Stufe 1 · Nachprüfung der Befunde
+
+**Status: erledigt.** Alle 20 Befunde der ersten Prüfung, mit eigener Messung am Stand `d2dc969`.
+
+| Nr. | Befund (Kurzform) | Status | Beleg | Schwere neu |
+| --- | --- | --- | --- | --- |
+| P708-B1 | Fokus bei 1280 px unter «Auf dieser Seite» (2.4.11) | **behoben** | 23 Seiten bei 1280, 924 und 360 px, Tab bis zum Ende und Umschalt+Tab zurück: 916 / 801 / 801 Fokusstellen je Richtung, zusammen 5036. Je Stelle 9 Punkte mit `elementFromPoint`: 0 ganz und 0 teilweise verdeckt. Alle 5036 Stellen haben einen Indikator: 5012-mal den Ring `0 0 0 2px #FFFFFF, 0 0 0 4px #3C64FF`, 24-mal einen Umriss von 2 px `#3C64FF` (Filterfelder). **Andere Verdeckung:** Bei keiner Fokusstelle gibt es ein sichtbares Element mit `position: fixed` oder `sticky`; das wurde je Stelle abgefragt. `site.css:1676–1683` enthält kein `position` mehr. Gegenprobe `3ae7916`, 1280 px rückwärts: 25 Stellen auf 16 Seiten ganz verdeckt. | – |
+| P708-B2 | Sprungziele bei 1280 px verdeckt | **behoben** | 114 Links in «Auf dieser Seite» auf 19 Seiten, je Klick und Enter, bei 1280, 924 und 360 px: 684 Sprünge. Jede Zielüberschrift liegt im Bild (Oberkante ≥ −0,5 px), `elementFromPoint` trifft die Überschrift. Der Fokus steht 654-mal auf dem Ziel und 30-mal auf der `summary` der Vertiefung, in der das Ziel steht (`rolle`, `kommunizieren`, `selbstfuersorge`; so in `interaktion.js` vorgesehen). 1280 px: `krise#selbstverletzung` Oberkante −0,2 px, sichtbar; `buecher` `#partner`, `#eltern`, `#kinderbuecher`, `#erfahrungsberichte`, `#vertiefen`, `#englisch` 0 bis 0,4 px; `#kritisch` 94,9 px. Auf `3ae7916` waren genau diese Ziele bei 1280 px verdeckt. **Wirkung der entfernten `scroll-margin-top:5rem`:** Zusätzlich wurden alle 211 übrigen Fragment-Links der Website bei 1280 und 924 px frisch geladen. Alle Ziele sind sichtbar. Bei 1280 px liegen 395 von 439 Zielen auf ±2 px gleich wie auf `main`. Die übrigen weichen ab, weil die Seite unten endet oder der Einstieg anders hoch ist; verdeckt ist keines. | – |
+| P708-B3 | Fusszeilenlinks 4,40:1 (1.4.3) | **behoben** | 23 Seiten, 1280 px, je in Ruhe und beim Überfahren, gemessen nach Ende des Farbübergangs. «Über diese Website», «Barrierefreiheit» und «Rückmeldung»: `#2B4FE0` auf `#F5F7FF` = **5,95:1** (15 px, Schnitt 300); überfahren `#222222`, 14,87:1. «Impressum» und «Datenschutz»: `#646464`, 5,53:1. Kontaktlink auf der weissen Karte: `#2B4FE0` 6,37:1. Theme «kontrast»: `#001F99` auf `#F5F7FF` 11,85:1, Kontaktlink 12,68:1, überfahren `#222222`; Impressum und Datenschutz `#4F4F4F` 7,66:1. `site.css:1760`. | – |
+| P708-B4 | `clip-path` schneidet Fokusring der Absender-E-Mail ab | **behoben** | `site.css:1627` nutzt `border-image`; kein `clip-path` mehr. In Einstieg und Absenderzeile gibt es 31 Fokusstellen (23 E-Mail-Links, 8 im Einstieg); das Band hat keine. Bei 1280, 924, 360 und 320 px: kein Vorfahre mit `clip-path` oder Überlauf-Beschnitt (124 Messungen). Pixel 3 px ausserhalb jeder Kante des E-Mail-Links: oben, unten, links und rechts je 100 % Ringfarbe `#3C64FF`, auf 23 Seiten und bei allen vier Breiten. `3ae7916`: oben und unten 0 % bei 1280 und 924 px, unten 0 % bei 360 und 320 px. **Volle Breite:** Pixel 1 px vom linken und vom rechten Fensterrand in jeder Fläche = Flächenfarbe (47 Flächen je Breite, vier Breiten). **Kein waagrechtes Scrollen:** `scrollWidth` = Fensterbreite auf 23 Seiten bei allen vier Breiten. | – |
+| P708-B5 | Weisser Text im Druck ohne Hintergrund kaum lesbar | **behoben** | PDF A4, Rand 15 mm: Start 4 Seiten, Verstehen 14 Seiten. Strichfarbe = Median der dunkelsten 3 % je Wortbox (`pdftotext -bbox`, 200 dpi). **Ohne Hintergrund:** Band (Start S. 3: «HALTUNG», «Mitgefühl», «Unterstützung»), Phasenkarte 2 (Verstehen S. 5: «eng.», «Argumentieren», «Druck.») und Merksatz (S. 11: «MERKSATZ», «ruhiger») je `#222222` auf Weiss, 15,91:1, mit blauem Rahmen (Foto). **Mit Hintergrund:** dieselben Wörter `#222222`; Phasenkarte 2 steht auf der Figurfläche `#F5F7FF`, 14,87:1. Gleich gemessen auf `3ae7916`: ohne Hintergrund `#ABABAB`, 2,30:1. Folgepunkte: N4a, N4b, N5. | – |
+| P708-B6 | Erzwungene Farben: Rahmen und Hervorhebung fehlen | offen | Emulation, 23 Seiten, hell und dunkel, 1280 und 360 px. Kontaktkarte (`.puk-site-safety--responsibility`) und Figurflächen haben keinen Rahmen. Das Band hat Rahmen rechts, unten und links, oben nicht (`site.css:1668` schlägt `1788`). Alle vier Phasenkarten haben denselben 1-px-Rahmen; Karte 2 ist nicht hervorgehoben, nur der Doppelring auf der Kurve markiert Stelle 2 (Foto `verstehen`, 1280 px). Unverändert seit `3ae7916`. Neu dazu: N3. | gering |
+| P708-B7 | Einstiegskarten brechen im Druck um | offen | PDF Start, mit und ohne Hintergrund: Die Karten der zweiten Reihe beginnen unten auf S. 1, der Text steht auf S. 2 (Foto). Im Druckmedium hat `.bl-paths-cards li` `break-inside: auto` (`site.css:1651`). | gering |
+| P708-I1 | Gate erkennt die ausstehende Satzfreigabe nicht | teilweise | **Dokumentiert:** Übergabe Punkt 1 («Das Gate erkennt die ausstehende Freigabe nicht; vor dem Neuschreiben von `site/` von Hand prüfen.»), `reason` der Planzeile `v-vs-eisberg` und PR-Beschreibung («Beobachtungen der bauenden Sitzung»). Nicht erwähnt in `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`. **Technisch unverändert:** `contract.js` ist seit `main` gleich; Zeile 376 nimmt `format: text` von `visual-approval` aus. Simulation in einer Wegwerfkopie von `d2dc969`, die fünf ausstehenden Planzeilen auf «freigegeben»: `--production` meldet «23 Seiten · 0 Blocker · 20 Hinweise». «Musterentwurf, nicht fachlich geprüft» steht je 1-mal in `dist/site/verstehen.html` und `suche.html`, beide Sätze stehen im Export. | wichtig. Ob das Gate geändert wird, entscheidet die Fachstelle. |
+| P708-I2 | Zweiter neuer Satz nicht dokumentiert | **behoben** | `reason` und Übergabe Punkt 1 nennen beide Sätze wörtlich wie `verstehen` › `#eisberg` (`p.puk-say__item`): «Du willst mich doch nur provozieren.» und «Deine Stimme wird lauter. Wie ist es gerade für dich?». Die drei Bezeichnungen «So könnte es klingen», «Gedanken lesen» und «Beobachten und nachfragen» nennt `reason` als Namen, Übergabe Punkt 1 nicht. `reason` sagt «aus Bestandssätzen zusammengesetzt»; die Du-Anrede der Beobachtung ist aber neu. Beides bleibt Teil von F2. | – |
+| P708-I3 | Quellenseite nennt «Verstehen» bei «Notfall und Rettung» | offen | `quellen` › `#versorgung`: «Notfall und Rettung … Verwendet auf: «Kurz und klar», «Borderline verstehen», …» unverändert. | gering |
+| P708-V1 | DEAR erst ab etwa 1080 px waagrecht | offen | `grenzen` › `v-gr-dear`: Fenster 1070 px, Container 984,41 px, eine Spalte; 1080 px, Container 993,63 px, 4 × 216,4 px. | gering |
+| P708-V2 | Lücke zwischen den Container-Abfragen | offen | Container auf 992,08 und 992,15 px gesetzt: 5 Spalten zu 169,6 px. Bei 992,00 eine Spalte, bei 992,19 vier. `site.css:1774/1779` unverändert. | gering |
+| P708-V3 | Phasenkarten bei Schrift 32 px vierspaltig | offen | 1280 px, Schrift 32 px: vier Spalten, in Karte 2 «Argumentier / en». `main`: 0 Wortbrüche. `site.css:1708` unverändert. | gering |
+| P708-V4 | Zwei Figuren auf 736 px begrenzt | offen | `v-be-kontakt` und `v-ge-forschung` 736 px bei 1280 und 920 px; zum Vergleich `v-ge-trieb` und `v-vs-anspannung` 1104 / 846 px. | gering |
+| P708-W1 | `sprachtest.mjs` erwartete den Akuthinweis | **behoben** | Test gelesen: `verstehen` ist aus der Liste der Seiten mit Akuthinweis genommen. Für die übrigen sechs Seiten gelten dieselben Erwartungen wie auf `main`: mindestens ein Hinweis, darin `tel:144` «144» und `tel:117` «117», keine Nummer in der Fusszeile. Neu für «Verstehen»: 0 `[data-responsibility-inline]`, 0 `tel:144` und `tel:117` auf der ganzen Seite, Link «Wenn Suizidgedanken ein Thema sind» auf `krise.html#suizid`. Das bildet den Entscheid vom 21.10.2026 wörtlich ab. 73/73 nachgerechnet (siehe Kennzahlen). Gegenprobe gegen den `main`-Build: Abbruch in Zeile 76 mit `actual: 3`, `expected: 0`. Der Test erkennt also einen Akuthinweis auf «Verstehen». | – |
+| P708-W2 | Hervorhebung von Phasenkarte 2 hängt an `:has()` | offen | `site.css:1713/1716/1717` unverändert. | gering |
+| P708-W3 | Pfeil im Rückfall eventuell mitgelesen | offen | `site.css:1748/1765` unverändert (`content:"→"` vor `content:"→" / ""`). | gering |
+| P708-W4 | Verwaiste CSS-Regeln | offen | In `site.css` stehen weiter `bl-observe` (5 Fundstellen), `bl-observe__item` (6), `__item--open`, `__key`, `__question` (je 1) und `bl-knowledge-boundary` (3); in `content/` werden sie nicht verwendet. | gering |
+| P708-W5 | Kommentar «ab 760 px» passte nicht zum Code | **behoben** | `site.css:1676`: «… als kompakte Zeile (nicht mitlaufend: Prüfbefund PR #708, WCAG 2.4.11)». Darauf folgt `@media (min-width:760px)` ohne `position`. Kommentar und Code stimmen überein. | – |
+| P708-W6 | `outline:none` an Einstiegskarten wirkungslos | offen | `site.css:1656` unverändert. Fokussierte Karte bei 1280 px: Ring am Link (`box-shadow`) und Umriss 3 px `#3C64FF` an der Karte (`li:focus-within`). | gering |
+
+### Stufe 2 · Neue Punkte
+
+**Status: erledigt.** N1–N4 sind Hinweise der bauenden Sitzung und hier selbst geprüft. N5 hat diese Nachprüfung gefunden.
+
+| Nr. | Befund | Beleg | Schwere |
+| --- | --- | --- | --- |
+| NP708-N1 | **Waagrechtes Scrollen in «Auf dieser Seite» bei grosser Schrift.** Der Link «Was Reaktionen verschärfen kann» bricht wegen `white-space:nowrap` nicht um. Neu gegenüber `main`, seit Commit 2. 1.4.10 ist nicht betroffen (bei 320 und 360 px mit Schrift 32 px kein Überlauf). Der projekteigene Layouttest ist dadurch rot. | `beziehungen`, Schrift 32 px. Breitenreihe von 760 bis 1280 px in 8-px-Schritten über alle 23 Seiten: Überlauf von 760 bis 832 px, `scrollWidth` 835 bis 838, nur auf dieser Seite und nur durch diesen Link. Bei Schrift 24 px kein Überlauf; `main` mit 32 px keiner. `site.css:1682`. | wichtig |
+| NP708-N2 | **Anspannungskurve bei 375 px höher als 1800 px.** | Layouttest-Kopie: 1942 px, `main` 1772 px, `251df1a` 1942 px. Die Grenze stammt aus A04-2014 (`audit-results/2026-10-18-a04-umsetzung/AUDIT-BEFUNDE.csv`): «Bei 375 px sind die vier Phasen und ihre grundlegenden Handlungsmöglichkeiten in höchstens 1800 px Figurhöhe ohne Aufklappen erfassbar.» Gemessen bis zum Ende der vierten Phasenkarte: 1508 px (`main` 1314 px). Die Mehrhöhe kommt aus den Kartenabständen: Kartenliste 924 statt 729 px. **Einordnung:** Die Absicht der Grenze ist erfüllt, die Messgrösse des Werkzeugs (ganze Figur samt Modellgrenze und Kennzeichnung) nicht. Ob die Grenze für die ganze Figur weiter gelten soll, ist zu entscheiden. Bis dahin bleibt der Layouttest rot. | gering |
+| NP708-N3 | **Erzwungene Farben: Einstieg und Absenderzeile bleiben hell, auch im dunklen Schema.** Der Browser ersetzt `border-image` bei erzwungenen Farben nicht. Die Regel `site.css:1787–1789` setzt es nur beim Band zurück, über die Kurzschreibweise `border`. Der Text bleibt dank der schwarzen Unterlegung des Browsers lesbar (Foto). Wer ein dunkles Kontrastschema wegen Blendempfindlichkeit wählt, bekommt aber oben auf jeder Seite eine helle Fläche; auf `index` ist der Einstieg bei 1280 px 550 px hoch. Neu durch Commit 5. | Emulation, dunkles Schema, 23 Seiten, 1280 und 360 px: Pixel am Rand und in der Mitte `#F5F7FF` (Einstieg) und `#F4F4F4` (Absenderzeile), Canvas `#000000`. Gegenprobe `3ae7916` und `main`: `#000000`. Helles Schema: `#F5F7FF` bzw. `#F4F4F4` statt `#FFFFFF`, unkritisch. Band: `border-image: none`, Fläche `#000000`. | wichtig |
+| NP708-N4a | **Druck: Beim Band fehlt die obere Rahmenlinie.** | Druckmedium, `index`: Band `border-top 0px none`, rechts, unten und links 2 px. `.puk-longform__section+.bl-band{border-top:0}` (Spezifität 0,2,0, `site.css:1668`) schlägt `.bl-band{border:2px solid …}` (0,1,0, `1792`). PDF Start S. 3, mit und ohne Hintergrund: Rahmen nach oben offen (Foto). | gering |
+| NP708-N4b | **Druck: Die Nummer «2» der Phasenkarte hat keinen sichtbaren Ring.** | Druckmedium: `border 2px solid #FFFFFF`, Hintergrund `#FFFFFF`, Ziffer `#3C64FF`; `site.css:1717` gilt im Druck weiter. PDF Verstehen S. 5: Nummern 1, 3 und 4 mit blauem Ring, «2» ohne; mit Hintergrund eine weisse Scheibe auf `#F5F7FF`. Die Karte selbst ist durch ihren blauen Rahmen hervorgehoben. | gering |
+| NP708-N4c | Die Druckregel für Phasenkarte 2 hängt an `:has()`. | **entfällt:** Ohne `:has()` greift auch die Bildschirmregel nicht (`site.css:1716`). Die Karte bleibt dann weiss mit dunklem Text; im Druck wird nichts unleserlich. Die Folge ist dieselbe wie bei P708-W2. | – |
+| NP708-N5 | **Druck ohne Hintergrund: Die beiden Aktionslinks der Startseite drucken hellgrau.** Gleicher Mechanismus wie P708-B5; die neue Druckregel erfasst sie nicht. Die erste Prüfung hat sie nicht genannt; sie bestehen auch auf `3ae7916`. | PDF Start ohne Hintergrund: «Mit meiner Frage beginnen» (S. 1; `site.css:1637`, weiss auf `#3C64FF`) und «Beratung per E-Mail anfragen» (S. 4; `1673`, weiss auf `#222222`) je `#ABABAB` auf Weiss, 2,30:1. `main`: `#222222` 15,91:1 bzw. `#2843AB` 8,46:1. Mit Hintergrund lesbar. | gering |
+
+### Stufe 3 · Regression über alle Seiten
+
+**Status: erledigt** (automatisiert, Chromium 141). Ausnahme: **Screenreader offen**, weil keiner verfügbar ist.
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Überlauf und Überlappung | 1 neue Abweichung (N1) | 23 Seiten × 14 Bedingungen = 322 Läufe, alle Vertiefungen geöffnet: <br>– Breiten 1280, 924, 920, 768, 760, 360, 320 px <br>– Zoom 200 % (640 px, Pixeldichte 2) und 400 % (320 px, Pixeldichte 4) <br>– Schrift 32 px bei 1280, 924, 768, 360, 320 px <br>Gemessen: `scrollWidth`, Elemente über den rechten Rand, innere Bildlaufleisten, Textüberlappung zwischen verschiedenen Blöcken (über 2 × 2 px), Wortbrüche und Textblöcke unter 140 px in Figuren, Tabellen und Pfaden. Derselbe Lauf auf `main`. <br>**Ergebnis:** <br>– Waagrechtes Scrollen nur `beziehungen` bei 768 px mit Schrift 32 px (N1). <br>– Innere Bildlaufleisten: 0. <br>– Überlappung nur `kommunizieren`, Tabelle: Spaltenkopf «Stufe» über «Stufe 1» (39 × 15 px, mit Schrift 32 px 79 × 30 px), identisch auf `main`. <br>– Wortbrüche: 0 bei 1280–360 px und Zoom 200 %. 1 bei 320 px und Zoom 400 % («Erwachsenenaufgabe / n.», SPZ-40, wie `main`). Mit Schrift 32 px: 1280 px 1 (V3), 924 und 768 px 0, 360/320 px 55/120 (`main` 59/134). <br>– Textblöcke unter 140 px: 0 (`main` 1–3). <br>– JS- und Konsolenfehler unter CSP: 0. <br>Gegenüber `main` verschlechtert sind nur N1 und V3. |
+| Tastatur | erfüllt | siehe P708-B1 (Fokus) und P708-B2 (Sprungziele) |
+| Erzwungene Farben | N3 neu, B6 offen | 23 Seiten × hell und dunkel × 1280 und 360 px (92 Kontexte). Einen 1-px-Rahmen haben: Einstiegskarten, «Was Sie tun können», Merkmale, Merksatz, Phasenkarten, «Das Wichtigste» und «Weitere Themen». Fotos von Einstieg, Absenderzeile, Band, Kontaktkarte und Kurve auf `index`, `kurz` und `verstehen`. |
+| Druck | B5 behoben; N4a, N4b, N5 und B7 | Start und Verstehen, je mit und ohne Hintergrund, alle Seiten angesehen. Im Druckmedium ist kein Element breiter als die Seite. `border-image` ist `none` für Einstieg, Band und Absender. «Auf dieser Seite» ist `position: static`. |
+| Figuren-Stichproben | tragen | 1280, 920 und 360 px, Fotos angesehen: <br>– **Kurve** (`verstehen`): 1 `path`, 0 `line`, `text` oder `rect`, keine Klasse mit «axis» oder «achse». Stelle 2 mit Doppelring auf der Kurve und blauer Karte (`#3C64FF`, Text weiss). Spalten 4 / 2 / 1, Figur 1104 / 846 / 320 px. <br>– **DEAR** (`grenzen`): 4 × 244 px bei 1280 px, senkrecht bei 920 und 360 px. <br>– **Tabelle «Sechs Stufen der Validierung»** (`kommunizieren`): `scrollWidth` = `clientWidth` (1102 / 844 / 318 px), keine Bildlaufleiste, kein Wortbruch. |
+| Reduzierte Bewegung | unverändert | Der Diff `3ae7916..d2dc969` enthält kein `transition` und keine `animation`. |
+| Screenreader | **offen** | kein Screenreader verfügbar |
+
+### Stufe 4 · W3 Code-Review (nur Diff `3ae7916..d2dc969`)
+
+**Status: erledigt.** Werkzeug: Lesen des Diffs; berechnete Werte und Simulationen in Playwright 1.56.1 mit Chromium 141.
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| `border-image`: Syntax | gültig | `conic-gradient(var(--bl-surface,transparent) 0 0) fill 0//0 100vmax` heisst: Ausschnitt `0 fill`, Breite weggelassen (1), Auswuchs `0 100vmax`. Chromium berechnet Ausschnitt «0 fill», Breite «1», Auswuchs «0 1280px» (Fenster 1280 × 900) bzw. «0 900px» (360 × 900), Wiederholung «stretch». Die drei Flächen haben keinen eigenen Rahmen (`border` 0 auf allen Seiten); `border-image` überdeckt also keine Linie. Im Theme «kontrast» folgt die Füllung (Band `#0028C2`). |
+| `border-image`: Browserunterstützung | nur Chromium real geprüft | Firefox und WebKit standen nicht zur Verfügung. `conic-gradient` und `border-image` mit `fill` und Auswuchs sind spezifiziert und in aktuellen Browsern verbreitet. Kennt ein Browser `conic-gradient` nicht, ist die ganze Deklaration ungültig; die Fläche bleibt dann nur containerbreit, ohne Folge für die Lesbarkeit. |
+| `border-image`: Scrollbereich | keine Wirkung | Der Auswuchs ist Tintenüberlauf. `scrollWidth` = Fensterbreite auf 23 Seiten bei vier Breiten und in allen 322 Läufen der Stufe 3 ausser N1, das eine andere Ursache hat. |
+| `border-image`: erzwungene Farben | Befund N3 | Der Browser ersetzt `border-image` nicht. Nur das Band verliert es, weil `border:1px solid CanvasText` (`site.css:1788`) als Kurzschreibweise `border-image` zurücksetzt. Einstieg und Absender stehen nicht in dieser Regel. |
+| `border-image`: Druck | erfüllt | `site.css:1791` `border-image:none`, gemessen `none` für alle drei Flächen. Beim Band setzt zusätzlich die Kurzschreibweise in `1792` zurück. |
+| Kurzschreibweisen | zwei Wirkungen | `border` in `1788` und `1792` setzt `border-image` zurück, beabsichtigt bzw. unschädlich. `border-top:0` aus `1668` (0,2,0) schlägt beide (0,1,0): P708-B6 und N4a. |
+| Druckblock: Spezifität | wirkt | `.bl-band :is(h2,p,.puk-longform__kicker)` (0,2,0) gleich stark wie die Bildschirmregel `.bl-band .puk-web-h2` (0,2,0), steht später, gewinnt. `.bl-merksatz :is(h3,p)` (0,1,1) gleich `.bl-merksatz h3` (0,1,1). Phasenkarte: derselbe Selektor wie am Bildschirm (0,3,1), später. Gemessen: alle Texte `#222222`, im Druckmedium und im PDF (P708-B5). |
+| Druckblock: `:has()` | unkritisch | N4c |
+| Druckblock: Vollständigkeit | drei Lücken | Nummernring (N4b, `1717`), obere Bandlinie (N4a), Aktionslinks der Startseite (N5) |
+| `sprachtest.mjs` | minimal, im Stil der Datei | 4 Zeilen: Seite aus der Liste genommen, Kommentar mit Entscheid und PR, zwei `check()` mit den vorhandenen Hilfen `open` und `locator`. `textContent()` verlangt genau einen Treffer (strikter Modus von Playwright). `main a[href="krise.html#suizid"]` trifft im Build genau 1 Element, auf der ganzen Seite ebenfalls 1. Kommt später ein zweiter gleicher Link in `main` dazu, bricht der Test mit einer Fehlermeldung ab, statt fälschlich zu bestehen. Kein Befund. |
+| `style`-Attribute, Inline-Skripte, externe Ressourcen | keine | Diff: 0 hinzugefügte Zeilen mit `style=`, `<script`, `url(`, `@import` oder `http`. Build: 0 Seiten mit `style=` oder `<style>`, 0 `<script>` ohne `src`; Skripte nur `js/interaktion.js?v=r4-40`. JS- und Konsolenfehler unter CSP: 0. |
+
+### Status je Stufe
+
+| Stufe | Status |
+| --- | --- |
+| 1 · Nachprüfung der Befunde | erledigt |
+| 2 · Neue Punkte | erledigt |
+| 3 · Regression über alle Seiten | erledigt (automatisiert); Screenreader offen |
+| 4 · W3 Code-Review | erledigt |
+
+**Gesamtzahl:**
+- Alte Befunde: 8 behoben (B1, B2, B3, B4, B5, I2, W1, W5), 1 teilweise (I1, wichtig), 11 offen und gering (B6, B7, I3, V1–V4, W2, W3, W4, W6).
+- Neue Befunde: 2 wichtig (N1, N3), 4 gering (N2, N4a, N4b, N5); N4c entfällt.
+- Blockierend: keiner.
+- Prüfbedarf Fachstelle F1–F4 unverändert offen.
+
+Die Statustabelle oben bleibt unverändert. Diese Nachprüfung setzt keine Stufe auf «erledigt» und ersetzt keine Fachfreigabe.
+
+**Empfehlung: Nachbesserung nötig.** Vor einer Freigabe sind N1 und N3 zu beheben. Für I1 entscheidet die Fachstelle, ob das Gate geändert wird oder die Satzfreigabe vor dem Neuschreiben von `site/` von Hand bestätigt wird. Zu N2 ist zu entscheiden, ob die 1800-px-Grenze für die ganze Figur gilt. Die geringen Befunde sind optional.
+
+## Prüfung PR #708 · 21.10.2026
+
+**Prüfsitzung (Claude Code), 21.10.2026.** Grundlage ist der Prüfauftrag zu [PR #708](https://github.com/christaegger-dot/borderline-angehoerige/pull/708) «Gestaltung 2026-10-21: Startseite und Verstehen (Entwurf)». Diese Sitzung hat den PR weder gebaut noch korrigiert. Sie hat nichts entschieden und keine fachliche Aussage abschliessend beurteilt. Geändert ist nur dieser Abschnitt; die Statustabelle oben bleibt unverändert.
+
+**Geprüfter Stand:**
+- Branch `gestaltung/2026-10-21`, Kopf `3ae7916`; Basis `main` = `dccc8a3` (r4-39)
+- geprüft wurde nur der lokale Build; die Netlify-Vorschau zeigt r4-39 und wurde nicht verwendet
+
+**Gelesen:**
+- `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`
+- `UEBERGABE-GESTALTUNG-2026-10-21.md`
+- `REVIEW-GESTALTUNG-2026-10-21.md` (nur als Hinweis)
+- `WORTLAUT-VORSCHLAEGE-FUSSZEILE-2026-10-21.md`
+- PR-Beschreibung und die drei Kommentare zu #708; Review-Threads gibt es keine
+
+**Werkzeuge:**
+- Node.js 22.22.0
+- Playwright 1.56.1 mit Chromium 141.0.7390.37 (Build 1194, headless, Linux), nicht die CI-Version 1.64.0
+- Python 3.13.16 (`html.parser`, Pillow 12.3.0)
+- poppler 24.02.0 (`pdftoppm`, `pdfinfo`, `pdftotext`)
+- git 2.43.0
+
+Ein lokaler Server lieferte `dist/site-draft` mit den Kopfzeilen aus `_headers` aus, also mit aktiver CSP. Zum Vergleich wurde `main` aus einem eigenen Arbeitsbaum gleich gebaut. Skripte, Fotos und Messdaten liegen ausserhalb des Repositorys.
+
+**Nicht verfügbar:**
+- kein Screenreader (NVDA, JAWS, VoiceOver, Orca)
+- kein echter Windows-Kontrastmodus, nur die Emulation `forced-colors: active`
+- kein Firefox, kein WebKit
+
+**Schwere:** «blockierend» heisst, dass dieser PR ein Kriterium von WCAG 2.2 AA neu verletzt. «Wichtig» ist vor einer Freigabe zu beheben. «Gering» betrifft Konsistenz oder Optionales.
+
+### Ergebnis in Kürze
+
+- **Empfehlung: Nachbesserung nötig.**
+- **20 Befunde:** 3 blockierend, 5 wichtig, 12 gering. Dazu kommen 4 Punkte «Prüfbedarf Fachstelle» (F1–F4).
+- **Blockierend:**
+  - P708-B1: Bei 1280 px verdeckt die mitlaufende Leiste «Auf dieser Seite» den Tastaturfokus (2.4.11).
+  - P708-B2: Bei 1280 px liegen Sprungziele unter derselben Leiste (2.4.11).
+  - P708-B3: Die Fusszeilenlinks erreichen auf `#F5F7FF` nur 4,40:1 (1.4.3).
+- **Die Kennzahlen der bauenden Sitzung stimmen:** 82/82, 216/216, 5 BLOCK / 20 WARN.
+
+### Kennzahlen nachgerechnet
+
+| Kennzahl | bauende Sitzung | nachgerechnet | Beleg |
+| --- | --- | --- | --- |
+| Selbsttest | 82/82 | **82/82** | `node authoring/tools/build.mjs --selftest`, Exit 0, «Selbsttest: 82/82 bestanden» |
+| Produktionsgate | 5 BLOCK / 20 WARN | **5 BLOCK / 20 WARN** | `--production --out=dist/site`, Exit 1, «Build blockiert: 5 Befund(e)». Die fünf BLOCK-Zeilen sind wörtlich die der PR-Beschreibung (`v-vs-anspannung`, `v-ki-alltag`, `v-ju-uebergang`, `v-sf-entlastung`, `v-ge-aspekte`). `main` `dccc8a3`: 6 BLOCK / 23 WARN. Die Differenz ist genau der BLOCK zu `v-vs-eisberg` und die drei WARN `verstehen` › `crisis-number-check`. |
+| Entwurfsgate | 0 Blocker / 25 Hinweise | **0 / 25** | `--out=dist/site-draft`: «23 Seiten · 0 Blocker · 25 Hinweise»; `main`: 29 Hinweise |
+| Suchtest | 216/216 | **216/216**, JS-Fehler 0 | `PLAYWRIGHT_MODULE=… node authoring/tools/suchtest.mjs dist/site-draft` |
+| Sprach-/UI-Test (nicht in der CI) | nicht genannt | **Abbruch** | `node authoring/tools/sprachtest.mjs dist/site-draft`: AssertionError in Zeile 67, Seite `verstehen` (P708-W1). `main`: «75 Prüfungen bestanden». Eine Kopie ohne `verstehen` in der Liste ergibt 71/71. |
+
+### Stufe 1 · Abgleich Inhalt (W1-Anteil, nur Veränderungen)
+
+**Status: erledigt.**
+- Werkzeug: Python `html.parser`. Verglichen wurden die Sätze in `<main>` der gebauten Seiten von `main` und PR, als Menge und in Reihenfolge, dazu der Text von Kopf und Fusszeile.
+- Weitere Werkzeuge: `git diff main…3ae7916`, `grep`.
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Startseite wörtlich erhalten | erfüllt | 55 von 55 Sätzen gleich, keine fehlt und keine kommt dazu. Verschoben ist nur der Block «Haltung». Abschnittsfolge PR: `#einstiege` → `#haltung` → `#orientierung` → `#beratung`; `main`: `#einstiege` → `#orientierung` → `#beratung` → `#haltung`. Drei Beispiele: «Mitgefühl und Selbstschutz gehören zusammen», «Sie sind nicht für die Genesung eines anderen Menschen verantwortlich.», «Beginnen Sie bei Ihrer aktuellen Frage. Die Seiten bauen nicht aufeinander auf.» |
+| «Verstehen» wörtlich erhalten ausser den bewussten Änderungen | erfüllt, mit P708-I2 | `main` hat 298 Sätze, der PR 267. 228 verschiedene Sätze kommen in beiden vor, 38 gibt es nur auf `main`, 8 nur im PR. Jede Abweichung gehört zu einer bewussten Änderung: <br>– «Was Sie tun können:» → «Was Sie tun können» (3-mal, ohne Doppelpunkt, als `div.bl-tun`) <br>– 28 Zeilen der Abbildung «Beobachten, nicht Gedanken lesen» entfernt, darunter «Eine Vermutung ist keine Tatsache.» <br>– 4 Sätze des Akuthinweises 144/117 entfernt <br>– Quelle «Kanton Zürich … Notfall und Rettung» entfernt <br>– «Abbildung 2/3» → «Abbildung 1/2» <br>– Quellenzeile Bateman und Fonagy (2013): «(Abbildung 1: Haltung …)» → «(Haltung des Nicht-Wissens, offen nachfragen)» <br>– neu: «So könnte es klingen», Etikett, «Gedanken lesen», ««Du willst mich doch nur provozieren.»», «Beobachten und nachfragen», ««Deine Stimme wird lauter. Wie ist es gerade für dich?»» <br>Alle übrigen Sätze sind unverändert, zum Beispiel «Lautwerden, Vorwürfe oder Rückzug sind beobachtbar.» und «Verstehen hilft, ruhiger und klarer zu handeln.» |
+| Kopf, Fusszeile und übrige Seiten | erfüllt | Kopf und Fusszeile sind auf allen 23 Seiten textgleich mit `main`. `<main>` ist auf 21 Seiten gleich. `suche`: 1 Satz mehr, nämlich der Suchindex-Text von `verstehen#eisberg` einschliesslich «Musterentwurf, nicht fachlich geprüft». |
+| Akuthinweis entfernt | wie entschieden | `<p data-responsibility-inline>` fehlt in `verstehen`. Entscheid Christa 21.10.2026 im [PR-Kommentar](https://github.com/christaegger-dot/borderline-angehoerige/pull/708#issuecomment-6324108309). Der Link «Wenn Suizidgedanken ein Thema sind» bleibt erhalten. |
+| Abbildungen neu nummeriert | erfüllt | «Abbildung 1 · Die Anspannungskurve: wann Reden hilft», «Abbildung 2 · Momentaufnahmen». Auf den übrigen 22 Seiten verweist nichts auf die alten Nummern (`grep 'Abbildung [0-9]'`). |
+| Planzeile `v-vs-eisberg` | erfüllt, mit P708-I2 | `format: text`; `statement`, `source` und `alternative` stehen auf «–». `reason` nennt den Ersatz durch Kasten und zwei Beispielsätze sowie den Bezug Bateman und Fonagy (2013) in der Quellenliste. `approvalStatus: ausstehend`. Ohne Begründung entfallen ist nur `approvalScope`. |
+| Neuer Satz gekennzeichnet | erfüllt | `<p class="bl-say-title">So könnte es klingen <span class="puk-site-draft">Musterentwurf, nicht fachlich geprüft</span></p>` steht direkt über beiden Beispielsätzen (`verstehen` › `#eisberg`). Inhalt: Prüfbedarf Fachstelle (F1). |
+
+| Nr. | Befund | Beleg | Schwere |
+| --- | --- | --- | --- |
+| P708-I1 | **Das Gate erkennt die ausstehende Freigabe des neuen Satzes nicht.** Planzeilen mit `format: text` sind von `visual-approval` ausgenommen. Ein `span.puk-site-draft` im Inhalt wird nicht geprüft. Sobald die übrigen fünf Abbildungen freigegeben sind, würde der Produktionsbuild Satz und Etikett ohne Sperre veröffentlichen. | `authoring/tools/contract.js:376`: `if (v.format !== 'text' && v.approvalStatus !== 'freigegeben')`. Simulation in einer Wegwerfkopie, nicht im Repository: Die fünf ausstehenden Planzeilen wurden auf «freigegeben» gesetzt. Ergebnis: `--production` meldet «23 Seiten · 0 Blocker · 20 Hinweise»; «Musterentwurf, nicht fachlich geprüft» steht in `dist/site/verstehen.html` (1×) und `suche.html` (1×). | wichtig |
+| P708-I2 | **Ein zweiter neuer Satz fehlt in der Liste der neuen Sätze.** Übergabe Punkt 1 und `reason` nennen nur «Du willst mich doch nur provozieren.». Neu ist auch «Deine Stimme wird lauter. Wie ist es gerade für dich?». Neu sind ausserdem die Bezeichnungen «So könnte es klingen», «Gedanken lesen» und «Beobachten und nachfragen». Das Etikett steht über beiden Sätzen, die Dokumentation nennt aber nur einen. | `main`: «Die Stimme wird lauter.» als Beobachtung und «Wie ist es gerade für dich?» als getrennte Frage, in der entfernten Abbildung. PR: beides in einem Satz, die Beobachtung in Du-Anrede (`p.puk-say__item--hilfreich`). | wichtig |
+| P708-I3 | **Die Quellenseite nennt «Verstehen» noch als Verwendungsort von «Notfall und Rettung».** | `authoring/content/quellen.html` › `#versorgung`: «Kanton Zürich (laufend, Abruf 18.10.2026). Notfall und Rettung … Verwendet auf: «Kurz und klar», «Borderline verstehen», …». Auf «Verstehen» stehen weder diese Quelle noch der Akuthinweis. | gering |
+
+**Prüfbedarf Fachstelle:**
+- **F1:** «Du willst mich doch nur provozieren.» (Beispiel «Gedanken lesen», `verstehen` › `#eisberg`)
+- **F2:** «Deine Stimme wird lauter. Wie ist es gerade für dich?». Die Beobachtung steht neu in Du-Anrede und ist mit der Frage verbunden. Dazu die drei neuen Bezeichnungen aus P708-I2.
+
+### Stufe 2 · Visualisierungs-Check
+
+**Status: erledigt.** Eine Fachfreigabe ist das nicht.
+- Werkzeug: Playwright 1.56.1 mit Chromium 141.
+- Fotos: alle 15 Figuren und die Tabelle «Sechs Stufen der Validierung» bei 1280, 920 und 360 px (48 Fotos), dazu mit Schrift 32 px bei 360 und 1280 px. Vergleichsfotos von `main`.
+- Messung in 13 Darstellungen × 23 Seiten (299 Läufe), alle Vertiefungen geöffnet:
+  - Breiten: 1280, 1100, 990, 924, 920, 760, 360, 320 px
+  - Seitenzoom 200 % (640 px)
+  - Schrift 32 px bei 1280, 924, 360 und 320 px
+- Gemessen wurden Wörter, die mitten im Wort umbrechen (je Wort die Zeilenlage), Textblöcke in Figuren und Tabellen unter 140 px Inhaltsbreite, Textüberlappung und Überlauf.
+
+| Seite | Figur | Breite 1280 / 920 / 360 | Kernaussage | Darstellung | Vertiefung | Ansatzpunkt | Ergebnis |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| verstehen | `v-vs-anspannung` | 1104 / 846 / 320 | «Bei hoher Anspannung können Worte schwerer ankommen. …» | Kurve und vier Phasenkarten (4 / 2×2 / 1 Spalte) | «Mehr zu den vier Phasen» | Stelle 2: Doppelring auf der Kurve und blaue Karte | trägt. Keine Achse: Das SVG hat 1 `path` und 0 `line`, `text` oder `rect`. |
+| verstehen | `v-vs-bewertungen` | 1104 / 846 / 320 | vorhanden | Album, zwei Fotos, zwei Sätze | «Was den Blick färben kann – und Grenzen des Bildes» | – | trägt. Freundin-Test bestanden: «Das waren zwei Momente, nicht unser ganzes Album.» Zeichnung unverändert wie auf `main`. |
+| grenzen | `v-gr-dear` | 1104 / 846 / 320 | vorhanden | 4 Schritte: waagrecht bei 1100 und 1280 px (Spalten 221 bzw. 244 px), senkrecht bei 1000 px und weniger | «Herkunft des Modells» | – | trägt, siehe P708-V1 und P708-V2 |
+| beziehungen | `v-bz-schleife` | 1104 / 846 / 320 | vorhanden | Kreislauf, schmal als Liste | keine eigene | «Ansatzpunkt für Angehörige · bei Station 5» | trägt |
+| beziehungen | `v-bz-sichten` | 1104 / 846 / 320 | vorhanden | zwei Sichten je Station | keine eigene | – | trägt |
+| genesung | `v-ge-forschung` | **736 / 736** / 320 | vorhanden | Vergleich zweier Verläufe | «Grenzen der Darstellung» | – | trägt, siehe P708-V4 |
+| genesung | `v-ge-aspekte` | 1104 / 846 / 320 | vorhanden | drei Aspekte | keine eigene | – | trägt |
+| genesung | `v-ge-trieb` | 1104 / 846 / 320 | vorhanden | Pflanze, zwei Sätze | «Grenzen des Bildes» | – | trägt |
+| behandlung | `v-be-kontakt` | **736 / 736** / 320 | vorhanden | zwei Informationswege | «Grenzen der Darstellung» | «Für Ihre eigene Belastung» | trägt, siehe P708-V4 |
+| jugendliche | `v-ju-uebergang` | 1104 / 846 / 320 | vorhanden | zwei Fragen | keine eigene | – | trägt |
+| kinder | `v-ki-alltag` | 1104 / 846 / 320 | vorhanden | drei Ebenen | keine eigene | – | trägt. Bei 320 px «Erwachsenenaufgabe / n.», gleich wie `main` (SPZ-40). |
+| kommunizieren | `v-ko-tassen` | 1104 / 846 / 320 | vorhanden | zwei Tassen | «Grenzen des Bildes» | – | trägt |
+| rolle | `v-ro-weg` | 1104 / 846 / 320 | vorhanden | Weg | «Grenzen des Bildes» | – | trägt |
+| selbstfuersorge | `v-sf-abend` | 1104 / 846 / 320 | vorhanden | Abendbild | «Grenzen des Bildes» | – | trägt |
+| selbstfuersorge | `v-sf-entlastung` | 1104 / 846 / 320 | vorhanden | drei Fragen | keine eigene | – | trägt |
+| kommunizieren | Tabelle «Sechs Stufen der Validierung» | 1104 / 846 / 320 | – | Tabelle, schmal gestapelt | – | – | trägt. Volle Breite, keine Bildlaufleiste (`scrollWidth` 1102 = `clientWidth`), kein Wortbruch |
+
+«Keine eigene» Vertiefung ist erlaubt: Nach `DARSTELLUNGSREGELN.md` «dürfen» Beispiele und Herkunft in eine Vertiefung.
+
+**Messwerte:**
+- Wortbruch in Figuren, Tabelle und Pfad: 0 bei 1280, 1100, 990, 924, 920, 760 und 360 px sowie bei Zoom 200 %.
+- Bei 320 px: 1 Wortbruch, gleich wie `main` (SPZ-40).
+- Bei Schrift 32 px und 1280 px: 1 neuer Wortbruch (P708-V3).
+- Bei Schrift 32 px und 360/320 px: 55/120 Wortbrüche, auf `main` 59/134. Das liegt ausserhalb des Prüfrahmens und ist keine Verschlechterung.
+- Textblöcke unter 140 px: im PR in keiner Darstellung. `main` hat bei 920–990 px die DEAR-Beispielsätze mit 122–134 px und `#eisberg` mit 82–119 px. Das ist eine Verbesserung.
+
+| Nr. | Befund | Beleg | Schwere |
+| --- | --- | --- | --- |
+| P708-V1 | DEAR wird nicht «ab etwa 990 px» waagrecht, wie Übergabe und Review sagen, sondern erst ab etwa 1080 px Fensterbreite. Massgebend ist der Container `.puk-vis-wide` ab 62rem = 992 px. Das Verhalten ist gut; die Angabe stimmt nicht. | Fenster 990 px: Container 910,8 px, senkrecht. 1000 px: 920 px, senkrecht. 1100 px: 1012 px, waagrecht mit 4 × 221 px. Bei Schrift 32 px bleibt der Pfad bis 1440 px senkrecht. | gering |
+| P708-V2 | Die Container-Abfragen überschneiden sich nicht, lassen aber eine Lücke. Zwischen 992,00 und 992,16 px Containerbreite greift keine der beiden Regeln. Dann gilt die Grundregel mit 5 Spalten für 4 Schritte. | `site.css:1778`/`1783`: `min-width:62.01rem` und `max-width:62rem`. Container auf 992,08 und 992,15 px gesetzt: `grid-template-columns` 5 × 169,6 px, waagrecht, ohne senkrechte Linie. Bei 992,00 senkrecht, ab 992,19 4 Spalten. | gering |
+| P708-V3 | Bei Schrift 32 px bleiben die Phasenkarten bei 1280 px vierspaltig. Grund ist die Abfrage in px. Dadurch bricht ein Wort mitten durch. Das widerspricht `DARSTELLUNGSREGELN.md`: «Spalten wechseln früher untereinander». | `site.css:1712` `@media (min-width:1100px)`. `verstehen` › `#anspannung` › Phasenkarte 2: Spalte 217 px, «Argumentier / en». `main`: 0 Wortbrüche in Figuren in dieser Darstellung. | gering |
+| P708-V4 | `v-be-kontakt` und `v-ge-forschung` sind jetzt auf die Lesebreite 46rem (736 px) begrenzt. Die übrigen Figuren sind 1104 px (1280) bzw. 846 px (920) breit. Auf `main` waren beide bei 920 px 846 px breit. | `site.css:1645` `.puk-longform__copy{max-width:var(--bl-measure)}`; beide Figuren liegen nicht in `.puk-vis-wide`. Höhe bei 920 px: 893 → 957 px bzw. 931 → 975 px. Review G nennt «Genesung › Abbildung 1» «vertretbar». | gering |
+
+### Stufe 3 · Bedienung und Barrierefreiheit (WCAG 2.2 AA)
+
+**Status: erledigt** (automatisiert, Chromium 141, Playwright 1.56.1). Ausnahme: **Screenreader offen**, weil in der Prüfumgebung keiner verfügbar ist. Reale Screenreader-Läufe sind nach AR3-3 nicht vorgesehen; eine Ersatzprüfung steht unten.
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Tastatur, sichtbarer Fokus | erfüllt, mit P708-B4 | 23 Seiten bei 1280, 924 und 360 px, jeweils mit Tab vorwärts bis zum Ende und mit Umschalt+Tab zurück. Das sind je Richtung 916, 801 und 801 Fokusstellen. Alle haben einen sichtbaren Indikator: Ring `0 0 0 2px #FFFFFF, 0 0 0 4px #3C64FF` oder Umriss. **Einstiegskarten:** Die ganze Karte hat einen Umriss von 3 px `#3C64FF` (`li:focus-within`), dazu kommt der Ring um den Linktext (Foto, siehe P708-W6). Zuerst kommt «Zum Hauptinhalt», zuletzt «Datenschutz». |
+| Fokus nicht verdeckt (2.4.11) | **nicht erfüllt bei 1280 px** (P708-B1) | 1280 px, Umschalt+Tab: 25 Fokusstellen auf 16 Seiten sind ganz unter «Auf dieser Seite» verdeckt. Vorwärts sind es 0, bei 924 und 360 px ebenfalls 0. `main`: 0 in allen sechs Läufen. |
+| Sprungziele über «Auf dieser Seite» | 924 px erfüllt, **1280 px nicht** (P708-B2) | Je Link einmal Klick und einmal Enter, danach die Lage der Überschrift gemessen. 924 px: 228 von 228 sichtbar (kleinster Abstand 0 px, Median 120 px). 360 px: 228 von 228. 1280 px: 212 von 228. |
+| 200 % Text | erfüllt | **Seitenzoom:** 640 px mit Pixeldichte 2 (entspricht 200 % bei 1280 px) und 320 px (entspricht 400 %). **Schriftgrösse:** `--blink-settings=defaultFontSize=32` bei 1280, 924, 360 und 320 px. Auf keiner Seite waagrechtes Scrollen, keine innere Bildlaufleiste. Textüberlappung nur `kinder` › `#alltag`: Pfeil «→» an «Unterstützung je nach Situation», 3–5 px, gleich wie `main`. |
+| Erzwungene Farben | erfüllt für die genannten Flächen, mit P708-B6 | Emulation in einem neuen Kontext je Seite, 1280 und 360 px. 1 px CanvasText-Rahmen auf allen vier Seiten haben: Einstiegskarten, «Was Sie tun können», Merkmale, Merksatz, Phasenkarte 2, «Das Wichtigste» und «Weitere Themen». Das Band hat links, rechts und unten einen Rahmen, oben nicht. Kontaktkarte und Figurenflächen haben keinen Rahmen. Fokus Einstiegskarte: Umriss 2 px auf dem Link, 3 px auf der Karte. |
+| Kontrast (gemessen, WCAG-Formel) | **nicht erfüllt für Fusszeilenlinks** (P708-B3) | weiss auf `#3C64FF` 4,71:1 (Band 22 px Light, Kicker 14 px, Merksatz 30 px, Phasenkarte 2 21 px, Startaktion). `#646464` auf `#F5F7FF` 5,53:1 (Kartentext, Fusszeile Metazeile und Rechtliches). Linkfarbe `#3C64FF` auf `#F5F7FF` in der Fusszeile **4,40:1**, Text 15 px Light (`main`: `#646464` auf `#F4F4F4`, 5,38:1). Kontaktlink auf weisser Karte 4,71:1. Karte beim Überfahren: `#646464` auf `#F0F3FF` 5,35:1. «Was Sie tun können»: `#2B4FE0` auf `#F0F3FF` 5,75:1. Fokusring `#3C64FF` gegen `#F5F7FF` 4,40:1, für Nicht-Text ≥ 3:1 erfüllt. Theme «kontrast»: weiss auf `#0028C2` 10,08:1, Fusszeilenlinks `#0028C2` auf `#F5F7FF` 9,43:1. |
+| Bedienziele ≥ 44 px | erfüllt | 1280 / 360 px: Einstiegskarte 536 × 161,5 / 320 × 200,7, Linkfläche mindestens 44 hoch. «Weitere Themen» mindestens 88,6 / 58,7 hoch. Menüknopf (360) 70,1 × 44. Fusszeilenlinks mindestens 75,6 × 44. «Auf dieser Seite» mindestens 98,4 × 44. Absender-E-Mail 199,2 × 44. «Beratung per E-Mail anfragen» 45,3 / 44 hoch. |
+| Screenreader | **offen** | Kein Screenreader verfügbar. **Ersatz, kein Screenreader-Nachweis:** Chromium-Barrierefreiheitsbaum über CDP `Accessibility.getFullAXTree` auf `grenzen`, `index` und `verstehen`. Kein zugänglicher Name enthält «→»; berechnetes `content` ist `"→" / ""`. Startseite: Die neun Karten heissen nach ihrer Frage, zum Beispiel ««Ich sorge mich um Sicherheit, Selbstgefährdung oder Gewalt.»». Die Beschreibung steht als Text danach. Abbildung 1: Die Beschreibung über `aria-describedby` wird aufgelöst («Kurve über den Gesprächsverlauf: links tief, …, 2 «Es wird eng» mit Ansatzpunkt, …»). |
+| Reduzierte Bewegung | erfüllt | Mit `reducedMotion: reduce` gibt es auf 23 Seiten keinen Übergang und keine Animation; `scroll-behavior` ist `auto`. Ohne Einstellung laufen nur bestehende Farbübergänge (0,12 s) und Chevrons (0,2 s). Der neue Block enthält kein `transition` und kein `animation`. |
+| Druck | erfüllt, mit P708-B5 und P708-B7 | A4, Rand 15 mm, je mit und ohne Hintergrundgrafik. Start 4 Seiten, Verstehen 14 Seiten. Alle 18 Seiten mit Hintergrund wurden angesehen, ohne Hintergrund die Seiten S. 3 (Start) sowie S. 4, 5 und 11 (Verstehen). Keine Fläche ragt über den Seitenrand. Im Druckmedium bei 1280 px ist kein Element breiter als der Viewport. «Auf dieser Seite» ist `position: static`. Hero, Band und Absender haben `box-shadow: none` und `clip-path: none`. Die Teile der Figuren sind `break-inside: avoid`. «Momentaufnahmen» steht auf einer Seite (S. 8). Die Anspannungskurve ist auf S. 4/5 geteilt, auf `main` auf S. 5/6; das ist die begründete Ausnahme SPZ-F-32. |
+
+| Nr. | Befund | Beleg | Schwere |
+| --- | --- | --- | --- |
+| P708-B1 | **Die Leiste «Auf dieser Seite» verdeckt ab 1280 px den Fokus** (2.4.11 Focus Not Obscured, AA). Beim Zurückgehen mit Umschalt+Tab liegt das fokussierte Element ganz unter der mitlaufenden Leiste. Die Leiste ist 62 px hoch (9 Seiten) oder 106 px (10 Seiten, zweizeilig). | `site.css:1677–1679` (`position:sticky;top:0;z-index:5`, `scroll-margin-top:5rem` nur für Abschnitte). Getroffen sind 25 Stellen auf 16 Seiten, zum Beispiel: <br>– `begriffe` › Zusammenfassungen «Urteilsfähigkeit», «Mentalisierung», «Co-Abhängigkeit» <br>– `grenzen` › `#riskant` «Wenn Gewalt oder Bedrohung vor…» <br>– `fragen` › `#gespraeche` «Wenn Suizidgedanken ein Thema …» <br>– `krise` und weitere: «Quellen zu dieser Seite» <br>Messung: Je 9 Punkte im Element prüfen mit `elementFromPoint`, welches Element oben liegt. Bei allen 9 ist das die mitlaufende `nav.puk-longform__roadmap` (Oberkante 0, Unterkante 62 bzw. 106 px) oder ihr innerer Container. | blockierend |
+| P708-B2 | **Sprungziele liegen bei 1280 px unter der Leiste.** Ziele, die Unterüberschriften (`h3`) sind, haben keinen `scroll-margin`. Nach Klick oder Enter steht die Überschrift bei `top` 0 unter der 106 px hohen Leiste. Der Fokus geht auf genau diese Überschrift, sie ist also ganz verdeckt. Das betrifft auch einen sicherheitsrelevanten Abschnitt. | 8 Ziele, je Klick und Enter: <br>– `krise` › `#selbstverletzung` «Wenn Sie eine Selbstverletzung bemerken» <br>– `buecher` › `#partner`, `#eltern`, `#kinderbuecher`, `#erfahrungsberichte`, `#vertiefen`, `#englisch` <br>– `buecher` › `#kritisch`, teilweise (Oberkante 95 px) <br>`h3.puk-site-subheading` bzw. `h3.puk-acc__heading`; `scroll-margin-top:5rem` = 80 px gilt nur für `.puk-longform__section` (`site.css:1679`). | blockierend |
+| P708-B3 | **Die Linkfarbe auf der hellen Blaufläche der Fusszeile hat zu wenig Kontrast** (1.4.3, AA). Betroffen sind «Über diese Website», «Barrierefreiheit» und «Rückmeldung» auf allen 23 Seiten. | `#3C64FF` auf `#F5F7FF` = 4,40:1 bei 15 px, Schnitt 300 (`site.css:1760`, `1764`, `1773`). `main`: 5,38:1. Zum Vergleich: `#2B4FE0` (`--puk-blue-125`) ergäbe 5,95:1. | blockierend |
+| P708-B4 | **`clip-path` schneidet den Fokusring des E-Mail-Links in der Absenderzeile ab.** Der Link ist 44 px hoch und damit höher als die verdichtete Zeile. Bei 1280 px bleiben vom Ring nur die Seitenkanten sichtbar. 2.4.7 ist knapp erfüllt, die Sichtbarkeit aber deutlich gemindert. | `site.css:1627` `clip-path:inset(0 -100vmax)` auf `.puk-site-sender`, Zeile 38 px hoch (`site.css:1631`). Der Ring ragt bei 1280 und 924 px oben und unten je 7,2 px über die Zeile hinaus, bei 360 und 320 px unten 7,2 px. Betroffen sind alle 23 Seiten (92 Messungen). Foto im Vergleich mit `main`: dort ist der Ring vollständig. Andere Fokusringe in Hero, Band und Absender werden nicht abgeschnitten (32 Messungen). | wichtig |
+| P708-B5 | **Ohne Hintergrundgrafik, der Standardeinstellung von Chrome, wird weisser Text fast unleserlich gedruckt.** Betroffen sind Band «Haltung», Merksatz und Phasenkarte 2. | PDF ohne Hintergrund mit 200 dpi gerastert: Die Schrift erscheint als `#ABABAB` auf Weiss, 2,3:1 (`index` S. 3, `verstehen` S. 5 und S. 11). Die bestehende Druckregel `site.css:664` (`.puk-web-band,.surface-brand{…color:var(--text-default)!important}`) erfasst `.bl-band`, `.bl-merksatz` und die Phasenkarte nicht. Mit Hintergrund ist alles lesbar. | wichtig |
+| P708-B6 | **Bei erzwungenen Farben fehlen einige Rahmen und eine Hervorhebung.** <br>– Kontaktkarte der Fusszeile und Figurenflächen haben keinen Rahmen und sind nicht als Fläche erkennbar; `main` hatte einen Figurenrahmen. <br>– Beim Band fehlt der obere Rahmen. <br>– Phasenkarte 2 ist nicht mehr hervorgehoben; nur der Doppelring auf der Kurve markiert Stelle 2 noch. | `site.css:1708` (`border:0`), `1766` (`border:0`), `1668` (`.puk-longform__section+.bl-band{border-top:0}`, Spezifität 0,2,0 schlägt die Regel 0,1,0 in `1792`). `1792` nennt Kontaktkarte und Figur nicht. Fotos `forced` bei 1280 und 360 px. | gering |
+| P708-B7 | Im Druck brechen Einstiegskarten über die Seite. | `index`, Druck mit Hintergrund: Die Karten der zweiten Reihe beginnen als leere Fläche unten auf S. 1, der Text steht auf S. 2. `.bl-paths-cards li` hat kein `break-inside: avoid`. | gering |
+
+### Stufe 4 · W3 Code-Review (reines Review)
+
+**Status: erledigt.** Werkzeug: Lesen des Blocks `site.css:1616–1797` und des Diffs `main…3ae7916`. Zusätzlich CSSOM- und Chromium-Simulationen in Playwright 1.56.1 und `grep`.
+
+| Prüfpunkt | Ergebnis | Beleg |
+| --- | --- | --- |
+| Spezifität | 4 Konflikte mit Wirkung | `1668` gegen `1792` (Band oben, P708-B6). `1708`/`1766` `border:0` gegen den Rahmen bei erzwungenen Farben (P708-B6). `1679` `scroll-margin-top` nur für `.puk-longform__section` (P708-B2). `1656` ist wirkungslos (P708-W6). Der Block ist nachgestellt; `.puk-vis-path h3{hyphens:manual}` (0,1,1) schlägt wie beabsichtigt `.puk-vis-wide :where(li,dl,h3){hyphens:auto}` (0,1,0). |
+| Container- und Media-Queries | keine Überschneidung, aber eine Lücke | P708-V2 (Container) und P708-V3 (`@media (min-width:1100px)` in px). «Auf dieser Seite» mitlaufend ab 1280 px (`1677`), Umbruch ab 760 px (`1681`). Kommentar und Code widersprechen sich (P708-W5). |
+| Vollbreite mit `box-shadow` und `clip-path` | Fokus betroffen, Druck in Ordnung | Fokus: P708-B4. Druck: `1794–1797` setzt beides zurück, gemessen `none`; im PDF gibt es keine Fläche ausserhalb der Seite. Bei erzwungenen Farben entfällt `box-shadow`, die Fläche bleibt containerbreit; das ist unkritisch. Waagrechtes Scrollen entsteht nicht (299 Läufe). |
+| `:has()` | in Browsern ohne `:has()` benutzbar, mit P708-W2 | Die Datei hat 12 Regeln mit `:has()` (CSSOM-Zählung). Simulation: diese Regeln entfernen und messen. Ergebnis: <br>– Phasenkarte 2 ist weiss mit Text `#222222`, Rand des Ansatzpunkts 0 <br>– Doppelring auf der Kurve bleibt <br>– Tabelle 736 px ohne Bildlaufleiste <br>– DEAR mit 5 × 192 px für 4 Schritte |
+| `content:"→" / ""` | gestaffelt, Rückfall vorhanden | `1752` und `1769`: Zuerst steht `content:"→"`, dann die Fassung mit Alternativtext. Berechnet: `"→" / ""`. Rückfall simuliert (nur `content:"→"`): «Weitere Themen» bleibt durch `aria-label` ohne Pfeil im Namen, der Fusszeilenlink heisst «Kontakt und Beratungsangebot →» (P708-W3). Ältere Browser wurden nicht real geprüft. |
+| `style`-Attribute, Inline-Skripte, externe Ressourcen | keine | In `index` und `verstehen` 0 `style=`. Im Build: 0 Seiten mit `style=`, 0 `<style>`, 0 `<script>` ohne `src`. Skripte nur `js/interaktion.js?v=r4-40`. Der Diff enthält kein `url(`, `@import` und `http`. Externe Adressen gibt es nur in bestehenden `canonical`-Links. Unter der CSP aus `_headers`: 0 Konsolenfehler in 299 Läufen. |
+| Klassen ohne Regel, Regeln ohne Verwendung | neue Klassen vollständig, mit P708-W4 | Alle 13 neuen `bl-`-Klassen haben eine Regel; der Block hat keinen ungenutzten Selektor. Ohne Regel sind nur bestehende Klassen: `bl-kurve__hilft` und `bl-begriffe`, beide schon auf `main`. |
+| Regressionstests | ein Test rot | P708-W1 |
+
+| Nr. | Befund | Beleg | Schwere |
+| --- | --- | --- | --- |
+| P708-W1 | **Der projekteigene Browser-Regressionstest scheitert.** `sprachtest.mjs` erwartet auf «Verstehen» weiterhin den Akuthinweis mit `tel:144` und `tel:117`. Der Test läuft nicht in der CI und wurde nicht an den Entscheid vom 21.10.2026 angepasst. | `authoring/tools/sprachtest.mjs:64–67` (Liste mit `'verstehen'`). PR: AssertionError, Abbruch. `main`: 75 bestanden. Kopie ohne `verstehen`: 71 bestanden, JS-Fehler 0. | wichtig |
+| P708-W2 | Die Hervorhebung von Ansatzpunkt und Phasenkarte 2 hängt an `:has()`. Ohne `:has()` ist die Karte nicht markiert, weil der Rand des Ansatzpunkts unbedingt entfernt wird. | `site.css:1716` (ohne `:has`) gegen `1717`/`1720`/`1721` (mit `:has`). Simulation siehe Tabelle. Die Kurve markiert Stelle 2 weiter. | gering |
+| P708-W3 | In Browsern ohne Alternativtext für `content` wird der Pfeil im Kontaktlink der Fusszeile vermutlich mitgelesen. Die Übergabe (Punkt 11) nennt das bereits. | Simulierter Name: «Kontakt und Beratungsangebot →». | gering |
+| P708-W4 | Durch das Entfernen der Abbildung «Beobachten» sind CSS-Regeln verwaist. | `bl-observe`, `bl-observe__item`, `bl-observe__item--open`, `bl-observe__key`, `bl-observe__question` und `bl-knowledge-boundary` werden auf `main` verwendet, im PR nirgends; ihre Regeln stehen ausserhalb des neuen Blocks. | gering |
+| P708-W5 | Der Kommentar sagt «ab 760 px», die Regel gilt ab 1280 px. | `site.css:1676–1677` | gering |
+| P708-W6 | `.bl-paths-cards a:focus-visible{outline:none}` wirkt nicht. Der Fokus der Website ist ein `box-shadow`. Dadurch zeigen Einstiegskarten zwei Ringe, um die Karte und um den Linktext. Sichtbar ist der Fokus trotzdem. | `site.css:1656`; Foto der fokussierten Karte bei 1280 px | gering |
+
+### Zwölf Punkte der Übergabe
+
+| Nr. | Punkt | Ergebnis |
+| --- | --- | --- |
+| 1 | Neuer Beispielsatz | Er ist als Musterentwurf gekennzeichnet (Stufe 1). Inhalt: Prüfbedarf Fachstelle (F1). Ein zweiter neuer Satz ist nicht aufgeführt (P708-I2). Das Gate erkennt die ausstehende Freigabe nicht (P708-I1). |
+| 2 | Rubik Medium | Bestätigt: Alle `.puk-web-h2` haben `font-weight` 500, auf `main` 400. Auch der Seitentitel `h1` im Einstieg ist neu 500, auf `main` 300 (`site.css:1635`); die Übergabe nennt das nicht. **Prüfbedarf Fachstelle (CD), F3.** |
+| 3 | Grundfläche `#F5F7FF` | Sie ist eine Tönung von PUK-Blau von etwa 5 % (Rot 5,1 %, Grün 5,2 %). Schrift darauf: `#222222` 14,87:1, `#646464` 5,53:1, Links 4,40:1 (P708-B3). **Prüfbedarf Fachstelle (CD), F4.** |
+| 4 | Einspaltige Abschnitte auf allen Seiten | Alle 23 Seiten in 13 Darstellungen geprüft, mit geöffneten Akkordeons und Vertiefungen. Kein waagrechtes Scrollen und keine neue Überlappung. Folgen: P708-V4 und die verdeckten Sprungziele (P708-B2). |
+| 5 | Kopf und Menü | Kopfhöhe 1280 / 920 / 360 px: 159 / 188 / 208 px, auf `main` 168 / 182 / 203 px. Menüknopf 70 × 44 px, Navigation unverändert. G8 bleibt offen (Renderer). |
+| 6 | Fusszeile | Der Wortlaut ist auf allen 23 Seiten gleich wie auf `main`. Befunde P708-B3, P708-B6 und P708-W3. Die Wortlaut-Vorschläge sind nirgends eingetragen; `site.config.json` enthält nur `assetVersion` und `v-vs-eisberg`. |
+| 7 | Bild im Einstieg | Die Startseite enthält kein `img`, kein `svg` und keinen `data-placeholder`. |
+| 8 | Anspannungskurve ohne Achsen | erfüllt: 1 `path` und 0 `line`, `text` oder `rect`; keine Klasse mit «axis» oder «achse». Fotos bei 1280, 920 und 360 px. |
+| 9 | Momentaufnahmen, Illustratorin | Freundin-Test bestanden, die Zeichnung ist unverändert. Ob eine Illustratorin beigezogen wird, entscheidet die Fachstelle. |
+| 10 | Prüfstufen offen | Dieser Abschnitt erledigt Visualisierungs-Check, Bedienung und W3. Offen bleibt der Screenreader-Teil. |
+| 11 | Dekorative Pfeile | In Chromium 141 enthält kein zugänglicher Name «→». Rückfall: P708-W3. **Offen** bleibt die Prüfung mit einem echten Screenreader und weiteren Browsern. |
+| 12 | Bedienung und Barrierefreiheit | Stufe 3: geprüft wurden Tastatur, 200 % Text, erzwungene Farben (emuliert), reduzierte Bewegung und Druck. Es gibt 3 blockierende Befunde (B1–B3). |
+
+**Gesamtzahl:** 3 blockierend (P708-B1, P708-B2, P708-B3), 5 wichtig (P708-I1, P708-I2, P708-B4, P708-B5, P708-W1) und 12 gering. Dazu Prüfbedarf Fachstelle F1–F4. Die Statustabelle oben bleibt unverändert; diese Prüfung setzt keine Stufe auf «erledigt» und ersetzt keine Fachfreigabe.
+
+**Empfehlung: Nachbesserung nötig.** Vor einer Freigabe sind P708-B1 bis P708-B3 zu beheben. Ebenso P708-B4, P708-B5 und P708-W1. Die Liste der neuen Sätze (P708-I2) ist nachzuführen. Die Freigabe der Sätze ist ausserhalb des Gates sicherzustellen (P708-I1).
+
 ## Prüfung der Produktion AR3-4 (13.10.2026, Deploy 6acdc7b)
 
 **Prüfsitzung (Claude Code), 13.10.2026, etwa 05.45 bis 06.05 UTC.** Auftrag der Leitsitzung der Veröffentlichung, im Auftrag der Fachstelle Angehörigenarbeit PUK. Vorgehen und Form folgen «Prüfung der Produktion AR3-2». Diese Sitzung hat die Website weder gebaut noch korrigiert. Sie hat nichts entschieden und keine frühere Stufe geprüft.

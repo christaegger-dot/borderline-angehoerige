@@ -61,7 +61,7 @@ try {
   check(await page.locator('[data-search-directory]').isVisible(), true);
   const badExcerpts = await page.locator('[data-search-item] > p:last-child').evaluateAll(items => items.map(item => item.textContent).filter(text => text.endsWith('…')));
   check(badExcerpts, []);
-  for (const name of ['kurz', 'verstehen', 'diagnose', 'grenzen', 'kommunizieren', 'krise', 'kinder']) {
+  for (const name of ['kurz', 'diagnose', 'grenzen', 'kommunizieren', 'krise', 'kinder']) {
     await open(name);
     const references = page.locator('[data-responsibility-inline]');
     check(await references.count() > 0, true);
@@ -71,6 +71,10 @@ try {
     }
     check(await page.locator('footer a[href="tel:144"], footer a[href="tel:117"]').count(), 0);
   }
+  // Entscheid Christa 21.10.2026 (PR #708): Auf «Verstehen» entfällt der Akuthinweis (144/117); der Link auf «Krise» › Suizid bleibt.
+  await open('verstehen');
+  check(await page.locator('[data-responsibility-inline], a[href="tel:144"], a[href="tel:117"]').count(), 0);
+  check(await page.locator('main a[href="krise.html#suizid"]').textContent(), 'Wenn Suizidgedanken ein Thema sind');
   if (screenshots) mkdirSync(screenshots, { recursive: true });
   for (const width of [320, 390, 1280]) {
     await page.setViewportSize({ width, height: 900 });

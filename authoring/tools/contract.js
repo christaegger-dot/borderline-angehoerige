@@ -374,6 +374,8 @@ function gate(cfg, files, opts = {}) {
       if (v.format !== 'text' && !v.understood) add('block', pid, 'visual-plan', `visualPlan ${v.id}: «understood» fehlt – was versteht die Zielgruppe dadurch besser als durch einen kurzen Text allein?`);
       if (v.format !== 'text' && !(v.resonance || '').trim()) prod(pid, 'resonance', `visualPlan ${v.id}: «resonance» fehlt – Wirkung: Was soll eine Angehörige in der Darstellung wiedererkennen oder spüren?`);
       if (v.format !== 'text' && v.approvalStatus !== 'freigegeben') prod(pid, 'visual-approval', `Visualisierung ${v.id} nicht freigegeben (${v.approvalStatus})`);
+      /* Neue Textfassung anstelle einer Abbildung (z. B. Musterentwurf-Sätze) braucht ebenfalls die Freigabe (Prüfbefund P708-I1, 22.10.2026) */
+      if (v.format === 'text' && !['freigegeben', 'entfällt'].includes(v.approvalStatus)) prod(pid, 'visual-approval', `Textfassung ${v.id} nicht freigegeben (${v.approvalStatus})`);
       if (ENTRY_FORMATS.includes(v.format) && !(v.entryPoint || '').trim()) prod(pid, 'entry-point', `visualPlan ${v.id}: «entryPoint» fehlt – Ansatzpunkt für Angehörige oder «entfällt: Begründung»`);
     }
   }
@@ -697,6 +699,16 @@ function selftest(cfg, files, opts = {}) {
     rows.push({ name: 'Produktion blockiert Redaktionsstatus ohne Datum', expected: 'editorial-status', got: hitDate ? 'editorial-status' : 'nicht erkannt', ok: hitDate }); }
   { const hitCurrent = gate(cfg, files, { mode: 'production', exists: base }).findings.some(x => x.id === 'editorial-status');
     rows.push({ name: 'Aktueller datierter Redaktionsstatus besteht das Produktionsgate', expected: 'kein editorial-status', got: hitCurrent ? 'editorial-status' : 'kein editorial-status', ok: !hitCurrent }); }
+  /* Textfassung im Visualisierungsplan (P708-I1). Ohne freigegebene Textfassung meldet der Fall einen Befund statt eines Laufzeitfehlers (Nachprüfung 2, NP2-3) */
+  const textApprovalRow = (c0) => { const c = JSON.parse(JSON.stringify(c0)); const v = c.pages.flatMap(p => p.visualPlan || []).find(x => x.format === 'text' && x.approvalStatus === 'freigegeben');
+    if (!v) return { name: 'Produktion blockiert ausstehende Textfassung im Visualisierungsplan', expected: 'visual-approval', got: 'keine freigegebene Textfassung im Visualisierungsplan – Fall nicht prüfbar', ok: false };
+    v.approvalStatus = 'ausstehend';
+    const hitText = gate(c, files, { mode: 'production', exists: base }).findings.some(x => x.level === 'block' && x.id === 'visual-approval' && x.msg.includes(v.id));
+    return { name: 'Produktion blockiert ausstehende Textfassung im Visualisierungsplan', expected: 'visual-approval', got: hitText ? 'visual-approval' : 'nicht erkannt', ok: hitText }; };
+  rows.push(textApprovalRow(cfg));
+  { const c = JSON.parse(JSON.stringify(cfg)); for (const x of c.pages.flatMap(p => p.visualPlan || [])) if (x.format === 'text') x.approvalStatus = 'entfällt';
+    let got; try { got = textApprovalRow(c).got; } catch (e) { got = 'Laufzeitfehler: ' + e.message; }
+    rows.push({ name: 'Selbsttest meldet fehlende freigegebene Textfassung als Befund, nicht als Laufzeitfehler', expected: 'keine freigegebene Textfassung', got, ok: got.startsWith('keine freigegebene Textfassung') }); }
   const unreviewed = {}; for (const [k, v] of Object.entries(files)) unreviewed[k] = typeof v === 'string' ? v.split('data-review-status="geprueft"').join('data-review-status="ausstehend"') : v;
   const pending = JSON.parse(JSON.stringify(cfg));
   pending.sender.status = 'placeholder';

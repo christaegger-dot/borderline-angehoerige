@@ -104,6 +104,15 @@ Christa hat am 22.10.2026 die Empfehlungen übernommen; Nachweis und Messwerte: 
 - **F4 · Grundfläche `#F5F7FF`:** bleibt, mit Auflage «kein kleiner Text in `#3C64FF` auf getönten Flächen». Drei Links verletzten sie (Absenderzeile 4,28:1, Einstieg `index` 4,40:1, «Was Sie tun können» auf `verstehen` 4,25:1) und stehen jetzt in `--puk-blue-125`. Als Profilton im Design-System nachzutragen.
 - **W6 · Fokus an den Einstiegskarten:** ein Rahmen um die ganze Karte, nur bei Tastaturbedienung (`:has(a:focus-visible)`); ohne `:has()` bleibt der Doppelrahmen als Rückfall.
 
+## Fünf Abbildungen aus r4-39 nach Rückmeldung Christa (22.10.2026)
+Wortlaut der Rückmeldung und Status je Abbildung: `audit-results/2026-10-22-abbildungen/FREIGABE.md`.
+- **Abbildung 3 `v-ju-uebergang`:** freigegeben wie gezeigt (Fassung `176444c`); Abbildungsnummer «Abbildung 1» ergänzt. Plan-Eintrag mit eigenen Angaben statt Sammelsätzen, Rechtsgrundlagen Art. 14 und Art. 296 Abs. 2 ZGB.
+- **Abbildung 5 `v-ge-aspekte`:** als Text belassen. Figur entfernt; ihre drei Erläuterungen standen nicht schon im Abschnitt und stehen jetzt wörtlich als Unterabschnitte in `genesung` › `#begriffe`. Der Einleitungsabsatz endet schon mit «Diese verändern sich nicht unbedingt gleichzeitig.»; die gleichlautende Kernaussage entfällt. Plan-Eintrag `format: text`, freigegeben. Die Regeln `.bl-parallel-aspects` in `site.css` werden damit nicht mehr verwendet (wie P708-W4).
+- **Abbildung 1 `v-vs-anspannung`:** Kernaussage «… oder das Gespräch vorerst beenden.»; Beispiel Phase 3 «Für mich ist es gerade zu viel. Ich mache eine Pause.». Freigabe der geänderten Fassung ausstehend.
+- **Abbildung 2 `v-ki-alltag`:** Fachpersonen «Kinderarztpraxis, Schulsozialarbeit, schulpsychologischer Dienst, Familienberatung oder Kinder- und Jugendpsychiatrie». Bei breiter Darstellung (Container über 55 rem) je eine Linie vom Kasten oben senkrecht hinunter und waagrecht bis zur Kinderbox, Pfeilspitze an der Kinderbox; die Kästen oben gleich hoch. Beschriftungen und schmale Fassung (↓, ↑) unverändert. Freigabe ausstehend.
+- **Abbildung 4 `v-sf-entlastung`:** Kernaussage «Sie dürfen für sich sorgen: begrenzen, abgeben oder sich beraten lassen.»; erste Frage «Was brauche ich für mich?», auch in der Screenreader-Fassung; «Abbildung 2» ergänzt. Plan-Eintrag mit eigenen Angaben. Freigabe ausstehend.
+- Produktionsgate danach: 3 BLOCK (Abbildungen 1, 2 und 4).
+
 ## Pull Request
 
 Als Entwurf eröffnen, mit Verweis auf diese Datei und die offenen Stufen. `site/` erst nach Freigabe in einem separaten PR neu schreiben.

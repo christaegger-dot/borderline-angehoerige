@@ -1575,10 +1575,27 @@ html.puk-scroll-lock{overflow:hidden}
 .bl-caremap__link--adult{grid-column:1;grid-row:2}
 .bl-caremap__link--professional{grid-column:3;grid-row:2}
 .bl-caremap__link--professional span{transform:rotate(180deg)}
+/* Breit: je eine Linie vom Kasten oben bis zur Kinderbox, Pfeilspitze an der Kinderbox (Entscheid Fachstelle 22.10.2026) */
+.bl-caremap--linked{--bl-link-x:var(--space-5);--bl-link-y:3.25rem;align-items:stretch}
+.bl-caremap--linked>.bl-caremap__child{align-self:start}
+.bl-caremap--linked .bl-caremap__link{position:relative;align-self:start;min-height:calc(var(--bl-link-y) + var(--space-3));border-bottom:0}
+.bl-caremap--linked .bl-caremap__link span{display:none}
+.bl-caremap--linked .bl-caremap__link::before{content:"";position:absolute;top:calc(-1 * var(--space-3));height:calc(var(--bl-link-y) + var(--space-3));border-bottom:2px solid var(--puk-blue-100)}
+.bl-caremap--linked .bl-caremap__link::after{content:"";position:absolute;top:calc(var(--bl-link-y) - .375rem + 1px);width:.75rem;height:.75rem;border-top:2px solid var(--puk-blue-100);border-right:2px solid var(--puk-blue-100)}
+.bl-caremap--linked .bl-caremap__link--adult{padding-left:calc(var(--bl-link-x) + var(--space-3))}
+.bl-caremap--linked .bl-caremap__link--adult::before{left:var(--bl-link-x);right:calc(-1 * var(--space-3));border-left:2px solid var(--puk-blue-100)}
+.bl-caremap--linked .bl-caremap__link--adult::after{right:calc(-1 * var(--space-3) + 1px);transform:rotate(45deg)}
+.bl-caremap--linked .bl-caremap__link--professional{padding-right:calc(var(--bl-link-x) + var(--space-3));text-align:right}
+.bl-caremap--linked .bl-caremap__link--professional::before{right:var(--bl-link-x);left:calc(-1 * var(--space-3));border-right:2px solid var(--puk-blue-100)}
+.bl-caremap--linked .bl-caremap__link--professional::after{left:calc(-1 * var(--space-3) + 1px);transform:rotate(-135deg)}
 @container(max-width:55rem){
   .bl-caremap--linked{grid-template-columns:minmax(0,1fr)}
   .bl-caremap--linked>*{grid-column:1!important;grid-row:auto!important}
   .bl-caremap__link span{display:inline-block;transform:none}
+  .bl-caremap--linked{align-items:start}
+  .bl-caremap--linked .bl-caremap__link{min-height:0;padding:var(--space-3);border-bottom:2px solid var(--puk-blue-100);text-align:left}
+  .bl-caremap--linked .bl-caremap__link span{display:inline-block}
+  .bl-caremap--linked .bl-caremap__link::before,.bl-caremap--linked .bl-caremap__link::after{content:none}
   .bl-caremap__link--adult span{transform:rotate(90deg)}
   .bl-caremap__link--professional span{transform:rotate(-90deg)}
 }

@@ -24,7 +24,7 @@ Die Paritätsprüfung (`--verify-site`) schlägt erwartungsgemäss fehl, bis `si
 
 ## Prüfbedarf
 
-1. **Zwei neue Beispielsätze** (verstehen › eisberg): «Du willst mich doch nur provozieren.» und «Deine Stimme wird lauter. Wie ist es gerade für dich?». Beide sind als Musterentwurf gekennzeichnet und brauchen die fachliche Freigabe. Das Gate erkennt die ausstehende Freigabe nicht; vor dem Neuschreiben von `site/` von Hand prüfen.
+1. **Zwei neue Beispielsätze** (verstehen › eisberg): «Du willst mich doch nur provozieren.» und «Deine Stimme wird lauter. Wie ist es gerade für dich?» (am 22.10.2026 ersetzt, siehe «Beispielsätze nach Rückmeldung Christa»). Beide sind als Musterentwurf gekennzeichnet und brauchen die fachliche Freigabe. Das Gate erkennt die ausstehende Freigabe nicht; vor dem Neuschreiben von `site/` von Hand prüfen.
 2. **Überschriften in Rubik Medium (500).** Das CD Manual nennt Light und Regular für Text.
 3. **Grundfläche #F5F7FF** ist eine Schattierung von PUK-Blau unter 25 %.
 4. **Einspaltige Abschnitte gelten für alle Seiten** (`.puk-longform__section-grid`). Alle übrigen Seiten bei 1280 px und 360 px ansehen, besonders Figuren und Akkordeons.
@@ -89,6 +89,13 @@ Alle Messwerte unten sind eine **Selbstprüfung, keine Prüfstufe**: Playwright 
 | Überlauf | 23 Seiten × 14 Bedingungen (7 Breiten, Zoom 200 und 400 %, Schrift 32 px bei 5 Breiten): kein waagrechtes Scrollen, keine innere Bildlaufleiste |
 
 **Nicht bearbeitet:** C9 (P708-W6, doppelter Fokusindikator an den Einstiegskarten, Gestaltungsentscheid), P708-W2, W3, W4 und V4 sowie F1–F4. Kein Screenreader verfügbar.
+
+## Beispielsätze nach Rückmeldung Christa (22.10.2026)
+Rückmeldung von Christa Egger am 22.10.2026 zu F1 und F2 (`verstehen` › `#eisberg`):
+- **F1** «Du willst mich doch nur provozieren.»: «OK».
+- **F2** «Deine Stimme wird lauter. Wie ist es gerade für dich?»: «nicht ok, bitte formuliere es natürlicher, menschlicher». Drei Vorschläge vorgelegt; gewählt: «Ich höre, dass du lauter wirst. Magst du mir sagen, was gerade in dir vorgeht?»
+- Geändert: der Satz in `content/verstehen.html` und `reason` der Planzeile `v-vs-eisberg`. Unverändert bleiben die Frage «Wie ist es gerade für dich?» im Kasten «Was Sie tun können» (Bestandstext), das Etikett «Musterentwurf, nicht fachlich geprüft» und `approvalStatus: ausstehend`. Beides ändert sich erst, wenn die Freigabe beider Sätze ausdrücklich dokumentiert ist.
+- Damit ist diese Sitzung bauende Sitzung dieses PR; die Nachprüfung von `f50536e` und dieses Commits macht eine andere Sitzung.
 
 ## Pull Request
 

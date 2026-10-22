@@ -24,7 +24,7 @@ Die Paritätsprüfung (`--verify-site`) schlägt erwartungsgemäss fehl, bis `si
 
 ## Prüfbedarf
 
-1. **Zwei neue Beispielsätze** (verstehen › eisberg): «Du willst mich doch nur provozieren.» und «Deine Stimme wird lauter. Wie ist es gerade für dich?» (am 22.10.2026 ersetzt, siehe «Beispielsätze nach Rückmeldung Christa»). Beide sind als Musterentwurf gekennzeichnet und brauchen die fachliche Freigabe. Das Gate erkennt die ausstehende Freigabe nicht; vor dem Neuschreiben von `site/` von Hand prüfen.
+1. **Zwei neue Beispielsätze** (verstehen › eisberg): «Du willst mich doch nur provozieren.» und «Deine Stimme wird lauter. Wie ist es gerade für dich?» (am 22.10.2026 ersetzt, siehe «Beispielsätze nach Rückmeldung Christa»). Stand 22.10.2026: beide Sätze in der neuen Fassung fachlich freigegeben, Etikett «Musterentwurf» entfernt (siehe dort).
 2. **Überschriften in Rubik Medium (500).** Das CD Manual nennt Light und Regular für Text.
 3. **Grundfläche #F5F7FF** ist eine Schattierung von PUK-Blau unter 25 %.
 4. **Einspaltige Abschnitte gelten für alle Seiten** (`.puk-longform__section-grid`). Alle übrigen Seiten bei 1280 px und 360 px ansehen, besonders Figuren und Akkordeons.
@@ -95,6 +95,7 @@ Rückmeldung von Christa Egger am 22.10.2026 zu F1 und F2 (`verstehen` › `#eis
 - **F1** «Du willst mich doch nur provozieren.»: «OK».
 - **F2** «Deine Stimme wird lauter. Wie ist es gerade für dich?»: «nicht ok, bitte formuliere es natürlicher, menschlicher». Drei Vorschläge vorgelegt; gewählt: «Ich höre, dass du lauter wirst. Magst du mir sagen, was gerade in dir vorgeht?»
 - Geändert: der Satz in `content/verstehen.html` und `reason` der Planzeile `v-vs-eisberg`. Unverändert bleiben die Frage «Wie ist es gerade für dich?» im Kasten «Was Sie tun können» (Bestandstext), das Etikett «Musterentwurf, nicht fachlich geprüft» und `approvalStatus: ausstehend`. Beides ändert sich erst, wenn die Freigabe beider Sätze ausdrücklich dokumentiert ist.
+- **Freigabe:** Am 22.10.2026, 09:14 Uhr, hat Christa beide Sätze ausdrücklich freigegeben («ich gebe beide sätze frei»). Nachweis: `audit-results/2026-10-22-v-vs-eisberg/FREIGABE.md`. Danach Planzeile auf «freigegeben» mit Name, Datum und Beleg; Etikett «Musterentwurf» entfernt. Das Produktionsgate meldet `v-vs-eisberg` nicht mehr.
 - Damit ist diese Sitzung bauende Sitzung dieses PR; die Nachprüfung von `f50536e` und dieses Commits macht eine andere Sitzung.
 
 ## Pull Request

@@ -353,8 +353,12 @@
           "statement": "–",
           "source": "–",
           "alternative": "–",
-          "reason": "Text ist klarer (Gestaltungsentwurf 21.10.2026, Prüfbedarf): Die frühere Abbildung mit drei Feldern wiederholte den Abschnittstext. Ersetzt durch den Kasten «Was Sie tun können» und zwei Beispielsätze «So könnte es klingen» (puk-say: «Gedanken lesen» und «Beobachten und nachfragen»). Beide Sätze sind neu formuliert und als Musterentwurf gekennzeichnet. «Du willst mich doch nur provozieren.» hat Christa Egger am 22.10.2026 als «OK» bestätigt. Den zweiten Satz «Deine Stimme wird lauter. Wie ist es gerade für dich?» hat sie am 22.10.2026 abgelehnt («natürlicher, menschlicher»); er lautet jetzt «Ich höre, dass du lauter wirst. Magst du mir sagen, was gerade in dir vorgeht?» (von ihr aus drei Vorschlägen gewählt). Die Planzeile bleibt ausstehend, bis die Freigabe beider Sätze ausdrücklich dokumentiert ist; das Produktionsgate blockiert bis dahin. Bezug weiterhin Bateman und Fonagy (2013) in der Quellenliste.",
-          "approvalStatus": "ausstehend"
+          "reason": "Text ist klarer (Gestaltungsentwurf 21.10.2026, Prüfbedarf): Die frühere Abbildung mit drei Feldern wiederholte den Abschnittstext. Ersetzt durch den Kasten «Was Sie tun können» und zwei Beispielsätze «So könnte es klingen» (puk-say: «Gedanken lesen» und «Beobachten und nachfragen»). Beide Sätze sind neu formuliert und als Musterentwurf gekennzeichnet. «Du willst mich doch nur provozieren.» hat Christa Egger am 22.10.2026 als «OK» bestätigt. Den zweiten Satz «Deine Stimme wird lauter. Wie ist es gerade für dich?» hat sie am 22.10.2026 abgelehnt («natürlicher, menschlicher»); er lautet jetzt «Ich höre, dass du lauter wirst. Magst du mir sagen, was gerade in dir vorgeht?» (von ihr aus drei Vorschlägen gewählt). Am 22.10.2026 hat sie beide Sätze ausdrücklich freigegeben; das Etikett «Musterentwurf» ist entfernt. Bezug weiterhin Bateman und Fonagy (2013) in der Quellenliste.",
+          "approvalStatus": "freigegeben",
+          "approvedBy": "Christa Egger",
+          "approvedAt": "2026-10-22",
+          "approvalRef": "audit-results/2026-10-22-v-vs-eisberg/FREIGABE.md",
+          "approvalScope": "Fachliche Freigabe der beiden Beispielsätze in verstehen › eisberg, Fassung 176444c"
         },
         {
           "id": "v-vs-anspannung",

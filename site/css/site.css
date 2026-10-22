@@ -1575,10 +1575,28 @@ html.puk-scroll-lock{overflow:hidden}
 .bl-caremap__link--adult{grid-column:1;grid-row:2}
 .bl-caremap__link--professional{grid-column:3;grid-row:2}
 .bl-caremap__link--professional span{transform:rotate(180deg)}
+/* Breit: je eine Linie vom Kasten oben bis zur Kinderbox, Pfeilspitze an der Kinderbox (Entscheid Fachstelle 22.10.2026).
+   Die waagrechte Linie sitzt an der Unterkante der Beschriftung, nicht auf fester Höhe: Bricht die Beschriftung um, rückt die Linie mit (Nachprüfung 2, NP2-1) */
+.bl-caremap--linked{--bl-link-x:var(--space-5);--bl-link-y:3.25rem;align-items:stretch}
+.bl-caremap--linked>.bl-caremap__child{align-self:start}
+.bl-caremap--linked .bl-caremap__link{position:relative;align-self:start;min-height:var(--bl-link-y);border-bottom:0}
+.bl-caremap--linked .bl-caremap__link span{display:none}
+.bl-caremap--linked .bl-caremap__link::before{content:"";position:absolute;top:calc(-1 * var(--space-3));bottom:0;border-bottom:2px solid var(--puk-blue-100)}
+.bl-caremap--linked .bl-caremap__link::after{content:"";position:absolute;bottom:calc(-.375rem + 1px);width:.75rem;height:.75rem;border-top:2px solid var(--puk-blue-100);border-right:2px solid var(--puk-blue-100)}
+.bl-caremap--linked .bl-caremap__link--adult{padding-left:calc(var(--bl-link-x) + var(--space-3))}
+.bl-caremap--linked .bl-caremap__link--adult::before{left:var(--bl-link-x);right:calc(-1 * var(--space-3));border-left:2px solid var(--puk-blue-100)}
+.bl-caremap--linked .bl-caremap__link--adult::after{right:calc(-1 * var(--space-3) + 1px);transform:rotate(45deg)}
+.bl-caremap--linked .bl-caremap__link--professional{padding-right:calc(var(--bl-link-x) + var(--space-3));text-align:right}
+.bl-caremap--linked .bl-caremap__link--professional::before{right:var(--bl-link-x);left:calc(-1 * var(--space-3));border-right:2px solid var(--puk-blue-100)}
+.bl-caremap--linked .bl-caremap__link--professional::after{left:calc(-1 * var(--space-3) + 1px);transform:rotate(-135deg)}
 @container(max-width:55rem){
   .bl-caremap--linked{grid-template-columns:minmax(0,1fr)}
   .bl-caremap--linked>*{grid-column:1!important;grid-row:auto!important}
   .bl-caremap__link span{display:inline-block;transform:none}
+  .bl-caremap--linked{align-items:start}
+  .bl-caremap--linked .bl-caremap__link{min-height:0;padding:var(--space-3);border-bottom:2px solid var(--puk-blue-100);text-align:left}
+  .bl-caremap--linked .bl-caremap__link span{display:inline-block}
+  .bl-caremap--linked .bl-caremap__link::before,.bl-caremap--linked .bl-caremap__link::after{content:none}
   .bl-caremap__link--adult span{transform:rotate(90deg)}
   .bl-caremap__link--professional span{transform:rotate(-90deg)}
 }
@@ -1611,4 +1629,199 @@ html.puk-scroll-lock{overflow:hidden}
   #einstiege .puk-longform__copy{max-width:none}
   #einstiege .puk-site-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3) var(--space-8)}
   #einstiege .puk-site-paths>li{margin:0;padding-block:var(--space-3)}
+}
+
+/* ===== Gestaltung 2026-10-21 · Entwurf, nicht freigegeben =====
+   Quelle: Entwürfe «Borderline Startseite Entwurf» und «Borderline Verstehen Entwurf».
+   Nachgestellt, damit diese Regeln bei gleicher Spezifität gewinnen. Neue Klassen beginnen mit .bl-.
+   Prüfbedarf: Überschriften in Rubik Medium (500); das CD Manual nennt Light und Regular für Text. */
+:root{
+  /* Grundfläche: Schattierung von PUK-Blau unter 25 % («sämtliche Schattierungen zulässig», CD Manual). */
+  --bl-ground:#F5F7FF;
+  --bl-measure:46rem;
+}
+
+/* Volle Breite für Flächen innerhalb von .puk-web-container, ohne horizontales Scrollen */
+.puk-longform__hero,.bl-band,.puk-site-sender{border-image:conic-gradient(var(--bl-surface,transparent) 0 0) fill 0//0 100vmax}
+
+/* Kopf kompakter, Absenderin als schmale Zeile */
+.puk-web-header__inner{padding-block:var(--space-3)}
+.puk-site-sender{--bl-surface:var(--ui-wash);background:var(--ui-wash);padding-block:var(--space-2);font-size:.875rem}
+
+/* Einstieg */
+.puk-longform__hero{--bl-surface:var(--bl-ground);background:var(--bl-ground);padding-block:clamp(2.5rem,5vw,4.5rem) clamp(2rem,4vw,3.5rem)}
+.puk-longform__hero .puk-web-h1{max-width:20ch;font-size:clamp(2.125rem,1.4rem + 2.6vw,3.25rem);font-weight:var(--fw-medium);line-height:1.12}
+.puk-longform__intro{max-width:38em;font-weight:var(--fw-light,300);line-height:1.55}
+.puk-site-start-actions .puk-link--action{background:var(--action-accent-bg);border-color:var(--action-accent-bg);color:var(--puk-white);font-weight:var(--fw-medium);padding:var(--space-3) var(--space-5);border-radius:var(--web-radius-btn-lg)}
+.puk-site-start-actions .puk-link--action:hover{background:var(--action-accent-bg-hover);border-color:var(--action-accent-bg-hover);color:var(--puk-white)}
+.puk-site-quick-entry{border-left:0;padding:0;background:none}
+
+/* Abschnitte einspaltig: Titel über dem Text statt leerer Titelspalte */
+.puk-longform__section-grid{grid-template-columns:minmax(0,1fr);gap:var(--space-5)}
+.puk-longform__section-heading{position:static}
+.puk-longform__section-heading .puk-web-h2{max-width:24ch;font-weight:var(--fw-medium)}
+.puk-longform__copy{max-width:var(--bl-measure)}
+.bl-section--wide .puk-longform__copy{max-width:none}
+.bl-section--wide .puk-longform__copy>p{max-width:var(--bl-measure)}
+
+/* Einstiege nach Anliegen als Karten; die ganze Karte ist der Link */
+.bl-paths-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:var(--space-4)}
+.bl-paths-cards li{position:relative;display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-5);border:1px solid transparent;border-radius:var(--web-radius-btn-lg);background:var(--bl-ground)}
+.bl-paths-cards li:hover{border-color:var(--puk-blue-100);background:var(--ui-field)}
+.bl-paths-cards li:focus-within{outline:3px solid var(--border-focus);outline-offset:2px}
+.bl-paths-cards a{color:var(--text-default);text-decoration:none;font-weight:var(--fw-medium);padding-block:0}
+.bl-paths-cards a::after{content:"";position:absolute;inset:0}
+/* Ein Fokusrahmen um die ganze Karte, nur bei Tastaturbedienung (P708-W6). Ohne :has() bleibt der Rahmen bei :focus-within samt Ring am Link */
+@supports selector(:has(*)){.bl-paths-cards li:focus-within{outline:none}.bl-paths-cards li:has(a:focus-visible){outline:3px solid var(--border-focus);outline-offset:2px}.bl-paths-cards a:focus-visible{box-shadow:none}}
+.bl-paths-cards p{margin:0;color:var(--text-muted)}
+
+/* Themen als ruhiges, liniertes Raster */
+.bl-paths-lines{grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:0 var(--space-6);border-top:2px solid var(--border-strong)}
+.bl-paths-lines li{padding-block:var(--space-4);border-top:0;border-bottom:1px solid var(--border-default)}
+.bl-paths-lines a{color:var(--text-default);text-decoration:none;font-weight:var(--fw-medium)}
+.bl-paths-lines a:hover{color:var(--puk-blue-125);text-decoration:underline}
+.bl-paths-lines p{color:var(--text-muted)}
+
+/* Blaues Band (Haltung) */
+.bl-band{--bl-surface:var(--puk-blue-100);background:var(--puk-blue-100);color:var(--puk-white)}
+.bl-band+.puk-longform__section,.puk-longform__section+.bl-band{border-top:0}
+.bl-band .puk-longform__kicker,.bl-band .puk-web-h2{color:var(--puk-white)}
+.bl-band .puk-longform__copy p{font-size:clamp(1.1875rem,1rem + .6vw,1.375rem);line-height:1.55}
+
+/* Hauptaktion Beratung */
+.bl-action--primary{background:var(--action-primary-bg);border-color:var(--action-primary-bg);color:var(--action-primary-fg);font-weight:var(--fw-medium);text-decoration:none}
+.bl-action--primary:hover{background:var(--action-primary-bg-hover);border-color:var(--action-primary-bg-hover);color:var(--action-primary-fg)}
+
+/* «Auf dieser Seite» als kompakte Zeile (nicht mitlaufend: Prüfbefund PR #708, WCAG 2.4.11) */
+@media (min-width:760px){
+  .puk-longform__roadmap{background:var(--puk-white);padding-block:var(--space-2)}
+  .puk-longform__roadmap .puk-web-container{display:flex;align-items:center;gap:0 var(--space-4)}
+  .puk-longform__roadmap-label{margin:0;flex:0 0 auto;text-transform:none;letter-spacing:0;color:var(--text-muted)}
+  .puk-longform__roadmap ol{flex-wrap:wrap;gap:0 var(--space-1)}
+  .puk-longform__roadmap a{padding-inline:var(--space-3);text-decoration:none;border-radius:var(--web-radius-btn-lg)}
+  .puk-longform__roadmap a:hover{background:var(--ui-field);color:var(--text-default)}
+}
+
+/* «Was Sie tun können» als hervorgehobener Kasten im Text */
+.bl-tun{margin:var(--space-5) 0 0;padding:var(--space-5) var(--space-6);background:var(--ui-field);border-radius:var(--web-radius-btn-lg)}
+.bl-tun>*{margin:0}
+.bl-tun>*+*{margin-top:var(--space-3)}
+.bl-tun__label{font-size:.875rem;font-weight:var(--fw-medium);letter-spacing:.04em;text-transform:uppercase;color:var(--puk-blue-125)}
+
+/* Diagnose-Merkmale als Raster */
+.bl-merkmale{list-style:none;margin:var(--space-4) 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:var(--space-3)}
+.bl-merkmale li{margin:0;padding:var(--space-4) var(--space-5);background:var(--bl-ground);border-radius:var(--web-radius-btn-lg)}
+.bl-rule{padding-block:var(--space-5);border-top:2px solid var(--border-strong);border-bottom:1px solid var(--border-default)}
+
+/* Beispielsätze nebeneinander («So könnte es klingen») */
+.bl-say-title{margin:var(--space-6) 0 var(--space-2);font-size:.875rem;font-weight:var(--fw-medium);color:var(--text-muted)}
+.bl-say{grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--space-3)}
+.bl-say .puk-say__item{padding:var(--space-4) var(--space-5);border:1px solid var(--border-default);border-radius:var(--web-radius-btn-lg);color:var(--text-muted)}
+.bl-say .puk-say__item--hilfreich{border-color:var(--ui-field);background:var(--ui-field);color:var(--text-default);font-weight:var(--fw-medium)}
+
+/* Abbildungen auf heller Blaufläche */
+.puk-vis-figure:not(.puk-vis-figure--open){background:var(--bl-ground);border:0;border-radius:var(--web-radius-btn-lg)}
+.puk-vis-kern{font-weight:var(--fw-medium)}
+.puk-vis-figure .bl-phase-actions{display:grid;gap:var(--space-3);grid-template-columns:minmax(0,1fr)}
+@media (min-width:560px){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:68.75em){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.puk-vis-figure .bl-phase-actions>li{margin:0;padding:var(--space-5);background:var(--puk-white);border-radius:var(--web-radius-btn-lg);display:flex;flex-direction:column;gap:var(--space-2)}
+.puk-vis-figure .bl-phase-actions>li>.puk-vis-build__n{grid-column:auto;grid-row:auto;position:static;align-self:flex-start;margin:0}
+.puk-vis-figure .bl-phase-actions>li>div{grid-column:auto;min-width:0}
+.puk-vis-figure .bl-phase-actions .puk-vis-ansatz{padding-left:0;border-left:0;margin:0;background:none;color:inherit}
+.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) :where(h3,p,span:not(.puk-vis-build__n)){color:var(--puk-white)}
+.puk-vis-figure .bl-phase-actions h3{margin:0 0 var(--space-2)}
+.puk-vis-figure .bl-phase-actions p{hyphens:manual}
+.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz){background:var(--puk-blue-100);color:var(--puk-white)}
+.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) .puk-vis-build__n{background:var(--puk-white);color:var(--puk-blue-100);border-color:var(--puk-white)}
+
+/* Häufige Annahmen: Annahme links, Einordnung rechts */
+.bl-annahmen{margin:var(--space-6) 0;border-top:2px solid var(--border-strong)}
+.bl-annahmen dt,.bl-annahmen dd{margin:0;padding-block:var(--space-5)}
+.bl-annahmen dt{color:var(--text-muted);font-size:clamp(1.1875rem,1rem + .6vw,1.375rem);line-height:1.35}
+.bl-annahmen dd{border-bottom:1px solid var(--border-default)}
+@media (min-width:900px){
+  .bl-section--wide .bl-annahmen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);column-gap:var(--space-8)}
+  .bl-annahmen dt{border-bottom:1px solid var(--border-default)}
+}
+
+/* Merksatz als blaue Fläche */
+.bl-merksatz{border-left:0;background:var(--puk-blue-100);color:var(--puk-white);border-radius:var(--web-radius-btn-lg)}
+.bl-merksatz h3{color:var(--puk-white);font-size:.9375rem;letter-spacing:.04em;text-transform:uppercase}
+.bl-merksatz p{margin:0;font-size:clamp(1.375rem,1.1rem + 1vw,1.875rem);line-height:1.3}
+
+/* Seitenübergreifend nach Review 21.10.2026 */
+.puk-web-h2{font-weight:var(--fw-medium)}
+.puk-longform__hero>.puk-longform__intro+p{margin-top:var(--space-4)}
+.puk-site-start-actions .puk-link--action,.bl-action--primary{justify-content:flex-start;text-align:left;line-height:1.3}
+/* «Das Wichtigste» oben auf Themenseiten: Fläche statt Randlinie, Text in Lesebreite */
+.puk-site-quick{max-width:min(calc(var(--web-container-max) - 2 * var(--web-gutter-inline)),calc(100% - 2 * var(--web-gutter-inline)));padding:clamp(1.25rem,3vw,2rem);border:2px solid var(--puk-blue-25);background:var(--puk-white);border-radius:var(--web-radius-btn-lg)}
+.puk-site-quick>*{max-width:var(--bl-measure)}
+.puk-site-quick h2{font-size:clamp(1.375rem,1.1rem + 1vw,1.75rem)}
+/* Weitere Themen als Karten */
+.puk-site-related{background:var(--bl-ground)}
+.puk-site-related h2{font-size:clamp(1.5rem,1.2rem + 1vw,2rem)}
+.puk-site-related ul{gap:var(--space-3)}
+.puk-site-related li{display:flex}
+.puk-site-related a{flex:1;display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);min-height:var(--web-touch-target);padding:var(--space-4) var(--space-5);background:var(--puk-white);border:1px solid transparent;border-radius:var(--web-radius-btn-lg);color:var(--text-default);font-weight:var(--fw-medium);text-decoration:none}
+.puk-site-related a::after{content:"→";content:"→" / "";color:var(--puk-blue-100)}
+.puk-site-related a:hover{border-color:var(--puk-blue-100);color:var(--text-default)}
+/* Tabellen dürfen breiter sein als die Lesespalte */
+.puk-longform__copy:has(>.puk-vis-tablewrap){max-width:none}
+.puk-longform__copy:has(>.puk-vis-tablewrap)>:not(.puk-vis-tablewrap){max-width:var(--bl-measure)}
+.puk-vis-tablewrap :is(th,td){hyphens:manual}
+
+/* Fusszeile: ruhiger, persönlicher Abschluss. Kontakt als Karte vorn, Angaben zur Website als leise zweite Ebene */
+.puk-web-footer{margin-top:0;padding-block:clamp(2.5rem,5vw,4rem);border-top:2px solid var(--puk-blue-25);background:var(--bl-ground);font-size:1rem}
+@media (min-width:760px){.puk-web-footer__grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:var(--space-6) clamp(2rem,6vw,5rem)}}
+.puk-web-footer__heading{color:var(--text-default);font-size:1.25rem;font-weight:var(--fw-medium);letter-spacing:0;text-transform:none}
+.puk-web-footer__copy{color:var(--text-default)}
+.puk-web-footer a{color:var(--puk-blue-125)}
+.puk-web-footer a:hover{color:var(--text-link-hover)}
+/* Links auf getönten Flächen (Absenderzeile, Einstieg, «Was Sie tun können») im dunkleren Blau: mindestens 4,5:1 (Auflage zu F4) */
+.puk-site-sender a,.puk-longform__hero a.puk-link--inline,.bl-tun a{color:var(--puk-blue-125)}
+.puk-site-sender a:hover,.puk-longform__hero a.puk-link--inline:hover,.bl-tun a:hover{color:var(--text-link-hover)}
+/* Aktionslink im Einstieg ohne eigene Fläche (404-Seite «Zur Startseite»): beim Überfahren Blau 125 statt Blau 100, 5,95:1 auf #F5F7FF (Nachprüfung 2, NP2-2). Die Startaktionen der Startseite sind ausgenommen */
+.puk-longform__hero .puk-link--action:not(.puk-site-start-actions .puk-link--action):hover{color:var(--puk-blue-125)}
+.puk-site-safety--responsibility{padding:clamp(1.25rem,3vw,2rem);background:var(--puk-white);border:0;border-radius:var(--web-radius-btn-lg)}
+.puk-site-safety--responsibility .puk-web-footer__copy:first-of-type{font-size:clamp(1.125rem,1rem + .4vw,1.3125rem);line-height:1.45;font-weight:var(--fw-light,300)}
+.puk-site-safety--responsibility .puk-web-footer__copy a{font-weight:var(--fw-medium)}
+.puk-site-safety--responsibility .puk-web-footer__copy a::after{content:"→";content:"→" / "";margin-left:.4em;color:var(--puk-blue-100)}
+.puk-web-footer__about>.puk-web-footer__copy:first-of-type{margin-top:var(--space-1);color:var(--text-muted)}
+.puk-web-footer__boundary{margin-top:var(--space-5)}
+.puk-web-footer__boundary .puk-web-footer__copy{font-size:1rem;color:var(--text-default)}
+.puk-site-info-links,.puk-site-legal,.puk-web-footer__meta{font-size:.9375rem}
+.puk-web-footer__details{border-top:1px solid var(--puk-blue-25)}
+.puk-web-footer__details .puk-web-footer__meta,.puk-site-legal,.puk-site-legal a{color:var(--text-muted)}
+
+/* Prozesspfade (z. B. DEAR): Spaltenzahl = Anzahl Schritte; senkrecht, sobald die Spalten zu schmal würden */
+@container (width > 62rem){
+  .puk-vis-path:has(>li:nth-child(4):last-child){grid-template-columns:repeat(4,minmax(0,1fr))}
+  .puk-vis-path:has(>li:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+.puk-vis-path p,.puk-vis-path h3{hyphens:manual}
+@container (max-width:62rem){
+  .puk-vis-path{grid-template-columns:minmax(0,1fr);gap:0}
+  .puk-vis-path li{padding:0 0 var(--space-6) var(--space-10)}
+  .puk-vis-path li::before{left:11px;right:auto;top:24px;bottom:0;border-top:0;border-left:2px solid var(--puk-blue-100)}
+  .puk-vis-path li.puk-vis-path--optional::before{border-left-style:dashed}
+  .puk-vis-path li:last-child::before{display:none}
+}
+
+@media (forced-colors:active){
+  .bl-paths-cards li,.bl-tun,.bl-merkmale li,.bl-merksatz,.bl-band,.puk-vis-figure .bl-phase-actions>li,.puk-site-quick,.puk-site-related a{border:1px solid CanvasText}
+  /* Der Browser ersetzt border-image nicht: ohne diese Regel bleiben Einstieg und Absenderzeile hell (Nachprüfung PR #708, N3) */
+  .puk-longform__hero,.puk-site-sender{border-image:none}
+  .puk-site-safety--responsibility,.puk-vis-figure:not(.puk-vis-figure--open){border:1px solid CanvasText}
+  .puk-longform__section+.bl-band{border-top:1px solid CanvasText}
+  .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz){border-width:3px}
+}
+@media print{
+  .puk-longform__hero,.bl-band,.puk-site-sender{border-image:none}
+  .bl-band,.bl-merksatz,.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz){background:none;color:var(--text-default);border:2px solid var(--puk-blue-100)}
+  .bl-band :is(h2,p,.puk-longform__kicker),.bl-merksatz :is(h3,p),.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) :where(h3,p,span:not(.puk-vis-build__n)){color:var(--text-default)}
+  .puk-longform__section+.bl-band{border-top:2px solid var(--puk-blue-100)}
+  .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) .puk-vis-build__n{border-color:var(--puk-blue-100)}
+  .puk-site-start-actions .puk-link--action,.bl-action--primary{background:none;color:var(--text-default);border-color:var(--puk-blue-100)}
+  .bl-paths-cards li{break-inside:avoid}
 }

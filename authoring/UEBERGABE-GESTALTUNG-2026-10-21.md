@@ -114,6 +114,14 @@ Wortlaut der Rückmeldung und Status je Abbildung: `audit-results/2026-10-22-abb
 - Produktionsgate danach: 3 BLOCK (Abbildungen 1, 2 und 4).
 - **Nachtrag 22.10.2026, 12:17 Uhr:** Christa gibt die geänderten Fassungen von `v-vs-anspannung`, `v-ki-alltag` und `v-sf-entlastung` frei (Stand `5b024ce`); Wortlaut im Nachweis. Produktionsgate: 0 BLOCK.
 
+## Nachbesserung 3 nach Nachprüfung 2 (22.10.2026)
+Entscheid Christa Egger, 22.10.2026: Die drei geringen Befunde NP2-1 bis NP2-3 und der Hinweis H1 der Nachprüfung 2 (`PRUEFBERICHT.md`, Abschnitt «Nachprüfung 2 PR #708 · 22.10.2026») werden vor dem Neuschreiben von `site/` behoben; danach Nachprüfung 3 durch eine unbeteiligte Sitzung, dann `site/` und Merge. Ausgeführt hat die Nachprüfsitzung 2; sie ist damit bauende Sitzung und für Nachprüfung 3 ausgeschlossen. Nachweis mit Messwerten und Bildschirmfotos: `audit-results/2026-10-22-nachbesserung-3/BERICHT.md`. Alle Werte dort sind eine Selbstprüfung, keine Prüfstufe.
+- **NP2-1 · `v-ki-alltag`:** Die waagrechte Verbindungslinie sitzt an der Unterkante der Beschriftung statt auf fester Höhe; bei zweizeiliger Beschriftung (957–985 px) rückt sie mit. 760–1280 px in 1-px-Schritten: Mindestabstand Text–Linie 13,3 px (vorher −3,3 px bei 958–984 px), Pfeilspitze auf der Linienmitte, kein Überlauf. Bei 1280 px bis auf die um 2 px zentrierte Pfeilspitze pixelgleich. Wortlaut, Kennzeichnung und Screenreader-Fassung unverändert; Gestaltungskorrektur ohne neue Freigabe.
+- **NP2-2 · 404-Seite:** `.puk-longform__hero .puk-link--action:not(.puk-site-start-actions .puk-link--action):hover{color:var(--puk-blue-125)}`. «Zur Startseite» überfahren 5,95:1 (vorher 4,40:1); alle Zustände mindestens 4,71:1. Alle 168 Links und Schaltflächen auf getönten Flächen, 23 Seiten, in Ruhe, überfahren und fokussiert: 0 unter 4,5:1. Startaktionen der Startseite unverändert.
+- **NP2-3 · `contract.js`:** Der Selbsttest-Fall zur Textfassung meldet ohne freigegebene Textfassung «keine freigegebene Textfassung im Visualisierungsplan – Fall nicht prüfbar» als FAIL (Exit 1) statt `TypeError`. Neuer Fall dafür; Selbsttest 84/84.
+- **H1 · `selbstfuersorge` › `#unterstuetzung`:** «Sie dürfen auch zuerst für sich sorgen.» statt «Sie dürfen zuerst oder ausschliesslich für sich sorgen.» (Wortlaut von Christa, Begründung wie bei der Figur: Die Seite lesen auch Eltern minderjähriger Kinder). Nur dieser Satz. «ausschliesslich» steht sonst nur in anderem Sinn auf `diagnose` und `impressum-datenschutz`; gemeldet, nicht geändert.
+- Kennzahlen: Selbsttest 84/84; Produktion 23 Seiten · 0 Blocker · 20 Hinweise; Entwurf 0 / 20; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 1 Abweichung (B2c); `--verify-site` Exit 1, erwartet.
+
 ## Pull Request
 
 Als Entwurf eröffnen, mit Verweis auf diese Datei und die offenen Stufen. `site/` erst nach Freigabe in einem separaten PR neu schreiben.

@@ -1575,13 +1575,14 @@ html.puk-scroll-lock{overflow:hidden}
 .bl-caremap__link--adult{grid-column:1;grid-row:2}
 .bl-caremap__link--professional{grid-column:3;grid-row:2}
 .bl-caremap__link--professional span{transform:rotate(180deg)}
-/* Breit: je eine Linie vom Kasten oben bis zur Kinderbox, Pfeilspitze an der Kinderbox (Entscheid Fachstelle 22.10.2026) */
+/* Breit: je eine Linie vom Kasten oben bis zur Kinderbox, Pfeilspitze an der Kinderbox (Entscheid Fachstelle 22.10.2026).
+   Die waagrechte Linie sitzt an der Unterkante der Beschriftung, nicht auf fester Höhe: Bricht die Beschriftung um, rückt die Linie mit (Nachprüfung 2, NP2-1) */
 .bl-caremap--linked{--bl-link-x:var(--space-5);--bl-link-y:3.25rem;align-items:stretch}
 .bl-caremap--linked>.bl-caremap__child{align-self:start}
-.bl-caremap--linked .bl-caremap__link{position:relative;align-self:start;min-height:calc(var(--bl-link-y) + var(--space-3));border-bottom:0}
+.bl-caremap--linked .bl-caremap__link{position:relative;align-self:start;min-height:var(--bl-link-y);border-bottom:0}
 .bl-caremap--linked .bl-caremap__link span{display:none}
-.bl-caremap--linked .bl-caremap__link::before{content:"";position:absolute;top:calc(-1 * var(--space-3));height:calc(var(--bl-link-y) + var(--space-3));border-bottom:2px solid var(--puk-blue-100)}
-.bl-caremap--linked .bl-caremap__link::after{content:"";position:absolute;top:calc(var(--bl-link-y) - .375rem + 1px);width:.75rem;height:.75rem;border-top:2px solid var(--puk-blue-100);border-right:2px solid var(--puk-blue-100)}
+.bl-caremap--linked .bl-caremap__link::before{content:"";position:absolute;top:calc(-1 * var(--space-3));bottom:0;border-bottom:2px solid var(--puk-blue-100)}
+.bl-caremap--linked .bl-caremap__link::after{content:"";position:absolute;bottom:calc(-.375rem + 1px);width:.75rem;height:.75rem;border-top:2px solid var(--puk-blue-100);border-right:2px solid var(--puk-blue-100)}
 .bl-caremap--linked .bl-caremap__link--adult{padding-left:calc(var(--bl-link-x) + var(--space-3))}
 .bl-caremap--linked .bl-caremap__link--adult::before{left:var(--bl-link-x);right:calc(-1 * var(--space-3));border-left:2px solid var(--puk-blue-100)}
 .bl-caremap--linked .bl-caremap__link--adult::after{right:calc(-1 * var(--space-3) + 1px);transform:rotate(45deg)}
@@ -1780,6 +1781,8 @@ html.puk-scroll-lock{overflow:hidden}
 /* Links auf getönten Flächen (Absenderzeile, Einstieg, «Was Sie tun können») im dunkleren Blau: mindestens 4,5:1 (Auflage zu F4) */
 .puk-site-sender a,.puk-longform__hero a.puk-link--inline,.bl-tun a{color:var(--puk-blue-125)}
 .puk-site-sender a:hover,.puk-longform__hero a.puk-link--inline:hover,.bl-tun a:hover{color:var(--text-link-hover)}
+/* Aktionslink im Einstieg ohne eigene Fläche (404-Seite «Zur Startseite»): beim Überfahren Blau 125 statt Blau 100, 5,95:1 auf #F5F7FF (Nachprüfung 2, NP2-2). Die Startaktionen der Startseite sind ausgenommen */
+.puk-longform__hero .puk-link--action:not(.puk-site-start-actions .puk-link--action):hover{color:var(--puk-blue-125)}
 .puk-site-safety--responsibility{padding:clamp(1.25rem,3vw,2rem);background:var(--puk-white);border:0;border-radius:var(--web-radius-btn-lg)}
 .puk-site-safety--responsibility .puk-web-footer__copy:first-of-type{font-size:clamp(1.125rem,1rem + .4vw,1.3125rem);line-height:1.45;font-weight:var(--fw-light,300)}
 .puk-site-safety--responsibility .puk-web-footer__copy a{font-weight:var(--fw-medium)}

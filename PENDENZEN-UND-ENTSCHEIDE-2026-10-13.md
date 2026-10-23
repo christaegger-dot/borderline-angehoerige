@@ -19,7 +19,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Technischer Stand des Entwurfs:** Selbsttest 84/84; Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise (`crisis-number-check`, unverändert); `--verify-site` Parität 34 Dateien bytegleich; Suchtest 216/216; Sprach-/UI-Test 73/73; Audit-04-Layouttest 230 Zustände, 25 Bedienproben, 1 Abweichung (`tension core exceeds 1800px`, Ausnahme B2c), neu mit Titelprüfung (0 Brüche ohne Trennstelle).
 
-**Bewusst belassen:** P708-W3, P708-V4, H2. **Offen:** Screenreader-Prüfung (kein Screenreader verfügbar); Nachprüfung durch eine Sitzung, die nicht gebaut hat (im PR beauftragt); Merge und Veröffentlichung nur auf Auftrag.
+**Bewusst belassen:** P708-W3, P708-V4, H2. **Offen:** Screenreader-Prüfung (kein Screenreader verfügbar); Nachprüfung durch eine Sitzung, die nicht gebaut hat (Stand `e1d0952`, [NACHPRUEFUNG.md](audit-results/2026-10-23-r4-41-nachfuehrung/NACHPRUEFUNG.md)): Kennzahlen bestätigt, 0 blockierend, 1 wichtig (N41-W1: bei 200 % Schrift brechen «erkrankungen» bei 320 und 375 px sowie «betroffen» und «schlagen» bei 320 px innerhalb des Segments ohne Trennstelle; der Layouttest prüft nur auf Wortebene), 2 gering (N41-G1 Zeilenbilanz im Nachweis, N41-G2 Vermerk `appliedTo`), Empfehlung «Nachbesserung nötig (N41-W1), ohne Blocker; nach dem erfolgten Merge als Folge-PR»; Merge und Veröffentlichung nur auf Auftrag.
 
 ## Gestaltung 2026-10-21 · r4-40 · veröffentlicht am 22.10.2026
 

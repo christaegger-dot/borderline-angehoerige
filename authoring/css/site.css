@@ -1430,7 +1430,9 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-site-filter{margin-block:var(--space-5);padding:var(--space-5);background:var(--surface-subtle)}
 [data-puk-filter]:not([data-filter-enhanced]) .puk-site-filter,[data-puk-search]:not([data-search-enhanced]) .puk-site-filter{display:none}
 .puk-site-filter label{display:block;margin-bottom:var(--space-2);font-weight:var(--fw-medium)}
-.puk-site-filter input[type="search"]{box-sizing:border-box;width:100%;min-height:2.75rem;padding:var(--space-2) var(--space-3);border:var(--border-width) solid var(--border-hairline);border-radius:var(--radius-md);background:var(--ui-field);color:var(--text-default)}
+.puk-site-filter input[type="search"]{box-sizing:border-box;width:100%;min-height:2.75rem;padding:var(--space-2) var(--space-3);border:var(--border-width) solid var(--border-hairline);border-radius:var(--radius-md);background:var(--ui-field);color:var(--text-default);font:inherit;font-weight:var(--fw-regular,400)}
+/* r4-43 (Prüfbericht 23.10.2026, X3): Eingabe in der Seitenschrift und mit der Browser-Schriftgrösse; Hinweistext mit mindestens 4,5 : 1 */
+.puk-site-filter input[type="search"]::placeholder{color:var(--text-muted);opacity:1}
 .puk-site-filter input[type="search"]:focus-visible{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}
 .puk-site-filter__status{margin-bottom:0;color:var(--text-muted);font:var(--type-body-sm)}
 .puk-site-filter__empty{margin-top:var(--space-5);font-weight:var(--fw-medium)}
@@ -1803,6 +1805,28 @@ html.puk-scroll-lock{overflow:hidden}
   .puk-vis-path li:last-child::before{display:none}
 }
 
+
+/* r4-43 (Prüfbericht 23.10.2026, X1): Regel W-2 sinngemäss für Zwischentitel, Lesetext, Schnellorientierung und
+   Fusszeile. Ist die Textspalte schmaler als 12 em ihrer Schrift (Handy bei 200 % Schrift), trennen diese Texte Wörter
+   ab 8 Zeichen nach Silben, statt sie an beliebiger Stelle zu brechen. Bei Standardschrift bleibt Lesetext ungetrennt
+   (Fliesstext ohne automatische Silbentrennung). Browser ohne deutsches Trennmuster brechen wie bisher. Lokale
+   Erweiterung, zur Übernahme ins Profil vorgeschlagen. Unter 76 rem ist die Titelspalte kein Container mehr, deshalb
+   fragt die Regel das Abschnittsraster ab. */
+.puk-longform__section-grid,.puk-site-quick,.puk-web-footer__grid{container-type:inline-size}
+@container (max-width:12em){
+  .puk-web-h2,
+  .puk-longform__copy :where(p,li,dd,dt,h3,h4,summary,a,strong,span),
+  .puk-site-quick :where(p,li,a,strong),
+  .puk-web-footer :where(h2,p,a){hyphens:auto;hyphenate-limit-chars:8 4 4}
+  /* Akuthinweis in der Schnellorientierung (KR-01): weniger Innenabstand, damit die Notrufsätze nicht in einer
+     Spalte von rund 5 em stehen */
+  .puk-site-quick .puk-longform__boundary{padding-inline:var(--space-3) var(--space-2)}
+}
+/* Schnellorientierung bei schmaler Spalte (KR-01): weniger Innenabstand am Rand, damit der Akuthinweis Platz hat */
+.puk-web-main{container-type:inline-size}
+@container (max-width:12em){.puk-site-quick{padding-inline:var(--space-3)}}
+/* Zähler der Kapitelübersicht nicht zwischen den Ziffern umbrechen («0 / 1») */
+.puk-longform__roadmap a::before{white-space:nowrap}
 @media (forced-colors:active){
   .bl-paths-cards li,.bl-tun,.bl-merkmale li,.bl-merksatz,.bl-band,.puk-vis-figure .bl-phase-actions>li,.puk-site-quick,.puk-site-related a{border:1px solid CanvasText}
   /* Der Browser ersetzt border-image nicht: ohne diese Regel bleiben Einstieg und Absenderzeile hell (Nachprüfung PR #708, N3) */

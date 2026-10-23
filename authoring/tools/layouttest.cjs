@@ -16,7 +16,9 @@ const pages=JSON.parse(fs.readFileSync(root+'/authoring/site.config.json')).page
     const result=await p.evaluate(()=>{
      const pos=s=>{let e=document.querySelector(s);if(!e)return null;const r=e.getBoundingClientRect();return {y:Math.round(r.top+scrollY),h:Math.round(r.height),width:Math.round(r.width)}};
      const over=[...document.querySelectorAll('main *,header *')].filter(e=>{const r=e.getBoundingClientRect();return r.width&&r.right>innerWidth+2&&!e.closest('svg')&&!e.closest('.puk-sr')&&getComputedStyle(e).position!=='absolute'}).map(e=>({tag:e.tagName,cls:String(e.className),text:e.textContent.slice(0,55)}));
-     return {scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,header:pos('header'),input:pos('input'),quick:pos('.puk-site-quick'),firstCrisisStep:pos('.puk-site-quick li'),curve:pos('[data-visual-id="v-vs-anspannung"]'),firstQuote:pos('.bl-sicht .puk-vis-compare__col'),tableWidth:pos('.bl-tabelle'),tableRegion:pos('.puk-vis-tablewrap'),overflow:over.slice(0,10),copy:pos('.puk-longform__copy')};
+     const h1=document.querySelector('main h1'),node=h1&&[...h1.childNodes].find(n=>n.nodeType===3),title={broken:[],hyphenated:[],hyphens:h1?getComputedStyle(h1).hyphens:null};
+     if(node){const text=node.data;let pos=0;for(const word of text.split(/\s+/).filter(Boolean)){const i=text.indexOf(word,pos);pos=i+word.length;const r=document.createRange();r.setStart(node,i);r.setEnd(node,i+word.length);const lines=new Set([...r.getClientRects()].map(x=>Math.round(x.top))).size;if(lines>1)(word.includes('\u00AD')?title.hyphenated:title.broken).push(word.replace(/\u00AD/g,'|'));}}
+     return {title,scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,header:pos('header'),input:pos('input'),quick:pos('.puk-site-quick'),firstCrisisStep:pos('.puk-site-quick li'),curve:pos('[data-visual-id="v-vs-anspannung"]'),firstQuote:pos('.bl-sicht .puk-vis-compare__col'),tableWidth:pos('.bl-tabelle'),tableRegion:pos('.puk-vis-tablewrap'),overflow:over.slice(0,10),copy:pos('.puk-longform__copy')};
     });
     rows.push({page,width,large,...result});
     if(!large&&width===375&&['krise','suche','begriffe','quellen'].includes(page))await p.screenshot({path:out+'/screenshots/'+page+'-375.png'});
@@ -49,6 +51,8 @@ const pages=JSON.parse(fs.readFileSync(root+'/authoring/site.config.json')).page
   if(!r.large&&r.width===375&&r.page==='verstehen'&&r.curve.h>1800)issues.push('tension core exceeds 1800px');
   if(!r.large&&r.width===1440&&r.page==='beziehungen'&&r.firstQuote.h>150)issues.push('quote card exceeds natural height');
   if(r.large&&[768,1024].includes(r.width)&&r.page==='kommunizieren'&&r.tableWidth.width>r.tableRegion.width+2)issues.push('table fails to become labelled records');
+  if(r.width&&r.title&&r.title.broken.length)issues.push(`${r.page} ${r.width}px text200=${r.large}: title word breaks without soft hyphen (${r.title.broken.join(', ')})`);
+  if(r.width&&!r.large&&r.title&&r.title.hyphenated.length&&r.title.hyphens==='none')issues.push(`${r.page} ${r.width}px: title word breaks arbitrarily at default font size (${r.title.hyphenated.join(', ')})`);
  }
  if(errors.length)issues.push(...errors);
  fs.writeFileSync(out+'/ERGEBNIS.json',JSON.stringify({states:rows.filter(r=>r.width).length,interactions:rows.filter(r=>r.test).length,issues},null,2));

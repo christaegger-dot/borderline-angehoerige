@@ -1,10 +1,25 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 22. Oktober 2026 · GitHub main: r4-40 (`670c29f91b0c8e2035e0fc9ca10030effde6e51c`, PR #708 gemergt am 22.10.2026, 19:32 UTC). Kein offener Arbeitsentwurf, kein offener Pull Request (Status geprüft am 22.10.2026).**
+**Dokumentationsstand: 23. Oktober 2026 · GitHub main: r4-40 (`8aa6be83a5eb83d21848a8d4028fca893b18e74d`, PR #710 gemergt am 22.10.2026). Offener Arbeitsentwurf: r4-41 auf Branch `gestaltung/2026-10-23-nachfuehrung-r4-41` (Pull Request PR-NUMMER, Entwurf; Status geprüft am 23.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Gestaltungsnachführung · r4-41 · Entwurf vom 23.10.2026
+
+**GitHub:** Branch `gestaltung/2026-10-23-nachfuehrung-r4-41`, Pull Request PR-NUMMER (Entwurf, nicht gemergt). Auftrag von Christa Egger vom 23.10.2026 nach der Beurteilung der Releasefähigkeit von r4-40: «einverstanden, setze um die offenen Pendenzen. du kannst selbständig entscheiden!» Nachweis: [`audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md`](audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
+
+**Inhalt (technisch-gestalterisch, kein Wortlaut, keine Abbildung, keine Kontaktangabe geändert):**
+- Profilregel 2026.10.9 W-2: Titel werden bei Standardschrift nie getrennt; ist der Einstieg schmaler als 12 em seiner Schrift (320–375 px bei 200 % Schrift), trennen sie Wörter ab 8 Zeichen nach Silben statt beliebig zu brechen; 17 Seitentitel tragen weiche Trennstellen. Ausnahme Diagnose («Begleit-erkrankungen» auch bei Standardschrift länger als die Zeile). Vorher brachen bei 200 % auf 17 von 23 Seiten Titelwörter ohne Trennstelle.
+- Profilregel 2026.10.9 W-3: Hover-Zustände auf `--ui-wash` in Blau 125 (`--text-link-on-tint`); keine Seite nutzt die betroffenen Klassen, die Regel ist vorsorglich.
+- Build-Kennung r4-41 in `contract.js` und `assetVersion` (vorher r4-39 neben r4-40); `independentReviewWaiver.version` r4-41 auf den fortgeltenden Entscheid vom 18.10.2026 gestützt, mit Vermerk; `pendingScope` r4-41.
+- P708-W4: verwaiste CSS-Regeln entfernt. P708-W2: Markierung des Ansatzpunkts ohne `:has()` erhalten.
+- Profilstand nachgetragen: `christaegger-dot/puk-website-profil` hat das Paket 2026.10.8 unabhängig geprüft (PR #138), die Befunde als 2026.10.9 umgesetzt (PR #139) und 2026.10.9 unabhängig geprüft (PR #140, alle gemergt am 23.10.2026). Dort offen: nichts.
+
+**Technischer Stand des Entwurfs:** Selbsttest 84/84; Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise (`crisis-number-check`, unverändert); `--verify-site` Parität 34 Dateien bytegleich; Suchtest 216/216; Sprach-/UI-Test 73/73; Audit-04-Layouttest 230 Zustände, 25 Bedienproben, 1 Abweichung (`tension core exceeds 1800px`, Ausnahme B2c), neu mit Titelprüfung (0 Brüche ohne Trennstelle).
+
+**Bewusst belassen:** P708-W3, P708-V4, H2. **Offen:** Screenreader-Prüfung (kein Screenreader verfügbar); Nachprüfung durch eine Sitzung, die nicht gebaut hat (im PR beauftragt); Merge und Veröffentlichung nur auf Auftrag.
 
 ## Gestaltung 2026-10-21 · r4-40 · veröffentlicht am 22.10.2026
 
@@ -26,7 +41,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 - Screenreader-Prüfung der neuen Gestaltung (kein Screenreader verfügbar).
 - Geringe Befunde W2, W3, W4 (verwaiste CSS-Regeln, u. a. `.bl-parallel-aspects`, `bl-observe`, `bl-knowledge-boundary`) und V4 aus der Prüfung vom 21.10.2026; nicht bearbeitet, optional.
 - Hinweis H2 der Nachprüfung 3 ohne Befund: Die Hover-Regel für Aktionslinks im Einstieg nutzt `:not()` mit zusammengesetztem Selektor; ältere Browser zeigen den Zustand von vor der Nachbesserung 3 (4,40:1), keinen Rückschritt.
-- Profilentscheid F3 (Rubik Medium für `h1`/`h2`) und Profilton F4 (Grundfläche `#F5F7FF` mit Auflage «kein kleiner Text in `#3C64FF` auf getönten Flächen»): **nachgetragen** im Repository `christaegger-dot/puk-website-profil` als Profil 2026.10.8 ([PR #137](https://github.com/christaegger-dot/puk-website-profil/pull/137), gemergt als `365dbb3` am 22.10.2026, 10:12 UTC; Entscheiddokument `ENTSCHEIDE-PROFIL-2026-10-8.md`, Tokens `--ui-tint`, `--surface-tint`, `--text-link-on-tint`, `--web-fw-title`). Dort offen: die unabhängige Prüfung des Pakets `puk-website-profil-2026.10.8.zip` durch eine Sitzung, die es nicht gebaut hat.
+- Profilentscheid F3 (Rubik Medium für `h1`/`h2`) und Profilton F4 (Grundfläche `#F5F7FF` mit Auflage «kein kleiner Text in `#3C64FF` auf getönten Flächen»): **nachgetragen** im Repository `christaegger-dot/puk-website-profil` als Profil 2026.10.8 ([PR #137](https://github.com/christaegger-dot/puk-website-profil/pull/137), gemergt als `365dbb3` am 22.10.2026, 10:12 UTC; Entscheiddokument `ENTSCHEIDE-PROFIL-2026-10-8.md`, Tokens `--ui-tint`, `--surface-tint`, `--text-link-on-tint`, `--web-fw-title`). Nachtrag 23.10.2026: Paket 2026.10.8 unabhängig geprüft (PR #138), Befunde als Profil 2026.10.9 umgesetzt und geprüft (PR #139, #140); die Website übernimmt die Regeln W-2 und W-3 mit r4-41.
 
 ## Audit 04 · Gestaltung und Didaktik · r4-39
 

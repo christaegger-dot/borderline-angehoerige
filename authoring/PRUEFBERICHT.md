@@ -417,6 +417,14 @@ Dazu 5 leichte Befunde zu Bericht und Abgleich. Die erste und zweite Prüfrunde 
   - **Gültigkeit:** Die Freigabe AR3-4 umfasst auch die Runden 4 und 5. Sie gilt, sobald die Nachprüfung der Runde 5 bestätigt, dass nur diese Änderungen vorliegen.
 - Die Statustabelle bleibt unverändert.
 
+## Gestaltungsnachführung r4-41 · 23.10.2026 (Selbstprüfung der bauenden Sitzung)
+
+**Rolle und Status:** Diese Sitzung hat die Änderungen gebaut und setzt keine Prüfstufe erneut auf «erledigt». Auftrag von Christa Egger vom 23.10.2026 («setze um die offenen Pendenzen. du kannst selbständig entscheiden!»). Umfang: Profilregeln 2026.10.9 (Titeltrennung bei stark vergrösserter Schrift, Hover-Zustände auf grauer Fläche in Blau 125), Build-Kennung r4-41, verwaiste CSS-Regeln (P708-W4), Rückfall ohne `:has()` (P708-W2), Metadaten. Kein Wortlaut, keine Abbildung, keine Kontaktangabe geändert. Vollständiger Nachweis mit Messungen und Bildschirmfotos: [`audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md`](../audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
+
+**Ergebnisse der Selbstprüfung:** Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` 34 Dateien bytegleich; Selbsttest 84/84; Suchtest 216/216; Sprach-/UI-Test 73/73; Audit-04-Layouttest 230 Zustände, 25 Bedienproben, 1 bekannte Abweichung; neu im Layouttest: 0 Titelwörter, die ohne Trennstelle brechen, bei 100 % keine Trennung ausser der dokumentierten Ausnahme «Begleit-erkrankungen» (Diagnose).
+
+**Weiter offen:** Screenreader-Prüfung (kein Screenreader verfügbar); P708-W3, P708-V4 und H2 bewusst belassen; automatische Silbentrennung mit deutschem Trennmuster in realen Browsern nicht gemessen. Die unabhängige Gesamtprüfung entfällt nach dem fortgeltenden Entscheid vom 18.10.2026; eine Nachprüfung durch eine Sitzung, die nicht gebaut hat, wird im Pull Request beauftragt.
+
 ## Nachprüfung 3 PR #708 · 22.10.2026 (Stand 2089968)
 
 **Nachprüfsitzung 3 (Claude Code), 22.10.2026.** Grundlage ist der in der PR-Beschreibung festgehaltene Auftrag «Nachprüfung 3 des Stands nach Commit 17 (`2089968`) durch eine Sitzung, die an diesem PR weder gebaut noch geprüft hat. Nur die vier Punkte und ihr Umfeld.» Die Auftragsdatei der vorbereitenden Sitzung (`NACHPRUEFAUFTRAG-3-PR-708.md`) war in dieser Sitzung nicht mehr zugänglich; massgebend ist deshalb der Wortlaut in der PR-Beschreibung und im Kommentar «Nachbesserung 3». Diese Sitzung hat an [PR #708](https://github.com/christaegger-dot/borderline-angehoerige/pull/708) weder gebaut noch geprüft: Sie ist keine der Sitzungen der Commits 1–17 und hat vor diesem Auftrag keine Datei des Branches gesehen. Sie hat nichts entschieden und keine fachliche Aussage beurteilt; der Wortlaut von H1 gilt als von Christa Egger gesetzt, geprüft ist nur, ob der Build ihn genau zeigt. Geändert ist nur dieser Abschnitt. Die Statustabelle oben und die drei Abschnitte zu PR #708 vom 21. und 22.10.2026 bleiben unverändert.

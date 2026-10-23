@@ -1,14 +1,24 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 23. Oktober 2026 · GitHub main: r4-40 (`8aa6be83a5eb83d21848a8d4028fca893b18e74d`, PR #710 gemergt am 22.10.2026). Offener Arbeitsentwurf: r4-41 auf Branch `gestaltung/2026-10-23-nachfuehrung-r4-41` ([PR #711](https://github.com/christaegger-dot/borderline-angehoerige/pull/711), Entwurf; Status geprüft am 23.10.2026).**
+**Dokumentationsstand: 23. Oktober 2026 · GitHub main: r4-41 (`67f6f6d`, PR #711 gemergt am 23.10.2026, 14:49 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-42 auf Branch `gestaltung/2026-10-23-nachbesserung-r4-42` (Pull Request PR-NUMMER, Entwurf; Status geprüft am 23.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Gestaltungsnachführung · r4-41 · Entwurf vom 23.10.2026
+## Nachbesserung · r4-42 · Entwurf vom 23.10.2026
 
-**GitHub:** Branch `gestaltung/2026-10-23-nachfuehrung-r4-41`, [PR #711](https://github.com/christaegger-dot/borderline-angehoerige/pull/711) (Entwurf, nicht gemergt). Auftrag von Christa Egger vom 23.10.2026 nach der Beurteilung der Releasefähigkeit von r4-40: «einverstanden, setze um die offenen Pendenzen. du kannst selbständig entscheiden!» Nachweis: [`audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md`](audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
+**GitHub:** Branch `gestaltung/2026-10-23-nachbesserung-r4-42`, Pull Request PR-NUMMER (Entwurf, nicht gemergt). Anlass: Befund N41-W1 der Nachprüfung von r4-41 ([NACHPRUEFUNG.md](audit-results/2026-10-23-r4-41-nachfuehrung/NACHPRUEFUNG.md)); die Nachprüfung selbst ist in diesem Entwurf enthalten (Commit der Nachprüfsitzung, nach dem Merge von r4-41 entstanden). Nachweis: [`BERICHT.md`, Abschnitt «Nachbesserung r4-42»](audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
+
+**Inhalt:** weiche Trennstellen «Begleit-erkran-kungen», «mit-betrof-fen», «Nach-schla-gen», «Be-hand-lung» (vierter Fall beim Umsetzen gefunden); Layouttest prüft Titelumbrüche auf Zeichenebene statt Wortebene; N41-G1 (Kennzahl) und N41-G2 (`appliedTo`) berichtigt; Build-Kennung r4-42 mit Verzicht wie bei r4-41. Kein Wortlaut, keine Abbildung, keine Kontaktangabe geändert.
+
+**Technischer Stand des Entwurfs:** Selbsttest 84/84; Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` Parität 34 Dateien; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 230 Zustände, 25 Bedienproben, 1 Abweichung (Ausnahme B2c), 0 Titelumbrüche ohne Trennstelle; Segmentprüfung der Nachprüfsitzung 47 Wörter, 0 verletzt.
+
+**Offen:** Screenreader-Prüfung; Prüfbedarf der Nachprüfung (kurze Vorsilben «Dia-gnose», «Ange-hörige», «Gene-sung», Grenzwert `8 4 4` gegenüber 3-Zeichen-Trennstellen, gierige Trennung «Gene- / sung») als gestalterischer Entscheid von Christa Egger; Merge und Veröffentlichung nur auf Auftrag.
+
+## Gestaltungsnachführung · r4-41 · veröffentlicht am 23.10.2026
+
+**GitHub:** Branch `gestaltung/2026-10-23-nachfuehrung-r4-41`, [PR #711](https://github.com/christaegger-dot/borderline-angehoerige/pull/711), gemergt als `67f6f6d` am 23.10.2026, 14:49 UTC, von Christa Egger; damit über Netlify veröffentlicht. Die Nachprüfung (Stand `e1d0952`) lag beim Merge noch nicht vor und ist mit r4-42 nachgetragen. Auftrag von Christa Egger vom 23.10.2026 nach der Beurteilung der Releasefähigkeit von r4-40: «einverstanden, setze um die offenen Pendenzen. du kannst selbständig entscheiden!» Nachweis: [`audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md`](audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
 
 **Inhalt (technisch-gestalterisch, kein Wortlaut, keine Abbildung, keine Kontaktangabe geändert):**
 - Profilregel 2026.10.9 W-2: Titel werden bei Standardschrift nie getrennt; ist der Einstieg schmaler als 12 em seiner Schrift (320–375 px bei 200 % Schrift), trennen sie Wörter ab 8 Zeichen nach Silben statt beliebig zu brechen; 17 Seitentitel tragen weiche Trennstellen. Ausnahme Diagnose («Begleit-erkrankungen» auch bei Standardschrift länger als die Zeile). Vorher brachen bei 200 % auf 17 von 23 Seiten Titelwörter ohne Trennstelle.

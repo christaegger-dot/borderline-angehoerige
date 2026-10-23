@@ -417,6 +417,14 @@ Dazu 5 leichte Befunde zu Bericht und Abgleich. Die erste und zweite Prüfrunde 
   - **Gültigkeit:** Die Freigabe AR3-4 umfasst auch die Runden 4 und 5. Sie gilt, sobald die Nachprüfung der Runde 5 bestätigt, dass nur diese Änderungen vorliegen.
 - Die Statustabelle bleibt unverändert.
 
+## Nachbesserung r4-42 · 23.10.2026 (Selbstprüfung der bauenden Sitzung)
+
+**Rolle und Status:** Diese Sitzung hat gebaut und setzt keine Prüfstufe auf «erledigt». Anlass: Befund N41-W1 der [Nachprüfung r4-41](#nachprüfung-r4-41--23102026-stand-e1d0952). Umsetzung: weiche Trennstellen «Begleit-erkran-kungen», «mit-betrof-fen», «Nach-schla-gen» und zusätzlich «Be-hand-lung» (beim Umsetzen gefunden: «Behand-» passt mit Trennstrich nicht in die Zeile bei 320 px und 200 %); Layouttest prüft jeden Zeilenwechsel innerhalb eines Titelworts auf Zeichenebene (erlaubt nur unmittelbar an einer weichen Trennstelle); N41-G1 und N41-G2 berichtigt; Build-Kennung r4-42. Nachweis: [`audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md`](../audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md), Abschnitt «Nachbesserung r4-42».
+
+**Ergebnisse der Selbstprüfung:** Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` 34 Dateien bytegleich; Selbsttest 84/84; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 230 Zustände, 25 Bedienproben, 1 bekannte Abweichung, 0 Titelumbrüche ohne Trennstelle (Zeichenebene); Segmentprüfung der Nachprüfsitzung 47 Wörter, 0 verletzt.
+
+**Weiter offen:** Screenreader-Prüfung; Prüfbedarf der Nachprüfung zu kurzen Vorsilben und Grenzwerten (gestalterischer Entscheid von Christa Egger); Nachprüfung von r4-42 durch eine Sitzung, die nicht gebaut hat, nur auf Auftrag.
+
 ## Gestaltungsnachführung r4-41 · 23.10.2026 (Selbstprüfung der bauenden Sitzung)
 
 **Rolle und Status:** Diese Sitzung hat die Änderungen gebaut und setzt keine Prüfstufe erneut auf «erledigt». Auftrag von Christa Egger vom 23.10.2026 («setze um die offenen Pendenzen. du kannst selbständig entscheiden!»). Umfang: Profilregeln 2026.10.9 (Titeltrennung bei stark vergrösserter Schrift, Hover-Zustände auf grauer Fläche in Blau 125), Build-Kennung r4-41, verwaiste CSS-Regeln (P708-W4), Rückfall ohne `:has()` (P708-W2), Metadaten. Kein Wortlaut, keine Abbildung, keine Kontaktangabe geändert. Vollständiger Nachweis mit Messungen und Bildschirmfotos: [`audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md`](../audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).

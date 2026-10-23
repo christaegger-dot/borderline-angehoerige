@@ -417,6 +417,14 @@ Dazu 5 leichte Befunde zu Bericht und Abgleich. Die erste und zweite Prüfrunde 
   - **Gültigkeit:** Die Freigabe AR3-4 umfasst auch die Runden 4 und 5. Sie gilt, sobald die Nachprüfung der Runde 5 bestätigt, dass nur diese Änderungen vorliegen.
 - Die Statustabelle bleibt unverändert.
 
+## Nachbesserung r4-42 · 23.10.2026 (Selbstprüfung der bauenden Sitzung)
+
+**Rolle und Status:** Diese Sitzung hat gebaut und setzt keine Prüfstufe auf «erledigt». Anlass: Befund N41-W1 der [Nachprüfung r4-41](#nachprüfung-r4-41--23102026-stand-e1d0952). Umsetzung: weiche Trennstellen «Begleit-erkran-kungen», «mit-betrof-fen», «Nach-schla-gen» und zusätzlich «Be-hand-lung» (beim Umsetzen gefunden: «Behand-» passt mit Trennstrich nicht in die Zeile bei 320 px und 200 %); Layouttest prüft jeden Zeilenwechsel innerhalb eines Titelworts auf Zeichenebene (erlaubt nur unmittelbar an einer weichen Trennstelle); N41-G1 und N41-G2 berichtigt; Build-Kennung r4-42. Nachweis: [`audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md`](../audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md), Abschnitt «Nachbesserung r4-42».
+
+**Ergebnisse der Selbstprüfung:** Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` 34 Dateien bytegleich; Selbsttest 84/84; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 230 Zustände, 25 Bedienproben, 1 bekannte Abweichung, 0 Titelumbrüche ohne Trennstelle (Zeichenebene); Segmentprüfung der Nachprüfsitzung 47 Wörter, 0 verletzt.
+
+**Weiter offen:** Screenreader-Prüfung; Prüfbedarf der Nachprüfung zu kurzen Vorsilben und Grenzwerten (gestalterischer Entscheid von Christa Egger); Nachprüfung von r4-42 durch eine Sitzung, die nicht gebaut hat, nur auf Auftrag.
+
 ## Gestaltungsnachführung r4-41 · 23.10.2026 (Selbstprüfung der bauenden Sitzung)
 
 **Rolle und Status:** Diese Sitzung hat die Änderungen gebaut und setzt keine Prüfstufe erneut auf «erledigt». Auftrag von Christa Egger vom 23.10.2026 («setze um die offenen Pendenzen. du kannst selbständig entscheiden!»). Umfang: Profilregeln 2026.10.9 (Titeltrennung bei stark vergrösserter Schrift, Hover-Zustände auf grauer Fläche in Blau 125), Build-Kennung r4-41, verwaiste CSS-Regeln (P708-W4), Rückfall ohne `:has()` (P708-W2), Metadaten. Kein Wortlaut, keine Abbildung, keine Kontaktangabe geändert. Vollständiger Nachweis mit Messungen und Bildschirmfotos: [`audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md`](../audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
@@ -424,6 +432,30 @@ Dazu 5 leichte Befunde zu Bericht und Abgleich. Die erste und zweite Prüfrunde 
 **Ergebnisse der Selbstprüfung:** Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` 34 Dateien bytegleich; Selbsttest 84/84; Suchtest 216/216; Sprach-/UI-Test 73/73; Audit-04-Layouttest 230 Zustände, 25 Bedienproben, 1 bekannte Abweichung; neu im Layouttest: 0 Titelwörter, die ohne Trennstelle brechen, bei 100 % keine Trennung ausser der dokumentierten Ausnahme «Begleit-erkrankungen» (Diagnose).
 
 **Weiter offen:** Screenreader-Prüfung (kein Screenreader verfügbar); P708-W3, P708-V4 und H2 bewusst belassen; automatische Silbentrennung mit deutschem Trennmuster in realen Browsern nicht gemessen. Die unabhängige Gesamtprüfung entfällt nach dem fortgeltenden Entscheid vom 18.10.2026; eine Nachprüfung durch eine Sitzung, die nicht gebaut hat, wird im Pull Request beauftragt.
+
+## Nachprüfung r4-41 · 23.10.2026 (Stand e1d0952)
+
+**Nachprüfsitzung (eigene Agentensitzung ohne Kenntnis des Bauvorgangs, gestartet aus der Cloud-Sitzung session_01BMStN2dKBAcxTT7rmqqM3T), 23.10.2026.** Diese Sitzung hat an [PR #711](https://github.com/christaegger-dot/borderline-angehoerige/pull/711) weder gebaut noch entschieden und ändert keine Inhalte, kein CSS, keine Werkzeuge und keine Konfiguration; sie ist keine klinische, juristische oder institutionelle Freigabe. Geprüfter Stand: Branch `gestaltung/2026-10-23-nachfuehrung-r4-41`, Kopf `e1d0952`, Basis `main` = `8aa6be8`; Vergleich mit `main` aus einem eigenen Arbeitsbaum. Werkzeuge: Node.js 22.22.0, Playwright 1.62.1 mit Chromium 151.0.7922.34 (ohne deutsches Trennmuster), eigene Skripte ausserhalb des Repositorys. Vollständiger Bericht mit Belegen je Prüfpunkt: [`audit-results/2026-10-23-r4-41-nachfuehrung/NACHPRUEFUNG.md`](../audit-results/2026-10-23-r4-41-nachfuehrung/NACHPRUEFUNG.md), 16 Fotos unter `nachpruefung/`. Während der Prüfung hat Christa Egger den PR gemergt (`67f6f6d`); die Prüfung gilt für `e1d0952`.
+
+### Ergebnis in Kürze
+
+- **Empfehlung: Nachbesserung nötig (N41-W1), ohne Blocker.** Build und Parität bestehen; kein Befund verletzt WCAG 2.2 AA. Da der Merge bereits erfolgt ist, kann die Nachbesserung als Folge-PR erfolgen.
+- **Kennzahlen der bauenden Sitzung nachgerechnet: alle stimmen** (Parität 34 Dateien; 23 Seiten · 0 Blocker · 20 Hinweise; Selbsttest 84/84; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 230 Zustände, 25 Bedienproben, 1 Abweichung `tension core exceeds 1800px`; 47 mehrzeilige Titelwörter mit Trennstelle bei 200 %, 0 ohne; Blau 100 unter 24 px auf nicht weisser Fläche 0 Treffer; 5,79:1 und 4,28:1).
+- **Umfang bestätigt:** nur die erwarteten Dateien; in `authoring/content/` ausschliesslich weiche Trennstellen in den `h1` von 17 Seiten (nach Entfernen des `h1` sind alle 23 Dateien byteidentisch mit `main`); keine Krisen- oder Kontaktangabe, keine neue externe Ressource, kein Inline-Skript. Build-Kennung r4-41 in allen 23 Seiten, `contract.js` und `assetVersion`.
+- **W-2:** 276 Browserzustände (23 Seiten × 4 Breiten × 100 % / 200 % blink / 200 % CSS), 0 Überlauf; bei 100 % keine Trennung ausser «Begleit-erkrankungen»; `container-type:inline-size` lässt den Einstieg bei 100 % in allen 92 Zuständen gegenüber `main` unverändert. **W-3:** 0 Treffer, Hover-Stichproben auf getönten Flächen mindestens 5,75:1. **P708-W4 / P708-W2:** 12 Elementfotos der betroffenen Figuren bei 375 und 1280 px byteidentisch mit `main`.
+- **Gate und Verzicht:** formal erfüllt (`waiver.version` = `BUILD`); der referenzierte Entscheid vom 18.10.2026 existiert und wird in der Pendenzendatei als fortgeltend bezeichnet. Prüfbedarf: die Anwendung auf r4-41 ist ohne eigenen Vermerk von Christa Egger erfolgt.
+- Screenreader bleibt offen.
+
+### Befunde
+
+| Nr. | Schwere | Befund | Beleg |
+| --- | --- | --- | --- |
+| – | blockierend | keine | – |
+| N41-W1 | wichtig | Bei 200 % Schrift brechen vier Titelsegmente ohne Trennstelle: «erkrankungen» (Diagnose, 320 und 375 px), «betroffen» (Kinder, 320 px), «schlagen» (Fragen, 320 px) – gerendert «Begleit- / erkrank / ungen», «mit- / betroffe / n», «Nach- / schlage / n». Die Aussage «0 Titelbrüche ohne Trennstelle» gilt nur auf Wortebene; der erweiterte Layouttest zählt ein mehrzeiliges Wort als «an Trennstelle getrennt», sobald es ein U+00AD enthält, und sieht Brüche innerhalb eines Segments nicht. Kein WCAG-Verstoss, kein Rückschritt gegenüber `main` (dort 26 Wörter), aber Profilregel W-2 für drei Titel nicht erfüllt. Mögliche Abhilfe: Trennstellen «Begleit\|erkran\|kungen», «betrof\|fen», «schla\|gen» und Prüfung auf Segmentebene. | NACHPRUEFUNG.md Prüfpunkt 4, Tabelle Bruchebene; Foto `titel-diagnose-320-200prozent.png` der bauenden Sitzung |
+| N41-G1 | gering | `BERICHT.md`: «`site.css` um 17 Zeilen kürzer» – netto 5 Zeilen (+26/−31, 1827 → 1822). | `git diff --numstat` |
+| N41-G2 | gering | `site.config.json` `appliedTo` nennt die Nachprüfung als dokumentiert, bevor sie vorlag; mit NACHPRUEFUNG.md erfüllt. | `authoring/site.config.json:40` |
+
+**Hinweise ohne Befund, mit Prüfbedarf:** N41-H1 Grenzwert `hyphenate-limit-chars:8 4 4` gegenüber zehn gesetzten Trennstellen mit 3 Zeichen auf einer Seite (Chromium wendet die Grenzwerte nicht auf U+00AD an); N41-H2 gierige Trennung «Gene- / sung ist» bei 200 %/320 px. Nicht geprüft: Screenreader, Firefox/WebKit, deutsches Trennmuster in realen Browsern, erzwungene Farben, reale Geräte, Netlify-Vorschau. Geändert sind nur dieser Abschnitt, NACHPRUEFUNG.md mit Fotos und ein Satz in der Pendenzendatei; keine Prüfstufe wird auf «erledigt» gesetzt.
 
 ## Nachprüfung 3 PR #708 · 22.10.2026 (Stand 2089968)
 

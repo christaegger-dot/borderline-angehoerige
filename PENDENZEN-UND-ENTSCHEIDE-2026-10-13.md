@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 23. Oktober 2026 · GitHub main: r4-42 (`a7f3073`, PR #712 gemergt am 23.10.2026, 17:28 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-43 auf Branch `claude/2026-10-23-pruefbefunde-r4-43` (Pull Request als Entwurf; Status geprüft am 23.10.2026).**
+**Dokumentationsstand: 23. Oktober 2026 · GitHub main: r4-42 (`a7f3073`, PR #712 gemergt am 23.10.2026, 17:28 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-43 auf Branch `claude/2026-10-23-pruefbefunde-r4-43` ([PR #713](https://github.com/christaegger-dot/borderline-angehoerige/pull/713), Entwurf, offen; Status geprüft am 23.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Prüfbefunde Struktur und Technik · r4-43 · Entwurf vom 23.10.2026
 
-**GitHub:** Branch `claude/2026-10-23-pruefbefunde-r4-43`, Pull Request als Entwurf (nicht gemergt). Anlass: Prüfbericht «Prüfbericht Borderline-Website r4-41» vom 23.10.2026 (Durchsicht aller 23 Seiten in sechs Prüfgruppen). Auftrag von Christa Egger vom 23.10.2026: «Einverstanden, leg los» zu den Punkten ohne Wortlaut-Entscheid. Nachweis: [`audit-results/2026-10-23-pruefbefunde-r4-43/BERICHT.md`](audit-results/2026-10-23-pruefbefunde-r4-43/BERICHT.md).
+**GitHub:** Branch `claude/2026-10-23-pruefbefunde-r4-43`, [PR #713](https://github.com/christaegger-dot/borderline-angehoerige/pull/713) als Entwurf (offen, nicht gemergt). Anlass: Prüfbericht «Prüfbericht Borderline-Website r4-41» vom 23.10.2026 (Durchsicht aller 23 Seiten in sechs Prüfgruppen). Auftrag von Christa Egger vom 23.10.2026: «Einverstanden, leg los» zu den Punkten ohne Wortlaut-Entscheid. Nachweis: [`audit-results/2026-10-23-pruefbefunde-r4-43/BERICHT.md`](audit-results/2026-10-23-pruefbefunde-r4-43/BERICHT.md).
 
 **Inhalt:** Weiterleitungen der früheren Notfallkarte, des Notfallplans und von «Soforthilfe» auf die Schnellorientierung von «Krisen begleiten» (vorher Startseite, deren Fusszeile seit dem 17.10.2026 keinen Akutsatz mehr enthält); Kinder-Weiterleitungen auf die Kinderseite; zwei Sprungziele; Sprung in ein Akkordeon öffnet den Eintrag; Suche: Umschreibungen und Tippfehler bei Suizid und Selbstverletzung, Alltagswörter für Gewalt, Kinder als Betroffene ohne Tötungswort zuerst, Leermeldung mit Weg zur Schnellorientierung, Quellenblöcke nicht mehr im Index, «FU» und «IV» als ganzes Wort (R27-O04); drei Antworten mit Handlungsanleitung auf «Fragen» offen; auf «Kurz und klar» die Sicherheitssituation zuerst; Silbentrennung bei schmaler Spalte für Zwischentitel, Lesetext, Schnellorientierung und Fusszeile; Suchfelder in der Seitenschrift. Kein neuer Wortlaut ausser der Wiederverwendung des freigegebenen Einstiegs der Startseite in der Leermeldung und dem Abschnittstitel als Linktext. Die Proben der Suchtests stehen im Nachweis und in der Testliste, nicht hier.
 

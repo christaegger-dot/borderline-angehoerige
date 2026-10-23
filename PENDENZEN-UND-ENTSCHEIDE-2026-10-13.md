@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 23. Oktober 2026 · GitHub main: r4-41 (`67f6f6d`, PR #711 gemergt am 23.10.2026, 14:49 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-42 auf Branch `gestaltung/2026-10-23-nachbesserung-r4-42` (Pull Request PR-NUMMER, Entwurf; Status geprüft am 23.10.2026).**
+**Dokumentationsstand: 23. Oktober 2026 · GitHub main: r4-41 (`67f6f6d`, PR #711 gemergt am 23.10.2026, 14:49 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-42 auf Branch `gestaltung/2026-10-23-nachbesserung-r4-42` ([PR #712](https://github.com/christaegger-dot/borderline-angehoerige/pull/712), Entwurf; Status geprüft am 23.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Nachbesserung · r4-42 · Entwurf vom 23.10.2026
 
-**GitHub:** Branch `gestaltung/2026-10-23-nachbesserung-r4-42`, Pull Request PR-NUMMER (Entwurf, nicht gemergt). Anlass: Befund N41-W1 der Nachprüfung von r4-41 ([NACHPRUEFUNG.md](audit-results/2026-10-23-r4-41-nachfuehrung/NACHPRUEFUNG.md)); die Nachprüfung selbst ist in diesem Entwurf enthalten (Commit der Nachprüfsitzung, nach dem Merge von r4-41 entstanden). Nachweis: [`BERICHT.md`, Abschnitt «Nachbesserung r4-42»](audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
+**GitHub:** Branch `gestaltung/2026-10-23-nachbesserung-r4-42`, [PR #712](https://github.com/christaegger-dot/borderline-angehoerige/pull/712) (Entwurf, nicht gemergt). Anlass: Befund N41-W1 der Nachprüfung von r4-41 ([NACHPRUEFUNG.md](audit-results/2026-10-23-r4-41-nachfuehrung/NACHPRUEFUNG.md)); die Nachprüfung selbst ist in diesem Entwurf enthalten (Commit der Nachprüfsitzung, nach dem Merge von r4-41 entstanden). Nachweis: [`BERICHT.md`, Abschnitt «Nachbesserung r4-42»](audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
 
 **Inhalt:** weiche Trennstellen «Begleit-erkran-kungen», «mit-betrof-fen», «Nach-schla-gen», «Be-hand-lung» (vierter Fall beim Umsetzen gefunden); Layouttest prüft Titelumbrüche auf Zeichenebene statt Wortebene; N41-G1 (Kennzahl) und N41-G2 (`appliedTo`) berichtigt; Build-Kennung r4-42 mit Verzicht wie bei r4-41. Kein Wortlaut, keine Abbildung, keine Kontaktangabe geändert.
 

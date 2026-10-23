@@ -57,7 +57,7 @@ Geld leihen	grenzen.html#arten	Bestand r4-28 (91)
 Streit eskaliert	kommunizieren.html#kippen	Bestand r4-28 (91)
 Wut	verstehen.html#erleben	Bestand r4-28 (91)
 gefährlich	krise.html#waehrend	Bestand r4-28 (91)
-Geheimnis	fragen.html#weitere	Bestand r4-28 (91)
+Geheimnis	behandlung.html#auskunft	Bestand r4-28 (91); r4-43: vorher Treffer nur über den mitindexierten Quellenblock (SU-05)
 Selbstverletzung entdeckt	krise.html#selbstverletzung	Bestand r4-28 (91)
 Selbstverletzung bemerkt	krise.html#selbstverletzung	Bestand r4-28 (91)
 ritzt sich	krise.html#selbstverletzung	Bestand r4-28 (91)
@@ -222,3 +222,28 @@ Mein Mann bringt mich um sie sieht es	grenzen.html#gewalt > krise.html#suizid	Co
 Er bringt mich und auch die Kinder um	kinder.html#eskalation > grenzen.html#gewalt > krise.html#suizid	Codex P1 auf #695 («und auch»)
 ich töte mich und die Kinder wissen nichts davon	krise.html#suizid > grenzen.html#gewalt	R33-01 Ich-Aussage, Kinder nicht Opfer
 er tötet die Kinder	kinder.html#eskalation > grenzen.html#gewalt > krise.html#suizid	R33-01 Gegenprobe, Opfer nach gebeugtem Verb
+Ich will nicht mehr	krise.html#suizid > selbstfuersorge.html#warnsignale	r4-43 Prüfbericht 23.10.2026, SU-01
+Er sagt er will nicht mehr	krise.html#suizid > selbstfuersorge.html#warnsignale	r4-43 SU-01
+Si wott nüme läbe	krise.html#suizid	r4-43 SU-01 Mundart
+Sie redet vom Sterben	krise.html#suizid	r4-43 SU-01 Füllwörter
+Abschiedsnachricht	krise.html#suizid	r4-43 SU-01
+Suizit	krise.html#suizid	r4-43 SU-01 Tippfehler
+Selbsmord	krise.html#suizid	r4-43 SU-01 Tippfehler
+Selbstverletztung	krise.html#selbstverletzung	r4-43 SU-01 Tippfehler
+Er hat sich geschnitten	krise.html#selbstverletzung	r4-43 SU-01
+Angst um mein Leben	grenzen.html#gewalt	r4-43 SU-02
+Sie hat mir eine Ohrfeige gegeben	grenzen.html#gewalt	r4-43 SU-02
+mein Mann schlägt die Kinder	kinder.html#eskalation > grenzen.html#gewalt	r4-43 SU-02 Kinder zuerst ohne Tötungswort
+der Vater meiner Kinder schlägt mich	grenzen.html#gewalt	r4-43 SU-02 Kinder nicht Betroffene
+Zwangseinweisung	fragen.html#f-einweisung	r4-43 SU-06
+Beschwerde FU Frist	fragen.html#f-einweisung	r4-43 SU-06
+Arztgeheimnis	behandlung.html#auskunft	r4-43 SU-05
+Zweitmeinung	diagnose.html#zweifel	r4-43 SU-05
+Jugendamt	kinder.html#eskalation	r4-43 SU-09
+Notfallplan	krise.html#krisenplan	r4-43 SU-09
+Er will nicht mehr in die Therapie	behandlung.html#keine-behandlung	r4-43 Gegenprobe (Ergänzung nach «nicht mehr»)
+Ich mag nicht mehr mit ihr streiten	!sicher	r4-43 Gegenprobe
+schlafen	!sicher	r4-43 Gegenprobe Tippfehlerregel (nicht «schlagen»)
+Tochter ritzt sich was tun	krise.html#selbstverletzung	r4-43 Regressionsprobe (Prüfbericht 23.10.2026)
+Er droht mir	grenzen.html#gewalt	r4-43 Regressionsprobe (kurze Wörter)
+Mentalisieren	begriffe.html#b-mentalisierung	r4-43 SU-05/BE-04

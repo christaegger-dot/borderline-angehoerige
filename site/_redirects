@@ -5,17 +5,19 @@
 # Alte Routen mit gleichem Namen wie eine neue Seite (/verstehen, /grenzen, /kommunizieren, /selbstfuersorge, /genesung,
 # /quellen) brauchen keine Regel: Netlify liefert verstehen.html auch unter /verstehen aus.
 
-# Krisenzugang entfällt (Profil): auf die Startseite, deren Fusszeile den Zuständigkeitsverweis enthält
-/soforthilfe                                 /index.html                                  301
-/soforthilfe/*                               /index.html                                  301
-/notfall                                     /index.html                                  301
-/notfallkarte                                /index.html                                  301
-/notfallkarte.html                           /index.html                                  301
-/materialien/text/notfallplan-krise          /index.html                                  301
-/notfallplan-krise-v04.pdf                   /index.html                                  301
-/Notfallkarte-Zuerich-Psychische-Krise.pdf   /index.html                                  301
-/notfallkarte-preview.webp                   /index.html                                  301
-/notfallplan-krise-v04-preview.webp          /index.html                                  301
+# Frühere Notfallkarte und Soforthilfe (Krisenzugang entfällt, Profil): auf die Schnellorientierung von «Krisen begleiten»,
+# wo der freigegebene Akuthinweis steht. Vorher Startseite; deren Fusszeile enthält seit dem 17.10.2026 keinen Akutsatz mehr
+# (Prüfbericht vom 23.10.2026, Befund S3; geändert in r4-43).
+/soforthilfe                                 /krise.html#krise-schnell                    301
+/soforthilfe/*                               /krise.html#krise-schnell                    301
+/notfall                                     /krise.html#krise-schnell                    301
+/notfallkarte                                /krise.html#krise-schnell                    301
+/notfallkarte.html                           /krise.html#krise-schnell                    301
+/materialien/text/notfallplan-krise          /krise.html#krise-schnell                    301
+/notfallplan-krise-v04.pdf                   /krise.html#krise-schnell                    301
+/Notfallkarte-Zuerich-Psychische-Krise.pdf   /krise.html#krise-schnell                    301
+/notfallkarte-preview.webp                   /krise.html#krise-schnell                    301
+/notfallplan-krise-v04-preview.webp          /krise.html#krise-schnell                    301
 
 # Seiten
 /verstehen/diagnostik                        /diagnose.html                               301
@@ -70,7 +72,7 @@
 /materialien/text/grenzen-erkennen           /grenzen.html#erkennen                       301
 /materialien/text/grenzen-ohne-eskalation    /kommunizieren.html#kippen                   301
 /materialien/text/grenzen-spickzettel        /grenzen.html#dear                           301
-/materialien/text/kinder                     /rolle.html#kinder                           301
+/materialien/text/kinder                     /kinder.html                                 301
 /materialien/text/konsistenz-prinzip         /rolle.html#alltag                           301
 /materialien/text/krisenkommunikation        /krise.html#sagen                            301
 /materialien/text/leuchtturm                 /rolle.html#anbieten                         301
@@ -95,11 +97,11 @@
 # die Download-Funktion auf die Startseite
 /infografiken/puk-garten-v1.pdf              /rolle.html#anbieten                         301
 /infografiken/manus-genesung-zahlen-v3.pdf   /genesung.html#forschung                     301
-/infografiken/manus-kinder-v3.pdf            /rolle.html#kinder                           301
+/infografiken/manus-kinder-v3.pdf            /kinder.html                                 301
 /infografiken/puk-4-arten-von-grenzen-v1.pdf /grenzen.html#arten                          301
 /infografiken/manus-stopp-technik-v3.pdf     /selbstfuersorge.html#zu-viel                301
 /infografiken/manus-genesung-zahlen-v1.pdf   /genesung.html#forschung                     301
-/infografiken/manus-kinder-v1.pdf            /rolle.html#kinder                           301
+/infografiken/manus-kinder-v1.pdf            /kinder.html                                 301
 /infografiken/manus-stopp-technik-v1.pdf     /selbstfuersorge.html#zu-viel                301
 /infografiken/*                              /index.html                                  301
 /api/material-download/*                     /index.html                                  301

@@ -56,7 +56,9 @@ try {
   await page.locator('[data-search-input]').fill('zzzauditohnetreffer');
   check(await page.locator('[data-search-status]').textContent(), 'Keine passenden Inhalte gefunden.');
   check((await page.locator('[data-search-empty]').textContent()).includes('Keine passenden Inhalte gefunden.'), false);
-  check(await page.locator('[data-search-empty] a').getAttribute('href'), 'fragen.html');
+  check(await page.locator('[data-search-empty] a').first().getAttribute('href'), 'fragen.html');
+  /* r4-43 (SU-03): Die Leermeldung führt auch zur Schnellorientierung von «Krisen begleiten». */
+  check(await page.locator('[data-search-empty] a').nth(1).getAttribute('href'), 'krise.html#krise-schnell');
   await page.locator('[data-search-input]').fill('');
   check(await page.locator('[data-search-directory]').isVisible(), true);
   const badExcerpts = await page.locator('[data-search-item] > p:last-child').evaluateAll(items => items.map(item => item.textContent).filter(text => text.endsWith('…')));

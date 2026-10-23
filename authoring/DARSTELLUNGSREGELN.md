@@ -18,3 +18,7 @@ Der ausdrückliche Verzicht auf eine unabhängige Gesamtprüfung bleibt bestehen
 Lokale Layoutabweichungen vom Referenzprofil: Menü bis 60 rem (deutsche Navigation),
 Text und Titel bis 76 rem untereinander, Tabellen anhand des verfügbaren Textraums.
 Der kompakte Footer bleibt entsprechend dem Entscheid zu r4-36 erhalten.
+
+r4-43: Die Titelregel W-2 (Profil 2026.10.9) gilt lokal auch für Zwischentitel, Lesetext,
+Schnellorientierung und Fusszeile, wenn die Spalte schmaler als 12 em ihrer Schrift ist
+(Handy bei 200 % Schrift). Zur Übernahme ins Profil vorgeschlagen.

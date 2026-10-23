@@ -43,9 +43,13 @@ export function buildSearchIndex(cfg, fragments) {
       start: match.index,
       end: match.index + match[0].length,
       id: (match[2].match(/\bid="([^"]+)"/i) || [])[1] || ''
-    })).filter(heading => heading.id && heading.title && !/^Quellen zu dieser Seite$/i.test(heading.title));
+    })).filter(heading => heading.id && heading.title);
+    // r4-43 (SU-05): «Quellen zu dieser Seite» bleibt Abschnittsgrenze, wird aber kein eigener Treffer.
+    // Vorher fiel der Quellenblock dem vorangehenden Abschnitt zu und erzeugte falsche Ersttreffer.
+    const isSourceBlock = heading => /^Quellen zu dieser Seite$/i.test(heading.title);
     for (let i = 0; i < headings.length; i++) {
       const heading = headings[i];
+      if (isSourceBlock(heading)) continue;
       let end = html.length;
       for (let j = i + 1; j < headings.length; j++) {
         if (headings[j].level <= heading.level) { end = headings[j].start; break; }

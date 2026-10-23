@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 23. Oktober 2026 · GitHub main: r4-40 (`8aa6be83a5eb83d21848a8d4028fca893b18e74d`, PR #710 gemergt am 22.10.2026). Offener Arbeitsentwurf: r4-41 auf Branch `gestaltung/2026-10-23-nachfuehrung-r4-41` (Pull Request PR-NUMMER, Entwurf; Status geprüft am 23.10.2026).**
+**Dokumentationsstand: 23. Oktober 2026 · GitHub main: r4-40 (`8aa6be83a5eb83d21848a8d4028fca893b18e74d`, PR #710 gemergt am 22.10.2026). Offener Arbeitsentwurf: r4-41 auf Branch `gestaltung/2026-10-23-nachfuehrung-r4-41` ([PR #711](https://github.com/christaegger-dot/borderline-angehoerige/pull/711), Entwurf; Status geprüft am 23.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Gestaltungsnachführung · r4-41 · Entwurf vom 23.10.2026
 
-**GitHub:** Branch `gestaltung/2026-10-23-nachfuehrung-r4-41`, Pull Request PR-NUMMER (Entwurf, nicht gemergt). Auftrag von Christa Egger vom 23.10.2026 nach der Beurteilung der Releasefähigkeit von r4-40: «einverstanden, setze um die offenen Pendenzen. du kannst selbständig entscheiden!» Nachweis: [`audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md`](audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
+**GitHub:** Branch `gestaltung/2026-10-23-nachfuehrung-r4-41`, [PR #711](https://github.com/christaegger-dot/borderline-angehoerige/pull/711) (Entwurf, nicht gemergt). Auftrag von Christa Egger vom 23.10.2026 nach der Beurteilung der Releasefähigkeit von r4-40: «einverstanden, setze um die offenen Pendenzen. du kannst selbständig entscheiden!» Nachweis: [`audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md`](audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
 
 **Inhalt (technisch-gestalterisch, kein Wortlaut, keine Abbildung, keine Kontaktangabe geändert):**
 - Profilregel 2026.10.9 W-2: Titel werden bei Standardschrift nie getrennt; ist der Einstieg schmaler als 12 em seiner Schrift (320–375 px bei 200 % Schrift), trennen sie Wörter ab 8 Zeichen nach Silben statt beliebig zu brechen; 17 Seitentitel tragen weiche Trennstellen. Ausnahme Diagnose («Begleit-erkrankungen» auch bei Standardschrift länger als die Zeile). Vorher brachen bei 200 % auf 17 von 23 Seiten Titelwörter ohne Trennstelle.

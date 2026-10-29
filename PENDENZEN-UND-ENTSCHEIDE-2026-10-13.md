@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-43 (`abf947d`, [PR #714](https://github.com/christaegger-dot/borderline-angehoerige/pull/714) gemergt am 29.10.2026, 15:23 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-44 auf Branch `claude/dazzling-cerf-n6ci1w` (Pull Request folgt; Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-43 (`abf947d`, [PR #714](https://github.com/christaegger-dot/borderline-angehoerige/pull/714) gemergt am 29.10.2026, 15:23 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-44 auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #715](https://github.com/christaegger-dot/borderline-angehoerige/pull/715), Entwurf; Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Gestaltung Schritt 2 · r4-44 · Entwurf vom 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`abf947d`) aufgesetzt. Pull Request folgt. Auftrag von Christa Egger vom 29.10.2026: «ja, mach weiter mit Schritt 2». Entscheid während der Umsetzung, zu den Modellgrenzen in Abbildungen: «nein, bitte mach das nicht mehr, das lenkt einfach nur ab». Nachweis: [`audit-results/2026-10-29-bausteine-r4-44/BERICHT.md`](audit-results/2026-10-29-bausteine-r4-44/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`abf947d`) aufgesetzt, [PR #715](https://github.com/christaegger-dot/borderline-angehoerige/pull/715) (Entwurf, nicht gemergt). Auftrag von Christa Egger vom 29.10.2026: «ja, mach weiter mit Schritt 2». Entscheid während der Umsetzung, zu den Modellgrenzen in Abbildungen: «nein, bitte mach das nicht mehr, das lenkt einfach nur ab». Nachweis: [`audit-results/2026-10-29-bausteine-r4-44/BERICHT.md`](audit-results/2026-10-29-bausteine-r4-44/BERICHT.md).
 
 **Inhalt:** «Was Sie tun können» steht auf allen Seiten als Kasten. Das sind 34 Stellen auf 10 Seiten, bisher ein fetter Satzanfang im Fliesstext; dazu kommen 3 bestehende Kästen auf «Verstehen». Damit ist Befund G7 vom 21.10.2026 behoben. Die Grenzen der Anspannungskurve und der Zuständigkeitskarte («Kinder») stehen wie bei den fünf übrigen Abbildungen in der Vertiefung «Grenzen des Bildes». `DARSTELLUNGSREGELN.md` ist nachgeführt. Der Wortlaut ist unverändert, ausser dem Doppelpunkt im Etikett. Akut- und Sicherheitswortlaut, Kontaktangaben und Abbildungsaussagen sind unverändert. Die Kennzeichnung «Eigene didaktische Darstellung» bzw. «Quelle:» bleibt sichtbar (Gate `figure-source`).
 

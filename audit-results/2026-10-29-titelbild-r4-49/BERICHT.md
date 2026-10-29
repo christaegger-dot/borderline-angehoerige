@@ -4,6 +4,8 @@
 
 Diese Datei ist der Nachweis der bauenden Sitzung (Selbstprüfung). Sie ist keine fachliche, juristische oder institutionelle Freigabe und keine unabhängige Prüfung. **Der Stand ist eine Vorschau und nicht zum Merge bestimmt, bis Christa Egger entscheidet.**
 
+**Nachtrag:** Christa Egger hat den Stand am 29.10.2026 um 18:42 UTC selbst gemergt ([PR #728](https://github.com/christaegger-dot/borderline-angehoerige/pull/728), `f300e7d`). Offen bleibt die Profilfrage: Das PUK-Website-Profil 2026.10.9 nennt «mehrere Felder nebeneinander» in Blau unter «Vermeiden». Ein Vorschlag für Profil 2026.10.10 liegt ihr vor (Pendenzendatei, Abschnitt r4-49).
+
 ## Was sich ändert
 
 Die Startseite bekommt im Einstieg das Bild der Titelkarte des Gestaltungssystems. Komposition und Farben sind unverändert übernommen:

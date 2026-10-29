@@ -1,16 +1,16 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-48 (`fa923aa`, [PR #726](https://github.com/christaegger-dot/borderline-angehoerige/pull/726) gemergt am 29.10.2026, 17:58 UTC, im Auftrag von Christa Egger). Offener Arbeitsentwurf: r4-49 (Titelbild der Startseite, Vorschau) auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #728](https://github.com/christaegger-dot/borderline-angehoerige/pull/728), Entwurf); Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-49 (`f300e7d`, [PR #728](https://github.com/christaegger-dot/borderline-angehoerige/pull/728) gemergt am 29.10.2026, 18:42 UTC, von Christa Egger). Kein offener Arbeitsentwurf; offen ist der Vorschlag für Profil 2026.10.10 (Nachtblau, Titelbild), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Gestaltung · r4-49 · Titelbild der Startseite · Vorschau vom 29.10.2026
+## Gestaltung · r4-49 · Titelbild der Startseite · veröffentlicht am 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, auf `main` (`cd17c2e`) aufgesetzt, [PR #728](https://github.com/christaegger-dot/borderline-angehoerige/pull/728) (Entwurf, nicht gemergt). Nachweis: [`audit-results/2026-10-29-titelbild-r4-49/BERICHT.md`](audit-results/2026-10-29-titelbild-r4-49/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, auf `main` (`cd17c2e`) aufgesetzt, [PR #728](https://github.com/christaegger-dot/borderline-angehoerige/pull/728), gemergt als `f300e7d` am 29.10.2026, 18:42 UTC, von Christa Egger, nach grünem CI-Lauf `build-and-compare` auf `7d21252`; damit über Netlify veröffentlicht. Die Live-Site lieferte danach die Startseite mit `data-puk-site-build="r4-49"` und dem Titelbild (`.bl-titelbild`) aus (eigene Abfrage mit `curl`, keine Prüfstufe). Nachweis: [`audit-results/2026-10-29-titelbild-r4-49/BERICHT.md`](audit-results/2026-10-29-titelbild-r4-49/BERICHT.md).
 
-**Auftrag Christa Egger, 29.10.2026:** «ja, bau eine Fassung als Netlify-Vorschau». Nicht zum Merge bestimmt, bis sie entscheidet.
+**Auftrag Christa Egger, 29.10.2026:** «ja, bau eine Fassung als Netlify-Vorschau». Den Merge hat sie selbst ausgeführt.
 
 **Inhalt:** Die Startseite zeigt im Einstieg das Bild der Titelkarte «Cover» aus dem Gestaltungssystem.
 - **Bild:** Flächen in Blau 25, PUK Blau, Gelb und Nachtblau; dazu eine weisse Kurve mit vier Marken. Es ist rein dekorativ und für Screenreader verborgen.
@@ -18,7 +18,9 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 - **Wortlaut:** Kein Wortlaut geändert; die Unterzeile der Titelkarte ist nicht übernommen.
 - **Regeln:** Ausnahme zu «gelb = Schutz» und «nachtblau nur für das Band «Haltung»» nur im Titelbild (`DARSTELLUNGSREGELN.md`).
 
-**Offen:** Entscheid Christa Egger zur Vorschau, auch ob das Motiv der Anspannungskurve als Schmuck fachlich passt.
+**Offen:**
+- **Fachlich:** ob das Motiv der Anspannungskurve als Schmuck auf der Startseite passt.
+- **Profil:** Das Titelbild zeigt mehrere blaue Flächen nebeneinander (Blau 25, PUK Blau, Nachtblau). Das PUK-Website-Profil 2026.10.9 nennt «Blau als Hintergrund für ganze Seiten oder mehrere Felder nebeneinander» unter «Vermeiden» (`guidelines/02-farben-und-kontrast.md` in `christaegger-dot/puk-website-profil`). Christa Egger hat am 29.10.2026 entschieden, Nachtblau dort als gemeinsame Änderung vorzuschlagen («JA»). Der Vorschlag für Profil 2026.10.10 hat sieben Punkte: Nachtblau als benannte Schattierung `--puk-blue-night` mit `--surface-night`, Geltung, Zählung und eine Ausnahme für ein dekoratives Titelbild. Er liegt ihr zur Bestätigung vor; im Profil-Repository ist noch nichts geändert.
 
 **Technischer Stand:** Selbsttest 86/86; Gate 24 Seiten · 0 Blocker; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 1 bekannte Ausnahme.
 

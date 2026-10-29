@@ -1,10 +1,46 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-51 (`5e0ad1a`, [PR #735](https://github.com/christaegger-dot/borderline-angehoerige/pull/735) gemergt am 29.10.2026, 21:37 UTC, im Auftrag von Christa Egger). Kein offener Arbeitsentwurf; Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger), siehe oberster Abschnitt; Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-51 (`5e0ad1a`, [PR #735](https://github.com/christaegger-dot/borderline-angehoerige/pull/735) gemergt am 29.10.2026, 21:37 UTC, im Auftrag von Christa Egger). Kein offener Arbeitsentwurf; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger), siehe oberster Abschnitt; Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Nachprüfung r4-50 bis r4-51 · liegt vor seit 29.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, auf `main` (`5380e80`) aufgesetzt. Der Branchname stammt aus der ersten Nachprüfung, weil die Prüfsitzung an diesen Branch gebunden ist. [PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger. Die Prüfungen waren grün. Ein CI-Lauf `build-and-compare` war nicht nötig (Pfadfilter, nur `audit-results/`). Auftrag von Christa Egger, 29.10.2026: «Nachprüfung r4-50 bis r4-51 starten». Nachweis: [`audit-results/2026-10-29-nachpruefung-r4-50-r4-51/NACHPRUEFUNG.md`](audit-results/2026-10-29-nachpruefung-r4-50-r4-51/NACHPRUEFUNG.md).
+
+**Gegenstand und Prüfende:** alle Änderungen von `f300e7d` (r4-49) bis `5e0ad1a` (r4-51), also r4-50 und r4-51. An `authoring/` und `site/` hat sich seither nichts geändert, geprüft ist also der veröffentlichte Stand. Geprüft hat die Claude-Sitzung, die auch die zwei vorigen Nachprüfungen erstellt hat. Sie hat an r4-50 und r4-51 nicht gebaut und nichts an Inhalt oder Code geändert.
+
+**Ergebnis:** «Keine Nachbesserung nötig».
+
+| Befund | Schweregrad | Inhalt | Stand |
+|---|---|---|---|
+| N51-1 | gering | Das Gate merkt nicht, wenn **alle** Direkteinstiege im Menü fehlen (`contract.js`, Bedingung `menuUtility.length &&`). Abweichende und einzelne fehlende Einträge erkennt es. Fielen alle weg, wären «Kurz und klar», «Nachschlagen» und «Suchen» bei 200 % Schrift auf dem Handy nicht erreichbar | offen, bei der nächsten Arbeit am Seitenrahmen mitnehmen (Bedingung streichen, Selbsttestfall ergänzen) |
+| N51-2 | gering | Ohne JavaScript ist der Kopf bei 200 % Schrift und 320 px 937 statt 896 px hoch (acht Links im offenen Menü). Im Bericht r4-51 nicht genannt | offen, keine Änderung nötig; bei einer Überarbeitung des Kopfs ohne Skript mitprüfen |
+
+**Bestätigt:**
+- P4-2: Das Titelbild-Band ist höchstens 480 × 120 px.
+- P4-4: Die Drucklinie über dem Sicherheitshinweis und der Sicherheitskarte ist `rgb(100, 100, 100)`. Der Akuthinweis bleibt rot.
+- P4-1:
+  - Der Kopf ist bei 200 % Schrift 418 statt 562 px hoch, bei Standardschrift unverändert.
+  - Die Direkteinstiege stehen immer genau einmal da, auch im Barrierefreiheitsbaum.
+  - Die Pfeiltasten und `aria-current` im Menü stimmen.
+- axe-core: 0 Verstösse mit Standardschrift (48 Läufe) und mit 200 % Schrift bei offenem Menü (48 Läufe).
+- Kein Wortlaut ist geändert.
+- Tests auf `5e0ad1a`:
+  - Gate: 24 Seiten · 0 Blocker
+  - Parität: 35
+  - Selbsttest: 87/87
+  - Suchtest: 216/216
+  - Sprach-/UI-Test: 73/73
+  - Layouttest: bekannte Ausnahme B2c, Exit 1
+
+**Weiter offen aus der Nachprüfung r4-47 bis r4-49:**
+- **N49-1:** Die Sicherheitskarte der Startseite liegt auf dem Handy nicht im ersten Bildschirm. Bei 390 × 844 beginnt sie unverändert bei 902 px. Bei 768 × 1024 beginnt sie dank r4-50 bei 895 statt 952 px, ist aber weiter nur angeschnitten. Dafür braucht es den Gestaltungsentscheid.
+- **N49-2:** Die Bestätigung durch Christa Egger fehlt noch.
+
+**Offen ausserdem:** Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte. Ebenfalls offen ist, wie sich die Textgrösse in Safari unter iOS auf r4-51 auswirkt.
 
 ## Nachprüfung r4-47 bis r4-49 · liegt vor seit 29.10.2026
 
@@ -52,6 +88,8 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 - **Wortlaut:** unverändert.
 
 **Technischer Stand:** Selbsttest 87/87; Gate 24 Seiten · 0 Blocker; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 1 bekannte Ausnahme.
+
+**Nachprüfung:** liegt vor, «Keine Nachbesserung nötig», zwei geringe Befunde N51-1 und N51-2 (siehe Abschnitt «Nachprüfung r4-50 bis r4-51» oben).
 
 ## Prüfschritt 4 · r4-50 · Sichtprüfung und Korrekturen · veröffentlicht am 29.10.2026
 

@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-45 (`7704147`, [PR #717](https://github.com/christaegger-dot/borderline-angehoerige/pull/717) gemergt am 29.10.2026 im Auftrag von Christa Egger: «bitte merge und dann Pendenzendatei nachführen»). Offener Arbeitsentwurf: r4-46 (E10) auf Branch `claude/dazzling-cerf-n6ci1w` (Pull Request folgt; Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-45 (`7704147`, [PR #717](https://github.com/christaegger-dot/borderline-angehoerige/pull/717) gemergt am 29.10.2026 im Auftrag von Christa Egger: «bitte merge und dann Pendenzendatei nachführen»). Offener Arbeitsentwurf: r4-46 (E10) auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719), Entwurf; Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## E10 · r4-46 · Entwurf vom 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`352c716`) aufgesetzt. Pull Request folgt. Auftrag von Christa Egger vom 29.10.2026: «mach weiter mit E10». Nachweis: [`audit-results/2026-10-29-e10-r4-46/BERICHT.md`](audit-results/2026-10-29-e10-r4-46/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`352c716`) aufgesetzt, [PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719) (Entwurf, nicht gemergt). Auftrag von Christa Egger vom 29.10.2026: «mach weiter mit E10». Nachweis: [`audit-results/2026-10-29-e10-r4-46/BERICHT.md`](audit-results/2026-10-29-e10-r4-46/BERICHT.md).
 
 **Inhalt:**
 - **Teilung:** «Grenzen setzen» ist geteilt. Die Abschnitte «Wenn Entscheidungen oder Verhalten riskant werden» und «Wenn Gewalt oder Bedrohung vorkommt» stehen samt Akuthinweis wortgleich auf der neuen Seite `gefahr.html` «Wenn es riskant oder bedrohlich wird» im Bereich «Krisen». Der Titel heisst «bedrohlich» statt «gefährlich», damit die festgeschriebene Suche «gefährlich» weiter auf «Krisen begleiten» führt.

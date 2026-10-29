@@ -1,16 +1,16 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-46 (`fe73ecb`, [PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719) gemergt am 29.10.2026, 16:52 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-47 (Befunde der Nachprüfung) auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #724](https://github.com/christaegger-dot/borderline-angehoerige/pull/724), Entwurf); Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-47 (`1d53178`, [PR #724](https://github.com/christaegger-dot/borderline-angehoerige/pull/724) gemergt am 29.10.2026, 17:39 UTC, von Christa Egger). Kein offener Arbeitsentwurf; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Korrektur · r4-47 · Befunde der Nachprüfung · Entwurf vom 29.10.2026
+## Korrektur · r4-47 · Befunde der Nachprüfung · veröffentlicht am 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`b220994`) aufgesetzt, [PR #724](https://github.com/christaegger-dot/borderline-angehoerige/pull/724) (Entwurf, nicht gemergt). Auftrag von Christa Egger: «behebe den Kontrast gleich»; die übrigen Befunde gestützt auf «entscheide selbständig, du hast freie Hand». Nachweis: [`audit-results/2026-10-29-kontrast-r4-47/BERICHT.md`](audit-results/2026-10-29-kontrast-r4-47/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`b220994`) aufgesetzt, [PR #724](https://github.com/christaegger-dot/borderline-angehoerige/pull/724), gemergt als `1d53178` am 29.10.2026, 17:39 UTC, von Christa Egger, nach grünem CI-Lauf `build-and-compare` auf `10f2b23`; damit über Netlify veröffentlicht. Die Live-Site lieferte danach `data-puk-site-build="r4-47"` aus, mit der neuen Kontrast- und E-Mail-Regel in `site.css?v=r4-47` und «Weiter im Bereich «Krisen»» auf `gefahr.html` und `krise.html` (eigene Abfrage mit `curl`, keine Prüfstufe). Auftrag von Christa Egger: «behebe den Kontrast gleich»; die übrigen Befunde gestützt auf «entscheide selbständig, du hast freie Hand». Nachweis: [`audit-results/2026-10-29-kontrast-r4-47/BERICHT.md`](audit-results/2026-10-29-kontrast-r4-47/BERICHT.md).
 
-**Inhalt:** Behebt die Befunde der Nachprüfung ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), Empfehlung «Nachbesserung nötig, ohne Blocker»):
+**Inhalt:** Behebt die Befunde der Nachprüfung ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e`, Empfehlung «Nachbesserung nötig, ohne Blocker»):
 - **N46-1:** Link im gelben Sicherheitshinweis in Blau 125, 5,74 : 1 statt 4,24 : 1; der rote Akuthinweis behält 144/117 in Rot.
 - **N46-2:** E-Mail-Link der Absenderin wieder 44 px hoch, war 22 px. Der Kopf ist bei 390 px 191 statt 169 px hoch.
 - **N46-5:** Gate-Regel `moved-anchor` mit zwei Selbsttestfällen.

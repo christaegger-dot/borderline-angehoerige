@@ -54,6 +54,42 @@ Kein Wortlaut geändert. **N46-3** ist mit der Freigabe vom 29.10.2026 erledigt.
 
 **Technischer Stand:** Selbsttest 86/86; Gate 24 Seiten · 0 Blocker; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 1 bekannte Ausnahme.
 
+## Nachprüfung r4-43 bis r4-46 · liegt vor seit 29.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, [PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger. Der PR enthält nur den Prüfbericht und zwei Bildschirmfotos. Website und `site/` sind unverändert, ein CI-Lauf `build-and-compare` war nicht nötig (Pfadfilter). Der Codex-Review lief wegen erreichter Nutzungslimits nicht. Auftrag von Christa Egger vom 29.10.2026. Nachweis: [`audit-results/2026-10-29-nachpruefung-r4-43-r4-46/NACHPRUEFUNG.md`](audit-results/2026-10-29-nachpruefung-r4-43-r4-46/NACHPRUEFUNG.md).
+
+**Gegenstand und Prüfende:** alle Änderungen `a7f3073` (r4-42) bis `1f2788a` (r4-46). Geprüft hat eine eigene Claude-Sitzung, die nicht gebaut hat. Sie hat nichts an Inhalt oder Code geändert.
+
+**Ergebnis:** «Nachbesserung nötig, ohne Blocker».
+
+| Befund | Schweregrad | Inhalt | Stand |
+|---|---|---|---|
+| N46-1 | wichtig | Link im gelben Sicherheitshinweis 4,24 : 1 (WCAG 1.4.3) | behoben mit r4-47 |
+| N46-2 | wichtig | E-Mail-Link der Absenderin 22 px hoch, bei 390 px ohne Abstand (WCAG 2.5.8) | behoben mit r4-47 |
+| N46-3 | wichtig | Wortlaut r4-46 ohne dokumentierte Fachfreigabe | erledigt mit der Freigabe vom 29.10.2026 ([`FREIGABE.md`](audit-results/2026-10-29-e10-r4-46/FREIGABE.md)) |
+| N46-4 | gering | «im Abschnitt» verweist auf eine andere Seite | mit r4-48 umgesetzt, soweit freigegeben («Mehr zu Geld» bleibt auf Entscheid von Christa Egger) |
+| N46-5 | gering | `movedAnchors` ohne Gate-Prüfung | behoben mit r4-47 (Regel `moved-anchor`) |
+| N46-6 | gering | Layouttest zählt Navigationslinks aus der Konfiguration | behoben mit r4-47 |
+| N46-7 | gering | `gefahr.html` ohne «Weiter im Bereich» | behoben mit r4-47 |
+
+**Bestätigt:**
+- Akuthinweise stehen unverändert an denselben Stellen, keiner in einer Vertiefung.
+- Die verschobenen Abschnitte auf `gefahr.html` sind bytegleich übernommen.
+- `suche-ersttreffer.tsv` enthält nur Adressänderungen (76 + 6).
+- 0 tote Links.
+- Die Weiterleitung alter Sprungziele ist ohne offene Weiterleitung und ohne Schleife.
+- Keine Gate-Regel ist abgeschwächt.
+- Es gibt keine unberichtete Textänderung.
+- Alle Tests laufen wie berichtet.
+
+**Kontrolle auf `main` r4-49 (`bce1263`)** durch die Prüfsitzung, eigene Abfrage beim Nachführen:
+- axe-core 4.14.0 auf 24 Seiten bei 390 und 1280 px ergibt 0 Verstösse (48 Läufe).
+- Kleinstes Text-/Hintergrundpaar: 4,71 : 1 (Blau 100 auf Weiss).
+- `gefahr.html` hat «Weiter im Bereich».
+- Das ist keine erneute vollständige Nachprüfung von r4-47 bis r4-49.
+
+**Offen:** Prüfung mit echtem Screenreader. Eine Anleitung für VoiceOver auf dem iPhone (10 Schritte, etwa 10 Minuten) steht am Schluss von `NACHPRUEFUNG.md`. Ebenfalls offen: Safari, Firefox und reale Geräte.
+
 ## Entscheide vom 29.10.2026 zu den offenen Punkten (an Claude delegiert)
 
 **Auftrag:** Christa Egger, 29.10.2026, zu den sechs offenen Punkten nach r4-46: «entscheide selbständig, du hast freie Hand». Grundlage sind die Regeln des PUK-Website-Profils (Kurzfassung 2026.10.2) und die Entscheide in dieser Datei.
@@ -83,7 +119,7 @@ Kein Wortlaut geändert. **N46-3** ist mit der Freigabe vom 29.10.2026 erledigt.
 
 **Zu entscheiden:** «Grenzen setzen» zeigt 144/117 nicht mehr selbst. Die Nummern stehen im umgezogenen Abschnitt, der Sicherheitshinweis zuoberst führt mit einem Klick dorthin (Regel A03-231).
 
-**Fachfreigabe:** Christa Egger, 29.10.2026: «Ich gebe den Wortlaut von r4-46 frei» ([`FREIGABE.md`](audit-results/2026-10-29-e10-r4-46/FREIGABE.md)). **Offen:** Screenreader-Prüfung mit echtem Screenreader, Ergebnis der Nachprüfung (siehe «Entscheide vom 29.10.2026 zu den offenen Punkten» oben).
+**Fachfreigabe:** Christa Egger, 29.10.2026: «Ich gebe den Wortlaut von r4-46 frei» ([`FREIGABE.md`](audit-results/2026-10-29-e10-r4-46/FREIGABE.md)). **Offen:** Screenreader-Prüfung mit echtem Screenreader. Die Nachprüfung liegt vor (siehe Abschnitt «Nachprüfung r4-43 bis r4-46» oben).
 
 ## Gestaltung Schritt 3 · r4-45 · veröffentlicht am 29.10.2026
 
@@ -101,7 +137,7 @@ Kein Wortlaut geändert. **N46-3** ist mit der Freigabe vom 29.10.2026 erledigt.
 
 **Technischer Stand des Entwurfs:** Selbsttest 84/84; Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` Parität 34 Dateien; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 230 Zustände, 25 Bedienproben, 1 Abweichung (Ausnahme B2c, 1992 px bei 375 px). Die Probe «ohne JavaScript alle Navigationslinks sichtbar» zählt jetzt aus dem Seitenvertrag (fünf statt fest sechs).
 
-**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat (für r4-43 bis r4-45); E7 (Absenderleiste), E9 (Telefonlinks 144/117), E10 (umgesetzt als Entwurf r4-46, oben); Codex-Review, sobald das Limit frei ist. Weitere Merges und Veröffentlichungen nur auf Auftrag.
+**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat (**liegt vor**, siehe Abschnitt «Nachprüfung r4-43 bis r4-46» oben); E7 (Absenderleiste), E9 (Telefonlinks 144/117), E10 (umgesetzt als Entwurf r4-46, oben); Codex-Review, sobald das Limit frei ist. Weitere Merges und Veröffentlichungen nur auf Auftrag.
 
 ## Gestaltung Schritt 2 · r4-44 · veröffentlicht am 29.10.2026
 
@@ -113,7 +149,7 @@ Kein Wortlaut geändert. **N46-3** ist mit der Freigabe vom 29.10.2026 erledigt.
 
 **Entscheid zu den zwei Schutzsätzen (an Claude delegiert, Christa Egger, 29.10.2026: «entscheide selber»):** «ob Gefahr besteht, lässt sich aus der Stelle auf der Kurve nicht ableiten» und «ersetzt keinen Schutzplan und keine fachliche Beurteilung des Kindeswohls» werden wieder sichtbar, je als eigene Zeile unter dem Bild. Die übrigen Grenzsätze bleiben in «Grenzen des Bildes». Begründung: Die beiden Sätze verhindern, dass die Kurve als Gefahrenbeurteilung oder die Karte als Kindesschutzbeurteilung gelesen wird. Das ist Selbstschutz im Sinn von `DARSTELLUNGSREGELN.md`. Umsetzung im nächsten Entwurf (r4-45).
 
-**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat; Schritt 3. **Freigabe für Schritt 3:** Christa Egger, 29.10.2026: «nachher weiter mit Schritt 3, ich gebe Freigabe». Sie gilt für E2 (Bereiche und Navigationsnamen) und E8 (neue Bedienwörter) des Gestaltungssystems. Merge und Veröffentlichung bleiben auf Auftrag.
+**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat (**liegt vor**, siehe Abschnitt «Nachprüfung r4-43 bis r4-46» oben); Schritt 3. **Freigabe für Schritt 3:** Christa Egger, 29.10.2026: «nachher weiter mit Schritt 3, ich gebe Freigabe». Sie gilt für E2 (Bereiche und Navigationsnamen) und E8 (neue Bedienwörter) des Gestaltungssystems. Merge und Veröffentlichung bleiben auf Auftrag.
 
 ## Gestaltung Schritt 1 · r4-43 · veröffentlicht am 29.10.2026
 
@@ -125,7 +161,7 @@ Kein Wortlaut geändert. **N46-3** ist mit der Freigabe vom 29.10.2026 erledigt.
 
 **Bewusst nicht in Schritt 1 (siehe Bericht, «Abweichungen»):** Navigation mit fünf Bereichen und neue Bedienwörter (E2, E8: Wortlaut, Freigabe nötig), Absenderzeile ausserhalb des Kopfs (E7: Gate), «Was Sie tun können» als Kasten auf allen Seiten (Schritt 2, G7), Markierung des Ansatzpunkts in der Anspannungskurve (freigegebene Abbildung).
 
-**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat; Schritt 2 folgt als r4-44 (oben), Schritt 3 offen.
+**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat (**liegt vor**, siehe Abschnitt «Nachprüfung r4-43 bis r4-46» oben); Schritt 2 folgt als r4-44 (oben), Schritt 3 offen.
 
 ## Nachbesserung · r4-42 · veröffentlicht am 23.10.2026
 

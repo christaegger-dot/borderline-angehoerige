@@ -1,22 +1,22 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-43 (`abf947d`, [PR #714](https://github.com/christaegger-dot/borderline-angehoerige/pull/714) gemergt am 29.10.2026, 15:23 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-44 auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #715](https://github.com/christaegger-dot/borderline-angehoerige/pull/715), Entwurf; Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-44 (`65041e4`, [PR #715](https://github.com/christaegger-dot/borderline-angehoerige/pull/715) gemergt am 29.10.2026, 16:07 UTC, von Christa Egger). Kein offener Arbeitsentwurf; Schritt 3 folgt auf Branch `claude/dazzling-cerf-n6ci1w` (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Gestaltung Schritt 2 · r4-44 · Entwurf vom 29.10.2026
+## Gestaltung Schritt 2 · r4-44 · veröffentlicht am 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`abf947d`) aufgesetzt, [PR #715](https://github.com/christaegger-dot/borderline-angehoerige/pull/715) (Entwurf, nicht gemergt). Auftrag von Christa Egger vom 29.10.2026: «ja, mach weiter mit Schritt 2». Entscheid während der Umsetzung, zu den Modellgrenzen in Abbildungen: «nein, bitte mach das nicht mehr, das lenkt einfach nur ab». Nachweis: [`audit-results/2026-10-29-bausteine-r4-44/BERICHT.md`](audit-results/2026-10-29-bausteine-r4-44/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`abf947d`) aufgesetzt, [PR #715](https://github.com/christaegger-dot/borderline-angehoerige/pull/715), gemergt als `65041e4` am 29.10.2026, 16:07 UTC, von Christa Egger; damit über Netlify veröffentlicht. Die Live-Site lieferte danach `data-puk-site-build="r4-44"` und `site.css?v=r4-44` aus, auf «Alltag und Beziehungen» mit acht Kästen (eigene Abfrage mit `curl`, keine Prüfstufe). Auftrag von Christa Egger vom 29.10.2026: «ja, mach weiter mit Schritt 2». Entscheid während der Umsetzung, zu den Modellgrenzen in Abbildungen: «nein, bitte mach das nicht mehr, das lenkt einfach nur ab». Nachweis: [`audit-results/2026-10-29-bausteine-r4-44/BERICHT.md`](audit-results/2026-10-29-bausteine-r4-44/BERICHT.md).
 
 **Inhalt:** «Was Sie tun können» steht auf allen Seiten als Kasten. Das sind 34 Stellen auf 10 Seiten, bisher ein fetter Satzanfang im Fliesstext; dazu kommen 3 bestehende Kästen auf «Verstehen». Damit ist Befund G7 vom 21.10.2026 behoben. Die Grenzen der Anspannungskurve und der Zuständigkeitskarte («Kinder») stehen wie bei den fünf übrigen Abbildungen in der Vertiefung «Grenzen des Bildes». `DARSTELLUNGSREGELN.md` ist nachgeführt. Der Wortlaut ist unverändert, ausser dem Doppelpunkt im Etikett. Akut- und Sicherheitswortlaut, Kontaktangaben und Abbildungsaussagen sind unverändert. Die Kennzeichnung «Eigene didaktische Darstellung» bzw. «Quelle:» bleibt sichtbar (Gate `figure-source`).
 
 **Technischer Stand des Entwurfs:** Selbsttest 84/84; Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` Parität 34 Dateien; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 230 Zustände, 25 Bedienproben, 1 Abweichung (Ausnahme B2c, bei 375 px 1926 statt 2037 px). Die Seiten sind 0–7 % länger, wegen der Kästen.
 
-**Zu entscheiden (Hinweis im Bericht):** Zwei Sätze mit Schutzbezug stehen jetzt in der Vertiefung: «ob Gefahr besteht, lässt sich aus der Stelle auf der Kurve nicht ableiten» und «ersetzt keinen Schutzplan und keine fachliche Beurteilung des Kindeswohls».
+**Entscheid zu den zwei Schutzsätzen (an Claude delegiert, Christa Egger, 29.10.2026: «entscheide selber»):** «ob Gefahr besteht, lässt sich aus der Stelle auf der Kurve nicht ableiten» und «ersetzt keinen Schutzplan und keine fachliche Beurteilung des Kindeswohls» werden wieder sichtbar, je als eigene Zeile unter dem Bild. Die übrigen Grenzsätze bleiben in «Grenzen des Bildes». Begründung: Die beiden Sätze verhindern, dass die Kurve als Gefahrenbeurteilung oder die Karte als Kindesschutzbeurteilung gelesen wird. Das ist Selbstschutz im Sinn von `DARSTELLUNGSREGELN.md`. Umsetzung im nächsten Entwurf (r4-45).
 
-**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat; Schritt 3 (Struktur, Freigabe E2/E8 nötig); Merge und Veröffentlichung nur auf Auftrag.
+**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat; Schritt 3. **Freigabe für Schritt 3:** Christa Egger, 29.10.2026: «nachher weiter mit Schritt 3, ich gebe Freigabe». Sie gilt für E2 (Bereiche und Navigationsnamen) und E8 (neue Bedienwörter) des Gestaltungssystems. Merge und Veröffentlichung bleiben auf Auftrag.
 
 ## Gestaltung Schritt 1 · r4-43 · veröffentlicht am 29.10.2026
 

@@ -1,13 +1,13 @@
-# N54-1 und N54-2 · r4-55 · 29.10.2026 · Umsetzung und Selbstprüfung
+# N54-1 und N54-2 · r4-57 · 29.10.2026 · Umsetzung und Selbstprüfung
 
 **Auftrag von Christa Egger, 29.10.2026:** «Nachbesserung N54-1 und N54-2 umsetzen».
 
-- **Ausgangsstand:** `main` = `854bdbc`, also r4-54 mit gemergter Nachprüfung und Pendenzen.
+- **Ausgangsstand:** zuerst `main` = `854bdbc` (r4-54 mit gemergter Nachprüfung). Danach hat eine andere Sitzung parallel r4-55 (Absenderzeile 16 px, PR #753) und r4-56 (dezenter Footer) gemergt. Dieser Stand setzt deshalb auf `main` mit r4-56 auf (`3780ee5`, per Merge eingebracht) und heisst **r4-57**. Im ersten Entwurf (PR #756) hiess er noch r4-55.
 - **Befunde:** aus `audit-results/2026-10-29-nachpruefung-r4-54/NACHPRUEFUNG.md` (N54-1, N54-2).
 
 Diese Datei ist der Nachweis der bauenden Sitzung (Selbstprüfung). Sie ist keine fachliche, juristische oder institutionelle Freigabe und keine unabhängige Prüfung.
 
-**Unabhängigkeit:** Gebaut hat die Sitzung, die auch r4-52 und r4-54 gebaut hat. Für r4-55 ist sie nicht unabhängig. Die Nachprüfung von r4-55 muss eine andere Sitzung machen.
+**Unabhängigkeit:** Gebaut hat die Sitzung, die auch r4-52 und r4-54 gebaut hat. Für r4-57 ist sie nicht unabhängig. Die Nachprüfung von r4-57 muss eine andere Sitzung machen.
 
 ## Befunde
 
@@ -25,14 +25,14 @@ Alle Änderungen betreffen `authoring/tools/contract.js`:
 
 - **Eine gemeinsame Berechnung:** `utilityEntriesOf(cfg)` berechnet die Direkteinstiege. Ist `utilityNav` gesetzt, sind es die veröffentlichten Seiten daraus. Ohne `utilityNav` gilt der bisherige Rückfall «Website durchsuchen». Der Renderer nutzt die Funktion statt seiner eigenen Berechnung, das Gate erwartet genau dieselben Einträge. Damit ist N54-2 behoben.
   - Die Beschriftung ergibt sich wie bisher aus `label` oder dem Seitentitel (`utilityLabel`).
-  - Die gerenderten Seiten sind bis auf die Build-Kennung byte-gleich mit r4-54 (`diff` je Seite nach Ersetzen der Kennung, 24 Seiten, 0 Abweichungen).
+  - Die gerenderten Seiten sind bis auf die Build-Kennung byte-gleich mit r4-56 auf `main` (`diff` je Seite nach Ersetzen der Kennung, 24 Seiten, 0 Abweichungen; `site/css` und `site/js` unverändert).
 - **Zeile «Direkteinstiege» (N54-1):** Auf jeder veröffentlichten Seite ausser der Fehlerseite verlangt das Gate jetzt:
   - genau eine Zeile;
   - im Kopf, innerhalb von `header` und `.puk-site-subbar`;
   - mit Zielen, Reihenfolge und Beschriftung nach `utilityEntriesOf`.
 - **Einträge im Menü (N54-1):** Sie werden ebenfalls mit Zielen und Beschriftung verglichen.
 - **Vier neue Selbsttestfälle:** Beschriftung in der Zeile falsch, Zeile doppelt, Zeile ausserhalb des Kopfs, Beschriftung im Menü falsch. Der Selbsttest hat jetzt 93 statt 89 Fälle.
-- **Build-Kennung r4-55:** in `BUILD`, `assetVersion`, `independentReviewWaiver.version`, `pendingScope` und `appliedTo`. `site/` ist neu gebaut, nur die Build-Kennung ändert sich.
+- **Build-Kennung r4-57:** in `BUILD`, `assetVersion`, `independentReviewWaiver.version`, `pendingScope` und `appliedTo`. `site/` ist neu gebaut, nur die Build-Kennung ändert sich.
 
 Kein Wortlaut, kein Stylesheet und kein Skript ist geändert.
 
@@ -40,7 +40,7 @@ Kein Wortlaut, kein Stylesheet und kein Skript ist geändert.
 
 Die Fälle entsprechen denen der Nachprüfung r4-54 (K1, K2, M11–M13).
 
-| Mutation | r4-54 (laut Nachprüfung) | r4-55 |
+| Mutation | r4-54 (laut Nachprüfung) | r4-57 |
 |---|---|---|
 | Bestand | – | – |
 | K1: `utilityNav` entfernt (Rückfall) | 23 × `nav`, falsch | **keiner** |
@@ -50,7 +50,7 @@ Die Fälle entsprechen denen der Nachprüfung r4-54 (K1, K2, M11–M13).
 | M13: Zeile verdoppelt, zweite vertauscht | keiner | `utility-nav`: «steht 2-mal auf der Seite» |
 | Fehlerseite | – | – |
 
-Die Nachprüfung r4-54 nennt noch K3: Die Konfigurationsprüfung blockiere jede Konfiguration ohne `utilityNav` (`contract.js:320`). Das habe ich nicht geändert. Die Prüfung greift nur, wenn `utilityNav` gesetzt, aber leer oder ungültig ist. K1 ergibt mit r4-55 keinen Blocker `nav` oder `utility-nav`.
+Die Nachprüfung r4-54 nennt noch K3: Die Konfigurationsprüfung blockiere jede Konfiguration ohne `utilityNav` (`contract.js:320`). Das habe ich nicht geändert. Die Prüfung greift nur, wenn `utilityNav` gesetzt, aber leer oder ungültig ist. K1 ergibt mit r4-57 keinen Blocker `nav` oder `utility-nav`.
 
 ## Ausgeführte Prüfungen
 
@@ -64,6 +64,6 @@ Lokal mit Node 22.22.0, Chromium und Playwright über `PLAYWRIGHT_MODULE`:
 | Suchtest | 216 von 216 |
 | Sprach-/UI-Test | 73 Prüfungen, JS-Fehler 0 |
 | Layouttest | 240 Zustände, 27 Bedienproben, 1 Abweichung (`tension core exceeds 1800px`, bekannte Ausnahme B2c) |
-| Seitenvergleich | 24 Seiten bis auf die Build-Kennung gleich wie r4-54 |
+| Seitenvergleich | 24 Seiten bis auf die Build-Kennung gleich wie r4-56 |
 
 **Nicht geprüft:** Screenreader, Safari und Firefox, reale Geräte. Am Rendern ändert sich nichts, daher gibt es keinen neuen axe-Lauf.

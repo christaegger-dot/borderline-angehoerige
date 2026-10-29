@@ -1,19 +1,21 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-54 (`060aa8f`, [PR #751](https://github.com/christaegger-dot/borderline-angehoerige/pull/751) gemergt am 29.10.2026, 23:02 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-54. Offener Entwurf: r4-55 (N54-1, N54-2), siehe oberster Abschnitt. Nachprüfung r4-54 liegt auf `main` vor ([PR #754](https://github.com/christaegger-dot/borderline-angehoerige/pull/754), gemergt als `ab4e862` am 29.10.2026, 23:14 UTC, im Auftrag von Christa Egger), siehe oberster Abschnitt. Kein offener Arbeitsentwurf ausser dem Pull Request für diesen Eintrag. Vorher r4-53 (`2324026`, [PR #745](https://github.com/christaegger-dot/borderline-angehoerige/pull/745) gemergt am 29.10.2026, 22:42 UTC, von Christa Egger), siehe Abschnitt r4-53; Nachprüfung r4-53 liegt auf `main` vor ([PR #747](https://github.com/christaegger-dot/borderline-angehoerige/pull/747), gemergt als `0667a69` am 29.10.2026, 22:51 UTC, von Christa Egger), siehe Abschnitt «Nachprüfung r4-53». Vorher r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-52. Nachprüfung r4-52 liegt auf `main` vor ([PR #743](https://github.com/christaegger-dot/borderline-angehoerige/pull/743), gemergt als `b138c4b` am 29.10.2026, 22:32 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-52»; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); PUK-Website-Profil auf `main`: 2026.10.13 ([christaegger-dot/puk-website-profil#145](https://github.com/christaegger-dot/puk-website-profil/pull/145), gemergt als `828413c` am 29.10.2026, 22:42 UTC), siehe Abschnitt «PUK-Website-Profil 2026.10.10 bis 2026.10.13»; Gestaltungssystem «Borderline Angehörige» auf r4-53 nachgeführt (29.10.2026, 22:56 UTC), siehe Abschnitt «Gestaltungssystem»; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-54 (`060aa8f`, [PR #751](https://github.com/christaegger-dot/borderline-angehoerige/pull/751) gemergt am 29.10.2026, 23:02 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-54. Nachprüfung r4-54 liegt auf `main` vor ([PR #754](https://github.com/christaegger-dot/borderline-angehoerige/pull/754), gemergt als `ab4e862` am 29.10.2026, 23:14 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-54». Offener Entwurf: r4-57 (N54-1, N54-2, [PR #756](https://github.com/christaegger-dot/borderline-angehoerige/pull/756)), siehe oberster Abschnitt. Offener Arbeitsentwurf: r4-55 Absenderzeile 16 px und r4-56 dezenter Footer, beide in [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753) (Entwurf, nicht gemergt), siehe die zwei obersten Abschnitte. Vorher r4-53 (`2324026`, [PR #745](https://github.com/christaegger-dot/borderline-angehoerige/pull/745) gemergt am 29.10.2026, 22:42 UTC, von Christa Egger), siehe Abschnitt r4-53; Nachprüfung r4-53 liegt auf `main` vor ([PR #747](https://github.com/christaegger-dot/borderline-angehoerige/pull/747), gemergt als `0667a69` am 29.10.2026, 22:51 UTC, von Christa Egger), siehe Abschnitt «Nachprüfung r4-53». Vorher r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-52. Nachprüfung r4-52 liegt auf `main` vor ([PR #743](https://github.com/christaegger-dot/borderline-angehoerige/pull/743), gemergt als `b138c4b` am 29.10.2026, 22:32 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-52»; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); PUK-Website-Profil auf `main`: 2026.10.13 ([christaegger-dot/puk-website-profil#145](https://github.com/christaegger-dot/puk-website-profil/pull/145), gemergt als `828413c` am 29.10.2026, 22:42 UTC), siehe Abschnitt «PUK-Website-Profil 2026.10.10 bis 2026.10.13»; Gestaltungssystem «Borderline Angehörige» auf r4-53 nachgeführt (29.10.2026, 22:56 UTC), siehe Abschnitt «Gestaltungssystem»; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Korrektur · r4-55 · Befunde N54-1 und N54-2 · Entwurf vom 29.10.2026
+## Korrektur · r4-57 · Befunde N54-1 und N54-2 · Entwurf vom 29.10.2026
 
-**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, auf `main` (`854bdbc`) aufgesetzt, als Entwurfs-PR, **nicht gemergt**. Auftrag von Christa Egger, 29.10.2026: «Nachbesserung N54-1 und N54-2 umsetzen». Nachweis: [`audit-results/2026-10-29-n54-1-n54-2-r4-55/BERICHT.md`](audit-results/2026-10-29-n54-1-n54-2-r4-55/BERICHT.md).
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, auf `main` (`854bdbc`) aufgesetzt. Danach ist `main` mit r4-55 und r4-56 (`3780ee5`) per Merge eingebracht. Der Stand liegt als [PR #756](https://github.com/christaegger-dot/borderline-angehoerige/pull/756) vor, **nicht gemergt**. Auftrag von Christa Egger, 29.10.2026: «Nachbesserung N54-1 und N54-2 umsetzen». Nachweis: [`audit-results/2026-10-29-n54-1-n54-2-r4-57/BERICHT.md`](audit-results/2026-10-29-n54-1-n54-2-r4-57/BERICHT.md).
+
+**Nummer:** Der Stand hiess im ersten Entwurf r4-55. Eine andere Sitzung hat parallel r4-55 (Absenderzeile) und r4-56 (Footer) gebaut und gemergt. Deshalb heisst er jetzt r4-57.
 
 **Inhalt:**
 - **N54-1:** Das Gate verlangt genau eine Zeile «Direkteinstiege» im Kopf (`.puk-site-subbar`). Es vergleicht Ziele, Reihenfolge und Beschriftung, für die Zeile und für die Einträge im Menü. Dafür gibt es vier neue Selbsttestfälle.
 - **N54-2:** Renderer und Gate berechnen die Direkteinstiege gemeinsam (`utilityEntriesOf`). Ohne `utilityNav` gibt es keine 23 falschen Blocker mehr, und die Rückfallzeile wird geprüft.
-- **Unverändert:** Wortlaut, Stylesheet und Skript. Die Seiten sind bis auf die Build-Kennung byte-gleich mit r4-54.
+- **Unverändert:** Wortlaut, Stylesheet und Skript. Die Seiten sind bis auf die Build-Kennung byte-gleich mit r4-56.
 
 **Technischer Stand des Entwurfs:**
 - Selbsttest 93/93
@@ -23,15 +25,70 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 - Sprach-/UI-Test 73/73
 - Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c)
 
-**Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die auch r4-52 und r4-54 gebaut hat. Eine Nachprüfung von r4-55 muss eine andere Sitzung machen.
+**Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die auch r4-52 und r4-54 gebaut hat. Eine Nachprüfung von r4-57 muss eine andere Sitzung machen.
 
 **Offen:**
 - Merge nur auf Auftrag.
-- Nachprüfung von r4-55.
+- Nachprüfung von r4-57.
 - N52-3: Rest, gering.
 - N49-2: Bestätigung durch Christa Egger.
 - N51-2: gering.
 - Prüfung mit echtem Screenreader.
+
+## Dezenter Footer · r4-56 · Entwurf, nicht veröffentlicht
+
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, im selben [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753) wie r4-55, Entwurf, nicht gemergt. Auftrag von Christa Egger, 29.10.2026: «ich will einen sehr dezenten footer». Nach den Vergleichsbildern hat sie entschieden: «16 px, grau». Nachweis: [`audit-results/2026-10-29-footer-r4-56/BERICHT.md`](audit-results/2026-10-29-footer-r4-56/BERICHT.md).
+
+**Inhalt:**
+- Die Fusszeile hat keine graue Fläche mehr, oben steht eine Haarlinie, der Abstand ist kleiner.
+- Überschriften, Text und Links stehen in 16 px und `tinte-leise`, Links unterstrichen. Bisher war die Kontaktzeile 19 px gross und die Links blau.
+- Zielflächen bleiben 44 px. Wortlaut und Aufbau sind unverändert. Nur CSS.
+
+**Wirkung** (240 Zustände, 24 Seiten):
+- Der Footer ist bei 1440 px 217 statt 333 px hoch, bei 390 px 441 statt 574 px.
+- Kleinster Kontrast 5,92 : 1.
+- Kein waagrechtes Scrollen.
+- Druck und erzwungene Farben sind geprüft.
+
+**Bezug zum Profil:** Leitlinie 03 sieht für Kontakttexte im Footer Lesetext vor und Ruhe durch Inhalt und Abstand, nicht durch kleinere Schrift. Die 16 px für die Kontaktzeile hat Christa Egger nach diesem Hinweis entschieden. Ebenso die grauen Links, obwohl das Gestaltungssystem Blau für Links nennt.
+
+**Technischer Stand:**
+- Selbsttest 89/89
+- Gate 24 Seiten · 0 Blocker · 20 Hinweise
+- Parität 35
+- Suchtest 216/216
+- Sprach-/UI-Test 73/73
+- Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c)
+
+**Offen:** Merge auf Auftrag. Danach das Gestaltungssystem nachführen: Fusszeile ohne Fläche, Footer-Links grau, Absenderzeile 16 px.
+
+## Absenderzeile 16 px · r4-55 · Entwurf, nicht veröffentlicht
+
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753), Entwurf, nicht gemergt. Begonnen auf `fe745f9` als r4-54. Weil inzwischen r4-54 (N52-2) veröffentlicht war, ist `main` (`d5229c6`) per Merge eingebracht, und die Änderung heisst r4-55. Auftrag von Christa Egger, 29.10.2026: «setz die Absenderzeile auf 16 px». Nachweis: [`audit-results/2026-10-29-absender-r4-55/BERICHT.md`](audit-results/2026-10-29-absender-r4-55/BERICHT.md).
+
+**Inhalt:** Die Absenderzeile im Kopf jeder Seite steht in 16 statt 15 px (`.puk-site-sender`, `1rem`). So erfüllt sie die Regel des Gestaltungssystems «Nichts unter 16 px». Kein Wortlaut ist geändert.
+
+**Wirkung** (240 Zustände, 24 Seiten):
+- Bei 320 px bricht «der PUK» auf eine zweite Zeile um, der Kopf ist 26 px höher.
+- Bei 390 und 768 px ist er 1 px höher, ab 1100 px unverändert.
+- Auf dem Handy mit 200 % Schrift ist er 435 statt 418 px hoch.
+- Kein waagrechtes Scrollen, nichts abgeschnitten.
+
+**Technischer Stand:**
+- Selbsttest 89/89
+- Gate 24 Seiten · 0 Blocker · 20 Hinweise
+- Parität 35
+- Suchtest 216/216
+- Sprach-/UI-Test 73/73
+- Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c)
+
+**Hinweis, nicht geändert:** Weitere sichtbare Texte liegen unter 16 px.
+- **13 px:** Etiketten und Schlüssel in Abbildungen.
+- **15 px:** Direkteinstiege unter 22,5 rem, «Geprüft am», aufklappbare Titel, Bildlegenden, Tabellen und der Schutzsatz unter Abbildungen.
+
+Die Liste steht im Bericht. Zu entscheiden ist, ob die Regel «Nichts unter 16 px» auch dafür gilt.
+
+**Offen:** Merge auf Auftrag, zusammen mit r4-56 (oben); danach das Gestaltungssystem nachführen (die Abweichung entfällt).
 
 ## Nachprüfung r4-54 · liegt vor seit 29.10.2026
 
@@ -193,7 +250,7 @@ Aufträge von Christa Egger, 29.10.2026, in der Prüfsitzung des Profils: «Behe
 
 **Geprüft:** Die geänderten Vorschauen sind lokal in Chromium mit Rubik gerendert und mit Bildschirmfotos der Website verglichen. Waagrechter Überlauf: 0, Fehler: 0. Nicht geprüft ist die Darstellung in der Artefaktseite selbst.
 
-**Neu festgestellt, offen:** Die Absenderzeile im Kopf ist auf der Website 15 px gross (`.puk-site-sender`, gemessen bei 1440 px). Das Gestaltungssystem verlangt mindestens 16 px («Nichts unter 16 px»). Zu entscheiden ist, ob die Website angepasst wird oder das System eine Ausnahme nennt. Bis dahin ist es im System als Abweichung eingetragen.
+**Neu festgestellt:** Die Absenderzeile im Kopf ist auf der Website 15 px gross (`.puk-site-sender`, gemessen bei 1440 px). Das Gestaltungssystem verlangt mindestens 16 px («Nichts unter 16 px»). Entscheid Christa Egger, 29.10.2026: «setz die Absenderzeile auf 16 px»; umgesetzt im Entwurf r4-55 ([PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753), nicht gemergt). Bis zum Merge steht es im System als Abweichung.
 
 ## Nachprüfung r4-52 · liegt vor seit 29.10.2026
 

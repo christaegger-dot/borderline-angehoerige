@@ -1,0 +1,8 @@
+// Erste Textzeile der Sicherheitskarte: liegt sie ganz im ersten Bildschirm? Aufruf: node kartenzeile.cjs <site>
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE);const http=require('http'),fs=require('fs'),path=require('path');const root=process.argv[2];
+const srv=http.createServer((q,res)=>{const f=path.join(root,decodeURIComponent(q.url.split('?')[0]));try{const e=path.extname(f);res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.woff2':'font/woff2','.svg':'image/svg+xml'})[e]||'application/octet-stream');res.end(fs.readFileSync(f));}catch(e){res.statusCode=404;res.end();}});
+(async()=>{await new Promise(r=>srv.listen(0,'127.0.0.1',r));const b=await chromium.launch({args:['--no-sandbox']});
+ for(const [w,h] of [[390,844],[1024,768],[1112,834],[1150,800],[1199,800],[1200,800],[1280,800]]){const p=await (await b.newContext({viewport:{width:w,height:h}})).newPage();await p.goto('http://127.0.0.1:'+srv.address().port+'/index.html');await p.evaluate(()=>document.fonts.ready);
+  const r=await p.evaluate(()=>{const a=document.querySelector('.bl-paths-cards li a')||document.querySelector('.bl-paths-cards li');const rg=document.createRange();rg.selectNodeContents(a);const rc=[...rg.getClientRects()].filter(x=>x.width>0);const first=rc[0];return {top:Math.round(first.top),bottom:Math.round(first.bottom),text:a.textContent.trim().slice(0,50)}});
+  console.log(`${w}×${h}: erste Textzeile ${r.top}–${r.bottom} px → ${r.bottom<=h?'ganz lesbar':r.top<h?'abgeschnitten':'unsichtbar'} («${r.text}»)`);await p.context().close();}
+ await b.close();srv.close();})();

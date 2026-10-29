@@ -1,10 +1,23 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-46 (`fe73ecb`, [PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719) gemergt am 29.10.2026, 16:52 UTC, von Christa Egger). Kein offener Arbeitsentwurf (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-46 (`fe73ecb`, [PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719) gemergt am 29.10.2026, 16:52 UTC, von Christa Egger). Kein offener Arbeitsentwurf; Nachprüfung r4-43 bis r4-46 läuft in eigener Sitzung (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Entscheide vom 29.10.2026 zu den offenen Punkten (an Claude delegiert)
+
+**Auftrag:** Christa Egger, 29.10.2026, zu den sechs offenen Punkten nach r4-46: «entscheide selbständig, du hast freie Hand». Grundlage sind die Regeln des PUK-Website-Profils (Kurzfassung 2026.10.2) und die Entscheide in dieser Datei.
+
+| Punkt | Entscheid | Begründung |
+|---|---|---|
+| 144/117 auf «Grenzen setzen» | **Nein**, bleibt wie r4-46 | Notrufnummern nur an den thematischen Stellen (A03-231). Sie stehen im Abschnitt «Wenn Gewalt oder Bedrohung vorkommt» auf `gefahr.html`. Der gelbe Sicherheitshinweis zuoberst auf «Grenzen setzen» führt mit einem Klick dorthin. Der Zuständigkeitsverweis steht in jeder Fusszeile. |
+| Merge von PR #719 als Fachfreigabe des neuen Wortlauts | **Nicht als Fachfreigabe vermerkt** | Profilregel: «Einen Wortlaut nur dann als ‹fachlich geprüft› eintragen, wenn die Fachstelle genau diesen Wortlaut freigegeben hat. Eine überlassene Wahl zwischen Varianten ist keine Freigabe des Wortlauts.» Die Frage war an Claude delegiert, Claude kann die Freigabe nicht ersetzen. Vermerkt ist: veröffentlicht durch den Merge von Christa Egger. **Offen:** ausdrückliche Fachfreigabe des Wortlauts in `audit-results/2026-10-29-e10-r4-46/BERICHT.md`, Abschnitt «Zur Fachfreigabe». Ein Satz von Christa Egger genügt. |
+| E7 Absenderzeile ausserhalb des Kopfs | **Entfällt** | Profilregel: Im Kopf jeder Seite sichtbar «Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik Zürich · angehoerigenarbeit@pukzh.ch» als `mailto:`-Link. Das Gate prüft das (`sender`). Profilregeln werden nicht in einzelnen Website-Repositories geändert. Die Zeile ist seit r4-43 leise gesetzt. Der Kopf ist bei 1440 px 138 px hoch statt 159 px. |
+| E9 144/117 als Telefonlinks | **Bereits umgesetzt**, nichts zu tun | Der Akuthinweis (`responsibility.inline.phoneLinks`) setzt 144 und 117 auf allen fünf Seiten mit Akuthinweis als `tel:`-Links. Das sind Diagnose, Wenn es riskant oder bedrohlich wird, Kinder, Zugewandt sprechen und Krisen begleiten. Der Sprach-/UI-Test prüft es. |
+| Screenreader-Prüfung | **Ersatzprüfung durch die Prüfsitzung**; die Prüfung mit echtem Screenreader bleibt offen | Im Container gibt es keinen Screenreader. Die Prüfsitzung (unten) prüft axe-core, den Barrierefreiheitsbaum von Chromium, den Tastaturgang und die Kontraste. Sie legt eine Anleitung für eine Prüfung mit VoiceOver auf dem iPhone bei, etwa 10 Minuten. |
+| Nachprüfung durch eine Sitzung, die nicht gebaut hat | **Beauftragt** am 29.10.2026, 16:58 UTC | Eigene Sitzung «Nachprüfung r4-43 bis r4-46», gestartet aus dieser Sitzung. Sie ändert nichts und committet nur `audit-results/2026-10-29-nachpruefung-r4-43-r4-46/NACHPRUEFUNG.md` auf dem Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, als Entwurfs-PR. Ihre Befunde behebt danach die bauende Sitzung. Ein Unteragent derselben Sitzung wurde wieder gestoppt: Das Profil verlangt eine eigene Sitzung. |
 
 ## E10 · r4-46 · veröffentlicht am 29.10.2026
 
@@ -21,7 +34,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Zu entscheiden:** «Grenzen setzen» zeigt 144/117 nicht mehr selbst. Die Nummern stehen im umgezogenen Abschnitt, der Sicherheitshinweis zuoberst führt mit einem Klick dorthin (Regel A03-231).
 
-**Offen:** ausdrückliche Fachfreigabe des neuen Wortlauts (Liste im Bericht), falls gewünscht; Entscheid zu 144/117 auf «Grenzen setzen»; Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat; E7, E9. Weitere Merges und Veröffentlichungen nur auf Auftrag.
+**Offen:** siehe «Entscheide vom 29.10.2026 zu den offenen Punkten» oben: ausdrückliche Fachfreigabe des neuen Wortlauts, Screenreader-Prüfung mit echtem Screenreader, Ergebnis der Nachprüfung.
 
 ## Gestaltung Schritt 3 · r4-45 · veröffentlicht am 29.10.2026
 

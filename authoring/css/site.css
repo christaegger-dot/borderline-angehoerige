@@ -936,9 +936,12 @@ html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-to
 .bl-band :focus-visible{box-shadow:0 0 0 2px var(--nachtblau),0 0 0 4px var(--papier)}
 /* r4-49: Titelbild der Startseite, übernommen aus der Titelkarte «Cover» des Gestaltungssystems. Rein dekorativ und für
    Screenreader verborgen; seine Flächen tragen keine Bedeutung (Ausnahme zu «gelb = hier geht Schutz vor» und «nachtblau nur
-   für das Band Haltung»). Ab 62 rem rechts neben Titel und Einleitung, darunter als Band unter dem Einstieg. Bei erzwungenen
+   für das Band Haltung»). Ab 62 rem rechts neben Titel und Einleitung, darunter seit r4-52 ausgeblendet. Bei erzwungenen
    Farben und im Druck ausgeblendet. */
 .bl-titelbild{margin-top:var(--space-8);max-width:480px} /* r4-50 (Prüfschritt 4, P4-2): Das Band wächst nicht mit Breite und Schrift, höchstens 120 px hoch */
+/* r4-52 (Nachprüfung N49-1, Entscheid Christa Egger 29.10.2026: «Band ausblenden»): Unter 62 rem kein Titelbild, damit die
+   Sicherheitskarte der Startseite auf dem Handy wieder im ersten Bildschirm beginnt. Ab 62 rem steht es weiter rechts neben dem Einstieg. */
+@media (max-width:61.99rem){.bl-titelbild{display:none}}
 .bl-titelbild svg{display:block;width:100%;height:auto}
 .bl-titelbild .bl-titelbild__breit{display:none}
 .bl-titelbild__hell{fill:var(--blau-25)}

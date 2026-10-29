@@ -1,10 +1,25 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-47 (`1d53178`, [PR #724](https://github.com/christaegger-dot/borderline-angehoerige/pull/724) gemergt am 29.10.2026, 17:39 UTC, von Christa Egger). Kein offener Arbeitsentwurf; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-47 (`1d53178`, [PR #724](https://github.com/christaegger-dot/borderline-angehoerige/pull/724) gemergt am 29.10.2026, 17:39 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-48 (Befund N46-4) auf Branch `claude/dazzling-cerf-n6ci1w` (Entwurfs-PR folgt); Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Korrektur · r4-48 · Befund N46-4 · Entwurf vom 29.10.2026
+
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, auf `main` (`0ce60ea`) aufgesetzt, Entwurfs-PR folgt. Nachweis und Freigabe: [`audit-results/2026-10-29-n46-4-r4-48/BERICHT.md`](audit-results/2026-10-29-n46-4-r4-48/BERICHT.md).
+
+**Fachfreigabe Christa Egger, 29.10.2026:**
+- **«Ja»** zu: «Bei Bedrohung oder Gewalt geht Schutz vor jedem Gespräch. Mehr dazu auf der Seite «Wenn es riskant oder bedrohlich wird».»
+- **«nein»** zu: «Mehr zu Geld auf der Seite «Wenn es riskant oder bedrohlich wird»».
+
+**Inhalt:**
+- **Sicherheitshinweis auf «Grenzen setzen»:** Er steht jetzt im freigegebenen Wortlaut. Der Link führt weiter auf `gefahr.html#gewalt`, das `aria-label` entfällt.
+- **Hinweis auf `gefahr.html`:** Er bleibt «Mehr dazu im Abschnitt …», weil der Abschnitt dort auf derselben Seite steht. Das ist ein Entscheid der bauenden Sitzung. Der freigegebene Satz würde dort auf die eigene Seite verweisen.
+- **Verweis «Mehr zu Geld»:** Er bleibt unverändert, auf Entscheid von Christa Egger.
+
+**Technischer Stand:** Selbsttest 86/86; Gate 24 Seiten · 0 Blocker; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 1 bekannte Ausnahme.
 
 ## Korrektur · r4-47 · Befunde der Nachprüfung · veröffentlicht am 29.10.2026
 
@@ -17,7 +32,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 - **N46-6:** Der Layouttest vergleicht die fünf freigegebenen Namen.
 - **N46-7:** «Weiter im Bereich» auch auf `gefahr.html`.
 
-Kein Wortlaut geändert. **N46-3** ist mit der Freigabe vom 29.10.2026 erledigt. **N46-4** («im Abschnitt» verweist auf eine andere Seite) braucht neuen Wortlaut im Sicherheitshinweis und liegt Christa Egger zur Freigabe vor.
+Kein Wortlaut geändert. **N46-3** ist mit der Freigabe vom 29.10.2026 erledigt. **N46-4** («im Abschnitt» verweist auf eine andere Seite) brauchte neuen Wortlaut; umgesetzt mit r4-48, soweit freigegeben.
 
 **Technischer Stand:** Selbsttest 86/86; Gate 24 Seiten · 0 Blocker; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 1 bekannte Ausnahme.
 
@@ -32,7 +47,7 @@ Kein Wortlaut geändert. **N46-3** ist mit der Freigabe vom 29.10.2026 erledigt.
 | E7 Absenderzeile ausserhalb des Kopfs | **Entfällt** | Profilregel: Im Kopf jeder Seite sichtbar «Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik Zürich · angehoerigenarbeit@pukzh.ch» als `mailto:`-Link. Das Gate prüft das (`sender`). Profilregeln werden nicht in einzelnen Website-Repositories geändert. Die Zeile ist seit r4-43 leise gesetzt. Der Kopf ist bei 1440 px 138 px hoch statt 159 px. |
 | E9 144/117 als Telefonlinks | **Bereits umgesetzt**, nichts zu tun | Der Akuthinweis (`responsibility.inline.phoneLinks`) setzt 144 und 117 auf allen fünf Seiten mit Akuthinweis als `tel:`-Links. Das sind Diagnose, Wenn es riskant oder bedrohlich wird, Kinder, Zugewandt sprechen und Krisen begleiten. Der Sprach-/UI-Test prüft es. |
 | Screenreader-Prüfung | **Ersatzprüfung durch die Prüfsitzung**; die Prüfung mit echtem Screenreader bleibt offen | Im Container gibt es keinen Screenreader. Die Prüfsitzung (unten) prüft axe-core, den Barrierefreiheitsbaum von Chromium, den Tastaturgang und die Kontraste. Sie legt eine Anleitung für eine Prüfung mit VoiceOver auf dem iPhone bei, etwa 10 Minuten. |
-| Nachprüfung durch eine Sitzung, die nicht gebaut hat | **Beauftragt** am 29.10.2026, 16:58 UTC; **liegt vor** ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026; «Nachbesserung nötig, ohne Blocker», behoben mit r4-47 ausser N46-4) | Eigene Sitzung «Nachprüfung r4-43 bis r4-46», gestartet aus dieser Sitzung. Sie ändert nichts und committet nur `audit-results/2026-10-29-nachpruefung-r4-43-r4-46/NACHPRUEFUNG.md` auf dem Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, als Entwurfs-PR. Ihre Befunde behebt danach die bauende Sitzung. Ein Unteragent derselben Sitzung wurde wieder gestoppt: Das Profil verlangt eine eigene Sitzung. |
+| Nachprüfung durch eine Sitzung, die nicht gebaut hat | **Beauftragt** am 29.10.2026, 16:58 UTC; **liegt vor** ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026; «Nachbesserung nötig, ohne Blocker», behoben mit r4-47, N46-4 mit r4-48, soweit freigegeben) | Eigene Sitzung «Nachprüfung r4-43 bis r4-46», gestartet aus dieser Sitzung. Sie ändert nichts und committet nur `audit-results/2026-10-29-nachpruefung-r4-43-r4-46/NACHPRUEFUNG.md` auf dem Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, als Entwurfs-PR. Ihre Befunde behebt danach die bauende Sitzung. Ein Unteragent derselben Sitzung wurde wieder gestoppt: Das Profil verlangt eine eigene Sitzung. |
 
 ## E10 · r4-46 · veröffentlicht am 29.10.2026
 

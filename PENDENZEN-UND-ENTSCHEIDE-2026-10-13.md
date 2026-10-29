@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-44 (`65041e4`, [PR #715](https://github.com/christaegger-dot/borderline-angehoerige/pull/715) gemergt am 29.10.2026, 16:07 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-45 auf Branch `claude/dazzling-cerf-n6ci1w` (Pull Request folgt; Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-44 (`65041e4`, [PR #715](https://github.com/christaegger-dot/borderline-angehoerige/pull/715) gemergt am 29.10.2026, 16:07 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-45 auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #717](https://github.com/christaegger-dot/borderline-angehoerige/pull/717), Entwurf; Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Gestaltung Schritt 3 · r4-45 · Entwurf vom 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`e7eb137`) aufgesetzt. Pull Request folgt. Freigabe von Christa Egger vom 29.10.2026: «nachher weiter mit Schritt 3, ich gebe Freigabe». Sie gilt für E2 und E8. Zu den Schutzsätzen: «entscheide selber». Nachweis: [`audit-results/2026-10-29-struktur-r4-45/BERICHT.md`](audit-results/2026-10-29-struktur-r4-45/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`e7eb137`) aufgesetzt, [PR #717](https://github.com/christaegger-dot/borderline-angehoerige/pull/717) (Entwurf, nicht gemergt). Freigabe von Christa Egger vom 29.10.2026: «nachher weiter mit Schritt 3, ich gebe Freigabe». Sie gilt für E2 und E8. Zu den Schutzsätzen: «entscheide selber». Nachweis: [`audit-results/2026-10-29-struktur-r4-45/BERICHT.md`](audit-results/2026-10-29-struktur-r4-45/BERICHT.md).
 
 **Inhalt:**
 - **Hauptnavigation:** fünf Bereiche «Verstehen», «Im Alltag», «Krisen», «Familie», «Für Sie» statt sechs. «Übersicht» entfällt, das Logo führt zur Startseite. Behandlung gehört zu Verstehen. Krise und Familie sind eigene Bereiche. «Für Sie» umfasst Auf sich achten, Unterstützung und Bücher.

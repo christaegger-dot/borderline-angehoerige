@@ -1,10 +1,39 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-54 (`060aa8f`, [PR #751](https://github.com/christaegger-dot/borderline-angehoerige/pull/751) gemergt am 29.10.2026, 23:02 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-54. Nachprüfung r4-54 liegt auf `main` vor ([PR #754](https://github.com/christaegger-dot/borderline-angehoerige/pull/754), gemergt als `ab4e862` am 29.10.2026, 23:14 UTC, im Auftrag von Christa Egger), siehe oberster Abschnitt. Kein offener Arbeitsentwurf ausser dem Pull Request für diesen Eintrag. Vorher r4-53 (`2324026`, [PR #745](https://github.com/christaegger-dot/borderline-angehoerige/pull/745) gemergt am 29.10.2026, 22:42 UTC, von Christa Egger), siehe Abschnitt r4-53; Nachprüfung r4-53 liegt auf `main` vor ([PR #747](https://github.com/christaegger-dot/borderline-angehoerige/pull/747), gemergt als `0667a69` am 29.10.2026, 22:51 UTC, von Christa Egger), siehe Abschnitt «Nachprüfung r4-53». Vorher r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-52. Nachprüfung r4-52 liegt auf `main` vor ([PR #743](https://github.com/christaegger-dot/borderline-angehoerige/pull/743), gemergt als `b138c4b` am 29.10.2026, 22:32 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-52»; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); PUK-Website-Profil auf `main`: 2026.10.13 ([christaegger-dot/puk-website-profil#145](https://github.com/christaegger-dot/puk-website-profil/pull/145), gemergt als `828413c` am 29.10.2026, 22:42 UTC), siehe Abschnitt «PUK-Website-Profil 2026.10.10 bis 2026.10.13»; Gestaltungssystem «Borderline Angehörige» auf r4-53 nachgeführt (29.10.2026, 22:56 UTC), siehe Abschnitt «Gestaltungssystem»; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-54 (`060aa8f`, [PR #751](https://github.com/christaegger-dot/borderline-angehoerige/pull/751) gemergt am 29.10.2026, 23:02 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-54. Nachprüfung r4-54 liegt auf `main` vor ([PR #754](https://github.com/christaegger-dot/borderline-angehoerige/pull/754), gemergt als `ab4e862` am 29.10.2026, 23:14 UTC, im Auftrag von Christa Egger), siehe oberster Abschnitt. Pendenzen dazu gemergt ([PR #755](https://github.com/christaegger-dot/borderline-angehoerige/pull/755), `854bdbc`, 29.10.2026, 23:18 UTC). Offener Arbeitsentwurf: r4-55 (N54-1 und N54-2), siehe oberster Abschnitt. Vorher r4-53 (`2324026`, [PR #745](https://github.com/christaegger-dot/borderline-angehoerige/pull/745) gemergt am 29.10.2026, 22:42 UTC, von Christa Egger), siehe Abschnitt r4-53; Nachprüfung r4-53 liegt auf `main` vor ([PR #747](https://github.com/christaegger-dot/borderline-angehoerige/pull/747), gemergt als `0667a69` am 29.10.2026, 22:51 UTC, von Christa Egger), siehe Abschnitt «Nachprüfung r4-53». Vorher r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-52. Nachprüfung r4-52 liegt auf `main` vor ([PR #743](https://github.com/christaegger-dot/borderline-angehoerige/pull/743), gemergt als `b138c4b` am 29.10.2026, 22:32 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-52»; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); PUK-Website-Profil auf `main`: 2026.10.13 ([christaegger-dot/puk-website-profil#145](https://github.com/christaegger-dot/puk-website-profil/pull/145), gemergt als `828413c` am 29.10.2026, 22:42 UTC), siehe Abschnitt «PUK-Website-Profil 2026.10.10 bis 2026.10.13»; Gestaltungssystem «Borderline Angehörige» auf r4-53 nachgeführt (29.10.2026, 22:56 UTC), siehe Abschnitt «Gestaltungssystem»; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Korrektur · r4-55 · Befunde N54-1 und N54-2 · Entwurf seit 29.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-54`, auf `main` (`854bdbc`) aufgesetzt, Pull Request als Entwurf, nicht gemergt und nicht veröffentlicht. Auftrag von Christa Egger, 29.10.2026: «Nachbesserung N54-1 und N54-2 umsetzen». Nachweis: [`audit-results/2026-10-29-n54-1-n54-2-r4-55/BERICHT.md`](audit-results/2026-10-29-n54-1-n54-2-r4-55/BERICHT.md).
+
+**Inhalt:**
+- **N54-1:** Die Regel `utility-nav` verlangt genau eine Zeile «Direkteinstiege» im Kopf und vergleicht Beschriftung, Ziel und Reihenfolge. Die Menüregel vergleicht ebenfalls die Beschriftung.
+- **N54-2:** Renderer und Gate bestimmen die Direkteinstiege mit derselben Funktion, auch mit dem Rückfall «Website durchsuchen», wenn `utilityNav` fehlt. Die 23 falschen Blocker entfallen; eine fehlende Rückfallzeile meldet das Gate jetzt.
+- **Berichtigung:** `utilityNav` ist nicht Pflicht (nur eine leere Liste wird blockiert). Nachgetragen in der Nachprüfung r4-54.
+- **Selbsttest:** sechs neue Fälle, 95 statt 89. Mit den Regeln von r4-54 scheitern genau diese sechs (89/95).
+- **Unverändert:** Wortlaut, Stylesheet und Skript. `site/` ändert nur die Build-Kennung.
+
+**Technischer Stand:**
+- Selbsttest 95/95
+- Gate 24 Seiten · 0 Blocker · 20 Hinweise
+- Parität 35
+- Suchtest 216/216
+- Sprach-/UI-Test 73/73
+- Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c)
+
+**Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die die Nachprüfung r4-54 erstellt hat. Eine Nachprüfung von r4-55 muss eine andere Sitzung machen.
+
+**Offen:**
+- Merge und Veröffentlichung von r4-55 (Entscheid Christa Egger).
+- Nachprüfung von r4-55 durch eine Sitzung, die nicht gebaut hat.
+- N52-3: Rest, gering.
+- N49-2: Bestätigung durch Christa Egger.
+- N51-2: gering, keine Änderung nötig.
+- Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte.
 
 ## Nachprüfung r4-54 · liegt vor seit 29.10.2026
 
@@ -16,8 +45,8 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 | Befund | Schweregrad | Inhalt | Stand |
 |---|---|---|---|
-| N54-1 | gering | Die Regel `utility-nav` vergleicht nur Linkziele und Reihenfolge der Zeile «Direkteinstiege» (`contract.js:506–511`). Eine geänderte Beschriftung, eine in die Fusszeile verschobene oder eine doppelte Zeile meldet das Gate nicht. Die Angabe «genau nach `utilityNav`» trifft nur für Ziele und Reihenfolge zu | offen, bei der nächsten Arbeit am Seitenrahmen mitnehmen (Beschriftung vergleichen, genau eine Zeile im Kopf verlangen, Selbsttestfälle) oder Beschreibung präzisieren |
-| N54-2 | gering | Ist `utilityNav` nicht konfiguriert, meldet die Menüregel auf 23 Seiten falsche Blocker, weil der Renderer auf «Website durchsuchen» zurückfällt, das Gate diesen Rückfall aber nicht kennt (`contract.js:200–202`, `521–523`). Besteht seit r4-51; für diese Website ohne Folgen, weil `utilityNav` Pflicht ist | offen, nicht dringend (Rückfall entfernen oder im Gate gleich berechnen) |
+| N54-1 | gering | Die Regel `utility-nav` vergleicht nur Linkziele und Reihenfolge der Zeile «Direkteinstiege» (`contract.js:506–511`). Eine geänderte Beschriftung, eine in die Fusszeile verschobene oder eine doppelte Zeile meldet das Gate nicht. Die Angabe «genau nach `utilityNav`» trifft nur für Ziele und Reihenfolge zu | umgesetzt in r4-55, Entwurf (siehe oberster Abschnitt) |
+| N54-2 | gering | Ist `utilityNav` nicht konfiguriert, meldet die Menüregel auf 23 Seiten falsche Blocker, weil der Renderer auf «Website durchsuchen» zurückfällt, das Gate diesen Rückfall aber nicht kennt (`contract.js:200–202`, `521–523`). Besteht seit r4-51; für diese Website ohne Folgen, weil `utilityNav` konfiguriert ist (Berichtigung: `utilityNav` ist nicht Pflicht, der Rückfall ist erreichbar, siehe Nachtrag im Nachweis) | umgesetzt in r4-55, Entwurf (siehe oberster Abschnitt) |
 
 **Bestätigt:**
 - **N52-2 ist behoben.** Das Gate blockiert, wenn die Zeile «Direkteinstiege» fehlt (auch zusammen mit den Menüeinträgen), einen Eintrag zu viel oder zu wenig hat oder vertauscht ist, auf `index` wie auf anderen Seiten. Gegen r4-53 meldet keine dieser Mutationen etwas. Keine Falschmeldung auf der Fehlerseite.
@@ -34,8 +63,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
   - Layouttest: 240 Zustände, 27 Bedienproben, bekannte Ausnahme B2c
 
 **Offen:**
-- N54-1: gering, Gate.
-- N54-2: gering, Gate, nicht dringend.
+- N54-1 und N54-2: umgesetzt in r4-55, Entwurf.
 - N52-3: Rest, gering.
 - N49-2: Bestätigung durch Christa Egger.
 - N51-2: gering, keine Änderung nötig.

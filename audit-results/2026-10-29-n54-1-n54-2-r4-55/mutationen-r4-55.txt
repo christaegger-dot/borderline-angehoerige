@@ -1,0 +1,19 @@
+M0 Bestand	 Blocker gesamt 0	 {}	 404-nav/utility: 0	 
+M1 index: Zeile und Menüeinträge entfernt	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 index:utility-nav: Zeile «Direkteinstiege» fehlt
+M2 index: nur Zeile entfernt	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 index:utility-nav: Zeile «Direkteinstiege» fehlt
+M3 index: Reihenfolge in der Zeile vertauscht	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 index:utility-nav: Direkteinstiege weichen vom Seitenvertrag ab: Nachschlagen (fragen.html), Kurz und klar (kurz.html), Suchen (suche.html) statt Kurz und klar (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html)
+M4 index: ein Eintrag zu viel in der Zeile	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 index:utility-nav: Direkteinstiege weichen vom Seitenvertrag ab: Kurz und klar (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html), Verstehen (verstehen.html) statt Kurz und klar (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html)
+M5 index: ein Eintrag zu wenig in der Zeile	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 index:utility-nav: Direkteinstiege weichen vom Seitenvertrag ab: Kurz und klar (kurz.html), Nachschlagen (fragen.html) statt Kurz und klar (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html)
+M6 behandlung: nur Zeile entfernt	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 behandlung:utility-nav: Zeile «Direkteinstiege» fehlt
+M7 kinder: Zeile und Menüeinträge entfernt	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 kinder:utility-nav: Zeile «Direkteinstiege» fehlt
+M8 suche: Reihenfolge vertauscht	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 suche:utility-nav: Direkteinstiege weichen vom Seitenvertrag ab: Nachschlagen (fragen.html), Kurz und klar (kurz.html), Suchen (suche.html) statt Kurz und klar (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html)
+M9 alle Seiten: Zeile und Menüeinträge entfernt	 Blocker gesamt 23	 {"utility-nav":23}	 404-nav/utility: 0	 index:utility-nav: Zeile «Direkteinstiege» fehlt || kurz:utility-nav: Zeile «Direkteinstiege» fehlt || verstehen:utility-nav: Zeile «Direkteinstiege» fehlt
+M10 index: nur Menüeinträge entfernt (Regel r4-52)	 Blocker gesamt 1	 {"nav":1}	 404-nav/utility: 0	 index:nav: Direkteinstiege im Menü weichen vom Seitenvertrag ab: leer statt Kurz und klar (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html)
+M11 index: Beschriftung in der Zeile geändert	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 index:utility-nav: Direkteinstiege weichen vom Seitenvertrag ab: Mehr (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html) statt Kurz und klar (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html)
+M12 index: Zeile in die Fusszeile verschoben	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 index:utility-nav: Zeile «Direkteinstiege» steht nicht im Kopf (header › .puk-site-subbar)
+M13 index: Zeile doppelt, zweite vertauscht	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 index:utility-nav: Zeile «Direkteinstiege» 2-mal statt einmal
+M14 404: Bestand ohne Zeile (Fehlerseite)	 Blocker gesamt 0	 {}	 404-nav/utility: 0	 
+K1 utilityNav nicht konfiguriert (Rückfall «Website durchsuchen»)	 Blocker gesamt 0	 {}	 404-nav/utility: 0	 
+K2 utilityNav nicht konfiguriert, Rückfallzeile auf index entfernt	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 index:utility-nav: Zeile «Direkteinstiege» fehlt
+K3 utilityNav leer []	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 site:utility-nav: utilityNav muss mindestens einen Direkteinstieg enthalten
+K4 utilityNav mit unbekannter pageId zusätzlich	 Blocker gesamt 1	 {"utility-nav":1}	 404-nav/utility: 0	 site:utility-nav: utilityNav-Ziel fehlt: gibt-es-nicht

@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-54';
+const BUILD = 'r4-55';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -147,6 +147,16 @@ const reviewWaiverDocumented = ra => {
     waiver.decidedBy && /^\d{4}-\d{2}-\d{2}$/.test(waiver.decidedAt) && waiver.reference && waiver.statement);
 };
 const pagePath = p => resolve('', p.href).path;
+/* r4-55 (Nachprüfung N54-2): Renderer und Gate bestimmen die Direkteinstiege gleich. Ohne utilityNav gilt der Rückfall
+   «Website durchsuchen» (Seite suche), sonst meldete das Gate auf jeder Seite eine Abweichung im Menü. */
+function utilityEntriesOf(cfg) {
+  const pages = Array.isArray(cfg.pages) ? cfg.pages : [];
+  const search = pages.find(p => p.id === 'suche' && p.status === 'published');
+  return Array.isArray(cfg.utilityNav) && cfg.utilityNav.length
+    ? cfg.utilityNav.map(entry => ({ ...entry, page: pages.find(p => p.id === entry.pageId && p.status === 'published') })).filter(entry => entry.page)
+    : (search ? [{ pageId: search.id, label: 'Website durchsuchen', page: search }] : []);
+}
+const utilityList = list => list.map(e => `${e.label} (${e.path})`).join(', ');
 
 /* ---------- Build: Seitenrahmen konstruktiv aus dem Vertrag ---------- */
 function renderPage(cfg, page, content) {
@@ -196,10 +206,7 @@ function renderPage(cfg, page, content) {
   const legalHtml = legalLinks.length || legalMissing.length ? `<p class="puk-web-footer__copy puk-site-legal" data-site-legal>${legalLinks.map(l => `<a href="${esc(l.href)}"${isExternalUrl(l.href) ? ' rel="noopener noreferrer"' : ''}>${esc(l.label)}</a>`).join('<span aria-hidden="true"> · </span>')}${legalMissing.length ? `${legalLinks.length ? ' ' : ''}<span class="puk-site-draft">${esc(legalMissing.join(' und '))}: Platzhalter, Ziel nicht festgelegt</span>` : ''}</p>` : '';
   const notFound = isNotFound(page);
   const startPage = cfg.pages.find(p => p.id === 'index') || nav[0];
-  const defaultSearchPage = cfg.pages.find(p => p.id === 'suche' && p.status === 'published');
-  const utilityEntries = Array.isArray(cfg.utilityNav) && cfg.utilityNav.length
-    ? cfg.utilityNav.map(entry => ({ ...entry, page: cfg.pages.find(p => p.id === entry.pageId && p.status === 'published') })).filter(entry => entry.page)
-    : (defaultSearchPage ? [{ pageId: defaultSearchPage.id, label: 'Website durchsuchen', page: defaultSearchPage }] : []);
+  const utilityEntries = utilityEntriesOf(cfg);
   const utilityCurrent = entry => page.id === entry.page.id ? ' aria-current="page"' : (entry.page.id === groupRoot.id && groupRoot.id !== 'index' ? ' aria-current="location"' : '');
   const utilityNav = utilityEntries.length && !notFound ? `<nav class="puk-site-utility" aria-label="Direkteinstiege">${utilityEntries.map(entry => `<a class="puk-site-utility__link" href="${esc(entry.page.href)}"${utilityCurrent(entry)}>${esc(entry.label || entry.page.title)}</a>`).join('')}</nav>` : '';
   /* r4-51 (Prüfschritt 4, P4-1): Dieselben Direkteinstiege stehen zusätzlich im Menü. Das Stylesheet zeigt unter 20 rem
@@ -502,13 +509,19 @@ function gate(cfg, files, opts = {}) {
       }
     }
     /* r4-54 (Nachprüfung N52-2): Die Zeile «Direkteinstiege» ist auf jeder veröffentlichten Seite ausser der Fehlerseite Pflicht
-       und entspricht genau utilityNav. Sonst bliebe das Gate grün, wenn Zeile und Menüeinträge zugleich fehlen. */
-    if (Array.isArray(cfg.utilityNav) && cfg.utilityNav.length && !isNotFound(p)) {
-      const utilityEl = one(doc, x => x.tag === 'nav' && x.attrs['aria-label'] === 'Direkteinstiege');
-      const utilityWant = cfg.utilityNav.map(e => pages.find(q => q.id === e.pageId && q.status === 'published')).filter(Boolean).map(pagePath);
-      const utilityGot = utilityEl ? all(utilityEl, x => x.tag === 'a').map(a => resolve(path, a.attrs.href).path) : [];
-      if (!utilityEl) add('block', pid, 'utility-nav', 'Zeile «Direkteinstiege» fehlt');
-      else if (utilityGot.join('|') !== utilityWant.join('|')) add('block', pid, 'utility-nav', `Direkteinstiege weichen vom Seitenvertrag ab: ${utilityGot.join(', ') || 'leer'} statt ${utilityWant.join(', ')}`);
+       und entspricht genau utilityNav. Sonst bliebe das Gate grün, wenn Zeile und Menüeinträge zugleich fehlen.
+       r4-55 (Nachprüfung N54-1, N54-2): auch Beschriftung, genau eine Zeile, im Kopf; mit demselben Rückfall wie der Renderer. */
+    const utilityWant = utilityEntriesOf(cfg).map(e => ({ path: pagePath(e.page), label: norm(e.label || e.page.title) }));
+    if (utilityWant.length && !isNotFound(p)) {
+      const utilityEls = all(doc, x => x.tag === 'nav' && x.attrs['aria-label'] === 'Direkteinstiege');
+      if (!utilityEls.length) add('block', pid, 'utility-nav', 'Zeile «Direkteinstiege» fehlt');
+      else if (utilityEls.length > 1) add('block', pid, 'utility-nav', `Zeile «Direkteinstiege» ${utilityEls.length}-mal statt einmal`);
+      else {
+        const utilityEl = utilityEls[0];
+        if (!up(utilityEl, x => cls(x, 'puk-site-subbar')) || !up(utilityEl, x => x.tag === 'header')) add('block', pid, 'utility-nav', 'Zeile «Direkteinstiege» steht nicht im Kopf (header › .puk-site-subbar)');
+        const utilityGot = all(utilityEl, x => x.tag === 'a').map(a => ({ path: resolve(path, a.attrs.href).path, label: norm(txt(a)) }));
+        if (utilityList(utilityGot) !== utilityList(utilityWant)) add('block', pid, 'utility-nav', `Direkteinstiege weichen vom Seitenvertrag ab: ${utilityList(utilityGot) || 'leer'} statt ${utilityList(utilityWant)}`);
+      }
     }
     const navEl = one(doc, x => x.tag === 'nav' && x.attrs['aria-label'] === 'Hauptnavigation');
     if (!navEl) add('block', pid, 'nav', 'Hauptnavigation fehlt');
@@ -516,11 +529,11 @@ function gate(cfg, files, opts = {}) {
       const navLinks = all(navEl, x => x.tag === 'a'); const links = navLinks.filter(a => !cls(a, 'puk-site-menu__utility-link')); const got = links.map(a => resolve(path, a.attrs.href).path);
       /* r4-51: Direkteinstiege im Menü müssen genau den konfigurierten Direkteinstiegen entsprechen.
          r4-52 (Nachprüfung N51-1): auch wenn sie im Menü ganz fehlen. Unter 20 rem blendet das Stylesheet die Zeile unter dem
-         Kopf aus; ohne die Einträge im Menü wären die Direkteinstiege dort nicht erreichbar. Gilt für Seiten mit Menü und Zeile. */
-      const menuUtility = navLinks.filter(a => cls(a, 'puk-site-menu__utility-link')).map(a => resolve(path, a.attrs.href).path);
-      const utilityExp = (cfg.utilityNav || []).map(e => pages.find(q => q.id === e.pageId && q.status === 'published')).filter(Boolean).map(pagePath);
+         Kopf aus; ohne die Einträge im Menü wären die Direkteinstiege dort nicht erreichbar. Gilt für Seiten mit Menü und Zeile.
+         r4-55 (Nachprüfung N54-1, N54-2): mit Beschriftung und mit demselben Rückfall wie der Renderer. */
+      const menuUtility = navLinks.filter(a => cls(a, 'puk-site-menu__utility-link')).map(a => ({ path: resolve(path, a.attrs.href).path, label: norm(txt(a)) }));
       const needsMenuUtility = !!one(navEl, x => has(x, 'data-puk-disclosure')) && !!one(doc, x => x.tag === 'nav' && x.attrs['aria-label'] === 'Direkteinstiege');
-      if ((menuUtility.length || needsMenuUtility) && menuUtility.join('|') !== utilityExp.join('|')) add('block', pid, 'nav', `Direkteinstiege im Menü weichen vom Seitenvertrag ab: ${menuUtility.join(', ')} statt ${utilityExp.join(', ')}`);
+      if ((menuUtility.length || needsMenuUtility) && utilityList(menuUtility) !== utilityList(utilityWant)) add('block', pid, 'nav', `Direkteinstiege im Menü weichen vom Seitenvertrag ab: ${utilityList(menuUtility) || 'leer'} statt ${utilityList(utilityWant)}`);
       if (links.length > NAV_MAX && !one(navEl, x => has(x, 'data-puk-disclosure'))) add('block', pid, 'nav-menu', `${links.length} Hauptpunkte ohne Menü – ab ${NAV_MAX + 1} Punkten braucht die Navigation unter 760 px ein Dropdown-Menü (Abschnitt «Interaktionskonzept»; tools/build.mjs erzeugt es)`);
       links.forEach(a => { const r = resolve(path, a.attrs.href); if (!exists(r.path)) add('block', pid, 'nav-target', 'Navigationsziel fehlt: ' + a.attrs.href); else if (byPath[r.path] && byPath[r.path].status !== 'published') add('block', pid, 'nav', 'Entwurf in der Navigation: ' + a.attrs.href); });
       if (got.join('|') !== navExp.join('|')) add('block', pid, 'nav', `Navigation weicht vom Seitenvertrag ab: ${got.join(', ') || 'leer'} statt ${navExp.join(', ')}`);
@@ -659,6 +672,10 @@ const MUTATIONS = [
   ['Direkteinstieg im Menü weicht vom Seitenvertrag ab', ['nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link puk-site-menu__utility-link" href="kurz.html"', 'class="puk-web-nav__link puk-site-menu__utility-link" href="verstehen.html"')],
   ['Direkteinstiege im Menü fehlen (r4-52, N51-1)', ['nav'], (c, f) => rex(f, 'index.html', /\n<li class="puk-site-menu__utility">[\s\S]*?<\/li>/g, '')],
   ['Zeile und Menüeinträge der Direkteinstiege fehlen (r4-54, N52-2)', ['utility-nav'], (c, f) => rex(f, 'index.html', /<nav class="puk-site-utility"[\s\S]*?<\/nav>|\n<li class="puk-site-menu__utility">[\s\S]*?<\/li>/g, '')],
+  ['Beschriftung in der Zeile «Direkteinstiege» weicht ab (r4-55, N54-1)', ['utility-nav'], (c, f) => rep(f, 'index.html', 'class="puk-site-utility__link" href="kurz.html">Kurz und klar<', 'class="puk-site-utility__link" href="kurz.html">Mehr<')],
+  ['Zeile «Direkteinstiege» doppelt (r4-55, N54-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<nav class="puk-site-utility"[\s\S]*?<\/nav>)/, '$1$1')],
+  ['Zeile «Direkteinstiege» in der Fusszeile statt im Kopf (r4-55, N54-1)', ['utility-nav'], (c, f) => { const m = (f['index.html'] || '').match(/<nav class="puk-site-utility"[\s\S]*?<\/nav>/); return !!m && rep(f, 'index.html', m[0], '') && rep(f, 'index.html', '</footer>', m[0] + '</footer>'); }],
+  ['Beschriftung eines Direkteinstiegs im Menü weicht ab (r4-55, N54-1)', ['nav'], (c, f) => rep(f, 'index.html', 'puk-site-menu__utility-link" href="kurz.html">Kurz und klar<', 'puk-site-menu__utility-link" href="kurz.html">Mehr<')],
   ['Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite)', ['nav-target', 'nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link" href="beziehungen.html"', 'class="puk-web-nav__link" href="gibt-es-nicht.html"')],
   ['Seitenvertrag verweist auf fehlende Datei', ['page-file'], c => { pg(c, 'behandlung').href = 'gibt-es-nicht.html'; }],
   ['lang fehlt', ['lang'], (c, f) => rep(f, 'behandlung.html', '<html lang="de-CH"', '<html')],
@@ -809,6 +826,19 @@ function selftest(cfg, files, opts = {}) {
     const result = gate(cfg, f, { mode: 'draft', exists: base });
     rows.push({ name: 'Regulärer Kontakt ohne Krisenausnahme: ' + phone, expected: '0 Blocker', got: String(result.blocks), ok: applied && result.blocks === 0 });
   }
+  { /* r4-55 (Nachprüfung N54-2): Ohne utilityNav rendert der Renderer den Rückfall «Website durchsuchen»; das Gate kennt ihn. */
+    const c = JSON.parse(JSON.stringify(cfg)); delete c.utilityNav;
+    const fb = utilityEntriesOf(c);
+    const line = fb.length ? `<nav class="puk-site-utility" aria-label="Direkteinstiege">${fb.map(e => `<a class="puk-site-utility__link" href="${esc(e.page.href)}">${esc(e.label)}</a>`).join('')}</nav>` : '';
+    const menu = fb.map(e => `\n<li class="puk-site-menu__utility"><a class="puk-web-nav__link puk-site-menu__utility-link" href="${esc(e.page.href)}">${esc(e.label)}</a></li>`).join('');
+    const f = {}; for (const [k, v] of Object.entries(files)) f[k] = typeof v === 'string' && v.includes('<nav class="puk-site-utility"')
+      ? v.replace(/<nav class="puk-site-utility"[\s\S]*?<\/nav>/, line).replace(/(\n<li class="puk-site-menu__utility">[\s\S]*?<\/li>)+/, menu) : v;
+    const ids = r => [...new Set(r.findings.filter(x => x.level === 'block' && ['nav', 'utility-nav'].includes(x.id)).map(x => x.id))];
+    const okIds = fb.length ? ids(gate(c, f, { mode: 'draft', exists: base })) : ['kein Rückfall'];
+    rows.push({ name: 'Ohne utilityNav besteht der Rückfall «Website durchsuchen» das Gate (r4-55, N54-2)', expected: 'kein nav, kein utility-nav', got: okIds.join(', ') || 'kein nav, kein utility-nav', ok: !okIds.length });
+    const g = Object.assign({}, f); const cut = rex(g, 'index.html', /<nav class="puk-site-utility"[\s\S]*?<\/nav>/, '');
+    const missIds = cut ? ids(gate(c, g, { mode: 'draft', exists: base })) : [];
+    rows.push({ name: 'Ohne utilityNav fehlt die Rückfallzeile (r4-55, N54-2)', expected: 'utility-nav', got: cut ? (missIds.join(', ') || 'nicht erkannt') : 'Mutation nicht anwendbar', ok: missIds.includes('utility-nav') }); }
   for (const [name, expect, mut] of MUTATIONS) {
     const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files);
     let applied; try { applied = mut(c, f) !== false; } catch (e) { applied = false; }

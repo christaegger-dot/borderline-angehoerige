@@ -1,6 +1,6 @@
 # Korrektur · r4-47 · 29.10.2026 · Befunde der Nachprüfung r4-43 bis r4-46
 
-**Auftrag von Christa Egger, 29.10.2026:** «behebe den Kontrast gleich». Anlass war ein Zwischenbefund der Prüfsitzung «Nachprüfung r4-43 bis r4-46». Ihr Bericht liegt inzwischen vor: [PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), `audit-results/2026-10-29-nachpruefung-r4-43-r4-46/NACHPRUEFUNG.md`, Empfehlung «Nachbesserung nötig, ohne Blocker». Dieser Stand behebt die Befunde N46-1, N46-2, N46-5, N46-6 und N46-7. Die Entscheide dazu stützen sich auf «entscheide selbständig, du hast freie Hand». Ausgangsstand `main` = `b220994` (r4-46).
+**Auftrag von Christa Egger, 29.10.2026:** «behebe den Kontrast gleich». Anlass war ein Zwischenbefund der Prüfsitzung «Nachprüfung r4-43 bis r4-46». Ihr Bericht liegt inzwischen vor: [PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e`, `audit-results/2026-10-29-nachpruefung-r4-43-r4-46/NACHPRUEFUNG.md`, Empfehlung «Nachbesserung nötig, ohne Blocker». Dieser Stand behebt die Befunde N46-1, N46-2, N46-5, N46-6 und N46-7. Die Entscheide dazu stützen sich auf «entscheide selbständig, du hast freie Hand». Ausgangsstand `main` = `b220994` (r4-46).
 
 Diese Datei ist der Nachweis der bauenden Sitzung (Selbstprüfung), keine unabhängige Prüfung.
 

@@ -1,0 +1,7 @@
+import {readFileSync,readdirSync} from 'node:fs';import {join} from 'node:path';import {createHash} from 'node:crypto';
+const [a,b]=process.argv.slice(2);const norm=s=>s.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<style[\s\S]*?<\/style>/g,'').replace(/<[^>]+>/g,' ').replace(/&shy;|­/g,'').replace(/\s+/g,' ').trim();
+const h=s=>createHash('sha256').update(s).digest('hex').slice(0,12);
+let diff=0,files=0;for(const d of ['content','../site']){const A=join(a,d),B=join(b,d);for(const f of readdirSync(A).filter(f=>f.endsWith('.html'))){files++;const x=readFileSync(join(A,f),'utf8'),y=readFileSync(join(B,f),'utf8');const nx=norm(x),ny=norm(y);if(nx!==ny){diff++;console.log('TEXT ABWEICHUNG',d,f);}
+ const cnt=s=>[(s.match(/data-responsibility-inline/g)||[]).length,(s.match(/tel:144/g)||[]).length,(s.match(/tel:117/g)||[]).length,(s.match(/\sid="[^"]+"/g)||[]).map(m=>m).join('|')];const cx=cnt(x),cy=cnt(y);if(JSON.stringify(cx)!==JSON.stringify(cy))console.log('ZÄHLUNG ABWEICHT',d,f,cx.slice(0,3),cy.slice(0,3));}}
+let tot=[0,0,0,0];for(const f of readdirSync(join(b,'../site')).filter(f=>f.endsWith('.html'))){const s=readFileSync(join(b,'../site',f),'utf8');tot[0]+=(s.match(/data-responsibility-inline/g)||[]).length;tot[1]+=(s.match(/tel:144/g)||[]).length;tot[2]+=(s.match(/tel:117/g)||[]).length;tot[3]+=(s.match(/\sid="[^"]+"/g)||[]).length;}
+console.log(`${files} Dateien verglichen, ${diff} Textabweichungen; r4-52 site/: data-responsibility-inline=${tot[0]}, tel:144=${tot[1]}, tel:117=${tot[2]}, id-Attribute=${tot[3]}`);

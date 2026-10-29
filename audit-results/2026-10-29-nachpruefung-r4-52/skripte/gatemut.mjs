@@ -1,0 +1,32 @@
+import { readFileSync, existsSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { join } from 'node:path';
+const src = process.argv[2]; // authoring dir
+const require = createRequire(import.meta.url);
+const C = require(join(src, 'tools/contract.js'));
+const { injectSearchIndex } = await import(join(src, 'tools/search-index.mjs'));
+const cfg = JSON.parse(readFileSync(join(src, 'site.config.json'), 'utf8'));
+const fr = Object.fromEntries(cfg.pages.map(p => [p.id, readFileSync(join(src, 'content', p.id + '.html'), 'utf8')]));
+injectSearchIndex(cfg, fr);
+const base = Object.fromEntries(cfg.pages.filter(p => p.status === 'published').map(p => [C.resolve('', p.href).path, C.renderPage(cfg, p, fr[p.id])]));
+const run = (name, mut) => {
+  const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, base);
+  const applied = mut(c, f);
+  const r = C.gate(c, f, { mode: 'draft', exists: p => Object.hasOwn(f, p) || (!/\.html$/.test(p) && existsSync(join(src, p))) });
+  const nav = r.findings.filter(x => x.level === 'block' && x.id === 'nav');
+  console.log(`${name} | angewendet=${applied} | Blocker=${r.blocks} | nav=${nav.length}${nav.length ? ' | ' + nav.map(x => x.page + ': ' + x.message).join(' / ').slice(0, 260) : ''}`);
+};
+const LI = /\n<li class="puk-site-menu__utility">[\s\S]*?<\/li>/g;
+run('Ausgangsstand', () => true);
+run('index: alle 3 Einträge entfernt', (c, f) => { const b = f['index.html']; f['index.html'] = b.replace(LI, ''); return b !== f['index.html']; });
+run('alle Seiten: alle Einträge entfernt', (c, f) => { let n = 0; for (const k of Object.keys(f)) { const b = f[k]; f[k] = b.replace(LI, ''); if (b !== f[k]) n++; } return n; });
+run('index: nur «Suchen» entfernt', (c, f) => { const b = f['index.html']; f['index.html'] = b.replace(/\n<li class="puk-site-menu__utility"><a[^>]*href="suche\.html"[\s\S]*?<\/li>/, ''); return b !== f['index.html']; });
+run('index: «Kurz und klar» -> verstehen.html', (c, f) => { const b = f['index.html']; f['index.html'] = b.replace('puk-site-menu__utility-link" href="kurz.html"', 'puk-site-menu__utility-link" href="verstehen.html"'); return b !== f['index.html']; });
+run('index: Reihenfolge vertauscht', (c, f) => { const b = f['index.html']; f['index.html'] = b.replace('href="kurz.html">Kurz und klar', 'href="TMP">Kurz und klar').replace('puk-site-menu__utility-link" href="suche.html"', 'puk-site-menu__utility-link" href="kurz.html"').replace('href="TMP"', 'href="suche.html"'); return b !== f['index.html']; });
+run('index: Klasse utility-link entfernt (Einträge als Hauptpunkte)', (c, f) => { const b = f['index.html']; f['index.html'] = b.split(' puk-site-menu__utility-link"').join('"'); return b !== f['index.html']; });
+run('404: unverändert (Menü ohne Direkteinstiege)', () => true);
+run('index: Menü (data-puk-disclosure) entfernt und Einträge entfernt', (c, f) => { const b = f['index.html']; f['index.html'] = b.replace(LI, '').replace(/ data-puk-disclosure(="[^"]*")?/g, ''); return b !== f['index.html']; });
+run('index: Zeile «Direkteinstiege» entfernt und Einträge entfernt', (c, f) => { const b = f['index.html']; f['index.html'] = b.replace(LI, '').replace(/<nav[^>]*aria-label="Direkteinstiege"[\s\S]*?<\/nav>/, ''); return b !== f['index.html']; });
+run('404: drei Direkteinstiege ins Menü eingefügt', (c, f) => { const b = f['404.html']; const items = (f['index.html'].match(LI) || []).join(''); f['404.html'] = b.replace(/(<ul[^>]*puk-web-nav__list[^>]*>[\s\S]*?)(<\/ul>)/, (m, a, z) => a + items + '\n' + z); return b !== f['404.html']; });
+run('utilityNav leer, Menü unverändert', (c) => { c.utilityNav = []; return true; });
+run('utilityNav leer und Einträge entfernt (alle Seiten)', (c, f) => { c.utilityNav = []; for (const k of Object.keys(f)) f[k] = f[k].replace(LI, ''); return true; });

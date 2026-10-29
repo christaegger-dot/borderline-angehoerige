@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-51';
+const BUILD = 'r4-52';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -505,10 +505,13 @@ function gate(cfg, files, opts = {}) {
     if (!navEl) add('block', pid, 'nav', 'Hauptnavigation fehlt');
     else {
       const navLinks = all(navEl, x => x.tag === 'a'); const links = navLinks.filter(a => !cls(a, 'puk-site-menu__utility-link')); const got = links.map(a => resolve(path, a.attrs.href).path);
-      /* r4-51: Direkteinstiege im Menü müssen genau den konfigurierten Direkteinstiegen entsprechen. */
+      /* r4-51: Direkteinstiege im Menü müssen genau den konfigurierten Direkteinstiegen entsprechen.
+         r4-52 (Nachprüfung N51-1): auch wenn sie im Menü ganz fehlen. Unter 20 rem blendet das Stylesheet die Zeile unter dem
+         Kopf aus; ohne die Einträge im Menü wären die Direkteinstiege dort nicht erreichbar. Gilt für Seiten mit Menü und Zeile. */
       const menuUtility = navLinks.filter(a => cls(a, 'puk-site-menu__utility-link')).map(a => resolve(path, a.attrs.href).path);
       const utilityExp = (cfg.utilityNav || []).map(e => pages.find(q => q.id === e.pageId && q.status === 'published')).filter(Boolean).map(pagePath);
-      if (menuUtility.length && menuUtility.join('|') !== utilityExp.join('|')) add('block', pid, 'nav', `Direkteinstiege im Menü weichen vom Seitenvertrag ab: ${menuUtility.join(', ')} statt ${utilityExp.join(', ')}`);
+      const needsMenuUtility = !!one(navEl, x => has(x, 'data-puk-disclosure')) && !!one(doc, x => x.tag === 'nav' && x.attrs['aria-label'] === 'Direkteinstiege');
+      if ((menuUtility.length || needsMenuUtility) && menuUtility.join('|') !== utilityExp.join('|')) add('block', pid, 'nav', `Direkteinstiege im Menü weichen vom Seitenvertrag ab: ${menuUtility.join(', ')} statt ${utilityExp.join(', ')}`);
       if (links.length > NAV_MAX && !one(navEl, x => has(x, 'data-puk-disclosure'))) add('block', pid, 'nav-menu', `${links.length} Hauptpunkte ohne Menü – ab ${NAV_MAX + 1} Punkten braucht die Navigation unter 760 px ein Dropdown-Menü (Abschnitt «Interaktionskonzept»; tools/build.mjs erzeugt es)`);
       links.forEach(a => { const r = resolve(path, a.attrs.href); if (!exists(r.path)) add('block', pid, 'nav-target', 'Navigationsziel fehlt: ' + a.attrs.href); else if (byPath[r.path] && byPath[r.path].status !== 'published') add('block', pid, 'nav', 'Entwurf in der Navigation: ' + a.attrs.href); });
       if (got.join('|') !== navExp.join('|')) add('block', pid, 'nav', `Navigation weicht vom Seitenvertrag ab: ${got.join(', ') || 'leer'} statt ${navExp.join(', ')}`);
@@ -645,6 +648,7 @@ const MUTATIONS = [
   ['Site-weite Sprungzielfokussierung deaktiviert', ['deep-link-focus'], c => { delete c.deepLinkFocus; }],
   ['Statische Seite ohne Skript für Sprungzielfokus', ['interaction-script'], (c, f) => rex(f, 'index.html', /<script src="[^"]*interaktion\.js[^"]*" defer><\/script>\n?/, '')],
   ['Direkteinstieg im Menü weicht vom Seitenvertrag ab', ['nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link puk-site-menu__utility-link" href="kurz.html"', 'class="puk-web-nav__link puk-site-menu__utility-link" href="verstehen.html"')],
+  ['Direkteinstiege im Menü fehlen (r4-52, N51-1)', ['nav'], (c, f) => rex(f, 'index.html', /\n<li class="puk-site-menu__utility">[\s\S]*?<\/li>/g, '')],
   ['Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite)', ['nav-target', 'nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link" href="beziehungen.html"', 'class="puk-web-nav__link" href="gibt-es-nicht.html"')],
   ['Seitenvertrag verweist auf fehlende Datei', ['page-file'], c => { pg(c, 'behandlung').href = 'gibt-es-nicht.html'; }],
   ['lang fehlt', ['lang'], (c, f) => rep(f, 'behandlung.html', '<html lang="de-CH"', '<html')],

@@ -523,6 +523,32 @@
     renderSearch();
   }
 
+  /* «Auf dieser Seite» (r4-43): markiert den Abschnitt, der gerade gelesen wird (aria-current="true").
+     Nur Anzeige, keine Bedienung; ohne Skript bleibt die Liste unverändert. */
+  function tocSpy(scope) {
+    [].forEach.call(scope.querySelectorAll('.puk-site-toc'), function (toc) {
+      if (toc.hasAttribute('data-spy-enhanced')) return; toc.setAttribute('data-spy-enhanced', '');
+      var items = [].map.call(toc.querySelectorAll('a[href^="#"]'), function (a) {
+        var t; try { t = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1))); } catch (e) { t = null; }
+        return t ? { a: a, t: t } : null;
+      }).filter(Boolean);
+      if (!items.length) return;
+      var current = null, queued = false;
+      function update() {
+        queued = false;
+        var line = Math.min(160, window.innerHeight * 0.3), next = null;
+        items.forEach(function (it) { if (it.t.getBoundingClientRect().top <= line) next = it; });
+        if (next === current) return;
+        if (current) current.a.removeAttribute('aria-current');
+        if (next) next.a.setAttribute('aria-current', 'true');
+        current = next;
+      }
+      window.addEventListener('scroll', function () { if (!queued) { queued = true; window.requestAnimationFrame(update); } }, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    });
+  }
+
   function init(scope) {
     scope = scope || document;
     document.documentElement.setAttribute('data-puk-js', '');
@@ -539,6 +565,7 @@
       if (!el.hasAttribute('data-search-enhanced')) siteSearch(el);
     });
     dialogs(scope);
+    tocSpy(scope);
   }
   /* Druck: aufklappbare Vertiefungen (details) vollständig drucken, danach Zustand wiederherstellen.
      Der Starter bindet das Skript deshalb auf jeder Seite mit details ein (Prüfbefund W3-01, 11.10.2026);

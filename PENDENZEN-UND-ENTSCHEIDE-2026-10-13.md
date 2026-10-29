@@ -1,14 +1,26 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 23. Oktober 2026 · GitHub main: r4-41 (`67f6f6d`, PR #711 gemergt am 23.10.2026, 14:49 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-42 auf Branch `gestaltung/2026-10-23-nachbesserung-r4-42` ([PR #712](https://github.com/christaegger-dot/borderline-angehoerige/pull/712), Entwurf; Status geprüft am 23.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-42 (`a7f3073`, PR #712 gemergt am 23.10.2026, 17:28 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-43 auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #714](https://github.com/christaegger-dot/borderline-angehoerige/pull/714), Entwurf; Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Nachbesserung · r4-42 · Entwurf vom 23.10.2026
+## Gestaltung Schritt 1 · r4-43 · Entwurf vom 29.10.2026
 
-**GitHub:** Branch `gestaltung/2026-10-23-nachbesserung-r4-42`, [PR #712](https://github.com/christaegger-dot/borderline-angehoerige/pull/712) (Entwurf, nicht gemergt). Anlass: Befund N41-W1 der Nachprüfung von r4-41 ([NACHPRUEFUNG.md](audit-results/2026-10-23-r4-41-nachfuehrung/NACHPRUEFUNG.md)); die Nachprüfung selbst ist in diesem Entwurf enthalten (Commit der Nachprüfsitzung, nach dem Merge von r4-41 entstanden). Nachweis: [`BERICHT.md`, Abschnitt «Nachbesserung r4-42»](audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, [PR #714](https://github.com/christaegger-dot/borderline-angehoerige/pull/714) (Entwurf, nicht gemergt). Auftrag von Christa Egger vom 29.10.2026 nach der Designanalyse (Design-System-Artefakt «Borderline Angehörige»): «ja, setze den ersten Schritt um»; ergänzt: «Sprache und Inhalt: du darfst natürlich optimieren und korrigieren, auch kürzen bei Doppelspurigkeiten!» Nachweis: [`audit-results/2026-10-29-gestaltung-r4-43/BERICHT.md`](audit-results/2026-10-29-gestaltung-r4-43/BERICHT.md).
+
+**Inhalt:** neuer Seitenrahmen. Der Kopf hat eine Zeile, die Absenderin steht als leise Zeile darunter und bleibt im Kopf (Gate `sender`). Der Einstieg steht auf Weiss. «Auf dieser Seite» ist ab 72 rem eine stehende Spalte mit Markierung des gelesenen Abschnitts, darunter eine aufklappbare Zeile. Die Rangordnung ist 44 / 30 / 23 px statt 52 / 57 px. Fliesstext steht in Rubik Regular 20 px statt Light 21 px. Drei Flächen tragen Bedeutung (blau tun, grau erklären, gelb Schutz), rot nur der Akuthinweis, das Band «Haltung» nachtblau. Das Stylesheet ist in sieben Schichten neu geordnet, die alten Rahmenregeln sind ersetzt (1822 → 1734 Zeilen). Im Inhalt sind 23 Bereichsetiketten und 109 Kicker entfernt (Doppelungen) und ein doppelter Satz im Einstieg «Unterstützung finden» gekürzt. Akut- und Sicherheitswortlaut, Abbildungsaussagen und Kontaktangaben sind unverändert.
+
+**Technischer Stand des Entwurfs:** Selbsttest 84/84; Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` Parität 34 Dateien; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 230 Zustände, 25 Bedienproben, 1 Abweichung (Ausnahme B2c, bei 375 px 2037 statt 1974 px), 0 Titelumbrüche ohne Trennstelle. Am Desktop beginnt der erste Absatz 250–400 px früher, auf dem Handy bis 770 px früher, die Seiten sind 6–17 % kürzer.
+
+**Bewusst nicht in Schritt 1 (siehe Bericht, «Abweichungen»):** Navigation mit fünf Bereichen und neue Bedienwörter (E2, E8: Wortlaut, Freigabe nötig), Absenderzeile ausserhalb des Kopfs (E7: Gate), «Was Sie tun können» als Kasten auf allen Seiten (Schritt 2, G7), Markierung des Ansatzpunkts in der Anspannungskurve (freigegebene Abbildung).
+
+**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat; Schritte 2 und 3 des Gestaltungssystems; Merge und Veröffentlichung nur auf Auftrag.
+
+## Nachbesserung · r4-42 · veröffentlicht am 23.10.2026
+
+**GitHub:** Branch `gestaltung/2026-10-23-nachbesserung-r4-42`, [PR #712](https://github.com/christaegger-dot/borderline-angehoerige/pull/712), gemergt als `a7f3073` am 23.10.2026, 17:28 UTC, von Christa Egger. Anlass: Befund N41-W1 der Nachprüfung von r4-41 ([NACHPRUEFUNG.md](audit-results/2026-10-23-r4-41-nachfuehrung/NACHPRUEFUNG.md)); die Nachprüfung selbst ist in diesem Entwurf enthalten (Commit der Nachprüfsitzung, nach dem Merge von r4-41 entstanden). Nachweis: [`BERICHT.md`, Abschnitt «Nachbesserung r4-42»](audit-results/2026-10-23-r4-41-nachfuehrung/BERICHT.md).
 
 **Inhalt:** weiche Trennstellen «Begleit-erkran-kungen», «mit-betrof-fen», «Nach-schla-gen», «Be-hand-lung» (vierter Fall beim Umsetzen gefunden); Layouttest prüft Titelumbrüche auf Zeichenebene statt Wortebene; N41-G1 (Kennzahl) und N41-G2 (`appliedTo`) berichtigt; Build-Kennung r4-42 mit Verzicht wie bei r4-41. Kein Wortlaut, keine Abbildung, keine Kontaktangabe geändert.
 

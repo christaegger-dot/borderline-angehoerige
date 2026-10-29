@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-42';
+const BUILD = 'r4-43';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -114,6 +114,17 @@ const foldDepthSections = (html, ids) => (ids || []).reduce((out, id) => {
     return `<details class="puk-site-depth"><summary>Vertiefung anzeigen: ${esc(label)}</summary><div class="puk-site-depth__content">${section}</div></details>`;
   });
 }, String(html || ''));
+
+/* Gestaltung r4-43 (29.10.2026): «Auf dieser Seite» steht ab 72 rem als eigene Spalte neben der Lesespalte und bleibt beim
+   Scrollen stehen; schmaler ist es eine aufklappbare Zeile (data-puk-disclosure, ohne Skript offen). Der Renderer fasst dafür
+   die Leiste und alles danach in ein Seitenraster. Wortlaut, Reihenfolge und Sprungziele der Fragmente bleiben unverändert. */
+const ROADMAP_RE = /<nav class="puk-longform__roadmap"([^>]*)>\s*<div class="puk-web-container">\s*<p class="puk-longform__roadmap-label">([\s\S]*?)<\/p>\s*<ol>([\s\S]*?)<\/ol>\s*<\/div>\s*<\/nav>/;
+const tocLayout = (html, tail = '') => {
+  const m = ROADMAP_RE.exec(html);
+  if (!m) return html + (tail ? '\n' + tail : '');
+  const toc = `<nav class="puk-longform__roadmap puk-site-toc"${m[1]}><p class="puk-site-toc__title">${m[2]}</p><div class="puk-disclosure puk-site-toc__menu" data-puk-disclosure><span class="puk-disclosure__label">${m[2]}</span><ol class="puk-disclosure__panel">${m[3]}</ol></div></nav>`;
+  return `${html.slice(0, m.index)}<div class="puk-web-container puk-site-layout"><div class="puk-site-layout__aside">${toc}</div><div class="puk-site-layout__body">${html.slice(m.index + m[0].length).trim()}${tail ? '\n' + tail : ''}</div></div>`;
+};
 
 /* ---------- Pfade ---------- */
 const isExternalUrl = u => /^\s*(?:[a-z][a-z0-9+.-]*:)?\/\//i.test(u || '');
@@ -235,12 +246,11 @@ ${script ? `<script src="${esc(cfg.interactionScript)}${v}" defer></script>\n` :
 <a class="puk-web-skip" href="#main-content">Zum Hauptinhalt</a>
 ${draftbar}<header class="puk-web-header"><div class="puk-web-container puk-web-header__inner">
 <a class="puk-web-logo" href="${esc(pagePath(startPage))}" aria-label="${esc(logoName(cfg))}"><img src="${esc(cfg.logo)}" alt="${esc(s.institution)}"></a>
-${navHtml}${utilityNav}</div>
-<div class="puk-web-container"><p class="puk-site-sender" data-sender><span class="puk-site-sender__label">${esc(senderLabel)}</span><span class="puk-site-sender__name" data-sender-unit>${esc(senderName)}</span>${senderInstitution}${s.email ? `${contactLabel}<a class="puk-link--inline" data-sender-email href="mailto:${esc(s.email)}">${esc(s.email)}</a>` : ''}${senderBadge}</p></div>
+${navHtml}</div>
+<div class="puk-web-container puk-site-subbar"><p class="puk-site-sender" data-sender><span class="puk-site-sender__label">${esc(senderLabel)}</span><span class="puk-site-sender__name" data-sender-unit>${esc(senderName)}</span>${senderInstitution}${s.email ? `${contactLabel}<a class="puk-link--inline" data-sender-email href="mailto:${esc(s.email)}">${esc(s.email)}</a>` : ''}${senderBadge}</p>${utilityNav}</div>
 </header>
 ${breadcrumb}${direct}<main id="main-content" class="puk-web-main" tabindex="-1"${page.filterSelector ? ` data-puk-filter data-filter-selector="${esc(page.filterSelector)}" data-filter-label="${esc(page.filterLabel || 'Einträgen')}"` : ''}>
-${body.trim()}
-${sectionNav}
+${tocLayout(body.trim(), sectionNav)}
 </main>
 <footer class="puk-web-footer" data-safety-variant="${esc(sa.variant)}"><div class="puk-web-container puk-web-footer__grid">
 ${subdued}${footerHtml}

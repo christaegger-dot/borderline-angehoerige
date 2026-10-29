@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-42 (`a7f3073`, PR #712 gemergt am 23.10.2026, 17:28 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-43 auf Branch `claude/dazzling-cerf-n6ci1w` (Pull Request wird nach dem ersten Push nachgetragen).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-42 (`a7f3073`, PR #712 gemergt am 23.10.2026, 17:28 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-43 auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #714](https://github.com/christaegger-dot/borderline-angehoerige/pull/714), Entwurf; Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Gestaltung Schritt 1 · r4-43 · Entwurf vom 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, Entwurf, nicht gemergt. Auftrag von Christa Egger vom 29.10.2026 nach der Designanalyse (Design-System-Artefakt «Borderline Angehörige»): «ja, setze den ersten Schritt um»; ergänzt: «Sprache und Inhalt: du darfst natürlich optimieren und korrigieren, auch kürzen bei Doppelspurigkeiten!» Nachweis: [`audit-results/2026-10-29-gestaltung-r4-43/BERICHT.md`](audit-results/2026-10-29-gestaltung-r4-43/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, [PR #714](https://github.com/christaegger-dot/borderline-angehoerige/pull/714) (Entwurf, nicht gemergt). Auftrag von Christa Egger vom 29.10.2026 nach der Designanalyse (Design-System-Artefakt «Borderline Angehörige»): «ja, setze den ersten Schritt um»; ergänzt: «Sprache und Inhalt: du darfst natürlich optimieren und korrigieren, auch kürzen bei Doppelspurigkeiten!» Nachweis: [`audit-results/2026-10-29-gestaltung-r4-43/BERICHT.md`](audit-results/2026-10-29-gestaltung-r4-43/BERICHT.md).
 
 **Inhalt:** neuer Seitenrahmen. Der Kopf hat eine Zeile, die Absenderin steht als leise Zeile darunter und bleibt im Kopf (Gate `sender`). Der Einstieg steht auf Weiss. «Auf dieser Seite» ist ab 72 rem eine stehende Spalte mit Markierung des gelesenen Abschnitts, darunter eine aufklappbare Zeile. Die Rangordnung ist 44 / 30 / 23 px statt 52 / 57 px. Fliesstext steht in Rubik Regular 20 px statt Light 21 px. Drei Flächen tragen Bedeutung (blau tun, grau erklären, gelb Schutz), rot nur der Akuthinweis, das Band «Haltung» nachtblau. Das Stylesheet ist in sieben Schichten neu geordnet, die alten Rahmenregeln sind ersetzt (1822 → 1734 Zeilen). Im Inhalt sind 23 Bereichsetiketten und 109 Kicker entfernt (Doppelungen) und ein doppelter Satz im Einstieg «Unterstützung finden» gekürzt. Akut- und Sicherheitswortlaut, Abbildungsaussagen und Kontaktangaben sind unverändert.
 

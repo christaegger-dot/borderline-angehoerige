@@ -1,10 +1,41 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe oberster Abschnitt. Kein offener Arbeitsentwurf; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-52. Kein offener Arbeitsentwurf; Nachprüfung r4-52 liegt auf `main` vor ([PR #743](https://github.com/christaegger-dot/borderline-angehoerige/pull/743), gemergt als `b138c4b` am 29.10.2026, 22:32 UTC, im Auftrag von Christa Egger), siehe oberster Abschnitt; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Nachprüfung r4-52 · liegt vor seit 29.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-52`, auf `main` (`6116aff`) aufgesetzt, [PR #743](https://github.com/christaegger-dot/borderline-angehoerige/pull/743), gemergt als `b138c4b` am 29.10.2026, 22:32 UTC, im Auftrag von Christa Egger («bitte merge»). Die Prüfungen waren grün. Auftrag von Christa Egger, 29.10.2026: «Nachprüfung r4-52 starten». Nachweis: [`audit-results/2026-10-29-nachpruefung-r4-52/NACHPRUEFUNG.md`](audit-results/2026-10-29-nachpruefung-r4-52/NACHPRUEFUNG.md).
+
+**Gegenstand und Prüfende:** alle Änderungen von `5e0ad1a` (r4-51) bis `d8d78f5` (r4-52). Geprüft hat eine Claude-Sitzung, die an r4-52 nicht gebaut und nichts an Inhalt oder Code geändert hat.
+
+**Ergebnis:** «Nachbesserung nötig, ohne Blocker».
+
+| Befund | Schweregrad | Inhalt | Stand |
+|---|---|---|---|
+| N52-1 | wichtig | Zwischen 62 rem (992 px) und etwa 1160 px schiebt das breite Titelbild die Sicherheitskarte der Startseite aus dem ersten Bildschirm. Bei 1024 × 768 beginnt sie bei 842 statt 724 px (r4-48). Seit r4-49, durch r4-52 nicht verändert | **offen**, Gestaltungsentscheid Christa Egger (Titelbild erst ab grösserer Breite oder bewusst so lassen; dann Layoutprobe auch bei 1024 × 768) |
+| N52-2 | gering | Fehlen auf einer Seite die Zeile «Direkteinstiege» **und** die Einträge im Menü, meldet das Gate nichts (`contract.js:513`). Bestand schon in r4-51 | offen, bei der nächsten Arbeit am Seitenrahmen mitnehmen (Zeile auf allen Seiten ausser 404 verlangen, Selbsttestfall) |
+| N52-3 | gering | Die neue Layoutprobe prüft nur 390 × 844, nur ob die Karte *beginnt*, und wartet nicht auf `document.fonts.ready` | offen, bei der nächsten Arbeit am Layouttest mitnehmen |
+
+**Bestätigt:**
+- N49-1: Titelbild unter 62 rem ausgeblendet, ab 62 rem sichtbar, auch mit 200 % Schrift (Schwelle dort bei 1984 px). Sicherheitskarte bei 390 × 844 ab 783 px, bei 768 × 1024 ganz sichtbar. Kein waagrechtes Scrollen.
+- Die neue Layoutprobe meldet gegen r4-51 einen Fehler, gegen r4-52 nicht.
+- N51-1: Das Gate blockiert, wenn alle Einträge im Menü fehlen; keine Falschmeldungen, auch nicht auf der 404-Seite. Der neue Selbsttestfall scheitert mit der alten Regel (87/88).
+- Kein Wortlaut geändert (48 Dateien verglichen). Suche, Akuthinweise und Sprungziele unverändert.
+- Tests verschärft, keiner abgeschwächt.
+- axe-core 4.14.0: 0 Verstösse in 96 Läufen (Standardschrift und 200 % Schrift mit offenem Menü).
+- Tests auf `6116aff`:
+  - Gate: 24 Seiten · 0 Blocker
+  - Parität: 35
+  - Selbsttest: 88/88
+  - Suchtest: 216/216
+  - Sprach-/UI-Test: 73/73
+  - Layouttest: bekannte Ausnahme B2c, Exit 1
+
+**Offen:** N52-1 bis N52-3; N49-2 (Bestätigung durch Christa Egger); N51-2 (gering, keine Änderung nötig); Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte.
 
 ## Korrektur · r4-52 · Befunde N49-1 und N51-1 · veröffentlicht am 29.10.2026
 
@@ -27,7 +58,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 **Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die die Nachprüfungen r4-43 bis r4-51 erstellt hat. Eine Nachprüfung von r4-52 muss eine andere Sitzung machen.
 
 **Offen:**
-- Nachprüfung von r4-52 durch eine Sitzung, die nicht gebaut hat.
+- Nachprüfung von r4-52: liegt vor, «Nachbesserung nötig, ohne Blocker», Befunde N52-1 bis N52-3 (siehe Abschnitt «Nachprüfung r4-52» oben).
 - N49-2: Bestätigung durch Christa Egger.
 - N51-2: gering, keine Änderung nötig.
 - Prüfung mit echtem Screenreader.

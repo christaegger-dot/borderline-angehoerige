@@ -646,8 +646,9 @@ html:not([data-puk-js]) .puk-site-nav--menu{flex-basis:100%}
 .puk-site-sender__contact{margin-left:var(--space-2)}
 .puk-site-sender a{min-width:0;color:var(--blau);overflow-wrap:anywhere}
 .puk-site-sender a:hover{color:var(--blau-125)}
-/* Tippbereich 44 px ohne negative Ränder: Bricht die Adresse um, überdeckt sie die Zeile darüber nicht. */
-[data-sender-email]{display:inline-flex;align-items:center;min-height:var(--web-touch-target);max-width:100%}
+/* Tippbereich 44 px ohne negative Ränder: Bricht die Adresse um, überdeckt sie die Zeile darüber nicht.
+   r4-47 (Nachprüfung N46-2): mit Klasse, sonst setzt .puk-link--inline weiter unten min-height:0 (gemessen 22 px). */
+.puk-site-sender a[data-sender-email]{display:inline-flex;align-items:center;min-height:var(--web-touch-target);max-width:100%}
 .puk-site-utility{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-5)}
 .puk-site-utility__link{display:inline-flex;align-items:center;min-height:var(--web-touch-target);color:var(--blau);font-size:1rem;font-weight:var(--fw-medium);text-decoration:none}
 .puk-site-utility__link:hover{color:var(--blau-125);text-decoration:underline;text-underline-offset:.25em}

@@ -400,6 +400,15 @@ function gate(cfg, files, opts = {}) {
     const path = p.href ? pagePath(p) : null; const doc = path ? docOf(path) : null; if (!doc) continue; const pid = p.id;
     const htmlEl = one(doc, x => x.tag === 'html');
     if (!htmlEl || !/^de(-|$)/i.test(htmlEl.attrs.lang || '')) add('block', pid, 'lang', 'html lang fehlt oder ist nicht deutsch');
+    /* r4-47 (Nachprüfung N46-5): umgezogene Sprungziele. Das Ziel ist eine veröffentlichte Seite mit diesem Anker und leitet nicht selbst weiter; der alte Anker fehlt auf der Seite, sonst greift die Weiterleitung nie. */
+    for (const [from, to] of Object.entries(p.movedAnchors || {})) {
+      const mt = /^([a-z0-9-]+\.html)#([a-z0-9-]+)$/.exec(String(to));
+      if (!mt) { add('block', pid, 'moved-anchor', `movedAnchors.${from}: Ziel «${to}» hat nicht die Form seite.html#anker`); continue; }
+      if (byId(doc, from)) add('block', pid, 'moved-anchor', `movedAnchors.${from}: Sprungziel besteht noch auf der Seite`);
+      const tp = byPath[mt[1]]; const tdoc = tp && tp.status === 'published' ? docOf(mt[1]) : null;
+      if (!tdoc || !byId(tdoc, mt[2])) add('block', pid, 'moved-anchor', `movedAnchors.${from}: Ziel ${to} fehlt oder ist nicht veröffentlicht`);
+      else if (tp.movedAnchors && tp.movedAnchors[mt[2]]) add('block', pid, 'moved-anchor', `movedAnchors.${from}: Ziel ${to} leitet selbst weiter`);
+    }
     if (htmlEl && htmlEl.attrs['data-puk-site-build'] !== BUILD) add('warn', pid, 'build', `Seite nicht mit Build ${BUILD} erzeugt (${htmlEl.attrs['data-puk-site-build'] || 'ohne Kennung'}) – tools/build.mjs ausführen`);
     const t = norm(txt(one(doc, x => x.tag === 'title')));
     if (!t) add('block', pid, 'title', 'title fehlt'); else if (titles[t]) add('block', pid, 'title', 'title doppelt mit Seite ' + titles[t]); else titles[t] = pid;
@@ -622,6 +631,8 @@ function gate(cfg, files, opts = {}) {
 const INLINE_T = 'Sorgen Sie sich akut um das Leben oder die Sicherheit eines Menschen, holen Sie sofort Hilfe: ärztlicher Notfalldienst oder Notfallstation, bei Gefahr die Polizei.';
 const MUTATIONS = [
   ['Direkteinstieg verweist auf fehlende Seite', ['utility-nav'], c => { c.utilityNav = [{ pageId: 'fehlt', label: 'Fehlt' }]; }],
+  ['Weiterleitung auf fehlendes Sprungziel', ['moved-anchor'], c => { pg(c, 'grenzen').movedAnchors = { gewalt: 'gefahr.html#gibt-es-nicht' }; }],
+  ['Weiterleitung eines Sprungziels, das noch besteht', ['moved-anchor'], c => { pg(c, 'grenzen').movedAnchors = { dear: 'gefahr.html#gewalt' }; }],
   ['Site-weite Sprungzielfokussierung deaktiviert', ['deep-link-focus'], c => { delete c.deepLinkFocus; }],
   ['Statische Seite ohne Skript für Sprungzielfokus', ['interaction-script'], (c, f) => rex(f, 'index.html', /<script src="[^"]*interaktion\.js[^"]*" defer><\/script>\n?/, '')],
   ['Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite)', ['nav-target', 'nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link" href="beziehungen.html"', 'class="puk-web-nav__link" href="gibt-es-nicht.html"')],

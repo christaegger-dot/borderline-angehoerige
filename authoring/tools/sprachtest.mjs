@@ -61,7 +61,8 @@ try {
   check(await page.locator('[data-search-directory]').isVisible(), true);
   const badExcerpts = await page.locator('[data-search-item] > p:last-child').evaluateAll(items => items.map(item => item.textContent).filter(text => text.endsWith('…')));
   check(badExcerpts, []);
-  for (const name of ['kurz', 'diagnose', 'grenzen', 'kommunizieren', 'krise', 'kinder']) {
+  /* r4-46: Der Akuthinweis von «Grenzen setzen» › «Wenn Gewalt oder Bedrohung vorkommt» ist mit dem Abschnitt auf gefahr.html umgezogen. */
+  for (const name of ['kurz', 'diagnose', 'gefahr', 'kommunizieren', 'krise', 'kinder']) {
     await open(name);
     const references = page.locator('[data-responsibility-inline]');
     check(await references.count() > 0, true);

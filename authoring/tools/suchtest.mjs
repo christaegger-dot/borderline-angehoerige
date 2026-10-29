@@ -39,7 +39,7 @@ const page = await browser.newPage();
 const errors = [];
 page.on('pageerror', e => errors.push(String(e)));
 await page.goto(`http://127.0.0.1:${port}/suche.html`, { waitUntil: 'networkidle' });
-const safety = new Set(['krise.html#suizid', 'grenzen.html#gewalt', 'kinder.html#eskalation', 'kommunizieren.html#suizid-angesprochen']);
+const safety = new Set(['krise.html#suizid', 'gefahr.html#gewalt', 'kinder.html#eskalation', 'kommunizieren.html#suizid-angesprochen']);
 const fails = [];
 for (const [query, expected] of rows) {
   await page.fill('#site-search', query);

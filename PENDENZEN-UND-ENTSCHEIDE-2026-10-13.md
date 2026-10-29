@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-48 (`fa923aa`, [PR #726](https://github.com/christaegger-dot/borderline-angehoerige/pull/726) gemergt am 29.10.2026, 17:58 UTC, im Auftrag von Christa Egger). Offener Arbeitsentwurf: r4-49 (Titelbild der Startseite, Vorschau) auf Branch `claude/dazzling-cerf-n6ci1w` (Entwurfs-PR folgt); Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-48 (`fa923aa`, [PR #726](https://github.com/christaegger-dot/borderline-angehoerige/pull/726) gemergt am 29.10.2026, 17:58 UTC, im Auftrag von Christa Egger). Offener Arbeitsentwurf: r4-49 (Titelbild der Startseite, Vorschau) auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #728](https://github.com/christaegger-dot/borderline-angehoerige/pull/728), Entwurf); Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Gestaltung · r4-49 · Titelbild der Startseite · Vorschau vom 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, auf `main` (`cd17c2e`) aufgesetzt, Entwurfs-PR folgt. Nachweis: [`audit-results/2026-10-29-titelbild-r4-49/BERICHT.md`](audit-results/2026-10-29-titelbild-r4-49/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, auf `main` (`cd17c2e`) aufgesetzt, [PR #728](https://github.com/christaegger-dot/borderline-angehoerige/pull/728) (Entwurf, nicht gemergt). Nachweis: [`audit-results/2026-10-29-titelbild-r4-49/BERICHT.md`](audit-results/2026-10-29-titelbild-r4-49/BERICHT.md).
 
 **Auftrag Christa Egger, 29.10.2026:** «ja, bau eine Fassung als Netlify-Vorschau». Nicht zum Merge bestimmt, bis sie entscheidet.
 

@@ -1,4 +1,13 @@
-# Nachprüfung r4-53 · 29.10.2026
+# Zweite, unabhängige Nachprüfung r4-53 · 29.10.2026
+
+> **Einordnung (nachgetragen am 29.10.2026 im Auftrag von Christa Egger: «als zweite unabhängige Nachprüfung kennzeichnen»):**
+> Dies ist die **zweite** Nachprüfung von r4-53. Sie ergänzt die erste, [`NACHPRUEFUNG.md`](NACHPRUEFUNG.md) in diesem Ordner ([PR #747](https://github.com/christaegger-dot/borderline-angehoerige/pull/747), `9e2c570`, gemergt als `0667a69`). Sie ersetzt die erste nicht.
+>
+> - **Unabhängig:** Beide Prüfungen liefen getrennt; diese hat die erste beim Prüfen nicht gekannt. Die prüfende Sitzung hat weder r4-52 noch r4-53 gebaut. Die erste Nachprüfung stammt von der Sitzung, die r4-52 gebaut hat; sie legt das selbst offen.
+> - **Übereinstimmung:** Beide kommen zur Empfehlung «keine Nachbesserung nötig». Wo beide dasselbe gemessen haben (z. B. 1024 × 768: r4-52 842–959, r4-53 724–841 px; Selbsttest 88/88; Suchtest 216/216; axe 0 Verstösse), stimmen die Werte überein.
+> - **Ergänzung:** Diese Prüfung meldet zusätzlich N53-1 (gering). N53-2 deckt sich mit dem «Hinweis ohne Befund» der ersten Nachprüfung zur unsichtbaren Band-Fassung (siehe Berichtigung bei N53-2).
+> - **Dateiname:** Beim Abgleich mit `main` (Merge `eba1297`) wurde diese Datei von `NACHPRUEFUNG.md` in `NACHPRUEFUNG-pr749.md` umbenannt. Der Befundtext ist bis auf diese Einordnung und die Berichtigung bei N53-2 unverändert.
+> - **Nicht nachgeführt:** Die Befundnummern N53-1 und N53-2 stehen nur hier. In die Pendenzendatei trägt sie diese Sitzung nicht ein.
 
 ## Auftrag, Stand, Prüfende
 
@@ -64,7 +73,8 @@ Es gibt zwei neue Befunde, beide gering:
 **Beleg:**
 - Unter 75 rem ist das ganze Titelbild ausgeblendet (`site.css:946`). Ab 75 rem ist die schmale Fassung ausgeblendet (`site.css:961`).
 - Gemessen in 13 Zuständen (`skripte/zeilen.cjs`, 320 bis 1920 px, dazu 200 % Schrift bei 1984, 2399 und 2400 px). Die schmale Fassung war überall «aus». Auf r4-52 war das Ergebnis gleich.
-- Der Zustand besteht also schon seit r4-52. Mit r4-53 ist er endgültig, weil es keinen Bereich mehr gibt, in dem das Band stehen könnte. Die Nachprüfung r4-52 nennt ihn nicht.
+- Der Zustand besteht also schon seit r4-52. Mit r4-53 ist er endgültig, weil es keinen Bereich mehr gibt, in dem das Band stehen könnte.
+- **Berichtigung (nachgetragen):** Hier stand zuerst «Die Nachprüfung r4-52 nennt ihn nicht.» Das stimmt für die Nachprüfung r4-52, aber der Selbstbericht r4-52 vermerkt die Band-Fassung bereits (`audit-results/2026-10-29-n49-1-n51-1-r4-52/BERICHT.md:31`: «Die Band-Fassung des SVG bleibt in `index.html`. … Sie kann bei der nächsten Arbeit an der Startseite wegfallen.»). Die erste Nachprüfung r4-53 führt das als Hinweis ohne Befund. Neu ist an N53-2 nur der veraltete Kommentar zu P4-2 (`site.css:941`).
 - Für Nutzende hat das keine Wirkung, denn das Titelbild ist `aria-hidden="true"`. Wer aber den Kommentar zu P4-2 liest, nimmt an, das Band werde noch gezeigt.
 
 **Vorschlag:** bei der nächsten Arbeit am Titelbild das Band-SVG und seine Regeln entfernen oder ausdrücklich als Reserve kennzeichnen. Den Kommentar zu P4-2 nachführen. Danach den Wortlautvergleich wiederholen, mit dem Erwartungswert «keine Änderung».

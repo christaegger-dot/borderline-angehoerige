@@ -25,4 +25,7 @@ Lokale Layoutabweichungen vom Referenzprofil (r4-43, Gestaltungssystem «Borderl
 50 rem (fünf Bereiche seit r4-45; vorher 78 rem für sechs Bereiche), «Auf dieser Seite» ab 72 rem als stehende Spalte links, Text und Kästen in
 45 rem, Abbildungen und Tabellen bis 64 rem, Seitentitel 44 px über Abschnittstiteln 30 px. Einstieg auf Weiss;
 getönte Flächen tragen Bedeutung: blau «Was Sie tun können», grau Erklärung, gelb Sicherheit, rot nur der Akuthinweis.
+Ausnahme (r4-49): Das Titelbild der Startseite stammt aus der Titelkarte des Gestaltungssystems und ist reiner Schmuck
+(`.bl-titelbild`, für Screenreader verborgen). Seine Flächen in Blau 25, PUK Blau, Gelb und Nachtblau tragen keine Bedeutung.
+Nachtblau bleibt (Entscheid Christa Egger, 29.10.2026: «unbedingt beibehalten»).
 Der kompakte Footer bleibt entsprechend dem Entscheid zu r4-36 erhalten.

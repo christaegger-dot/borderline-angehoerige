@@ -651,7 +651,7 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
   .puk-site-menu .puk-web-nav__link{border-top:0;padding-block:0;white-space:nowrap;hyphens:manual}
 }
 .puk-site-subbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 var(--space-6);padding-bottom:var(--space-1)}
-/* r4-54 (Auftrag Christa Egger, 29.10.2026: «setz die Absenderzeile auf 16 px»): 1rem statt .9375rem, damit die Zeile die
+/* r4-55 (Auftrag Christa Egger, 29.10.2026: «setz die Absenderzeile auf 16 px»): 1rem statt .9375rem, damit die Zeile die
    Regel des Gestaltungssystems «Nichts unter 16 px» erfüllt. */
 .puk-site-sender{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-2);min-width:0;margin:0;font-size:1rem;line-height:1.45;color:var(--tinte-leise)}
 .puk-site-sender__label{font:inherit;color:inherit;letter-spacing:0;text-transform:none}

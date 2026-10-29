@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-54';
+const BUILD = 'r4-55';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -501,6 +501,15 @@ function gate(cfg, files, opts = {}) {
         if (JSON.stringify(actual) !== JSON.stringify(expected)) add('block', pid, 'footer-links', 'Footer-Links weichen von site.config.json › footer.links ab');
       }
     }
+    /* r4-54 (Nachprüfung N52-2): Die Zeile «Direkteinstiege» ist auf jeder veröffentlichten Seite ausser der Fehlerseite Pflicht
+       und entspricht genau utilityNav. Sonst bliebe das Gate grün, wenn Zeile und Menüeinträge zugleich fehlen. */
+    if (Array.isArray(cfg.utilityNav) && cfg.utilityNav.length && !isNotFound(p)) {
+      const utilityEl = one(doc, x => x.tag === 'nav' && x.attrs['aria-label'] === 'Direkteinstiege');
+      const utilityWant = cfg.utilityNav.map(e => pages.find(q => q.id === e.pageId && q.status === 'published')).filter(Boolean).map(pagePath);
+      const utilityGot = utilityEl ? all(utilityEl, x => x.tag === 'a').map(a => resolve(path, a.attrs.href).path) : [];
+      if (!utilityEl) add('block', pid, 'utility-nav', 'Zeile «Direkteinstiege» fehlt');
+      else if (utilityGot.join('|') !== utilityWant.join('|')) add('block', pid, 'utility-nav', `Direkteinstiege weichen vom Seitenvertrag ab: ${utilityGot.join(', ') || 'leer'} statt ${utilityWant.join(', ')}`);
+    }
     const navEl = one(doc, x => x.tag === 'nav' && x.attrs['aria-label'] === 'Hauptnavigation');
     if (!navEl) add('block', pid, 'nav', 'Hauptnavigation fehlt');
     else {
@@ -649,6 +658,7 @@ const MUTATIONS = [
   ['Statische Seite ohne Skript für Sprungzielfokus', ['interaction-script'], (c, f) => rex(f, 'index.html', /<script src="[^"]*interaktion\.js[^"]*" defer><\/script>\n?/, '')],
   ['Direkteinstieg im Menü weicht vom Seitenvertrag ab', ['nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link puk-site-menu__utility-link" href="kurz.html"', 'class="puk-web-nav__link puk-site-menu__utility-link" href="verstehen.html"')],
   ['Direkteinstiege im Menü fehlen (r4-52, N51-1)', ['nav'], (c, f) => rex(f, 'index.html', /\n<li class="puk-site-menu__utility">[\s\S]*?<\/li>/g, '')],
+  ['Zeile und Menüeinträge der Direkteinstiege fehlen (r4-54, N52-2)', ['utility-nav'], (c, f) => rex(f, 'index.html', /<nav class="puk-site-utility"[\s\S]*?<\/nav>|\n<li class="puk-site-menu__utility">[\s\S]*?<\/li>/g, '')],
   ['Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite)', ['nav-target', 'nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link" href="beziehungen.html"', 'class="puk-web-nav__link" href="gibt-es-nicht.html"')],
   ['Seitenvertrag verweist auf fehlende Datei', ['page-file'], c => { pg(c, 'behandlung').href = 'gibt-es-nicht.html'; }],
   ['lang fehlt', ['lang'], (c, f) => rep(f, 'behandlung.html', '<html lang="de-CH"', '<html')],

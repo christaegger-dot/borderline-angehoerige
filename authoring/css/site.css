@@ -928,7 +928,7 @@ html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-to
    Screenreader verborgen; seine Flächen tragen keine Bedeutung (Ausnahme zu «gelb = hier geht Schutz vor» und «nachtblau nur
    für das Band Haltung»). Ab 62 rem rechts neben Titel und Einleitung, darunter als Band unter dem Einstieg. Bei erzwungenen
    Farben und im Druck ausgeblendet. */
-.bl-titelbild{margin-top:var(--space-8)}
+.bl-titelbild{margin-top:var(--space-8);max-width:480px} /* r4-50 (Prüfschritt 4, P4-2): Das Band wächst nicht mit Breite und Schrift, höchstens 120 px hoch */
 .bl-titelbild svg{display:block;width:100%;height:auto}
 .bl-titelbild .bl-titelbild__breit{display:none}
 .bl-titelbild__hell{fill:var(--blau-25)}
@@ -1763,5 +1763,7 @@ html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-to
   .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) :where(h3,p,span:not(.puk-vis-build__n)){color:var(--tinte)}
   .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) .puk-vis-build__n{border-color:var(--blau)}
   .puk-site-start-actions .puk-link--action,.bl-action--primary{background:none;color:var(--tinte);border-color:var(--blau)}
+  /* r4-50 (Prüfschritt 4, P4-4): Ohne gelbe Fläche bleibt im Druck die Linie über dem Sicherheitshinweis erkennbar (Gelb auf Weiss 1,2 : 1) */
+  .puk-longform__boundary:not(.puk-site-inline-ref),.bl-paths-cards li:first-child{border-top-color:var(--tinte-leise)}
   .bl-paths-cards li,.puk-say>.puk-say__item,.bl-tun,.puk-longform__boundary{break-inside:avoid}
 }

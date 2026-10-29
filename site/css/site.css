@@ -349,7 +349,8 @@
    blau-125 6,4:1, rot-text 7,6:1; papier auf nachtblau 13,7:1. Das Theme «Hoher Kontrast» wirkt über die
    PUK-Werte, auf die diese Rollen verweisen.
    Drei getönte Flächen, drei Bedeutungen: blau = hier können Sie etwas tun, grau = hier wird etwas erklärt,
-   gelb = hier geht Schutz vor. Rot nur für den Akuthinweis, nachtblau nur für das Band «Haltung». */
+   gelb = hier geht Schutz vor. Rot nur für den Akuthinweis, nachtblau nur für das Band «Haltung».
+   Ausnahme seit r4-49: das Titelbild der Startseite (.bl-titelbild) ist reiner Schmuck; dort tragen die Flächen keine Bedeutung. */
 :root{
   --papier:var(--puk-white);
   --tinte:var(--puk-black-100);
@@ -923,6 +924,29 @@ html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-to
 .puk-longform__copy .bl-band p,.bl-band .puk-longform__copy p{color:var(--papier);font-size:1.25rem;line-height:1.6}
 .bl-band a{color:var(--papier)}
 .bl-band :focus-visible{box-shadow:0 0 0 2px var(--nachtblau),0 0 0 4px var(--papier)}
+/* r4-49: Titelbild der Startseite, übernommen aus der Titelkarte «Cover» des Gestaltungssystems. Rein dekorativ und für
+   Screenreader verborgen; seine Flächen tragen keine Bedeutung (Ausnahme zu «gelb = hier geht Schutz vor» und «nachtblau nur
+   für das Band Haltung»). Ab 62 rem rechts neben Titel und Einleitung, darunter als Band unter dem Einstieg. Bei erzwungenen
+   Farben und im Druck ausgeblendet. */
+.bl-titelbild{margin-top:var(--space-8)}
+.bl-titelbild svg{display:block;width:100%;height:auto}
+.bl-titelbild .bl-titelbild__breit{display:none}
+.bl-titelbild__hell{fill:var(--blau-25)}
+.bl-titelbild__blau{fill:var(--blau)}
+.bl-titelbild__gelb{fill:var(--gelb)}
+.bl-titelbild__nacht{fill:var(--nachtblau)}
+.bl-titelbild__kurve{fill:none;stroke:var(--papier);stroke-width:4;stroke-linecap:round}
+.bl-titelbild__band .bl-titelbild__kurve{stroke-width:3}
+.bl-titelbild__marke{fill:var(--papier)}
+@media (min-width:62rem){
+  html[data-page-id="index"] .puk-longform__hero{display:grid;grid-template-columns:minmax(0,var(--lesebreite)) minmax(0,30rem);column-gap:var(--space-12);justify-content:space-between;align-items:start}
+  html[data-page-id="index"] .puk-longform__hero>:not(.bl-titelbild){grid-column:1}
+  html[data-page-id="index"] .puk-longform__hero>.bl-titelbild{grid-column:2;grid-row:1/span 3;align-self:center;max-width:none;margin-top:0}
+  .bl-titelbild .bl-titelbild__breit{display:block}
+  .bl-titelbild .bl-titelbild__band{display:none}
+}
+@media (forced-colors:active){.bl-titelbild{display:none!important}}
+@media print{.bl-titelbild{display:none!important}}
 .bl-band+.puk-longform__section{padding-top:var(--space-16)}
 @media (min-width:47.5rem){.bl-band{padding-block:var(--space-16)}}
 

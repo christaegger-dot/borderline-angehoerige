@@ -633,6 +633,16 @@ html:not([data-puk-js]) .puk-site-nav--menu{flex-basis:100%}
 .puk-site-menu .puk-web-nav__list{position:absolute;top:100%;left:0;right:0;z-index:60;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:0 var(--space-6);min-width:0;max-width:none;margin:0;padding:var(--space-2) var(--web-gutter-inline) var(--space-5);background:var(--papier);border:0;border-bottom:1px solid var(--linie);box-shadow:var(--shadow-overlay);animation:none}
 .puk-site-menu .puk-web-nav__list[hidden]{display:none}
 .puk-site-menu .puk-web-nav__link{border-top:1px solid var(--linie);padding-block:var(--space-2)}
+/* r4-51 (Prüfschritt 4, P4-1): Direkteinstiege im Menü nur unter 20 rem, dort statt der Zeile unter dem Kopf.
+   20 rem: bei 200 % Schrift alle Handybreiten bis 640 px, bei Standardschrift erst unter 320 px. */
+.puk-site-menu__utility{display:none}
+li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-link{border-top:2px solid var(--linie-bedienung)}
+.puk-site-menu__utility-link{color:var(--blau);font-weight:var(--fw-medium)}
+.puk-site-menu__utility-link[aria-current="page"]{color:var(--tinte)}
+@media (max-width:19.99rem){
+  .puk-site-menu__utility{display:block}
+  .puk-site-subbar .puk-site-utility{display:none}
+}
 @media (min-width:50rem){
   .puk-web-header__inner{flex-wrap:nowrap}
   html:not([data-puk-js]) .puk-site-nav--menu{flex-basis:auto}

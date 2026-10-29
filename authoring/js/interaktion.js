@@ -92,7 +92,8 @@
     label.replaceWith(btn);
     if (panel.querySelector('[aria-current="page"]')) btn.setAttribute('data-current', 'true');
     btn.setAttribute('aria-controls', id(panel, 'puk-menu'));
-    var links = function () { return [].slice.call(panel.querySelectorAll('a')); };
+    /* r4-51: Nur sichtbare Links zählen; die Direkteinstiege im Menü sind über 20 rem ausgeblendet. */
+    var links = function () { return [].slice.call(panel.querySelectorAll('a')).filter(function (a) { return a.getClientRects().length > 0; }); };
     var active = function () { return btn.getClientRects().length > 0; };
     function set(open, focusBtn) {
       btn.setAttribute('aria-expanded', String(open)); panel.hidden = !open;

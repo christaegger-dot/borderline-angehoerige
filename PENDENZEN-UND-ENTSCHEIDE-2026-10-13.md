@@ -1,21 +1,21 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-51 (`5e0ad1a`, [PR #735](https://github.com/christaegger-dot/borderline-angehoerige/pull/735) gemergt am 29.10.2026, 21:37 UTC, im Auftrag von Christa Egger). Offener Entwurf: r4-52 (N49-1, N51-1), siehe oberster Abschnitt; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe oberster Abschnitt. Kein offener Arbeitsentwurf; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Korrektur · r4-52 · Befunde N49-1 und N51-1 · Entwurf vom 29.10.2026
+## Korrektur · r4-52 · Befunde N49-1 und N51-1 · veröffentlicht am 29.10.2026
 
-**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, auf `main` (`31ba96f`) aufgesetzt, als Entwurfs-PR, **nicht gemergt**. Auftrag von Christa Egger, 29.10.2026: «Nachbesserung N49-1 und N51-1 umsetzen». Entscheid zu N49-1: «Band ausblenden». Nachweis: [`audit-results/2026-10-29-n49-1-n51-1-r4-52/BERICHT.md`](audit-results/2026-10-29-n49-1-n51-1-r4-52/BERICHT.md).
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, auf `main` (`31ba96f`) aufgesetzt, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741), gemergt als `d8d78f5` am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger («bitte merge»), nach grünem CI-Lauf `build-and-compare` auf `3c6df59`; damit über Netlify veröffentlicht. Die Live-Site lieferte danach `data-puk-site-build="r4-52"` und in `site.css?v=r4-52` die Regel `@media (max-width:61.99rem){.bl-titelbild{display:none}}` aus (eigene Abfrage mit `curl`, keine Prüfstufe). Auftrag von Christa Egger, 29.10.2026: «Nachbesserung N49-1 und N51-1 umsetzen». Entscheid zu N49-1: «Band ausblenden». Nachweis: [`audit-results/2026-10-29-n49-1-n51-1-r4-52/BERICHT.md`](audit-results/2026-10-29-n49-1-n51-1-r4-52/BERICHT.md).
 
 **Inhalt:**
 - **N49-1:** Unter 62 rem ist das Titelbild der Startseite ausgeblendet, ab 62 rem steht es unverändert rechts. Die Sicherheitskarte beginnt bei 390 × 844 wieder bei 783 px statt 902 px. Bei 768 × 1024 ist sie ganz sichtbar (743–915 px). Neue Probe im Layouttest bei 390 × 844.
 - **N51-1:** Das Gate blockiert auch, wenn die Direkteinstiege im Menü ganz fehlen, auf Seiten mit Menü und Zeile «Direkteinstiege». Dafür gibt es einen neuen Selbsttestfall.
 - **Wortlaut:** keiner geändert. Nur CSS und Prüfwerkzeuge.
 
-**Technischer Stand des Entwurfs:**
+**Technischer Stand:**
 - Selbsttest 88/88
 - Gate 24 Seiten · 0 Blocker · 20 Hinweise
 - Parität 35
@@ -27,10 +27,10 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 **Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die die Nachprüfungen r4-43 bis r4-51 erstellt hat. Eine Nachprüfung von r4-52 muss eine andere Sitzung machen.
 
 **Offen:**
+- Nachprüfung von r4-52 durch eine Sitzung, die nicht gebaut hat.
 - N49-2: Bestätigung durch Christa Egger.
 - N51-2: gering, keine Änderung nötig.
 - Prüfung mit echtem Screenreader.
-- Merge nur auf Auftrag.
 
 ## Nachprüfung r4-50 bis r4-51 · liegt vor seit 29.10.2026
 

@@ -1,0 +1,1442 @@
+[
+ {
+  "v": "r4-52",
+  "w": 320,
+  "h": 568,
+  "large": false,
+  "top": 989,
+  "bottom": 1248,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 320,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 280,
+  "pCh": 28,
+  "scrollW": 320,
+  "innerW": 320,
+  "rootFs": "16px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 320,
+  "h": 568,
+  "large": false,
+  "top": 989,
+  "bottom": 1248,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 320,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 280,
+  "pCh": 28,
+  "scrollW": 320,
+  "innerW": 320,
+  "rootFs": "16px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-52",
+  "w": 390,
+  "h": 844,
+  "large": false,
+  "top": 783,
+  "bottom": 990,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 390,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 350,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 350,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 350,
+    "l": 20
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 350,
+  "pCh": 35,
+  "scrollW": 390,
+  "innerW": 390,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-53",
+  "w": 390,
+  "h": 844,
+  "large": false,
+  "top": 783,
+  "bottom": 990,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 390,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 350,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 350,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 350,
+    "l": 20
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 350,
+  "pCh": 35,
+  "scrollW": 390,
+  "innerW": 390,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-52",
+  "w": 768,
+  "h": 1024,
+  "large": false,
+  "top": 743,
+  "bottom": 915,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 768,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 636,
+    "l": 31
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 707,
+    "l": 31
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 707,
+    "l": 31
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 707,
+  "pCh": 64,
+  "scrollW": 768,
+  "innerW": 768,
+  "rootFs": "16px",
+  "lage": "ganz sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 768,
+  "h": 1024,
+  "large": false,
+  "top": 743,
+  "bottom": 915,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 768,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 636,
+    "l": 31
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 707,
+    "l": 31
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 707,
+    "l": 31
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 707,
+  "pCh": 64,
+  "scrollW": 768,
+  "innerW": 768,
+  "rootFs": "16px",
+  "lage": "ganz sichtbar"
+ },
+ {
+  "v": "r4-52",
+  "w": 1024,
+  "h": 768,
+  "large": false,
+  "top": 842,
+  "bottom": 959,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "447×268",
+  "display": "grid",
+  "cols": "447.047px 447.047px",
+  "heroW": 1024,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 447,
+    "l": 41
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 447,
+    "l": 41
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 447,
+    "l": 41
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 447,
+    "l": 536
+   }
+  ],
+  "pW": 447,
+  "pCh": 41,
+  "scrollW": 1024,
+  "innerW": 1024,
+  "rootFs": "16px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 1024,
+  "h": 768,
+  "large": false,
+  "top": 724,
+  "bottom": 841,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 1024,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 636,
+    "l": 41
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 720,
+    "l": 41
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 720,
+    "l": 41
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 720,
+  "pCh": 65,
+  "scrollW": 1024,
+  "innerW": 1024,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-52",
+  "w": 1112,
+  "h": 834,
+  "large": false,
+  "top": 844,
+  "bottom": 961,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "480×288",
+  "display": "grid",
+  "cols": "495.062px 480px",
+  "heroW": 1112,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 495,
+    "l": 44
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 495,
+    "l": 44
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 495,
+    "l": 44
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 480,
+    "l": 588
+   }
+  ],
+  "pW": 495,
+  "pCh": 45,
+  "scrollW": 1112,
+  "innerW": 1112,
+  "rootFs": "16px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 1112,
+  "h": 834,
+  "large": false,
+  "top": 726,
+  "bottom": 843,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 1112,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 636,
+    "l": 44
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 720,
+    "l": 44
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 720,
+    "l": 44
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 720,
+  "pCh": 65,
+  "scrollW": 1112,
+  "innerW": 1112,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-52",
+  "w": 1150,
+  "h": 800,
+  "large": false,
+  "top": 811,
+  "bottom": 928,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "480×288",
+  "display": "grid",
+  "cols": "530px 480px",
+  "heroW": 1150,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 530,
+    "l": 46
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 530,
+    "l": 46
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 530,
+    "l": 46
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 480,
+    "l": 624
+   }
+  ],
+  "pW": 530,
+  "pCh": 48,
+  "scrollW": 1150,
+  "innerW": 1150,
+  "rootFs": "16px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 1150,
+  "h": 800,
+  "large": false,
+  "top": 727,
+  "bottom": 844,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 1150,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 636,
+    "l": 46
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 720,
+    "l": 46
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 720,
+    "l": 46
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 720,
+  "pCh": 65,
+  "scrollW": 1150,
+  "innerW": 1150,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-52",
+  "w": 1199,
+  "h": 800,
+  "large": false,
+  "top": 728,
+  "bottom": 845,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "480×288",
+  "display": "grid",
+  "cols": "575.094px 480px",
+  "heroW": 1199,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 575,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 575,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 575,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 480,
+    "l": 671
+   }
+  ],
+  "pW": 575,
+  "pCh": 52,
+  "scrollW": 1199,
+  "innerW": 1199,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-53",
+  "w": 1199,
+  "h": 800,
+  "large": false,
+  "top": 728,
+  "bottom": 845,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 1199,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 636,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 720,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 720,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 720,
+  "pCh": 65,
+  "scrollW": 1199,
+  "innerW": 1199,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-52",
+  "w": 1200,
+  "h": 800,
+  "large": false,
+  "top": 729,
+  "bottom": 845,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "480×288",
+  "display": "grid",
+  "cols": "576px 480px",
+  "heroW": 1200,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 576,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 576,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 576,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 480,
+    "l": 672
+   }
+  ],
+  "pW": 576,
+  "pCh": 52,
+  "scrollW": 1200,
+  "innerW": 1200,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-53",
+  "w": 1200,
+  "h": 800,
+  "large": false,
+  "top": 729,
+  "bottom": 845,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "480×288",
+  "display": "grid",
+  "cols": "576px 480px",
+  "heroW": 1200,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 576,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 576,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 576,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 480,
+    "l": 672
+   }
+  ],
+  "pW": 576,
+  "pCh": 52,
+  "scrollW": 1200,
+  "innerW": 1200,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-52",
+  "w": 1280,
+  "h": 800,
+  "large": false,
+  "top": 686,
+  "bottom": 803,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "480×288",
+  "display": "grid",
+  "cols": "656px 480px",
+  "heroW": 1280,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 636,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 656,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 656,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 480,
+    "l": 752
+   }
+  ],
+  "pW": 656,
+  "pCh": 60,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-53",
+  "w": 1280,
+  "h": 800,
+  "large": false,
+  "top": 686,
+  "bottom": 803,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "480×288",
+  "display": "grid",
+  "cols": "656px 480px",
+  "heroW": 1280,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 636,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 656,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 656,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 480,
+    "l": 752
+   }
+  ],
+  "pW": 656,
+  "pCh": 60,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "rootFs": "16px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-52",
+  "w": 1440,
+  "h": 900,
+  "large": false,
+  "top": 690,
+  "bottom": 806,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "480×288",
+  "display": "grid",
+  "cols": "720px 480px",
+  "heroW": 1416,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 636,
+    "l": 60
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 720,
+    "l": 60
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 720,
+    "l": 60
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 480,
+    "l": 900
+   }
+  ],
+  "pW": 720,
+  "pCh": 65,
+  "scrollW": 1440,
+  "innerW": 1440,
+  "rootFs": "16px",
+  "lage": "ganz sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 1440,
+  "h": 900,
+  "large": false,
+  "top": 690,
+  "bottom": 806,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "480×288",
+  "display": "grid",
+  "cols": "720px 480px",
+  "heroW": 1416,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 636,
+    "l": 60
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 720,
+    "l": 60
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 720,
+    "l": 60
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 480,
+    "l": 900
+   }
+  ],
+  "pW": 720,
+  "pCh": 65,
+  "scrollW": 1440,
+  "innerW": 1440,
+  "rootFs": "16px",
+  "lage": "ganz sichtbar"
+ },
+ {
+  "v": "r4-52",
+  "w": 320,
+  "h": 568,
+  "large": true,
+  "top": 3179,
+  "bottom": 3952,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 320,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 280,
+  "pCh": 14,
+  "scrollW": 320,
+  "innerW": 320,
+  "rootFs": "32px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 320,
+  "h": 568,
+  "large": true,
+  "top": 3179,
+  "bottom": 3952,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 320,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 280,
+    "l": 20
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 280,
+  "pCh": 14,
+  "scrollW": 320,
+  "innerW": 320,
+  "rootFs": "32px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-52",
+  "w": 1024,
+  "h": 768,
+  "large": true,
+  "top": 1218,
+  "bottom": 1477,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 1024,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 925,
+    "l": 41
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 942,
+    "l": 41
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 942,
+    "l": 41
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 942,
+  "pCh": 47,
+  "scrollW": 1024,
+  "innerW": 1024,
+  "rootFs": "32px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 1024,
+  "h": 768,
+  "large": true,
+  "top": 1218,
+  "bottom": 1477,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 1024,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 925,
+    "l": 41
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 942,
+    "l": 41
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 942,
+    "l": 41
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 942,
+  "pCh": 47,
+  "scrollW": 1024,
+  "innerW": 1024,
+  "rootFs": "32px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-52",
+  "w": 1984,
+  "h": 1000,
+  "large": true,
+  "top": 1413,
+  "bottom": 1584,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "920×552",
+  "display": "grid",
+  "cols": "920px 920px",
+  "heroW": 1984,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 920,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 920,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 920,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 920,
+    "l": 1016
+   }
+  ],
+  "pW": 920,
+  "pCh": 42,
+  "scrollW": 1984,
+  "innerW": 1984,
+  "rootFs": "32px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 1984,
+  "h": 1000,
+  "large": true,
+  "top": 1177,
+  "bottom": 1348,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 1984,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 1272,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 1440,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 1440,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 1440,
+  "pCh": 65,
+  "scrollW": 1984,
+  "innerW": 1984,
+  "rootFs": "32px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-52",
+  "w": 2399,
+  "h": 1000,
+  "large": true,
+  "top": 1136,
+  "bottom": 1308,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "960×576",
+  "display": "grid",
+  "cols": "1295px 960px",
+  "heroW": 2399,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 1272,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 1295,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 1295,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 960,
+    "l": 1391
+   }
+  ],
+  "pW": 1295,
+  "pCh": 59,
+  "scrollW": 2399,
+  "innerW": 2399,
+  "rootFs": "32px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 2399,
+  "h": 1000,
+  "large": true,
+  "top": 1133,
+  "bottom": 1304,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "aus",
+  "display": "block",
+  "cols": "none",
+  "heroW": 2399,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 1272,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 1440,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 1440,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 0,
+    "l": 0
+   }
+  ],
+  "pW": 1440,
+  "pCh": 65,
+  "scrollW": 2399,
+  "innerW": 2399,
+  "rootFs": "32px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-52",
+  "w": 2400,
+  "h": 1000,
+  "large": true,
+  "top": 1136,
+  "bottom": 1308,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "960×576",
+  "display": "grid",
+  "cols": "1296px 960px",
+  "heroW": 2400,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 1272,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 1296,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 1296,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 960,
+    "l": 1392
+   }
+  ],
+  "pW": 1296,
+  "pCh": 59,
+  "scrollW": 2400,
+  "innerW": 2400,
+  "rootFs": "32px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-53",
+  "w": 2400,
+  "h": 1000,
+  "large": true,
+  "top": 1136,
+  "bottom": 1308,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "960×576",
+  "display": "grid",
+  "cols": "1296px 960px",
+  "heroW": 2400,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 1272,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 1296,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 1296,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 960,
+    "l": 1392
+   }
+  ],
+  "pW": 1296,
+  "pCh": 59,
+  "scrollW": 2400,
+  "innerW": 2400,
+  "rootFs": "32px",
+  "lage": "nicht sichtbar"
+ },
+ {
+  "v": "r4-52",
+  "w": 2560,
+  "h": 1200,
+  "large": true,
+  "top": 1136,
+  "bottom": 1308,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "960×576",
+  "display": "grid",
+  "cols": "1440px 960px",
+  "heroW": 2560,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 1272,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 1440,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 1440,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 960,
+    "l": 1552
+   }
+  ],
+  "pW": 1440,
+  "pCh": 65,
+  "scrollW": 2560,
+  "innerW": 2560,
+  "rootFs": "32px",
+  "lage": "angeschnitten"
+ },
+ {
+  "v": "r4-53",
+  "w": 2560,
+  "h": 1200,
+  "large": true,
+  "top": 1136,
+  "bottom": 1308,
+  "text": "«Ich sorge mich um Sicherheit, Selbstgef",
+  "titel": "960×576",
+  "display": "grid",
+  "cols": "1440px 960px",
+  "heroW": 2560,
+  "kids": [
+   {
+    "tag": "H1",
+    "cls": "puk-web-h1",
+    "w": 1272,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "puk-longform__intro",
+    "w": 1440,
+    "l": 48
+   },
+   {
+    "tag": "P",
+    "cls": "",
+    "w": 1440,
+    "l": 48
+   },
+   {
+    "tag": "DIV",
+    "cls": "bl-titelbild",
+    "w": 960,
+    "l": 1552
+   }
+  ],
+  "pW": 1440,
+  "pCh": 65,
+  "scrollW": 2560,
+  "innerW": 2560,
+  "rootFs": "32px",
+  "lage": "angeschnitten"
+ }
+]

@@ -3,8 +3,11 @@
 Eine Darstellung beginnt mit einer vollständigen Kernaussage. Eine kurze Einordnung
 ergänzt nur, was zum Verständnis nötig ist; zwei bis vier Sätze sind kein Mindestumfang.
 Eine Einleitung darf die Kernaussage nicht bloss wiederholen. Fachliche Unsicherheit,
-Grenzen einer Schlussfolgerung und notwendiger Selbstschutz bleiben sichtbar.
+Grenzen einer Schlussfolgerung und notwendiger Selbstschutz bleiben im Text sichtbar.
 Beispiele, Herkunft und ergänzende Erklärungen dürfen in eine Vertiefung.
+Die Grenzen einer Abbildung (Modell, Metapher, Darstellung) stehen in der Vertiefung «Grenzen des Bildes»,
+nicht sichtbar unter dem Bild (Entscheid Christa Egger, 29.10.2026: «nein, bitte mach das nicht mehr, das
+lenkt einfach nur ab»). Die Kennzeichnung «Eigene didaktische Darstellung» bzw. «Quelle:» bleibt sichtbar in der Bildlegende.
 
 Handlungs- und Erklärungssätze in Figuren verwenden die Leseschrift: schmal 19 px,
 breit 20 px bei normaler Browserschrift (Rubik Regular seit r4-43, vorher Light 21 px). Kurze Schlüssel, Nummern und Quellenangaben

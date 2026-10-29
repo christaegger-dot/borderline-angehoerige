@@ -14,10 +14,10 @@ Legende: **behoben** = in `authoring/css/site.css` korrigiert · **offen** = bra
 | G4 | «Weitere Themen in diesem Bereich» als kleine, lose blaue Links ohne Gewicht. | alle Themenseiten | behoben: Karten mit Pfeil auf heller Blaufläche |
 | G5 | Tabelle «Sechs Stufen der Validierung» in der Lesespalte eingeengt, Silbentrennung und Bildlaufleiste. | Kommunizieren › Validierung | behoben: Tabelle nutzt die volle Breite |
 | G6 | Zweiter Absatz im Einstieg ohne Abstand zum Einleitungstext. | Beziehungen, Kurz | behoben |
-| G7 | «Was Sie tun können:» steht auf allen Seiten ausser Verstehen als fetter Satzanfang im Fliesstext, nicht als Kasten. Das ist uneinheitlich. | z. B. Beziehungen › 01, Rolle › 01, Grenzen › 07, Jugendliche › 05 | offen: Inhaltsdurchgang je Seite (Markup `div.bl-tun`) |
+| G7 | «Was Sie tun können:» steht auf allen Seiten ausser Verstehen als fetter Satzanfang im Fliesstext, nicht als Kasten. Das ist uneinheitlich. | z. B. Beziehungen › 01, Rolle › 01, Grenzen › 07, Jugendliche › 05 | behoben in r4-44 (29.10.2026): alle 37 Stellen als Kasten `div.bl-tun`, Nachweis `audit-results/2026-10-29-bausteine-r4-44/BERICHT.md` |
 | G8 | Kopf: «Kurz und klar» und «Website durchsuchen» stehen bei mittlerer Breite in einer eigenen Zeile. Der Kopf wird hoch. | alle Seiten bei ~920 px | offen: Renderer (`tools/`) |
 | G9 | Fusszeile in altem Stil (graue Fläche, kleine Schrift, senkrechte Linie). Wirkt neben dem neuen Kopf schwach. | alle Seiten | behoben (CSS): helle Blaufläche, Kontakt als weisse Karte vorn, Überschriften in Satzschreibung, Angaben zur Website als leise zweite Ebene. Wortlaut unverändert. |
-| G10 | Beispielsätze (`puk-say`) erscheinen auf Verstehen als Kästen, sonst als Zeilen mit Randlinie. | Verstehen › 03 vs. Behandlung › 04, Genesung | offen, vertretbar: Profilmuster bleibt Standard |
+| G10 | Beispielsätze (`puk-say`) erscheinen auf Verstehen als Kästen, sonst als Zeilen mit Randlinie. | Verstehen › 03 vs. Behandlung › 04, Genesung | behoben in r4-43 (29.10.2026, CSS): eine Form im Text (Paar, hilfreiche Fassung auf Blau), in Abbildungen die freigegebene Linienform |
 
 ## Einzelne Seiten
 

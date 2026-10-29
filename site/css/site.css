@@ -811,7 +811,7 @@ html:not([data-puk-js]) .puk-site-nav--menu{flex-basis:100%}
 .bl-action--primary:hover{border-color:var(--blau-125);background:var(--blau-125);color:var(--papier)}
 .puk-web-actions,.puk-site-start-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6)}
 
-/* Was Sie tun können */
+/* Was Sie tun können: seit r4-44 auf allen Seiten derselbe Kasten (vorher nur auf «Verstehen», sonst fetter Satzanfang, G7) */
 .bl-tun{margin:var(--space-6) 0;padding:var(--space-4) var(--space-5);background:var(--flaeche-blau)}
 .puk-longform__copy .bl-tun>*{margin:0}
 .puk-longform__copy .bl-tun>*+*{margin-top:var(--space-3)}
@@ -1629,8 +1629,6 @@ html:not([data-puk-js]) .puk-site-nav--menu{flex-basis:100%}
 .bl-phase-actions .bl-kurve__key{display:inline}
 .bl-phase-actions .bl-kurve__key::after{content:": "}
 .bl-phase-actions .puk-vis-ansatz__key{display:none}
-.bl-model-limit{margin-top:var(--space-5);padding-top:var(--space-4);border-top:1px solid var(--border-default)}
-.bl-model-limit p{font:var(--type-body-sm)}
 .bl-relief__branches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-5);align-items:start}
 .bl-transition h3,.bl-relief h3{font-size:var(--web-size-body);line-height:var(--lh-subheading);margin:0 0 var(--space-3)}
 .bl-transition p,.bl-relief p{font-size:var(--web-size-body);line-height:var(--lh-body)}

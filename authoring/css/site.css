@@ -1,4 +1,17 @@
-/* Zusammengeführt von tools/export.mjs · PUK Website Kit 1.10.1-r4 · abgeleitet · Build r4-35 */
+/* Borderline – Orientierung für Angehörige · Stylesheet · Build r4-43 (29.10.2026)
+   Abgeleitet aus dem PUK Website Kit 1.10.1-r4 (Tokens, Grundlagen, Interaktion und Visualisierungsmuster unverändert
+   übernommen) und neu geordnet nach dem Gestaltungssystem «Borderline Angehörige». Reihenfolge:
+     1 Tokens        PUK-Hausfarben, Schrift, Abstände, Flächen, Webskala (Kit) und Rollen des Gestaltungssystems
+     2 Grundlagen    Elementvorgaben, Links, Fokus, Formularelemente, Bewegung, Theme «Hoher Kontrast» (Kit)
+     3 Interaktion   Menü, Schaltflächen, Akkordeon, Reiter, Dialog, Karussell, Druck der Bedienelemente (Kit)
+     4 Seitenrahmen  Kopf, Navigation, Absenderzeile, Brotkrumen, Einstieg, «Auf dieser Seite», Abschnitte, Fusszeile (neu)
+     5 Textbausteine Handlungskasten, Beispielsätze, Hinweise, Einstiege, Nachschlagen, Suche, Angebote, Tabellen
+     6 Abbildungen   Muster A–K (Kit) und die Abbildungen dieser Website (unverändert), Anpassungen an den Rahmen
+     7 Erzwungene Farben und Druck
+   Die Rahmenregeln von r4-24 bis r4-42 (Kopf, Einstieg, Abschnittsraster, «Auf dieser Seite», Fusszeile, Gestaltung
+   2026-10-21) sind ersetzt, nicht überschrieben. Der Stand r4-42 liegt im Git-Verlauf. */
+
+/* ======================= 1 Tokens ======================= */
 
 /* ===== ../../../styles.css ===== */
 /* ../../../tokens/fonts.css */
@@ -319,55 +332,61 @@
   --web-touch-target:44px; /* @kind spacing */
   --web-logo-width:clamp(160px,18vw,220px); /* @kind spacing */
 }
+/* Schriftgrade in rem statt px (Prüfbefund BD-04, BD-11, 11.10.2026): Die Browser-Einstellung «Schriftgrösse» wirkt.
+   Schriftfamilie ohne «Rubik Variable» als Rückfall (W3-09). */
+:root{
+  --font-core:"Rubik",Helvetica,sans-serif;
+  --size-display-1:4rem;--size-display-2:3rem;--size-title-1:2.25rem;--size-title-2:1.75rem;--size-title-3:1.5rem;
+  --size-lead:1.25rem;--size-body:1.0625rem;--size-body-sm:.9375rem;--size-caption:.8125rem;--size-micro:.6875rem;
+  --web-size-body:1.3125rem;--web-size-lead:1.640625rem;--web-size-h1:7.125rem;--web-size-h2:3.5625rem;--web-size-h3:2.5rem;
+  --web-size-h4:1.3125rem;--web-size-h5:1.125rem;--web-size-h6:1rem;
+  --web-size-h1-fluid:clamp(2.75rem,8vw,var(--web-size-h1));--web-size-h2-fluid:clamp(2rem,4.5vw,var(--web-size-h2));--web-size-h3-fluid:clamp(1.625rem,3vw,var(--web-size-h3));
+}
+/* ==== Gestaltungssystem «Borderline Angehörige» · r4-43 (29.10.2026) ====
+   Rollen über den PUK-Hausfarben und -Massen, wie im Design-System-Artefakt «Borderline Angehörige» beschrieben
+   (Abschnitte Farbe, Schrift, Raster). Neu ist nur --nachtblau, eine Schattierung von PUK Blau («sämtliche
+   Schattierungen zulässig», CD Manual). Kontraste auf Weiss: tinte 15,9:1, tinte-leise 5,9:1, blau 4,7:1,
+   blau-125 6,4:1, rot-text 7,6:1; papier auf nachtblau 13,7:1. Das Theme «Hoher Kontrast» wirkt über die
+   PUK-Werte, auf die diese Rollen verweisen.
+   Drei getönte Flächen, drei Bedeutungen: blau = hier können Sie etwas tun, grau = hier wird etwas erklärt,
+   gelb = hier geht Schutz vor. Rot nur für den Akuthinweis, nachtblau nur für das Band «Haltung». */
+:root{
+  --papier:var(--puk-white);
+  --tinte:var(--puk-black-100);
+  --tinte-leise:var(--puk-black-75);
+  --linie:var(--ui-hairline);
+  --linie-bedienung:var(--puk-black-50);
+  --blau:var(--puk-blue-100);
+  --blau-125:var(--puk-blue-125);
+  --blau-25:var(--puk-blue-25);
+  --flaeche-blau:#F5F7FF; /* Profilton F4 (--ui-tint), Schattierung von PUK Blau unter 25 % */
+  --flaeche-grau:var(--surface-structure);
+  --flaeche-gelb:var(--puk-yellow-50);
+  --gelb:var(--puk-yellow);
+  --flaeche-rot:var(--ui-danger-wash);
+  --rot:var(--puk-red);
+  --rot-text:var(--puk-red-text);
+  --nachtblau:#182866;
+  --fokus:var(--puk-blue-100);
 
-/* Wiederverwendbare Website-Hülle. Klassen sind absichtlich mit puk-web-
-   gekapselt, damit Büromedien und Druckvorlagen nicht betroffen sind. */
-.puk-web-page{min-height:100vh;background:var(--puk-white);color:var(--puk-web-text);font-family:var(--font-core);font-size:var(--web-size-body);font-weight:var(--web-fw-body);line-height:var(--web-lh-body);overflow-wrap:anywhere}
-.puk-web-container{width:100%;max-width:var(--web-container-max);margin-inline:auto;padding-inline:var(--web-gutter-inline)}
-.puk-web-copy{max-width:var(--web-content-measure)}
-.puk-web-skip{position:absolute;z-index:100;top:8px;left:8px;padding:10px 14px;background:var(--puk-white);color:var(--puk-black-100);font-size:16px;font-weight:var(--fw-regular);transform:translateY(-160%)}
-.puk-web-skip:focus{transform:translateY(0)}
-.puk-web-header{border-bottom:1px solid var(--border-hairline)}
-.puk-web-header__inner{display:flex;align-items:center;justify-content:space-between;gap:20px 32px;padding-block:24px}
-.puk-web-logo{display:block;flex:0 0 auto}
-.puk-web-logo img{width:var(--web-logo-width);display:block}
-.puk-web-nav__list{display:flex;align-items:center;flex-wrap:wrap;gap:4px 20px;margin:0;padding:0;list-style:none}
-.puk-web-nav__link{display:flex;align-items:center;min-height:var(--web-touch-target);padding:6px 4px;color:var(--puk-black-100);font-size:18px;font-weight:var(--fw-regular);text-decoration:none;text-underline-offset:.22em}
-.puk-web-nav__link:hover,.puk-web-nav__link:focus-visible{text-decoration:underline}
-.puk-web-nav__link[aria-current="page"]{color:var(--puk-blue-100);text-decoration:underline;text-decoration-thickness:2px}
-.puk-web-nav__link--emergency{color:var(--puk-blue-100)}
-.puk-web-main:focus{outline:none}
-.puk-web-hero{padding-block:var(--web-section-space) clamp(56px,6vw,80px)}
-.puk-web-eyebrow{margin:0;color:var(--puk-black-75);font-size:14px;font-weight:var(--fw-regular);letter-spacing:.08em;text-transform:uppercase}
-.puk-web-h1{max-width:14ch;margin:24px 0 0;font-size:var(--web-size-h1-fluid);font-weight:var(--web-fw-body);line-height:var(--web-lh-heading);letter-spacing:-.02em;text-wrap:balance}
-.puk-web-h2{margin:0;font-size:var(--web-size-h2-fluid);font-weight:var(--web-fw-heading);line-height:1.05;letter-spacing:-.015em;text-wrap:balance}
-.puk-web-h3{margin:0;font-size:var(--web-size-h3-fluid);font-weight:var(--web-fw-heading);line-height:1.15;text-wrap:balance}
-.puk-web-lead{max-width:52ch;margin:28px 0 0;font-size:var(--web-size-lead);font-weight:var(--web-fw-body);line-height:var(--web-lh-body);text-wrap:pretty}
-.puk-web-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.puk-web-section{padding-block:clamp(56px,7vw,80px)}
-.puk-web-media{aspect-ratio:16/9;background:var(--ui-field);outline:1px dashed var(--puk-blue-50);outline-offset:-1px;display:flex;align-items:flex-end;padding:16px;color:var(--puk-black-100);font-size:12px;font-weight:var(--fw-regular);letter-spacing:.08em;text-transform:uppercase}
-.puk-web-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px;margin:32px 0 0;padding:0;list-style:none}
-.puk-web-card-list>li{display:flex;min-width:0}
-.puk-web-band{padding-block:64px;background:var(--puk-blue-100);color:var(--puk-white)}
-.puk-web-band__inner{display:flex;align-items:flex-end;justify-content:space-between;gap:32px 48px;flex-wrap:wrap}
-.puk-web-footer{border-top:1px solid var(--border-default);padding-block:var(--space-8);background:var(--surface-sunken);font-size:1rem;line-height:1.5}
-.puk-web-footer__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,30rem),1fr));align-items:start;gap:var(--space-6) var(--space-8)}
-.puk-web-footer__heading{margin:0;color:var(--text-muted);font-size:.875rem;font-weight:var(--fw-medium);line-height:1.4;letter-spacing:.06em;text-transform:uppercase}
-.puk-web-footer__copy{max-width:62ch;margin:var(--space-2) 0 0;color:var(--text-muted);font-size:1rem}
-/* Nur Datums-, Versions- und Designmetadaten; keine Hinweise oder Kontakttexte. */
-.puk-web-footer__meta{margin:0;color:var(--text-muted);font-size:.875rem;line-height:1.5}
-.puk-web-footer a{color:var(--text-muted);text-decoration:underline;text-underline-offset:.18em}
+  /* Masse. Schwellen und Breiten in rem: Bei vergrösserter Schrift wechselt die Seite früher in die schmale Ansicht. */
+  --seite-max:82.5rem;      /* 1320 px Inhalt samt Seitennavigation */
+  --lesebreite:45rem;       /* 720 px für Text und Kästen */
+  --abbildungsbreite:64rem; /* 1024 px = volle Inhaltsspalte neben der Seitennavigation: Modelle und Tabellen behalten
+                               ihre breite Anordnung (Kreislauf ab 700 px, Versorgungskarte ab 880 px, DEAR ab 992 px) */
+  --navi-breite:15rem;
+  --spalten-abstand:3.5rem;
+  --kopf-hoehe:4.75rem;
+  --web-container-max:var(--seite-max);
 
-@media (max-width:760px){
-  .puk-web-page{font-size:19px}
-  .puk-web-header__inner{align-items:flex-start;flex-direction:column}
-  .puk-web-nav{width:100%}
-  .puk-web-nav__list{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:2px 12px}
-  .puk-web-nav__link{border-top:1px solid var(--border-hairline)}
-  .puk-web-actions>*{flex:1 1 100%}
-  .puk-web-band__inner{align-items:flex-start;flex-direction:column}
+  /* Leseschrift Rubik Regular 20/32, unter 760 px 19/30. Das Profil sieht Regular für Text vor
+     («Rubik Light for display, Regular for text»); Light bleibt der Einleitung vorbehalten. */
+  --web-size-body:1.25rem;
+  --web-fw-body:400;
+  --web-lh-body:1.6;
 }
 
+/* ======================= 2 Grundlagen ======================= */
 /* ==== tokens/base.css ==== */
 /* Minimal element defaults so consuming pages inherit the brand voice. */
 html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -431,87 +450,6 @@ a:hover{color:var(--text-link-hover)}
   [data-motion="logo-statisch"]{display:none}
 }
 
-/* ==== tokens/web-longform.css ==== */
-/* Langform und Psychoedukation — systemeigene Webmuster, keine zusätzliche
-   Vorgabe des PUK Corporate Designs. Der Vertrag ist in
-   templates/website/longform-pattern.json dokumentiert. */
-
-.puk-longform{background:var(--surface-page);color:var(--text-default)}
-.puk-longform__hero{padding-block:clamp(48px,7vw,88px) clamp(40px,6vw,72px)}
-.puk-longform__hero .puk-web-h1{max-width:16ch}
-.puk-longform__intro{max-width:62ch;margin:var(--space-6) 0 0;font-size:clamp(21px,2.1vw,var(--web-size-lead));line-height:1.35}
-.puk-longform__boundary{max-width:72ch;margin:var(--space-6) 0 0;padding:var(--space-4) var(--space-5);border-left:3px solid var(--puk-blue-100);background:var(--status-info-bg);font-size:var(--puk-read-size,var(--web-size-body));line-height:1.55;font-weight:var(--fw-regular)}
-.puk-longform__boundary--repeat{padding:var(--space-2) 0 var(--space-2) var(--space-5);background:transparent}
-
-.puk-longform__roadmap{padding-block:var(--space-6);border-block:1px solid var(--border-hairline)}
-.puk-longform__roadmap-label{margin:0 0 var(--space-3);font-size:14px;font-weight:var(--fw-medium);letter-spacing:.06em;text-transform:uppercase}
-.puk-longform__roadmap ol{display:flex;gap:var(--space-2) var(--space-5);flex-wrap:wrap;margin:0;padding:0;list-style:none;counter-reset:puk-longform-step}
-.puk-longform__roadmap li{counter-increment:puk-longform-step}
-.puk-longform__roadmap a{display:inline-flex;align-items:center;min-height:var(--web-touch-target);color:var(--text-default);font-size:16px;font-weight:var(--fw-regular);text-decoration:underline;text-decoration-color:var(--puk-black-25);text-underline-offset:.22em}
-.puk-longform__roadmap a::before{content:counter(puk-longform-step,decimal-leading-zero);margin-right:var(--space-2);color:var(--text-accent);font-weight:var(--fw-medium)}
-.puk-longform__roadmap a:hover{color:var(--text-link);text-decoration-color:currentColor}
-
-.puk-longform__section{padding-block:clamp(52px,7vw,84px);scroll-margin-top:var(--space-6)}
-.puk-longform__section+.puk-longform__section{border-top:1px solid var(--border-hairline)}
-.puk-longform__section-grid{display:grid;grid-template-columns:minmax(220px,.58fr) minmax(0,1.42fr);gap:clamp(32px,7vw,96px);align-items:start}
-.puk-longform__section-heading{position:sticky;top:var(--space-6)}
-.puk-longform__section-heading .puk-web-h2{max-width:12ch}
-.puk-longform__kicker{margin:0 0 var(--space-3);color:var(--text-accent);font-size:14px;font-weight:var(--fw-medium);letter-spacing:.07em;text-transform:uppercase}
-.puk-longform__copy{max-width:var(--web-content-measure);min-width:0}
-.puk-longform__copy> :first-child{margin-top:0}
-.puk-longform__copy> :last-child{margin-bottom:0}
-.puk-longform__copy p,.puk-longform__copy li,.puk-longform__copy dd{line-height:1.55}
-.puk-longform__copy p{margin:0 0 var(--space-5)}
-.puk-longform__copy h3{margin:var(--space-10) 0 var(--space-4);font:var(--type-title-2);line-height:1.15}
-.puk-longform__copy h4{margin:var(--space-8) 0 var(--space-3);font:var(--type-title-3)}
-
-.puk-longform__term-guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--space-5);margin:var(--space-8) 0 0}
-.puk-longform__term-guide>div{padding:var(--space-5);border-top:3px solid var(--puk-blue-100);background:var(--surface-sunken)}
-.puk-longform__term-guide dt{font-weight:var(--fw-medium)}
-.puk-longform__term-guide dd{margin:var(--space-2) 0 0;color:var(--text-muted)}
-
-.puk-longform__figure{margin:var(--space-8) 0;padding:clamp(20px,4vw,40px);border:1px solid var(--border-default);background:var(--surface-sunken)}
-.puk-longform__figure-stage{display:grid;grid-template-columns:1fr auto 1fr;gap:var(--space-4);align-items:center;min-height:180px}
-.puk-longform__figure-side{padding:var(--space-5);border-top:4px solid var(--puk-blue-100);background:var(--surface-card);font-weight:var(--fw-medium);text-align:center}
-.puk-longform__figure-relation{max-width:18ch;color:var(--text-muted);font-size:16px;font-weight:var(--fw-regular);text-align:center}
-.puk-longform__figure figcaption{max-width:68ch;margin-top:var(--space-5);font-size:15px;line-height:1.5;color:var(--text-muted)}
-
-.puk-longform__reflection{margin:var(--space-8) 0;padding:clamp(20px,4vw,36px);border-left:4px solid var(--puk-blue-100);background:var(--surface-accent)}
-.puk-longform__reflection h3{margin:0 0 var(--space-3)}
-.puk-longform__reflection p{margin:0 0 var(--space-5)}
-.puk-longform__reflection label{display:block;margin-bottom:var(--space-2);font-weight:var(--fw-medium)}
-.puk-longform__reflection textarea{width:100%;min-height:132px;padding:var(--space-4);resize:vertical;border:1px solid var(--border-strong);border-radius:var(--radius-xs);background:var(--surface-card);color:var(--text-default);font:inherit;line-height:1.45}
-.puk-longform__reflection textarea:focus-visible{outline:none;box-shadow:var(--focus-ring)}
-.puk-longform__privacy{margin:var(--space-3) 0 0!important;font-size:14px;color:var(--text-muted)}
-
-.puk-longform__transition{max-width:68ch;margin:var(--space-10) 0 0;padding-top:var(--space-5);border-top:1px solid var(--border-default);font-weight:var(--fw-regular)}
-.puk-longform__sources{margin:var(--space-8) 0 0;padding:0;list-style:none}
-.puk-longform__sources li{padding-block:var(--space-4);border-top:1px solid var(--border-hairline)}
-.puk-longform__source-use{display:block;margin-top:var(--space-2);font-size:15px;color:var(--text-muted)}
-.puk-longform__support{padding:clamp(24px,5vw,48px);border-top:4px solid var(--puk-blue-100);background:var(--surface-sunken)}
-.puk-longform__support h3{margin-top:0}
-
-/* Inline-Satzlink und eigenständige Aktion sind absichtlich getrennte
-   Verträge. Das verhindert vergrösserte Zeilenabstände bei Linkumbrüchen. */
-.puk-link--inline{display:inline;min-height:0;padding:0;color:var(--text-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
-.puk-link--inline:hover{color:var(--text-link-hover)}
-.puk-link--action{display:inline-flex;align-items:center;justify-content:center;min-height:var(--web-touch-target);padding:var(--space-2) var(--space-4);border:1px solid var(--border-strong);border-radius:var(--radius-sm);color:var(--text-default);font-weight:var(--fw-medium);text-decoration:none}
-.puk-link--action:hover{border-color:var(--puk-blue-100);color:var(--text-link)}
-
-@media (max-width:760px){
-  .puk-longform__section-grid{grid-template-columns:1fr}
-  .puk-longform__section-heading{position:static}
-  .puk-longform__section-heading .puk-web-h2{max-width:16ch}
-  .puk-longform__figure-stage{grid-template-columns:1fr;min-height:0}
-  .puk-longform__figure-relation{max-width:none}
-}
-
-@media (max-width:420px){
-  .puk-longform__roadmap ol{display:grid;grid-template-columns:1fr}
-  .puk-longform__roadmap a{width:100%}
-}
-
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 /* ==== Theme «Hoher Kontrast» (ergänzt, nicht Teil der Quelle) ====
    Aktivieren mit <html data-theme="kontrast">. Dunklere Schattierungen derselben
@@ -533,16 +471,7 @@ a:hover{color:var(--text-link-hover)}
   --action-disabled-fg:var(--puk-black-50);
 }
 
-/* ==== Profilentscheide 06.10.2026 (ergänzt, nicht Teil der Quelle) ====
-   1. Textfarbe auf Websites überall Hausschwarz (--text-default, #222222) statt
-      der Bestandsausnahme --puk-web-text (#000000).
-   2. Lesen in Seitenschrift, Bedienen in UI-Grösse: Innerhalb von .puk-web-page
-      übernehmen Lesetexte in Card, Alert, Accordion und List die Seitenschrift
-      (21 px Light, unter 760 px 19 px). Buttons, Felder, Tabs bleiben bei der
-      UI-Skala. Ausserhalb der Website-Hülle gilt die UI-Skala unverändert. */
-.puk-web-page{color:var(--text-default);--puk-read-size:var(--web-size-body);--puk-read-font:var(--web-fw-body) var(--puk-read-size)/var(--web-lh-body) var(--font-core);--puk-read-color:var(--text-default)}
-@media (max-width:760px){.puk-web-page{--puk-read-size:19px}}
-
+/* ======================= 3 Interaktion ======================= */
 /* ==== Interaktionskonzept 06.10.2026 (ergänzt, nicht Teil der Quelle) ====
    Abschnitt «Interaktionskonzept». Ruhige, funktionale Bewegung; jede
    Animation fällt bei prefers-reduced-motion weg (globale Regel in base.css). */
@@ -666,74 +595,417 @@ html.puk-scroll-lock{overflow:hidden}
   body{background:#fff}
 }
 
-/* ==== Prüfbefunde 09.10.2026 (ergänzt, nicht Teil der Quelle) ====
-   1. Links im Hinweiskasten: Blau 100 auf --status-info-bg hatte 3,6:1, Blau 125 hat 4,9:1.
-   2. Definitionslisten im Fliesstext (Begriff und Erklärung, Situation und Beispiel):
-      Begriff hervorgehoben, Erklärung ohne Browsereinzug, Abstand zwischen den Einträgen.
-   3. Formulierungsbeispiele «So könnte es klingen» als gestaltete Folge (.puk-say):
-      jedes Beispiel mit sichtbarer Bezeichnung; hilfreiche Variante mit blauer Linie.
-   4. Verweis im Text auf die zuständigen Stellen (data-responsibility-inline): Darstellung
-      wie der Hinweiskasten; Wortlaut kommt aus site.config.json › responsibility.inline. */
-.puk-longform__boundary a{color:var(--puk-blue-125);text-decoration:underline;text-underline-offset:.18em}
+/* ======================= 4 Seitenrahmen ======================= */
+/* ==== Seitenrahmen · r4-43 (29.10.2026) ====
+   Ersetzt die Rahmenregeln des Kits und der Nachbesserungen bis r4-42: Kopf, Navigation, Absenderzeile, Brotkrumen,
+   Einstieg, «Auf dieser Seite», Abschnitte und Fusszeile. Breiten: schmal unter 760 px (47,5 rem), Menüknopf unter
+   78 rem, Seitennavigation als eigene Spalte ab 72 rem. Rangordnung: Seitentitel 44 px über Abschnittstiteln 30 px über
+   Zwischentiteln 23 px (schmal 32 / 25 / 21 px). */
+.puk-web-page{min-height:100vh;background:var(--papier);color:var(--tinte);font-family:var(--font-core);font-size:var(--web-size-body);font-weight:var(--web-fw-body);line-height:var(--web-lh-body);overflow-wrap:break-word;hyphens:manual;--puk-read-size:var(--web-size-body);--puk-read-font:var(--web-fw-body) var(--puk-read-size)/var(--web-lh-body) var(--font-core);--puk-read-color:var(--tinte)}
+@media (max-width:760px){.puk-web-page{font-size:1.1875rem;--puk-read-size:1.1875rem}}
+/* Robustheit 320 px / 200 % Text: Rasterzellen dürfen schrumpfen, Wörter bleiben ganz, solange sie in eine Zeile passen. */
+.puk-web-page :where(li,article,section,div,dl,dd,dt,figure,figcaption,p,h1,h2,h3,label,a,strong,span){min-width:0}
+.puk-web-container{width:100%;max-width:calc(var(--seite-max) + 2 * var(--web-gutter-inline));margin-inline:auto;padding-inline:var(--web-gutter-inline)}
+.puk-web-skip{position:absolute;z-index:100;top:8px;left:8px;display:inline-flex;align-items:center;min-height:var(--web-touch-target);padding:10px 14px;background:var(--papier);color:var(--tinte);font-size:1rem;transform:translateY(-160%)}
+.puk-web-skip:focus{transform:translateY(0)}
+.puk-web-main:focus{outline:none}
+
+/* Kopf: Logo und Hauptnavigation in einer Zeile, darunter leise die Absenderin und die Direkteinstiege.
+   Die Absenderin bleibt auf jeder Seite sichtbar im Kopf (Gate «sender»). */
+.puk-web-header{position:relative;background:var(--papier);border-bottom:1px solid var(--linie)}
+.puk-web-header__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-2) var(--space-6);min-height:var(--kopf-hoehe);padding-block:var(--space-2)}
+.puk-web-logo{display:block;flex:0 0 auto;line-height:0}
+.puk-web-logo img{display:block;width:clamp(148px,6vw + 98px,184px);height:auto}
+html:not([data-puk-js]) .puk-site-nav--menu{flex-basis:100%}
+.puk-web-nav__list{margin:0;padding:0;list-style:none}
+.puk-web-nav__link{display:flex;align-items:center;min-width:0;max-width:100%;min-height:var(--web-touch-target);color:var(--tinte);font-size:1.0625rem;line-height:1.3;text-decoration:none;overflow-wrap:anywhere;hyphens:auto}
+.puk-web-nav__link:hover{color:var(--blau-125);text-decoration:underline;text-underline-offset:.35em}
+.puk-web-nav__link[aria-current="page"],.puk-web-nav__link[aria-current="location"]{font-weight:var(--fw-medium);text-decoration:underline;text-decoration-color:var(--blau);text-decoration-thickness:3px;text-underline-offset:.4em}
+/* Menü unter 78 rem: Knopf rechts vom Logo, die Liste klappt über die ganze Breite unter dem Kopf auf.
+   Ohne Skript steht die Liste offen im Fluss (Kit: .puk-disclosure:not([data-enhanced])). */
+.puk-site-menu{position:static;display:block}
+.puk-site-menu .puk-disclosure__label{padding:var(--space-2) 0;font-size:1.0625rem}
+.puk-site-menu .puk-disclosure__button{min-height:var(--web-touch-target);padding:0 var(--space-3);border:1px solid var(--linie-bedienung);border-radius:var(--radius-sm);background:var(--papier);color:var(--tinte);font-size:1.0625rem;font-weight:var(--fw-regular)}
+.puk-site-menu .puk-disclosure__button:hover{border-color:var(--blau);color:var(--blau-125);text-decoration:none}
+.puk-site-menu .puk-disclosure__button[data-current="true"]{color:var(--tinte)}
+.puk-site-menu .puk-disclosure__button[aria-expanded="true"]{border-color:var(--blau);color:var(--blau-125)}
+.puk-site-menu .puk-web-nav__list{position:absolute;top:100%;left:0;right:0;z-index:60;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:0 var(--space-6);min-width:0;max-width:none;margin:0;padding:var(--space-2) var(--web-gutter-inline) var(--space-5);background:var(--papier);border:0;border-bottom:1px solid var(--linie);box-shadow:var(--shadow-overlay);animation:none}
+.puk-site-menu .puk-web-nav__list[hidden]{display:none}
+.puk-site-menu .puk-web-nav__link{border-top:1px solid var(--linie);padding-block:var(--space-2)}
+@media (min-width:78rem){
+  .puk-web-header__inner{flex-wrap:nowrap}
+  html:not([data-puk-js]) .puk-site-nav--menu{flex-basis:auto}
+  .puk-site-menu .puk-disclosure__label,.puk-site-menu .puk-disclosure__button{display:none}
+  .puk-site-menu .puk-web-nav__list,.puk-site-menu .puk-web-nav__list[hidden]{position:static;display:flex;flex-wrap:nowrap;gap:0 var(--space-6);padding:0;border:0;background:none;box-shadow:none}
+  .puk-site-menu .puk-web-nav__link{border-top:0;padding-block:0;white-space:nowrap;hyphens:manual}
+}
+.puk-site-subbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 var(--space-6);padding-bottom:var(--space-1)}
+.puk-site-sender{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-2);min-width:0;margin:0;font-size:.9375rem;line-height:1.45;color:var(--tinte-leise)}
+.puk-site-sender__label{font:inherit;color:inherit;letter-spacing:0;text-transform:none}
+.puk-site-sender__name{color:var(--tinte);font-weight:var(--fw-medium)}
+.puk-site-sender__contact{margin-left:var(--space-2)}
+.puk-site-sender a{min-width:0;color:var(--blau);overflow-wrap:anywhere}
+.puk-site-sender a:hover{color:var(--blau-125)}
+/* Tippbereich 44 px ohne negative Ränder: Bricht die Adresse um, überdeckt sie die Zeile darüber nicht. */
+[data-sender-email]{display:inline-flex;align-items:center;min-height:var(--web-touch-target);max-width:100%}
+.puk-site-utility{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-5)}
+.puk-site-utility__link{display:inline-flex;align-items:center;min-height:var(--web-touch-target);color:var(--blau);font-size:1rem;font-weight:var(--fw-medium);text-decoration:none}
+.puk-site-utility__link:hover{color:var(--blau-125);text-decoration:underline;text-underline-offset:.25em}
+.puk-site-utility__link[aria-current="page"]{color:var(--tinte);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.3em}
+@media (max-width:760px){
+  .puk-site-subbar{flex-direction:column;align-items:flex-start;padding-bottom:var(--space-1)}
+  .puk-site-sender__label{display:none}
+  .puk-site-sender__contact{margin-left:0}
+  .puk-site-utility{gap:0 var(--space-4)}
+}
+@media (max-width:22.5rem){.puk-site-utility{gap:0 var(--space-3)}.puk-site-utility__link{font-size:.9375rem}}
+
+/* Brotkrumen: eine leise Zeile über dem Titel, ohne Fläche und Linie */
+.puk-site-breadcrumb ol{display:flex;flex-wrap:wrap;gap:0 var(--space-2);margin:0;padding:var(--space-4) 0 0;list-style:none;font-size:1rem;line-height:1.5;color:var(--tinte-leise)}
+.puk-site-breadcrumb li{display:flex;align-items:center;min-width:0;margin:0}
+.puk-site-breadcrumb li+li::before{content:"/";margin-right:var(--space-2);color:var(--linie-bedienung)}
+.puk-site-breadcrumb a{color:var(--blau);text-decoration:underline;text-underline-offset:.2em}
+.puk-site-breadcrumb a:hover{color:var(--blau-125)}
+.puk-site-breadcrumb a,.puk-site-breadcrumb span{overflow-wrap:anywhere}
+
+/* Einstieg auf Weiss: Titel, Einleitung, bei Bedarf ein Hinweis zur Sicherheit */
+.puk-longform__hero{padding-block:var(--space-6) var(--space-8);container-type:inline-size}
+.puk-longform__hero>*{max-width:var(--lesebreite)}
+.puk-web-h1{margin:0;max-width:22ch;font-size:2rem;line-height:1.19;font-weight:var(--fw-medium);letter-spacing:0;text-wrap:balance;hyphens:none}
+/* Titeltrennung (Profil 2026.10.9, W-2; r4-41): Bei Standardschrift wird der Titel nie getrennt, auch nicht an weichen
+   Trennstellen. Ist der Einstieg schmaler als 12 em seiner Schrift (320–375 px bei 200 % Schrift), trennt der Titel
+   Wörter ab 8 Zeichen nach Silben statt sie beliebig zu brechen. Browser ohne deutsches Trennmuster trennen nur an den
+   weichen Trennstellen, die lange Titelwörter in authoring/content/ tragen. */
+@container (max-width:12em){.puk-longform__hero .puk-web-h1{hyphens:auto;hyphenate-limit-chars:8 4 4}}
+/* Ausnahme: «Begleiterkrankungen» ist auch bei Standardschrift länger als die Zeile bei 320–375 px; die gesetzte
+   Trennstelle «Begleit-erkrankungen» bleibt dort wirksam statt eines Umbruchs an beliebiger Stelle. */
+[data-page-id="diagnose"] .puk-longform__hero .puk-web-h1{hyphens:manual}
+.puk-longform__intro{margin:var(--space-4) 0 0;font-size:1.25rem;line-height:1.55;font-weight:var(--fw-light)}
+.puk-longform__hero>p:not(.puk-longform__intro,.puk-longform__boundary){margin:var(--space-4) 0 0}
+.puk-longform__hero a.puk-link--inline{color:var(--blau)}
+@media (min-width:47.5rem){
+  .puk-longform__hero{padding-block:var(--space-10) var(--space-12)}
+  .puk-web-h1{font-size:2.75rem;line-height:1.18}
+  .puk-longform__intro{font-size:1.375rem}
+}
+
+/* Seitenraster mit «Auf dieser Seite»: schmal eine aufklappbare Zeile über dem ersten Abschnitt, ab 72 rem eine
+   eigene Spalte links, die beim Scrollen stehen bleibt. Sie überdeckt keinen Inhalt (WCAG 2.4.11). */
+.puk-site-layout{padding-bottom:var(--space-4)}
+.puk-site-layout .puk-web-container{max-width:none;margin-inline:0;padding-inline:0}
+.puk-site-layout__aside,.puk-site-layout__body{min-width:0}
+.puk-site-toc{margin:0;padding:0;border-block:1px solid var(--linie);font-size:1.0625rem;line-height:1.4}
+.puk-site-toc__title{display:none;margin:0 0 var(--space-2);padding-inline:var(--space-3);font-size:1rem;line-height:1.4;font-weight:var(--fw-medium);color:var(--tinte)}
+.puk-site-toc__menu{display:block}
+.puk-site-toc .puk-disclosure__label{display:block;padding:var(--space-3) 0;font-size:1.0625rem;font-weight:var(--fw-medium)}
+.puk-site-toc .puk-disclosure__button{display:flex;width:100%;justify-content:space-between;min-height:3.25rem;padding:0;font-size:1.0625rem;font-weight:var(--fw-medium);color:var(--tinte)}
+.puk-site-toc .puk-disclosure__button:hover{color:var(--blau-125);text-decoration:none}
+.puk-site-toc .puk-disclosure__button[aria-expanded="true"],.puk-site-toc .puk-disclosure__button[data-current="true"]{color:var(--tinte)}
+.puk-site-toc .puk-disclosure__panel{position:static;min-width:0;max-width:none;margin:0;padding:0 0 var(--space-3);border:0;background:none;box-shadow:none;animation:none;list-style:none;counter-reset:bl-toc}
+.puk-site-toc .puk-disclosure__panel[hidden]{display:none}
+.puk-site-toc li{margin:0;counter-increment:bl-toc}
+.puk-site-toc a{display:flex;align-items:center;gap:var(--space-3);min-width:0;min-height:var(--web-touch-target);padding:var(--space-1) var(--space-3);border-radius:var(--radius-sm);color:var(--tinte);text-decoration:none;overflow-wrap:anywhere}
+.puk-site-toc a::before{content:counter(bl-toc);flex:0 0 1.5em;color:var(--tinte-leise);font-variant-numeric:tabular-nums}
+.puk-site-toc a:hover{background:var(--flaeche-grau);color:var(--blau-125)}
+.puk-site-toc a[aria-current="true"]{background:var(--blau-25);font-weight:var(--fw-medium)}
+.puk-site-toc a[aria-current="true"]::before{color:var(--tinte)}
+.puk-site-layout__body>.puk-longform__section:first-child{padding-top:var(--space-8)}
+.puk-site-layout__body>.puk-site-quick:first-child{margin-top:var(--space-8)}
+@media (min-width:72rem){
+  .puk-site-layout{display:grid;grid-template-columns:var(--navi-breite) minmax(0,1fr);column-gap:var(--spalten-abstand);align-items:start}
+  .puk-site-layout__aside{position:sticky;top:0;max-height:100vh;margin-top:var(--space-6);padding-block:var(--space-6);overflow-y:auto}
+  .puk-site-toc{border:0}
+  .puk-site-toc__title{display:block}
+  .puk-site-toc .puk-disclosure__label,.puk-site-toc .puk-disclosure__button{display:none}
+  .puk-site-toc .puk-disclosure__panel,.puk-site-toc .puk-disclosure__panel[hidden]{display:block;padding:0}
+  .puk-site-toc a{min-height:2.25rem;padding-block:6px}
+  .puk-site-layout__body>.puk-longform__section:first-child{padding-top:var(--space-12)}
+  .puk-site-layout__body>.puk-site-quick:first-child{margin-top:var(--space-12)}
+}
+
+/* Abschnitte: Titel über dem Text, getrennt nur durch Weissraum. Kein Kicker, keine Trennlinie. */
+.puk-longform__section{padding-top:var(--space-12);scroll-margin-top:var(--space-6)}
+.puk-longform__section-grid{display:block}
+.puk-longform__section-heading{margin:0 0 var(--space-4)}
+.puk-longform__section-heading:empty{display:none}
+.puk-longform__kicker{margin:0 0 var(--space-2);font-size:1rem;line-height:1.4;font-weight:var(--fw-medium);color:var(--blau-125);letter-spacing:0;text-transform:none}
+.puk-web-h2{margin:0;max-width:30ch;font-size:1.5625rem;line-height:1.24;font-weight:var(--fw-medium);letter-spacing:0;text-wrap:balance}
+.puk-web-h3{margin:0;font-size:1.3125rem;line-height:1.33;font-weight:var(--fw-regular);text-wrap:balance}
+.puk-longform__copy{min-width:0;max-width:none}
+.puk-longform__copy>*{max-width:var(--lesebreite)}
+.puk-longform__copy>:is(.puk-vis-wide,.puk-vis-tablewrap),.puk-longform__section>.puk-vis-wide{max-width:var(--abbildungsbreite)}
+.puk-longform__copy>:first-child{margin-top:0}
+.puk-longform__copy>:last-child{margin-bottom:0}
+.puk-longform__copy p,.puk-longform__copy li,.puk-longform__copy dd{line-height:var(--web-lh-body)}
+.puk-longform__copy p{margin:0 0 var(--space-5)}
+.puk-longform__copy h3{margin:var(--space-10) 0 var(--space-3);font-size:1.3125rem;line-height:1.33;font-weight:var(--fw-regular)}
+.puk-longform__copy h4{margin:var(--space-8) 0 var(--space-2);font-size:1.1875rem;line-height:1.4;font-weight:var(--fw-medium)}
+.puk-longform__copy>:where(ul,ol){margin:0 0 var(--space-5);padding-left:1.3em}
+.puk-longform__copy>:where(ul,ol)>li+li{margin-top:var(--space-2)}
 .puk-longform__copy dl{margin:0 0 var(--space-5)}
 .puk-longform__copy dt{margin:var(--space-5) 0 0;font-weight:var(--fw-medium);line-height:1.35}
 .puk-longform__copy dt:first-child{margin-top:0}
 .puk-longform__copy dd{margin:var(--space-1) 0 0}
-.puk-say{margin:var(--space-3) 0 var(--space-5);display:grid;gap:var(--space-3)}
-.puk-say__item{margin:0;padding:var(--space-1) 0 var(--space-1) var(--space-4);border-left:2px solid var(--ui-hairline)}
-.puk-say__item--hilfreich{border-left:3px solid var(--puk-blue-100)}
-.puk-say__label{display:block;margin-bottom:var(--space-1);font:var(--type-caption);color:var(--text-muted)}
-.puk-site-inline-ref{margin:var(--space-5) 0}
-
-/* ==== Prüfbefunde 11.10.2026 (ergänzt, nicht Teil der Quelle) ====
-   Befunde der Prüfung der Website «Depression: Informationen für Angehörige» (Bedienung BD, Code-Review W3).
-   1. Schriftgrade in rem statt px (BD-04, BD-11): Die Browser-Einstellung «Schriftgrösse» wirkt jetzt. Bei
-      Standardeinstellung (1 rem = 16 px) bleiben alle Grade gleich, z. B. 21 px = 1,3125 rem. Die Quellwerte oben
-      bleiben stehen; dieser Block überschreibt sie.
-   2. Schriftfamilie ohne «Rubik Variable» als Rückfall (W3-09): Zeichen, die in den statischen Schnitten fehlen
-      (z. B. ← →), luden sonst 110 kB nach; sie kommen jetzt aus der Systemschrift.
-   3. Sprunglink mindestens 44 px hoch (BD-06, W3-04); Navigation trennt lange Wörter nach Silben.
-   4. Erzwungene Farben (Windows-Kontrastmodus): Fokus als Umrandung, weil der Browser Schatten entfernt (BD-03);
-      Logo im dunklen Schema hell (BD-07). Keine Hexwerte: Systemfarbe CanvasText, Logo per Filter.
-   5. Druck: Vertiefungen auch ohne Skript offen, wo der Browser ::details-content kennt (W3-01); Grundschrift
-      13 statt 16 px und kleinere Zeichnungen, damit eine Figur auf eine A4-Seite passt; Kennzeichnung direkt unter
-      der Darstellung, die Vertiefung danach (W3-11, Figurgrössen in den Mustern). */
-:root{
-  --font-core:"Rubik",Helvetica,sans-serif;
-  --size-display-1:4rem;--size-display-2:3rem;--size-title-1:2.25rem;--size-title-2:1.75rem;--size-title-3:1.5rem;
-  --size-lead:1.25rem;--size-body:1.0625rem;--size-body-sm:.9375rem;--size-caption:.8125rem;--size-micro:.6875rem;
-  --web-size-body:1.3125rem;--web-size-lead:1.640625rem;--web-size-h1:7.125rem;--web-size-h2:3.5625rem;--web-size-h3:2.5rem;
-  --web-size-h4:1.3125rem;--web-size-h5:1.125rem;--web-size-h6:1rem;
-  --web-size-h1-fluid:clamp(2.75rem,8vw,var(--web-size-h1));--web-size-h2-fluid:clamp(2rem,4.5vw,var(--web-size-h2));--web-size-h3-fluid:clamp(1.625rem,3vw,var(--web-size-h3));
+.puk-longform address{font-style:normal}
+.puk-site-subheading{margin:var(--space-8) 0 var(--space-3);font-size:1.3125rem;line-height:1.33;font-weight:var(--fw-regular);color:var(--tinte)}
+@media (min-width:47.5rem){
+  .puk-longform__section{padding-top:var(--space-16)}
+  .puk-longform__section-heading{margin-bottom:var(--space-6)}
+  .puk-web-h2{font-size:1.875rem;line-height:1.27}
+  .puk-web-h3,.puk-longform__copy h3,.puk-site-subheading{font-size:1.4375rem;line-height:1.3}
 }
-.puk-web-skip{display:inline-flex;align-items:center;min-height:var(--web-touch-target);font-size:1rem}
-.puk-web-nav__link{font-size:1.125rem;hyphens:auto}
-.puk-web-eyebrow{font-size:.875rem}
-.puk-web-media{font-size:.75rem}
-.puk-web-footer{font-size:1rem}
-.puk-longform__intro{font-size:clamp(1.3125rem,2.1vw,var(--web-size-lead))}
-.puk-longform__roadmap a,.puk-longform__figure-relation{font-size:1rem}
-.puk-longform__roadmap-label,.puk-longform__kicker,.puk-longform__privacy{font-size:.875rem}
-.puk-longform__figure figcaption,.puk-longform__source-use{font-size:.9375rem}
-@media (max-width:760px){.puk-web-page{font-size:1.1875rem;--puk-read-size:1.1875rem}.puk-web-footer{padding-block:var(--space-6)}}
-@media (forced-colors:active){
-  :focus-visible:not([tabindex="-1"]){outline:2px solid CanvasText!important;outline-offset:2px!important}
-}
-@media (forced-colors:active) and (prefers-color-scheme:dark){.puk-web-logo img{filter:invert(1)}}
-@media print{
-  html{font-size:81.25%}
-  .puk-vis-more>summary::before,.puk-acc__chevron{display:none}
-  /* Figur als Spalte: Titel, Kernaussage, Darstellung und Kennzeichnung bleiben zusammen; die Vertiefung steht
-     im Druck nach der Kennzeichnung und darf auf die nächste Seite fliessen. */
-  .puk-vis-figure{display:flex;flex-direction:column;break-inside:auto}
-  .puk-vis-figure>*{width:100%;break-inside:avoid}
-  .puk-vis-figure>.puk-vis-label,.puk-vis-figure>.puk-vis-kern,.puk-vis-figure>.puk-vis-short{break-after:avoid}
-  .puk-vis-caption{break-before:avoid}
-  .puk-vis-figure>.puk-vis-more{order:1}
-}
-@media print{details::details-content{content-visibility:visible;display:block}}
+/* Direkt verlinkte Abschnitte und Überschriften erhalten vorübergehend tabindex=-1. Der Fokus bleibt sichtbar;
+   main ist ausgenommen, damit der Skip-Link den Inhaltsbereich nicht mit einem seitenbreiten Ring umgibt. */
+.puk-longform :where(section,h2,h3,h4)[tabindex="-1"]:focus{outline:none;box-shadow:var(--focus-ring);border-radius:var(--radius-sm)}
+@media (forced-colors:active){.puk-longform :where(section,h2,h3,h4)[tabindex="-1"]:focus{outline:2px solid CanvasText;outline-offset:2px;box-shadow:none}}
+/* Sprungziel am Seitenende: genug Höhe, damit es an die Oberkante scrollen kann. */
+.puk-site-anchor-end{min-height:calc(100svh - 32px)}
 
+/* Weiter im Bereich: am Ende der Lesespalte als Liste, nicht als Kartenraster */
+.puk-site-related{margin:var(--space-16) 0 0;padding:0;background:none}
+.puk-site-related .puk-web-h2{max-width:var(--lesebreite);margin:0 0 var(--space-3);font-size:1.0625rem;line-height:1.4}
+.puk-site-related ul{max-width:var(--lesebreite);margin:0;padding:0;list-style:none;border-top:1px solid var(--linie)}
+.puk-site-related li{margin:0;border-bottom:1px solid var(--linie)}
+.puk-site-related a{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);min-height:var(--web-touch-target);padding:var(--space-3) 0;color:var(--tinte);font-size:1.1875rem;line-height:1.35;font-weight:var(--fw-medium);text-decoration:none;overflow-wrap:anywhere}
+.puk-site-related a::after{content:"→";content:"→" / "";flex:0 0 auto;color:var(--blau-125)}
+.puk-site-related a:hover{color:var(--blau-125)}
 
+/* Fusszeile: Kontakt vorn, Angaben zur Website als leise zweite Ebene, auf grauer Fläche */
+.puk-web-footer{margin-top:var(--space-16);padding-block:var(--space-10) var(--space-12);background:var(--flaeche-grau);color:var(--tinte);font-size:1rem;line-height:1.5}
+.puk-web-footer__grid{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:var(--space-8)}
+@media (min-width:47.5rem){.puk-web-footer__grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);column-gap:clamp(2rem,6vw,5rem)}}
+.puk-web-footer__heading{margin:0;color:var(--tinte);font-size:1.0625rem;line-height:1.4;font-weight:var(--fw-medium);letter-spacing:0;text-transform:none}
+.puk-web-footer__copy{max-width:var(--lesebreite);margin:var(--space-2) 0 0;color:var(--tinte);font-size:1rem}
+.puk-web-footer__meta{margin:0;color:var(--tinte-leise);font-size:1rem;line-height:1.5}
+.puk-web-footer a{color:var(--blau-125);text-decoration:underline;text-underline-offset:.18em}
+.puk-web-footer a:hover{color:var(--tinte)}
+.puk-site-safety--responsibility .puk-web-footer__copy:first-of-type{font-size:1.1875rem;line-height:1.5}
+.puk-site-safety--responsibility a{display:inline-flex;align-items:center;min-height:var(--web-touch-target);font-weight:var(--fw-medium);overflow-wrap:anywhere}
+.puk-site-safety--responsibility .puk-web-footer__copy a::after{content:"→";content:"→" / "";margin-left:.4em}
+.puk-site-review{margin:0;flex-basis:100%;font:var(--type-caption);color:var(--tinte)}
+.puk-web-footer__about>.puk-web-footer__copy:first-of-type{margin-top:var(--space-1);color:var(--tinte-leise)}
+.puk-web-footer__boundary{max-width:var(--lesebreite);margin-top:var(--space-4)}
+.puk-web-footer__details{max-width:var(--lesebreite);margin-top:var(--space-4);padding-top:var(--space-3);border-top:1px solid var(--linie-bedienung)}
+.puk-web-footer__details .puk-web-footer__meta+.puk-web-footer__meta{margin-top:var(--space-1)}
+.puk-site-info-links{margin-top:var(--space-3)}
+.puk-site-info-links ul{display:flex;flex-wrap:wrap;gap:0 var(--space-5);margin:0;padding:0;list-style:none}
+.puk-site-info-links a,.puk-site-legal a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target)}
+.puk-site-legal{margin:0;color:var(--tinte-leise);font-size:1rem;line-height:1.5}
+
+/* Entwurfsmarken (nur bei nicht freigegebener Absenderin, fehlenden Rechtsangaben oder Entwurfsseiten) */
+.puk-site-draft{display:inline-block;padding:1px 8px;border:1px dashed var(--puk-black-75);background:var(--papier);font:var(--type-caption);color:var(--tinte)}
+.puk-site-draftbar{margin:0;padding-block:var(--space-2);background:var(--gelb);color:var(--tinte);font:var(--type-body-sm);font-weight:var(--fw-medium)}
+.puk-site-draftbar span{display:block}
+
+/* ======================= 5 Textbausteine ======================= */
+/* ==== Textbausteine · r4-43 (29.10.2026) ====
+   Jede Form hat eine Bedeutung und sieht auf allen Seiten gleich aus: «Was Sie tun können» blau, Beispielsätze als Paar,
+   Sicherheit gelb, Akuthinweis rot. Keine farbigen Randlinien links an Kästen. */
+
+/* Links und Schaltflächen. Inline-Satzlink und eigenständige Aktion sind getrennte Verträge. */
+.puk-link--inline{display:inline;min-height:0;padding:0;color:var(--blau);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
+.puk-link--inline:hover{color:var(--blau-125);text-decoration-thickness:2px}
+.puk-link--action{display:inline-flex;align-items:center;justify-content:flex-start;min-width:0;max-width:100%;min-height:3rem;padding:var(--space-2) var(--space-5);border:1px solid var(--linie-bedienung);border-radius:var(--radius-sm);background:var(--papier);color:var(--tinte);font-weight:var(--fw-regular);line-height:1.3;text-align:left;text-decoration:none;overflow-wrap:anywhere}
+.puk-link--action:hover{border-color:var(--blau);color:var(--blau-125)}
+.bl-action--primary{border-color:var(--blau);background:var(--blau);color:var(--papier);font-weight:var(--fw-medium)}
+.bl-action--primary:hover{border-color:var(--blau-125);background:var(--blau-125);color:var(--papier)}
+.puk-web-actions,.puk-site-start-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6)}
+
+/* Was Sie tun können */
+.bl-tun{margin:var(--space-6) 0;padding:var(--space-4) var(--space-5);background:var(--flaeche-blau)}
+.puk-longform__copy .bl-tun>*{margin:0}
+.puk-longform__copy .bl-tun>*+*{margin-top:var(--space-3)}
+.bl-tun__label{font-size:1rem;line-height:1.4;font-weight:var(--fw-medium);color:var(--blau-125);letter-spacing:0;text-transform:none}
+.bl-tun a{color:var(--blau-125)}
+.bl-tun a:hover{color:var(--tinte)}
+@media (min-width:47.5rem){.bl-tun{padding:var(--space-5) var(--space-6)}}
+
+/* So könnte es klingen: eine Form für alle Seiten. Der hilfreiche Satz trägt die Fläche. */
+.puk-say{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--space-3);margin:var(--space-3) 0 var(--space-6)}
+.puk-say>.puk-say__item{margin:0;padding:var(--space-4) var(--space-5);border:1px solid var(--linie);background:var(--papier);color:var(--tinte-leise)}
+.puk-say>.puk-say__item--hilfreich{border-color:var(--flaeche-blau);background:var(--flaeche-blau);color:var(--tinte)}
+.puk-say__label{display:block;margin-bottom:var(--space-1);color:var(--tinte-leise);font-size:1rem;line-height:1.4;font-weight:var(--fw-regular)}
+.puk-say__item--hilfreich .puk-say__label{color:var(--blau-125);font-weight:var(--fw-medium)}
+.bl-say-title{margin:var(--space-6) 0 var(--space-2);color:var(--tinte-leise);font-size:1rem;font-weight:var(--fw-medium)}
+
+/* Hinweis zur Sicherheit (gelb) und Akuthinweis mit dem freigegebenen Wortlaut aus site.config.json (rot) */
+.puk-longform__boundary{max-width:var(--lesebreite);margin:var(--space-6) 0 0;padding:var(--space-4) var(--space-5);border-top:4px solid var(--gelb);background:var(--flaeche-gelb);color:var(--tinte);font-size:var(--puk-read-size);line-height:var(--web-lh-body);font-weight:var(--fw-regular)}
+.puk-longform__boundary a{color:var(--blau-125);text-decoration:underline;text-underline-offset:.18em}
+.puk-longform__boundary.puk-site-inline-ref{margin:var(--space-6) 0;border-top-color:var(--rot);background:var(--flaeche-rot)}
+.puk-site-inline-ref a{color:var(--rot-text);font-weight:var(--fw-medium);white-space:nowrap}
+.puk-site-inline-ref a:hover{color:var(--puk-red-text-hover)}
+.puk-longform__boundary--repeat,.puk-longform__boundary.puk-site-inline-ref.puk-longform__boundary--repeat{padding:var(--space-3) 0 0;border-top-width:1px;background:transparent}
+@media (min-width:47.5rem){.puk-longform__boundary{padding:var(--space-5) var(--space-6)}}
+
+/* Das Wichtigste (oben auf Themenseiten) und «Wenn Sie sich jetzt Sorgen machen» (Krisen begleiten) */
+.puk-site-quick{margin-block:var(--space-6) 0}
+.puk-site-quick>*{max-width:var(--lesebreite)}
+.puk-site-quick>h2,.puk-site-quick>.puk-web-h2{margin:0;padding-top:var(--space-4);border-top:2px solid var(--blau);font-size:1.25rem;line-height:1.4}
+.puk-site-quick :is(ol,ul){margin:var(--space-3) 0 0;padding-left:1.4em}
+.puk-site-quick li+li{margin-top:var(--space-2)}
+.puk-longform__hero:has(+.puk-site-quick){padding-bottom:var(--space-6)}
+.puk-longform__hero+.puk-site-quick{margin-top:0}
+.puk-site-quick-entry{margin:var(--space-5) 0 0;padding:0;border:0;background:none}
+
+/* Merksatz und Nachdenkfeld */
+.puk-longform__reflection{margin:var(--space-8) 0;padding:var(--space-5) var(--space-6);background:var(--flaeche-blau)}
+.puk-longform__reflection h3{margin:0 0 var(--space-3)}
+.puk-longform__reflection p{margin:0 0 var(--space-5)}
+.puk-longform__reflection label{display:block;margin-bottom:var(--space-2);font-weight:var(--fw-medium)}
+.puk-longform__reflection textarea{width:100%;min-height:132px;padding:var(--space-4);resize:vertical;border:1px solid var(--linie-bedienung);border-radius:var(--radius-xs);background:var(--papier);color:var(--tinte);font:inherit;line-height:1.45}
+.puk-longform__reflection textarea:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+.puk-longform__reflection.bl-merksatz{padding:var(--space-5) 0 0;border-top:2px solid var(--tinte);background:none}
+.puk-longform__copy .bl-merksatz h3{margin:0 0 var(--space-2);color:var(--tinte-leise);font-size:1rem;line-height:1.4;font-weight:var(--fw-medium);letter-spacing:0;text-transform:none}
+.puk-longform__copy .bl-merksatz p{margin:0;color:var(--tinte);font-size:clamp(1.375rem,1.2rem + .6vw,1.625rem);line-height:1.4}
+
+/* Erklärende Listen und Gegenüberstellungen im Text (Borderline verstehen) */
+.puk-longform__copy .bl-merkmale{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:var(--space-3);margin:var(--space-4) 0 var(--space-5);padding:0;list-style:none}
+.puk-longform__copy .bl-merkmale>li{margin:0;padding:var(--space-4) var(--space-5);background:var(--flaeche-grau)}
+.bl-rule{padding-block:var(--space-5);border-top:2px solid var(--tinte);border-bottom:1px solid var(--linie)}
+.bl-annahmen{margin:var(--space-6) 0;border-top:2px solid var(--tinte)}
+.bl-annahmen dt,.bl-annahmen dd{margin:0;padding-block:var(--space-5)}
+.puk-longform__copy .bl-annahmen dt{margin:0;color:var(--tinte-leise);font-size:clamp(1.1875rem,1rem + .6vw,1.375rem);font-weight:var(--fw-regular);line-height:1.35}
+.puk-longform__copy .bl-annahmen dd{margin:0;border-bottom:1px solid var(--linie)}
+@media (min-width:56.25rem){
+  .bl-section--wide .bl-annahmen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);column-gap:var(--space-8)}
+  .bl-annahmen dt{border-bottom:1px solid var(--linie)}
+}
+.bl-section--wide .puk-longform__copy>:is(.bl-annahmen,.puk-site-paths){max-width:none}
+
+/* Lesepfade (Startseite): eigenständige Links, mindestens 44 px hoch */
+.puk-site-paths{display:grid;gap:var(--space-5);margin:0;padding:0;list-style:none}
+.puk-site-paths li{min-width:0;margin:0;padding-top:var(--space-4);border-top:1px solid var(--linie)}
+.puk-site-paths a{display:inline-block;max-width:100%;min-height:var(--web-touch-target);padding-block:.3em;color:var(--blau);font-size:1.3125rem;line-height:1.3;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
+.puk-site-paths a:hover{color:var(--blau-125)}
+.puk-longform__copy .puk-site-paths p{margin:var(--space-2) 0 0}
+/* Einstiege nach Anliegen: die ganze Karte ist der Link. Die erste Karte («Ich sorge mich um Sicherheit …») steht
+   über die ganze Breite und gelb: Schutz geht vor. */
+.bl-paths-cards{grid-template-columns:minmax(0,1fr);gap:var(--space-3)}
+.bl-paths-cards li{position:relative;display:flex;flex-direction:column;gap:var(--space-2);margin:0;padding:var(--space-5);border:1px solid transparent;background:var(--flaeche-blau)}
+.bl-paths-cards li:hover{border-color:var(--blau)}
+.bl-paths-cards li:first-child{border-top:4px solid var(--gelb);background:var(--flaeche-gelb)}
+.bl-paths-cards li:first-child:hover{border-color:var(--tinte);border-top-color:var(--gelb)}
+.bl-paths-cards a{min-height:0;padding-block:0;color:var(--tinte);font-size:1.25rem;line-height:1.3;font-weight:var(--fw-medium);text-decoration:none}
+.bl-paths-cards a::after{content:"";position:absolute;inset:0}
+.bl-paths-cards li:focus-within{outline:3px solid var(--fokus);outline-offset:2px}
+/* Ein Fokusrahmen um die ganze Karte, nur bei Tastaturbedienung (P708-W6). Ohne :has() bleibt der Rahmen bei :focus-within */
+@supports selector(:has(*)){.bl-paths-cards li:focus-within{outline:none}.bl-paths-cards li:has(a:focus-visible){outline:3px solid var(--fokus);outline-offset:2px}.bl-paths-cards a:focus-visible{box-shadow:none}}
+.puk-longform__copy .bl-paths-cards p{margin:0;color:var(--tinte-leise);font-size:1.0625rem;line-height:1.5}
+@media (min-width:47.5rem){
+  .bl-paths-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4)}
+  .bl-paths-cards>li:first-child{grid-column:1/-1}
+  .bl-paths-cards li{padding:var(--space-6)}
+  .bl-paths-cards a{font-size:1.4375rem}
+}
+/* Themen als ruhige, linierte Liste */
+.bl-paths-lines{grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:0 var(--space-8);border-top:1px solid var(--linie)}
+.bl-paths-lines li{padding-block:var(--space-4);border-top:0;border-bottom:1px solid var(--linie)}
+.bl-paths-lines a{color:var(--tinte);font-size:1.25rem;font-weight:var(--fw-medium);text-decoration:none}
+.bl-paths-lines a::after{content:"\00a0→";content:"\00a0→" / "";color:var(--blau-125)}
+.bl-paths-lines a:hover{color:var(--blau-125);text-decoration:underline}
+.puk-longform__copy .bl-paths-lines p{color:var(--tinte-leise);font-size:1.0625rem;line-height:1.5}
+
+/* Band «Haltung» (Startseite): die einzige dunkle Fläche der Website, über die ganze Fensterbreite */
+.bl-band{--bl-surface:var(--nachtblau);margin-top:var(--space-16);padding-block:var(--space-12);background:var(--nachtblau);color:var(--papier);border-image:conic-gradient(var(--bl-surface) 0 0) fill 0//0 100vmax}
+.bl-band .puk-longform__kicker{color:var(--blau-25)}
+.bl-band .puk-web-h2{color:var(--papier)}
+.puk-longform__copy .bl-band p,.bl-band .puk-longform__copy p{color:var(--papier);font-size:1.25rem;line-height:1.6}
+.bl-band a{color:var(--papier)}
+.bl-band :focus-visible{box-shadow:0 0 0 2px var(--nachtblau),0 0 0 4px var(--papier)}
+.bl-band+.puk-longform__section{padding-top:var(--space-16)}
+@media (min-width:47.5rem){.bl-band{padding-block:var(--space-16)}}
+
+/* Weite Abschnitte der Startseite: Raster über die ganze Breite, Text in Lesebreite */
+.bl-section--wide .puk-longform__copy>:not(p){max-width:none}
+
+/* Nachschlagen, Suche, Angebote und Vertiefungen (IA-Überarbeitung 13.10.2026, übernommen) */
+.puk-site-faq{border-top:1px solid var(--ui-hairline)}
+.puk-site-faq:last-child{border-bottom:1px solid var(--ui-hairline)}
+.puk-site-faq summary{position:relative;padding:var(--space-4) var(--space-8) var(--space-4) 0;cursor:pointer;list-style:none}
+.puk-site-faq summary::-webkit-details-marker{display:none}
+.puk-site-faq summary::after{content:"+";position:absolute;right:0;top:var(--space-4);font:var(--type-title-3)}
+.puk-site-faq[open] summary::after{content:"−"}
+.puk-site-faq summary h3{display:inline;margin:0}
+.puk-site-faq__answer{padding:0 0 var(--space-5)}
+.puk-site-faq__answer>:first-child{margin-top:0}
+.puk-site-faq:has(h3:target)>.puk-site-faq__answer{display:block}
+.puk-site-faq:has(h3:target)>summary{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}
+.puk-site-resource{margin-top:var(--space-5);border-top:1px solid var(--ui-hairline);border-bottom:1px solid var(--ui-hairline)}
+.puk-site-resource>summary{position:relative;padding:var(--space-4) var(--space-8) var(--space-4) 0;cursor:pointer;font:var(--type-title-3);list-style:none}
+.puk-site-resource>summary::-webkit-details-marker{display:none}
+.puk-site-resource>summary::after{content:"+";position:absolute;right:0}
+.puk-site-resource[open]>summary::after{content:"−"}
+.puk-site-resource__content{padding-bottom:var(--space-5)}
+.puk-site-glossary{border-top:1px solid var(--ui-hairline)}
+.puk-site-glossary:last-child{border-bottom:1px solid var(--ui-hairline)}
+.puk-site-glossary>summary{position:relative;padding:var(--space-4) var(--space-8) var(--space-4) 0;cursor:pointer;font:var(--type-title-3);list-style:none}
+.puk-site-glossary>summary::-webkit-details-marker{display:none}
+.puk-site-glossary>summary::after{content:"+";position:absolute;right:0}
+.puk-site-glossary[open]>summary::after{content:"−"}
+.puk-site-glossary__content{padding:0 0 var(--space-5)}
+.puk-site-glossary__content>:first-child{margin-top:0}
+.puk-site-glossary>summary:target{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}
+.puk-site-filter{margin-block:var(--space-5);padding:var(--space-5);background:var(--flaeche-grau)}
+[data-puk-filter]:not([data-filter-enhanced]) .puk-site-filter,[data-puk-search]:not([data-search-enhanced]) .puk-site-filter{display:none}
+.puk-site-filter label{display:block;margin-bottom:var(--space-2);font-weight:var(--fw-medium)}
+.puk-site-filter input[type="search"]{box-sizing:border-box;width:100%;min-height:2.75rem;padding:var(--space-2) var(--space-3);border:1px solid var(--linie-bedienung);border-radius:var(--radius-sm);background:var(--papier);color:var(--text-default)}
+.puk-site-filter input[type="search"]:focus-visible{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}
+.puk-site-filter__status{margin-bottom:0;color:var(--text-muted);font:var(--type-body-sm)}
+.puk-site-filter__empty{margin-top:var(--space-5);font-weight:var(--fw-medium)}
+.puk-site-result-list,.puk-site-offers{display:grid;gap:var(--space-4);margin:var(--space-5) 0;padding:0;list-style:none}
+.puk-site-result,.puk-site-offer{padding:var(--space-5);border:1px solid var(--ui-hairline)}
+.puk-site-result h2,.puk-site-offer h3{margin-top:0}
+.puk-site-result p:last-child,.puk-site-offer p:last-child,.puk-site-offer dl:last-child{margin-bottom:0}
+.puk-site-result__context{margin-top:calc(var(--space-2) * -1);color:var(--text-muted);font:var(--type-body-sm)}
+.puk-site-offer dl{display:grid;grid-template-columns:minmax(6rem,auto) 1fr;gap:var(--space-1) var(--space-3)}
+.puk-site-offer dt{font-weight:var(--fw-medium)}
+.puk-site-offer dd{margin:0}
+.puk-site-service{margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--ui-hairline)}
+.puk-site-reviewed{margin-top:var(--space-3);font:var(--type-body-sm);color:var(--text-muted)}
+.puk-site-depth{margin:var(--space-5) 0;border-top:1px solid var(--ui-hairline);border-bottom:1px solid var(--ui-hairline)}
+.puk-site-depth>summary{position:relative;box-sizing:border-box;width:100%;max-width:var(--web-container-max);margin-inline:auto;padding:var(--space-4) var(--space-10) var(--space-4) var(--web-gutter-inline);cursor:pointer;font:var(--type-title-3);list-style:none}
+.puk-site-depth>summary::-webkit-details-marker{display:none}
+.puk-site-depth>summary::after{content:"+";position:absolute;right:var(--space-5)}
+.puk-site-depth[open]>summary::after{content:"−"}
+.puk-site-depth__content>.puk-longform__section{margin-top:0}
+[data-filter-item][hidden],[data-search-item][hidden]{display:none!important}
+@media (max-width:759px){.puk-site-utility{width:100%;margin-left:0}.puk-site-offer dl{grid-template-columns:1fr}.puk-site-offer dd+dt{margin-top:var(--space-2)}}
+@media print{.puk-site-breadcrumb,.puk-site-related,.puk-site-filter,.puk-site-utility,.puk-site-depth>summary,[data-search-results]{display:none!important}.puk-site-result[hidden],.puk-site-offer[hidden],[data-filter-item][hidden]{display:block!important}}
+
+/* Validierungsstufen als Tabelle (kommunizieren › anerkennen, M6.3, Release C) */
+.bl-tabelle{width:100%;border-collapse:collapse;font:var(--type-body-sm);color:var(--text-default)}
+.bl-tabelle th,.bl-tabelle td{padding:var(--space-3) var(--space-4);border-top:1px solid var(--border-hairline);text-align:left;vertical-align:top;hyphens:auto}
+.bl-tabelle thead th{border-top:0;background:var(--surface-structure);font-weight:var(--fw-medium)}
+.bl-tabelle tbody th{font-weight:var(--fw-medium)}
+.bl-tabelle .bl-stufen__n{font-weight:var(--fw-regular)}
+@media (max-width:760px){
+  .bl-tabelle thead{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .bl-tabelle,.bl-tabelle tbody,.bl-tabelle tr,.bl-tabelle th,.bl-tabelle td{display:block}
+  .bl-tabelle tr{border-top:1px solid var(--border-hairline);padding:var(--space-3) var(--space-4)}
+  .bl-tabelle tbody tr:first-child{border-top:0}
+  .bl-tabelle th,.bl-tabelle td{border-top:0;padding:0}
+  .bl-tabelle td{margin-top:var(--space-2)}
+  .bl-tabelle td::before{content:attr(data-label);display:block;font:var(--type-caption);color:var(--text-muted)}
+}
+/* Frühe Werkzeuge (Suche, Filter) und Hinweise zur lokalen Verarbeitung (Audit 04, r4-39, übernommen) */
+.bl-crisis-intro{margin-block:var(--space-6)}
+.puk-longform__hero:has(+[data-early-tool]){padding-bottom:0}
+[data-early-tool]{margin-top:var(--space-4);padding-top:0}
+[data-early-tool]>.puk-longform__section-grid{display:block}
+[data-early-tool] .puk-longform__copy{max-width:68ch}
+[data-early-tool] .puk-site-filter,.puk-longform__hero>.puk-site-filter{margin-top:var(--space-4);max-width:68ch}
+.bl-local-privacy{font:var(--type-body-sm);max-width:68ch;margin-block:var(--space-2)}
+.bl-followup{max-width:68ch;margin-top:var(--space-6)}
+.puk-site-filter .bl-local-privacy{margin-block:var(--space-3)}
+/* Anpassungen der übernommenen Bausteine an den Rahmen r4-43: Begriff und Angabe in Angebotskarten auf einer Zeile,
+   frühe Werkzeuge und Hinweise in Lesebreite. */
+.puk-longform__copy .puk-site-offer dl{row-gap:var(--space-2)}
+.puk-longform__copy .puk-site-offer :is(dt,dd){margin:0}
+.puk-longform__hero>.puk-site-filter,[data-early-tool] .puk-site-filter,[data-early-tool] .puk-longform__copy,.bl-local-privacy,.bl-followup{max-width:var(--lesebreite)}
+.puk-site-filter{padding:var(--space-4) var(--space-5)}
+.puk-site-filter input[type="search"]:focus-visible{border-color:var(--blau)}
+
+/* ======================= 6 Abbildungen ======================= */
 /* ===== ../longform/visual-patterns.css ===== */
 /* PUK Website Kit 1.10.1-r4 · abgeleitet – Visualisierungsmuster für Langform (r3 eingeführt, r4 erweitert: Vergleich, Entscheidungsweg, Kreislauf-Rücksprung).
    Ergänzung des abgeleiteten Profils, nicht Teil der kanonischen Quelle PUK Zürich Design System 1.10.1.
@@ -881,8 +1153,6 @@ html.puk-scroll-lock{overflow:hidden}
 }
 /* Schmale Spalten in Figuren trennen nach Silben statt mitten im Wort (Prüfbefund BD-04, Abschnitt «Technische Qualität», F). */
 .puk-vis-wide :where(li,dl,h3){hyphens:auto}
-/* 200 % Text: lange Roadmap-Einträge umbrechen statt überlaufen */
-.puk-longform__roadmap li,.puk-longform__roadmap a{min-width:0;max-width:100%;overflow-wrap:anywhere}
 /* Keine selbstlaufende Animation: Kreislaufpfeile sind statisch (Profilentscheid 06.10.2026, Abschnitt «Interaktionskonzept»). */
 
 /* Drei Erklärungsebenen für alle Muster A–K (Profilentscheid 08.10.2026):
@@ -1045,87 +1315,6 @@ html.puk-scroll-lock{overflow:hidden}
   .puk-vis-balance{max-width:720px}
 }
 
-/* ===== starter.css ===== */
-/* PUK Website Kit 1.10.1-r4 · abgeleitet – Psychoedukations-Starter. Nach styles.css und visual-patterns.css einbinden.
-   Nur Seitenrahmen des Starters: Absenderin, Entwurfsmarken, Zuständigkeitsverweis, Platzhalter, Lesepfade. Flache Flächen. */
-.puk-site-sender{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--space-1) var(--space-3);margin:0;padding-block:0 var(--space-4);font:var(--type-body-sm);color:var(--text-default);min-width:0}
-.puk-site-sender__label{font:var(--type-caption);color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em}
-.puk-site-sender__name{font-weight:var(--fw-medium)}
-.puk-site-draft{display:inline-block;padding:1px 8px;border:1px dashed var(--puk-black-75);background:var(--puk-white);font:var(--type-caption);color:var(--text-default)}
-.puk-site-draftbar{margin:0;padding-block:var(--space-2);background:var(--puk-yellow);color:var(--puk-black-100);font:var(--type-body-sm);font-weight:var(--fw-medium)}
-.puk-site-draftbar span{display:block}
-.puk-site-safety--direct{background:var(--surface-structure);border-bottom:1px solid var(--border-hairline)}
-.puk-site-safety__inner{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3) var(--space-5);padding-block:var(--space-4)}
-.puk-site-safety__title{margin:0;font:var(--type-body);font-weight:var(--fw-medium);color:var(--text-default)}
-.puk-site-safety .puk-link--action{max-width:100%;overflow-wrap:anywhere}
-.puk-site-review{margin:0;flex-basis:100%;font:var(--type-caption);color:var(--text-default)}
-.puk-site-safety--subdued a,.puk-site-safety--responsibility a{overflow-wrap:anywhere}
-.puk-site-placeholder{margin:var(--space-5) 0 0;padding:var(--space-4) var(--space-5);border:2px dashed var(--puk-blue-100);background:var(--ui-field);max-width:72ch;color:var(--text-default)}
-.puk-site-placeholder p{margin:0 0 var(--space-2)}.puk-site-placeholder p:last-child{margin-bottom:0}
-.puk-site-paths{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-5)}
-.puk-site-paths li{padding-top:var(--space-4);border-top:1px solid var(--border-hairline);min-width:0}
-/* Lesepfade sind eigenständige Links: mindestens 44 px hoch (Prüfbefund BD-06/W3-04, 11.10.2026). inline-block statt inline-flex,
-   damit lange Wörter bei 320 px und 200 % Schrift umbrechen. */
-.puk-site-paths a{display:inline-block;max-width:100%;min-height:var(--web-touch-target);padding-block:.3em;font:var(--type-title-3);color:var(--text-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
-.puk-site-paths a:hover{color:var(--text-link-hover)}
-.puk-site-paths p{margin:var(--space-2) 0 0}
-/* Robustheit 320 px / 200 % Text (gleiche Regeln wie ui_kits/website/kit.css): Rasterzellen dürfen schrumpfen,
-   Wörter bleiben ganz, solange sie in eine Zeile passen. Fliesstext ohne automatische Silbentrennung; schmale Spalten
-   (Navigation, Spalten und Stationen in Figuren) trennen nach Silben (hyphens:auto, Abschnitt «Technische Qualität», F). */
-.puk-web-page{overflow-wrap:break-word;hyphens:manual}
-.puk-web-page :where(li,article,section,div,dl,dd,dt,figure,figcaption,p,h1,h2,h3,label,a,strong,span){min-width:0}
-.puk-longform__section-heading{container-type:inline-size}
-.puk-longform__section-heading .puk-web-h2{max-width:none;font-size:max(1.625rem,min(var(--web-size-h2-fluid),11.5cqi))}
-.puk-longform__section-grid{grid-template-columns:minmax(220px,.58fr) minmax(0,1.42fr)}
-@media (max-width:760px){.puk-longform__section-grid{grid-template-columns:minmax(0,1fr)}}
-/* Hauptnavigation unter 760 px zweispaltig (Prüfbefund BD-05/W3-06, 11.10.2026); bei grosser Schrift einspaltig, weil die Spaltenbreite in rem wächst. */
-@media (max-width:760px){.puk-web-nav__list{grid-template-columns:repeat(auto-fit,minmax(min(100%,8.25rem),1fr))}}
-.puk-web-nav__link,.puk-longform__roadmap a,.puk-link--action{min-width:0;max-width:100%;overflow-wrap:anywhere}
-/* Direkt verlinkte Abschnitte und Überschriften erhalten vorübergehend tabindex=-1.
-   Der Fokus muss trotz des aus der Tab-Reihenfolge ausgeschlossenen Ziels sichtbar
-   bleiben; main ist absichtlich ausgenommen, damit der Skip-Link den Inhaltsbereich
-   nicht mit einem seitenbreiten Ring umgibt. */
-.puk-longform :where(section,h2,h3,h4)[tabindex="-1"]:focus{outline:none;box-shadow:var(--focus-ring);border-radius:var(--radius-sm)}
-@media (forced-colors:active){.puk-longform :where(section,h2,h3,h4)[tabindex="-1"]:focus{outline:2px solid CanvasText;outline-offset:2px;box-shadow:none}}
-/* Sprungziel am Seitenende: Ein Abschnitt, auf den ein Link springt und der zuletzt steht, braucht genug Höhe,
-   damit er an die Oberkante scrollen kann (sonst endet die Seite vorher). Nur an solchen Abschnitten setzen. */
-.puk-site-anchor-end{min-height:calc(100svh - 32px)}
-/* Profilentscheid 06.10.2026: Textfarbe auf Websites Hausschwarz (--text-default, #222222) statt Bestandsausnahme #000000. */
-.puk-web-page{color:var(--text-default)}
-
-/* Zwischentitel innerhalb eines Abschnitts (z. B. häufige Fragen) */
-.puk-site-subheading{margin:var(--space-8) 0 var(--space-3);font:var(--type-title-3);color:var(--text-default)}
-
-/* Hauptnavigation mit mehr als sechs Punkten (Profilentscheid 11.10.2026, Abschnitt «Interaktionskonzept»): tools/build.mjs
-   setzt die Liste in ein Dropdown-Menü (data-puk-disclosure). Unter 760 px öffnet «Menü» die Liste im Fluss; breit bleiben alle
-   Punkte sichtbar, die Schaltfläche entfällt. Ohne Skript steht die Liste offen. */
-.puk-site-menu{display:block}
-.puk-site-menu .puk-web-nav__list{position:static;min-width:0;max-width:none;margin:0;padding:0;border:0;background:none;box-shadow:none;animation:none}
-.puk-site-menu .puk-disclosure__button{width:100%;justify-content:space-between;padding:6px 4px;border-top:1px solid var(--border-hairline);font-size:1.125rem;font-weight:var(--fw-regular)}
-.puk-site-menu .puk-disclosure__button[data-current="true"]{color:var(--text-default)}
-.puk-site-menu .puk-disclosure__button[aria-expanded="true"]{color:var(--puk-blue-100)}
-.puk-site-menu .puk-disclosure__label{padding:6px 4px;font-size:1.125rem}
-@media not all and (max-width:60rem){
-  .puk-site-menu .puk-disclosure__label,.puk-site-menu .puk-disclosure__button{display:none}
-  .puk-site-menu .puk-web-nav__list[hidden]{display:flex}
-}
-
-/* Der Footer bleibt eine ruhige Sekundärebene: Zuständigkeit und Abgrenzung sind klar getrennt,
-   redaktionelle Angaben und rechtliche Wege bilden eine kompakte Metadatengruppe. */
-.puk-site-safety--responsibility{padding-inline-start:var(--space-4);border-inline-start:2px solid var(--border-default)}
-.puk-web-footer__boundary{max-width:62ch;margin-block-start:var(--space-4);padding-block-start:var(--space-3);border-top:1px solid var(--border-default)}
-.puk-web-footer__boundary .puk-web-footer__copy{margin-block-start:var(--space-1);font-size:.875rem}
-.puk-web-footer__details{max-width:62ch;margin-block-start:var(--space-3);padding-block-start:var(--space-3);border-top:1px solid var(--border-default)}
-.puk-web-footer__details .puk-web-footer__meta+.puk-web-footer__meta{margin-block-start:var(--space-1)}
-
-/* Impressum und Datenschutzerklärung in der Fusszeile (Prüfbefund W3-05, site.config.json › legal) */
-.puk-site-legal{margin:var(--space-1) 0 0;font-size:.875rem;line-height:1.5}
-.puk-site-legal a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target);padding-block:.35em}
-
-/* Globale Wege zu Grundsätzen, Barrierefreiheit und Rückmeldung (site.config.json › footer.links) */
-.puk-site-info-links{margin-block-start:var(--space-3);font-size:.875rem;line-height:1.5}
-.puk-site-info-links ul{display:flex;flex-wrap:wrap;gap:0 var(--space-6);margin:0;padding:0;list-style:none}
-.puk-site-info-links a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target);padding-block:.35em}
 
 /* ===== borderline.css ===== */
 /* Borderline – Orientierung für Angehörige · website-eigene Ergänzung, nach starter.css einbinden.
@@ -1378,156 +1567,7 @@ html.puk-scroll-lock{overflow:hidden}
   .puk-vis-figure{min-width:0;max-width:100%}
   .puk-vis-figure :where(h2,h3,h4,p,li,dt,dd,strong,span){min-width:0;hyphens:auto;overflow-wrap:anywhere}
 }
-
-/* IA-Überarbeitung 13.10.2026: Bereichskontext, Brotkrümel und nächste sinnvolle Wege. */
-.puk-web-nav__link[aria-current="location"]{font-weight:var(--fw-medium);text-decoration-thickness:var(--border-width-strong);text-underline-offset:var(--space-1)}
-.puk-site-breadcrumb{border-bottom:1px solid var(--ui-hairline);background:var(--surface-subtle)}
-.puk-site-breadcrumb ol{display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-2);margin:0;padding:var(--space-3) 0;font:var(--type-body-sm)}
-.puk-site-breadcrumb li{display:flex;align-items:center;min-width:0;margin:0}
-.puk-site-breadcrumb li+li::before{content:"/";margin-right:var(--space-2);color:var(--text-muted)}
-.puk-site-breadcrumb a,.puk-site-breadcrumb span{overflow-wrap:anywhere}
-.puk-site-related{margin-top:var(--space-12);padding:var(--space-10) 0;background:var(--surface-subtle)}
-.puk-site-related h2{margin-top:0}
-.puk-site-related ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--space-3) var(--space-6);margin:var(--space-5) 0 0;padding:0;list-style:none}
-.puk-site-related li{margin:0}
-.puk-site-related a{display:inline-block;max-width:100%;padding-block:var(--space-1);overflow-wrap:anywhere}
-.puk-site-sender__contact{margin-left:var(--space-2)}
-[data-sender-email]{display:inline-flex;align-items:center;min-height:var(--web-touch-target);max-width:100%;margin-block:calc((var(--web-touch-target) - 1.5em)/-2);overflow-wrap:anywhere}
-.puk-longform address{font-style:normal}
-.puk-site-faq{border-top:1px solid var(--ui-hairline)}
-.puk-site-faq:last-child{border-bottom:1px solid var(--ui-hairline)}
-.puk-site-faq summary{position:relative;padding:var(--space-4) var(--space-8) var(--space-4) 0;cursor:pointer;list-style:none}
-.puk-site-faq summary::-webkit-details-marker{display:none}
-.puk-site-faq summary::after{content:"+";position:absolute;right:0;top:var(--space-4);font:var(--type-title-3)}
-.puk-site-faq[open] summary::after{content:"−"}
-.puk-site-faq summary h3{display:inline;margin:0}
-.puk-site-faq__answer{padding:0 0 var(--space-5)}
-.puk-site-faq__answer>:first-child{margin-top:0}
-.puk-site-faq:has(h3:target)>.puk-site-faq__answer{display:block}
-.puk-site-faq:has(h3:target)>summary{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}
-.puk-site-resource{margin-top:var(--space-5);border-top:1px solid var(--ui-hairline);border-bottom:1px solid var(--ui-hairline)}
-.puk-site-resource>summary{position:relative;padding:var(--space-4) var(--space-8) var(--space-4) 0;cursor:pointer;font:var(--type-title-3);list-style:none}
-.puk-site-resource>summary::-webkit-details-marker{display:none}
-.puk-site-resource>summary::after{content:"+";position:absolute;right:0}
-.puk-site-resource[open]>summary::after{content:"−"}
-.puk-site-resource__content{padding-bottom:var(--space-5)}
-.puk-site-glossary{border-top:1px solid var(--ui-hairline)}
-.puk-site-glossary:last-child{border-bottom:1px solid var(--ui-hairline)}
-.puk-site-glossary>summary{position:relative;padding:var(--space-4) var(--space-8) var(--space-4) 0;cursor:pointer;font:var(--type-title-3);list-style:none}
-.puk-site-glossary>summary::-webkit-details-marker{display:none}
-.puk-site-glossary>summary::after{content:"+";position:absolute;right:0}
-.puk-site-glossary[open]>summary::after{content:"−"}
-.puk-site-glossary__content{padding:0 0 var(--space-5)}
-.puk-site-glossary__content>:first-child{margin-top:0}
-.puk-site-glossary>summary:target{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}
-.puk-site-utility{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2) var(--space-4);margin-left:auto}
-.puk-site-utility__link{display:inline-flex;align-items:center;min-height:2.75rem;padding:var(--space-2) 0;font:var(--type-body-sm);font-weight:var(--fw-medium)}
-.puk-site-utility__link[aria-current="page"]{text-decoration-thickness:var(--border-width-strong);text-underline-offset:var(--space-1)}
-.puk-site-quick-entry{margin-top:var(--space-5);padding:var(--space-4);border-left:var(--border-width-strong) solid var(--puk-blue-100);background:var(--surface-subtle)}
-.puk-site-quick{margin-block:var(--space-6) var(--space-8);padding:var(--space-5);border-left:var(--border-width-strong) solid var(--puk-blue-100);background:var(--surface-subtle)}
-.puk-site-quick h2{margin-top:0}
-.puk-site-quick ol,.puk-site-quick ul{margin-bottom:0}
-.puk-site-filter{margin-block:var(--space-5);padding:var(--space-5);background:var(--surface-subtle)}
-[data-puk-filter]:not([data-filter-enhanced]) .puk-site-filter,[data-puk-search]:not([data-search-enhanced]) .puk-site-filter{display:none}
-.puk-site-filter label{display:block;margin-bottom:var(--space-2);font-weight:var(--fw-medium)}
-.puk-site-filter input[type="search"]{box-sizing:border-box;width:100%;min-height:2.75rem;padding:var(--space-2) var(--space-3);border:var(--border-width) solid var(--border-hairline);border-radius:var(--radius-md);background:var(--ui-field);color:var(--text-default)}
-.puk-site-filter input[type="search"]:focus-visible{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}
-.puk-site-filter__status{margin-bottom:0;color:var(--text-muted);font:var(--type-body-sm)}
-.puk-site-filter__empty{margin-top:var(--space-5);font-weight:var(--fw-medium)}
-.puk-site-result-list,.puk-site-offers{display:grid;gap:var(--space-4);margin:var(--space-5) 0;padding:0;list-style:none}
-.puk-site-result,.puk-site-offer{padding:var(--space-5);border:1px solid var(--ui-hairline)}
-.puk-site-result h2,.puk-site-offer h3{margin-top:0}
-.puk-site-result p:last-child,.puk-site-offer p:last-child,.puk-site-offer dl:last-child{margin-bottom:0}
-.puk-site-result__context{margin-top:calc(var(--space-2) * -1);color:var(--text-muted);font:var(--type-body-sm)}
-.puk-site-offer dl{display:grid;grid-template-columns:minmax(6rem,auto) 1fr;gap:var(--space-1) var(--space-3)}
-.puk-site-offer dt{font-weight:var(--fw-medium)}
-.puk-site-offer dd{margin:0}
-.puk-site-service{margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--ui-hairline)}
-.puk-site-reviewed{margin-top:var(--space-3);font:var(--type-body-sm);color:var(--text-muted)}
-.puk-site-depth{margin:var(--space-5) 0;border-top:1px solid var(--ui-hairline);border-bottom:1px solid var(--ui-hairline)}
-.puk-site-depth>summary{position:relative;box-sizing:border-box;width:100%;max-width:var(--web-container-max);margin-inline:auto;padding:var(--space-4) var(--space-10) var(--space-4) var(--web-gutter-inline);cursor:pointer;font:var(--type-title-3);list-style:none}
-.puk-site-depth>summary::-webkit-details-marker{display:none}
-.puk-site-depth>summary::after{content:"+";position:absolute;right:var(--space-5)}
-.puk-site-depth[open]>summary::after{content:"−"}
-.puk-site-depth__content>.puk-longform__section{margin-top:0}
-[data-filter-item][hidden],[data-search-item][hidden]{display:none!important}
-@media (max-width:759px){.puk-site-utility{width:100%;margin-left:0}.puk-site-offer dl{grid-template-columns:1fr}.puk-site-offer dd+dt{margin-top:var(--space-2)}}
-@media print{.puk-site-breadcrumb,.puk-site-related,.puk-site-filter,.puk-site-utility,.puk-site-depth>summary,[data-search-results]{display:none!important}.puk-site-result[hidden],.puk-site-offer[hidden],[data-filter-item][hidden]{display:block!important}}
-
-/* Validierungsstufen als Tabelle (kommunizieren › anerkennen, M6.3, Release C) */
-.bl-tabelle{width:100%;border-collapse:collapse;font:var(--type-body-sm);color:var(--text-default)}
-.bl-tabelle th,.bl-tabelle td{padding:var(--space-3) var(--space-4);border-top:1px solid var(--border-hairline);text-align:left;vertical-align:top;hyphens:auto}
-.bl-tabelle thead th{border-top:0;background:var(--surface-structure);font-weight:var(--fw-medium)}
-.bl-tabelle tbody th{font-weight:var(--fw-medium)}
-.bl-tabelle .bl-stufen__n{font-weight:var(--fw-regular)}
-@media (max-width:760px){
-  .bl-tabelle thead{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  .bl-tabelle,.bl-tabelle tbody,.bl-tabelle tr,.bl-tabelle th,.bl-tabelle td{display:block}
-  .bl-tabelle tr{border-top:1px solid var(--border-hairline);padding:var(--space-3) var(--space-4)}
-  .bl-tabelle tbody tr:first-child{border-top:0}
-  .bl-tabelle th,.bl-tabelle td{border-top:0;padding:0}
-  .bl-tabelle td{margin-top:var(--space-2)}
-  .bl-tabelle td::before{content:attr(data-label);display:block;font:var(--type-caption);color:var(--text-muted)}
-}
-
-/* Ruhiger Kontaktabschluss; situative Akuthinweise stehen im jeweiligen Thema. */
-.puk-web-footer{padding-block:28px;font-size:1rem}
-.puk-web-footer__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:28px}
-.puk-web-footer__links{display:flex;flex-wrap:wrap;gap:0 20px}
-.puk-web-footer__links a,.puk-web-footer [data-site-legal] a,.puk-site-safety--responsibility a{display:inline-flex;align-items:center;min-height:44px}
-.puk-web-footer__boundary{margin-top:12px;padding-top:0;border:0}
-.puk-web-footer__details{margin-top:8px;padding-top:8px}
-@media(max-width:759px){.puk-web-footer__grid{grid-template-columns:minmax(0,1fr);gap:20px}}
-
-/* Informationsseiten brauchen einen frühen Einstieg, keine Display-Titel.
-   Lokale Bildschirmproportionen; Schriftwahl, Lesetext und Druck bleiben erhalten. */
-.puk-site-start-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6)}
-@media screen{
-  .puk-web-header__inner{padding-block:var(--space-4);row-gap:var(--space-3)}
-  .puk-longform__hero{padding-block:clamp(2rem,4vw,3rem) clamp(2rem,3vw,2.5rem)}
-  .puk-longform__hero .puk-web-h1{max-width:24ch;margin-top:var(--space-4);font-size:clamp(2rem,1.5rem + 2.5vw,3.75rem);line-height:1.12;letter-spacing:normal}
-  .puk-longform__intro{margin-top:var(--space-5);font-size:clamp(1.25rem,1.125rem + .5vw,1.5rem);line-height:1.45}
-  .puk-site-start-actions+p{max-width:68ch;margin-top:var(--space-4);color:var(--text-muted);font-size:1rem;line-height:1.5}
-}
-@media screen and (max-width:760px){
-  .puk-web-header__inner{padding-block:var(--space-3);gap:var(--space-2)}
-  .puk-site-utility{gap:0 var(--space-4)}
-  .puk-site-sender{gap:var(--space-1) var(--space-3);padding-bottom:var(--space-3)}
-}
-
-/* Audit 04, r4-39: local layout extensions. No fixed heights or smaller body copy. */
-@media screen and (max-width:60rem){
-  .puk-web-header__inner{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:var(--space-2) var(--space-3);padding-block:var(--space-3)}
-  .puk-web-header__inner>.puk-web-logo{grid-column:1;grid-row:1}
-  .puk-web-logo img{width:min(var(--web-logo-width),100%);max-width:11rem}
-  .puk-site-nav--menu,.puk-site-menu{display:contents}
-  .puk-site-menu .puk-disclosure__button,.puk-site-menu .puk-disclosure__label{grid-column:2;grid-row:1;width:auto;min-height:2.75rem;border-top:0}
-  .puk-site-menu .puk-web-nav__list{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1fr);gap:0}
-  .puk-site-menu .puk-web-nav__list[hidden]{display:none}
-  .puk-site-utility{grid-column:1/-1;grid-row:3;width:auto;margin:0;gap:0 var(--space-4)}
-  .puk-site-sender{gap:0 var(--space-3);padding-bottom:var(--space-2)}
-  .puk-site-sender__label{display:none}
-  .puk-site-sender__contact{margin-left:0}
-}
-.puk-site-sender a{min-width:0;overflow-wrap:anywhere}
-/* A heading sidebar is useful only when the text beside it has sufficient measure.
-   rem responds to the browser's default font, including 200% text settings. */
-@media screen and (max-width:76rem){
-  .puk-longform__section-grid{grid-template-columns:minmax(0,1fr);gap:var(--space-5)}
-  .puk-longform__section-heading{position:static;container-type:normal}
-  .puk-longform__section-heading .puk-web-h2{font-size:var(--web-size-h2-fluid)}
-}
-.bl-crisis-intro{margin-block:var(--space-6)}
-.puk-longform__hero:has(+.puk-site-quick){padding-bottom:var(--space-3)}
-.puk-longform__hero+.puk-site-quick{margin-top:0}
-.puk-longform__hero:has(+[data-early-tool]){padding-bottom:0}
-[data-early-tool]{margin-top:var(--space-4);padding-top:0}
-[data-early-tool]>.puk-longform__section-grid{display:block}
-[data-early-tool] .puk-longform__copy{max-width:68ch}
-[data-early-tool] .puk-site-filter,.puk-longform__hero>.puk-site-filter{margin-top:var(--space-4);max-width:68ch}
-.bl-local-privacy{font:var(--type-body-sm);max-width:68ch;margin-block:var(--space-2)}
-.bl-followup{max-width:68ch;margin-top:var(--space-6)}
-.puk-site-filter .bl-local-privacy{margin-block:var(--space-3)}
+/* Abbildungen: Schrift, Versorgungskarte, Übergänge (Audit 04, r4-39, übernommen) */
 .bl-sicht .puk-vis-compare__col{display:block;grid-row:auto;grid-template-rows:none;align-self:start}
 .bl-sichten.puk-vis-compare{row-gap:var(--space-6)}
 .puk-longform__copy:has(>.puk-vis-tablewrap){container-type:inline-size}
@@ -1607,119 +1647,16 @@ html.puk-scroll-lock{overflow:hidden}
   .bl-relief__branches{border-top:0;border-left:2px solid var(--puk-blue-100);padding-left:var(--space-4)}
   .bl-relief__branches article::before{left:calc(-1 * var(--space-4));top:var(--space-6);height:0;width:var(--space-3);border-left:0;border-top:2px solid var(--puk-blue-100)}
 }
-/* Wide selection pages use the available width, with the acute entry first in DOM. */
-@media screen and (min-width:76.01rem){
-  #einstiege>.puk-longform__section-grid{grid-template-columns:minmax(0,1fr);gap:var(--space-5)}
-  #einstiege .puk-longform__copy{max-width:none}
-  #einstiege .puk-site-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3) var(--space-8)}
-  #einstiege .puk-site-paths>li{margin:0;padding-block:var(--space-3)}
-}
-
-/* ===== Gestaltung 2026-10-21 · Entwurf, nicht freigegeben =====
-   Quelle: Entwürfe «Borderline Startseite Entwurf» und «Borderline Verstehen Entwurf».
-   Nachgestellt, damit diese Regeln bei gleicher Spezifität gewinnen. Neue Klassen beginnen mit .bl-.
-   Prüfbedarf: Überschriften in Rubik Medium (500); das CD Manual nennt Light und Regular für Text. */
-:root{
-  /* Grundfläche: Schattierung von PUK-Blau unter 25 % («sämtliche Schattierungen zulässig», CD Manual). */
-  --bl-ground:#F5F7FF;
-  --bl-measure:46rem;
-}
-
-/* Volle Breite für Flächen innerhalb von .puk-web-container, ohne horizontales Scrollen */
-.puk-longform__hero,.bl-band,.puk-site-sender{border-image:conic-gradient(var(--bl-surface,transparent) 0 0) fill 0//0 100vmax}
-
-/* Kopf kompakter, Absenderin als schmale Zeile */
-.puk-web-header__inner{padding-block:var(--space-3)}
-.puk-site-sender{--bl-surface:var(--ui-wash);background:var(--ui-wash);padding-block:var(--space-2);font-size:.875rem}
-
-/* Einstieg */
-.puk-longform__hero{--bl-surface:var(--bl-ground);background:var(--bl-ground);padding-block:clamp(2.5rem,5vw,4.5rem) clamp(2rem,4vw,3.5rem)}
-.puk-longform__hero .puk-web-h1{max-width:20ch;font-size:clamp(2.125rem,1.4rem + 2.6vw,3.25rem);font-weight:var(--fw-medium);line-height:1.12;hyphens:none}
-/* Titeltrennung (Profil 2026.10.9, W-2; r4-41): Bei Standardschrift wird der Titel nie getrennt, auch nicht an weichen
-   Trennstellen. Ist der Einstieg schmaler als 12 em seiner Schrift (320–375 px bei 200 % Schrift; bei Standardschrift
-   mindestens 14,7 em), trennt der Titel Wörter ab 8 Zeichen nach Silben statt sie beliebig zu brechen (der Titel ist hier
-   mit 68 px grösser als im Profil, darum 8 statt 10 Zeichen). Browser ohne deutsches Trennmuster trennen nur an den
-   weichen Trennstellen, die lange Titelwörter in authoring/content/ tragen. */
-.puk-longform__hero{container-type:inline-size}
-@container (max-width:12em){.puk-longform__hero .puk-web-h1{hyphens:auto;hyphenate-limit-chars:8 4 4}}
-/* Ausnahme: «Begleiterkrankungen» ist auch bei Standardschrift länger als die Zeile bei 320–375 px; die gesetzte
-   Trennstelle «Begleit-erkrankungen» bleibt dort wirksam statt eines Umbruchs an beliebiger Stelle. */
-[data-page-id="diagnose"] .puk-longform__hero .puk-web-h1{hyphens:manual}
-.puk-longform__intro{max-width:38em;font-weight:var(--fw-light,300);line-height:1.55}
-.puk-site-start-actions .puk-link--action{background:var(--action-accent-bg);border-color:var(--action-accent-bg);color:var(--puk-white);font-weight:var(--fw-medium);padding:var(--space-3) var(--space-5);border-radius:var(--web-radius-btn-lg)}
-.puk-site-start-actions .puk-link--action:hover{background:var(--action-accent-bg-hover);border-color:var(--action-accent-bg-hover);color:var(--puk-white)}
-.puk-site-quick-entry{border-left:0;padding:0;background:none}
-
-/* Abschnitte einspaltig: Titel über dem Text statt leerer Titelspalte */
-.puk-longform__section-grid{grid-template-columns:minmax(0,1fr);gap:var(--space-5)}
-.puk-longform__section-heading{position:static}
-.puk-longform__section-heading .puk-web-h2{max-width:24ch;font-weight:var(--fw-medium)}
-.puk-longform__copy{max-width:var(--bl-measure)}
-.bl-section--wide .puk-longform__copy{max-width:none}
-.bl-section--wide .puk-longform__copy>p{max-width:var(--bl-measure)}
-
-/* Einstiege nach Anliegen als Karten; die ganze Karte ist der Link */
-.bl-paths-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:var(--space-4)}
-.bl-paths-cards li{position:relative;display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-5);border:1px solid transparent;border-radius:var(--web-radius-btn-lg);background:var(--bl-ground)}
-.bl-paths-cards li:hover{border-color:var(--puk-blue-100);background:var(--ui-field)}
-.bl-paths-cards li:focus-within{outline:3px solid var(--border-focus);outline-offset:2px}
-.bl-paths-cards a{color:var(--text-default);text-decoration:none;font-weight:var(--fw-medium);padding-block:0}
-.bl-paths-cards a::after{content:"";position:absolute;inset:0}
-/* Ein Fokusrahmen um die ganze Karte, nur bei Tastaturbedienung (P708-W6). Ohne :has() bleibt der Rahmen bei :focus-within samt Ring am Link */
-@supports selector(:has(*)){.bl-paths-cards li:focus-within{outline:none}.bl-paths-cards li:has(a:focus-visible){outline:3px solid var(--border-focus);outline-offset:2px}.bl-paths-cards a:focus-visible{box-shadow:none}}
-.bl-paths-cards p{margin:0;color:var(--text-muted)}
-
-/* Themen als ruhiges, liniertes Raster */
-.bl-paths-lines{grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:0 var(--space-6);border-top:2px solid var(--border-strong)}
-.bl-paths-lines li{padding-block:var(--space-4);border-top:0;border-bottom:1px solid var(--border-default)}
-.bl-paths-lines a{color:var(--text-default);text-decoration:none;font-weight:var(--fw-medium)}
-.bl-paths-lines a:hover{color:var(--puk-blue-125);text-decoration:underline}
-.bl-paths-lines p{color:var(--text-muted)}
-
-/* Blaues Band (Haltung) */
-.bl-band{--bl-surface:var(--puk-blue-100);background:var(--puk-blue-100);color:var(--puk-white)}
-.bl-band+.puk-longform__section,.puk-longform__section+.bl-band{border-top:0}
-.bl-band .puk-longform__kicker,.bl-band .puk-web-h2{color:var(--puk-white)}
-.bl-band .puk-longform__copy p{font-size:clamp(1.1875rem,1rem + .6vw,1.375rem);line-height:1.55}
-
-/* Hauptaktion Beratung */
-.bl-action--primary{background:var(--action-primary-bg);border-color:var(--action-primary-bg);color:var(--action-primary-fg);font-weight:var(--fw-medium);text-decoration:none}
-.bl-action--primary:hover{background:var(--action-primary-bg-hover);border-color:var(--action-primary-bg-hover);color:var(--action-primary-fg)}
-
-/* «Auf dieser Seite» als kompakte Zeile (nicht mitlaufend: Prüfbefund PR #708, WCAG 2.4.11) */
-@media (min-width:760px){
-  .puk-longform__roadmap{background:var(--puk-white);padding-block:var(--space-2)}
-  .puk-longform__roadmap .puk-web-container{display:flex;align-items:center;gap:0 var(--space-4)}
-  .puk-longform__roadmap-label{margin:0;flex:0 0 auto;text-transform:none;letter-spacing:0;color:var(--text-muted)}
-  .puk-longform__roadmap ol{flex-wrap:wrap;gap:0 var(--space-1)}
-  .puk-longform__roadmap a{padding-inline:var(--space-3);text-decoration:none;border-radius:var(--web-radius-btn-lg)}
-  .puk-longform__roadmap a:hover{background:var(--ui-field);color:var(--text-default)}
-}
-
-/* «Was Sie tun können» als hervorgehobener Kasten im Text */
-.bl-tun{margin:var(--space-5) 0 0;padding:var(--space-5) var(--space-6);background:var(--ui-field);border-radius:var(--web-radius-btn-lg)}
-.bl-tun>*{margin:0}
-.bl-tun>*+*{margin-top:var(--space-3)}
-.bl-tun__label{font-size:.875rem;font-weight:var(--fw-medium);letter-spacing:.04em;text-transform:uppercase;color:var(--puk-blue-125)}
-
-/* Diagnose-Merkmale als Raster */
-.bl-merkmale{list-style:none;margin:var(--space-4) 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:var(--space-3)}
-.bl-merkmale li{margin:0;padding:var(--space-4) var(--space-5);background:var(--bl-ground);border-radius:var(--web-radius-btn-lg)}
-.bl-rule{padding-block:var(--space-5);border-top:2px solid var(--border-strong);border-bottom:1px solid var(--border-default)}
-
-/* Beispielsätze nebeneinander («So könnte es klingen») */
-.bl-say-title{margin:var(--space-6) 0 var(--space-2);font-size:.875rem;font-weight:var(--fw-medium);color:var(--text-muted)}
-.bl-say{grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--space-3)}
-.bl-say .puk-say__item{padding:var(--space-4) var(--space-5);border:1px solid var(--border-default);border-radius:var(--web-radius-btn-lg);color:var(--text-muted)}
-.bl-say .puk-say__item--hilfreich{border-color:var(--ui-field);background:var(--ui-field);color:var(--text-default);font-weight:var(--fw-medium)}
-
-/* Abbildungen auf heller Blaufläche */
-.puk-vis-figure:not(.puk-vis-figure--open){background:var(--bl-ground);border:0;border-radius:var(--web-radius-btn-lg)}
+/* ==== Abbildungen im neuen Rahmen · r4-43 (29.10.2026) ====
+   Aussage, Anordnung und Beschriftung der Abbildungen bleiben wie freigegeben. Geändert sind nur die Fläche (grau =
+   «hier wird etwas erklärt», statt der hellblauen Fläche von r4-40) und die Schwellen, die bisher die Fensterbreite
+   abfragten: Abbildungen stehen jetzt in der Abbildungsbreite (höchstens 64 rem) und fragen ihren Container ab. */
+.puk-vis-figure:not(.puk-vis-figure--open){background:var(--flaeche-grau);border:0;border-radius:0}
 .puk-vis-kern{font-weight:var(--fw-medium)}
 .puk-vis-figure .bl-phase-actions{display:grid;gap:var(--space-3);grid-template-columns:minmax(0,1fr)}
-@media (min-width:560px){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:68.75em){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.puk-vis-figure .bl-phase-actions>li{margin:0;padding:var(--space-5);background:var(--puk-white);border-radius:var(--web-radius-btn-lg);display:flex;flex-direction:column;gap:var(--space-2)}
+@container (min-width:35rem){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@container (min-width:60rem){.puk-vis-figure .bl-phase-actions{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.puk-vis-figure .bl-phase-actions>li{margin:0;padding:var(--space-5);background:var(--papier);border-radius:var(--web-radius-btn-lg);display:flex;flex-direction:column;gap:var(--space-2)}
 .puk-vis-figure .bl-phase-actions>li>.puk-vis-build__n{grid-column:auto;grid-row:auto;position:static;align-self:flex-start;margin:0}
 .puk-vis-figure .bl-phase-actions>li>div{grid-column:auto;min-width:0}
 /* P708-W2 (r4-41): Die eigene Markierung des Ansatzpunkts entfällt nur, wenn :has() die ganze Phasenkarte markieren kann. */
@@ -1729,65 +1666,18 @@ html.puk-scroll-lock{overflow:hidden}
 .puk-vis-figure .bl-phase-actions p{hyphens:manual}
 .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz){background:var(--puk-blue-100);color:var(--puk-white)}
 .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) .puk-vis-build__n{background:var(--puk-white);color:var(--puk-blue-100);border-color:var(--puk-white)}
-
-/* Häufige Annahmen: Annahme links, Einordnung rechts */
-.bl-annahmen{margin:var(--space-6) 0;border-top:2px solid var(--border-strong)}
-.bl-annahmen dt,.bl-annahmen dd{margin:0;padding-block:var(--space-5)}
-.bl-annahmen dt{color:var(--text-muted);font-size:clamp(1.1875rem,1rem + .6vw,1.375rem);line-height:1.35}
-.bl-annahmen dd{border-bottom:1px solid var(--border-default)}
-@media (min-width:900px){
-  .bl-section--wide .bl-annahmen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);column-gap:var(--space-8)}
-  .bl-annahmen dt{border-bottom:1px solid var(--border-default)}
-}
-
-/* Merksatz als blaue Fläche */
-.bl-merksatz{border-left:0;background:var(--puk-blue-100);color:var(--puk-white);border-radius:var(--web-radius-btn-lg)}
-.bl-merksatz h3{color:var(--puk-white);font-size:.9375rem;letter-spacing:.04em;text-transform:uppercase}
-.bl-merksatz p{margin:0;font-size:clamp(1.375rem,1.1rem + 1vw,1.875rem);line-height:1.3}
-
-/* Seitenübergreifend nach Review 21.10.2026 */
-.puk-web-h2{font-weight:var(--fw-medium)}
-.puk-longform__hero>.puk-longform__intro+p{margin-top:var(--space-4)}
-.puk-site-start-actions .puk-link--action,.bl-action--primary{justify-content:flex-start;text-align:left;line-height:1.3}
-/* «Das Wichtigste» oben auf Themenseiten: Fläche statt Randlinie, Text in Lesebreite */
-.puk-site-quick{max-width:min(calc(var(--web-container-max) - 2 * var(--web-gutter-inline)),calc(100% - 2 * var(--web-gutter-inline)));padding:clamp(1.25rem,3vw,2rem);border:2px solid var(--puk-blue-25);background:var(--puk-white);border-radius:var(--web-radius-btn-lg)}
-.puk-site-quick>*{max-width:var(--bl-measure)}
-.puk-site-quick h2{font-size:clamp(1.375rem,1.1rem + 1vw,1.75rem)}
-/* Weitere Themen als Karten */
-.puk-site-related{background:var(--bl-ground)}
-.puk-site-related h2{font-size:clamp(1.5rem,1.2rem + 1vw,2rem)}
-.puk-site-related ul{gap:var(--space-3)}
-.puk-site-related li{display:flex}
-.puk-site-related a{flex:1;display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);min-height:var(--web-touch-target);padding:var(--space-4) var(--space-5);background:var(--puk-white);border:1px solid transparent;border-radius:var(--web-radius-btn-lg);color:var(--text-default);font-weight:var(--fw-medium);text-decoration:none}
-.puk-site-related a::after{content:"→";content:"→" / "";color:var(--puk-blue-100)}
-.puk-site-related a:hover{border-color:var(--puk-blue-100);color:var(--text-default)}
+/* Anspannungskurve: Die Beschriftungen im Bild brauchen 960 px Containerbreite (Korrektur 1h/1i). Die Schwelle steht
+   in em der Containerschrift; mit der Leseschrift 20 statt 21 px sind das 48 em statt 45,71 em. */
+@container (max-width:48em){.bl-fig--kurve .bl-fig__label{display:none}}
+/* Beispielsätze in Abbildungen behalten die freigegebene Form des Musters (Linie, hilfreiche Variante blau);
+   die Paarform mit Flächen gilt im Text ausserhalb von Abbildungen. */
+.puk-vis-figure .puk-say{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-3)}
+.puk-vis-figure .puk-say>.puk-say__item{margin:0;padding:var(--space-1) 0 var(--space-1) var(--space-4);border:0;border-left:2px solid var(--ui-hairline);background:none;color:var(--tinte)}
+.puk-vis-figure .puk-say>.puk-say__item--hilfreich{border-left:3px solid var(--puk-blue-100)}
+.puk-vis-figure .puk-say__label,.puk-vis-figure .puk-say__item--hilfreich .puk-say__label{font:var(--type-caption);color:var(--tinte-leise)}
+.bl-kurve__liste .puk-say>.puk-say__item,.bl-stufen .puk-say>.puk-say__item{margin:0}
 /* Tabellen dürfen breiter sein als die Lesespalte */
-.puk-longform__copy:has(>.puk-vis-tablewrap){max-width:none}
-.puk-longform__copy:has(>.puk-vis-tablewrap)>:not(.puk-vis-tablewrap){max-width:var(--bl-measure)}
 .puk-vis-tablewrap :is(th,td){hyphens:manual}
-
-/* Fusszeile: ruhiger, persönlicher Abschluss. Kontakt als Karte vorn, Angaben zur Website als leise zweite Ebene */
-.puk-web-footer{margin-top:0;padding-block:clamp(2.5rem,5vw,4rem);border-top:2px solid var(--puk-blue-25);background:var(--bl-ground);font-size:1rem}
-@media (min-width:760px){.puk-web-footer__grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:var(--space-6) clamp(2rem,6vw,5rem)}}
-.puk-web-footer__heading{color:var(--text-default);font-size:1.25rem;font-weight:var(--fw-medium);letter-spacing:0;text-transform:none}
-.puk-web-footer__copy{color:var(--text-default)}
-.puk-web-footer a{color:var(--puk-blue-125)}
-.puk-web-footer a:hover{color:var(--text-link-hover)}
-/* Links auf getönten Flächen (Absenderzeile, Einstieg, «Was Sie tun können») im dunkleren Blau: mindestens 4,5:1 (Auflage zu F4) */
-.puk-site-sender a,.puk-longform__hero a.puk-link--inline,.bl-tun a{color:var(--puk-blue-125)}
-.puk-site-sender a:hover,.puk-longform__hero a.puk-link--inline:hover,.bl-tun a:hover{color:var(--text-link-hover)}
-/* Aktionslink im Einstieg ohne eigene Fläche (404-Seite «Zur Startseite»): beim Überfahren Blau 125 statt Blau 100, 5,95:1 auf #F5F7FF (Nachprüfung 2, NP2-2). Die Startaktionen der Startseite sind ausgenommen */
-.puk-longform__hero .puk-link--action:not(.puk-site-start-actions .puk-link--action):hover{color:var(--puk-blue-125)}
-.puk-site-safety--responsibility{padding:clamp(1.25rem,3vw,2rem);background:var(--puk-white);border:0;border-radius:var(--web-radius-btn-lg)}
-.puk-site-safety--responsibility .puk-web-footer__copy:first-of-type{font-size:clamp(1.125rem,1rem + .4vw,1.3125rem);line-height:1.45;font-weight:var(--fw-light,300)}
-.puk-site-safety--responsibility .puk-web-footer__copy a{font-weight:var(--fw-medium)}
-.puk-site-safety--responsibility .puk-web-footer__copy a::after{content:"→";content:"→" / "";margin-left:.4em;color:var(--puk-blue-100)}
-.puk-web-footer__about>.puk-web-footer__copy:first-of-type{margin-top:var(--space-1);color:var(--text-muted)}
-.puk-web-footer__boundary{margin-top:var(--space-5)}
-.puk-web-footer__boundary .puk-web-footer__copy{font-size:1rem;color:var(--text-default)}
-.puk-site-info-links,.puk-site-legal,.puk-web-footer__meta{font-size:.9375rem}
-.puk-web-footer__details{border-top:1px solid var(--puk-blue-25)}
-.puk-web-footer__details .puk-web-footer__meta,.puk-site-legal,.puk-site-legal a{color:var(--text-muted)}
 
 /* Prozesspfade (z. B. DEAR): Spaltenzahl = Anzahl Schritte; senkrecht, sobald die Spalten zu schmal würden */
 @container (width > 62rem){
@@ -1803,20 +1693,42 @@ html.puk-scroll-lock{overflow:hidden}
   .puk-vis-path li:last-child::before{display:none}
 }
 
+/* ======================= 7 Erzwungene Farben und Druck ======================= */
 @media (forced-colors:active){
-  .bl-paths-cards li,.bl-tun,.bl-merkmale li,.bl-merksatz,.bl-band,.puk-vis-figure .bl-phase-actions>li,.puk-site-quick,.puk-site-related a{border:1px solid CanvasText}
-  /* Der Browser ersetzt border-image nicht: ohne diese Regel bleiben Einstieg und Absenderzeile hell (Nachprüfung PR #708, N3) */
-  .puk-longform__hero,.puk-site-sender{border-image:none}
-  .puk-site-safety--responsibility,.puk-vis-figure:not(.puk-vis-figure--open){border:1px solid CanvasText}
-  .puk-longform__section+.bl-band{border-top:1px solid CanvasText}
+  :focus-visible:not([tabindex="-1"]){outline:2px solid CanvasText!important;outline-offset:2px!important}
+}
+@media (forced-colors:active) and (prefers-color-scheme:dark){.puk-web-logo img{filter:invert(1)}}
+@media print{
+  html{font-size:81.25%}
+  .puk-vis-more>summary::before,.puk-acc__chevron{display:none}
+  /* Figur als Spalte: Titel, Kernaussage, Darstellung und Kennzeichnung bleiben zusammen; die Vertiefung steht
+     im Druck nach der Kennzeichnung und darf auf die nächste Seite fliessen. */
+  .puk-vis-figure{display:flex;flex-direction:column;break-inside:auto}
+  .puk-vis-figure>*{width:100%;break-inside:avoid}
+  .puk-vis-figure>.puk-vis-label,.puk-vis-figure>.puk-vis-kern,.puk-vis-figure>.puk-vis-short{break-after:avoid}
+  .puk-vis-caption{break-before:avoid}
+  .puk-vis-figure>.puk-vis-more{order:1}
+}
+@media print{details::details-content{content-visibility:visible;display:block}}
+/* ==== Erzwungene Farben und Druck für Rahmen und Bausteine · r4-43 ==== */
+@media (forced-colors:active){
+  .bl-paths-cards li,.bl-tun,.puk-say>.puk-say__item,.bl-merkmale>li,.puk-longform__boundary,.puk-longform__reflection,.bl-band,.puk-vis-figure .bl-phase-actions>li,.puk-vis-figure:not(.puk-vis-figure--open){border:1px solid CanvasText}
+  /* Der Browser ersetzt border-image nicht: ohne diese Regel bliebe das Band «Haltung» ohne Fläche und Rahmen. */
+  .bl-band{border-image:none}
   .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz){border-width:3px}
+  .puk-site-toc a[aria-current="true"]{outline:2px solid CanvasText;outline-offset:-2px}
+  .puk-web-nav__link[aria-current]{text-decoration-color:CanvasText}
 }
 @media print{
-  .puk-longform__hero,.bl-band,.puk-site-sender{border-image:none}
-  .bl-band,.bl-merksatz,.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz){background:none;color:var(--text-default);border:2px solid var(--puk-blue-100)}
-  .bl-band :is(h2,p,.puk-longform__kicker),.bl-merksatz :is(h3,p),.puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) :where(h3,p,span:not(.puk-vis-build__n)){color:var(--text-default)}
-  .puk-longform__section+.bl-band{border-top:2px solid var(--puk-blue-100)}
-  .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) .puk-vis-build__n{border-color:var(--puk-blue-100)}
-  .puk-site-start-actions .puk-link--action,.bl-action--primary{background:none;color:var(--text-default);border-color:var(--puk-blue-100)}
-  .bl-paths-cards li{break-inside:avoid}
+  .puk-site-layout{display:block}
+  .puk-site-layout__aside,.puk-site-subbar .puk-site-utility{display:none}
+  .puk-web-header{position:static}
+  .puk-longform__hero{padding-block:var(--space-4)}
+  .bl-band{border-image:none;padding:var(--space-5);background:none;color:var(--tinte);border:2px solid var(--blau)}
+  .bl-band :is(h2,p,.puk-longform__kicker),.bl-band .puk-longform__copy p{color:var(--tinte)}
+  .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz){background:none;color:var(--tinte);border:2px solid var(--blau)}
+  .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) :where(h3,p,span:not(.puk-vis-build__n)){color:var(--tinte)}
+  .puk-vis-figure .bl-phase-actions>li:has(.puk-vis-ansatz) .puk-vis-build__n{border-color:var(--blau)}
+  .puk-site-start-actions .puk-link--action,.bl-action--primary{background:none;color:var(--tinte);border-color:var(--blau)}
+  .bl-paths-cards li,.puk-say>.puk-say__item,.bl-tun,.puk-longform__boundary{break-inside:avoid}
 }

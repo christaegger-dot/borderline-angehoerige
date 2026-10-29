@@ -36,7 +36,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Dezenter Footer · r4-56 · veröffentlicht am 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, im selben [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753) wie r4-55, gemergt als `3780ee5` am 29.10.2026, 23:21 UTC, von Christa Egger. Auftrag von Christa Egger, 29.10.2026: «ich will einen sehr dezenten footer». Nach den Vergleichsbildern hat sie entschieden: «16 px, grau». Nachweis: [`audit-results/2026-10-29-footer-r4-56/BERICHT.md`](audit-results/2026-10-29-footer-r4-56/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, im selben [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753) wie r4-55. Gemergt zusammen mit r4-55 als `3780ee5` am 29.10.2026, 23:21 UTC, im Auftrag von Christa Egger («bitte merge»), nach grünem CI-Lauf `build-and-compare` auf `c69e24f`; damit über Netlify veröffentlicht. Die Live-Site lieferte um 23:22 UTC `data-puk-site-build="r4-56"` und in `site.css?v=r4-56` die neuen Regeln für `.puk-web-footer` (ohne Fläche, Haarlinie) und `.puk-site-sender` (`font-size:1rem`) aus (eigene Abfrage mit `curl`, keine Prüfstufe). Auftrag von Christa Egger, 29.10.2026: «ich will einen sehr dezenten footer». Nach den Vergleichsbildern hat sie entschieden: «16 px, grau». Nachweis: [`audit-results/2026-10-29-footer-r4-56/BERICHT.md`](audit-results/2026-10-29-footer-r4-56/BERICHT.md).
 
 **Inhalt:**
 - Die Fusszeile hat keine graue Fläche mehr, oben steht eine Haarlinie, der Abstand ist kleiner.
@@ -59,11 +59,11 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 - Sprach-/UI-Test 73/73
 - Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c)
 
-**Offen:** Das Gestaltungssystem nachführen: Fusszeile ohne Fläche, Footer-Links grau, Absenderzeile 16 px.
+**Offen:** Nachprüfung von r4-55 und r4-56 durch eine Sitzung, die nicht gebaut hat. Das Gestaltungssystem ist nachgeführt: neues Bauteil «Fusszeile», ohne Fläche, Links grau, Absenderzeile 16 px (siehe Abschnitt «Gestaltungssystem»).
 
 ## Absenderzeile 16 px · r4-55 · veröffentlicht am 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753), gemergt als `3780ee5` am 29.10.2026, 23:21 UTC, von Christa Egger. Begonnen auf `fe745f9` als r4-54. Weil inzwischen r4-54 (N52-2) veröffentlicht war, ist `main` (`d5229c6`) per Merge eingebracht, und die Änderung heisst r4-55. Auftrag von Christa Egger, 29.10.2026: «setz die Absenderzeile auf 16 px». Nachweis: [`audit-results/2026-10-29-absender-r4-55/BERICHT.md`](audit-results/2026-10-29-absender-r4-55/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753), gemergt zusammen mit r4-56 als `3780ee5` am 29.10.2026, 23:21 UTC, im Auftrag von Christa Egger; Live-Nachweis siehe r4-56 oben. Begonnen auf `fe745f9` als r4-54. Weil inzwischen r4-54 (N52-2) veröffentlicht war, ist `main` (`d5229c6`) per Merge eingebracht, und die Änderung heisst r4-55. Auftrag von Christa Egger, 29.10.2026: «setz die Absenderzeile auf 16 px». Nachweis: [`audit-results/2026-10-29-absender-r4-55/BERICHT.md`](audit-results/2026-10-29-absender-r4-55/BERICHT.md).
 
 **Inhalt:** Die Absenderzeile im Kopf jeder Seite steht in 16 statt 15 px (`.puk-site-sender`, `1rem`). So erfüllt sie die Regel des Gestaltungssystems «Nichts unter 16 px». Kein Wortlaut ist geändert.
 
@@ -87,7 +87,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 Die Liste steht im Bericht. Zu entscheiden ist, ob die Regel «Nichts unter 16 px» auch dafür gilt.
 
-**Offen:** Das Gestaltungssystem nachführen (die Abweichung entfällt).
+**Offen:** Nachprüfung von r4-55 und r4-56. Zu entscheiden bleibt, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Hinweis). Im Gestaltungssystem ist die Abweichung der Absenderzeile entfernt.
 
 ## Nachprüfung r4-54 · liegt vor seit 29.10.2026
 
@@ -237,7 +237,7 @@ Aufträge von Christa Egger, 29.10.2026, in der Prüfsitzung des Profils: «Behe
 
 ## Gestaltungssystem «Borderline Angehörige» · nachgeführt am 29.10.2026
 
-**Ort:** Design-System-Artefakt «Borderline Angehörige» auf claude.ai, privat. Auftrag von Christa Egger, 29.10.2026: «Führ das Gestaltungssystem auf den heutigen Stand nach». Zuerst nachgeführt auf r4-52 (Version 17), nach r4-53 korrigiert (Version 19, 22:56 UTC).
+**Ort:** Design-System-Artefakt «Borderline Angehörige» auf claude.ai, privat. Auftrag von Christa Egger, 29.10.2026: «Führ das Gestaltungssystem auf den heutigen Stand nach». Zuerst nachgeführt auf r4-52 (Version 17), nach r4-53 korrigiert (Version 19, 22:56 UTC), nach r4-56 erneut (Version 22, 23:24 UTC): neues Bauteil «Fusszeile» ohne Fläche mit grauen Links, Absenderzeile 16 px, Stände r4-54 bis r4-56, offene Frage zu Texten unter 16 px; danach r4-57 nachgetragen (Version 25, 23:32 UTC).
 
 **Nachgeführt:**
 - **Texte:** Stand und alle veröffentlichten Versionen r4-43 bis r4-53 mit PR-Links. Dazu der Stand der Entscheide E1 bis E10 mit Wortlaut, die Abweichungen der Website vom System und die offenen Punkte.
@@ -249,7 +249,7 @@ Aufträge von Christa Egger, 29.10.2026, in der Prüfsitzung des Profils: «Behe
 
 **Geprüft:** Die geänderten Vorschauen sind lokal in Chromium mit Rubik gerendert und mit Bildschirmfotos der Website verglichen. Waagrechter Überlauf: 0, Fehler: 0. Nicht geprüft ist die Darstellung in der Artefaktseite selbst.
 
-**Neu festgestellt:** Die Absenderzeile im Kopf ist auf der Website 15 px gross (`.puk-site-sender`, gemessen bei 1440 px). Das Gestaltungssystem verlangt mindestens 16 px («Nichts unter 16 px»). Entscheid Christa Egger, 29.10.2026: «setz die Absenderzeile auf 16 px»; umgesetzt im Entwurf r4-55 ([PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753), nicht gemergt). Bis zum Merge steht es im System als Abweichung.
+**Neu festgestellt:** Die Absenderzeile im Kopf ist auf der Website 15 px gross (`.puk-site-sender`, gemessen bei 1440 px). Das Gestaltungssystem verlangt mindestens 16 px («Nichts unter 16 px»). Entscheid Christa Egger, 29.10.2026: «setz die Absenderzeile auf 16 px»; umgesetzt mit r4-55 ([PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753), gemergt als `3780ee5`). Veröffentlicht am 29.10.2026, im Gestaltungssystem nachgeführt.
 
 ## Nachprüfung r4-52 · liegt vor seit 29.10.2026
 

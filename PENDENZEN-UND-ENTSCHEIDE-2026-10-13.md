@@ -1,14 +1,14 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-45 (`7704147`, [PR #717](https://github.com/christaegger-dot/borderline-angehoerige/pull/717) gemergt am 29.10.2026 im Auftrag von Christa Egger: «bitte merge und dann Pendenzendatei nachführen»). Offener Arbeitsentwurf: r4-46 (E10) auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719), Entwurf; Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-46 (`fe73ecb`, [PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719) gemergt am 29.10.2026, 16:52 UTC, von Christa Egger). Kein offener Arbeitsentwurf (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## E10 · r4-46 · Entwurf vom 29.10.2026
+## E10 · r4-46 · veröffentlicht am 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`352c716`) aufgesetzt, [PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719) (Entwurf, nicht gemergt). Auftrag von Christa Egger vom 29.10.2026: «mach weiter mit E10». Nachweis: [`audit-results/2026-10-29-e10-r4-46/BERICHT.md`](audit-results/2026-10-29-e10-r4-46/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`352c716`) aufgesetzt, [PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719), gemergt als `fe73ecb` am 29.10.2026, 16:52 UTC, von Christa Egger, nach grünem CI-Lauf `build-and-compare`; damit über Netlify veröffentlicht. Die Live-Site lieferte danach `gefahr.html` mit `data-puk-site-build="r4-46"` aus, auf `grenzen.html` mit `data-moved-anchors` und dem Kasten «Das Wichtigste» (eigene Abfrage mit `curl`, keine Prüfstufe). Eine ausdrückliche Fachfreigabe des neuen Wortlauts ist nicht dokumentiert; der Merge erfolgte durch Christa Egger. Auftrag von Christa Egger vom 29.10.2026: «mach weiter mit E10». Nachweis: [`audit-results/2026-10-29-e10-r4-46/BERICHT.md`](audit-results/2026-10-29-e10-r4-46/BERICHT.md).
 
 **Inhalt:**
 - **Teilung:** «Grenzen setzen» ist geteilt. Die Abschnitte «Wenn Entscheidungen oder Verhalten riskant werden» und «Wenn Gewalt oder Bedrohung vorkommt» stehen samt Akuthinweis wortgleich auf der neuen Seite `gefahr.html` «Wenn es riskant oder bedrohlich wird» im Bereich «Krisen». Der Titel heisst «bedrohlich» statt «gefährlich», damit die festgeschriebene Suche «gefährlich» weiter auf «Krisen begleiten» führt.
@@ -21,7 +21,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Zu entscheiden:** «Grenzen setzen» zeigt 144/117 nicht mehr selbst. Die Nummern stehen im umgezogenen Abschnitt, der Sicherheitshinweis zuoberst führt mit einem Klick dorthin (Regel A03-231).
 
-**Offen:** Fachfreigabe des neuen Wortlauts; Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat; E7, E9; Merge und Veröffentlichung nur auf Auftrag.
+**Offen:** ausdrückliche Fachfreigabe des neuen Wortlauts (Liste im Bericht), falls gewünscht; Entscheid zu 144/117 auf «Grenzen setzen»; Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat; E7, E9. Weitere Merges und Veröffentlichungen nur auf Auftrag.
 
 ## Gestaltung Schritt 3 · r4-45 · veröffentlicht am 29.10.2026
 

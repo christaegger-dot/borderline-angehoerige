@@ -830,7 +830,8 @@ html:not([data-puk-js]) .puk-site-nav--menu{flex-basis:100%}
 
 /* Hinweis zur Sicherheit (gelb) und Akuthinweis mit dem freigegebenen Wortlaut aus site.config.json (rot) */
 .puk-longform__boundary{max-width:var(--lesebreite);margin:var(--space-6) 0 0;padding:var(--space-4) var(--space-5);border-top:4px solid var(--gelb);background:var(--flaeche-gelb);color:var(--tinte);font-size:var(--puk-read-size);line-height:var(--web-lh-body);font-weight:var(--fw-regular)}
-.puk-longform__boundary a{color:var(--blau-125);text-decoration:underline;text-underline-offset:.18em}
+/* r4-47: auch im Einstieg (.puk-longform__hero a.puk-link--inline färbt sonst Blau 100: 4,24 : 1 auf Gelb); der rote Akuthinweis behält Rot für 144/117 */
+.puk-longform__boundary a,.puk-longform__boundary:not(.puk-site-inline-ref) a.puk-link--inline{color:var(--blau-125);text-decoration:underline;text-underline-offset:.18em}
 /* Sicherheitshinweis mit Etikett «Zu Ihrer Sicherheit» (r4-45, E8) */
 .puk-longform__boundary>p{margin:0}
 .puk-longform__boundary>p+p{margin-top:var(--space-2)}

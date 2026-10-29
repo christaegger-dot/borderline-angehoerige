@@ -1,10 +1,18 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-46 (`fe73ecb`, [PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719) gemergt am 29.10.2026, 16:52 UTC, von Christa Egger). Kein offener Arbeitsentwurf; Nachprüfung r4-43 bis r4-46 läuft in eigener Sitzung (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-46 (`fe73ecb`, [PR #719](https://github.com/christaegger-dot/borderline-angehoerige/pull/719) gemergt am 29.10.2026, 16:52 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-47 (Kontrastkorrektur) auf Branch `claude/dazzling-cerf-n6ci1w` (Pull Request folgt); Nachprüfung r4-43 bis r4-46 läuft in eigener Sitzung (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Korrektur · r4-47 · Entwurf vom 29.10.2026
+
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`b220994`) aufgesetzt. Pull Request folgt. Auftrag von Christa Egger: «behebe den Kontrast gleich». Anlass: Zwischenbefund der Prüfsitzung. Nachweis: [`audit-results/2026-10-29-kontrast-r4-47/BERICHT.md`](audit-results/2026-10-29-kontrast-r4-47/BERICHT.md).
+
+**Inhalt:** Der Link im gelben Sicherheitshinweis im Einstieg erscheint in Blau 125 statt Blau 100. Der Kontrast steigt von 4,24 : 1 auf 5,74 : 1. Der rote Akuthinweis ist ausgenommen, 144 und 117 bleiben rot. Nur CSS, kein Wortlaut.
+
+**Technischer Stand:** Selbsttest 84/84; Gate 24 Seiten · 0 Blocker; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 1 bekannte Ausnahme.
 
 ## Entscheide vom 29.10.2026 zu den offenen Punkten (an Claude delegiert)
 

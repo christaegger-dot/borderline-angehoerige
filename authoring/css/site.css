@@ -651,7 +651,9 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
   .puk-site-menu .puk-web-nav__link{border-top:0;padding-block:0;white-space:nowrap;hyphens:manual}
 }
 .puk-site-subbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 var(--space-6);padding-bottom:var(--space-1)}
-.puk-site-sender{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-2);min-width:0;margin:0;font-size:.9375rem;line-height:1.45;color:var(--tinte-leise)}
+/* r4-55 (Auftrag Christa Egger, 29.10.2026: «setz die Absenderzeile auf 16 px»): 1rem statt .9375rem, damit die Zeile die
+   Regel des Gestaltungssystems «Nichts unter 16 px» erfüllt. */
+.puk-site-sender{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-2);min-width:0;margin:0;font-size:1rem;line-height:1.45;color:var(--tinte-leise)}
 .puk-site-sender__label{font:inherit;color:inherit;letter-spacing:0;text-transform:none}
 .puk-site-sender__name{color:var(--tinte);font-weight:var(--fw-medium)}
 .puk-site-sender__contact{margin-left:var(--space-2)}
@@ -782,24 +784,22 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
 .puk-site-related a::after{content:"→";content:"→" / "";flex:0 0 auto;color:var(--blau-125)}
 .puk-site-related a:hover{color:var(--blau-125)}
 
-/* Fusszeile: Kontakt vorn, Angaben zur Website als leise zweite Ebene, auf grauer Fläche */
-.puk-web-footer{margin-top:var(--space-16);padding-block:var(--space-10) var(--space-12);background:var(--flaeche-grau);color:var(--tinte);font-size:1rem;line-height:1.5}
-.puk-web-footer__grid{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:var(--space-8)}
+/* Fusszeile: Kontakt vorn, Angaben zur Website daneben.
+   r4-56 (Auftrag Christa Egger, 29.10.2026: «ich will einen sehr dezenten footer», Entscheid «16 px, grau»):
+   keine Fläche, eine Haarlinie oben, weniger Abstand; Überschriften, Text und Links in 16 px und tinte-leise
+   (5,9 : 1 auf Weiss), Links unterstrichen. Zielflächen bleiben 44 px, der Wortlaut bleibt. */
+.puk-web-footer{margin-top:var(--space-16);padding-block:var(--space-6) var(--space-8);border-top:1px solid var(--linie);color:var(--tinte-leise);font-size:1rem;line-height:1.5}
+.puk-web-footer__grid{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:var(--space-4)}
 @media (min-width:47.5rem){.puk-web-footer__grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);column-gap:clamp(2rem,6vw,5rem)}}
-.puk-web-footer__heading{margin:0;color:var(--tinte);font-size:1.0625rem;line-height:1.4;font-weight:var(--fw-medium);letter-spacing:0;text-transform:none}
-.puk-web-footer__copy{max-width:var(--lesebreite);margin:var(--space-2) 0 0;color:var(--tinte);font-size:1rem}
+.puk-web-footer__heading{margin:0;color:var(--tinte-leise);font-size:1rem;line-height:1.5;font-weight:var(--fw-regular);letter-spacing:0;text-transform:none}
+.puk-web-footer__copy{max-width:var(--lesebreite);margin:0;color:var(--tinte-leise);font-size:1rem}
 .puk-web-footer__meta{margin:0;color:var(--tinte-leise);font-size:1rem;line-height:1.5}
-.puk-web-footer a{color:var(--blau-125);text-decoration:underline;text-underline-offset:.18em}
-.puk-web-footer a:hover{color:var(--tinte)}
-.puk-site-safety--responsibility .puk-web-footer__copy:first-of-type{font-size:1.1875rem;line-height:1.5}
-.puk-site-safety--responsibility a{display:inline-flex;align-items:center;min-height:var(--web-touch-target);font-weight:var(--fw-medium);overflow-wrap:anywhere}
-.puk-site-safety--responsibility .puk-web-footer__copy a::after{content:"→";content:"→" / "";margin-left:.4em}
+.puk-web-footer a{color:var(--tinte-leise);text-decoration:underline;text-underline-offset:.18em}
+.puk-web-footer a:hover{color:var(--tinte);text-decoration-thickness:2px}
+.puk-site-safety--responsibility a{display:inline-flex;align-items:center;min-height:var(--web-touch-target);overflow-wrap:anywhere}
 .puk-site-review{margin:0;flex-basis:100%;font:var(--type-caption);color:var(--tinte)}
-.puk-web-footer__about>.puk-web-footer__copy:first-of-type{margin-top:var(--space-1);color:var(--tinte-leise)}
-.puk-web-footer__boundary{max-width:var(--lesebreite);margin-top:var(--space-4)}
-.puk-web-footer__details{max-width:var(--lesebreite);margin-top:var(--space-4);padding-top:var(--space-3);border-top:1px solid var(--linie-bedienung)}
-.puk-web-footer__details .puk-web-footer__meta+.puk-web-footer__meta{margin-top:var(--space-1)}
-.puk-site-info-links{margin-top:var(--space-3)}
+.puk-web-footer__boundary{max-width:var(--lesebreite)}
+.puk-web-footer__details{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-5);max-width:var(--lesebreite)}
 .puk-site-info-links ul{display:flex;flex-wrap:wrap;gap:0 var(--space-5);margin:0;padding:0;list-style:none}
 .puk-site-info-links a,.puk-site-legal a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target)}
 .puk-site-legal{margin:0;color:var(--tinte-leise);font-size:1rem;line-height:1.5}

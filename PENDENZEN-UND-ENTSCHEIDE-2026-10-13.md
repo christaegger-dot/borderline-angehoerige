@@ -1,10 +1,22 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-50 (`90be231`, [PR #733](https://github.com/christaegger-dot/borderline-angehoerige/pull/733) gemergt am 29.10.2026, 20:26 UTC, von Christa Egger). Kein offener Arbeitsentwurf; Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-50 (`90be231`, [PR #733](https://github.com/christaegger-dot/borderline-angehoerige/pull/733) gemergt am 29.10.2026, 20:26 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-51 (Kopf bei grosser Schrift, P4-1) auf Branch `claude/dazzling-cerf-n6ci1w` (Entwurfs-PR folgt); Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Kopf bei grosser Schrift · r4-51 · Befund P4-1 · Entwurf vom 29.10.2026
+
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, auf `main` (`da488fa`) aufgesetzt, Entwurfs-PR folgt. Auftrag Christa Egger, 29.10.2026: «ja, setz P4-1 um». Nachweis: [`audit-results/2026-10-29-kopf-r4-51/BERICHT.md`](audit-results/2026-10-29-kopf-r4-51/BERICHT.md).
+
+**Inhalt:** Unter 20 rem stehen die Direkteinstiege «Kurz und klar», «Nachschlagen» und «Suchen» im Menü statt in der Zeile unter dem Kopf. 20 rem entsprechen bei 200 % Schrift allen Handybreiten, bei Standardschrift erst Breiten unter 320 px.
+- **Wirkung:** Der Kopf ist bei 320 px mit 200 % Schrift 418 statt 562 px hoch, bei 390 px 418 statt 514 px. Bei Standardschrift bleibt alles unverändert.
+- **Gate:** Es prüft die Direkteinstiege im Menü gegen `utilityNav`; dafür gibt es einen neuen Selbsttestfall.
+- **Menü:** Das Menüskript überspringt ausgeblendete Links.
+- **Wortlaut:** unverändert.
+
+**Technischer Stand:** Selbsttest 87/87; Gate 24 Seiten · 0 Blocker; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 1 bekannte Ausnahme.
 
 ## Prüfschritt 4 · r4-50 · Sichtprüfung und Korrekturen · veröffentlicht am 29.10.2026
 
@@ -17,7 +29,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 - **P4-4:** Im Druck steht über dem Sicherheitshinweis und der Sicherheitskarte der Startseite eine Linie in Schwarz 75 statt Gelb (vorher 1,2 : 1).
 
 **Offen:**
-- **P4-1:** Bei 320 und 390 px mit 200 % Schrift ist der Kopf 562 bzw. 514 px hoch. Vorschlag: Die Direkteinstiege stehen unter 20 rem im Menü. Das braucht den Entscheid von Christa Egger.
+- **P4-1:** Bei 320 und 390 px mit 200 % Schrift ist der Kopf 562 bzw. 514 px hoch. Christa Egger hat am 29.10.2026 entschieden: «ja, setz P4-1 um». Umgesetzt im Entwurf r4-51 (unten).
 - **P4-3:** Der Platzhalter im Suchfeld ist bei 390 px abgeschnitten. Ihn zu kürzen wäre Wortlaut.
 
 **Technischer Stand:** Selbsttest 86/86; Gate 24 Seiten · 0 Blocker; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 1 bekannte Ausnahme.

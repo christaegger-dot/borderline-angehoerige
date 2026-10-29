@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-50';
+const BUILD = 'r4-51';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -184,9 +184,6 @@ function renderPage(cfg, page, content) {
     const current = p.id === page.id ? ' aria-current="page"' : (p.id === groupRoot.id ? ' aria-current="location" data-current-section="true"' : '');
     return `<li><a class="puk-web-nav__link" href="${esc(p.href)}"${current}>${esc(p.navLabel)}</a></li>`;
   }).join('\n');
-  const navHtml = menu
-    ? `<nav class="puk-web-nav puk-site-nav--menu" aria-label="Hauptnavigation"><div class="puk-disclosure puk-site-menu" data-puk-disclosure><span class="puk-disclosure__label">Menü</span><ul class="puk-web-nav__list puk-disclosure__panel" role="list">\n${navItems}\n</ul></div></nav>`
-    : `<nav class="puk-web-nav" aria-label="Hauptnavigation"><ul class="puk-web-nav__list" role="list">\n${navItems}\n</ul></nav>`;
   /* Direkte Abschnittslinks entstehen nicht nur in Kapitelwegen, sondern auch in der
      Website-Suche. Bei deepLinkFocus lädt deshalb jede Seite die kleine progressive
      Verbesserung: Das vorhandene revealHashTarget öffnet nötigenfalls details und
@@ -203,7 +200,15 @@ function renderPage(cfg, page, content) {
   const utilityEntries = Array.isArray(cfg.utilityNav) && cfg.utilityNav.length
     ? cfg.utilityNav.map(entry => ({ ...entry, page: cfg.pages.find(p => p.id === entry.pageId && p.status === 'published') })).filter(entry => entry.page)
     : (defaultSearchPage ? [{ pageId: defaultSearchPage.id, label: 'Website durchsuchen', page: defaultSearchPage }] : []);
-  const utilityNav = utilityEntries.length && !notFound ? `<nav class="puk-site-utility" aria-label="Direkteinstiege">${utilityEntries.map(entry => `<a class="puk-site-utility__link" href="${esc(entry.page.href)}"${page.id === entry.page.id ? ' aria-current="page"' : (entry.page.id === groupRoot.id && groupRoot.id !== 'index' ? ' aria-current="location"' : '')}>${esc(entry.label || entry.page.title)}</a>`).join('')}</nav>` : '';
+  const utilityCurrent = entry => page.id === entry.page.id ? ' aria-current="page"' : (entry.page.id === groupRoot.id && groupRoot.id !== 'index' ? ' aria-current="location"' : '');
+  const utilityNav = utilityEntries.length && !notFound ? `<nav class="puk-site-utility" aria-label="Direkteinstiege">${utilityEntries.map(entry => `<a class="puk-site-utility__link" href="${esc(entry.page.href)}"${utilityCurrent(entry)}>${esc(entry.label || entry.page.title)}</a>`).join('')}</nav>` : '';
+  /* r4-51 (Prüfschritt 4, P4-1): Dieselben Direkteinstiege stehen zusätzlich im Menü. Das Stylesheet zeigt unter 20 rem
+     (bei 200 % Schrift alle Handybreiten, bei Standardschrift erst unter 320 px) diese Fassung und blendet die Zeile unter
+     dem Kopf aus; sonst umgekehrt. Es ist also immer genau eine Fassung sichtbar und im Barrierefreiheitsbaum. */
+  const utilityMenuItems = menu && utilityNav ? utilityEntries.map(entry => `<li class="puk-site-menu__utility"><a class="puk-web-nav__link puk-site-menu__utility-link" href="${esc(entry.page.href)}"${utilityCurrent(entry)}>${esc(entry.label || entry.page.title)}</a></li>`).join('\n') : '';
+  const navHtml = menu
+    ? `<nav class="puk-web-nav puk-site-nav--menu" aria-label="Hauptnavigation"><div class="puk-disclosure puk-site-menu" data-puk-disclosure><span class="puk-disclosure__label">Menü</span><ul class="puk-web-nav__list puk-disclosure__panel" role="list">\n${navItems}${utilityMenuItems ? '\n' + utilityMenuItems : ''}\n</ul></div></nav>`
+    : `<nav class="puk-web-nav" aria-label="Hauptnavigation"><ul class="puk-web-nav__list" role="list">\n${navItems}\n</ul></nav>`;
   const breadcrumbParts = page.id === 'index' || notFound ? [] : [
     `<li><a href="${esc(startPage.href)}">Übersicht</a></li>`,
     ...(groupRoot.id !== page.id && groupRoot.id !== startPage.id ? [`<li><a href="${esc(groupRoot.href)}">${esc(groupRoot.navLabel || groupRoot.title)}</a></li>`] : []),
@@ -499,7 +504,11 @@ function gate(cfg, files, opts = {}) {
     const navEl = one(doc, x => x.tag === 'nav' && x.attrs['aria-label'] === 'Hauptnavigation');
     if (!navEl) add('block', pid, 'nav', 'Hauptnavigation fehlt');
     else {
-      const links = all(navEl, x => x.tag === 'a'); const got = links.map(a => resolve(path, a.attrs.href).path);
+      const navLinks = all(navEl, x => x.tag === 'a'); const links = navLinks.filter(a => !cls(a, 'puk-site-menu__utility-link')); const got = links.map(a => resolve(path, a.attrs.href).path);
+      /* r4-51: Direkteinstiege im Menü müssen genau den konfigurierten Direkteinstiegen entsprechen. */
+      const menuUtility = navLinks.filter(a => cls(a, 'puk-site-menu__utility-link')).map(a => resolve(path, a.attrs.href).path);
+      const utilityExp = (cfg.utilityNav || []).map(e => pages.find(q => q.id === e.pageId && q.status === 'published')).filter(Boolean).map(pagePath);
+      if (menuUtility.length && menuUtility.join('|') !== utilityExp.join('|')) add('block', pid, 'nav', `Direkteinstiege im Menü weichen vom Seitenvertrag ab: ${menuUtility.join(', ')} statt ${utilityExp.join(', ')}`);
       if (links.length > NAV_MAX && !one(navEl, x => has(x, 'data-puk-disclosure'))) add('block', pid, 'nav-menu', `${links.length} Hauptpunkte ohne Menü – ab ${NAV_MAX + 1} Punkten braucht die Navigation unter 760 px ein Dropdown-Menü (Abschnitt «Interaktionskonzept»; tools/build.mjs erzeugt es)`);
       links.forEach(a => { const r = resolve(path, a.attrs.href); if (!exists(r.path)) add('block', pid, 'nav-target', 'Navigationsziel fehlt: ' + a.attrs.href); else if (byPath[r.path] && byPath[r.path].status !== 'published') add('block', pid, 'nav', 'Entwurf in der Navigation: ' + a.attrs.href); });
       if (got.join('|') !== navExp.join('|')) add('block', pid, 'nav', `Navigation weicht vom Seitenvertrag ab: ${got.join(', ') || 'leer'} statt ${navExp.join(', ')}`);
@@ -635,6 +644,7 @@ const MUTATIONS = [
   ['Weiterleitung eines Sprungziels, das noch besteht', ['moved-anchor'], c => { pg(c, 'grenzen').movedAnchors = { dear: 'gefahr.html#gewalt' }; }],
   ['Site-weite Sprungzielfokussierung deaktiviert', ['deep-link-focus'], c => { delete c.deepLinkFocus; }],
   ['Statische Seite ohne Skript für Sprungzielfokus', ['interaction-script'], (c, f) => rex(f, 'index.html', /<script src="[^"]*interaktion\.js[^"]*" defer><\/script>\n?/, '')],
+  ['Direkteinstieg im Menü weicht vom Seitenvertrag ab', ['nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link puk-site-menu__utility-link" href="kurz.html"', 'class="puk-web-nav__link puk-site-menu__utility-link" href="verstehen.html"')],
   ['Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite)', ['nav-target', 'nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link" href="beziehungen.html"', 'class="puk-web-nav__link" href="gibt-es-nicht.html"')],
   ['Seitenvertrag verweist auf fehlende Datei', ['page-file'], c => { pg(c, 'behandlung').href = 'gibt-es-nicht.html'; }],
   ['lang fehlt', ['lang'], (c, f) => rep(f, 'behandlung.html', '<html lang="de-CH"', '<html')],

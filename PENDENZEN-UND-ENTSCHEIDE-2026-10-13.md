@@ -1,6 +1,6 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-47 (`1d53178`, [PR #724](https://github.com/christaegger-dot/borderline-angehoerige/pull/724) gemergt am 29.10.2026, 17:39 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-48 (Befund N46-4) auf Branch `claude/dazzling-cerf-n6ci1w` (Entwurfs-PR folgt); Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-47 (`1d53178`, [PR #724](https://github.com/christaegger-dot/borderline-angehoerige/pull/724) gemergt am 29.10.2026, 17:39 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-48 (Befund N46-4) auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #726](https://github.com/christaegger-dot/borderline-angehoerige/pull/726), Entwurf); Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Korrektur · r4-48 · Befund N46-4 · Entwurf vom 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, auf `main` (`0ce60ea`) aufgesetzt, Entwurfs-PR folgt. Nachweis und Freigabe: [`audit-results/2026-10-29-n46-4-r4-48/BERICHT.md`](audit-results/2026-10-29-n46-4-r4-48/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, auf `main` (`0ce60ea`) aufgesetzt, [PR #726](https://github.com/christaegger-dot/borderline-angehoerige/pull/726) (Entwurf, nicht gemergt). Nachweis und Freigabe: [`audit-results/2026-10-29-n46-4-r4-48/BERICHT.md`](audit-results/2026-10-29-n46-4-r4-48/BERICHT.md).
 
 **Fachfreigabe Christa Egger, 29.10.2026:**
 - **«Ja»** zu: «Bei Bedrohung oder Gewalt geht Schutz vor jedem Gespräch. Mehr dazu auf der Seite «Wenn es riskant oder bedrohlich wird».»

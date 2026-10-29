@@ -1,10 +1,45 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-51 (`5e0ad1a`, [PR #735](https://github.com/christaegger-dot/borderline-angehoerige/pull/735) gemergt am 29.10.2026, 21:37 UTC, im Auftrag von Christa Egger). Kein offener Arbeitsentwurf; Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-51 (`5e0ad1a`, [PR #735](https://github.com/christaegger-dot/borderline-angehoerige/pull/735) gemergt am 29.10.2026, 21:37 UTC, im Auftrag von Christa Egger). Offener Entwurf: Nachprüfung r4-47 bis r4-49 ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), nicht gemergt), siehe oberster Abschnitt; Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Nachprüfung r4-47 bis r4-49 · liegt als Entwurf vor seit 29.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, auf `main` (`7f6e5de`) aufgesetzt. Der Branchname stammt aus der vorigen Nachprüfung, weil die Prüfsitzung an diesen Branch gebunden ist. Der Entwurf liegt als [PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737) vor, **nicht gemergt**. Die Prüfungen sind grün. Ein CI-Lauf `build-and-compare` war nicht nötig (Pfadfilter, nur `audit-results/` und diese Datei). Auftrag von Christa Egger, 29.10.2026: «Nachprüfung r4-47 bis r4-49 starten». Nachweis: [`audit-results/2026-10-29-nachpruefung-r4-47-r4-49/NACHPRUEFUNG.md`](audit-results/2026-10-29-nachpruefung-r4-47-r4-49/NACHPRUEFUNG.md).
+
+**Gegenstand und Prüfende:** alle Änderungen `1f2788a` (r4-46) bis `f300e7d` (r4-49), also r4-47, r4-48 und r4-49. r4-50 und r4-51 sind nicht Gegenstand. Geprüft hat die Claude-Sitzung, die auch die Nachprüfung r4-43 bis r4-46 erstellt hat. Sie hat an r4-47 bis r4-49 nicht gebaut und nichts an Inhalt oder Code geändert.
+
+**Ergebnis:** «Nachbesserung nötig, ohne Blocker».
+
+| Befund | Schweregrad | Inhalt | Stand |
+|---|---|---|---|
+| N49-1 | wichtig | Das Titelbild (r4-49) schiebt auf dem Handy die Einstiegskarte «Ich sorge mich um Sicherheit, Selbstgefährdung oder Gewalt.» aus dem ersten Bildschirm. Bei 390 × 844 beginnt sie bei 902 px statt bei 783 px (r4-48). Bei 768 × 1024 ist sie nur angeschnitten. Auf r4-51 gemessen gleich (902 px bzw. 895 px) | **offen**, Gestaltungsentscheid Christa Egger (Band auf dem Handy weglassen, nach den Anliegen zeigen oder flacher; dazu eine Probe im Layouttest) |
+| N49-2 | gering | Der in r4-48 freigegebene Satz «Mehr dazu auf der Seite «Wenn es riskant oder bedrohlich wird»» steht nur auf «Grenzen setzen». Die Freigabe nennt auch `gefahr.html`; dort bleibt sachlich richtig «Mehr dazu im Abschnitt …» | **offen**, kurze Bestätigung durch Christa Egger; Wortlaut nicht ändern |
+
+**Bestätigt:**
+- N46-1, N46-2 und N46-4 bis N46-7 sind richtig behoben:
+  - Kontrast 5,74 : 1.
+  - E-Mail-Link 213 × 44 px, Fokusring vollständig.
+  - Gate-Regel `moved-anchor`, mit eigenen Fehlerfällen geprüft (absolute URL, fehlender Anker, unveröffentlichte Seite, gegenseitige Weiterleitung).
+  - Layouttest mit den fünf Namen.
+  - «Weiter im Bereich» auf `gefahr.html`.
+- N46-3 ist mit der Freigabe erledigt.
+- axe-core: 0 Verstösse in 48 Läufen (r4-46: 27).
+- Die einzige Textänderung ist der freigegebene Satz auf «Grenzen setzen». Akuthinweise und Suche sind unverändert.
+- Das Titelbild ist für Screenreader verborgen und nicht fokussierbar. Bei erzwungenen Farben und im Druck ist es ausgeblendet.
+- Gate und Layouttest sind verschärft.
+- Tests auf `f300e7d`:
+  - Gate: 24 Seiten · 0 Blocker
+  - Parität: 35
+  - Selbsttest: 86/86
+  - Suchtest: 216/216
+  - Sprach-/UI-Test: 73/73
+  - Layouttest: bekannte Ausnahme B2c, Exit 1
+
+**Offen:** N49-1 und N49-2; Prüfung mit echtem Screenreader (Anleitung in `audit-results/2026-10-29-nachpruefung-r4-43-r4-46/NACHPRUEFUNG.md`); Safari, Firefox, reale Geräte; Merge von PR #737 nur auf Auftrag.
 
 ## Kopf bei grosser Schrift · r4-51 · Befund P4-1 · veröffentlicht am 29.10.2026
 
@@ -48,6 +83,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Offen:**
 - **Fachlich:** ob das Motiv der Anspannungskurve als Schmuck auf der Startseite passt.
+- **Nachprüfung (N49-1):** Auf dem Handy schiebt das Titelbild die Sicherheitskarte der Startseite aus dem ersten Bildschirm; Gestaltungsentscheid offen (siehe Abschnitt «Nachprüfung r4-47 bis r4-49» oben).
 - **Profil:** Das Titelbild zeigt mehrere blaue Flächen nebeneinander (Blau 25, PUK Blau, Nachtblau). Das PUK-Website-Profil 2026.10.9 nennt «Blau als Hintergrund für ganze Seiten oder mehrere Felder nebeneinander» unter «Vermeiden» (`guidelines/02-farben-und-kontrast.md` in `christaegger-dot/puk-website-profil`). Christa Egger hat am 29.10.2026 entschieden, Nachtblau dort als gemeinsame Änderung vorzuschlagen («JA»). Den Vorschlag für Profil 2026.10.10 mit sieben Punkten hat sie am 29.10.2026 bestätigt («ja, wie vorgeschlagen»): Nachtblau als benannte Schattierung `--puk-blue-night` mit `--surface-night`, Geltung, Zählung und eine Ausnahme für ein dekoratives Titelbild der Startseite. Umgesetzt als Profil 2026.10.10 ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), gemergt als `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger, nach grünen Prüfungen «Build, Tests und Paket» und «Offene Stufen»; Entscheiddokument `ENTSCHEIDE-PROFIL-2026-10-10.md`). Das Titelbild der Startseite entspricht damit dem Profil. Die unabhängige Prüfung des Pakets durch eine eigene Sitzung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt): alle sieben Punkte bestätigt, ein Befund «wichtig» (W-A: im Druck verliert das nachtblaue Band der Profilvorlage seine Fläche, der Text bleibt hell) und drei «optional» (O-A bis O-C). Die Website ist von W-A nicht betroffen, weil ihr Band «Haltung» eigene Druckregeln hat (dunkle Schrift, blauer Rahmen, geprüft in r4-50). Eine Nachbesserung als Profil 2026.10.11 ist vorgeschlagen; der Entscheid von Christa Egger ist offen.
 
 **Technischer Stand:** Selbsttest 86/86; Gate 24 Seiten · 0 Blocker; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 1 bekannte Ausnahme.

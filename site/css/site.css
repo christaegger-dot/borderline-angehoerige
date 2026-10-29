@@ -936,12 +936,14 @@ html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-to
 .bl-band :focus-visible{box-shadow:0 0 0 2px var(--nachtblau),0 0 0 4px var(--papier)}
 /* r4-49: Titelbild der Startseite, übernommen aus der Titelkarte «Cover» des Gestaltungssystems. Rein dekorativ und für
    Screenreader verborgen; seine Flächen tragen keine Bedeutung (Ausnahme zu «gelb = hier geht Schutz vor» und «nachtblau nur
-   für das Band Haltung»). Ab 62 rem rechts neben Titel und Einleitung, darunter seit r4-52 ausgeblendet. Bei erzwungenen
+   für das Band Haltung»). Ab 75 rem rechts neben Titel und Einleitung, darunter ausgeblendet (r4-52 unter 62 rem, seit r4-53 unter 75 rem). Bei erzwungenen
    Farben und im Druck ausgeblendet. */
 .bl-titelbild{margin-top:var(--space-8);max-width:480px} /* r4-50 (Prüfschritt 4, P4-2): Das Band wächst nicht mit Breite und Schrift, höchstens 120 px hoch */
 /* r4-52 (Nachprüfung N49-1, Entscheid Christa Egger 29.10.2026: «Band ausblenden»): Unter 62 rem kein Titelbild, damit die
-   Sicherheitskarte der Startseite auf dem Handy wieder im ersten Bildschirm beginnt. Ab 62 rem steht es weiter rechts neben dem Einstieg. */
-@media (max-width:61.99rem){.bl-titelbild{display:none}}
+   Sicherheitskarte der Startseite auf dem Handy wieder im ersten Bildschirm beginnt. Ab 62 rem steht es weiter rechts neben dem Einstieg.
+   r4-53 (Nachprüfung N52-1, Entscheid Christa Egger 29.10.2026: «Titelbild erst ab 75 rem zeigen»): Schwelle von 62 auf 75 rem,
+   damit die Sicherheitskarte auch zwischen 992 und etwa 1160 px (z. B. 1024 × 768) nicht aus dem ersten Bildschirm rückt. */
+@media (max-width:74.99rem){.bl-titelbild{display:none}}
 .bl-titelbild svg{display:block;width:100%;height:auto}
 .bl-titelbild .bl-titelbild__breit{display:none}
 .bl-titelbild__hell{fill:var(--blau-25)}
@@ -951,7 +953,7 @@ html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-to
 .bl-titelbild__kurve{fill:none;stroke:var(--papier);stroke-width:4;stroke-linecap:round}
 .bl-titelbild__band .bl-titelbild__kurve{stroke-width:3}
 .bl-titelbild__marke{fill:var(--papier)}
-@media (min-width:62rem){
+@media (min-width:75rem){
   html[data-page-id="index"] .puk-longform__hero{display:grid;grid-template-columns:minmax(0,var(--lesebreite)) minmax(0,30rem);column-gap:var(--space-12);justify-content:space-between;align-items:start}
   html[data-page-id="index"] .puk-longform__hero>:not(.bl-titelbild){grid-column:1}
   html[data-page-id="index"] .puk-longform__hero>.bl-titelbild{grid-column:2;grid-row:1/span 3;align-self:center;max-width:none;margin-top:0}

@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-44';
+const BUILD = 'r4-45';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -117,12 +117,14 @@ const foldDepthSections = (html, ids) => (ids || []).reduce((out, id) => {
 
 /* Gestaltung r4-43 (29.10.2026): «Auf dieser Seite» steht ab 72 rem als eigene Spalte neben der Lesespalte und bleibt beim
    Scrollen stehen; schmaler ist es eine aufklappbare Zeile (data-puk-disclosure, ohne Skript offen). Der Renderer fasst dafür
-   die Leiste und alles danach in ein Seitenraster. Wortlaut, Reihenfolge und Sprungziele der Fragmente bleiben unverändert. */
+   die Leiste und alles danach in ein Seitenraster. Wortlaut, Reihenfolge und Sprungziele der Fragmente bleiben unverändert.
+   r4-45 (E8): Die aufklappbare Zeile nennt die Zahl der Abschnitte («Auf dieser Seite · 11 Abschnitte»). */
 const ROADMAP_RE = /<nav class="puk-longform__roadmap"([^>]*)>\s*<div class="puk-web-container">\s*<p class="puk-longform__roadmap-label">([\s\S]*?)<\/p>\s*<ol>([\s\S]*?)<\/ol>\s*<\/div>\s*<\/nav>/;
 const tocLayout = (html, tail = '') => {
   const m = ROADMAP_RE.exec(html);
   if (!m) return html + (tail ? '\n' + tail : '');
-  const toc = `<nav class="puk-longform__roadmap puk-site-toc"${m[1]}><p class="puk-site-toc__title">${m[2]}</p><div class="puk-disclosure puk-site-toc__menu" data-puk-disclosure><span class="puk-disclosure__label">${m[2]}</span><ol class="puk-disclosure__panel">${m[3]}</ol></div></nav>`;
+  const n = (m[3].match(/<li\b/g) || []).length;
+  const toc = `<nav class="puk-longform__roadmap puk-site-toc"${m[1]}><p class="puk-site-toc__title">${m[2]}</p><div class="puk-disclosure puk-site-toc__menu" data-puk-disclosure><span class="puk-disclosure__label">${m[2]} · ${n} ${n === 1 ? 'Abschnitt' : 'Abschnitte'}</span><ol class="puk-disclosure__panel">${m[3]}</ol></div></nav>`;
   return `${html.slice(0, m.index)}<div class="puk-web-container puk-site-layout"><div class="puk-site-layout__aside">${toc}</div><div class="puk-site-layout__body">${html.slice(m.index + m[0].length).trim()}${tail ? '\n' + tail : ''}</div></div>`;
 };
 
@@ -201,15 +203,19 @@ function renderPage(cfg, page, content) {
   const utilityEntries = Array.isArray(cfg.utilityNav) && cfg.utilityNav.length
     ? cfg.utilityNav.map(entry => ({ ...entry, page: cfg.pages.find(p => p.id === entry.pageId && p.status === 'published') })).filter(entry => entry.page)
     : (defaultSearchPage ? [{ pageId: defaultSearchPage.id, label: 'Website durchsuchen', page: defaultSearchPage }] : []);
-  const utilityNav = utilityEntries.length && !notFound ? `<nav class="puk-site-utility" aria-label="Direkteinstiege">${utilityEntries.map(entry => `<a class="puk-site-utility__link" href="${esc(entry.page.href)}"${page.id === entry.page.id ? ' aria-current="page"' : ''}>${esc(entry.label || entry.page.title)}</a>`).join('')}</nav>` : '';
+  const utilityNav = utilityEntries.length && !notFound ? `<nav class="puk-site-utility" aria-label="Direkteinstiege">${utilityEntries.map(entry => `<a class="puk-site-utility__link" href="${esc(entry.page.href)}"${page.id === entry.page.id ? ' aria-current="page"' : (entry.page.id === groupRoot.id && groupRoot.id !== 'index' ? ' aria-current="location"' : '')}>${esc(entry.label || entry.page.title)}</a>`).join('')}</nav>` : '';
   const breadcrumbParts = page.id === 'index' || notFound ? [] : [
     `<li><a href="${esc(startPage.href)}">Übersicht</a></li>`,
     ...(groupRoot.id !== page.id && groupRoot.id !== startPage.id ? [`<li><a href="${esc(groupRoot.href)}">${esc(groupRoot.navLabel || groupRoot.title)}</a></li>`] : []),
     `<li><span aria-current="page">${esc(page.title)}</span></li>`
   ];
   const breadcrumb = breadcrumbParts.length ? `<nav class="puk-site-breadcrumb" aria-label="Brotkrümelnavigation"><div class="puk-web-container"><ol role="list">${breadcrumbParts.join('')}</ol></div></nav>` : '';
+  /* Gestaltung r4-45 (E8): Der Bereich heisst wie im Kopf; Bereiche ohne Eintrag dort (Nachschlagen, Über diese Website)
+     tragen den Namen ihres Direkteinstiegs oder den Seitentitel. */
+  const areaUtility = utilityEntries.find(entry => entry.page.id === groupRoot.id);
+  const areaLabel = groupRoot.navLabel || (areaUtility && areaUtility.label) || groupRoot.title;
   const sectionPages = cfg.pages.filter(p => p.status === 'published' && p.id !== page.id && p.id !== '404' && p.showInSectionNav !== false && (p.id === groupRoot.id || p.groupRootId === groupRoot.id));
-  const sectionNav = !notFound && groupRoot.id !== 'index' && sectionPages.length ? `<nav class="puk-site-related" aria-labelledby="puk-related-title"><div class="puk-web-container"><h2 class="puk-web-h2" id="puk-related-title">Weitere Themen in diesem Bereich</h2><ul role="list">${sectionPages.map(p => `<li><a href="${esc(p.href)}" aria-label="${esc(`${p.title}: zu dieser Themenseite wechseln`)}">${esc(p.title)}</a></li>`).join('')}</ul></div></nav>` : '';
+  const sectionNav = !notFound && groupRoot.id !== 'index' && sectionPages.length ? `<nav class="puk-site-related" aria-labelledby="puk-related-title"><div class="puk-web-container"><h2 class="puk-web-h2" id="puk-related-title">Weiter im Bereich «${esc(areaLabel)}»</h2><ul role="list">${sectionPages.map(p => `<li><a href="${esc(p.href)}" aria-label="${esc(`${p.title}: zu dieser Themenseite wechseln`)}">${esc(p.title)}</a></li>`).join('')}</ul></div></nav>` : '';
   const senderLabel = s.displayLabel || 'Absenderin';
   const senderName = s.displayName || s.orgUnit;
   const senderInstitution = s.displayName ? '' : `<span aria-hidden="true">·</span><span data-sender-institution>${esc(s.institution)}</span>`;

@@ -2,7 +2,9 @@ const fs=require('fs'),path=require('path');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE || '/opt/npm-tools/node_modules/playwright');
 const root=path.resolve(__dirname,'../..');
 const out=path.resolve(process.argv[2] || root+'/dist/audit04-layout');fs.mkdirSync(out+'/screenshots',{recursive:true});
-const pages=JSON.parse(fs.readFileSync(root+'/authoring/site.config.json')).pages.map(p=>p.id),rows=[],errors=[];
+const cfgPages=JSON.parse(fs.readFileSync(root+'/authoring/site.config.json')).pages,pages=cfgPages.map(p=>p.id),rows=[],errors=[];
+/* Zahl der Hauptbereiche aus dem Seitenvertrag (r4-45: fünf statt sechs) */
+const navCount=cfgPages.filter(p=>p.status==='published'&&p.navLabel).length;
 (async()=>{
  const server=require('http').createServer((req,res)=>{let file=root+'/site'+decodeURIComponent(req.url.split('?')[0]);try{let ext=path.extname(file);res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.woff2':'font/woff2','.svg':'image/svg+xml'})[ext]||'application/octet-stream');res.end(fs.readFileSync(file));}catch(e){res.statusCode=404;res.end();}});await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port+'/';
  for(const large of [false,true]){
@@ -41,7 +43,7 @@ const pages=JSON.parse(fs.readFileSync(root+'/authoring/site.config.json')).page
   }
   await browser.close();
  }
- const b=await chromium.launch({...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),args:['--no-sandbox']});const c=await b.newContext({javaScriptEnabled:false,viewport:{width:375,height:812}}),p=await c.newPage();await p.goto(base+'index.html');rows.push({test:'no JS six navigation links visible',ok:(await p.locator('.puk-web-nav a:visible').count())===6});await b.close();server.close();
+ const b=await chromium.launch({...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),args:['--no-sandbox']});const c=await b.newContext({javaScriptEnabled:false,viewport:{width:375,height:812}}),p=await c.newPage();await p.goto(base+'index.html');rows.push({test:'no JS all navigation links visible',ok:(await p.locator('.puk-web-nav a:visible').count())===navCount});await b.close();server.close();
  fs.writeFileSync(out+'/BROWSER.json',JSON.stringify({rows,errors},null,2));
  const issues=rows.filter(r=>r.width&&(r.scrollWidth>r.width+2||r.overflow?.length)).map(r=>`${r.page} ${r.width}px text200=${r.large}: horizontal overflow`);
  for(const r of rows){

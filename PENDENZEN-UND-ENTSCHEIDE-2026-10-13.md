@@ -1,10 +1,28 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-44 (`65041e4`, [PR #715](https://github.com/christaegger-dot/borderline-angehoerige/pull/715) gemergt am 29.10.2026, 16:07 UTC, von Christa Egger). Kein offener Arbeitsentwurf; Schritt 3 folgt auf Branch `claude/dazzling-cerf-n6ci1w` (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-44 (`65041e4`, [PR #715](https://github.com/christaegger-dot/borderline-angehoerige/pull/715) gemergt am 29.10.2026, 16:07 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-45 auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #717](https://github.com/christaegger-dot/borderline-angehoerige/pull/717), Entwurf; Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Gestaltung Schritt 3 · r4-45 · Entwurf vom 29.10.2026
+
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`e7eb137`) aufgesetzt, [PR #717](https://github.com/christaegger-dot/borderline-angehoerige/pull/717) (Entwurf, nicht gemergt). Freigabe von Christa Egger vom 29.10.2026: «nachher weiter mit Schritt 3, ich gebe Freigabe». Sie gilt für E2 und E8. Zu den Schutzsätzen: «entscheide selber». Nachweis: [`audit-results/2026-10-29-struktur-r4-45/BERICHT.md`](audit-results/2026-10-29-struktur-r4-45/BERICHT.md).
+
+**Inhalt:**
+- **Hauptnavigation:** fünf Bereiche «Verstehen», «Im Alltag», «Krisen», «Familie», «Für Sie» statt sechs. «Übersicht» entfällt, das Logo führt zur Startseite. Behandlung gehört zu Verstehen. Krise und Familie sind eigene Bereiche. «Für Sie» umfasst Auf sich achten, Unterstützung und Bücher.
+- **Direkteinstiege:** «Kurz und klar», «Nachschlagen», «Suchen».
+- **Menüknopf:** nur noch unter 50 rem statt 78 rem.
+- **Adressen:** unverändert.
+- **Bedienwörter:** «Weiter im Bereich «…»», «Auf dieser Seite · N Abschnitte», «Das Wichtigste» (sechs Schnelleinstiege), «Zu Ihrer Sicherheit» (zwei Sicherheitshinweise).
+- **Startseite:** ohne Sprungknopf; «Wenig Zeit oder Kraft?» steht unter den Anliegen.
+- **Schutzsätze:** Die zwei Schutzsätze der Abbildungen sind wieder sichtbar.
+- **Unverändert:** Akut- und Sicherheitswortlaut, Kontaktangaben.
+
+**Technischer Stand des Entwurfs:** Selbsttest 84/84; Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` Parität 34 Dateien; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 230 Zustände, 25 Bedienproben, 1 Abweichung (Ausnahme B2c, 1992 px bei 375 px). Die Probe «ohne JavaScript alle Navigationslinks sichtbar» zählt jetzt aus dem Seitenvertrag (fünf statt fest sechs).
+
+**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat; E7, E9, E10; Merge und Veröffentlichung nur auf Auftrag.
 
 ## Gestaltung Schritt 2 · r4-44 · veröffentlicht am 29.10.2026
 

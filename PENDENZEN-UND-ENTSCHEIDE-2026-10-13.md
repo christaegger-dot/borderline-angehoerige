@@ -1,10 +1,66 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-53 (`2324026`, [PR #745](https://github.com/christaegger-dot/borderline-angehoerige/pull/745) gemergt am 29.10.2026, 22:42 UTC, von Christa Egger), siehe oberster Abschnitt. Kein offener Arbeitsentwurf. Vorher r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-52. Nachprüfung r4-52 liegt auf `main` vor ([PR #743](https://github.com/christaegger-dot/borderline-angehoerige/pull/743), gemergt als `b138c4b` am 29.10.2026, 22:32 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-52»; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); Profil 2026.10.10 (Nachtblau, Titelbild) ist gemergt ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger), die unabhängige Prüfung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt), siehe Abschnitt r4-49; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-54 (`060aa8f`, [PR #751](https://github.com/christaegger-dot/borderline-angehoerige/pull/751) gemergt am 29.10.2026, 23:02 UTC, im Auftrag von Christa Egger), siehe oberster Abschnitt. Kein offener Arbeitsentwurf. Vorher r4-53 (`2324026`, [PR #745](https://github.com/christaegger-dot/borderline-angehoerige/pull/745) gemergt am 29.10.2026, 22:42 UTC, von Christa Egger), siehe Abschnitt r4-53; Nachprüfung r4-53 liegt auf `main` vor ([PR #747](https://github.com/christaegger-dot/borderline-angehoerige/pull/747), gemergt als `0667a69` am 29.10.2026, 22:51 UTC, von Christa Egger), siehe oberster Abschnitt. Vorher r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-52. Nachprüfung r4-52 liegt auf `main` vor ([PR #743](https://github.com/christaegger-dot/borderline-angehoerige/pull/743), gemergt als `b138c4b` am 29.10.2026, 22:32 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-52»; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); PUK-Website-Profil auf `main`: 2026.10.13 ([christaegger-dot/puk-website-profil#145](https://github.com/christaegger-dot/puk-website-profil/pull/145), gemergt als `828413c` am 29.10.2026, 22:42 UTC), siehe Abschnitt «PUK-Website-Profil 2026.10.10 bis 2026.10.13»; Gestaltungssystem «Borderline Angehörige» auf r4-53 nachgeführt (29.10.2026, 22:56 UTC), siehe Abschnitt «Gestaltungssystem»; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Korrektur · r4-54 · Befund N52-2 · veröffentlicht am 29.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, auf `main` (`37d8326`) aufgesetzt, [PR #751](https://github.com/christaegger-dot/borderline-angehoerige/pull/751), gemergt als `060aa8f` am 29.10.2026, 23:02 UTC, im Auftrag von Christa Egger («bitte merge»). Vorher wurde ein Konflikt in der Kopfzeile dieser Datei mit PR #750 aufgelöst (`5434c83`). Der CI-Lauf `build-and-compare` war auf `5434c83` grün, Codex meldete keine Befunde; damit über Netlify veröffentlicht. Die Live-Site lieferte danach `data-puk-site-build="r4-54"` aus (eigene Abfrage mit `curl`, keine Prüfstufe). Auftrag von Christa Egger, 29.10.2026: «Nachbesserung N52-2 umsetzen». Nachweis: [`audit-results/2026-10-29-n52-2-r4-54/BERICHT.md`](audit-results/2026-10-29-n52-2-r4-54/BERICHT.md).
+
+**Inhalt:**
+- **N52-2:** Die Gate-Regel `utility-nav` verlangt die Zeile «Direkteinstiege» auf jeder veröffentlichten Seite ausser der Fehlerseite, genau nach `utilityNav`. Bisher fiel nicht auf, wenn Zeile und Menüeinträge zugleich fehlten. Auch eine fehlende oder vertauschte Zeile allein fiel nicht auf. Das zeigen eigene Mutationen.
+- **Selbsttest:** neuer Fall, 89 statt 88.
+- **Unverändert:** Wortlaut, Stylesheet und Skript. `site/` ändert nur die Build-Kennung.
+
+**Technischer Stand:**
+- Selbsttest 89/89
+- Gate 24 Seiten · 0 Blocker · 20 Hinweise
+- Parität 35
+- Suchtest 216/216
+- Sprach-/UI-Test 73/73
+- Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c)
+
+**Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die die Nachprüfungen r4-43 bis r4-51 und r4-53 erstellt und r4-52 gebaut hat. Eine Nachprüfung von r4-54 muss eine andere Sitzung machen.
+
+**Offen:**
+- Nachprüfung von r4-54 durch eine Sitzung, die nicht gebaut hat.
+- N52-3: Rest, gering.
+- N49-2: Bestätigung durch Christa Egger.
+- N51-2: gering.
+- Prüfung mit echtem Screenreader.
+
+## Nachprüfung r4-53 · liegt vor seit 29.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, auf `main` (`2324026`) aufgesetzt. Der Branchname stammt aus der ersten Nachprüfung, weil die Prüfsitzung an diesen Branch gebunden ist. [PR #747](https://github.com/christaegger-dot/borderline-angehoerige/pull/747), gemergt als `0667a69` am 29.10.2026, 22:51 UTC, von Christa Egger. Die Prüfungen waren grün. Ein CI-Lauf `build-and-compare` war nicht nötig, weil der PR nur `audit-results/` ändert (Pfadfilter). Dieser Eintrag folgte mit einem eigenen PR, weil der Merge vor seinem Push lag. Auftrag von Christa Egger, 29.10.2026: «Nachprüfung r4-53 starten». Nachweis: [`audit-results/2026-10-29-nachpruefung-r4-53/NACHPRUEFUNG.md`](audit-results/2026-10-29-nachpruefung-r4-53/NACHPRUEFUNG.md).
+
+**Gegenstand und Prüfende:** alle Änderungen von `d8d78f5` (r4-52) bis `2324026` (r4-53). Danach ist an `authoring/` und `site/` nichts mehr geändert worden; geprüft ist also der veröffentlichte Stand. Die Live-Site liefert `data-puk-site-build="r4-53"` aus. Geprüft hat die Claude-Sitzung, die die Nachprüfungen r4-43 bis r4-51 erstellt hat. Sie hat an r4-53 nicht gebaut. Sie hat aber r4-52 gebaut, auf dem r4-53 aufsetzt. Das ist im Bericht offengelegt.
+
+**Ergebnis:** «Keine Nachbesserung nötig». Es gibt keine neuen Befunde.
+
+**Bestätigt:**
+- **N52-1 ist behoben.** Zwischen 992 und 1199 px beginnt die Sicherheitskarte wieder im ersten Bildschirm (bei 1024 × 768 bei 724 statt 842 px). Der Einstieg ist dort einspaltig, ohne leere Spalte. Ab 1200 px ist alles wie in r4-52. In keinem gemessenen Zustand scrollt die Seite waagrecht.
+- **Die neue Probe bei 1024 × 768 greift.** Gegen r4-52 meldet sie einen Fehler, gegen r4-53 ist sie erfüllt.
+- **axe-core:** 0 Verstösse in 144 Läufen. Geprüft sind 390, 1280, 1024 und 1200 px sowie 200 % Schrift mit offenem Menü.
+- **Unverändert:** Wortlaut, Akuthinweise, Suche und Gate-Regeln.
+- **Tests:**
+  - Gate: 24 Seiten · 0 Blocker
+  - Parität: 35
+  - Selbsttest: 88/88
+  - Suchtest: 216/216
+  - Sprach-/UI-Test: 73/73
+  - Layouttest: 27 Bedienproben, bekannte Ausnahme B2c
+
+**Hinweis ohne Befund:** Bei 200 % Schrift liegt die Sicherheitskarte bei keiner gemessenen Fenstergrösse im ersten Bildschirm. Das war schon vor dem Titelbild so.
+
+**Offen:**
+- N52-2: gering, Gate.
+- N52-3: Rest, gering.
+- N49-2: Bestätigung durch Christa Egger.
+- N51-2: gering, keine Änderung nötig.
+- Prüfung mit echtem Screenreader.
 
 ## Korrektur · r4-53 · Befund N52-1 · veröffentlicht am 29.10.2026
 
@@ -27,12 +83,54 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 **Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die die Nachprüfung r4-52 erstellt hat. Eine Nachprüfung von r4-53 muss eine andere Sitzung machen.
 
 **Offen:**
-- Nachprüfung von r4-53 durch eine Sitzung, die nicht gebaut hat.
+- Nachprüfung von r4-53: liegt vor, «Keine Nachbesserung nötig» (siehe Abschnitt «Nachprüfung r4-53» oben).
 - N52-2: gering, Gate.
 - N52-3: Rest gering (768 × 1024 mit «ganz sichtbar» als Probe).
 - N49-2: Bestätigung durch Christa Egger.
 - N51-2: gering, keine Änderung nötig.
 - Prüfung mit echtem Screenreader.
+
+## PUK-Website-Profil 2026.10.10 bis 2026.10.13 · Stand 29.10.2026
+
+**GitHub:** Repository `christaegger-dot/puk-website-profil`, `main` = `828413c`, Version 2026.10.13. Status geprüft am 29.10.2026 gegen 22:55 UTC (GitHub und `git ls-remote`).
+
+| Version | Inhalt | PR | gemergt |
+|---|---|---|---|
+| 2026.10.10 | Nachtblau als `--puk-blue-night` mit `--surface-night`; Titelbild der Startseite als einzige Ausnahme von «nicht mehrere blaue Felder nebeneinander» | [christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141) | `1b0e238`, 19:25 UTC, von Christa Egger |
+| Prüfung 2026.10.10 | Unabhängige Prüfung durch eine eigene Sitzung: sieben Punkte bestätigt, ein Befund «wichtig» (W-A) und vier «optional» (O-A bis O-D) | [christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142) | `68535c5`, 21:50 UTC |
+| 2026.10.11 | W-A: Im Druck verliert die nachtblaue Fläche ihre Farbe, Text und Links stehen wie auf Weiss | [christaegger-dot/puk-website-profil#143](https://github.com/christaegger-dot/puk-website-profil/pull/143) | `6b0ce34`, 22:04 UTC |
+| 2026.10.12 | O-D: Die Plattformvorschau `Website.dc.html` lädt das Bundle erst nach React | [christaegger-dot/puk-website-profil#144](https://github.com/christaegger-dot/puk-website-profil/pull/144) | `a4b9c1e`, 22:17 UTC |
+| 2026.10.13 | O-A: Sekundär- und Ghost-Knopf auf Nachtblau in Weiss, neues Token `--action-quiet-fg` | [christaegger-dot/puk-website-profil#145](https://github.com/christaegger-dot/puk-website-profil/pull/145) | `828413c`, 22:42 UTC, von Christa Egger |
+
+Aufträge von Christa Egger, 29.10.2026, in der Prüfsitzung des Profils: «Behebe W-A: Druck des nachtblauen Bandes», «Behebe O-D: Vorschaufehler Website.dc.html», «Behebe O-A: Knöpfe auf Nachtblau». Gebaut hat 2026.10.11 bis 2026.10.13 die Sitzung, die 2026.10.10 unabhängig geprüft hat.
+
+**Folgen für diese Website:** keine. Ihr Band «Haltung» und das Titelbild nutzen eigene Klassen (`.bl-band`, `.bl-titelbild`) mit eigenen Druckregeln. Sekundär- und Ghost-Knöpfe des Profils stehen hier nicht auf Nachtblau. Profiländerungen gehen nicht automatisch auf bestehende Websites über.
+
+**Offen im Profil-Repository (nicht in diesem Repository zu lösen):**
+- **Korrektur aus christaegger-dot/puk-website-profil#145 fehlt auf `main`:**
+  - Die Regel für Sekundär- und Ghost-Knopf auf Nachtblau im Zustand «gedrückt ohne Hover» steht nicht auf `main`. Sie steht in Commit `e9f23a2`.
+  - Gemergt ist der PR mit Head `d1609ae`. Den Commit `e9f23a2` hat die Sitzung erst danach auf den Branch `profil/2026-10-29-knoepfe-nachtblau-2026-10-13` gepusht.
+  - Auf `main` bleibt die Schrift beim Drücken mit der Tastatur deshalb weiss auf `--ui-field`, 1,11 : 1.
+  - Das Paket auf `main` hat SHA-256 `ce36829b…`, nicht den in der PR-Beschreibung genannten Wert `9458d73d…`.
+  - Die Prüfsitzung des Profils ist informiert.
+- **Weitere optionale Befunde:** O-B (Karte «PUK-Blau»), O-C (Links und Kicker im blauen Band) und die Sekundär- und Ghost-Knöpfe im blauen Band. Dazu gibt es keinen gemergten Stand und zum Zeitpunkt der Prüfung keinen offenen PR.
+- **Unabhängige Prüfung von 2026.10.13:** Sie muss eine Sitzung machen, die 2026.10.11 bis 2026.10.13 nicht gebaut hat. Sie schliesst W-A und O-D ein.
+
+## Gestaltungssystem «Borderline Angehörige» · nachgeführt am 29.10.2026
+
+**Ort:** Design-System-Artefakt «Borderline Angehörige» auf claude.ai, privat. Auftrag von Christa Egger, 29.10.2026: «Führ das Gestaltungssystem auf den heutigen Stand nach». Zuerst nachgeführt auf r4-52 (Version 17), nach r4-53 korrigiert (Version 19, 22:56 UTC).
+
+**Nachgeführt:**
+- **Texte:** Stand und alle veröffentlichten Versionen r4-43 bis r4-53 mit PR-Links. Dazu der Stand der Entscheide E1 bis E10 mit Wortlaut, die Abweichungen der Website vom System und die offenen Punkte.
+- **Seitenkopf:** Absenderin mit E-Mail und Direkteinstiege in der Zeile unter dem Kopf (E7 entfällt). Unter 20 rem stehen die Direkteinstiege im Menü.
+- **Neues Bauteil «Titelbild»:** ab 75 rem, für Screenreader verborgen, im Druck und bei erzwungenen Farben ausgeblendet. Es ist die einzige Ausnahme nach Profil 2026.10.10.
+- **Vorschauen:** Startseite, Themenseite «Grenzen setzen» (9 Abschnitte, Sicherheitshinweis im freigegebenen Wortlaut, «Das Wichtigste») und Handyansicht mit Texten aus `site/`. Die neun Anliegen der Startseite sind Wort für Wort mit `site/index.html` abgeglichen.
+- **Abbildung:** Schutzsatz und Herkunft sichtbar, Grenzen in «Grenzen des Bildes».
+- **Tokens:** nur Beschreibungen, keine Werte.
+
+**Geprüft:** Die geänderten Vorschauen sind lokal in Chromium mit Rubik gerendert und mit Bildschirmfotos der Website verglichen. Waagrechter Überlauf: 0, Fehler: 0. Nicht geprüft ist die Darstellung in der Artefaktseite selbst.
+
+**Neu festgestellt, offen:** Die Absenderzeile im Kopf ist auf der Website 15 px gross (`.puk-site-sender`, gemessen bei 1440 px). Das Gestaltungssystem verlangt mindestens 16 px («Nichts unter 16 px»). Zu entscheiden ist, ob die Website angepasst wird oder das System eine Ausnahme nennt. Bis dahin ist es im System als Abweichung eingetragen.
 
 ## Nachprüfung r4-52 · liegt vor seit 29.10.2026
 
@@ -206,8 +304,8 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Offen:**
 - **Fachlich:** ob das Motiv der Anspannungskurve als Schmuck auf der Startseite passt.
-- **Nachprüfung (N49-1):** Auf dem Handy schiebt das Titelbild die Sicherheitskarte der Startseite aus dem ersten Bildschirm; Gestaltungsentscheid offen (siehe Abschnitt «Nachprüfung r4-47 bis r4-49» oben).
-- **Profil:** Das Titelbild zeigt mehrere blaue Flächen nebeneinander (Blau 25, PUK Blau, Nachtblau). Das PUK-Website-Profil 2026.10.9 nennt «Blau als Hintergrund für ganze Seiten oder mehrere Felder nebeneinander» unter «Vermeiden» (`guidelines/02-farben-und-kontrast.md` in `christaegger-dot/puk-website-profil`). Christa Egger hat am 29.10.2026 entschieden, Nachtblau dort als gemeinsame Änderung vorzuschlagen («JA»). Den Vorschlag für Profil 2026.10.10 mit sieben Punkten hat sie am 29.10.2026 bestätigt («ja, wie vorgeschlagen»): Nachtblau als benannte Schattierung `--puk-blue-night` mit `--surface-night`, Geltung, Zählung und eine Ausnahme für ein dekoratives Titelbild der Startseite. Umgesetzt als Profil 2026.10.10 ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), gemergt als `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger, nach grünen Prüfungen «Build, Tests und Paket» und «Offene Stufen»; Entscheiddokument `ENTSCHEIDE-PROFIL-2026-10-10.md`). Das Titelbild der Startseite entspricht damit dem Profil. Die unabhängige Prüfung des Pakets durch eine eigene Sitzung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), Entwurf, nicht gemergt): alle sieben Punkte bestätigt, ein Befund «wichtig» (W-A: im Druck verliert das nachtblaue Band der Profilvorlage seine Fläche, der Text bleibt hell) und drei «optional» (O-A bis O-C). Die Website ist von W-A nicht betroffen, weil ihr Band «Haltung» eigene Druckregeln hat (dunkle Schrift, blauer Rahmen, geprüft in r4-50). Eine Nachbesserung als Profil 2026.10.11 ist vorgeschlagen; der Entscheid von Christa Egger ist offen.
+- **Nachprüfung (N49-1):** Auf dem Handy schob das Titelbild die Sicherheitskarte der Startseite aus dem ersten Bildschirm. Behoben mit r4-52 (Titelbild unter 62 rem ausgeblendet), der Folgebefund N52-1 mit r4-53 (erst ab 75 rem).
+- **Profil:** Das Titelbild zeigt mehrere blaue Flächen nebeneinander (Blau 25, PUK Blau, Nachtblau). Das PUK-Website-Profil 2026.10.9 nennt «Blau als Hintergrund für ganze Seiten oder mehrere Felder nebeneinander» unter «Vermeiden» (`guidelines/02-farben-und-kontrast.md` in `christaegger-dot/puk-website-profil`). Christa Egger hat am 29.10.2026 entschieden, Nachtblau dort als gemeinsame Änderung vorzuschlagen («JA»). Den Vorschlag für Profil 2026.10.10 mit sieben Punkten hat sie am 29.10.2026 bestätigt («ja, wie vorgeschlagen»): Nachtblau als benannte Schattierung `--puk-blue-night` mit `--surface-night`, Geltung, Zählung und eine Ausnahme für ein dekoratives Titelbild der Startseite. Umgesetzt als Profil 2026.10.10 ([christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141), gemergt als `1b0e238` am 29.10.2026, 19:25 UTC, von Christa Egger, nach grünen Prüfungen «Build, Tests und Paket» und «Offene Stufen»; Entscheiddokument `ENTSCHEIDE-PROFIL-2026-10-10.md`). Das Titelbild der Startseite entspricht damit dem Profil. Die unabhängige Prüfung des Pakets durch eine eigene Sitzung liegt vor ([christaegger-dot/puk-website-profil#142](https://github.com/christaegger-dot/puk-website-profil/pull/142), gemergt als `68535c5` am 29.10.2026, 21:50 UTC): alle sieben Punkte bestätigt, ein Befund «wichtig» (W-A: im Druck verliert das nachtblaue Band der Profilvorlage seine Fläche, der Text bleibt hell) und vier «optional» (O-A bis O-D). Die Website ist von W-A nicht betroffen, weil ihr Band «Haltung» eigene Druckregeln hat (dunkle Schrift, blauer Rahmen, geprüft in r4-50). Nachgebessert mit Profil 2026.10.11 bis 2026.10.13 (W-A, O-D, O-A), siehe Abschnitt «PUK-Website-Profil 2026.10.10 bis 2026.10.13».
 
 **Technischer Stand:** Selbsttest 86/86; Gate 24 Seiten · 0 Blocker; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 1 bekannte Ausnahme.
 
@@ -286,7 +384,7 @@ Kein Wortlaut geändert. **N46-3** ist mit der Freigabe vom 29.10.2026 erledigt.
 | 144/117 auf «Grenzen setzen» | **Nein**, bleibt wie r4-46 | Notrufnummern nur an den thematischen Stellen (A03-231). Sie stehen im Abschnitt «Wenn Gewalt oder Bedrohung vorkommt» auf `gefahr.html`. Der gelbe Sicherheitshinweis zuoberst auf «Grenzen setzen» führt mit einem Klick dorthin. Der Zuständigkeitsverweis steht in jeder Fusszeile. |
 | Merge von PR #719 als Fachfreigabe des neuen Wortlauts | **Nicht als Fachfreigabe vermerkt**; danach ausdrücklich erteilt (siehe unten) | Profilregel: «Einen Wortlaut nur dann als ‹fachlich geprüft› eintragen, wenn die Fachstelle genau diesen Wortlaut freigegeben hat. Eine überlassene Wahl zwischen Varianten ist keine Freigabe des Wortlauts.» Die Frage war an Claude delegiert, Claude kann die Freigabe nicht ersetzen. Vermerkt ist: veröffentlicht durch den Merge von Christa Egger. **Erteilt:** Christa Egger, 29.10.2026 gegen 17:10 UTC: «Ich gebe den Wortlaut von r4-46 frei». Der freigegebene Wortlaut steht vollständig in [`audit-results/2026-10-29-e10-r4-46/FREIGABE.md`](audit-results/2026-10-29-e10-r4-46/FREIGABE.md). |
 | E7 Absenderzeile ausserhalb des Kopfs | **Entfällt** | Profilregel: Im Kopf jeder Seite sichtbar «Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik Zürich · angehoerigenarbeit@pukzh.ch» als `mailto:`-Link. Das Gate prüft das (`sender`). Profilregeln werden nicht in einzelnen Website-Repositories geändert. Die Zeile ist seit r4-43 leise gesetzt. Der Kopf ist bei 1440 px 138 px hoch statt 159 px. |
-| E5 Nachtblau `#182866` | **Bleibt**, Entscheid Christa Egger, 29.10.2026: «unbedingt beibehalten: E5 Nachtblau #182866» | Schattierung von PUK Blau («sämtliche Schattierungen zulässig»), im PUK-Website-Profil nicht benannt. Ob sie dort als gemeinsame Änderung vorgeschlagen wird, ist nicht entschieden. |
+| E5 Nachtblau `#182866` | **Bleibt**, Entscheid Christa Egger, 29.10.2026: «unbedingt beibehalten: E5 Nachtblau #182866» | Schattierung von PUK Blau («sämtliche Schattierungen zulässig»). Seit Profil 2026.10.10 im PUK-Website-Profil benannt (`--puk-blue-night`, `--surface-night`; [christaegger-dot/puk-website-profil#141](https://github.com/christaegger-dot/puk-website-profil/pull/141)). |
 | E9 144/117 als Telefonlinks | **Bereits umgesetzt**, nichts zu tun | Der Akuthinweis (`responsibility.inline.phoneLinks`) setzt 144 und 117 auf allen fünf Seiten mit Akuthinweis als `tel:`-Links. Das sind Diagnose, Wenn es riskant oder bedrohlich wird, Kinder, Zugewandt sprechen und Krisen begleiten. Der Sprach-/UI-Test prüft es. |
 | Screenreader-Prüfung | **Ersatzprüfung durch die Prüfsitzung**; die Prüfung mit echtem Screenreader bleibt offen | Im Container gibt es keinen Screenreader. Die Prüfsitzung (unten) prüft axe-core, den Barrierefreiheitsbaum von Chromium, den Tastaturgang und die Kontraste. Sie legt eine Anleitung für eine Prüfung mit VoiceOver auf dem iPhone bei, etwa 10 Minuten. |
 | Nachprüfung durch eine Sitzung, die nicht gebaut hat | **Beauftragt** am 29.10.2026, 16:58 UTC; **liegt vor** ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026; «Nachbesserung nötig, ohne Blocker», behoben mit r4-47, N46-4 mit r4-48, soweit freigegeben) | Eigene Sitzung «Nachprüfung r4-43 bis r4-46», gestartet aus dieser Sitzung. Sie ändert nichts und committet nur `audit-results/2026-10-29-nachpruefung-r4-43-r4-46/NACHPRUEFUNG.md` auf dem Branch `pruefung/2026-10-29-nachpruefung-r4-43-r4-46`, als Entwurfs-PR. Ihre Befunde behebt danach die bauende Sitzung. Ein Unteragent derselben Sitzung wurde wieder gestoppt: Das Profil verlangt eine eigene Sitzung. |

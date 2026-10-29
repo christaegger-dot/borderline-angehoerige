@@ -1,14 +1,14 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-47 (`1d53178`, [PR #724](https://github.com/christaegger-dot/borderline-angehoerige/pull/724) gemergt am 29.10.2026, 17:39 UTC, von Christa Egger). Offener Arbeitsentwurf: r4-48 (Befund N46-4) auf Branch `claude/dazzling-cerf-n6ci1w` ([PR #726](https://github.com/christaegger-dot/borderline-angehoerige/pull/726), Entwurf); Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-48 (`fa923aa`, [PR #726](https://github.com/christaegger-dot/borderline-angehoerige/pull/726) gemergt am 29.10.2026, 17:58 UTC, im Auftrag von Christa Egger). Kein offener Arbeitsentwurf; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Korrektur · r4-48 · Befund N46-4 · Entwurf vom 29.10.2026
+## Korrektur · r4-48 · Befund N46-4 · veröffentlicht am 29.10.2026
 
-**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, auf `main` (`0ce60ea`) aufgesetzt, [PR #726](https://github.com/christaegger-dot/borderline-angehoerige/pull/726) (Entwurf, nicht gemergt). Nachweis und Freigabe: [`audit-results/2026-10-29-n46-4-r4-48/BERICHT.md`](audit-results/2026-10-29-n46-4-r4-48/BERICHT.md).
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, auf `main` (`0ce60ea`) aufgesetzt, [PR #726](https://github.com/christaegger-dot/borderline-angehoerige/pull/726), gemergt als `fa923aa` am 29.10.2026, 17:58 UTC, im Auftrag von Christa Egger («bitte merge»), nach grünem CI-Lauf `build-and-compare` auf `2964924`; damit über Netlify veröffentlicht. Die Live-Site lieferte danach `data-puk-site-build="r4-48"` aus, auf `grenzen.html` mit «Mehr dazu auf der Seite «Wenn es riskant oder bedrohlich wird»», auf `gefahr.html` unverändert «Mehr dazu im Abschnitt …» (eigene Abfrage mit `curl`, keine Prüfstufe). Nachweis und Freigabe: [`audit-results/2026-10-29-n46-4-r4-48/BERICHT.md`](audit-results/2026-10-29-n46-4-r4-48/BERICHT.md).
 
 **Fachfreigabe Christa Egger, 29.10.2026:**
 - **«Ja»** zu: «Bei Bedrohung oder Gewalt geht Schutz vor jedem Gespräch. Mehr dazu auf der Seite «Wenn es riskant oder bedrohlich wird».»

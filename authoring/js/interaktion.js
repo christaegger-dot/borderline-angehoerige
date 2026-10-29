@@ -249,7 +249,7 @@
     var finiteKill = { umbringt: 1, umbringe: 1, umbringst: 1, umbrachte: 1, umbrachten: 1, umbrachtest: 1, umbrachtet: 1, toete: 1,
       toetest: 1, toetet: 1, toetete: 1, toeteten: 1, toetetest: 1, toetetet: 1 };
     var separableVerbs = { bring: 1, bringe: 1, bringt: 1, bringst: 1, bringen: 1, brachte: 1, brachten: 1, brachtest: 1, brachtet: 1 };
-    var safetyTargets = { suizid: 'krise.html#suizid', gewalt: 'grenzen.html#gewalt', kinder: 'kinder.html#eskalation', druck: 'kommunizieren.html#suizid-angesprochen' };
+    var safetyTargets = { suizid: 'krise.html#suizid', gewalt: 'gefahr.html#gewalt', kinder: 'kinder.html#eskalation', druck: 'kommunizieren.html#suizid-angesprochen' };
     var actors = { er: 1, sie: 1, du: 1, jemand: 1, man: 1, ihr: 1, mann: 1, frau: 1, partner: 1, partnerin: 1, ex: 1, exmann: 1, exfrau: 1,
       ehemann: 1, ehefrau: 1, lebenspartner: 1, lebenspartnerin: 1, vater: 1, mutter: 1, stiefvater: 1, stiefmutter: 1, mama: 1, papa: 1,
       sohn: 1, tochter: 1, bruder: 1, schwester: 1, freund: 1, freundin: 1, kind: 1, eltern: 1, familie: 1, nachbar: 1, nachbarin: 1 };
@@ -580,7 +580,7 @@
     if (!window.location.hash) return;
     var target;
     try { target = document.getElementById(decodeURIComponent(window.location.hash.slice(1))); } catch (e) { return; }
-    if (!target) return;
+    if (!target) { movedAnchor(); return; }
     var details = target.closest('details');
     var opened = false;
     for (var d = details; d; d = d.parentElement && d.parentElement.closest('details')) { if (!d.open) { d.open = true; opened = true; } }
@@ -594,6 +594,13 @@
       focusTarget.focus({ preventScroll: true });
       if (addedTabindex) focusTarget.addEventListener('blur', function () { focusTarget.removeAttribute('tabindex'); }, { once: true });
     });
+  }
+  /* r4-46: Abschnitte, die auf eine andere Seite umgezogen sind (grenzen.html#gewalt → gefahr.html#gewalt). Alte Lesezeichen
+     und Links führen so zum neuen Ort; ohne Skript zeigt der Sicherheitshinweis oben auf der Seite den Weg. */
+  function movedAnchor() {
+    var to;
+    try { to = (JSON.parse(document.documentElement.getAttribute('data-moved-anchors') || '{}') || {})[decodeURIComponent(window.location.hash.slice(1))]; } catch (e) { return; }
+    if (typeof to === 'string' && /^[a-z0-9-]+\.html#[a-z0-9-]+$/.test(to)) window.location.replace(to);
   }
   window.addEventListener('hashchange', revealHashTarget);
 

@@ -1487,9 +1487,7 @@ html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-to
 .bl-stufen .puk-say__item{margin:0}
 @media print{.bl-stufen>li{break-inside:avoid}}
 
-/* Genesung, Kopf (Bauauftrag 2c-1, Abschnitt 3): die drei Kernsätze des Bestands als Liste unter der Einleitung, in Seitenschrift. */
-.bl-kernsaetze{max-width:62ch;margin:var(--space-5) 0 0;padding-left:var(--space-6)}
-.bl-kernsaetze li{margin-top:var(--space-2);font-size:var(--web-size-body);line-height:var(--lh-body);color:var(--text-default)}
+/* Genesung: Die drei Kernsätze des Einstiegs stehen seit r4-46 im Kasten «Das Wichtigste» (.puk-site-quick). */
 
 /* Genesung › Forschung: Datenbotschaft (Leitlinie 05, Anwendungsmuster «Datenbotschaft»): Kernaussage zuerst, danach die Werte
    als hervorgehobener Text mit Erklärung. Kein Diagramm (Entscheid im Bauauftrag 2c-1, Abschnitt 1). */

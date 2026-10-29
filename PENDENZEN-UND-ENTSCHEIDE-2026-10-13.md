@@ -1,10 +1,27 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-45 (`7704147`, [PR #717](https://github.com/christaegger-dot/borderline-angehoerige/pull/717) gemergt am 29.10.2026 im Auftrag von Christa Egger: «bitte merge und dann Pendenzendatei nachführen»). Kein offener Arbeitsentwurf (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-45 (`7704147`, [PR #717](https://github.com/christaegger-dot/borderline-angehoerige/pull/717) gemergt am 29.10.2026 im Auftrag von Christa Egger: «bitte merge und dann Pendenzendatei nachführen»). Offener Arbeitsentwurf: r4-46 (E10) auf Branch `claude/dazzling-cerf-n6ci1w` (Pull Request folgt; Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## E10 · r4-46 · Entwurf vom 29.10.2026
+
+**GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, neu von `main` (`352c716`) aufgesetzt. Pull Request folgt. Auftrag von Christa Egger vom 29.10.2026: «mach weiter mit E10». Nachweis: [`audit-results/2026-10-29-e10-r4-46/BERICHT.md`](audit-results/2026-10-29-e10-r4-46/BERICHT.md).
+
+**Inhalt:**
+- **Teilung:** «Grenzen setzen» ist geteilt. Die Abschnitte «Wenn Entscheidungen oder Verhalten riskant werden» und «Wenn Gewalt oder Bedrohung vorkommt» stehen samt Akuthinweis wortgleich auf der neuen Seite `gefahr.html` «Wenn es riskant oder bedrohlich wird» im Bereich «Krisen». Der Titel heisst «bedrohlich» statt «gefährlich», damit die festgeschriebene Suche «gefährlich» weiter auf «Krisen begleiten» führt.
+- **Verweise:** Links, Quellenangaben und das Sicherheitsziel der Suche sind auf die neue Adresse umgestellt. Logik und Rangfolge der Suche sind unverändert (216/216).
+- **Alte Links:** `grenzen.html#riskant` und `#gewalt` leiten per Skript weiter.
+- **«Das Wichtigste»:** neu auf «Borderline verstehen», «Alltag und Beziehungen», «Grenzen setzen», «Diagnose» und «Genesung». Die Kästen sind aus bestehenden Sätzen derselben Seite zusammengestellt.
+- **Fachfreigabe nötig:** für die neuen Titel und 6 angepasste Sätze (Liste im Bericht).
+
+**Technischer Stand des Entwurfs:** Selbsttest 84/84; Produktionsgate 24 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` Parität 35 Dateien; Suchtest 216/216; Sprach-/UI-Test 73/73 (Prüfung des Akuthinweises von `grenzen` auf `gefahr` umgestellt); Layouttest 240 Zustände, 25 Bedienproben, 1 Abweichung (Ausnahme B2c).
+
+**Zu entscheiden:** «Grenzen setzen» zeigt 144/117 nicht mehr selbst. Die Nummern stehen im umgezogenen Abschnitt, der Sicherheitshinweis zuoberst führt mit einem Klick dorthin (Regel A03-231).
+
+**Offen:** Fachfreigabe des neuen Wortlauts; Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat; E7, E9; Merge und Veröffentlichung nur auf Auftrag.
 
 ## Gestaltung Schritt 3 · r4-45 · veröffentlicht am 29.10.2026
 
@@ -22,7 +39,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Technischer Stand des Entwurfs:** Selbsttest 84/84; Produktionsgate 23 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` Parität 34 Dateien; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 230 Zustände, 25 Bedienproben, 1 Abweichung (Ausnahme B2c, 1992 px bei 375 px). Die Probe «ohne JavaScript alle Navigationslinks sichtbar» zählt jetzt aus dem Seitenvertrag (fünf statt fest sechs).
 
-**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat (für r4-43 bis r4-45); E7 (Absenderleiste), E9 (Telefonlinks 144/117), E10 (Teilung «Grenzen setzen», «Das Wichtigste» auf weiteren Seiten); Codex-Review, sobald das Limit frei ist. Weitere Merges und Veröffentlichungen nur auf Auftrag.
+**Offen:** Screenreader-Prüfung; Nachprüfung durch eine Sitzung, die nicht gebaut hat (für r4-43 bis r4-45); E7 (Absenderleiste), E9 (Telefonlinks 144/117), E10 (umgesetzt als Entwurf r4-46, oben); Codex-Review, sobald das Limit frei ist. Weitere Merges und Veröffentlichungen nur auf Auftrag.
 
 ## Gestaltung Schritt 2 · r4-44 · veröffentlicht am 29.10.2026
 

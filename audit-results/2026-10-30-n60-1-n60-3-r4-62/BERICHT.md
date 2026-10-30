@@ -95,12 +95,11 @@ Lokal mit Node 22.22.0, Chromium 153 und Playwright über `PLAYWRIGHT_MODULE`, a
 
 ## Nachtrag: Merge von `main` durch Copilot, Umbenennung in r4-65
 
-- **Merge durch Copilot:** Am 30.10.2026 um 09:24:06 UTC hat `copilot-swe-agent[bot]` `main` in diesen Branch gemergt (`e1db2da`). Auf `main` war inzwischen r4-64 veröffentlicht (PR #788, N56-1). Dabei sind zwei Fehler entstanden:
-  - Die Pendenzendatei stand wieder auf dem Stand vor #788 und #789. Ein Merge von #784 hätte deren Einträge auf `main` gelöscht.
-  - In `pendingScope` war der Eintrag r4-64 durch r4-62 ersetzt. `BUILD`, `assetVersion` und `independentReviewWaiver.version` standen auf r4-64.
-- **Behoben in diesem Commit:**
-  - Die Pendenzendatei ist wieder gleich wie auf `main` (`git diff origin/main -- PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md` leer).
-  - Die Konfiguration ist die von `main` mit dem Eintrag dieses Stands obenauf. Der Eintrag r4-64 steht wieder darunter.
+- **Merge durch Copilot:** Am 30.10.2026 um 09:24:06 UTC hat `copilot-swe-agent[bot]` `main` (`a55ecb1`, r4-64, PR #788) in diesen Branch gemergt (`e1db2da`). Dabei hat er `BUILD`, `independentReviewWaiver.version` und die Kennung in `site/` auf r4-64 gesetzt, also auf die Kennung, die schon live ist. `pendingScope` und `appliedTo` sagten dagegen r4-62 (Review auf #784, Befund K1).
+- **Berichtigung einer eigenen Angabe:** Im Commit `7a21ee5` und in einer ersten Fassung dieses Abschnitts stand, der Copilot-Merge habe die Pendenzendatei auf den Stand vor #788 und #789 zurückgesetzt und den Eintrag r4-64 in `pendingScope` überschrieben. Das ist falsch. Verglichen hatte ich mit einem neueren `main` (`d20973b`, mit #791). `e1db2da` hat dieselbe Pendenzendatei wie `a55ecb1`, und sein `pendingScope` enthält den Eintrag r4-64.
+- **Geändert in `7a21ee5`:**
+  - Die Pendenzendatei ist gleich wie auf `main` (`d20973b`). Das bringt nur #791 nach (`git diff origin/main -- PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md` leer).
+  - Die Konfiguration ist die von `main` mit dem Eintrag dieses Stands obenauf.
 - **Umbenennung in r4-65:** r4-64 ist schon veröffentlicht, und r4-63 ist in PR #787 vergeben. Dieser Stand heisst deshalb r4-65, in `BUILD`, `assetVersion`, `independentReviewWaiver.version`, `pendingScope`, `appliedTo` und in den Kommentaren und Selbsttestnamen von `contract.js`. Die Regeln sind unverändert gegenüber `d6dd542`, den die Nachprüfung r4-62 (#790) geprüft hat. Ordner und Dateinamen dieses Nachweises bleiben bei r4-62.
 - **Seiten:** `site/` ist bis auf die Build-Kennung byte-gleich mit `main` (r4-64): 72 Ersetzungen in 24 Seiten, Stylesheet und Skript unverändert.
 - **Prüfungen auf diesem Stand:**

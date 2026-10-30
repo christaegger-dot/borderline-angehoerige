@@ -37,8 +37,8 @@ Kein Wortlaut, kein Stylesheet und kein Skript ist geändert. Der Renderer ist n
 
 **Neue Fälle greifen:** Die fünf neuen Einträge habe ich in eine Kopie von r4-57 eingesetzt. Ergebnis mit den Regeln von r4-57: `Selbsttest: 93/98 bestanden`, genau diese fünf scheitern.
 
-**Eigene Mutationen über `C.gate`** (Modus `production`, gerenderte Seiten wie in `build.mjs`; gezählt sind neue Blocker). Dazu habe ich die 39 Mutationen der Nachprüfung r4-57 wiederholt:
-- 36 ergeben dasselbe wie mit r4-57;
+**Eigene Mutationen über `C.gate`** (Modus `production`, gerenderte Seiten wie in `build.mjs`; gezählt sind neue Blocker). Dazu habe ich die 39 Läufe des Prüfskripts der Nachprüfung r4-57 wiederholt (berichtigt am 30.10.2026, Befund N58-2; vorher hiess es «39 Mutationen»): den Bestand M0 und 38 Mutationen, nämlich die 37 aus der Tabelle der Nachprüfung r4-57 und M11 (`Kurz&shy;und klar` als Entität, ändert den sichtbaren Text; im Skript enthalten, in der Tabelle nicht):
+- 36 Läufe ergeben dasselbe wie mit r4-57 (der Bestand und 35 Mutationen);
 - 3 sind neu blockiert: M15 (`aria-label` am Link), M16 (`aria-hidden` auf der Zeile) und M16b (`hidden` auf der Zeile).
 
 | Mutation | r4-57 | r4-58 |

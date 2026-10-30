@@ -1,0 +1,23 @@
+== V0 r4-65 unverändert
+   Selbsttest: 122/122 bestanden
+== V1 hiddenFlag von r4-64 (ersetzt: H)
+   FAIL | Direkteinstieg mit <svg hidden aria-label> im Link: hidden wirkt an SVG nicht (r4-65, N61-1) | erwartet: utility-nav | erhalten: crisis-number-check
+   FAIL | Direkteinstieg im Menü mit <svg inert><title> im Link: inert wirkt an SVG nicht (r4-65, N61-1) | erwartet: nav | erhalten: crisis-number-check
+   Selbsttest: 120/122 bestanden
+== V2 SVG-Prüfung in Abbildungen von r4-64 (ersetzt: F)
+   FAIL | SVG ohne aria-hidden unter einem Vorfahren mit hidden und eigener display-Regel (r4-65, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+   Selbsttest: 121/122 bestanden
+== V3 hiddenFlag und SVG-Prüfung von r4-64 (ersetzt: H+F)
+   FAIL | Direkteinstieg mit <svg hidden aria-label> im Link: hidden wirkt an SVG nicht (r4-65, N61-1) | erwartet: utility-nav | erhalten: crisis-number-check
+   FAIL | Direkteinstieg im Menü mit <svg inert><title> im Link: inert wirkt an SVG nicht (r4-65, N61-1) | erwartet: nav | erhalten: crisis-number-check
+   FAIL | SVG ohne aria-hidden, nur mit hidden am SVG, bleibt ohne Namen (r4-65, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+   FAIL | SVG ohne aria-hidden, nur mit inert am SVG, bleibt ohne Namen (r4-65, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+   FAIL | SVG ohne aria-hidden unter einem Vorfahren mit hidden und eigener display-Regel (r4-65, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+   Selbsttest: 117/122 bestanden
+== V4 zu streng: inert am HTML-Vorfahren zählt nicht (ersetzt: X)
+   FAIL | SVG ohne aria-hidden unter einem Vorfahren mit inert gilt als ausgeblendet (r4-65, N60-3) | erwartet: kein figure-alt | erhalten: figure-alt
+   Selbsttest: 121/122 bestanden
+== V5 inSvg immer falsch (ersetzt: S)
+   FAIL | Direkteinstieg mit <svg hidden aria-label> im Link: hidden wirkt an SVG nicht (r4-65, N61-1) | erwartet: utility-nav | erhalten: crisis-number-check
+   FAIL | Direkteinstieg im Menü mit <svg inert><title> im Link: inert wirkt an SVG nicht (r4-65, N61-1) | erwartet: nav | erhalten: crisis-number-check
+   Selbsttest: 120/122 bestanden

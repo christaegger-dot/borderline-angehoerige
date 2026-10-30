@@ -38,6 +38,12 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, im selben [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753) wie r4-55. Gemergt zusammen mit r4-55 als `3780ee5` am 29.10.2026, 23:21 UTC, im Auftrag von Christa Egger («bitte merge»), nach grünem CI-Lauf `build-and-compare` auf `c69e24f`; damit über Netlify veröffentlicht. Die Live-Site lieferte um 23:22 UTC `data-puk-site-build="r4-56"` und in `site.css?v=r4-56` die neuen Regeln für `.puk-web-footer` (ohne Fläche, Haarlinie) und `.puk-site-sender` (`font-size:1rem`) aus (eigene Abfrage mit `curl`, keine Prüfstufe). Auftrag von Christa Egger, 29.10.2026: «ich will einen sehr dezenten footer». Nach den Vergleichsbildern hat sie entschieden: «16 px, grau». Nachweis: [`audit-results/2026-10-29-footer-r4-56/BERICHT.md`](audit-results/2026-10-29-footer-r4-56/BERICHT.md).
 
+**Merge-Regeln R28-O01 und R29-P20 nicht eingehalten** (nachgetragen auf Auftrag von Christa Egger, 30.10.2026: «ja, trag es nach»):
+- [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753) wurde um 23:21:28 UTC gemergt. Der Kommentar des Codex-Reviews, ausgelöst durch «ready for review», erschien erst um 23:21:33 UTC. Das Review auf `c69e24f` war um 23:22:02 UTC ohne Befund abgeschlossen.
+- Die Nachführung dieser Abschnitte, [PR #759](https://github.com/christaegger-dot/borderline-angehoerige/pull/759), wurde um 23:59:31 UTC gemergt. Ihr Codex-Review auf `b1fd210` lief seit 23:59:21 UTC und war um 23:59:44 UTC abgeschlossen, ebenfalls ohne Befund.
+- Beide Merges hat die bauende Sitzung im Auftrag von Christa Egger («bitte merge») ausgelöst, jeweils direkt nach dem Freigeben und damit vor dem Abschluss des Reviews.
+- Folgen: keine, weil beide Reviews ohne Befund blieben. Ab jetzt mergt die bauende Sitzung erst nach abgeschlossenem und gelesenem Codex-Review.
+
 **Inhalt:**
 - Die Fusszeile hat keine graue Fläche mehr, oben steht eine Haarlinie, der Abstand ist kleiner.
 - Überschriften, Text und Links stehen in 16 px und `tinte-leise`, Links unterstrichen. Bisher war die Kontaktzeile 19 px gross und die Links blau.

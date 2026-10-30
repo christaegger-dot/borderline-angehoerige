@@ -11,6 +11,8 @@
   - r4-65: #784 auf `main`;
   - darum r4-66.
 
+**Kennung bestätigt:** Nach der Doppelvergabe mit [PR #795](https://github.com/christaegger-dot/borderline-angehoerige/pull/795) entschied Christa Egger am 30.10.2026: «#787 behält r4-66», #795 wird r4-67 (Auswahl auf Rückfrage der Review-Sitzung kurz nach 10:58 UTC; in dieser Sitzung bestätigt). Ihr früherer gegenteiliger Wortlaut in dieser Sitzung (ca. 10:55 UTC: «#795 behält r4-66, #787 wird r4-67») ist damit überholt; eine vorbereitete Umbenennung in r4-67 ist verworfen und nie gepusht worden.
+
 Diese Datei ist der Nachweis der bauenden Sitzung (Selbstprüfung). Sie ist keine fachliche, juristische oder institutionelle Freigabe und keine unabhängige Prüfung.
 
 **Unabhängigkeit:** Die Regel hat die Sitzung gebaut, die die Nachprüfung r4-61 verfasst hat. Neu gefasst hat sie die Sitzung, die die Nachprüfung r4-65 (PR #793) verfasst hat. Die Nachprüfung von r4-66 muss eine dritte Sitzung machen.

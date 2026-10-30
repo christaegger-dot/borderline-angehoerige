@@ -10,7 +10,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **GitHub:** Branch `pruefung/2026-10-30-nachpruefung-r4-61` (Name historisch), [PR #787](https://github.com/christaegger-dot/borderline-angehoerige/pull/787), Entwurf, **nicht gemergt**. Auftrag von Christa Egger, 30.10.2026: «Nachbesserung N61-1 bis N61-3 umsetzen»; Entscheide «#787 neu fassen, dann prüfen» und, nach N65-1 der Nachprüfung r4-65 ([PR #793](https://github.com/christaegger-dot/borderline-angehoerige/pull/793)), «#787 als r4-66 neu fassen». Grundlage: `main` mit r4-65 (#784, `19a72dc`). Nachweis: [`audit-results/2026-10-30-n61-2-r4-66/BERICHT.md`](audit-results/2026-10-30-n61-2-r4-66/BERICHT.md).
 
-**Nummer:** begonnen als r4-63 (`f2fac13`, überholt), dann r4-65 (`f7f8d18`). r4-65 trägt jetzt #784 auf `main`, darum r4-66.
+**Nummer:** begonnen als r4-63 (`f2fac13`, überholt), dann r4-65 (`f7f8d18`). r4-65 trägt jetzt #784 auf `main`, darum r4-66. **Kennung bestätigt:** Nach der Doppelvergabe mit [PR #795](https://github.com/christaegger-dot/borderline-angehoerige/pull/795) entschied Christa Egger am 30.10.2026: «#787 behält r4-66», #795 wird r4-67 (Auswahl auf Rückfrage der Review-Sitzung kurz nach 10:58 UTC; in dieser Sitzung bestätigt). Ihr früherer gegenteiliger Wortlaut in dieser Sitzung (ca. 10:55 UTC: «#795 behält r4-66, #787 wird r4-67») ist damit überholt; eine vorbereitete Umbenennung in r4-67 ist verworfen und nie gepusht worden.
 
 **Inhalt:**
 - **N61-2:** Der zugängliche Text eines Direkteinstiegs schliesst den Alternativtext von Bildern und den Wert von Eingabefeldern ein, wie in Chromium (`ctlTxt` in `accTxt`). Zwei neue Selbsttestfälle und eine Gegenprobe. Die Regel ist unverändert gegenüber dem nachgeprüften Stand `f7f8d18`.

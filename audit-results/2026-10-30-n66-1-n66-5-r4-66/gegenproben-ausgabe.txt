@@ -1,0 +1,25 @@
+== ohne title (N66-1) (ersetzt: : c.attrs.title || '' → : '')
+FAIL | Direkteinstieg mit Bild ohne alt, aber mit title (Nachprüfung r4-66, N66-1) | erwartet: utility-nav | erhalten: crisis-number-check
+Selbsttest: 131/132 bestanden
+== ohne Präsentationsrolle (N66-2) (ersetzt: presentational(c) ? '' : → )
+FAIL | Bild mit role="presentation", noscript, template, input type="hidden" und Bild mit leerem alt zwischen Wörtern sind zulässig (Nachprüfung r4-66, N66-2 bis N66-4) | erwartet: kein nav, kein utility-nav | erhalten: utility-nav, nav
+Selbsttest: 131/132 bestanden
+== ohne noscript/template (N66-2) (ersetzt: 'script', 'style', 'noscript', 'template' → 'script', 'style')
+FAIL | Bild mit role="presentation", noscript, template, input type="hidden" und Bild mit leerem alt zwischen Wörtern sind zulässig (Nachprüfung r4-66, N66-2 bis N66-4) | erwartet: kein nav, kein utility-nav | erhalten: utility-nav, nav
+Selbsttest: 131/132 bestanden
+== ohne formCtl (N66-2) (ersetzt: all(a, formCtl).length > 0 || → )
+FAIL | Direkteinstieg im Menü mit input value im Link (r4-66, N61-2) | erwartet: nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg mit Checkbox im Link (Nachprüfung r4-66, N66-2) | erwartet: utility-nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg im Menü mit Schaltfläche unter inert (Nachprüfung r4-66, N66-2) | erwartet: nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg mit leerem Textfeld und Platzhalter (Nachprüfung r4-66, N66-2) | erwartet: utility-nav | erhalten: crisis-number-check
+Selbsttest: 128/132 bestanden
+== type=hidden nicht ausgenommen (N66-3) (ersetzt: !== 'hidden') || → !== 'hiddenX') ||)
+FAIL | Bild mit role="presentation", noscript, template, input type="hidden" und Bild mit leerem alt zwischen Wörtern sind zulässig (Nachprüfung r4-66, N66-2 bis N66-4) | erwartet: kein nav, kein utility-nav | erhalten: utility-nav, nav
+Selbsttest: 131/132 bestanden
+== ohne sichtbaren Text (N66-4) (ersetzt: || norm(visTxt(a)) !== norm(accTxt(a)) → )
+FAIL | Direkteinstieg nur aus Bild mit alt gleich Beschriftung (Nachprüfung r4-66, N66-4) | erwartet: utility-nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg im Menü nur aus Bild mit alt gleich Beschriftung (Nachprüfung r4-66, N66-4) | erwartet: nav | erhalten: crisis-number-check
+Selbsttest: 130/132 bestanden
+== Bild ohne Zwischenraum im sichtbaren Text (N66-4) (ersetzt: c.tag === 'img' ? ' ' : visTxt(c) → c.tag === 'img' ? '' : visTxt(c))
+FAIL | Bild mit role="presentation", noscript, template, input type="hidden" und Bild mit leerem alt zwischen Wörtern sind zulässig (Nachprüfung r4-66, N66-2 bis N66-4) | erwartet: kein nav, kein utility-nav | erhalten: utility-nav
+Selbsttest: 131/132 bestanden

@@ -1,0 +1,69 @@
+Worktree <repo> · BUILD r4-66
+Fall | Gate-Blocker (Seite index) | Chromium-Name | Chromium: Name ≠ «Kurz und klar» | Urteil
+Basis ohne Änderung | kein Blocker | "Kurz und klar" | nein | gleich
+img alt="Mehr" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+img alt="" (leer) | kein Blocker | "Kurz und klar" | nein | gleich
+img alt="   " (Leerraum) | kein Blocker | "Kurz und klar " | nein | gleich
+img ohne alt | kein Blocker | "Kurz und klar" | nein | gleich
+img ohne alt mit title="Mehr" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+img alt="" title="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+img alt = Beschriftung, Text entfernt | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+Text + img alt = Beschriftung | utility-nav | "Kurz und klar Kurz und klar" | ja | gleich
+img alt mitten im Wort: «Kurz und kl<img alt=ar>» | utility-nav | "Kurz und kl ar" | ja | gleich
+img alt="" mitten: «Kurz und<img alt="">klar» | kein Blocker | "Kurz und klar" | nein | gleich
+img role="presentation" alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+img role="none" alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+img aria-hidden="true" alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+img hidden alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+IMG ALT="Mehr" (Grossschrift) | utility-nav | "Kurz und klar Mehr" | ja | gleich
+img in svg foreignObject? nein: picture>img alt="Mehr" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+map/area alt="Mehr" (img usemap) | kein Blocker | "Kurz und klar" | nein | gleich
+area alt="Mehr" direkt im Link | kein Blocker | "Kurz und klar" | nein | gleich
+input type=text value="Mehr" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+input type=text ohne value | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+input type=text value="" | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+input type=text placeholder="Mehr" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+input ohne type value="Mehr" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+input type=hidden value="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+input type=HIDDEN value="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+input type=button value="Mehr" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+input type=button ohne value | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+input type=submit value="Mehr" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+input type=submit ohne value | utility-nav | "Kurz und klar Submit" | ja | gleich
+input type=reset ohne value | utility-nav | "Kurz und klar Reset" | ja | gleich
+input type=image alt="Mehr" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+input type=image alt="Mehr" value="X" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+input type=image ohne alt | utility-nav | "Kurz und klar Submit" | ja | gleich
+input type=checkbox | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+input type=checkbox value="Mehr" | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+input type=radio value="Mehr" | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+input type=range | utility-nav | "Kurz und klar 50" | ja | gleich
+input type=color | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+input type=file | utility-nav | "Kurz und klar Choose File: No file chosen" | ja | gleich
+input hidden-Attribut value="Mehr" | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+input aria-hidden="true" value="Mehr" | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+input value = Beschriftung, Text entfernt | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+textarea «Mehr» | utility-nav | "Kurz und klar Mehr" | ja | gleich
+textarea leer | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+select option «Mehr» | utility-nav | "Kurz und klar Mehr" | ja | gleich
+select zwei Optionen, zweite gewählt | utility-nav | "Kurz und klar Mehr" | ja | gleich
+select mit leerer Option | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+button «Mehr» | utility-nav | "Kurz und klar Mehr" | ja | gleich
+img alt="Mehr" title="Anders" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+input type=text title="Mehr" ohne value | utility-nav | "Kurz und klar Mehr" | ja | gleich
+input type=button title="Mehr" ohne value | utility-nav | "Kurz und klar Mehr" | ja | gleich
+noscript mit img alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+template mit img alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+svg aria-hidden mit foreignObject img alt | kein Blocker | "Kurz und klar" | nein | gleich
+img alt="Mehr" in span aria-hidden="false" | utility-nav | "Kurz und klar Mehr" | ja | gleich
+Menü: img alt="Mehr" | nav | "Kurz und klar Mehr" | ja | gleich
+Menü: img alt="" | kein Blocker | "Kurz und klar" | nein | gleich
+Menü: input type=button value="Mehr" | nav | "Kurz und klar Mehr" | ja | gleich
+Menü: input type=hidden value="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+Menü: input type=checkbox | nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+Rückfall ohne utilityNav: Basis | kein Blocker
+Rückfall ohne utilityNav: img alt="Mehr" (angewandt: true) | utility-nav
+Rückfall ohne utilityNav: img alt="" + input hidden (angewandt: true) | kein Blocker
+Fehlerseite 404.html: Direkteinstiege-Zeile vorhanden: false | Blocker: kein Blocker
+Fehlerseite mit <a>…<img alt> im Inhalt (angewandt: true) | Blocker: placeholder-status
+Ungeänderte Seiten: 0 Blocker, 20 Hinweise

@@ -44,12 +44,23 @@ const inSvg = x => x.tag === 'svg' || !!up(x, y => y.tag === 'svg');
 const hiddenFlag = x => (!inSvg(x) && (has(x, 'hidden') || has(x, 'inert'))) || ariaHiddenFlag(x);
 const concealed = nd => hiddenFlag(nd) || !!up(nd, hiddenFlag);
 const svgSilenced = sv => ariaHiddenFlag(sv) || !!up(sv, x => ariaHiddenFlag(x) || (has(x, 'inert') && !inSvg(x)));
-/* r4-66 (Nachprüfung r4-61, N61-2): Chromium nimmt auch den Alternativtext eines Bildes und den Wert eines Eingabefelds in den
-   Namen des Links auf («<a>Kurz und klar<img alt="Mehr"></a>» heisst «Kurz und klar Mehr»). Ein sichtbares Eingabefeld ohne Wert
-   zählt als Platzhalter, damit es auffällt (in einem Link ohnehin unzulässig). */
-const ctlTxt = c => c.tag === 'img' ? ' ' + (c.attrs.alt || '') + ' '
-  : c.tag === 'input' ? (String(c.attrs.type || '').toLowerCase() === 'hidden' ? '' : ' ' + (c.attrs.value || '[Eingabefeld]') + ' ') : null;
-const accTxt = node => (node.children || []).map(c => c.tag === '#text' ? c.text : RAW.has(c.tag) || hiddenFlag(c) ? '' : ctlTxt(c) ?? accTxt(c)).join('');
+/* r4-66 (Nachprüfung r4-61, N61-2): Chromium nimmt auch den Alternativtext eines Bildes in den Namen des Links auf
+   («<a>Kurz und klar<img alt="Mehr"></a>» heisst «Kurz und klar Mehr»).
+   Nachbesserung (Nachprüfung r4-66, PR #800, N66-1, N66-2), wie Chromium 153 (Zugänglichkeitsbaum über CDP): Bei einem Bild ohne
+   alt zählt der title, bei role="presentation" oder "none" nichts; der Inhalt von noscript und template zählt nicht.
+   Eingabefelder, Schaltflächen, Auswahllisten und Textfelder bildet accTxt nicht nach. formCtl blockiert sie im Direkteinstieg
+   immer, auch verborgen oder unter inert; Chromium nimmt dort z. B. den Wert einer Schaltfläche trotz inert auf. Nur
+   <input type="hidden"> ist zulässig. */
+const NONAME = new Set(['script', 'style', 'noscript', 'template']);
+const presentational = c => ['presentation', 'none'].includes(String(c.attrs.role || '').trim().split(/\s+/)[0].toLowerCase());
+const imgTxt = c => presentational(c) ? '' : has(c, 'alt') ? c.attrs.alt : c.attrs.title || '';
+const accTxt = node => (node.children || []).map(c => c.tag === '#text' ? c.text : NONAME.has(c.tag) || hiddenFlag(c) ? '' : c.tag === 'img' ? ' ' + imgTxt(c) + ' ' : accTxt(c)).join('');
+const formCtl = x => (x.tag === 'input' && String(x.attrs.type || '').toLowerCase() !== 'hidden') || ['button', 'select', 'textarea'].includes(x.tag);
+/* r4-66 (Nachprüfung r4-66, PR #800, N66-4; Entscheid Christa Egger «sichtbaren Text verlangen»): Die Beschriftung muss als Text
+   sichtbar sein. Ein Bild trägt zum sichtbaren Text nur einen Zwischenraum bei; ein Link, der nur aus einem Bild mit
+   alt = Beschriftung besteht, ist darum nicht zulässig. Verborgene Zusätze (P4.6) zählen wie bei accTxt nicht. */
+const visTxt = node => (node.children || []).map(c => c.tag === '#text' ? c.text : NONAME.has(c.tag) || hiddenFlag(c) ? '' : c.tag === 'img' ? ' ' : visTxt(c)).join('');
+const unlabelledText = a => all(a, formCtl).length > 0 || norm(visTxt(a)) !== norm(accTxt(a));
 /* r4-61 (Nachprüfung N59-3): auch aria-label oder aria-labelledby an einem nicht verborgenen Element im Link ändert den Namen
    (Chromium: «<a><span aria-label="Mehr">Kurz und klar</span></a>» heisst «Mehr»). Ein verborgenes Element zählt nicht.
    r4-65 (N61-1): verborgen nach hiddenFlag, also an SVG nur mit aria-hidden, nicht mit hidden oder inert. */
@@ -553,6 +564,8 @@ function gate(cfg, files, opts = {}) {
         const utilityLinks = all(utilityEl, x => x.tag === 'a');
         if (concealed(utilityEl) || utilityLinks.some(concealed)) add('block', pid, 'utility-nav', 'Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden verborgen');
         if (utilityLinks.some(relabelled)) add('block', pid, 'utility-nav', 'Direkteinstieg mit aria-label oder aria-labelledby: der zugängliche Name muss die sichtbare Beschriftung sein');
+        /* r4-66 (Nachprüfung r4-66, PR #800, N66-2, N66-4) */
+        if (utilityLinks.some(unlabelledText)) add('block', pid, 'utility-nav', 'Direkteinstieg mit Formularelement oder ohne die Beschriftung als sichtbaren Text');
       }
     }
     const navEl = one(doc, x => x.tag === 'nav' && x.attrs['aria-label'] === 'Hauptnavigation');
@@ -570,6 +583,7 @@ function gate(cfg, files, opts = {}) {
       const menuUtilityLinks = navLinks.filter(a => cls(a, 'puk-site-menu__utility-link'));
       if (menuUtilityLinks.some(concealed)) add('block', pid, 'nav', 'Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen');
       if (menuUtilityLinks.some(relabelled)) add('block', pid, 'nav', 'Direkteinstieg im Menü mit aria-label oder aria-labelledby: der zugängliche Name muss die sichtbare Beschriftung sein');
+      if (menuUtilityLinks.some(unlabelledText)) add('block', pid, 'nav', 'Direkteinstieg im Menü mit Formularelement oder ohne die Beschriftung als sichtbaren Text');
       if (links.length > NAV_MAX && !one(navEl, x => has(x, 'data-puk-disclosure'))) add('block', pid, 'nav-menu', `${links.length} Hauptpunkte ohne Menü – ab ${NAV_MAX + 1} Punkten braucht die Navigation unter 760 px ein Dropdown-Menü (Abschnitt «Interaktionskonzept»; tools/build.mjs erzeugt es)`);
       links.forEach(a => { const r = resolve(path, a.attrs.href); if (!exists(r.path)) add('block', pid, 'nav-target', 'Navigationsziel fehlt: ' + a.attrs.href); else if (byPath[r.path] && byPath[r.path].status !== 'published') add('block', pid, 'nav', 'Entwurf in der Navigation: ' + a.attrs.href); });
       if (got.join('|') !== navExp.join('|')) add('block', pid, 'nav', `Navigation weicht vom Seitenvertrag ab: ${got.join(', ') || 'leer'} statt ${navExp.join(', ')}`);
@@ -744,6 +758,12 @@ const MUTATIONS = [
   ['Direkteinstieg im Menü mit <svg inert><title> im Link: inert wirkt an SVG nicht (r4-65, N61-1)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<svg inert width="8" height="8"><title>Mehr</title></svg><')],
   ['Direkteinstieg mit img alt im Link (r4-66, N61-2)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class=\"puk-site-utility__link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<img alt="Mehr" src="data:," width="8" height="8"><')],
   ['Direkteinstieg im Menü mit input value im Link (r4-66, N61-2)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class=\"puk-web-nav__link puk-site-menu__utility-link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<input type="button" value="Mehr"><')],
+  ['Direkteinstieg mit Bild ohne alt, aber mit title (Nachprüfung r4-66, N66-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<img title="Mehr" src="data:," width="8" height="8"><')],
+  ['Direkteinstieg mit Checkbox im Link (Nachprüfung r4-66, N66-2)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<input type="checkbox"><')],
+  ['Direkteinstieg im Menü mit Schaltfläche unter inert (Nachprüfung r4-66, N66-2)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<span inert><input type="button" value="Mehr"></span><')],
+  ['Direkteinstieg mit leerem Textfeld und Platzhalter (Nachprüfung r4-66, N66-2)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<textarea placeholder="Mehr"></textarea><')],
+  ['Direkteinstieg nur aus Bild mit alt gleich Beschriftung (Nachprüfung r4-66, N66-4)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<img alt="$2" src="data:," width="8" height="8"><')],
+  ['Direkteinstieg im Menü nur aus Bild mit alt gleich Beschriftung (Nachprüfung r4-66, N66-4)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<img alt="$2" src="data:," width="8" height="8"><')],
   ['SVG ohne aria-hidden, nur mit hidden am SVG, bleibt ohne Namen (r4-65, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1 hidden')],
   ['SVG ohne aria-hidden, nur mit inert am SVG, bleibt ohne Namen (r4-65, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1 inert')],
   ['SVG ohne aria-hidden unter einem Vorfahren mit hidden und eigener display-Regel (r4-65, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1') && rex(f, 'verstehen.html', /<div class="puk-vis-scene">/, '<div class="puk-vis-scene" hidden>')],
@@ -939,6 +959,16 @@ function selftest(cfg, files, opts = {}) {
     const ok = rex(f, 'index.html', /(<a class=\"puk-site-utility__link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<img alt="" src="data:," width="8" height="8"><span hidden><img alt="Mehr" src="data:,"></span><');
     const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'utility-nav');
     rows.push({ name: 'Bild mit leerem alt und verborgenes Bild im Direkteinstieg sind zulässig (r4-66, N61-2)', expected: 'kein utility-nav', got: ok ? (hit ? 'utility-nav' : 'kein utility-nav') : 'Mutation nicht anwendbar', ok: ok && !hit }); }
+  { /* r4-66 (Nachprüfung r4-66, PR #800, N66-2, N66-3, N66-4): Was in Chromium nicht zum Namen zählt, ändert die Beschriftung nicht:
+       Bild mit role="presentation" und alt, Bild in noscript oder template, <input type="hidden">, ein Bild mit leerem alt
+       zwischen zwei Wörtern (Chromium: «Kurz und klar»). In Zeile und Menü. */
+    const ids = f => [...new Set(gate(cfg, f, { mode: 'draft', exists: base }).findings.filter(x => x.level === 'block' && ['nav', 'utility-nav'].includes(x.id)).map(x => x.id))];
+    const extra = '<img role="presentation" alt="Mehr" src="data:,"><noscript><img alt="Mehr" src="data:,"></noscript><template><img alt="Mehr" src="data:,"></template><input type="hidden" value="Mehr">';
+    const f = Object.assign({}, files);
+    const ok = rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, (m, a, t) => a + t.replace(/ (\S+)$/, '<img alt="" src="data:,">$1') + extra + '<')
+      && rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, (m, a, t) => a + t + extra + '<');
+    const got = ok ? ids(f) : ['Mutation nicht anwendbar'];
+    rows.push({ name: 'Bild mit role="presentation", noscript, template, input type="hidden" und Bild mit leerem alt zwischen Wörtern sind zulässig (Nachprüfung r4-66, N66-2 bis N66-4)', expected: 'kein nav, kein utility-nav', got: got.join(', ') || 'kein nav, kein utility-nav', ok: ok && !got.length }); }
   for (const [name, expect, mut] of MUTATIONS) {
     const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files);
     let applied; try { applied = mut(c, f) !== false; } catch (e) { applied = false; }

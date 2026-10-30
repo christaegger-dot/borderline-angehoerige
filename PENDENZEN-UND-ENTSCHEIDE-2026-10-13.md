@@ -6,7 +6,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Korrektur · r4-66 · Befund N61-2 · offen seit 30.10.2026
+## Korrektur · r4-66 · Befund N61-2, Nachbesserung N66-1 bis N66-5 (#800) · offen seit 30.10.2026
 
 **GitHub:** Branch `pruefung/2026-10-30-nachpruefung-r4-61` (Name historisch), [PR #787](https://github.com/christaegger-dot/borderline-angehoerige/pull/787), seit 11:11 UTC kein Entwurf mehr (Codex-Auslöser «Draft marked ready»), **nicht gemergt**. Auftrag von Christa Egger, 30.10.2026: «Nachbesserung N61-1 bis N61-3 umsetzen»; Entscheide «#787 neu fassen, dann prüfen» und, nach N65-1 der Nachprüfung r4-65 ([PR #793](https://github.com/christaegger-dot/borderline-angehoerige/pull/793)), «#787 als r4-66 neu fassen». Grundlage: `main` mit r4-65 (#784, `19a72dc`). Nachweis: [`audit-results/2026-10-30-n61-2-r4-66/BERICHT.md`](audit-results/2026-10-30-n61-2-r4-66/BERICHT.md).
 
@@ -15,6 +15,13 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 **Inhalt:**
 - **N61-2:** Der zugängliche Text eines Direkteinstiegs schliesst den Alternativtext von Bildern und den Wert von Eingabefeldern ein, wie in Chromium (`ctlTxt` in `accTxt`). Zwei neue Selbsttestfälle und eine Gegenprobe. Die Regel ist unverändert gegenüber dem nachgeprüften Stand `f7f8d18`.
 - **N61-1** ist mit r4-65 auf `main`, **N61-3** mit PR #789 erledigt.
+- **Nachbesserung nach der Nachprüfung r4-66 in [PR #800](https://github.com/christaegger-dot/borderline-angehoerige/pull/800)** (Nummern aus #800, nicht aus #803). Auftrag von Christa Egger, 30.10.2026: «Nachbesserung N66-1 bis N66-5 umsetzen». Entscheide auf Rückfrage: «Auf #787 selbst» (die Kennung bleibt r4-66) und zu N66-4 «Ja, sichtbaren Text verlangen». Nachweis: [`audit-results/2026-10-30-n66-1-n66-5-r4-66/BERICHT.md`](audit-results/2026-10-30-n66-1-n66-5-r4-66/BERICHT.md).
+  - **Bilder:** Ein Bild ohne `alt` zählt mit seinem `title` (N66-1). Ein Bild mit `role="presentation"` oder `"none"` zählt nicht, der Inhalt von `noscript` und `template` auch nicht (N66-2).
+  - **Formularelemente:** Das Gate blockiert jedes Formularelement in einem Direkteinstieg, auch verborgen; `input type="hidden"` bleibt zulässig und ist jetzt im Selbsttest (N66-2, N66-3).
+  - **Sichtbarer Text:** Die Beschriftung muss als sichtbarer Text dastehen. Ein Bild mit `alt` = Beschriftung genügt nicht mehr (N66-4).
+  - **Nummernhistorie:** `pendingScope` und `appliedTo` nennen «begonnen als r4-63, dann r4-65» (N66-5).
+  - **Prüfungen:** Selbsttest 132/132; jede neue Regel greift; im Abgleich mit Chromium 153 kein Fall mehr, den das Gate durchlässt; `site/` unverändert.
+  - **Unabhängigkeit:** Gebaut hat die Sitzung, die die Nachprüfung #800 verfasst hat; nachprüfen muss eine andere Sitzung.
 - **Unverändert:** Wortlaut, Stylesheet, Skript und Renderer. Die Seiten sind bis auf die Build-Kennung byte-gleich mit `main` (r4-65).
 
 **Merge:** #787 zielt jetzt auf `main`. `main` ist eingebracht bis `ec821ab` (#797 mit `b87dbf5`, #798 mit dem Merge danach); `authoring/` und `site/` sind dabei unverändert (Nachprüfung r4-66, N66-1).

@@ -220,3 +220,11 @@ N58-1 ist für die genannten Fälle behoben, N58-2 stimmt, soweit prüfbar. Seit
 - N59-2, N59-3, N59-5 (gering): bei der nächsten Arbeit an `contract.js` bzw. der nächsten Nachführung.
 
 Keiner der Befunde wirkt auf die veröffentlichten Seiten.
+
+## Nachtrag · 30.10.2026, 07:05 UTC
+
+- **PR #771** (parallele Nachprüfung r4-59) ist auf Entscheid von Christa Egger ohne Merge geschlossen («#771 schliessen, #772 gilt»). Massgebend ist diese Fassung.
+- **`main` steht seit PR #770 auf `18e0d75`.** Er ändert nur die Pendenzendatei (`git diff --stat 0c7d172 18e0d75` → 1 Datei) und trägt den Nachtrag zu N54-2 (#768) ein. Dort steht auch, dass beim Merge von #768 «ein abgeschlossenes Codex-Review … nicht zu sehen» war.
+  - **N59-4:** Der Merge vor dem Review ist damit vermerkt. Der Zeitpunkt des Abschlusses (06:27:16 UTC) und der Bezug auf R28-O01 und R29-P20 fehlen noch.
+  - **N59-5:** Der Teil zu #768 ist erledigt. Offen bleibt: r4-59 steht weiter als «Entwurf» (`:3`, `:9`) mit «Selbsttest 102/102» (`:19`).
+- Diese Nachprüfung prüft weiterhin den Stand `0c7d172`. PR #770 ist nicht Gegenstand.

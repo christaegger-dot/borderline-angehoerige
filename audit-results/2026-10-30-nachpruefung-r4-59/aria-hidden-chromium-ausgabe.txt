@@ -1,0 +1,26 @@
+Chromium 153.0.8010.12
+"true" uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: verborgen
+"TRUE" uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: verborgen
+"True" uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: verborgen
+"true " uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: sichtbar
+" true" uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: sichtbar
+" true " uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: sichtbar
+"true\t" uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: sichtbar
+"yes" uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: sichtbar
+"0" uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: sichtbar
+"x" uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: sichtbar
+"false" uninteresting,uninteresting => CDP: sichtbar | ariaSnapshot: sichtbar
+"False" uninteresting,uninteresting => CDP: sichtbar | ariaSnapshot: sichtbar
+"FALSE" uninteresting,uninteresting => CDP: sichtbar | ariaSnapshot: sichtbar
+"false " uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: sichtbar
+" false " uninteresting,uninteresting,ariaHiddenSubtree,ariaHiddenSubtree => CDP: verborgen | ariaSnapshot: sichtbar
+"undefined" uninteresting,uninteresting => CDP: sichtbar | ariaSnapshot: sichtbar
+"" uninteresting,uninteresting => CDP: sichtbar | ariaSnapshot: sichtbar
+
+# inert und verborgener Linktext
+inertSpan | nav: shown | link: shown name="" | fokussierbar: true
+inertNav | nav:  | link: none | fokussierbar: false
+inertLink | nav: shown | link: none | fokussierbar: false
+TrueMixed | nav:  | link: none | fokussierbar: true
+trailing | nav:  | link: none | fokussierbar: true
+decor | nav: shown | link: shown name="Kurz und klar" | fokussierbar: true

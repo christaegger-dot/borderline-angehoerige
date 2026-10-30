@@ -1,0 +1,526 @@
+Q1.1 aria-hidden="true" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.2 aria-hidden="TRUE" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.3 aria-hidden="␣true␣" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.4 aria-hidden="true␣" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.5 aria-hidden="yes" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.6 aria-hidden="0" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.7 aria-hidden="␣false␣" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.8 aria-hidden="FALSE␣" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.9 aria-hidden="null" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.10 aria-hidden="␣␣" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.11 aria-hidden="&#116;rue" auf Zeile
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.12 aria-hidden="false" auf Zeile
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.13 aria-hidden="False" auf Zeile
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.14 aria-hidden="FALSE" auf Zeile
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.15 aria-hidden="undefined" auf Zeile
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.16 aria-hidden="UNDEFINED" auf Zeile
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.17 aria-hidden="" auf Zeile
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.18 aria-hidden=ohne Wert auf Zeile
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.19 aria-hidden="&#102;alse" auf Zeile
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.20 aria-hidden="true" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.21 aria-hidden="TRUE" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.22 aria-hidden="␣true␣" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.23 aria-hidden="true␣" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.24 aria-hidden="yes" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.25 aria-hidden="0" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.26 aria-hidden="␣false␣" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.27 aria-hidden="FALSE␣" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.28 aria-hidden="null" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.29 aria-hidden="␣␣" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.30 aria-hidden="&#116;rue" auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q1.31 aria-hidden="false" auf Zeilenlink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.32 aria-hidden="False" auf Zeilenlink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.33 aria-hidden="FALSE" auf Zeilenlink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.34 aria-hidden="undefined" auf Zeilenlink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.35 aria-hidden="UNDEFINED" auf Zeilenlink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.36 aria-hidden="" auf Zeilenlink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.37 aria-hidden=ohne Wert auf Zeilenlink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.38 aria-hidden="&#102;alse" auf Zeilenlink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.39 aria-hidden="true" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.40 aria-hidden="TRUE" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.41 aria-hidden="␣true␣" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.42 aria-hidden="true␣" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.43 aria-hidden="yes" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.44 aria-hidden="0" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.45 aria-hidden="␣false␣" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.46 aria-hidden="FALSE␣" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.47 aria-hidden="null" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.48 aria-hidden="␣␣" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.49 aria-hidden="&#116;rue" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.50 aria-hidden="false" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.51 aria-hidden="False" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.52 aria-hidden="FALSE" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.53 aria-hidden="undefined" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.54 aria-hidden="UNDEFINED" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.55 aria-hidden="" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.56 aria-hidden=ohne Wert auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.57 aria-hidden="&#102;alse" auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.58 aria-hidden="true" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.59 aria-hidden="TRUE" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.60 aria-hidden="␣true␣" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.61 aria-hidden="true␣" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.62 aria-hidden="yes" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.63 aria-hidden="0" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.64 aria-hidden="␣false␣" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.65 aria-hidden="FALSE␣" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.66 aria-hidden="null" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.67 aria-hidden="␣␣" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.68 aria-hidden="&#116;rue" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q1.69 aria-hidden="false" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.70 aria-hidden="False" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.71 aria-hidden="FALSE" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.72 aria-hidden="undefined" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.73 aria-hidden="UNDEFINED" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.74 aria-hidden="" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.75 aria-hidden=ohne Wert auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.76 aria-hidden="&#102;alse" auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.77 aria-hidden="true" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.78 aria-hidden="TRUE" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.79 aria-hidden="␣true␣" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.80 aria-hidden="true␣" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.81 aria-hidden="yes" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.82 aria-hidden="0" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.83 aria-hidden="␣false␣" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.84 aria-hidden="FALSE␣" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.85 aria-hidden="null" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.86 aria-hidden="␣␣" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.87 aria-hidden="&#116;rue" auf subbar
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q1.88 aria-hidden="false" auf subbar
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.89 aria-hidden="False" auf subbar
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.90 aria-hidden="FALSE" auf subbar
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.91 aria-hidden="undefined" auf subbar
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.92 aria-hidden="UNDEFINED" auf subbar
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.93 aria-hidden="" auf subbar
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.94 aria-hidden=ohne Wert auf subbar
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.95 aria-hidden="&#102;alse" auf subbar
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.96 aria-hidden="true" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.97 aria-hidden="TRUE" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.98 aria-hidden="␣true␣" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.99 aria-hidden="true␣" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.100 aria-hidden="yes" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.101 aria-hidden="0" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.102 aria-hidden="␣false␣" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.103 aria-hidden="FALSE␣" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.104 aria-hidden="null" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.105 aria-hidden="␣␣" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.106 aria-hidden="&#116;rue" auf header
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q1.107 aria-hidden="false" auf header
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.108 aria-hidden="False" auf header
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.109 aria-hidden="FALSE" auf header
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.110 aria-hidden="undefined" auf header
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.111 aria-hidden="UNDEFINED" auf header
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.112 aria-hidden="" auf header
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.113 aria-hidden=ohne Wert auf header
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q1.114 aria-hidden="&#102;alse" auf header
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q2.1 inert auf Zeile
+   Chromium: Zeilenlink: VERBORGEN(inertElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q2.2 inert auf Zeilenlink
+   Chromium: Zeilenlink: VERBORGEN(inertElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q2.3 inert auf Menü-<li>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(inertElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q2.4 inert auf Menülink
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(inertElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q2.5 inert auf subbar
+   Chromium: Zeilenlink: VERBORGEN(inertElement) | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN(inertElement)
+   erwartet: sender, utility-nav | r4-61: sender, utility-nav | r4-62: sender, utility-nav | gleich r4-62
+Q2.6 inert auf header
+   Chromium: Zeilenlink: VERBORGEN(inertElement) | Menülink: VERBORGEN(inertElement) | Absenderin: VERBORGEN(inertElement)
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q3.1 Zeile: ganzer Linktext in <span aria-hidden="yes">
+   Chromium: Zeilenlink: link «» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q3.2 Zeile: ganzer Linktext in <span aria-hidden=" true ">
+   Chromium: Zeilenlink: link «» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q3.3 Zeile: ganzer Linktext in <span aria-hidden="0">
+   Chromium: Zeilenlink: link «» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q3.4 Zeile: ganzer Linktext in <span aria-hidden="False">
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q3.5 Menü: ganzer Linktext in <span aria-hidden="yes">
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q3.6 Menü: ganzer Linktext in <span aria-hidden=" true ">
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q3.7 Menü: ganzer Linktext in <span aria-hidden="0">
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q3.8 Menü: ganzer Linktext in <span aria-hidden="False">
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q3.9 Zeile: Text + dekoratives <span aria-hidden=" true "> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q3.10 Zeile: Text + dekoratives <span aria-hidden="yes"> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q3.11 Zeile: Text + dekoratives <span aria-hidden="0"> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q3.12 Zeile: Text + dekoratives <span aria-hidden="undefined"> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar →» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q3.13 Zeile: Text + dekoratives <span aria-hidden="false"> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar →» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: utility-nav | r4-62: utility-nav | gleich r4-62
+Q3.14 Menü: Text + dekoratives <span aria-hidden=" true "> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q3.15 Menü: Text + dekoratives <span aria-hidden="yes"> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q3.16 Menü: Text + dekoratives <span aria-hidden="0"> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q3.17 Menü: Text + dekoratives <span aria-hidden="undefined"> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar →» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q3.18 Menü: Text + dekoratives <span aria-hidden="false"> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar →» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: nav | r4-62: nav | gleich r4-62
+Q4.1 index.html: header inert
+   Chromium: Zeilenlink: VERBORGEN(inertElement) | Menülink: VERBORGEN(inertElement) | Absenderin: VERBORGEN(inertElement)
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q4.2 index.html: header aria-hidden="TRUE"
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q4.3 index.html: header aria-hidden=" true "
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q4.4 index.html: header aria-hidden="yes"
+   Chromium: Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+   erwartet: nav, sender, utility-nav | r4-61: nav, sender, utility-nav | r4-62: nav, sender, utility-nav | gleich r4-62
+Q4.5 index.html: header aria-hidden="false"
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q4.6 index.html: header aria-hidden="undefined"
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q4.7 index.html: Absenderin inert
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN(inertElement)
+   erwartet: sender | r4-61: sender | r4-62: sender | gleich r4-62
+Q4.8 index.html: Absenderin aria-hidden="TRUE"
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender | r4-61: sender | r4-62: sender | gleich r4-62
+Q4.9 index.html: Absenderin aria-hidden="0"
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+   erwartet: sender | r4-61: sender | r4-62: sender | gleich r4-62
+Q4.10 index.html: Absenderin aria-hidden=""
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q4.11 404.html: header inert
+   Chromium: Absenderin: VERBORGEN(inertElement)
+   erwartet: sender | r4-61: sender | r4-62: sender | gleich r4-62
+Q4.12 404.html: header aria-hidden="TRUE"
+   Chromium: Absenderin: VERBORGEN()
+   erwartet: sender | r4-61: sender | r4-62: sender | gleich r4-62
+Q4.13 404.html: header aria-hidden=" true "
+   Chromium: Absenderin: VERBORGEN()
+   erwartet: sender | r4-61: sender | r4-62: sender | gleich r4-62
+Q4.14 404.html: header aria-hidden="yes"
+   Chromium: Absenderin: VERBORGEN()
+   erwartet: sender | r4-61: sender | r4-62: sender | gleich r4-62
+Q4.15 404.html: header aria-hidden="false"
+   Chromium: Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q4.16 404.html: header aria-hidden="undefined"
+   Chromium: Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q4.17 404.html: Absenderin inert
+   Chromium: Absenderin: VERBORGEN(inertElement)
+   erwartet: sender | r4-61: sender | r4-62: sender | gleich r4-62
+Q4.18 404.html: Absenderin aria-hidden="TRUE"
+   Chromium: Absenderin: VERBORGEN()
+   erwartet: sender | r4-61: sender | r4-62: sender | gleich r4-62
+Q4.19 404.html: Absenderin aria-hidden="0"
+   Chromium: Absenderin: VERBORGEN()
+   erwartet: sender | r4-61: sender | r4-62: sender | gleich r4-62
+Q4.20 404.html: Absenderin aria-hidden=""
+   Chromium: Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q5.1 SVG Szene aria-hidden="TRUE" statt "true"
+   Chromium: SVG: VERBORGEN(ariaHiddenElement)
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q5.2 SVG Szene aria-hidden="␣true␣" statt "true"
+   Chromium: SVG: VERBORGEN(ariaHiddenElement)
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q5.3 SVG Szene aria-hidden="yes" statt "true"
+   Chromium: SVG: VERBORGEN(ariaHiddenElement)
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q5.4 SVG Szene aria-hidden="True" statt "true"
+   Chromium: SVG: VERBORGEN(ariaHiddenElement)
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q5.5 SVG Szene aria-hidden="false" statt "true"
+   Chromium: SVG: image «»
+   erwartet: figure-alt | r4-61: figure-alt | r4-62: figure-alt | gleich r4-62
+Q5.6 SVG Szene aria-hidden="undefined" statt "true"
+   Chromium: SVG: image «»
+   erwartet: figure-alt | r4-61: figure-alt | r4-62: figure-alt | gleich r4-62
+Q5.7 SVG Szene aria-hidden="" statt "true"
+   Chromium: SVG: image «»
+   erwartet: figure-alt | r4-61: figure-alt | r4-62: figure-alt | gleich r4-62
+Q5.8 SVG Szene ohne aria-hidden
+   Chromium: SVG: image «»
+   erwartet: figure-alt | r4-61: figure-alt | r4-62: figure-alt | gleich r4-62
+Q5.9 SVG Szene ohne aria-hidden, mit hidden
+   Chromium: SVG: image «»
+   erwartet: figure-alt | r4-61: — | r4-62: figure-alt | gleich r4-62 / Abweichung r4-61
+Q5.10 SVG Szene ohne aria-hidden, mit inert
+   Chromium: SVG: image «»
+   erwartet: figure-alt | r4-61: — | r4-62: figure-alt | gleich r4-62 / Abweichung r4-61
+Q5.11 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit hidden
+   Chromium: SVG: image «»
+   erwartet: figure-alt | r4-61: — | r4-62: figure-alt | gleich r4-62 / Abweichung r4-61
+Q5.12 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit inert
+   Chromium: SVG: VERBORGEN(inertElement)
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q5.13 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="TRUE"
+   Chromium: SVG: VERBORGEN()
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q5.14 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="yes"
+   Chromium: SVG: VERBORGEN()
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q5.15 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="false"
+   Chromium: SVG: image «»
+   erwartet: figure-alt | r4-61: figure-alt | r4-62: figure-alt | gleich r4-62
+Q5.16 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit role="img" aria-label="Szene"
+   Chromium: SVG: image «»
+   erwartet: figure-alt | r4-61: — | r4-62: — | ABWEICHUNG r4-62 / Abweichung r4-61
+Q5.17 SVG Szene ohne aria-hidden, in <div hidden> innerhalb der Szene
+   Chromium: SVG: VERBORGEN(notRendered)
+   erwartet: — | r4-61: — | r4-62: figure-alt | ABWEICHUNG r4-62
+# 175 Fälle · Abweichungen Gate ↔ Chromium: r4-61 4, r4-62 2

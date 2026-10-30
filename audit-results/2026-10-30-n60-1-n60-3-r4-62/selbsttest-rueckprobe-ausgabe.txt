@@ -1,0 +1,11 @@
+## r4-62 mit SVG-Prüfung von r4-61
+FAIL | SVG ohne aria-hidden, nur mit hidden am SVG, bleibt ohne Namen (r4-62, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+FAIL | SVG ohne aria-hidden, nur mit inert am SVG, bleibt ohne Namen (r4-62, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+FAIL | SVG ohne aria-hidden unter einem Vorfahren mit hidden und eigener display-Regel (r4-62, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+Selbsttest: 117/120 bestanden
+## r4-62 mit hiddenFlag von r4-59 (aria-hidden nur bei «true» in jeder Schreibweise; Regression, gegen die N60-1 sichert)
+FAIL | Verborgener Zusatz <span aria-hidden=" true "> →</span> im Linktext von Zeile und Menü ist zulässig (r4-62, N60-1) | erwartet: kein nav, kein utility-nav | erhalten: utility-nav, nav
+FAIL | Zeile der Direkteinstiege mit aria-hidden=" true " verborgen (r4-60, N59-1) | erwartet: utility-nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg im Menü mit aria-hidden="yes" verborgen (r4-60, N59-1) | erwartet: nav | erhalten: crisis-number-check
+FAIL | Zeile der Direkteinstiege mit aria-hidden=" false " verborgen (r4-62, N60-1) | erwartet: utility-nav | erhalten: crisis-number-check
+Selbsttest: 116/120 bestanden

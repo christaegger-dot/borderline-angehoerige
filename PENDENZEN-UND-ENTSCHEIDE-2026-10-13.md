@@ -388,6 +388,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 - Die Nachführung dieser Abschnitte, [PR #759](https://github.com/christaegger-dot/borderline-angehoerige/pull/759), wurde um 23:59:31 UTC gemergt. Ihr Codex-Review auf `b1fd210` lief seit 23:59:21 UTC und war um 23:59:44 UTC abgeschlossen, ebenfalls ohne Befund.
 - Beide Merges hat die bauende Sitzung im Auftrag von Christa Egger («bitte merge») ausgelöst, jeweils direkt nach dem Freigeben und damit vor dem Abschluss des Reviews.
 - Folgen: keine, weil beide Reviews ohne Befund blieben. Ab jetzt mergt die bauende Sitzung erst nach abgeschlossenem und gelesenem Codex-Review.
+- Auch der Nachtrag selbst, [PR #762](https://github.com/christaegger-dot/borderline-angehoerige/pull/762), wurde vor dem Abschluss seines Reviews gemergt (nachgetragen auf Auftrag von Christa Egger, 30.10.2026: «ja, trag es nach»). Christa Egger gab den Entwurf um 00:06:43 UTC zur Durchsicht frei und mergte ihn um 00:06:51 UTC als `95b1f7b`. Der Kommentar des Codex-Reviews erschien um 00:06:54 UTC. Das Review auf `c90ef2d` war um 00:07:22 UTC ohne Befund abgeschlossen. Folgen: keine. Die Zeiten stammen aus dem Verlauf des PR auf GitHub.
 
 **Inhalt:**
 - Die Fusszeile hat keine graue Fläche mehr, oben steht eine Haarlinie, der Abstand ist kleiner.

@@ -1,0 +1,71 @@
+# Abgleich Gate r4-60 mit Chromium (aria-ausgabe.txt der Nachprüfung r4-59)
+P5.1 aria-label="Kurz und klar" (gleich) am Zeilenlink
+   Chromium erwartet [] | Gate ['utility-nav'] | Z=link «Kurz und klar» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P5.2 aria-label="" am Zeilenlink
+   Chromium erwartet [] | Gate ['utility-nav'] | Z=link «Kurz und klar» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P5.3 aria-labelledby am Menülink
+   Chromium erwartet [] | Gate ['nav'] | Z=link «Kurz und klar» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P5.4 aria-label an einem <span> im Zeilenlink
+   Chromium erwartet ['utility-nav'] | Gate [] | Z=link «Mehr» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P7.1 Zeile: Linktext in <span style="display:none"> (Grenze)
+   Chromium erwartet ['utility-nav'] | Gate [] | Z=link «» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P7.2 Zeile: Text + <span style="display:none"> extra</span>
+   Chromium erwartet [] | Gate ['utility-nav'] | Z=link «Kurz und klar» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+Fälle mit Chromium-Messung: 87, Abweichungen Gate↔Chromium: 6
+
+# dasselbe für r4-59
+P1.3 aria-hidden=" true " auf Zeile
+   Chromium erwartet ['utility-nav'] | Gate [] | Z=VERBORGEN () M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P1.4 aria-hidden="true " auf Zeile
+   Chromium erwartet ['utility-nav'] | Gate [] | Z=VERBORGEN () M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P1.10 aria-hidden=" true " auf Zeilenlink
+   Chromium erwartet ['utility-nav'] | Gate [] | Z=VERBORGEN (ariaHiddenElement) M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P1.11 aria-hidden="true " auf Zeilenlink
+   Chromium erwartet ['utility-nav'] | Gate [] | Z=VERBORGEN (ariaHiddenElement) M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P1.17 aria-hidden=" true " auf Menü-<li>
+   Chromium erwartet ['nav'] | Gate [] | Z=link «Kurz und klar» M=VERBORGEN () A=link «angehoerigenarbeit@pukzh.ch»
+P1.18 aria-hidden="true " auf Menü-<li>
+   Chromium erwartet ['nav'] | Gate [] | Z=link «Kurz und klar» M=VERBORGEN () A=link «angehoerigenarbeit@pukzh.ch»
+P1.24 aria-hidden=" true " auf Menülink
+   Chromium erwartet ['nav'] | Gate [] | Z=link «Kurz und klar» M=VERBORGEN (ariaHiddenElement) A=link «angehoerigenarbeit@pukzh.ch»
+P1.25 aria-hidden="true " auf Menülink
+   Chromium erwartet ['nav'] | Gate [] | Z=link «Kurz und klar» M=VERBORGEN (ariaHiddenElement) A=link «angehoerigenarbeit@pukzh.ch»
+P1.29 aria-hidden="TRUE" auf subbar
+   Chromium erwartet ['sender', 'utility-nav'] | Gate ['utility-nav'] | Z=VERBORGEN () M=link «Kurz und klar» A=VERBORGEN ()
+P1.30 aria-hidden="True" auf subbar
+   Chromium erwartet ['sender', 'utility-nav'] | Gate ['utility-nav'] | Z=VERBORGEN () M=link «Kurz und klar» A=VERBORGEN ()
+P1.31 aria-hidden=" true " auf subbar
+   Chromium erwartet ['sender', 'utility-nav'] | Gate [] | Z=VERBORGEN () M=link «Kurz und klar» A=VERBORGEN ()
+P1.32 aria-hidden="true " auf subbar
+   Chromium erwartet ['sender', 'utility-nav'] | Gate [] | Z=VERBORGEN () M=link «Kurz und klar» A=VERBORGEN ()
+P1.36 aria-hidden="TRUE" auf header
+   Chromium erwartet ['nav', 'sender', 'utility-nav'] | Gate ['nav', 'utility-nav'] | Z=VERBORGEN () M=VERBORGEN () A=VERBORGEN ()
+P1.37 aria-hidden="True" auf header
+   Chromium erwartet ['nav', 'sender', 'utility-nav'] | Gate ['nav', 'utility-nav'] | Z=VERBORGEN () M=VERBORGEN () A=VERBORGEN ()
+P1.38 aria-hidden=" true " auf header
+   Chromium erwartet ['nav', 'sender', 'utility-nav'] | Gate [] | Z=VERBORGEN () M=VERBORGEN () A=VERBORGEN ()
+P1.39 aria-hidden="true " auf header
+   Chromium erwartet ['nav', 'sender', 'utility-nav'] | Gate [] | Z=VERBORGEN () M=VERBORGEN () A=VERBORGEN ()
+P2.5 inert auf subbar
+   Chromium erwartet ['sender', 'utility-nav'] | Gate ['utility-nav'] | Z=VERBORGEN (inertElement) M=link «Kurz und klar» A=VERBORGEN (inertElement)
+P2.6 inert auf header
+   Chromium erwartet ['nav', 'sender', 'utility-nav'] | Gate ['nav', 'utility-nav'] | Z=VERBORGEN (inertElement) M=VERBORGEN (inertElement) A=VERBORGEN (inertElement)
+P4.6 Zeile: Text + <span aria-hidden=" true "> →</span> (in Chromium nicht verborgen)
+   Chromium erwartet [] | Gate ['utility-nav'] | Z=link «Kurz und klar» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P5.1 aria-label="Kurz und klar" (gleich) am Zeilenlink
+   Chromium erwartet [] | Gate ['utility-nav'] | Z=link «Kurz und klar» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P5.2 aria-label="" am Zeilenlink
+   Chromium erwartet [] | Gate ['utility-nav'] | Z=link «Kurz und klar» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P5.3 aria-labelledby am Menülink
+   Chromium erwartet [] | Gate ['nav'] | Z=link «Kurz und klar» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P5.4 aria-label an einem <span> im Zeilenlink
+   Chromium erwartet ['utility-nav'] | Gate [] | Z=link «Mehr» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P6.3 Fehlerseite: header inert
+   Chromium erwartet ['sender'] | Gate [] | Z=fehlt im DOM M=fehlt im DOM A=VERBORGEN (inertElement)
+P6.4 Fehlerseite: header aria-hidden="TRUE"
+   Chromium erwartet ['sender'] | Gate [] | Z=fehlt im DOM M=fehlt im DOM A=VERBORGEN ()
+P7.1 Zeile: Linktext in <span style="display:none"> (Grenze)
+   Chromium erwartet ['utility-nav'] | Gate [] | Z=link «» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+P7.2 Zeile: Text + <span style="display:none"> extra</span>
+   Chromium erwartet [] | Gate ['utility-nav'] | Z=link «Kurz und klar» M=link «Kurz und klar» A=link «angehoerigenarbeit@pukzh.ch»
+Fälle mit Chromium-Messung: 87, Abweichungen Gate↔Chromium: 27

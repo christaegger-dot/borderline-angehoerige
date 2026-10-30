@@ -36,6 +36,7 @@ Es bleiben vier Befunde:
     - D2 `inert` auf der Zeile;
     - D5 Linktext in `<span aria-hidden="true">` (der zugängliche Name des Links wird leer).
   - **Chromium:** Ich habe mit Playwright den Zugänglichkeitsbaum gelesen (`locator('main').ariaSnapshot()`). `<nav aria-label="Direkteinstiege" aria-hidden="TRUE">` ergibt `"- main"`: Die Zeile ist für Screenreader weg. Mit `aria-hidden=" true "` (mit Leerzeichen) bleibt die Zeile sichtbar; das Gate hat dort also zu Recht nichts gemeldet. Bei D5 lautet die Ausgabe `link:` ohne Namen.
+  - **Berichtigung vom 30.10.2026 (Nachprüfung r4-59, Befund N59-1; umgesetzt in r4-60):** Die Aussage zu `aria-hidden=" true "` ist falsch. `ariaSnapshot()` berechnet Playwright selbst. Der Zugänglichkeitsbaum von Chromium (CDP, `Accessibility.getFullAXTree`, Chromium 153) verbirgt bei jedem Wert ausser `false` (jede Schreibweise), `undefined` und leer, also auch bei `" true "`. D8 hätte blockieren müssen. Beleg: `audit-results/2026-10-30-nachpruefung-r4-59/NACHPRUEFUNG.md`, N59-1.
   - `inert` macht die Links nicht bedienbar und nimmt sie aus dem Fokus. Die Regel will laut Kommentar (`:33–34`) aber, dass die Direkteinstiege erreichbar bleiben.
 - **Einordnung:**
   - Der Renderer erzeugt keine dieser Formen, und `site/` ist generiert. Eine Folge hätte die Lücke nur bei einem künftigen Eingriff in den Renderer.
@@ -179,7 +180,7 @@ Die Nummerierung ist stimmig: in Kommentaren, Selbsttestnamen, `BUILD` und den v
 | D5 | Linktext in `<span aria-hidden="true">` | keiner | **keiner** (N58-1) |
 | D6 | `aria-hidden="true"` auf der Menüliste `<ul>` | keiner | 1 × `nav` |
 | D7 | `hidden` auf der ganzen Hauptnavigation | keiner | 1 × `nav` (nur über die Direkteinstiege) |
-| D8 | `aria-hidden=" true "` mit Leerzeichen | keiner | keiner (Chromium verbirgt die Zeile damit nicht) |
+| D8 | `aria-hidden=" true "` mit Leerzeichen | keiner | keiner (berichtigt: Chromium verbirgt die Zeile damit doch, siehe N59-1; ab r4-60 blockiert) |
 | D9 | Fehlerseite: `aria-hidden="true"` auf `header` | 1 × `sender` | 1 × `sender` (keine Meldung zu Direkteinstiegen) |
 | E1 | ohne `utilityNav`, neu gerendert (Rückfall) | 0 Blocker | **0 Blocker**, 20 Hinweise |
 | E2 | wie E1, `hidden` auf der Rückfallzeile | keiner | 1 × `utility-nav` |

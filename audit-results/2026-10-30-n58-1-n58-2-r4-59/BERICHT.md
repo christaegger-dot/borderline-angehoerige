@@ -22,6 +22,7 @@ Diese Datei ist der Nachweis der bauenden Sitzung (Selbstprüfung). Sie ist kein
 **N58-1**, alle Änderungen in `authoring/tools/contract.js`:
 - **`hiddenFlag`:** Ein Element gilt als verborgen bei `hidden`, `inert` oder `aria-hidden`, wenn dessen Wert in Kleinschrift `true` ist.
   - Leerraum wird nicht entfernt, weil Chromium `aria-hidden=" true "` nicht als verborgen behandelt (Nachprüfung r4-58, Prüfung im Zugänglichkeitsbaum).
+  - **Berichtigung vom 30.10.2026 (Nachprüfung r4-59, Befund N59-1; umgesetzt in r4-60):** Chromium verbirgt bei `aria-hidden=" true "` doch, ebenso bei jedem anderen Wert ausser `false` (jede Schreibweise), `undefined` und leer. Die Angabe der Nachprüfung r4-58 beruhte auf Playwrights `ariaSnapshot()`. Ab r4-60 gilt die Regel entsprechend.
   - `concealed` prüft `hiddenFlag` am Element und an allen Vorfahren.
 - **`accTxt`:** Der zugängliche Text eines Links ohne verborgene Teile. Die Regeln für Zeile und Menü vergleichen die Beschriftung jetzt mit `accTxt` statt `txt`.
   - Damit ergibt ein Linktext nur in `<span aria-hidden="true">` eine leere Beschriftung und blockiert.
@@ -57,7 +58,7 @@ Kein Wortlaut, kein Stylesheet, kein Skript und kein Renderer ist geändert.
 - **Alle übrigen Fälle sind gleich**, darunter:
   - D3 (`style="display:none"`, bekannte Grenze);
   - D4 (`role="presentation"`);
-  - D8 (`aria-hidden=" true "`, in Chromium nicht verborgen, zu Recht ohne Meldung);
+  - D8 (`aria-hidden=" true "`, ohne Meldung; berichtigt am 30.10.2026: Chromium verbirgt damit doch, siehe N59-1, ab r4-60 blockiert);
   - E1 (Rückfall ohne `utilityNav`: 0 Blocker).
 
 **Eigene zusätzliche Mutationen:**
@@ -69,7 +70,7 @@ Kein Wortlaut, kein Stylesheet, kein Skript und kein Renderer ist geändert.
 | Y3 `aria-hidden="True"` am Menülink | keiner | 1 × `nav` |
 | Y4 Linktext im Menü in `<span hidden>` | keiner | 1 × `nav` (Beschriftung leer) |
 
-Damit gibt es keine Falsch-Positiven: weder beim Bestand noch beim Rückfall noch bei `aria-hidden="false"` oder `aria-hidden=" true "`.
+Damit gibt es keine Falsch-Positiven: weder beim Bestand noch beim Rückfall noch bei `aria-hidden="false"` oder `aria-hidden=" true "`. (Berichtigt am 30.10.2026, N59-1: `aria-hidden=" true "` verbirgt in Chromium; dass dort kein Blocker kam, war eine Lücke, kein richtiges Ergebnis.)
 
 ## Ausgeführte Prüfungen
 

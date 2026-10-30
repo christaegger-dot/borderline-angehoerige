@@ -1,0 +1,62 @@
+Gate r4-60, Bestand: 4 Blocker (404:legal, 404:footer-links, 404:safety-target)
+gleich  | index | Zeile aria-hidden=" true "                 | Chromium: verborgen              | Gate: utility-nav
+gleich  | index | Menülink aria-hidden=" true "              | Chromium: verborgen              | Gate: nav
+gleich  | index | Subbar aria-hidden=" true "                | Chromium: verborgen              | Gate: sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden=" true "      | Chromium: verborgen              | Gate: sender
+gleich  | index | Linktext + <span aria-hidden=" true "> →</span> | Chromium: Name «Kurz und klar»   | Gate: kein utility-nav
+gleich  | index | Zeile aria-hidden="yes"                    | Chromium: verborgen              | Gate: utility-nav
+gleich  | index | Menülink aria-hidden="yes"                 | Chromium: verborgen              | Gate: nav
+gleich  | index | Subbar aria-hidden="yes"                   | Chromium: verborgen              | Gate: sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden="yes"         | Chromium: verborgen              | Gate: sender
+gleich  | index | Linktext + <span aria-hidden="yes"> →</span> | Chromium: Name «Kurz und klar»   | Gate: kein utility-nav
+gleich  | index | Zeile aria-hidden="0"                      | Chromium: verborgen              | Gate: utility-nav
+gleich  | index | Menülink aria-hidden="0"                   | Chromium: verborgen              | Gate: nav
+gleich  | index | Subbar aria-hidden="0"                     | Chromium: verborgen              | Gate: sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden="0"           | Chromium: verborgen              | Gate: sender
+gleich  | index | Linktext + <span aria-hidden="0"> →</span> | Chromium: Name «Kurz und klar»   | Gate: kein utility-nav
+gleich  | index | Zeile aria-hidden=" false "                | Chromium: verborgen              | Gate: utility-nav
+gleich  | index | Menülink aria-hidden=" false "             | Chromium: verborgen              | Gate: nav
+gleich  | index | Subbar aria-hidden=" false "               | Chromium: verborgen              | Gate: sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden=" false "     | Chromium: verborgen              | Gate: sender
+gleich  | index | Linktext + <span aria-hidden=" false "> →</span> | Chromium: Name «Kurz und klar»   | Gate: kein utility-nav
+gleich  | index | Zeile aria-hidden="TRUE"                   | Chromium: verborgen              | Gate: utility-nav
+gleich  | index | Menülink aria-hidden="TRUE"                | Chromium: verborgen              | Gate: nav
+gleich  | index | Subbar aria-hidden="TRUE"                  | Chromium: verborgen              | Gate: sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden="TRUE"        | Chromium: verborgen              | Gate: sender
+gleich  | index | Linktext + <span aria-hidden="TRUE"> →</span> | Chromium: Name «Kurz und klar»   | Gate: kein utility-nav
+gleich  | index | Zeile aria-hidden="False"                  | Chromium: im Baum                | Gate: kein utility-nav
+gleich  | index | Menülink aria-hidden="False"               | Chromium: im Baum                | Gate: kein nav
+gleich  | index | Subbar aria-hidden="False"                 | Chromium: im Baum                | Gate: kein sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden="False"       | Chromium: im Baum                | Gate: kein sender
+gleich  | index | Linktext + <span aria-hidden="False"> →</span> | Chromium: Name «Kurz und klar →» | Gate: utility-nav
+gleich  | index | Zeile aria-hidden="undefined"              | Chromium: im Baum                | Gate: kein utility-nav
+gleich  | index | Menülink aria-hidden="undefined"           | Chromium: im Baum                | Gate: kein nav
+gleich  | index | Subbar aria-hidden="undefined"             | Chromium: im Baum                | Gate: kein sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden="undefined"   | Chromium: im Baum                | Gate: kein sender
+gleich  | index | Linktext + <span aria-hidden="undefined"> →</span> | Chromium: Name «Kurz und klar →» | Gate: utility-nav
+gleich  | index | Zeile aria-hidden="UNDEFINED"              | Chromium: im Baum                | Gate: kein utility-nav
+gleich  | index | Menülink aria-hidden="UNDEFINED"           | Chromium: im Baum                | Gate: kein nav
+gleich  | index | Subbar aria-hidden="UNDEFINED"             | Chromium: im Baum                | Gate: kein sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden="UNDEFINED"   | Chromium: im Baum                | Gate: kein sender
+gleich  | index | Linktext + <span aria-hidden="UNDEFINED"> →</span> | Chromium: Name «Kurz und klar →» | Gate: utility-nav
+gleich  | index | Zeile aria-hidden=" undefined "            | Chromium: verborgen              | Gate: utility-nav
+gleich  | index | Menülink aria-hidden=" undefined "         | Chromium: verborgen              | Gate: nav
+gleich  | index | Subbar aria-hidden=" undefined "           | Chromium: verborgen              | Gate: sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden=" undefined " | Chromium: verborgen              | Gate: sender
+gleich  | index | Linktext + <span aria-hidden=" undefined "> →</span> | Chromium: Name «Kurz und klar»   | Gate: kein utility-nav
+gleich  | index | Zeile aria-hidden=""                       | Chromium: im Baum                | Gate: kein utility-nav
+gleich  | index | Menülink aria-hidden=""                    | Chromium: im Baum                | Gate: kein nav
+gleich  | index | Subbar aria-hidden=""                      | Chromium: im Baum                | Gate: kein sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden=""            | Chromium: im Baum                | Gate: kein sender
+gleich  | index | Linktext + <span aria-hidden=""> →</span>  | Chromium: Name «Kurz und klar →» | Gate: utility-nav
+gleich  | index | Zeile aria-hidden                          | Chromium: im Baum                | Gate: kein utility-nav
+gleich  | index | Menülink aria-hidden                       | Chromium: im Baum                | Gate: kein nav
+gleich  | index | Subbar aria-hidden                         | Chromium: im Baum                | Gate: kein sender
+gleich  | 404   | Kopf Fehlerseite aria-hidden               | Chromium: im Baum                | Gate: kein sender
+gleich  | index | Linktext + <span aria-hidden> →</span>     | Chromium: Name «Kurz und klar →» | Gate: utility-nav
+gleich  | index | Zeile inert                                | Chromium: verborgen              | Gate: utility-nav
+gleich  | index | Menülink inert                             | Chromium: verborgen              | Gate: nav
+gleich  | index | Kopf inert                                 | Chromium: verborgen              | Gate: sender
+gleich  | 404   | Kopf Fehlerseite inert                     | Chromium: verborgen              | Gate: sender
+gleich  | index | Zeilenlink hidden                          | Chromium: verborgen              | Gate: utility-nav
+Übereinstimmung Gate/Chromium: 60 von 60

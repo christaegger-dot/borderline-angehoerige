@@ -2,7 +2,12 @@
 
 **Umbenennung (begonnen als r4-66):**
 - **Anlass:** #787 (N61-2) und dieser Stand nahmen fast gleichzeitig r4-66 an (`7aa64b6` um 09:58:13 UTC, `d01223f` um 09:58:12 UTC).
-- **Entscheid:** Christa Egger hat entschieden: #787 behält r4-66, dieser Stand wird r4-67. Der Entscheid ist sinngemäss und wurde von der Sitzung von PR #784 übermittelt, zweimal; die zweite Übermittlung zitiert «#787 = r4-66, #795 = r4-67». Er stimmt mit dem Stand auf GitHub überein: #787 trägt r4-66.
+- **Entscheid:** Christa Egger hat entschieden: #787 behält r4-66, dieser Stand wird r4-67. Diese Sitzung hat den Entscheid nicht selbst erhalten. Drei Sitzungen haben ihn übermittelt, alle gleichlautend:
+  - die Sitzung von PR #784: «#787 = r4-66, #795 = r4-67»;
+  - die Sitzung von PR #787: «#795 in r4-67 umbenennen» (wörtlich);
+  - die Review-Sitzung von #787 (Quelle: Mitteilung an die Review-Sitzung): «#787 behält r4-66, #795 wird r4-67».
+
+  Der Entscheid stimmt mit dem Stand auf GitHub überein: #787 trägt r4-66 (`7aa64b6`).
 - **Umgesetzt:** Die Kennung ist durchgehend r4-67 (`BUILD`, `assetVersion`, `independentReviewWaiver.version`, `pendingScope`, `appliedTo`, Kommentar und Selbsttestname). Der Ordner heisst `2026-10-30-n62-1-n62-2-r4-67`.
 - **Neu gebaut:** `main` ist bis `a323fed` eingebracht (#796, #794; nur `.claude/`, `.gitignore` und `audit-results/`). Danach sind `site/` neu gebaut und alle Prüfungen neu gelaufen.
 - **Merge-Reihenfolge:** #787 (r4-66) zuerst; danach bringt dieser Stand `main` ein und baut neu.

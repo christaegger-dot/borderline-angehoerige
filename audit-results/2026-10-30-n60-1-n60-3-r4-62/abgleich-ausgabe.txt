@@ -523,4 +523,52 @@ Q5.16 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit role="img" aria-la
 Q5.17 SVG Szene ohne aria-hidden, in <div hidden> innerhalb der Szene
    Chromium: SVG: VERBORGEN(notRendered)
    erwartet: — | r4-61: — | r4-62: figure-alt | ABWEICHUNG r4-62
-# 175 Fälle · Abweichungen Gate ↔ Chromium: r4-61 4, r4-62 2
+Q6.1 Zeile: Text + <svg hidden aria-label="Pfeil"></svg>
+   Chromium: Zeilenlink: link «Kurz und klar Pfeil» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: — | r4-62: utility-nav | gleich r4-62 / Abweichung r4-61
+Q6.2 Zeile: Text + <svg inert aria-label="Pfeil"></svg>
+   Chromium: Zeilenlink: link «Kurz und klar Pfeil» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: — | r4-62: utility-nav | gleich r4-62 / Abweichung r4-61
+Q6.3 Zeile: Text + <svg hidden><title>Mehr</title></svg>
+   Chromium: Zeilenlink: link «Kurz und klar Mehr» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: utility-nav | r4-61: — | r4-62: utility-nav | gleich r4-62 / Abweichung r4-61
+Q6.4 Zeile: Text + <svg><g hidden><title>Mehr</title></g></svg>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: utility-nav | ABWEICHUNG r4-62
+Q6.5 Zeile: Text + <svg aria-hidden="true" aria-label="Pfeil"></svg>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q6.6 Zeile: Text + <svg aria-hidden="yes"><title>Mehr</title></svg>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q6.7 Zeile: Text + <span hidden aria-label="Pfeil"> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q6.8 Zeile: Text + <span inert> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q6.9 Menü: Text + <svg hidden aria-label="Pfeil"></svg>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar Pfeil» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: — | r4-62: nav | gleich r4-62 / Abweichung r4-61
+Q6.10 Menü: Text + <svg inert aria-label="Pfeil"></svg>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar Pfeil» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: — | r4-62: nav | gleich r4-62 / Abweichung r4-61
+Q6.11 Menü: Text + <svg hidden><title>Mehr</title></svg>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar Mehr» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: nav | r4-61: — | r4-62: nav | gleich r4-62 / Abweichung r4-61
+Q6.12 Menü: Text + <svg><g hidden><title>Mehr</title></g></svg>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: nav | ABWEICHUNG r4-62
+Q6.13 Menü: Text + <svg aria-hidden="true" aria-label="Pfeil"></svg>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q6.14 Menü: Text + <svg aria-hidden="yes"><title>Mehr</title></svg>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q6.15 Menü: Text + <span hidden aria-label="Pfeil"> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+Q6.16 Menü: Text + <span inert> →</span>
+   Chromium: Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   erwartet: — | r4-61: — | r4-62: — | gleich r4-62
+# 191 Fälle · Abweichungen Gate ↔ Chromium: r4-61 10, r4-62 4

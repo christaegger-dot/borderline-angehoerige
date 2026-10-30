@@ -174,3 +174,19 @@ Q5.14 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="yes" 
 Q5.15 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="false" => SVG: image «»
 Q5.16 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit role="img" aria-label="Szene" => SVG: image «»
 Q5.17 SVG Szene ohne aria-hidden, in <div hidden> innerhalb der Szene => SVG: VERBORGEN(notRendered)
+Q6.1 Zeile: Text + <svg hidden aria-label="Pfeil"></svg> => Zeilenlink: link «Kurz und klar Pfeil» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.2 Zeile: Text + <svg inert aria-label="Pfeil"></svg> => Zeilenlink: link «Kurz und klar Pfeil» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.3 Zeile: Text + <svg hidden><title>Mehr</title></svg> => Zeilenlink: link «Kurz und klar Mehr» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.4 Zeile: Text + <svg><g hidden><title>Mehr</title></g></svg> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.5 Zeile: Text + <svg aria-hidden="true" aria-label="Pfeil"></svg> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.6 Zeile: Text + <svg aria-hidden="yes"><title>Mehr</title></svg> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.7 Zeile: Text + <span hidden aria-label="Pfeil"> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.8 Zeile: Text + <span inert> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.9 Menü: Text + <svg hidden aria-label="Pfeil"></svg> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar Pfeil» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.10 Menü: Text + <svg inert aria-label="Pfeil"></svg> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar Pfeil» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.11 Menü: Text + <svg hidden><title>Mehr</title></svg> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar Mehr» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.12 Menü: Text + <svg><g hidden><title>Mehr</title></g></svg> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.13 Menü: Text + <svg aria-hidden="true" aria-label="Pfeil"></svg> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.14 Menü: Text + <svg aria-hidden="yes"><title>Mehr</title></svg> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.15 Menü: Text + <span hidden aria-label="Pfeil"> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q6.16 Menü: Text + <span inert> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»

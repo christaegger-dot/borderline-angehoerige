@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-62';
+const BUILD = 'r4-63';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -37,12 +37,21 @@ const utilityLabel = entry => entry.label || entry.page.title;
    und leer, also auch bei « true », «yes» oder «0» (Zugänglichkeitsbaum über CDP, Chromium 153). Leerraum wird nicht entfernt. */
 const ariaHiddenOff = new Set(['false', 'undefined', '']);
 const ariaHiddenFlag = x => has(x, 'aria-hidden') && !ariaHiddenOff.has(String(x.attrs['aria-hidden']).toLowerCase());
-const hiddenFlag = x => has(x, 'hidden') || has(x, 'inert') || ariaHiddenFlag(x);
+/* r4-63 (Nachprüfung r4-61, N61-1): hidden und inert sind HTML-Attribute; an einem Element im SVG-Namensraum (svg und alles darin,
+   ausser innerhalb von foreignObject) verbergen sie in Chromium nichts. Dort zählt nur aria-hidden. */
+const inSvgNs = x => { for (let p = x; p; p = p.parent) { if (p.tag === 'foreignobject' && p !== x) return false; if (p.tag === 'svg') return true; } return false; };
+const hiddenFlag = x => (!inSvgNs(x) && (has(x, 'hidden') || has(x, 'inert'))) || ariaHiddenFlag(x);
 const concealed = nd => hiddenFlag(nd) || !!up(nd, hiddenFlag);
 const svgSilenced = sv => ariaHiddenFlag(sv) || !!up(sv, x => ariaHiddenFlag(x) || (has(x, 'inert') && x.tag !== 'svg' && !up(x, y => y.tag === 'svg')));
-const accTxt = node => (node.children || []).map(c => c.tag === '#text' ? c.text : RAW.has(c.tag) || hiddenFlag(c) ? '' : accTxt(c)).join('');
+/* r4-63 (Nachprüfung r4-61, N61-2): Chromium nimmt auch den Alternativtext eines Bildes und den Wert eines Eingabefelds in den
+   Namen des Links auf («<a>Kurz und klar<img alt="Mehr"></a>» heisst «Kurz und klar Mehr»). Ein sichtbares Eingabefeld ohne Wert
+   zählt als Platzhalter, damit es auffällt (in einem Link ohnehin unzulässig). */
+const ctlTxt = c => c.tag === 'img' ? ' ' + (c.attrs.alt || '') + ' '
+  : c.tag === 'input' ? (String(c.attrs.type || '').toLowerCase() === 'hidden' ? '' : ' ' + (c.attrs.value || '[Eingabefeld]') + ' ') : null;
+const accTxt = node => (node.children || []).map(c => c.tag === '#text' ? c.text : RAW.has(c.tag) || hiddenFlag(c) ? '' : ctlTxt(c) ?? accTxt(c)).join('');
 /* r4-61 (Nachprüfung N59-3): auch aria-label oder aria-labelledby an einem nicht verborgenen Element im Link ändert den Namen
-   (Chromium: «<a><span aria-label="Mehr">Kurz und klar</span></a>» heisst «Mehr»). Ein verborgenes Element zählt nicht. */
+   (Chromium: «<a><span aria-label="Mehr">Kurz und klar</span></a>» heisst «Mehr»). Ein verborgenes Element zählt nicht;
+   r4-63 (N61-1): hidden oder inert an einem SVG verbirgt es nicht (hiddenFlag). */
 const relabels = x => has(x, 'aria-label') || has(x, 'aria-labelledby');
 const hiddenBelow = (x, a) => { for (let p = x; p && p !== a; p = p.parent) if (hiddenFlag(p)) return true; return false; };
 const relabelled = a => relabels(a) || all(a, relabels).some(x => !hiddenBelow(x, a));
@@ -735,6 +744,10 @@ const MUTATIONS = [
   ['SVG ohne aria-hidden, nur mit inert am SVG, bleibt ohne Namen (r4-62, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1 inert')],
   ['SVG ohne aria-hidden unter einem Vorfahren mit hidden und eigener display-Regel (r4-62, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1') && rex(f, 'verstehen.html', /<div class="puk-vis-scene">/, '<div class="puk-vis-scene" hidden>')],
   ['Direkteinstieg im Menü mit aria-labelledby an einem span im Link (r4-61, N59-3)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<span aria-labelledby="x">$2</span><')],
+  ['Direkteinstieg mit svg hidden und aria-label im Link (r4-63, N61-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class=\"puk-site-utility__link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<svg hidden aria-label="Pfeil" width="8" height="8"></svg><')],
+  ['Direkteinstieg im Menü mit svg inert und title im Link (r4-63, N61-1)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class=\"puk-web-nav__link puk-site-menu__utility-link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<svg inert width="8" height="8"><title>Mehr</title></svg><')],
+  ['Direkteinstieg mit img alt im Link (r4-63, N61-2)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class=\"puk-site-utility__link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<img alt="Mehr" src="data:," width="8" height="8"><')],
+  ['Direkteinstieg im Menü mit input value im Link (r4-63, N61-2)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class=\"puk-web-nav__link puk-site-menu__utility-link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<input type="button" value="Mehr"><')],
   ['Krisennummer erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p>Telefon 144</p></main>')],
   ['Krisentelefonlink erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p><a href="tel:144">Anrufen</a></p></main>')],
   ['Notfallblock eingefügt', ['crisis-block'], (c, f) => rep(f, 'behandlung.html', '<main id="main-content"', '<aside data-safety-access="direct"><p>Akute Hilfe</p></aside><main id="main-content"')],
@@ -926,6 +939,11 @@ function selftest(cfg, files, opts = {}) {
     const ok = rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1') && rex(f, 'verstehen.html', /<div class="puk-vis-scene">/, '<div class="puk-vis-scene" inert>');
     const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'figure-alt');
     rows.push({ name: 'SVG ohne aria-hidden unter einem Vorfahren mit inert gilt als ausgeblendet (r4-62, N60-3)', expected: 'kein figure-alt', got: ok ? (hit ? 'figure-alt' : 'kein figure-alt') : 'Mutation nicht anwendbar', ok: ok && !hit }); }
+  { /* r4-63 (Nachprüfung r4-61, N61-1, N61-2): Ein Bild mit leerem alt und ein verborgenes Bild oder SVG mit Text ändern den Namen nicht. */
+    const f = Object.assign({}, files);
+    const ok = rex(f, 'index.html', /(<a class=\"puk-site-utility__link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<img alt="" src="data:," width="8" height="8"><span hidden><img alt="Mehr" src="data:,"></span><svg aria-hidden="true" width="8" height="8"><title>Mehr</title></svg><');
+    const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'utility-nav');
+    rows.push({ name: 'Leeres alt, verborgenes Bild und verborgenes SVG mit title im Direkteinstieg sind zulässig (r4-63, N61-1, N61-2)', expected: 'kein utility-nav', got: ok ? (hit ? 'utility-nav' : 'kein utility-nav') : 'Mutation nicht anwendbar', ok: ok && !hit }); }
   for (const [name, expect, mut] of MUTATIONS) {
     const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files);
     let applied; try { applied = mut(c, f) !== false; } catch (e) { applied = false; }

@@ -1,3 +1,4 @@
+# Prüfskript der Nachprüfung r4-58/r4-59 (Sitzung von PR #771), erweitert um G1–G12
 # r4-59 (18e0d750)
 BASIS 0 Blocker 20 Hinweise
 A1 aria-hidden=true auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
@@ -125,8 +126,8 @@ F3 aria-hidden="FALSE" auf Zeile => keine neuen Blocker
 F4 aria-hidden="true " (Leerzeichen hinten) auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
 F5 inert auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
 F6 inert auf <li> im Menü => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborge» 
-F7 inert auf .puk-site-subbar => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
-F8 inert auf header => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» ; index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborge» 
+F7 inert auf .puk-site-subbar => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
+F8 inert auf header => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» ; index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborge» 
 F9 inert auf Menü-<ul> => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborge» 
 F10 dekoratives <span aria-hidden> → nach Linktext (Zeile) => keine neuen Blocker 
 F11 dekoratives <span aria-hidden> → nach Linktext (Menü) => keine neuen Blocker 
@@ -138,14 +139,14 @@ F16 Linktext in <span> (ohne Attribut) => keine neuen Blocker
 F17 Linktext in <strong> mit dekorativem <span hidden>x</span> => keine neuen Blocker 
 F18 <script> im Link (Text darin) => index:inline-script«Inline-Skript: mit strenger Content-Security-Policy nicht zulässig – i» 
 F19 inert auf Hauptnavigation (nav) => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborge» 
-F20 Fehlerseite: inert auf header => keine neuen Blocker 
+F20 Fehlerseite: inert auf header => 404:sender«Fachstellen-Absenderin ist versteckt» 
 F21 inert auf behandlung.html: Zeile => behandlung:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
 G1 aria-hidden=" true " auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
 G2 aria-hidden="yes" auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
 G3 aria-hidden="0" auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
 G4 aria-hidden=" false " auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
 G5 aria-hidden="x" auf <li> im Menü => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborge» 
-G6 aria-hidden="true " auf .puk-site-subbar => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
+G6 aria-hidden="true " auf .puk-site-subbar => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder ar» 
 G7 aria-hidden="False" auf Zeile => keine neuen Blocker 
 G8 aria-hidden="undefined" auf Menülink => keine neuen Blocker 
 G9 aria-hidden="" auf Zeilenlink => keine neuen Blocker 

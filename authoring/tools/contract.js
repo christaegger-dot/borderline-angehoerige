@@ -477,7 +477,8 @@ function gate(cfg, files, opts = {}) {
     const skip = one(doc, x => x.tag === 'a' && cls(x, 'puk-web-skip'));
     if (!skip || skip.attrs.href !== '#main-content') add('block', pid, 'skip', 'Skip-Link auf #main-content fehlt');
     const snd = one(doc, x => has(x, 'data-sender')); const st = snd ? norm(txt(snd)) : '';
-    const hidden = x => has(x, 'hidden') || x.attrs['aria-hidden'] === 'true' || /display\s*:\s*none|visibility\s*:\s*hidden/i.test(x.attrs.style || '') || cls(x, 'kit-visually-hidden') || cls(x, 'visually-hidden');
+    /* r4-60 (Nachprüfung N59-2): hidden, inert und aria-hidden wie bei den Direkteinstiegen (hiddenFlag, Chromium). */
+    const hidden = x => hiddenFlag(x) || /display\s*:\s*none|visibility\s*:\s*hidden/i.test(x.attrs.style || '') || cls(x, 'kit-visually-hidden') || cls(x, 'visually-hidden');
     if (!snd || (s.displayName ? !st.includes(s.displayName) : (!s.orgUnit || !st.includes(s.orgUnit) || !st.includes(s.institution || '\u0000')))) add('block', pid, 'sender', 'Fachstellen-Absenderin nicht sichtbar (Organisationseinheit und Institution)');
     else if (hidden(snd) || up(snd, hidden)) add('block', pid, 'sender', 'Fachstellen-Absenderin ist versteckt');
     else if (s.email && !one(snd, x => x.tag === 'a' && has(x, 'data-sender-email') && x.attrs.href === 'mailto:' + s.email)) add('block', pid, 'sender', 'E-Mail der Absenderin fehlt im Kopf: ' + s.email);
@@ -630,7 +631,8 @@ function gate(cfg, files, opts = {}) {
       if (v && ENTRY_FORMATS.includes(v.format) && v.entryPoint && !/^entfällt/i.test(v.entryPoint.trim()) && !one(f, x => cls(x, 'puk-vis-ansatz'))) prod(pid, 'entry-point', `Figur ${vid}: Der Plan nennt einen Ansatzpunkt für Angehörige, die Figur markiert ihn nicht (.puk-vis-ansatz)`);
       if (!/eigene (didaktische )?darstellung|quelle:/i.test(capT)) add('block', pid, 'figure-source', `Figur ${lab}: Kennzeichnung «Eigene didaktische Darstellung» bzw. «Quelle:» fehlt in der Bildlegende`);
       for (const img of all(f, x => x.tag === 'img')) if (!has(img, 'alt')) add('block', pid, 'figure-alt', `Figur ${lab}: img ohne alt`);
-      for (const sv of all(f, x => x.tag === 'svg')) if (sv.attrs['aria-hidden'] !== 'true' && !up(sv, x => x.attrs['aria-hidden'] === 'true' || x.attrs.role === 'img') && !sv.attrs['aria-label'] && !one(sv, x => x.tag === 'title')) add('block', pid, 'figure-alt', `Figur ${lab}: SVG weder ausgeblendet noch benannt`);
+      /* r4-60 (Nachprüfung N59-2): ausgeblendet wie bei den Direkteinstiegen (hiddenFlag); ein SVG mit aria-hidden="TRUE" ist verborgen. */
+      for (const sv of all(f, x => x.tag === 'svg')) if (!hiddenFlag(sv) && !up(sv, x => hiddenFlag(x) || x.attrs.role === 'img') && !sv.attrs['aria-label'] && !one(sv, x => x.tag === 'title')) add('block', pid, 'figure-alt', `Figur ${lab}: SVG weder ausgeblendet noch benannt`);
       if (f.attrs['data-visual-type'] === 'cycle') {
         const stations = all(f, x => x.tag === 'li' && !!up(x, y => cls(y, 'puk-vis-cycle')));
         const arcs = all(f, x => cls(x, 'puk-vis-arc'));
@@ -715,6 +717,9 @@ const MUTATIONS = [
   ['Fachstelle unsichtbar', ['sender'], (c, f) => rep(f, 'unterstuetzung.html', '<p class="puk-site-sender" data-sender>', '<p class="puk-site-sender" data-sender hidden>')],
   ['E-Mail der Absenderin fehlt', ['sender'], (c, f) => !!(c.sender && c.sender.email) && rex(f, 'index.html', /<a class="puk-link--inline" data-sender-email[^>]*>[^<]*<\/a>/, '')],
   ['Fachstelle fehlt', ['sender'], (c, f) => rex(f, 'index.html', /<p class="puk-site-sender" data-sender>[\s\S]*?<\/p>/, '')],
+  ['Absenderin über inert am Kopf gesperrt (r4-60, N59-2)', ['sender'], (c, f) => rex(f, 'index.html', /<header class="puk-web-header"/, '$& inert')],
+  ['Absenderin mit aria-hidden="TRUE" auf der Subbar verborgen (r4-60, N59-2)', ['sender'], (c, f) => rex(f, 'index.html', /<div class="puk-web-container puk-site-subbar"/, '$& aria-hidden="TRUE"')],
+  ['Fehlerseite: Absenderin über inert am Kopf gesperrt (r4-60, N59-2)', ['sender'], (c, f) => rex(f, '404.html', /<header class="puk-web-header"/, '$& inert')],
   ['Krisennummer erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p>Telefon 144</p></main>')],
   ['Krisentelefonlink erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p><a href="tel:144">Anrufen</a></p></main>')],
   ['Notfallblock eingefügt', ['crisis-block'], (c, f) => rep(f, 'behandlung.html', '<main id="main-content"', '<aside data-safety-access="direct"><p>Akute Hilfe</p></aside><main id="main-content"')],
@@ -877,6 +882,11 @@ function selftest(cfg, files, opts = {}) {
       const ids = ok ? [...new Set(gate(cfg, f, { mode: 'draft', exists: base }).findings.filter(x => x.level === 'block' && ['nav', 'utility-nav'].includes(x.id)).map(x => x.id))] : ['Mutation nicht anwendbar'];
       if (ids.length) hits.push(`«${v}»: ${ids.join(', ')}`); }
     rows.push({ name: 'aria-hidden «false», «FALSE», «undefined» oder leer an Zeile und Menü gilt nicht als verborgen (r4-60, N59-1)', expected: 'kein nav, kein utility-nav', got: hits.join('; ') || 'kein nav, kein utility-nav', ok: !hits.length }); }
+  { /* r4-60 (Nachprüfung N59-2): Ein SVG mit aria-hidden="TRUE" ist verborgen und braucht keinen Namen. */
+    const f = Object.assign({}, files);
+    const ok = rex(f, 'verstehen.html', /(<svg class="puk-vis-scene__art"[^>]*) aria-hidden="true"/, '$1 aria-hidden="TRUE"');
+    const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'figure-alt');
+    rows.push({ name: 'SVG mit aria-hidden="TRUE" gilt als ausgeblendet (r4-60, N59-2)', expected: 'kein figure-alt', got: ok ? (hit ? 'figure-alt' : 'kein figure-alt') : 'Mutation nicht anwendbar', ok: ok && !hit }); }
   for (const [name, expect, mut] of MUTATIONS) {
     const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files);
     let applied; try { applied = mut(c, f) !== false; } catch (e) { applied = false; }

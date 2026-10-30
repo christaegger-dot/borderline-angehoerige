@@ -64,6 +64,46 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 | N60-1 | gering | Behobene Falschmeldung P4.6 und `aria-hidden=" false "` ohne Selbsttestfall | umgesetzt mit PR #783 (`4f4ba8f`) |
 | N60-3 | gering | SVG-Prüfung wertet `hidden` und `inert` als ausgeblendet, Chromium nicht; Teil von N61-1 | offen; in r4-62 (PR #784, Entwurf) |
 
+## Footer-Überschriften · r4-64 · Befund N56-1 · mit PR #788 veröffentlicht
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-53`, [PR #788](https://github.com/christaegger-dot/borderline-angehoerige/pull/788), im Auftrag von Christa Egger gemergt («bitte merge»). Grüner CI-Lauf `build-and-compare` auf `88ede98`. Mit dem Merge über Netlify veröffentlicht.
+
+**Nummer:** Begonnen auf `aefdf06` als r4-63. Inzwischen ist r4-61 gemergt (`5cbaf1c`). Offen sind r4-62 ([PR #784](https://github.com/christaegger-dot/borderline-angehoerige/pull/784)) und ein weiterer Stand r4-63 ([PR #787](https://github.com/christaegger-dot/borderline-angehoerige/pull/787)). Deshalb ist `main` per Merge eingebracht, und die Änderung heisst r4-64. Wer #784 oder #787 später mergt, bringt `main` ein und baut neu.
+
+**Auftrag** von Christa Egger, 30.10.2026: «N56-1: Überschriften in Medium und Abstand vor Hinweis umsetzen». Nachweis: [`audit-results/2026-10-30-n56-1-r4-64/BERICHT.md`](audit-results/2026-10-30-n56-1-r4-64/BERICHT.md).
+
+**Merge ohne Codex-Review (Ausnahme von R28-O01 und R29-P20):**
+- Das Codex-Review auf `88ede98` brach am 30.10.2026 um 08:43:35 UTC mit «Failed» ab. Danach meldete Codex, das Nutzungslimit für Code-Reviews sei erreicht. Es gibt keine Review-Threads.
+- Der PR ändert die veröffentlichte Website. Darauf hat diese Sitzung vor dem Merge hingewiesen.
+- Entscheid Christa Egger: «ja, ohne Codex-Review mergen».
+
+**Inhalt:**
+- Die Überschriften im Footer («Kontakt», «Fachstelle Angehörigenarbeit») stehen in Medium statt Regular, weiter 16 px und `tinte-leise`.
+- Vor dem Hinweis «Diese Website ersetzt keine individuelle Abklärung, Beratung oder Behandlung.» stehen 8 px Abstand.
+- Unter 22,5 rem trennt die Überschrift Silben. Sonst bräche «Angehörigenarbeit» in Medium bei 320 px und 200 % Schrift mitten im Wort um.
+- Geändert sind nur CSS und `DARSTELLUNGSREGELN.md`, kein Wortlaut.
+
+**Wirkung** (240 Zustände, 24 Seiten):
+- Der Footer ist 8 px höher, bei 320 px und 200 % Schrift 56 px, weil die Überschrift dort drei Zeilen braucht.
+- Kontrast 5,92 : 1, Links mindestens 44 px, kein waagrechtes Scrollen.
+- Fokusbild, erzwungene Farben und Druck sind unverändert.
+
+**Technischer Stand:**
+- Selbsttest 116/116
+- Gate 24 Seiten · 0 Blocker · 20 Hinweise
+- Parität 35
+- Suchtest 216/216
+- Sprach-/UI-Test 73/73
+- Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c)
+- axe-core 0 Verstösse (Standardschrift und 200 % Schrift mit offenem Menü)
+
+**Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die die Nachprüfung r4-55 und r4-56 erstellt und N56-1 gefunden hat. Eine Nachprüfung von r4-64 muss eine andere Sitzung machen.
+
+**Offen:**
+- Nachprüfung von r4-64.
+- Live-Abfrage der Build-Kennung nach dem Merge.
+- Gestaltungssystem nachführen (Fusszeile: Überschriften in Medium).
+
 ## Nachprüfung r4-55 und r4-56 · liegt vor seit 30.10.2026
 
 **GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-53`, [PR #779](https://github.com/christaegger-dot/borderline-angehoerige/pull/779), Kopf `3a96722`, gemergt als `db56243` am 30.10.2026, 07:53:55 UTC, über das Konto von Christa Egger. Auftrag von Christa Egger, 30.10.2026: «Nachprüfung r4-55 und r4-56 starten». Gegenstand ist PR #753 (`9c3521e`..`3780ee5`): r4-55 (Absenderzeile 16 px) und r4-56 (dezenter Footer, 16 px, grau). CSS, Fragmente und Skripte sind seit `3780ee5` unverändert, geprüft ist also auch der veröffentlichte Footer. Nachweis: [`audit-results/2026-10-30-nachpruefung-r4-55-r4-56/NACHPRUEFUNG.md`](audit-results/2026-10-30-nachpruefung-r4-55-r4-56/NACHPRUEFUNG.md), dazu Auswertung, Rohmessung, Fotos und Prüfskripte.
@@ -76,9 +116,9 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 | Befund | Schweregrad | Inhalt | Stand |
 |---|---|---|---|
-| N56-1 | gering | Die zwei Überschriften im Footer sehen aus wie der Text darunter (16 px, Regular, grau, ohne Abstand); der Pflichthinweis «Diese Website ersetzt keine …» geht ohne Abstand in den Namen der Klinik über (`site.css:794–795`) | offen; in r4-64 (PR #788, bereit zur Prüfung) |
+| N56-1 | gering | Die zwei Überschriften im Footer sehen aus wie der Text darunter (16 px, Regular, grau, ohne Abstand); der Pflichthinweis «Diese Website ersetzt keine …» geht ohne Abstand in den Namen der Klinik über (`site.css:794–795`) | Entscheid Christa Egger 30.10.2026: «N56-1: Überschriften in Medium und Abstand vor Hinweis umsetzen»; umgesetzt in r4-64 ([PR #788](https://github.com/christaegger-dot/borderline-angehoerige/pull/788), siehe Abschnitt «Footer-Überschriften · r4-64»); Nachprüfung von r4-64 offen |
 
-**Offen:** N56-1 (in r4-64, [PR #788](https://github.com/christaegger-dot/borderline-angehoerige/pull/788), bereit zur Prüfung; er ändert selbst die Pendenzendatei mit einem Abschnitt «Footer-Überschriften · r4-64», was sich mit dieser Nachführung überschneidet); zu entscheiden bleibt weiterhin, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Abschnitt r4-55).
+**Offen:** Nachprüfung von r4-64 (N56-1, [PR #788](https://github.com/christaegger-dot/borderline-angehoerige/pull/788), siehe Abschnitt «Footer-Überschriften · r4-64»); zu entscheiden bleibt weiterhin, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Abschnitt r4-55).
 
 ## Nachprüfung r4-60 · liegt vor seit 30.10.2026
 
@@ -93,7 +133,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 | N60-1 | gering | Die behobene Falschmeldung P4.6 (verborgener Zusatz ` →` im Linktext) und `aria-hidden=" false "` sind durch keinen Selbsttestfall abgesichert, nur durch das Mutationsskript | umgesetzt mit PR #783 (`4f4ba8f`), siehe Abschnitt «Nachträge zu N60-1 und N60-3» |
 | N60-2 | gering | Die Pendenzendatei auf `main` nannte r4-60 nicht | mit diesem Eintrag erledigt |
 
-**Offen:** N60-3 und N61-1 (in r4-62, PR #784, Entwurf); N61-2 (in r4-63, PR #787, Entwurf); N56-1 (in r4-64, PR #788, bereit zur Prüfung); N53-1, N53-2; Rest von N52-3; N49-2 (Bestätigung durch Christa Egger); N51-2; Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte.
+**Offen:** N60-3 und N61-1 (in r4-62, PR #784, Entwurf); N61-2 (in r4-63, PR #787, Entwurf); N56-1 (in r4-64, PR #788, Nachprüfung offen); N53-1, N53-2; Rest von N52-3; N49-2 (Bestätigung durch Christa Egger); N51-2; Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte.
 
 ## Korrektur · r4-60 · Befunde N59-1 und N59-2 · veröffentlicht am 30.10.2026
 
@@ -122,7 +162,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Offen:**
 - N60-1: umgesetzt mit PR #783; N60-3: in r4-62 (PR #784, Entwurf).
-- N56-1: in r4-64 (PR #788, bereit zur Prüfung).
+- N56-1: in r4-64 (PR #788), Nachprüfung offen.
 - N59-3: in r4-61 umgesetzt (PR #780, `5cbaf1c`); N53-1, N53-2; N52-3: Rest; N51-2; N49-2: Bestätigung durch Christa Egger.
 - Prüfung mit echtem Screenreader; Safari und Firefox (Behandlung ungültiger `aria-hidden`-Werte), reale Geräte.
 

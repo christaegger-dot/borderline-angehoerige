@@ -1,0 +1,90 @@
+Gate r4-61 (r4-65) Grundzustand: 0 Blocker · Gate r4-62 (r4-67): 0 Blocker · Chromium 153.0.8010.12
+Nr	Fall	Regel	r4-61	r4-62	Chromium	soll	r4-61=Chr	r4-62=Chr
+M1	Zeile: svg hidden aria-label	utility-nav	utility-nav	utility-nav	link «Kurz und klar Pfeil»	Blocker	ja	ja
+M2	Zeile: svg inert aria-label	utility-nav	utility-nav	utility-nav	link «Kurz und klar Pfeil»	Blocker	ja	ja
+M3	Zeile: svg hidden + title	utility-nav	utility-nav	utility-nav	link «Kurz und klar Mehr»	Blocker	ja	ja
+M4	Zeile: svg inert + title	utility-nav	utility-nav	utility-nav	link «Kurz und klar Mehr»	Blocker	ja	ja
+M5	Zeile: svg aria-hidden="true" aria-label	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M6	Zeile: svg aria-hidden="yes" aria-label	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M7	Zeile: svg aria-hidden="true" + title	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M8	Zeile: svg aria-label (sichtbar)	utility-nav	utility-nav	utility-nav	link «Kurz und klar Pfeil»	Blocker	ja	ja
+M9	Zeile: svg + title (sichtbar)	utility-nav	utility-nav	utility-nav	link «Kurz und klar Mehr»	Blocker	ja	ja
+M10	Zeile: span hidden aria-label	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M11	Zeile: span inert aria-label	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M12	Zeile: span hidden Text	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M13	Zeile: span inert Text	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M14	Zeile: svg > g hidden > title	utility-nav	utility-nav	utility-nav	link «Kurz und klar»	kein	NEIN	NEIN
+M15	Zeile: svg > g inert > title	utility-nav	utility-nav	utility-nav	link «Kurz und klar»	kein	NEIN	NEIN
+M16	Zeile: svg > g aria-hidden > title	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M17	Zeile: svg > g hidden aria-label	utility-nav	utility-nav	utility-nav	link «Kurz und klar»	kein	NEIN	NEIN
+M18	Zeile: svg aria-hidden > foreignObject > span aria-label	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M19	Zeile: foreignObject > span hidden aria-label	utility-nav	utility-nav	–	link «Kurz und klar»	kein	NEIN	ja
+M20	Zeile: foreignObject > span hidden Text	utility-nav	utility-nav	–	link «Kurz und klar»	kein	NEIN	ja
+M21	Zeile: foreignObject > span inert Text	utility-nav	utility-nav	–	link «Kurz und klar»	kein	NEIN	ja
+M22	Zeile: foreignObject > span aria-label (sichtbar)	utility-nav	utility-nav	utility-nav	link «Kurz und klar»	kein	NEIN	NEIN
+M23	Zeile: Kontrolle: svg > g > title (ohne hidden)	utility-nav	utility-nav	utility-nav	link «Kurz und klar»	kein	NEIN	NEIN
+M24	Zeile: Kontrolle: svg > g aria-label (ohne hidden)	utility-nav	utility-nav	utility-nav	link «Kurz und klar»	kein	NEIN	NEIN
+M25	Zeile: Kontrolle: foreignObject > span Text (sichtbar)	utility-nav	utility-nav	utility-nav	link «Kurz und klar»	kein	NEIN	NEIN
+M26	Zeile: span hidden > svg aria-label	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M27	Zeile: span inert > svg aria-label	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M28	Menü: svg hidden aria-label	nav	nav	nav	link «Kurz und klar Pfeil»	Blocker	ja	ja
+M29	Menü: svg inert aria-label	nav	nav	nav	link «Kurz und klar Pfeil»	Blocker	ja	ja
+M30	Menü: svg hidden + title	nav	nav	nav	link «Kurz und klar Mehr»	Blocker	ja	ja
+M31	Menü: svg inert + title	nav	nav	nav	link «Kurz und klar Mehr»	Blocker	ja	ja
+M32	Menü: svg aria-hidden="true" aria-label	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M33	Menü: svg aria-hidden="yes" aria-label	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M34	Menü: svg aria-hidden="true" + title	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M35	Menü: svg aria-label (sichtbar)	nav	nav	nav	link «Kurz und klar Pfeil»	Blocker	ja	ja
+M36	Menü: svg + title (sichtbar)	nav	nav	nav	link «Kurz und klar Mehr»	Blocker	ja	ja
+M37	Menü: span hidden aria-label	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M38	Menü: span inert aria-label	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M39	Menü: span hidden Text	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M40	Menü: span inert Text	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M41	Menü: svg > g hidden > title	nav	nav	nav	link «Kurz und klar»	kein	NEIN	NEIN
+M42	Menü: svg > g inert > title	nav	nav	nav	link «Kurz und klar»	kein	NEIN	NEIN
+M43	Menü: svg > g aria-hidden > title	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M44	Menü: svg > g hidden aria-label	nav	nav	nav	link «Kurz und klar»	kein	NEIN	NEIN
+M45	Menü: svg aria-hidden > foreignObject > span aria-label	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M46	Menü: foreignObject > span hidden aria-label	nav	nav	–	link «Kurz und klar»	kein	NEIN	ja
+M47	Menü: foreignObject > span hidden Text	nav	nav	–	link «Kurz und klar»	kein	NEIN	ja
+M48	Menü: foreignObject > span inert Text	nav	nav	–	link «Kurz und klar»	kein	NEIN	ja
+M49	Menü: foreignObject > span aria-label (sichtbar)	nav	nav	nav	link «Kurz und klar»	kein	NEIN	NEIN
+M50	Menü: Kontrolle: svg > g > title (ohne hidden)	nav	nav	nav	link «Kurz und klar»	kein	NEIN	NEIN
+M51	Menü: Kontrolle: svg > g aria-label (ohne hidden)	nav	nav	nav	link «Kurz und klar»	kein	NEIN	NEIN
+M52	Menü: Kontrolle: foreignObject > span Text (sichtbar)	nav	nav	nav	link «Kurz und klar»	kein	NEIN	NEIN
+M53	Menü: span hidden > svg aria-label	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M54	Menü: span inert > svg aria-label	nav	–	–	link «Kurz und klar»	kein	ja	ja
+M55	Zeile: Link aria-hidden="true"	utility-nav	utility-nav	utility-nav	ignoriert (ariaHiddenElement)	Blocker	ja	ja
+M56	Zeile: Link aria-hidden=" true "	utility-nav	utility-nav	utility-nav	ignoriert (ariaHiddenElement)	Blocker	ja	ja
+M57	Zeile: Link aria-hidden="false"	utility-nav	–	–	link «Kurz und klar»	kein	ja	ja
+M58	Zeile: Link hidden	utility-nav	utility-nav	utility-nav	link «Kurz und klar»	kein	NEIN	NEIN
+M59	Zeile: Link inert	utility-nav	utility-nav	utility-nav	ignoriert (inertElement)	Blocker	ja	ja
+M60	Zeile: nav aria-hidden="yes"	utility-nav	utility-nav	utility-nav	ignoriert (ariaHiddenSubtree)	Blocker	ja	ja
+M61	Menü: Link aria-hidden="TRUE"	nav	nav	nav	ignoriert (ariaHiddenElement)	Blocker	ja	ja
+M62	Menü: Link inert	nav	nav	nav	ignoriert (inertElement)	Blocker	ja	ja
+M63	Subbar aria-hidden="true"	sender	sender,utility-nav	sender,utility-nav	Absenderzeile ignoriert (ariaHiddenSubtree)	Blocker	ja	ja
+M64	Subbar aria-hidden="0"	sender	sender,utility-nav	sender,utility-nav	Absenderzeile ignoriert (ariaHiddenSubtree)	Blocker	ja	ja
+M65	Subbar hidden	sender	sender,utility-nav	sender,utility-nav	Absenderzeile ignoriert (uninteresting)	Blocker	ja	ja
+M66	Kopf inert	sender	sender,utility-nav,nav	sender,utility-nav,nav	Absenderzeile ignoriert (inertElement)	Blocker	ja	ja
+M67	Fehlerseite: Kopf aria-hidden="TRUE"	sender	sender	sender	Absenderzeile ignoriert (ariaHiddenSubtree)	Blocker	ja	ja
+M68	Absenderzeile aria-hidden="false"	sender	–	–	Absenderzeile im Baum (paragraph)	kein	ja	ja
+M69	Abbildung: SVG ohne aria-hidden	figure-alt	figure-alt	figure-alt	image «»	Blocker	ja	ja
+M70	Abbildung: SVG hidden statt aria-hidden	figure-alt	figure-alt	figure-alt	image «»	Blocker	ja	ja
+M71	Abbildung: SVG inert statt aria-hidden	figure-alt	figure-alt	figure-alt	image «»	Blocker	ja	ja
+M72	Abbildung: SVG aria-hidden="yes"	figure-alt	–	–	nicht im Baum	kein	ja	ja
+M73	Abbildung: SVG aria-hidden="false"	figure-alt	figure-alt	figure-alt	image «»	Blocker	ja	ja
+M74	Abbildung: SVG ohne aria-hidden, Szene hidden (eigene display-Regel)	figure-alt	figure-alt	figure-alt	image «»	Blocker	ja	ja
+M75	Abbildung: SVG ohne aria-hidden, in <div hidden> (keine display-Regel)	figure-alt	figure-alt	figure-alt	nicht im Baum	kein	NEIN	NEIN
+M76	Abbildung: SVG ohne aria-hidden, Szene inert	figure-alt	–	–	nicht im Baum	kein	ja	ja
+M77	Abbildung: SVG ohne aria-hidden, Szene aria-hidden="true"	figure-alt	–	–	nicht im Baum	kein	ja	ja
+M78	Abbildung: SVG ohne aria-hidden, Szene hidden + inert	figure-alt	–	–	nicht im Baum	kein	ja	ja
+M79	Abbildung: SVG ohne aria-hidden, mit aria-label	figure-alt	–	–	image «Szene»	kein	ja	ja
+M80	Abbildung: SVG ohne aria-hidden, <g hidden><title>	figure-alt	–	–	SvgRoot «»	kein	ja	ja
+M81	Abbildung: SVG ohne aria-hidden, <g inert> um nichts	figure-alt	figure-alt	figure-alt	image «»	Blocker	ja	ja
+M82	Abbildung: SVG aria-hidden, darin verschachteltes <svg> ohne Namen	figure-alt	–	–	nicht im Baum | nicht im Baum	kein	ja	ja
+M83	Abbildung: SVG aria-label, darin verschachteltes <svg hidden> ohne Namen	figure-alt	figure-alt	figure-alt	image «Szene» | nicht im Baum	kein	NEIN	NEIN
+M84	Abbildung: Kontrolle: SVG aria-label, darin verschachteltes <svg> ohne Namen (ohne hidden)	figure-alt	figure-alt	figure-alt	image «Szene» | nicht im Baum	kein	NEIN	NEIN
+M85	Abbildung: SVG aria-hidden, foreignObject mit <svg> ohne Namen	figure-alt	–	–	nicht im Baum | nicht im Baum	kein	ja	ja
+M86	Abbildung: SVG ohne aria-hidden, unter role="img" aria-label	figure-alt	–	–	image «»	Blocker	NEIN	NEIN
+
+86 Fälle · Abweichungen Gate ↔ Chromium: r4-61 25, r4-62 19 (r4-62: 18 strenger als Chromium, 1 milder als Chromium)

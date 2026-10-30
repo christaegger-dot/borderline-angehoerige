@@ -2,12 +2,17 @@
 
 **Umbenennung (begonnen als r4-66):**
 - **Anlass:** #787 (N61-2) und dieser Stand nahmen fast gleichzeitig r4-66 an (`7aa64b6` um 09:58:13 UTC, `d01223f` um 09:58:12 UTC).
-- **Entscheid:** Christa Egger hat entschieden: #787 behält r4-66, dieser Stand wird r4-67. Diese Sitzung hat den Entscheid nicht selbst erhalten. Drei Sitzungen haben ihn übermittelt, alle gleichlautend:
+- **Entscheid:** Christa Egger hat entschieden: #787 behält r4-66, dieser Stand wird r4-67. Die bauende Sitzung hat den Entscheid nicht selbst erhalten. Drei Sitzungen haben ihn in dieser Fassung übermittelt:
   - die Sitzung von PR #784: «#787 = r4-66, #795 = r4-67»;
   - die Sitzung von PR #787: «#795 in r4-67 umbenennen» (wörtlich);
   - die Review-Sitzung von #787 (Quelle: Mitteilung an die Review-Sitzung): «#787 behält r4-66, #795 wird r4-67».
-
-  Der Entscheid stimmt mit dem Stand auf GitHub überein: #787 trägt r4-66 (`7aa64b6`).
+- **Früherer gegenteiliger Wortlaut (ergänzt nach N67-1):** In der Sitzung von #787 lautete der Entscheid um etwa 10:55 UTC zuerst umgekehrt: «#795 behält r4-66, #787 wird r4-67».
+  - Auf Rückfrage der Review-Sitzung bestätigte Christa Egger kurz nach 10:58 UTC «#787 behält r4-66». Damit ist der frühere Wortlaut überholt.
+  - Quellen: Commit `13f471f` auf dem Branch von #787 (11:00:47 UTC) und die Pendenzendatei auf `main` (`ec821ab`, Abschnitt zu N61-2: «Mitteilung an die Review-Sitzung, auf GitHub nicht belegt»).
+- **Zeitfolge:**
+  - Die Umbenennung `f99f29b` (10:57:35 UTC) und `eca7fbd` (10:57:47 UTC) stützte sich auf die Mitteilung der Sitzung von #784. Sie liegt vor der Bestätigung in der Review-Sitzung.
+  - Die Bestätigung ändert am Ergebnis nichts: #787 trägt r4-66 (`7aa64b6`, `13f471f`), dieser Stand r4-67.
+- **Commit `f99f29b`:** Seine Meldung nennt auch Kennung, `site/` und Prüfungen. Der Commit benennt aber nur den Nachweisordner um und trägt noch `BUILD = 'r4-66'`. Den Inhalt bringt `eca7fbd`.
 - **Umgesetzt:** Die Kennung ist durchgehend r4-67 (`BUILD`, `assetVersion`, `independentReviewWaiver.version`, `pendingScope`, `appliedTo`, Kommentar und Selbsttestname). Der Ordner heisst `2026-10-30-n62-1-n62-2-r4-67`.
 - **Neu gebaut:** `main` ist bis `a323fed` eingebracht (#796, #794; nur `.claude/`, `.gitignore` und `audit-results/`). Danach sind `site/` neu gebaut und alle Prüfungen neu gelaufen.
 - **Merge-Reihenfolge:** #787 (r4-66) zuerst; danach bringt dieser Stand `main` ein und baut neu.
@@ -48,7 +53,7 @@ N62-1 braucht deshalb keine Codeänderung. Ich habe den Branch von #787 nicht ve
   - Das `foreignObject` selbst bleibt ein SVG-Element. Ein `<svg>` in `foreignObject` ist wieder ein SVG-Element.
   - Der Parser schreibt Tags klein, deshalb steht `foreignobject` im Vergleich.
 - **Wirkung:** über `hiddenFlag` auf `concealed`, `accTxt`, `relabelled` und `svgSilenced`. Ein `inert` an einem HTML-Element in `foreignObject` blendet damit ein SVG darin auch in der SVG-Prüfung aus, wie in Chromium.
-- **Selbsttest** (`:933–939`): ein neuer Fall, 123 statt 122.
+- **Selbsttest** (`:933–939`): ein neuer Fall, 123 statt 122. Dazu kommt nach N67-2 eine Gegenprobe (`:940–945`), 124, siehe Abschnitt «Nachbesserung N67-1 und N67-2».
   - Zeile: `<svg><foreignObject><span hidden aria-label="Mehr">x</span></foreignObject></svg>` hinter dem Text des Links.
   - Menü: `<svg><foreignObject><span inert> mehr</span></foreignObject></svg>` hinter dem Text des Links.
   - Erwartet: kein `utility-nav`, kein `nav`.
@@ -97,3 +102,44 @@ Lokal mit Node 22.22.0, Chromium 153.0.8010.12 und Playwright über `PLAYWRIGHT_
 | axe-core 4.14.0 (eigener Ordner ausserhalb des Repositorys) | `build r4-67 · Seiten: 24 · Läufe: 48 · Verstösse: 0` |
 
 **Nicht geprüft:** Screenreader, Safari und Firefox, reale Geräte.
+
+## Nachbesserung N67-1 und N67-2 · 30.10.2026
+
+**Auftrag von Christa Egger, 30.10.2026:** «Nachbesserung N67-1 und N67-2 umsetzen». Beide Befunde stammen aus der Nachprüfung r4-67 ([PR #802](https://github.com/christaegger-dot/borderline-angehoerige/pull/802), Entwurf, nicht gemergt), geprüft auf `51b9b1e`.
+
+- **Gebaut** hat diese Nachbesserung die Sitzung, die die Nachprüfung r4-67 verfasst hat. Eine Nachprüfung dieser Commits muss eine andere Sitzung machen.
+- **Build-Kennung:** bleibt r4-67. r4-67 ist nicht gemergt und nicht veröffentlicht, und `site/` ändert sich nicht.
+
+**N67-1 (Darstellung des Kennungsentscheids):**
+- Der Abschnitt «Umbenennung» oben nennt jetzt den früheren gegenteiligen Wortlaut, seine Quellen und die Zeitfolge. Er sagt auch, dass `f99f29b` nur den Ordner umbenennt.
+- `independentReviewWaiver.appliedTo` nennt dieselben drei übermittelnden Sitzungen wie dieser Bericht und den überholten Wortlaut. Dazu ist die Nachbesserung N67-1 und N67-2 vermerkt.
+- `pendingScope` nennt die Gegenprobe.
+- Die Beschreibung von PR #795 ist angeglichen.
+
+**N67-2 (Gegenprobe im Selbsttest)** in `authoring/tools/contract.js:940–945`:
+- **Fall:** In `verstehen.html` steht am Szenen-SVG `role="group" aria-label="Szene"` statt `aria-hidden`. Darin steht `<foreignObject inert>` mit einem SVG ohne Namen.
+- **Erwartet:** `figure-alt`. Chromium 153 zeigt das innere SVG hier als `image` ohne Namen, `inert` am `foreignObject` verbirgt nichts (Nachprüfung r4-67, Fall K81).
+- **Regeln unverändert:** Nur der Selbsttest ist ergänzt, `inSvg`, `hiddenFlag` und `svgSilenced` sind gleich wie auf `51b9b1e`.
+
+**Rückprobe** (`rueckprobe-n67-ausgabe.txt`, Skript `rueckprobe-n67.py` aus der Nachprüfung r4-67):
+
+| Fassung von `inSvg` | Ergebnis | scheitert |
+|---|---|---|
+| r4-67 | 124/124 | — |
+| von r4-65 | 123/124 | der Fall N62-2 |
+| `foreignObject` selbst gilt als HTML | 123/124 | die neue Gegenprobe N67-2 |
+| jedes `foreignObject` darüber macht HTML | 124/124 | nichts; diese Variante weicht in den Fällen der Nachprüfung r4-67 nicht zum Milderen ab (K84) |
+
+**Prüfungen nach der Nachbesserung** (`tests-ausgabe-n67.txt`, `axe-ausgabe-n67.txt`):
+
+| Prüfung | Ergebnis |
+|---|---|
+| `build.mjs --production --out=site --write-site` | 24 Seiten · 0 Blocker · 20 Hinweise; `site/` unverändert (`git diff --quiet -- site`) |
+| `build.mjs --production --verify-site` | `PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/` |
+| Selbsttest | 124/124 |
+| Suchtest (`dist/site`) | 216 von 216, JS-Fehler 0 |
+| Sprach-/UI-Test | 73 Prüfungen, JS-Fehler 0 |
+| Layouttest | 240 Zustände, 27 Bedienproben, 1 Abweichung (bekannte Ausnahme B2c, Exit 1 wie bisher) |
+| axe-core 4.14.0 | `build r4-67 · Seiten: 24 · Läufe: 48 · Verstösse: 0` |
+
+**Merge-Reihenfolge unverändert:** #787 (r4-66) zuerst. Danach bringt #795 `main` ein und baut neu. Beim Zusammenführen bleiben beide Selbsttest-Einschübe stehen, dann sind es 127 Fälle (125 aus #787, dazu der Fall N62-2 und die Gegenprobe N67-2).

@@ -937,6 +937,12 @@ function selftest(cfg, files, opts = {}) {
       && rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<svg width="8" height="8"><foreignObject width="8" height="8"><span inert> mehr</span></foreignObject></svg><');
     const got = ok ? ids(f) : ['Mutation nicht anwendbar'];
     rows.push({ name: 'Verborgenes HTML in foreignObject im Direkteinstieg ist zulässig (r4-67, N62-2)', expected: 'kein nav, kein utility-nav', got: got.join(', ') || 'kein nav, kein utility-nav', ok: ok && got.length === 0 }); }
+  { /* r4-67 (Nachprüfung r4-67, N67-2), Gegenprobe: Das foreignObject selbst ist ein SVG-Element. inert daran verbirgt in Chromium
+       nichts; ein SVG ohne Namen darin bleibt «image» ohne Namen. */
+    const f = Object.assign({}, files);
+    const ok = rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"([^>]*>)/, '$1 role="group" aria-label="Szene"$2<foreignObject inert width="40" height="40"><svg width="20" height="20"><rect width="20" height="20"/></svg></foreignObject>');
+    const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'figure-alt');
+    rows.push({ name: 'SVG ohne Namen in <foreignObject inert> gilt nicht als ausgeblendet (r4-67, N67-2)', expected: 'figure-alt', got: ok ? (hit ? 'figure-alt' : 'kein figure-alt') : 'Mutation nicht anwendbar', ok: ok && hit }); }
   for (const [name, expect, mut] of MUTATIONS) {
     const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files);
     let applied; try { applied = mut(c, f) !== false; } catch (e) { applied = false; }

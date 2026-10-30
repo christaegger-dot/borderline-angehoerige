@@ -143,3 +143,32 @@ Lokal mit Node 22.22.0, Chromium 153.0.8010.12 und Playwright über `PLAYWRIGHT_
 | axe-core 4.14.0 | `build r4-67 · Seiten: 24 · Läufe: 48 · Verstösse: 0` |
 
 **Merge-Reihenfolge unverändert:** #787 (r4-66) zuerst. Danach bringt #795 `main` ein und baut neu. Beim Zusammenführen bleiben beide Selbsttest-Einschübe stehen, dann sind es 127 Fälle (125 aus #787, dazu der Fall N62-2 und die Gegenprobe N67-2).
+
+## Nachtrag · `main` mit r4-66 eingebracht (30.10.2026, nach 11:46 UTC)
+
+**Anlass:** #787 (r4-66, N61-2) ist auf `main` gemergt (`cec2bbc`, 11:46:36 UTC). Wie vereinbart, bringt dieser Stand danach `main` ein.
+
+**Konflikte und Auflösung:**
+- **`authoring/tools/contract.js`:**
+  - `BUILD` bleibt r4-67.
+  - Die zwei angrenzenden Selbsttestblöcke stehen beide drin: zuerst der von r4-66 (N61-2, Bild mit leerem `alt`), dann die zwei von r4-67 (N62-2 und die Gegenprobe N67-2).
+  - `ctlTxt` (N61-2) und das neue `inSvg` (N62-2) stehen jetzt zusammen in der Datei.
+- **`authoring/site.config.json`:**
+  - `assetVersion` und `independentReviewWaiver.version` stehen auf r4-67.
+  - `pendingScope`: r4-67, danach «Vorher:» mit dem vollständigen Eintrag r4-66 von `main`.
+  - `appliedTo`: der Eintrag von `main` bis r4-66, danach die Einträge zu r4-67.
+- **`site/`:** Die Fassung von `main` ist übernommen und danach neu gebaut.
+
+**Prüfungen nach dem Merge** (lokal, Node 22.22.0, Chromium 153):
+
+| Prüfung | Ergebnis |
+|---|---|
+| `build.mjs --production --out=site --write-site` | 24 Seiten · 0 Blocker · 20 Hinweise |
+| `build.mjs --production --verify-site` | `PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/` |
+| Selbsttest | 127/127 (125 von `main` mit r4-66, dazu N62-2 und die Gegenprobe N67-2) |
+| Suchtest (`dist/site`) | 216 von 216, JS-Fehler 0 |
+| Sprach-/UI-Test | 73 Prüfungen, JS-Fehler 0 |
+| Layouttest | 240 Zustände, 27 Bedienproben, 1 Abweichung (bekannte Ausnahme B2c) |
+| axe-core 4.14.0 | `build r4-67 · Seiten: 24 · Läufe: 48 · Verstösse: 0` |
+
+**Seiten:** Die 35 Dateien in `site/` sind bis auf die Kennung byte-gleich mit `main` (r4-66 bzw. r4-67 ersetzt, `sha1sum` je Datei: 0 Abweichungen). 72-mal steht `r4-67`, kein `r4-65` und kein `r4-66`.

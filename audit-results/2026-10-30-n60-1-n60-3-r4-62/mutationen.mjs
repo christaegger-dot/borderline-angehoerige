@@ -1,4 +1,4 @@
-// r4-62 (übernommen aus dem Nachtrag zur Nachprüfung r4-60, PR #781): eigene Mutationen über C.gate (Eingabe wie build.mjs: C.renderPage mit injectSearchIndex,
+// r4-62 (übernommen aus dem Nachtrag zur Nachprüfung r4-60, PR #781, erweitert um Q6 für N61-1): eigene Mutationen über C.gate (Eingabe wie build.mjs: C.renderPage mit injectSearchIndex,
 // Modus production, report und exists wie dort). Aufruf: node mutationen.mjs <authoringDir> [--dump <datei.json>]
 // Ausgabe je Mutation: neue Blocker gegenüber dem Bestand (Seite:Regel). Mit --dump die mutierten Seiten als JSON
 // für den Abgleich im Zugänglichkeitsbaum von Chromium (aria.mjs).
@@ -70,6 +70,13 @@ M.push([`Q5.${++i} SVG Szene ohne aria-hidden, mit inert`, 'verstehen.html', s =
 for (const a of ['hidden', 'inert', 'aria-hidden="TRUE"', 'aria-hidden="yes"', 'aria-hidden="false"', 'role="img" aria-label="Szene"'])
   M.push([`Q5.${++i} SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit ${a}`, 'verstehen.html', s => SVG_OFF(s).replace(SCENE, `<div class="puk-vis-scene" ${a}>`)]);
 M.push([`Q5.${++i} SVG Szene ohne aria-hidden, in <div hidden> innerhalb der Szene`, 'verstehen.html', s => SVG_OFF(s).replace(/(<svg class="puk-vis-scene__art"[\s\S]*?<\/svg>)/, '<div hidden>$1</div>')]);
+
+// Q6 (r4-62, N61-1): SVG im Linktext von Zeile und Menü
+i = 0;
+for (const [lbl, re] of [['Zeile', ZL], ['Menü', ML]]) for (const sv of ['<svg hidden aria-label="Pfeil" width="8" height="8"></svg>', '<svg inert aria-label="Pfeil" width="8" height="8"></svg>',
+  '<svg hidden width="8" height="8"><title>Mehr</title></svg>', '<svg width="8" height="8"><g hidden><title>Mehr</title></g></svg>', '<svg aria-hidden="true" aria-label="Pfeil" width="8" height="8"></svg>',
+  '<svg aria-hidden="yes" width="8" height="8"><title>Mehr</title></svg>', '<span hidden aria-label="Pfeil"> →</span>', '<span inert> →</span>'])
+  M.push([`Q6.${++i} ${lbl}: Text + ${sv.replace(/ width="8" height="8"/, '')}`, 'index.html', s => s.replace(re, `$1$2${sv}<`)]);
 
 const dumps = [];
 for (const [name, file, fn] of M) {

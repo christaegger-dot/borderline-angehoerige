@@ -174,3 +174,19 @@ Q5.14 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="yes" 
 Q5.15 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="false" => verstehen:figure-alt
 Q5.16 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit role="img" aria-label="Szene" => keine neuen Blocker
 Q5.17 SVG Szene ohne aria-hidden, in <div hidden> innerhalb der Szene => verstehen:figure-alt
+Q6.1 Zeile: Text + <svg hidden aria-label="Pfeil"></svg> => index:utility-nav
+Q6.2 Zeile: Text + <svg inert aria-label="Pfeil"></svg> => index:utility-nav
+Q6.3 Zeile: Text + <svg hidden><title>Mehr</title></svg> => index:utility-nav
+Q6.4 Zeile: Text + <svg><g hidden><title>Mehr</title></g></svg> => index:utility-nav
+Q6.5 Zeile: Text + <svg aria-hidden="true" aria-label="Pfeil"></svg> => keine neuen Blocker
+Q6.6 Zeile: Text + <svg aria-hidden="yes"><title>Mehr</title></svg> => keine neuen Blocker
+Q6.7 Zeile: Text + <span hidden aria-label="Pfeil"> →</span> => keine neuen Blocker
+Q6.8 Zeile: Text + <span inert> →</span> => keine neuen Blocker
+Q6.9 Menü: Text + <svg hidden aria-label="Pfeil"></svg> => index:nav
+Q6.10 Menü: Text + <svg inert aria-label="Pfeil"></svg> => index:nav
+Q6.11 Menü: Text + <svg hidden><title>Mehr</title></svg> => index:nav
+Q6.12 Menü: Text + <svg><g hidden><title>Mehr</title></g></svg> => index:nav
+Q6.13 Menü: Text + <svg aria-hidden="true" aria-label="Pfeil"></svg> => keine neuen Blocker
+Q6.14 Menü: Text + <svg aria-hidden="yes"><title>Mehr</title></svg> => keine neuen Blocker
+Q6.15 Menü: Text + <span hidden aria-label="Pfeil"> →</span> => keine neuen Blocker
+Q6.16 Menü: Text + <span inert> →</span> => keine neuen Blocker

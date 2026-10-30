@@ -1,0 +1,110 @@
+## Commits d20973b..19a72dc
+19a72dc d20973b 2810994 | christaegger-dot | 2026-10-30T10:52:58+01:00 | Merge pull request #784 from christaegger-dot/korrektur/2026-10-30-n60-1-n60-3-r4-62
+2810994 7a21ee5 | Claude | 2026-10-30T09:30:10+00:00 | r4-65: Nachweis berichtigt (Copilot-Merge setzte nur die Kennung falsch)
+7a21ee5 e1db2da | Claude | 2026-10-30T09:29:04+00:00 | r4-65: Merge durch Copilot berichtigt, r4-62 in r4-65 umbenannt
+e1db2da d6dd542 a55ecb1 | copilot-swe-agent[bot] | 2026-10-30T09:24:06+00:00 | Merge remote-tracking branch 'origin/main' into korrektur/2026-10-30-n60-1-n60-3-r4-62
+d6dd542 171a6e0 | Claude | 2026-10-30T08:32:30+00:00 | r4-62 neu gefasst: hidden und inert nur an HTML-Elementen (N60-3, N61-1)
+171a6e0 a5d18e7 5cbaf1c | Claude | 2026-10-30T08:26:39+00:00 | Merge main (r4-61 #780, Nachtrag N60-1 #783, Nachprüfung r4-61 #785, Nachtrag r4-60 #781) in den Branch r4-62
+a5d18e7 9fe243e | Claude | 2026-10-30T08:01:10+00:00 | r4-62: SVG-Prüfung wertet hidden und inert wie Chromium (N60-3), Selbsttest sichert P4.6 ab (N60-1)
+
+## git diff --stat d20973b 19a72dc (ohne Nachweisordner der bauenden Sitzung)
+ authoring/site.config.json      |  8 ++++----
+ authoring/tools/contract.js     | 30 +++++++++++++++++++++++++-----
+ site/404.html                   |  6 +++---
+ site/begriffe.html              |  6 +++---
+ site/behandlung.html            |  6 +++---
+ site/beziehungen.html           |  6 +++---
+ site/buecher.html               |  6 +++---
+ site/diagnose.html              |  6 +++---
+ site/fragen.html                |  6 +++---
+ site/gefahr.html                |  6 +++---
+ site/genesung.html              |  6 +++---
+ site/grenzen.html               |  6 +++---
+ site/impressum-datenschutz.html |  6 +++---
+ site/index.html                 |  6 +++---
+ site/jugendliche.html           |  6 +++---
+ site/kinder.html                |  6 +++---
+ site/kommunizieren.html         |  6 +++---
+ site/krise.html                 |  6 +++---
+ site/kurz.html                  |  6 +++---
+ site/quellen.html               |  6 +++---
+ site/rolle.html                 |  6 +++---
+ site/selbstfuersorge.html       |  6 +++---
+ site/suche.html                 |  6 +++---
+ site/ueber.html                 |  6 +++---
+ site/unterstuetzung.html        |  6 +++---
+ site/verstehen.html             |  6 +++---
+ 26 files changed, 101 insertions(+), 81 deletions(-)
+
+## geänderte Dateien in audit-results/
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/BERICHT.md
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/abgleich-ausgabe.txt
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/abgleich.py
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/aria-ausgabe.txt
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/aria.mjs
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/axe-ausgabe-r4-65.txt
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/axe-ausgabe.txt
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/axe.mjs
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/mutationen-r4-61-ausgabe.txt
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/mutationen-r4-62-ausgabe.txt
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/mutationen.mjs
+A	audit-results/2026-10-30-n60-1-n60-3-r4-62/selbsttest-rueckprobe-ausgabe.txt
+
+## unverändert? (Exit 0 = keine Änderung)
+  authoring/content: Exit 0
+  authoring/css: Exit 0
+  authoring/js: Exit 0
+  authoring/tests: Exit 0
+  authoring/tools/build.mjs: Exit 0
+  authoring/tools/search-index.mjs: Exit 0
+  authoring/tools/selftest.mjs: Exit 0
+  authoring/tools/suchtest.mjs: Exit 0
+  authoring/tools/sprachtest.mjs: Exit 0
+  authoring/tools/layouttest.cjs: Exit 0
+  authoring/tools/wortbilanz.mjs: Exit 0
+  authoring/DARSTELLUNGSREGELN.md: Exit 0
+  PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md: Exit 0
+  .github: Exit 0
+  netlify.toml: Exit 0
+
+## site/: Dateien nach Ersetzen r4-64 -> r4-65 byte-gleich?
+  unverändert ohne Ersetzung: site/css/site.css
+  Dateien: 35 · Abweichungen: 0
+  Ersetzungen im Diff von site/: 72 mal r4-65, 72 mal r4-64
+  r4-64 in site/*.html auf 19a72dc: 0 Dateien
+
+## contract.js: d6dd542 mit r4-62 -> r4-65 gleich 2810994?
+  gleich (Blob 2810994 = 7a41374871cc29903af3883d9e0716f6b0b5f59f, 19a72dc = 7a41374871cc29903af3883d9e0716f6b0b5f59f)
+  r4-62 in contract.js auf 2810994: 0
+  e1db2da gegen d6dd542:
+    -const BUILD = 'r4-62';
+    +const BUILD = 'r4-64';
+
+## Pendenzendatei
+  e1db2da gegen a55ecb1: 
+  e1db2da gegen d20973b:  1 file changed, 47 insertions(+), 65 deletions(-)
+  7a21ee5 gegen d20973b: 
+  19a72dc gegen d20973b: 
+  Blob a55ecb1 = 20c60811b2396759652b5fe82da61c72b69174b6, e1db2da = 20c60811b2396759652b5fe82da61c72b69174b6, d20973b = f6b6c82bb521f43eb4a3ff59977dfbaa8c8c2189, 19a72dc = f6b6c82bb521f43eb4a3ff59977dfbaa8c8c2189
+
+## site.config.json
+  a55ecb1: assetVersion=r4-64 waiver.version=r4-64 appliedTo-Einträge=38 pendingScope beginnt «r4-64 (Befund N56-1 der Nachprüfung r4-5…»
+  d6dd542: assetVersion=r4-62 waiver.version=r4-62 appliedTo-Einträge=39 pendingScope beginnt «r4-62 (Befund N60-3 aus dem Nachtrag zur…»
+  e1db2da: assetVersion=r4-64 waiver.version=r4-64 appliedTo-Einträge=39 pendingScope beginnt «r4-62 (Befund N60-3 aus dem Nachtrag zur…»
+  7a21ee5: assetVersion=r4-65 waiver.version=r4-65 appliedTo-Einträge=40 pendingScope beginnt «r4-65 (begonnen als r4-62, umbenannt, we…»
+  2810994: assetVersion=r4-65 waiver.version=r4-65 appliedTo-Einträge=40 pendingScope beginnt «r4-65 (begonnen als r4-62, umbenannt, we…»
+  19a72dc: assetVersion=r4-65 waiver.version=r4-65 appliedTo-Einträge=40 pendingScope beginnt «r4-65 (begonnen als r4-62, umbenannt, we…»
+  pendingScope 19a72dc enthält pendingScope von a55ecb1 (r4-64) vollständig: true
+  pendingScope e1db2da enthält pendingScope von a55ecb1 (r4-64) vollständig: true
+  appliedTo: Einträge von a55ecb1, die auf 19a72dc fehlen: []
+  appliedTo: Einträge von d6dd542, die auf e1db2da fehlen: ["r4-61 am 30.10.2026 gemergt (PR #780), Nachprüfung r4-61 durch eine Sitzung, die an r4-61 nicht gebaut hat (PR #785)"]
+  appliedTo: Einträge von d6dd542, die auf 19a72dc fehlen: ["r4-61 am 30.10.2026 gemergt (PR #780), Nachprüfung r4-61 durch eine Sitzung, die an r4-61 nicht gebaut hat (PR #785)","r4-62 am 30.10.2026 im Auftrag «Nachbesserung N60-1 und N60-3 umsetzen» auf denselben fortgeltenden Entscheid gestützt, nach dem Merge von r4-61 (PR #780) auf main neu gefasst, gebaut von der Sitzung, die den Nachtrag zur Nachprüfung r4-60 (PR #781, N60-3) verfasst hat, Nachweis audit-results/2026-10-30-n60-1-n60-3-r4-62/BERICHT.md"]
+  appliedTo: neu auf 19a72dc gegenüber a55ecb1: ["r4-64 am 30.10.2026 gemergt (PR #788)","r4-65 (begonnen als r4-62) am 30.10.2026 im Auftrag «Nachbesserung N60-1 und N60-3 umsetzen» auf denselben fortgeltenden Entscheid gestützt, nach dem Merge von r4-61 (PR #780) auf main neu gefasst, nachgeprüft als r4-62 (PR #790), gebaut von der Sitzung, die den Nachtrag zur Nachprüfung r4-60 (PR #781, N60-3) verfasst hat, Nachweis audit-results/2026-10-30-n60-1-n60-3-r4-62/BERICHT.md"]
+  geänderte Schlüssel a55ecb1 -> 19a72dc: assetVersion, releaseApproval.pendingScope, releaseApproval.independentReviewWaiver.version, releaseApproval.independentReviewWaiver.appliedTo
+
+## Build-Kennung in den Zwischenständen
+  d6dd542: const BUILD = 'r4-62' · site/index.html data-puk-site-build="r4-62" · Commit 2026-10-30T08:32:30+00:00
+  e1db2da: const BUILD = 'r4-64' · site/index.html data-puk-site-build="r4-64" · Commit 2026-10-30T09:24:06+00:00
+  7a21ee5: const BUILD = 'r4-65' · site/index.html data-puk-site-build="r4-65" · Commit 2026-10-30T09:29:04+00:00
+  2810994: const BUILD = 'r4-65' · site/index.html data-puk-site-build="r4-65" · Commit 2026-10-30T09:30:10+00:00
+  f7f8d18: const BUILD = 'r4-65' · site/index.html data-puk-site-build="r4-65" · Commit 2026-10-30T09:24:00+00:00

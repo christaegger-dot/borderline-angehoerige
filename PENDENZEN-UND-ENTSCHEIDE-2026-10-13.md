@@ -6,6 +6,31 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
+## Footer-Überschriften · r4-63 · Befund N56-1 · Entwurf, nicht veröffentlicht
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-53`, auf `main` (`aefdf06`, Build r4-60) aufgesetzt, Pull Request als Entwurf, nicht gemergt. Die Nummer ist r4-63, weil r4-61 ([PR #780](https://github.com/christaegger-dot/borderline-angehoerige/pull/780)) und r4-62 ([PR #784](https://github.com/christaegger-dot/borderline-angehoerige/pull/784)) offen sind; wer später mergt, bringt `main` ein und baut neu. Auftrag von Christa Egger, 30.10.2026: «N56-1: Überschriften in Medium und Abstand vor Hinweis umsetzen». Nachweis: [`audit-results/2026-10-30-n56-1-r4-63/BERICHT.md`](audit-results/2026-10-30-n56-1-r4-63/BERICHT.md).
+
+**Inhalt:**
+- Die Überschriften im Footer («Kontakt», «Fachstelle Angehörigenarbeit») stehen in Medium statt Regular, weiter 16 px und `tinte-leise`.
+- Vor dem Hinweis «Diese Website ersetzt keine individuelle Abklärung, Beratung oder Behandlung.» stehen 8 px Abstand.
+- Unter 22,5 rem trennt die Überschrift Silben. Sonst bräche «Angehörigenarbeit» bei 320 px und 200 % Schrift in Medium mitten im Wort um.
+- Nur CSS und `DARSTELLUNGSREGELN.md`. Kein Wortlaut geändert.
+
+**Wirkung** (240 Zustände, 24 Seiten): Footer 8 px höher (bei 320 px und 200 % Schrift 56 px, weil die Überschrift dort drei Zeilen braucht); Kontrast 5,92 : 1, Links mindestens 44 px, kein waagrechtes Scrollen; Fokusbild, erzwungene Farben und Druck unverändert.
+
+**Technischer Stand:**
+- Selbsttest 113/113
+- Gate 24 Seiten · 0 Blocker · 20 Hinweise
+- Parität 35
+- Suchtest 216/216
+- Sprach-/UI-Test 73/73
+- Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c)
+- axe-core 0 Verstösse (Standardschrift und 200 % Schrift mit offenem Menü)
+
+**Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die die Nachprüfung r4-55 und r4-56 erstellt und N56-1 gefunden hat. Eine Nachprüfung von r4-63 muss eine andere Sitzung machen.
+
+**Offen:** Merge auf Auftrag; Nachprüfung von r4-63; danach das Gestaltungssystem nachführen (Fusszeile: Überschriften Medium).
+
 ## Nachprüfung r4-55 und r4-56 · liegt vor seit 30.10.2026
 
 **GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-53`, [PR #779](https://github.com/christaegger-dot/borderline-angehoerige/pull/779), Kopf `3a96722`, gemergt als `db56243` am 30.10.2026, 07:53:55 UTC, über das Konto von Christa Egger. Auftrag von Christa Egger, 30.10.2026: «Nachprüfung r4-55 und r4-56 starten». Gegenstand ist PR #753 (`9c3521e`..`3780ee5`): r4-55 (Absenderzeile 16 px) und r4-56 (dezenter Footer, 16 px, grau). CSS, Fragmente und Skripte sind seit `3780ee5` unverändert, geprüft ist also auch der veröffentlichte Footer. Nachweis: [`audit-results/2026-10-30-nachpruefung-r4-55-r4-56/NACHPRUEFUNG.md`](audit-results/2026-10-30-nachpruefung-r4-55-r4-56/NACHPRUEFUNG.md), dazu Auswertung, Rohmessung, Fotos und Prüfskripte.
@@ -18,9 +43,9 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 | Befund | Schweregrad | Inhalt | Stand |
 |---|---|---|---|
-| N56-1 | gering | Die zwei Überschriften im Footer sehen aus wie der Text darunter (16 px, Regular, grau, ohne Abstand); der Pflichthinweis «Diese Website ersetzt keine …» geht ohne Abstand in den Namen der Klinik über (`site.css:794–795`) | offen, Entscheid Christa Egger; kann bei einer nächsten Arbeit am Footer mitlaufen |
+| N56-1 | gering | Die zwei Überschriften im Footer sehen aus wie der Text darunter (16 px, Regular, grau, ohne Abstand); der Pflichthinweis «Diese Website ersetzt keine …» geht ohne Abstand in den Namen der Klinik über (`site.css:794–795`) | Entscheid Christa Egger 30.10.2026: «N56-1: Überschriften in Medium und Abstand vor Hinweis umsetzen»; umgesetzt in r4-63, Entwurf (siehe Abschnitt «Footer-Überschriften · r4-63») |
 
-**Offen:** N56-1 (Entscheid Christa Egger); zu entscheiden bleibt weiterhin, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Abschnitt r4-55).
+**Offen:** N56-1 (in r4-63 umgesetzt, Entwurf); zu entscheiden bleibt weiterhin, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Abschnitt r4-55).
 
 ## Nachprüfung r4-60 · liegt vor seit 30.10.2026
 

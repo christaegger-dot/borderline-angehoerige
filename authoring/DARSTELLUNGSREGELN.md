@@ -31,3 +31,5 @@ Nachtblau bleibt (Entscheid Christa Egger, 29.10.2026: «unbedingt beibehalten»
 Der kompakte Footer bleibt entsprechend dem Entscheid zu r4-36 erhalten. Seit r4-56 ist er sehr dezent (Auftrag Christa Egger, 29.10.2026:
 «ich will einen sehr dezenten footer», Entscheid «16 px, grau»): keine Fläche, oben eine Haarlinie, alles in 16 px und tinte-leise,
 Links grau und unterstrichen, Zielflächen 44 px. Der Wortlaut bleibt.
+Seit r4-63 (N56-1, Auftrag Christa Egger, 30.10.2026) stehen die Überschriften im Footer in Medium, und vor dem Hinweis
+«Diese Website ersetzt keine …» stehen 8 px Abstand.

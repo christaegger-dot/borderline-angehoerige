@@ -1,0 +1,237 @@
+Fall|Ort|Gate r4-65|Gate r4-66|Chromium (Rolle «Name», ignoriert?)|sichtbarer Text|Chromium = Beschriftung|r4-66 gegen Chromium|r4-66 gegen r4-65
+# mit utilityNav · Ausgangslage Blocker r4-65 0, r4-66 0
+P0|Zeile: unverändert|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+P1|Zeile: Text « Mehr» ergänzt (Gegenkontrolle)|utility-nav|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar Mehr»|nein|gleich (blockiert)|–
+I1|Zeile: img alt="Mehr" nach dem Text|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I2|Zeile: img alt="" nach dem Text|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I3|Zeile: img alt gleich der Beschriftung, Text ersetzt|utility-nav|–|link «Kurz und klar»|«»|ja (sichtbar nein)|gleich (frei)|NICHT MEHR BLOCKIERT
+I4|Zeile: img ohne alt|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I5|Zeile: img ohne alt, title="Mehr"|–|–|link «Kurz und klar Mehr»|«Kurz und klar»|nein|MILDER|–
+I6|Zeile: img alt="", title="Mehr"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I7|Zeile: img alt="Mehr" aria-hidden="true"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I8|Zeile: img alt="Mehr" hidden|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I9|Zeile: img alt="Mehr" inert|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I10|Zeile: img alt="Mehr" in span hidden|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I11|Zeile: img alt="Mehr" in span inert|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I12|Zeile: img alt="Mehr" in span aria-hidden="true"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I13|Zeile: img alt="Mehr" role="presentation"|–|utility-nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+I14|Zeile: img alt="Mehr" role="none"|–|utility-nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+I15|Zeile: IMG ALT="Mehr" (Grossschreibung)|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I16|Zeile: img alt="Mehr" aria-hidden="false"|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I17|Zeile: img alt="  " (nur Leerraum)|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I18|Zeile: picture mit img alt="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I19|Zeile: img alt="" mitten im Wort|–|utility-nav|link «Kurz un d klar»|«Kurz un d klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I20|Zeile: img alt="Mehr" style="display:none"|–|utility-nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+I21|Zeile: img alt gleich der Beschriftung neben dem Text|–|utility-nav|link «Kurz und klar Kurz und klar»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I22|Zeile: img alt="Mehr" in span aria-hidden="false"|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N1|Zeile: input type=button value="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N2|Zeile: input type=submit ohne value|–|utility-nav|link «Kurz und klar Submit»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N3|Zeile: input type=submit value="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N4|Zeile: input type=text ohne value|–|utility-nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+N5|Zeile: input type=text value="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N6|Zeile: input type=hidden value="Mehr"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+N7|Zeile: input type=HIDDEN value="Mehr"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+N8|Zeile: input TYPE=Hidden value="Mehr"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+N9|Zeile: input type=checkbox ohne value|–|utility-nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+N10|Zeile: input type=checkbox value="Mehr"|–|utility-nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+N11|Zeile: input type=image alt="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N12|Zeile: input type=image alt=""|–|utility-nav|link «Kurz und klar Submit»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N13|Zeile: input type=button value="Mehr" hidden|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+N14|Zeile: input type=button value="Mehr" aria-hidden="true"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+N15|Zeile: input type=text placeholder="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N16|Zeile: input type=button value gleich der Beschriftung, Text ersetzt|utility-nav|–|link «Kurz und klar»|«»|ja (sichtbar nein)|gleich (frei)|NICHT MEHR BLOCKIERT
+N17|Zeile: input type=button value=""|–|utility-nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+N18|Zeile: input type=range|–|utility-nav|link «Kurz und klar 50»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N19|Zeile: input ohne type|–|utility-nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+N20|Zeile: input type=BUTTON value="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N21|Zeile: input type=button value="Mehr" in span inert|–|–|link «Kurz und klar Mehr»|«Kurz und klar»|nein|MILDER|–
+N22|Zeile: input type=image alt gleich der Beschriftung, Text ersetzt|utility-nav|utility-nav|link «Kurz und klar»|«»|ja (sichtbar nein)|STRENGER|–
+B1|Zeile: button Mehr|utility-nav|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar Mehr»|nein|gleich (blockiert)|–
+B2|Zeile: button Mehr aria-hidden="true"|–|–|link «Kurz und klar»|«Kurz und klar Mehr»|ja (sichtbar nein)|gleich (frei)|–
+B3|Zeile: leerer button|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+B4|Zeile: button mit der Beschriftung, Text ersetzt|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+B5|Zeile: button mit img alt="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+S1|Zeile: select Mehr/Weniger|utility-nav|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar Mehr Weniger»|nein|gleich (blockiert)|–
+S2|Zeile: select mit leerer option|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+S3|Zeile: select, zweite option selected|utility-nav|utility-nav|link «Kurz und klar Weniger»|«Kurz und klar Mehr Weniger»|nein|gleich (blockiert)|–
+X1|Zeile: textarea Mehr|utility-nav|utility-nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|–
+X2|Zeile: leere textarea|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+X3|Zeile: textarea placeholder="Mehr"|–|–|link «Kurz und klar Mehr»|«Kurz und klar»|nein|MILDER|–
+P0|Menü: unverändert|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+P1|Menü: Text « Mehr» ergänzt (Gegenkontrolle)|nav|nav|link «Kurz und klar Mehr»|«Kurz und klar Mehr»|nein|gleich (blockiert)|–
+I1|Menü: img alt="Mehr" nach dem Text|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I2|Menü: img alt="" nach dem Text|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I3|Menü: img alt gleich der Beschriftung, Text ersetzt|nav|–|link «Kurz und klar»|«»|ja (sichtbar nein)|gleich (frei)|NICHT MEHR BLOCKIERT
+I4|Menü: img ohne alt|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I5|Menü: img ohne alt, title="Mehr"|–|–|link «Kurz und klar Mehr»|«Kurz und klar»|nein|MILDER|–
+I6|Menü: img alt="", title="Mehr"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I7|Menü: img alt="Mehr" aria-hidden="true"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I8|Menü: img alt="Mehr" hidden|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I9|Menü: img alt="Mehr" inert|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I10|Menü: img alt="Mehr" in span hidden|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I11|Menü: img alt="Mehr" in span inert|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I12|Menü: img alt="Mehr" in span aria-hidden="true"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I13|Menü: img alt="Mehr" role="presentation"|–|nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+I14|Menü: img alt="Mehr" role="none"|–|nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+I15|Menü: IMG ALT="Mehr" (Grossschreibung)|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I16|Menü: img alt="Mehr" aria-hidden="false"|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I17|Menü: img alt="  " (nur Leerraum)|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+I18|Menü: picture mit img alt="Mehr"|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I19|Menü: img alt="" mitten im Wort|–|nav|link «Kurz un d klar»|«Kurz un d klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I20|Menü: img alt="Mehr" style="display:none"|–|nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+I21|Menü: img alt gleich der Beschriftung neben dem Text|–|nav|link «Kurz und klar Kurz und klar»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+I22|Menü: img alt="Mehr" in span aria-hidden="false"|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N1|Menü: input type=button value="Mehr"|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N2|Menü: input type=submit ohne value|–|nav|link «Kurz und klar Submit»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N3|Menü: input type=submit value="Mehr"|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N4|Menü: input type=text ohne value|–|nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+N5|Menü: input type=text value="Mehr"|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N6|Menü: input type=hidden value="Mehr"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+N7|Menü: input type=HIDDEN value="Mehr"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+N8|Menü: input TYPE=Hidden value="Mehr"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+N9|Menü: input type=checkbox ohne value|–|nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+N10|Menü: input type=checkbox value="Mehr"|–|nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+N11|Menü: input type=image alt="Mehr"|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N12|Menü: input type=image alt=""|–|nav|link «Kurz und klar Submit»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N13|Menü: input type=button value="Mehr" hidden|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+N14|Menü: input type=button value="Mehr" aria-hidden="true"|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+N15|Menü: input type=text placeholder="Mehr"|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N16|Menü: input type=button value gleich der Beschriftung, Text ersetzt|nav|–|link «Kurz und klar»|«»|ja (sichtbar nein)|gleich (frei)|NICHT MEHR BLOCKIERT
+N17|Menü: input type=button value=""|–|nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+N18|Menü: input type=range|–|nav|link «Kurz und klar 50»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N19|Menü: input ohne type|–|nav|link «Kurz und klar»|«Kurz und klar»|ja|STRENGER|NEU BLOCKIERT
+N20|Menü: input type=BUTTON value="Mehr"|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+N21|Menü: input type=button value="Mehr" in span inert|–|–|link «Kurz und klar Mehr»|«Kurz und klar»|nein|MILDER|–
+N22|Menü: input type=image alt gleich der Beschriftung, Text ersetzt|nav|nav|link «Kurz und klar»|«»|ja (sichtbar nein)|STRENGER|–
+B1|Menü: button Mehr|nav|nav|link «Kurz und klar Mehr»|«Kurz und klar Mehr»|nein|gleich (blockiert)|–
+B2|Menü: button Mehr aria-hidden="true"|–|–|link «Kurz und klar»|«Kurz und klar Mehr»|ja (sichtbar nein)|gleich (frei)|–
+B3|Menü: leerer button|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+B4|Menü: button mit der Beschriftung, Text ersetzt|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+B5|Menü: button mit img alt="Mehr"|–|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|NEU BLOCKIERT
+S1|Menü: select Mehr/Weniger|nav|nav|link «Kurz und klar Mehr»|«Kurz und klar Mehr Weniger»|nein|gleich (blockiert)|–
+S2|Menü: select mit leerer option|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+S3|Menü: select, zweite option selected|nav|nav|link «Kurz und klar Weniger»|«Kurz und klar Mehr Weniger»|nein|gleich (blockiert)|–
+X1|Menü: textarea Mehr|nav|nav|link «Kurz und klar Mehr»|«Kurz und klar»|nein|gleich (blockiert)|–
+X2|Menü: leere textarea|–|–|link «Kurz und klar»|«Kurz und klar»|ja|gleich (frei)|–
+X3|Menü: textarea placeholder="Mehr"|–|–|link «Kurz und klar Mehr»|«Kurz und klar»|nein|MILDER|–
+# Rückfall ohne utilityNav · Ausgangslage Blocker r4-65 0, r4-66 0
+P0r|Zeile: unverändert|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+P1r|Zeile: Text « Mehr» ergänzt (Gegenkontrolle)|utility-nav|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen Mehr»|nein|gleich (blockiert)|–
+I1r|Zeile: img alt="Mehr" nach dem Text|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+I2r|Zeile: img alt="" nach dem Text|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I3r|Zeile: img alt gleich der Beschriftung, Text ersetzt|utility-nav|–|link «Website durchsuchen»|«»|ja (sichtbar nein)|gleich (frei)|NICHT MEHR BLOCKIERT
+I4r|Zeile: img ohne alt|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I5r|Zeile: img ohne alt, title="Mehr"|–|–|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|MILDER|–
+I6r|Zeile: img alt="", title="Mehr"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I7r|Zeile: img alt="Mehr" aria-hidden="true"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I8r|Zeile: img alt="Mehr" hidden|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I9r|Zeile: img alt="Mehr" inert|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I10r|Zeile: img alt="Mehr" in span hidden|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I11r|Zeile: img alt="Mehr" in span inert|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I12r|Zeile: img alt="Mehr" in span aria-hidden="true"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I13r|Zeile: img alt="Mehr" role="presentation"|–|utility-nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+I14r|Zeile: img alt="Mehr" role="none"|–|utility-nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+I15r|Zeile: IMG ALT="Mehr" (Grossschreibung)|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+I16r|Zeile: img alt="Mehr" aria-hidden="false"|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+I17r|Zeile: img alt="  " (nur Leerraum)|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I18r|Zeile: picture mit img alt="Mehr"|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+I19r|Zeile: img alt="" mitten im Wort|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I20r|Zeile: img alt="Mehr" style="display:none"|–|utility-nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+I21r|Zeile: img alt gleich der Beschriftung neben dem Text|–|utility-nav|link «Website durchsuchen Website durchsuchen»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+I22r|Zeile: img alt="Mehr" in span aria-hidden="false"|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N1r|Zeile: input type=button value="Mehr"|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N2r|Zeile: input type=submit ohne value|–|utility-nav|link «Website durchsuchen Submit»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N3r|Zeile: input type=submit value="Mehr"|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N4r|Zeile: input type=text ohne value|–|utility-nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+N5r|Zeile: input type=text value="Mehr"|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N6r|Zeile: input type=hidden value="Mehr"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+N7r|Zeile: input type=HIDDEN value="Mehr"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+N8r|Zeile: input TYPE=Hidden value="Mehr"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+N9r|Zeile: input type=checkbox ohne value|–|utility-nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+N10r|Zeile: input type=checkbox value="Mehr"|–|utility-nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+N11r|Zeile: input type=image alt="Mehr"|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N12r|Zeile: input type=image alt=""|–|utility-nav|link «Website durchsuchen Submit»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N13r|Zeile: input type=button value="Mehr" hidden|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+N14r|Zeile: input type=button value="Mehr" aria-hidden="true"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+N15r|Zeile: input type=text placeholder="Mehr"|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N16r|Zeile: input type=button value gleich der Beschriftung, Text ersetzt|utility-nav|–|link «Website durchsuchen»|«»|ja (sichtbar nein)|gleich (frei)|NICHT MEHR BLOCKIERT
+N17r|Zeile: input type=button value=""|–|utility-nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+N18r|Zeile: input type=range|–|utility-nav|link «Website durchsuchen 50»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N19r|Zeile: input ohne type|–|utility-nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+N20r|Zeile: input type=BUTTON value="Mehr"|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N21r|Zeile: input type=button value="Mehr" in span inert|–|–|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|MILDER|–
+N22r|Zeile: input type=image alt gleich der Beschriftung, Text ersetzt|utility-nav|utility-nav|link «Website durchsuchen»|«»|ja (sichtbar nein)|STRENGER|–
+B1r|Zeile: button Mehr|utility-nav|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen Mehr»|nein|gleich (blockiert)|–
+B2r|Zeile: button Mehr aria-hidden="true"|–|–|link «Website durchsuchen»|«Website durchsuchen Mehr»|ja (sichtbar nein)|gleich (frei)|–
+B3r|Zeile: leerer button|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+B4r|Zeile: button mit der Beschriftung, Text ersetzt|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+B5r|Zeile: button mit img alt="Mehr"|–|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+S1r|Zeile: select Mehr/Weniger|utility-nav|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen Mehr Weniger»|nein|gleich (blockiert)|–
+S2r|Zeile: select mit leerer option|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+S3r|Zeile: select, zweite option selected|utility-nav|utility-nav|link «Website durchsuchen Weniger»|«Website durchsuchen Mehr Weniger»|nein|gleich (blockiert)|–
+X1r|Zeile: textarea Mehr|utility-nav|utility-nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|–
+X2r|Zeile: leere textarea|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+X3r|Zeile: textarea placeholder="Mehr"|–|–|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|MILDER|–
+P0r|Menü: unverändert|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+P1r|Menü: Text « Mehr» ergänzt (Gegenkontrolle)|nav|nav|link «Website durchsuchen Mehr»|«Website durchsuchen Mehr»|nein|gleich (blockiert)|–
+I1r|Menü: img alt="Mehr" nach dem Text|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+I2r|Menü: img alt="" nach dem Text|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I3r|Menü: img alt gleich der Beschriftung, Text ersetzt|nav|–|link «Website durchsuchen»|«»|ja (sichtbar nein)|gleich (frei)|NICHT MEHR BLOCKIERT
+I4r|Menü: img ohne alt|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I5r|Menü: img ohne alt, title="Mehr"|–|–|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|MILDER|–
+I6r|Menü: img alt="", title="Mehr"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I7r|Menü: img alt="Mehr" aria-hidden="true"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I8r|Menü: img alt="Mehr" hidden|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I9r|Menü: img alt="Mehr" inert|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I10r|Menü: img alt="Mehr" in span hidden|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I11r|Menü: img alt="Mehr" in span inert|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I12r|Menü: img alt="Mehr" in span aria-hidden="true"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I13r|Menü: img alt="Mehr" role="presentation"|–|nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+I14r|Menü: img alt="Mehr" role="none"|–|nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+I15r|Menü: IMG ALT="Mehr" (Grossschreibung)|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+I16r|Menü: img alt="Mehr" aria-hidden="false"|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+I17r|Menü: img alt="  " (nur Leerraum)|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I18r|Menü: picture mit img alt="Mehr"|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+I19r|Menü: img alt="" mitten im Wort|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+I20r|Menü: img alt="Mehr" style="display:none"|–|nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+I21r|Menü: img alt gleich der Beschriftung neben dem Text|–|nav|link «Website durchsuchen Website durchsuchen»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+I22r|Menü: img alt="Mehr" in span aria-hidden="false"|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N1r|Menü: input type=button value="Mehr"|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N2r|Menü: input type=submit ohne value|–|nav|link «Website durchsuchen Submit»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N3r|Menü: input type=submit value="Mehr"|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N4r|Menü: input type=text ohne value|–|nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+N5r|Menü: input type=text value="Mehr"|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N6r|Menü: input type=hidden value="Mehr"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+N7r|Menü: input type=HIDDEN value="Mehr"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+N8r|Menü: input TYPE=Hidden value="Mehr"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+N9r|Menü: input type=checkbox ohne value|–|nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+N10r|Menü: input type=checkbox value="Mehr"|–|nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+N11r|Menü: input type=image alt="Mehr"|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N12r|Menü: input type=image alt=""|–|nav|link «Website durchsuchen Submit»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N13r|Menü: input type=button value="Mehr" hidden|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+N14r|Menü: input type=button value="Mehr" aria-hidden="true"|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+N15r|Menü: input type=text placeholder="Mehr"|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N16r|Menü: input type=button value gleich der Beschriftung, Text ersetzt|nav|–|link «Website durchsuchen»|«»|ja (sichtbar nein)|gleich (frei)|NICHT MEHR BLOCKIERT
+N17r|Menü: input type=button value=""|–|nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+N18r|Menü: input type=range|–|nav|link «Website durchsuchen 50»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N19r|Menü: input ohne type|–|nav|link «Website durchsuchen»|«Website durchsuchen»|ja|STRENGER|NEU BLOCKIERT
+N20r|Menü: input type=BUTTON value="Mehr"|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+N21r|Menü: input type=button value="Mehr" in span inert|–|–|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|MILDER|–
+N22r|Menü: input type=image alt gleich der Beschriftung, Text ersetzt|nav|nav|link «Website durchsuchen»|«»|ja (sichtbar nein)|STRENGER|–
+B1r|Menü: button Mehr|nav|nav|link «Website durchsuchen Mehr»|«Website durchsuchen Mehr»|nein|gleich (blockiert)|–
+B2r|Menü: button Mehr aria-hidden="true"|–|–|link «Website durchsuchen»|«Website durchsuchen Mehr»|ja (sichtbar nein)|gleich (frei)|–
+B3r|Menü: leerer button|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+B4r|Menü: button mit der Beschriftung, Text ersetzt|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+B5r|Menü: button mit img alt="Mehr"|–|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|NEU BLOCKIERT
+S1r|Menü: select Mehr/Weniger|nav|nav|link «Website durchsuchen Mehr»|«Website durchsuchen Mehr Weniger»|nein|gleich (blockiert)|–
+S2r|Menü: select mit leerer option|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+S3r|Menü: select, zweite option selected|nav|nav|link «Website durchsuchen Weniger»|«Website durchsuchen Mehr Weniger»|nein|gleich (blockiert)|–
+X1r|Menü: textarea Mehr|nav|nav|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|gleich (blockiert)|–
+X2r|Menü: leere textarea|–|–|link «Website durchsuchen»|«Website durchsuchen»|ja|gleich (frei)|–
+X3r|Menü: textarea placeholder="Mehr"|–|–|link «Website durchsuchen Mehr»|«Website durchsuchen»|nein|MILDER|–
+# Ohne Mutation: alle Befunde (Stufe, Seite, Regel, Meldung) r4-65 gegen r4-66: gleich (20 Befunde)
+# Gewöhnlicher Link im Inhalt mit img alt und input value: Befunde r4-65 gegen r4-66: gleich
+# Fehlerseite mit Zeile «Direkteinstiege» und img alt: Befunde r4-65 gegen r4-66: gleich · Blocker r4-66: nav,placeholder-status
+# Fehlerseite unverändert, Blocker r4-66: 0
+# Bilanz: gleich (frei) 94 · gleich (blockiert) 86 · NEU BLOCKIERT 98 · NICHT MEHR BLOCKIERT 8 · MILDER 12 · STRENGER 36
+# Chromium 153.0.8010.12

@@ -1,0 +1,33 @@
+Zustand | Stand | Seiten | Footer px | Kopf px | Absender | Name Zeilen | Mail h×w | min. Kontrast | Schriften Footer | min. Linkhöhe | Überlauf
+100% 320 | vorher | 24 | 489 | 195–239 | 16px | 2 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 320 | nachher | 24 | 497 | 195–239 | 16px | 2 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 390 | vorher | 24 | 441 | 148–192 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 390 | nachher | 24 | 449 | 148–192 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 768 | vorher | 24 | 309 | 148–192 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 768 | nachher | 24 | 317 | 148–192 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 1100 | vorher | 24 | 241 | 130–174 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 1100 | nachher | 24 | 249 | 130–174 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 1440 | vorher | 24 | 217 | 138 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 1440 | nachher | 24 | 225 | 138 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+200% 320 | vorher | 24 | 1321 | 435 | 32px | 3 | 93×291 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 320 | nachher | 24 | 1377 | 435 | 32px | 3 | 93×291 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 390 | vorher | 24 | 1081 | 435 | 32px | 3 | 93×350 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 390 | nachher | 24 | 1089 | 435 | 32px | 3 | 93×350 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 768 | vorher | 24 | 649 | 296–347 | 32px | 1 | 46×455 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 768 | nachher | 24 | 657 | 296–347 | 32px | 1 | 46×455 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 1100 | vorher | 24 | 505 | 250–301 | 32px | 1 | 46×455 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 1100 | nachher | 24 | 513 | 250–301 | 32px | 1 | 46×455 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 1440 | vorher | 24 | 457 | 250–301 | 32px | 1 | 46×455 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 1440 | nachher | 24 | 465 | 250–301 | 32px | 1 | 46×455 | 5.92 «Kontakt» | 32px | 48 | 0
+
+vorher Footer rgba(0, 0, 0, 0) | 1px solid rgb(233, 233, 233) Linienkontrast 1.21
+ h2 [{"t":"Kontakt","fs":"16px","fw":"400","color":"rgb(100, 100, 100)"},{"t":"Fachstelle Angehörigenarbeit","fs":"16px","fw":"400","color":"rgb(100, 100, 100)"}]
+ copy 16px 400 rgb(100, 100, 100)
+ links [["Kontakt und Beratungsangebot",44,"underline","rgb(100, 100, 100)","400"],["Über diese Website",44,"underline","rgb(100, 100, 100)","400"],["Barrierefreiheit",44,"underline","rgb(100, 100, 100)","400"],["Rückmeldung",44,"underline","rgb(100, 100, 100)","400"],["Impressum",44,"underline","rgb(100, 100, 100)","400"],["Datenschutz",44,"underline","rgb(100, 100, 100)","400"]]
+
+nachher Footer rgba(0, 0, 0, 0) | 1px solid rgb(233, 233, 233) Linienkontrast 1.21
+ h2 [{"t":"Kontakt","fs":"16px","fw":"500","color":"rgb(100, 100, 100)"},{"t":"Fachstelle Angehörigenarbeit","fs":"16px","fw":"500","color":"rgb(100, 100, 100)"}]
+ copy 16px 400 rgb(100, 100, 100)
+ links [["Kontakt und Beratungsangebot",44,"underline","rgb(100, 100, 100)","400"],["Über diese Website",44,"underline","rgb(100, 100, 100)","400"],["Barrierefreiheit",44,"underline","rgb(100, 100, 100)","400"],["Rückmeldung",44,"underline","rgb(100, 100, 100)","400"],["Impressum",44,"underline","rgb(100, 100, 100)","400"],["Datenschutz",44,"underline","rgb(100, 100, 100)","400"]]
+
+404 r4-56 Footer/Links: 497/6 449/6 317/6 249/6 225/6 1377/6 1089/6 657/6 513/6 465/6

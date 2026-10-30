@@ -1,0 +1,7 @@
+# r4-65 · Chromium 153.0.8010.12 · Bestand 0 Blocker
+S1 Zeilenlink: <svg hidden aria-label="Pfeil"> | Gate: BLOCK utility-nav@index | SVG: 8×8 px, display block | Chromium (nav[aria-label="Direkteinstiege"] a): link «Kurz und klar Pfeil»
+S2 Zeilenlink: <svg inert aria-label="Pfeil"> | Gate: BLOCK utility-nav@index | SVG: 8×8 px, display block | Chromium (nav[aria-label="Direkteinstiege"] a): link «Kurz und klar Pfeil»
+S3 Zeilenlink: <svg hidden><title>Mehr</title></svg> | Gate: BLOCK utility-nav@index | SVG: 8×8 px, display block | Chromium (nav[aria-label="Direkteinstiege"] a): link «Kurz und klar Mehr»
+S4 Zeilenlink: <svg aria-hidden="true" aria-label="Pfeil"> (Gegenprobe) | Gate: frei | SVG: 8×8 px, display block | Chromium (nav[aria-label="Direkteinstiege"] a): link «Kurz und klar»
+S5 Figur verstehen.html: aria-hidden="true" am SVG durch hidden ersetzt | Gate: BLOCK figure-alt@verstehen | SVG: 760×356 px, display block | Chromium (#probe): image «»
+S6 Figur verstehen.html: aria-hidden="true" am SVG entfernt (Gegenprobe) | Gate: BLOCK figure-alt@verstehen | SVG: 760×356 px, display block | Chromium (#probe): image «»

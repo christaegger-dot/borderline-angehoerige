@@ -1,5 +1,7 @@
 # N61-1 bis N61-3 · r4-63 · 30.10.2026 · Umsetzung und Selbstprüfung
 
+> **Überholt (30.10.2026):** Diese erste Fassung (`f2fac13`) setzte auf r4-62 in der Fassung `a5d18e7` auf und überschnitt sich bei N61-1 mit der Neufassung von #784 (N62-1 der Nachprüfung r4-62). Auf Entscheid von Christa Egger («#787 neu fassen, dann prüfen») ersetzt sie r4-65, nur mit N61-2: [`audit-results/2026-10-30-n61-2-r4-65/BERICHT.md`](../2026-10-30-n61-2-r4-65/BERICHT.md). Der Text unten ist unverändert als Beleg erhalten.
+
 **Auftrag von Christa Egger, 30.10.2026:** «Nachbesserung N61-1 bis N61-3 umsetzen». Grundlage auf ihren Entscheid «Auf #784, r4-63».
 
 - **Befunde:** aus `audit-results/2026-10-30-nachpruefung-r4-61/NACHPRUEFUNG.md` (PR #785, gemergt als `3e16eeb`).

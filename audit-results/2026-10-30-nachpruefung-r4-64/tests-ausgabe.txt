@@ -1,0 +1,26 @@
+Stand: main = d20973b (r4-64 aus a55ecb1, danach nur Pendenzen #791). Node 22.22.0. «Exit» ist der Status von tail, nicht des Befehls.
+$ node authoring/tools/build.mjs --production
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+Exit: 0
+$ node authoring/tools/build.mjs --production --verify-site
+PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+Exit: 0
+$ node authoring/tools/selftest.mjs
+Selbsttest: 116/116 bestanden
+Exit: 0
+$ node authoring/tools/suchtest.mjs dist/site
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+Exit: 0
+$ node authoring/tools/sprachtest.mjs
+Sprach-/UI-Test: 73 Prüfungen bestanden · JS-Fehler 0
+Exit: 0
+$ node authoring/tools/layouttest.cjs
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core exceeds 1800px
+Exit: (in dieser Schleife nicht aussagekräftig, weil die Ausgabe durch tail lief)
+
+$ node authoring/tools/layouttest.cjs  (zweiter Lauf, mit Exit-Code)
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core exceeds 1800px
+Exit: 1

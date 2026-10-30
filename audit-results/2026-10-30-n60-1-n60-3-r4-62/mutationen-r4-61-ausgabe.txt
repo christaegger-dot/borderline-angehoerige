@@ -1,0 +1,192 @@
+# r4-61 BASIS 0 Blocker 20 Hinweise
+Q1.1 aria-hidden="true" auf Zeile => index:utility-nav
+Q1.2 aria-hidden="TRUE" auf Zeile => index:utility-nav
+Q1.3 aria-hidden="␣true␣" auf Zeile => index:utility-nav
+Q1.4 aria-hidden="true␣" auf Zeile => index:utility-nav
+Q1.5 aria-hidden="yes" auf Zeile => index:utility-nav
+Q1.6 aria-hidden="0" auf Zeile => index:utility-nav
+Q1.7 aria-hidden="␣false␣" auf Zeile => index:utility-nav
+Q1.8 aria-hidden="FALSE␣" auf Zeile => index:utility-nav
+Q1.9 aria-hidden="null" auf Zeile => index:utility-nav
+Q1.10 aria-hidden="␣␣" auf Zeile => index:utility-nav
+Q1.11 aria-hidden="&#116;rue" auf Zeile => index:utility-nav
+Q1.12 aria-hidden="false" auf Zeile => keine neuen Blocker
+Q1.13 aria-hidden="False" auf Zeile => keine neuen Blocker
+Q1.14 aria-hidden="FALSE" auf Zeile => keine neuen Blocker
+Q1.15 aria-hidden="undefined" auf Zeile => keine neuen Blocker
+Q1.16 aria-hidden="UNDEFINED" auf Zeile => keine neuen Blocker
+Q1.17 aria-hidden="" auf Zeile => keine neuen Blocker
+Q1.18 aria-hidden=ohne Wert auf Zeile => keine neuen Blocker
+Q1.19 aria-hidden="&#102;alse" auf Zeile => keine neuen Blocker
+Q1.20 aria-hidden="true" auf Zeilenlink => index:utility-nav
+Q1.21 aria-hidden="TRUE" auf Zeilenlink => index:utility-nav
+Q1.22 aria-hidden="␣true␣" auf Zeilenlink => index:utility-nav
+Q1.23 aria-hidden="true␣" auf Zeilenlink => index:utility-nav
+Q1.24 aria-hidden="yes" auf Zeilenlink => index:utility-nav
+Q1.25 aria-hidden="0" auf Zeilenlink => index:utility-nav
+Q1.26 aria-hidden="␣false␣" auf Zeilenlink => index:utility-nav
+Q1.27 aria-hidden="FALSE␣" auf Zeilenlink => index:utility-nav
+Q1.28 aria-hidden="null" auf Zeilenlink => index:utility-nav
+Q1.29 aria-hidden="␣␣" auf Zeilenlink => index:utility-nav
+Q1.30 aria-hidden="&#116;rue" auf Zeilenlink => index:utility-nav
+Q1.31 aria-hidden="false" auf Zeilenlink => keine neuen Blocker
+Q1.32 aria-hidden="False" auf Zeilenlink => keine neuen Blocker
+Q1.33 aria-hidden="FALSE" auf Zeilenlink => keine neuen Blocker
+Q1.34 aria-hidden="undefined" auf Zeilenlink => keine neuen Blocker
+Q1.35 aria-hidden="UNDEFINED" auf Zeilenlink => keine neuen Blocker
+Q1.36 aria-hidden="" auf Zeilenlink => keine neuen Blocker
+Q1.37 aria-hidden=ohne Wert auf Zeilenlink => keine neuen Blocker
+Q1.38 aria-hidden="&#102;alse" auf Zeilenlink => keine neuen Blocker
+Q1.39 aria-hidden="true" auf Menü-<li> => index:nav
+Q1.40 aria-hidden="TRUE" auf Menü-<li> => index:nav
+Q1.41 aria-hidden="␣true␣" auf Menü-<li> => index:nav
+Q1.42 aria-hidden="true␣" auf Menü-<li> => index:nav
+Q1.43 aria-hidden="yes" auf Menü-<li> => index:nav
+Q1.44 aria-hidden="0" auf Menü-<li> => index:nav
+Q1.45 aria-hidden="␣false␣" auf Menü-<li> => index:nav
+Q1.46 aria-hidden="FALSE␣" auf Menü-<li> => index:nav
+Q1.47 aria-hidden="null" auf Menü-<li> => index:nav
+Q1.48 aria-hidden="␣␣" auf Menü-<li> => index:nav
+Q1.49 aria-hidden="&#116;rue" auf Menü-<li> => index:nav
+Q1.50 aria-hidden="false" auf Menü-<li> => keine neuen Blocker
+Q1.51 aria-hidden="False" auf Menü-<li> => keine neuen Blocker
+Q1.52 aria-hidden="FALSE" auf Menü-<li> => keine neuen Blocker
+Q1.53 aria-hidden="undefined" auf Menü-<li> => keine neuen Blocker
+Q1.54 aria-hidden="UNDEFINED" auf Menü-<li> => keine neuen Blocker
+Q1.55 aria-hidden="" auf Menü-<li> => keine neuen Blocker
+Q1.56 aria-hidden=ohne Wert auf Menü-<li> => keine neuen Blocker
+Q1.57 aria-hidden="&#102;alse" auf Menü-<li> => keine neuen Blocker
+Q1.58 aria-hidden="true" auf Menülink => index:nav
+Q1.59 aria-hidden="TRUE" auf Menülink => index:nav
+Q1.60 aria-hidden="␣true␣" auf Menülink => index:nav
+Q1.61 aria-hidden="true␣" auf Menülink => index:nav
+Q1.62 aria-hidden="yes" auf Menülink => index:nav
+Q1.63 aria-hidden="0" auf Menülink => index:nav
+Q1.64 aria-hidden="␣false␣" auf Menülink => index:nav
+Q1.65 aria-hidden="FALSE␣" auf Menülink => index:nav
+Q1.66 aria-hidden="null" auf Menülink => index:nav
+Q1.67 aria-hidden="␣␣" auf Menülink => index:nav
+Q1.68 aria-hidden="&#116;rue" auf Menülink => index:nav
+Q1.69 aria-hidden="false" auf Menülink => keine neuen Blocker
+Q1.70 aria-hidden="False" auf Menülink => keine neuen Blocker
+Q1.71 aria-hidden="FALSE" auf Menülink => keine neuen Blocker
+Q1.72 aria-hidden="undefined" auf Menülink => keine neuen Blocker
+Q1.73 aria-hidden="UNDEFINED" auf Menülink => keine neuen Blocker
+Q1.74 aria-hidden="" auf Menülink => keine neuen Blocker
+Q1.75 aria-hidden=ohne Wert auf Menülink => keine neuen Blocker
+Q1.76 aria-hidden="&#102;alse" auf Menülink => keine neuen Blocker
+Q1.77 aria-hidden="true" auf subbar => index:sender ; index:utility-nav
+Q1.78 aria-hidden="TRUE" auf subbar => index:sender ; index:utility-nav
+Q1.79 aria-hidden="␣true␣" auf subbar => index:sender ; index:utility-nav
+Q1.80 aria-hidden="true␣" auf subbar => index:sender ; index:utility-nav
+Q1.81 aria-hidden="yes" auf subbar => index:sender ; index:utility-nav
+Q1.82 aria-hidden="0" auf subbar => index:sender ; index:utility-nav
+Q1.83 aria-hidden="␣false␣" auf subbar => index:sender ; index:utility-nav
+Q1.84 aria-hidden="FALSE␣" auf subbar => index:sender ; index:utility-nav
+Q1.85 aria-hidden="null" auf subbar => index:sender ; index:utility-nav
+Q1.86 aria-hidden="␣␣" auf subbar => index:sender ; index:utility-nav
+Q1.87 aria-hidden="&#116;rue" auf subbar => index:sender ; index:utility-nav
+Q1.88 aria-hidden="false" auf subbar => keine neuen Blocker
+Q1.89 aria-hidden="False" auf subbar => keine neuen Blocker
+Q1.90 aria-hidden="FALSE" auf subbar => keine neuen Blocker
+Q1.91 aria-hidden="undefined" auf subbar => keine neuen Blocker
+Q1.92 aria-hidden="UNDEFINED" auf subbar => keine neuen Blocker
+Q1.93 aria-hidden="" auf subbar => keine neuen Blocker
+Q1.94 aria-hidden=ohne Wert auf subbar => keine neuen Blocker
+Q1.95 aria-hidden="&#102;alse" auf subbar => keine neuen Blocker
+Q1.96 aria-hidden="true" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.97 aria-hidden="TRUE" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.98 aria-hidden="␣true␣" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.99 aria-hidden="true␣" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.100 aria-hidden="yes" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.101 aria-hidden="0" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.102 aria-hidden="␣false␣" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.103 aria-hidden="FALSE␣" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.104 aria-hidden="null" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.105 aria-hidden="␣␣" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.106 aria-hidden="&#116;rue" auf header => index:sender ; index:utility-nav ; index:nav
+Q1.107 aria-hidden="false" auf header => keine neuen Blocker
+Q1.108 aria-hidden="False" auf header => keine neuen Blocker
+Q1.109 aria-hidden="FALSE" auf header => keine neuen Blocker
+Q1.110 aria-hidden="undefined" auf header => keine neuen Blocker
+Q1.111 aria-hidden="UNDEFINED" auf header => keine neuen Blocker
+Q1.112 aria-hidden="" auf header => keine neuen Blocker
+Q1.113 aria-hidden=ohne Wert auf header => keine neuen Blocker
+Q1.114 aria-hidden="&#102;alse" auf header => keine neuen Blocker
+Q2.1 inert auf Zeile => index:utility-nav
+Q2.2 inert auf Zeilenlink => index:utility-nav
+Q2.3 inert auf Menü-<li> => index:nav
+Q2.4 inert auf Menülink => index:nav
+Q2.5 inert auf subbar => index:sender ; index:utility-nav
+Q2.6 inert auf header => index:sender ; index:utility-nav ; index:nav
+Q3.1 Zeile: ganzer Linktext in <span aria-hidden="yes"> => index:utility-nav
+Q3.2 Zeile: ganzer Linktext in <span aria-hidden=" true "> => index:utility-nav
+Q3.3 Zeile: ganzer Linktext in <span aria-hidden="0"> => index:utility-nav
+Q3.4 Zeile: ganzer Linktext in <span aria-hidden="False"> => keine neuen Blocker
+Q3.5 Menü: ganzer Linktext in <span aria-hidden="yes"> => index:nav
+Q3.6 Menü: ganzer Linktext in <span aria-hidden=" true "> => index:nav
+Q3.7 Menü: ganzer Linktext in <span aria-hidden="0"> => index:nav
+Q3.8 Menü: ganzer Linktext in <span aria-hidden="False"> => keine neuen Blocker
+Q3.9 Zeile: Text + dekoratives <span aria-hidden=" true "> →</span> => keine neuen Blocker
+Q3.10 Zeile: Text + dekoratives <span aria-hidden="yes"> →</span> => keine neuen Blocker
+Q3.11 Zeile: Text + dekoratives <span aria-hidden="0"> →</span> => keine neuen Blocker
+Q3.12 Zeile: Text + dekoratives <span aria-hidden="undefined"> →</span> => index:utility-nav
+Q3.13 Zeile: Text + dekoratives <span aria-hidden="false"> →</span> => index:utility-nav
+Q3.14 Menü: Text + dekoratives <span aria-hidden=" true "> →</span> => keine neuen Blocker
+Q3.15 Menü: Text + dekoratives <span aria-hidden="yes"> →</span> => keine neuen Blocker
+Q3.16 Menü: Text + dekoratives <span aria-hidden="0"> →</span> => keine neuen Blocker
+Q3.17 Menü: Text + dekoratives <span aria-hidden="undefined"> →</span> => index:nav
+Q3.18 Menü: Text + dekoratives <span aria-hidden="false"> →</span> => index:nav
+Q4.1 index.html: header inert => index:sender ; index:utility-nav ; index:nav
+Q4.2 index.html: header aria-hidden="TRUE" => index:sender ; index:utility-nav ; index:nav
+Q4.3 index.html: header aria-hidden=" true " => index:sender ; index:utility-nav ; index:nav
+Q4.4 index.html: header aria-hidden="yes" => index:sender ; index:utility-nav ; index:nav
+Q4.5 index.html: header aria-hidden="false" => keine neuen Blocker
+Q4.6 index.html: header aria-hidden="undefined" => keine neuen Blocker
+Q4.7 index.html: Absenderin inert => index:sender
+Q4.8 index.html: Absenderin aria-hidden="TRUE" => index:sender
+Q4.9 index.html: Absenderin aria-hidden="0" => index:sender
+Q4.10 index.html: Absenderin aria-hidden="" => keine neuen Blocker
+Q4.11 404.html: header inert => 404:sender
+Q4.12 404.html: header aria-hidden="TRUE" => 404:sender
+Q4.13 404.html: header aria-hidden=" true " => 404:sender
+Q4.14 404.html: header aria-hidden="yes" => 404:sender
+Q4.15 404.html: header aria-hidden="false" => keine neuen Blocker
+Q4.16 404.html: header aria-hidden="undefined" => keine neuen Blocker
+Q4.17 404.html: Absenderin inert => 404:sender
+Q4.18 404.html: Absenderin aria-hidden="TRUE" => 404:sender
+Q4.19 404.html: Absenderin aria-hidden="0" => 404:sender
+Q4.20 404.html: Absenderin aria-hidden="" => keine neuen Blocker
+Q5.1 SVG Szene aria-hidden="TRUE" statt "true" => keine neuen Blocker
+Q5.2 SVG Szene aria-hidden="␣true␣" statt "true" => keine neuen Blocker
+Q5.3 SVG Szene aria-hidden="yes" statt "true" => keine neuen Blocker
+Q5.4 SVG Szene aria-hidden="True" statt "true" => keine neuen Blocker
+Q5.5 SVG Szene aria-hidden="false" statt "true" => verstehen:figure-alt
+Q5.6 SVG Szene aria-hidden="undefined" statt "true" => verstehen:figure-alt
+Q5.7 SVG Szene aria-hidden="" statt "true" => verstehen:figure-alt
+Q5.8 SVG Szene ohne aria-hidden => verstehen:figure-alt
+Q5.9 SVG Szene ohne aria-hidden, mit hidden => keine neuen Blocker
+Q5.10 SVG Szene ohne aria-hidden, mit inert => keine neuen Blocker
+Q5.11 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit hidden => keine neuen Blocker
+Q5.12 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit inert => keine neuen Blocker
+Q5.13 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="TRUE" => keine neuen Blocker
+Q5.14 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="yes" => keine neuen Blocker
+Q5.15 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="false" => verstehen:figure-alt
+Q5.16 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit role="img" aria-label="Szene" => keine neuen Blocker
+Q5.17 SVG Szene ohne aria-hidden, in <div hidden> innerhalb der Szene => keine neuen Blocker
+Q6.1 Zeile: Text + <svg hidden aria-label="Pfeil"></svg> => keine neuen Blocker
+Q6.2 Zeile: Text + <svg inert aria-label="Pfeil"></svg> => keine neuen Blocker
+Q6.3 Zeile: Text + <svg hidden><title>Mehr</title></svg> => keine neuen Blocker
+Q6.4 Zeile: Text + <svg><g hidden><title>Mehr</title></g></svg> => keine neuen Blocker
+Q6.5 Zeile: Text + <svg aria-hidden="true" aria-label="Pfeil"></svg> => keine neuen Blocker
+Q6.6 Zeile: Text + <svg aria-hidden="yes"><title>Mehr</title></svg> => keine neuen Blocker
+Q6.7 Zeile: Text + <span hidden aria-label="Pfeil"> →</span> => keine neuen Blocker
+Q6.8 Zeile: Text + <span inert> →</span> => keine neuen Blocker
+Q6.9 Menü: Text + <svg hidden aria-label="Pfeil"></svg> => keine neuen Blocker
+Q6.10 Menü: Text + <svg inert aria-label="Pfeil"></svg> => keine neuen Blocker
+Q6.11 Menü: Text + <svg hidden><title>Mehr</title></svg> => keine neuen Blocker
+Q6.12 Menü: Text + <svg><g hidden><title>Mehr</title></g></svg> => keine neuen Blocker
+Q6.13 Menü: Text + <svg aria-hidden="true" aria-label="Pfeil"></svg> => keine neuen Blocker
+Q6.14 Menü: Text + <svg aria-hidden="yes"><title>Mehr</title></svg> => keine neuen Blocker
+Q6.15 Menü: Text + <span hidden aria-label="Pfeil"> →</span> => keine neuen Blocker
+Q6.16 Menü: Text + <span inert> →</span> => keine neuen Blocker

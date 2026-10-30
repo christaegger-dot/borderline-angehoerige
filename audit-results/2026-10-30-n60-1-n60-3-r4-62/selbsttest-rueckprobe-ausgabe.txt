@@ -1,0 +1,18 @@
+# Selbsttest r4-62 mit einzeln auf r4-61 (main, 5cbaf1c) zurückgesetzten Regeln; nur FAIL-Zeilen und Summe
+## hiddenFlag und SVG-Prüfung von r4-61
+FAIL | Direkteinstieg mit <svg hidden aria-label> im Link: hidden wirkt an SVG nicht (r4-62, N61-1) | erwartet: utility-nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg im Menü mit <svg inert><title> im Link: inert wirkt an SVG nicht (r4-62, N61-1) | erwartet: nav | erhalten: crisis-number-check
+FAIL | SVG ohne aria-hidden, nur mit hidden am SVG, bleibt ohne Namen (r4-62, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+FAIL | SVG ohne aria-hidden, nur mit inert am SVG, bleibt ohne Namen (r4-62, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+FAIL | SVG ohne aria-hidden unter einem Vorfahren mit hidden und eigener display-Regel (r4-62, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+Selbsttest: 117/122 bestanden
+## nur hiddenFlag von r4-61
+FAIL | Direkteinstieg mit <svg hidden aria-label> im Link: hidden wirkt an SVG nicht (r4-62, N61-1) | erwartet: utility-nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg im Menü mit <svg inert><title> im Link: inert wirkt an SVG nicht (r4-62, N61-1) | erwartet: nav | erhalten: crisis-number-check
+Selbsttest: 120/122 bestanden
+## nur SVG-Prüfung von r4-61
+FAIL | SVG ohne aria-hidden unter einem Vorfahren mit hidden und eigener display-Regel (r4-62, N60-3) | erwartet: figure-alt | erhalten: crisis-number-check
+Selbsttest: 121/122 bestanden
+## zu streng: inert am HTML-Vorfahren zählt nicht als ausgeblendet
+FAIL | SVG ohne aria-hidden unter einem Vorfahren mit inert gilt als ausgeblendet (r4-62, N60-3) | erwartet: kein figure-alt | erhalten: figure-alt
+Selbsttest: 121/122 bestanden

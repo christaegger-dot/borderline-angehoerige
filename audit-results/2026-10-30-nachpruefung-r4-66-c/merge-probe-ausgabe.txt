@@ -1,0 +1,20 @@
+# Probe: aktuelles main dd884e6 + #787 13f471f, Konflikt in der Pendenzendatei lokal mit der Fassung von main gelöst; 2026-10-30T11:21:36Z
+$ node authoring/tools/build.mjs --production
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+Exit 0
+$ node authoring/tools/build.mjs --production --verify-site
+(Paritätszeile siehe unten)
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+Exit 0
+$ node authoring/tools/selftest.mjs
+Selbsttest: 125/125 bestanden
+Exit 0
+$ node authoring/tools/suchtest.mjs dist/site
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+Exit 0
+## danach #795 (51b9b1e)
+Konflikte: 26
+CONFLICT (content): Merge conflict in authoring/site.config.json
+CONFLICT (content): Merge conflict in authoring/tools/contract.js
+  dazu 24 in site/*.html
+Parität (--verify-site): PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/

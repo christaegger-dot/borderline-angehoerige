@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-60';
+const BUILD = 'r4-61';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -39,7 +39,11 @@ const ariaHiddenOff = new Set(['false', 'undefined', '']);
 const hiddenFlag = x => has(x, 'hidden') || has(x, 'inert') || (has(x, 'aria-hidden') && !ariaHiddenOff.has(String(x.attrs['aria-hidden']).toLowerCase()));
 const concealed = nd => hiddenFlag(nd) || !!up(nd, hiddenFlag);
 const accTxt = node => (node.children || []).map(c => c.tag === '#text' ? c.text : RAW.has(c.tag) || hiddenFlag(c) ? '' : accTxt(c)).join('');
-const relabelled = a => has(a, 'aria-label') || has(a, 'aria-labelledby');
+/* r4-61 (Nachprüfung N59-3): auch aria-label oder aria-labelledby an einem nicht verborgenen Element im Link ändert den Namen
+   (Chromium: «<a><span aria-label="Mehr">Kurz und klar</span></a>» heisst «Mehr»). Ein verborgenes Element zählt nicht. */
+const relabels = x => has(x, 'aria-label') || has(x, 'aria-labelledby');
+const hiddenBelow = (x, a) => { for (let p = x; p && p !== a; p = p.parent) if (hiddenFlag(p)) return true; return false; };
+const relabelled = a => relabels(a) || all(a, relabels).some(x => !hiddenBelow(x, a));
 /* Prüfbefund W3-05 (11.10.2026): Impressum und Datenschutzerklärung in der Fusszeile, Ziele aus site.config.json › legal. */
 const LEGAL = [['imprint', 'Impressum'], ['privacy', 'Datenschutzerklärung']];
 /* Prüfbefund BD-02 (11.10.2026): Quellenangaben mit fremdsprachigem Titel brauchen lang (WCAG 3.1.2). Stichwortprüfung, nur Hinweis. */
@@ -720,6 +724,8 @@ const MUTATIONS = [
   ['Absenderin über inert am Kopf gesperrt (r4-60, N59-2)', ['sender'], (c, f) => rex(f, 'index.html', /<header class="puk-web-header"/, '$& inert')],
   ['Absenderin mit aria-hidden="TRUE" auf der Subbar verborgen (r4-60, N59-2)', ['sender'], (c, f) => rex(f, 'index.html', /<div class="puk-web-container puk-site-subbar"/, '$& aria-hidden="TRUE"')],
   ['Fehlerseite: Absenderin über inert am Kopf gesperrt (r4-60, N59-2)', ['sender'], (c, f) => rex(f, '404.html', /<header class="puk-web-header"/, '$& inert')],
+  ['Direkteinstieg mit aria-label an einem span im Link (r4-61, N59-3)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<span aria-label="Mehr">$2</span><')],
+  ['Direkteinstieg im Menü mit aria-labelledby an einem span im Link (r4-61, N59-3)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<span aria-labelledby="x">$2</span><')],
   ['Krisennummer erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p>Telefon 144</p></main>')],
   ['Krisentelefonlink erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p><a href="tel:144">Anrufen</a></p></main>')],
   ['Notfallblock eingefügt', ['crisis-block'], (c, f) => rep(f, 'behandlung.html', '<main id="main-content"', '<aside data-safety-access="direct"><p>Akute Hilfe</p></aside><main id="main-content"')],
@@ -887,6 +893,11 @@ function selftest(cfg, files, opts = {}) {
     const ok = rex(f, 'verstehen.html', /(<svg class="puk-vis-scene__art"[^>]*) aria-hidden="true"/, '$1 aria-hidden="TRUE"');
     const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'figure-alt');
     rows.push({ name: 'SVG mit aria-hidden="TRUE" gilt als ausgeblendet (r4-60, N59-2)', expected: 'kein figure-alt', got: ok ? (hit ? 'figure-alt' : 'kein figure-alt') : 'Mutation nicht anwendbar', ok: ok && !hit }); }
+  { /* r4-61 (Nachprüfung N59-3): Ein verborgenes Element mit aria-label im Link (dekoratives Zeichen) ändert den Namen nicht. */
+    const f = Object.assign({}, files);
+    const ok = rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<svg aria-hidden="true" aria-label="Pfeil" width="8" height="8"></svg><');
+    const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'utility-nav');
+    rows.push({ name: 'Verborgenes SVG mit aria-label im Direkteinstieg ist zulässig (r4-61, N59-3)', expected: 'kein utility-nav', got: ok ? (hit ? 'utility-nav' : 'kein utility-nav') : 'Mutation nicht anwendbar', ok: ok && !hit }); }
   for (const [name, expect, mut] of MUTATIONS) {
     const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files);
     let applied; try { applied = mut(c, f) !== false; } catch (e) { applied = false; }

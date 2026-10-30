@@ -791,10 +791,10 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
 .puk-web-footer{margin-top:var(--space-16);padding-block:var(--space-6) var(--space-8);border-top:1px solid var(--linie);color:var(--tinte-leise);font-size:1rem;line-height:1.5}
 .puk-web-footer__grid{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:var(--space-4)}
 @media (min-width:47.5rem){.puk-web-footer__grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);column-gap:clamp(2rem,6vw,5rem)}}
-/* r4-63 (Nachprüfung r4-55 und r4-56, N56-1; Auftrag Christa Egger, 30.10.2026: «Überschriften in Medium und Abstand vor Hinweis umsetzen»):
+/* r4-64 (Nachprüfung r4-55 und r4-56, N56-1; Auftrag Christa Egger, 30.10.2026: «Überschriften in Medium und Abstand vor Hinweis umsetzen»):
    Überschriften in Medium statt Regular, damit sie sich vom Text darunter abheben; Grösse und Farbe bleiben (16 px, tinte-leise). */
 .puk-web-footer__heading{margin:0;color:var(--tinte-leise);font-size:1rem;line-height:1.5;font-weight:var(--fw-medium);letter-spacing:0;text-transform:none}
-/* r4-63: In Medium passt «Angehörigenarbeit» bei 320 px und 200 % Schrift nicht in eine Zeile und bräche mitten im Wort um.
+/* r4-64: In Medium passt «Angehörigenarbeit» bei 320 px und 200 % Schrift nicht in eine Zeile und bräche mitten im Wort um.
    Bei schmalem Fenster im Verhältnis zur Schrift (wie bei den Direkteinstiegen unter 22,5 rem) daher Silbentrennung. */
 @media (max-width:22.5rem){.puk-web-footer__heading{hyphens:auto;hyphenate-limit-chars:8 4 4}}
 .puk-web-footer__copy{max-width:var(--lesebreite);margin:0;color:var(--tinte-leise);font-size:1rem}
@@ -803,7 +803,7 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
 .puk-web-footer a:hover{color:var(--tinte);text-decoration-thickness:2px}
 .puk-site-safety--responsibility a{display:inline-flex;align-items:center;min-height:var(--web-touch-target);overflow-wrap:anywhere}
 .puk-site-review{margin:0;flex-basis:100%;font:var(--type-caption);color:var(--tinte)}
-.puk-web-footer__boundary{max-width:var(--lesebreite);margin-top:var(--space-2)} /* r4-63 (N56-1): 8 px Abstand, damit der Hinweis «Diese Website ersetzt keine …» nicht in den Namen der Klinik übergeht */
+.puk-web-footer__boundary{max-width:var(--lesebreite);margin-top:var(--space-2)} /* r4-64 (N56-1): 8 px Abstand, damit der Hinweis «Diese Website ersetzt keine …» nicht in den Namen der Klinik übergeht */
 .puk-web-footer__details{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-5);max-width:var(--lesebreite)}
 .puk-site-info-links ul{display:flex;flex-wrap:wrap;gap:0 var(--space-5);margin:0;padding:0;list-style:none}
 .puk-site-info-links a,.puk-site-legal a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target)}

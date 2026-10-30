@@ -1,0 +1,10 @@
+PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+Selbsttest: 127/127 bestanden
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+Sprach-/UI-Test: 73 Prüfungen bestanden · JS-Fehler 0
+tension core exceeds 1800px
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+Layout-Exit 1
+axe 4.14.0 · Build r4-63 · Seiten 24 · Läufe 48 · Verstösse 0

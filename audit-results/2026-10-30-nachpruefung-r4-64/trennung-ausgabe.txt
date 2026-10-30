@@ -1,0 +1,4 @@
+r4-61 320 px 200 % {"lines":["Fachstelle ","Angehörigenarbeit"],"hyphens":"manual","limit":"auto","width":280}
+r4-61 390 px 200 % {"lines":["Fachstelle ","Angehörigenarbeit"],"hyphens":"manual","limit":"auto","width":350}
+r4-64 320 px 200 % {"lines":["Fachstelle ","Angehörigenarb","eit"],"hyphens":"auto","limit":"8 4 4","width":280}
+r4-64 390 px 200 % {"lines":["Fachstelle ","Angehörigenarbeit"],"hyphens":"auto","limit":"8 4 4","width":350}

@@ -6,6 +6,19 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
+**Nachgeführt:** GitHub `main` enthält r4-61 (N59-3) aus [PR #780](https://github.com/christaegger-dot/borderline-angehoerige/pull/780), gemergt mit dem aktuellen Basisstand `5cbaf1c`. Einzelheiten stehen im Abschnitt «Korrektur r4-61».
+
+## Korrektur r4-61 · Befund N59-3 · auf `main` seit 30.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-30-n59-3-r4-61`, [PR #780](https://github.com/christaegger-dot/borderline-angehoerige/pull/780), im aktuellen Basisstand `main` enthalten (Merge-Commit `5cbaf1c`). Nachweis: [`audit-results/2026-10-30-n59-3-r4-61/BERICHT.md`](audit-results/2026-10-30-n59-3-r4-61/BERICHT.md).
+
+**Inhalt:**
+- **N59-3:** Das Gate blockiert `aria-label` oder `aria-labelledby` auch an einem nicht verborgenen Element im Direkteinstieg, nicht nur am Link. Ein verborgenes dekoratives Element mit `aria-label` bleibt zulässig. Drei neue Selbsttestfälle; mit den Regeln von r4-60 scheitern die zwei, die blockieren müssen (112/114).
+- **Abgleich mit r4-60:** In allen Mutationen der Nachprüfung r4-59 verhält sich #775 bei N59-1 und N59-2 wie verlangt. `aria-hidden="undefined"` lässt Chromium im Baum (eigene Messung); #775 wertet es richtig als nicht verborgen.
+- **Unverändert:** Wortlaut, Stylesheet, Skript und Renderer. Die Seiten sind bis auf die Build-Kennung byte-gleich mit r4-60.
+
+**Technischer Stand:** Selbsttest 114/114; Gate 24 Seiten · 0 Blocker · 20 Hinweise; Parität 35; Suchtest 216/216; Sprach-/UI-Test 73/73; Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c); axe-core 4.14.0: 0 Verstösse in 48 Läufen.
+
 ## Nachtrag zu N60-1 · auf `main` seit 30.10.2026
 
 **GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-54`, [PR #783](https://github.com/christaegger-dot/borderline-angehoerige/pull/783), gemergt als `4f4ba8f` am 30.10.2026, 08:11:59 UTC, über das Konto von Christa Egger. Der CI-Lauf `build-and-compare` war grün. **Ohne Codex-Review:** Das Review brach um 08:08:12 UTC mit «Failed» ab (Nutzungslimit); eine Ausnahme von R28-O01 und R29-P20 wie bei #779. Ein späterer Kommentar «@codex review» kam erst nach dem Merge. Auftrag von Christa Egger, 30.10.2026: «Nachbesserung N60-1 umsetzen». Nachweis: [`audit-results/2026-10-30-nachtrag-n60-1/BERICHT.md`](audit-results/2026-10-30-nachtrag-n60-1/BERICHT.md).
@@ -52,7 +65,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 | N60-1 | gering | Die behobene Falschmeldung P4.6 (verborgener Zusatz ` →` im Linktext) und `aria-hidden=" false "` sind durch keinen Selbsttestfall abgesichert, nur durch das Mutationsskript | umgesetzt mit PR #783 (Nachtrag, siehe oberster Abschnitt) |
 | N60-2 | gering | Die Pendenzendatei auf `main` nannte r4-60 nicht | mit diesem Eintrag erledigt |
 
-**Offen:** Nachtrag #781 (N60-3) gemergt als `aefdf06` am 30.10.2026, 08:24 UTC, N60-3 offen; N56-1 (Entscheid Christa Egger); N59-3; N53-1, N53-2; Rest von N52-3; N49-2 (Bestätigung durch Christa Egger); N51-2; Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte.
+**Offen:** Nachtrag #781 (N60-3) gemergt als `aefdf06` am 30.10.2026, 08:24 UTC, N60-3 offen; N56-1 (Entscheid Christa Egger); N53-1, N53-2; Rest von N52-3; N49-2 (Bestätigung durch Christa Egger); N51-2; Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte. N59-3 ist inzwischen mit r4-61 auf `main` umgesetzt (PR #780).
 
 ## Korrektur · r4-60 · Befunde N59-1 und N59-2 · veröffentlicht am 30.10.2026
 
@@ -81,7 +94,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Offen:**
 - N60-1: umgesetzt mit PR #783 (Nachtrag, siehe oberster Abschnitt).
-- N59-3; N56-1 (Entscheid Christa Egger); N53-1, N53-2; N52-3: Rest; N51-2; N49-2: Bestätigung durch Christa Egger.
+- N59-3 mit r4-61 auf `main` umgesetzt (PR #780; siehe Abschnitt «Korrektur r4-61»); N56-1 (Entscheid Christa Egger); N53-1, N53-2; N52-3: Rest; N51-2; N49-2: Bestätigung durch Christa Egger.
 - Prüfung mit echtem Screenreader; Safari und Firefox (Behandlung ungültiger `aria-hidden`-Werte), reale Geräte.
 
 ## Nachprüfung r4-59 · liegt vor seit 30.10.2026
@@ -100,7 +113,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 | N59-4 | wichtig | PR #768 vor dem Codex-Review gemergt: Merge 06:26:31 UTC, Review «Completed» 06:27:16 UTC, ohne Befund (R28-O01, R29-P20). PR #766 und #769 halten die Regel ein (8 und 12 Sekunden nach «Completed») | mit diesem Eintrag vermerkt, siehe Abschnitt «Nachtrag zu N54-2» |
 | N59-5 | gering | Pendenzendatei führte r4-59 als Entwurf mit 102 Selbsttestfällen; auf `main` sind es 104 | mit diesem Eintrag erledigt |
 
-**Offen:** N59-1 und N59-2 in r4-60 umgesetzt (Nachprüfung r4-60: «Nachbesserung nötig, ohne Blocker», N60-1 mit PR #783 umgesetzt); N59-3; N53-1, N53-2; Rest von N52-3; N49-2 (Bestätigung durch Christa Egger); N51-2; Prüfung mit echtem Screenreader; Safari, Firefox (wie sie `aria-hidden` mit Leerraum auswerten), reale Geräte.
+**Offen:** N59-1 und N59-2 in r4-60 umgesetzt (Nachprüfung r4-60: «Nachbesserung nötig, ohne Blocker», N60-1 mit PR #783 umgesetzt); N59-3 mit r4-61 auf `main` umgesetzt (PR #780); N53-1, N53-2; Rest von N52-3; N49-2 (Bestätigung durch Christa Egger); N51-2; Prüfung mit echtem Screenreader; Safari, Firefox (wie sie `aria-hidden` mit Leerraum auswerten), reale Geräte.
 
 ## Korrektur · r4-59 · Befunde N58-1 und N58-2 · veröffentlicht am 30.10.2026
 
@@ -123,7 +136,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 **Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die auch r4-58 gebaut hat. Die Nachprüfung r4-59 hat eine andere Sitzung gemacht (Abschnitt oben).
 
 **Offen:**
-- N59-1, N59-2, N59-3 (Nachprüfung r4-59).
+- N59-1, N59-2 (Nachprüfung r4-59); N59-3 wurde anschliessend mit r4-61 auf `main` umgesetzt (PR #780).
 - N53-1, N53-2; N52-3: Rest; N51-2; N49-2: Bestätigung durch Christa Egger.
 - Prüfung mit echtem Screenreader.
 

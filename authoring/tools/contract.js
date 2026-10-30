@@ -844,6 +844,20 @@ function selftest(cfg, files, opts = {}) {
     const result = gate(cfg, f, { mode: 'draft', exists: base });
     rows.push({ name: 'Regulärer Kontakt ohne Krisenausnahme: ' + phone, expected: '0 Blocker', got: String(result.blocks), ok: applied && result.blocks === 0 });
   }
+  { /* Nachtrag zu N54-2 (Nachprüfung r4-54, 30.10.2026): Ohne utilityNav rendert der Renderer den Rückfall «Website durchsuchen».
+       Das Gate darf ihn nicht melden, eine fehlende Rückfallzeile aber schon. utilityNav ist nicht Pflicht. */
+    const c = JSON.parse(JSON.stringify(cfg)); delete c.utilityNav;
+    const fb = utilityEntriesOf(c);
+    const line = `<nav class="puk-site-utility" aria-label="Direkteinstiege">${fb.map(e => `<a class="puk-site-utility__link" href="${esc(e.page.href)}">${esc(utilityLabel(e))}</a>`).join('')}</nav>`;
+    const menu = fb.map(e => `\n<li class="puk-site-menu__utility"><a class="puk-web-nav__link puk-site-menu__utility-link" href="${esc(e.page.href)}">${esc(utilityLabel(e))}</a></li>`).join('');
+    const f = {}; for (const [k, v] of Object.entries(files)) f[k] = typeof v === 'string' && v.includes('<nav class="puk-site-utility"')
+      ? v.replace(/<nav class="puk-site-utility"[\s\S]*?<\/nav>/, line).replace(/(\n<li class="puk-site-menu__utility">[\s\S]*?<\/li>)+/, menu) : v;
+    const ids = r => [...new Set(r.findings.filter(x => x.level === 'block' && ['nav', 'utility-nav'].includes(x.id)).map(x => x.id))];
+    const okIds = fb.length ? ids(gate(c, f, { mode: 'draft', exists: base })) : ['kein Rückfall (Suchseite fehlt)'];
+    rows.push({ name: 'Ohne utilityNav besteht der Rückfall «Website durchsuchen» das Gate (Nachtrag N54-2)', expected: 'kein nav, kein utility-nav', got: okIds.join(', ') || 'kein nav, kein utility-nav', ok: !okIds.length });
+    const g = Object.assign({}, f); const cut = fb.length && rex(g, 'index.html', /<nav class="puk-site-utility"[\s\S]*?<\/nav>/, '');
+    const missIds = cut ? ids(gate(c, g, { mode: 'draft', exists: base })) : [];
+    rows.push({ name: 'Ohne utilityNav fehlt die Rückfallzeile (Nachtrag N54-2)', expected: 'utility-nav', got: cut ? (missIds.join(', ') || 'nicht erkannt') : 'Mutation nicht anwendbar', ok: missIds.includes('utility-nav') }); }
   for (const [name, expect, mut] of MUTATIONS) {
     const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files);
     let applied; try { applied = mut(c, f) !== false; } catch (e) { applied = false; }

@@ -743,6 +743,9 @@ const MUTATIONS = [
   ['SVG ohne aria-hidden, nur mit hidden am SVG, bleibt ohne Namen (r4-65, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1 hidden')],
   ['SVG ohne aria-hidden, nur mit inert am SVG, bleibt ohne Namen (r4-65, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1 inert')],
   ['SVG ohne aria-hidden unter einem Vorfahren mit hidden und eigener display-Regel (r4-65, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1') && rex(f, 'verstehen.html', /<div class="puk-vis-scene">/, '<div class="puk-vis-scene" hidden>')],
+  /* r4-67 (Nachprüfung r4-67, N67-2): Gegenprobe zu N62-2. Das foreignObject selbst ist ein SVG-Element; inert daran blendet das
+     SVG darin in Chromium nicht aus. */
+  ['inert am foreignObject blendet das SVG darin nicht aus (r4-67, N67-2)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /<div class="puk-vis-scene">/, '$&<svg role="group" aria-label="Szene" width="8" height="8"><foreignObject inert width="8" height="8"><svg width="8" height="8"></svg></foreignObject></svg>')],
   ['Direkteinstieg im Menü mit aria-labelledby an einem span im Link (r4-61, N59-3)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<span aria-labelledby="x">$2</span><')],
   ['Krisennummer erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p>Telefon 144</p></main>')],
   ['Krisentelefonlink erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p><a href="tel:144">Anrufen</a></p></main>')],

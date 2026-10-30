@@ -8,6 +8,14 @@
   - die Review-Sitzung von #787 (Quelle: Mitteilung an die Review-Sitzung): «#787 behält r4-66, #795 wird r4-67».
 
   Der Entscheid stimmt mit dem Stand auf GitHub überein: #787 trägt r4-66 (`7aa64b6`).
+- **Überholter Wortlaut und Zeitfolge** (Nachtrag zu N67-1, Nachprüfung r4-67):
+  - **ca. 10:55 UTC:** In der Sitzung von #787 lautete der Entscheid zuerst umgekehrt: «#795 behält r4-66, #787 wird r4-67». Quelle: Commit `13f471f` auf dem Branch von #787. Dieser Wortlaut ist überholt.
+  - **10:57:35 UTC:** `f99f29b` benennt nur den Nachweisordner um (`0 insertions, 0 deletions`). Auf diesem Commit steht noch `BUILD = 'r4-66'`. Die Commit-Meldung nennt mehr, als er enthält.
+  - **10:57:47 UTC:** `eca7fbd` bringt Kennung, Nachweis und `site/` auf r4-67.
+  - **kurz nach 10:58 UTC:** Christa Egger bestätigt der Review-Sitzung von #787 auf Rückfrage «#787 behält r4-66». Diese Bestätigung liegt nach den beiden Umbenennungs-Commits. Sie ist auf GitHub nicht belegt; die Pendenzendatei vermerkt sie als «Mitteilung an die Review-Sitzung».
+  - **11:00:47 UTC:** `13f471f` vermerkt auf dem Branch von #787 den bestätigten Entscheid und kennzeichnet den Wortlaut von ca. 10:55 UTC als überholt.
+
+  Umbenannt hat diese Sitzung auf die Übermittlung der Sitzung von #784. Die beiden anderen Übermittlungen und die Bestätigung kamen danach und stimmen damit überein. `appliedTo` in `site.config.json` nennt jetzt dieselben drei Quellen.
 - **Umgesetzt:** Die Kennung ist durchgehend r4-67 (`BUILD`, `assetVersion`, `independentReviewWaiver.version`, `pendingScope`, `appliedTo`, Kommentar und Selbsttestname). Der Ordner heisst `2026-10-30-n62-1-n62-2-r4-67`.
 - **Neu gebaut:** `main` ist bis `a323fed` eingebracht (#796, #794; nur `.claude/`, `.gitignore` und `audit-results/`). Danach sind `site/` neu gebaut und alle Prüfungen neu gelaufen.
 - **Merge-Reihenfolge:** #787 (r4-66) zuerst; danach bringt dieser Stand `main` ein und baut neu.
@@ -97,3 +105,19 @@ Lokal mit Node 22.22.0, Chromium 153.0.8010.12 und Playwright über `PLAYWRIGHT_
 | axe-core 4.14.0 (eigener Ordner ausserhalb des Repositorys) | `build r4-67 · Seiten: 24 · Läufe: 48 · Verstösse: 0` |
 
 **Nicht geprüft:** Screenreader, Safari und Firefox, reale Geräte.
+
+## Nachtrag · N67-1 und N67-2 · 30.10.2026
+
+**Auftrag von Christa Egger, 30.10.2026:** «Nachbesserung N67-1 und N67-2 umsetzen». Beide Befunde stammen aus der Nachprüfung r4-67, `audit-results/2026-10-30-nachpruefung-r4-67/NACHPRUEFUNG.md` ([PR #802](https://github.com/christaegger-dot/borderline-angehoerige/pull/802), Entwurf, auf `51b9b1e`).
+
+**Wer:** eine andere Sitzung als die bauende und als die Prüfsitzung von r4-67. Sie hat die Nachprüfungen r4-43 bis r4-51 und r4-53 verfasst und r4-52, r4-54 und r4-57 gebaut. Für diesen Nachtrag ist sie nicht unabhängig.
+
+**Kennung:** bleibt r4-67. Der Nachtrag ändert nur Prüfwerkzeug und Nachweis von r4-67, das noch nicht gemergt ist.
+
+- **N67-1** (Nachweis): Oben unter «Überholter Wortlaut und Zeitfolge» ergänzt. In `site.config.json` nennt `appliedTo` für r4-67 jetzt die drei Übermittlungen und den überholten Wortlaut, statt nur «sinngemäss übermittelt durch die Sitzung von PR #784». Die Beschreibung von PR #795 gehört der bauenden Sitzung; der Vorschlag zum Angleichen steht im PR dieses Nachtrags.
+- **N67-2** (`authoring/tools/contract.js`, `MUTATIONS`): neue Gegenprobe «inert am foreignObject blendet das SVG darin nicht aus (r4-67, N67-2)». Sie setzt auf `verstehen.html` in die Abbildung `<svg role="group" aria-label="Szene"><foreignObject inert><svg></svg></foreignObject></svg>` und erwartet `figure-alt`, wie Fall K81 der Nachprüfung.
+  - Selbsttest: 124/124.
+  - **Rückprobe:** Mit der Variante ohne `p !== x` in `inSvg` (das `foreignObject` selbst gilt als HTML) scheitert genau der neue Fall: 123/124, «erwartet: figure-alt, erhalten: crisis-number-check».
+  - Die Regeln selbst sind unverändert.
+
+**Prüfungen** auf dem Kopf dieses Nachtrags: siehe Beschreibung des PR.

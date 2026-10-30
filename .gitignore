@@ -13,7 +13,9 @@ test-results/
 
 # Lokale Werkzeuge
 .netlify
-.claude/
+# Lokale Claude-Dateien bleiben ausgeschlossen; nur die gemeinsamen Freigaben werden versioniert
+.claude/*
+!.claude/settings.json
 .vscode/
 .idea/
 *.log

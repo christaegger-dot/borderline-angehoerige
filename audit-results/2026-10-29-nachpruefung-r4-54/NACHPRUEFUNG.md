@@ -115,3 +115,11 @@ axe-core 4.14.0 auf allen 24 Seiten aus `dist/site` (eigener lokaler HTTP-Server
 ## Empfehlung
 
 **Nachbesserung nötig, ohne Blocker.** N52-2 ist behoben und durch einen greifenden Selbsttestfall gesichert. Die beiden Befunde N54-1 und N54-2 sind gering und können bei der nächsten Arbeit am Seitenrahmen mitgenommen werden; N54-2 besteht schon seit r4-51.
+
+## Berichtigung · 30.10.2026
+
+Bei N54-2 ist ein Satz falsch: «Daneben blockiert die Konfigurationsprüfung jede Konfiguration ohne `utilityNav` (`contract.js:320`, K3). Der Rückfall ist in diesem Repository also nie erreichbar.»
+
+`contract.js:319–320` (Stand r4-54) prüft nur, wenn `utilityNav` angegeben ist (`if (cfg.utilityNav !== undefined)`). Blockiert wird eine leere Liste (K3). Fehlt der Eintrag ganz, meldet die Konfigurationsprüfung nichts; K1 zeigt nur die 23 falschen `nav`-Blocker, keinen Konfigurationsblocker. Der Rückfall «Website durchsuchen» ist also erreichbar. Auch die Begründung «weil `utilityNav` konfiguriert und Pflicht ist» stimmt nur zur Hälfte: `utilityNav` ist konfiguriert, aber nicht Pflicht. Schweregrad und Empfehlung bleiben gleich.
+
+N54-2 ist in r4-57 behoben (PR #756). Zwei Selbsttestfälle für den Rückfall sind nachgereicht: `audit-results/2026-10-30-nachtrag-n54-2/BERICHT.md`.

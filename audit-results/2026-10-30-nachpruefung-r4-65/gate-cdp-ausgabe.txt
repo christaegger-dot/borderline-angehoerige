@@ -1,0 +1,125 @@
+Grundzustand old: 24 Seiten · Blocker 0 · 
+Grundzustand neu: 24 Seiten · Blocker 0 · 
+Grundzustand oldFb: 24 Seiten · Blocker 0 · 
+Grundzustand neuFb: 24 Seiten · Blocker 0 · 
+Kennung|Fall|Gate r4-62|Gate r4-65|Chromium|Chromium weicht ab|r4-65 ↔ Chromium|r4-62 → r4-65
+I1z|Zeile: img alt=""|–|–|link «Kurz und klar»|nein|gleich|–
+I1m|Menü: img alt=""|–|–|link «Kurz und klar»|nein|gleich|–
+I2z|Zeile: img alt="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+I2m|Menü: img alt="Mehr"|–|nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+I3z|Zeile: img alt gleich der Beschriftung, Text ersetzt|utility-nav|–|link «Kurz und klar»|nein|gleich|NICHT MEHR BLOCKIERT
+I3m|Menü: img alt gleich der Beschriftung, Text ersetzt|nav|–|link «Kurz und klar»|nein|gleich|NICHT MEHR BLOCKIERT
+I4z|Zeile: img ohne alt|–|–|link «Kurz und klar»|nein|gleich|–
+I4m|Menü: img ohne alt|–|–|link «Kurz und klar»|nein|gleich|–
+I5z|Zeile: img alt="Mehr" aria-hidden="true"|–|–|link «Kurz und klar»|nein|gleich|–
+I5m|Menü: img alt="Mehr" aria-hidden="true"|–|–|link «Kurz und klar»|nein|gleich|–
+I6z|Zeile: img alt="Mehr" hidden|–|–|link «Kurz und klar»|nein|gleich|–
+I6m|Menü: img alt="Mehr" hidden|–|–|link «Kurz und klar»|nein|gleich|–
+I7z|Zeile: img alt="Mehr" inert|–|–|link «Kurz und klar»|nein|gleich|–
+I7m|Menü: img alt="Mehr" inert|–|–|link «Kurz und klar»|nein|gleich|–
+I8z|Zeile: span hidden > img alt="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+I8m|Menü: span hidden > img alt="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+I9z|Zeile: span aria-hidden > img alt="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+I9m|Menü: span aria-hidden > img alt="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+I10z|Zeile: span inert > img alt="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+I10m|Menü: span inert > img alt="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+I11z|Zeile: img alt="Mehr" role="presentation"|–|utility-nav|link «Kurz und klar»|nein|strenger|neu blockiert
+I11m|Menü: img alt="Mehr" role="presentation"|–|nav|link «Kurz und klar»|nein|strenger|neu blockiert
+I12z|Zeile: img alt="Mehr" role="none"|–|utility-nav|link «Kurz und klar»|nein|strenger|neu blockiert
+I12m|Menü: img alt="Mehr" role="none"|–|nav|link «Kurz und klar»|nein|strenger|neu blockiert
+I13z|Zeile: img ohne alt mit title="Mehr"|–|–|link «Kurz und klar Mehr»|ja|MILDER|–
+I13m|Menü: img ohne alt mit title="Mehr"|–|–|link «Kurz und klar Mehr»|ja|MILDER|–
+I14z|Zeile: img alt="" title="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+I14m|Menü: img alt="" title="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+I15z|Zeile: img alt="  " (nur Leerraum)|–|–|link «Kurz und klar »|nein|gleich|–
+I15m|Menü: img alt="  " (nur Leerraum)|–|–|link «Kurz und klar »|nein|gleich|–
+I16z|Zeile: img alt="" ersetzt den Text|utility-nav|utility-nav|link «»|ja|gleich|–
+I16m|Menü: img alt="" ersetzt den Text|nav|nav|link «»|ja|gleich|–
+I17z|Zeile: img alt="Mehr" in svg > foreignObject|–|utility-nav|link «Kurz und klar»|nein|strenger|neu blockiert
+I17m|Menü: img alt="Mehr" in svg > foreignObject|–|nav|link «Kurz und klar»|nein|strenger|neu blockiert
+I18z|Zeile: img alt="Mehr" hidden in svg > foreignObject|–|utility-nav|link «Kurz und klar»|nein|strenger|neu blockiert
+I18m|Menü: img alt="Mehr" hidden in svg > foreignObject|–|nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N1z|Zeile: input type=button value="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N1m|Menü: input type=button value="Mehr"|–|nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N2z|Zeile: input type=submit ohne value|–|utility-nav|link «Kurz und klar Submit»|ja|gleich|neu blockiert
+N2m|Menü: input type=submit ohne value|–|nav|link «Kurz und klar Submit»|ja|gleich|neu blockiert
+N3z|Zeile: input type=submit value="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N3m|Menü: input type=submit value="Mehr"|–|nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N4z|Zeile: input type=text ohne value|–|utility-nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N4m|Menü: input type=text ohne value|–|nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N5z|Zeile: input type=text value="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N5m|Menü: input type=text value="Mehr"|–|nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N6z|Zeile: input type=hidden value="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+N6m|Menü: input type=hidden value="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+N7z|Zeile: input type=HIDDEN value="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+N7m|Menü: input type=HIDDEN value="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+N8z|Zeile: input type=checkbox|–|utility-nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N8m|Menü: input type=checkbox|–|nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N9z|Zeile: input type=checkbox value="Mehr"|–|utility-nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N9m|Menü: input type=checkbox value="Mehr"|–|nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N10z|Zeile: input type=image alt="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N10m|Menü: input type=image alt="Mehr"|–|nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N11z|Zeile: input type=button value="Mehr" hidden|–|–|link «Kurz und klar»|nein|gleich|–
+N11m|Menü: input type=button value="Mehr" hidden|–|–|link «Kurz und klar»|nein|gleich|–
+N12z|Zeile: input type=button value="Mehr" aria-hidden|–|–|link «Kurz und klar»|nein|gleich|–
+N12m|Menü: input type=button value="Mehr" aria-hidden|–|–|link «Kurz und klar»|nein|gleich|–
+N13z|Zeile: input type=reset ohne value|–|utility-nav|link «Kurz und klar Reset»|ja|gleich|neu blockiert
+N13m|Menü: input type=reset ohne value|–|nav|link «Kurz und klar Reset»|ja|gleich|neu blockiert
+N14z|Zeile: input type=text placeholder="Mehr"|–|utility-nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N14m|Menü: input type=text placeholder="Mehr"|–|nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N15z|Zeile: input ohne type, value=""|–|utility-nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N15m|Menü: input ohne type, value=""|–|nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N16z|Zeile: input type=range|–|utility-nav|link «Kurz und klar 50»|ja|gleich|neu blockiert
+N16m|Menü: input type=range|–|nav|link «Kurz und klar 50»|ja|gleich|neu blockiert
+N17z|Zeile: input type=button value="" |–|utility-nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N17m|Menü: input type=button value="" |–|nav|link «Kurz und klar»|nein|strenger|neu blockiert
+N18z|Zeile: input type=button value gleich der Beschriftung, Text ersetzt|utility-nav|–|link «Kurz und klar»|nein|gleich|NICHT MEHR BLOCKIERT
+N18m|Menü: input type=button value gleich der Beschriftung, Text ersetzt|nav|–|link «Kurz und klar»|nein|gleich|NICHT MEHR BLOCKIERT
+N19z|Zeile: input type=" hidden" (ungültig, also Text)|–|utility-nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+N19m|Menü: input type=" hidden" (ungültig, also Text)|–|nav|link «Kurz und klar Mehr»|ja|gleich|neu blockiert
+B1z|Zeile: button Mehr|utility-nav|utility-nav|link «Kurz und klar Mehr»|ja|gleich|–
+B1m|Menü: button Mehr|nav|nav|link «Kurz und klar Mehr»|ja|gleich|–
+B2z|Zeile: button leer|–|–|link «Kurz und klar»|nein|gleich|–
+B2m|Menü: button leer|–|–|link «Kurz und klar»|nein|gleich|–
+B3z|Zeile: select mit einer option «Mehr»|utility-nav|utility-nav|link «Kurz und klar Mehr»|ja|gleich|–
+B3m|Menü: select mit einer option «Mehr»|nav|nav|link «Kurz und klar Mehr»|ja|gleich|–
+B4z|Zeile: select A / Mehr (selected)|utility-nav|utility-nav|link «Kurz und klar Mehr»|ja|gleich|–
+B4m|Menü: select A / Mehr (selected)|nav|nav|link «Kurz und klar Mehr»|ja|gleich|–
+B5z|Zeile: textarea «Mehr»|utility-nav|utility-nav|link «Kurz und klar Mehr»|ja|gleich|–
+B5m|Menü: textarea «Mehr»|nav|nav|link «Kurz und klar Mehr»|ja|gleich|–
+B6z|Zeile: textarea leer|–|–|link «Kurz und klar»|nein|gleich|–
+B6m|Menü: textarea leer|–|–|link «Kurz und klar»|nein|gleich|–
+B7z|Zeile: area alt="Mehr" (ohne map)|–|–|link «Kurz und klar»|nein|gleich|–
+B7m|Menü: area alt="Mehr" (ohne map)|–|–|link «Kurz und klar»|nein|gleich|–
+B8z|Zeile: map > area alt="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+B8m|Menü: map > area alt="Mehr"|–|–|link «Kurz und klar»|nein|gleich|–
+B9z|Zeile: button aria-hidden «Mehr»|–|–|link «Kurz und klar»|nein|gleich|–
+B9m|Menü: button aria-hidden «Mehr»|–|–|link «Kurz und klar»|nein|gleich|–
+B10z|Zeile: span title="Mehr" (leer)|–|–|link «Kurz und klar»|nein|gleich|–
+B10m|Menü: span title="Mehr" (leer)|–|–|link «Kurz und klar»|nein|gleich|–
+B11z|Zeile: Kontrolle: svg > title «Mehr»|utility-nav|utility-nav|link «Kurz und klar Mehr»|ja|gleich|–
+B11m|Menü: Kontrolle: svg > title «Mehr»|nav|nav|link «Kurz und klar Mehr»|ja|gleich|–
+B12z|Zeile: Kontrolle: span hidden > input value|–|–|link «Kurz und klar»|nein|gleich|–
+B12m|Menü: Kontrolle: span hidden > input value|–|–|link «Kurz und klar»|nein|gleich|–
+I1r|Rückfall Zeile: img alt=""|–|–|link «Website durchsuchen»|nein|gleich|–
+I1rm|Rückfall Menü: img alt=""|–|–|link «Website durchsuchen»|nein|gleich|–
+I2r|Rückfall Zeile: img alt="Mehr"|–|utility-nav|link «Website durchsuchen Mehr»|ja|gleich|neu blockiert
+I2rm|Rückfall Menü: img alt="Mehr"|–|nav|link «Website durchsuchen Mehr»|ja|gleich|neu blockiert
+I5r|Rückfall Zeile: img alt="Mehr" aria-hidden="true"|–|–|link «Website durchsuchen»|nein|gleich|–
+I5rm|Rückfall Menü: img alt="Mehr" aria-hidden="true"|–|–|link «Website durchsuchen»|nein|gleich|–
+I11r|Rückfall Zeile: img alt="Mehr" role="presentation"|–|utility-nav|link «Website durchsuchen»|nein|strenger|neu blockiert
+I11rm|Rückfall Menü: img alt="Mehr" role="presentation"|–|nav|link «Website durchsuchen»|nein|strenger|neu blockiert
+I13r|Rückfall Zeile: img ohne alt mit title="Mehr"|–|–|link «Website durchsuchen Mehr»|ja|MILDER|–
+I13rm|Rückfall Menü: img ohne alt mit title="Mehr"|–|–|link «Website durchsuchen Mehr»|ja|MILDER|–
+N1r|Rückfall Zeile: input type=button value="Mehr"|–|utility-nav|link «Website durchsuchen Mehr»|ja|gleich|neu blockiert
+N1rm|Rückfall Menü: input type=button value="Mehr"|–|nav|link «Website durchsuchen Mehr»|ja|gleich|neu blockiert
+N6r|Rückfall Zeile: input type=hidden value="Mehr"|–|–|link «Website durchsuchen»|nein|gleich|–
+N6rm|Rückfall Menü: input type=hidden value="Mehr"|–|–|link «Website durchsuchen»|nein|gleich|–
+N4r|Rückfall Zeile: input type=text ohne value|–|utility-nav|link «Website durchsuchen»|nein|strenger|neu blockiert
+N4rm|Rückfall Menü: input type=text ohne value|–|nav|link «Website durchsuchen»|nein|strenger|neu blockiert
+B5r|Rückfall Zeile: textarea «Mehr»|utility-nav|utility-nav|link «Website durchsuchen Mehr»|ja|gleich|–
+B5rm|Rückfall Menü: textarea «Mehr»|nav|nav|link «Website durchsuchen Mehr»|ja|gleich|–
+
+116 Fälle · r4-65 ↔ Chromium gleich 90, strenger 22, milder 4 · r4-62 ↔ Chromium gleich 84
+Fehlerseite 404.html mit eingeschobener Zeile (r4-62): utility-nav nein · alle Blocker: nav «Direkteinstiege im Menü weichen vom Seitenvertrag ab: leer statt Kurz und klar (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html)»; placeholder-status «Bild: data-source-status und data-approval-status fehlen»
+Fehlerseite 404.html mit eingeschobener Zeile (r4-65): utility-nav nein · alle Blocker: nav «Direkteinstiege im Menü weichen vom Seitenvertrag ab: leer statt Kurz und klar (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html)»; placeholder-status «Bild: data-source-status und data-approval-status fehlen»

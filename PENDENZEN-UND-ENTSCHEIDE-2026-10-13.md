@@ -66,6 +66,20 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 [PR #791](https://github.com/christaegger-dot/borderline-angehoerige/pull/791), Branch `pendenzen/2026-10-30-nach-790`, Kopf `8c8b683`, gemergt als `d20973b` am 30.10.2026, 09:25:56 UTC, von der eigenen Review-Sitzung über das Konto von Christa Egger, auf ihren Auftrag «#791 mergen» (an die schreibende Sitzung zuvor «bitte merge»; Mitteilungen in den Sitzungen, auf GitHub nicht belegt). Kein Codex-Review; an seiner Stelle Review der eigenen Review-Sitzung: auf `0351a65` zwei geringe Befunde (I1, I2), auf `8c8b683` «ohne Befund, mergebar». Ein zweiter Merge-Aufruf der schreibenden Sitzung meldete denselben Commit.
 
+## Nachführung der Pendenzen · PR #797 · auf `main` seit 30.10.2026
+
+[PR #797](https://github.com/christaegger-dot/borderline-angehoerige/pull/797), Branch `pendenzen/2026-10-30-nach-794`, Kopf `20e0431`, gemergt als `dd884e6` am 30.10.2026, 11:12:04 UTC, über das Konto von Christa Egger. Geändert war nur diese Datei: r4-65 (#784), Nachprüfung r4-64 (#794), #796 und #791.
+- **Merge:** ausgelöst von der Sitzung, die r4-65 gebaut hat, auf den Auftrag von Christa Egger «bitte merge #797» und ihren Entscheid «Ohne Codex mergen» (Mitteilungen in der Sitzung; der Merge-Commit nennt den Entscheid wörtlich, den Auftrag nicht).
+- **Kein Codex-Review:** Es brach auf `fc9466c` um 11:00:25 UTC mit «Failed» ab (Nutzungslimit). Ausnahme von R28-O01 und R29-P20 auf Entscheid von Christa Egger.
+- **Ersatz-Review übersehen:** Die eigene Review-Sitzung hatte um 11:00:49 UTC auf `ed0efba` «Befunde, nicht mergen» eingereicht: M1 (wichtig, Konflikt mit #798, überholter Hinweis H3 und «Offen» zum Gestaltungssystem), M2 (gering, Köpfe von #795 und #787). Die Meldung erreichte die mergende Sitzung erst nach dem Merge; sie hatte die Reviews vor dem Merge nicht abgerufen. M2 war in `20e0431` umgesetzt. M1 ist mit dem Merge von `main` in #798 (`806c4ae`) gelöst.
+- **Folge:** Der erste Merge-Aufruf auf `fc9466c` scheiterte, weil der Branch inzwischen `20e0431` war; gemergt ist `20e0431`, gebunden an diesen Kopf.
+
+## Gestaltungssystem auf r4-64 · PR #798 · auf `main` seit 30.10.2026
+
+[PR #798](https://github.com/christaegger-dot/borderline-angehoerige/pull/798), Branch `pruefung/2026-10-29-nachpruefung-r4-53`, Kopf `806c4ae` (Merge von `main` mit #797, Konflikt in dieser Datei gelöst), gemergt als `ec821ab` am 30.10.2026, 11:13:21 UTC, über das Konto von Christa Egger. Auftrag laut Beschreibung: «Pendenzen mit Gestaltungssystem r4-64 nachführen». Inhalt: Abschnitt «Gestaltungssystem» auf Version 27 (10:55 UTC), Hinweis H3 und «Offen» im Abschnitt r4-64 angepasst.
+- **Kein Codex-Review:** Es brach auf `f52a80a` um 11:00:05 UTC mit «Failed» ab (Nutzungslimit). Entscheid von Christa Egger laut Beschreibung: «ja, ohne Codex-Review mergen». Ausnahme von R28-O01 und R29-P20. Keine Reviews, keine Review-Threads.
+- **Merge-Auftrag:** Welche Sitzung den Merge auslöste und auf welchen Wortlaut, nennt weder der PR noch der Merge-Commit. Ein späterer Auftrag «bitte merge #798» an die Sitzung, die r4-65 gebaut hat, kam nach dem Merge.
+
 ## Footer-Überschriften · r4-64 · Befund N56-1 · veröffentlicht am 30.10.2026
 
 **GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-53`, [PR #788](https://github.com/christaegger-dot/borderline-angehoerige/pull/788), Kopf `b62d061` (Merge von `main` mit #789), gemergt als `a55ecb1` am 30.10.2026, 09:16:29 UTC, über das Konto von Christa Egger, im Auftrag von Christa Egger («bitte merge»; Mitteilung an die bauende Sitzung, auf GitHub nicht belegt). CI `build-and-compare` grün auf `88ede98` und auf `b62d061` (09:12:52 bis 09:13:28 UTC). Mit dem Merge über Netlify veröffentlicht: Die Live-Site lieferte um 09:16:54 UTC `r4-64` (eigene Abfrage mit `curl`, keine Prüfstufe).
@@ -103,8 +117,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Gestaltungssystem:** Am 30.10.2026 um 10:55 UTC auf r4-64 nachgeführt (Version 27), siehe Abschnitt «Gestaltungssystem».
 
-**Offen:**
-- Nachprüfung r4-64 liegt vor (#794, keine Nachbesserung nötig).
+**Offen:** keine für r4-64 selbst. Die Nachprüfung r4-64 liegt vor ([PR #794](https://github.com/christaegger-dot/borderline-angehoerige/pull/794), «keine Nachbesserung nötig»); offen bleibt der Entscheid zu H1 (siehe Abschnitt «Nachprüfung r4-64»).
 
 ## Nachprüfung r4-62 · liegt vor seit 30.10.2026
 

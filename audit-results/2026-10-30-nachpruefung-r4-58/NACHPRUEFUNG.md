@@ -261,3 +261,7 @@ Die ausgelieferte Startseite ist nicht byte-gleich mit `site/index.html`. Netlif
 - N58-1 und N58-2 sind gering und können bei der nächsten Arbeit an `contract.js` oder an den Nachweisen mitgehen.
 - N58-3 und N58-4 betreffen Verfahren und Dokumentation, nicht die Website.
 - Für den veröffentlichten Stand r4-58 besteht kein Hindernis.
+
+## Berichtigung · 30.10.2026 (r4-60, Befund N59-1)
+
+Falsch sind die Angaben zu `aria-hidden=" true "` bei N58-1 («Mit `aria-hidden=" true "` (mit Leerzeichen) bleibt die Zeile sichtbar; das Gate hat dort also zu Recht nichts gemeldet.») und in der Tabelle bei D8 («Chromium verbirgt die Zeile damit nicht»). Sie beruhen auf Playwright `ariaSnapshot`, das den Zugänglichkeitsbaum selbst berechnet. Im Baum von Chromium (CDP) ist die Zeile auch damit verborgen; verborgen wird bei jedem nicht leeren Wert ausser `false`. Belege: `audit-results/2026-10-30-nachpruefung-r4-59/minimal-ausgabe.txt`. In r4-60 berücksichtigt (`audit-results/2026-10-30-n59-1-bis-n59-3-r4-60/BERICHT.md`). Schweregrad und Empfehlung dieser Nachprüfung bleiben gleich. Die übrige Datei ist unverändert.

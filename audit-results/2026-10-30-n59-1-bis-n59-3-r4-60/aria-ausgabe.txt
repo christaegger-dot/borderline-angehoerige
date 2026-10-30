@@ -1,0 +1,66 @@
+P1.3 aria-hidden=" true " auf Zeile
+   CDP Zeilenlink: VERBORGEN () | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+P1.31 aria-hidden=" true " auf subbar
+   CDP Zeilenlink: VERBORGEN () | CDP Menülink: link «Kurz und klar» | CDP Absenderin: VERBORGEN ()
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+P1.38 aria-hidden=" true " auf header
+   CDP Zeilenlink: VERBORGEN () | CDP Menülink: VERBORGEN () | CDP Absenderin: VERBORGEN ()
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+P2.5 inert auf subbar
+   CDP Zeilenlink: VERBORGEN (inertElement) | CDP Menülink: link «Kurz und klar» | CDP Absenderin: VERBORGEN (inertElement)
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+P2.6 inert auf header
+   CDP Zeilenlink: VERBORGEN (inertElement) | CDP Menülink: VERBORGEN (inertElement) | CDP Absenderin: VERBORGEN (inertElement)
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+P4.6 Zeile: Text + <span aria-hidden=" true "> →</span> (in Chromium nicht verborgen)
+   CDP Zeilenlink: link «Kurz und klar» | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar →":   - /url: kurz.html | Zeile im Kopf-Snapshot
+P5.4 aria-label an einem <span> im Zeilenlink
+   CDP Zeilenlink: link «Mehr» | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Mehr":   - /url: kurz.html   - text: Kurz und klar | Zeile im Kopf-Snapshot
+P6.1 grenzen.html: Zeile aria-hidden="TRUE"
+   CDP Zeilenlink: VERBORGEN () | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink:  | Zeile NICHT im Kopf-Snapshot
+P6.2 suche.html: Menülink inert
+   CDP Zeilenlink: link «Kurz und klar» | CDP Menülink: VERBORGEN (inertElement) | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+P6.3 Fehlerseite: header inert
+   CDP Zeilenlink: fehlt im DOM | CDP Menülink: fehlt im DOM | CDP Absenderin: VERBORGEN (inertElement)
+   Playwright Zeilenlink: Fehler: locator.ariaSnapshot: Timeout 2000ms exceeded. | Zeile NICHT im Kopf-Snapshot
+P6.4 Fehlerseite: header aria-hidden="TRUE"
+   CDP Zeilenlink: fehlt im DOM | CDP Menülink: fehlt im DOM | CDP Absenderin: VERBORGEN ()
+   Playwright Zeilenlink: Fehler: locator.ariaSnapshot: Timeout 2000ms exceeded. | Zeile NICHT im Kopf-Snapshot
+Q1 aria-hidden=" false " auf Zeile (Chromium: verborgen)
+   CDP Zeilenlink: VERBORGEN () | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+Q2 aria-hidden="FALSE" auf Zeile (Chromium: im Baum)
+   CDP Zeilenlink: link «Kurz und klar» | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+Q3 aria-hidden="yes" auf Zeilenlink
+   CDP Zeilenlink: VERBORGEN (ariaHiddenElement) | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+Q4 aria-hidden="0" auf Menü-<li>
+   CDP Zeilenlink: link «Kurz und klar» | CDP Menülink: VERBORGEN () | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+Q5 Zeile: Text + <svg aria-hidden="true" aria-label="Pfeil"> (verborgen, zulässig)
+   CDP Zeilenlink: link «Kurz und klar» | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+Q6 Zeile: Text + <span aria-hidden="true"><span aria-label="Pfeil">→</span></span> (zulässig)
+   CDP Zeilenlink: link «Kurz und klar» | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+Q7 Zeile: <span aria-labelledby="x"> um den Text
+   CDP Zeilenlink: link «Kurz und klar» | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+Q8 Menü: <span aria-label="Mehr"> um den Text
+   CDP Zeilenlink: link «Kurz und klar» | CDP Menülink: link «Mehr» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+Q9 aria-hidden="yes" auf .puk-site-subbar (Absenderin)
+   CDP Zeilenlink: VERBORGEN () | CDP Menülink: link «Kurz und klar» | CDP Absenderin: VERBORGEN ()
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+Q10 aria-hidden="false" auf header (zulässig)
+   CDP Zeilenlink: link «Kurz und klar» | CDP Menülink: link «Kurz und klar» | CDP Absenderin: link «angehoerigenarbeit@pukzh.ch»
+   Playwright Zeilenlink: - link "Kurz und klar":   - /url: kurz.html | Zeile im Kopf-Snapshot
+Q11 Fehlerseite: header inert
+   CDP Zeilenlink: fehlt im DOM | CDP Menülink: fehlt im DOM | CDP Absenderin: VERBORGEN (inertElement)
+   Playwright Zeilenlink: Fehler: locator.ariaSnapshot: Timeout 2000ms exceeded. | Zeile NICHT im Kopf-Snapshot

@@ -86,3 +86,7 @@ Lokal mit Node 22.22.0, Chromium und Playwright über `PLAYWRIGHT_MODULE`:
 | axe-core 4.14.0 (eigener Ordner ausserhalb des Repositorys) | 48 Läufe (24 Seiten, 390 und 1280 px), 0 Verstösse |
 
 **Nicht geprüft:** Screenreader, Safari und Firefox, reale Geräte.
+
+## Berichtigung · 30.10.2026 (r4-60, Befund N59-1)
+
+Falsch ist die Aussage, Chromium verberge mit `aria-hidden=" true "` nicht (oben unter «Umsetzung», bei D8 und im Satz zu den Falsch-Positiven). Im Zugänglichkeitsbaum von Chromium (CDP `Accessibility.getFullAXTree`) ist ein Element bei jedem nicht leeren Wert von `aria-hidden` verborgen, ausser bei `false` in beliebiger Gross- und Kleinschreibung; auch `" true "`, `"true "`, `"yes"`, `"1"`, `"0"` und `" false "` verbergen. Die Angabe stammte aus Playwright `ariaSnapshot`, das den Baum selbst berechnet. Belege: `audit-results/2026-10-30-nachpruefung-r4-59/minimal-ausgabe.txt` und `aria-ausgabe.txt`. In r4-60 ist `hiddenFlag` entsprechend angepasst (`audit-results/2026-10-30-n59-1-bis-n59-3-r4-60/BERICHT.md`). Die übrige Datei ist unverändert.

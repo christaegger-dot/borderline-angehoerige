@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-59';
+const BUILD = 'r4-60';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -32,12 +32,18 @@ const utilityEntriesOf = cfg => {
 const utilityLabel = entry => entry.label || entry.page.title;
 /* r4-58 (Nachprüfung N57-2): Direkteinstiege bleiben für Screenreader erreichbar, und ihr zugänglicher Name ist die sichtbare
    Beschriftung (WCAG 2.5.3). Kein hidden oder aria-hidden="true" am Eintrag oder darüber; kein aria-label oder aria-labelledby am Link. */
-/* r4-59 (Nachprüfung N58-1): aria-hidden ohne Rücksicht auf Gross- und Kleinschreibung (Chromium verbirgt auch «TRUE», aber nicht
-   « true » mit Leerraum); inert gilt wie hidden. Der zugängliche Text eines Links (accTxt) lässt verborgene Teile weg. */
-const hiddenFlag = x => has(x, 'hidden') || has(x, 'inert') || String((x.attrs || {})['aria-hidden']).toLowerCase() === 'true';
+/* r4-59 (Nachprüfung N58-1): inert gilt wie hidden. Der zugängliche Text eines Links (accTxt) lässt verborgene Teile weg.
+   r4-60 (Nachprüfung N59-1): Chromium verbirgt bei jedem nicht leeren Wert von aria-hidden ausser «false» (ohne Rücksicht auf
+   Gross- und Kleinschreibung, ohne Trimmen), also auch bei « true », «yes» oder « false ». Gelesen im Zugänglichkeitsbaum über
+   CDP, nicht mit Playwright ariaSnapshot, das selbst rechnet. Leer oder ohne Wert gilt nicht als verborgen. */
+const ariaHidden = x => { const v = (x.attrs || {})['aria-hidden']; return v !== undefined && v !== '' && v.toLowerCase() !== 'false'; };
+const hiddenFlag = x => has(x, 'hidden') || has(x, 'inert') || ariaHidden(x);
 const concealed = nd => hiddenFlag(nd) || !!up(nd, hiddenFlag);
 const accTxt = node => (node.children || []).map(c => c.tag === '#text' ? c.text : RAW.has(c.tag) || hiddenFlag(c) ? '' : accTxt(c)).join('');
-const relabelled = a => has(a, 'aria-label') || has(a, 'aria-labelledby');
+/* r4-60 (Nachprüfung N59-3): auch aria-label oder aria-labelledby an einem nicht verborgenen Element im Link ändert den Namen. */
+const relabels = x => has(x, 'aria-label') || has(x, 'aria-labelledby');
+const hiddenBelow = (x, a) => { for (let p = x; p && p !== a; p = p.parent) if (hiddenFlag(p)) return true; return false; };
+const relabelled = a => relabels(a) || all(a, relabels).some(x => !hiddenBelow(x, a));
 /* Prüfbefund W3-05 (11.10.2026): Impressum und Datenschutzerklärung in der Fusszeile, Ziele aus site.config.json › legal. */
 const LEGAL = [['imprint', 'Impressum'], ['privacy', 'Datenschutzerklärung']];
 /* Prüfbefund BD-02 (11.10.2026): Quellenangaben mit fremdsprachigem Titel brauchen lang (WCAG 3.1.2). Stichwortprüfung, nur Hinweis. */
@@ -475,7 +481,8 @@ function gate(cfg, files, opts = {}) {
     const skip = one(doc, x => x.tag === 'a' && cls(x, 'puk-web-skip'));
     if (!skip || skip.attrs.href !== '#main-content') add('block', pid, 'skip', 'Skip-Link auf #main-content fehlt');
     const snd = one(doc, x => has(x, 'data-sender')); const st = snd ? norm(txt(snd)) : '';
-    const hidden = x => has(x, 'hidden') || x.attrs['aria-hidden'] === 'true' || /display\s*:\s*none|visibility\s*:\s*hidden/i.test(x.attrs.style || '') || cls(x, 'kit-visually-hidden') || cls(x, 'visually-hidden');
+    /* r4-60 (Nachprüfung N59-2): verborgen wie bei den Direkteinstiegen (hiddenFlag: hidden, inert, aria-hidden nach Chromium). */
+    const hidden = x => hiddenFlag(x) || /display\s*:\s*none|visibility\s*:\s*hidden/i.test(x.attrs.style || '') || cls(x, 'kit-visually-hidden') || cls(x, 'visually-hidden');
     if (!snd || (s.displayName ? !st.includes(s.displayName) : (!s.orgUnit || !st.includes(s.orgUnit) || !st.includes(s.institution || '\u0000')))) add('block', pid, 'sender', 'Fachstellen-Absenderin nicht sichtbar (Organisationseinheit und Institution)');
     else if (hidden(snd) || up(snd, hidden)) add('block', pid, 'sender', 'Fachstellen-Absenderin ist versteckt');
     else if (s.email && !one(snd, x => x.tag === 'a' && has(x, 'data-sender-email') && x.attrs.href === 'mailto:' + s.email)) add('block', pid, 'sender', 'E-Mail der Absenderin fehlt im Kopf: ' + s.email);
@@ -628,7 +635,8 @@ function gate(cfg, files, opts = {}) {
       if (v && ENTRY_FORMATS.includes(v.format) && v.entryPoint && !/^entfällt/i.test(v.entryPoint.trim()) && !one(f, x => cls(x, 'puk-vis-ansatz'))) prod(pid, 'entry-point', `Figur ${vid}: Der Plan nennt einen Ansatzpunkt für Angehörige, die Figur markiert ihn nicht (.puk-vis-ansatz)`);
       if (!/eigene (didaktische )?darstellung|quelle:/i.test(capT)) add('block', pid, 'figure-source', `Figur ${lab}: Kennzeichnung «Eigene didaktische Darstellung» bzw. «Quelle:» fehlt in der Bildlegende`);
       for (const img of all(f, x => x.tag === 'img')) if (!has(img, 'alt')) add('block', pid, 'figure-alt', `Figur ${lab}: img ohne alt`);
-      for (const sv of all(f, x => x.tag === 'svg')) if (sv.attrs['aria-hidden'] !== 'true' && !up(sv, x => x.attrs['aria-hidden'] === 'true' || x.attrs.role === 'img') && !sv.attrs['aria-label'] && !one(sv, x => x.tag === 'title')) add('block', pid, 'figure-alt', `Figur ${lab}: SVG weder ausgeblendet noch benannt`);
+      /* r4-60 (Nachprüfung N59-2): ausgeblendet ist ein SVG nach derselben Regel für aria-hidden wie im Zugänglichkeitsbaum von Chromium. */
+      for (const sv of all(f, x => x.tag === 'svg')) if (!ariaHidden(sv) && !up(sv, x => ariaHidden(x) || x.attrs.role === 'img') && !sv.attrs['aria-label'] && !one(sv, x => x.tag === 'title')) add('block', pid, 'figure-alt', `Figur ${lab}: SVG weder ausgeblendet noch benannt`);
       if (f.attrs['data-visual-type'] === 'cycle') {
         const stations = all(f, x => x.tag === 'li' && !!up(x, y => cls(y, 'puk-vis-cycle')));
         const arcs = all(f, x => cls(x, 'puk-vis-arc'));
@@ -702,6 +710,11 @@ const MUTATIONS = [
   ['Zeile der Direkteinstiege mit inert gesperrt (r4-59, N58-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /<nav class="puk-site-utility" aria-label="Direkteinstiege"/, '$& inert')],
   ['Beschriftung eines Direkteinstiegs nur in aria-hidden (r4-59, N58-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<span aria-hidden="true">$2</span><')],
   ['Direkteinstieg im Menü mit inert gesperrt (r4-59, N58-1)', ['nav'], (c, f) => rex(f, 'index.html', /<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"/, '$& inert')],
+  ['Zeile der Direkteinstiege mit aria-hidden=" true " verborgen (r4-60, N59-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /<nav class="puk-site-utility" aria-label="Direkteinstiege"/, '$& aria-hidden=" true "')],
+  ['Direkteinstieg im Menü mit aria-hidden="yes" verborgen (r4-60, N59-1)', ['nav'], (c, f) => rex(f, 'index.html', /<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"/, '$& aria-hidden="yes"')],
+  ['Kopf mit inert: Absenderin für Screenreader verborgen (r4-60, N59-2)', ['sender'], (c, f) => rex(f, 'index.html', /<header class="puk-web-header"/, '$& inert')],
+  ['Kopf der Fehlerseite mit aria-hidden="TRUE" (r4-60, N59-2)', ['sender'], (c, f) => rex(f, '404.html', /<header class="puk-web-header"/, '$& aria-hidden="TRUE"')],
+  ['Direkteinstieg mit aria-label an einem span im Link (r4-60, N59-3)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<span aria-label="Mehr">$2</span><')],
   ['Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite)', ['nav-target', 'nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link" href="beziehungen.html"', 'class="puk-web-nav__link" href="gibt-es-nicht.html"')],
   ['Seitenvertrag verweist auf fehlende Datei', ['page-file'], c => { pg(c, 'behandlung').href = 'gibt-es-nicht.html'; }],
   ['lang fehlt', ['lang'], (c, f) => rep(f, 'behandlung.html', '<html lang="de-CH"', '<html')],

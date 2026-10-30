@@ -1,0 +1,217 @@
+# r4-59 (df7143b, Arbeitsbaum ausserhalb des Repositorys)
+# r4-59 BASIS 0 Blocker 20 Hinweise
+P1.1 aria-hidden="TRUE" auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.2 aria-hidden="True" auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.3 aria-hidden=" true " auf Zeile => keine neuen Blocker 
+P1.4 aria-hidden="true " auf Zeile => keine neuen Blocker 
+P1.5 aria-hidden="false" auf Zeile => keine neuen Blocker 
+P1.6 aria-hidden="" auf Zeile => keine neuen Blocker 
+P1.7 aria-hidden auf Zeile => keine neuen Blocker 
+P1.8 aria-hidden="TRUE" auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.9 aria-hidden="True" auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.10 aria-hidden=" true " auf Zeilenlink => keine neuen Blocker 
+P1.11 aria-hidden="true " auf Zeilenlink => keine neuen Blocker 
+P1.12 aria-hidden="false" auf Zeilenlink => keine neuen Blocker 
+P1.13 aria-hidden="" auf Zeilenlink => keine neuen Blocker 
+P1.14 aria-hidden auf Zeilenlink => keine neuen Blocker 
+P1.15 aria-hidden="TRUE" auf Menü-<li> => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.16 aria-hidden="True" auf Menü-<li> => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.17 aria-hidden=" true " auf Menü-<li> => keine neuen Blocker 
+P1.18 aria-hidden="true " auf Menü-<li> => keine neuen Blocker 
+P1.19 aria-hidden="false" auf Menü-<li> => keine neuen Blocker 
+P1.20 aria-hidden="" auf Menü-<li> => keine neuen Blocker 
+P1.21 aria-hidden auf Menü-<li> => keine neuen Blocker 
+P1.22 aria-hidden="TRUE" auf Menülink => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.23 aria-hidden="True" auf Menülink => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.24 aria-hidden=" true " auf Menülink => keine neuen Blocker 
+P1.25 aria-hidden="true " auf Menülink => keine neuen Blocker 
+P1.26 aria-hidden="false" auf Menülink => keine neuen Blocker 
+P1.27 aria-hidden="" auf Menülink => keine neuen Blocker 
+P1.28 aria-hidden auf Menülink => keine neuen Blocker 
+P1.29 aria-hidden="TRUE" auf subbar => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.30 aria-hidden="True" auf subbar => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.31 aria-hidden=" true " auf subbar => keine neuen Blocker 
+P1.32 aria-hidden="true " auf subbar => keine neuen Blocker 
+P1.33 aria-hidden="false" auf subbar => keine neuen Blocker 
+P1.34 aria-hidden="" auf subbar => keine neuen Blocker 
+P1.35 aria-hidden auf subbar => keine neuen Blocker 
+P1.36 aria-hidden="TRUE" auf header => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » ; index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.37 aria-hidden="True" auf header => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » ; index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.38 aria-hidden=" true " auf header => keine neuen Blocker 
+P1.39 aria-hidden="true " auf header => keine neuen Blocker 
+P1.40 aria-hidden="false" auf header => keine neuen Blocker 
+P1.41 aria-hidden="" auf header => keine neuen Blocker 
+P1.42 aria-hidden auf header => keine neuen Blocker 
+P2.1 inert auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P2.2 inert auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P2.3 inert auf Menü-<li> => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P2.4 inert auf Menülink => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P2.5 inert auf subbar => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P2.6 inert auf header => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » ; index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P2.7 inert="false" auf Zeile (boolesch, bleibt inert) => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P2.8 hidden="until-found" auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P3.1 Zeile: ganzer Linktext in <span aria-hidden="true"> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen (fragen» 
+P3.2 Zeile: «und klar» in <span aria-hidden="true"> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschlagen (fr» 
+P3.3 Zeile: ganzer Linktext in <span aria-hidden="TRUE"> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen (fragen» 
+P3.4 Zeile: «und klar» in <span aria-hidden="TRUE"> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschlagen (fr» 
+P3.5 Zeile: ganzer Linktext in <span hidden> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen (fragen» 
+P3.6 Zeile: «und klar» in <span hidden> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschlagen (fr» 
+P3.7 Zeile: ganzer Linktext in <span inert> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen (fragen» 
+P3.8 Zeile: «und klar» in <span inert> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschlagen (fr» 
+P3.9 Menü: ganzer Linktext in <span aria-hidden="true"> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen» 
+P3.10 Menü: «und klar» in <span aria-hidden="true"> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschl» 
+P3.11 Menü: ganzer Linktext in <span aria-hidden="TRUE"> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen» 
+P3.12 Menü: «und klar» in <span aria-hidden="TRUE"> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschl» 
+P3.13 Menü: ganzer Linktext in <span hidden> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen» 
+P3.14 Menü: «und klar» in <span hidden> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschl» 
+P3.15 Menü: ganzer Linktext in <span inert> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen» 
+P3.16 Menü: «und klar» in <span inert> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschl» 
+P4.1 Zeile: Text + <span aria-hidden="true"> →</span> => keine neuen Blocker 
+P4.2 Zeile: <span aria-hidden="true">→ </span> + Text => keine neuen Blocker 
+P4.3 Menü: Text + <span aria-hidden="true"> →</span> => keine neuen Blocker 
+P4.4 Zeile: Text + <svg aria-hidden="true"><title>Pfeil</title></svg> => keine neuen Blocker 
+P4.5 Zeile: Text + <span aria-hidden="false"> →</span> (nicht verborgen, Beschriftung weicht ab) => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz und klar → (kurz.html), Nachs» 
+P4.6 Zeile: Text + <span aria-hidden=" true "> →</span> (in Chromium nicht verborgen) => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz und klar → (kurz.html), Nachs» 
+P4.7 Zeile: «Mehr» sichtbar + <span aria-hidden="true">Kurz und klar</span> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Mehr (kurz.html), Nachschlagen (fr» 
+P5.1 aria-label="Kurz und klar" (gleich) am Zeilenlink => index:utility-nav«Direkteinstieg mit aria-label oder aria-labelledby: der zugängliche Name muss di» 
+P5.2 aria-label="" am Zeilenlink => index:utility-nav«Direkteinstieg mit aria-label oder aria-labelledby: der zugängliche Name muss di» 
+P5.3 aria-labelledby am Menülink => index:nav«Direkteinstieg im Menü mit aria-label oder aria-labelledby: der zugängliche Name» 
+P5.4 aria-label an einem <span> im Zeilenlink => keine neuen Blocker 
+P5.5 title="Mehr" am Zeilenlink => keine neuen Blocker 
+P6.1 grenzen.html: Zeile aria-hidden="TRUE" => grenzen:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P6.2 suche.html: Menülink inert => suche:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P6.3 Fehlerseite: header inert => keine neuen Blocker 
+P6.4 Fehlerseite: header aria-hidden="TRUE" => keine neuen Blocker 
+P7.1 Zeile: Linktext in <span style="display:none"> (Grenze) => keine neuen Blocker 
+P7.2 Zeile: Text + <span style="display:none"> extra</span> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz und klar extra (kurz.html), N» 
+P7.3 Zeile: Text + <span class="visually-hidden"> (Seite)</span> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz und klar (Seite) (kurz.html),» 
+P7.4 Zeilenlink role="presentation" => keine neuen Blocker 
+P7.5 Zeile: <span role="none">-Hülle um Text => keine neuen Blocker 
+Q1 aria-hidden=" false " auf Zeile (Chromium: verborgen) => keine neuen Blocker 
+Q2 aria-hidden="FALSE" auf Zeile (Chromium: im Baum) => keine neuen Blocker 
+Q3 aria-hidden="yes" auf Zeilenlink => keine neuen Blocker 
+Q4 aria-hidden="0" auf Menü-<li> => keine neuen Blocker 
+Q5 Zeile: Text + <svg aria-hidden="true" aria-label="Pfeil"> (verborgen, zulässig) => keine neuen Blocker 
+Q6 Zeile: Text + <span aria-hidden="true"><span aria-label="Pfeil">→</span></span> (zulässig) => keine neuen Blocker 
+Q7 Zeile: <span aria-labelledby="x"> um den Text => keine neuen Blocker 
+Q8 Menü: <span aria-label="Mehr"> um den Text => keine neuen Blocker 
+Q9 aria-hidden="yes" auf .puk-site-subbar (Absenderin) => keine neuen Blocker 
+Q10 aria-hidden="false" auf header (zulässig) => keine neuen Blocker 
+Q11 Fehlerseite: header inert => keine neuen Blocker 
+Q12 SVG der Abbildung (verstehen) mit aria-hidden="TRUE" statt "true" (zulässig) => verstehen:figure-alt«Figur v-vs-bewertungen: SVG weder ausgeblendet noch benannt» 
+Q13 SVG der Abbildung (verstehen) mit aria-hidden="false", ohne Titel => verstehen:figure-alt«Figur v-vs-bewertungen: SVG weder ausgeblendet noch benannt» 
+E1 ohne utilityNav (Rückfall) => 0 Blocker 20 Hinweise
+E2 Rückfall + Zeile aria-hidden="TRUE" => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, ine»
+E3 Rückfall + Zeile inert => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, ine»
+E4 Rückfall + Linktext in <span aria-hidden="true"> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab:  (suche.html) »
+E5 Rückfall + Menülink inert => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidde»
+E6 Rückfall + dekoratives <span aria-hidden="true"> →</span> => keine Blocker
+
+# r4-60 (Arbeitsstand)
+# r4-60 BASIS 0 Blocker 20 Hinweise
+P1.1 aria-hidden="TRUE" auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.2 aria-hidden="True" auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.3 aria-hidden=" true " auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.4 aria-hidden="true " auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.5 aria-hidden="false" auf Zeile => keine neuen Blocker 
+P1.6 aria-hidden="" auf Zeile => keine neuen Blocker 
+P1.7 aria-hidden auf Zeile => keine neuen Blocker 
+P1.8 aria-hidden="TRUE" auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.9 aria-hidden="True" auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.10 aria-hidden=" true " auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.11 aria-hidden="true " auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.12 aria-hidden="false" auf Zeilenlink => keine neuen Blocker 
+P1.13 aria-hidden="" auf Zeilenlink => keine neuen Blocker 
+P1.14 aria-hidden auf Zeilenlink => keine neuen Blocker 
+P1.15 aria-hidden="TRUE" auf Menü-<li> => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.16 aria-hidden="True" auf Menü-<li> => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.17 aria-hidden=" true " auf Menü-<li> => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.18 aria-hidden="true " auf Menü-<li> => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.19 aria-hidden="false" auf Menü-<li> => keine neuen Blocker 
+P1.20 aria-hidden="" auf Menü-<li> => keine neuen Blocker 
+P1.21 aria-hidden auf Menü-<li> => keine neuen Blocker 
+P1.22 aria-hidden="TRUE" auf Menülink => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.23 aria-hidden="True" auf Menülink => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.24 aria-hidden=" true " auf Menülink => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.25 aria-hidden="true " auf Menülink => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.26 aria-hidden="false" auf Menülink => keine neuen Blocker 
+P1.27 aria-hidden="" auf Menülink => keine neuen Blocker 
+P1.28 aria-hidden auf Menülink => keine neuen Blocker 
+P1.29 aria-hidden="TRUE" auf subbar => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.30 aria-hidden="True" auf subbar => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.31 aria-hidden=" true " auf subbar => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.32 aria-hidden="true " auf subbar => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P1.33 aria-hidden="false" auf subbar => keine neuen Blocker 
+P1.34 aria-hidden="" auf subbar => keine neuen Blocker 
+P1.35 aria-hidden auf subbar => keine neuen Blocker 
+P1.36 aria-hidden="TRUE" auf header => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » ; index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.37 aria-hidden="True" auf header => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » ; index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.38 aria-hidden=" true " auf header => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » ; index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.39 aria-hidden="true " auf header => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » ; index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P1.40 aria-hidden="false" auf header => keine neuen Blocker 
+P1.41 aria-hidden="" auf header => keine neuen Blocker 
+P1.42 aria-hidden auf header => keine neuen Blocker 
+P2.1 inert auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P2.2 inert auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P2.3 inert auf Menü-<li> => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P2.4 inert auf Menülink => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P2.5 inert auf subbar => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P2.6 inert auf header => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » ; index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P2.7 inert="false" auf Zeile (boolesch, bleibt inert) => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P2.8 hidden="until-found" auf Zeile => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P3.1 Zeile: ganzer Linktext in <span aria-hidden="true"> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen (fragen» 
+P3.2 Zeile: «und klar» in <span aria-hidden="true"> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschlagen (fr» 
+P3.3 Zeile: ganzer Linktext in <span aria-hidden="TRUE"> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen (fragen» 
+P3.4 Zeile: «und klar» in <span aria-hidden="TRUE"> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschlagen (fr» 
+P3.5 Zeile: ganzer Linktext in <span hidden> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen (fragen» 
+P3.6 Zeile: «und klar» in <span hidden> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschlagen (fr» 
+P3.7 Zeile: ganzer Linktext in <span inert> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen (fragen» 
+P3.8 Zeile: «und klar» in <span inert> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschlagen (fr» 
+P3.9 Menü: ganzer Linktext in <span aria-hidden="true"> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen» 
+P3.10 Menü: «und klar» in <span aria-hidden="true"> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschl» 
+P3.11 Menü: ganzer Linktext in <span aria-hidden="TRUE"> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen» 
+P3.12 Menü: «und klar» in <span aria-hidden="TRUE"> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschl» 
+P3.13 Menü: ganzer Linktext in <span hidden> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen» 
+P3.14 Menü: «und klar» in <span hidden> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschl» 
+P3.15 Menü: ganzer Linktext in <span inert> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab:  (kurz.html), Nachschlagen» 
+P3.16 Menü: «und klar» in <span inert> => index:nav«Direkteinstiege im Menü weichen vom Seitenvertrag ab: Kurz (kurz.html), Nachschl» 
+P4.1 Zeile: Text + <span aria-hidden="true"> →</span> => keine neuen Blocker 
+P4.2 Zeile: <span aria-hidden="true">→ </span> + Text => keine neuen Blocker 
+P4.3 Menü: Text + <span aria-hidden="true"> →</span> => keine neuen Blocker 
+P4.4 Zeile: Text + <svg aria-hidden="true"><title>Pfeil</title></svg> => keine neuen Blocker 
+P4.5 Zeile: Text + <span aria-hidden="false"> →</span> (nicht verborgen, Beschriftung weicht ab) => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz und klar → (kurz.html), Nachs» 
+P4.6 Zeile: Text + <span aria-hidden=" true "> →</span> (in Chromium nicht verborgen) => keine neuen Blocker 
+P4.7 Zeile: «Mehr» sichtbar + <span aria-hidden="true">Kurz und klar</span> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Mehr (kurz.html), Nachschlagen (fr» 
+P5.1 aria-label="Kurz und klar" (gleich) am Zeilenlink => index:utility-nav«Direkteinstieg mit aria-label oder aria-labelledby: der zugängliche Name muss di» 
+P5.2 aria-label="" am Zeilenlink => index:utility-nav«Direkteinstieg mit aria-label oder aria-labelledby: der zugängliche Name muss di» 
+P5.3 aria-labelledby am Menülink => index:nav«Direkteinstieg im Menü mit aria-label oder aria-labelledby: der zugängliche Name» 
+P5.4 aria-label an einem <span> im Zeilenlink => index:utility-nav«Direkteinstieg mit aria-label oder aria-labelledby: der zugängliche Name muss di» 
+P5.5 title="Mehr" am Zeilenlink => keine neuen Blocker 
+P6.1 grenzen.html: Zeile aria-hidden="TRUE" => grenzen:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+P6.2 suche.html: Menülink inert => suche:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+P6.3 Fehlerseite: header inert => 404:sender«Fachstellen-Absenderin ist versteckt» 
+P6.4 Fehlerseite: header aria-hidden="TRUE" => 404:sender«Fachstellen-Absenderin ist versteckt» 
+P7.1 Zeile: Linktext in <span style="display:none"> (Grenze) => keine neuen Blocker 
+P7.2 Zeile: Text + <span style="display:none"> extra</span> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz und klar extra (kurz.html), N» 
+P7.3 Zeile: Text + <span class="visually-hidden"> (Seite)</span> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab: Kurz und klar (Seite) (kurz.html),» 
+P7.4 Zeilenlink role="presentation" => keine neuen Blocker 
+P7.5 Zeile: <span role="none">-Hülle um Text => keine neuen Blocker 
+Q1 aria-hidden=" false " auf Zeile (Chromium: verborgen) => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+Q2 aria-hidden="FALSE" auf Zeile (Chromium: im Baum) => keine neuen Blocker 
+Q3 aria-hidden="yes" auf Zeilenlink => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+Q4 aria-hidden="0" auf Menü-<li> => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidden verborgen» 
+Q5 Zeile: Text + <svg aria-hidden="true" aria-label="Pfeil"> (verborgen, zulässig) => keine neuen Blocker 
+Q6 Zeile: Text + <span aria-hidden="true"><span aria-label="Pfeil">→</span></span> (zulässig) => keine neuen Blocker 
+Q7 Zeile: <span aria-labelledby="x"> um den Text => index:utility-nav«Direkteinstieg mit aria-label oder aria-labelledby: der zugängliche Name muss di» 
+Q8 Menü: <span aria-label="Mehr"> um den Text => index:nav«Direkteinstieg im Menü mit aria-label oder aria-labelledby: der zugängliche Name» 
+Q9 aria-hidden="yes" auf .puk-site-subbar (Absenderin) => index:sender«Fachstellen-Absenderin ist versteckt» ; index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, inert oder aria-hidden » 
+Q10 aria-hidden="false" auf header (zulässig) => keine neuen Blocker 
+Q11 Fehlerseite: header inert => 404:sender«Fachstellen-Absenderin ist versteckt» 
+Q12 SVG der Abbildung (verstehen) mit aria-hidden="TRUE" statt "true" (zulässig) => keine neuen Blocker 
+Q13 SVG der Abbildung (verstehen) mit aria-hidden="false", ohne Titel => verstehen:figure-alt«Figur v-vs-bewertungen: SVG weder ausgeblendet noch benannt» 
+E1 ohne utilityNav (Rückfall) => 0 Blocker 20 Hinweise
+E2 Rückfall + Zeile aria-hidden="TRUE" => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, ine»
+E3 Rückfall + Zeile inert => index:utility-nav«Zeile «Direkteinstiege» oder ein Eintrag ist mit hidden, ine»
+E4 Rückfall + Linktext in <span aria-hidden="true"> => index:utility-nav«Direkteinstiege weichen vom Seitenvertrag ab:  (suche.html) »
+E5 Rückfall + Menülink inert => index:nav«Direkteinstieg im Menü ist mit hidden, inert oder aria-hidde»
+E6 Rückfall + dekoratives <span aria-hidden="true"> →</span> => keine Blocker

@@ -1,0 +1,5 @@
+# Copilot-Merge d4bc6cf: Zeilen, die in keinem Elternteil (9033857, 7a21ee5) stehen, und ob sie in 13f471f vorkommen
+PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md: eigene Zeilen 3, davon in 13f471f: 0
+audit-results/2026-10-30-n60-1-n60-3-r4-62/BERICHT.md: eigene Zeilen 0, davon in 13f471f: 0
+audit-results/2026-10-30-n60-1-n60-3-r4-62/axe-ausgabe-r4-65.txt: eigene Zeilen 0, davon in 13f471f: 0
+authoring/tools/contract.js: eigene Zeilen 0, davon in 13f471f: 0

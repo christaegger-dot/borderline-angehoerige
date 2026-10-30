@@ -1,0 +1,27 @@
+# Merge-Proben mit git merge-tree --write-tree (nur Berechnung, keine Refs geschrieben), 2026-10-30T11:21:07Z
+main=dd884e6 · #787=13f471f · #795=51b9b1e
+## 1. #787 in a323fed (Basis des PR laut API)
+exit 0 · Konflikte: 0
+## 2. #787 in aktuelles main dd884e6
+exit 1 · Konflikte: 1
+CONFLICT (content): Merge conflict in PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md
+## 3. #795 in aktuelles main
+exit 0 · Konflikte: 0
+## 4. #787 gegen #795 direkt
+exit 1 · Konflikte: 26
+CONFLICT (content): Merge conflict in authoring/site.config.json
+CONFLICT (content): Merge conflict in authoring/tools/contract.js
+  dazu 24 Konflikte in site/*.html
+## 5. zuerst #795 in main, danach #787
+exit 1 · Konflikte: 27
+CONFLICT (content): Merge conflict in PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md
+CONFLICT (content): Merge conflict in authoring/site.config.json
+CONFLICT (content): Merge conflict in authoring/tools/contract.js
+  dazu 24 Konflikte in site/*.html
+## 6. siehe merge-probe-ausgabe.txt (Merge-Stand mit main dd884e6, danach #795)
+## 7. Nachtrag 2026-10-30T11:26:00Z: neuer Kopf von #787 b87dbf5 (Merge von dd884e6, 11:14:09 UTC) in main ec821ab (mit #798, beim Abruf um 11:25 UTC vorhanden)
+Konflikte: 0
+## 8. #795 (51b9b1e) in main ec821ab
+Konflikte: 0
+## 9. b87dbf5 gegen 51b9b1e
+Konflikte: 26 (2 ausserhalb site/: authoring/site.config.json authoring/tools/contract.js )

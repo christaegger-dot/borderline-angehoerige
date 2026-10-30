@@ -1,0 +1,20 @@
+== V0 unverändert
+Selbsttest: 125/125 bestanden
+== V1 ohne ctlTxt (accTxt wie r4-65)
+FAIL | Direkteinstieg mit img alt im Link (r4-66, N61-2) | erwartet: utility-nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg im Menü mit input value im Link (r4-66, N61-2) | erwartet: nav | erhalten: crisis-number-check
+Selbsttest: 123/125 bestanden
+== V2 nur img, kein input
+FAIL | Direkteinstieg im Menü mit input value im Link (r4-66, N61-2) | erwartet: nav | erhalten: crisis-number-check
+Selbsttest: 124/125 bestanden
+== V3 nur input, kein img
+FAIL | Direkteinstieg mit img alt im Link (r4-66, N61-2) | erwartet: utility-nav | erhalten: crisis-number-check
+Selbsttest: 124/125 bestanden
+== V4 ctlTxt vor hiddenFlag
+Selbsttest: 125/125 bestanden
+== V5 img alt ohne Leerzeichen-Trennung
+Selbsttest: 125/125 bestanden
+== V6 img ohne alt zählt als [Bild]
+Selbsttest: 125/125 bestanden
+== V7 type=hidden zählt mit
+Selbsttest: 125/125 bestanden

@@ -1,0 +1,196 @@
+# Gate r4-66 (r4-66) und r4-65 (r4-65) gegen Chromium 153.0.8010.12 (CDP Accessibility.getPartialAXTree)
+Fall|Ort|Beschreibung|Chromium-Name|Chromium weicht ab|Gate r4-66|Gate r4-65|Urteil r4-66|Änderung
+K0|z|Kontrolle: unverändert|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I1|z|img alt="Mehr"|link «Kurz und klar Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+I2|z|img alt=""|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I3|z|img ohne alt|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I4|z|img alt gleich der Beschriftung, Text ersetzt|link «Kurz und klar»|nein|–|utility-nav|richtig frei|NICHT MEHR BLOCKIERT
+I5|z|img alt gleich der Beschriftung, Text bleibt|link «Kurz und klar Kurz und klar»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+I6|z|img ohne alt mit title="Mehr"|link «Kurz und klar Mehr»|ja|–|–|FALSCH-NEGATIV|gleich
+I7|z|img alt="" mit title="Mehr"|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I8|z|img alt="Mehr" aria-hidden="true"|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I9|z|img alt="Mehr" hidden|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I10|z|img alt="Mehr" inert|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I11|z|img alt="Mehr" in span hidden|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I12|z|img alt="Mehr" in span aria-hidden|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I13|z|img alt="Mehr" in span inert|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I14|z|img alt="Mehr" role=presentation|link «Kurz und klar»|nein|utility-nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I15|z|img alt="Mehr" role=none|link «Kurz und klar»|nein|utility-nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I16|z|img alt="Mehr" style=display:none|link «Kurz und klar»|nein|utility-nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I17|z|img alt="Mehr" in span (Zwischenelement, sichtbar)|link «Kurz und klar Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+I18|z|img ALT in Grossbuchstaben (Attributname)|link «Kurz und klar Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+P1|z|Text in span role=presentation|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+P2|z|span role=presentation mit «Mehr»|link «Kurz und klar Mehr»|ja|utility-nav|utility-nav|richtig blockiert|gleich
+N1|z|input type=button value=Mehr|link «Kurz und klar Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N2|z|input type=submit value=Mehr|link «Kurz und klar Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N3|z|input type=submit ohne value|link «Kurz und klar Submit»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N4|z|input type=reset ohne value|link «Kurz und klar Reset»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N5|z|input type=text value=Mehr|link «Kurz und klar Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N6|z|input type=text ohne value|link «Kurz und klar»|nein|utility-nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+N7|z|input type=text placeholder=Mehr|link «Kurz und klar Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N8|z|input type=hidden value=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+N9|z|input type=HIDDEN value=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+N10|z|input type=checkbox|link «Kurz und klar»|nein|utility-nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+N11|z|input type=image alt=Mehr|link «Kurz und klar Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N12|z|input type=number value=5|link «Kurz und klar 5»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N13|z|input hidden-Attribut value=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+N14|z|input aria-hidden value=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+N15|z|input ohne type value=Mehr|link «Kurz und klar Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N16|z|input type=button value gleich der Beschriftung, Text ersetzt|link «Kurz und klar»|nein|–|utility-nav|richtig frei|NICHT MEHR BLOCKIERT
+N17|z|input type=range|link «Kurz und klar 50»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+B1|z|button «Mehr»|link «Kurz und klar Mehr»|ja|utility-nav|utility-nav|richtig blockiert|gleich
+B2|z|button leer|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+B3|z|select mit option «Mehr»|link «Kurz und klar Mehr»|ja|utility-nav|utility-nav|richtig blockiert|gleich
+B4|z|select zwei Optionen, «Mehr» gewählt|link «Kurz und klar Mehr»|ja|utility-nav|utility-nav|richtig blockiert|gleich
+B5|z|textarea «Mehr»|link «Kurz und klar Mehr»|ja|utility-nav|utility-nav|richtig blockiert|gleich
+B6|z|textarea leer|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+B7|z|area alt=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+B8|z|map mit area alt=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+B9|z|button aria-hidden «Mehr»|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+K0|m|Kontrolle: unverändert|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I1|m|img alt="Mehr"|link «Kurz und klar Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+I2|m|img alt=""|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I3|m|img ohne alt|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I4|m|img alt gleich der Beschriftung, Text ersetzt|link «Kurz und klar»|nein|–|nav|richtig frei|NICHT MEHR BLOCKIERT
+I5|m|img alt gleich der Beschriftung, Text bleibt|link «Kurz und klar Kurz und klar»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+I6|m|img ohne alt mit title="Mehr"|link «Kurz und klar Mehr»|ja|–|–|FALSCH-NEGATIV|gleich
+I7|m|img alt="" mit title="Mehr"|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I8|m|img alt="Mehr" aria-hidden="true"|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I9|m|img alt="Mehr" hidden|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I10|m|img alt="Mehr" inert|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I11|m|img alt="Mehr" in span hidden|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I12|m|img alt="Mehr" in span aria-hidden|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I13|m|img alt="Mehr" in span inert|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+I14|m|img alt="Mehr" role=presentation|link «Kurz und klar»|nein|nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I15|m|img alt="Mehr" role=none|link «Kurz und klar»|nein|nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I16|m|img alt="Mehr" style=display:none|link «Kurz und klar»|nein|nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I17|m|img alt="Mehr" in span (Zwischenelement, sichtbar)|link «Kurz und klar Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+I18|m|img ALT in Grossbuchstaben (Attributname)|link «Kurz und klar Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+P1|m|Text in span role=presentation|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+P2|m|span role=presentation mit «Mehr»|link «Kurz und klar Mehr»|ja|nav|nav|richtig blockiert|gleich
+N1|m|input type=button value=Mehr|link «Kurz und klar Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N2|m|input type=submit value=Mehr|link «Kurz und klar Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N3|m|input type=submit ohne value|link «Kurz und klar Submit»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N4|m|input type=reset ohne value|link «Kurz und klar Reset»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N5|m|input type=text value=Mehr|link «Kurz und klar Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N6|m|input type=text ohne value|link «Kurz und klar»|nein|nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+N7|m|input type=text placeholder=Mehr|link «Kurz und klar Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N8|m|input type=hidden value=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+N9|m|input type=HIDDEN value=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+N10|m|input type=checkbox|link «Kurz und klar»|nein|nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+N11|m|input type=image alt=Mehr|link «Kurz und klar Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N12|m|input type=number value=5|link «Kurz und klar 5»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N13|m|input hidden-Attribut value=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+N14|m|input aria-hidden value=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+N15|m|input ohne type value=Mehr|link «Kurz und klar Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N16|m|input type=button value gleich der Beschriftung, Text ersetzt|link «Kurz und klar»|nein|–|nav|richtig frei|NICHT MEHR BLOCKIERT
+N17|m|input type=range|link «Kurz und klar 50»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+B1|m|button «Mehr»|link «Kurz und klar Mehr»|ja|nav|nav|richtig blockiert|gleich
+B2|m|button leer|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+B3|m|select mit option «Mehr»|link «Kurz und klar Mehr»|ja|nav|nav|richtig blockiert|gleich
+B4|m|select zwei Optionen, «Mehr» gewählt|link «Kurz und klar Mehr»|ja|nav|nav|richtig blockiert|gleich
+B5|m|textarea «Mehr»|link «Kurz und klar Mehr»|ja|nav|nav|richtig blockiert|gleich
+B6|m|textarea leer|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+B7|m|area alt=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+B8|m|map mit area alt=Mehr|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+B9|m|button aria-hidden «Mehr»|link «Kurz und klar»|nein|–|–|richtig frei|gleich
+K0|rz|Kontrolle: unverändert|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I1|rz|img alt="Mehr"|link «Website durchsuchen Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+I2|rz|img alt=""|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I3|rz|img ohne alt|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I4|rz|img alt gleich der Beschriftung, Text ersetzt|link «Website durchsuchen»|nein|–|utility-nav|richtig frei|NICHT MEHR BLOCKIERT
+I5|rz|img alt gleich der Beschriftung, Text bleibt|link «Website durchsuchen Website durchsuchen»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+I6|rz|img ohne alt mit title="Mehr"|link «Website durchsuchen Mehr»|ja|–|–|FALSCH-NEGATIV|gleich
+I7|rz|img alt="" mit title="Mehr"|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I8|rz|img alt="Mehr" aria-hidden="true"|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I9|rz|img alt="Mehr" hidden|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I10|rz|img alt="Mehr" inert|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I11|rz|img alt="Mehr" in span hidden|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I12|rz|img alt="Mehr" in span aria-hidden|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I13|rz|img alt="Mehr" in span inert|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I14|rz|img alt="Mehr" role=presentation|link «Website durchsuchen»|nein|utility-nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I15|rz|img alt="Mehr" role=none|link «Website durchsuchen»|nein|utility-nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I16|rz|img alt="Mehr" style=display:none|link «Website durchsuchen»|nein|utility-nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I17|rz|img alt="Mehr" in span (Zwischenelement, sichtbar)|link «Website durchsuchen Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+I18|rz|img ALT in Grossbuchstaben (Attributname)|link «Website durchsuchen Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+P1|rz|Text in span role=presentation|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+P2|rz|span role=presentation mit «Mehr»|link «Website durchsuchen Mehr»|ja|utility-nav|utility-nav|richtig blockiert|gleich
+N1|rz|input type=button value=Mehr|link «Website durchsuchen Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N2|rz|input type=submit value=Mehr|link «Website durchsuchen Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N3|rz|input type=submit ohne value|link «Website durchsuchen Submit»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N4|rz|input type=reset ohne value|link «Website durchsuchen Reset»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N5|rz|input type=text value=Mehr|link «Website durchsuchen Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N6|rz|input type=text ohne value|link «Website durchsuchen»|nein|utility-nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+N7|rz|input type=text placeholder=Mehr|link «Website durchsuchen Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N8|rz|input type=hidden value=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+N9|rz|input type=HIDDEN value=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+N10|rz|input type=checkbox|link «Website durchsuchen»|nein|utility-nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+N11|rz|input type=image alt=Mehr|link «Website durchsuchen Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N12|rz|input type=number value=5|link «Website durchsuchen 5»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N13|rz|input hidden-Attribut value=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+N14|rz|input aria-hidden value=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+N15|rz|input ohne type value=Mehr|link «Website durchsuchen Mehr»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+N16|rz|input type=button value gleich der Beschriftung, Text ersetzt|link «Website durchsuchen»|nein|–|utility-nav|richtig frei|NICHT MEHR BLOCKIERT
+N17|rz|input type=range|link «Website durchsuchen 50»|ja|utility-nav|–|richtig blockiert|NEU BLOCKIERT
+B1|rz|button «Mehr»|link «Website durchsuchen Mehr»|ja|utility-nav|utility-nav|richtig blockiert|gleich
+B2|rz|button leer|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+B3|rz|select mit option «Mehr»|link «Website durchsuchen Mehr»|ja|utility-nav|utility-nav|richtig blockiert|gleich
+B4|rz|select zwei Optionen, «Mehr» gewählt|link «Website durchsuchen Mehr»|ja|utility-nav|utility-nav|richtig blockiert|gleich
+B5|rz|textarea «Mehr»|link «Website durchsuchen Mehr»|ja|utility-nav|utility-nav|richtig blockiert|gleich
+B6|rz|textarea leer|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+B7|rz|area alt=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+B8|rz|map mit area alt=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+B9|rz|button aria-hidden «Mehr»|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+K0|rm|Kontrolle: unverändert|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I1|rm|img alt="Mehr"|link «Website durchsuchen Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+I2|rm|img alt=""|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I3|rm|img ohne alt|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I4|rm|img alt gleich der Beschriftung, Text ersetzt|link «Website durchsuchen»|nein|–|nav|richtig frei|NICHT MEHR BLOCKIERT
+I5|rm|img alt gleich der Beschriftung, Text bleibt|link «Website durchsuchen Website durchsuchen»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+I6|rm|img ohne alt mit title="Mehr"|link «Website durchsuchen Mehr»|ja|–|–|FALSCH-NEGATIV|gleich
+I7|rm|img alt="" mit title="Mehr"|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I8|rm|img alt="Mehr" aria-hidden="true"|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I9|rm|img alt="Mehr" hidden|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I10|rm|img alt="Mehr" inert|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I11|rm|img alt="Mehr" in span hidden|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I12|rm|img alt="Mehr" in span aria-hidden|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I13|rm|img alt="Mehr" in span inert|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+I14|rm|img alt="Mehr" role=presentation|link «Website durchsuchen»|nein|nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I15|rm|img alt="Mehr" role=none|link «Website durchsuchen»|nein|nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I16|rm|img alt="Mehr" style=display:none|link «Website durchsuchen»|nein|nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+I17|rm|img alt="Mehr" in span (Zwischenelement, sichtbar)|link «Website durchsuchen Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+I18|rm|img ALT in Grossbuchstaben (Attributname)|link «Website durchsuchen Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+P1|rm|Text in span role=presentation|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+P2|rm|span role=presentation mit «Mehr»|link «Website durchsuchen Mehr»|ja|nav|nav|richtig blockiert|gleich
+N1|rm|input type=button value=Mehr|link «Website durchsuchen Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N2|rm|input type=submit value=Mehr|link «Website durchsuchen Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N3|rm|input type=submit ohne value|link «Website durchsuchen Submit»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N4|rm|input type=reset ohne value|link «Website durchsuchen Reset»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N5|rm|input type=text value=Mehr|link «Website durchsuchen Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N6|rm|input type=text ohne value|link «Website durchsuchen»|nein|nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+N7|rm|input type=text placeholder=Mehr|link «Website durchsuchen Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N8|rm|input type=hidden value=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+N9|rm|input type=HIDDEN value=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+N10|rm|input type=checkbox|link «Website durchsuchen»|nein|nav|–|falsch-positiv (strenger)|NEU BLOCKIERT
+N11|rm|input type=image alt=Mehr|link «Website durchsuchen Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N12|rm|input type=number value=5|link «Website durchsuchen 5»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N13|rm|input hidden-Attribut value=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+N14|rm|input aria-hidden value=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+N15|rm|input ohne type value=Mehr|link «Website durchsuchen Mehr»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+N16|rm|input type=button value gleich der Beschriftung, Text ersetzt|link «Website durchsuchen»|nein|–|nav|richtig frei|NICHT MEHR BLOCKIERT
+N17|rm|input type=range|link «Website durchsuchen 50»|ja|nav|–|richtig blockiert|NEU BLOCKIERT
+B1|rm|button «Mehr»|link «Website durchsuchen Mehr»|ja|nav|nav|richtig blockiert|gleich
+B2|rm|button leer|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+B3|rm|select mit option «Mehr»|link «Website durchsuchen Mehr»|ja|nav|nav|richtig blockiert|gleich
+B4|rm|select zwei Optionen, «Mehr» gewählt|link «Website durchsuchen Mehr»|ja|nav|nav|richtig blockiert|gleich
+B5|rm|textarea «Mehr»|link «Website durchsuchen Mehr»|ja|nav|nav|richtig blockiert|gleich
+B6|rm|textarea leer|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+B7|rm|area alt=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+B8|rm|map mit area alt=Mehr|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+B9|rm|button aria-hidden «Mehr»|link «Website durchsuchen»|nein|–|–|richtig frei|gleich
+404: Zeile «Direkteinstiege» fehlt, Menüeinträge puk-site-menu__utility-link: 0
+404 mit <img alt="Mehr"> im ersten Menülink: Blocker 0 
+404 mit künstlicher Zeile «Direkteinstiege» und <img alt="Mehr">: Blocker 1 nav: Direkteinstiege im Menü weichen vom Seitenvertrag ab: leer statt Kurz und klar (kurz.html), Nachschlagen (fragen.html), Suchen (suche.html)
+Zusammenfassung r4-66: übereinstimmend 164, falsch-negativ 4 [I6z, I6m, I6rz, I6rm], falsch-positiv 20 [I14z, I15z, I16z, N6z, N10z, I14m, I15m, I16m, N6m, N10m, I14rz, I15rz, I16rz, N6rz, N10rz, I14rm, I15rm, I16rm, N6rm, N10rm]
+Änderungen gegenüber r4-65: 84 [I1z: NEU BLOCKIERT; I4z: NICHT MEHR BLOCKIERT; I5z: NEU BLOCKIERT; I14z: NEU BLOCKIERT; I15z: NEU BLOCKIERT; I16z: NEU BLOCKIERT; I17z: NEU BLOCKIERT; I18z: NEU BLOCKIERT; N1z: NEU BLOCKIERT; N2z: NEU BLOCKIERT; N3z: NEU BLOCKIERT; N4z: NEU BLOCKIERT; N5z: NEU BLOCKIERT; N6z: NEU BLOCKIERT; N7z: NEU BLOCKIERT; N10z: NEU BLOCKIERT; N11z: NEU BLOCKIERT; N12z: NEU BLOCKIERT; N15z: NEU BLOCKIERT; N16z: NICHT MEHR BLOCKIERT; N17z: NEU BLOCKIERT; I1m: NEU BLOCKIERT; I4m: NICHT MEHR BLOCKIERT; I5m: NEU BLOCKIERT; I14m: NEU BLOCKIERT; I15m: NEU BLOCKIERT; I16m: NEU BLOCKIERT; I17m: NEU BLOCKIERT; I18m: NEU BLOCKIERT; N1m: NEU BLOCKIERT; N2m: NEU BLOCKIERT; N3m: NEU BLOCKIERT; N4m: NEU BLOCKIERT; N5m: NEU BLOCKIERT; N6m: NEU BLOCKIERT; N7m: NEU BLOCKIERT; N10m: NEU BLOCKIERT; N11m: NEU BLOCKIERT; N12m: NEU BLOCKIERT; N15m: NEU BLOCKIERT; N16m: NICHT MEHR BLOCKIERT; N17m: NEU BLOCKIERT; I1rz: NEU BLOCKIERT; I4rz: NICHT MEHR BLOCKIERT; I5rz: NEU BLOCKIERT; I14rz: NEU BLOCKIERT; I15rz: NEU BLOCKIERT; I16rz: NEU BLOCKIERT; I17rz: NEU BLOCKIERT; I18rz: NEU BLOCKIERT; N1rz: NEU BLOCKIERT; N2rz: NEU BLOCKIERT; N3rz: NEU BLOCKIERT; N4rz: NEU BLOCKIERT; N5rz: NEU BLOCKIERT; N6rz: NEU BLOCKIERT; N7rz: NEU BLOCKIERT; N10rz: NEU BLOCKIERT; N11rz: NEU BLOCKIERT; N12rz: NEU BLOCKIERT; N15rz: NEU BLOCKIERT; N16rz: NICHT MEHR BLOCKIERT; N17rz: NEU BLOCKIERT; I1rm: NEU BLOCKIERT; I4rm: NICHT MEHR BLOCKIERT; I5rm: NEU BLOCKIERT; I14rm: NEU BLOCKIERT; I15rm: NEU BLOCKIERT; I16rm: NEU BLOCKIERT; I17rm: NEU BLOCKIERT; I18rm: NEU BLOCKIERT; N1rm: NEU BLOCKIERT; N2rm: NEU BLOCKIERT; N3rm: NEU BLOCKIERT; N4rm: NEU BLOCKIERT; N5rm: NEU BLOCKIERT; N6rm: NEU BLOCKIERT; N7rm: NEU BLOCKIERT; N10rm: NEU BLOCKIERT; N11rm: NEU BLOCKIERT; N12rm: NEU BLOCKIERT; N15rm: NEU BLOCKIERT; N16rm: NICHT MEHR BLOCKIERT; N17rm: NEU BLOCKIERT]
+r4-65 gegen Chromium: übereinstimmend 120 falsch-negativ 60 falsch-positiv 8

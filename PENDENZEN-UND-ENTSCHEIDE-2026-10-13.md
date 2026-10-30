@@ -1,10 +1,49 @@
 # Aktueller Pendenzen- und Entscheidstatus
 
-**Dokumentationsstand: 29. Oktober 2026 · GitHub main: r4-57 (`5226917`, [PR #756](https://github.com/christaegger-dot/borderline-angehoerige/pull/756) gemergt am 29.10.2026, 23:27 UTC, im Auftrag von Christa Egger), siehe oberster Abschnitt; davor r4-56 und r4-55 (`3780ee5`, [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753) gemergt am 29.10.2026, 23:21 UTC, von Christa Egger) und r4-54 (`060aa8f`, [PR #751](https://github.com/christaegger-dot/borderline-angehoerige/pull/751) gemergt am 29.10.2026, 23:02 UTC, im Auftrag von Christa Egger). Nachprüfung r4-54 liegt auf `main` vor ([PR #754](https://github.com/christaegger-dot/borderline-angehoerige/pull/754), gemergt als `ab4e862` am 29.10.2026, 23:14 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-54». Offen: Nachprüfung r4-57 läuft in einer eigenen Sitzung. Kein offener Arbeitsentwurf. Vorher r4-53 (`2324026`, [PR #745](https://github.com/christaegger-dot/borderline-angehoerige/pull/745) gemergt am 29.10.2026, 22:42 UTC, von Christa Egger), siehe Abschnitt r4-53; Nachprüfung r4-53 liegt auf `main` vor ([PR #747](https://github.com/christaegger-dot/borderline-angehoerige/pull/747), gemergt als `0667a69` am 29.10.2026, 22:51 UTC, von Christa Egger), siehe Abschnitt «Nachprüfung r4-53»; zweite, unabhängige Nachprüfung r4-53 liegt auf `main` vor ([PR #749](https://github.com/christaegger-dot/borderline-angehoerige/pull/749), gemergt als `9c3521e` am 29.10.2026, 23:21 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Zweite Nachprüfung r4-53». Vorher r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-52. Nachprüfung r4-52 liegt auf `main` vor ([PR #743](https://github.com/christaegger-dot/borderline-angehoerige/pull/743), gemergt als `b138c4b` am 29.10.2026, 22:32 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-52»; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); PUK-Website-Profil auf `main`: 2026.10.13 ([christaegger-dot/puk-website-profil#145](https://github.com/christaegger-dot/puk-website-profil/pull/145), gemergt als `828413c` am 29.10.2026, 22:42 UTC), siehe Abschnitt «PUK-Website-Profil 2026.10.10 bis 2026.10.13»; Gestaltungssystem «Borderline Angehörige» auf r4-53 nachgeführt (29.10.2026, 22:56 UTC), siehe Abschnitt «Gestaltungssystem»; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
+**Dokumentationsstand: 30. Oktober 2026 · Offener Entwurf: r4-58 (N57-1, N57-2, [PR #764](https://github.com/christaegger-dot/borderline-angehoerige/pull/764)), siehe oberster Abschnitt. Nachprüfung r4-57 liegt auf `main` vor ([PR #761](https://github.com/christaegger-dot/borderline-angehoerige/pull/761), gemergt als `c7b2183` am 29.10.2026, 23:58 UTC, im Auftrag von Christa Egger), Ergebnis «Nachbesserung nötig, ohne Blocker». GitHub main: r4-57 (`5226917`, [PR #756](https://github.com/christaegger-dot/borderline-angehoerige/pull/756) gemergt am 29.10.2026, 23:27 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-57; davor r4-56 und r4-55 (`3780ee5`, [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753) gemergt am 29.10.2026, 23:21 UTC, von Christa Egger) und r4-54 (`060aa8f`, [PR #751](https://github.com/christaegger-dot/borderline-angehoerige/pull/751) gemergt am 29.10.2026, 23:02 UTC, im Auftrag von Christa Egger). Nachprüfung r4-54 liegt auf `main` vor ([PR #754](https://github.com/christaegger-dot/borderline-angehoerige/pull/754), gemergt als `ab4e862` am 29.10.2026, 23:14 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-54». Vorher r4-53 (`2324026`, [PR #745](https://github.com/christaegger-dot/borderline-angehoerige/pull/745) gemergt am 29.10.2026, 22:42 UTC, von Christa Egger), siehe Abschnitt r4-53; Nachprüfung r4-53 liegt auf `main` vor ([PR #747](https://github.com/christaegger-dot/borderline-angehoerige/pull/747), gemergt als `0667a69` am 29.10.2026, 22:51 UTC, von Christa Egger), siehe Abschnitt «Nachprüfung r4-53»; zweite, unabhängige Nachprüfung r4-53 liegt auf `main` vor ([PR #749](https://github.com/christaegger-dot/borderline-angehoerige/pull/749), gemergt als `9c3521e` am 29.10.2026, 23:21 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Zweite Nachprüfung r4-53». Vorher r4-52 (`d8d78f5`, [PR #741](https://github.com/christaegger-dot/borderline-angehoerige/pull/741) gemergt am 29.10.2026, 22:17 UTC, im Auftrag von Christa Egger), siehe Abschnitt r4-52. Nachprüfung r4-52 liegt auf `main` vor ([PR #743](https://github.com/christaegger-dot/borderline-angehoerige/pull/743), gemergt als `b138c4b` am 29.10.2026, 22:32 UTC, im Auftrag von Christa Egger), siehe Abschnitt «Nachprüfung r4-52»; Nachprüfung r4-50 bis r4-51 liegt auf `main` vor ([PR #739](https://github.com/christaegger-dot/borderline-angehoerige/pull/739), gemergt als `8e00bc3` am 29.10.2026, 22:03 UTC, von Christa Egger); Nachprüfung r4-47 bis r4-49 liegt auf `main` vor ([PR #737](https://github.com/christaegger-dot/borderline-angehoerige/pull/737), gemergt als `6b63e30` am 29.10.2026, 21:52 UTC, im Auftrag von Christa Egger); PUK-Website-Profil auf `main`: 2026.10.13 ([christaegger-dot/puk-website-profil#145](https://github.com/christaegger-dot/puk-website-profil/pull/145), gemergt als `828413c` am 29.10.2026, 22:42 UTC), siehe Abschnitt «PUK-Website-Profil 2026.10.10 bis 2026.10.13»; Gestaltungssystem «Borderline Angehörige» auf r4-53 nachgeführt (29.10.2026, 22:56 UTC), siehe Abschnitt «Gestaltungssystem»; Nachprüfung r4-43 bis r4-46 liegt auf `main` vor ([PR #723](https://github.com/christaegger-dot/borderline-angehoerige/pull/723), gemergt als `97be88e` am 29.10.2026, 17:39 UTC, von Christa Egger) (Status geprüft am 29.10.2026).**
 
 Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene Arbeiten an der Website. Der ausführliche Bericht unter `authoring/PRUEFBERICHT.md` dokumentiert frühere Prüfungen und Entscheidungen, ist aber kein aktueller Aufgabenplan.
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
+
+## Korrektur · r4-58 · Befunde N57-1 und N57-2 · Entwurf vom 30.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-57`, nach dem Merge von PR #761 neu auf `main` (`1bdea3a`) aufgesetzt. Der Stand liegt als [PR #764](https://github.com/christaegger-dot/borderline-angehoerige/pull/764) (Entwurf) vor, **nicht gemergt**. Auftrag von Christa Egger, 30.10.2026: «Nachbesserung N57-1 und N57-2 umsetzen». Nachweis: [`audit-results/2026-10-30-n57-1-n57-2-r4-58/BERICHT.md`](audit-results/2026-10-30-n57-1-n57-2-r4-58/BERICHT.md).
+
+**Inhalt:**
+- **N57-1:** Kommentare und Selbsttestnamen zu N54-1 und N54-2 in `contract.js` nennen r4-57 statt r4-55.
+- **N57-2:** Das Gate blockiert Direkteinstiege in Zeile und Menü, die mit `hidden` oder `aria-hidden="true"` verborgen sind (auch über einen Vorfahren). Es blockiert auch Links mit `aria-label` oder `aria-labelledby`; der zugängliche Name muss die sichtbare Beschriftung sein (WCAG 2.5.3). Dafür gibt es fünf neue Selbsttestfälle; mit den Regeln von r4-57 scheitern sie (93/98).
+- **Unverändert:** Wortlaut, Stylesheet, Skript und Renderer. Die Seiten sind bis auf die Build-Kennung byte-gleich mit r4-57.
+
+**Technischer Stand:**
+- Selbsttest 98/98
+- Gate 24 Seiten · 0 Blocker · 20 Hinweise
+- Parität 35
+- Suchtest 216/216
+- Sprach-/UI-Test 73/73
+- Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c)
+- axe-core 4.14.0: 0 Verstösse in 48 Läufen
+
+**Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die die Nachprüfung r4-57 erstellt hat. Eine Nachprüfung von r4-58 muss eine andere Sitzung machen.
+
+**Offen:**
+- Merge nur auf Auftrag.
+- Nachprüfung von r4-58.
+- N52-3: Rest, gering.
+- N49-2: Bestätigung durch Christa Egger.
+- N51-2: gering.
+- Prüfung mit echtem Screenreader.
+
+## Nachprüfung r4-57 · liegt vor seit 29.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-57`, [PR #761](https://github.com/christaegger-dot/borderline-angehoerige/pull/761), gemergt als `c7b2183` am 29.10.2026, 23:58 UTC, im Auftrag von Christa Egger («bitte merge»). Die Netlify-Prüfungen waren grün. Auftrag: «Nachprüfung r4-57 starten». Nachweis: [`audit-results/2026-10-29-nachpruefung-r4-57/NACHPRUEFUNG.md`](audit-results/2026-10-29-nachpruefung-r4-57/NACHPRUEFUNG.md).
+
+**Ergebnis:** «Nachbesserung nötig, ohne Blocker». N54-1 und N54-2 sind behoben. Die vier Selbsttestfälle von r4-57 greifen (mit den Regeln von r4-56: 89/93).
+
+| Befund | Schweregrad | Inhalt | Stand |
+|---|---|---|---|
+| N57-1 | gering | Kommentare und Selbsttestnamen in `contract.js` nennen r4-55 statt r4-57 | in r4-58 umgesetzt (Entwurf) |
+| N57-2 | gering | Verborgene Zeile (`hidden`, `aria-hidden`) und abweichendes `aria-label` blieben ohne Blocker | in r4-58 umgesetzt (Entwurf) |
 
 ## Korrektur · r4-57 · Befunde N54-1 und N54-2 · veröffentlicht am 29.10.2026
 
@@ -28,7 +67,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 **Hinweis zur Unabhängigkeit:** Gebaut hat die Sitzung, die auch r4-52 und r4-54 gebaut hat. Eine Nachprüfung von r4-57 muss eine andere Sitzung machen.
 
 **Offen:**
-- Nachprüfung von r4-57: beauftragt am 29.10.2026, läuft in einer eigenen Sitzung, Branch `pruefung/2026-10-29-nachpruefung-r4-57`.
+- Nachprüfung von r4-57: liegt vor, «Nachbesserung nötig, ohne Blocker» (siehe Abschnitt «Nachprüfung r4-57» oben); N57-1 und N57-2 in r4-58.
 - N52-3: Rest, gering.
 - N49-2: Bestätigung durch Christa Egger.
 - N51-2: gering.

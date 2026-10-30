@@ -1,0 +1,4 @@
+# 2026-10-30T11:14:16Z
+$ curl -sS https://borderline-angehoerige.netlify.app/ | grep -o …
+data-puk-site-build="r4-65"
+site.css?v=r4-65

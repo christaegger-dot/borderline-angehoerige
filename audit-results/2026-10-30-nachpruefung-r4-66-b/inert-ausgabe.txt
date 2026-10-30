@@ -1,0 +1,13 @@
+Text in span inert | Kurz und klar<span inert> Mehr</span> | link «Kurz und klar»
+img alt in span inert | Kurz und klar<span inert><img alt="Mehr" src="data:,"></span> | link «Kurz und klar»
+input value in span inert | Kurz und klar<span inert><input type="button" value="Mehr"></span> | link «Kurz und klar Mehr»
+input value mit inert am Feld | Kurz und klar<input type="button" value="Mehr" inert> | link «Kurz und klar Mehr»
+input type=text value in span inert | Kurz und klar<span inert><input type="text" value="Mehr"></span> | link «Kurz und klar»
+button in span inert | Kurz und klar<span inert><button>Mehr</button></span> | link «Kurz und klar»
+select in span inert | Kurz und klar<span inert><select><option>Mehr</option></select></span> | link «Kurz und klar»
+textarea in span inert | Kurz und klar<span inert><textarea>Mehr</textarea></span> | link «Kurz und klar»
+input value in span hidden | Kurz und klar<span hidden><input type="button" value="Mehr"></span> | link «Kurz und klar»
+textarea placeholder | Kurz und klar<textarea placeholder="Mehr"></textarea> | link «Kurz und klar Mehr»
+input type=text placeholder | Kurz und klar<input type="text" placeholder="Mehr"> | link «Kurz und klar Mehr»
+img ohne alt, title | Kurz und klar<img title="Mehr" src="data:,"> | link «Kurz und klar Mehr»
+Chromium 153.0.8010.12

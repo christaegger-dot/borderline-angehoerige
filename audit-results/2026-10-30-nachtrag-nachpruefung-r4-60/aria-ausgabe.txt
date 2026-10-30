@@ -1,0 +1,176 @@
+# Chromium 153.0.8010.12
+Q1.1 aria-hidden="true" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.2 aria-hidden="TRUE" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.3 aria-hidden="␣true␣" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.4 aria-hidden="true␣" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.5 aria-hidden="yes" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.6 aria-hidden="0" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.7 aria-hidden="␣false␣" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.8 aria-hidden="FALSE␣" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.9 aria-hidden="null" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.10 aria-hidden="␣␣" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.11 aria-hidden="&#116;rue" auf Zeile => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.12 aria-hidden="false" auf Zeile => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.13 aria-hidden="False" auf Zeile => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.14 aria-hidden="FALSE" auf Zeile => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.15 aria-hidden="undefined" auf Zeile => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.16 aria-hidden="UNDEFINED" auf Zeile => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.17 aria-hidden="" auf Zeile => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.18 aria-hidden=ohne Wert auf Zeile => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.19 aria-hidden="&#102;alse" auf Zeile => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.20 aria-hidden="true" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.21 aria-hidden="TRUE" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.22 aria-hidden="␣true␣" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.23 aria-hidden="true␣" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.24 aria-hidden="yes" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.25 aria-hidden="0" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.26 aria-hidden="␣false␣" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.27 aria-hidden="FALSE␣" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.28 aria-hidden="null" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.29 aria-hidden="␣␣" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.30 aria-hidden="&#116;rue" auf Zeilenlink => Zeilenlink: VERBORGEN(ariaHiddenElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.31 aria-hidden="false" auf Zeilenlink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.32 aria-hidden="False" auf Zeilenlink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.33 aria-hidden="FALSE" auf Zeilenlink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.34 aria-hidden="undefined" auf Zeilenlink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.35 aria-hidden="UNDEFINED" auf Zeilenlink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.36 aria-hidden="" auf Zeilenlink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.37 aria-hidden=ohne Wert auf Zeilenlink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.38 aria-hidden="&#102;alse" auf Zeilenlink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.39 aria-hidden="true" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.40 aria-hidden="TRUE" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.41 aria-hidden="␣true␣" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.42 aria-hidden="true␣" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.43 aria-hidden="yes" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.44 aria-hidden="0" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.45 aria-hidden="␣false␣" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.46 aria-hidden="FALSE␣" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.47 aria-hidden="null" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.48 aria-hidden="␣␣" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.49 aria-hidden="&#116;rue" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN() | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.50 aria-hidden="false" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.51 aria-hidden="False" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.52 aria-hidden="FALSE" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.53 aria-hidden="undefined" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.54 aria-hidden="UNDEFINED" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.55 aria-hidden="" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.56 aria-hidden=ohne Wert auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.57 aria-hidden="&#102;alse" auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.58 aria-hidden="true" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.59 aria-hidden="TRUE" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.60 aria-hidden="␣true␣" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.61 aria-hidden="true␣" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.62 aria-hidden="yes" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.63 aria-hidden="0" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.64 aria-hidden="␣false␣" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.65 aria-hidden="FALSE␣" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.66 aria-hidden="null" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.67 aria-hidden="␣␣" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.68 aria-hidden="&#116;rue" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(ariaHiddenElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.69 aria-hidden="false" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.70 aria-hidden="False" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.71 aria-hidden="FALSE" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.72 aria-hidden="undefined" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.73 aria-hidden="UNDEFINED" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.74 aria-hidden="" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.75 aria-hidden=ohne Wert auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.76 aria-hidden="&#102;alse" auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.77 aria-hidden="true" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.78 aria-hidden="TRUE" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.79 aria-hidden="␣true␣" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.80 aria-hidden="true␣" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.81 aria-hidden="yes" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.82 aria-hidden="0" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.83 aria-hidden="␣false␣" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.84 aria-hidden="FALSE␣" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.85 aria-hidden="null" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.86 aria-hidden="␣␣" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.87 aria-hidden="&#116;rue" auf subbar => Zeilenlink: VERBORGEN() | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q1.88 aria-hidden="false" auf subbar => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.89 aria-hidden="False" auf subbar => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.90 aria-hidden="FALSE" auf subbar => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.91 aria-hidden="undefined" auf subbar => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.92 aria-hidden="UNDEFINED" auf subbar => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.93 aria-hidden="" auf subbar => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.94 aria-hidden=ohne Wert auf subbar => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.95 aria-hidden="&#102;alse" auf subbar => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.96 aria-hidden="true" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.97 aria-hidden="TRUE" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.98 aria-hidden="␣true␣" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.99 aria-hidden="true␣" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.100 aria-hidden="yes" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.101 aria-hidden="0" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.102 aria-hidden="␣false␣" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.103 aria-hidden="FALSE␣" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.104 aria-hidden="null" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.105 aria-hidden="␣␣" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.106 aria-hidden="&#116;rue" auf header => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q1.107 aria-hidden="false" auf header => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.108 aria-hidden="False" auf header => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.109 aria-hidden="FALSE" auf header => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.110 aria-hidden="undefined" auf header => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.111 aria-hidden="UNDEFINED" auf header => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.112 aria-hidden="" auf header => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.113 aria-hidden=ohne Wert auf header => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q1.114 aria-hidden="&#102;alse" auf header => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q2.1 inert auf Zeile => Zeilenlink: VERBORGEN(inertElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q2.2 inert auf Zeilenlink => Zeilenlink: VERBORGEN(inertElement) | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q2.3 inert auf Menü-<li> => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(inertElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q2.4 inert auf Menülink => Zeilenlink: link «Kurz und klar» | Menülink: VERBORGEN(inertElement) | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q2.5 inert auf subbar => Zeilenlink: VERBORGEN(inertElement) | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN(inertElement)
+Q2.6 inert auf header => Zeilenlink: VERBORGEN(inertElement) | Menülink: VERBORGEN(inertElement) | Absenderin: VERBORGEN(inertElement)
+Q3.1 Zeile: ganzer Linktext in <span aria-hidden="yes"> => Zeilenlink: link «» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.2 Zeile: ganzer Linktext in <span aria-hidden=" true "> => Zeilenlink: link «» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.3 Zeile: ganzer Linktext in <span aria-hidden="0"> => Zeilenlink: link «» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.4 Zeile: ganzer Linktext in <span aria-hidden="False"> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.5 Menü: ganzer Linktext in <span aria-hidden="yes"> => Zeilenlink: link «Kurz und klar» | Menülink: link «» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.6 Menü: ganzer Linktext in <span aria-hidden=" true "> => Zeilenlink: link «Kurz und klar» | Menülink: link «» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.7 Menü: ganzer Linktext in <span aria-hidden="0"> => Zeilenlink: link «Kurz und klar» | Menülink: link «» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.8 Menü: ganzer Linktext in <span aria-hidden="False"> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.9 Zeile: Text + dekoratives <span aria-hidden=" true "> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.10 Zeile: Text + dekoratives <span aria-hidden="yes"> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.11 Zeile: Text + dekoratives <span aria-hidden="0"> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.12 Zeile: Text + dekoratives <span aria-hidden="undefined"> →</span> => Zeilenlink: link «Kurz und klar →» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.13 Zeile: Text + dekoratives <span aria-hidden="false"> →</span> => Zeilenlink: link «Kurz und klar →» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.14 Menü: Text + dekoratives <span aria-hidden=" true "> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.15 Menü: Text + dekoratives <span aria-hidden="yes"> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.16 Menü: Text + dekoratives <span aria-hidden="0"> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.17 Menü: Text + dekoratives <span aria-hidden="undefined"> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar →» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q3.18 Menü: Text + dekoratives <span aria-hidden="false"> →</span> => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar →» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q4.1 index.html: header inert => Zeilenlink: VERBORGEN(inertElement) | Menülink: VERBORGEN(inertElement) | Absenderin: VERBORGEN(inertElement)
+Q4.2 index.html: header aria-hidden="TRUE" => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q4.3 index.html: header aria-hidden=" true " => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q4.4 index.html: header aria-hidden="yes" => Zeilenlink: VERBORGEN() | Menülink: VERBORGEN() | Absenderin: VERBORGEN()
+Q4.5 index.html: header aria-hidden="false" => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q4.6 index.html: header aria-hidden="undefined" => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q4.7 index.html: Absenderin inert => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN(inertElement)
+Q4.8 index.html: Absenderin aria-hidden="TRUE" => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q4.9 index.html: Absenderin aria-hidden="0" => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: VERBORGEN()
+Q4.10 index.html: Absenderin aria-hidden="" => Zeilenlink: link «Kurz und klar» | Menülink: link «Kurz und klar» | Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q4.11 404.html: header inert => Absenderin: VERBORGEN(inertElement)
+Q4.12 404.html: header aria-hidden="TRUE" => Absenderin: VERBORGEN()
+Q4.13 404.html: header aria-hidden=" true " => Absenderin: VERBORGEN()
+Q4.14 404.html: header aria-hidden="yes" => Absenderin: VERBORGEN()
+Q4.15 404.html: header aria-hidden="false" => Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q4.16 404.html: header aria-hidden="undefined" => Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q4.17 404.html: Absenderin inert => Absenderin: VERBORGEN(inertElement)
+Q4.18 404.html: Absenderin aria-hidden="TRUE" => Absenderin: VERBORGEN()
+Q4.19 404.html: Absenderin aria-hidden="0" => Absenderin: VERBORGEN()
+Q4.20 404.html: Absenderin aria-hidden="" => Absenderin: link «angehoerigenarbeit@pukzh.ch»
+Q5.1 SVG Szene aria-hidden="TRUE" statt "true" => SVG: VERBORGEN(ariaHiddenElement)
+Q5.2 SVG Szene aria-hidden="␣true␣" statt "true" => SVG: VERBORGEN(ariaHiddenElement)
+Q5.3 SVG Szene aria-hidden="yes" statt "true" => SVG: VERBORGEN(ariaHiddenElement)
+Q5.4 SVG Szene aria-hidden="True" statt "true" => SVG: VERBORGEN(ariaHiddenElement)
+Q5.5 SVG Szene aria-hidden="false" statt "true" => SVG: image «»
+Q5.6 SVG Szene aria-hidden="undefined" statt "true" => SVG: image «»
+Q5.7 SVG Szene aria-hidden="" statt "true" => SVG: image «»
+Q5.8 SVG Szene ohne aria-hidden => SVG: image «»
+Q5.9 SVG Szene ohne aria-hidden, mit hidden => SVG: image «»
+Q5.10 SVG Szene ohne aria-hidden, mit inert => SVG: image «»
+Q5.11 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit hidden => SVG: image «»
+Q5.12 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit inert => SVG: VERBORGEN(inertElement)
+Q5.13 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="TRUE" => SVG: VERBORGEN()
+Q5.14 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="yes" => SVG: VERBORGEN()
+Q5.15 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit aria-hidden="false" => SVG: image «»
+Q5.16 SVG Szene ohne aria-hidden, Vorfahre .puk-vis-scene mit role="img" aria-label="Szene" => SVG: image «»
+Q5.17 SVG Szene ohne aria-hidden, in <div hidden> innerhalb der Szene => SVG: VERBORGEN(notRendered)

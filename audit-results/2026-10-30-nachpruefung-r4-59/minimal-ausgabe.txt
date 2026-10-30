@@ -1,0 +1,20 @@
+Chromium 153.0.8010.12
+"true"             | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link VERBORGEN
+"TRUE"             | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link VERBORGEN
+"True"             | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link VERBORGEN
+" true "           | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+"true "            | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+" true"            | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+"\ttrue\n"         | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+"false"            | Chromium (CDP): Link im Baum | Playwright ariaSnapshot: Link im Baum
+"FALSE"            | Chromium (CDP): Link im Baum | Playwright ariaSnapshot: Link im Baum
+"False"            | Chromium (CDP): Link im Baum | Playwright ariaSnapshot: Link im Baum
+" false "          | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+""                 | Chromium (CDP): Link im Baum | Playwright ariaSnapshot: Link im Baum
+" "                | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+"yes"              | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+"1"                | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+"0"                | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+"no"               | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+"mixed"            | Chromium (CDP): Link VERBORGEN | Playwright ariaSnapshot: Link im Baum
+"(ohne Attribut)"  | Chromium (CDP): Link im Baum | Playwright ariaSnapshot: Link im Baum

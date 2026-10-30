@@ -1,0 +1,11 @@
+# Rückprobe nach N67-2: inSvg in Kopien von authoring/ ausserhalb des Repositorys ersetzt (Skript: rueckprobe-n67.py in diesem Ordner, übernommen aus der Nachprüfung r4-67)
+## r4-67 unverändert
+Selbsttest: 124/124 bestanden
+## inSvg von r4-65
+FAIL | Verborgenes HTML in foreignObject im Direkteinstieg ist zulässig (r4-67, N62-2) | erwartet: kein nav, kein utility-nav | erhalten: utility-nav, nav
+Selbsttest: 123/124 bestanden
+## Variante: foreignObject selbst gilt als HTML (ohne p !== x)
+FAIL | SVG ohne Namen in <foreignObject inert> gilt nicht als ausgeblendet (r4-67, N67-2) | erwartet: figure-alt | erhalten: kein figure-alt
+Selbsttest: 123/124 bestanden
+## Variante: jedes foreignObject darüber macht HTML, auch über verschachteltem svg
+Selbsttest: 124/124 bestanden

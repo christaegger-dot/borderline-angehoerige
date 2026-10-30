@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-66';
+const BUILD = 'r4-67';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -39,8 +39,11 @@ const ariaHiddenOff = new Set(['false', 'undefined', '']);
 const ariaHiddenFlag = x => has(x, 'aria-hidden') && !ariaHiddenOff.has(String(x.attrs['aria-hidden']).toLowerCase());
 /* r4-65 (Nachtrag zur Nachprüfung r4-60, N60-3; Nachprüfung r4-61, N61-1): hidden und inert sind HTML-Attribute. An <svg> und an
    Elementen darin verbirgt Chromium damit nichts (<a>Kurz und klar<svg hidden aria-label="Pfeil"></svg></a> heisst «Kurz und klar Pfeil»).
-   Dort gilt nur aria-hidden. */
-const inSvg = x => x.tag === 'svg' || !!up(x, y => y.tag === 'svg');
+   Dort gilt nur aria-hidden.
+   r4-67 (Nachprüfung r4-62, N62-2): HTML in <foreignObject> ist wieder HTML; dort wirken hidden und inert (Chromium: «<a>Kurz und klar
+   <svg><foreignObject><span hidden aria-label="Mehr">x</span></foreignObject></svg></a>» heisst «Kurz und klar»). Das foreignObject
+   selbst ist ein SVG-Element. */
+const inSvg = x => { for (let p = x; p; p = p.parent) { if (p.tag === 'svg') return true; if (p.tag === 'foreignobject' && p !== x) return false; } return false; };
 const hiddenFlag = x => (!inSvg(x) && (has(x, 'hidden') || has(x, 'inert'))) || ariaHiddenFlag(x);
 const concealed = nd => hiddenFlag(nd) || !!up(nd, hiddenFlag);
 const svgSilenced = sv => ariaHiddenFlag(sv) || !!up(sv, x => ariaHiddenFlag(x) || (has(x, 'inert') && !inSvg(x)));
@@ -939,6 +942,19 @@ function selftest(cfg, files, opts = {}) {
     const ok = rex(f, 'index.html', /(<a class=\"puk-site-utility__link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<img alt="" src="data:," width="8" height="8"><span hidden><img alt="Mehr" src="data:,"></span><');
     const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'utility-nav');
     rows.push({ name: 'Bild mit leerem alt und verborgenes Bild im Direkteinstieg sind zulässig (r4-66, N61-2)', expected: 'kein utility-nav', got: ok ? (hit ? 'utility-nav' : 'kein utility-nav') : 'Mutation nicht anwendbar', ok: ok && !hit }); }
+  { /* r4-67 (Nachprüfung r4-62, N62-2): Ein verborgenes HTML-Element in <foreignObject> ändert den Namen nicht, in Zeile und Menü. */
+    const ids = f => [...new Set(gate(cfg, f, { mode: 'draft', exists: base }).findings.filter(x => x.level === 'block' && ['nav', 'utility-nav'].includes(x.id)).map(x => x.id))];
+    const f = Object.assign({}, files);
+    const ok = rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<svg width="8" height="8"><foreignObject width="8" height="8"><span hidden aria-label="Mehr">x</span></foreignObject></svg><')
+      && rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<svg width="8" height="8"><foreignObject width="8" height="8"><span inert> mehr</span></foreignObject></svg><');
+    const got = ok ? ids(f) : ['Mutation nicht anwendbar'];
+    rows.push({ name: 'Verborgenes HTML in foreignObject im Direkteinstieg ist zulässig (r4-67, N62-2)', expected: 'kein nav, kein utility-nav', got: got.join(', ') || 'kein nav, kein utility-nav', ok: ok && got.length === 0 }); }
+  { /* r4-67 (Nachprüfung r4-67, N67-2), Gegenprobe: Das foreignObject selbst ist ein SVG-Element. inert daran verbirgt in Chromium
+       nichts; ein SVG ohne Namen darin bleibt «image» ohne Namen. */
+    const f = Object.assign({}, files);
+    const ok = rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"([^>]*>)/, '$1 role="group" aria-label="Szene"$2<foreignObject inert width="40" height="40"><svg width="20" height="20"><rect width="20" height="20"/></svg></foreignObject>');
+    const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'figure-alt');
+    rows.push({ name: 'SVG ohne Namen in <foreignObject inert> gilt nicht als ausgeblendet (r4-67, N67-2)', expected: 'figure-alt', got: ok ? (hit ? 'figure-alt' : 'kein figure-alt') : 'Mutation nicht anwendbar', ok: ok && hit }); }
   for (const [name, expect, mut] of MUTATIONS) {
     const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files);
     let applied; try { applied = mut(c, f) !== false; } catch (e) { applied = false; }

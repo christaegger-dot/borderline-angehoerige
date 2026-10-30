@@ -1,0 +1,24 @@
+# Selbsttest r4-60 (7cbdd40) mit einzeln auf r4-59 (330a9af) zurückgesetzten Regeln; nur FAIL-Zeilen und Summe
+## hiddenFlag, sender und SVG-Prüfung zurückgesetzt
+FAIL | SVG mit aria-hidden="TRUE" gilt als ausgeblendet (r4-60, N59-2) | erwartet: kein figure-alt | erhalten: figure-alt
+FAIL | Zeile der Direkteinstiege mit aria-hidden=" true " verborgen (r4-60, N59-1) | erwartet: utility-nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg im Menü mit aria-hidden="yes" verborgen (r4-60, N59-1) | erwartet: nav | erhalten: crisis-number-check
+FAIL | Absenderin über inert am Kopf gesperrt (r4-60, N59-2) | erwartet: sender | erhalten: utility-nav, nav, crisis-number-check
+FAIL | Absenderin mit aria-hidden="TRUE" auf der Subbar verborgen (r4-60, N59-2) | erwartet: sender | erhalten: utility-nav, crisis-number-check
+FAIL | Fehlerseite: Absenderin über inert am Kopf gesperrt (r4-60, N59-2) | erwartet: sender | erhalten: crisis-number-check
+Selbsttest: 105/111 bestanden
+## nur hiddenFlag zurückgesetzt
+FAIL | Zeile der Direkteinstiege mit aria-hidden=" true " verborgen (r4-60, N59-1) | erwartet: utility-nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg im Menü mit aria-hidden="yes" verborgen (r4-60, N59-1) | erwartet: nav | erhalten: crisis-number-check
+Selbsttest: 109/111 bestanden
+## nur sender zurückgesetzt
+FAIL | Absenderin über inert am Kopf gesperrt (r4-60, N59-2) | erwartet: sender | erhalten: utility-nav, nav, crisis-number-check
+FAIL | Absenderin mit aria-hidden="TRUE" auf der Subbar verborgen (r4-60, N59-2) | erwartet: sender | erhalten: utility-nav, crisis-number-check
+FAIL | Fehlerseite: Absenderin über inert am Kopf gesperrt (r4-60, N59-2) | erwartet: sender | erhalten: crisis-number-check
+Selbsttest: 108/111 bestanden
+## nur svg zurückgesetzt
+FAIL | SVG mit aria-hidden="TRUE" gilt als ausgeblendet (r4-60, N59-2) | erwartet: kein figure-alt | erhalten: figure-alt
+Selbsttest: 110/111 bestanden
+## hiddenFlag zu streng (jedes aria-hidden verbirgt)
+FAIL | aria-hidden «false», «FALSE», «undefined» oder leer an Zeile und Menü gilt nicht als verborgen (r4-60, N59-1) | erwartet: kein nav, kein utility-nav | erhalten: «false»: utility-nav, nav; «FALSE»: utility-nav, nav; «undefined»: utility-nav, nav; «»: utility-nav, nav
+Selbsttest: 110/111 bestanden

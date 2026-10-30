@@ -1,0 +1,29 @@
+# Tests auf f7f8d18, v22.22.0, 2026-10-30T09:28:22Z
+$ node authoring/tools/build.mjs --production
+WARN | kinder | crisis-number-check | Krisentelefonlink: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | quellen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | suche | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+Exit 0
+$ node authoring/tools/build.mjs --production --verify-site
+WARN | quellen | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+WARN | suche | crisis-number-check | Mögliche Krisennummer «144»: thematischen Nutzen und Platzierung bewusst prüfen
+PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+Exit 0
+$ node authoring/tools/selftest.mjs
+PASS | Veraltetes Prüfdatum eines Angebots | erwartet: service-review | erhalten: crisis-number-check, service-review
+PASS | Angebot ohne serviceReview-Konfiguration | erwartet: service-review | erhalten: crisis-number-check, service-review
+PASS | Pflichtangebot nur auf einer Entwurfsseite | erwartet: service-review | erhalten: link-draft, crisis-number-check, service-review
+Selbsttest: 125/125 bestanden
+Exit 0
+$ node authoring/tools/suchtest.mjs dist/site
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+Exit 0
+$ node authoring/tools/sprachtest.mjs
+Sprach-/UI-Test: 73 Prüfungen bestanden · JS-Fehler 0
+Exit 0
+$ node authoring/tools/layouttest.cjs
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core exceeds 1800px
+Exit 1

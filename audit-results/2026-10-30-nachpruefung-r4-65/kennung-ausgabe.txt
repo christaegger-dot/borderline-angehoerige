@@ -1,0 +1,16 @@
+== d6dd542
+BUILD=r4-62 assetVersion=r4-62 waiver.version=r4-62
+pendingScope Abschnittsanfänge: r4-62 → r4-61 → r4-60 → r4-59 → r4-58 → r4-57 → r4-56 → r4-55 → r4-54 → r4-53 → r4-52 → r4-51 → r4-50 → r4-49 → r4-48 → r4-47 → r4-46 → r4-45 → r4-44 → r4-43 → r4-42 → r4-41
+appliedTo Länge 5992, Ende: … #780), Nachprüfung r4-61 durch eine Sitzung, die an r4-61 nicht gebaut hat (PR #785); r4-62 am 30.10.2026 im Auftrag «Nachbesserung N60-1 und N60-3 umsetzen» auf denselben fortgeltenden Entscheid gestützt, nach dem Merge von r4-61 (PR #780) auf main neu gefasst, gebaut von der Sitzung, die den Nachtrag zur Nachprüfung r4-60 (PR #781, N60-3) verfasst hat, Nachweis audit-results/2026-10-30-n60-1-n60-3-r4-62/BERICHT.md
+== a55ecb1
+BUILD=r4-64 assetVersion=r4-64 waiver.version=r4-64
+pendingScope Abschnittsanfänge: r4-64 → r4-61 → r4-60 → r4-59 → r4-58 → r4-57 → r4-56 → r4-55 → r4-54 → r4-53 → r4-52 → r4-51 → r4-50 → r4-49 → r4-48 → r4-47 → r4-46 → r4-45 → r4-44 → r4-43 → r4-42 → r4-41
+appliedTo Länge 5824, Ende: …tzt, gebaut von der Sitzung, die die Nachprüfung r4-59 (PR #772) verfasst hat, Nachweis audit-results/2026-10-30-n59-3-r4-61/BERICHT.md; r4-64 am 30.10.2026 im Auftrag «N56-1: Überschriften in Medium und Abstand vor Hinweis umsetzen» auf denselben fortgeltenden Entscheid gestützt, gebaut von der Sitzung, die die Nachprüfung r4-55 und r4-56 (N56-1) erstellt hat, Nachweis audit-results/2026-10-30-n56-1-r4-64/BERICHT.md
+== f7f8d18
+BUILD=r4-65 assetVersion=r4-65 waiver.version=r4-65
+pendingScope Abschnittsanfänge: r4-65 → r4-64 → r4-61 → r4-62 → r4-61 → r4-60 → r4-59 → r4-58 → r4-57 → r4-56 → r4-55 → r4-54 → r4-53 → r4-52 → r4-51 → r4-50 → r4-49 → r4-48 → r4-47 → r4-46 → r4-45 → r4-44 → r4-43 → r4-42 → r4-41
+appliedTo Länge 6658, Ende: …sults/2026-10-30-n56-1-r4-64/BERICHT.md; r4-65 am 30.10.2026 im Auftrag «Nachbesserung N61-1 bis N61-3 umsetzen» (Entscheid «#787 neu fassen, dann prüfen», davon offen nur N61-2) auf denselben fortgeltenden Entscheid gestützt, aufgebaut auf r4-62 (PR #784, nicht gemergt) und r4-64 (main), gebaut von der Sitzung, die die Nachprüfung r4-61 (PR #785) verfasst hat, Nachweis audit-results/2026-10-30-n61-2-r4-65/BERICHT.md
+== 2810994
+BUILD=r4-65 assetVersion=r4-65 waiver.version=r4-65
+pendingScope Abschnittsanfänge: r4-65 → r4-61 → r4-64 → r4-61 → r4-60 → r4-59 → r4-58 → r4-57 → r4-56 → r4-55 → r4-54 → r4-53 → r4-52 → r4-51 → r4-50 → r4-49 → r4-48 → r4-47 → r4-46 → r4-45 → r4-44 → r4-43 → r4-42 → r4-41
+appliedTo Länge 6252, Ende: …am 30.10.2026 gemergt (PR #788); r4-65 (begonnen als r4-62) am 30.10.2026 im Auftrag «Nachbesserung N60-1 und N60-3 umsetzen» auf denselben fortgeltenden Entscheid gestützt, nach dem Merge von r4-61 (PR #780) auf main neu gefasst, nachgeprüft als r4-62 (PR #790), gebaut von der Sitzung, die den Nachtrag zur Nachprüfung r4-60 (PR #781, N60-3) verfasst hat, Nachweis audit-results/2026-10-30-n60-1-n60-3-r4-62/BERICHT.md

@@ -1,0 +1,28 @@
+# Merge-Proben mit git merge-tree, 2026-10-30T09:38:01Z
+# Köpfe: #787 9033857, #784 2810994, main d20973b
+tree f7f8d18 = tree 9033857: ja
+$ git merge-tree --write-tree --name-only d6dd542 f7f8d18
+Exit 0
+$ git merge-tree --write-tree --name-only a55ecb1 f7f8d18
+Exit 0
+$ git merge-tree --write-tree --name-only 2810994 9033857
+PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md
+authoring/site.config.json
+authoring/tools/contract.js
+
+Auto-merging PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md
+CONFLICT (content): Merge conflict in PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md
+Auto-merging authoring/site.config.json
+CONFLICT (content): Merge conflict in authoring/site.config.json
+Auto-merging authoring/tools/contract.js
+CONFLICT (content): Merge conflict in authoring/tools/contract.js
+Exit 1
+$ git merge-tree --write-tree --name-only origin/main f7f8d18
+PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md
+
+Auto-merging PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md
+CONFLICT (content): Merge conflict in PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md
+Exit 1
+$ git merge-tree --write-tree --name-only origin/main 2810994
+Exit 0
+authoring/ und site/ auf main d20973b gleich wie a55ecb1: ja

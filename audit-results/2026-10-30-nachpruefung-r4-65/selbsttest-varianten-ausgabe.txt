@@ -1,0 +1,32 @@
+== V0 unverändert
+Selbsttest: 125/125 bestanden
+(zurückgesetzt, cmp gleich)
+== V1 accTxt ohne ctlTxt (wie d6dd542)
+FAIL | Direkteinstieg mit img alt im Link (r4-65, N61-2) | erwartet: utility-nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg im Menü mit input value im Link (r4-65, N61-2) | erwartet: nav | erhalten: crisis-number-check
+Selbsttest: 123/125 bestanden
+(zurückgesetzt, cmp gleich)
+== V2 ctlTxt nur für img
+FAIL | Direkteinstieg im Menü mit input value im Link (r4-65, N61-2) | erwartet: nav | erhalten: crisis-number-check
+Selbsttest: 124/125 bestanden
+(zurückgesetzt, cmp gleich)
+== V3 ctlTxt nur für input
+FAIL | Direkteinstieg mit img alt im Link (r4-65, N61-2) | erwartet: utility-nav | erhalten: crisis-number-check
+Selbsttest: 124/125 bestanden
+(zurückgesetzt, cmp gleich)
+== V4 ctlTxt vor hiddenFlag (verborgene Bilder/Felder zählen)
+Selbsttest: 125/125 bestanden
+(zurückgesetzt, cmp gleich)
+== V5 Bild ohne alt-Text zählt als «Bild»
+FAIL | Bild mit leerem alt und verborgenes Bild im Direkteinstieg sind zulässig (r4-65, N61-2) | erwartet: kein utility-nav | erhalten: utility-nav
+Selbsttest: 124/125 bestanden
+(zurückgesetzt, cmp gleich)
+== V6 type=hidden zählt mit
+Selbsttest: 125/125 bestanden
+(zurückgesetzt, cmp gleich)
+== V7 ohne Platzhalter [Eingabefeld]
+Selbsttest: 125/125 bestanden
+(zurückgesetzt, cmp gleich)
+== V8 type ohne toLowerCase
+Selbsttest: 125/125 bestanden
+(zurückgesetzt, cmp gleich)

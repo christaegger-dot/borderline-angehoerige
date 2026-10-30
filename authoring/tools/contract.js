@@ -809,6 +809,15 @@ function selftest(cfg, files, opts = {}) {
     const hitText = gate(c, files, { mode: 'production', exists: base }).findings.some(x => x.level === 'block' && x.id === 'visual-approval' && x.msg.includes(v.id));
     return { name: 'Produktion blockiert ausstehende Textfassung im Visualisierungsplan', expected: 'visual-approval', got: hitText ? 'visual-approval' : 'nicht erkannt', ok: hitText }; };
   rows.push(textApprovalRow(cfg));
+  { /* Nachtrag zu N60-1 (Nachprüfung r4-60, 30.10.2026): Ein verborgener Zusatz im Linktext zählt nicht zur Beschriftung (P4.6),
+       und aria-hidden=" false " verbirgt wie in Chromium, weil Leerraum nicht entfernt wird. */
+    const ids = f => [...new Set(gate(cfg, f, { mode: 'draft', exists: base }).findings.filter(x => x.level === 'block' && ['nav', 'utility-nav'].includes(x.id)).map(x => x.id))];
+    const fa = Object.assign({}, files); const okA = rex(fa, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>Kurz und klar)(<\/a>)/, '$1<span aria-hidden=" true "> →</span>$2');
+    const gotA = okA ? ids(fa) : ['Mutation nicht anwendbar'];
+    rows.push({ name: 'Verborgener Zusatz im Linktext zählt nicht zur Beschriftung (Nachtrag N60-1, P4.6)', expected: 'kein nav, kein utility-nav', got: gotA.join(', ') || 'kein nav, kein utility-nav', ok: okA && !gotA.length });
+    const fb = Object.assign({}, files); const okB = rex(fb, 'index.html', /<nav class="puk-site-utility" aria-label="Direkteinstiege"/, '$& aria-hidden=" false "');
+    const gotB = okB ? ids(fb) : [];
+    rows.push({ name: 'Zeile mit aria-hidden=" false " gilt als verborgen (Nachtrag N60-1)', expected: 'utility-nav', got: okB ? (gotB.join(', ') || 'nicht erkannt') : 'Mutation nicht anwendbar', ok: gotB.includes('utility-nav') }); }
   { const c = JSON.parse(JSON.stringify(cfg)); for (const x of c.pages.flatMap(p => p.visualPlan || [])) if (x.format === 'text') x.approvalStatus = 'entfällt';
     let got; try { got = textApprovalRow(c).got; } catch (e) { got = 'Laufzeitfehler: ' + e.message; }
     rows.push({ name: 'Selbsttest meldet fehlende freigegebene Textfassung als Befund, nicht als Laufzeitfehler', expected: 'keine freigegebene Textfassung', got, ok: got.startsWith('keine freigegebene Textfassung') }); }

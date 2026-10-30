@@ -10,7 +10,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-54`, [PR #778](https://github.com/christaegger-dot/borderline-angehoerige/pull/778), gemergt als `2e3530d` am 30.10.2026, 07:25:53 UTC, über das Konto von Christa Egger, 13 Sekunden nach dem Abschluss des Codex-Reviews auf `9a1a85a` (07:25:39 UTC, ohne Befund; R28-O01, R29-P20 eingehalten). Auftrag von Christa Egger, 30.10.2026: «Nachprüfung r4-60 starten». Gegenstand ist `330a9af..7cbdd40`, also r4-60 aus PR #775 (gemergt als `b6777ec`). Nachweis: [`audit-results/2026-10-30-nachpruefung-r4-60/NACHPRUEFUNG.md`](audit-results/2026-10-30-nachpruefung-r4-60/NACHPRUEFUNG.md), dazu Abgleichskript und Ausgaben.
 
-**Prüfende und Unabhängigkeit:** Geprüft hat eine Sitzung, die an r4-58, r4-59 und r4-60 auf `main` nicht gebaut hat. Sie legt offen: Sie hat parallel zu #775 eine eigene Fassung von r4-60 geschrieben, die auf Entscheid von Christa Egger verworfen und nie gepusht wurde, hat dabei die Beschreibung von #775 gelesen und hat den Nachtrag zu N54-2 (#768) gebaut. Die bauende Sitzung von r4-60 hatte eine eigene Prüfsitzung gestartet; vorgelegt hat die Nachprüfung die Sitzung von #778.
+**Prüfende und Unabhängigkeit:** Geprüft hat eine Sitzung, die an r4-58, r4-59 und r4-60 auf `main` nicht gebaut hat. Sie legt offen: Sie hat parallel zu #775 eine eigene Fassung von r4-60 geschrieben, die auf Entscheid von Christa Egger verworfen und nie gepusht wurde, hat dabei die Beschreibung von #775 gelesen und hat den Nachtrag zu N54-2 (#768) gebaut. Die bauende Sitzung von r4-60 hatte eine eigene Prüfsitzung gestartet. Weil #778 bei deren Abschluss schon auf `main` lag, reicht sie ihren Bericht auf Entscheid von Christa Egger als Nachtrag ein: [PR #781](https://github.com/christaegger-dot/borderline-angehoerige/pull/781) «Nachtrag zur Nachprüfung r4-60», offen, nicht gemergt. Er meldet N60-3 (gering): Seit N59-2 wertet die SVG-Prüfung `hidden` und `inert` als «ausgeblendet», Chromium führt das SVG in diesen Fällen aber weiter als Bild ohne Namen. Den Eintrag dazu nach dem Merge von #781.
 
 **Ergebnis:** «Nachbesserung nötig, ohne Blocker». Eigener Abgleich mit Chromium (CDP, 60 Mutationen): Gate und Chromium stimmen bei r4-60 in 60 von 60 Fällen überein, bei r4-59 in 31 von 60; keine Falsch-Positiven. Selbsttest 111/111, mit den Regeln von r4-59 105/111. Seiten bis auf die Build-Kennung unverändert.
 
@@ -19,7 +19,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 | N60-1 | gering | Die behobene Falschmeldung P4.6 (verborgener Zusatz ` →` im Linktext) und `aria-hidden=" false "` sind durch keinen Selbsttestfall abgesichert, nur durch das Mutationsskript | offen, bei der nächsten Arbeit an `contract.js` |
 | N60-2 | gering | Die Pendenzendatei auf `main` nannte r4-60 nicht | mit diesem Eintrag erledigt |
 
-**Offen:** N60-1; N59-3; N53-1, N53-2; Rest von N52-3; N49-2 (Bestätigung durch Christa Egger); N51-2; Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte.
+**Offen:** N60-1; Nachtrag #781 (N60-3, Entwurf); N59-3; N53-1, N53-2; Rest von N52-3; N49-2 (Bestätigung durch Christa Egger); N51-2; Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte.
 
 ## Korrektur · r4-60 · Befunde N59-1 und N59-2 · veröffentlicht am 30.10.2026
 

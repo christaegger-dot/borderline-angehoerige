@@ -8,7 +8,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Footer-Überschriften · r4-64 · Befund N56-1 · veröffentlicht am 30.10.2026
 
-**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-53`, [PR #788](https://github.com/christaegger-dot/borderline-angehoerige/pull/788), Kopf `b62d061` (Merge von `main` mit #789), gemergt als `a55ecb1` am 30.10.2026, 09:16:29 UTC, über das Konto von Christa Egger, im Auftrag von Christa Egger («bitte merge»). CI `build-and-compare` grün auf `88ede98` und auf `b62d061` (09:12:52 bis 09:13:28 UTC). Mit dem Merge über Netlify veröffentlicht: Die Live-Site lieferte um 09:16:54 UTC `r4-64` (eigene Abfrage mit `curl`, keine Prüfstufe).
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-53`, [PR #788](https://github.com/christaegger-dot/borderline-angehoerige/pull/788), Kopf `b62d061` (Merge von `main` mit #789), gemergt als `a55ecb1` am 30.10.2026, 09:16:29 UTC, über das Konto von Christa Egger, im Auftrag von Christa Egger («bitte merge»; Mitteilung an die bauende Sitzung, auf GitHub nicht belegt). CI `build-and-compare` grün auf `88ede98` und auf `b62d061` (09:12:52 bis 09:13:28 UTC). Mit dem Merge über Netlify veröffentlicht: Die Live-Site lieferte um 09:16:54 UTC `r4-64` (eigene Abfrage mit `curl`, keine Prüfstufe).
 
 **Nummer:** Begonnen auf `aefdf06` als r4-63. Inzwischen ist r4-61 gemergt (`5cbaf1c`). Offen sind r4-62 ([PR #784](https://github.com/christaegger-dot/borderline-angehoerige/pull/784)) und ein weiterer Stand r4-63 ([PR #787](https://github.com/christaegger-dot/borderline-angehoerige/pull/787)). Deshalb ist `main` per Merge eingebracht, und die Änderung heisst r4-64. Wer #784 oder #787 später mergt, bringt `main` ein und baut neu. Seit diesem Merge trägt `main` r4-64; #784 (r4-62) und #787 (r4-63) brauchen vor einem Merge eine neue Build-Kennung über r4-64.
 
@@ -17,7 +17,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 **Merge ohne Codex-Review (Ausnahme von R28-O01 und R29-P20):**
 - Das Codex-Review auf `88ede98` brach am 30.10.2026 um 08:43:35 UTC mit «Failed» ab. Danach meldete Codex, das Nutzungslimit für Code-Reviews sei erreicht. Es gibt keine Review-Threads.
 - Der PR ändert die veröffentlichte Website. Darauf hat diese Sitzung vor dem Merge hingewiesen.
-- Entscheid Christa Egger: «ja, ohne Codex-Review mergen».
+- Entscheid Christa Egger: «ja, ohne Codex-Review mergen» (Quelle: Beschreibung von PR #788).
 
 **Inhalt:**
 - Die Überschriften im Footer («Kontakt», «Fachstelle Angehörigenarbeit») stehen in Medium statt Regular, weiter 16 px und `tinte-leise`.
@@ -62,7 +62,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 ## Nachführung der Pendenzen · PR #789 · auf `main` seit 30.10.2026
 
-[PR #789](https://github.com/christaegger-dot/borderline-angehoerige/pull/789), Branch `pendenzen/2026-10-30-r4-61`, Kopf `aa2eac7`, gemergt als `bd31ada` am 30.10.2026, 09:11:40 UTC, über das Konto von Christa Egger, im Auftrag von Christa Egger («bitte merge»). Inhalt: Abschnitte zu r4-61, Nachprüfung r4-61 und den Nachträgen zu N60-1 und N60-3. Kein Codex-Review (Nutzungslimit, Meldung um 09:11:45 UTC). An seiner Stelle prüfte eine eigene Review-Sitzung: auf `9f95c1e` mit Befunden, auf `dc36600` mit einem Folgebefund, auf `aa2eac7` «ohne Befund, mergebar». CI `build-and-compare` lief nicht, weil nur diese Datei geändert war; Parität 35 und Selbsttest 116/116 sind lokal geprüft.
+[PR #789](https://github.com/christaegger-dot/borderline-angehoerige/pull/789), Branch `pendenzen/2026-10-30-r4-61`, Kopf `aa2eac7`, gemergt als `bd31ada` am 30.10.2026, 09:11:40 UTC, von der eigenen Review-Sitzung über das Konto von Christa Egger, nach Aufhebung des Entwurfsstatus und gebunden an den Kopf `aa2eac7`. Auftrag von Christa Egger: an die Review-Sitzung «#789 mergen», an die schreibende Sitzung «bitte merge» (Mitteilungen in den Sitzungen, auf GitHub nicht belegt; der Merge-Commit enthält nur den PR-Titel). Inhalt: Abschnitte zu r4-61, Nachprüfung r4-61 und den Nachträgen zu N60-1 und N60-3. Kein Codex-Review (Nutzungslimit, Meldung um 09:11:45 UTC). An seiner Stelle prüfte eine eigene Review-Sitzung: auf `9f95c1e` mit Befunden, auf `dc36600` mit einem Folgebefund, auf `aa2eac7` «ohne Befund, mergebar». CI `build-and-compare` lief nicht, weil nur diese Datei geändert war; Parität 35 und Selbsttest 116/116 sind lokal geprüft.
 
 ## Korrektur · r4-61 · Befund N59-3 · veröffentlicht am 30.10.2026
 

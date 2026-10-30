@@ -162,6 +162,35 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 - N51-2: gering.
 - Prüfung mit echtem Screenreader.
 
+## Nachprüfung r4-55 und r4-56 · liegt vor seit 30.10.2026
+
+**GitHub:** Branch `pruefung/2026-10-29-nachpruefung-r4-53`, auf `main` (`b6777ec`) aufgesetzt. Der Branchname stammt aus der Nachprüfung r4-53, weil die Prüfsitzung an diesen Branch gebunden ist. [PR #779](https://github.com/christaegger-dot/borderline-angehoerige/pull/779), gemergt als `db56243` am 30.10.2026, 07:53 UTC, im Auftrag von Christa Egger («bitte merge»). Die Prüfungen waren grün. Der Codex-Review brach ab, weil das Kontingent aufgebraucht war («You have reached your Codex usage limits»), und hat nichts geprüft. Entscheid Christa Egger: «ja, ohne Codex-Review mergen». Auftrag von Christa Egger, 30.10.2026: «Nachprüfung r4-55 und r4-56 starten». Nachweis: [`audit-results/2026-10-30-nachpruefung-r4-55-r4-56/NACHPRUEFUNG.md`](audit-results/2026-10-30-nachpruefung-r4-55-r4-56/NACHPRUEFUNG.md).
+
+**Gegenstand und Prüfende:** [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753), verglichen `9c3521e` (an `authoring/` und `site/` gleich r4-54) mit `3780ee5` (r4-56). Footer- und Absender-CSS sind seither unverändert, auch live auf r4-60. Geprüft hat die Claude-Sitzung, die die zweite Nachprüfung r4-53 erstellt hat. Sie hat an r4-55 und r4-56 nicht gebaut und nichts an Inhalt oder Code geändert.
+
+**Ergebnis:** «Keine Nachbesserung nötig».
+
+| Befund | Schweregrad | Inhalt | Stand |
+|---|---|---|---|
+| N56-1 | gering | Die Überschriften im Footer («Kontakt», «Fachstelle Angehörigenarbeit») sehen aus wie der Text darunter: 16 px, Regular, `tinte-leise`, ohne Abstand (`site.css:794–795`). Der Pflichthinweis «Diese Website ersetzt keine individuelle Abklärung, Beratung oder Behandlung.» geht optisch in den Namen der Klinik über. Für Screenreader unverändert, kein WCAG-Verstoss | offen, Entscheid Christa Egger. Vorschlag: Überschriften in `fw-medium` und etwas Abstand vor dem Hinweis, weiter 16 px |
+
+**Bestätigt:**
+- Alle Messwerte der Selbstberichte r4-55 und r4-56 stimmen auf den Pixel (480 Zustände, 24 Seiten). Footer bei 1440 px 217 statt 333 px, bei 390 px 441 statt 574 px; Kopf bei 320 px 26 px höher; kleinster Kontrast im Footer 5,92 : 1; Footer-Links mindestens 44 px; kein waagrechtes Scrollen.
+- Fokusbild an allen sechs Footer-Links, Hover, erzwungene Farben und Druck in Ordnung.
+- Kein Wortlaut geändert (48 Dateien). Akuthinweise, Sprungziele und Suche unverändert. Tests gleichwertig, keiner geändert.
+- axe-core 4.14.0: 0 Verstösse in 96 Läufen.
+- Tests auf `3780ee5`:
+  - Gate: 24 Seiten · 0 Blocker
+  - Parität: 35
+  - Selbsttest: 89/89
+  - Suchtest: 216/216
+  - Sprach-/UI-Test: 73/73
+  - Layouttest: bekannte Ausnahme B2c
+
+**Hinweis ohne Befund:** Keine automatische Probe misst den Footer (Zielflächen, Kontrast).
+
+**Offen:** N56-1; Entscheid, ob «Nichts unter 16 px» auch für die übrigen Texte gilt; Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte.
+
 ## Dezenter Footer · r4-56 · veröffentlicht am 29.10.2026
 
 **GitHub:** Branch `claude/dazzling-cerf-n6ci1w`, im selben [PR #753](https://github.com/christaegger-dot/borderline-angehoerige/pull/753) wie r4-55. Gemergt zusammen mit r4-55 als `3780ee5` am 29.10.2026, 23:21 UTC, im Auftrag von Christa Egger («bitte merge»), nach grünem CI-Lauf `build-and-compare` auf `c69e24f`; damit über Netlify veröffentlicht. Die Live-Site lieferte um 23:22 UTC `data-puk-site-build="r4-56"` und in `site.css?v=r4-56` die neuen Regeln für `.puk-web-footer` (ohne Fläche, Haarlinie) und `.puk-site-sender` (`font-size:1rem`) aus (eigene Abfrage mit `curl`, keine Prüfstufe). Auftrag von Christa Egger, 29.10.2026: «ich will einen sehr dezenten footer». Nach den Vergleichsbildern hat sie entschieden: «16 px, grau». Nachweis: [`audit-results/2026-10-29-footer-r4-56/BERICHT.md`](audit-results/2026-10-29-footer-r4-56/BERICHT.md).
@@ -193,7 +222,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 - Sprach-/UI-Test 73/73
 - Layouttest 240 Zustände, 27 Bedienproben, 1 bekannte Ausnahme (B2c)
 
-**Offen:** Nachprüfung von r4-55 und r4-56 durch eine Sitzung, die nicht gebaut hat. Das Gestaltungssystem ist nachgeführt: neues Bauteil «Fusszeile», ohne Fläche, Links grau, Absenderzeile 16 px (siehe Abschnitt «Gestaltungssystem»).
+**Offen:** Nachprüfung von r4-55 und r4-56: liegt vor, «Keine Nachbesserung nötig», Befund N56-1 (gering, siehe Abschnitt «Nachprüfung r4-55 und r4-56» oben). Das Gestaltungssystem ist nachgeführt: neues Bauteil «Fusszeile», ohne Fläche, Links grau, Absenderzeile 16 px (siehe Abschnitt «Gestaltungssystem»).
 
 ## Absenderzeile 16 px · r4-55 · veröffentlicht am 29.10.2026
 
@@ -221,7 +250,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 Die Liste steht im Bericht. Zu entscheiden ist, ob die Regel «Nichts unter 16 px» auch dafür gilt.
 
-**Offen:** Nachprüfung von r4-55 und r4-56. Zu entscheiden bleibt, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Hinweis). Im Gestaltungssystem ist die Abweichung der Absenderzeile entfernt.
+**Offen:** Nachprüfung von r4-55 und r4-56: liegt vor (siehe Abschnitt oben). Zu entscheiden bleibt, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Hinweis). Im Gestaltungssystem ist die Abweichung der Absenderzeile entfernt.
 
 ## Nachprüfung r4-54 · liegt vor seit 29.10.2026
 

@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-59';
+const BUILD = 'r4-60';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -32,9 +32,11 @@ const utilityEntriesOf = cfg => {
 const utilityLabel = entry => entry.label || entry.page.title;
 /* r4-58 (Nachprüfung N57-2): Direkteinstiege bleiben für Screenreader erreichbar, und ihr zugänglicher Name ist die sichtbare
    Beschriftung (WCAG 2.5.3). Kein hidden oder aria-hidden="true" am Eintrag oder darüber; kein aria-label oder aria-labelledby am Link. */
-/* r4-59 (Nachprüfung N58-1): aria-hidden ohne Rücksicht auf Gross- und Kleinschreibung (Chromium verbirgt auch «TRUE», aber nicht
-   « true » mit Leerraum); inert gilt wie hidden. Der zugängliche Text eines Links (accTxt) lässt verborgene Teile weg. */
-const hiddenFlag = x => has(x, 'hidden') || has(x, 'inert') || String((x.attrs || {})['aria-hidden']).toLowerCase() === 'true';
+/* r4-59 (Nachprüfung N58-1): inert gilt wie hidden. Der zugängliche Text eines Links (accTxt) lässt verborgene Teile weg.
+   r4-60 (Nachprüfung N59-1): Chromium verbirgt bei jedem Wert von aria-hidden ausser «false» (in jeder Schreibweise), «undefined»
+   und leer, also auch bei « true », «yes» oder «0» (Zugänglichkeitsbaum über CDP, Chromium 153). Leerraum wird nicht entfernt. */
+const ariaHiddenOff = new Set(['false', 'undefined', '']);
+const hiddenFlag = x => has(x, 'hidden') || has(x, 'inert') || (has(x, 'aria-hidden') && !ariaHiddenOff.has(String(x.attrs['aria-hidden']).toLowerCase()));
 const concealed = nd => hiddenFlag(nd) || !!up(nd, hiddenFlag);
 const accTxt = node => (node.children || []).map(c => c.tag === '#text' ? c.text : RAW.has(c.tag) || hiddenFlag(c) ? '' : accTxt(c)).join('');
 const relabelled = a => has(a, 'aria-label') || has(a, 'aria-labelledby');
@@ -702,6 +704,8 @@ const MUTATIONS = [
   ['Zeile der Direkteinstiege mit inert gesperrt (r4-59, N58-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /<nav class="puk-site-utility" aria-label="Direkteinstiege"/, '$& inert')],
   ['Beschriftung eines Direkteinstiegs nur in aria-hidden (r4-59, N58-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<span aria-hidden="true">$2</span><')],
   ['Direkteinstieg im Menü mit inert gesperrt (r4-59, N58-1)', ['nav'], (c, f) => rex(f, 'index.html', /<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"/, '$& inert')],
+  ['Zeile der Direkteinstiege mit aria-hidden=" true " verborgen (r4-60, N59-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /<nav class="puk-site-utility" aria-label="Direkteinstiege"/, '$& aria-hidden=" true "')],
+  ['Direkteinstieg im Menü mit aria-hidden="yes" verborgen (r4-60, N59-1)', ['nav'], (c, f) => rex(f, 'index.html', /<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"/, '$& aria-hidden="yes"')],
   ['Navigationsziel fehlt (Link zeigt auf nicht vorhandene Seite)', ['nav-target', 'nav'], (c, f) => rep(f, 'index.html', 'class="puk-web-nav__link" href="beziehungen.html"', 'class="puk-web-nav__link" href="gibt-es-nicht.html"')],
   ['Seitenvertrag verweist auf fehlende Datei', ['page-file'], c => { pg(c, 'behandlung').href = 'gibt-es-nicht.html'; }],
   ['lang fehlt', ['lang'], (c, f) => rep(f, 'behandlung.html', '<html lang="de-CH"', '<html')],
@@ -866,6 +870,13 @@ function selftest(cfg, files, opts = {}) {
     const g = Object.assign({}, f); const cut = fb.length && rex(g, 'index.html', /<nav class="puk-site-utility"[\s\S]*?<\/nav>/, '');
     const missIds = cut ? ids(gate(c, g, { mode: 'draft', exists: base })) : [];
     rows.push({ name: 'Ohne utilityNav fehlt die Rückfallzeile (Nachtrag N54-2)', expected: 'utility-nav', got: cut ? (missIds.join(', ') || 'nicht erkannt') : 'Mutation nicht anwendbar', ok: missIds.includes('utility-nav') }); }
+  { /* r4-60 (Nachprüfung N59-1): aria-hidden mit «false» (jede Schreibweise), «undefined» oder leer verbirgt nicht und darf nicht blockieren. */
+    const vals = ['false', 'FALSE', 'undefined', '']; const hits = [];
+    for (const v of vals) { const f = Object.assign({}, files);
+      const ok = rex(f, 'index.html', /<nav class="puk-site-utility" aria-label="Direkteinstiege"/, `$& aria-hidden="${v}"`) && rex(f, 'index.html', /<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"/, `$& aria-hidden="${v}"`);
+      const ids = ok ? [...new Set(gate(cfg, f, { mode: 'draft', exists: base }).findings.filter(x => x.level === 'block' && ['nav', 'utility-nav'].includes(x.id)).map(x => x.id))] : ['Mutation nicht anwendbar'];
+      if (ids.length) hits.push(`«${v}»: ${ids.join(', ')}`); }
+    rows.push({ name: 'aria-hidden «false», «FALSE», «undefined» oder leer an Zeile und Menü gilt nicht als verborgen (r4-60, N59-1)', expected: 'kein nav, kein utility-nav', got: hits.join('; ') || 'kein nav, kein utility-nav', ok: !hits.length }); }
   for (const [name, expect, mut] of MUTATIONS) {
     const c = JSON.parse(JSON.stringify(cfg)); const f = Object.assign({}, files);
     let applied; try { applied = mut(c, f) !== false; } catch (e) { applied = false; }

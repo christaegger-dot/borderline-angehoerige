@@ -1,0 +1,3 @@
+bare => link name="Kurz und klar"
+spanYes => link name=""
+decorFalse => link name="Kurz und klar →"

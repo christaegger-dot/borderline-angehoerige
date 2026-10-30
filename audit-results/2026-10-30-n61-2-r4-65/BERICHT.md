@@ -1,5 +1,7 @@
 # N61-2 · r4-65 · 30.10.2026 · Umsetzung und Selbstprüfung
 
+> **Umbenannt (30.10.2026):** Dieser Stand (`f7f8d18`) ist nachgeprüft (Nachprüfung r4-65, PR #793). Weil r4-65 inzwischen #784 auf `main` trägt, ist er auf Entscheid von Christa Egger («#787 als r4-66 neu fassen») als r4-66 neu gefasst, mit unveränderter Regel: [`audit-results/2026-10-30-n61-2-r4-66/BERICHT.md`](../2026-10-30-n61-2-r4-66/BERICHT.md).
+
 **Auftrag von Christa Egger, 30.10.2026:** «Nachbesserung N61-1 bis N61-3 umsetzen». Nach N62-1 der Nachprüfung r4-62 (PR #790) hat sie entschieden: «#787 neu fassen, dann prüfen».
 
 - **Befund:** N61-2 aus `audit-results/2026-10-30-nachpruefung-r4-61/NACHPRUEFUNG.md` (PR #785).

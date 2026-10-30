@@ -1,0 +1,33 @@
+Zustand | Stand | Seiten | Footer px | Kopf px | Absender | Name Zeilen | Mail h×w | min. Kontrast | Schriften Footer | min. Linkhöhe | Überlauf
+100% 320 | r4-54 | 24 | 622 | 169–213 | 15px | 1 | 44×213 | 5.52 «Psychiatrische Universitätskli» | 16px,17px,19px | 44 | 0
+100% 320 | r4-56 | 24 | 489 | 195–239 | 16px | 2 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 390 | r4-54 | 24 | 574 | 147–191 | 15px | 1 | 44×213 | 5.52 «Psychiatrische Universitätskli» | 16px,17px,19px | 44 | 0
+100% 390 | r4-56 | 24 | 441 | 148–192 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 768 | r4-54 | 24 | 401 | 147–191 | 15px | 1 | 44×213 | 5.52 «Psychiatrische Universitätskli» | 16px,17px,19px | 44 | 0
+100% 768 | r4-56 | 24 | 309 | 148–192 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 1100 | r4-54 | 24 | 357 | 130–174 | 15px | 1 | 44×213 | 5.52 «Psychiatrische Universitätskli» | 16px,17px,19px | 44 | 0
+100% 1100 | r4-56 | 24 | 241 | 130–174 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+100% 1440 | r4-54 | 24 | 333 | 138 | 15px | 1 | 44×213 | 5.52 «Psychiatrische Universitätskli» | 16px,17px,19px | 44 | 0
+100% 1440 | r4-56 | 24 | 217 | 138 | 16px | 1 | 44×228 | 5.92 «Kontakt» | 16px | 44 | 0
+200% 320 | r4-54 | 24 | 1575 | 418 | 30px | 3 | 87×280 | 5.52 «Psychiatrische Universitätskli» | 32px,34px,38px | 48 | 0
+200% 320 | r4-56 | 24 | 1321 | 435 | 32px | 3 | 93×291 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 390 | r4-54 | 24 | 1288 | 418 | 30px | 3 | 87×350 | 5.52 «Psychiatrische Universitätskli» | 32px,34px,38px | 48 | 0
+200% 390 | r4-56 | 24 | 1081 | 435 | 32px | 3 | 93×350 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 768 | r4-54 | 24 | 790 | 288–339 | 30px | 1 | 44×427 | 5.52 «Psychiatrische Universitätskli» | 32px,34px,38px | 48 | 0
+200% 768 | r4-56 | 24 | 649 | 296–347 | 32px | 1 | 46×455 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 1100 | r4-54 | 24 | 685 | 245–296 | 30px | 1 | 44×427 | 5.52 «Psychiatrische Universitätskli» | 32px,34px,38px | 48 | 0
+200% 1100 | r4-56 | 24 | 505 | 250–301 | 32px | 1 | 46×455 | 5.92 «Kontakt» | 32px | 48 | 0
+200% 1440 | r4-54 | 24 | 637 | 245–296 | 30px | 1 | 44×427 | 5.52 «Psychiatrische Universitätskli» | 32px,34px,38px | 48 | 0
+200% 1440 | r4-56 | 24 | 457 | 250–301 | 32px | 1 | 46×455 | 5.92 «Kontakt» | 32px | 48 | 0
+
+r4-54 Footer rgb(247, 247, 247) | 0px none rgb(34, 34, 34) Linienkontrast 15.91
+ h2 [{"t":"Kontakt","fs":"17px","fw":"500","color":"rgb(34, 34, 34)"},{"t":"Fachstelle Angehörigenarbeit","fs":"17px","fw":"500","color":"rgb(34, 34, 34)"}]
+ copy 19px 400 rgb(34, 34, 34)
+ links [["Kontakt und Beratungsangebot",44,"underline","rgb(43, 79, 224)","500"],["Über diese Website",44,"underline","rgb(43, 79, 224)","400"],["Barrierefreiheit",44,"underline","rgb(43, 79, 224)","400"],["Rückmeldung",44,"underline","rgb(43, 79, 224)","400"],["Impressum",44,"underline","rgb(43, 79, 224)","400"],["Datenschutz",44,"underline","rgb(43, 79, 224)","400"]]
+
+r4-56 Footer rgba(0, 0, 0, 0) | 1px solid rgb(233, 233, 233) Linienkontrast 1.21
+ h2 [{"t":"Kontakt","fs":"16px","fw":"400","color":"rgb(100, 100, 100)"},{"t":"Fachstelle Angehörigenarbeit","fs":"16px","fw":"400","color":"rgb(100, 100, 100)"}]
+ copy 16px 400 rgb(100, 100, 100)
+ links [["Kontakt und Beratungsangebot",44,"underline","rgb(100, 100, 100)","400"],["Über diese Website",44,"underline","rgb(100, 100, 100)","400"],["Barrierefreiheit",44,"underline","rgb(100, 100, 100)","400"],["Rückmeldung",44,"underline","rgb(100, 100, 100)","400"],["Impressum",44,"underline","rgb(100, 100, 100)","400"],["Datenschutz",44,"underline","rgb(100, 100, 100)","400"]]
+
+404 r4-56 Footer/Links: 489/6 441/6 309/6 241/6 217/6 1321/6 1081/6 649/6 505/6 457/6

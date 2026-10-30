@@ -1,0 +1,28 @@
+## r4-61 (9fe243e), Arbeitsbaum ausserhalb des Repositorys
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+EXIT 0
+PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+EXIT 0
+Selbsttest: 114/114 bestanden
+EXIT 0
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+EXIT 0
+Sprach-/UI-Test: 73 Prüfungen bestanden · JS-Fehler 0
+EXIT 0
+tension core exceeds 1800px
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+EXIT 1
+
+## main (db56243) + 9fe243e zusammengeführt (c9789ea, lokal, nicht gepusht)
+0
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+EXIT 0
+PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+Selbsttest: 114/114 bestanden
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+Sprach-/UI-Test: 73 Prüfungen bestanden · JS-Fehler 0
+tension core exceeds 1800px
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+EXIT 1

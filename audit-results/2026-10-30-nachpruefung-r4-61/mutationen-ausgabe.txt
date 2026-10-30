@@ -1,0 +1,69 @@
+# gate-mutationen.mjs gegen r4-60 (b6777ec) und r4-61 (9fe243e), dazu chromium-name.mjs (CDP getFullAXTree) auf den mutierten Seiten von r4-61
+# Chromium 153.0.8010.12
+A1 <span aria-label="Mehr"> um den Text · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Mehr»
+A1 <span aria-label="Mehr"> um den Text · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Mehr»
+A2 <strong aria-label="Mehr"> um den Text · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Mehr»
+A2 <strong aria-label="Mehr"> um den Text · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Mehr»
+A3 <svg aria-label="Pfeil"> nach dem Text · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Kurz und klar Pfeil»
+A3 <svg aria-label="Pfeil"> nach dem Text · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Kurz und klar Pfeil»
+A4 <svg role="img" aria-label="Pfeil"> nach dem Text · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Kurz und klar Pfeil»
+A4 <svg role="img" aria-label="Pfeil"> nach dem Text · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Kurz und klar Pfeil»
+A5 <img alt="" aria-label="Pfeil"> nach dem Text · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Kurz und klar Pfeil»
+A5 <img alt="" aria-label="Pfeil"> nach dem Text · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Kurz und klar Pfeil»
+A6 verschachtelt <span><em aria-label="Mehr"> · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Mehr»
+A6 verschachtelt <span><em aria-label="Mehr"> · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Mehr»
+A7 <span aria-labelledby="haltung-title"> (ID vorhanden) · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Mitgefühl und Selbstschutz gehören zusammen»
+A7 <span aria-labelledby="haltung-title"> (ID vorhanden) · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Mitgefühl und Selbstschutz gehören zusammen»
+A8 <span aria-labelledby="gibtsnicht"> (ID fehlt) · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Kurz und klar»
+A8 <span aria-labelledby="gibtsnicht"> (ID fehlt) · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Kurz und klar»
+A9 <span aria-label="Kurz und klar"> (gleich der Beschriftung) · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Kurz und klar»
+A9 <span aria-label="Kurz und klar"> (gleich der Beschriftung) · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Kurz und klar»
+A10 <span aria-label=""> (leer) · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Kurz und klar»
+A10 <span aria-label=""> (leer) · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Kurz und klar»
+A11 <span aria-hidden="false" aria-label="Mehr"> · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Mehr»
+A11 <span aria-hidden="false" aria-label="Mehr"> · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Mehr»
+A12 <span aria-hidden="" aria-label="Mehr"> · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Mehr»
+A12 <span aria-hidden="" aria-label="Mehr"> · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Mehr»
+A13 <span aria-hidden="undefined" aria-label="Mehr"> · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Mehr»
+A13 <span aria-hidden="undefined" aria-label="Mehr"> · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Mehr»
+A14 <span aria-label="Mehr"> auf krise.html · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@krise | Chromium: link «Mehr»
+B svg aria-hidden="true" aria-label="Pfeil" · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B svg aria-hidden="true" aria-label="Pfeil" · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B svg aria-hidden="TRUE" aria-label="Pfeil" · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B svg aria-hidden="TRUE" aria-label="Pfeil" · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B svg aria-hidden=" true " aria-label="Pfeil" · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B svg aria-hidden=" true " aria-label="Pfeil" · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B svg aria-hidden="yes" aria-label="Pfeil" · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B svg aria-hidden="yes" aria-label="Pfeil" · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B svg hidden aria-label="Pfeil" · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar Pfeil»
+B svg hidden aria-label="Pfeil" · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar Pfeil»
+B svg inert aria-label="Pfeil" · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar Pfeil»
+B svg inert aria-label="Pfeil" · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar Pfeil»
+B img aria-hidden="true" aria-label="Pfeil" · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B img aria-hidden="true" aria-label="Pfeil" · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B Zwischenelement <span aria-hidden="true"> um <span aria-label="Pfeil"> · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B Zwischenelement <span aria-hidden="true"> um <span aria-label="Pfeil"> · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B Zwischenelement <span hidden> um <span aria-label="Pfeil"> · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B Zwischenelement <span hidden> um <span aria-label="Pfeil"> · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B Zwischenelement <span inert> um <span aria-label="Pfeil"> · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B Zwischenelement <span inert> um <span aria-label="Pfeil"> · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B Zwischen aria-hidden="true", innen aria-hidden="false" aria-label · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+B Zwischen aria-hidden="true", innen aria-hidden="false" aria-label · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+C1 <span aria-describedby="haltung-title"> · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+C1 <span aria-describedby="haltung-title"> · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+C2 <span title="Mehr"> um den Text · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+C2 <span title="Mehr"> um den Text · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+D1 leeres <span title="Mehr"> nach dem Text · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+D1 leeres <span title="Mehr"> nach dem Text · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar»
+D2 <img alt="Mehr"> nach dem Text · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar Mehr»
+D2 <img alt="Mehr"> nach dem Text · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar Mehr»
+D3 <svg><title>Mehr</title></svg> nach dem Text · Zeile | r4-60: BLOCK utility-nav@index | r4-61: BLOCK utility-nav@index | Chromium: link «Kurz und klar Mehr»
+D3 <svg><title>Mehr</title></svg> nach dem Text · Menü | r4-60: BLOCK nav@index | r4-61: BLOCK nav@index | Chromium: link «Kurz und klar Mehr»
+D4 <input value="Mehr"> nach dem Text · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar Mehr»
+D4 <input value="Mehr"> nach dem Text · Menü | r4-60: frei | r4-61: frei | Chromium: link «Kurz und klar Mehr»
+E0 Rückfall ohne Mutation | r4-60: frei (Bestand mit Rückfall: 0 Blocker) | r4-61: frei (Bestand mit Rückfall: 0 Blocker) | Chromium: link «Website durchsuchen»
+E1 Rückfall <span aria-label="Mehr"> · Zeile | r4-60: frei | r4-61: BLOCK utility-nav@index | Chromium: link «Mehr»
+E2 Rückfall <span aria-label="Mehr"> · Menü | r4-60: frei | r4-61: BLOCK nav@index | Chromium: link «Mehr»
+E3 Rückfall <svg aria-hidden="true" aria-label> · Zeile | r4-60: frei | r4-61: frei | Chromium: link «Website durchsuchen»
+F1 404: <span aria-label="Mehr"> in einem Hauptmenülink | r4-60: frei | r4-61: frei | Chromium: link «Mehr»
+G1 index: <span aria-label="Mehr"> in einem Hauptmenülink | r4-60: frei | r4-61: frei | Chromium: link «Mehr»

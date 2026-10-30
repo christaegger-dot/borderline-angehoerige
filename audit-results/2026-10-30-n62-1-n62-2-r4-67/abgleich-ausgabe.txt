@@ -1,5 +1,5 @@
-Gate r4-65 Grundzustand: 0 Blocker · Gate r4-66: 0 Blocker · Chromium 153.0.8010.12
-Nr	Fall	Regel	r4-65	r4-66	Chromium	soll	r4-65=Chr	r4-66=Chr
+Gate r4-65 Grundzustand: 0 Blocker · Gate r4-67: 0 Blocker · Chromium 153.0.8010.12
+Nr	Fall	Regel	r4-65	r4-67	Chromium	soll	r4-65=Chr	r4-67=Chr
 M1	Zeile: svg hidden aria-label	utility-nav	utility-nav	utility-nav	link «Kurz und klar Pfeil»	Blocker	ja	ja
 M2	Zeile: svg inert aria-label	utility-nav	utility-nav	utility-nav	link «Kurz und klar Pfeil»	Blocker	ja	ja
 M3	Zeile: svg hidden + title	utility-nav	utility-nav	utility-nav	link «Kurz und klar Mehr»	Blocker	ja	ja
@@ -87,4 +87,4 @@ M84	Abbildung: Kontrolle: SVG aria-label, darin verschachteltes <svg> ohne Namen
 M85	Abbildung: SVG aria-hidden, foreignObject mit <svg> ohne Namen	figure-alt	–	–	nicht im Baum | nicht im Baum	kein	ja	ja
 M86	Abbildung: SVG ohne aria-hidden, unter role="img" aria-label	figure-alt	–	–	image «»	Blocker	NEIN	NEIN
 
-86 Fälle · Abweichungen Gate ↔ Chromium: r4-65 25, r4-66 19 (r4-66: 18 strenger als Chromium, 1 milder als Chromium)
+86 Fälle · Abweichungen Gate ↔ Chromium: r4-65 25, r4-67 19 (r4-67: 18 strenger als Chromium, 1 milder als Chromium)

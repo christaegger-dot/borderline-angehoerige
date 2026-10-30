@@ -1,3 +1,3 @@
-# Selbsttest r4-66 mit inSvg von r4-65 (Kopie von authoring/ ausserhalb des Repositorys)
-FAIL | Verborgenes HTML in foreignObject im Direkteinstieg ist zulässig (r4-66, N62-2) | erwartet: kein nav, kein utility-nav | erhalten: utility-nav, nav
+# Selbsttest r4-67 mit inSvg von r4-65 (Kopie von authoring/ ausserhalb des Repositorys)
+FAIL | Verborgenes HTML in foreignObject im Direkteinstieg ist zulässig (r4-67, N62-2) | erwartet: kein nav, kein utility-nav | erhalten: utility-nav, nav
 Selbsttest: 122/123 bestanden

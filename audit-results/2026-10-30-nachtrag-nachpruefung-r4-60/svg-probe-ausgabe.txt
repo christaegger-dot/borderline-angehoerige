@@ -1,0 +1,8 @@
+# Chromium 153.0.8010.12
+svg ohne Attribut => CDP: image «» | display: inline, Breite 40
+svg hidden => CDP: image «» | display: inline, Breite 40
+svg inert => CDP: image «» | display: inline, Breite 40
+svg aria-hidden="TRUE" => CDP: VERBORGEN(ariaHiddenElement) | display: inline, Breite 40
+div hidden > svg => CDP: VERBORGEN(notRendered) | display: inline, Breite 0
+div.grid hidden > svg (div{display:grid} im Autor-Stylesheet) => CDP: image «» | display: block, Breite 40
+div inert > svg => CDP: VERBORGEN(inertElement) | display: inline, Breite 40

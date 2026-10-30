@@ -37,7 +37,7 @@ const utilityLabel = entry => entry.label || entry.page.title;
    und leer, also auch bei « true », «yes» oder «0» (Zugänglichkeitsbaum über CDP, Chromium 153). Leerraum wird nicht entfernt. */
 const ariaHiddenOff = new Set(['false', 'undefined', '']);
 const ariaHiddenFlag = x => has(x, 'aria-hidden') && !ariaHiddenOff.has(String(x.attrs['aria-hidden']).toLowerCase());
-/* r4-62 (Nachtrag zur Nachprüfung r4-60, N60-3; Nachprüfung r4-61, N61-1): hidden und inert sind HTML-Attribute. An <svg> und an
+/* r4-65 (Nachtrag zur Nachprüfung r4-60, N60-3; Nachprüfung r4-61, N61-1): hidden und inert sind HTML-Attribute. An <svg> und an
    Elementen darin verbirgt Chromium damit nichts (<a>Kurz und klar<svg hidden aria-label="Pfeil"></svg></a> heisst «Kurz und klar Pfeil»).
    Dort gilt nur aria-hidden. */
 const inSvg = x => x.tag === 'svg' || !!up(x, y => y.tag === 'svg');
@@ -52,7 +52,7 @@ const ctlTxt = c => c.tag === 'img' ? ' ' + (c.attrs.alt || '') + ' '
 const accTxt = node => (node.children || []).map(c => c.tag === '#text' ? c.text : RAW.has(c.tag) || hiddenFlag(c) ? '' : ctlTxt(c) ?? accTxt(c)).join('');
 /* r4-61 (Nachprüfung N59-3): auch aria-label oder aria-labelledby an einem nicht verborgenen Element im Link ändert den Namen
    (Chromium: «<a><span aria-label="Mehr">Kurz und klar</span></a>» heisst «Mehr»). Ein verborgenes Element zählt nicht.
-   r4-62 (N61-1): verborgen nach hiddenFlag, also an SVG nur mit aria-hidden, nicht mit hidden oder inert. */
+   r4-65 (N61-1): verborgen nach hiddenFlag, also an SVG nur mit aria-hidden, nicht mit hidden oder inert. */
 const relabels = x => has(x, 'aria-label') || has(x, 'aria-labelledby');
 const hiddenBelow = (x, a) => { for (let p = x; p && p !== a; p = p.parent) if (hiddenFlag(p)) return true; return false; };
 const relabelled = a => relabels(a) || all(a, relabels).some(x => !hiddenBelow(x, a));
@@ -648,7 +648,7 @@ function gate(cfg, files, opts = {}) {
       if (!/eigene (didaktische )?darstellung|quelle:/i.test(capT)) add('block', pid, 'figure-source', `Figur ${lab}: Kennzeichnung «Eigene didaktische Darstellung» bzw. «Quelle:» fehlt in der Bildlegende`);
       for (const img of all(f, x => x.tag === 'img')) if (!has(img, 'alt')) add('block', pid, 'figure-alt', `Figur ${lab}: img ohne alt`);
       /* r4-60 (Nachprüfung N59-2): aria-hidden wie bei den Direkteinstiegen; ein SVG mit aria-hidden="TRUE" ist verborgen.
-         r4-62 (Nachtrag zur Nachprüfung r4-60, N60-3): hidden und inert am SVG selbst wirken nicht (SVG-Namensraum), und eine eigene display-Regel
+         r4-65 (Nachtrag zur Nachprüfung r4-60, N60-3): hidden und inert am SVG selbst wirken nicht (SVG-Namensraum), und eine eigene display-Regel
          hebt hidden an einem Vorfahren auf (.puk-vis-scene{display:grid}); Chromium zeigt das SVG dann als Bild ohne Namen.
          Als ausgeblendet gilt deshalb nur aria-hidden am SVG oder an einem Vorfahren und inert an einem Vorfahren ausserhalb von SVG. */
       for (const sv of all(f, x => x.tag === 'svg')) if (!svgSilenced(sv) && !up(sv, x => x.attrs.role === 'img') && !sv.attrs['aria-label'] && !one(sv, x => x.tag === 'title')) add('block', pid, 'figure-alt', `Figur ${lab}: SVG weder ausgeblendet noch benannt`);
@@ -740,13 +740,13 @@ const MUTATIONS = [
   ['Absenderin mit aria-hidden="TRUE" auf der Subbar verborgen (r4-60, N59-2)', ['sender'], (c, f) => rex(f, 'index.html', /<div class="puk-web-container puk-site-subbar"/, '$& aria-hidden="TRUE"')],
   ['Fehlerseite: Absenderin über inert am Kopf gesperrt (r4-60, N59-2)', ['sender'], (c, f) => rex(f, '404.html', /<header class="puk-web-header"/, '$& inert')],
   ['Direkteinstieg mit aria-label an einem span im Link (r4-61, N59-3)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<span aria-label="Mehr">$2</span><')],
-  ['Direkteinstieg mit <svg hidden aria-label> im Link: hidden wirkt an SVG nicht (r4-62, N61-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<svg hidden aria-label="Pfeil" width="8" height="8"></svg><')],
-  ['Direkteinstieg im Menü mit <svg inert><title> im Link: inert wirkt an SVG nicht (r4-62, N61-1)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<svg inert width="8" height="8"><title>Mehr</title></svg><')],
+  ['Direkteinstieg mit <svg hidden aria-label> im Link: hidden wirkt an SVG nicht (r4-65, N61-1)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<svg hidden aria-label="Pfeil" width="8" height="8"></svg><')],
+  ['Direkteinstieg im Menü mit <svg inert><title> im Link: inert wirkt an SVG nicht (r4-65, N61-1)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<svg inert width="8" height="8"><title>Mehr</title></svg><')],
   ['Direkteinstieg mit img alt im Link (r4-65, N61-2)', ['utility-nav'], (c, f) => rex(f, 'index.html', /(<a class=\"puk-site-utility__link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<img alt="Mehr" src="data:," width="8" height="8"><')],
   ['Direkteinstieg im Menü mit input value im Link (r4-65, N61-2)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class=\"puk-web-nav__link puk-site-menu__utility-link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<input type="button" value="Mehr"><')],
-  ['SVG ohne aria-hidden, nur mit hidden am SVG, bleibt ohne Namen (r4-62, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1 hidden')],
-  ['SVG ohne aria-hidden, nur mit inert am SVG, bleibt ohne Namen (r4-62, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1 inert')],
-  ['SVG ohne aria-hidden unter einem Vorfahren mit hidden und eigener display-Regel (r4-62, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1') && rex(f, 'verstehen.html', /<div class="puk-vis-scene">/, '<div class="puk-vis-scene" hidden>')],
+  ['SVG ohne aria-hidden, nur mit hidden am SVG, bleibt ohne Namen (r4-65, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1 hidden')],
+  ['SVG ohne aria-hidden, nur mit inert am SVG, bleibt ohne Namen (r4-65, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1 inert')],
+  ['SVG ohne aria-hidden unter einem Vorfahren mit hidden und eigener display-Regel (r4-65, N60-3)', ['figure-alt'], (c, f) => rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1') && rex(f, 'verstehen.html', /<div class="puk-vis-scene">/, '<div class="puk-vis-scene" hidden>')],
   ['Direkteinstieg im Menü mit aria-labelledby an einem span im Link (r4-61, N59-3)', ['nav'], (c, f) => rex(f, 'index.html', /(<a class="puk-web-nav__link puk-site-menu__utility-link" href="kurz\.html"[^>]*>)([^<]*)</, '$1<span aria-labelledby="x">$2</span><')],
   ['Krisennummer erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p>Telefon 144</p></main>')],
   ['Krisentelefonlink erzeugt Prüfhinweis', ['crisis-number-check'], (c, f) => rep(f, 'behandlung.html', '</main>', '<p><a href="tel:144">Anrufen</a></p></main>')],
@@ -929,11 +929,11 @@ function selftest(cfg, files, opts = {}) {
     const ok = rex(f, 'index.html', /(<a class="puk-site-utility__link" href="kurz\.html"[^>]*>)([^<]*)</, '$1$2<svg aria-hidden="true" aria-label="Pfeil" width="8" height="8"></svg><');
     const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'utility-nav');
     rows.push({ name: 'Verborgenes SVG mit aria-label im Direkteinstieg ist zulässig (r4-61, N59-3)', expected: 'kein utility-nav', got: ok ? (hit ? 'utility-nav' : 'kein utility-nav') : 'Mutation nicht anwendbar', ok: ok && !hit }); }
-  { /* r4-62 (Nachtrag zur Nachprüfung r4-60, N60-3): inert an einem Vorfahren verbirgt das SVG auch in Chromium. */
+  { /* r4-65 (Nachtrag zur Nachprüfung r4-60, N60-3): inert an einem Vorfahren verbirgt das SVG auch in Chromium. */
     const f = Object.assign({}, files);
     const ok = rex(f, 'verstehen.html', /(<svg class=\"puk-vis-scene__art\"[^>]*) aria-hidden=\"true\"/, '$1') && rex(f, 'verstehen.html', /<div class="puk-vis-scene">/, '<div class="puk-vis-scene" inert>');
     const hit = ok && gate(cfg, f, { mode: 'draft', exists: base }).findings.some(x => x.level === 'block' && x.id === 'figure-alt');
-    rows.push({ name: 'SVG ohne aria-hidden unter einem Vorfahren mit inert gilt als ausgeblendet (r4-62, N60-3)', expected: 'kein figure-alt', got: ok ? (hit ? 'figure-alt' : 'kein figure-alt') : 'Mutation nicht anwendbar', ok: ok && !hit }); }
+    rows.push({ name: 'SVG ohne aria-hidden unter einem Vorfahren mit inert gilt als ausgeblendet (r4-65, N60-3)', expected: 'kein figure-alt', got: ok ? (hit ? 'figure-alt' : 'kein figure-alt') : 'Mutation nicht anwendbar', ok: ok && !hit }); }
   { /* r4-65 (Nachprüfung r4-61, N61-2): Ein Bild mit leerem alt und ein verborgenes Bild ändern den Namen nicht. */
     const f = Object.assign({}, files);
     const ok = rex(f, 'index.html', /(<a class=\"puk-site-utility__link\" href=\"kurz\.html\"[^>]*>)([^<]*)</, '$1$2<img alt="" src="data:," width="8" height="8"><span hidden><img alt="Mehr" src="data:,"></span><');

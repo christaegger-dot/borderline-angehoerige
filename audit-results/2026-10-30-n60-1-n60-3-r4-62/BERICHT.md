@@ -1,4 +1,4 @@
-# N60-3 und N61-1 · r4-62 · 30.10.2026 · Umsetzung und Selbstprüfung
+# N60-3 und N61-1 · r4-62, veröffentlicht als r4-65 · 30.10.2026 · Umsetzung und Selbstprüfung
 
 **Auftrag von Christa Egger, 30.10.2026:** «Nachbesserung N60-1 und N60-3 umsetzen». Danach Entscheid von Christa Egger: «#780 mergen, r4-62 neu fassen». Gemeint ist: N60-1 ohne Dubletten, N60-3 zusammen mit N61-1 beheben, Selbsttest für Abbildung und Direkteinstieg.
 
@@ -92,3 +92,22 @@ Lokal mit Node 22.22.0, Chromium 153 und Playwright über `PLAYWRIGHT_MODULE`, a
 | axe-core 4.14.0 (eigener Ordner ausserhalb des Repositorys, `axe.mjs`) | `build r4-62 · Läufe: 48 · Seiten: 24 · Verstösse: 0` |
 
 **Nicht geprüft:** Screenreader, Safari und Firefox, reale Geräte.
+
+## Nachtrag: Merge von `main` durch Copilot, Umbenennung in r4-65
+
+- **Merge durch Copilot:** Am 30.10.2026 um 09:24:06 UTC hat `copilot-swe-agent[bot]` `main` in diesen Branch gemergt (`e1db2da`). Auf `main` war inzwischen r4-64 veröffentlicht (PR #788, N56-1). Dabei sind zwei Fehler entstanden:
+  - Die Pendenzendatei stand wieder auf dem Stand vor #788 und #789. Ein Merge von #784 hätte deren Einträge auf `main` gelöscht.
+  - In `pendingScope` war der Eintrag r4-64 durch r4-62 ersetzt. `BUILD`, `assetVersion` und `independentReviewWaiver.version` standen auf r4-64.
+- **Behoben in diesem Commit:**
+  - Die Pendenzendatei ist wieder gleich wie auf `main` (`git diff origin/main -- PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md` leer).
+  - Die Konfiguration ist die von `main` mit dem Eintrag dieses Stands obenauf. Der Eintrag r4-64 steht wieder darunter.
+- **Umbenennung in r4-65:** r4-64 ist schon veröffentlicht, und r4-63 ist in PR #787 vergeben. Dieser Stand heisst deshalb r4-65, in `BUILD`, `assetVersion`, `independentReviewWaiver.version`, `pendingScope`, `appliedTo` und in den Kommentaren und Selbsttestnamen von `contract.js`. Die Regeln sind unverändert gegenüber `d6dd542`, den die Nachprüfung r4-62 (#790) geprüft hat. Ordner und Dateinamen dieses Nachweises bleiben bei r4-62.
+- **Seiten:** `site/` ist bis auf die Build-Kennung byte-gleich mit `main` (r4-64): 72 Ersetzungen in 24 Seiten, Stylesheet und Skript unverändert.
+- **Prüfungen auf diesem Stand:**
+  - Build: 24 Seiten · 0 Blocker · 20 Hinweise
+  - Parität: 35
+  - Selbsttest: 122/122
+  - Suchtest: 216/216
+  - Sprach-/UI-Test: 73
+  - Layouttest: 240 Zustände, 27 Bedienproben, bekannte Ausnahme B2c
+  - axe-core 4.14.0: `build r4-65 · Läufe: 48 · Seiten: 24 · Verstösse: 0` (`axe-ausgabe-r4-65.txt`)

@@ -39,7 +39,8 @@ const B2C_PHASES=4,B2C_PHASE_END_MAX=1800,B2C_FIGURE_MAX=2400;
     rows.push({page,width,large,...result});
     if(!large&&width===375&&['krise','suche','begriffe','quellen'].includes(page))await p.screenshot({path:out+'/screenshots/'+page+'-375.png'});
     if(width===375&&['verstehen','kinder','genesung','jugendliche','selbstfuersorge','beziehungen','behandlung'].includes(page)){
-     let fig=p.locator('figure').first();if(await fig.count()){await fig.scrollIntoViewIfNeeded();await fig.screenshot({path:out+'/screenshots/'+page+'-figure-375'+(large?'-200':'')+'.png'});}
+     /* N813-5: Ist die erste Abbildung nicht sichtbar (zum Beispiel in einem geschlossenen <details>), wird das als Abweichung gemeldet. Vorher brach der Test hier mit einem Timeout ab, ohne ERGEBNIS.json. */
+     let fig=p.locator('figure').first();if(await fig.count()){if(await fig.isVisible()){await fig.scrollIntoViewIfNeeded();await fig.screenshot({path:out+'/screenshots/'+page+'-figure-375'+(large?'-200':'')+'.png'});}else rows.push({test:`${page} 375px text200=${large}: first figure not visible, screenshot skipped (for example inside a closed <details>)`,ok:false});}
     }
     if(!large&&width===1440&&page==='index')await p.locator('#einstiege').screenshot({path:out+'/screenshots/index-einstiege-1440.png'});
    }

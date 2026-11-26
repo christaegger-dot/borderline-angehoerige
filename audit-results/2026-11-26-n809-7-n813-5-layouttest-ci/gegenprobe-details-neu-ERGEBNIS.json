@@ -1,0 +1,12 @@
+{
+  "states": 240,
+  "interactions": 32,
+  "issues": [
+    "tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible",
+    "verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)",
+    "verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)",
+    "safety card starts in first screen 375x667 (top 802px)",
+    "safety card starts in first screen 360x740 (top 863px)"
+  ],
+  "exceptions": []
+}

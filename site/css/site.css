@@ -655,7 +655,10 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
    Regel des Gestaltungssystems «Nichts unter 16 px» erfüllt. */
 .puk-site-sender{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-2);min-width:0;margin:0;font-size:1rem;line-height:1.45;color:var(--tinte-leise)}
 .puk-site-sender__label{font:inherit;color:inherit;letter-spacing:0;text-transform:none}
-.puk-site-sender__name{color:var(--tinte);font-weight:var(--fw-medium)}
+/* r4-69 (Nachprüfung #815, N815-4, Auftrag Christa Egger vom 26.11.2026): «Angehörigenarbeit» ist bei 300 % Schrift breiter als ein
+   schmaler Bildschirm und schob die Seite seitlich hinaus. Der Name darf jetzt im Wort umbrechen, aber nur, wenn er sonst nicht passt;
+   bei 100 % und 200 % bleibt der Umbruch wie bisher (keine Silbentrennung). */
+.puk-site-sender__name{min-width:0;max-width:100%;color:var(--tinte);font-weight:var(--fw-medium);overflow-wrap:anywhere}
 .puk-site-sender__contact{margin-left:var(--space-2)}
 .puk-site-sender a{min-width:0;color:var(--blau);overflow-wrap:anywhere}
 .puk-site-sender a:hover{color:var(--blau-125)}
@@ -806,7 +809,8 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
 .puk-web-footer__boundary{max-width:var(--lesebreite);margin-top:var(--space-2)} /* r4-64 (N56-1): 8 px Abstand, damit der Hinweis «Diese Website ersetzt keine …» nicht in den Namen der Klinik übergeht */
 .puk-web-footer__details{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-5);max-width:var(--lesebreite)}
 .puk-site-info-links ul{display:flex;flex-wrap:wrap;gap:0 var(--space-5);margin:0;padding:0;list-style:none}
-.puk-site-info-links a,.puk-site-legal a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target)}
+/* r4-69 (N815-4): «Barrierefreiheit» und «Datenschutz» sind bei 300 % Schrift breiter als 320 px; sie dürfen dann im Wort umbrechen. */
+.puk-site-info-links a,.puk-site-legal a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target);overflow-wrap:anywhere}
 .puk-site-legal{margin:0;color:var(--tinte-leise);font-size:1rem;line-height:1.5}
 
 /* Entwurfsmarken (nur bei nicht freigegebener Absenderin, fehlenden Rechtsangaben oder Entwurfsseiten) */

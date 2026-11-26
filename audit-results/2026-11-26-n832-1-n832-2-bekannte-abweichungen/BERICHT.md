@@ -60,4 +60,5 @@ Gates auf dem Branch (`gates.txt`): Selbsttest 127/127; `--write-site` ändert `
 ## Offen
 
 - Nachprüfung durch eine andere Sitzung; Merge nur auf Auftrag.
-- Reserve von 8 px bestätigen oder ändern (Christa Egger); zugestimmt hat sie «eine kleine Reserve».
+- Reserve von 8 px: Auf «Reserve von 8 px: bestätigen oder ändern.» antwortete Christa Egger am 26.11.2026 «ok»; gelesen als Bestätigung.
+- Nachprüfung vor dem Merge: von Christa Egger am 26.11.2026 mit «ok» beauftragt.

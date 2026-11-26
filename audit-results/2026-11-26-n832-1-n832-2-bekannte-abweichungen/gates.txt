@@ -1,0 +1,16 @@
+== node authoring/tools/selftest.mjs
+Selbsttest: 127/127 bestanden
+exit 0
+== node authoring/tools/build.mjs --production --out=site --write-site
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel site
+exit 0
+== node authoring/tools/build.mjs --production --verify-site
+PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+exit 0
+== node authoring/tools/suchtest.mjs site
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+exit 0
+== node authoring/tools/sprachtest.mjs site
+Sprach-/UI-Test: 74 Prüfungen bestanden · JS-Fehler 0
+exit 0

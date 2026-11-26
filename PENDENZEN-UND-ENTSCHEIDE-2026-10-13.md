@@ -6,15 +6,32 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Layouttest · Ausnahme B2c als bestanden gewertet · offen seit 26.11.2026
+## Layouttest · Ausnahme B2c als bestanden gewertet · auf `main` seit 26.11.2026 · Nachbesserung N809-2 bis N809-6 offen
 
-**Auftrag von Christa Egger, 26.11.2026:** «Lass den Layouttest die Ausnahme B2c als bestanden werten». Das ändert den Entscheid in `authoring/UEBERGABE-GESTALTUNG-2026-10-21.md` (B2c, NP708-N2), wonach das Werkzeug unverändert bleibt.
+**GitHub:** [PR #809](https://github.com/christaegger-dot/borderline-angehoerige/pull/809), Branch `claude/sharp-mendel-6ecwbi` (gelöscht), Kopf `2949b00`, gemergt als `5b7e799` am 26.11.2026, 14:52:50 UTC, über das Konto von Christa Egger, 102 Sekunden nach dem Anlegen. Einen Merge-Auftrag nennen weder der PR noch der Merge-Commit (auf GitHub nicht belegt). CI `build-and-compare` grün auf `2949b00` (14:51:16 bis 14:51:43 UTC); den Layouttest enthält sie nicht. Codex-Review «Completed» ohne Befund um 14:53:43 UTC, 53 Sekunden nach dem Merge (R28-O01 nicht eingehalten). Die Website ist nicht betroffen, `site/` ist unverändert.
 
-**Inhalt:** `authoring/tools/layouttest.cjs` prüft bei 375 px auf «Verstehen» nicht mehr die Höhe der ganzen Anspannungskurve, sondern das B2c-Kriterium aus A04-2014: genau vier sichtbare Phasenkarten (`ol.bl-phase-actions > li`, nicht im Aufklappbereich), und die vierte endet höchstens 1800 px nach dem oberen Rand der Figur. Ist die Figur höher, meldet der Test «Bekannte Ausnahme B2c bestanden» mit beiden Werten, ohne Abweichung. Website, Stylesheet, Skript und Renderer sind unverändert.
+**Auftrag von Christa Egger, 26.11.2026:** «Lass den Layouttest die Ausnahme B2c als bestanden werten». Das ändert den Entscheid in `authoring/UEBERGABE-GESTALTUNG-2026-10-21.md` (B2c, NP708-N2), wonach das Werkzeug unverändert bleibt; die Übergabedatei verweist seit der Nachbesserung auf diesen Abschnitt.
 
-**Messung (Playwright 1.64.0, Chromium 1248):** Figur 1992 px, vierte Phase endet bei 1603 px. Layouttest 240 Zustände, 27 Bedienproben, 0 Abweichungen, Exit 0. Gegenprobe mit Grenze 1500 px: 1 Abweichung, Exit 1. Selbsttest 125/125, `--verify-site` 35 Dateien bytegleich, Suchtest 216/216, Sprach-/UI-Test 73/73.
+**Inhalt (#809):** `authoring/tools/layouttest.cjs` prüft bei 375 px auf «Verstehen» nicht mehr die Höhe der ganzen Anspannungskurve, sondern das B2c-Kriterium aus A04-2014: genau vier Phasenkarten (`ol.bl-phase-actions > li`, nicht im Aufklappbereich), und die vierte endet höchstens 1800 px nach dem oberen Rand der Figur. Ist die Figur höher, meldet der Test «Bekannte Ausnahme B2c bestanden» mit beiden Werten, ohne Abweichung. **Berichtigung:** Die frühere Fassung dieses Abschnitts nannte «vier sichtbare Phasenkarten». Ob die Karten sichtbar sind, prüfte #809 nicht (N809-2).
 
-**Offen:** Nachprüfung durch eine andere Sitzung; Merge nur auf Auftrag.
+**Messung (Playwright 1.64.0, Chromium 156.0.8078.4, Revision 1248):** Figur 1992 px, vierte Phase endet bei 1603 px. Layouttest 240 Zustände, 27 Bedienproben, 0 Abweichungen, Exit 0. Gegenprobe mit Grenze 1500 px: 1 Abweichung, Exit 1. Selbsttest 125/125, `--verify-site` 35 Dateien byte-gleich, Suchtest 216/216, Sprach-/UI-Test 73/73.
+
+**Nachprüfung:** [PR #810](https://github.com/christaegger-dot/borderline-angehoerige/pull/810), Branch `pruefung/2026-11-26-nachpruefung-pr-809`, Entwurf, nicht gemergt. Nachweis: [`audit-results/2026-11-26-nachpruefung-pr-809/NACHPRUEFUNG.md`](audit-results/2026-11-26-nachpruefung-pr-809/NACHPRUEFUNG.md). Ergebnis «Nachbesserung empfohlen, ohne Blocker». Die Werte von #809 sind bestätigt. Befunde: N809-1 (wichtig, Ablauf: Merge vor Nachprüfung und Codex-Ende), N809-2 bis N809-6 (gering), N809-7 (Hinweis: CI ohne Layouttest).
+
+**Nachbesserung N809-2 bis N809-6:** Auftrag von Christa Egger, 26.11.2026: «Nachbesserung N809-2 bis N809-6 umsetzen». Branch `korrektur/2026-11-26-n809-layouttest-b2c`, PR siehe Nachweis, Entwurf, **nicht gemergt**. Nachweis: [`audit-results/2026-11-26-n809-layouttest-b2c/BERICHT.md`](audit-results/2026-11-26-n809-layouttest-b2c/BERICHT.md).
+- **N809-2:** Eine Phasenkarte zählt nur, wenn sie sichtbar ist (`checkVisibility` mit `opacity` und `visibility`, Höhe über 0, Text). Vollständig ist sie mit sichtbarer Überschrift und sichtbarem Absatz, also mit ihrer Handlungsmöglichkeit.
+- **N809-3:** Massgebend ist die tiefste sichtbare Karte, nicht die letzte im Quelltext.
+- **N809-4:** Der Schutzhinweis (`.bl-fig-schutz`) muss sichtbar sein und vor dem ersten Aufklappbereich stehen. Die ganze Figur darf höchstens 2400 px hoch sein. **Der Wert 2400 px ist ein Vorschlag der nachbessernden Sitzung (heute 1992 px) und von Christa Egger zu bestätigen.**
+- **N809-5:** dieser Abschnitt. **N809-6:** Nachtrag in der Übergabedatei bei B2c.
+- **Messung:** 13 Mutationsproben, alle erkannt; mit #809 blieben 9 davon grün. Eine erlaubte Änderung (+200 px unterhalb der Karten) besteht. Layouttest 240 Zustände, 27 Bedienproben, 0 Abweichungen. Selbsttest 125/125, `--verify-site` 35 Dateien byte-gleich, Suchtest 216/216, Sprach-/UI-Test 73. `--write-site` ändert `site/` nicht.
+- **Wer:** die Sitzung, die die Nachprüfung #810 verfasst hat. Prüfen muss diese Nachbesserung eine andere Sitzung.
+
+**Offen:**
+- Nachprüfung der Nachbesserung durch eine andere Sitzung; Merge nur auf Auftrag.
+- Wert 2400 px bestätigen (Christa Egger).
+- N809-1: Merge-Auftrag zu #809 belegen (Christa Egger).
+- N809-7: ob der Layouttest in die CI soll (Entscheid).
+- Nicht in diesem Auftrag: Die Kopfzeile dieser Datei steht noch auf dem 30.10.2026. Der Abschnitt «Korrektur · r4-66» führt #787 als nicht gemergt; #787 ist seit 30.10.2026, 11:46 UTC gemergt (`cec2bbc`).
 
 ## Korrektur · r4-66 · Befund N61-2 · offen seit 30.10.2026
 

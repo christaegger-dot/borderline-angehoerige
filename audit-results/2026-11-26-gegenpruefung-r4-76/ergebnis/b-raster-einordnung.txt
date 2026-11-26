@@ -1,0 +1,37 @@
+Datei: audit-results/2026-11-26-gegenpruefung-r4-76/ergebnis/b-raster-saetze-r4-73-gegen-r4-75.txt
+verloren 646 · leer 185
+a) Tötungswort, Suizid aus den ersten zwei (ausser Kinder zuerst): 0
+b) Tötungswort mit verlorenem Sicherheitsabschnitt oder leer (obere Schranke für «Anheftung verloren»): 6
+  mein mann bringt sich um polizei | gefahr#gewalt → –
+  meine frau bringt sich um polizei | gefahr#gewalt → –
+  mein kind bringt sich um ständig | grenzen#rollen > jugendliche#unterstuetzung > kinder#hilfe → –
+  mein bruder bringt sich um ständig | grenzen#rollen → –
+  meine schwester bringt sich um ständig | grenzen#rollen → –
+  meine freundin bringt sich um ständig | grenzen#rollen → –
+c) eng, Satz beginnt mit «ich», leer: 1
+  ich denkt ans sterben therapie | beziehungen#verantwortung → –
+c) weit, enthält ich/mich/mir, leer: 24
+  ich denkt ans sterben therapie | beziehungen#verantwortung → –
+  mein mann schlägt wegen mir | gefahr#gewalt → –
+  mein mann schlägt zu wegen mir | gefahr#gewalt → –
+  mein mann ist gewalttätig wegen mir | gefahr#gewalt → –
+  mein mann wird gewalttätig wegen mir | gefahr#gewalt → –
+  mein mann wird gewalttätig und ich habe angst | gefahr#gewalt → –
+  mein mann wird gewalttätig was kann ich machen | gefahr#gewalt → –
+  mein mann bedroht uns wegen mir | gefahr#gewalt → –
+  mein mann beschimpft mich polizei | gefahr#gewalt → –
+  mein mann gewalt wegen mir | gefahr#gewalt → –
+  mein mann häusliche gewalt wegen mir | gefahr#gewalt → –
+  mein mann häusliche gewalt und ich habe angst | gefahr#gewalt → –
+  mein mann häusliche gewalt was kann ich machen | gefahr#gewalt → –
+  meine frau wird gewalttätig und ich habe angst | gefahr#gewalt → –
+  meine frau wird gewalttätig was kann ich machen | gefahr#gewalt → –
+  meine frau beschimpft mich polizei | gefahr#gewalt → –
+  meine frau häusliche gewalt wegen mir | gefahr#gewalt → –
+  meine frau häusliche gewalt und ich habe angst | gefahr#gewalt → –
+  meine frau häusliche gewalt was kann ich machen | gefahr#gewalt → –
+  mein kind beschimpft mich ständig | grenzen#rollen > jugendliche#unterstuetzung > kinder#hilfe → –
+  mein bruder beschimpft mich ständig | grenzen#rollen → –
+  meine schwester beschimpft mich ständig | grenzen#rollen → –
+  mein freund beschimpft mich ständig | grenzen#rollen → –
+  meine freundin beschimpft mich ständig | grenzen#rollen → –

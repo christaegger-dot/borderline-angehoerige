@@ -1,0 +1,147 @@
+## r4-73 gegen r4-75: 70 Proben · gleich 44 · a) 0 · b) 0 · c) 0 · ausserhalb der Stopp-Regel 14
+Kennz	Typ	Anfrage	r4-73	r4-75
+·	A	mein partner wird handgreiflich	jugendliche#volljaehrig > diagnose#zweifel > kommunizieren#suizid-angesprochen	jugendliche#volljaehrig > diagnose#zweifel > kommunizieren#suizid-angesprochen
+x	A	meine frau ist gewalttätig geworden	gefahr#gewalt	–
+·	A	er schlägt meine tochter	gefahr#gewalt > kinder#eskalation > index#orientierung	gefahr#gewalt > kinder#eskalation > index#orientierung
+·	A	mein sohn schlägt seine freundin	grenzen#rollen	grenzen#rollen
+·	A	mein vater ist gewalttätig gegen meine mutter	rolle#schuld > grenzen#rollen > kurz#jetzt	grenzen#rollen > rolle#schuld > kurz#jetzt
+·	A	meine partnerin schlägt die kinder	kinder#eskalation > gefahr#gewalt > grenzen#rollen	kinder#eskalation > gefahr#gewalt > index#orientierung
+·	A	mein mann hat zugeschlagen	–	–
+·	A	mein ex bedroht meine familie	kinder#eskalation > quellen#leitlinien > quellen#forschung	kinder#eskalation > quellen#leitlinien > quellen#forschung
+·	A	mein bruder wird gewalttätig wenn er trinkt	grenzen#rollen > gefahr#riskant	grenzen#rollen > gefahr#riskant
+·	A	mein freund schlägt zu wenn er wütend ist	grenzen#rollen > fragen#f-umfeld	grenzen#rollen > fragen#f-umfeld
+·	A	meine tochter schlägt ihren partner	fragen#f-nicht-geteilt > grenzen#rollen > fragen#diagnose	fragen#f-nicht-geteilt > grenzen#rollen > fragen#diagnose
+x	A	häusliche gewalt mein mann	gefahr#gewalt > quellen#schweiz	quellen#schweiz
+x	A	gewalt in der beziehung frau	gefahr#gewalt > quellen#schweiz > quellen#leitlinien	quellen#schweiz > quellen#leitlinien > verstehen#mythen
+x	A	mann gewalttätig was tun	gefahr#gewalt > quellen#schweiz	quellen#schweiz
+x	A	frau schlägt mann	gefahr#gewalt > quellen#schweiz	quellen#schweiz
+x	A	gewalt gegen den mann	gefahr#gewalt > quellen#schweiz	quellen#schweiz
+·	A	meine mutter schlägt meinen vater	rolle#schuld > grenzen#rollen > kurz#jetzt	grenzen#rollen > rolle#schuld > kurz#jetzt
+·	A	partner gewalttätig polizei	gefahr#gewalt > krise#krise-schnell > quellen#schweiz	gefahr#gewalt > krise#krise-schnell > quellen#schweiz
+·	A	er wird gewalttätig gegen unseren sohn	gefahr#gewalt > fragen#f-besser > gefahr	gefahr#gewalt > fragen#f-besser > gefahr
+·	A	mein mann wirft mit gegenständen	–	–
+x	A	mein mann ist aggressiv und schlägt	gefahr#gewalt	kinder#eskalation > verstehen#anspannung > kommunizieren#kippen
+·	A	meine frau bedroht die kinder	gefahr#gewalt > quellen#schweiz > quellen#leitlinien	kinder#eskalation > gefahr#gewalt > index#orientierung
+x	A	mein mann schlägt zu	gefahr#gewalt > quellen#schweiz	quellen#schweiz
+x	A	meine frau schlägt zu	gefahr#gewalt > quellen#schweiz > quellen#leitlinien	quellen#schweiz > quellen#leitlinien > verstehen#mythen
+x	A	mein mann schlägt unseren sohn	gefahr#gewalt	–
+x	I	ich werde von meinem mann geschlagen	gefahr#gewalt > quellen#schweiz	quellen#schweiz
+·	I	ich habe angst vor meinem mann	gefahr#gewalt > kinder#eskalation > index#orientierung	gefahr#gewalt > kinder#eskalation > index#orientierung
+·	I	ich werde bedroht	gefahr#gewalt > fragen#f-mehrere > gefahr#riskant	gefahr#gewalt > fragen#f-einweisung > fragen#f-mehrere
+·	I	ich wurde geschlagen	begriffe#b-dbt > begriffe#begriffe > quellen#forschung	begriffe#b-dbt > begriffe#begriffe > quellen#forschung
+·	I	ich halte die gewalt nicht mehr aus	beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung	beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung
+·	I	ich werde zu hause geschlagen	gefahr#gewalt > fragen#f-mehrere > gefahr#riskant	gefahr#gewalt > fragen#f-einweisung > fragen#f-mehrere
+·	A	meine tochter schneidet sich die arme auf	krise#selbstverletzung	krise#selbstverletzung > krise > diagnose#suizidalitaet
+·	A	sie schneidet sich heimlich	krise#selbstverletzung	krise#selbstverletzung > krise > diagnose#suizidalitaet
+x	A	er schneidet sich immer noch	krise#selbstverletzung > krise#suizid > grenzen#bruecke	krise#suizid > kurz#borderline > gefahr#gewalt
+·	A	mein kind schneidet sich und ich weiss nicht weiter	–	fragen#f-sprache > fragen#schutz > rolle#nach-konflikten
+·	A	sie schneidet sich seit monaten	krise#selbstverletzung	krise#selbstverletzung > krise > begriffe#b-selbstverletzung
+·	A	meine tochter ritzt sich heimlich	krise#selbstverletzung	krise#selbstverletzung
+·	A	er verletzt sich selbst wenn wir streiten	krise#selbstverletzung > krise > diagnose#suizidalitaet	krise#selbstverletzung > krise > diagnose#suizidalitaet
+x	A	mein sohn schneidet sich mit einer klinge	krise#selbstverletzung > kommunizieren#beispiele	kommunizieren#beispiele
+·	A	sie schneidet sich nach jedem streit	–	quellen#forschung
+·	I	ich schneide mich	krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen	krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+·	I	ich ritze mich	krise#selbstverletzung	krise#selbstverletzung
+·	I	ich verletze mich selbst	krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid	krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid
+·	I	ich schneide mich wieder	krise#suizid > krise#selbstverletzung	krise#suizid > krise#selbstverletzung
+·	I	ich ritze mich seit jahren	krise#selbstverletzung	krise#selbstverletzung
+·	I	ich will nicht mehr leben	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	ich denke an suizid	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	ich habe suizidgedanken seit wochen	begriffe#begriffe > diagnose#begleiterkrankungen	begriffe#begriffe > diagnose#begleiterkrankungen
+·	I	ich will sterben wegen ihm	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	ich kann nicht mehr und will sterben	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	manchmal will ich nicht mehr aufwachen	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	ich bin lebensmüde	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	ich denke oft an den tod	–	–
+·	K	ich denke daran mich umzubringen	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	K	ich bringe mich um wenn er geht	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+·	K	mein sohn will sich umbringen seit wochen	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	K	meine frau droht sich umzubringen wenn ich gehe	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	K	er sagt er bringt sich um	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+·	K	sie hat gesagt sie bringt sich heute um	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+·	K	mein mann droht mich umzubringen	gefahr#gewalt > krise#suizid > kinder#eskalation	gefahr#gewalt > krise#suizid > kinder#eskalation
+·	K	er will mich töten	gefahr#gewalt > krise#suizid > kinder#eskalation	gefahr#gewalt > krise#suizid > kinder#eskalation
+·	K	er droht die kinder umzubringen	kinder#eskalation > gefahr#gewalt > krise#suizid	kinder#eskalation > gefahr#gewalt > krise#suizid
+·	K	meine tochter will sich umbringen und schneidet sich	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	K	mein mann will sich umbringen was tun	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	K	sie droht sich umzubringen polizei	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	A	sie hat versucht sich das leben zu nehmen	selbstfuersorge#eigenes-leben > fragen#f-zu-kurz > fragen#eigenes-leben	selbstfuersorge#eigenes-leben > fragen#f-zu-kurz > fragen#eigenes-leben
+x	A	meine tochter hat suizidgedanken und schneidet sich	krise#selbstverletzung	krise > krise#suizid > krise#selbstverletzung
+·	A	mein vater hat eine überdosis genommen	–	–
+·	A	meine mutter spricht ständig vom sterben	–	krise#suizid > krise > diagnose#suizidalitaet
+·	A	mein freund hat einen abschiedsbrief geschrieben	–	–
+
+## r4-73 gegen r4-76: 70 Proben · gleich 70 · a) 0 · b) 0 · c) 0 · ausserhalb der Stopp-Regel 0
+Kennz	Typ	Anfrage	r4-73	r4-76
+·	A	mein partner wird handgreiflich	jugendliche#volljaehrig > diagnose#zweifel > kommunizieren#suizid-angesprochen	jugendliche#volljaehrig > diagnose#zweifel > kommunizieren#suizid-angesprochen
+·	A	meine frau ist gewalttätig geworden	gefahr#gewalt	gefahr#gewalt
+·	A	er schlägt meine tochter	gefahr#gewalt > kinder#eskalation > index#orientierung	gefahr#gewalt > kinder#eskalation > index#orientierung
+·	A	mein sohn schlägt seine freundin	grenzen#rollen	grenzen#rollen
+·	A	mein vater ist gewalttätig gegen meine mutter	rolle#schuld > grenzen#rollen > kurz#jetzt	rolle#schuld > grenzen#rollen > kurz#jetzt
+·	A	meine partnerin schlägt die kinder	kinder#eskalation > gefahr#gewalt > grenzen#rollen	kinder#eskalation > gefahr#gewalt > grenzen#rollen
+·	A	mein mann hat zugeschlagen	–	–
+·	A	mein ex bedroht meine familie	kinder#eskalation > quellen#leitlinien > quellen#forschung	kinder#eskalation > quellen#leitlinien > quellen#forschung
+·	A	mein bruder wird gewalttätig wenn er trinkt	grenzen#rollen > gefahr#riskant	grenzen#rollen > gefahr#riskant
+·	A	mein freund schlägt zu wenn er wütend ist	grenzen#rollen > fragen#f-umfeld	grenzen#rollen > fragen#f-umfeld
+·	A	meine tochter schlägt ihren partner	fragen#f-nicht-geteilt > grenzen#rollen > fragen#diagnose	fragen#f-nicht-geteilt > grenzen#rollen > fragen#diagnose
+·	A	häusliche gewalt mein mann	gefahr#gewalt > quellen#schweiz	gefahr#gewalt > quellen#schweiz
+·	A	gewalt in der beziehung frau	gefahr#gewalt > quellen#schweiz > quellen#leitlinien	gefahr#gewalt > quellen#schweiz > quellen#leitlinien
+·	A	mann gewalttätig was tun	gefahr#gewalt > quellen#schweiz	gefahr#gewalt > quellen#schweiz
+·	A	frau schlägt mann	gefahr#gewalt > quellen#schweiz	gefahr#gewalt > quellen#schweiz
+·	A	gewalt gegen den mann	gefahr#gewalt > quellen#schweiz	gefahr#gewalt > quellen#schweiz
+·	A	meine mutter schlägt meinen vater	rolle#schuld > grenzen#rollen > kurz#jetzt	rolle#schuld > grenzen#rollen > kurz#jetzt
+·	A	partner gewalttätig polizei	gefahr#gewalt > krise#krise-schnell > quellen#schweiz	gefahr#gewalt > krise#krise-schnell > quellen#schweiz
+·	A	er wird gewalttätig gegen unseren sohn	gefahr#gewalt > fragen#f-besser > gefahr	gefahr#gewalt > fragen#f-besser > gefahr
+·	A	mein mann wirft mit gegenständen	–	–
+·	A	mein mann ist aggressiv und schlägt	gefahr#gewalt	gefahr#gewalt
+·	A	meine frau bedroht die kinder	gefahr#gewalt > quellen#schweiz > quellen#leitlinien	gefahr#gewalt > quellen#schweiz > quellen#leitlinien
+·	A	mein mann schlägt zu	gefahr#gewalt > quellen#schweiz	gefahr#gewalt > quellen#schweiz
+·	A	meine frau schlägt zu	gefahr#gewalt > quellen#schweiz > quellen#leitlinien	gefahr#gewalt > quellen#schweiz > quellen#leitlinien
+·	A	mein mann schlägt unseren sohn	gefahr#gewalt	gefahr#gewalt
+·	I	ich werde von meinem mann geschlagen	gefahr#gewalt > quellen#schweiz	gefahr#gewalt > quellen#schweiz
+·	I	ich habe angst vor meinem mann	gefahr#gewalt > kinder#eskalation > index#orientierung	gefahr#gewalt > kinder#eskalation > index#orientierung
+·	I	ich werde bedroht	gefahr#gewalt > fragen#f-mehrere > gefahr#riskant	gefahr#gewalt > fragen#f-mehrere > gefahr#riskant
+·	I	ich wurde geschlagen	begriffe#b-dbt > begriffe#begriffe > quellen#forschung	begriffe#b-dbt > begriffe#begriffe > quellen#forschung
+·	I	ich halte die gewalt nicht mehr aus	beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung	beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung
+·	I	ich werde zu hause geschlagen	gefahr#gewalt > fragen#f-mehrere > gefahr#riskant	gefahr#gewalt > fragen#f-mehrere > gefahr#riskant
+·	A	meine tochter schneidet sich die arme auf	krise#selbstverletzung	krise#selbstverletzung
+·	A	sie schneidet sich heimlich	krise#selbstverletzung	krise#selbstverletzung
+·	A	er schneidet sich immer noch	krise#selbstverletzung > krise#suizid > grenzen#bruecke	krise#selbstverletzung > krise#suizid > grenzen#bruecke
+·	A	mein kind schneidet sich und ich weiss nicht weiter	–	–
+·	A	sie schneidet sich seit monaten	krise#selbstverletzung	krise#selbstverletzung
+·	A	meine tochter ritzt sich heimlich	krise#selbstverletzung	krise#selbstverletzung
+·	A	er verletzt sich selbst wenn wir streiten	krise#selbstverletzung > krise > diagnose#suizidalitaet	krise#selbstverletzung > krise > diagnose#suizidalitaet
+·	A	mein sohn schneidet sich mit einer klinge	krise#selbstverletzung > kommunizieren#beispiele	krise#selbstverletzung > kommunizieren#beispiele
+·	A	sie schneidet sich nach jedem streit	–	–
+·	I	ich schneide mich	krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen	krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+·	I	ich ritze mich	krise#selbstverletzung	krise#selbstverletzung
+·	I	ich verletze mich selbst	krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid	krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid
+·	I	ich schneide mich wieder	krise#suizid > krise#selbstverletzung	krise#suizid > krise#selbstverletzung
+·	I	ich ritze mich seit jahren	krise#selbstverletzung	krise#selbstverletzung
+·	I	ich will nicht mehr leben	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	ich denke an suizid	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	ich habe suizidgedanken seit wochen	begriffe#begriffe > diagnose#begleiterkrankungen	begriffe#begriffe > diagnose#begleiterkrankungen
+·	I	ich will sterben wegen ihm	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	ich kann nicht mehr und will sterben	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	manchmal will ich nicht mehr aufwachen	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	ich bin lebensmüde	krise#suizid > krise > diagnose#suizidalitaet	krise#suizid > krise > diagnose#suizidalitaet
+·	I	ich denke oft an den tod	–	–
+·	K	ich denke daran mich umzubringen	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	K	ich bringe mich um wenn er geht	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+·	K	mein sohn will sich umbringen seit wochen	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	K	meine frau droht sich umzubringen wenn ich gehe	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	K	er sagt er bringt sich um	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+·	K	sie hat gesagt sie bringt sich heute um	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+·	K	mein mann droht mich umzubringen	gefahr#gewalt > krise#suizid > kinder#eskalation	gefahr#gewalt > krise#suizid > kinder#eskalation
+·	K	er will mich töten	gefahr#gewalt > krise#suizid > kinder#eskalation	gefahr#gewalt > krise#suizid > kinder#eskalation
+·	K	er droht die kinder umzubringen	kinder#eskalation > gefahr#gewalt > krise#suizid	kinder#eskalation > gefahr#gewalt > krise#suizid
+·	K	meine tochter will sich umbringen und schneidet sich	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	K	mein mann will sich umbringen was tun	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	K	sie droht sich umzubringen polizei	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	A	sie hat versucht sich das leben zu nehmen	selbstfuersorge#eigenes-leben > fragen#f-zu-kurz > fragen#eigenes-leben	selbstfuersorge#eigenes-leben > fragen#f-zu-kurz > fragen#eigenes-leben
+·	A	meine tochter hat suizidgedanken und schneidet sich	krise#selbstverletzung	krise#selbstverletzung
+·	A	mein vater hat eine überdosis genommen	–	–
+·	A	meine mutter spricht ständig vom sterben	–	–
+·	A	mein freund hat einen abschiedsbrief geschrieben	–	–
+
+JS-Fehler: 0

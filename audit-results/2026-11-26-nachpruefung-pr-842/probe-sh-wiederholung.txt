@@ -1,0 +1,29 @@
+== probe.sh ohne PLAYWRIGHT_MODULE (Standardpfad /opt/npm-tools)
+::error title=Layouttest ohne Ergebnis::ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+### Layouttest: ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+report exit 1
+
+== probe.sh mit relativem Arbeitsordner
+::error title=Layouttest ohne Ergebnis::ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+### Layouttest: ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+report exit 1
+
+== probe.sh, absoluter Ordner, unverändert und +5 px (eigene CSS, Werte im Nachweis nicht genannt)
+== A
+1 Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 2 Abweichungen (2 bekannt, 0 neu).
+1 safety card starts in first screen 360x740 (top 863px)
+1 safety card starts in first screen 375x667 (top 802px)
+layouttest exit 1
+::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+### Layouttest: 0 neue, 2 bekannte Abweichungen
+report exit 0
+
+== V1b
+1 Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 2 Abweichungen (2 bekannt, 0 neu).
+1 safety card starts in first screen 360x740 (top 868px)
+1 safety card starts in first screen 375x667 (top 807px)
+layouttest exit 1
+::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+### Layouttest: 0 neue, 2 bekannte Abweichungen
+report exit 0
+

@@ -1,0 +1,12 @@
+== Altes ERGEBNIS.json, Abbruch VOR dem Löschen (Playwright-Modul fehlt)
+layouttest exit 1
+ERGEBNIS.json
+::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+### Layouttest: 0 neue, 2 bekannte Abweichungen
+report exit 0
+== Altes ERGEBNIS.json, Abbruch NACH dem Löschen (Chromium-Pfad falsch)
+layouttest exit 1
+screenshots
+::error title=Layouttest ohne Ergebnis::ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+### Layouttest: ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+report exit 1

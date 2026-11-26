@@ -66,7 +66,7 @@ Offen ist Folgendes:
 
 ### N815-2 · gering · Pendenzendatei auf `main` veraltet
 
-- **Ort:** `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md:3`, `:9`, `:11` und `:23` auf `main` (`55d006e`).
+- **Ort:** `PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md:3`, `:11`, `:13`, `:23` und `:54` auf `main` (`55d006e`).
 - **Beleg:**
   - Die Kopfzeile nennt «GitHub main: r4-66 (Website unverändert seit 30.10.2026), Stand `c937f8e`» und «In Arbeit: r4-68». Seit 16:37:48 UTC ist r4-68 auf `main` und live.
   - Die Kopfzeile führt [#814](https://github.com/christaegger-dot/borderline-angehoerige/pull/814) als Entwurf und [#815](https://github.com/christaegger-dot/borderline-angehoerige/pull/815) als «r4-68, Entwurf». Beide sind gemergt: #815 als `c7d8c01` um 16:37:48 UTC, #814 als `55d006e` um 16:40:15 UTC.

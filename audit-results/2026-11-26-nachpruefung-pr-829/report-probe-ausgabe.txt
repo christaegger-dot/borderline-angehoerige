@@ -1,0 +1,39 @@
+== outcome=success, ERGEBNIS.json mit
+exit 0
+### Layouttest (nicht blockierend): success
+```json
+{
+  "states": 240,
+… (24 Zeilen)
+}
+```
+== outcome=failure, ERGEBNIS.json mit
+::warning title=Layouttest::Abweichungen im Layouttest (nicht blockierend), siehe Zusammenfassung des Laufs
+exit 0
+### Layouttest (nicht blockierend): failure
+```json
+{
+  "states": 240,
+… (24 Zeilen)
+}
+```
+== outcome=failure, ERGEBNIS.json ohne
+::warning title=Layouttest::Abweichungen im Layouttest (nicht blockierend), siehe Zusammenfassung des Laufs
+exit 0
+### Layouttest (nicht blockierend): failure
+```json
+"ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)"
+
+… (5 Zeilen)
+
+```
+== outcome=cancelled, ERGEBNIS.json ohne
+::warning title=Layouttest::Abweichungen im Layouttest (nicht blockierend), siehe Zusammenfassung des Laufs
+exit 0
+### Layouttest (nicht blockierend): cancelled
+```json
+"ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)"
+
+… (5 Zeilen)
+
+```

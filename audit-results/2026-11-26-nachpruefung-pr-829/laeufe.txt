@@ -1,0 +1,121 @@
+# Layouttest-Läufe der Nachprüfung #829 · Fassung-Variante · Schlusszeile | erste Meldung
+base-s0        exit 1 · 50 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 2 Abweichungen.
+base-s1        exit 1 · 34 s · ERGEBNIS.json fehlt | locator.screenshot: Timeout
+base-s2        exit 1 · 38 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 2 Abweichungen.
+base-s3        exit 1 · 36 s · ERGEBNIS.json fehlt | locator.scrollIntoViewIfNeeded: Timeout
+base-s4        exit 1 · 39 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 3 Abweichungen.
+base-s5        exit 1 · 34 s · ERGEBNIS.json fehlt | locator.scrollIntoViewIfNeeded: Timeout
+main-s0        exit 1 · 52 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 34 Bedienproben, 2 Abweichungen.
+merged-s0      exit 1 · 51 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 34 Bedienproben, 2 Abweichungen.
+merged-s1      exit 1 · 29 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 36 Bedienproben, 5 Abweichungen.
+merged-s3      exit 1 · 33 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 36 Bedienproben, 4 Abweichungen.
+pr-s0          exit 1 · 51 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 2 Abweichungen.
+pr-s1          exit 1 · 27 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 32 Bedienproben, 5 Abweichungen.
+pr-s2          exit 1 · 38 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 2 Abweichungen.
+pr-s3          exit 1 · 38 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 32 Bedienproben, 4 Abweichungen.
+pr-s4          exit 1 · 33 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 3 Abweichungen.
+pr-s5          exit 1 · 32 s · ERGEBNIS.json vorhanden | Audit-04-Layouttest: 240 Seitenzustände, 32 Bedienproben, 4 Abweichungen.
+
+== base-s0
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 2 Abweichungen.
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 50 s · ERGEBNIS.json vorhanden
+== base-s1
+locator.screenshot: Timeout 29967.508ms exceeded.
+exit 1 · 34 s · ERGEBNIS.json fehlt
+== base-s2
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 2 Abweichungen.
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 38 s · ERGEBNIS.json vorhanden
+== base-s3
+locator.scrollIntoViewIfNeeded: Timeout 29991.155000000002ms exceeded.
+exit 1 · 36 s · ERGEBNIS.json fehlt
+== base-s4
+Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 3 Abweichungen.
+tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 39 s · ERGEBNIS.json vorhanden
+== base-s5
+locator.scrollIntoViewIfNeeded: Timeout 29990.405ms exceeded.
+exit 1 · 34 s · ERGEBNIS.json fehlt
+== main-s0
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 34 Bedienproben, 2 Abweichungen.
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 52 s · ERGEBNIS.json vorhanden
+== merged-s0
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 34 Bedienproben, 2 Abweichungen.
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 51 s · ERGEBNIS.json vorhanden
+== merged-s1
+Audit-04-Layouttest: 240 Seitenzustände, 36 Bedienproben, 5 Abweichungen.
+tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 29 s · ERGEBNIS.json vorhanden
+== merged-s3
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 36 Bedienproben, 4 Abweichungen.
+genesung 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+genesung 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 33 s · ERGEBNIS.json vorhanden
+== pr-s0
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 2 Abweichungen.
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 51 s · ERGEBNIS.json vorhanden
+== pr-s1
+Audit-04-Layouttest: 240 Seitenzustände, 32 Bedienproben, 5 Abweichungen.
+tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 27 s · ERGEBNIS.json vorhanden
+== pr-s2
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 2 Abweichungen.
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 38 s · ERGEBNIS.json vorhanden
+== pr-s3
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 32 Bedienproben, 4 Abweichungen.
+genesung 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+genesung 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 38 s · ERGEBNIS.json vorhanden
+== pr-s4
+Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 3 Abweichungen.
+tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 33 s · ERGEBNIS.json vorhanden
+== pr-s5
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 32 Bedienproben, 4 Abweichungen.
+behandlung 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+behandlung 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1 · 32 s · ERGEBNIS.json vorhanden
+
+# Vergleich bei unveränderter Website (cmp, sha256 der 19 Screenshots)
+base-s0 = pr-s0: ERGEBNIS.json gleich, BROWSER.json gleich, 19 Screenshots gleich
+main-s0 = merged-s0: ERGEBNIS.json gleich, BROWSER.json gleich, 19 Screenshots gleich
+pr-s1/ERGEBNIS.json = audit-results/2026-11-26-n809-7-n813-5-layouttest-ci/gegenprobe-details-neu-ERGEBNIS.json (cmp: gleich)
+Screenshots: pr-s2 17 (ohne kinder), pr-s3 17 (ohne genesung), pr-s4 19, pr-s5 17 (ohne behandlung)

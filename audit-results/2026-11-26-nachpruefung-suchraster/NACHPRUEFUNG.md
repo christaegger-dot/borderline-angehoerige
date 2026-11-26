@@ -33,6 +33,7 @@ Die Prüfung war beim Merge also noch nicht fertig. Auf Auftrag hat sie trotzdem
 | N847-7 | niedrig | CI: Pfadfilter gegen «erforderliche Prüfung», kein Zeitlimit, Laufzeit auf GitHub nicht beobachtet |
 | N847-8 | niedrig | Vergleich mit der Basis: Verluste mit Ausnahme werden zum neuen Bezug, die Liste veraltet still |
 | N847-9 | Hinweis | Pendenzendatei: Zitierregel eingehalten, Zeiten stimmen; Status #847 veraltet |
+| N847-10 | mittel | Nachtrag: Die vier Ausnahmemuster aus r4-77 sind breiter als ihre Begründung (Abschnitt 6) |
 
 ### N847-1 (hoch, Ablauf) · Merge vor der Nachprüfung
 
@@ -169,3 +170,20 @@ cd $A && ./lauf.sh r75a tool r73 r75 && ./lauf.sh k3 tool r76 k3
 ```
 
 `lauf.sh` schreibt nach `out/<name>/` und `log-<name>.txt`. K6 braucht eine Werkzeugkopie `tool6` mit `konstruktionen/k6-suchraster-ausnahmen.tsv` als `authoring/tests/suchraster-ausnahmen.tsv`.
+
+## 6 Nachtrag 23:50 UTC · die vier Ausnahmemuster aus r4-77
+
+Während dieser Prüfung wurde Schritt 2 gemergt: [PR #848](https://github.com/christaegger-dot/borderline-angehoerige/pull/848), r4-77, `9d3b7d4`, 23:47:58 UTC (GitHub-API). Nach Mitteilung der bauenden Sitzung lief das Raster dabei erstmals voll auf GitHub, und vier Muster in `authoring/tests/suchraster-ausnahmen.tsv` erlaubten 298 Fälle. r4-77 selbst prüft eine andere Sitzung. Hier stehen nur die Muster auf `main` (`c38132e`), statisch gegen Beispielanfragen getestet (`node -e`, regulärer Ausdruck auf die klein geschriebene Anfrage, wie in `suchraster.mjs`). Ob r4-77 solche Verluste wirklich hat, ist **nicht gemessen**.
+
+### N847-10 (mittel) · Die Muster sind breiter als ihre Begründung
+
+| Muster (Verlust → Ersatz) | Begründung in der Liste | greift auch bei (Beispiele) |
+|---|---|---|
+| `/./` (Suizid angesprochen → Suizid) | Suizid-Signal heftet den Suizidabschnitt an | **jeder** Anfrage, auch künftigen PRs, solange der Suizidabschnitt oben steht (N847-2, N847-8) |
+| `/^(?!.*\b(kind\|kinder\|kindern)\b)/` (Kinderschutz → Gewalt) | Gewalt-Signal «ohne genannte Kinder» | «mein mann schlägt unseren sohn», «er schlägt meine tochter», «er bedroht unser baby», «… kindes …»: Kinder sind genannt, aber nicht mit diesen drei Wörtern |
+| `/^(?!.*(suizid\|selbstmord\|…\|lebensmüd))/` (Suizid → Selbstverletzung) | Selbstverletzung «ohne Suizid-Signal» | Tippformen und Umschreibungen: «suizit…», «selbsmord», «toeten» (ohne Umlaut), «nicht mehr da sein» |
+| `/^(?!.*(gewalt\|schläg\|…\|angst vor))/` (Gewalt → Selbstverletzung) | Selbstverletzung «ohne Gewalt-Signal» | «schlaegt», «wuergt» (ohne Umlaut), «droht mir», «prügelt» |
+
+Die Ausschlusslisten der Muster sind schmaler als die Signale der Suche: Die Suche wandelt «ä» in «ae» um, die Muster nicht. Die Liste `actors` kennt Sohn und Tochter, das Kinder-Muster nicht. Jede Anfrage dieser Art, die in einem künftigen PR ihren Sicherheitsabschnitt verliert, gilt als erlaubt, sofern der Ersatz oben steht, und erscheint nur in der Zahl «als Ausnahme erlaubt». Das belegt N847-2 und N847-8 am ersten echten Fall.
+
+**Vorschlag:** In der Nachprüfung von r4-77 die 298 erlaubten Fälle einzeln ansehen und die Muster auf diese Fälle eng fassen. Dazu im Werkzeug die erlaubten Anfragen auflisten und Muster nur auf die normalisierte Anfrage anwenden (gleiche Normalisierung wie die Suche). Grenze: Ob sich unter den 298 Fällen solche Anfragen befinden, ist hier nicht geprüft.

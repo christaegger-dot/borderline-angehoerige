@@ -1,0 +1,36 @@
+vorher {
+ "390x844": "Kopf 192 · Sicherheitskarte 815 (im 1. Bildschirm) · «144» 884 · erster Krisenschritt 403",
+ "375x812": "Kopf 192 · Sicherheitskarte 846 · «144» 912 · erster Krisenschritt 431",
+ "360x740": "Kopf 192 · Sicherheitskarte 907 · «144» 973 · erster Krisenschritt 431",
+ "375x667": "Kopf 192 · Sicherheitskarte 846 · «144» 912 · erster Krisenschritt 431",
+ "ohneSkript375": {
+  "kopfzeileDirekteinstiege": "flex",
+  "navLinks": 5
+ },
+ "textUnter16px": {
+  "320px 15px": 231,
+  "320px 13px": 49,
+  "360px 15px": 231,
+  "360px 13px": 49,
+  "375px 15px": 162,
+  "375px 13px": 49,
+  "768px 15px": 161,
+  "768px 13px": 49,
+  "1440px 15px": 161,
+  "1440px 13px": 49
+ },
+ "sucheSatzAnzahl": 2
+}
+nachher {
+ "390x844": "Kopf 148 · Sicherheitskarte 771 (im 1. Bildschirm) · «144» 477 (im 1. Bildschirm) · erster Krisenschritt 765",
+ "375x812": "Kopf 148 · Sicherheitskarte 802 (im 1. Bildschirm) · «144» 505 (im 1. Bildschirm) · erster Krisenschritt 793",
+ "menue": "Verstehen | Im Alltag | Krisen | Familie | Für Sie | Kurz und klar | Nachschlagen | Suchen",
+ "360x740": "Kopf 148 · Sicherheitskarte 863 · «144» 536 (im 1. Bildschirm) · erster Krisenschritt 823",
+ "375x667": "Kopf 148 · Sicherheitskarte 802 · «144» 505 (im 1. Bildschirm) · erster Krisenschritt 793",
+ "ohneSkript375": {
+  "kopfzeileDirekteinstiege": "flex",
+  "navLinks": 5
+ },
+ "textUnter16px": "keine",
+ "sucheSatzAnzahl": 1
+}

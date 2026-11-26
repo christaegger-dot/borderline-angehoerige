@@ -1,0 +1,34 @@
+### Kopie pr-v0
+Schritte: 9 | Layouttest continue-on-error: True | Bericht if: always() && steps.layouttest.outcome != 'skipped' | Bericht continue-on-error: None
+Bericht ist letzter Schritt: True | Bericht env: {'LAYOUT_OUTCOME': '${{ steps.layouttest.outcome }}'} | run: node authoring/tools/layouttest-report.cjs dist/audit04-layout/ERGEBNIS.json
+Layouttest exit 1 => outcome failure (conclusion wegen continue-on-error: success)
+Bericht exit 0 | stdout: ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+JOB: success
+
+### Kopie pr-v3
+Schritte: 9 | Layouttest continue-on-error: True | Bericht if: always() && steps.layouttest.outcome != 'skipped' | Bericht continue-on-error: None
+Bericht ist letzter Schritt: True | Bericht env: {'LAYOUT_OUTCOME': '${{ steps.layouttest.outcome }}'} | run: node authoring/tools/layouttest-report.cjs dist/audit04-layout/ERGEBNIS.json
+Layouttest exit 1 => outcome failure (conclusion wegen continue-on-error: success)
+Bericht exit 1 | stdout: ::error title=Layouttest: neue Abweichung::tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible ¦ ::error title=Layouttest: neue Abweichung::verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>) ¦ ::error title=Layouttest: neue Abweichung::verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>) ¦ ::warning title=Layouttest::2 bekannte Abweichungen, 3 neue
+JOB: failure
+
+### Kopie pr-v1
+Schritte: 9 | Layouttest continue-on-error: True | Bericht if: always() && steps.layouttest.outcome != 'skipped' | Bericht continue-on-error: None
+Bericht ist letzter Schritt: True | Bericht env: {'LAYOUT_OUTCOME': '${{ steps.layouttest.outcome }}'} | run: node authoring/tools/layouttest-report.cjs dist/audit04-layout/ERGEBNIS.json
+Layouttest exit 1 => outcome failure (conclusion wegen continue-on-error: success)
+Bericht exit 0 | stdout: ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+JOB: success
+
+### Kopie pr-v0 ohne Playwright-Modul (Abbruch vor dem Schreiben)
+Schritte: 9 | Layouttest continue-on-error: True | Bericht if: always() && steps.layouttest.outcome != 'skipped' | Bericht continue-on-error: None
+Bericht ist letzter Schritt: True | Bericht env: {'LAYOUT_OUTCOME': '${{ steps.layouttest.outcome }}'} | run: node authoring/tools/layouttest-report.cjs dist/audit04-layout/ERGEBNIS.json
+Layouttest exit 1 => outcome failure (conclusion wegen continue-on-error: success)
+Bericht exit 1 | stdout: ::error title=Layouttest ohne Ergebnis::ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+JOB: failure
+
+### Kopie pr-v0, altes ERGEBNIS.json liegt noch da, dann Abbruch (nur lokal möglich; dist/ ist in .gitignore)
+Schritte: 9 | Layouttest continue-on-error: True | Bericht if: always() && steps.layouttest.outcome != 'skipped' | Bericht continue-on-error: None
+Bericht ist letzter Schritt: True | Bericht env: {'LAYOUT_OUTCOME': '${{ steps.layouttest.outcome }}'} | run: node authoring/tools/layouttest-report.cjs dist/audit04-layout/ERGEBNIS.json
+Layouttest exit 1 => outcome failure (conclusion wegen continue-on-error: success)
+Bericht exit 0 | stdout: ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+JOB: success

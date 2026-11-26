@@ -1,0 +1,13 @@
+## Vergleich base-v0 (7a02774) gegen pr-v0 (a26bcca), unveränderte Website
+BROWSER.json byte-gleich
+Screenshots: 19 Dateien, sha256 alle gleich
+states gleich
+interactions gleich
+issues gleich
+exceptions gleich
+Felder base: states,interactions,issues,exceptions | pr: states,interactions,issues,knownIssues,newIssues,knownNotSeen,exceptions
+## Vergleich pr-v0 gegen main-v0 (8ef8394)
+ERGEBNIS.json byte-gleich
+BROWSER.json byte-gleich
+## Werkzeug und Workflow: a26bcca gegen main
+(leer = identisch)

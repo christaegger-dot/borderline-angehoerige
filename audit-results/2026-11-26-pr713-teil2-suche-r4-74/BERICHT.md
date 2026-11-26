@@ -63,7 +63,7 @@ X1/KR-01 (Silbentrennung) aus PR #713 bleibt offen, wie in r4-73 festgehalten. D
 
 Die Liste wuchs von 216 auf 253 Erwartungen: 25 aus PR #713, 12 zur Ergänzung (davon 2 Gegenproben), eine geändert («Geheimnis», SU-05). Die übrigen 215 bestehenden Erwartungen gelten unverändert.
 
-Geändert in `site/`: 24 HTML-Dateien (Versionskennung; `suche.html` zusätzlich mit dem Suchindex) und `assets/interaktion.js`.
+Geändert in `site/`: 24 HTML-Dateien (Versionskennung; `suche.html` zusätzlich mit dem Suchindex) und `js/interaktion.js`. (Berichtigt am 26.11.2026 nach dem Merge: hier stand `assets/interaktion.js`.)
 
 ## 4 Vorher-Nachher-Vergleich
 

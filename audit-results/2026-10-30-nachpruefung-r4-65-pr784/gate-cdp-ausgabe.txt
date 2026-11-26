@@ -1,0 +1,99 @@
+# Gate r4-64 = r4-64 (wt64), r4-65 = r4-65 (wt65); Chromium 153.0.8010.12 über CDP
+# Ausgangslage ohne Mutation: Blocker r4-64 keine, r4-65 keine
+ID|Fall|Gate r4-64|Gate r4-65|weitere Blocker r4-64/r4-65|Chromium (CDP)|Chromium verlangt|r4-64 stimmt|r4-65 stimmt
+LZ1|Zeile: svg hidden aria-label|–|utility-nav|–/–|link «Kurz und klar Pfeil»|Blocker|NEIN|ja
+LZ2|Zeile: svg inert aria-label|–|utility-nav|–/–|link «Kurz und klar Pfeil»|Blocker|NEIN|ja
+LZ3|Zeile: svg hidden + title|–|utility-nav|–/–|link «Kurz und klar Mehr»|Blocker|NEIN|ja
+LZ4|Zeile: svg inert + title|–|utility-nav|–/–|link «Kurz und klar Mehr»|Blocker|NEIN|ja
+LZ5|Zeile: svg HIDDEN (Grossschreibung) aria-label|–|utility-nav|–/–|link «Kurz und klar Pfeil»|Blocker|NEIN|ja
+LZ6|Zeile: svg hidden="until-found" aria-label|–|utility-nav|–/–|link «Kurz und klar Pfeil»|Blocker|NEIN|ja
+LZ7|Zeile: svg > g inert aria-label|–|utility-nav|–/–|link «Kurz und klar»|kein|ja|NEIN
+LZ8|Zeile: svg > text hidden|–|utility-nav|–/–|link «Kurz und klar»|kein|ja|NEIN
+LZ9|Zeile: svg aria-hidden="true" aria-label|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+LZ10|Zeile: svg aria-hidden=" true " + title|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+LZ11|Zeile: svg aria-hidden="false" aria-label|utility-nav|utility-nav|–/–|link «Kurz und klar Pfeil»|Blocker|ja|ja
+LZ12|Zeile: svg aria-hidden="undefined" + title|utility-nav|utility-nav|–/–|link «Kurz und klar Mehr»|Blocker|ja|ja
+LZ13|Zeile: span hidden > svg aria-label|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+LZ14|Zeile: span inert > svg + title|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+LZ15|Zeile: span hidden aria-label|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+LZ16|Zeile: Kontrolle: svg aria-label sichtbar|utility-nav|utility-nav|–/–|link «Kurz und klar Pfeil»|Blocker|ja|ja
+LZ17|Zeile: Kontrolle: svg > g aria-label (ohne inert)|utility-nav|utility-nav|–/–|link «Kurz und klar»|kein|NEIN|NEIN
+LZ18|Zeile: Kontrolle: svg > text (ohne hidden)|utility-nav|utility-nav|–/–|link «Kurz und klar»|kein|NEIN|NEIN
+LM1|Menü: svg hidden aria-label|–|nav|–/–|link «Kurz und klar Pfeil»|Blocker|NEIN|ja
+LM2|Menü: svg inert aria-label|–|nav|–/–|link «Kurz und klar Pfeil»|Blocker|NEIN|ja
+LM3|Menü: svg hidden + title|–|nav|–/–|link «Kurz und klar Mehr»|Blocker|NEIN|ja
+LM4|Menü: svg inert + title|–|nav|–/–|link «Kurz und klar Mehr»|Blocker|NEIN|ja
+LM5|Menü: svg HIDDEN (Grossschreibung) aria-label|–|nav|–/–|link «Kurz und klar Pfeil»|Blocker|NEIN|ja
+LM6|Menü: svg hidden="until-found" aria-label|–|nav|–/–|link «Kurz und klar Pfeil»|Blocker|NEIN|ja
+LM7|Menü: svg > g inert aria-label|–|nav|–/–|link «Kurz und klar»|kein|ja|NEIN
+LM8|Menü: svg > text hidden|–|nav|–/–|link «Kurz und klar»|kein|ja|NEIN
+LM9|Menü: svg aria-hidden="true" aria-label|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+LM10|Menü: svg aria-hidden=" true " + title|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+LM11|Menü: svg aria-hidden="false" aria-label|nav|nav|–/–|link «Kurz und klar Pfeil»|Blocker|ja|ja
+LM12|Menü: svg aria-hidden="undefined" + title|nav|nav|–/–|link «Kurz und klar Mehr»|Blocker|ja|ja
+LM13|Menü: span hidden > svg aria-label|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+LM14|Menü: span inert > svg + title|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+LM15|Menü: span hidden aria-label|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+LM16|Menü: Kontrolle: svg aria-label sichtbar|nav|nav|–/–|link «Kurz und klar Pfeil»|Blocker|ja|ja
+LM17|Menü: Kontrolle: svg > g aria-label (ohne inert)|nav|nav|–/–|link «Kurz und klar»|kein|NEIN|NEIN
+LM18|Menü: Kontrolle: svg > text (ohne hidden)|nav|nav|–/–|link «Kurz und klar»|kein|NEIN|NEIN
+F1|Abbildung: svg hidden statt aria-hidden|–|figure-alt|–/–|image «»|Blocker|NEIN|ja
+F2|Abbildung: svg inert statt aria-hidden|–|figure-alt|–/–|image «»|Blocker|NEIN|ja
+F3|Abbildung: svg ohne aria-hidden, Szene hidden|–|figure-alt|–/–|image «»|Blocker|NEIN|ja
+F4|Abbildung: svg ohne aria-hidden, Szene inert|–|–|–/–|ignoriert (inertElement)|kein|ja|ja
+F5|Abbildung: svg ohne aria-hidden, Szene aria-hidden="true"|–|–|–/–|ignoriert (ariaHiddenSubtree)|kein|ja|ja
+F6|Abbildung: svg ohne aria-hidden, Szene aria-hidden="false"|figure-alt|figure-alt|–/–|image «»|Blocker|ja|ja
+F7|Abbildung: svg aria-hidden="TRUE"|–|–|–/–|ignoriert (ariaHiddenElement)|kein|ja|ja
+F8|Abbildung: svg aria-hidden="false"|figure-alt|figure-alt|–/–|image «»|Blocker|ja|ja
+F9|Abbildung: svg aria-hidden="undefined"|figure-alt|figure-alt|–/–|image «»|Blocker|ja|ja
+F10|Abbildung: svg aria-hidden=""|figure-alt|figure-alt|–/–|image «»|Blocker|ja|ja
+F11|Abbildung: svg aria-hidden="0"|–|–|–/–|ignoriert (ariaHiddenElement)|kein|ja|ja
+F12|Abbildung: svg hidden inert aria-hidden="false"|–|figure-alt|–/–|image «»|Blocker|NEIN|ja
+F13|Abbildung: svg ohne aria-hidden, mit aria-label|–|–|–/–|image «Szene»|kein|ja|ja
+F14|Abbildung: Kontrolle: unverändert|–|–|–/–|ignoriert (ariaHiddenElement)|kein|ja|ja
+AZ1|Zeile <nav> aria-hidden="true"|utility-nav|utility-nav|–/–|ignoriert (ariaHiddenSubtree)|Blocker|ja|ja
+AM1|Menü-Link aria-hidden="true"|nav|nav|–/–|ignoriert (ariaHiddenElement)|Blocker|ja|ja
+AS1|Subbar aria-hidden="true"|sender|sender|utility-nav/utility-nav|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AK1|Kopf aria-hidden="true"|sender|sender|–/–|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AZ2|Zeile <nav> aria-hidden="TRUE"|utility-nav|utility-nav|–/–|ignoriert (ariaHiddenSubtree)|Blocker|ja|ja
+AM2|Menü-Link aria-hidden="TRUE"|nav|nav|–/–|ignoriert (ariaHiddenElement)|Blocker|ja|ja
+AS2|Subbar aria-hidden="TRUE"|sender|sender|utility-nav/utility-nav|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AK2|Kopf aria-hidden="TRUE"|sender|sender|–/–|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AZ3|Zeile <nav> aria-hidden=" true "|utility-nav|utility-nav|–/–|ignoriert (ariaHiddenSubtree)|Blocker|ja|ja
+AM3|Menü-Link aria-hidden=" true "|nav|nav|–/–|ignoriert (ariaHiddenElement)|Blocker|ja|ja
+AS3|Subbar aria-hidden=" true "|sender|sender|utility-nav/utility-nav|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AK3|Kopf aria-hidden=" true "|sender|sender|–/–|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AZ4|Zeile <nav> aria-hidden="yes"|utility-nav|utility-nav|–/–|ignoriert (ariaHiddenSubtree)|Blocker|ja|ja
+AM4|Menü-Link aria-hidden="yes"|nav|nav|–/–|ignoriert (ariaHiddenElement)|Blocker|ja|ja
+AS4|Subbar aria-hidden="yes"|sender|sender|utility-nav/utility-nav|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AK4|Kopf aria-hidden="yes"|sender|sender|–/–|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AZ5|Zeile <nav> aria-hidden="0"|utility-nav|utility-nav|–/–|ignoriert (ariaHiddenSubtree)|Blocker|ja|ja
+AM5|Menü-Link aria-hidden="0"|nav|nav|–/–|ignoriert (ariaHiddenElement)|Blocker|ja|ja
+AS5|Subbar aria-hidden="0"|sender|sender|utility-nav/utility-nav|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AK5|Kopf aria-hidden="0"|sender|sender|–/–|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AZ6|Zeile <nav> aria-hidden="false"|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+AM6|Menü-Link aria-hidden="false"|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+AS6|Subbar aria-hidden="false"|–|–|–/–|StaticText «Fachstelle Angehörigenarbeit der PUK» im Baum|kein|ja|ja
+AK6|Kopf aria-hidden="false"|–|–|–/–|StaticText «Fachstelle Angehörigenarbeit der PUK» im Baum|kein|ja|ja
+AZ7|Zeile <nav> aria-hidden="False"|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+AM7|Menü-Link aria-hidden="False"|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+AS7|Subbar aria-hidden="False"|–|–|–/–|StaticText «Fachstelle Angehörigenarbeit der PUK» im Baum|kein|ja|ja
+AK7|Kopf aria-hidden="False"|–|–|–/–|StaticText «Fachstelle Angehörigenarbeit der PUK» im Baum|kein|ja|ja
+AZ8|Zeile <nav> aria-hidden=" false "|utility-nav|utility-nav|–/–|ignoriert (ariaHiddenSubtree)|Blocker|ja|ja
+AM8|Menü-Link aria-hidden=" false "|nav|nav|–/–|ignoriert (ariaHiddenElement)|Blocker|ja|ja
+AS8|Subbar aria-hidden=" false "|sender|sender|utility-nav/utility-nav|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AK8|Kopf aria-hidden=" false "|sender|sender|–/–|nicht im Baum (Absatz: ignoriert, ariaHiddenSubtree)|Blocker|ja|ja
+AZ9|Zeile <nav> aria-hidden="undefined"|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+AM9|Menü-Link aria-hidden="undefined"|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+AS9|Subbar aria-hidden="undefined"|–|–|–/–|StaticText «Fachstelle Angehörigenarbeit der PUK» im Baum|kein|ja|ja
+AK9|Kopf aria-hidden="undefined"|–|–|–/–|StaticText «Fachstelle Angehörigenarbeit der PUK» im Baum|kein|ja|ja
+AZ10|Zeile <nav> aria-hidden=""|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+AM10|Menü-Link aria-hidden=""|–|–|–/–|link «Kurz und klar»|kein|ja|ja
+AS10|Subbar aria-hidden=""|–|–|–/–|StaticText «Fachstelle Angehörigenarbeit der PUK» im Baum|kein|ja|ja
+AK10|Kopf aria-hidden=""|–|–|–/–|StaticText «Fachstelle Angehörigenarbeit der PUK» im Baum|kein|ja|ja
+S-hidden-sub|Subbar hidden|sender|sender|utility-nav/utility-nav|StaticText «Fachstelle Angehörigenarbeit der PUK» im Baum|kein|NEIN|NEIN
+S-hidden-kopf|Kopf hidden (404)|sender|sender|–/–|nicht im Baum (Absatz: ignoriert, notRendered)|Blocker|ja|ja
+S-inert-sub|Subbar inert|sender|sender|utility-nav/utility-nav|nicht im Baum (Absatz: ignoriert, inertElement)|Blocker|ja|ja
+S-inert-kopf|Kopf inert (404)|sender|sender|–/–|nicht im Baum (Absatz: ignoriert, inertElement)|Blocker|ja|ja
+S-svg|Absenderin in <svg hidden><foreignObject> (Kontrolle Namensraum)|sender|–|–/–|StaticText «Fachstelle Angehörigenarbeit der PUK» im Baum|kein|NEIN|ja
+# Fälle: 95 · r4-64 ≠ r4-65: 21 · Abweichungen Gate ↔ Chromium: r4-64 22, r4-65 9

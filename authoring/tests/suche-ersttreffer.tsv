@@ -241,3 +241,10 @@ Mein Mann ist gewalttätig	gefahr.html#gewalt	r4-76 Regressionsprobe (Quellenblo
 Mein Mann schlägt unseren Sohn	gefahr.html#gewalt	r4-76 Regressionsprobe (Quellenblock zählt wieder zum Abschnitt)
 Meine Frau schlägt zu	gefahr.html#gewalt	r4-76 Regressionsprobe (Quellenblock zählt wieder zum Abschnitt)
 Mein Sohn schneidet sich seit Wochen	krise.html#selbstverletzung	r4-76 Regressionsprobe (Begriff nicht mehr in der Gruppe Selbstverletzung)
+mein Mann schlägt die Kinder	kinder.html#eskalation > gefahr.html#gewalt	r4-74 (aus PR #713) SU-02 Kinder zuerst ohne Tötungswort; erfüllt seit r4-77 (Signal-Anheftung), aus suche-ausbau-offen.tsv übernommen
+der Vater meiner Kinder schlägt mich	gefahr.html#gewalt	r4-74 (aus PR #713) SU-02 Kinder nicht Betroffene; erfüllt seit r4-77 (Signal-Anheftung), aus suche-ausbau-offen.tsv übernommen
+Ich habe Suizidgedanken	krise.html#suizid	r4-77 Signal-Anheftung (Wiederaufbau der Suche, Schritt 2); vorher zuerst «Suizidgedanken und Selbstverletzung» der Diagnoseseite
+Ich habe eine Überdosis genommen	krise.html#suizid	r4-77 Signal-Anheftung (Wiederaufbau der Suche, Schritt 2); vorher zuerst «Einen Krisenplan vereinbaren» (Gegenprüfung r4-76, N840-4)
+Ich werde immer wieder geschlagen	gefahr.html#gewalt	r4-77 Signal-Anheftung (Wiederaufbau der Suche, Schritt 2); vorher kein Sicherheitsabschnitt oben
+mein Bruder schlägt die Kinder	kinder.html#eskalation > gefahr.html#gewalt	r4-77 Signal-Anheftung (Wiederaufbau der Suche, Schritt 2); Kinder als Betroffene: Kinderschutz zuerst
+Selbstverletzung bei Jugendlichen	krise.html#selbstverletzung	r4-77 Signal-Anheftung (Wiederaufbau der Suche, Schritt 2); vorher zuerst «Wenn Sie nur die nächsten Schritte brauchen» (Jugendliche)

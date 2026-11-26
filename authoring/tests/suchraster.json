@@ -278,6 +278,16 @@
       "Kinder: "
     ]
   },
+  "ichRahmen": {
+    "_hinweis": "Klare Ich-Aussage um eine Aussage über Dritte: Rahmen × Handelnde (ohne «ich») × Aussage (Gegenprüfung r4-76, PR #844, N840-2)",
+    "rahmen": [
+      "Ich habe Angst, {s}",
+      "Ich bin verzweifelt, {s}",
+      "Ich brauche Hilfe, {s}",
+      "{s} und ich habe Angst",
+      "{s}, was kann ich machen?"
+    ]
+  },
   "tippen": {
     "_hinweis": "Jede Zwischenstufe beim Tippen ab drei Zeichen (Nachprüfung r4-74, PR #839, erweitert)",
     "gruppen": [
@@ -288,7 +298,8 @@
       "N",
       "P",
       "ZY",
-      "ZZ"
+      "ZZ",
+      "GC"
     ],
     "abZeichen": 3
   }

@@ -904,3 +904,102 @@ Polizei rufen
 Meine Mutter schlägt meinen Vater
 Sie schlägt ihn
 Er schlägt sie
+
+# GA Gewalt ohne «mich», Selbstverletzung, Suizid, Tötungswort · Quelle: Gegenprüfung r4-76, PR #844
+mein partner wird handgreiflich
+meine frau ist gewalttätig geworden
+er schlägt meine tochter
+mein sohn schlägt seine freundin
+mein vater ist gewalttätig gegen meine mutter
+meine partnerin schlägt die kinder
+mein mann hat zugeschlagen
+mein ex bedroht meine familie
+mein bruder wird gewalttätig wenn er trinkt
+mein freund schlägt zu wenn er wütend ist
+meine tochter schlägt ihren partner
+häusliche gewalt mein mann
+gewalt in der beziehung frau
+mann gewalttätig was tun
+frau schlägt mann
+gewalt gegen den mann
+meine mutter schlägt meinen vater
+partner gewalttätig polizei
+er wird gewalttätig gegen unseren sohn
+mein mann wirft mit gegenständen
+mein mann ist aggressiv und schlägt
+meine frau bedroht die kinder
+mein mann schlägt zu
+meine frau schlägt zu
+mein mann schlägt unseren sohn
+ich werde von meinem mann geschlagen
+ich habe angst vor meinem mann
+ich werde bedroht
+ich wurde geschlagen
+ich halte die gewalt nicht mehr aus
+ich werde zu hause geschlagen
+meine tochter schneidet sich die arme auf
+sie schneidet sich heimlich
+er schneidet sich immer noch
+mein kind schneidet sich und ich weiss nicht weiter
+sie schneidet sich seit monaten
+meine tochter ritzt sich heimlich
+er verletzt sich selbst wenn wir streiten
+mein sohn schneidet sich mit einer klinge
+sie schneidet sich nach jedem streit
+ich schneide mich
+ich ritze mich
+ich verletze mich selbst
+ich schneide mich wieder
+ich ritze mich seit jahren
+ich will nicht mehr leben
+ich denke an suizid
+ich habe suizidgedanken seit wochen
+ich will sterben wegen ihm
+ich kann nicht mehr und will sterben
+manchmal will ich nicht mehr aufwachen
+ich bin lebensmüde
+ich denke oft an den tod
+ich denke daran mich umzubringen
+ich bringe mich um wenn er geht
+mein sohn will sich umbringen seit wochen
+meine frau droht sich umzubringen wenn ich gehe
+er sagt er bringt sich um
+sie hat gesagt sie bringt sich heute um
+mein mann droht mich umzubringen
+er will mich töten
+er droht die kinder umzubringen
+meine tochter will sich umbringen und schneidet sich
+mein mann will sich umbringen was tun
+sie droht sich umzubringen polizei
+sie hat versucht sich das leben zu nehmen
+meine tochter hat suizidgedanken und schneidet sich
+mein vater hat eine überdosis genommen
+meine mutter spricht ständig vom sterben
+mein freund hat einen abschiedsbrief geschrieben
+
+# GB Nachproben zu Rasterfällen · Quelle: Gegenprüfung r4-76, PR #844
+mein mann bringt sich um polizei
+Mein Mann bringt sich um, Polizei?
+meine frau sagt sie bringt sich um polizei rufen
+mein bruder bringt sich um ständig
+mein mann will sich umbringen polizei
+Mein Mann wird gewalttätig und ich habe Angst
+Meine Frau wird gewalttätig, was kann ich machen?
+Mein Mann schlägt zu, wegen mir
+Ich habe Angst, mein Mann wird gewalttätig
+mein mann beschimpft mich polizei
+Ich denke ans Sterben, Therapie?
+
+# GC Klare Ich-Aussagen mit Gewalt durch Mann oder Frau · Quelle: Gegenprüfung r4-76, PR #844
+Ich habe Angst vor meinem Mann, er wird gewalttätig
+Ich habe Angst, meine Frau schlägt zu
+Ich weiss nicht weiter, mein Mann ist gewalttätig
+Ich halte es nicht mehr aus, mein Mann schlägt zu
+Ich brauche Hilfe, mein Mann ist gewalttätig
+Ich brauche Hilfe, meine Frau ist gewalttätig
+Ich werde von meiner Frau geschlagen
+Ich habe Angst, mein Mann schlägt unseren Sohn
+Ich bin verzweifelt, mein Mann schlägt zu
+Ich fühle mich bedroht von meinem Mann
+Ich habe Angst, meine Tochter schneidet sich
+Ich mache mir Sorgen, mein Sohn schneidet sich seit Wochen

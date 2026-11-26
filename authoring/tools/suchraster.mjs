@@ -12,6 +12,7 @@
 // Anfragemengen (authoring/tests/suchraster.json, authoring/tests/suchraster-proben.txt):
 //   saetze        Handelnde × Aussage zu Suizid, Selbstverletzung oder Gewalt × Nachsatz
 //   ich           Ich-Aussagen aus Kern × Füllung × Rahmen
+//   ichRahmen     klare Ich-Aussage um eine Aussage über Dritte: Rahmen × Handelnde × Aussage
 //   proben        alle Einzelproben, dazu die festgeschriebenen Anfragen aus suche-ersttreffer.tsv und suche-ausbau-offen.tsv
 //   kombinationen Proben ausgewählter Gruppen mal Zusätze und Vorsätze, in Gross- und Kleinschreibung
 //   tippen        jede Zwischenstufe beim Tippen der Proben ausgewählter Gruppen
@@ -96,6 +97,7 @@ const groupsOf = keys => keys.flatMap(k => {
 const sets = {
   saetze: cfg.saetze.handelnde.flatMap(a => cfg.saetze.aussagen.flatMap(p => cfg.saetze.nachsaetze.map(x => [a, p, x].filter(Boolean).join(' ')))),
   ich: cfg.ichAussagen.kerne.flatMap(k => cfg.ichAussagen.fuellungen.flatMap(f => cfg.ichAussagen.rahmen.map(r => r.replace('{k}', k + f)))),
+  ichRahmen: cfg.ichRahmen.rahmen.flatMap(r => cfg.saetze.handelnde.filter(h => h && h !== 'ich').flatMap(h => cfg.saetze.aussagen.map(a => r.replace('{s}', `${h} ${a}`)))),
   proben: [...[...probeGroups.values()].flat(), ...tsvQueries(join(tests, 'suche-ersttreffer.tsv')), ...tsvQueries(join(tests, 'suche-ausbau-offen.tsv'))],
   kombinationen: groupsOf(cfg.kombinationen.gruppen).flatMap(s => [
     ...cfg.kombinationen.zusaetze.map(z => s + z),

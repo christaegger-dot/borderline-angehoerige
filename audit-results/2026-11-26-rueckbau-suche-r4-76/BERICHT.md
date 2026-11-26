@@ -64,7 +64,7 @@ Die Proben der Prüfsitzung, von dieser Sitzung gegen r4-75 gelaufen (`ergebnis/
 
 **Beweis der Gleichheit.** Nach dem Build mit `--write-site`:
 
-- `site/js/interaktion.js`, `site/css/site.css` und `site/_redirects` sind byte-gleich mit dem Stand `3764d45`.
+- `site/js/interaktion.js`, `site/css/site.css` und `site/_redirects` sind byte-gleich mit dem Stand `3764d45`. Nachgetragen am 26.11.2026 nach der Gegenprüfung (N840-8): `site/_headers` ebenfalls.
 - Alle 24 HTML-Dateien sind gleich, wenn man die Kennung `r4-76` und `r4-73` gleichsetzt. Dazu gehört `suche.html` mit dem Suchindex.
 - Die Dateiliste von `site/` ist gleich (35 Dateien).
 

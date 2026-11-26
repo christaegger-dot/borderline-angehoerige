@@ -1,10 +1,11 @@
 # Suchraster · Bezug r4-73 · Prüfstand r4-75
-Ergebnis: VERSCHLECHTERUNG · 40789 Anfragen · 1072 Verschlechterungen · JS-Fehler 0 · 298 s
+Ergebnis: VERSCHLECHTERUNG · 45603 Anfragen · 1227 Verschlechterungen · JS-Fehler 0 · 582 s
 - saetze: 23328 Anfragen · geändert 6842 · verloren 630 · verdrängt 130 · Anheftung verloren 0 · leer 185 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 3096
 - ich: 4416 Anfragen · geändert 28 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 1 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 3
-- proben: 1032 Anfragen · geändert 328 · verloren 13 · verdrängt 4 · Anheftung verloren 0 · leer 2 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 170
+- ichRahmen: 4320 Anfragen · geändert 1171 · verloren 68 · verdrängt 3 · Anheftung verloren 0 · leer 28 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 629
+- proben: 1125 Anfragen · geändert 369 · verloren 36 · verdrängt 6 · Anheftung verloren 0 · leer 12 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 175
 - kombinationen: 5622 Anfragen · geändert 1182 · verloren 34 · verdrängt 48 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 800
-- tippen: 6391 Anfragen · geändert 734 · verloren 134 · verdrängt 5 · Anheftung verloren 0 · leer 16 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 204
+- tippen: 6792 Anfragen · geändert 839 · verloren 177 · verdrängt 18 · Anheftung verloren 0 · leer 19 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 221
 Alle Ausnahmen angewendet oder keine eingetragen.
 
 ## saetze: 23328 Anfragen · geändert 6842 · verloren 630 · verdrängt 130 · Anheftung verloren 0 · leer 185 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 3096
@@ -841,7 +842,81 @@ VERLOREN | saetze | mein ex schreit mich an notfall | Bezug kinder#eskalation | 
 VERLOREN | saetze | mein ex schreit mich an polizei | Bezug gefahr#gewalt | Prüfstand kommunizieren#moment > grenzen#saetze > grenzen#erkennen
 ## ich: 4416 Anfragen · geändert 28 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 1 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 3
 LEER | ich | Ich weine oft | Bezug diagnose#begleiterkrankungen | Prüfstand –
-## proben: 1032 Anfragen · geändert 328 · verloren 13 · verdrängt 4 · Anheftung verloren 0 · leer 2 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 170
+## ichRahmen: 4320 Anfragen · geändert 1171 · verloren 68 · verdrängt 3 · Anheftung verloren 0 · leer 28 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 629
+VERLOREN+LEER | ichRahmen | Ich habe Angst, mein mann wird gewalttätig | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich habe Angst, mein mann häusliche gewalt | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich habe Angst, meine frau wird gewalttätig | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich habe Angst, meine frau häusliche gewalt | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | ichRahmen | Ich bin verzweifelt, er schneidet sich | Bezug krise#selbstverletzung | Prüfstand begriffe#b-borderline > begriffe#begriffe
+VERLOREN | ichRahmen | Ich bin verzweifelt, sie schneidet sich | Bezug krise#selbstverletzung | Prüfstand begriffe#b-borderline > begriffe#begriffe
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, mein mann schlägt | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, mein mann schlägt zu | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, mein mann ist gewalttätig | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, mein mann wird gewalttätig | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, mein mann bedroht uns | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, mein mann gewalt | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, mein mann häusliche gewalt | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, meine frau schlägt | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, meine frau schlägt zu | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, meine frau ist gewalttätig | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, meine frau wird gewalttätig | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, meine frau bedroht uns | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, meine frau gewalt | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | Ich bin verzweifelt, meine frau häusliche gewalt | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | ichRahmen | Ich bin verzweifelt, mein partner schneidet sich | Bezug krise#selbstverletzung | Prüfstand begriffe#b-borderline > begriffe#begriffe
+VERLOREN | ichRahmen | Ich bin verzweifelt, meine partnerin schneidet sich | Bezug krise#selbstverletzung | Prüfstand begriffe#b-borderline > begriffe#begriffe
+VERLOREN | ichRahmen | Ich bin verzweifelt, mein sohn schneidet sich | Bezug krise#selbstverletzung | Prüfstand begriffe#b-borderline > begriffe#begriffe
+VERLOREN | ichRahmen | Ich bin verzweifelt, meine tochter schneidet sich | Bezug krise#selbstverletzung | Prüfstand begriffe#b-borderline > begriffe#begriffe
+VERDRAENGT | ichRahmen | Ich brauche Hilfe, mein mann verletzt sich | Bezug gefahr#gewalt | Prüfstand krise > krise#selbstverletzung > krise#krise-schnell
+VERDRAENGT | ichRahmen | Ich brauche Hilfe, mein mann selbstverletzung | Bezug gefahr#gewalt | Prüfstand krise > krise#selbstverletzung > krise#krise-schnell
+VERLOREN | ichRahmen | Ich brauche Hilfe, mein mann schlägt | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | ichRahmen | Ich brauche Hilfe, mein mann schlägt zu | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | ichRahmen | Ich brauche Hilfe, mein mann ist gewalttätig | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | ichRahmen | Ich brauche Hilfe, mein mann wird gewalttätig | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | ichRahmen | Ich brauche Hilfe, mein mann bedroht uns | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | ichRahmen | Ich brauche Hilfe, mein mann gewalt | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | ichRahmen | Ich brauche Hilfe, mein mann häusliche gewalt | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau schneidet sich | Bezug krise#selbstverletzung | Prüfstand quellen#leitlinien > quellen#forschung > behandlung#rollen
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau verletzt sich | Bezug gefahr#gewalt > quellen#leitlinien > quellen#forschung | Prüfstand quellen#leitlinien > quellen#forschung > behandlung#rollen
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau selbstverletzung | Bezug gefahr#gewalt > quellen#leitlinien > quellen#forschung | Prüfstand quellen#leitlinien > quellen#forschung > behandlung#rollen
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau schlägt | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau schlägt zu | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau ist gewalttätig | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau droht mir | Bezug quellen#schweiz > gefahr#gewalt > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > quellen#forschung
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau wird gewalttätig | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau bedroht uns | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau gewalt | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine frau häusliche gewalt | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+LEER | ichRahmen | Ich brauche Hilfe, meine mutter hat einen abschiedsbrief geschrieben | Bezug jugendliche#unterstuetzung | Prüfstand –
+VERLOREN | ichRahmen | Ich brauche Hilfe, meine mutter schneidet sich | Bezug krise#selbstverletzung > rolle#schuld > rolle#anbieten | Prüfstand behandlung#rollen > behandlung#kontakt
+LEER | ichRahmen | Ich brauche Hilfe, mein vater hat einen abschiedsbrief geschrieben | Bezug jugendliche#unterstuetzung | Prüfstand –
+VERLOREN | ichRahmen | Ich brauche Hilfe, mein vater schneidet sich | Bezug krise#selbstverletzung > rolle#schuld > rolle#anbieten | Prüfstand behandlung#rollen > behandlung#kontakt
+VERDRAENGT | ichRahmen | Ich brauche Hilfe, mein ex schneidet sich | Bezug unterstuetzung#beratung > krise#selbstverletzung > ueber#grundsaetze | Prüfstand gefahr#gewalt > begriffe#begriffe > quellen#forschung
+VERLOREN+LEER | ichRahmen | mein mann wird gewalttätig und ich habe Angst | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | mein mann häusliche gewalt und ich habe Angst | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | meine frau wird gewalttätig und ich habe Angst | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | ichRahmen | meine frau häusliche gewalt und ich habe Angst | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | ichRahmen | er schneidet sich, was kann ich machen? | Bezug krise#selbstverletzung > krise#krise-schnell | Prüfstand krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+VERLOREN | ichRahmen | sie schneidet sich, was kann ich machen? | Bezug krise#selbstverletzung > krise#krise-schnell | Prüfstand krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+VERLOREN | ichRahmen | mein mann schlägt, was kann ich machen? | Bezug gefahr#gewalt > krise#krise-schnell | Prüfstand krise#krise-schnell
+VERLOREN | ichRahmen | mein mann schlägt zu, was kann ich machen? | Bezug gefahr#gewalt > krise#krise-schnell | Prüfstand krise#krise-schnell
+VERLOREN | ichRahmen | mein mann ist gewalttätig, was kann ich machen? | Bezug gefahr#gewalt > krise#krise-schnell | Prüfstand krise#krise-schnell
+VERLOREN+LEER | ichRahmen | mein mann wird gewalttätig, was kann ich machen? | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | ichRahmen | mein mann bedroht uns, was kann ich machen? | Bezug gefahr#gewalt > krise#krise-schnell | Prüfstand krise#krise-schnell
+VERLOREN | ichRahmen | mein mann gewalt, was kann ich machen? | Bezug gefahr#gewalt > krise#krise-schnell | Prüfstand krise#krise-schnell
+VERLOREN+LEER | ichRahmen | mein mann häusliche gewalt, was kann ich machen? | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | ichRahmen | meine frau schlägt, was kann ich machen? | Bezug gefahr#gewalt > krise#krise-schnell | Prüfstand krise#krise-schnell
+VERLOREN | ichRahmen | meine frau schlägt zu, was kann ich machen? | Bezug gefahr#gewalt > krise#krise-schnell | Prüfstand krise#krise-schnell
+VERLOREN | ichRahmen | meine frau ist gewalttätig, was kann ich machen? | Bezug gefahr#gewalt > krise#krise-schnell | Prüfstand krise#krise-schnell
+VERLOREN+LEER | ichRahmen | meine frau wird gewalttätig, was kann ich machen? | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | ichRahmen | meine frau bedroht uns, was kann ich machen? | Bezug gefahr#gewalt > krise#krise-schnell | Prüfstand krise#krise-schnell
+VERLOREN | ichRahmen | meine frau gewalt, was kann ich machen? | Bezug gefahr#gewalt > krise#krise-schnell | Prüfstand krise#krise-schnell
+VERLOREN+LEER | ichRahmen | meine frau häusliche gewalt, was kann ich machen? | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | ichRahmen | mein partner schneidet sich, was kann ich machen? | Bezug krise#selbstverletzung > krise#krise-schnell | Prüfstand krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+VERLOREN | ichRahmen | meine partnerin schneidet sich, was kann ich machen? | Bezug krise#selbstverletzung > krise#krise-schnell | Prüfstand krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+VERLOREN | ichRahmen | mein sohn schneidet sich, was kann ich machen? | Bezug krise#selbstverletzung > krise#krise-schnell | Prüfstand krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+VERLOREN | ichRahmen | meine tochter schneidet sich, was kann ich machen? | Bezug krise#selbstverletzung > krise#krise-schnell | Prüfstand krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+## proben: 1125 Anfragen · geändert 369 · verloren 36 · verdrängt 6 · Anheftung verloren 0 · leer 12 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 175
 LEER | proben | Ich weine oft | Bezug diagnose#begleiterkrankungen | Prüfstand –
 VERDRAENGT | proben | suizidgefährdet und gewalttätig | Bezug gefahr#gewalt > kinder#eskalation > index#orientierung | Prüfstand krise#suizid > gefahr#gewalt > krise [angeheftet]
 VERDRAENGT | proben | Er ist suizidgefährdet und schlägt mich | Bezug gefahr#gewalt > kinder#eskalation > index#orientierung | Prüfstand krise#suizid > gefahr#gewalt > krise [angeheftet]
@@ -859,6 +934,32 @@ VERLOREN+LEER | proben | Mein Mann schlägt unseren Sohn | Bezug gefahr#gewalt |
 VERLOREN | proben | Meine Frau ist gewalttätig | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
 VERLOREN | proben | Mein Mann ist gewalttätig | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
 VERLOREN | proben | Gewalt Frau | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN+LEER | proben | meine frau ist gewalttätig geworden | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | proben | häusliche gewalt mein mann | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | proben | gewalt in der beziehung frau | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | mann gewalttätig was tun | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | proben | frau schlägt mann | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | proben | gewalt gegen den mann | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERDRAENGT | proben | mein mann ist aggressiv und schlägt | Bezug gefahr#gewalt | Prüfstand kinder#eskalation > verstehen#anspannung > kommunizieren#kippen
+VERLOREN | proben | mein mann schlägt zu | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | proben | meine frau schlägt zu | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN+LEER | proben | mein mann schlägt unseren sohn | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | proben | ich werde von meinem mann geschlagen | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | proben | er schneidet sich immer noch | Bezug krise#selbstverletzung > krise#suizid > grenzen#bruecke | Prüfstand krise#suizid > kurz#borderline > gefahr#gewalt
+VERLOREN | proben | mein sohn schneidet sich mit einer klinge | Bezug krise#selbstverletzung > kommunizieren#beispiele | Prüfstand kommunizieren#beispiele
+VERDRAENGT | proben | meine tochter hat suizidgedanken und schneidet sich | Bezug krise#selbstverletzung | Prüfstand krise > krise#suizid > krise#selbstverletzung
+VERLOREN+LEER | proben | mein mann bringt sich um polizei | Bezug gefahr#gewalt | Prüfstand –
+LEER | proben | mein bruder bringt sich um ständig | Bezug grenzen#rollen | Prüfstand –
+VERLOREN+LEER | proben | Mein Mann wird gewalttätig und ich habe Angst | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | proben | Meine Frau wird gewalttätig, was kann ich machen? | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | proben | Mein Mann schlägt zu, wegen mir | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | proben | Ich habe Angst, mein Mann wird gewalttätig | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | proben | mein mann beschimpft mich polizei | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | proben | Ich halte es nicht mehr aus, mein Mann schlägt zu | Bezug gefahr#gewalt > beziehungen#verantwortung > fragen#f-eigenes-leben | Prüfstand beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung
+VERLOREN | proben | Ich brauche Hilfe, mein Mann ist gewalttätig | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | proben | Ich brauche Hilfe, meine Frau ist gewalttätig | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | Ich werde von meiner Frau geschlagen | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > quellen#forschung
+VERLOREN+LEER | proben | Ich bin verzweifelt, mein Mann schlägt zu | Bezug gefahr#gewalt | Prüfstand –
 VERLOREN | proben | Mein Sohn schneidet sich seit Wochen | Bezug krise#selbstverletzung | Prüfstand begriffe#begriffe
 ## kombinationen: 5622 Anfragen · geändert 1182 · verloren 34 · verdrängt 48 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 800
 VERLOREN | kombinationen | Wenn du gehst bringe ich mich um cha nümme | Bezug kommunizieren#suizid-angesprochen | Prüfstand selbstfuersorge#warnsignale > kurz > selbstfuersorge
@@ -943,7 +1044,7 @@ VERLOREN | kombinationen | er bringt uns alle um immer wieder schreit mich an | 
 VERDRAENGT | kombinationen | er bringt uns alle um immer wieder Angst um mein Leben | Bezug krise#suizid > verstehen#borderline | Prüfstand gefahr#gewalt > kinder#eskalation > index#orientierung
 VERDRAENGT | kombinationen | Ich bringe mich um Angst um mein Leben immer wieder | Bezug krise#suizid > kinder#eskalation | Prüfstand gefahr#gewalt > kinder#eskalation > index#orientierung [angeheftet]
 VERDRAENGT | kombinationen | Er sagt immer wieder: Ich bringe mich um Angst um mein Leben | Bezug krise#suizid > verstehen#borderline | Prüfstand gefahr#gewalt > kinder#eskalation > index#orientierung [angeheftet]
-## tippen: 6391 Anfragen · geändert 734 · verloren 134 · verdrängt 5 · Anheftung verloren 0 · leer 16 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 204
+## tippen: 6792 Anfragen · geändert 839 · verloren 177 · verdrängt 18 · Anheftung verloren 0 · leer 19 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 221
 VERLOREN | tippen | Mein Mann d | Bezug gefahr#gewalt > buecher#kinderbuecher > quellen#schweiz | Prüfstand buecher#kinderbuecher > quellen#schweiz > buecher#auswahl
 VERLOREN | tippen | Mein Mann dr | Bezug gefahr#gewalt > quellen#schweiz > buecher#auswahl | Prüfstand quellen#schweiz > buecher#auswahl
 VERLOREN | tippen | Mein Mann dro | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
@@ -1084,6 +1185,62 @@ VERLOREN | tippen | Meine Frau bedroht unsere F | Bezug gefahr#gewalt > quellen#
 VERLOREN | tippen | Meine Frau bedroht unsere Fa | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
 VERLOREN | tippen | Gewalt Frau | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
 VERLOREN | tippen | Polizei ruf | Bezug gefahr#gewalt > quellen#versorgung > quellen#schweiz | Prüfstand quellen#versorgung > quellen#schweiz
+VERLOREN | tippen | Ich habe Angst, meine Frau schlägt z | Bezug gefahr#gewalt > kinder#eskalation > beziehungen#zwei-sichten | Prüfstand kinder#eskalation > beziehungen#zwei-sichten > rolle#schuld
+VERLOREN | tippen | Ich weiss nicht weiter, mein Mann is | Bezug rolle#anbieten > gefahr#gewalt > fragen#f-einweisung | Prüfstand rolle#anbieten > fragen#f-einweisung > fragen#f-nicht-geteilt
+VERLOREN | tippen | Ich weiss nicht weiter, mein Mann ist g | Bezug kommunizieren#kippen > gefahr#gewalt > fragen#f-sprache | Prüfstand kommunizieren#kippen > fragen#f-sprache > diagnose#zweifel
+VERLOREN | tippen | Ich halte es nicht mehr aus, mein Mann schlägt | Bezug gefahr#gewalt > beziehungen#verantwortung > fragen#f-eigenes-leben | Prüfstand beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung
+VERLOREN | tippen | Ich halte es nicht mehr aus, mein Mann schlägt  | Bezug gefahr#gewalt > beziehungen#verantwortung > fragen#f-eigenes-leben | Prüfstand beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung
+VERLOREN | tippen | Ich halte es nicht mehr aus, mein Mann schlägt z | Bezug gefahr#gewalt > beziehungen#verantwortung > gefahr#riskant | Prüfstand beziehungen#verantwortung > gefahr#riskant > rolle#schuld
+VERLOREN | tippen | Ich halte es nicht mehr aus, mein Mann schlägt zu | Bezug gefahr#gewalt > beziehungen#verantwortung > fragen#f-eigenes-leben | Prüfstand beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung
+VERLOREN | tippen | Ich brauche Hilfe, mein Mann i | Bezug gefahr#gewalt > buecher#kinderbuecher > quellen#schweiz | Prüfstand buecher#kinderbuecher > quellen#schweiz > buecher#auswahl
+VERLOREN | tippen | Ich brauche Hilfe, mein Mann is | Bezug gefahr#gewalt > buecher#kinderbuecher > quellen#schweiz | Prüfstand buecher#kinderbuecher > quellen#schweiz > buecher#auswahl
+VERLOREN | tippen | Ich brauche Hilfe, mein Mann ist g | Bezug gefahr#gewalt > buecher#auswahl > buecher#kinderbuecher | Prüfstand buecher#auswahl > buecher#kinderbuecher > quellen#schweiz
+VERLOREN | tippen | Ich brauche Hilfe, mein Mann ist ge | Bezug gefahr#gewalt > buecher#auswahl > buecher#kinderbuecher | Prüfstand buecher#auswahl > buecher#kinderbuecher > quellen#schweiz
+VERLOREN | tippen | Ich brauche Hilfe, mein Mann ist gew | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | tippen | Ich brauche Hilfe, mein Mann ist gewa | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | tippen | Ich brauche Hilfe, mein Mann ist gewal | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | tippen | Ich brauche Hilfe, mein Mann ist gewalt | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | tippen | Ich brauche Hilfe, mein Mann ist gewalttätig | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau | Bezug quellen#schweiz > gefahr#gewalt > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > quellen#forschung
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau  | Bezug quellen#schweiz > gefahr#gewalt > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > quellen#forschung
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau is | Bezug gefahr#gewalt > verstehen#mythen > quellen#schweiz | Prüfstand verstehen#mythen > quellen#schweiz > quellen#leitlinien
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau ist | Bezug quellen#schweiz > gefahr#gewalt > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > quellen#forschung
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau ist  | Bezug quellen#schweiz > gefahr#gewalt > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > quellen#forschung
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau ist g | Bezug gefahr#gewalt > behandlung#kontakt > behandlung#rollen | Prüfstand behandlung#kontakt > behandlung#rollen > quellen#leitlinien
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau ist ge | Bezug gefahr#gewalt > behandlung#rollen > behandlung#kontakt | Prüfstand behandlung#rollen > behandlung#kontakt > quellen#leitlinien
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau ist gew | Bezug gefahr#gewalt > quellen#schweiz > behandlung#kontakt | Prüfstand quellen#schweiz > behandlung#kontakt > behandlung#rollen
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau ist gewa | Bezug gefahr#gewalt > quellen#schweiz > verstehen#mythen | Prüfstand quellen#schweiz > verstehen#mythen > quellen#forschung
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau ist gewal | Bezug gefahr#gewalt > quellen#schweiz > verstehen#mythen | Prüfstand quellen#schweiz > verstehen#mythen
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau ist gewalt | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | tippen | Ich brauche Hilfe, meine Frau ist gewalttätig | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | tippen | Ich werde von meiner Frau | Bezug quellen#schweiz > gefahr#gewalt > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > behandlung#kontakt
+VERLOREN | tippen | Ich werde von meiner Frau  | Bezug quellen#schweiz > gefahr#gewalt > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > behandlung#kontakt
+VERLOREN | tippen | Ich werde von meiner Frau g | Bezug gefahr#gewalt > behandlung#kontakt > behandlung#rollen | Prüfstand behandlung#kontakt > behandlung#rollen > quellen#leitlinien
+VERLOREN | tippen | Ich werde von meiner Frau ge | Bezug gefahr#gewalt > behandlung#rollen > behandlung#kontakt | Prüfstand behandlung#rollen > behandlung#kontakt > quellen#leitlinien
+VERLOREN | tippen | Ich werde von meiner Frau ges | Bezug gefahr#gewalt > quellen#leitlinien > quellen#schweiz | Prüfstand quellen#leitlinien > quellen#schweiz > behandlung#kontakt
+VERLOREN | tippen | Ich werde von meiner Frau geschlagen | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > quellen#forschung
+VERLOREN | tippen | Ich habe Angst, mein Mann schlägt u | Bezug kinder#eskalation > gefahr#gewalt > selbstfuersorge#warnsignale | Prüfstand kinder#eskalation > selbstfuersorge#warnsignale > fragen#f-sprache
+VERLOREN | tippen | Ich habe Angst, mein Mann schlägt un | Bezug kinder#eskalation > gefahr#gewalt > selbstfuersorge#warnsignale | Prüfstand kinder#eskalation > selbstfuersorge#warnsignale > fragen#f-sprache
+VERLOREN | tippen | Ich bin verzweifelt, mein Mann s | Bezug gefahr#gewalt > quellen#schweiz > begriffe#b-borderline | Prüfstand quellen#schweiz > begriffe#b-borderline
+VERLOREN | tippen | Ich bin verzweifelt, mein Mann sc | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN | tippen | Ich bin verzweifelt, mein Mann sch | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN+LEER | tippen | Ich bin verzweifelt, mein Mann schlägt | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN+LEER | tippen | Ich bin verzweifelt, mein Mann schlägt  | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | tippen | Ich bin verzweifelt, mein Mann schlägt z | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN+LEER | tippen | Ich bin verzweifelt, mein Mann schlägt zu | Bezug gefahr#gewalt | Prüfstand –
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet | Bezug krise#krise-schnell > krise#selbstverletzung | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet  | Bezug krise#krise-schnell > krise#selbstverletzung | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet s | Bezug krise#krise-schnell > krise#selbstverletzung > krise#suizid | Prüfstand krise#krise-schnell > krise#suizid > behandlung#rollen
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet si | Bezug krise#selbstverletzung > krise#krise-schnell > krise#suizid | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet sic | Bezug krise#selbstverletzung > krise#krise-schnell | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet sich | Bezug krise#krise-schnell > krise#selbstverletzung | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet sich  | Bezug krise#krise-schnell > krise#selbstverletzung | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet sich s | Bezug krise#krise-schnell > krise#selbstverletzung > krise#suizid | Prüfstand krise#krise-schnell > krise#suizid > behandlung#rollen
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet sich se | Bezug krise#selbstverletzung > krise#krise-schnell > krise#suizid | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet sich sei | Bezug krise#krise-schnell > krise#selbstverletzung | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet sich seit | Bezug krise#krise-schnell > krise#selbstverletzung | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet sich seit  | Bezug krise#krise-schnell > krise#selbstverletzung | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
+VERDRAENGT | tippen | Ich mache mir Sorgen, mein Sohn schneidet sich seit Wo | Bezug krise#krise-schnell > krise#selbstverletzung | Prüfstand krise#krise-schnell > krise#suizid > kommunizieren#beispiele
 
 ## Vorlage für suchraster-ausnahmen.tsv (nur für gewollte Änderungen; Begründung und Entscheid ergänzen, gleichartige Fälle besser als Muster)
 ist suizidgefährdet notfall	kinder.html#eskalation	–	<Begründung>	<Entscheid>
@@ -2032,6 +2189,105 @@ mein ex gewalt notfall	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
 mein ex schreit mich an notfall	kinder.html#eskalation	–	<Begründung>	<Entscheid>
 mein ex schreit mich an polizei	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
 Ich weine oft	LEER	–	<Begründung>	<Entscheid>
+Ich habe Angst, mein mann wird gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich habe Angst, mein mann wird gewalttätig	LEER	–	<Begründung>	<Entscheid>
+Ich habe Angst, mein mann häusliche gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich habe Angst, mein mann häusliche gewalt	LEER	–	<Begründung>	<Entscheid>
+Ich habe Angst, meine frau wird gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich habe Angst, meine frau wird gewalttätig	LEER	–	<Begründung>	<Entscheid>
+Ich habe Angst, meine frau häusliche gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich habe Angst, meine frau häusliche gewalt	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, er schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, sie schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann schlägt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann schlägt	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann schlägt zu	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann schlägt zu	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann ist gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann ist gewalttätig	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann wird gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann wird gewalttätig	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann bedroht uns	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann bedroht uns	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann gewalt	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann häusliche gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein mann häusliche gewalt	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau schlägt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau schlägt	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau schlägt zu	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau schlägt zu	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau ist gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau ist gewalttätig	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau wird gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau wird gewalttätig	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau bedroht uns	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau bedroht uns	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau gewalt	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau häusliche gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine frau häusliche gewalt	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein partner schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine partnerin schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein sohn schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, meine tochter schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein mann verletzt sich	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein mann selbstverletzung	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein mann schlägt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein mann schlägt zu	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein mann ist gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein mann wird gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein mann bedroht uns	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein mann gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein mann häusliche gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau verletzt sich	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau selbstverletzung	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau schlägt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau schlägt zu	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau ist gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau droht mir	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau wird gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau bedroht uns	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine frau häusliche gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine mutter hat einen abschiedsbrief geschrieben	LEER	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine mutter schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein vater hat einen abschiedsbrief geschrieben	LEER	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein vater schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein ex schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+mein mann wird gewalttätig und ich habe Angst	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann wird gewalttätig und ich habe Angst	LEER	–	<Begründung>	<Entscheid>
+mein mann häusliche gewalt und ich habe Angst	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann häusliche gewalt und ich habe Angst	LEER	–	<Begründung>	<Entscheid>
+meine frau wird gewalttätig und ich habe Angst	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau wird gewalttätig und ich habe Angst	LEER	–	<Begründung>	<Entscheid>
+meine frau häusliche gewalt und ich habe Angst	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau häusliche gewalt und ich habe Angst	LEER	–	<Begründung>	<Entscheid>
+er schneidet sich, was kann ich machen?	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+sie schneidet sich, was kann ich machen?	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+mein mann schlägt, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann schlägt zu, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann ist gewalttätig, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann wird gewalttätig, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann wird gewalttätig, was kann ich machen?	LEER	–	<Begründung>	<Entscheid>
+mein mann bedroht uns, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann gewalt, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann häusliche gewalt, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann häusliche gewalt, was kann ich machen?	LEER	–	<Begründung>	<Entscheid>
+meine frau schlägt, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau schlägt zu, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau ist gewalttätig, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau wird gewalttätig, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau wird gewalttätig, was kann ich machen?	LEER	–	<Begründung>	<Entscheid>
+meine frau bedroht uns, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau gewalt, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau häusliche gewalt, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau häusliche gewalt, was kann ich machen?	LEER	–	<Begründung>	<Entscheid>
+mein partner schneidet sich, was kann ich machen?	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+meine partnerin schneidet sich, was kann ich machen?	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+mein sohn schneidet sich, was kann ich machen?	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+meine tochter schneidet sich, was kann ich machen?	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
 suizidgefährdet und gewalttätig	kinder.html#eskalation	–	<Begründung>	<Entscheid>
 Er ist suizidgefährdet und schlägt mich	kinder.html#eskalation	–	<Begründung>	<Entscheid>
 Selbstverletzungen	krise.html#suizid	–	<Begründung>	<Entscheid>
@@ -2049,6 +2305,34 @@ Mein Mann schlägt unseren Sohn	LEER	–	<Begründung>	<Entscheid>
 Meine Frau ist gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
 Mein Mann ist gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
 Gewalt Frau	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau ist gewalttätig geworden	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+meine frau ist gewalttätig geworden	LEER	–	<Begründung>	<Entscheid>
+häusliche gewalt mein mann	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+gewalt in der beziehung frau	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mann gewalttätig was tun	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+frau schlägt mann	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+gewalt gegen den mann	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann ist aggressiv und schlägt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann schlägt unseren sohn	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+mein mann schlägt unseren sohn	LEER	–	<Begründung>	<Entscheid>
+ich werde von meinem mann geschlagen	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+er schneidet sich immer noch	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+mein sohn schneidet sich mit einer klinge	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+meine tochter hat suizidgedanken und schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Mein Mann wird gewalttätig und ich habe Angst	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Mein Mann wird gewalttätig und ich habe Angst	LEER	–	<Begründung>	<Entscheid>
+Meine Frau wird gewalttätig, was kann ich machen?	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Meine Frau wird gewalttätig, was kann ich machen?	LEER	–	<Begründung>	<Entscheid>
+Mein Mann schlägt zu, wegen mir	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Mein Mann schlägt zu, wegen mir	LEER	–	<Begründung>	<Entscheid>
+Ich habe Angst, mein Mann wird gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich habe Angst, mein Mann wird gewalttätig	LEER	–	<Begründung>	<Entscheid>
+Ich halte es nicht mehr aus, mein Mann schlägt zu	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein Mann ist gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau ist gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich werde von meiner Frau geschlagen	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein Mann schlägt zu	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein Mann schlägt zu	LEER	–	<Begründung>	<Entscheid>
 Mein Sohn schneidet sich seit Wochen	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
 Wenn du gehst bringe ich mich um cha nümme	kommunizieren.html#suizid-angesprochen	–	<Begründung>	<Entscheid>
 Wenn du gehst bringe ich mich um Angst um mein Leben	kommunizieren.html#suizid-angesprochen	–	<Begründung>	<Entscheid>
@@ -2275,3 +2559,56 @@ Meine Frau bedroht unsere 	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
 Meine Frau bedroht unsere F	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
 Meine Frau bedroht unsere Fa	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
 Polizei ruf	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich habe Angst, meine Frau schlägt z	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich weiss nicht weiter, mein Mann is	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich weiss nicht weiter, mein Mann ist g	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich halte es nicht mehr aus, mein Mann schlägt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich halte es nicht mehr aus, mein Mann schlägt 	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich halte es nicht mehr aus, mein Mann schlägt z	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein Mann i	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein Mann is	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein Mann ist g	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein Mann ist ge	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein Mann ist gew	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein Mann ist gewa	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein Mann ist gewal	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein Mann ist gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau 	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau is	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau ist	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau ist 	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau ist g	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau ist ge	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau ist gew	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau ist gewa	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau ist gewal	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich brauche Hilfe, meine Frau ist gewalt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich werde von meiner Frau	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich werde von meiner Frau 	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich werde von meiner Frau g	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich werde von meiner Frau ge	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich werde von meiner Frau ges	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich habe Angst, mein Mann schlägt u	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich habe Angst, mein Mann schlägt un	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein Mann s	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein Mann sc	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein Mann sch	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein Mann schlägt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein Mann schlägt	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein Mann schlägt 	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein Mann schlägt 	LEER	–	<Begründung>	<Entscheid>
+Ich bin verzweifelt, mein Mann schlägt z	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet 	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet s	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet si	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet sic	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet sich	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet sich 	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet sich s	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet sich se	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet sich sei	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet sich seit	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet sich seit 	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>
+Ich mache mir Sorgen, mein Sohn schneidet sich seit Wo	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>

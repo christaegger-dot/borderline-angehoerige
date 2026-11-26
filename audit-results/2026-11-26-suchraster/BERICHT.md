@@ -15,24 +15,25 @@ Die Website ändert sich nicht. `--write-site` lässt `site/` unverändert; es g
 | Datei | Inhalt |
 |---|---|
 | `authoring/tools/suchraster.mjs` | Werkzeug: vergleicht die Suche eines Stands mit einem Bezugsstand im Browser |
-| `authoring/tests/suchraster.json` | Rasterdefinition: Sätze aus Handelnden, Aussagen und Nachsätzen; Ich-Aussagen aus Bausteinen; Kombinationen; Gruppen für das Tippen |
-| `authoring/tests/suchraster-proben.txt` | 833 Einzelproben in 35 Gruppen, mit Quelle je Gruppe |
+| `authoring/tests/suchraster.json` | Rasterdefinition: Sätze aus Handelnden, Aussagen und Nachsätzen; Ich-Aussagen aus Bausteinen; Ich-Rahmen um Aussagen über Dritte; Kombinationen; Gruppen für das Tippen |
+| `authoring/tests/suchraster-proben.txt` | 926 Einzelproben in 38 Gruppen, mit Quelle je Gruppe |
 | `authoring/tests/suchraster-ausnahmen.tsv` | Liste gewollter Verluste mit Begründung und Entscheid; heute leer |
 | `.github/workflows/verify-authoring.yml` | zwei Schritte: Basis des Pull Requests auschecken (nur `site/`), Raster gegen die Basis |
 
-**Herkunft der Proben.** Die Proben stammen aus beiden Nachprüfungen dieses Tages und aus den Nachweisen der bauenden Sitzung: Nachprüfung von r4-74 (PR #839, Gruppen A bis P, dazu die Bausteine für Ich-Aussagen, Kombinationen und das Tippen), Nachprüfung von r4-75 (PR #841, Entwurf, Gruppen Q bis S) und die Nachweise zu r4-74, r4-75 und r4-76 (Gruppen ZA bis ZZ). Dazu kommen alle Anfragen aus `suche-ersttreffer.tsv` und `suche-ausbau-offen.tsv`. Eine Anfrage, die in mehreren Quellen vorkommt, steht nur in der ersten Gruppe.
+**Herkunft der Proben.** Die Proben stammen aus beiden Nachprüfungen dieses Tages und aus den Nachweisen der bauenden Sitzung: Nachprüfung von r4-74 (PR #839, Gruppen A bis P, dazu die Bausteine für Ich-Aussagen, Kombinationen und das Tippen), Nachprüfung von r4-75 (PR #841, Gruppen Q bis S), Gegenprüfung von r4-76 (PR #844, Gruppen GA bis GC) und die Nachweise zu r4-74, r4-75 und r4-76 (Gruppen ZA bis ZZ). Dazu kommen alle Anfragen aus `suche-ersttreffer.tsv` und `suche-ausbau-offen.tsv`. Eine Anfrage, die in mehreren Quellen vorkommt, steht nur in der ersten Gruppe.
 
 ## 3 Was das Werkzeug prüft
 
-Fünf Anfragemengen, zusammen 40 789 Anfragen:
+Sechs Anfragemengen, zusammen 45 603 Anfragen:
 
 | Menge | Anfragen | Aufbau |
 |---|---|---|
 | `saetze` | 23 328 | 18 Handelnde × 54 Aussagen zu Suizid, Selbstverletzung oder Gewalt × 24 Nachsätze |
 | `ich` | 4 416 | 92 Kerne × 8 Füllungen × 6 Rahmen |
-| `proben` | 1 032 | Einzelproben und festgeschriebene Anfragen |
+| `ichRahmen` | 4 320 | 5 Ich-Rahmen («Ich habe Angst, …», «…, was kann ich machen?») × 16 Handelnde × 54 Aussagen; auf Hinweis der Gegenprüfung (N840-2) |
+| `proben` | 1 125 | Einzelproben und festgeschriebene Anfragen |
 | `kombinationen` | 5 622 | Proben der Gruppen A, B, N und ZY mal 34 Zusätze und 4 Vorsätze, dazu gross und klein geschrieben |
-| `tippen` | 6 391 | jede Zwischenstufe beim Tippen der Proben aus acht Gruppen, ab drei Zeichen |
+| `tippen` | 6 792 | jede Zwischenstufe beim Tippen der Proben aus neun Gruppen, ab drei Zeichen |
 
 Beide Stände laufen gleichzeitig in Chromium mit ihrem eigenen `interaktion.js`. Das Werkzeug liest die ersten drei Treffer und die Anheftung. Die Anheftung liest es über eine Messzeile, die `queryGroups` nach aussen reicht; fehlt die Stelle dafür, bricht es ab, statt ohne sie weiterzuprüfen.
 
@@ -59,12 +60,12 @@ Bezug ist jeweils r4-73 (`3764d45`), der Stand der Suche vor heute Abend.
 
 | Prüfstand | Ergebnis | Verschlechterungen | Dauer |
 |---|---|---|---|
-| r4-74 (`8d95e6a`) | scheitert | 4 799 | 292 s |
-| r4-75 (`e8efa78`) | scheitert | 1 072 | 300 s |
+| r4-74 (`8d95e6a`) | scheitert | 4 955 | 568 s |
+| r4-75 (`e8efa78`) | scheitert | 1 227 | 584 s |
 | r4-76 (`b529695`, `main`) | besteht, Abkürzung | 0 | unter 1 s |
-| r4-76, voller Lauf (`--immer`) | besteht | 0 | 240 s |
+| r4-76, voller Lauf (`--immer`) | besteht | 0 | 539 s |
 
-Die zwei langen Läufe liefen gleichzeitig auf demselben Rechner.
+Die drei langen Läufe liefen gleichzeitig auf demselben Rechner; allein dauerte ein Lauf mit der etwas kleineren ersten Fassung (40 789 Anfragen) 240 bis 300 s.
 
 Aufschlüsselung r4-73 gegen r4-75:
 
@@ -72,17 +73,18 @@ Aufschlüsselung r4-73 gegen r4-75:
 |---|---|---|---|
 | saetze | 630 | 130 | 185 |
 | ich | 0 | 0 | 1 |
-| proben | 13 | 4 | 2 |
+| ichRahmen | 68 | 3 | 28 |
+| proben | 36 | 6 | 12 |
 | kombinationen | 34 | 48 | 0 |
-| tippen | 134 | 5 | 16 |
+| tippen | 177 | 18 | 19 |
 
-Darunter sind alle Fälle, die der Nachweis zu r4-76 als Grund für den Rückbau nennt («Mein Mann schlägt zu», «Mein Mann schlägt unseren Sohn», Selbstverletzung mit Nachsatz). Die Nachprüfung von r4-75 (PR #841) hat mit ihren Proben «blockiert nicht» gefunden; die Proben dieses Rasters umfassen ihre und zusätzlich die Sätze aus Handelnden und Nachsätzen. Den Widerspruch prüft die laufende Gegenprüfung von r4-76 unabhängig.
+Darunter sind alle Fälle, die der Nachweis zu r4-76 als Grund für den Rückbau nennt («Mein Mann schlägt zu», «Mein Mann schlägt unseren Sohn», Selbstverletzung mit Nachsatz), und die klaren Ich-Aussagen, mit denen die Gegenprüfung (PR #844, N840-2) das Urteil «blockiert nicht» der Nachprüfung von r4-75 (PR #841) widerlegt hat, zum Beispiel «Ich habe Angst, mein mann wird gewalttätig»: in r4-73 der Gewaltabschnitt, in r4-75 kein Treffer. Die Menge `ichRahmen` ist auf diesen Hinweis hin dazugekommen.
 
-**Ausnahmen geprüft:** Mit drei Probe-Einträgen (ein Muster, eine genaue Anfrage, eine nie zutreffende) gegen r4-75, nur Menge `proben`: 5 Fälle als Ausnahme erlaubt, 13 bleiben Verschlechterungen, die nie zutreffende Ausnahme wird gemeldet (`ergebnis/probe-ausnahmen-r4-73-gegen-r4-75-proben.txt`). Danach ist die Liste wieder leer.
+**Ausnahmen geprüft:** Mit drei Probe-Einträgen (ein Muster, eine genaue Anfrage, eine nie zutreffende) gegen r4-75, nur Menge `proben`, noch mit der ersten Fassung der Probenliste: 5 Fälle als Ausnahme erlaubt, 13 bleiben Verschlechterungen, die nie zutreffende Ausnahme wird gemeldet (`ergebnis/probe-ausnahmen-r4-73-gegen-r4-75-proben-erste-fassung.txt`). Danach ist die Liste wieder leer.
 
 ## 5 Was das für die nächsten Schritte heisst
 
-r4-73 hat viele Sicherheitstreffer nur zufällig: In r4-75 stehen gegenüber r4-73 bei 3 096 Sätzen des Rasters neu Sicherheitsabschnitte oben, und viele Verluste betreffen Abschnitte, die vorher ohne Bezug zur Anfrage oben standen. Schritt 2 (ein erkanntes Signal heftet den passenden Abschnitt fest an) wird deshalb viele Fälle als VERDRAENGT melden. Sie gehören dann nicht einzeln, sondern als begründete Muster in die Ausnahmen, und die Nachprüfung prüft jedes Muster. Das ist Absicht: Jede Verschiebung eines Sicherheitsabschnitts wird sichtbar und braucht eine Begründung.
+r4-73 hat viele Sicherheitstreffer nur zufällig: In r4-75 stehen gegenüber r4-73 bei 3 096 Sätzen der Menge `saetze` neu Sicherheitsabschnitte oben, und viele Verluste betreffen Abschnitte, die vorher ohne Bezug zur Anfrage oben standen. Schritt 2 (ein erkanntes Signal heftet den passenden Abschnitt fest an) wird deshalb viele Fälle als VERDRAENGT melden. Sie gehören dann nicht einzeln, sondern als begründete Muster in die Ausnahmen, und die Nachprüfung prüft jedes Muster. Das ist Absicht: Jede Verschiebung eines Sicherheitsabschnitts wird sichtbar und braucht eine Begründung.
 
 ## 6 CI
 
@@ -97,8 +99,10 @@ Ob ein roter Lauf das Mergen verhindert, hängt von den Einstellungen des Reposi
 | `--production --out=site --write-site` | 24 Seiten, 0 Blocker, 20 Hinweise; `site/` unverändert |
 | `--production --verify-site` | Parität bestanden, 35 Dateien byte-gleich |
 | Selbsttest | 127 von 127 |
-| Suchtest | 235 von 235, 0 JS-Fehler |
+| Suchtest | 235 von 235, 0 JS-Fehler (eine Erwartung gelockert, siehe unten) |
 | Suchraster `main` gegen `main` | Abkürzung, 0 |
+
+**Gelockerte Erwartung (N840-6):** In `suche-ersttreffer.tsv` verlangte eine Gegenprobe «kein Treffer» für ein Wort, das thematisch nahe am Suizidabschnitt liegt. Die Gegenprüfung von r4-76 hat darauf hingewiesen, dass eine spätere sachgerechte Verknüpfung den Test dann bricht. Die Erwartung lautet jetzt «nicht der Suizidabschnitt» (`!krise.html#suizid`). r4-76 erfüllt sie wie vorher.
 
 Der neue CI-Schritt läuft erst auf GitHub. Für diesen Pull Request greift die Abkürzung, weil er die Suche nicht ändert; der volle Lauf in der CI ist damit noch nicht auf GitHub beobachtet. Lokal ist er belegt (Abschnitt 4).
 

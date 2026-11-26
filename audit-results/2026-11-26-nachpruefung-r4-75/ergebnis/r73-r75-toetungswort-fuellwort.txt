@@ -1,0 +1,56 @@
+# N Tötungswort (trennbares Verb oder Mundart-/Tippform) zusammen mit neuen Füllwörtern, natürliche Sätze ohne Satzzeichen
+GLEICH   | Er bringt sich um sagt er immer wieder | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie bringt sich um hat sie wieder gesagt | vorher – | nachher –
+GLEICH   | Sie sagt immer wieder sie bringt sich um wegen mir | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Mein Sohn sagt immer wieder ich bring mich um Mama | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er schreibt immer wieder er bringt sich um heute Nacht | vorher – | nachher –
+GLEICH   | Sie sagt oft sie bringt sich um wegen der Trennung | vorher – | nachher –
+GLEICH   | Er sagt immer er bringt sich um ohne mich | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie schreibt mir oft sie bringt sich um heute | vorher – | nachher –
+GLEICH   | Er redet immer wieder davon er bringt sich um irgendwann | vorher – | nachher –
+GLEICH   | Sie erzählt immer wieder sie bringt sich um eines Tages | vorher – | nachher –
+GLEICH   | Er sagte er bringt sich um noch heute | vorher – | nachher –
+GLEICH   | Meine Tochter sagt immer wieder sie bringt sich um mit Tabletten | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er sagt immer wieder ich bringe mich um mit dem Auto | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie sagt sie bringt sich um mit Tabletten | vorher – | nachher –
+GLEICH   | Er bringt sich um mit Tabletten sagt er | vorher – | nachher –
+GLEICH   | Sie sagt immer wieder sie bringe sich um deswegen | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er sagt immer wieder er bringt mich um eines Tages | vorher – | nachher –
+GLEICH   | Mein Mann sagt oft er bringt mich um im Schlaf | vorher – | nachher –
+GLEICH   | Er schreibt immer wieder er bringt uns um alle | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie sagt immer wieder sie bringt die Kinder um und sich auch | vorher kinder.html#eskalation > gefahr.html#gewalt > krise.html#suizid > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kinder.html#eskalation, gefahr.html#gewalt, krise.html#suizid] | nachher kinder.html#eskalation > gefahr.html#gewalt > krise.html#suizid > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kinder.html#eskalation, gefahr.html#gewalt, krise.html#suizid]
+GLEICH   | Er sagt immer wieder er bringt sich um was soll ich tun | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie sagt immer wieder sie bringt sich um was kann ich machen | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er sagt oft er bringt sich um wie reagieren | vorher – | nachher –
+GLEICH   | Sie sagt wieder sie bringt sich um soll ich die Polizei rufen | vorher – | nachher –
+GLEICH   | Er sagt immer wieder er bringt sich um ist das ernst | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie sagt immer wieder sie bringt sich um meint sie das ernst | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er droht immer wieder er bringt sich um ernst nehmen | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Tochter sagt immer wieder sie bringt sich um Hilfe | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sohn schreibt wieder er bringt sich um Notfall | vorher – | nachher –
+GLEICH   | Partner sagt oft er bringt sich um Angst | vorher – | nachher –
+GLEICH   | Si seit immer wieder si bringt sich um | vorher kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kommunizieren.html#suizid-angesprochen, krise.html#suizid, gefahr.html#gewalt] | nachher kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kommunizieren.html#suizid-angesprochen, krise.html#suizid, gefahr.html#gewalt]
+GLEICH   | Er seit immer wieder er bringi sich um | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie sagt immer wieder sie well sich umbringä | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er sagt immer wieder er will sich umbrigen | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie sagt oft sie will sich umbringn | vorher – | nachher –
+GLEICH   | Er redet immer wieder vom Umbringen | vorher krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20) [angeheftet: krise.html#suizid, gefahr.html#gewalt] | nachher krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20) [angeheftet: krise.html#suizid, gefahr.html#gewalt]
+GLEICH   | Sie spricht oft vom Umbringen | vorher krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20) [angeheftet: krise.html#suizid, gefahr.html#gewalt] | nachher krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20) [angeheftet: krise.html#suizid, gefahr.html#gewalt]
+GLEICH   | Er sagt immer wieder er macht Schluss mit dem Leben | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie sagt immer wieder sie erhängt sich | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er sagt oft er erschiesst sich | vorher – | nachher –
+GLEICH   | Sie sagt immer wieder sie springt vor den Zug | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er sagt immer wieder er bringt sich um | vorher kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kommunizieren.html#suizid-angesprochen, krise.html#suizid, gefahr.html#gewalt] | nachher kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kommunizieren.html#suizid-angesprochen, krise.html#suizid, gefahr.html#gewalt]
+GLEICH   | Sie sagt oft sie bringt sich um | vorher kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kommunizieren.html#suizid-angesprochen, krise.html#suizid, gefahr.html#gewalt] | nachher kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kommunizieren.html#suizid-angesprochen, krise.html#suizid, gefahr.html#gewalt]
+GLEICH   | Er sagt immer wieder: Ich bringe mich um. | vorher kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kommunizieren.html#suizid-angesprochen, krise.html#suizid, gefahr.html#gewalt] | nachher kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kommunizieren.html#suizid-angesprochen, krise.html#suizid, gefahr.html#gewalt]
+GLEICH   | Sie sagt immer wieder, sie bringt sich um, wegen mir | vorher kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kommunizieren.html#suizid-angesprochen, krise.html#suizid, gefahr.html#gewalt] | nachher kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt > krise.html > diagnose.html#suizidalitaet … (20) [angeheftet: kommunizieren.html#suizid-angesprochen, krise.html#suizid, gefahr.html#gewalt]
+# O Dieselben Sätze ohne Füllwörter (Kontrolle: wird das Tötungswort überhaupt erkannt?)
+GLEICH   | Er bringt sich um wegen mir | vorher – | nachher –
+GLEICH   | Sie bringt sich um heute Nacht | vorher – | nachher –
+GLEICH   | Ich bring mich um Mama | vorher fragen.html#f-einweisung > fragen.html > begriffe.html#b-fu | nachher fragen.html#f-einweisung > fragen.html > begriffe.html#b-fu
+GLEICH   | Sie bringt sich um mit Tabletten | vorher behandlung.html#rollen > behandlung.html#kontakt | nachher behandlung.html#rollen > behandlung.html#kontakt
+GLEICH   | Er bringt mich um eines Tages | vorher – | nachher –
+GLEICH   | Er bringt sich um was soll ich tun | vorher behandlung.html#kontakt > behandlung.html#rollen | nachher behandlung.html#kontakt > behandlung.html#rollen
+GLEICH   | Sie bringt sich um soll ich die Polizei rufen | vorher – | nachher –
+GLEICH   | Er bringt sich um ist das ernst | vorher – | nachher –
+GLEICH   | Sie bringt sich um Hilfe | vorher behandlung.html#rollen > behandlung.html#kontakt | nachher behandlung.html#rollen > behandlung.html#kontakt

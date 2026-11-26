@@ -1,0 +1,70 @@
+# Q Neue Proben, der bauenden Sitzung nicht bekannt: Tötungswort mit den 13 früheren Füllwörtern
+Er redet immer davon er bringt sich um wegen der Schulden
+Sie schreibt mir er bringt sich um wenn ich nicht komme
+Mein Bruder erzählt überall er bringt sich um nach Weihnachten
+Sie spricht oft davon sie bringt sich um mit dem Auto
+Er sagte gestern wieder er bringt uns alle um irgendwann
+Meine Mutter sagt oft sie bringt sich um wegen uns Kindern
+Er hat es schon oft gesagt er bringt sich um diesmal wirklich
+Sie hat wieder geschrieben sie bringt sich um heute Abend
+Was hat er getan er wollte sich umbringen
+Sie hat es wieder gemacht sie wollte sich töten
+Er hat mir oft gedroht er bringt mich um im Schlaf
+Sie redet vom Umbringen immer wieder seit Wochen
+Mein Sohn schreibt oft vom Töten in seinen Nachrichten
+Er sagt oft er erschiesst sich
+Sie sagt wieder sie springt von der Brücke
+Er erzählt er habe sich fast umgebracht letzte Woche
+# R Neue Proben: Aussagen zu Sterben, Selbstverletzung, Gewalt mit früheren Füllwörtern
+Ich denke oft an den Tod
+Ich denke wieder ans Sterben
+Ich rede oft vom Sterben
+Ich habe oft gesagt ich will sterben
+Ich habe wieder daran gedacht zu sterben
+Ich schreibe oft Abschiedsbriefe
+Ich habe schon oft daran gedacht mir etwas anzutun
+Ich wünsche mir immer wieder einzuschlafen und nicht mehr aufzuwachen
+Ich habe es wieder getan ich habe mich geritzt
+Ich habe mich wieder verletzt
+Ich habe mir oft wehgetan
+Ich habe wieder Tabletten genommen
+Sie redet immer vom Tod
+Er spricht wieder vom Sterben
+Sie schreibt oft vom Tod
+Er erzählt immer wieder er sei lebensmüde
+Sie sagt oft sie mag nicht mehr leben
+Er sagt immer wieder es wäre besser wenn er nicht mehr da wäre
+Sie sagt wieder sie halte es nicht mehr aus
+Er hat wieder gesagt er sehe keinen Ausweg
+Sie hat oft gesagt sie wolle nur noch schlafen
+Er hat mir wieder eine Ohrfeige gegeben
+Sie hat mir schon oft Ohrfeigen gegeben
+Er hat mir eine Ohrfeige verpasst
+Sie gab mir eine Ohrfeige
+Er hat dem Kind eine Ohrfeige gegeben
+Ich habe ihr eine Ohrfeige gegeben
+Er hat mich wieder gewürgt
+Sie hat mich oft bedroht
+Er sagt immer wieder er schlägt mich tot
+# S Neue Proben: Kürzel «FU» und «IV» mit weiteren Begriffen und allein
+FU
+IV
+FU Suizid
+Suizidgedanken FU nötig
+FU wegen Selbstgefährdung
+FU nach Suizidversuch
+FU Gewalt
+FU Kinder
+FU Entlassung
+FU Dauer
+Wie lange dauert eine FU
+Wer ordnet eine FU an
+FU gegen den Willen
+FU oder freiwillig
+IV Rente
+IV und Borderline
+IV Anmeldung Suizid
+Zwangseinweisung
+Zwangseinweisung Suizid
+Einweisung
+für

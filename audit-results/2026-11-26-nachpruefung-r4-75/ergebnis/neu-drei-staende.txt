@@ -1,0 +1,69 @@
+# Neue Proben über drei Stände (erste zwei Treffer, [P] = angeheftet)
+Anfrage | r4-73 | r4-74 | r4-75
+Er redet immer davon er bringt sich um wegen der Schulden | – | gefahr#riskant | –
+Sie schreibt mir er bringt sich um wenn ich nicht komme | kommunizieren#suizid-angesprochen > krise#suizid | kommunizieren#suizid-angesprochen > krise#suizid | kommunizieren#suizid-angesprochen > krise#suizid
+Mein Bruder erzählt überall er bringt sich um nach Weihnachten | – | – | –
+Sie spricht oft davon sie bringt sich um mit dem Auto | – | behandlung#rollen > behandlung#kontakt | –
+Er sagte gestern wieder er bringt uns alle um irgendwann | – | – | –
+Meine Mutter sagt oft sie bringt sich um wegen uns Kindern | – | – | –
+Er hat es schon oft gesagt er bringt sich um diesmal wirklich | – | – | –
+Sie hat wieder geschrieben sie bringt sich um heute Abend | – | – | –
+Was hat er getan er wollte sich umbringen | krise#suizid > gefahr#gewalt | krise#suizid > gefahr#gewalt | krise#suizid > gefahr#gewalt
+Sie hat es wieder gemacht sie wollte sich töten | krise#suizid > gefahr#gewalt | krise#suizid > gefahr#gewalt | krise#suizid > gefahr#gewalt
+Er hat mir oft gedroht er bringt mich um im Schlaf | – | – | –
+Sie redet vom Umbringen immer wieder seit Wochen | krise#suizid > gefahr#gewalt | krise#suizid > gefahr#gewalt | krise#suizid > gefahr#gewalt
+Mein Sohn schreibt oft vom Töten in seinen Nachrichten | krise#suizid > gefahr#gewalt | krise#suizid > gefahr#gewalt | krise#suizid > gefahr#gewalt
+Er sagt oft er erschiesst sich | – | – | –
+Sie sagt wieder sie springt von der Brücke | – | – | –
+Er erzählt er habe sich fast umgebracht letzte Woche | krise#suizid > gefahr#gewalt | krise#suizid > gefahr#gewalt | krise#suizid > gefahr#gewalt
+Ich denke oft an den Tod | – | – | –
+Ich denke wieder ans Sterben | krise#suizid > verstehen#anspannung | krise#suizid > verstehen#anspannung | krise#suizid > verstehen#anspannung
+Ich rede oft vom Sterben | begriffe#begriffe | krise#suizid > krise | krise#suizid > krise
+Ich habe oft gesagt ich will sterben | krise#suizid > krise | krise#suizid > krise | krise#suizid > krise
+Ich habe wieder daran gedacht zu sterben | krise#suizid | – | krise#suizid
+Ich schreibe oft Abschiedsbriefe | begriffe#begriffe > verstehen#mythen | verstehen#borderline > kurz#borderline | begriffe#begriffe > verstehen#mythen
+Ich habe schon oft daran gedacht mir etwas anzutun | – | – | –
+Ich wünsche mir immer wieder einzuschlafen und nicht mehr aufzuwachen | – | – | –
+Ich habe es wieder getan ich habe mich geritzt | – | diagnose#suizidalitaet > beziehungen#bz-sichten-s2 | diagnose#suizidalitaet
+Ich habe mich wieder verletzt | diagnose#suizidalitaet > fragen#schutz | diagnose#suizidalitaet > beziehungen#bz-sichten-s2 | diagnose#suizidalitaet > fragen#schutz
+Ich habe mir oft wehgetan | – | – | –
+Ich habe wieder Tabletten genommen | krise#suizid > krise | krise#suizid > krise | krise#suizid > krise
+Sie redet immer vom Tod | – | krise#selbstverletzung > begriffe#b-selbstverletzung | –
+Er spricht wieder vom Sterben | – | krise#suizid > krise | krise#suizid > krise
+Sie schreibt oft vom Tod | begriffe#begriffe | krise#selbstverletzung > begriffe#b-selbstverletzung | begriffe#begriffe
+Er erzählt immer wieder er sei lebensmüde | krise#suizid | krise#suizid > krise | krise#suizid
+Sie sagt oft sie mag nicht mehr leben | krise#suizid > krise | krise#suizid > krise | krise#suizid > krise
+Er sagt immer wieder es wäre besser wenn er nicht mehr da wäre | krise#suizid > verstehen#borderline | rolle#schuld > genesung#freiwillig | krise#suizid > verstehen#borderline
+Sie sagt wieder sie halte es nicht mehr aus | krise#suizid > verstehen#borderline | beziehungen#verantwortung > krise#suizid | krise#suizid > verstehen#borderline
+Er hat wieder gesagt er sehe keinen Ausweg | – | – | –
+Sie hat oft gesagt sie wolle nur noch schlafen | – | – | –
+Er hat mir wieder eine Ohrfeige gegeben | – | gefahr#gewalt > kinder#eskalation | gefahr#gewalt > kinder#eskalation
+Sie hat mir schon oft Ohrfeigen gegeben | – | gefahr#gewalt > kinder#eskalation | gefahr#gewalt > kinder#eskalation
+Er hat mir eine Ohrfeige verpasst | – | gefahr#gewalt > kinder#eskalation | gefahr#gewalt > kinder#eskalation
+Sie gab mir eine Ohrfeige | rolle#anbieten > gefahr#riskant | gefahr#riskant > fragen#f-kinder | gefahr#riskant > fragen#f-kinder
+Er hat dem Kind eine Ohrfeige gegeben | – | kinder#eskalation > gefahr#gewalt | kinder#eskalation > gefahr#gewalt
+Ich habe ihr eine Ohrfeige gegeben | – | fragen#f-eifersucht > fragen#f-bewertungen | gefahr#gewalt > kinder#eskalation
+Er hat mich wieder gewürgt | kinder#eskalation > index#orientierung | gefahr#gewalt > kinder#eskalation | gefahr#gewalt > kinder#eskalation
+Sie hat mich oft bedroht | begriffe#begriffe > begriffe#b-selbstverletzung | gefahr#gewalt > kinder#eskalation | gefahr#gewalt > kinder#eskalation
+Er sagt immer wieder er schlägt mich tot | krise#suizid | gefahr#gewalt > kinder#eskalation | gefahr#gewalt > kinder#eskalation
+FU | unterstuetzung#beratung > index#haltung | begriffe#b-fu > fragen#f-einweisung | begriffe#b-fu > fragen#f-einweisung
+IV | fragen#f-medikamente > diagnose#begleiterkrankungen | quellen#diagnostik | quellen#diagnostik
+FU Suizid | krise#suizid > diagnose#suizidalitaet | begriffe#begriffe | krise#suizid > diagnose#suizidalitaet
+Suizidgedanken FU nötig | krise#danach > begriffe#begriffe | begriffe#begriffe | krise#danach > begriffe#begriffe
+FU wegen Selbstgefährdung | fragen#f-einweisung > behandlung#auskunft | fragen#f-einweisung > begriffe#b-fu | fragen#f-einweisung > behandlung#auskunft
+FU nach Suizidversuch | krise#suizid > diagnose#suizidalitaet | begriffe#begriffe | krise#suizid > diagnose#suizidalitaet
+FU Gewalt | fragen#f-einweisung > kinder#eskalation | fragen#f-einweisung > fragen | fragen#f-einweisung > kinder#eskalation
+FU Kinder | fragen#f-einweisung > kinder | fragen#f-einweisung > fragen#behandlung | fragen#f-einweisung > kinder
+FU Entlassung | fragen#f-einweisung > fragen#weitere | fragen#f-einweisung > fragen#behandlung | fragen#f-einweisung > fragen#behandlung
+FU Dauer | fragen#f-einweisung > fragen#f-dauer-behandlung | fragen#f-einweisung > begriffe#b-fu | fragen#f-einweisung > fragen#f-dauer-behandlung
+Wie lange dauert eine FU | fragen#f-dauer-behandlung > fragen#f-dauer-diagnose | quellen#schweiz > fragen#behandlung | fragen#f-dauer-behandlung > fragen#f-dauer-diagnose
+Wer ordnet eine FU an | fragen#f-einweisung > buecher#auswahl | fragen#f-einweisung > begriffe#b-fu | fragen#f-einweisung > buecher#auswahl
+FU gegen den Willen | begriffe#b-fu > genesung#verlauf | fragen#f-einweisung > begriffe#b-fu | fragen#f-einweisung > begriffe#b-fu
+FU oder freiwillig | rolle#schuld > selbstfuersorge#warnsignale | fragen#f-einweisung > fragen | rolle#schuld > selbstfuersorge#warnsignale
+IV Rente | fragen#f-medikamente > diagnose#begleiterkrankungen | – | fragen#f-medikamente > diagnose#begleiterkrankungen
+IV und Borderline | fragen#f-medikamente > diagnose#begleiterkrankungen | quellen#diagnostik | fragen#f-medikamente > diagnose#begleiterkrankungen
+IV Anmeldung Suizid | diagnose#begleiterkrankungen > kommunizieren#suizid-angesprochen | – | diagnose#begleiterkrankungen > kommunizieren#suizid-angesprochen
+Zwangseinweisung | – | fragen#f-einweisung > fragen | fragen#f-einweisung > fragen
+Zwangseinweisung Suizid | krise#suizid > krise | begriffe#begriffe | krise#suizid > diagnose#suizidalitaet
+Einweisung | fragen#f-einweisung > unterstuetzung#beratung | fragen#f-einweisung > fragen | fragen#f-einweisung > fragen
+für | unterstuetzung#beratung > index#beratung | unterstuetzung#beratung > index#beratung | unterstuetzung#beratung > index#beratung

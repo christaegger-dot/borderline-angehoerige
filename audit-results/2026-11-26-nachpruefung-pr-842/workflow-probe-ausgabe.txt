@@ -1,0 +1,12 @@
+== o8 (Kopie mit altem dist/ aus dem ersten Lauf)
+Schritte: 9 | Layouttest continue-on-error: True | Bericht if: always() && steps.layouttest.outcome != 'skipped' | Bericht continue-on-error: None
+Bericht ist letzter Schritt: True | Bericht env: {'LAYOUT_OUTCOME': '${{ steps.layouttest.outcome }}'} | run: node authoring/tools/layouttest-report.cjs dist/audit04-layout/ERGEBNIS.json
+Layouttest exit 1 => outcome failure (conclusion wegen continue-on-error: success)
+Bericht exit 0 | stdout: ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+JOB: success
+== o9 (Kopie mit altem dist/ aus dem ersten Lauf)
+Schritte: 9 | Layouttest continue-on-error: True | Bericht if: always() && steps.layouttest.outcome != 'skipped' | Bericht continue-on-error: None
+Bericht ist letzter Schritt: True | Bericht env: {'LAYOUT_OUTCOME': '${{ steps.layouttest.outcome }}'} | run: node authoring/tools/layouttest-report.cjs dist/audit04-layout/ERGEBNIS.json
+Layouttest exit 1 => outcome failure (conclusion wegen continue-on-error: success)
+Bericht exit 1 | stdout: ::error title=Layouttest: neue Abweichung::safety card starts in first screen 375x667 (top 811px) ¦ ::error title=Layouttest: neue Abweichung::safety card starts in first screen 360x740 (top 872px)
+JOB: failure

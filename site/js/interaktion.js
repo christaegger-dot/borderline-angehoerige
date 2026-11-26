@@ -585,7 +585,11 @@
     var details = target.closest('details');
     var opened = false;
     for (var d = details; d; d = d.parentElement && d.parentElement.closest('details')) { if (!d.open) { d.open = true; opened = true; } }
-    var focusTarget = target.matches('summary, a, button, input, select, textarea, [tabindex]') ? target : (details ? details.querySelector('summary') : target);
+    /* r4-73 (aus PR #713, BU-04): Ein Sprungziel in einem Akkordeon öffnet dessen Eintrag; Fokus auf die Schaltfläche, wenn das Ziel die Überschrift ist. */
+    var accItem = target.closest('.puk-acc__item');
+    var accButton = accItem ? accItem.querySelector('.puk-acc__heading .puk-acc__button') : null;
+    if (accButton && accButton.getAttribute('aria-expanded') !== 'true') { accButton.click(); opened = true; }
+    var focusTarget = target.matches('summary, a, button, input, select, textarea, [tabindex]') ? target : (accButton && target.matches('.puk-acc__heading') ? accButton : (details ? details.querySelector('summary') : target));
     if (!focusTarget) return;
     var addedTabindex = !focusTarget.matches('summary, a, button, input, select, textarea, [tabindex]');
     if (addedTabindex) focusTarget.setAttribute('tabindex', '-1');

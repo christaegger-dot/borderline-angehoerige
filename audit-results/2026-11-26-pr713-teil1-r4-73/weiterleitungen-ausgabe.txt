@@ -1,0 +1,4 @@
+88 interne Weiterleitungen geprüft · Ziel fehlt: 0 [] · auf /krise.html#krise-schnell: 10 · auf /kinder.html: 3 · noch auf /index.html: 2
+/notfall → ['/krise.html#krise-schnell']
+/notfallkarte → ['/krise.html#krise-schnell']
+/soforthilfe → ['/krise.html#krise-schnell']

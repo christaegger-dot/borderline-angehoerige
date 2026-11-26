@@ -1,0 +1,10 @@
+Live-Abgleich https://borderline-angehoerige.netlify.app/ gegen site/ (Stand c7d8c01), nur lesende curl-Abfragen
+Zeit: 2026-11-26T16:45:10Z (Antwort-Header date: Thu, 26 Nov 2026 16:45:22 GMT, etag "f2492b9bfb50f044e64e83917df4f7aa-ssl")
+Startseite: HTTP/2 200, <html ... data-puk-site-build="r4-68">, Zeile 6 <meta name="text-scale" content="scale">
+Byte-gleich (cmp): 9 von 11 Nicht-HTML-Dateien (assets/favicon.svg, assets/logo.svg, css/site.css, fonts/OFL.txt, fonts/Rubik-*.woff2 (3), js/interaktion.js, robots.txt)
+  css/site.css?v=r4-68: byte-gleich
+  _headers, _redirects: HTTP 404 (Netlify-Konfiguration, wird nicht ausgeliefert; erwartet)
+HTML (24 Seiten, je .html abgerufen): nicht byte-gleich, weil Netlify beim Ausliefern Links umschreibt (href="index.html" -> href='/', "x.html" -> '/x').
+  domvergleich.py (html.parser, Attribute sortiert, Pretty-URL-href zurückgeführt): DOM gleich nach Normalisierung: 24, abweichend: 0
+/verstehen: HTTP/2 200, x-robots-tag: noindex, nofollow
+/gibt-es-nicht: HTTP 404

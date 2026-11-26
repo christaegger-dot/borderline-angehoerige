@@ -1,0 +1,31 @@
+NICHT x2 (Breite Tag alt→neu: Seiten)
+1280 h1.puk-web-h1 44→64 : 24 404.html,begriffe.html,behandlung.html,beziehungen.html
+1280 p.puk-longform__intro 22→40 : 24 404.html,begriffe.html,behandlung.html,beziehungen.html
+390 a.puk-site-utility__link 16→30 : 23 begriffe.html,behandlung.html,beziehungen.html,buecher.html
+1280 h2.puk-web-h2 30→50 : 22 begriffe.html,behandlung.html,beziehungen.html,buecher.html
+1280 h3.puk-site-subheading 23→42 : 17 behandlung.html,buecher.html,diagnose.html,fragen.html
+1280 span.puk-acc__label 23→42 : 4 behandlung.html,buecher.html,diagnose.html,kommunizieren.html
+1280 h3 23→42 : 1 behandlung.html
+1280 p 20→38 : 6 behandlung.html,beziehungen.html,jugendliche.html,kinder.html
+1280 p.puk-vis-compare__key 20→38 : 1 beziehungen.html
+1280 dt 38.4→52 : 1 genesung.html
+1280 a 23→40 : 1 index.html
+1280 h3 20→38 : 3 jugendliche.html,selbstfuersorge.html,verstehen.html
+1280 a.puk-link--inline 20→38 : 1 jugendliche.html
+1280 h4 20→38 : 1 jugendliche.html
+1280 a.puk-link--inline 22→40 : 2 kinder.html,ueber.html
+1280 p.bl-relief__centre 20→38 : 1 selbstfuersorge.html
+1280 strong 20→38 : 1 selbstfuersorge.html
+1280 h2.puk-web-h3 23→42 : 1 suche.html
+1280 a 23→42 : 1 suche.html
+1280 p.bl-kurve__hilft 20→38 : 1 verstehen.html
+1280 span.bl-kurve__key 20→38 : 1 verstehen.html
+1280 p.puk-vis-ansatz 20→38 : 1 verstehen.html
+1280 dt 22→39.68 : 1 verstehen.html
+1280 p 26→46.08 : 1 verstehen.html
+
+ÜBERLAUF 48px 48
+320/48 404.html [["p.puk-site-sender",20,458,438,"0px","Fachstelle Angehörigenarbeit der PUK\nBer"],["span.puk-site-sender__name",20,458,438,"0px","Fachstelle Angehörigenarbeit der PUK"],["a.puk-link--inline",20,458,438,"0px","angehoerigenarbeit@pukzh.ch"]]
+390/48 404.html [["p.puk-site-sender",20,458,438,"0px","Fachstelle Angehörigenarbeit der PUK\nBer"],["span.puk-site-sender__name",20,458,438,"0px","Fachstelle Angehörigenarbeit der PUK"],["a.puk-link--inline",20,458,438,"0px","angehoerigenarbeit@pukzh.ch"]]
+320/48 begriffe.html [["p.puk-site-sender",20,458,438,"0px","Fachstelle Angehörigenarbeit der PUK\nBer"],["span.puk-site-sender__name",20,458,438,"0px","Fachstelle Angehörigenarbeit der PUK"],["a.puk-link--inline",20,458,438,"0px","angehoerigenarbeit@pukzh.ch"]]
+390/48 begriffe.html [["p.puk-site-sender",20,458,438,"0px","Fachstelle Angehörigenarbeit der PUK\nBer"],["span.puk-site-sender__name",20,458,438,"0px","Fachstelle Angehörigenarbeit der PUK"],["a.puk-link--inline",20,458,438,"0px","angehoerigenarbeit@pukzh.ch"]]

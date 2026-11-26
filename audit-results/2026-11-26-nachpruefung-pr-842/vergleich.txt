@@ -1,0 +1,17 @@
+Vergleich 6f06888 (pre) gegen cb603b7 (head), unveränderte Website
+site/ identisch
+BROWSER.json byte-gleich
+Screenshots: 19 / 19
+sha256 alle gleich
+states        gleich 240
+interactions  gleich 38
+issues        gleich ["safety card starts in first screen 375x667 (top 802px)","safety card starts in first screen 360x740 (top 863px)"]
+knownIssues   gleich ["safety card starts in first screen 375x667 (top 802px)","safety card starts in first screen 360x740 (top 863px)"]
+newIssues     gleich []
+knownNotSeen  gleich []
+exceptions    gleich [{"id":"B2c","page":"verstehen","width":375,"figureHeight":2029,"phaseEnd":1603,"phaseEndMax":1800,"figureMax":2400,"protectionNoteVisible":true,"status":"besta
+
+main 7809d52 gegen 9f7f052 (main vor dem Merge): nur Werkzeug
+ 7 files changed, 194 insertions(+), 12 deletions(-)
+site/ gleich
+layouttest*.cjs und .github: 7809d52 = cb603b7

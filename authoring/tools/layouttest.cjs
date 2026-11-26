@@ -2,13 +2,17 @@ const fs=require('fs'),path=require('path');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE || '/opt/npm-tools/node_modules/playwright');
 const root=path.resolve(__dirname,'../..');
 const out=path.resolve(process.argv[2] || root+'/dist/audit04-layout');fs.mkdirSync(out+'/screenshots',{recursive:true});
+/* N832-6: Ein altes Ergebnis darf einen abgebrochenen Lauf nicht als bestanden erscheinen lassen. */
+fs.rmSync(out+'/ERGEBNIS.json',{force:true});
 const cfgPages=JSON.parse(fs.readFileSync(root+'/authoring/site.config.json')).pages,pages=cfgPages.map(p=>p.id),rows=[],errors=[];
 /* Hauptbereiche mit den freigegebenen Namen (E2, 29.10.2026; r4-47 nach Nachprüfung N46-6 fest statt aus dem Seitenvertrag) */
 const navNames=['Verstehen','Im Alltag','Krisen','Familie','Für Sie'];
-/* N829-2: bekannte, dokumentierte Abweichungen auf main. Jede Zeile nennt Herkunft und Stelle in der Pendenzendatei. Der Vergleich nimmt den Anfang der Meldung, ohne den Messwert. */
+/* N829-2: bekannte, dokumentierte Abweichungen auf main. Jede Zeile nennt Herkunft und Stelle in der Pendenzendatei.
+   N832-1: Ein Eintrag gilt nur bis zu seinem Messwert maxTop (heutiger Wert plus 8 px Reserve). Liegt die Karte tiefer, ist die Abweichung NEU.
+   N832-2: Jeder Eintrag deckt höchstens eine Meldung, und nur Prüfmeldungen des Werkzeugs; JS-Fehler der Seite sind immer neu. */
 const KNOWN_ISSUES=[
- {id:'safety-card-375x667',match:/^safety card starts in first screen 375x667 /,ref:'r4-70/r4-71, Website-Review Punkt 2: Sicherheitskarte der Startseite unter dem ersten Bildschirm'},
- {id:'safety-card-360x740',match:/^safety card starts in first screen 360x740 /,ref:'r4-70/r4-71, Website-Review Punkt 2: Sicherheitskarte der Startseite unter dem ersten Bildschirm'}
+ {id:'safety-card-375x667',match:/^safety card starts in first screen 375x667 \(top (\d+)px\)$/,maxTop:810,ref:'r4-70/r4-71, Website-Review Punkt 2: Sicherheitskarte der Startseite unter dem ersten Bildschirm (gemessen 802 px)'},
+ {id:'safety-card-360x740',match:/^safety card starts in first screen 360x740 \(top (\d+)px\)$/,maxTop:871,ref:'r4-70/r4-71, Website-Review Punkt 2: Sicherheitskarte der Startseite unter dem ersten Bildschirm (gemessen 863 px)'}
 ];
 /* B2c-Grenzen an einer Stelle, damit Prüfung und Meldungen nicht auseinanderlaufen (Code-Review nach #811, 26.11.2026). */
 const B2C_PHASES=4,B2C_PHASE_END_MAX=1800,B2C_FIGURE_MAX=2400;
@@ -104,10 +108,14 @@ const B2C_PHASES=4,B2C_PHASE_END_MAX=1800,B2C_FIGURE_MAX=2400;
   if(r.width&&r.title&&r.title.broken.length)issues.push(`${r.page} ${r.width}px text200=${r.large}: title word breaks without soft hyphen (${r.title.broken.join(', ')})`);
   if(r.width&&!r.large&&r.title&&r.title.hyphenated.length&&r.title.hyphens==='none')issues.push(`${r.page} ${r.width}px: title word breaks arbitrarily at default font size (${r.title.hyphenated.join(', ')})`);
  }
- if(errors.length)issues.push(...errors);
  /* N829-2: Bekannte Abweichungen stehen in KNOWN_ISSUES. ERGEBNIS.json trennt sie von neuen, damit eine neue Abweichung in der CI auffällt.
-    Der Exit-Code bleibt 1, sobald es irgendeine Abweichung gibt; bekannte Abweichungen gelten nicht als bestanden. Einträge entfernen, sobald die Abweichung behoben ist. */
- const knownIssues=issues.filter(i=>KNOWN_ISSUES.some(k=>k.match.test(i))),newIssues=issues.filter(i=>!KNOWN_ISSUES.some(k=>k.match.test(i))),knownNotSeen=KNOWN_ISSUES.filter(k=>!issues.some(i=>k.match.test(i))).map(k=>k.id);
+    Der Exit-Code bleibt 1, sobald es irgendeine Abweichung gibt; bekannte Abweichungen gelten nicht als bestanden. Einträge entfernen, sobald die Abweichung behoben ist.
+    N832-1/N832-2: bekannt ist eine Prüfmeldung nur, wenn ihr Messwert höchstens maxTop beträgt und der Eintrag noch keine Meldung gedeckt hat. */
+ const knownIssues=[],newIssues=[],usedKnown=new Set();
+ for(const i of issues){const k=KNOWN_ISSUES.find(k=>{if(usedKnown.has(k.id))return false;const m=k.match.exec(i);return !!m&&Number(m[1])<=k.maxTop;});if(k){usedKnown.add(k.id);knownIssues.push(i);}else newIssues.push(i);}
+ if(errors.length){issues.push(...errors);newIssues.push(...errors);}
+ /* Nicht mehr aufgetreten ist ein Eintrag nur, wenn gar keine Prüfmeldung zu seinem Muster passt; eine verschlechterte Abweichung (über maxTop) zählt nicht dazu. */
+ const knownNotSeen=KNOWN_ISSUES.filter(k=>!knownIssues.concat(newIssues.filter(i=>!errors.includes(i))).some(i=>k.match.test(i))).map(k=>k.id);
  fs.writeFileSync(out+'/ERGEBNIS.json',JSON.stringify({states:rows.filter(r=>r.width).length,interactions:rows.filter(r=>r.test).length,issues,knownIssues,newIssues,knownNotSeen,exceptions},null,2));
  console.log(`Audit-04-Layouttest: ${rows.filter(r=>r.width).length} Seitenzustände, ${rows.filter(r=>r.test).length} Bedienproben, ${issues.length} Abweichungen (${knownIssues.length} bekannt, ${newIssues.length} neu).`);
  if(knownNotSeen.length)console.log(`Bekannte Abweichung nicht mehr aufgetreten, Eintrag in KNOWN_ISSUES entfernen: ${knownNotSeen.join(', ')}`);

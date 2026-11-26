@@ -1,0 +1,119 @@
+A    success   exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+A    failure   exit 0 |  1 ::warning  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+A    cancelled exit 0 |  1 ::warning  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+A    skipped   exit 0 |  1 ::warning  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+A    UNSET     exit 0 |  1 ::warning  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+B    success   exit 1 |  2 ::error  1 ::warning  | ### Layouttest: 1 neue, 2 bekannte Abweichungen
+B    failure   exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 1 neue, 2 bekannte Abweichungen
+B    cancelled exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 1 neue, 2 bekannte Abweichungen
+B    skipped   exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 1 neue, 2 bekannte Abweichungen
+B    UNSET     exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 1 neue, 2 bekannte Abweichungen
+C    success   exit 1 |  2 ::error  1 ::notice  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+C    failure   exit 1 |  1 ::error  1 ::notice  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+C    cancelled exit 1 |  1 ::error  1 ::notice  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+C    skipped   exit 1 |  1 ::error  1 ::notice  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+C    UNSET     exit 1 |  1 ::error  1 ::notice  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+M    success   exit 0 |  1 ::notice  | ### Layouttest: 0 neue, 0 bekannte Abweichungen
+M    failure   exit 1 |  1 ::error  1 ::notice  | ### Layouttest: 0 neue, 0 bekannte Abweichungen
+M    cancelled exit 1 |  1 ::error  1 ::notice  | ### Layouttest: 0 neue, 0 bekannte Abweichungen
+M    skipped   exit 0 |  1 ::notice  | ### Layouttest: 0 neue, 0 bekannte Abweichungen
+M    UNSET     exit 0 |  1 ::notice  | ### Layouttest: 0 neue, 0 bekannte Abweichungen
+E    success   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+E    failure   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+E    cancelled exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+E    skipped   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+E    UNSET     exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+F    success   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+F    failure   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+F    cancelled exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+F    skipped   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+F    UNSET     exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+G    success   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+G    failure   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+G    cancelled exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+G    skipped   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+G    UNSET     exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+H    success   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+H    failure   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+H    cancelled exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+H    skipped   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+H    UNSET     exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+I    success   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+I    failure   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+I    cancelled exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+I    skipped   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+I    UNSET     exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+Js   success   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+Js   failure   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+Js   cancelled exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+Js   skipped   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+Js   UNSET     exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+T    success   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+T    failure   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+T    cancelled exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+T    skipped   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+T    UNSET     exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+Alt  success   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+Alt  failure   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+Alt  cancelled exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+Alt  skipped   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+Alt  UNSET     exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+L    success   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+L    failure   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+L    cancelled exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+L    skipped   exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+L    UNSET     exit 1 |  1 ::error  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+Nz   success   exit 1 |  2 ::error  1 ::warning  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+Nz   failure   exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+Nz   cancelled exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+Nz   skipped   exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+Nz   UNSET     exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+Ni   success   exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+Ni   failure   exit 1 |  2 ::error  1 ::warning  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+Ni   cancelled exit 1 |  2 ::error  1 ::warning  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+Ni   skipped   exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+Ni   UNSET     exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+Ks   success   exit 1 |  1 ::warning  | 
+Ks   failure   exit 1 |  1 ::warning  | 
+Ks   cancelled exit 1 |  1 ::warning  | 
+Ks   skipped   exit 1 |  1 ::warning  | 
+Ks   UNSET     exit 1 |  1 ::warning  | 
+S    success   exit 1 |  2 ::error  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+S    failure   exit 1 |  1 ::error  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+S    cancelled exit 1 |  1 ::error  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+S    skipped   exit 1 |  1 ::error  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+S    UNSET     exit 1 |  1 ::error  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+Sk   success   exit 1 |  1 ::error  1 ::warning  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+Sk   failure   exit 0 |  1 ::warning  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+Sk   cancelled exit 0 |  1 ::warning  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+Sk   skipped   exit 0 |  1 ::warning  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+Sk   UNSET     exit 0 |  1 ::warning  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+
+--- Fehlende Datei
+exit 1
+
+--- Sonderzeichen S, failure: Konsole
+::error title=Layouttest: neue Abweichung::a%0A::warning::eingeschleust%0D%0A### Titel <b>fett</b> `code` *s* _u_ [l](http://x) | t & 100%25 ~~d~~ @someone https://example.org
+--- Zusammenfassung S
+### Layouttest: 1 neue, 0 bekannte Abweichungen
+
+1 Seitenzustände, 1 Bedienproben. Schritt «Layout test»: failure.
+
+**Neue Abweichungen (blockieren):**
+- a ::warning::eingeschleust &#35;&#35;&#35; Titel &#60;b&#62;fett&#60;/b&#62; &#96;code&#96; &#42;s&#42; &#95;u&#95; &#91;l&#93;(http://x) &#124; t &#38; 100% ~~d~~ @someone https://example.org
+
+
+--- Sk (bekannt), failure: Zusammenfassung
+### Layouttest: 0 neue, 1 bekannte Abweichungen
+
+1 Seitenzustände, 1 Bedienproben. Schritt «Layout test»: failure.
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- &#60;img src=x onerror=alert(1)&#62; - zweite Zeile
+
+--- G null, failure: Konsole
+::error title=Layouttest ohne Ergebnis::ERGEBNIS.json enthält kein Ergebnisobjekt
+### Layouttest: ERGEBNIS.json enthält kein Ergebnisobjekt
+
+Schritt «Layout test»: failure. Ohne Ergebnis lässt sich nicht sagen, ob es neue Abweichungen gibt.
+

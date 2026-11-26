@@ -1,0 +1,5 @@
+375x812 top 801.765625 gerundet 802 Grenze 812
+375x667 top 801.765625 gerundet 802 Grenze 667
+360x740 top 863.15625 gerundet 863 Grenze 740
+390x844 top 770.765625 gerundet 771 Grenze 844
+1024x768 top 724.328125 gerundet 724 Grenze 768

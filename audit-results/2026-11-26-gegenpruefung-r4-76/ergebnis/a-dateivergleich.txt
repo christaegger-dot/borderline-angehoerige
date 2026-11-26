@@ -1,0 +1,27 @@
+main: 7809d52 · r4-73: 3764d45
+Dateiliste gleich: 35 Dateien
+byte-gleich: js/interaktion.js
+byte-gleich: css/site.css
+byte-gleich: _redirects
+byte-gleich: _headers
+HTML gleich nach Gleichsetzen der Kennung: 24 von 24
+Vorkommen r4-76 in site/ (main), nach Form:
+     24 data-puk-site-build="r4-76"
+      1 href="/css/site.css?v=r4-76">
+     23 href="css/site.css?v=r4-76">
+      1 src="/js/interaktion.js?v=r4-76"
+     23 src="js/interaktion.js?v=r4-76"
+Dateien mit r4-73 in site/ (main): site/css/site.css site/_redirects site/js/interaktion.js 
+Dateien mit r4-76 in r4-73/site: 0
+byte-gleich: authoring/js/interaktion.js
+byte-gleich: authoring/tools/search-index.mjs
+byte-gleich: authoring/css/site.css
+site.config.json ohne assetVersion/releaseApproval gleich: true
+authoring/ gegen 3764d45:
+ authoring/site.config.json             |  8 ++++----
+ authoring/tests/suche-ausbau-offen.tsv | 36 ++++++++++++++++++++++++++++++++++
+ authoring/tests/suche-ersttreffer.tsv  | 19 ++++++++++++++++++
+ authoring/tools/contract.js            |  2 +-
+ authoring/tools/layouttest-report.cjs  | 34 ++++++++++++++++++++++++++++++++
+ authoring/tools/layouttest.cjs         | 23 +++++++++++++++++++---
+ 6 files changed, 114 insertions(+), 8 deletions(-)

@@ -1,0 +1,26 @@
+## r73-r75-fuellwort-sicherheit.txt: 60 Anfragen (0 mit Tötungswort), geändert 8
+a) Tötungswort, Suizid vorher unter den ersten zwei oder Kinder zuerst, nachher nicht: 0
+b) Anheftung verloren oder kleiner: 0
+c) vorher Treffer, nachher keiner: 0
+d) Sicherheitsabschnitt (auch Selbstverletzung) vorher unter den ersten zwei, nachher dort nicht: 0
+## r73-r75-neu.txt: 67 Anfragen (14 mit Tötungswort), geändert 19
+a) Tötungswort, Suizid vorher unter den ersten zwei oder Kinder zuerst, nachher nicht: 0
+b) Anheftung verloren oder kleiner: 0
+c) vorher Treffer, nachher keiner: 0
+d) Sicherheitsabschnitt (auch Selbstverletzung) vorher unter den ersten zwei, nachher dort nicht: 1
+   Er sagt immer wieder er schlägt mich tot | krise#suizid → gefahr#gewalt > kinder#eskalation > index#orientierung [P]
+## r73-r75-proben.txt: 479 Anfragen (55 mit Tötungswort), geändert 226
+a) Tötungswort, Suizid vorher unter den ersten zwei oder Kinder zuerst, nachher nicht: 0
+b) Anheftung verloren oder kleiner: 0
+c) vorher Treffer, nachher keiner: 1
+   Ich weine oft | diagnose#begleiterkrankungen → –
+d) Sicherheitsabschnitt (auch Selbstverletzung) vorher unter den ersten zwei, nachher dort nicht: 4
+   suizidgefährdet und gewalttätig | gefahr#gewalt > kinder#eskalation > index#orientierung → krise#suizid > gefahr#gewalt > krise [P]
+   Er ist suizidgefährdet und schlägt mich | gefahr#gewalt > kinder#eskalation > index#orientierung → krise#suizid > gefahr#gewalt > krise [P]
+   Selbstverletzungen | diagnose#suizidalitaet > krise#suizid > kurz#borderline → krise#selbstverletzung > krise > diagnose#suizidalitaet
+   Berufsgeheimnis | quellen#diagnostik > kinder#eskalation → behandlung#auskunft > quellen#diagnostik > kinder#eskalation
+## r73-r75-toetungswort-fuellwort.txt: 54 Anfragen (49 mit Tötungswort), geändert 0
+a) Tötungswort, Suizid vorher unter den ersten zwei oder Kinder zuerst, nachher nicht: 0
+b) Anheftung verloren oder kleiner: 0
+c) vorher Treffer, nachher keiner: 0
+d) Sicherheitsabschnitt (auch Selbstverletzung) vorher unter den ersten zwei, nachher dort nicht: 0

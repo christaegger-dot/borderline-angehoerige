@@ -1,0 +1,14 @@
+# Suchraster · Bezug r4-73 · Prüfstand r4-74
+Ergebnis: VERSCHLECHTERUNG · 45603 Anfragen · 4955 Verschlechterungen · JS-Fehler 0 · 566 s
+- saetze: 23328 Anfragen · geändert 9696 · verloren 1199 · verdrängt 290 · Anheftung verloren 0 · leer 452 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 3352
+- ich: 4416 Anfragen · geändert 2847 · verloren 1014 · verdrängt 34 · Anheftung verloren 0 · leer 330 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 140
+- ichRahmen: 4320 Anfragen · geändert 1306 · verloren 68 · verdrängt 3 · Anheftung verloren 0 · leer 28 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 587
+- proben: 1125 Anfragen · geändert 529 · verloren 93 · verdrängt 14 · Anheftung verloren 0 · leer 31 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 190
+- kombinationen: 5622 Anfragen · geändert 2063 · verloren 518 · verdrängt 113 · Anheftung verloren 0 · leer 172 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 849
+- tippen: 6792 Anfragen · geändert 3178 · verloren 1167 · verdrängt 158 · Anheftung verloren 0 · leer 116 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 447
+Alle Ausnahmen angewendet oder keine eingetragen.
+
+## saetze: 23328 Anfragen · geändert 9696 · verloren 1199 · verdrängt 290 · Anheftung verloren 0 · leer 452 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 3352
+VERLOREN | saetze | bringt sich um immer wieder | Bezug krise#suizid | Prüfstand behandlung#rollen > behandlung#kontakt
+VERLOREN | saetze | bringt sich um schon wieder | Bezug krise#suizid | Prüfstand behandlung#rollen > behandlung#kontakt
+(Vollständige Liste mit 4955 Fällen nicht eingecheckt, rund 1,2 MB; Reproduktion siehe BERICHT.md)

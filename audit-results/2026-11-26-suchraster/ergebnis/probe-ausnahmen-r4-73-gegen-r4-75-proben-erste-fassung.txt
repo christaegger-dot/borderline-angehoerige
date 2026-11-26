@@ -1,0 +1,36 @@
+# Suchraster · Bezug r4-73 · Prüfstand r4-75
+Ergebnis: VERSCHLECHTERUNG · 1032 Anfragen · 13 Verschlechterungen · JS-Fehler 0 · 6 s
+- proben: 1032 Anfragen · geändert 328 · verloren 9 · verdrängt 4 · Anheftung verloren 0 · leer 1 · als Ausnahme erlaubt 5 · Sicherheitsabschnitt neu oben 170
+Ausnahmen ohne Anwendung (prüfen, ob noch nötig): 1
+  - nie benutzt · LEER · –
+
+## proben: 1032 Anfragen · geändert 328 · verloren 9 · verdrängt 4 · Anheftung verloren 0 · leer 1 · als Ausnahme erlaubt 5 · Sicherheitsabschnitt neu oben 170
+VERDRAENGT | proben | suizidgefährdet und gewalttätig | Bezug gefahr#gewalt > kinder#eskalation > index#orientierung | Prüfstand krise#suizid > gefahr#gewalt > krise [angeheftet]
+VERDRAENGT | proben | Er ist suizidgefährdet und schlägt mich | Bezug gefahr#gewalt > kinder#eskalation > index#orientierung | Prüfstand krise#suizid > gefahr#gewalt > krise [angeheftet]
+VERDRAENGT | proben | Selbstverletzungen | Bezug diagnose#suizidalitaet > krise#suizid > kurz#borderline | Prüfstand krise#selbstverletzung > krise > diagnose#suizidalitaet
+VERLOREN | proben | Berufsgeheimnis | Bezug quellen#diagnostik > kinder#eskalation | Prüfstand behandlung#auskunft > quellen#diagnostik > kinder#eskalation
+VERDRAENGT | proben | Er sagt immer wieder er schlägt mich tot | Bezug krise#suizid | Prüfstand gefahr#gewalt > kinder#eskalation > index#orientierung [angeheftet]
+VERLOREN | proben | Meine Frau schlägt | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | Meine Frau schlägt zu | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | Meine Frau schlägt unsere Tochter | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | Frau schlägt Mann | Bezug gefahr#gewalt > quellen#schweiz | Prüfstand quellen#schweiz
+VERLOREN+LEER | proben | Mein Mann schlägt unseren Sohn | Bezug gefahr#gewalt | Prüfstand –
+VERLOREN | proben | Meine Frau ist gewalttätig | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | Gewalt Frau | Bezug gefahr#gewalt > quellen#schweiz > quellen#leitlinien | Prüfstand quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | Mein Sohn schneidet sich seit Wochen | Bezug krise#selbstverletzung | Prüfstand begriffe#begriffe
+
+## Vorlage für suchraster-ausnahmen.tsv (nur für gewollte Änderungen; Begründung und Entscheid ergänzen, gleichartige Fälle besser als Muster)
+suizidgefährdet und gewalttätig	kinder.html#eskalation	–	<Begründung>	<Entscheid>
+Er ist suizidgefährdet und schlägt mich	kinder.html#eskalation	–	<Begründung>	<Entscheid>
+Selbstverletzungen	krise.html#suizid	–	<Begründung>	<Entscheid>
+Berufsgeheimnis	kinder.html#eskalation	–	<Begründung>	<Entscheid>
+Er sagt immer wieder er schlägt mich tot	krise.html#suizid	–	<Begründung>	<Entscheid>
+Meine Frau schlägt	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Meine Frau schlägt zu	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Meine Frau schlägt unsere Tochter	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Frau schlägt Mann	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Mein Mann schlägt unseren Sohn	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Mein Mann schlägt unseren Sohn	LEER	–	<Begründung>	<Entscheid>
+Meine Frau ist gewalttätig	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Gewalt Frau	gefahr.html#gewalt	–	<Begründung>	<Entscheid>
+Mein Sohn schneidet sich seit Wochen	krise.html#selbstverletzung	–	<Begründung>	<Entscheid>

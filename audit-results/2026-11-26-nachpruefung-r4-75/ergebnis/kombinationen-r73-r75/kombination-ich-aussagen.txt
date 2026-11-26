@@ -1,0 +1,5 @@
+# Ich-Aussagen aus Bausteinen: 4416 Anfragen (92 Kerne, 8 Füllungen, 6 Rahmen)
+Ohne Treffer vorher 2161, nachher 2160; neu mit Treffer 2
+## c) vorher Treffer, nachher keiner: 1
+Ich weine oft | diagnose#begleiterkrankungen (1) → –
+## Sicherheitsabschnitt vorher unter den ersten zwei, nachher keiner unter den ersten drei: 0

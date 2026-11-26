@@ -1,6 +1,6 @@
 # Nachtrag zu den Mutationsproben · N811-2 · 26.11.2026
 
-`BERICHT.md`, `mut.sh`, `mutationen.txt` und `gates.txt` in diesem Ordner sind ein historischer Nachweis zu [PR #811](https://github.com/christaegger-dot/borderline-angehoerige/pull/811). Sie bleiben unverändert. Die Nachprüfung von #811 ([PR #823](https://github.com/christaegger-dot/borderline-angehoerige/pull/823), Befund N811-2) hat festgestellt, dass sich neun der 13 Proben mit diesem Nachweis allein nicht wiederholen lassen. Dieser Nachtrag ergänzt die fehlenden Angaben. Verfasst hat ihn die Sitzung, die #811 gebaut hat; die Aufrufe stammen aus ihrem Sitzungsverlauf.
+`BERICHT.md`, `mut.sh`, `mutationen.txt` und `gates.txt` in diesem Ordner sind ein historischer Nachweis zu [PR #811](https://github.com/christaegger-dot/borderline-angehoerige/pull/811). Sie bleiben unverändert. Die Nachprüfung von #811 ([PR #823](https://github.com/christaegger-dot/borderline-angehoerige/pull/823), gemergt als `ad2c419`, Befund N811-2) hat festgestellt, dass sich neun der 13 Proben mit diesem Nachweis allein nicht wiederholen lassen. Dieser Nachtrag ergänzt die fehlenden Angaben. Verfasst hat ihn die Sitzung, die #811 gebaut hat; die Aufrufe stammen aus ihrem Sitzungsverlauf.
 
 ## Was im Nachweis fehlte
 
@@ -37,4 +37,4 @@ Alle Selektoren beginnen mit `[data-visual-id="v-vs-anspannung"]`; unten steht d
 
 ## Ersatz
 
-Wiederholbare, fest an Commits gebundene Proben stehen in [`../2026-11-26-nachpruefung-pr-811/`](../2026-11-26-nachpruefung-pr-811/) (`mutate.py`, `mut.sh`, `mutationen.txt`; `5b7e799` gegen `dec530f` gegen `b72d59d`), sobald #823 gemergt ist. Die Nachprüfung hat M0 bis M13 dort mit eigenem CSS nachgebaut und in jeder Probe dasselbe Ergebnis erhalten. Bei M6 und M7 misst sie 1883 statt 1903 px, weil ihr CSS anders vergrössert.
+Wiederholbare, fest an Commits gebundene Proben stehen in [`../2026-11-26-nachpruefung-pr-811/`](../2026-11-26-nachpruefung-pr-811/) (`mutate.py`, `mut.sh`, `mutationen.txt`; `5b7e799` gegen `dec530f` gegen `b72d59d`); #823 ist seit 26.11.2026, 18:26:38 UTC auf `main` (`ad2c419`). Die Nachprüfung hat M0 bis M13 dort mit eigenem CSS nachgebaut und in jeder Probe dasselbe Ergebnis erhalten. Bei M6 und M7 misst sie 1883 statt 1903 px, weil ihr CSS anders vergrössert.

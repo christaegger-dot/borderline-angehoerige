@@ -5,6 +5,11 @@ const out=path.resolve(process.argv[2] || root+'/dist/audit04-layout');fs.mkdirS
 const cfgPages=JSON.parse(fs.readFileSync(root+'/authoring/site.config.json')).pages,pages=cfgPages.map(p=>p.id),rows=[],errors=[];
 /* Hauptbereiche mit den freigegebenen Namen (E2, 29.10.2026; r4-47 nach Nachprüfung N46-6 fest statt aus dem Seitenvertrag) */
 const navNames=['Verstehen','Im Alltag','Krisen','Familie','Für Sie'];
+/* N829-2: bekannte, dokumentierte Abweichungen auf main. Jede Zeile nennt Herkunft und Stelle in der Pendenzendatei. Der Vergleich nimmt den Anfang der Meldung, ohne den Messwert. */
+const KNOWN_ISSUES=[
+ {id:'safety-card-375x667',match:/^safety card starts in first screen 375x667 /,ref:'r4-70/r4-71, Website-Review Punkt 2: Sicherheitskarte der Startseite unter dem ersten Bildschirm'},
+ {id:'safety-card-360x740',match:/^safety card starts in first screen 360x740 /,ref:'r4-70/r4-71, Website-Review Punkt 2: Sicherheitskarte der Startseite unter dem ersten Bildschirm'}
+];
 /* B2c-Grenzen an einer Stelle, damit Prüfung und Meldungen nicht auseinanderlaufen (Code-Review nach #811, 26.11.2026). */
 const B2C_PHASES=4,B2C_PHASE_END_MAX=1800,B2C_FIGURE_MAX=2400;
 (async()=>{
@@ -100,7 +105,11 @@ const B2C_PHASES=4,B2C_PHASE_END_MAX=1800,B2C_FIGURE_MAX=2400;
   if(r.width&&!r.large&&r.title&&r.title.hyphenated.length&&r.title.hyphens==='none')issues.push(`${r.page} ${r.width}px: title word breaks arbitrarily at default font size (${r.title.hyphenated.join(', ')})`);
  }
  if(errors.length)issues.push(...errors);
- fs.writeFileSync(out+'/ERGEBNIS.json',JSON.stringify({states:rows.filter(r=>r.width).length,interactions:rows.filter(r=>r.test).length,issues,exceptions},null,2));
- console.log(`Audit-04-Layouttest: ${rows.filter(r=>r.width).length} Seitenzustände, ${rows.filter(r=>r.test).length} Bedienproben, ${issues.length} Abweichungen.`);
+ /* N829-2: Bekannte Abweichungen stehen in KNOWN_ISSUES. ERGEBNIS.json trennt sie von neuen, damit eine neue Abweichung in der CI auffällt.
+    Der Exit-Code bleibt 1, sobald es irgendeine Abweichung gibt; bekannte Abweichungen gelten nicht als bestanden. Einträge entfernen, sobald die Abweichung behoben ist. */
+ const knownIssues=issues.filter(i=>KNOWN_ISSUES.some(k=>k.match.test(i))),newIssues=issues.filter(i=>!KNOWN_ISSUES.some(k=>k.match.test(i))),knownNotSeen=KNOWN_ISSUES.filter(k=>!issues.some(i=>k.match.test(i))).map(k=>k.id);
+ fs.writeFileSync(out+'/ERGEBNIS.json',JSON.stringify({states:rows.filter(r=>r.width).length,interactions:rows.filter(r=>r.test).length,issues,knownIssues,newIssues,knownNotSeen,exceptions},null,2));
+ console.log(`Audit-04-Layouttest: ${rows.filter(r=>r.width).length} Seitenzustände, ${rows.filter(r=>r.test).length} Bedienproben, ${issues.length} Abweichungen (${knownIssues.length} bekannt, ${newIssues.length} neu).`);
+ if(knownNotSeen.length)console.log(`Bekannte Abweichung nicht mehr aufgetreten, Eintrag in KNOWN_ISSUES entfernen: ${knownNotSeen.join(', ')}`);
  if(issues.length){console.error(issues.join('\n'));process.exitCode=1;}
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -1,0 +1,71 @@
+== A: unveränderte Website
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 2 Abweichungen (2 bekannt, 0 neu).
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+layouttest exit 1
+::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+### Layouttest: 0 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 802px)
+- safety card starts in first screen 360x740 (top 863px)
+
+
+report exit 0
+
+== B: neue Abweichung (Figur in geschlossenem <details>)
+Audit-04-Layouttest: 240 Seitenzustände, 40 Bedienproben, 5 Abweichungen (2 bekannt, 3 neu).
+tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+layouttest exit 1
+::error title=Layouttest: neue Abweichung::tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+::error title=Layouttest: neue Abweichung::verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+::error title=Layouttest: neue Abweichung::verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+::warning title=Layouttest::2 bekannte Abweichungen, 3 neue
+### Layouttest: 3 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 40 Bedienproben. Schritt «Layout test»: failure.
+
+**Neue Abweichungen (blockieren):**
+- tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+- verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+- verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 802px)
+- safety card starts in first screen 360x740 (top 863px)
+
+
+report exit 1
+
+== C: ERGEBNIS.json fehlt
+::error title=Layouttest ohne Ergebnis::ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+### Layouttest: ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+
+Schritt «Layout test»: failure. Ohne Ergebnis lässt sich nicht sagen, ob es neue Abweichungen gibt.
+
+report exit 1
+
+== D: alles behoben (konstruiertes ERGEBNIS.json)
+::notice title=Layouttest::Bekannte Abweichung nicht mehr aufgetreten: safety-card-375x667, safety-card-360x740
+### Layouttest: 0 neue, 0 bekannte Abweichungen
+
+240 Seitenzustände, 34 Bedienproben. Schritt «Layout test»: success.
+
+**Nicht mehr aufgetreten, Eintrag in KNOWN_ISSUES entfernen:** safety-card-375x667, safety-card-360x740
+
+Keine Abweichungen.
+
+report exit 0
+
+== E: altes Format ohne knownIssues
+::error title=Layouttest::ERGEBNIS.json ohne knownIssues/newIssues
+### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+
+report exit 1

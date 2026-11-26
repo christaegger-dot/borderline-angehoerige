@@ -33,25 +33,19 @@ jobs:
         env:
           PLAYWRIGHT_MODULE: /tmp/borderline-browser/node_modules/playwright
         run: node authoring/tools/suchtest.mjs site
-      # N809-7: Der Layouttest laeuft sichtbar, aber nicht blockierend (Entscheid Christa Egger, 26.11.2026).
+      # N809-7: Der Layouttest laeuft sichtbar; seine bekannten Abweichungen blockieren nicht (Entscheid Christa Egger, 26.11.2026).
       # Er ist auf main derzeit rot (Sicherheitskarte auf kleinen Telefonen, Website-Review Punkt 2).
-      # Sobald er gruen ist: continue-on-error entfernen, damit er blockiert.
-      - name: Layout test (Audit-04, incl. B2c) - visible, not blocking
+      # N829-2: Bekannte Abweichungen stehen in KNOWN_ISSUES in layouttest.cjs. Eine NEUE Abweichung oder ein
+      # fehlendes ERGEBNIS.json laesst den Job im Berichtsschritt scheitern, damit sie auffaellt.
+      # Sobald der Test gruen ist: continue-on-error entfernen, damit er ganz blockiert.
+      - name: Layout test (Audit-04, incl. B2c) - known deviations do not block
         id: layouttest
         continue-on-error: true
         env:
           PLAYWRIGHT_MODULE: /tmp/borderline-browser/node_modules/playwright
         run: node authoring/tools/layouttest.cjs
-      - name: Report layout test result
+      - name: Report layout test result (fails on new deviations)
         if: always() && steps.layouttest.outcome != 'skipped'
-        run: |
-          {
-            echo "### Layouttest (nicht blockierend): ${{ steps.layouttest.outcome }}"
-            echo '```json'
-            cat dist/audit04-layout/ERGEBNIS.json 2>/dev/null || echo '"ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)"'
-            echo
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
-          if [ "${{ steps.layouttest.outcome }}" != "success" ]; then
-            echo "::warning title=Layouttest::Abweichungen im Layouttest (nicht blockierend), siehe Zusammenfassung des Laufs"
-          fi
+        env:
+          LAYOUT_OUTCOME: ${{ steps.layouttest.outcome }}
+        run: node authoring/tools/layouttest-report.cjs dist/audit04-layout/ERGEBNIS.json

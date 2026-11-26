@@ -1,0 +1,25 @@
+== P0
+-- 7d5723e: Bekannte Ausnahme B2c bestanden: Figur 1992 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar. Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen. exit 0  | exceptions="FEHLT"
+-- 91e4ac0: Bekannte Ausnahme B2c bestanden: Figur 1992 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar. Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen. exit 0  | exceptions=[{"id":"B2c","page":"verstehen","width":375,"figureHeight":1992,"phaseEnd":1603,"phaseEndMax":1800,"figureMax":2400,"protectionNoteVisible":true,"status":"bestanden"}]
+== P1-wrap-offen
+-- 7d5723e: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: 0 phase cards outside disclosures instead of 4 exit 1  | exceptions="FEHLT"
+-- 91e4ac0: Bekannte Ausnahme B2c bestanden: Figur 1992 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar. Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen. exit 0  | exceptions=[{"id":"B2c","page":"verstehen","width":375,"figureHeight":1992,"phaseEnd":1603,"phaseEndMax":1800,"figureMax":2400,"protectionNoteVisible":true,"status":"bestanden"}]
+== P2-wrap-zu
+-- 7d5723e:   name: 'TimeoutError' exit 1  | kein ERGEBNIS.json
+-- 91e4ac0:   name: 'TimeoutError' exit 1  | kein ERGEBNIS.json
+== P3-wrap-zu-dummy
+-- 7d5723e: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: 0 phase cards outside disclosures instead of 4 exit 1  | exceptions="FEHLT"
+-- 91e4ac0: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: only 0 of 4 phase cards visible exit 1  | exceptions=[]
+== P4-details-offen-in-figur
+-- 7d5723e: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: 0 phase cards outside disclosures instead of 4 exit 1  | exceptions="FEHLT"
+-- 91e4ac0: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: 0 phase cards outside disclosures instead of 4 exit 1  | exceptions=[]
+== P5-wrap-offen-schutz-weg
+-- 7d5723e: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: 0 phase cards outside disclosures instead of 4 exit 1  | exceptions="FEHLT"
+-- 91e4ac0: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: protection note not visible before the disclosures exit 1  | exceptions=[]
+== P6-hidden-div-dummy
+-- 7d5723e: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: only 0 of 4 phase cards visible exit 1  | exceptions="FEHLT"
+-- 91e4ac0: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: only 0 of 4 phase cards visible exit 1  | exceptions=[]
+== P7-wrap-offen-plus700
+-- 7d5723e: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: 0 phase cards outside disclosures instead of 4 exit 1  | exceptions="FEHLT"
+-- 91e4ac0: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: whole figure 2692px exceeds 2400px exit 1  | exceptions=[]
+

@@ -1,0 +1,906 @@
+# Suchraster: Einzelproben (Stand 26.11.2026). Eine Gruppe beginnt mit «# <Kennung> <Titel> · Quelle: …».
+# Die Proben enthalten bewusst Wortlaute zu Suizid, Selbstverletzung und Gewalt. Sie dienen nur der Prüfung der Suche
+# und gehören nicht in die Pendenzendatei. Eine doppelte Anfrage steht nur in der ersten Gruppe, in der sie vorkommt.
+
+# A Tötungswort (Stopp-Regel a): eigene Sätze mit Satzzeichen, Gross-/Kleinschreibung, Mundart · Quelle: Nachprüfung r4-74, PR #839
+Er will mich umbringen
+Mein Mann droht, mich umzubringen.
+Sie sagt, sie bringt sich um
+Ich bringe mich um
+ICH BRINGE MICH UM!!!
+Meine Tochter will sich umbringen
+Er hat gedroht mich zu töten
+Sie will sich töten
+er bringt uns alle um
+Mein Sohn schreibt, er bringt sich um.
+Sie redet immer wieder davon, sich umzubringen
+Er sagt oft er bringt sich um
+Mein Partner hat versucht sich umzubringen
+Sie sagte sie tötet sich
+Ich habe Angst dass er mich umbringt
+Wenn du gehst bringe ich mich um
+Er bringt die Kinder um
+Sie droht die Kinder und sich umzubringen
+Mein Ex will mich und die Kinder töten
+Er hat seine Frau umgebracht
+Mein Bruder wollte sich umbringen, jetzt will er nicht mehr
+Sie hat sich fast umgebracht
+Kann sie sich umbringen?
+umbringen
+töten
+Suizid umbringen
+Er schlägt mich und droht mich umzubringen
+Mini Tochter wott sich umbringe
+Er het gseit er bringt sich um
+Ich möchte mich nicht umbringen, aber ich will nicht mehr
+Sie will sich nicht umbringen
+Er bringt sich nicht um, oder?
+Mein Vater sagt er bringt sich um wenn ich ausziehe
+Tochter (16) schreibt: «Ich bring mich um»
+Sie spricht davon, sich zu töten.
+Was tun, wenn jemand sagt, er bringe sich um?
+Er erzählt allen, dass er sich umbringt
+Sie hat gesagt sie bringt erst die Kinder und dann sich um
+Sie hat immer wieder gesagt, sie bringt sich um
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um
+Was hat sie getan, wollte sie sich umbringen
+Er schreibt mir wieder er tötet mich
+Sie redet vom Sterben und will sich umbringen
+Er spricht immer vom Tod, er bringt sich um
+Suizit, er will sich umbringen
+suizidgefährdet und droht mich umzubringen
+Mein Mann schlägt die Kinder und droht sie umzubringen
+Mein Kind sagt es bringt sich um
+Die Kinder haben Angst, dass Papa sich umbringt
+Er will sich umbringen und ich mag nicht mehr
+
+# B Suizid und Gewalt zusammen ohne Tötungswort (vorher angeheftet) · Quelle: Nachprüfung r4-74, PR #839
+Er schlägt mich und ist suizidal
+Sie hat Suizidgedanken und bedroht mich
+Suizid Gewalt
+Er droht mit Suizid und schlägt mich
+Sie will sterben und hat mich gewürgt
+Er will nicht mehr leben und schlägt die Kinder
+Suizidgedanken, Gewalt, Kinder
+Sie ist lebensmüde und gewalttätig
+Abschiedsbrief und Morddrohung
+Er hat Tabletten genommen und mich geschlagen
+Frauenhaus Suizid
+Meine Tochter ist suizidal und schlägt mich immer wieder
+Er redet oft von Suizid und bedroht mich
+Sie sagt sie will sterben und hat mich geschlagen
+Mein Sohn will nicht mehr leben. Er hat mich bedroht.
+Suizidversuch Gewalt gegen mich
+Er hat mit Suizid gedroht und mir eine Ohrfeige gegeben
+Selbstmord und Gewalt in der Familie
+Sie will nicht mehr da sein und würgt mich
+Todeswunsch Bedrohung
+
+# C Klare Ich-Aussagen (Stopp-Regel c) · Quelle: Nachprüfung r4-74, PR #839
+Ich will sterben
+Ich will nicht mehr leben
+Ich möchte sterben
+Ich kann nicht mehr
+Ich habe Suizidgedanken
+Ich will mir das Leben nehmen
+Ich will nicht mehr da sein
+Ich bin lebensmüde
+Ich habe Tabletten genommen
+Ich habe Angst vor meinem Mann
+Ich habe Angst vor ihr
+Ich werde geschlagen
+Ich wurde bedroht
+Ich bin erschöpft
+Ich bin überfordert
+Ich habe keine Kraft mehr
+Ich bin am Ende
+Ich brauche Hilfe
+Ich brauche eine Pause
+Ich weiss nicht mehr weiter
+Ich habe Schuldgefühle
+Ich habe Angst um meine Tochter
+Ich mache mir Sorgen um meinen Sohn
+Ich fühle mich schuldig
+Ich schäme mich
+Ich bin wütend
+Ich werde immer wieder beschimpft
+Ich werde oft angeschrien
+Ich habe immer Angst
+Ich sage immer das Falsche
+Ich habe alles falsch gemacht
+Ich habe es schon oft gesagt
+Ich habe ihr Geld gegeben
+Ich habe ihm wieder Geld gegeben
+Ich habe nichts getan
+Ich rede oft mit ihr
+Ich will nicht mehr streiten
+Ich will keinen Kontakt mehr
+Ich möchte den Kontakt abbrechen
+Ich will mich trennen
+Ich halte es nicht mehr aus
+Ich werde manipuliert
+Ich fühle mich erpresst
+Ich habe Angst etwas Falsches zu sagen
+Ich verstehe sie nicht
+Ich möchte helfen
+Ich brauche Abstand
+Ich schlafe nicht mehr
+Ich weine oft
+Ich bin immer schuld
+Ich bin die Mutter
+Ich bin der Partner
+Ich habe mich selbst verletzt
+Ich ritze mich
+Ich schneide mich
+Ich habe mich geschnitten
+Ich habe eine Überdosis genommen
+Ich habe einen Abschiedsbrief gefunden
+Ich habe Angst dass sie sich etwas antut
+Ich mache mir Sorgen
+Ich bin hilflos
+Ich kann ihr nicht helfen
+Ich darf nichts sagen
+Ich werde ständig angerufen
+Ich bekomme immer wieder Nachrichten
+Ich bin Angehörige
+Ich möchte mit dem Arzt sprechen
+Ich bekomme keine Auskunft
+Ich habe Angst um mein Leben
+Ich habe die Polizei gerufen
+Ich wurde gewürgt
+Ich will nicht mehr
+Ich mag nicht mehr
+Ich möchte nicht mehr
+Ich cha nümme
+Ich wott nümme
+Ich will nüme läbe
+
+# D Regel «will / möchte / mag nicht mehr» am Ende: Proben und Gegenproben · Quelle: Nachprüfung r4-74, PR #839
+Sie will nicht mehr
+Sie will nicht mehr.
+Sie will nicht mehr!!!
+Er sagt, er mag nicht mehr
+Meine Tochter möchte nicht mehr
+Mein Sohn will einfach nicht mehr
+Was tun wenn sie nicht mehr will
+Er sagt dass er nicht mehr mag
+Sie will nicht mehr weiter
+Sie will nicht mehr weitermachen
+Er will nicht mehr zur Schule
+Sie will nicht mehr zur Therapie
+Therapie abgebrochen, sie will nicht mehr
+Medikamente: er will nicht mehr
+Er will nicht mehr reden
+Sie will nicht mehr mit mir reden
+Er will nicht mehr arbeiten
+Meine Partnerin will nicht mehr, Trennung
+Trennung, er will nicht mehr
+Sie will mich nicht mehr
+Er will nicht mehr mit mir zusammen sein
+Ich mag nicht mehr diskutieren
+Kind will nicht mehr zum Vater
+Mein Kind will nicht mehr
+Sie will nicht mehr essen
+Er isst nicht, will nicht mehr
+will nicht mehr
+mag nicht mehr
+nicht mehr
+Er will nicht
+Sie will nicht mehr und schlägt mich
+Er schlägt mich, ich will nicht mehr
+Ich werde bedroht und mag nicht mehr
+Si wott nümme
+Er wott nüme
+Si mag nümme
+I cha nümm
+Ich will nimmer
+Sie will nicht mehr, Suizit
+Er hat gesagt er will nicht mehr und hat Tabletten gesammelt
+
+# E Tippfehlerregel: Proben und Gegenproben für Fehltreffer · Quelle: Nachprüfung r4-74, PR #839
+Suizit
+Suzid
+Suiziid
+Suizd
+Selbsmord
+Selbstmort
+Selbstverletztung
+Selbsverletzung
+Boderline
+Bordeline
+Borderlein
+Terapie
+Therapi
+Theraphie
+Medikamnt
+Krisenpaln
+Krisnplan
+Abschidsbrief
+Todeswunch
+Lebensmüte
+Uberdosis
+Überdossis
+schlafen
+schlagen
+Schlagzeug
+Thermalbad
+Therapeut
+Theorie
+Borderliner
+Bordsteine
+Medikation
+Meditation
+Krisenplatz
+Suite
+Sulzer
+Subsidien
+Todeswunde
+Lebensmüller
+Lebensmittel
+Abschiedsfeier
+Abschiedsgruss
+Abschiedsbier
+Überdosiert
+Übergossen
+Überdruss
+Selbstverletzer
+Selbstversetzung
+Selbstvergessen
+Selbstmorde
+Selbstmode
+Suizidant
+Suizidär
+
+# F Kinder und Gewalt ohne Tötungswort · Quelle: Nachprüfung r4-74, PR #839
+mein Mann schlägt die Kinder
+Meine Frau schlägt unser Kind
+Er hat das Kind geschlagen
+Mein Kind schlägt mich
+Mein erwachsenes Kind bedroht mich
+Ich wurde als Kind geschlagen
+Sie schlägt mich vor den Kindern
+Er schlägt mich vor dem Kind
+Gewalt, die Kinder sehen zu
+Die Kinder haben Angst vor ihm
+Kinder Gewalt
+Kind bedroht
+Mein Kind wird in der Schule geschlagen
+Mein Kind wird bedroht
+Tochter schlägt ihr Kind
+Mini Frau schlaat d Chind
+Er schlägt meine Tochter
+Mein Sohn (8) wird von der Mutter geschlagen
+Sie ohrfeigt die Kinder
+Sie gibt dem Kind eine Ohrfeige
+Wegen der Kinder gehe ich nicht ins Frauenhaus
+Frauenhaus mit Kindern
+Frauenhaus mit Kind
+Die Mutter meiner Kinder bedroht mich
+Kinder schlagen sich
+Das Kind würgt die Katze
+Jugendliche schlägt mich
+
+# G Gewalt gegen die eigene Person · Quelle: Nachprüfung r4-74, PR #839
+Er schlägt mich
+Sie hat mich geschlagen
+Meine Tochter schlägt mich
+Sie bedroht mich
+Mein Sohn hat mich gewürgt
+Er schlägt sich selbst, das macht mich fertig
+Sie schlägt sich und verletzt sich, es belastet mich
+Sie ritzt sich und schlägt mich
+Er verletzt sich selbst und bedroht mich
+Mich hat niemand geschlagen
+Er hat mich nie geschlagen
+Keine Gewalt, aber er beschimpft mich
+Sie schreit mich an
+Er beleidigt mich
+Sie beschimpft mich immer wieder
+Angst um mein Leben
+Ich habe Angst um mein Leben, er ist so aggressiv
+Angst um ihr Leben
+Ich habe Angst um sein Leben
+Ohrfeige
+Schlagen Sie mich nicht
+
+# H «FU» und «IV» als ganzes Wort · Quelle: Nachprüfung r4-74, PR #839
+FU
+fu
+FU Rechte
+FU Beschwerde
+Was ist eine FU?
+FU-Einweisung
+für
+Führung
+IV
+IV Rente
+IV-Rente
+IV Anmeldung
+Invalidenversicherung
+positiv
+Motivation
+intensiv
+Zwangseinweisung
+Zwangsmedikation
+gegen ihren Willen eingewiesen
+gegen seinen Willen
+gegen meinen Willen
+Rekurs
+Frist
+zehn Tage
+
+# I Neue Füllwörter: Alltagssätze · Quelle: Nachprüfung r4-74, PR #839
+Er redet nicht mehr mit mir
+Sie spricht nicht mit mir
+Sie spricht nicht mehr
+Er sagt nichts
+Was sagt man in einer Krise
+Was sage ich
+Sie schreibt mir ständig
+Er schreibt dauernd Nachrichten
+Sie schreibt nicht zurück
+immer wieder Streit
+immer wieder Krisen
+immer wieder Rückfälle
+immer wieder
+immer
+oft
+wieder
+Sie ruft immer wieder an
+Er sagt er liebt mich nicht
+Sie sagt sie hasst mich
+Sie sagt ich bin schuld
+Er erzählt Lügen über mich
+Sie erzählt überall herum dass ich schuld bin
+Was habe ich falsch gemacht
+Was habe ich getan
+Habe ich etwas falsch gemacht
+Sie hat Schluss gemacht
+Er hat mir die Schuld gegeben
+Sie redet schlecht über mich
+Er redet nur von sich
+Sie spricht von Trennung
+Er redet von Trennung
+Vom Hausarzt überwiesen
+Brief vom Gericht
+Sie redet vom Sterben
+Er redet vom Tod seines Vaters
+Sie spricht vom Tod ihrer Mutter
+Er schreibt vom Tod des Hundes
+Tod
+Trauer
+Sie redet vom Tod
+vom Sterben der Grossmutter
+
+# J Wortstamm-Regel (Ergänzung): Proben und Gegenproben · Quelle: Nachprüfung r4-74, PR #839
+suizidgefährdet
+Suizidrisiko
+Suizidprävention
+Suizidpräventionstag
+Selbstmordattentäter
+Selbstmordattentat
+Selbstmörder
+Selbstmörderin
+selbstmörderisch
+Suizidforschung
+Suizidrate
+Suizidhilfe
+Suizidbeihilfe
+assistierter Suizid
+Freitod
+Freitodbegleitung
+Lebensmüdigkeit
+lebensmüden
+Überdosierung
+überdosiert
+Medikament überdosiert, Nebenwirkungen
+Überdosis Koffein
+Todeswünsche
+Abschiedsbriefen
+nicht suizidal
+nicht suizidgefährdet
+kein Suizidrisiko
+Sie ist nicht mehr suizidgefährdet
+keine Suizidgedanken
+Suizidgedanken ansprechen
+Darf ich Suizid ansprechen
+Suizidalität einschätzen
+Suizidversuch in der Familie
+Postsuizidal
+Parasuizid
+parasuizidal
+Suizidenten
+Hinterbliebene nach Suizid
+Suizidgefährdung bei Borderline
+suizidgefährdet und gewalttätig
+Er ist suizidgefährdet und schlägt mich
+suizidgefährdete Tochter will nicht mehr
+Selbstmorddrohung als Druckmittel
+Er droht mit Selbstmord wenn ich gehe
+Suiziddrohung wenn ich gehe
+geritzt
+ritzte
+aufritzen
+aufgeritzt
+Sie hat sich geritzt
+Selbstverletzungen
+Narben vom Ritzen
+Spritze
+Fritz
+kritzeln
+Witz
+Beleidigungen
+beleidigt sein
+Er schreibt vom Tod
+Sie schreibt in Nachrichten vom Tod
+
+# K Mundart · Quelle: Nachprüfung r4-74, PR #839
+Mini Tochter wott nüme läbe
+Er wott nümme läbe
+Si wott nüm läbe
+Ich cha nüme
+Mini Frau schlaat mi
+Er het mi gschlage
+Si ritzt sich
+Mis Chind
+mini Chind
+D Chinder händ Angscht
+Er wott sich umbringe
+Si het gseit si well stärbe
+Ich mag nümm
+Was söll ich mache
+
+# L Verneinungen und Gegenlagen · Quelle: Nachprüfung r4-74, PR #839
+Ich will nicht tot sein
+Ich will nicht sterben
+Sie will nicht sterben
+Er will nie sterben
+Ich will ihn nicht umbringen
+Niemand will sich umbringen
+Sie ist nicht tot
+Angst vor dem Sterben
+Mein Vater liegt im Sterben
+Sterbehilfe
+Der Hund ist gestorben
+Wir sterben vor Hunger
+Ich könnte sie umbringen
+Zum Töten langweilig
+Sie redet nicht vom Sterben
+Er redet nie vom Tod
+
+# M Quellenblock und Alltagswörter mit neuem Sicherheitstreffer · Quelle: Nachprüfung r4-74, PR #839
+Geheimnis
+Arztgeheimnis
+Berufsgeheimnis
+Schweigepflicht
+Zweitmeinung
+zweite Meinung
+Opferhilfe
+Opferberatung
+Polizei
+Linehan
+Bohus
+DBT
+Leitlinie
+S3-Leitlinie
+Studie
+Haare geschnitten
+Sie schneidet mich
+Er schneidet mir das Wort ab
+Sie hat sich beim Kochen geschnitten
+Gut abgeschnitten
+Es blutet
+Nasenbluten, es blutet
+Sie hat sich verletzt
+aggressiv
+Aggression
+Mein Sohn ist aggressiv
+Jugendamt
+KESB
+Kindesschutzbehörde
+Gefährdungsmeldung
+Mentalisieren
+MBT
+Notfallplan
+Notfallkarte
+Krisenplan
+Rückfall
+
+# N Tötungswort (trennbares Verb oder Mundart-/Tippform) zusammen mit neuen Füllwörtern, natürliche Sätze ohne Satzzeichen · Quelle: Nachprüfung r4-74, PR #839
+Er bringt sich um sagt er immer wieder
+Sie bringt sich um hat sie wieder gesagt
+Sie sagt immer wieder sie bringt sich um wegen mir
+Mein Sohn sagt immer wieder ich bring mich um Mama
+Er schreibt immer wieder er bringt sich um heute Nacht
+Sie sagt oft sie bringt sich um wegen der Trennung
+Er sagt immer er bringt sich um ohne mich
+Sie schreibt mir oft sie bringt sich um heute
+Er redet immer wieder davon er bringt sich um irgendwann
+Sie erzählt immer wieder sie bringt sich um eines Tages
+Er sagte er bringt sich um noch heute
+Meine Tochter sagt immer wieder sie bringt sich um mit Tabletten
+Er sagt immer wieder ich bringe mich um mit dem Auto
+Sie sagt sie bringt sich um mit Tabletten
+Er bringt sich um mit Tabletten sagt er
+Sie sagt immer wieder sie bringe sich um deswegen
+Er sagt immer wieder er bringt mich um eines Tages
+Mein Mann sagt oft er bringt mich um im Schlaf
+Er schreibt immer wieder er bringt uns um alle
+Sie sagt immer wieder sie bringt die Kinder um und sich auch
+Er sagt immer wieder er bringt sich um was soll ich tun
+Sie sagt immer wieder sie bringt sich um was kann ich machen
+Er sagt oft er bringt sich um wie reagieren
+Sie sagt wieder sie bringt sich um soll ich die Polizei rufen
+Er sagt immer wieder er bringt sich um ist das ernst
+Sie sagt immer wieder sie bringt sich um meint sie das ernst
+Er droht immer wieder er bringt sich um ernst nehmen
+Tochter sagt immer wieder sie bringt sich um Hilfe
+Sohn schreibt wieder er bringt sich um Notfall
+Partner sagt oft er bringt sich um Angst
+Si seit immer wieder si bringt sich um
+Er seit immer wieder er bringi sich um
+Sie sagt immer wieder sie well sich umbringä
+Er sagt immer wieder er will sich umbrigen
+Sie sagt oft sie will sich umbringn
+Er redet immer wieder vom Umbringen
+Sie spricht oft vom Umbringen
+Er sagt immer wieder er macht Schluss mit dem Leben
+Sie sagt immer wieder sie erhängt sich
+Er sagt oft er erschiesst sich
+Sie sagt immer wieder sie springt vor den Zug
+Er sagt immer wieder er bringt sich um
+Sie sagt oft sie bringt sich um
+Er sagt immer wieder: Ich bringe mich um.
+Sie sagt immer wieder, sie bringt sich um, wegen mir
+
+# O Dieselben Sätze ohne Füllwörter (Kontrolle: wird das Tötungswort überhaupt erkannt?) · Quelle: Nachprüfung r4-74, PR #839
+Er bringt sich um wegen mir
+Sie bringt sich um heute Nacht
+Ich bring mich um Mama
+Sie bringt sich um mit Tabletten
+Er bringt mich um eines Tages
+Er bringt sich um was soll ich tun
+Sie bringt sich um soll ich die Polizei rufen
+Er bringt sich um ist das ernst
+Sie bringt sich um Hilfe
+
+# P Aussagen zu Suizidgedanken, Selbstverletzung und Gewalt ohne Tötungswort, mit neuen Füllwörtern (natürliche Wortstellung) · Quelle: Nachprüfung r4-74, PR #839
+Ich denke oft ans Sterben
+Ich denke sehr oft ans Sterben
+Ich denke immer wieder ans Sterben
+Ich denke immer öfter ans Sterben
+Ich denke ans Sterben
+Ich denke oft an den Tod
+Ich denke immer wieder an den Tod
+Ich habe immer wieder Suizidgedanken
+Ich habe oft Suizidgedanken
+Ich denke oft an Suizid
+Ich denke immer wieder an Selbstmord
+Ich will immer wieder sterben
+Ich möchte oft einfach sterben
+Ich wünsche mir oft tot zu sein
+Ich denke oft daran nicht mehr zu leben
+Ich habe immer wieder den Gedanken zu sterben
+Ich habe ihr oft gesagt dass ich sterben will
+Ich sage immer wieder ich will sterben
+Ich verletze mich immer wieder
+Ich ritze mich immer wieder
+Ich schneide mich oft
+Ich werde immer wieder geschlagen
+Ich werde oft bedroht
+Ich habe immer wieder Angst vor ihm
+Mein Sohn denkt oft ans Sterben
+Sie denkt immer wieder ans Sterben
+Sie denkt ans Sterben
+Sie redet oft vom Sterben
+Er spricht oft davon zu sterben
+Sie sagt oft sie will sterben
+Er sagt immer wieder er will nicht mehr leben
+Sie schreibt oft sie möchte tot sein
+Sie hat wieder gesagt sie will nicht mehr
+Er sagt immer wieder er kann nicht mehr
+Sie sagt immer wieder das Leben hat keinen Sinn
+Er sagt oft es hat alles keinen Sinn mehr
+Sie sagt immer wieder sie wäre lieber tot
+Er sagt immer wieder ohne ihn wären alle besser dran
+Sie sagt oft sie will einschlafen und nicht mehr aufwachen
+Er hat wieder Tabletten gesammelt
+Sie hat sich wieder verletzt
+Er hat sich wieder geritzt
+Sie hat es schon oft versucht
+Er hat es wieder versucht
+Sie hat wieder einen Suizidversuch gemacht
+Er hat schon oft einen Suizidversuch gemacht
+Sie hat schon wieder eine Überdosis genommen
+Er hat ihr wieder eine Ohrfeige gegeben
+Sie hat mich wieder geschlagen
+Er hat mich schon oft bedroht
+Er hat mir wieder gedroht
+Sie sagt immer wieder sie tut sich etwas an
+Er sagt oft er macht Schluss
+Sie sagt immer wieder sie will weg sein
+Er redet immer wieder vom Sterben und vom Tod
+Sie spricht immer wieder über Suizid
+Er schreibt immer wieder Abschiedsbriefe
+Sie sagt sie sei lebensmüde
+Er sagt immer wieder er sei lebensmüde
+Sie erzählt oft von Suizidgedanken
+
+# Q Neue Proben, der bauenden Sitzung nicht bekannt: Tötungswort mit den 13 früheren Füllwörtern · Quelle: Nachprüfung r4-75, PR #841 (Entwurf)
+Er redet immer davon er bringt sich um wegen der Schulden
+Sie schreibt mir er bringt sich um wenn ich nicht komme
+Mein Bruder erzählt überall er bringt sich um nach Weihnachten
+Sie spricht oft davon sie bringt sich um mit dem Auto
+Er sagte gestern wieder er bringt uns alle um irgendwann
+Meine Mutter sagt oft sie bringt sich um wegen uns Kindern
+Er hat es schon oft gesagt er bringt sich um diesmal wirklich
+Sie hat wieder geschrieben sie bringt sich um heute Abend
+Was hat er getan er wollte sich umbringen
+Sie hat es wieder gemacht sie wollte sich töten
+Er hat mir oft gedroht er bringt mich um im Schlaf
+Sie redet vom Umbringen immer wieder seit Wochen
+Mein Sohn schreibt oft vom Töten in seinen Nachrichten
+Sie sagt wieder sie springt von der Brücke
+Er erzählt er habe sich fast umgebracht letzte Woche
+
+# R Neue Proben: Aussagen zu Sterben, Selbstverletzung, Gewalt mit früheren Füllwörtern · Quelle: Nachprüfung r4-75, PR #841 (Entwurf)
+Ich denke wieder ans Sterben
+Ich rede oft vom Sterben
+Ich habe oft gesagt ich will sterben
+Ich habe wieder daran gedacht zu sterben
+Ich schreibe oft Abschiedsbriefe
+Ich habe schon oft daran gedacht mir etwas anzutun
+Ich wünsche mir immer wieder einzuschlafen und nicht mehr aufzuwachen
+Ich habe es wieder getan ich habe mich geritzt
+Ich habe mich wieder verletzt
+Ich habe mir oft wehgetan
+Ich habe wieder Tabletten genommen
+Sie redet immer vom Tod
+Er spricht wieder vom Sterben
+Sie schreibt oft vom Tod
+Er erzählt immer wieder er sei lebensmüde
+Sie sagt oft sie mag nicht mehr leben
+Er sagt immer wieder es wäre besser wenn er nicht mehr da wäre
+Sie sagt wieder sie halte es nicht mehr aus
+Er hat wieder gesagt er sehe keinen Ausweg
+Sie hat oft gesagt sie wolle nur noch schlafen
+Er hat mir wieder eine Ohrfeige gegeben
+Sie hat mir schon oft Ohrfeigen gegeben
+Er hat mir eine Ohrfeige verpasst
+Sie gab mir eine Ohrfeige
+Er hat dem Kind eine Ohrfeige gegeben
+Ich habe ihr eine Ohrfeige gegeben
+Er hat mich wieder gewürgt
+Sie hat mich oft bedroht
+Er sagt immer wieder er schlägt mich tot
+
+# S Neue Proben: Kürzel «FU» und «IV» mit weiteren Begriffen und allein · Quelle: Nachprüfung r4-75, PR #841 (Entwurf)
+FU Suizid
+Suizidgedanken FU nötig
+FU wegen Selbstgefährdung
+FU nach Suizidversuch
+FU Gewalt
+FU Kinder
+FU Entlassung
+FU Dauer
+Wie lange dauert eine FU
+Wer ordnet eine FU an
+FU gegen den Willen
+FU oder freiwillig
+IV und Borderline
+IV Anmeldung Suizid
+Zwangseinweisung Suizid
+Einweisung
+
+# ZA Neue Füllwörter (vom redet spricht sagt sagte schreibt erzählt immer wieder oft gegeben gemacht getan) · Quelle: Nachweis r4-74, bauende Sitzung
+sagt nichts
+Sie spricht nicht mehr mit mir
+redet nicht mit mir
+schreibt mir ständig Nachrichten
+Fehler gemacht
+Schuld gegeben
+vom Arzt
+Rückfall immer wieder
+Sie erzählt Lügen
+oft wütend
+wieder gut machen
+Er redet nicht über Gefühle
+
+# ZB Neue Suizidbegriffe · Quelle: Nachweis r4-74, bauende Sitzung
+Abschiedsnachricht
+Abschiedsnachrichten
+Sie hat eine Abschiedsnachricht geschrieben
+Er spricht vom Tod
+Er spricht oft vom Sterben
+Sie redet immer wieder vom Sterben
+Mi Maa wott nümme läbe
+Si wott nüme läbe
+nüm läbe
+vom Sterben
+Tod der Mutter
+
+# ZC «will nicht mehr» am Ende der Anfrage · Quelle: Nachweis r4-74, bauende Sitzung
+Ich will nicht mehr.
+Ich will nicht mehr!
+Sie möchte nicht mehr
+Er mag nicht mehr
+I wott nümme
+Er sagt er will nicht mehr
+Mein Sohn will nicht mehr
+Meine Tochter sagt sie will nicht mehr
+Er will nicht mehr leben
+Er will nicht mehr zur Arbeit
+Mein Sohn will nicht mehr in die Schule
+Therapie will er nicht mehr
+Er will die Therapie nicht mehr
+Ich will nicht mehr helfen
+Sie will mich nicht mehr sehen
+Was tun wenn er nicht mehr will
+Er will nicht mehr in die Therapie
+Ich mag nicht mehr mit ihr streiten
+er schlägt mich und ich will nicht mehr
+Sie will keine Hilfe mehr
+
+# ZD Tippfehler · Quelle: Nachweis r4-74, bauende Sitzung
+Suizied
+Selbstmordgedanke
+Suizidgedanke
+Suizidversuchs
+Borderlin
+Therapien
+Medikamnte
+Medikamenten
+Krisenplann
+Selbstverletzng
+Lebensmüde
+Lebensmüd
+Überdosi
+toten
+Totensonntag
+
+# ZE Streit, Aggression, Beschimpfung · Quelle: Nachweis r4-74, bauende Sitzung
+Aggressionen
+Er ist aggressiv
+aggressives Verhalten
+beschimpft
+Er beschimpft mich
+angeschrien
+beleidigt mich
+Wutausbruch
+
+# ZF Mundart · Quelle: Nachweis r4-74, bauende Sitzung
+cha nümme
+I cha nümme
+Chinder
+
+# ZG Einweisung und Kürzel · Quelle: Nachweis r4-74, bauende Sitzung
+zwangseingewiesen
+gegen ihren Willen
+gegen seinen Willen eingewiesen
+Beschwerde
+Beschwerde FU Frist
+fürsorgerische Unterbringung
+
+# ZH Selbstverletzung · Quelle: Nachweis r4-74, bauende Sitzung
+geschnitten
+Er hat sich geschnitten
+Sie schneidet sich
+schneidet sich
+es blutet
+Er hat sich beim Kochen geschnitten
+Tochter ritzt sich was tun
+ritzen
+
+# ZI Neue Gruppen · Quelle: Nachweis r4-74, bauende Sitzung
+Mentalisierung
+mentalisierungsbasierte Therapie
+
+# ZJ Gewalt · Quelle: Nachweis r4-74, bauende Sitzung
+geohrfeigt
+Sie hat mir eine Ohrfeige gegeben
+Angst um mein eigenes Leben
+Angst um sein Leben
+Er droht mir
+Er bedroht mich
+Sie schlägt mich
+mich bedroht
+
+# ZK Kinder und Gewalt · Quelle: Nachweis r4-74, bauende Sitzung
+Er schlägt unser Kind
+Kind wird geschlagen
+Mein Kind ist gewalttätig
+Kinder haben Angst vor ihm
+Gewalt vor den Kindern
+Sie bedroht die Kinder
+der Vater meiner Kinder schlägt mich
+Mein Sohn schlägt mich
+Kind schlägt um sich
+Er schlägt mich vor den Kindern
+Er schlägt mich und die Kinder
+Gewalt Kinder
+Kinder schlagen
+Darf man Kinder schlagen
+
+# ZL Quellenblock (SU-05) · Quelle: Nachweis r4-74, bauende Sitzung
+Quellen
+
+# ZM Ergänzung zu PR #713: Beugungen und Zusammensetzungen eindeutiger Suizidwörter, Formen von «ritzen» · Quelle: Nachweis r4-74, bauende Sitzung
+Meine Tochter ist suizidgefährdet
+Mein Mann ist selbstmordgefährdet was tun
+Selbstmorddrohung
+Selbstmordgefahr
+Suizidabsichten
+nach Suizidversuchen
+suizidale Gedanken
+suizidalen Krise
+Abschiedsbriefs
+Medikamentenüberdosis
+Lebensmut
+Überforderung
+Arme aufgeritzt
+selbstverletzendes Verhalten
+
+# ZX Kürzel «FU» und «IV» mit weiteren Begriffen · Quelle: Nachweis r4-75, bauende Sitzung
+Suizid FU
+Suizidgefahr FU
+Suizidgedanken FU
+FU bei Suizidgefahr
+Selbstgefährdung FU
+umbringen FU
+Sie will sich umbringen FU
+FU wegen Suizidgedanken
+Suizid IV
+Gewalt FU
+Er schlägt mich FU
+Selbstverletzung FU
+FU Rechte Angehörige
+
+# ZY Tötungswendung mit Nachsatz, natürliche Sätze · Quelle: Nachweis r4-75, bauende Sitzung
+Sie bringt sich um sagt sie immer wieder
+Er bringt sich um hat er gesagt
+Er bringt sich um sagt er
+Sie sagt immer wieder sie bringt sich um
+Er hat schon oft gesagt er bringt sich um
+Mein Sohn sagt er bringt sich um immer wieder
+Er bringt sich um wenn ich gehe
+Er bringt sich um schreibt er mir
+Sie will sich umbringen sagt sie immer wieder
+Er bringt sich um heute Nacht
+Sie bringt sich um wegen mir
+Er bringt sich bestimmt um irgendwann
+Er hat gesagt er bringt sich um gestern Abend
+Sie bringt sich um oft sagt sie das
+Sie sagt, sie bringt sich um immer wieder
+Ich bringe mich um immer wieder
+er bringt uns alle um immer wieder
+Wenn du gehst bringe ich mich um immer wieder
+Mein Kind sagt es bringt sich um immer wieder
+Sie hat immer wieder gesagt, sie bringt sich um hat er oft gesagt
+Ich bringe mich um Angst um mein Leben
+Er bringt sich um sagt er oft
+Sie bringt sich um hat sie geschrieben
+Er bringt sich um, sagt er immer wieder
+Sie redet immer wieder davon sich umzubringen
+Er droht immer wieder sich umzubringen
+
+# ZZ Gewalt durch Handelnde ohne «mich» · Quelle: Nachweis r4-76, bauende Sitzung
+Meine Frau schlägt
+Meine Frau schlägt zu
+Meine Frau schlägt unsere Tochter
+Frau schlägt Mann
+Mein Mann schlägt
+Mein Mann schlägt zu
+Mein Mann schlägt unsere Tochter
+Mein Mann schlägt unseren Sohn
+Meine Frau ist gewalttätig
+Mein Mann ist gewalttätig
+Meine Frau bedroht unsere Familie
+Mein Partner schlägt die Katze
+Meine Freundin schlägt zu
+Gewalt Frau
+Gewalt gegen Männer
+häusliche Gewalt
+Polizei rufen
+Meine Mutter schlägt meinen Vater
+Sie schlägt ihn
+Er schlägt sie

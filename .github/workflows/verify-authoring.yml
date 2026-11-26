@@ -49,3 +49,20 @@ jobs:
         env:
           LAYOUT_OUTCOME: ${{ steps.layouttest.outcome }}
         run: node authoring/tools/layouttest-report.cjs dist/audit04-layout/ERGEBNIS.json
+      # Suchraster (Wiederaufbau der Suche, Schritt 1; Auftrag Christa Egger, 26.11.2026: «ok, leg los!»):
+      # vergleicht die Suche des Pull Requests mit der Suche der Basis. Ein verlorener oder verdrängter
+      # Sicherheitsabschnitt, eine verlorene Anheftung oder eine Anfrage ohne Treffer lässt den Job scheitern,
+      # ausser der Fall steht begründet in authoring/tests/suchraster-ausnahmen.tsv. Ist die Suche unverändert,
+      # endet der Schritt ohne Browserlauf.
+      - name: Check out base site for the search grid
+        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: suchraster-basis
+          sparse-checkout: site
+      - name: Search grid against base (fails on lost safety sections or hits)
+        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+        env:
+          PLAYWRIGHT_MODULE: /tmp/borderline-browser/node_modules/playwright
+        run: node authoring/tools/suchraster.mjs suchraster-basis/site site

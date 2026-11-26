@@ -1,0 +1,29 @@
+## r4-73 gegen r4-75: 11 Proben · gleich 4 · a) 0 · b) 1 · c) 5 · ausserhalb der Stopp-Regel 1
+Kennz	Typ	Anfrage	r4-73	r4-75
+b	K	mein mann bringt sich um polizei	gefahr#gewalt	–
+·	K	Mein Mann bringt sich um, Polizei?	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+·	K	meine frau sagt sie bringt sich um polizei rufen	–	–
+x	K	mein bruder bringt sich um ständig	grenzen#rollen	–
+·	K	mein mann will sich umbringen polizei	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+c	I	Mein Mann wird gewalttätig und ich habe Angst	gefahr#gewalt	–
+c	I	Meine Frau wird gewalttätig, was kann ich machen?	gefahr#gewalt	–
+c	I	Mein Mann schlägt zu, wegen mir	gefahr#gewalt	–
+c	I	Ich habe Angst, mein Mann wird gewalttätig	gefahr#gewalt	–
+c	I	mein mann beschimpft mich polizei	gefahr#gewalt	–
+·	I	Ich denke ans Sterben, Therapie?	–	–
+
+## r4-73 gegen r4-76: 11 Proben · gleich 11 · a) 0 · b) 0 · c) 0 · ausserhalb der Stopp-Regel 0
+Kennz	Typ	Anfrage	r4-73	r4-76
+·	K	mein mann bringt sich um polizei	gefahr#gewalt	gefahr#gewalt
+·	K	Mein Mann bringt sich um, Polizei?	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt	kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+·	K	meine frau sagt sie bringt sich um polizei rufen	–	–
+·	K	mein bruder bringt sich um ständig	grenzen#rollen	grenzen#rollen
+·	K	mein mann will sich umbringen polizei	krise#suizid > gefahr#gewalt > krise	krise#suizid > gefahr#gewalt > krise
+·	I	Mein Mann wird gewalttätig und ich habe Angst	gefahr#gewalt	gefahr#gewalt
+·	I	Meine Frau wird gewalttätig, was kann ich machen?	gefahr#gewalt	gefahr#gewalt
+·	I	Mein Mann schlägt zu, wegen mir	gefahr#gewalt	gefahr#gewalt
+·	I	Ich habe Angst, mein Mann wird gewalttätig	gefahr#gewalt	gefahr#gewalt
+·	I	mein mann beschimpft mich polizei	gefahr#gewalt	gefahr#gewalt
+·	I	Ich denke ans Sterben, Therapie?	–	–
+
+JS-Fehler: 0

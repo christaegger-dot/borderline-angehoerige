@@ -1,0 +1,33 @@
+## r4-73 gegen r4-75: 13 Proben · gleich 6 · a) 0 · b) 0 · c) 1 · ausserhalb der Stopp-Regel 4
+Kennz	Typ	Anfrage	r4-73	r4-75
+·	I	Ich habe Angst vor meinem Mann, er wird gewalttätig	gefahr#gewalt > kinder#eskalation > index#orientierung	gefahr#gewalt > kinder#eskalation > index#orientierung
+·	I	Ich habe Angst, meine Frau schlägt zu	–	–
+·	I	Ich weiss nicht weiter, mein Mann ist gewalttätig	gefahr#gewalt	gefahr#gewalt
+x	I	Ich halte es nicht mehr aus, mein Mann schlägt zu	gefahr#gewalt > beziehungen#verantwortung > fragen#f-eigenes-leben	beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung
+x	I	Ich brauche Hilfe, mein Mann ist gewalttätig	gefahr#gewalt > quellen#schweiz	quellen#schweiz
+x	I	Ich brauche Hilfe, meine Frau ist gewalttätig	gefahr#gewalt > quellen#schweiz > quellen#leitlinien	quellen#schweiz > quellen#leitlinien > verstehen#mythen
+x	I	Ich werde von meiner Frau geschlagen	gefahr#gewalt > quellen#schweiz > quellen#leitlinien	quellen#schweiz > quellen#leitlinien > quellen#forschung
+·	I	Ich habe Angst, mein Mann schlägt unseren Sohn	–	–
+·	I	Ich habe Angst vor meinem Mann	gefahr#gewalt > kinder#eskalation > index#orientierung	gefahr#gewalt > kinder#eskalation > index#orientierung
+c	I	Ich bin verzweifelt, mein Mann schlägt zu	gefahr#gewalt	–
+·	I	Ich fühle mich bedroht von meinem Mann	gefahr#gewalt > kinder#eskalation > index#orientierung	gefahr#gewalt > kinder#eskalation > index#orientierung
+·	I	Ich habe Angst, meine Tochter schneidet sich	–	beziehungen#zwei-sichten > begriffe#b-borderline > begriffe#begriffe
+·	I	Ich mache mir Sorgen, mein Sohn schneidet sich seit Wochen	krise#krise-schnell	krise#krise-schnell > krise#selbstverletzung > krise#suizid
+
+## r4-73 gegen r4-76: 13 Proben · gleich 13 · a) 0 · b) 0 · c) 0 · ausserhalb der Stopp-Regel 0
+Kennz	Typ	Anfrage	r4-73	r4-76
+·	I	Ich habe Angst vor meinem Mann, er wird gewalttätig	gefahr#gewalt > kinder#eskalation > index#orientierung	gefahr#gewalt > kinder#eskalation > index#orientierung
+·	I	Ich habe Angst, meine Frau schlägt zu	–	–
+·	I	Ich weiss nicht weiter, mein Mann ist gewalttätig	gefahr#gewalt	gefahr#gewalt
+·	I	Ich halte es nicht mehr aus, mein Mann schlägt zu	gefahr#gewalt > beziehungen#verantwortung > fragen#f-eigenes-leben	gefahr#gewalt > beziehungen#verantwortung > fragen#f-eigenes-leben
+·	I	Ich brauche Hilfe, mein Mann ist gewalttätig	gefahr#gewalt > quellen#schweiz	gefahr#gewalt > quellen#schweiz
+·	I	Ich brauche Hilfe, meine Frau ist gewalttätig	gefahr#gewalt > quellen#schweiz > quellen#leitlinien	gefahr#gewalt > quellen#schweiz > quellen#leitlinien
+·	I	Ich werde von meiner Frau geschlagen	gefahr#gewalt > quellen#schweiz > quellen#leitlinien	gefahr#gewalt > quellen#schweiz > quellen#leitlinien
+·	I	Ich habe Angst, mein Mann schlägt unseren Sohn	–	–
+·	I	Ich habe Angst vor meinem Mann	gefahr#gewalt > kinder#eskalation > index#orientierung	gefahr#gewalt > kinder#eskalation > index#orientierung
+·	I	Ich bin verzweifelt, mein Mann schlägt zu	gefahr#gewalt	gefahr#gewalt
+·	I	Ich fühle mich bedroht von meinem Mann	gefahr#gewalt > kinder#eskalation > index#orientierung	gefahr#gewalt > kinder#eskalation > index#orientierung
+·	I	Ich habe Angst, meine Tochter schneidet sich	–	–
+·	I	Ich mache mir Sorgen, mein Sohn schneidet sich seit Wochen	krise#krise-schnell	krise#krise-schnell
+
+JS-Fehler: 0

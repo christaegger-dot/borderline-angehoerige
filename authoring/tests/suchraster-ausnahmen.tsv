@@ -1,0 +1,4 @@
+# Gewollte Verluste für authoring/tools/suchraster.mjs, mit Begründung und Entscheid. Spalten durch Tabulator getrennt.
+# Muster: genaue Anfrage oder /regulärer Ausdruck/ auf die klein geschriebene Anfrage. Verlust: Abschnitt, LEER oder ANHEFTUNG:<Abschnitt>.
+# Ersatz: Abschnitt, der im Prüfstand unter den ersten zwei stehen muss, oder «–». Stand 26.11.2026: keine Ausnahmen.
+Muster	Verlust	Ersatz	Begründung	Entscheid

@@ -1,0 +1,10 @@
+r4-69 320px Schrift 16: Name | Name | Beratung: | Adresse
+r4-69 600px Schrift 32: Name | Name | Beratung: | Adresse
+r4-69 980px Schrift 48: Bezeichnung | Name | Beratung: | Adresse
+r4-69 840px Schrift 16: Bezeichnung+Name+Beratung: | Adresse
+r4-69 1100px Schrift 32: Bezeichnung+Name | Beratung:+Adresse
+r4-71 320px Schrift 16: Name | Name | Beratung: | Adresse
+r4-71 600px Schrift 32: Name | Name | Beratung: | Adresse
+r4-71 980px Schrift 48: Bezeichnung | Name | Beratung: | Adresse
+r4-71 840px Schrift 16: Bezeichnung+Name | Beratung:+Adresse
+r4-71 1100px Schrift 32: Bezeichnung+Name | Beratung:+Adresse

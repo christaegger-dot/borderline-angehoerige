@@ -1,0 +1,15 @@
+390x844 r4-69 {"kopf":192,"karte":815,"utilZeile":"flex","n144":861,"n144unten":884,"hinweisUnten":1147,"schritt1":403,"schritt1unten":524,"ersterBildschirm":844}
+390x844 r4-70 {"kopf":192,"karte":815,"utilZeile":"flex","n144":861,"n144unten":884,"hinweisUnten":1147,"schritt1":403,"schritt1unten":524,"ersterBildschirm":844}
+390x844 r4-71 {"kopf":148,"karte":771,"utilZeile":"none","n144":454,"n144unten":477,"hinweisUnten":741,"schritt1":765,"schritt1unten":887,"ersterBildschirm":844}
+375x812 r4-69 {"kopf":192,"karte":846,"utilZeile":"flex","n144":889,"n144unten":912,"hinweisUnten":1175,"schritt1":431,"schritt1unten":552,"ersterBildschirm":812}
+375x812 r4-70 {"kopf":192,"karte":846,"utilZeile":"flex","n144":889,"n144unten":912,"hinweisUnten":1175,"schritt1":431,"schritt1unten":552,"ersterBildschirm":812}
+375x812 r4-71 {"kopf":148,"karte":802,"utilZeile":"none","n144":482,"n144unten":505,"hinweisUnten":769,"schritt1":793,"schritt1unten":915,"ersterBildschirm":812}
+360x740 r4-69 {"kopf":192,"karte":907,"utilZeile":"flex","n144":950,"n144unten":973,"hinweisUnten":1236,"schritt1":431,"schritt1unten":552,"ersterBildschirm":740}
+360x740 r4-70 {"kopf":192,"karte":907,"utilZeile":"flex","n144":950,"n144unten":973,"hinweisUnten":1236,"schritt1":431,"schritt1unten":552,"ersterBildschirm":740}
+360x740 r4-71 {"kopf":148,"karte":863,"utilZeile":"none","n144":513,"n144unten":536,"hinweisUnten":799,"schritt1":823,"schritt1unten":945,"ersterBildschirm":740}
+375x667 r4-69 {"kopf":192,"karte":846,"utilZeile":"flex","n144":889,"n144unten":912,"hinweisUnten":1175,"schritt1":431,"schritt1unten":552,"ersterBildschirm":667}
+375x667 r4-70 {"kopf":192,"karte":846,"utilZeile":"flex","n144":889,"n144unten":912,"hinweisUnten":1175,"schritt1":431,"schritt1unten":552,"ersterBildschirm":667}
+375x667 r4-71 {"kopf":148,"karte":802,"utilZeile":"none","n144":482,"n144unten":505,"hinweisUnten":769,"schritt1":793,"schritt1unten":915,"ersterBildschirm":667}
+320x568 r4-69 {"kopf":239,"karte":1015,"utilZeile":"flex","n144":1026,"n144unten":1049,"hinweisUnten":1374,"schritt1":477,"schritt1unten":599,"ersterBildschirm":568}
+320x568 r4-70 {"kopf":239,"karte":1015,"utilZeile":"flex","n144":1026,"n144unten":1049,"hinweisUnten":1374,"schritt1":477,"schritt1unten":599,"ersterBildschirm":568}
+320x568 r4-71 {"kopf":195,"karte":971,"utilZeile":"none","n144":559,"n144unten":582,"hinweisUnten":907,"schritt1":931,"schritt1unten":1052,"ersterBildschirm":568}

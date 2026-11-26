@@ -1,6 +1,6 @@
 # Nachprüfung PR #847 · Suchraster als Prüfwerkzeug · nachträglich
 
-**Urteil (nachträglich, #847 war beim Abschluss dieser Prüfung schon gemergt): Das Suchraster tut, was sein Bericht sagt, ist deterministisch und ändert die Website nicht. Es kann aber falsch bestehen, am deutlichsten, weil ein Pull Request Werkzeug, Proben und Ausnahmen selbst mitbringt (N847-2). Empfehlung: #847 gemergt lassen, weil es nichts verschlechtert und r4-74 und r4-75 aufgehalten hätte. Vor Schritt 2 sollten N847-2 bis N847-5 behoben sein. Bis dahin gilt eine grüne CI nicht als Freigabe nach R34-P01; die Nachprüfung vor dem Merge bleibt nötig.**
+**Urteil (nachträglich, #847 war beim Abschluss dieser Prüfung schon gemergt): Das Suchraster tut, was sein Bericht sagt, ist deterministisch und ändert die Website nicht. Es kann aber falsch bestehen, am deutlichsten, weil ein Pull Request Werkzeug, Proben und Ausnahmen selbst mitbringt (N847-2). Empfehlung: #847 gemergt lassen, weil es nichts verschlechtert und r4-74 und r4-75 aufgehalten hätte. N847-2 bis N847-5 sollten behoben werden. Bis dahin gilt eine grüne CI nicht als Freigabe nach R34-P01; die Nachprüfung vor dem Merge bleibt nötig. Schritt 2 (#848, r4-77) wurde während dieser Prüfung ohne diese Korrekturen gemergt, siehe Nachtrag N847-10.**
 
 Stand 26.11.2026, Prüfung ab etwa 23:00 UTC · geprüfter Kopf `0259793` (Baum identisch mit `main` `451b20f`) · Basis `d90e7ef`.
 

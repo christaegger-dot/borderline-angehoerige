@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-69';
+const BUILD = 'r4-70';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -256,6 +256,8 @@ function renderPage(cfg, page, content) {
   const senderLabel = s.displayLabel || 'Absenderin';
   const senderName = s.displayName || s.orgUnit;
   const senderInstitution = s.displayName ? '' : `<span aria-hidden="true">·</span><span data-sender-institution>${esc(s.institution)}</span>`;
+  /* r4-70 (Website-Review vom 26.11.2026, Punkt 4): Kontaktbezeichnung und Adresse stehen in .puk-site-sender__beratung und brechen gemeinsam um
+     (vorher stand «Beratung:» zwischen 780 und 900 px am Zeilenende und die Adresse allein auf der nächsten Zeile). */
   const contactLabel = s.contactLabel ? `<span class="puk-site-sender__contact">${esc(s.contactLabel)}:</span>` : '<span aria-hidden="true">·</span>';
   const footer = cfg.footer || {};
   const footerLinks = Array.isArray(footer.links) ? footer.links.filter(link => link && link.label && link.href) : [];
@@ -294,7 +296,7 @@ ${script ? `<script src="${esc(cfg.interactionScript)}${v}" defer></script>\n` :
 ${draftbar}<header class="puk-web-header"><div class="puk-web-container puk-web-header__inner">
 <a class="puk-web-logo" href="${esc(pagePath(startPage))}" aria-label="${esc(logoName(cfg))}"><img src="${esc(cfg.logo)}" alt="${esc(s.institution)}"></a>
 ${navHtml}</div>
-<div class="puk-web-container puk-site-subbar"><p class="puk-site-sender" data-sender><span class="puk-site-sender__label">${esc(senderLabel)}</span><span class="puk-site-sender__name" data-sender-unit>${esc(senderName)}</span>${senderInstitution}${s.email ? `${contactLabel}<a class="puk-link--inline" data-sender-email href="mailto:${esc(s.email)}">${esc(s.email)}</a>` : ''}${senderBadge}</p>${utilityNav}</div>
+<div class="puk-web-container puk-site-subbar"><p class="puk-site-sender" data-sender><span class="puk-site-sender__label">${esc(senderLabel)}</span><span class="puk-site-sender__name" data-sender-unit>${esc(senderName)}</span>${senderInstitution}${s.email ? `<span class="puk-site-sender__beratung">${contactLabel}<a class="puk-link--inline" data-sender-email href="mailto:${esc(s.email)}">${esc(s.email)}</a></span>` : ''}${senderBadge}</p>${utilityNav}</div>
 </header>
 ${breadcrumb}${direct}<main id="main-content" class="puk-web-main" tabindex="-1"${page.filterSelector ? ` data-puk-filter data-filter-selector="${esc(page.filterSelector)}" data-filter-label="${esc(page.filterLabel || 'Einträgen')}"` : ''}>
 ${tocLayout(body.trim(), sectionNav)}

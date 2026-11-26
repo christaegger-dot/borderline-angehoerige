@@ -8,6 +8,29 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
+## r4-70 · Website-Review: Punkte 4, 5, 7, 10 und Telefonproben · offen seit 26.11.2026
+
+**GitHub:** PR folgt, Branch `claude/sharp-mendel-6ecwbi` (Name von der Cloud-Sitzung vorgegeben, verstösst gegen die Branch-Konvention in `AGENTS.md`), nicht gemergt.
+
+**Auftrag von Christa Egger, 26.11.2026:** «starte mit: Ohne fachlichen Entscheid umsetzbar sind 4, 5, 7 und 10; dazu im Layouttest die zusätzlichen Telefongrössen aus Punkt 2.» Die Punkte stammen aus einem Website-Review derselben Sitzung (gerendert bei 360 bis 1440 px, nur im Gespräch berichtet). Sie sind im Nachweis aufgeführt.
+
+**Inhalt:**
+- **Punkt 4:** «Beratung:» und Adresse bilden in der Absenderzeile die neue Gruppe `.puk-site-sender__beratung` (Seitenrahmen in `contract.js`) und brechen gemeinsam um. Vorher stand die Adresse bei 780 bis 900 px allein auf einer Zeile.
+- **Punkt 5:** Lesebreite für Vertiefungen und Bildunterschriften (`max-width:36em`, vorher keine bzw. `80ch`) und für die Einleitung von «Krisen begleiten» (`--lesebreite`). Die längste Zeile bei 1440 px sinkt von 148, 113 und 130 auf 78, 76 und 71 Zeichen.
+- **Punkt 7:** Der vorgesehene Abstand über «Wenig Zeit oder Kraft?» wirkt wieder (0 → 20 px).
+- **Punkt 10:** Das Trennzeichen der Brotkrümel steht am Zeilenende statt am Zeilenanfang.
+- **Punkt 2:** `layouttest.cjs` prüft die Sicherheitskarte zusätzlich bei 375 × 812, 375 × 667 und 360 × 740.
+
+Wortlaut und Skript sind unverändert. **Kennung:** r4-70 (r4-67 übersprungen, r4-69 auf `main`). **Freigabe:** `appliedTo` stützt r4-70 wie frühere Releases auf den fortgeltenden Entscheid vom 18.10.2026.
+
+**Messung:** `site/` 24 HTML-Seiten (je nur die Absenderzeile und die Kennung) und `css/site.css`. `--write-site` 24 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` 35 Dateien byte-gleich; Selbsttest 125/125; Suchtest 216/216; Sprach-/UI-Test 73; axe-core 4.14.0 96 Läufe, 0 Verstösse; kein waagrechter Überlauf bei 100, 200 und 300 % Schrift (216 Läufe). **Layouttest:** 240 Zustände, 30 Bedienproben, **3 Abweichungen**, genau die drei neuen Telefonproben (Sicherheitskarte bei 846, 846 und 907 px). Das ist Punkt 2 des Reviews, offen bis zum Entscheid über den Kopf am Telefon (Punkt 3). Nachweis: [`audit-results/2026-11-26-website-review-r4-70/BERICHT.md`](audit-results/2026-11-26-website-review-r4-70/BERICHT.md).
+
+**Wer:** die Sitzung, die #809, #813 und #815 gebaut hat. Prüfen muss diese Änderung eine andere Sitzung.
+
+**Offen:**
+- Nachprüfung durch eine andere Sitzung; Merge nur auf Auftrag.
+- Aus dem Review mit Entscheid: 1 (Notrufnummern auf «Krisen begleiten» am Telefon unter dem ersten Bildschirm, fachlich), 2 und 3 (Sicherheitskarte und Kopf am Telefon, Gestaltung), 6 («Nichts unter 16 px» für die übrigen Texte), 8 (doppelter Satz auf der Suchseite, Wortlaut), 9 (P4-3).
+
 ## r4-69 · Nachbesserung N815-2 bis N815-4 · offen seit 26.11.2026
 
 **GitHub:** Branch `korrektur/2026-11-26-n815-2-n815-4-r4-69`, [PR #821](https://github.com/christaegger-dot/borderline-angehoerige/pull/821), Entwurf, nicht gemergt. Grundlage `main` bei `b72d59d`.

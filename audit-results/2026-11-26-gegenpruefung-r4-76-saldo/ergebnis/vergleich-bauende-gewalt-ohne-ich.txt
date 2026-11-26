@@ -1,0 +1,25 @@
+# 22 Anfragen · Bezug r4-73 · JS-Fehler 0
+# r4-76 gegen r4-73: vollständige Trefferliste gleich 22 von 22 · Ersttreffer gleich 22 · Sicherheitsabschnitt aus den ersten zwei verloren 0 · vorher Treffer, nachher leer 0
+# r4-75 gegen r4-73: vollständige Trefferliste gleich 8 von 22 · Ersttreffer gleich 9 · Sicherheitsabschnitt aus den ersten zwei verloren 10 · vorher Treffer, nachher leer 1
+Meine Frau schlägt | r4-73 gefahr#gewalt > quellen#schweiz > quellen#leitlinien (+2) | r4-76 = | r4-75 quellen#schweiz > quellen#leitlinien > verstehen#mythen (+1) [VERLOREN]
+Meine Frau schlägt zu | r4-73 gefahr#gewalt > quellen#schweiz > quellen#leitlinien (+2) | r4-76 = | r4-75 quellen#schweiz > quellen#leitlinien > verstehen#mythen (+1) [VERLOREN]
+Meine Frau schlägt unser Kind | r4-73 gefahr#gewalt > quellen#schweiz > quellen#leitlinien (+2) | r4-76 = | r4-75 kinder#eskalation > gefahr#gewalt > index#orientierung (+17)
+Meine Frau schlägt unsere Tochter | r4-73 gefahr#gewalt > quellen#schweiz > quellen#leitlinien (+2) | r4-76 = | r4-75 quellen#schweiz > quellen#leitlinien > verstehen#mythen (+1) [VERLOREN]
+Frau schlägt Mann | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Mein Mann schlägt | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Mein Mann schlägt zu | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Mein Mann schlägt unsere Tochter | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Mein Mann schlägt unseren Sohn | r4-73 gefahr#gewalt | r4-76 = | r4-75 – [LEER]
+Meine Frau ist gewalttätig | r4-73 gefahr#gewalt > quellen#schweiz > quellen#leitlinien (+2) | r4-76 = | r4-75 quellen#schweiz > quellen#leitlinien > verstehen#mythen (+1) [VERLOREN]
+Mein Mann ist gewalttätig | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Meine Frau bedroht unsere Familie | r4-73 quellen#leitlinien > quellen#forschung | r4-76 = | r4-75 =
+Mein Partner schlägt die Katze | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung | r4-76 = | r4-75 =
+Meine Freundin schlägt zu | r4-73 grenzen#rollen > quellen#leitlinien > selbstfuersorge#kraft | r4-76 = | r4-75 =
+Gewalt Frau | r4-73 gefahr#gewalt > quellen#schweiz > quellen#leitlinien (+2) | r4-76 = | r4-75 quellen#schweiz > quellen#leitlinien > verstehen#mythen (+1) [VERLOREN]
+Gewalt gegen Männer | r4-73 gefahr#gewalt > verstehen#mythen > quellen#forschung | r4-76 = | r4-75 =
+häusliche Gewalt | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 =
+Opferhilfe | r4-73 gefahr#gewalt > kinder#hilfe > fragen#weitere (+1) | r4-76 = | r4-75 gefahr#gewalt > quellen#schweiz
+Polizei rufen | r4-73 krise#krise-schnell > gefahr#gewalt > fragen#f-einweisung (+1) | r4-76 = | r4-75 =
+Meine Mutter schlägt meinen Vater | r4-73 rolle#schuld > grenzen#rollen > kurz#jetzt (+1) | r4-76 = | r4-75 grenzen#rollen > rolle#schuld > kurz#jetzt (+1)
+Sie schlägt ihn | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Er schlägt sie | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =

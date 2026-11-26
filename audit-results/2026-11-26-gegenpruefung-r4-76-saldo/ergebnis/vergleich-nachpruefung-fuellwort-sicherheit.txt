@@ -1,0 +1,63 @@
+# 60 Anfragen · Bezug r4-73 · JS-Fehler 0
+# r4-76 gegen r4-73: vollständige Trefferliste gleich 60 von 60 · Ersttreffer gleich 60 · Sicherheitsabschnitt aus den ersten zwei verloren 0 · vorher Treffer, nachher leer 0
+# r4-75 gegen r4-73: vollständige Trefferliste gleich 52 von 60 · Ersttreffer gleich 54 · Sicherheitsabschnitt aus den ersten zwei verloren 0 · vorher Treffer, nachher leer 0
+Ich denke oft ans Sterben | r4-73 krise#suizid | r4-76 = | r4-75 =
+Ich denke sehr oft ans Sterben | r4-73 krise#suizid | r4-76 = | r4-75 =
+Ich denke immer wieder ans Sterben | r4-73 krise#suizid > verstehen#anspannung | r4-76 = | r4-75 =
+Ich denke immer öfter ans Sterben | r4-73 krise#suizid | r4-76 = | r4-75 =
+Ich denke ans Sterben | r4-73 krise#suizid > verstehen#anspannung > krise (+2) | r4-76 = | r4-75 =
+Ich denke oft an den Tod | r4-73 – | r4-76 = | r4-75 =
+Ich denke immer wieder an den Tod | r4-73 krise#suizid | r4-76 = | r4-75 =
+Ich habe immer wieder Suizidgedanken | r4-73 begriffe#begriffe | r4-76 = | r4-75 =
+Ich habe oft Suizidgedanken | r4-73 begriffe#begriffe > diagnose#begleiterkrankungen | r4-76 = | r4-75 =
+Ich denke oft an Suizid | r4-73 krise#suizid | r4-76 = | r4-75 =
+Ich denke immer wieder an Selbstmord | r4-73 krise#suizid | r4-76 = | r4-75 =
+Ich will immer wieder sterben | r4-73 krise#suizid > verstehen#borderline > begriffe#begriffe (+1) | r4-76 = | r4-75 =
+Ich möchte oft einfach sterben | r4-73 begriffe#begriffe | r4-76 = | r4-75 =
+Ich wünsche mir oft tot zu sein | r4-73 – | r4-76 = | r4-75 =
+Ich denke oft daran nicht mehr zu leben | r4-73 krise#suizid > verstehen#mythen > diagnose#abklaerung | r4-76 = | r4-75 =
+Ich habe immer wieder den Gedanken zu sterben | r4-73 begriffe#begriffe | r4-76 = | r4-75 =
+Ich habe ihr oft gesagt dass ich sterben will | r4-73 krise#suizid | r4-76 = | r4-75 =
+Ich sage immer wieder ich will sterben | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+17) | r4-76 = | r4-75 =
+Ich verletze mich immer wieder | r4-73 krise#suizid > verstehen#borderline > begriffe#begriffe | r4-76 = | r4-75 =
+Ich ritze mich immer wieder | r4-73 krise#suizid | r4-76 = | r4-75 =
+Ich schneide mich oft | r4-73 diagnose#begleiterkrankungen > verstehen#mythen | r4-76 = | r4-75 =
+Ich werde immer wieder geschlagen | r4-73 kurz#jetzt > begriffe#begriffe > quellen#forschung | r4-76 = | r4-75 =
+Ich werde oft bedroht | r4-73 begriffe#begriffe > rolle#an-grenzen > selbstfuersorge#warnsignale (+4) | r4-76 = | r4-75 =
+Ich habe immer wieder Angst vor ihm | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Mein Sohn denkt oft ans Sterben | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie denkt immer wieder ans Sterben | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie denkt ans Sterben | r4-73 beziehungen#verantwortung | r4-76 = | r4-75 krise#suizid > krise > kommunizieren#suizid-angesprochen (+1)
+Sie redet oft vom Sterben | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Er spricht oft davon zu sterben | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie sagt oft sie will sterben | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+17) | r4-76 = | r4-75 =
+Er sagt immer wieder er will nicht mehr leben | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+17) | r4-76 = | r4-75 =
+Sie schreibt oft sie möchte tot sein | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+17) | r4-76 = | r4-75 =
+Sie hat wieder gesagt sie will nicht mehr | r4-73 behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft (+17) | r4-76 = | r4-75 krise#suizid > selbstfuersorge#warnsignale > krise (+17)
+Er sagt immer wieder er kann nicht mehr | r4-73 selbstfuersorge#warnsignale > kurz > selbstfuersorge (+17) | r4-76 = | r4-75 =
+Sie sagt immer wieder das Leben hat keinen Sinn | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er sagt oft es hat alles keinen Sinn mehr | r4-73 – | r4-76 = | r4-75 =
+Sie sagt immer wieder sie wäre lieber tot | r4-73 – | r4-76 = | r4-75 =
+Er sagt immer wieder ohne ihn wären alle besser dran | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie sagt oft sie will einschlafen und nicht mehr aufwachen | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+17) | r4-76 = | r4-75 =
+Er hat wieder Tabletten gesammelt | r4-73 – | r4-76 = | r4-75 =
+Sie hat sich wieder verletzt | r4-73 krise#suizid > diagnose#suizidalitaet > krise#bleibt (+10) | r4-76 = | r4-75 =
+Er hat sich wieder geritzt | r4-73 krise#suizid | r4-76 = | r4-75 krise#suizid > diagnose#suizidalitaet > krise#bleibt (+10)
+Sie hat es schon oft versucht | r4-73 – | r4-76 = | r4-75 =
+Er hat es wieder versucht | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie hat wieder einen Suizidversuch gemacht | r4-73 krise#suizid > diagnose#suizidalitaet | r4-76 = | r4-75 =
+Er hat schon oft einen Suizidversuch gemacht | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie hat schon wieder eine Überdosis genommen | r4-73 quellen#forschung | r4-76 = | r4-75 =
+Er hat ihr wieder eine Ohrfeige gegeben | r4-73 – | r4-76 = | r4-75 gefahr#gewalt > kinder#eskalation > index#orientierung (+17)
+Sie hat mich wieder geschlagen | r4-73 kinder#eskalation > index#orientierung > fragen#schutz (+17) | r4-76 = | r4-75 gefahr#gewalt > kinder#eskalation > index#orientierung (+17)
+Er hat mich schon oft bedroht | r4-73 begriffe#begriffe > begriffe#b-selbstverletzung > begriffe#b-validierung (+10) | r4-76 = | r4-75 gefahr#gewalt > kinder#eskalation > index#orientierung (+17)
+Er hat mir wieder gedroht | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie sagt immer wieder sie tut sich etwas an | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er sagt oft er macht Schluss | r4-73 – | r4-76 = | r4-75 =
+Sie sagt immer wieder sie will weg sein | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er redet immer wieder vom Sterben und vom Tod | r4-73 krise#suizid | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Sie spricht immer wieder über Suizid | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er schreibt immer wieder Abschiedsbriefe | r4-73 verstehen#borderline > begriffe#begriffe > quellen#forschung | r4-76 = | r4-75 =
+Sie sagt sie sei lebensmüde | r4-73 krise#suizid > beziehungen#verantwortung > krise#selbstverletzung (+1) | r4-76 = | r4-75 =
+Er sagt immer wieder er sei lebensmüde | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie erzählt oft von Suizidgedanken | r4-73 krise#suizid | r4-76 = | r4-75 =

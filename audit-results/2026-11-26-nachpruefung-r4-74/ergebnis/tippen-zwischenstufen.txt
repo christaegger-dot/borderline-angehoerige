@@ -1,0 +1,36 @@
+# Tippen: 5452 Zwischenstufen aus 208 Sätzen (ab drei Zeichen)
+## a) Zwischenstufe mit Anheftung und Suizid unter den ersten zwei (oder Kinder zuerst) vorher, nachher nicht: 0
+## b) Anheftung verloren: 0
+## c) vorher Treffer, nachher keiner: 15
+«Sie redet immer wieder davon, sich umzub» | krise#suizid → –
+«Sie redet immer wieder davon, sich umzubr» | krise#suizid → –
+«Sie redet immer wieder davon, sich umzubri» | krise#suizid → –
+«Sie redet immer wieder davon, sich umzubrin» | krise#suizid → –
+«Sie redet immer wieder davon, sich umzubring» | krise#suizid → –
+«Sie redet immer wieder davon, sich umzubringe» | krise#suizid → –
+«Sie hat immer wieder gesagt, sie bringt si» | krise#suizid → –
+«Sie hat immer wieder gesagt, sie bringt sic» | krise#suizid → –
+«Meine Frau schlägt unse» | gefahr#gewalt → –
+«Sie ruft immer» | krise#suizid > grenzen#bruecke → –
+«Sie ruft immer » | krise#suizid > grenzen#bruecke → –
+«Sie ruft immer wie» | krise#suizid > grenzen#bruecke → –
+«Sie ruft immer wieder» | krise#suizid → –
+«Sie ruft immer wieder » | krise#suizid → –
+«Sie ruft immer wieder an» | krise#suizid → –
+## Aufblitzen nachher: Zwischenstufe heftet einen Sicherheitsabschnitt an, der ganze Satz nicht (je Satz die erste Stufe): 16
+Sie will nicht mehr weiter | Zwischenstufe «Sie will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Sie will nicht mehr weitermachen | Zwischenstufe «Sie will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Er will nicht mehr zur Schule | Zwischenstufe «Er will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Sie will nicht mehr zur Therapie | Zwischenstufe «Sie will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Er will nicht mehr reden | Zwischenstufe «Er will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Sie will nicht mehr mit mir reden | Zwischenstufe «Sie will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Er will nicht mehr arbeiten | Zwischenstufe «Er will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Meine Partnerin will nicht mehr, Trennung | Zwischenstufe «Meine Partnerin will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Er will nicht mehr mit mir zusammen sein | Zwischenstufe «Er will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Ich mag nicht mehr diskutieren | Zwischenstufe «Ich mag nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: –
+Kind will nicht mehr zum Vater | Zwischenstufe «Kind will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Sie will nicht mehr essen | Zwischenstufe «Sie will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Sie will nicht mehr, Suizit | Zwischenstufe «Sie will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: krise#suizid > krise > diagnose#suizidalitaet
+Er hat gesagt er will nicht mehr und hat Tabletten gesammelt | Zwischenstufe «Er hat gesagt er will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft
+Ich will nicht mehr leben | Zwischenstufe «Ich will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: krise#suizid > krise > diagnose#suizidalitaet
+Ich will nicht mehr da sein | Zwischenstufe «Ich will nicht mehr»: krise#suizid > selbstfuersorge#warnsignale > krise [P] | ganzer Satz: krise#suizid > krise > diagnose#suizidalitaet

@@ -1,0 +1,38 @@
+# Messvarianten ausserhalb des Repositorys (Kopien von site/ des PR-Kopfs b87535b mit je einer geänderten Zeile in js/interaktion.js; nur zur Eingrenzung der Ursache, keine Korrektur)
+# Zähler: «Suizid vorher unter den ersten zwei, nachher nicht» (ohne Kinder zuerst) und «vorher Treffer, nachher keiner», je gegen Vorher r4-73 (9d0d237)
+## PR-Kopf r4-74
+Suchtest: 253 von 253
+proben-toetungswort-fuellwort-ergebnis.txt: 54 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 20 · vorher Treffer, nachher keiner: 7
+proben-fuellwort-sicherheit-ergebnis.txt: 60 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 14 · vorher Treffer, nachher keiner: 5
+proben-ergebnis.txt: 479 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 5 · vorher Treffer, nachher keiner: 4
+## V1: alle 13 neuen Füllwörter entfernt
+Suchtest: 252 von 253 (Abweichung: «Sie hat mir eine Ohrfeige gegeben»)
+proben-toetungswort-fuellwort.txt: 54 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 0 · vorher Treffer, nachher keiner: 0
+proben-fuellwort-sicherheit.txt: 60 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 0 · vorher Treffer, nachher keiner: 0
+proben.txt: 479 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 1 · vorher Treffer, nachher keiner: 4
+## V2: nur «sagt», «immer», «wieder», «oft» entfernt (neun Füllwörter bleiben)
+Suchtest: 253 von 253
+proben-toetungswort-fuellwort.txt: 54 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 0 · vorher Treffer, nachher keiner: 0
+proben-fuellwort-sicherheit.txt: 60 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 0 · vorher Treffer, nachher keiner: 0
+proben.txt: 479 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 1 · vorher Treffer, nachher keiner: 4
+Kombinationslauf gegen V2:
+1 Tötungswort mal Zusätze: 2000 Anfragen · a) 3 · a') 277 · b) 0 · c) 5 · Reihenfolge der Anheftung geändert 81
+1b Suizid und Gewalt mal Zusätze: 680 Anfragen · Anheftung verloren 0 · Suizid aus den ersten zwei 0 · vorher Treffer, nachher keiner 0
+2 Ich-Aussagen aus Bausteinen: 4416 Anfragen · ohne Treffer vorher 2161, nachher 1929 · c) vorher Treffer, nachher keiner 57 · neu mit Treffer 289 · Sicherheitsabschnitt verschwunden 22
+3 Tippen: 5452 Zwischenstufen aus 208 Sätzen · a) 0 · b) 0 · c) 1 · Sätze mit aufblitzender Anheftung 16
+JS-Fehler: 0
+## V3: nur «immer», «wieder», «oft» entfernt («sagt» bleibt Füllwort)
+Suchtest: 253 von 253
+proben-toetungswort-fuellwort.txt: 54 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 8 · vorher Treffer, nachher keiner: 8
+proben-fuellwort-sicherheit.txt: 60 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 4 · vorher Treffer, nachher keiner: 2
+proben.txt: 479 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 2 · vorher Treffer, nachher keiner: 4
+## V4: nur «immer», «wieder» entfernt
+Suchtest: 253 von 253
+proben-toetungswort-fuellwort.txt: 54 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 8 · vorher Treffer, nachher keiner: 8
+proben-fuellwort-sicherheit.txt: 60 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 6 · vorher Treffer, nachher keiner: 3
+proben.txt: 479 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 2 · vorher Treffer, nachher keiner: 3
+## V5: Aufruf der Wortstamm-Regel entfernt (Ergänzung gegenüber #713), Füllwörter wie im PR
+Suchtest: 247 von 253 (die sechs Abweichungen sind Erwartungen der Ergänzung)
+proben-toetungswort-fuellwort.txt: 54 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 20 · vorher Treffer, nachher keiner: 7
+proben-fuellwort-sicherheit.txt: 60 Anfragen · Suizid vorher unter den ersten zwei, nachher nicht: 14 · vorher Treffer, nachher keiner: 5
+## Füllwörter im Suchtext des Abschnitts krise.html#suizid (PR-Kopf): sagt 1, immer 1, wieder 3, oft 1; die übrigen neun 0

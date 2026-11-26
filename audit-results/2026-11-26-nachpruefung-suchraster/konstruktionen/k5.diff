@@ -1,0 +1,12 @@
+diff -ru r76/site/js/interaktion.js k5/site/js/interaktion.js
+--- r76/site/js/interaktion.js	2026-11-26 20:54:23.000000000 +0000
++++ k5/site/js/interaktion.js	2026-11-26 23:10:04.264050194 +0000
+@@ -506,7 +506,7 @@
+           .filter(function (entry) { return entry.score >= 0; })
+           .sort(function (a, b) { return b.score - a.score || a.order - b.order; });
+       }
+-      if (groups.pins) {
++      if (false && groups.pins) {
+         /* Sicherheitsabschnitte zuoberst, in der Reihenfolge der Faustregel (r4-32) */
+         var pinnedItems = groups.pins.map(function (target) {
+           return items.filter(function (item) { return item.getAttribute('data-search-target') === target; })[0];

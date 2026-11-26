@@ -1,0 +1,13 @@
+# Suchraster · Bezug r4-73 · Prüfstand r4-75
+Ergebnis: VERSCHLECHTERUNG · 1125 Anfragen · 44 Verschlechterungen · JS-Fehler 0 · 8 s
+- proben: 1125 Anfragen · geändert 369 · verloren 36 · verdrängt 6 · Anheftung verloren 0 · leer 12 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 175
+Alle Ausnahmen angewendet oder keine eingetragen.
+
+## proben: 1125 Anfragen · geändert 369 · verloren 36 · verdrängt 6 · Anheftung verloren 0 · leer 12 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 175
+LEER | proben | Ich weine oft | Bezug diagnose#begleiterkrankungen | Prüfstand –
+VERDRAENGT | proben | suizidgefährdet und gewalttätig | Bezug gefahr#gewalt > kinder#eskalation > index#orientierung | Prüfstand krise#suizid > gefahr#gewalt > krise [angeheftet]
+VERDRAENGT | proben | Er ist suizidgefährdet und schlägt mich | Bezug gefahr#gewalt > kinder#eskalation > index#orientierung | Prüfstand krise#suizid > gefahr#gewalt > krise [angeheftet]
+VERDRAENGT | proben | Selbstverletzungen | Bezug diagnose#suizidalitaet > krise#suizid > kurz#borderline | Prüfstand krise#selbstverletzung > krise > diagnose#suizidalitaet
+VERLOREN | proben | Berufsgeheimnis | Bezug quellen#diagnostik > kinder#eskalation | Prüfstand behandlung#auskunft > quellen#diagnostik > kinder#eskalation
+VERDRAENGT | proben | Er sagt immer wieder er schlägt mich tot | Bezug krise#suizid | Prüfstand gefahr#gewalt > kinder#eskalation > index#orientierung [angeheftet]
+rc=1 dauer=9s

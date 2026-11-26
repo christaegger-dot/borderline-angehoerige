@@ -1,0 +1,2 @@
+Suchraster · Bezug r4-73 · Prüfstand r4-76
+Suche unverändert: suche.html, js/interaktion.js und _headers sind bis auf die Versionskennung byte-gleich. Kein Browserlauf nötig.

@@ -1,0 +1,15 @@
+# Gewollte Verluste für authoring/tools/suchraster.mjs, mit Begründung und Entscheid. Spalten durch Tabulator getrennt.
+# Muster: genaue Anfrage oder /regulärer Ausdruck/ auf die klein geschriebene Anfrage. Verlust: Abschnitt, LEER oder ANHEFTUNG:<Abschnitt>.
+# Ersatz: Abschnitt, der im Prüfstand unter den ersten zwei stehen muss, oder «–». Stand 26.11.2026: keine Ausnahmen.
+Muster	Verlust	Ersatz	Begründung	Entscheid
+/./	krise.html#suizid	–	Bauweise neu	im PR
+/./	krise.html#selbstverletzung	–	Bauweise neu	im PR
+/./	gefahr.html#gewalt	–	Bauweise neu	im PR
+/./	kinder.html#eskalation	–	Bauweise neu	im PR
+/./	kommunizieren.html#suizid-angesprochen	–	Bauweise neu	im PR
+/./	LEER	–	Bauweise neu	im PR
+/./	ANHEFTUNG:krise.html#suizid	–	Bauweise neu	im PR
+/./	ANHEFTUNG:gefahr.html#gewalt	–	Bauweise neu	im PR
+/./	ANHEFTUNG:krise.html#selbstverletzung	–	Bauweise neu	im PR
+/./	ANHEFTUNG:kinder.html#eskalation	–	Bauweise neu	im PR
+/./	ANHEFTUNG:kommunizieren.html#suizid-angesprochen	–	Bauweise neu	im PR

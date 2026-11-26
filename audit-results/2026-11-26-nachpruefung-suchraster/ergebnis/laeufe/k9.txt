@@ -1,0 +1,13 @@
+# Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 45603 Anfragen · 1089 Verschlechterungen · JS-Fehler 0 · 280 s
+- saetze: 23328 Anfragen · geändert 1818 · verloren 0 · verdrängt 90 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 90
+- ich: 4416 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+- ichRahmen: 4320 Anfragen · geändert 400 · verloren 0 · verdrängt 80 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 80
+- proben: 1125 Anfragen · geändert 156 · verloren 0 · verdrängt 44 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 44
+- kombinationen: 5622 Anfragen · geändert 2871 · verloren 0 · verdrängt 712 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 712
+- tippen: 6792 Anfragen · geändert 442 · verloren 0 · verdrängt 163 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 163
+Alle Ausnahmen angewendet oder keine eingetragen.
+
+## saetze: 23328 Anfragen · geändert 1818 · verloren 0 · verdrängt 90 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 90
+VERDRAENGT | saetze | bringt sich um | Bezug kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt [angeheftet] | Prüfstand gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen [angeheftet]
+rc=1 dauer=281s

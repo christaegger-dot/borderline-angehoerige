@@ -1,0 +1,8 @@
+== r76
+Er will sich umbringen	krise.html#suizid > gefahr.html#gewalt > krise.html
+Mein Mann droht, mich umzubringen.	gefahr.html#gewalt > krise.html#suizid > kinder.html#eskalation
+Ich bringe mich um	kommunizieren.html#suizid-angesprochen > krise.html#suizid > gefahr.html#gewalt
+== k9
+Er will sich umbringen	gefahr.html#gewalt > krise.html#suizid > krise.html
+Mein Mann droht, mich umzubringen.	krise.html#suizid > gefahr.html#gewalt > kinder.html#eskalation
+Ich bringe mich um	gefahr.html#gewalt > krise.html#suizid > kommunizieren.html#suizid-angesprochen

@@ -1,0 +1,13 @@
+# Suchraster · Bezug r4-73 · Prüfstand r4-75
+Ergebnis: KEINE VERSCHLECHTERUNG · 1125 Anfragen · 0 Verschlechterungen · JS-Fehler 0 · 8 s
+- proben: 1125 Anfragen · geändert 369 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 44 · Sicherheitsabschnitt neu oben 175
+Ausnahmen ohne Anwendung (prüfen, ob noch nötig): 6
+  - /./ · kommunizieren.html#suizid-angesprochen · –
+  - /./ · ANHEFTUNG:krise.html#suizid · –
+  - /./ · ANHEFTUNG:gefahr.html#gewalt · –
+  - /./ · ANHEFTUNG:krise.html#selbstverletzung · –
+  - /./ · ANHEFTUNG:kinder.html#eskalation · –
+  - /./ · ANHEFTUNG:kommunizieren.html#suizid-angesprochen · –
+
+## proben: 1125 Anfragen · geändert 369 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 44 · Sicherheitsabschnitt neu oben 175
+rc=0 dauer=10s

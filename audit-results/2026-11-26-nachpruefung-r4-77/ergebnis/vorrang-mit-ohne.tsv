@@ -1,0 +1,8 @@
+Anfrage-Kategorie	Anfrage	r4-77 (mit Vorrang-Regel)	r4-77 ohne Vorrang-Regel	angeheftet
+x	schlägt was tun	kinder#eskalation > gefahr#gewalt > rolle#schuld > selbstfuersorge#warnsignale [A]	gefahr#gewalt > kinder#eskalation > rolle#schuld > selbstfuersorge#warnsignale	gefahr#gewalt (Tötungswort/alt)
+x	Ich brauche Hilfe, mein Partner schlägt mich	kinder#eskalation > gefahr#gewalt > krise#krise-schnell > gefahr#riskant [A]	gefahr#gewalt > kinder#eskalation > krise#krise-schnell > gefahr#riskant	gefahr#gewalt (Tötungswort/alt)
+x	Gewalt was tun	kinder#eskalation > gefahr#gewalt > rolle#schuld > selbstfuersorge#warnsignale [A]	gefahr#gewalt > kinder#eskalation > rolle#schuld > selbstfuersorge#warnsignale	gefahr#gewalt (Tötungswort/alt)
+x	Gewalt gegen Kinder	kinder#eskalation > gefahr#gewalt > grenzen#rollen > jugendliche#geschwister [A]	kinder#eskalation > gefahr#gewalt > grenzen#rollen > jugendliche#geschwister	kinder#eskalation, gefahr#gewalt (Tötungswort/alt)
+x	selbstverletzung immer wieder	krise#suizid > krise#selbstverletzung > verstehen#borderline > begriffe#begriffe [A]	krise#selbstverletzung > krise#suizid > verstehen#borderline > begriffe#begriffe	krise#selbstverletzung (Tötungswort/alt)
+x	Sie hat Suizidgedanken und ritzt sich	krise#selbstverletzung > krise#suizid [A]	krise#suizid > krise#selbstverletzung	krise#suizid (Tötungswort/alt)
+x	Er schlägt mich vor den Kindern	kinder#eskalation > gefahr#gewalt > kinder#schnell > kurz#jetzt [A]	gefahr#gewalt > kinder#eskalation > kinder#schnell > kurz#jetzt	gefahr#gewalt (Tötungswort/alt)

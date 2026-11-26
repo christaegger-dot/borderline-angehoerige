@@ -1027,7 +1027,12 @@ html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-to
 .puk-site-filter{margin-block:var(--space-5);padding:var(--space-5);background:var(--flaeche-grau)}
 [data-puk-filter]:not([data-filter-enhanced]) .puk-site-filter,[data-puk-search]:not([data-search-enhanced]) .puk-site-filter{display:none}
 .puk-site-filter label{display:block;margin-bottom:var(--space-2);font-weight:var(--fw-medium)}
-.puk-site-filter input[type="search"]{box-sizing:border-box;width:100%;min-height:2.75rem;padding:var(--space-2) var(--space-3);border:1px solid var(--linie-bedienung);border-radius:var(--radius-sm);background:var(--papier);color:var(--text-default)}
+.puk-site-filter input[type="search"]{box-sizing:border-box;width:100%;min-height:2.75rem;padding:var(--space-2) var(--space-3);border:1px solid var(--linie-bedienung);border-radius:var(--radius-sm);background:var(--papier);color:var(--text-default);font:inherit;font-size:1rem;font-weight:var(--fw-regular,400)}
+/* r4-73 (aus PR #713, Prüfbericht vom 23.10.2026, X3; Entscheid «Alles auf 16 px» vom 26.11.2026): Die Suchfelder standen in der
+   Browser-Vorgabe (13,33 px Arial, wächst nicht mit der Schriftgrösse). Jetzt Seitenschrift in 1rem wie die übrige Bedienung
+   (#713 sah die Grösse des Lesetexts vor; damit wäre der Hinweistext am Telefon noch stärker abgeschnitten); Hinweistext mit
+   mindestens 4,5 : 1 in allen Browsern. */
+.puk-site-filter input[type="search"]::placeholder{color:var(--text-muted);opacity:1}
 .puk-site-filter input[type="search"]:focus-visible{outline:var(--border-width-strong) solid var(--puk-blue-100);outline-offset:var(--space-1)}
 .puk-site-filter__status{margin-bottom:0;color:var(--text-muted);font:var(--type-body-sm)}
 .puk-site-filter__empty{margin-top:var(--space-5);font-weight:var(--fw-medium)}

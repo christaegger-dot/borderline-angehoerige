@@ -1,0 +1,95 @@
+vorher {
+ "kurz": {
+  "ersteSituationen": [
+   "Ein Gespräch kippt",
+   "Sie wissen nicht, was Ihre Aufgabe ist"
+  ],
+  "akuthinweisVorErsterAnderer": false,
+  "akuthinweiseAufSeite": 1,
+  "kinderLink": "kinder.html"
+ },
+ "fragen": {
+  "antworten": 27,
+  "offenImText": "f-bedrohlich, f-einweisung",
+  "kinder": "eingeklappt",
+  "verlassen": "eingeklappt",
+  "depression": "eingeklappt",
+  "bedrohlich": "offen im Text",
+  "medikamente": "eingeklappt",
+  "mediLink": "behandlung.html#therapieformen «Therapieformen»"
+ },
+ "suche": {
+  "sichtbar": true,
+  "links": [
+   "fragen.html «häufigen Fragen»"
+  ]
+ },
+ "feld": {
+  "320 suche": "13.33px Arial · Hinweis 305 von 214 px · Kontrast 4.61 · Höhe 44",
+  "320 begriffe": "13.33px Arial · Hinweis 207 von 214 px · Kontrast 4.61 · Höhe 44",
+  "320 quellen": "13.33px Arial · Hinweis 144 von 214 px · Kontrast 4.61 · Höhe 44",
+  "360 suche": "13.33px Arial · Hinweis 305 von 254 px · Kontrast 4.61 · Höhe 44",
+  "360 begriffe": "13.33px Arial · Hinweis 207 von 254 px · Kontrast 4.61 · Höhe 44",
+  "360 quellen": "13.33px Arial · Hinweis 144 von 254 px · Kontrast 4.61 · Höhe 44",
+  "375 suche": "13.33px Arial · Hinweis 305 von 269 px · Kontrast 4.61 · Höhe 44",
+  "375 begriffe": "13.33px Arial · Hinweis 207 von 269 px · Kontrast 4.61 · Höhe 44",
+  "375 quellen": "13.33px Arial · Hinweis 144 von 269 px · Kontrast 4.61 · Höhe 44",
+  "1440 suche": "13.33px Arial · Hinweis 305 von 654 px · Kontrast 4.61 · Höhe 44",
+  "1440 begriffe": "13.33px Arial · Hinweis 207 von 654 px · Kontrast 4.61 · Höhe 44",
+  "1440 quellen": "13.33px Arial · Hinweis 144 von 654 px · Kontrast 4.61 · Höhe 44"
+ },
+ "akkordeon": {
+  "imAkkordeon": true,
+  "aufgeklappt": "false",
+  "fokus": "kritisch"
+ },
+ "jsFehler": 0
+}
+nachher {
+ "kurz": {
+  "ersteSituationen": [
+   "Sie sorgen sich um die Sicherheit",
+   "Ein Gespräch kippt"
+  ],
+  "akuthinweisVorErsterAnderer": true,
+  "akuthinweiseAufSeite": 1,
+  "kinderLink": "kinder.html#schnell"
+ },
+ "fragen": {
+  "antworten": 27,
+  "offenImText": "f-depression, f-bedrohlich, f-einweisung, f-kinder, f-verlassen",
+  "kinder": "offen im Text",
+  "verlassen": "offen im Text",
+  "depression": "offen im Text",
+  "bedrohlich": "offen im Text",
+  "medikamente": "eingeklappt",
+  "mediLink": "behandlung.html#medikamente «Begleiterkrankungen und Medikamente»"
+ },
+ "suche": {
+  "sichtbar": true,
+  "links": [
+   "fragen.html «häufigen Fragen»",
+   "krise.html#krise-schnell ««Ich sorge mich um Sicherheit, Selbstgefährdung oder Gewalt.»»"
+  ]
+ },
+ "feld": {
+  "320 suche": "16px Rubik · Hinweis 385 von 214 px · Kontrast 5.92 · Höhe 44",
+  "320 begriffe": "16px Rubik · Hinweis 259 von 214 px · Kontrast 5.92 · Höhe 44",
+  "320 quellen": "16px Rubik · Hinweis 180 von 214 px · Kontrast 5.92 · Höhe 44",
+  "360 suche": "16px Rubik · Hinweis 385 von 254 px · Kontrast 5.92 · Höhe 44",
+  "360 begriffe": "16px Rubik · Hinweis 259 von 254 px · Kontrast 5.92 · Höhe 44",
+  "360 quellen": "16px Rubik · Hinweis 180 von 254 px · Kontrast 5.92 · Höhe 44",
+  "375 suche": "16px Rubik · Hinweis 385 von 269 px · Kontrast 5.92 · Höhe 44",
+  "375 begriffe": "16px Rubik · Hinweis 259 von 269 px · Kontrast 5.92 · Höhe 44",
+  "375 quellen": "16px Rubik · Hinweis 180 von 269 px · Kontrast 5.92 · Höhe 44",
+  "1440 suche": "16px Rubik · Hinweis 385 von 654 px · Kontrast 5.92 · Höhe 44",
+  "1440 begriffe": "16px Rubik · Hinweis 259 von 654 px · Kontrast 5.92 · Höhe 44",
+  "1440 quellen": "16px Rubik · Hinweis 180 von 654 px · Kontrast 5.92 · Höhe 44"
+ },
+ "akkordeon": {
+  "imAkkordeon": true,
+  "aufgeklappt": "true",
+  "fokus": "Schaltfläche"
+ },
+ "jsFehler": 0
+}

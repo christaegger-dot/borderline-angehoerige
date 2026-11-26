@@ -1,0 +1,56 @@
+# N Tötungswort (trennbares Verb oder Mundart-/Tippform) zusammen mit neuen Füllwörtern, natürliche Sätze ohne Satzzeichen
+Er bringt sich um sagt er immer wieder
+Sie bringt sich um hat sie wieder gesagt
+Sie sagt immer wieder sie bringt sich um wegen mir
+Mein Sohn sagt immer wieder ich bring mich um Mama
+Er schreibt immer wieder er bringt sich um heute Nacht
+Sie sagt oft sie bringt sich um wegen der Trennung
+Er sagt immer er bringt sich um ohne mich
+Sie schreibt mir oft sie bringt sich um heute
+Er redet immer wieder davon er bringt sich um irgendwann
+Sie erzählt immer wieder sie bringt sich um eines Tages
+Er sagte er bringt sich um noch heute
+Meine Tochter sagt immer wieder sie bringt sich um mit Tabletten
+Er sagt immer wieder ich bringe mich um mit dem Auto
+Sie sagt sie bringt sich um mit Tabletten
+Er bringt sich um mit Tabletten sagt er
+Sie sagt immer wieder sie bringe sich um deswegen
+Er sagt immer wieder er bringt mich um eines Tages
+Mein Mann sagt oft er bringt mich um im Schlaf
+Er schreibt immer wieder er bringt uns um alle
+Sie sagt immer wieder sie bringt die Kinder um und sich auch
+Er sagt immer wieder er bringt sich um was soll ich tun
+Sie sagt immer wieder sie bringt sich um was kann ich machen
+Er sagt oft er bringt sich um wie reagieren
+Sie sagt wieder sie bringt sich um soll ich die Polizei rufen
+Er sagt immer wieder er bringt sich um ist das ernst
+Sie sagt immer wieder sie bringt sich um meint sie das ernst
+Er droht immer wieder er bringt sich um ernst nehmen
+Tochter sagt immer wieder sie bringt sich um Hilfe
+Sohn schreibt wieder er bringt sich um Notfall
+Partner sagt oft er bringt sich um Angst
+Si seit immer wieder si bringt sich um
+Er seit immer wieder er bringi sich um
+Sie sagt immer wieder sie well sich umbringä
+Er sagt immer wieder er will sich umbrigen
+Sie sagt oft sie will sich umbringn
+Er redet immer wieder vom Umbringen
+Sie spricht oft vom Umbringen
+Er sagt immer wieder er macht Schluss mit dem Leben
+Sie sagt immer wieder sie erhängt sich
+Er sagt oft er erschiesst sich
+Sie sagt immer wieder sie springt vor den Zug
+Er sagt immer wieder er bringt sich um
+Sie sagt oft sie bringt sich um
+Er sagt immer wieder: Ich bringe mich um.
+Sie sagt immer wieder, sie bringt sich um, wegen mir
+# O Dieselben Sätze ohne Füllwörter (Kontrolle: wird das Tötungswort überhaupt erkannt?)
+Er bringt sich um wegen mir
+Sie bringt sich um heute Nacht
+Ich bring mich um Mama
+Sie bringt sich um mit Tabletten
+Er bringt mich um eines Tages
+Er bringt sich um was soll ich tun
+Sie bringt sich um soll ich die Polizei rufen
+Er bringt sich um ist das ernst
+Sie bringt sich um Hilfe

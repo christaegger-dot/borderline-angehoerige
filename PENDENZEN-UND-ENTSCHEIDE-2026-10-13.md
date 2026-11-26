@@ -6,6 +6,16 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
+## Layouttest · Ausnahme B2c als bestanden gewertet · offen seit 26.11.2026
+
+**Auftrag von Christa Egger, 26.11.2026:** «Lass den Layouttest die Ausnahme B2c als bestanden werten». Das ändert den Entscheid in `authoring/UEBERGABE-GESTALTUNG-2026-10-21.md` (B2c, NP708-N2), wonach das Werkzeug unverändert bleibt.
+
+**Inhalt:** `authoring/tools/layouttest.cjs` prüft bei 375 px auf «Verstehen» nicht mehr die Höhe der ganzen Anspannungskurve, sondern das B2c-Kriterium aus A04-2014: genau vier sichtbare Phasenkarten (`ol.bl-phase-actions > li`, nicht im Aufklappbereich), und die vierte endet höchstens 1800 px nach dem oberen Rand der Figur. Ist die Figur höher, meldet der Test «Bekannte Ausnahme B2c bestanden» mit beiden Werten, ohne Abweichung. Website, Stylesheet, Skript und Renderer sind unverändert.
+
+**Messung (Playwright 1.64.0, Chromium 1248):** Figur 1992 px, vierte Phase endet bei 1603 px. Layouttest 240 Zustände, 27 Bedienproben, 0 Abweichungen, Exit 0. Gegenprobe mit Grenze 1500 px: 1 Abweichung, Exit 1. Selbsttest 125/125, `--verify-site` 35 Dateien bytegleich, Suchtest 216/216, Sprach-/UI-Test 73/73.
+
+**Offen:** Nachprüfung durch eine andere Sitzung; Merge nur auf Auftrag.
+
 ## Korrektur · r4-66 · Befund N61-2 · offen seit 30.10.2026
 
 **GitHub:** Branch `pruefung/2026-10-30-nachpruefung-r4-61` (Name historisch), [PR #787](https://github.com/christaegger-dot/borderline-angehoerige/pull/787), seit 11:11 UTC kein Entwurf mehr (Codex-Auslöser «Draft marked ready»), **nicht gemergt**. Auftrag von Christa Egger, 30.10.2026: «Nachbesserung N61-1 bis N61-3 umsetzen»; Entscheide «#787 neu fassen, dann prüfen» und, nach N65-1 der Nachprüfung r4-65 ([PR #793](https://github.com/christaegger-dot/borderline-angehoerige/pull/793)), «#787 als r4-66 neu fassen». Grundlage: `main` mit r4-65 (#784, `19a72dc`). Nachweis: [`audit-results/2026-10-30-n61-2-r4-66/BERICHT.md`](audit-results/2026-10-30-n61-2-r4-66/BERICHT.md).

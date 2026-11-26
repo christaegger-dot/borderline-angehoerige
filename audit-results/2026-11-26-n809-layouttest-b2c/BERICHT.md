@@ -6,7 +6,7 @@
 - **Grundlage:**
   - Nachprüfung von PR #809 ([PR #810](https://github.com/christaegger-dot/borderline-angehoerige/pull/810), Entwurf), Nachweis `audit-results/2026-11-26-nachpruefung-pr-809/NACHPRUEFUNG.md`.
   - `main` auf `5b7e799` (Merge von #809).
-- **Branch:** `korrektur/2026-11-26-n809-layouttest-b2c`. Vor dem Anlegen geprüft: Es gab keinen Branch mit diesem Namen.
+- **Branch:** `korrektur/2026-11-26-n809-layouttest-b2c`, [PR #811](https://github.com/christaegger-dot/borderline-angehoerige/pull/811) (Entwurf). Vor dem Anlegen geprüft: Es gab keinen Branch mit diesem Namen.
 - **Wer baut:** die Sitzung, die die Nachprüfung #810 verfasst hat. **Diese Nachbesserung muss eine andere Sitzung prüfen.**
 - **Nicht umgesetzt:**
   - N809-1 (Ablauf, Merge-Auftrag zu #809): Das kann nur Christa Egger belegen.

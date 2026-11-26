@@ -1,0 +1,91 @@
+# Nachprüfung r4-67 · 86 Mutationen · Chromium 153.0.8010.12 · 2026-10-30T11:09:18.510Z
+# Gate-Grundzustand (Blocker): r4-65: keine · r4-67: keine · V-fO-selbst-HTML: keine · V-fO-Vorfahr-HTML: keine
+# Chromium-Grundzustand: Zeile link «Kurz und klar», Menü link «Kurz und klar»
+# Spalten: Nr | Fall | Gate r4-65 | Gate r4-67 | Gate V-fO-selbst-HTML | Gate V-fO-Vorfahr-HTML | Chromium | Soll | stimmt r4-65 | stimmt r4-67 | stimmt V-fO-selbst-HTML | stimmt V-fO-Vorfahr-HTML
+K1 | Zeile: fO > span hidden aria-label | utility-nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K2 | Zeile: fO > span inert aria-label | utility-nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K3 | Zeile: fO > span hidden Text | utility-nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K4 | Zeile: fO > span inert Text | utility-nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K5 | Zeile: fO > div > span hidden Text (tiefer) | utility-nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K6 | Zeile: fO > span aria-hidden Text | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K7 | Zeile: fO > sichtbarer Text | utility-nav | utility-nav | utility-nav | utility-nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K8 | Zeile: fO > sichtbares aria-label | utility-nav | utility-nav | utility-nav | utility-nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K9 | Zeile: foreignObject hidden > span Text | utility-nav | utility-nav | – | utility-nav | link «Kurz und klar» | kein | NEIN | NEIN | ja | NEIN
+K10 | Zeile: foreignObject inert > span Text | utility-nav | utility-nav | – | utility-nav | link «Kurz und klar» | kein | NEIN | NEIN | ja | NEIN
+K11 | Zeile: foreignObject hidden > span aria-label | utility-nav | utility-nav | – | utility-nav | link «Kurz und klar» | kein | NEIN | NEIN | ja | NEIN
+K12 | Zeile: foreignObject aria-hidden > span Text | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K13 | Zeile: svg aria-hidden > fO > span Text | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K14 | Zeile: fO > svg aria-label (verschachtelt) | utility-nav | utility-nav | utility-nav | utility-nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K15 | Zeile: fO > svg hidden aria-label (verschachtelt) | utility-nav | utility-nav | utility-nav | – | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | ja
+K16 | Zeile: fO > svg inert aria-label (verschachtelt) | utility-nav | utility-nav | utility-nav | – | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | ja
+K17 | Zeile: fO > span hidden > svg aria-label | utility-nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K18 | Zeile: fO > div inert > svg aria-label | utility-nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K19 | Zeile: fO > svg > fO > span hidden Text (doppelt) | utility-nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K20 | Zeile: fO > svg > fO > span Text (doppelt, sichtbar) | utility-nav | utility-nav | utility-nav | utility-nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K21 | Zeile: svg hidden aria-label | utility-nav | utility-nav | utility-nav | utility-nav | link «Kurz und klar Pfeil» | Blocker | ja | ja | ja | ja
+K22 | Zeile: svg inert aria-label | utility-nav | utility-nav | utility-nav | utility-nav | link «Kurz und klar Pfeil» | Blocker | ja | ja | ja | ja
+K23 | Zeile: svg aria-hidden aria-label | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K24 | Zeile: svg hidden > title | utility-nav | utility-nav | utility-nav | utility-nav | link «Kurz und klar Mehr» | Blocker | ja | ja | ja | ja
+K25 | Zeile: svg > g hidden > title | utility-nav | utility-nav | utility-nav | utility-nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K26 | Zeile: svg > g inert > title | utility-nav | utility-nav | utility-nav | utility-nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K27 | Zeile: svg > g aria-hidden > title | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K28 | Zeile: svg > g hidden aria-label | utility-nav | utility-nav | utility-nav | utility-nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K29 | Zeile: span hidden aria-label (HTML) | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K30 | Zeile: span inert Text (HTML) | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K31 | Menü: fO > span hidden aria-label | nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K32 | Menü: fO > span inert aria-label | nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K33 | Menü: fO > span hidden Text | nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K34 | Menü: fO > span inert Text | nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K35 | Menü: fO > div > span hidden Text (tiefer) | nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K36 | Menü: fO > span aria-hidden Text | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K37 | Menü: fO > sichtbarer Text | nav | nav | nav | nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K38 | Menü: fO > sichtbares aria-label | nav | nav | nav | nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K39 | Menü: foreignObject hidden > span Text | nav | nav | – | nav | link «Kurz und klar» | kein | NEIN | NEIN | ja | NEIN
+K40 | Menü: foreignObject inert > span Text | nav | nav | – | nav | link «Kurz und klar» | kein | NEIN | NEIN | ja | NEIN
+K41 | Menü: foreignObject hidden > span aria-label | nav | nav | – | nav | link «Kurz und klar» | kein | NEIN | NEIN | ja | NEIN
+K42 | Menü: foreignObject aria-hidden > span Text | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K43 | Menü: svg aria-hidden > fO > span Text | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K44 | Menü: fO > svg aria-label (verschachtelt) | nav | nav | nav | nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K45 | Menü: fO > svg hidden aria-label (verschachtelt) | nav | nav | nav | – | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | ja
+K46 | Menü: fO > svg inert aria-label (verschachtelt) | nav | nav | nav | – | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | ja
+K47 | Menü: fO > span hidden > svg aria-label | nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K48 | Menü: fO > div inert > svg aria-label | nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K49 | Menü: fO > svg > fO > span hidden Text (doppelt) | nav | – | – | – | link «Kurz und klar» | kein | NEIN | ja | ja | ja
+K50 | Menü: fO > svg > fO > span Text (doppelt, sichtbar) | nav | nav | nav | nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K51 | Menü: svg hidden aria-label | nav | nav | nav | nav | link «Kurz und klar Pfeil» | Blocker | ja | ja | ja | ja
+K52 | Menü: svg inert aria-label | nav | nav | nav | nav | link «Kurz und klar Pfeil» | Blocker | ja | ja | ja | ja
+K53 | Menü: svg aria-hidden aria-label | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K54 | Menü: svg hidden > title | nav | nav | nav | nav | link «Kurz und klar Mehr» | Blocker | ja | ja | ja | ja
+K55 | Menü: svg > g hidden > title | nav | nav | nav | nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K56 | Menü: svg > g inert > title | nav | nav | nav | nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K57 | Menü: svg > g aria-hidden > title | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K58 | Menü: svg > g hidden aria-label | nav | nav | nav | nav | link «Kurz und klar» | kein | NEIN | NEIN | NEIN | NEIN
+K59 | Menü: span hidden aria-label (HTML) | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K60 | Menü: span inert Text (HTML) | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K61 | Zeile: Link aria-hidden="true" | utility-nav | utility-nav | utility-nav | utility-nav | ignoriert | Blocker | ja | ja | ja | ja
+K62 | Zeile: Link inert | utility-nav | utility-nav | utility-nav | utility-nav | ignoriert | Blocker | ja | ja | ja | ja
+K63 | Zeile: Link aria-hidden="false" | – | – | – | – | link «Kurz und klar» | kein | ja | ja | ja | ja
+K64 | Zeile: nav aria-hidden="yes" | utility-nav | utility-nav | utility-nav | utility-nav | ignoriert | Blocker | ja | ja | ja | ja
+K65 | Menü: Link inert | nav | nav | nav | nav | ignoriert | Blocker | ja | ja | ja | ja
+K66 | Menü: Link aria-hidden="TRUE" | nav | nav | nav | nav | ignoriert | Blocker | ja | ja | ja | ja
+K67 | Subbar aria-hidden="true" | sender,utility-nav | sender,utility-nav | sender,utility-nav | sender,utility-nav | Absenderzeile ignoriert | Blocker | ja | ja | ja | ja
+K68 | Subbar hidden | sender,utility-nav | sender,utility-nav | sender,utility-nav | sender,utility-nav | Absenderzeile ignoriert | Blocker | ja | ja | ja | ja
+K69 | Subbar inert | sender,utility-nav | sender,utility-nav | sender,utility-nav | sender,utility-nav | Absenderzeile ignoriert | Blocker | ja | ja | ja | ja
+K70 | Kopf inert | sender,utility-nav,nav | sender,utility-nav,nav | sender,utility-nav,nav | sender,utility-nav,nav | Absenderzeile ignoriert | Blocker | ja | ja | ja | ja
+K71 | Absenderzeile aria-hidden="false" | – | – | – | – | paragraph «…» | kein | ja | ja | ja | ja
+K72 | Abb.: Szenen-SVG ohne aria-hidden | figure-alt | figure-alt | figure-alt | figure-alt | image«» | Blocker | ja | ja | ja | ja
+K73 | Abb.: Szenen-SVG hidden statt aria-hidden | figure-alt | figure-alt | figure-alt | figure-alt | image«» | Blocker | ja | ja | ja | ja
+K74 | Abb.: Szenen-SVG inert statt aria-hidden | figure-alt | figure-alt | figure-alt | figure-alt | image«» | Blocker | ja | ja | ja | ja
+K75 | Abb.: .puk-vis-scene inert, SVG ohne aria-hidden | – | – | – | – | ign | kein | ja | ja | ja | ja
+K76 | Abb.: .puk-vis-scene hidden, SVG ohne aria-hidden | figure-alt | figure-alt | figure-alt | figure-alt | image«» | Blocker | ja | ja | ja | ja
+K77 | Abb.: SVG aria-label > fO > div inert > svg ohne Namen | figure-alt | – | – | – | image«Szene» / ign | kein | NEIN | ja | ja | ja
+K78 | Abb.: SVG aria-label > fO > div > svg ohne Namen (Kontrolle) | figure-alt | figure-alt | figure-alt | figure-alt | SvgRoot«Szene» / image«» | Blocker | ja | ja | ja | ja
+K79 | Abb.: SVG role=group > fO > div inert > svg ohne Namen | figure-alt | – | – | – | group«Szene» / ign | kein | NEIN | ja | ja | ja
+K80 | Abb.: SVG role=group > fO > div > svg ohne Namen (Kontrolle) | figure-alt | figure-alt | figure-alt | figure-alt | group«Szene» / image«» | Blocker | ja | ja | ja | ja
+K81 | Abb.: SVG role=group > fO inert > svg ohne Namen | figure-alt | figure-alt | – | figure-alt | group«Szene» / image«» | Blocker | ja | ja | NEIN | ja
+K82 | Abb.: SVG role=group > fO > div hidden > svg ohne Namen | figure-alt | figure-alt | figure-alt | figure-alt | group«Szene» / ign | kein | NEIN | NEIN | NEIN | NEIN
+K83 | Abb.: SVG role=group > fO > div inert > svg inert ohne Namen | figure-alt | figure-alt | figure-alt | figure-alt | group«Szene» / image«» | Blocker | ja | ja | ja | ja
+K84 | Abb.: SVG role=group > fO > svg hidden ohne Namen | figure-alt | figure-alt | figure-alt | figure-alt | group«Szene» / image«» | Blocker | ja | ja | ja | ja
+K85 | Abb.: SVG role=group > fO > span hidden > svg ohne Namen | figure-alt | figure-alt | figure-alt | figure-alt | group«Szene» / ign | kein | NEIN | NEIN | NEIN | NEIN
+K86 | Abb.: SVG role=group > fO > svg aria-hidden ohne Namen | – | – | – | – | group«Szene» / ign | kein | ja | ja | ja | ja
+# Abweichungen Gate ↔ Chromium: r4-65 44 (strenger 44, milder 0) · r4-67 26 (strenger 26, milder 0) · V-fO-selbst-HTML 21 (strenger 20, milder 1) · V-fO-Vorfahr-HTML 22 (strenger 22, milder 0)

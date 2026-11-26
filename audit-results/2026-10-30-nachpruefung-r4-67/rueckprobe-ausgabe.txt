@@ -1,0 +1,9 @@
+## r4-67 unverändert
+Selbsttest: 123/123 bestanden
+## inSvg von r4-65
+FAIL | Verborgenes HTML in foreignObject im Direkteinstieg ist zulässig (r4-67, N62-2) | erwartet: kein nav, kein utility-nav | erhalten: utility-nav, nav
+Selbsttest: 122/123 bestanden
+## Variante: foreignObject selbst gilt als HTML (ohne p !== x)
+Selbsttest: 123/123 bestanden
+## Variante: jedes foreignObject darüber macht HTML, auch über verschachteltem svg
+Selbsttest: 123/123 bestanden

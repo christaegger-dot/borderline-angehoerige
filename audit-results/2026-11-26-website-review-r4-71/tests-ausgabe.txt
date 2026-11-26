@@ -1,0 +1,17 @@
+== write-site
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel site
+== verify-site
+PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+== selftest
+Selbsttest: 125/125 bestanden
+== suchtest
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+== sprachtest
+Sprach-/UI-Test: 73 Prüfungen bestanden · JS-Fehler 0
+== layouttest
+Bekannte Ausnahme B2c bestanden: Figur 2029 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 2 Abweichungen.
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1

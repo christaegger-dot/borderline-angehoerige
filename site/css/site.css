@@ -342,6 +342,10 @@
   --web-size-h4:1.3125rem;--web-size-h5:1.125rem;--web-size-h6:1rem;
   --web-size-h1-fluid:clamp(2.75rem,8vw,var(--web-size-h1));--web-size-h2-fluid:clamp(2rem,4.5vw,var(--web-size-h2));--web-size-h3-fluid:clamp(1.625rem,3vw,var(--web-size-h3));
 }
+/* r4-71 (Entscheid Christa Egger vom 26.11.2026 zum Website-Review, Punkt 6: «Alles auf 16 px»): Die Regel des Gestaltungssystems
+   «Nichts unter 16 px» gilt für alle Texte am Bildschirm. Kleine Texte (Bildunterschriften, Vertiefungen, Tabellen, Buchangaben, Prüfdaten)
+   und Etiketten in Abbildungen stehen in 1rem statt .9375rem bzw. .8125rem. Im Druck gilt weiter die verkleinerte Druckgrösse. */
+:root{--size-body-sm:1rem;--size-caption:1rem}
 /* ==== Gestaltungssystem «Borderline Angehörige» · r4-43 (29.10.2026) ====
    Rollen über den PUK-Hausfarben und -Massen, wie im Design-System-Artefakt «Borderline Angehörige» beschrieben
    (Abschnitte Farbe, Schrift, Raster). Neu ist nur --nachtblau, eine Schattierung von PUK Blau («sämtliche
@@ -678,7 +682,12 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
   .puk-site-sender>:has(+ .puk-site-sender__beratung){margin-right:0}
   .puk-site-utility{gap:0 var(--space-4)}
 }
-@media (max-width:22.5rem){.puk-site-utility{gap:0 var(--space-3)}.puk-site-utility__link{font-size:.9375rem}}
+@media (max-width:22.5rem){.puk-site-utility{gap:0 var(--space-3)}}
+/* r4-71 (Entscheid Christa Egger vom 26.11.2026 zum Website-Review, Punkt 3: «Direkteinstiege ins Menü»): Mit Skript stehen
+   «Kurz und klar», «Nachschlagen» und «Suchen» am Telefon nur im Menü; der Kopf wird 148 statt 192 px hoch. Ohne Skript bleibt die
+   Zeile unter dem Absender, weil das Menü dann aufgeklappt ist und nur die fünf Hauptbereiche zeigt. (Vorher stand hier für
+   schmale Telefone .9375rem; nach Punkt 6 bleibt es bei 1rem.) */
+@media (max-width:760px){html[data-puk-js] .puk-site-subbar .puk-site-utility{display:none}html[data-puk-js] .puk-site-menu__utility{display:block}}
 
 /* Brotkrumen: eine leise Zeile über dem Titel, ohne Fläche und Linie */
 .puk-site-breadcrumb ol{display:flex;flex-wrap:wrap;gap:0 var(--space-2);margin:0;padding:var(--space-4) 0 0;list-style:none;font-size:1rem;line-height:1.5;color:var(--tinte-leise)}

@@ -1,0 +1,22 @@
+CI-Probe auf GitHub: «neue Abweichung lässt den Job scheitern» (Nachprüfung #832)
+
+Branch   probe/2026-11-26-n832-neue-abweichung-ci-nicht-mergen, von main (8ef8394), ein Commit 1d90c2c
+Änderung nur authoring/tools/layouttest.cjs: Eintrag «safety-card-360x740» aus KNOWN_ISSUES entfernt. site/ unverändert. Kein PR.
+Start    workflow_dispatch auf diesem Branch, 19:23:04 UTC
+Lauf     174, https://github.com/christaegger-dot/borderline-angehoerige/actions/runs/45883245049  => conclusion failure
+Job      build-and-compare, 140127520140, 19:23:09 bis 19:24:39 UTC => conclusion failure
+Schritt 9  «Layout test (Audit-04, incl. B2c) - known deviations do not block»: conclusion success (continue-on-error), 19:24:14 bis 19:24:35
+Schritt 10 «Report layout test result (fails on new deviations)»: conclusion failure
+Log des Berichtsschritts:
+  env: LAYOUT_OUTCOME: failure
+  ##[error]safety card starts in first screen 360x740 (top 863px)
+  ##[warning]1 bekannte Abweichungen, 1 neue
+  ##[error]Process completed with exit code 1.
+
+Zum Vergleich der Lauf auf dem PR #832 (a26bcca), Lauf 171, Job 140116684595, 18:57:58 bis 18:59:02 UTC => success:
+  Layouttest 18:58:32 bis 18:58:59: «240 Seitenzustände, 38 Bedienproben, 2 Abweichungen (2 bekannt, 0 neu).», 802 px und 863 px, «Process completed with exit code 1.»
+  Berichtsschritt: env LAYOUT_OUTCOME: failure; ##[warning]2 bekannte Abweichungen, keine neue; Schritt 9 und 10 conclusion success.
+  PLAYWRIGHT_MODULE=/tmp/borderline-browser/node_modules/playwright (playwright@1.64.0, Chrome Headless Shell 156.0.8078.4)
+
+Aufräumen: Das Löschen des Probe-Branchs wurde von der Umgebung dieser Sitzung abgewiesen (git push --delete: «remote end hung up», Branch besteht weiter).
+Der Branch ist nicht zum Mergen bestimmt und kann gelöscht werden.

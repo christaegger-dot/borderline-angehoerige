@@ -1,0 +1,1348 @@
+# Ich-Aussagen aus Bausteinen: 4416 Anfragen (92 Kerne, 8 Füllungen, 6 Rahmen)
+Ohne Treffer vorher 2161, nachher 1605; neu mit Treffer 886
+## c) vorher Treffer, nachher keiner: 330
+Ich zittere immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich zittere immer | krise#suizid (1) → –
+Sie sagt, ich zittere immer | krise#suizid (1) → –
+Ich zittere immer, sagt sie | krise#suizid (1) → –
+Ich zittere immer wieder | krise#suizid (1) → –
+Er sagt ich zittere immer wieder | krise#suizid (1) → –
+Sie sagt, ich zittere immer wieder | krise#suizid (1) → –
+Ich zittere immer wieder, sagt sie | krise#suizid (1) → –
+Ich zittere wieder | krise#suizid (1) → –
+Er sagt ich zittere wieder | krise#suizid (1) → –
+Sie sagt, ich zittere wieder | krise#suizid (1) → –
+Ich zittere wieder, sagt sie | krise#suizid (1) → –
+Ich zittere schon wieder | krise#suizid (1) → –
+Er sagt ich zittere schon wieder | krise#suizid (1) → –
+Sie sagt, ich zittere schon wieder | krise#suizid (1) → –
+Ich zittere schon wieder, sagt sie | krise#suizid (1) → –
+Ich schreie immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich schreie immer | krise#suizid (1) → –
+Sie sagt, ich schreie immer | krise#suizid (1) → –
+Ich schreie immer, sagt sie | krise#suizid (1) → –
+Ich schreie immer wieder | krise#suizid (1) → –
+Er sagt ich schreie immer wieder | krise#suizid (1) → –
+Sie sagt, ich schreie immer wieder | krise#suizid (1) → –
+Ich schreie immer wieder, sagt sie | krise#suizid (1) → –
+Ich schreie wieder | krise#suizid (1) → –
+Er sagt ich schreie wieder | krise#suizid (1) → –
+Sie sagt, ich schreie wieder | krise#suizid (1) → –
+Ich schreie wieder, sagt sie | krise#suizid (1) → –
+Ich schreie schon wieder | krise#suizid (1) → –
+Er sagt ich schreie schon wieder | krise#suizid (1) → –
+Sie sagt, ich schreie schon wieder | krise#suizid (1) → –
+Ich schreie schon wieder, sagt sie | krise#suizid (1) → –
+Ich streite immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich streite immer | krise#suizid (1) → –
+Sie sagt, ich streite immer | krise#suizid (1) → –
+Ich streite immer, sagt sie | krise#suizid (1) → –
+Ich streite immer wieder | krise#suizid (1) → –
+Er sagt ich streite immer wieder | krise#suizid (1) → –
+Sie sagt, ich streite immer wieder | krise#suizid (1) → –
+Ich streite immer wieder, sagt sie | krise#suizid (1) → –
+Ich streite wieder | krise#suizid (1) → –
+Er sagt ich streite wieder | krise#suizid (1) → –
+Sie sagt, ich streite wieder | krise#suizid (1) → –
+Ich streite wieder, sagt sie | krise#suizid (1) → –
+Ich streite schon wieder | krise#suizid (1) → –
+Er sagt ich streite schon wieder | krise#suizid (1) → –
+Sie sagt, ich streite schon wieder | krise#suizid (1) → –
+Ich streite schon wieder, sagt sie | krise#suizid (1) → –
+Ich zweifle immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich zweifle immer | krise#suizid (1) → –
+Sie sagt, ich zweifle immer | krise#suizid (1) → –
+Ich zweifle immer, sagt sie | krise#suizid (1) → –
+Ich zweifle immer wieder | krise#suizid (1) → –
+Er sagt ich zweifle immer wieder | krise#suizid (1) → –
+Sie sagt, ich zweifle immer wieder | krise#suizid (1) → –
+Ich zweifle immer wieder, sagt sie | krise#suizid (1) → –
+Ich zweifle wieder | krise#suizid (1) → –
+Er sagt ich zweifle wieder | krise#suizid (1) → –
+Sie sagt, ich zweifle wieder | krise#suizid (1) → –
+Ich zweifle wieder, sagt sie | krise#suizid (1) → –
+Ich zweifle schon wieder | krise#suizid (1) → –
+Er sagt ich zweifle schon wieder | krise#suizid (1) → –
+Sie sagt, ich zweifle schon wieder | krise#suizid (1) → –
+Ich zweifle schon wieder, sagt sie | krise#suizid (1) → –
+Ich leide immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich leide immer | krise#suizid (1) → –
+Sie sagt, ich leide immer | krise#suizid (1) → –
+Ich leide immer, sagt sie | krise#suizid (1) → –
+Ich leide immer wieder | krise#suizid (1) → –
+Er sagt ich leide immer wieder | krise#suizid (1) → –
+Sie sagt, ich leide immer wieder | krise#suizid (1) → –
+Ich leide immer wieder, sagt sie | krise#suizid (1) → –
+Ich leide wieder | krise#suizid (1) → –
+Er sagt ich leide wieder | krise#suizid (1) → –
+Sie sagt, ich leide wieder | krise#suizid (1) → –
+Ich leide wieder, sagt sie | krise#suizid (1) → –
+Ich leide schon wieder | krise#suizid (1) → –
+Er sagt ich leide schon wieder | krise#suizid (1) → –
+Sie sagt, ich leide schon wieder | krise#suizid (1) → –
+Ich leide schon wieder, sagt sie | krise#suizid (1) → –
+Ich grüble immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich grüble immer | krise#suizid (1) → –
+Sie sagt, ich grüble immer | krise#suizid (1) → –
+Ich grüble immer, sagt sie | krise#suizid (1) → –
+Ich grüble immer wieder | krise#suizid (1) → –
+Er sagt ich grüble immer wieder | krise#suizid (1) → –
+Sie sagt, ich grüble immer wieder | krise#suizid (1) → –
+Ich grüble immer wieder, sagt sie | krise#suizid (1) → –
+Ich grüble wieder | krise#suizid (1) → –
+Er sagt ich grüble wieder | krise#suizid (1) → –
+Sie sagt, ich grüble wieder | krise#suizid (1) → –
+Ich grüble wieder, sagt sie | krise#suizid (1) → –
+Ich grüble schon wieder | krise#suizid (1) → –
+Er sagt ich grüble schon wieder | krise#suizid (1) → –
+Sie sagt, ich grüble schon wieder | krise#suizid (1) → –
+Ich grüble schon wieder, sagt sie | krise#suizid (1) → –
+Ich flüchte immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich flüchte immer | krise#suizid (1) → –
+Sie sagt, ich flüchte immer | krise#suizid (1) → –
+Ich flüchte immer, sagt sie | krise#suizid (1) → –
+Ich flüchte immer wieder | krise#suizid (1) → –
+Er sagt ich flüchte immer wieder | krise#suizid (1) → –
+Sie sagt, ich flüchte immer wieder | krise#suizid (1) → –
+Ich flüchte immer wieder, sagt sie | krise#suizid (1) → –
+Ich flüchte wieder | krise#suizid (1) → –
+Er sagt ich flüchte wieder | krise#suizid (1) → –
+Sie sagt, ich flüchte wieder | krise#suizid (1) → –
+Ich flüchte wieder, sagt sie | krise#suizid (1) → –
+Ich flüchte schon wieder | krise#suizid (1) → –
+Er sagt ich flüchte schon wieder | krise#suizid (1) → –
+Sie sagt, ich flüchte schon wieder | krise#suizid (1) → –
+Ich flüchte schon wieder, sagt sie | krise#suizid (1) → –
+Ich lüge immer öfter und habe nichts getan | fragen#gespraeche (1) → –
+Ich entschuldige mich immer öfter und habe nichts getan | fragen#gespraeche (1) → –
+Ich ziehe mich zurück immer öfter und habe nichts getan | beziehungen#zwei-sichten (1) → –
+Ich raste aus immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich raste aus immer | krise#suizid (1) → –
+Sie sagt, ich raste aus immer | krise#suizid (1) → –
+Ich raste aus immer, sagt sie | krise#suizid (1) → –
+Ich raste aus immer wieder | krise#suizid (1) → –
+Er sagt ich raste aus immer wieder | krise#suizid (1) → –
+Sie sagt, ich raste aus immer wieder | krise#suizid (1) → –
+Ich raste aus immer wieder, sagt sie | krise#suizid (1) → –
+Ich raste aus wieder | krise#suizid (1) → –
+Er sagt ich raste aus wieder | krise#suizid (1) → –
+Sie sagt, ich raste aus wieder | krise#suizid (1) → –
+Ich raste aus wieder, sagt sie | krise#suizid (1) → –
+Ich raste aus schon wieder | krise#suizid (1) → –
+Er sagt ich raste aus schon wieder | krise#suizid (1) → –
+Sie sagt, ich raste aus schon wieder | krise#suizid (1) → –
+Ich raste aus schon wieder, sagt sie | krise#suizid (1) → –
+Er sagt ich verliere die Geduld immer wieder | krise#suizid (1) → –
+Sie sagt, ich verliere die Geduld immer wieder | krise#suizid (1) → –
+Ich verliere die Geduld immer wieder, sagt sie | krise#suizid (1) → –
+Ich bin allein immer öfter und habe nichts getan | beziehungen#zwei-sichten (1) → –
+Ich bin einsam immer öfter | krise#suizid (1) → –
+Er sagt ich bin einsam immer öfter | krise#suizid (1) → –
+Sie sagt, ich bin einsam immer öfter | krise#suizid (1) → –
+Ich bin einsam immer öfter, sagt sie | krise#suizid (1) → –
+Ich bin einsam immer öfter und habe nichts getan | beziehungen#zwei-sichten (1) → –
+Ich bin ratlos immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich bin ratlos immer | krise#suizid (1) → –
+Sie sagt, ich bin ratlos immer | krise#suizid (1) → –
+Ich bin ratlos immer, sagt sie | krise#suizid (1) → –
+Ich bin ratlos immer wieder | krise#suizid (1) → –
+Er sagt ich bin ratlos immer wieder | krise#suizid (1) → –
+Sie sagt, ich bin ratlos immer wieder | krise#suizid (1) → –
+Ich bin ratlos immer wieder, sagt sie | krise#suizid (1) → –
+Ich bin ratlos wieder | krise#suizid (1) → –
+Er sagt ich bin ratlos wieder | krise#suizid (1) → –
+Sie sagt, ich bin ratlos wieder | krise#suizid (1) → –
+Ich bin ratlos wieder, sagt sie | krise#suizid (1) → –
+Ich bin ratlos schon wieder | krise#suizid (1) → –
+Er sagt ich bin ratlos schon wieder | krise#suizid (1) → –
+Sie sagt, ich bin ratlos schon wieder | krise#suizid (1) → –
+Ich bin ratlos schon wieder, sagt sie | krise#suizid (1) → –
+Ich bin schuld sehr oft und habe nichts getan | rolle#schuld (1) → –
+Ich bin schuld immer öfter und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich habe Angst immer öfter und habe nichts getan | beziehungen#zwei-sichten (1) → –
+Er sagt ich habe Panik immer wieder | krise#suizid (1) → –
+Sie sagt, ich habe Panik immer wieder | krise#suizid (1) → –
+Ich habe Panik immer wieder, sagt sie | krise#suizid (1) → –
+Er sagt ich habe versagt immer wieder | krise#suizid (1) → –
+Sie sagt, ich habe versagt immer wieder | krise#suizid (1) → –
+Ich habe versagt immer wieder, sagt sie | krise#suizid (1) → –
+Er sagt ich habe aufgegeben immer wieder | krise#suizid (1) → –
+Sie sagt, ich habe aufgegeben immer wieder | krise#suizid (1) → –
+Ich habe aufgegeben immer wieder, sagt sie | krise#suizid (1) → –
+Ich werde angeschrien immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich werde beschimpft immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich werde bedroht sehr oft. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde geschlagen sehr oft. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde erpresst immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich werde erpresst wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde erpresst schon wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde kontrolliert immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich werde kontrolliert wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde kontrolliert schon wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde angerufen immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich werde angerufen wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde angerufen schon wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde beschuldigt immer öfter und habe nichts getan | fragen#gespraeche (1) → –
+Ich werde abgewertet immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich werde abgewertet wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde abgewertet schon wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde ignoriert immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich werde ignoriert wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich werde ignoriert schon wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich fühle mich schuldig sehr oft. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich fühle mich schuldig immer öfter und habe nichts getan | fragen#gespraeche (1) → –
+Ich fühle mich leer immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich fühle mich ausgenutzt immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich fühle mich ausgenutzt wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich fühle mich ausgenutzt schon wieder. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich fühle mich verantwortlich sehr oft. Das habe ich oft gemacht | rolle#schuld (1) → –
+Ich schäme mich immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich schäme mich immer | krise#suizid (1) → –
+Sie sagt, ich schäme mich immer | krise#suizid (1) → –
+Ich schäme mich immer, sagt sie | krise#suizid (1) → –
+Ich schäme mich immer wieder | krise#suizid (1) → –
+Er sagt ich schäme mich immer wieder | krise#suizid (1) → –
+Sie sagt, ich schäme mich immer wieder | krise#suizid (1) → –
+Ich schäme mich immer wieder, sagt sie | krise#suizid (1) → –
+Ich schäme mich wieder | krise#suizid (1) → –
+Er sagt ich schäme mich wieder | krise#suizid (1) → –
+Sie sagt, ich schäme mich wieder | krise#suizid (1) → –
+Ich schäme mich wieder, sagt sie | krise#suizid (1) → –
+Ich schäme mich schon wieder | krise#suizid (1) → –
+Er sagt ich schäme mich schon wieder | krise#suizid (1) → –
+Sie sagt, ich schäme mich schon wieder | krise#suizid (1) → –
+Ich schäme mich schon wieder, sagt sie | krise#suizid (1) → –
+Ich ärgere mich immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich ärgere mich immer | krise#suizid (1) → –
+Sie sagt, ich ärgere mich immer | krise#suizid (1) → –
+Ich ärgere mich immer, sagt sie | krise#suizid (1) → –
+Ich ärgere mich immer wieder | krise#suizid (1) → –
+Er sagt ich ärgere mich immer wieder | krise#suizid (1) → –
+Sie sagt, ich ärgere mich immer wieder | krise#suizid (1) → –
+Ich ärgere mich immer wieder, sagt sie | krise#suizid (1) → –
+Ich ärgere mich wieder | krise#suizid (1) → –
+Er sagt ich ärgere mich wieder | krise#suizid (1) → –
+Sie sagt, ich ärgere mich wieder | krise#suizid (1) → –
+Ich ärgere mich wieder, sagt sie | krise#suizid (1) → –
+Ich ärgere mich schon wieder | krise#suizid (1) → –
+Er sagt ich ärgere mich schon wieder | krise#suizid (1) → –
+Sie sagt, ich ärgere mich schon wieder | krise#suizid (1) → –
+Ich ärgere mich schon wieder, sagt sie | krise#suizid (1) → –
+Ich denke ans Sterben sehr oft | krise#suizid (1) → –
+Er sagt ich denke ans Sterben sehr oft | krise#suizid (1) → –
+Sie sagt, ich denke ans Sterben sehr oft | krise#suizid (1) → –
+Ich denke ans Sterben sehr oft, sagt sie | krise#suizid (1) → –
+Ich denke ans Sterben immer öfter | krise#suizid (1) → –
+Er sagt ich denke ans Sterben immer öfter | krise#suizid (1) → –
+Sie sagt, ich denke ans Sterben immer öfter | krise#suizid (1) → –
+Ich denke ans Sterben immer öfter, sagt sie | krise#suizid (1) → –
+Ich denke an Suizid immer und habe nichts getan | fragen#gespraeche (1) → –
+Er sagt ich denke an Suizid sehr oft | krise#suizid (1) → –
+Sie sagt, ich denke an Suizid sehr oft | krise#suizid (1) → –
+Ich denke an Suizid sehr oft, sagt sie | krise#suizid (1) → –
+Er sagt ich denke an Suizid immer öfter | krise#suizid (1) → –
+Sie sagt, ich denke an Suizid immer öfter | krise#suizid (1) → –
+Ich denke an Suizid immer öfter, sagt sie | krise#suizid (1) → –
+Ich verletze mich immer öfter und habe nichts getan | fragen#gespraeche (1) → –
+Ich schlage zu immer öfter und habe nichts getan | fragen#gespraeche (1) → –
+Ich kontrolliere sie immer öfter und habe nichts getan | beziehungen#zwei-sichten (1) → –
+Ich putze immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich putze immer | krise#suizid (1) → –
+Sie sagt, ich putze immer | krise#suizid (1) → –
+Ich putze immer, sagt sie | krise#suizid (1) → –
+Ich putze immer wieder | krise#suizid (1) → –
+Er sagt ich putze immer wieder | krise#suizid (1) → –
+Sie sagt, ich putze immer wieder | krise#suizid (1) → –
+Ich putze immer wieder, sagt sie | krise#suizid (1) → –
+Ich putze wieder | krise#suizid (1) → –
+Er sagt ich putze wieder | krise#suizid (1) → –
+Sie sagt, ich putze wieder | krise#suizid (1) → –
+Ich putze wieder, sagt sie | krise#suizid (1) → –
+Ich putze schon wieder | krise#suizid (1) → –
+Er sagt ich putze schon wieder | krise#suizid (1) → –
+Sie sagt, ich putze schon wieder | krise#suizid (1) → –
+Ich putze schon wieder, sagt sie | krise#suizid (1) → –
+Ich hoffe immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich hoffe immer | krise#suizid (1) → –
+Sie sagt, ich hoffe immer | krise#suizid (1) → –
+Ich hoffe immer, sagt sie | krise#suizid (1) → –
+Ich hoffe immer wieder | krise#suizid (1) → –
+Er sagt ich hoffe immer wieder | krise#suizid (1) → –
+Sie sagt, ich hoffe immer wieder | krise#suizid (1) → –
+Ich hoffe immer wieder, sagt sie | krise#suizid (1) → –
+Ich hoffe wieder | krise#suizid (1) → –
+Er sagt ich hoffe wieder | krise#suizid (1) → –
+Sie sagt, ich hoffe wieder | krise#suizid (1) → –
+Ich hoffe wieder, sagt sie | krise#suizid (1) → –
+Ich hoffe schon wieder | krise#suizid (1) → –
+Er sagt ich hoffe schon wieder | krise#suizid (1) → –
+Sie sagt, ich hoffe schon wieder | krise#suizid (1) → –
+Ich hoffe schon wieder, sagt sie | krise#suizid (1) → –
+Ich verzeihe immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich verzeihe immer | krise#suizid (1) → –
+Sie sagt, ich verzeihe immer | krise#suizid (1) → –
+Ich verzeihe immer, sagt sie | krise#suizid (1) → –
+Ich verzeihe immer wieder | krise#suizid (1) → –
+Er sagt ich verzeihe immer wieder | krise#suizid (1) → –
+Sie sagt, ich verzeihe immer wieder | krise#suizid (1) → –
+Ich verzeihe immer wieder, sagt sie | krise#suizid (1) → –
+Ich verzeihe wieder | krise#suizid (1) → –
+Er sagt ich verzeihe wieder | krise#suizid (1) → –
+Sie sagt, ich verzeihe wieder | krise#suizid (1) → –
+Ich verzeihe wieder, sagt sie | krise#suizid (1) → –
+Ich verzeihe schon wieder | krise#suizid (1) → –
+Er sagt ich verzeihe schon wieder | krise#suizid (1) → –
+Sie sagt, ich verzeihe schon wieder | krise#suizid (1) → –
+Ich verzeihe schon wieder, sagt sie | krise#suizid (1) → –
+Ich tröste immer | krise#suizid > grenzen#bruecke (2) → –
+Er sagt ich tröste immer | krise#suizid (1) → –
+Sie sagt, ich tröste immer | krise#suizid (1) → –
+Ich tröste immer, sagt sie | krise#suizid (1) → –
+Ich tröste immer wieder | krise#suizid (1) → –
+Er sagt ich tröste immer wieder | krise#suizid (1) → –
+Sie sagt, ich tröste immer wieder | krise#suizid (1) → –
+Ich tröste immer wieder, sagt sie | krise#suizid (1) → –
+Ich tröste wieder | krise#suizid (1) → –
+Er sagt ich tröste wieder | krise#suizid (1) → –
+Sie sagt, ich tröste wieder | krise#suizid (1) → –
+Ich tröste wieder, sagt sie | krise#suizid (1) → –
+Ich tröste schon wieder | krise#suizid (1) → –
+Er sagt ich tröste schon wieder | krise#suizid (1) → –
+Sie sagt, ich tröste schon wieder | krise#suizid (1) → –
+Ich tröste schon wieder, sagt sie | krise#suizid (1) → –
+Ich erkläre immer öfter und habe nichts getan | beziehungen#zwei-sichten (1) → –
+Sie sagt, ich sage ja schon wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline (4) → –
+Ich sage ja schon wieder, sagt sie | krise#suizid > verstehen#bewertungen > verstehen#borderline (4) → –
+Ich setze Grenzen immer öfter und habe nichts getan | fragen#gespraeche (1) → –
+Ich gehe immer öfter und habe nichts getan | fragen#gespraeche (1) → –
+Ich bleibe immer öfter und habe nichts getan | fragen#gespraeche (1) → –
+Ich kann nicht schlafen und habe nichts getan | beziehungen#bz-sichten-s2 (1) → –
+Ich kann nicht schlafen immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+Ich will Ruhe immer öfter | krise#suizid (1) → –
+Er sagt ich will Ruhe immer öfter | krise#suizid (1) → –
+Sie sagt, ich will Ruhe immer öfter | krise#suizid (1) → –
+Ich will Ruhe immer öfter, sagt sie | krise#suizid (1) → –
+Ich will Ruhe immer öfter und habe nichts getan | beziehungen#zwei-sichten (1) → –
+Ich brauche Hilfe immer öfter und habe nichts getan | fragen#gespraeche (1) → –
+Ich brauche Ruhe immer öfter | krise#suizid (1) → –
+Er sagt ich brauche Ruhe immer öfter | krise#suizid (1) → –
+Sie sagt, ich brauche Ruhe immer öfter | krise#suizid (1) → –
+Ich brauche Ruhe immer öfter, sagt sie | krise#suizid (1) → –
+Ich brauche Ruhe immer öfter und habe nichts getan | beziehungen#zwei-sichten (1) → –
+Ich ertrage es nicht und habe nichts getan | beziehungen#bz-sichten-s2 (1) → –
+Ich ertrage es nicht immer und habe nichts getan | fragen#gespraeche > beziehungen#zwei-sichten (2) → –
+## Sicherheitsabschnitt vorher unter den ersten zwei, nachher keiner unter den ersten drei: 1014
+Er sagt ich weine immer | krise#suizid → quellen#forschung
+Sie sagt, ich weine immer | krise#suizid → quellen#forschung
+Ich weine immer, sagt sie | krise#suizid → quellen#forschung
+Er sagt ich weine immer wieder | krise#suizid → quellen#forschung
+Sie sagt, ich weine immer wieder | krise#suizid → quellen#forschung
+Ich weine immer wieder, sagt sie | krise#suizid → quellen#forschung
+Er sagt ich weine wieder | krise#suizid → quellen#forschung
+Sie sagt, ich weine wieder | krise#suizid → quellen#forschung
+Ich weine wieder, sagt sie | krise#suizid → quellen#forschung
+Er sagt ich weine schon wieder | krise#suizid → quellen#forschung
+Sie sagt, ich weine schon wieder | krise#suizid → quellen#forschung
+Ich weine schon wieder, sagt sie | krise#suizid → quellen#forschung
+Ich zittere immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich zittere immer | krise#suizid → –
+Sie sagt, ich zittere immer | krise#suizid → –
+Ich zittere immer, sagt sie | krise#suizid → –
+Ich zittere immer wieder | krise#suizid → –
+Er sagt ich zittere immer wieder | krise#suizid → –
+Sie sagt, ich zittere immer wieder | krise#suizid → –
+Ich zittere immer wieder, sagt sie | krise#suizid → –
+Ich zittere wieder | krise#suizid → –
+Er sagt ich zittere wieder | krise#suizid → –
+Sie sagt, ich zittere wieder | krise#suizid → –
+Ich zittere wieder, sagt sie | krise#suizid → –
+Ich zittere schon wieder | krise#suizid → –
+Er sagt ich zittere schon wieder | krise#suizid → –
+Sie sagt, ich zittere schon wieder | krise#suizid → –
+Ich zittere schon wieder, sagt sie | krise#suizid → –
+Ich schreie immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich schreie immer | krise#suizid → –
+Sie sagt, ich schreie immer | krise#suizid → –
+Ich schreie immer, sagt sie | krise#suizid → –
+Ich schreie immer wieder | krise#suizid → –
+Er sagt ich schreie immer wieder | krise#suizid → –
+Sie sagt, ich schreie immer wieder | krise#suizid → –
+Ich schreie immer wieder, sagt sie | krise#suizid → –
+Ich schreie wieder | krise#suizid → –
+Er sagt ich schreie wieder | krise#suizid → –
+Sie sagt, ich schreie wieder | krise#suizid → –
+Ich schreie wieder, sagt sie | krise#suizid → –
+Ich schreie schon wieder | krise#suizid → –
+Er sagt ich schreie schon wieder | krise#suizid → –
+Sie sagt, ich schreie schon wieder | krise#suizid → –
+Ich schreie schon wieder, sagt sie | krise#suizid → –
+Ich streite immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich streite immer | krise#suizid → –
+Sie sagt, ich streite immer | krise#suizid → –
+Ich streite immer, sagt sie | krise#suizid → –
+Ich streite immer wieder | krise#suizid → –
+Er sagt ich streite immer wieder | krise#suizid → –
+Sie sagt, ich streite immer wieder | krise#suizid → –
+Ich streite immer wieder, sagt sie | krise#suizid → –
+Ich streite wieder | krise#suizid → –
+Er sagt ich streite wieder | krise#suizid → –
+Sie sagt, ich streite wieder | krise#suizid → –
+Ich streite wieder, sagt sie | krise#suizid → –
+Ich streite schon wieder | krise#suizid → –
+Er sagt ich streite schon wieder | krise#suizid → –
+Sie sagt, ich streite schon wieder | krise#suizid → –
+Ich streite schon wieder, sagt sie | krise#suizid → –
+Ich zweifle immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich zweifle immer | krise#suizid → –
+Sie sagt, ich zweifle immer | krise#suizid → –
+Ich zweifle immer, sagt sie | krise#suizid → –
+Ich zweifle immer wieder | krise#suizid → –
+Er sagt ich zweifle immer wieder | krise#suizid → –
+Sie sagt, ich zweifle immer wieder | krise#suizid → –
+Ich zweifle immer wieder, sagt sie | krise#suizid → –
+Ich zweifle wieder | krise#suizid → –
+Er sagt ich zweifle wieder | krise#suizid → –
+Sie sagt, ich zweifle wieder | krise#suizid → –
+Ich zweifle wieder, sagt sie | krise#suizid → –
+Ich zweifle schon wieder | krise#suizid → –
+Er sagt ich zweifle schon wieder | krise#suizid → –
+Sie sagt, ich zweifle schon wieder | krise#suizid → –
+Ich zweifle schon wieder, sagt sie | krise#suizid → –
+Ich leide immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich leide immer | krise#suizid → –
+Sie sagt, ich leide immer | krise#suizid → –
+Ich leide immer, sagt sie | krise#suizid → –
+Ich leide immer wieder | krise#suizid → –
+Er sagt ich leide immer wieder | krise#suizid → –
+Sie sagt, ich leide immer wieder | krise#suizid → –
+Ich leide immer wieder, sagt sie | krise#suizid → –
+Ich leide wieder | krise#suizid → –
+Er sagt ich leide wieder | krise#suizid → –
+Sie sagt, ich leide wieder | krise#suizid → –
+Ich leide wieder, sagt sie | krise#suizid → –
+Ich leide schon wieder | krise#suizid → –
+Er sagt ich leide schon wieder | krise#suizid → –
+Sie sagt, ich leide schon wieder | krise#suizid → –
+Ich leide schon wieder, sagt sie | krise#suizid → –
+Er sagt ich schweige immer | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Sie sagt, ich schweige immer | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Ich schweige immer, sagt sie | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Er sagt ich schweige immer wieder | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Sie sagt, ich schweige immer wieder | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Ich schweige immer wieder, sagt sie | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Er sagt ich schweige wieder | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Sie sagt, ich schweige wieder | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Ich schweige wieder, sagt sie | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Er sagt ich schweige schon wieder | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Sie sagt, ich schweige schon wieder | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Ich schweige schon wieder, sagt sie | krise#suizid → behandlung#kontakt > behandlung#auskunft > index#orientierung
+Ich grüble immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich grüble immer | krise#suizid → –
+Sie sagt, ich grüble immer | krise#suizid → –
+Ich grüble immer, sagt sie | krise#suizid → –
+Ich grüble immer wieder | krise#suizid → –
+Er sagt ich grüble immer wieder | krise#suizid → –
+Sie sagt, ich grüble immer wieder | krise#suizid → –
+Ich grüble immer wieder, sagt sie | krise#suizid → –
+Ich grüble wieder | krise#suizid → –
+Er sagt ich grüble wieder | krise#suizid → –
+Sie sagt, ich grüble wieder | krise#suizid → –
+Ich grüble wieder, sagt sie | krise#suizid → –
+Ich grüble schon wieder | krise#suizid → –
+Er sagt ich grüble schon wieder | krise#suizid → –
+Sie sagt, ich grüble schon wieder | krise#suizid → –
+Ich grüble schon wieder, sagt sie | krise#suizid → –
+Ich trinke immer | gefahr#riskant > krise#suizid > grenzen#bruecke → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Er sagt ich trinke immer | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Sie sagt, ich trinke immer | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Ich trinke immer, sagt sie | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Ich trinke immer wieder | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Er sagt ich trinke immer wieder | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Sie sagt, ich trinke immer wieder | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Ich trinke immer wieder, sagt sie | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Ich trinke wieder | krise#suizid > gefahr#riskant → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Er sagt ich trinke wieder | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Sie sagt, ich trinke wieder | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Ich trinke wieder, sagt sie | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Ich trinke schon wieder | krise#suizid > gefahr#riskant → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Er sagt ich trinke schon wieder | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Sie sagt, ich trinke schon wieder | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Ich trinke schon wieder, sagt sie | krise#suizid → gefahr#riskant > selbstfuersorge#selbstfuersorge-schnell
+Ich flüchte immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich flüchte immer | krise#suizid → –
+Sie sagt, ich flüchte immer | krise#suizid → –
+Ich flüchte immer, sagt sie | krise#suizid → –
+Ich flüchte immer wieder | krise#suizid → –
+Er sagt ich flüchte immer wieder | krise#suizid → –
+Sie sagt, ich flüchte immer wieder | krise#suizid → –
+Ich flüchte immer wieder, sagt sie | krise#suizid → –
+Ich flüchte wieder | krise#suizid → –
+Er sagt ich flüchte wieder | krise#suizid → –
+Sie sagt, ich flüchte wieder | krise#suizid → –
+Ich flüchte wieder, sagt sie | krise#suizid → –
+Ich flüchte schon wieder | krise#suizid → –
+Er sagt ich flüchte schon wieder | krise#suizid → –
+Sie sagt, ich flüchte schon wieder | krise#suizid → –
+Ich flüchte schon wieder, sagt sie | krise#suizid → –
+Ich lüge immer wieder | krise#suizid → fragen#f-luegen > fragen#gespraeche
+Er sagt ich lüge immer wieder | krise#suizid → fragen#f-luegen > fragen#gespraeche
+Sie sagt, ich lüge immer wieder | krise#suizid → fragen#f-luegen > fragen#gespraeche
+Ich lüge immer wieder, sagt sie | krise#suizid → fragen#f-luegen > fragen#gespraeche
+Ich lüge wieder | krise#suizid > fragen#f-luegen → fragen#f-luegen > fragen#gespraeche
+Er sagt ich lüge wieder | krise#suizid → fragen#f-luegen > fragen#gespraeche
+Sie sagt, ich lüge wieder | krise#suizid → fragen#f-luegen > fragen#gespraeche
+Ich lüge wieder, sagt sie | krise#suizid → fragen#f-luegen > fragen#gespraeche
+Ich lüge schon wieder | krise#suizid > fragen#f-luegen → fragen#f-luegen > fragen#gespraeche
+Er sagt ich lüge schon wieder | krise#suizid → fragen#f-luegen > fragen#gespraeche
+Sie sagt, ich lüge schon wieder | krise#suizid → fragen#f-luegen > fragen#gespraeche
+Ich lüge schon wieder, sagt sie | krise#suizid → fragen#f-luegen > fragen#gespraeche
+Ich entschuldige mich immer wieder | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Er sagt ich entschuldige mich immer wieder | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Sie sagt, ich entschuldige mich immer wieder | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Ich entschuldige mich immer wieder, sagt sie | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Ich entschuldige mich wieder | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Er sagt ich entschuldige mich wieder | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Sie sagt, ich entschuldige mich wieder | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Ich entschuldige mich wieder, sagt sie | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Ich entschuldige mich schon wieder | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Er sagt ich entschuldige mich schon wieder | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Sie sagt, ich entschuldige mich schon wieder | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Ich entschuldige mich schon wieder, sagt sie | krise#suizid → fragen#f-beschuldigt > fragen#gespraeche > kommunizieren#anerkennen
+Ich raste aus immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich raste aus immer | krise#suizid → –
+Sie sagt, ich raste aus immer | krise#suizid → –
+Ich raste aus immer, sagt sie | krise#suizid → –
+Ich raste aus immer wieder | krise#suizid → –
+Er sagt ich raste aus immer wieder | krise#suizid → –
+Sie sagt, ich raste aus immer wieder | krise#suizid → –
+Ich raste aus immer wieder, sagt sie | krise#suizid → –
+Ich raste aus wieder | krise#suizid → –
+Er sagt ich raste aus wieder | krise#suizid → –
+Sie sagt, ich raste aus wieder | krise#suizid → –
+Ich raste aus wieder, sagt sie | krise#suizid → –
+Ich raste aus schon wieder | krise#suizid → –
+Er sagt ich raste aus schon wieder | krise#suizid → –
+Sie sagt, ich raste aus schon wieder | krise#suizid → –
+Ich raste aus schon wieder, sagt sie | krise#suizid → –
+Er sagt ich verliere die Geduld immer wieder | krise#suizid → –
+Sie sagt, ich verliere die Geduld immer wieder | krise#suizid → –
+Ich verliere die Geduld immer wieder, sagt sie | krise#suizid → –
+Ich bin müde immer | krise#suizid > grenzen#bruecke → kinder#erklaeren
+Er sagt ich bin müde immer | krise#suizid → kinder#erklaeren
+Sie sagt, ich bin müde immer | krise#suizid → kinder#erklaeren
+Ich bin müde immer, sagt sie | krise#suizid → kinder#erklaeren
+Ich bin müde immer wieder | krise#suizid → kinder#erklaeren
+Er sagt ich bin müde immer wieder | krise#suizid → kinder#erklaeren
+Sie sagt, ich bin müde immer wieder | krise#suizid → kinder#erklaeren
+Ich bin müde immer wieder, sagt sie | krise#suizid → kinder#erklaeren
+Ich bin müde wieder | krise#suizid → kinder#erklaeren
+Er sagt ich bin müde wieder | krise#suizid → kinder#erklaeren
+Sie sagt, ich bin müde wieder | krise#suizid → kinder#erklaeren
+Ich bin müde wieder, sagt sie | krise#suizid → kinder#erklaeren
+Ich bin müde schon wieder | krise#suizid → kinder#erklaeren
+Er sagt ich bin müde schon wieder | krise#suizid → kinder#erklaeren
+Sie sagt, ich bin müde schon wieder | krise#suizid → kinder#erklaeren
+Ich bin müde schon wieder, sagt sie | krise#suizid → kinder#erklaeren
+Er sagt ich bin traurig immer | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Sie sagt, ich bin traurig immer | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Ich bin traurig immer, sagt sie | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Ich bin traurig immer wieder | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Er sagt ich bin traurig immer wieder | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Sie sagt, ich bin traurig immer wieder | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Ich bin traurig immer wieder, sagt sie | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Er sagt ich bin traurig wieder | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Sie sagt, ich bin traurig wieder | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Ich bin traurig wieder, sagt sie | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Er sagt ich bin traurig schon wieder | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Sie sagt, ich bin traurig schon wieder | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Ich bin traurig schon wieder, sagt sie | krise#suizid → selbstfuersorge#eigenes-leben > kinder#erklaeren > rolle#schuld
+Er sagt ich bin verzweifelt immer | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Sie sagt, ich bin verzweifelt immer | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Ich bin verzweifelt immer, sagt sie | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Er sagt ich bin verzweifelt immer wieder | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Sie sagt, ich bin verzweifelt immer wieder | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Ich bin verzweifelt immer wieder, sagt sie | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Er sagt ich bin verzweifelt wieder | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Sie sagt, ich bin verzweifelt wieder | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Ich bin verzweifelt wieder, sagt sie | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Er sagt ich bin verzweifelt schon wieder | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Sie sagt, ich bin verzweifelt schon wieder | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Ich bin verzweifelt schon wieder, sagt sie | krise#suizid → begriffe#b-borderline > begriffe#begriffe
+Ich bin wütend immer | krise#suizid > grenzen#bruecke → verstehen#bewertungen > rolle#schuld
+Er sagt ich bin wütend immer | krise#suizid → verstehen#bewertungen > rolle#schuld
+Sie sagt, ich bin wütend immer | krise#suizid → verstehen#bewertungen > rolle#schuld
+Ich bin wütend immer, sagt sie | krise#suizid → verstehen#bewertungen > rolle#schuld
+Ich bin wütend immer wieder | krise#suizid → verstehen#bewertungen > rolle#schuld
+Er sagt ich bin wütend immer wieder | krise#suizid → verstehen#bewertungen > rolle#schuld
+Sie sagt, ich bin wütend immer wieder | krise#suizid → verstehen#bewertungen > rolle#schuld
+Ich bin wütend immer wieder, sagt sie | krise#suizid → verstehen#bewertungen > rolle#schuld
+Ich bin allein immer | krise#suizid > grenzen#bruecke > kurz#borderline → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Er sagt ich bin allein immer | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Sie sagt, ich bin allein immer | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Ich bin allein immer, sagt sie | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Ich bin allein immer wieder | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Er sagt ich bin allein immer wieder | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Sie sagt, ich bin allein immer wieder | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Ich bin allein immer wieder, sagt sie | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Ich bin allein immer wieder. Das habe ich oft gemacht | krise#suizid > rolle#schuld → rolle#schuld > fragen#f-verlassen > fragen#schutz
+Ich bin allein immer wieder und habe nichts getan | krise#suizid > beziehungen#zwei-sichten → beziehungen#zwei-sichten > selbstfuersorge#akzeptanz > selbstfuersorge#kraft
+Ich bin allein oft | krise#suizid > kommunizieren#zuhoeren > rolle#schuld → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Er sagt ich bin allein oft | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Sie sagt, ich bin allein oft | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Ich bin allein oft, sagt sie | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Ich bin allein wieder | krise#suizid > fragen#schutz > rolle#schuld → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Er sagt ich bin allein wieder | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Sie sagt, ich bin allein wieder | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Ich bin allein wieder, sagt sie | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Ich bin allein schon wieder | krise#suizid > fragen#schutz > rolle#schuld → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Er sagt ich bin allein schon wieder | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Sie sagt, ich bin allein schon wieder | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Ich bin allein schon wieder, sagt sie | krise#suizid → selbstfuersorge#beratung > beziehungen#bz-sichten-s1 > kurz#borderline
+Ich bin allein immer öfter | krise#suizid > grenzen#bruecke → selbstfuersorge#beratung
+Er sagt ich bin allein immer öfter | krise#suizid → selbstfuersorge#beratung
+Sie sagt, ich bin allein immer öfter | krise#suizid → selbstfuersorge#beratung
+Ich bin allein immer öfter, sagt sie | krise#suizid → selbstfuersorge#beratung
+Ich bin einsam immer | krise#suizid > grenzen#saetze > beziehungen#zwei-sichten → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Er sagt ich bin einsam immer | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Sie sagt, ich bin einsam immer | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Ich bin einsam immer, sagt sie | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Ich bin einsam immer wieder | krise#suizid > begriffe#begriffe > quellen#forschung → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Er sagt ich bin einsam immer wieder | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Sie sagt, ich bin einsam immer wieder | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Ich bin einsam immer wieder, sagt sie | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Ich bin einsam immer wieder. Das habe ich oft gemacht | krise#suizid → krise#krisenplan > verstehen#anspannung > behandlung#keine-behandlung
+Ich bin einsam immer wieder und habe nichts getan | krise#suizid > beziehungen#zwei-sichten → verstehen#anspannung > beziehungen#zwei-sichten > kommunizieren#beispiele
+Er sagt ich bin einsam oft | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Sie sagt, ich bin einsam oft | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Ich bin einsam oft, sagt sie | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Ich bin einsam wieder | krise#suizid > verstehen#anspannung > rolle#nach-konflikten → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Er sagt ich bin einsam wieder | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Sie sagt, ich bin einsam wieder | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Ich bin einsam wieder, sagt sie | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Ich bin einsam schon wieder | krise#suizid > verstehen#anspannung > rolle#nach-konflikten → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Er sagt ich bin einsam schon wieder | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Sie sagt, ich bin einsam schon wieder | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Ich bin einsam schon wieder, sagt sie | krise#suizid → beziehungen#verbindung > verstehen#anspannung > krise#krisenplan
+Ich bin einsam immer öfter | krise#suizid → –
+Er sagt ich bin einsam immer öfter | krise#suizid → –
+Sie sagt, ich bin einsam immer öfter | krise#suizid → –
+Ich bin einsam immer öfter, sagt sie | krise#suizid → –
+Ich bin ratlos immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich bin ratlos immer | krise#suizid → –
+Sie sagt, ich bin ratlos immer | krise#suizid → –
+Ich bin ratlos immer, sagt sie | krise#suizid → –
+Ich bin ratlos immer wieder | krise#suizid → –
+Er sagt ich bin ratlos immer wieder | krise#suizid → –
+Sie sagt, ich bin ratlos immer wieder | krise#suizid → –
+Ich bin ratlos immer wieder, sagt sie | krise#suizid → –
+Ich bin ratlos wieder | krise#suizid → –
+Er sagt ich bin ratlos wieder | krise#suizid → –
+Sie sagt, ich bin ratlos wieder | krise#suizid → –
+Ich bin ratlos wieder, sagt sie | krise#suizid → –
+Ich bin ratlos schon wieder | krise#suizid → –
+Er sagt ich bin ratlos schon wieder | krise#suizid → –
+Sie sagt, ich bin ratlos schon wieder | krise#suizid → –
+Ich bin ratlos schon wieder, sagt sie | krise#suizid → –
+Ich bin hilflos immer | krise#suizid > grenzen#bruecke → ueber#warum
+Er sagt ich bin hilflos immer | krise#suizid → ueber#warum
+Sie sagt, ich bin hilflos immer | krise#suizid → ueber#warum
+Ich bin hilflos immer, sagt sie | krise#suizid → ueber#warum
+Ich bin hilflos immer wieder | krise#suizid → ueber#warum
+Er sagt ich bin hilflos immer wieder | krise#suizid → ueber#warum
+Sie sagt, ich bin hilflos immer wieder | krise#suizid → ueber#warum
+Ich bin hilflos immer wieder, sagt sie | krise#suizid → ueber#warum
+Er sagt ich bin hilflos wieder | krise#suizid → ueber#warum
+Sie sagt, ich bin hilflos wieder | krise#suizid → ueber#warum
+Ich bin hilflos wieder, sagt sie | krise#suizid → ueber#warum
+Er sagt ich bin hilflos schon wieder | krise#suizid → ueber#warum
+Sie sagt, ich bin hilflos schon wieder | krise#suizid → ueber#warum
+Ich bin hilflos schon wieder, sagt sie | krise#suizid → ueber#warum
+Ich bin schuld immer | beziehungen#zwei-sichten > gefahr#gewalt > fragen#gespraeche → rolle#schuld > gefahr#riskant > rolle
+Er sagt ich habe Angst immer wieder | krise#suizid → diagnose#begleiterkrankungen > ueber#warum > beziehungen#zwei-sichten
+Sie sagt, ich habe Angst immer wieder | krise#suizid → diagnose#begleiterkrankungen > ueber#warum > beziehungen#zwei-sichten
+Ich habe Angst immer wieder, sagt sie | krise#suizid → diagnose#begleiterkrankungen > ueber#warum > beziehungen#zwei-sichten
+Er sagt ich habe Panik immer wieder | krise#suizid → –
+Sie sagt, ich habe Panik immer wieder | krise#suizid → –
+Ich habe Panik immer wieder, sagt sie | krise#suizid → –
+Er sagt ich habe Schuldgefühle immer wieder | krise#suizid → rolle#schuld > selbstfuersorge#eigenes-leben > selbstfuersorge#unterstuetzung
+Sie sagt, ich habe Schuldgefühle immer wieder | krise#suizid → rolle#schuld > selbstfuersorge#eigenes-leben > selbstfuersorge#unterstuetzung
+Ich habe Schuldgefühle immer wieder, sagt sie | krise#suizid → rolle#schuld > selbstfuersorge#eigenes-leben > selbstfuersorge#unterstuetzung
+Er sagt ich habe versagt immer wieder | krise#suizid → –
+Sie sagt, ich habe versagt immer wieder | krise#suizid → –
+Ich habe versagt immer wieder, sagt sie | krise#suizid → –
+Er sagt ich habe aufgegeben immer wieder | krise#suizid → –
+Sie sagt, ich habe aufgegeben immer wieder | krise#suizid → –
+Ich habe aufgegeben immer wieder, sagt sie | krise#suizid → –
+Er sagt ich werde angeschrien immer wieder | krise#suizid → grenzen#saetze > grenzen#erkennen
+Sie sagt, ich werde angeschrien immer wieder | krise#suizid → grenzen#saetze > grenzen#erkennen
+Ich werde angeschrien immer wieder, sagt sie | krise#suizid → grenzen#saetze > grenzen#erkennen
+Er sagt ich werde beschimpft immer wieder | krise#suizid → grenzen#saetze > grenzen#erkennen
+Sie sagt, ich werde beschimpft immer wieder | krise#suizid → grenzen#saetze > grenzen#erkennen
+Ich werde beschimpft immer wieder, sagt sie | krise#suizid → grenzen#saetze > grenzen#erkennen
+Er sagt ich werde erpresst immer wieder | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Sie sagt, ich werde erpresst immer wieder | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Ich werde erpresst immer wieder, sagt sie | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Er sagt ich werde kontrolliert immer wieder | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Sie sagt, ich werde kontrolliert immer wieder | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Ich werde kontrolliert immer wieder, sagt sie | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Er sagt ich werde angerufen immer wieder | krise#suizid → grenzen#dear
+Sie sagt, ich werde angerufen immer wieder | krise#suizid → grenzen#dear
+Ich werde angerufen immer wieder, sagt sie | krise#suizid → grenzen#dear
+Er sagt ich werde beschuldigt immer wieder | krise#suizid → fragen#f-beschuldigt > ueber#grundsaetze > fragen#gespraeche
+Sie sagt, ich werde beschuldigt immer wieder | krise#suizid → fragen#f-beschuldigt > ueber#grundsaetze > fragen#gespraeche
+Ich werde beschuldigt immer wieder, sagt sie | krise#suizid → fragen#f-beschuldigt > ueber#grundsaetze > fragen#gespraeche
+Er sagt ich werde abgewertet immer wieder | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Sie sagt, ich werde abgewertet immer wieder | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Ich werde abgewertet immer wieder, sagt sie | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Er sagt ich werde ignoriert immer wieder | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Sie sagt, ich werde ignoriert immer wieder | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Ich werde ignoriert immer wieder, sagt sie | krise#suizid → genesung#verlauf > fragen#f-einweisung > genesung
+Er sagt ich fühle mich schuldig immer wieder | krise#suizid → grenzen#arten > rolle#schuld > fragen#gespraeche
+Sie sagt, ich fühle mich schuldig immer wieder | krise#suizid → grenzen#arten > rolle#schuld > fragen#gespraeche
+Ich fühle mich schuldig immer wieder, sagt sie | krise#suizid → grenzen#arten > rolle#schuld > fragen#gespraeche
+Er sagt ich fühle mich ausgenutzt immer wieder | krise#suizid → verstehen#erleben
+Sie sagt, ich fühle mich ausgenutzt immer wieder | krise#suizid → verstehen#erleben
+Ich fühle mich ausgenutzt immer wieder, sagt sie | krise#suizid → verstehen#erleben
+Ich schäme mich immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich schäme mich immer | krise#suizid → –
+Sie sagt, ich schäme mich immer | krise#suizid → –
+Ich schäme mich immer, sagt sie | krise#suizid → –
+Ich schäme mich immer wieder | krise#suizid → –
+Er sagt ich schäme mich immer wieder | krise#suizid → –
+Sie sagt, ich schäme mich immer wieder | krise#suizid → –
+Ich schäme mich immer wieder, sagt sie | krise#suizid → –
+Ich schäme mich wieder | krise#suizid → –
+Er sagt ich schäme mich wieder | krise#suizid → –
+Sie sagt, ich schäme mich wieder | krise#suizid → –
+Ich schäme mich wieder, sagt sie | krise#suizid → –
+Ich schäme mich schon wieder | krise#suizid → –
+Er sagt ich schäme mich schon wieder | krise#suizid → –
+Sie sagt, ich schäme mich schon wieder | krise#suizid → –
+Ich schäme mich schon wieder, sagt sie | krise#suizid → –
+Er sagt ich sorge mich | krise#selbstverletzung > krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Sie sagt, ich sorge mich | krise#selbstverletzung > krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich, sagt sie | krise#selbstverletzung > krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich immer | krise#suizid > kurz#jetzt > jugendliche#schnell → jugendliche#rolle > fragen#f-einweisung > fragen
+Er sagt ich sorge mich immer | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Sie sagt, ich sorge mich immer | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich immer, sagt sie | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich immer wieder | krise#suizid > kurz#jetzt > begriffe#begriffe → jugendliche#rolle > fragen#f-einweisung > fragen
+Er sagt ich sorge mich immer wieder | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Sie sagt, ich sorge mich immer wieder | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich immer wieder, sagt sie | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich immer wieder. Das habe ich oft gemacht | krise#suizid → diagnose#zweifel > behandlung#keine-behandlung > jugendliche#volljaehrig
+Ich sorge mich immer wieder und habe nichts getan | krise#suizid → selbstfuersorge#kraft > selbstfuersorge#akzeptanz > kommunizieren#beispiele
+Ich sorge mich oft | krise#suizid > selbstfuersorge#warnsignale > rolle#nach-konflikten → jugendliche#rolle > fragen#f-einweisung > fragen
+Er sagt ich sorge mich oft | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Sie sagt, ich sorge mich oft | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich oft, sagt sie | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich wieder | krise#suizid > kurz#jetzt > beziehungen#was-hilft → jugendliche#rolle > fragen#f-einweisung > fragen
+Er sagt ich sorge mich wieder | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Sie sagt, ich sorge mich wieder | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich wieder, sagt sie | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich schon wieder | krise#suizid > kurz#jetzt > beziehungen#was-hilft → jugendliche#rolle > fragen#f-einweisung > fragen
+Er sagt ich sorge mich schon wieder | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Sie sagt, ich sorge mich schon wieder | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Ich sorge mich schon wieder, sagt sie | krise#suizid → jugendliche#rolle > fragen#f-einweisung > fragen
+Er sagt ich sorge mich immer öfter | krise#suizid → verstehen#mythen
+Sie sagt, ich sorge mich immer öfter | krise#suizid → verstehen#mythen
+Ich sorge mich immer öfter, sagt sie | krise#suizid → verstehen#mythen
+Ich ärgere mich immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich ärgere mich immer | krise#suizid → –
+Sie sagt, ich ärgere mich immer | krise#suizid → –
+Ich ärgere mich immer, sagt sie | krise#suizid → –
+Ich ärgere mich immer wieder | krise#suizid → –
+Er sagt ich ärgere mich immer wieder | krise#suizid → –
+Sie sagt, ich ärgere mich immer wieder | krise#suizid → –
+Ich ärgere mich immer wieder, sagt sie | krise#suizid → –
+Ich ärgere mich wieder | krise#suizid → –
+Er sagt ich ärgere mich wieder | krise#suizid → –
+Sie sagt, ich ärgere mich wieder | krise#suizid → –
+Ich ärgere mich wieder, sagt sie | krise#suizid → –
+Ich ärgere mich schon wieder | krise#suizid → –
+Er sagt ich ärgere mich schon wieder | krise#suizid → –
+Sie sagt, ich ärgere mich schon wieder | krise#suizid → –
+Ich ärgere mich schon wieder, sagt sie | krise#suizid → –
+Er sagt ich denke an Trennung immer wieder | krise#suizid → gefahr#riskant
+Sie sagt, ich denke an Trennung immer wieder | krise#suizid → gefahr#riskant
+Ich denke an Trennung immer wieder, sagt sie | krise#suizid → gefahr#riskant
+Ich denke ans Sterben immer wieder. Das habe ich oft gemacht | krise#suizid → verstehen#anspannung > diagnose#suizidalitaet
+Ich denke ans Sterben sehr oft | krise#suizid → –
+Er sagt ich denke ans Sterben sehr oft | krise#suizid → –
+Sie sagt, ich denke ans Sterben sehr oft | krise#suizid → –
+Ich denke ans Sterben sehr oft, sagt sie | krise#suizid → –
+Ich denke ans Sterben immer öfter | krise#suizid → –
+Er sagt ich denke ans Sterben immer öfter | krise#suizid → –
+Sie sagt, ich denke ans Sterben immer öfter | krise#suizid → –
+Ich denke ans Sterben immer öfter, sagt sie | krise#suizid → –
+Er sagt ich denke an Suizid sehr oft | krise#suizid → –
+Sie sagt, ich denke an Suizid sehr oft | krise#suizid → –
+Ich denke an Suizid sehr oft, sagt sie | krise#suizid → –
+Er sagt ich denke an Suizid immer öfter | krise#suizid → –
+Sie sagt, ich denke an Suizid immer öfter | krise#suizid → –
+Ich denke an Suizid immer öfter, sagt sie | krise#suizid → –
+Ich verletze mich immer | krise#suizid > kommunizieren#beispiele > fragen#gespraeche → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Er sagt ich verletze mich immer | krise#suizid > fragen#gespraeche > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Sie sagt, ich verletze mich immer | krise#suizid > fragen#gespraeche > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Ich verletze mich immer, sagt sie | krise#suizid > fragen#gespraeche > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Ich verletze mich immer wieder | krise#suizid > verstehen#borderline > begriffe#begriffe → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Er sagt ich verletze mich immer wieder | krise#suizid > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Sie sagt, ich verletze mich immer wieder | krise#suizid > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Ich verletze mich immer wieder, sagt sie | krise#suizid > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Ich verletze mich immer wieder. Das habe ich oft gemacht | krise#suizid > rolle#schuld → rolle#schuld > kommunizieren#beispiele > fragen#gespraeche
+Ich verletze mich immer wieder und habe nichts getan | krise#suizid > fragen#gespraeche → kommunizieren#beispiele > fragen#gespraeche
+Er sagt ich verletze mich oft | krise#suizid → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Sie sagt, ich verletze mich oft | krise#suizid → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Ich verletze mich oft, sagt sie | krise#suizid → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Ich verletze mich wieder | krise#suizid > rolle#schuld > verstehen#bewertungen → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Er sagt ich verletze mich wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Sie sagt, ich verletze mich wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Ich verletze mich wieder, sagt sie | krise#suizid > verstehen#bewertungen > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Ich verletze mich schon wieder | krise#suizid > rolle#schuld > verstehen#bewertungen → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Er sagt ich verletze mich schon wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Sie sagt, ich verletze mich schon wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Ich verletze mich schon wieder, sagt sie | krise#suizid > verstehen#bewertungen > verstehen#borderline → krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele
+Er sagt ich verletze mich immer öfter | krise#suizid → verstehen#mythen
+Sie sagt, ich verletze mich immer öfter | krise#suizid → verstehen#mythen
+Ich verletze mich immer öfter, sagt sie | krise#suizid → verstehen#mythen
+Ich ritze mich immer | krise#selbstverletzung > krise#suizid > grenzen#bruecke → krise#selbstverletzung
+Er sagt ich ritze mich immer | krise#selbstverletzung > krise#suizid → krise#selbstverletzung
+Sie sagt, ich ritze mich immer | krise#selbstverletzung > krise#suizid → krise#selbstverletzung
+Ich ritze mich immer, sagt sie | krise#selbstverletzung > krise#suizid → krise#selbstverletzung
+Ich ritze mich immer wieder | krise#suizid → krise#selbstverletzung
+Er sagt ich ritze mich immer wieder | krise#suizid → krise#selbstverletzung
+Sie sagt, ich ritze mich immer wieder | krise#suizid → krise#selbstverletzung
+Ich ritze mich immer wieder, sagt sie | krise#suizid → krise#selbstverletzung
+Ich ritze mich wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung
+Er sagt ich ritze mich wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung
+Sie sagt, ich ritze mich wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung
+Ich ritze mich wieder, sagt sie | krise#suizid > krise#selbstverletzung → krise#selbstverletzung
+Ich ritze mich schon wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung
+Er sagt ich ritze mich schon wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung
+Sie sagt, ich ritze mich schon wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung
+Ich ritze mich schon wieder, sagt sie | krise#suizid > krise#selbstverletzung → krise#selbstverletzung
+Er sagt ich schneide mich immer | krise#selbstverletzung > krise#suizid → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Sie sagt, ich schneide mich immer | krise#selbstverletzung > krise#suizid → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Ich schneide mich immer, sagt sie | krise#selbstverletzung > krise#suizid → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Ich schneide mich immer wieder | krise#suizid → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Er sagt ich schneide mich immer wieder | krise#suizid → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Sie sagt, ich schneide mich immer wieder | krise#suizid → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Ich schneide mich immer wieder, sagt sie | krise#suizid → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Ich schneide mich wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Er sagt ich schneide mich wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Sie sagt, ich schneide mich wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Ich schneide mich wieder, sagt sie | krise#suizid > krise#selbstverletzung → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Ich schneide mich schon wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Er sagt ich schneide mich schon wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Sie sagt, ich schneide mich schon wieder | krise#suizid > krise#selbstverletzung → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Ich schneide mich schon wieder, sagt sie | krise#suizid > krise#selbstverletzung → krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen
+Er sagt ich schlage zu immer wieder | krise#suizid → index#orientierung > fragen > fragen#nachschlagen
+Sie sagt, ich schlage zu immer wieder | krise#suizid → index#orientierung > fragen > fragen#nachschlagen
+Ich schlage zu immer wieder, sagt sie | krise#suizid → index#orientierung > fragen > fragen#nachschlagen
+Er sagt ich schlage zu wieder | krise#suizid > index#orientierung → index#orientierung > fragen > fragen#nachschlagen
+Sie sagt, ich schlage zu wieder | krise#suizid > index#orientierung → index#orientierung > fragen > fragen#nachschlagen
+Ich schlage zu wieder, sagt sie | krise#suizid > index#orientierung → index#orientierung > fragen > fragen#nachschlagen
+Er sagt ich schlage zu schon wieder | krise#suizid > index#orientierung → index#orientierung > fragen > fragen#nachschlagen
+Sie sagt, ich schlage zu schon wieder | krise#suizid > index#orientierung → index#orientierung > fragen > fragen#nachschlagen
+Ich schlage zu schon wieder, sagt sie | krise#suizid > index#orientierung → index#orientierung > fragen > fragen#nachschlagen
+Ich drohe immer | krise#suizid > grenzen#bruecke → krise#vermeiden > beziehungen#verstaerker > diagnose#begleiterkrankungen
+Er sagt ich drohe immer | krise#suizid → krise#vermeiden > beziehungen#verstaerker > diagnose#begleiterkrankungen
+Sie sagt, ich drohe immer | krise#suizid → krise#vermeiden > beziehungen#verstaerker > diagnose#begleiterkrankungen
+Ich drohe immer, sagt sie | krise#suizid → krise#vermeiden > beziehungen#verstaerker > diagnose#begleiterkrankungen
+Ich drohe immer wieder | krise#suizid → krise#vermeiden > beziehungen#verstaerker > diagnose#begleiterkrankungen
+Er sagt ich drohe immer wieder | krise#suizid → krise#vermeiden > beziehungen#verstaerker > diagnose#begleiterkrankungen
+Sie sagt, ich drohe immer wieder | krise#suizid → krise#vermeiden > beziehungen#verstaerker > diagnose#begleiterkrankungen
+Ich drohe immer wieder, sagt sie | krise#suizid → krise#vermeiden > beziehungen#verstaerker > diagnose#begleiterkrankungen
+Er sagt ich kontrolliere sie immer | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Sie sagt, ich kontrolliere sie immer | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Ich kontrolliere sie immer, sagt sie | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Ich kontrolliere sie immer wieder | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Er sagt ich kontrolliere sie immer wieder | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Sie sagt, ich kontrolliere sie immer wieder | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Ich kontrolliere sie immer wieder, sagt sie | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Ich kontrolliere sie wieder | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Er sagt ich kontrolliere sie wieder | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Sie sagt, ich kontrolliere sie wieder | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Ich kontrolliere sie wieder, sagt sie | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Ich kontrolliere sie schon wieder | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Er sagt ich kontrolliere sie schon wieder | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Sie sagt, ich kontrolliere sie schon wieder | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Ich kontrolliere sie schon wieder, sagt sie | krise#suizid → rolle#kinder > beziehungen#zwei-sichten > kinder#alltag
+Er sagt ich rufe an immer | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Sie sagt, ich rufe an immer | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Ich rufe an immer, sagt sie | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Er sagt ich rufe an immer wieder | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Sie sagt, ich rufe an immer wieder | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Ich rufe an immer wieder, sagt sie | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Ich rufe an wieder | rolle#alltag > kinder#eskalation > begriffe#begriffe → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Er sagt ich rufe an wieder | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Sie sagt, ich rufe an wieder | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Ich rufe an wieder, sagt sie | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Ich rufe an schon wieder | rolle#alltag > kinder#eskalation > begriffe#begriffe → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Er sagt ich rufe an schon wieder | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Sie sagt, ich rufe an schon wieder | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Ich rufe an schon wieder, sagt sie | krise#suizid → fragen#f-einweisung > grenzen#saetze > rolle#alltag
+Ich zahle immer | krise#suizid > grenzen#bruecke → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Er sagt ich zahle immer | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Sie sagt, ich zahle immer | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Ich zahle immer, sagt sie | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Ich zahle immer wieder | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Er sagt ich zahle immer wieder | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Sie sagt, ich zahle immer wieder | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Ich zahle immer wieder, sagt sie | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Er sagt ich zahle wieder | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Sie sagt, ich zahle wieder | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Ich zahle wieder, sagt sie | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Er sagt ich zahle schon wieder | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Sie sagt, ich zahle schon wieder | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Ich zahle schon wieder, sagt sie | krise#suizid → genesung#genesung-schnell > genesung#forschung > gefahr#riskant
+Ich putze immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich putze immer | krise#suizid → –
+Sie sagt, ich putze immer | krise#suizid → –
+Ich putze immer, sagt sie | krise#suizid → –
+Ich putze immer wieder | krise#suizid → –
+Er sagt ich putze immer wieder | krise#suizid → –
+Sie sagt, ich putze immer wieder | krise#suizid → –
+Ich putze immer wieder, sagt sie | krise#suizid → –
+Ich putze wieder | krise#suizid → –
+Er sagt ich putze wieder | krise#suizid → –
+Sie sagt, ich putze wieder | krise#suizid → –
+Ich putze wieder, sagt sie | krise#suizid → –
+Ich putze schon wieder | krise#suizid → –
+Er sagt ich putze schon wieder | krise#suizid → –
+Sie sagt, ich putze schon wieder | krise#suizid → –
+Ich putze schon wieder, sagt sie | krise#suizid → –
+Er sagt ich koche immer | krise#suizid → kommunizieren#beispiele
+Sie sagt, ich koche immer | krise#suizid → kommunizieren#beispiele
+Ich koche immer, sagt sie | krise#suizid → kommunizieren#beispiele
+Ich koche immer wieder | krise#suizid → kommunizieren#beispiele
+Er sagt ich koche immer wieder | krise#suizid → kommunizieren#beispiele
+Sie sagt, ich koche immer wieder | krise#suizid → kommunizieren#beispiele
+Ich koche immer wieder, sagt sie | krise#suizid → kommunizieren#beispiele
+Ich koche wieder | krise#suizid → kommunizieren#beispiele
+Er sagt ich koche wieder | krise#suizid → kommunizieren#beispiele
+Sie sagt, ich koche wieder | krise#suizid → kommunizieren#beispiele
+Ich koche wieder, sagt sie | krise#suizid → kommunizieren#beispiele
+Ich koche schon wieder | krise#suizid → kommunizieren#beispiele
+Er sagt ich koche schon wieder | krise#suizid → kommunizieren#beispiele
+Sie sagt, ich koche schon wieder | krise#suizid → kommunizieren#beispiele
+Ich koche schon wieder, sagt sie | krise#suizid → kommunizieren#beispiele
+Er sagt ich warte | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Sie sagt, ich warte | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte, sagt sie | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte immer | krise#suizid > diagnose#bedeutung > kommunizieren#beispiele → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Er sagt ich warte immer | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Sie sagt, ich warte immer | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte immer, sagt sie | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte immer wieder | krise#suizid > diagnose#bedeutung → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Er sagt ich warte immer wieder | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Sie sagt, ich warte immer wieder | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte immer wieder, sagt sie | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte immer wieder. Das habe ich oft gemacht | krise#suizid → behandlung#keine-behandlung > behandlung#rueckschlaege > diagnose#ohne-diagnose
+Ich warte immer wieder und habe nichts getan | krise#suizid → kommunizieren#beispiele > selbstfuersorge#kraft
+Ich warte oft | krise#suizid > behandlung#medikamente > diagnose#ohne-diagnose → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Er sagt ich warte oft | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Sie sagt, ich warte oft | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte oft, sagt sie | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte wieder | krise#suizid > kinder#eskalation > diagnose#ohne-diagnose → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Er sagt ich warte wieder | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Sie sagt, ich warte wieder | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte wieder, sagt sie | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte schon wieder | krise#suizid > kinder#eskalation > diagnose#ohne-diagnose → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Er sagt ich warte schon wieder | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Sie sagt, ich warte schon wieder | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte schon wieder, sagt sie | krise#suizid → behandlung#wartezeit > behandlung#therapieformen > behandlung#rollen
+Ich warte immer öfter | krise#suizid → behandlung#wartezeit
+Er sagt ich warte immer öfter | krise#suizid → behandlung#wartezeit
+Sie sagt, ich warte immer öfter | krise#suizid → behandlung#wartezeit
+Ich warte immer öfter, sagt sie | krise#suizid → behandlung#wartezeit
+Ich hoffe immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich hoffe immer | krise#suizid → –
+Sie sagt, ich hoffe immer | krise#suizid → –
+Ich hoffe immer, sagt sie | krise#suizid → –
+Ich hoffe immer wieder | krise#suizid → –
+Er sagt ich hoffe immer wieder | krise#suizid → –
+Sie sagt, ich hoffe immer wieder | krise#suizid → –
+Ich hoffe immer wieder, sagt sie | krise#suizid → –
+Ich hoffe wieder | krise#suizid → –
+Er sagt ich hoffe wieder | krise#suizid → –
+Sie sagt, ich hoffe wieder | krise#suizid → –
+Ich hoffe wieder, sagt sie | krise#suizid → –
+Ich hoffe schon wieder | krise#suizid → –
+Er sagt ich hoffe schon wieder | krise#suizid → –
+Sie sagt, ich hoffe schon wieder | krise#suizid → –
+Ich hoffe schon wieder, sagt sie | krise#suizid → –
+Er sagt ich bete immer | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Sie sagt, ich bete immer | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Ich bete immer, sagt sie | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Ich bete immer wieder | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Er sagt ich bete immer wieder | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Sie sagt, ich bete immer wieder | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Ich bete immer wieder, sagt sie | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Er sagt ich bete wieder | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Sie sagt, ich bete wieder | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Ich bete wieder, sagt sie | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Er sagt ich bete schon wieder | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Sie sagt, ich bete schon wieder | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Ich bete schon wieder, sagt sie | krise#suizid → rolle#mehrere > rolle#rolle-schnell > kommunizieren#beispiele
+Ich verzeihe immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich verzeihe immer | krise#suizid → –
+Sie sagt, ich verzeihe immer | krise#suizid → –
+Ich verzeihe immer, sagt sie | krise#suizid → –
+Ich verzeihe immer wieder | krise#suizid → –
+Er sagt ich verzeihe immer wieder | krise#suizid → –
+Sie sagt, ich verzeihe immer wieder | krise#suizid → –
+Ich verzeihe immer wieder, sagt sie | krise#suizid → –
+Ich verzeihe wieder | krise#suizid → –
+Er sagt ich verzeihe wieder | krise#suizid → –
+Sie sagt, ich verzeihe wieder | krise#suizid → –
+Ich verzeihe wieder, sagt sie | krise#suizid → –
+Ich verzeihe schon wieder | krise#suizid → –
+Er sagt ich verzeihe schon wieder | krise#suizid → –
+Sie sagt, ich verzeihe schon wieder | krise#suizid → –
+Ich verzeihe schon wieder, sagt sie | krise#suizid → –
+Ich helfe immer | krise#suizid > grenzen#dear > diagnose#bedeutung → fragen#f-medikamente > behandlung#therapieformen > rolle
+Er sagt ich helfe immer | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Sie sagt, ich helfe immer | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe immer, sagt sie | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe immer wieder | krise#suizid > diagnose#bedeutung > begriffe#begriffe → fragen#f-medikamente > behandlung#therapieformen > rolle
+Er sagt ich helfe immer wieder | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Sie sagt, ich helfe immer wieder | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe immer wieder, sagt sie | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe immer wieder. Das habe ich oft gemacht | krise#suizid → diagnose#bedeutung > kommunizieren#kippen > ueber#warum
+Ich helfe immer wieder und habe nichts getan | krise#suizid → kommunizieren#kippen > selbstfuersorge#akzeptanz
+Er sagt ich helfe oft | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Sie sagt, ich helfe oft | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe oft, sagt sie | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe wieder | krise#suizid > rolle#an-grenzen > fragen#f-ansprechen → fragen#f-medikamente > behandlung#therapieformen > rolle
+Er sagt ich helfe wieder | krise#suizid > beziehungen#verstaerker → fragen#f-medikamente > behandlung#therapieformen > rolle
+Sie sagt, ich helfe wieder | krise#suizid > beziehungen#verstaerker → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe wieder, sagt sie | krise#suizid > beziehungen#verstaerker → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe schon wieder | krise#suizid > rolle#an-grenzen > fragen#f-ansprechen → fragen#f-medikamente > behandlung#therapieformen > rolle
+Er sagt ich helfe schon wieder | krise#suizid > beziehungen#verstaerker → fragen#f-medikamente > behandlung#therapieformen > rolle
+Sie sagt, ich helfe schon wieder | krise#suizid > beziehungen#verstaerker → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe schon wieder, sagt sie | krise#suizid > beziehungen#verstaerker → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe immer öfter | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Er sagt ich helfe immer öfter | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Sie sagt, ich helfe immer öfter | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich helfe immer öfter, sagt sie | krise#suizid → fragen#f-medikamente > behandlung#therapieformen > rolle
+Ich tröste immer | krise#suizid > grenzen#bruecke → –
+Er sagt ich tröste immer | krise#suizid → –
+Sie sagt, ich tröste immer | krise#suizid → –
+Ich tröste immer, sagt sie | krise#suizid → –
+Ich tröste immer wieder | krise#suizid → –
+Er sagt ich tröste immer wieder | krise#suizid → –
+Sie sagt, ich tröste immer wieder | krise#suizid → –
+Ich tröste immer wieder, sagt sie | krise#suizid → –
+Ich tröste wieder | krise#suizid → –
+Er sagt ich tröste wieder | krise#suizid → –
+Sie sagt, ich tröste wieder | krise#suizid → –
+Ich tröste wieder, sagt sie | krise#suizid → –
+Ich tröste schon wieder | krise#suizid → –
+Er sagt ich tröste schon wieder | krise#suizid → –
+Sie sagt, ich tröste schon wieder | krise#suizid → –
+Ich tröste schon wieder, sagt sie | krise#suizid → –
+Ich erkläre immer | beziehungen#zwei-sichten > gefahr#gewalt > selbstfuersorge#eigenes-leben → fragen#f-umfeld > kinder#schnell > kinder#erklaeren
+Er sagt ich erkläre immer | krise#suizid → fragen#f-umfeld > kinder#schnell > kinder#erklaeren
+Sie sagt, ich erkläre immer | krise#suizid → fragen#f-umfeld > kinder#schnell > kinder#erklaeren
+Ich erkläre immer, sagt sie | krise#suizid → fragen#f-umfeld > kinder#schnell > kinder#erklaeren
+Er sagt ich erkläre immer wieder | krise#suizid → fragen#f-umfeld > kinder#schnell > kinder#erklaeren
+Sie sagt, ich erkläre immer wieder | krise#suizid → fragen#f-umfeld > kinder#schnell > kinder#erklaeren
+Ich erkläre immer wieder, sagt sie | krise#suizid → fragen#f-umfeld > kinder#schnell > kinder#erklaeren
+Ich erkläre wieder | kinder#eskalation > kurz#jetzt > fragen#eigenes-leben → fragen#f-umfeld > kinder#schnell > kinder#erklaeren
+Ich erkläre schon wieder | kinder#eskalation > kurz#jetzt > fragen#eigenes-leben → fragen#f-umfeld > kinder#schnell > kinder#erklaeren
+Er sagt ich rechtfertige mich immer | krise#suizid → kommunizieren#moment > grenzen#dear
+Sie sagt, ich rechtfertige mich immer | krise#suizid → kommunizieren#moment > grenzen#dear
+Ich rechtfertige mich immer, sagt sie | krise#suizid → kommunizieren#moment > grenzen#dear
+Ich rechtfertige mich immer wieder | krise#suizid → kommunizieren#moment > grenzen#dear
+Er sagt ich rechtfertige mich immer wieder | krise#suizid → kommunizieren#moment > grenzen#dear
+Sie sagt, ich rechtfertige mich immer wieder | krise#suizid → kommunizieren#moment > grenzen#dear
+Ich rechtfertige mich immer wieder, sagt sie | krise#suizid → kommunizieren#moment > grenzen#dear
+Ich rechtfertige mich wieder | krise#suizid → kommunizieren#moment > grenzen#dear
+Er sagt ich rechtfertige mich wieder | krise#suizid → kommunizieren#moment > grenzen#dear
+Sie sagt, ich rechtfertige mich wieder | krise#suizid → kommunizieren#moment > grenzen#dear
+Ich rechtfertige mich wieder, sagt sie | krise#suizid → kommunizieren#moment > grenzen#dear
+Ich rechtfertige mich schon wieder | krise#suizid → kommunizieren#moment > grenzen#dear
+Er sagt ich rechtfertige mich schon wieder | krise#suizid → kommunizieren#moment > grenzen#dear
+Sie sagt, ich rechtfertige mich schon wieder | krise#suizid → kommunizieren#moment > grenzen#dear
+Ich rechtfertige mich schon wieder, sagt sie | krise#suizid → kommunizieren#moment > grenzen#dear
+Ich verteidige mich immer | krise#suizid > grenzen#bruecke → beziehungen#schleife
+Er sagt ich verteidige mich immer | krise#suizid → beziehungen#schleife
+Sie sagt, ich verteidige mich immer | krise#suizid → beziehungen#schleife
+Ich verteidige mich immer, sagt sie | krise#suizid → beziehungen#schleife
+Ich verteidige mich immer wieder | krise#suizid → beziehungen#schleife
+Er sagt ich verteidige mich immer wieder | krise#suizid → beziehungen#schleife
+Sie sagt, ich verteidige mich immer wieder | krise#suizid → beziehungen#schleife
+Ich verteidige mich immer wieder, sagt sie | krise#suizid → beziehungen#schleife
+Ich verteidige mich wieder | krise#suizid → beziehungen#schleife
+Er sagt ich verteidige mich wieder | krise#suizid → beziehungen#schleife
+Sie sagt, ich verteidige mich wieder | krise#suizid → beziehungen#schleife
+Ich verteidige mich wieder, sagt sie | krise#suizid → beziehungen#schleife
+Ich verteidige mich schon wieder | krise#suizid → beziehungen#schleife
+Er sagt ich verteidige mich schon wieder | krise#suizid → beziehungen#schleife
+Sie sagt, ich verteidige mich schon wieder | krise#suizid → beziehungen#schleife
+Ich verteidige mich schon wieder, sagt sie | krise#suizid → beziehungen#schleife
+Er sagt ich sage nein immer | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Sie sagt, ich sage nein immer | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Ich sage nein immer, sagt sie | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Er sagt ich sage nein immer wieder | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Sie sagt, ich sage nein immer wieder | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Ich sage nein immer wieder, sagt sie | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Er sagt ich sage nein wieder | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Sie sagt, ich sage nein wieder | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Ich sage nein wieder, sagt sie | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Er sagt ich sage nein schon wieder | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Sie sagt, ich sage nein schon wieder | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Ich sage nein schon wieder, sagt sie | krise#suizid → grenzen > begriffe#b-co-abhaengigkeit > kurz#grundsaetze
+Ich sage ja immer | krise#suizid > grenzen#bruecke > fragen#gespraeche → kurz#jetzt > verstehen#mythen > begriffe#begriffe
+Er sagt ich sage ja immer | krise#suizid > fragen#gespraeche > verstehen#borderline → kurz#jetzt > grenzen#dear > genesung#forschung
+Sie sagt, ich sage ja immer | krise#suizid > fragen#gespraeche > verstehen#borderline → kurz#jetzt > fragen#f-bedrohlich > fragen#gespraeche
+Ich sage ja immer, sagt sie | krise#suizid > fragen#gespraeche > verstehen#borderline → kurz#jetzt > fragen#f-bedrohlich > fragen#gespraeche
+Ich sage ja immer wieder | krise#suizid > kurz#jetzt > diagnose#bedeutung → kurz#jetzt > begriffe#begriffe > quellen#forschung
+Ich sage ja immer wieder. Das habe ich oft gemacht | krise#suizid → diagnose#diagnose-schnell > diagnose#abklaerung > diagnose#bedeutung
+Ich sage ja immer wieder und habe nichts getan | krise#suizid → beziehungen#bz-sichten-s2 > fragen#f-bewertungen > verstehen#anspannung
+Er sagt ich sage ja oft | krise#suizid → rolle#schuld > kommunizieren#zuhoeren > genesung#verlauf
+Sie sagt, ich sage ja oft | krise#suizid → kommunizieren#zuhoeren > kinder#erklaeren > verstehen#mythen
+Ich sage ja oft, sagt sie | krise#suizid → kommunizieren#zuhoeren > kinder#erklaeren > verstehen#mythen
+Ich sage ja wieder | krise#suizid > beziehungen#was-hilft > kinder#eskalation → genesung#forschung > kurz#jetzt > quellen#leitlinien
+Er sagt ich sage ja wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → genesung#forschung > kurz#jetzt > rolle#schuld
+Ich sage ja schon wieder | krise#suizid > beziehungen#was-hilft > kinder#eskalation → genesung#forschung > kurz#jetzt > kommunizieren#zuhoeren
+Er sagt ich sage ja schon wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → genesung#forschung > kurz#jetzt > kommunizieren#anerkennen
+Sie sagt, ich sage ja schon wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → –
+Ich sage ja schon wieder, sagt sie | krise#suizid > verstehen#bewertungen > verstehen#borderline → –
+Er sagt ich sage ja immer öfter | krise#suizid → verstehen#mythen
+Sie sagt, ich sage ja immer öfter | krise#suizid → verstehen#mythen
+Ich sage ja immer öfter, sagt sie | krise#suizid → verstehen#mythen
+Er sagt ich setze Grenzen immer wieder | krise#suizid > grenzen#dear → grenzen > begriffe#b-grenzen > grenzen#dear
+Sie sagt, ich setze Grenzen immer wieder | krise#suizid > grenzen#dear → grenzen > begriffe#b-grenzen > grenzen#dear
+Ich setze Grenzen immer wieder, sagt sie | krise#suizid > grenzen#dear → grenzen > begriffe#b-grenzen > grenzen#dear
+Er sagt ich setze Grenzen wieder | krise#suizid > rolle#an-grenzen → grenzen > begriffe#b-grenzen > grenzen#dear
+Sie sagt, ich setze Grenzen wieder | krise#suizid > rolle#an-grenzen → grenzen > begriffe#b-grenzen > grenzen#dear
+Ich setze Grenzen wieder, sagt sie | krise#suizid > rolle#an-grenzen → grenzen > begriffe#b-grenzen > grenzen#dear
+Er sagt ich setze Grenzen schon wieder | krise#suizid > rolle#an-grenzen → grenzen > begriffe#b-grenzen > grenzen#dear
+Sie sagt, ich setze Grenzen schon wieder | krise#suizid > rolle#an-grenzen → grenzen > begriffe#b-grenzen > grenzen#dear
+Ich setze Grenzen schon wieder, sagt sie | krise#suizid > rolle#an-grenzen → grenzen > begriffe#b-grenzen > grenzen#dear
+Ich gehe immer. Das habe ich oft gemacht | krise#suizid → fragen#f-verlassen > fragen#f-eifersucht > fragen#f-beschuldigt
+Ich gehe immer wieder. Das habe ich oft gemacht | krise#suizid → fragen#f-verlassen > fragen#f-eifersucht > fragen#f-beschuldigt
+Ich gehe immer wieder und habe nichts getan | krise#suizid > fragen#gespraeche → fragen#f-bewertungen > fragen#gespraeche > kommunizieren#kippen
+Ich gehe wieder. Das habe ich oft gemacht | krise#suizid → fragen#f-verlassen > fragen#f-eifersucht > fragen#f-beschuldigt
+Ich gehe wieder und habe nichts getan | krise#suizid → fragen#f-bewertungen > fragen#gespraeche > kommunizieren#kippen
+Er sagt ich gehe sehr oft | krise#suizid → fragen#f-ansprechen > krise#sagen > fragen#diagnose
+Sie sagt, ich gehe sehr oft | krise#suizid → fragen#f-ansprechen > krise#sagen > fragen#diagnose
+Ich gehe sehr oft, sagt sie | krise#suizid → fragen#f-ansprechen > krise#sagen > fragen#diagnose
+Ich gehe schon wieder. Das habe ich oft gemacht | krise#suizid → fragen#f-verlassen > fragen#f-eifersucht > fragen#f-beschuldigt
+Ich gehe schon wieder und habe nichts getan | krise#suizid → fragen#f-bewertungen > fragen#gespraeche > kommunizieren#kippen
+Ich bleibe immer | krise#suizid > fragen#f-bedrohlich > fragen#gespraeche → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Er sagt ich bleibe immer | krise#suizid > fragen#gespraeche → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Sie sagt, ich bleibe immer | krise#suizid > fragen#gespraeche → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Ich bleibe immer, sagt sie | krise#suizid > fragen#gespraeche → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Ich bleibe immer wieder | krise#suizid > begriffe#begriffe → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Er sagt ich bleibe immer wieder | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Sie sagt, ich bleibe immer wieder | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Ich bleibe immer wieder, sagt sie | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Ich bleibe immer wieder. Das habe ich oft gemacht | krise#suizid → fragen#f-verlassen > fragen#f-bedrohlich > fragen#f-bewertungen
+Ich bleibe immer wieder und habe nichts getan | krise#suizid > fragen#gespraeche → fragen#f-bewertungen > fragen#gespraeche > verstehen#anspannung
+Ich bleibe oft | rolle#nach-konflikten > krise#suizid > grenzen#konsequenz → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Er sagt ich bleibe oft | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Sie sagt, ich bleibe oft | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Ich bleibe oft, sagt sie | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Ich bleibe wieder | krise#suizid > beziehungen#was-hilft > fragen#f-ansprechen → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Er sagt ich bleibe wieder | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Sie sagt, ich bleibe wieder | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Ich bleibe wieder, sagt sie | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Ich bleibe schon wieder | krise#suizid > beziehungen#was-hilft > fragen#f-ansprechen → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Er sagt ich bleibe schon wieder | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Sie sagt, ich bleibe schon wieder | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Ich bleibe schon wieder, sagt sie | krise#suizid → fragen#f-verlassen > selbstfuersorge#kraft > fragen#f-nicht-geteilt
+Ich bleibe immer öfter | krise#suizid → fragen#f-verlassen
+Er sagt ich bleibe immer öfter | krise#suizid → fragen#f-verlassen
+Sie sagt, ich bleibe immer öfter | krise#suizid → fragen#f-verlassen
+Ich bleibe immer öfter, sagt sie | krise#suizid → fragen#f-verlassen
+Ich mache alles falsch immer wieder | krise#suizid → beziehungen#verantwortung
+Er sagt ich mache alles falsch immer wieder | krise#suizid → beziehungen#verantwortung
+Sie sagt, ich mache alles falsch immer wieder | krise#suizid → beziehungen#verantwortung
+Ich mache alles falsch immer wieder, sagt sie | krise#suizid → beziehungen#verantwortung
+Ich mache mir Sorgen immer. Das habe ich oft gemacht | krise#suizid → behandlung#keine-behandlung > selbstfuersorge#akzeptanz > kommunizieren#beispiele
+Ich mache mir Sorgen immer wieder. Das habe ich oft gemacht | krise#suizid → behandlung#keine-behandlung > selbstfuersorge#akzeptanz > kommunizieren#beispiele
+Ich mache mir Sorgen immer wieder und habe nichts getan | krise#suizid → selbstfuersorge#akzeptanz > kommunizieren#beispiele
+Ich mache mir Sorgen wieder. Das habe ich oft gemacht | krise#suizid → behandlung#keine-behandlung > selbstfuersorge#akzeptanz > kommunizieren#beispiele
+Ich mache mir Sorgen wieder und habe nichts getan | krise#suizid → selbstfuersorge#akzeptanz > kommunizieren#beispiele
+Ich mache mir Sorgen schon wieder. Das habe ich oft gemacht | krise#suizid → behandlung#keine-behandlung > selbstfuersorge#akzeptanz > kommunizieren#beispiele
+Ich mache mir Sorgen schon wieder und habe nichts getan | krise#suizid → selbstfuersorge#akzeptanz > kommunizieren#beispiele
+Ich mache mir Sorgen immer öfter | krise#suizid → krise#krise-schnell
+Er sagt ich mache mir Sorgen immer öfter | krise#suizid → krise#krise-schnell
+Sie sagt, ich mache mir Sorgen immer öfter | krise#suizid → krise#krise-schnell
+Ich mache mir Sorgen immer öfter, sagt sie | krise#suizid → krise#krise-schnell
+Ich kann nicht schlafen immer | krise#suizid > grenzen#bruecke → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Er sagt ich kann nicht schlafen immer | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Sie sagt, ich kann nicht schlafen immer | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Ich kann nicht schlafen immer, sagt sie | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Ich kann nicht schlafen immer wieder | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Er sagt ich kann nicht schlafen immer wieder | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Sie sagt, ich kann nicht schlafen immer wieder | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Ich kann nicht schlafen immer wieder, sagt sie | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Ich kann nicht schlafen wieder | krise#suizid > grenzen#konsequenz → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Er sagt ich kann nicht schlafen wieder | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Sie sagt, ich kann nicht schlafen wieder | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Ich kann nicht schlafen wieder, sagt sie | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Ich kann nicht schlafen schon wieder | krise#suizid > grenzen#konsequenz → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Er sagt ich kann nicht schlafen schon wieder | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Sie sagt, ich kann nicht schlafen schon wieder | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Ich kann nicht schlafen schon wieder, sagt sie | krise#suizid → verstehen#eisberg > verstehen#einordnung > beziehungen#schleife
+Ich will weg immer | gefahr#gewalt > genesung#begriffe > beziehungen#zwei-sichten → behandlung#keine-behandlung > fragen#f-einweisung > behandlung#auskunft
+Er sagt ich will Ruhe | krise#selbstverletzung > krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Sie sagt, ich will Ruhe | krise#selbstverletzung > krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe, sagt sie | krise#selbstverletzung > krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe immer | krise#suizid > grenzen#dear > beziehungen#zwei-sichten → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Er sagt ich will Ruhe immer | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Sie sagt, ich will Ruhe immer | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe immer, sagt sie | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe immer wieder | krise#suizid > begriffe#begriffe → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Er sagt ich will Ruhe immer wieder | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Sie sagt, ich will Ruhe immer wieder | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe immer wieder, sagt sie | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe immer wieder. Das habe ich oft gemacht | krise#suizid → rolle#alltag > selbstfuersorge#erholung > kommunizieren#kippen
+Ich will Ruhe immer wieder und habe nichts getan | krise#suizid > beziehungen#zwei-sichten → kommunizieren#kippen > beziehungen#zwei-sichten > kommunizieren#beispiele
+Er sagt ich will Ruhe oft | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Sie sagt, ich will Ruhe oft | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe oft, sagt sie | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe wieder | krise#suizid > rolle#alltag > rolle#nach-konflikten → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Er sagt ich will Ruhe wieder | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Sie sagt, ich will Ruhe wieder | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe wieder, sagt sie | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe schon wieder | krise#suizid > rolle#alltag > rolle#nach-konflikten → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Er sagt ich will Ruhe schon wieder | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Sie sagt, ich will Ruhe schon wieder | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe schon wieder, sagt sie | krise#suizid → rolle#mehrere > selbstfuersorge#erholung > rolle#alltag
+Ich will Ruhe immer öfter | krise#suizid → –
+Er sagt ich will Ruhe immer öfter | krise#suizid → –
+Sie sagt, ich will Ruhe immer öfter | krise#suizid → –
+Ich will Ruhe immer öfter, sagt sie | krise#suizid → –
+Ich brauche Hilfe immer | krise#suizid > grenzen#bruecke > fragen#f-bedrohlich → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Er sagt ich brauche Hilfe immer | krise#suizid > fragen#gespraeche → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Sie sagt, ich brauche Hilfe immer | krise#suizid > fragen#gespraeche → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Ich brauche Hilfe immer, sagt sie | krise#suizid > fragen#gespraeche → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Ich brauche Hilfe immer wieder | krise#suizid > kurz#jetzt > diagnose#bedeutung → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Er sagt ich brauche Hilfe immer wieder | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Sie sagt, ich brauche Hilfe immer wieder | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Ich brauche Hilfe immer wieder, sagt sie | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Ich brauche Hilfe immer wieder. Das habe ich oft gemacht | krise#suizid > rolle#schuld → behandlung#keine-behandlung > selbstfuersorge#unterstuetzung > rolle#schuld
+Ich brauche Hilfe immer wieder und habe nichts getan | krise#suizid > fragen#gespraeche → verstehen#anspannung > kommunizieren#kippen > fragen#gespraeche
+Er sagt ich brauche Hilfe oft | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Sie sagt, ich brauche Hilfe oft | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Ich brauche Hilfe oft, sagt sie | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Ich brauche Hilfe wieder | krise#suizid > rolle#an-grenzen > selbstfuersorge#unterstuetzung → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Er sagt ich brauche Hilfe wieder | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Sie sagt, ich brauche Hilfe wieder | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Ich brauche Hilfe wieder, sagt sie | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Ich brauche Hilfe schon wieder | krise#suizid > rolle#an-grenzen > selbstfuersorge#unterstuetzung → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Er sagt ich brauche Hilfe schon wieder | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Sie sagt, ich brauche Hilfe schon wieder | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Ich brauche Hilfe schon wieder, sagt sie | krise#suizid → unterstuetzung#beratung > unterstuetzung > krise#krise-schnell
+Er sagt ich brauche Hilfe immer öfter | krise#suizid → verstehen#mythen
+Sie sagt, ich brauche Hilfe immer öfter | krise#suizid → verstehen#mythen
+Ich brauche Hilfe immer öfter, sagt sie | krise#suizid → verstehen#mythen
+Er sagt ich brauche Abstand immer wieder | krise#suizid → kommunizieren#kippen > grenzen > selbstfuersorge#selbstfuersorge-schnell
+Sie sagt, ich brauche Abstand immer wieder | krise#suizid → kommunizieren#kippen > grenzen > selbstfuersorge#selbstfuersorge-schnell
+Ich brauche Abstand immer wieder, sagt sie | krise#suizid → kommunizieren#kippen > grenzen > selbstfuersorge#selbstfuersorge-schnell
+Er sagt ich brauche Ruhe | krise#selbstverletzung > krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Sie sagt, ich brauche Ruhe | krise#selbstverletzung > krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe, sagt sie | krise#selbstverletzung > krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe immer | krise#suizid > beziehungen#zwei-sichten > grenzen#dear → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Er sagt ich brauche Ruhe immer | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Sie sagt, ich brauche Ruhe immer | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe immer, sagt sie | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe immer wieder | krise#suizid > begriffe#begriffe → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Er sagt ich brauche Ruhe immer wieder | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Sie sagt, ich brauche Ruhe immer wieder | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe immer wieder, sagt sie | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe immer wieder. Das habe ich oft gemacht | krise#suizid → rolle#alltag > selbstfuersorge#erholung > beziehungen#zwei-sichten
+Ich brauche Ruhe immer wieder und habe nichts getan | krise#suizid > beziehungen#zwei-sichten → kommunizieren#kippen > beziehungen#zwei-sichten > kommunizieren#beispiele
+Er sagt ich brauche Ruhe oft | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Sie sagt, ich brauche Ruhe oft | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe oft, sagt sie | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe wieder | krise#suizid > beziehungen#was-hilft > rolle#alltag → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Er sagt ich brauche Ruhe wieder | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Sie sagt, ich brauche Ruhe wieder | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe wieder, sagt sie | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe schon wieder | krise#suizid > beziehungen#was-hilft > rolle#alltag → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Er sagt ich brauche Ruhe schon wieder | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Sie sagt, ich brauche Ruhe schon wieder | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe schon wieder, sagt sie | krise#suizid → selbstfuersorge#erholung > beziehungen#bz-sichten-s1 > beziehungen#was-hilft
+Ich brauche Ruhe immer öfter | krise#suizid → –
+Er sagt ich brauche Ruhe immer öfter | krise#suizid → –
+Sie sagt, ich brauche Ruhe immer öfter | krise#suizid → –
+Ich brauche Ruhe immer öfter, sagt sie | krise#suizid → –
+Ich verstehe es nicht immer | krise#suizid > begriffe#b-urteilsfaehigkeit > diagnose#diagnose-schnell → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Er sagt ich verstehe es nicht immer | krise#suizid > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Sie sagt, ich verstehe es nicht immer | krise#suizid > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Ich verstehe es nicht immer, sagt sie | krise#suizid > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Ich verstehe es nicht immer wieder | krise#suizid > diagnose#bedeutung > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Er sagt ich verstehe es nicht immer wieder | krise#suizid > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Sie sagt, ich verstehe es nicht immer wieder | krise#suizid > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Ich verstehe es nicht immer wieder, sagt sie | krise#suizid > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Ich verstehe es nicht immer wieder. Das habe ich oft gemacht | krise#suizid > rolle#schuld → beziehungen#verantwortung > diagnose#zweifel > beziehungen#schleife
+Ich verstehe es nicht immer wieder und habe nichts getan | krise#suizid → verstehen#anspannung > kommunizieren#kippen > kommunizieren#beispiele
+Er sagt ich verstehe es nicht oft | krise#suizid → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Sie sagt, ich verstehe es nicht oft | krise#suizid → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Ich verstehe es nicht oft, sagt sie | krise#suizid → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Ich verstehe es nicht wieder | krise#suizid > rolle#an-grenzen > diagnose#ohne-diagnose → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Er sagt ich verstehe es nicht wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Sie sagt, ich verstehe es nicht wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Ich verstehe es nicht wieder, sagt sie | krise#suizid > verstehen#bewertungen > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Ich verstehe es nicht schon wieder | krise#suizid > rolle#an-grenzen > diagnose#ohne-diagnose → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Er sagt ich verstehe es nicht schon wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Sie sagt, ich verstehe es nicht schon wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Ich verstehe es nicht schon wieder, sagt sie | krise#suizid > verstehen#bewertungen > verstehen#borderline → verstehen#einordnung > beziehungen#verantwortung > verstehen#eisberg
+Er sagt ich verstehe es nicht immer öfter | krise#suizid > beziehungen#verantwortung → verstehen#mythen
+Sie sagt, ich verstehe es nicht immer öfter | krise#suizid > beziehungen#verantwortung → verstehen#mythen
+Ich verstehe es nicht immer öfter, sagt sie | krise#suizid > beziehungen#verantwortung → verstehen#mythen
+Ich weiss nicht weiter immer wieder | krise#suizid > kurz#jetzt → kommunizieren#kippen > kommunizieren#zuhoeren
+Er sagt ich weiss nicht weiter immer wieder | krise#suizid → kommunizieren#kippen > kommunizieren#zuhoeren
+Sie sagt, ich weiss nicht weiter immer wieder | krise#suizid → kommunizieren#kippen > kommunizieren#zuhoeren
+Ich weiss nicht weiter immer wieder, sagt sie | krise#suizid → kommunizieren#kippen > kommunizieren#zuhoeren
+Ich halte es nicht aus immer | krise#suizid > grenzen#bruecke > kurz#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Er sagt ich halte es nicht aus immer | krise#suizid > fragen#gespraeche > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Sie sagt, ich halte es nicht aus immer | krise#suizid > fragen#gespraeche > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Ich halte es nicht aus immer, sagt sie | krise#suizid > fragen#gespraeche > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Ich halte es nicht aus immer. Das habe ich oft gemacht | krise#suizid > rolle#schuld → beziehungen#verantwortung > diagnose#zweifel > kommunizieren#zuhoeren
+Ich halte es nicht aus immer wieder | krise#suizid > verstehen#borderline > begriffe#begriffe → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Er sagt ich halte es nicht aus immer wieder | krise#suizid > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Sie sagt, ich halte es nicht aus immer wieder | krise#suizid > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Ich halte es nicht aus immer wieder, sagt sie | krise#suizid > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Ich halte es nicht aus immer wieder. Das habe ich oft gemacht | krise#suizid > rolle#schuld → beziehungen#verantwortung > diagnose#zweifel > kommunizieren#zuhoeren
+Ich halte es nicht aus immer wieder und habe nichts getan | krise#suizid > fragen#gespraeche > beziehungen#zwei-sichten → verstehen#anspannung > kommunizieren#kippen > kommunizieren#beispiele
+Ich halte es nicht aus oft | krise#suizid > kommunizieren#zuhoeren > begriffe#b-selbstverletzung → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Er sagt ich halte es nicht aus oft | krise#suizid → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Sie sagt, ich halte es nicht aus oft | krise#suizid → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Ich halte es nicht aus oft, sagt sie | krise#suizid → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Ich halte es nicht aus wieder | krise#suizid > fragen#f-eigenes-leben > grenzen#konsequenz → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Er sagt ich halte es nicht aus wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Sie sagt, ich halte es nicht aus wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Ich halte es nicht aus wieder, sagt sie | krise#suizid > verstehen#bewertungen > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Ich halte es nicht aus wieder und habe nichts getan | krise#suizid > verstehen#anspannung > kommunizieren#kippen → verstehen#anspannung > kommunizieren#kippen > kommunizieren#beispiele
+Er sagt ich halte es nicht aus sehr oft | krise#suizid > beziehungen#verantwortung > verstehen#bewertungen → fragen#f-ansprechen > verstehen#bewertungen > kommunizieren#kippen
+Sie sagt, ich halte es nicht aus sehr oft | krise#suizid > beziehungen#verantwortung > verstehen#bewertungen → fragen#f-ansprechen > verstehen#bewertungen > kommunizieren#kippen
+Ich halte es nicht aus sehr oft, sagt sie | krise#suizid > beziehungen#verantwortung > verstehen#bewertungen → fragen#f-ansprechen > verstehen#bewertungen > kommunizieren#kippen
+Ich halte es nicht aus schon wieder | krise#suizid > fragen#f-eigenes-leben > grenzen#konsequenz → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Er sagt ich halte es nicht aus schon wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Sie sagt, ich halte es nicht aus schon wieder | krise#suizid > verstehen#bewertungen > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Ich halte es nicht aus schon wieder, sagt sie | krise#suizid > verstehen#bewertungen > verstehen#borderline → gefahr#riskant > beziehungen#verantwortung > krise#selbstverletzung
+Ich halte es nicht aus schon wieder und habe nichts getan | krise#suizid > verstehen#anspannung > kommunizieren#kippen → verstehen#anspannung > kommunizieren#kippen > kommunizieren#beispiele
+Er sagt ich halte es nicht aus immer öfter | krise#suizid > beziehungen#verantwortung > grenzen#bruecke → verstehen#mythen
+Sie sagt, ich halte es nicht aus immer öfter | krise#suizid > beziehungen#verantwortung > grenzen#bruecke → verstehen#mythen
+Ich halte es nicht aus immer öfter, sagt sie | krise#suizid > beziehungen#verantwortung > grenzen#bruecke → verstehen#mythen
+Ich ertrage es nicht immer | krise#suizid > grenzen#bruecke → impressum-datenschutz#datenschutz > quellen#leitlinien
+Er sagt ich ertrage es nicht immer | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Sie sagt, ich ertrage es nicht immer | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Ich ertrage es nicht immer, sagt sie | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Ich ertrage es nicht immer wieder | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Er sagt ich ertrage es nicht immer wieder | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Sie sagt, ich ertrage es nicht immer wieder | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Ich ertrage es nicht immer wieder, sagt sie | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Er sagt ich ertrage es nicht wieder | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Sie sagt, ich ertrage es nicht wieder | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Ich ertrage es nicht wieder, sagt sie | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Er sagt ich ertrage es nicht schon wieder | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Sie sagt, ich ertrage es nicht schon wieder | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien
+Ich ertrage es nicht schon wieder, sagt sie | krise#suizid → impressum-datenschutz#datenschutz > quellen#leitlinien

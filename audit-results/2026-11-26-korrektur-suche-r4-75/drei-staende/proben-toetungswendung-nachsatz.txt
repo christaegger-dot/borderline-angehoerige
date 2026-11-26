@@ -1,0 +1,28 @@
+r4-74 SCHLECHTER | r4-75 ok         | Sie bringt sich um sagt sie immer wieder | r4-73 krise#suizid | r4-74 behandlung#rollen > behandlung#kontakt | r4-75 krise#suizid
+r4-74 ok         | r4-75 ok         | Er bringt sich um hat er gesagt | r4-73 – | r4-74 – | r4-75 –
+r4-74 ok         | r4-75 ok         | Er bringt sich um sagt er | r4-73 – | r4-74 behandlung#rollen > behandlung#kontakt | r4-75 –
+r4-74 ok         | r4-75 ok         | Sie sagt immer wieder sie bringt sich um | r4-73 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt | r4-74 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt | r4-75 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+r4-74 ok         | r4-75 ok         | Er hat schon oft gesagt er bringt sich um | r4-73 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt | r4-74 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt | r4-75 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+r4-74 SCHLECHTER | r4-75 ok         | Mein Sohn sagt er bringt sich um immer wieder | r4-73 krise#suizid | r4-74 behandlung#rollen > behandlung#kontakt | r4-75 krise#suizid
+r4-74 ok         | r4-75 ok         | Er bringt sich um wenn ich gehe | r4-73 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt | r4-74 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt | r4-75 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+r4-74 ok         | r4-75 ok         | Er bringt sich um schreibt er mir | r4-73 – | r4-74 behandlung#rollen > behandlung#kontakt | r4-75 –
+r4-74 ok         | r4-75 ok         | Sie will sich umbringen sagt sie immer wieder | r4-73 krise#suizid > gefahr#gewalt > krise | r4-74 krise#suizid > gefahr#gewalt > krise | r4-75 krise#suizid > gefahr#gewalt > krise
+r4-74 ok         | r4-75 ok         | Er bringt sich um heute Nacht | r4-73 – | r4-74 – | r4-75 –
+r4-74 ok         | r4-75 ok         | Sie bringt sich um wegen mir | r4-73 – | r4-74 – | r4-75 –
+r4-74 ok         | r4-75 ok         | Er bringt sich bestimmt um irgendwann | r4-73 – | r4-74 – | r4-75 –
+r4-74 ok         | r4-75 ok         | Er hat gesagt er bringt sich um gestern Abend | r4-73 – | r4-74 – | r4-75 –
+r4-74 ok         | r4-75 ok         | Sie bringt sich um oft sagt sie das | r4-73 – | r4-74 behandlung#rollen > behandlung#kontakt | r4-75 –
+r4-74 SCHLECHTER | r4-75 ok         | Sie sagt, sie bringt sich um immer wieder | r4-73 krise#suizid | r4-74 behandlung#rollen > behandlung#kontakt | r4-75 krise#suizid
+r4-74 SCHLECHTER | r4-75 ok         | Ich bringe mich um immer wieder | r4-73 krise#suizid | r4-74 kommunizieren#suizid-angesprochen > krise#krise-schnell > fragen#f-kinder | r4-75 krise#suizid
+r4-74 SCHLECHTER | r4-75 ok         | er bringt uns alle um immer wieder | r4-73 krise#suizid | r4-74 behandlung#rollen > behandlung#kontakt | r4-75 krise#suizid
+r4-74 SCHLECHTER | r4-75 ok         | Wenn du gehst bringe ich mich um immer wieder | r4-73 krise#suizid | r4-74 kommunizieren#suizid-angesprochen > kommunizieren#worte | r4-75 krise#suizid
+r4-74 SCHLECHTER | r4-75 ok         | Mein Kind sagt es bringt sich um immer wieder | r4-73 krise#suizid | r4-74 kinder > jugendliche > jugendliche#abklaerung | r4-75 krise#suizid
+r4-74 SCHLECHTER | r4-75 ok         | Sie hat immer wieder gesagt, sie bringt sich um hat er oft gesagt | r4-73 krise#suizid | r4-74 – | r4-75 krise#suizid
+r4-74 ok         | r4-75 ok         | Ich bringe mich um Angst um mein Leben | r4-73 kinder#eskalation | r4-74 gefahr#gewalt > kinder#eskalation > index#orientierung | r4-75 gefahr#gewalt > kinder#eskalation > index#orientierung
+r4-74 ok         | r4-75 ok         | Er bringt sich um sagt er oft | r4-73 – | r4-74 behandlung#rollen > behandlung#kontakt | r4-75 –
+r4-74 ok         | r4-75 ok         | Sie bringt sich um hat sie geschrieben | r4-73 – | r4-74 – | r4-75 –
+r4-74 ok         | r4-75 ok         | Er bringt sich um, sagt er immer wieder | r4-73 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt | r4-74 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt | r4-75 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt
+r4-74 ok         | r4-75 ok         | Sie redet immer wieder davon sich umzubringen | r4-73 krise#suizid > gefahr#gewalt > krise | r4-74 krise#suizid > gefahr#gewalt > krise | r4-75 krise#suizid > gefahr#gewalt > krise
+r4-74 ok         | r4-75 ok         | Er droht immer wieder sich umzubringen | r4-73 krise#suizid > gefahr#gewalt > krise | r4-74 krise#suizid > gefahr#gewalt > krise | r4-75 krise#suizid > gefahr#gewalt > krise
+
+26 Anfragen · schlechter als r4-73: in r4-74 8, in r4-75 0 · erste drei Treffer in r4-75 wie r4-73: 25 · JS-Fehler 0

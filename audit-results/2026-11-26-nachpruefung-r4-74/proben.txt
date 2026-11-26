@@ -1,0 +1,492 @@
+# A Tötungswort (Stopp-Regel a): eigene Sätze mit Satzzeichen, Gross-/Kleinschreibung, Mundart
+Er will mich umbringen
+Mein Mann droht, mich umzubringen.
+Sie sagt, sie bringt sich um
+Ich bringe mich um
+ICH BRINGE MICH UM!!!
+Meine Tochter will sich umbringen
+Er hat gedroht mich zu töten
+Sie will sich töten
+er bringt uns alle um
+Mein Sohn schreibt, er bringt sich um.
+Sie redet immer wieder davon, sich umzubringen
+Er sagt oft er bringt sich um
+Mein Partner hat versucht sich umzubringen
+Sie sagte sie tötet sich
+Ich habe Angst dass er mich umbringt
+Wenn du gehst bringe ich mich um
+Er bringt die Kinder um
+Sie droht die Kinder und sich umzubringen
+Mein Ex will mich und die Kinder töten
+Er hat seine Frau umgebracht
+Mein Bruder wollte sich umbringen, jetzt will er nicht mehr
+Sie hat sich fast umgebracht
+Kann sie sich umbringen?
+umbringen
+töten
+Suizid umbringen
+Er schlägt mich und droht mich umzubringen
+Mini Tochter wott sich umbringe
+Er het gseit er bringt sich um
+Ich möchte mich nicht umbringen, aber ich will nicht mehr
+Sie will sich nicht umbringen
+Er bringt sich nicht um, oder?
+Mein Vater sagt er bringt sich um wenn ich ausziehe
+Tochter (16) schreibt: «Ich bring mich um»
+Sie spricht davon, sich zu töten.
+Was tun, wenn jemand sagt, er bringe sich um?
+Er erzählt allen, dass er sich umbringt
+Sie hat gesagt sie bringt erst die Kinder und dann sich um
+Sie hat immer wieder gesagt, sie bringt sich um
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um
+Was hat sie getan, wollte sie sich umbringen
+Er schreibt mir wieder er tötet mich
+Sie redet vom Sterben und will sich umbringen
+Er spricht immer vom Tod, er bringt sich um
+Suizit, er will sich umbringen
+suizidgefährdet und droht mich umzubringen
+Mein Mann schlägt die Kinder und droht sie umzubringen
+Mein Kind sagt es bringt sich um
+Die Kinder haben Angst, dass Papa sich umbringt
+Er will sich umbringen und ich mag nicht mehr
+# B Suizid und Gewalt zusammen ohne Tötungswort (vorher angeheftet)
+Er schlägt mich und ist suizidal
+Sie hat Suizidgedanken und bedroht mich
+Suizid Gewalt
+Er droht mit Suizid und schlägt mich
+Sie will sterben und hat mich gewürgt
+Er will nicht mehr leben und schlägt die Kinder
+Suizidgedanken, Gewalt, Kinder
+Sie ist lebensmüde und gewalttätig
+Abschiedsbrief und Morddrohung
+Er hat Tabletten genommen und mich geschlagen
+Frauenhaus Suizid
+Meine Tochter ist suizidal und schlägt mich immer wieder
+Er redet oft von Suizid und bedroht mich
+Sie sagt sie will sterben und hat mich geschlagen
+Mein Sohn will nicht mehr leben. Er hat mich bedroht.
+Suizidversuch Gewalt gegen mich
+Er hat mit Suizid gedroht und mir eine Ohrfeige gegeben
+Selbstmord und Gewalt in der Familie
+Sie will nicht mehr da sein und würgt mich
+Todeswunsch Bedrohung
+# C Klare Ich-Aussagen (Stopp-Regel c)
+Ich will sterben
+Ich will nicht mehr leben
+Ich möchte sterben
+Ich kann nicht mehr
+Ich habe Suizidgedanken
+Ich will mir das Leben nehmen
+Ich will nicht mehr da sein
+Ich bin lebensmüde
+Ich habe Tabletten genommen
+Ich habe Angst vor meinem Mann
+Ich habe Angst vor ihr
+Ich werde geschlagen
+Ich wurde bedroht
+Ich bin erschöpft
+Ich bin überfordert
+Ich habe keine Kraft mehr
+Ich bin am Ende
+Ich brauche Hilfe
+Ich brauche eine Pause
+Ich weiss nicht mehr weiter
+Ich habe Schuldgefühle
+Ich habe Angst um meine Tochter
+Ich mache mir Sorgen um meinen Sohn
+Ich fühle mich schuldig
+Ich schäme mich
+Ich bin wütend
+Ich werde immer wieder beschimpft
+Ich werde oft angeschrien
+Ich habe immer Angst
+Ich sage immer das Falsche
+Ich habe alles falsch gemacht
+Ich habe es schon oft gesagt
+Ich habe ihr Geld gegeben
+Ich habe ihm wieder Geld gegeben
+Ich habe nichts getan
+Ich rede oft mit ihr
+Ich will nicht mehr streiten
+Ich will keinen Kontakt mehr
+Ich möchte den Kontakt abbrechen
+Ich will mich trennen
+Ich halte es nicht mehr aus
+Ich werde manipuliert
+Ich fühle mich erpresst
+Ich habe Angst etwas Falsches zu sagen
+Ich verstehe sie nicht
+Ich möchte helfen
+Ich brauche Abstand
+Ich schlafe nicht mehr
+Ich weine oft
+Ich bin immer schuld
+Ich bin die Mutter
+Ich bin der Partner
+Ich habe mich selbst verletzt
+Ich ritze mich
+Ich schneide mich
+Ich habe mich geschnitten
+Ich habe eine Überdosis genommen
+Ich habe einen Abschiedsbrief gefunden
+Ich habe Angst dass sie sich etwas antut
+Ich mache mir Sorgen
+Ich bin hilflos
+Ich kann ihr nicht helfen
+Ich darf nichts sagen
+Ich werde ständig angerufen
+Ich bekomme immer wieder Nachrichten
+Ich bin Angehörige
+Ich möchte mit dem Arzt sprechen
+Ich bekomme keine Auskunft
+Ich habe Angst um mein Leben
+Ich habe die Polizei gerufen
+Ich wurde gewürgt
+Ich will nicht mehr
+Ich mag nicht mehr
+Ich möchte nicht mehr
+Ich cha nümme
+Ich wott nümme
+Ich will nüme läbe
+# D Regel «will / möchte / mag nicht mehr» am Ende: Proben und Gegenproben
+Sie will nicht mehr
+Sie will nicht mehr.
+Sie will nicht mehr!!!
+Er sagt, er mag nicht mehr
+Meine Tochter möchte nicht mehr
+Mein Sohn will einfach nicht mehr
+Was tun wenn sie nicht mehr will
+Er sagt dass er nicht mehr mag
+Sie will nicht mehr weiter
+Sie will nicht mehr weitermachen
+Er will nicht mehr zur Schule
+Sie will nicht mehr zur Therapie
+Therapie abgebrochen, sie will nicht mehr
+Medikamente: er will nicht mehr
+Er will nicht mehr reden
+Sie will nicht mehr mit mir reden
+Er will nicht mehr arbeiten
+Meine Partnerin will nicht mehr, Trennung
+Trennung, er will nicht mehr
+Sie will mich nicht mehr
+Er will nicht mehr mit mir zusammen sein
+Ich mag nicht mehr diskutieren
+Kind will nicht mehr zum Vater
+Mein Kind will nicht mehr
+Sie will nicht mehr essen
+Er isst nicht, will nicht mehr
+will nicht mehr
+mag nicht mehr
+nicht mehr
+Er will nicht
+Sie will nicht mehr und schlägt mich
+Er schlägt mich, ich will nicht mehr
+Ich werde bedroht und mag nicht mehr
+Si wott nümme
+Er wott nüme
+Si mag nümme
+I cha nümm
+Ich will nimmer
+Sie will nicht mehr, Suizit
+Er hat gesagt er will nicht mehr und hat Tabletten gesammelt
+# E Tippfehlerregel: Proben und Gegenproben für Fehltreffer
+Suizit
+Suzid
+Suiziid
+Suizd
+Selbsmord
+Selbstmort
+Selbstverletztung
+Selbsverletzung
+Boderline
+Bordeline
+Borderlein
+Terapie
+Therapi
+Theraphie
+Medikamnt
+Krisenpaln
+Krisnplan
+Abschidsbrief
+Todeswunch
+Lebensmüte
+Uberdosis
+Überdossis
+schlafen
+schlagen
+Schlagzeug
+Thermalbad
+Therapeut
+Theorie
+Borderliner
+Bordsteine
+Medikation
+Meditation
+Krisenplatz
+Suite
+Sulzer
+Subsidien
+Todeswunde
+Lebensmüller
+Lebensmittel
+Abschiedsfeier
+Abschiedsgruss
+Abschiedsbier
+Überdosiert
+Übergossen
+Überdruss
+Selbstverletzer
+Selbstversetzung
+Selbstvergessen
+Selbstmorde
+Selbstmode
+Suizidant
+Suizidär
+# F Kinder und Gewalt ohne Tötungswort
+mein Mann schlägt die Kinder
+Meine Frau schlägt unser Kind
+Er hat das Kind geschlagen
+Mein Kind schlägt mich
+Mein erwachsenes Kind bedroht mich
+Ich wurde als Kind geschlagen
+Sie schlägt mich vor den Kindern
+Er schlägt mich vor dem Kind
+Gewalt, die Kinder sehen zu
+Die Kinder haben Angst vor ihm
+Kinder Gewalt
+Kind bedroht
+Mein Kind wird in der Schule geschlagen
+Mein Kind wird bedroht
+Tochter schlägt ihr Kind
+Mini Frau schlaat d Chind
+Er schlägt meine Tochter
+Mein Sohn (8) wird von der Mutter geschlagen
+Sie ohrfeigt die Kinder
+Sie gibt dem Kind eine Ohrfeige
+Wegen der Kinder gehe ich nicht ins Frauenhaus
+Frauenhaus mit Kindern
+Frauenhaus mit Kind
+Die Mutter meiner Kinder bedroht mich
+Kinder schlagen sich
+Das Kind würgt die Katze
+Jugendliche schlägt mich
+# G Gewalt gegen die eigene Person
+Er schlägt mich
+Sie hat mich geschlagen
+Meine Tochter schlägt mich
+Sie bedroht mich
+Mein Sohn hat mich gewürgt
+Er schlägt sich selbst, das macht mich fertig
+Sie schlägt sich und verletzt sich, es belastet mich
+Sie ritzt sich und schlägt mich
+Er verletzt sich selbst und bedroht mich
+Mich hat niemand geschlagen
+Er hat mich nie geschlagen
+Keine Gewalt, aber er beschimpft mich
+Sie schreit mich an
+Er beleidigt mich
+Sie beschimpft mich immer wieder
+Angst um mein Leben
+Ich habe Angst um mein Leben, er ist so aggressiv
+Angst um ihr Leben
+Ich habe Angst um sein Leben
+Ohrfeige
+Schlagen Sie mich nicht
+# H «FU» und «IV» als ganzes Wort
+FU
+fu
+FU Rechte
+FU Beschwerde
+Was ist eine FU?
+FU-Einweisung
+für
+Führung
+IV
+IV Rente
+IV-Rente
+IV Anmeldung
+Invalidenversicherung
+positiv
+Motivation
+intensiv
+Zwangseinweisung
+Zwangsmedikation
+gegen ihren Willen eingewiesen
+gegen seinen Willen
+gegen meinen Willen
+Rekurs
+Frist
+zehn Tage
+# I Neue Füllwörter: Alltagssätze
+Er redet nicht mehr mit mir
+Sie spricht nicht mit mir
+Sie spricht nicht mehr
+Er sagt nichts
+Was sagt man in einer Krise
+Was sage ich
+Sie schreibt mir ständig
+Er schreibt dauernd Nachrichten
+Sie schreibt nicht zurück
+immer wieder Streit
+immer wieder Krisen
+immer wieder Rückfälle
+immer wieder
+immer
+oft
+wieder
+Sie ruft immer wieder an
+Er sagt er liebt mich nicht
+Sie sagt sie hasst mich
+Sie sagt ich bin schuld
+Er erzählt Lügen über mich
+Sie erzählt überall herum dass ich schuld bin
+Was habe ich falsch gemacht
+Was habe ich getan
+Habe ich etwas falsch gemacht
+Sie hat Schluss gemacht
+Er hat mir die Schuld gegeben
+Sie redet schlecht über mich
+Er redet nur von sich
+Sie spricht von Trennung
+Er redet von Trennung
+Vom Hausarzt überwiesen
+Brief vom Gericht
+Sie redet vom Sterben
+Er redet vom Tod seines Vaters
+Sie spricht vom Tod ihrer Mutter
+Er schreibt vom Tod des Hundes
+Tod
+Trauer
+Sie redet vom Tod
+vom Sterben der Grossmutter
+# J Wortstamm-Regel (Ergänzung): Proben und Gegenproben
+suizidgefährdet
+Suizidrisiko
+Suizidprävention
+Suizidpräventionstag
+Selbstmordattentäter
+Selbstmordattentat
+Selbstmörder
+Selbstmörderin
+selbstmörderisch
+Suizidforschung
+Suizidrate
+Suizidhilfe
+Suizidbeihilfe
+assistierter Suizid
+Freitod
+Freitodbegleitung
+Lebensmüdigkeit
+lebensmüden
+Überdosierung
+überdosiert
+Medikament überdosiert, Nebenwirkungen
+Überdosis Koffein
+Todeswünsche
+Abschiedsbriefen
+nicht suizidal
+nicht suizidgefährdet
+kein Suizidrisiko
+Sie ist nicht mehr suizidgefährdet
+keine Suizidgedanken
+Suizidgedanken ansprechen
+Darf ich Suizid ansprechen
+Suizidalität einschätzen
+Suizidversuch in der Familie
+Postsuizidal
+Parasuizid
+parasuizidal
+Suizidenten
+Hinterbliebene nach Suizid
+Suizidgefährdung bei Borderline
+suizidgefährdet und gewalttätig
+Er ist suizidgefährdet und schlägt mich
+suizidgefährdete Tochter will nicht mehr
+Selbstmorddrohung als Druckmittel
+Er droht mit Selbstmord wenn ich gehe
+Suiziddrohung wenn ich gehe
+geritzt
+ritzte
+aufritzen
+aufgeritzt
+Sie hat sich geritzt
+Selbstverletzungen
+Narben vom Ritzen
+Spritze
+Fritz
+kritzeln
+Witz
+Beleidigungen
+beleidigt sein
+Er schreibt vom Tod
+Sie schreibt in Nachrichten vom Tod
+# K Mundart
+Mini Tochter wott nüme läbe
+Er wott nümme läbe
+Si wott nüm läbe
+Ich cha nüme
+Ich cha nümme
+Mini Frau schlaat mi
+Er het mi gschlage
+Si ritzt sich
+Mis Chind
+mini Chind
+D Chinder händ Angscht
+Er wott sich umbringe
+Si het gseit si well stärbe
+Ich mag nümm
+Was söll ich mache
+# L Verneinungen und Gegenlagen
+Ich will nicht tot sein
+Ich will nicht sterben
+Sie will nicht sterben
+Er will nie sterben
+Ich will ihn nicht umbringen
+Niemand will sich umbringen
+Sie ist nicht tot
+Angst vor dem Sterben
+Mein Vater liegt im Sterben
+Sterbehilfe
+Der Hund ist gestorben
+Wir sterben vor Hunger
+Ich könnte sie umbringen
+Zum Töten langweilig
+Sie redet nicht vom Sterben
+Er redet nie vom Tod
+# M Quellenblock und Alltagswörter mit neuem Sicherheitstreffer
+Geheimnis
+Arztgeheimnis
+Berufsgeheimnis
+Schweigepflicht
+Zweitmeinung
+zweite Meinung
+Opferhilfe
+Opferberatung
+Polizei
+Linehan
+Bohus
+DBT
+Leitlinie
+S3-Leitlinie
+Studie
+Haare geschnitten
+Sie schneidet mich
+Er schneidet mir das Wort ab
+Sie hat sich beim Kochen geschnitten
+Gut abgeschnitten
+Es blutet
+Nasenbluten, es blutet
+Sie hat sich verletzt
+aggressiv
+Aggression
+Mein Sohn ist aggressiv
+Jugendamt
+KESB
+Kindesschutzbehörde
+Gefährdungsmeldung
+Mentalisieren
+MBT
+Notfallplan
+Notfallkarte
+Krisenplan
+Rückfall

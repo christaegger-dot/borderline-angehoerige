@@ -1,0 +1,5 @@
+Nur geänderte Anfragen: Anzahl mit passendem Abschnitt in r4-73 → r4-75 (Differenz gilt für das ganze Raster)
+Suizid: 328 → 1045 (Differenz +717)
+Selbstverletzung: 370 → 492 (Differenz +122)
+Gewalt (nur gefahr#gewalt): 1264 → 2465 (Differenz +1201)
+Gewalt (gefahr#gewalt zuerst): 856 → 1663 (Differenz +807)

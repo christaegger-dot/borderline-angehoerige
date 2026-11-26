@@ -1,0 +1,85 @@
+# 82 Anfragen · Bezug r4-73 · JS-Fehler 0
+# r4-76 gegen r4-73: vollständige Trefferliste gleich 82 von 82 · Ersttreffer gleich 82 · Sicherheitsabschnitt aus den ersten zwei verloren 0 · vorher Treffer, nachher leer 0
+# r4-75 gegen r4-73: vollständige Trefferliste gleich 54 von 82 · Ersttreffer gleich 65 · Sicherheitsabschnitt aus den ersten zwei verloren 4 · vorher Treffer, nachher leer 4
+Mein Mann schlägt zu wenn er wütend ist | r4-73 gefahr#gewalt | r4-76 = | r4-75 – [LEER]
+Mein Mann wird handgreiflich | r4-73 – | r4-76 = | r4-75 =
+Mein Mann hat unseren Sohn geschlagen | r4-73 gefahr#gewalt | r4-76 = | r4-75 – [LEER]
+Meine Frau schlägt unsere Tochter | r4-73 gefahr#gewalt > quellen#schweiz > quellen#leitlinien (+2) | r4-76 = | r4-75 quellen#schweiz > quellen#leitlinien > verstehen#mythen (+1) [VERLOREN]
+Meine Frau wirft Sachen nach den Kindern | r4-73 – | r4-76 = | r4-75 =
+Mein Partner schlägt seine Mutter | r4-73 grenzen#rollen > kurz#jetzt > kinder#erklaeren | r4-76 = | r4-75 =
+Meine Partnerin ist gewalttätig geworden | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung | r4-76 = | r4-75 =
+Mein Sohn schlägt seine Schwester | r4-73 grenzen#rollen | r4-76 = | r4-75 =
+Mein Sohn bedroht seinen Vater | r4-73 grenzen#rollen > rolle#schuld | r4-76 = | r4-75 =
+Meine Tochter schlägt ihren Freund | r4-73 grenzen#rollen > selbstfuersorge#kraft | r4-76 = | r4-75 =
+Meine Tochter wird gewalttätig wenn sie wütend ist | r4-73 rolle#schuld | r4-76 = | r4-75 =
+Mein Bruder bedroht unsere Eltern | r4-73 grenzen#rollen > jugendliche#geschwister | r4-76 = | r4-75 =
+Mein Vater schlägt meine Mutter | r4-73 rolle#schuld > grenzen#rollen > kurz#jetzt (+1) | r4-76 = | r4-75 grenzen#rollen > rolle#schuld > kurz#jetzt (+1)
+Meine Mutter schlägt meinen Bruder | r4-73 grenzen#rollen | r4-76 = | r4-75 =
+Er schlägt sie regelmässig | r4-73 begriffe#b-selbstfuersorge > begriffe#begriffe | r4-76 = | r4-75 =
+Sie schlägt ihn vor den Kindern | r4-73 kinder#eskalation > kinder#schnell > kurz#jetzt (+3) | r4-76 = | r4-75 kinder#eskalation > kinder#schnell > kurz#jetzt (+2)
+Er hat sie gewürgt | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Sie hat ihn mit dem Messer bedroht | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung | r4-76 = | r4-75 =
+Mein Mann schlägt Türen ein | r4-73 gefahr#gewalt | r4-76 = | r4-75 – [LEER]
+Mein Mann ist gewalttätig gegenüber den Kindern | r4-73 – | r4-76 = | r4-75 =
+Meine Frau schlägt zu und ich weiss nicht weiter | r4-73 gefahr#gewalt | r4-76 = | r4-75 =
+Mein Ex bedroht unsere Familie | r4-73 kinder#eskalation > quellen#leitlinien > quellen#forschung | r4-76 = | r4-75 =
+Mann schlägt Frau | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Frau schlägt Kind | r4-73 gefahr#gewalt > quellen#schweiz > quellen#leitlinien (+2) | r4-76 = | r4-75 kinder#eskalation > gefahr#gewalt > index#orientierung (+17)
+Gewalt in der Familie | r4-73 kinder#eskalation > fragen#f-umfeld > fragen#f-sprache (+14) | r4-76 = | r4-75 kinder#eskalation > fragen#f-umfeld > fragen#f-sprache (+12)
+Gewalt durch die Partnerin | r4-73 gefahr#gewalt > fragen#nachschlagen > selbstfuersorge#zu-viel (+6) | r4-76 = | r4-75 gefahr#gewalt > fragen#nachschlagen > selbstfuersorge#zu-viel (+5)
+Mein Schwiegersohn schlägt meine Tochter | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung | r4-76 = | r4-75 =
+Unser Sohn ist gewalttätig | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Unsere Tochter schlägt um sich | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Er droht ihr | r4-73 rolle#anbieten > behandlung#kontakt > jugendliche#rolle (+17) | r4-76 = | r4-75 =
+Sie droht den Kindern | r4-73 kinder#schnell > kinder#erklaeren > kinder#alltag (+11) | r4-76 = | r4-75 =
+Der Mann meiner Schwester schlägt zu | r4-73 gefahr#gewalt > grenzen#rollen | r4-76 = | r4-75 grenzen#rollen [VERLOREN]
+Mein Mann schlägt den Hund | r4-73 gefahr#gewalt | r4-76 = | r4-75 – [LEER]
+Mein Freund hat seine Ex geschlagen | r4-73 grenzen#rollen | r4-76 = | r4-75 =
+Meine Freundin schlägt zu wenn wir streiten | r4-73 grenzen#rollen | r4-76 = | r4-75 =
+Mein Sohn schneidet sich seit Monaten | r4-73 krise#selbstverletzung | r4-76 = | r4-75 krise#selbstverletzung > krise > begriffe#b-selbstverletzung
+Meine Tochter schneidet sich in die Arme | r4-73 krise#selbstverletzung | r4-76 = | r4-75 krise#selbstverletzung > krise > diagnose#suizidalitaet (+1)
+Meine Tochter schneidet sich und sagt nichts | r4-73 krise#selbstverletzung | r4-76 = | r4-75 krise#selbstverletzung > verstehen#borderline > fragen#gespraeche (+1)
+Sie schneidet sich jeden Abend | r4-73 – | r4-76 = | r4-75 kommunizieren#beispiele
+Er schneidet sich wenn wir streiten | r4-73 krise#selbstverletzung | r4-76 = | r4-75 krise#selbstverletzung > krise > diagnose#suizidalitaet (+1)
+Meine Frau schneidet sich wieder | r4-73 – | r4-76 = | r4-75 quellen#leitlinien > quellen#forschung
+Mein Partner schneidet sich heimlich | r4-73 krise#selbstverletzung | r4-76 = | r4-75 krise#selbstverletzung > krise > diagnose#suizidalitaet (+1)
+Meine Schwester schneidet sich seit sie vierzehn ist | r4-73 – | r4-76 = | r4-75 =
+Sie schneidet sich und ich habe Angst | r4-73 – | r4-76 = | r4-75 beziehungen#zwei-sichten > begriffe#b-borderline > begriffe#begriffe (+2)
+Meine Tochter ritzt sich seit Wochen | r4-73 krise#selbstverletzung | r4-76 = | r4-75 =
+Mein Sohn ritzt sich was kann ich tun | r4-73 krise#selbstverletzung | r4-76 = | r4-75 =
+Sie ritzt sich wegen mir | r4-73 krise#selbstverletzung | r4-76 = | r4-75 =
+Er ritzt sich heimlich | r4-73 krise#selbstverletzung | r4-76 = | r4-75 =
+Meine Freundin ritzt sich jeden Tag | r4-73 – | r4-76 = | r4-75 =
+Meine Tochter verletzt sich selbst seit dem Streit | r4-73 krise > begriffe#begriffe > quellen#forschung | r4-76 = | r4-75 =
+Er verletzt sich selbst wenn ich gehe | r4-73 krise#selbstverletzung > krise#suizid > diagnose#suizidalitaet (+13) | r4-76 = | r4-75 krise#selbstverletzung > krise#suizid > diagnose#suizidalitaet (+11)
+Sie verletzt sich immer wieder | r4-73 krise#suizid > verstehen#borderline > begriffe#begriffe (+1) | r4-76 = | r4-75 =
+Mein Kind verletzt sich absichtlich | r4-73 begriffe#begriffe | r4-76 = | r4-75 =
+Meine Tochter schneidet sich was soll ich tun | r4-73 krise#selbstverletzung | r4-76 = | r4-75 krise > krise#selbstverletzung > krise#suizid (+17)
+Sie schneidet sich nach jedem Streit | r4-73 – | r4-76 = | r4-75 quellen#forschung
+Er schneidet sich in den Arm und lacht | r4-73 – | r4-76 = | r4-75 =
+Meine Mutter schneidet sich schon wieder | r4-73 rolle#schuld | r4-76 = | r4-75 krise#suizid > rolle#schuld > diagnose#suizidalitaet
+Sie fügt sich Schnitte zu | r4-73 – | r4-76 = | r4-75 =
+Er verbrennt sich mit Zigaretten | r4-73 – | r4-76 = | r4-75 =
+Sie kratzt sich blutig | r4-73 – | r4-76 = | r4-75 =
+Selbstverletzung was tun als Mutter | r4-73 behandlung#kontakt > behandlung#rollen | r4-76 = | r4-75 =
+Selbstverletzung Narben ansprechen | r4-73 krise#selbstverletzung > krise > diagnose#suizidalitaet | r4-76 = | r4-75 =
+Schneidet sich meine Tochter wegen mir | r4-73 krise#selbstverletzung | r4-76 = | r4-75 begriffe#begriffe [VERLOREN]
+Mein Mann will nicht mehr leben seit der Trennung | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+17) | r4-76 = | r4-75 =
+Meine Tochter sagt sie will sterben und lacht dann | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+17) | r4-76 = | r4-75 =
+Er sagt er bringt sich um wenn ich gehe | r4-73 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt (+17) | r4-76 = | r4-75 =
+Sie droht mit Suizid wenn ich Grenzen setze | r4-73 krise#waehrend > verstehen#einordnung > krise#danach (+5) | r4-76 = | r4-75 krise#waehrend > krise#danach > fragen#gespraeche (+4)
+Mein Sohn hat Tabletten gesammelt | r4-73 fragen#f-medikamente > behandlung#therapieformen > behandlung (+2) | r4-76 = | r4-75 =
+Sie hat einen Abschiedsbrief geschrieben | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+1) | r4-76 = | r4-75 =
+Er redet oft vom Tod | r4-73 – | r4-76 = | r4-75 =
+Sie will nicht mehr aufwachen | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+17) | r4-76 = | r4-75 =
+Mein Partner sagt das Leben hat keinen Sinn mehr | r4-73 – | r4-76 = | r4-75 =
+Suizidgedanken ansprechen | r4-73 krise#suizid > krise > kommunizieren#suizid-angesprochen (+12) | r4-76 = | r4-75 =
+Suiziddrohung ernst nehmen | r4-73 krise#suizid > kommunizieren#suizid-angesprochen > diagnose#suizidalitaet (+10) | r4-76 = | r4-75 =
+Suizidversuch meiner Tochter | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+17) | r4-76 = | r4-75 =
+Nach dem Suizidversuch | r4-73 krise#suizid > krise > diagnose#suizidalitaet (+17) | r4-76 = | r4-75 =
+Sie tut sich etwas an | r4-73 grenzen#erkennen > selbstfuersorge#kraft | r4-76 = | r4-75 =
+Mein Mann will nicht in die Therapie | r4-73 behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft (+17) | r4-76 = | r4-75 behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft (+17)
+Meine Tochter schneidet den Kontakt ab | r4-73 behandlung > grenzen > behandlung#keine-behandlung (+6) | r4-76 = | r4-75 behandlung#kontakt > gefahr#gewalt > rolle#nach-konflikten (+7)
+Grenzen setzen ohne Schuldgefühle | r4-73 grenzen#rollen > selbstfuersorge#unterstuetzung | r4-76 = | r4-75 =
+Wie spreche ich mit den Kindern | r4-73 kinder#alltag > kurz#jetzt > buecher#kinderbuecher (+1) | r4-76 = | r4-75 =
+Was ist Borderline | r4-73 kurz#borderline > fragen#f-medikamente > verstehen (+17) | r4-76 = | r4-75 =

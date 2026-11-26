@@ -1,0 +1,34 @@
+# 236 Anfragen · Bezug r4-73 · JS-Fehler 0
+# r4-76 gegen r4-73: vollständige Trefferliste gleich 236 von 236 · Ersttreffer gleich 236 · Sicherheitsabschnitt aus den ersten zwei verloren 0 · vorher Treffer, nachher leer 0
+# r4-75 gegen r4-73: vollständige Trefferliste gleich 206 von 236 · Ersttreffer gleich 230 · Sicherheitsabschnitt aus den ersten zwei verloren 4 · vorher Treffer, nachher leer 1
+# gezeigt: nur Anfragen mit Unterschied in mindestens einem Stand
+Trennung | r4-73 fragen#schutz > fragen > grenzen (+5) | r4-76 = | r4-75 fragen#schutz > fragen > grenzen (+4)
+DBT | r4-73 begriffe#b-dbt > behandlung#therapieformen > buecher#eltern (+17) | r4-76 = | r4-75 begriffe#b-dbt > behandlung#therapieformen > buecher#eltern (+17)
+Validierung | r4-73 begriffe#b-validierung > kommunizieren#anerkennen > kommunizieren#schnell (+11) | r4-76 = | r4-75 begriffe#b-validierung > kommunizieren#anerkennen > kommunizieren#schnell (+10)
+Skills | r4-73 begriffe#b-skills > buecher#eltern > begriffe#b-dbt (+7) | r4-76 = | r4-75 begriffe#b-skills > buecher#eltern > begriffe#b-dbt (+4)
+Therapie verweigert | r4-73 behandlung#keine-behandlung > behandlung > behandlung#therapieformen (+17) | r4-76 = | r4-75 behandlung#keine-behandlung > behandlung > behandlung#therapieformen (+17)
+Behandlungsteam | r4-73 behandlung#kontakt > behandlung#rollen > jugendliche#abklaerung (+17) | r4-76 = | r4-75 behandlung#kontakt > behandlung#rollen > behandlung#auskunft (+17)
+erblich | r4-73 fragen#f-erblich > fragen > fragen#verlauf (+2) | r4-76 = | r4-75 fragen#f-erblich > fragen > fragen#verlauf (+1)
+Einweisung | r4-73 fragen#f-einweisung > unterstuetzung#beratung > rolle#schuld (+17) | r4-76 = | r4-75 fragen#f-einweisung > fragen > begriffe#b-fu (+5)
+gefährlich | r4-73 krise#waehrend > verstehen#borderline > buecher#kritisch (+3) | r4-76 = | r4-75 krise#waehrend > verstehen#borderline > buecher#kritisch (+2)
+Geheimnis | r4-73 fragen#weitere > behandlung#rueckschlaege > quellen#diagnostik (+3) | r4-76 = | r4-75 behandlung#auskunft > quellen#diagnostik > kinder#eskalation
+Selbstverletzung bemerkt | r4-73 krise#selbstverletzung > krise#bleibt > quellen#versorgung | r4-76 = | r4-75 krise#selbstverletzung > quellen#versorgung
+schneidet sich | r4-73 krise#selbstverletzung | r4-76 = | r4-75 krise#selbstverletzung > krise > diagnose#suizidalitaet (+17)
+Muss ich bleiben | r4-73 fragen#f-verlassen > selbstfuersorge#kraft > rolle#nach-konflikten (+3) | r4-76 = | r4-75 fragen#f-verlassen > selbstfuersorge#kraft > rolle#nach-konflikten (+2)
+Vertrauensperson | r4-73 begriffe#b-vertrauensperson > behandlung#auskunft > grenzen#bruecke (+5) | r4-76 = | r4-75 begriffe#b-vertrauensperson > behandlung#auskunft > grenzen#bruecke (+4)
+emotional instabil | r4-73 begriffe#b-emotional-instabil > quellen#diagnostik > begriffe#begriffe (+2) | r4-76 = | r4-75 begriffe#b-emotional-instabil > quellen#diagnostik > begriffe#begriffe (+1)
+F60.31 | r4-73 begriffe#b-emotional-instabil > quellen#diagnostik > diagnose#abklaerung (+2) | r4-76 = | r4-75 begriffe#b-emotional-instabil > quellen#diagnostik > diagnose#abklaerung (+1)
+Beistandschaft | r4-73 behandlung#auskunft > gefahr#riskant > genesung#freiwillig (+2) | r4-76 = | r4-75 behandlung#auskunft > gefahr#riskant > genesung#freiwillig (+1)
+Was bessert sich zuerst | r4-73 genesung#forschung > genesung#freiwillig | r4-76 = | r4-75 genesung#forschung
+Tochter 15 Borderline | r4-73 jugendliche > grenzen#rollen > buecher#partner (+15) | r4-76 = | r4-75 jugendliche > buecher#partner > quellen#diagnostik (+9)
+volljährig | r4-73 jugendliche#volljaehrig > jugendliche > jugendliche#auskunft (+2) | r4-76 = | r4-75 jugendliche#volljaehrig > jugendliche > jugendliche#auskunft (+1)
+will keine Hilfe | r4-73 behandlung#keine-behandlung > behandlung > unterstuetzung#beratung (+17) | r4-76 = | r4-75 behandlung#keine-behandlung > behandlung > unterstuetzung#beratung (+17)
+Psychiatrie Notfall | r4-73 krise#krise-schnell > kinder#hilfe > buecher#auswahl | r4-76 = | r4-75 krise#krise-schnell > buecher#auswahl
+Gewalt gegen Kinder | r4-73 kinder#eskalation > gefahr#gewalt > grenzen#rollen (+17) | r4-76 = | r4-75 kinder#eskalation > gefahr#gewalt > index#orientierung (+17)
+Ärztin | r4-73 behandlung#kontakt > behandlung#rollen > jugendliche#abklaerung (+17) | r4-76 = | r4-75 behandlung#kontakt > behandlung#rollen > behandlung#auskunft (+17)
+Er will nicht mehr in die Therapie | r4-73 behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft (+17) | r4-76 = | r4-75 behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft (+17)
+Mein Mann schlägt zu | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Mein Mann ist gewalttätig | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Mein Mann schlägt unseren Sohn | r4-73 gefahr#gewalt | r4-76 = | r4-75 – [LEER]
+Meine Frau schlägt zu | r4-73 gefahr#gewalt > quellen#schweiz > quellen#leitlinien (+2) | r4-76 = | r4-75 quellen#schweiz > quellen#leitlinien > verstehen#mythen (+1) [VERLOREN]
+Mein Sohn schneidet sich seit Wochen | r4-73 krise#selbstverletzung | r4-76 = | r4-75 begriffe#begriffe [VERLOREN]

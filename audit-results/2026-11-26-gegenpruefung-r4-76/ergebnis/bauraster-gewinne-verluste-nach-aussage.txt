@@ -1,0 +1,44 @@
+Aussage | gewonnen | verloren/leer | vorher leer, nachher Treffer
+hat mir eine ohrfeige gegeben | 432 | 0 | 0
+redet vom sterben | 416 | 0 | 0
+schlägt die kinder | 343 | 0 | 0
+schlägt mich | 341 | 0 | 0
+würgt mich | 341 | 0 | 0
+hat mich geschlagen | 341 | 0 | 0
+ist suizidgefährdet | 200 | 22 | 84
+hat sich geritzt | 147 | 22 | 114
+hat sich geschnitten | 147 | 22 | 114
+denkt ans sterben | 88 | 8 | 0
+schneidet sich | 45 | 122 | 67
+ist aggressiv | 34 | 38 | 192
+wird gewalttätig | 33 | 50 | 0
+häusliche gewalt | 32 | 56 | 0
+schlägt | 20 | 61 | 0
+schlägt zu | 20 | 61 | 0
+ist gewalttätig | 20 | 61 | 0
+bedroht uns | 20 | 61 | 0
+gewalt | 20 | 61 | 0
+will nicht mehr | 18 | 0 | 0
+mag nicht mehr | 18 | 11 | 0
+verletzt sich | 9 | 15 | 0
+selbstverletzung | 9 | 15 | 0
+hat einen abschiedsbrief geschrieben | 1 | 4 | 0
+droht mir | 1 | 10 | 0
+hat suizidgedanken | 0 | 0 | 0
+ist suizidal | 0 | 0 | 0
+droht mit suizid | 0 | 0 | 0
+hat selbstmordgedanken | 0 | 0 | 0
+hat einen todeswunsch | 0 | 0 | 0
+verletzt sich selbst | 0 | 0 | 0
+hat sich selbst verletzt | 0 | 0 | 0
+beschimpft mich | 0 | 23 | 33
+macht mir angst | 0 | 0 | 0
+schreit mich an | 0 | 46 | 246
+bringt sich um | 0 | 6 | 0
+tut sich etwas an | 0 | 4 | 0
+ritzt sich | 0 | 7 | 0
+hat einen suizidversuch gemacht | 0 | 0 | 0
+spricht von suizid | 0 | 0 | 0
+denkt an den tod | 0 | 0 | 0
+bedroht mich | 0 | 0 | 0
+ich habe angst vor ihm | 0 | 0 | 0

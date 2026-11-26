@@ -1,0 +1,35 @@
+# 32 Anfragen · Bezug r4-73 · JS-Fehler 0
+# r4-76 gegen r4-73: vollständige Trefferliste gleich 32 von 32 · Ersttreffer gleich 32 · Sicherheitsabschnitt aus den ersten zwei verloren 0 · vorher Treffer, nachher leer 0
+# r4-75 gegen r4-73: vollständige Trefferliste gleich 1 von 32 · Ersttreffer gleich 1 · Sicherheitsabschnitt aus den ersten zwei verloren 1 · vorher Treffer, nachher leer 0
+Anfrage | r4-73 impressum-datenschutz#impressum > impressum-datenschutz#datenschutz > index#beratung (+5) | r4-76 = | r4-75 =
+Ich will nicht mehr | r4-73 behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft (+17) | r4-76 = | r4-75 krise#suizid > selbstfuersorge#warnsignale > krise (+17)
+Er sagt er will nicht mehr | r4-73 behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft (+17) | r4-76 = | r4-75 krise#suizid > selbstfuersorge#warnsignale > krise (+17)
+Si wott nüme läbe | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Sie redet vom Sterben | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Abschiedsnachricht | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Suizit | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Selbsmord | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Selbstverletztung | r4-73 – | r4-76 = | r4-75 krise#selbstverletzung > krise > diagnose#suizidalitaet (+17)
+Er hat sich geschnitten | r4-73 – | r4-76 = | r4-75 krise#selbstverletzung > krise > diagnose#suizidalitaet (+17)
+Angst um mein Leben | r4-73 verstehen#erleben > fragen#eigenes-leben > verstehen#borderline (+14) | r4-76 = | r4-75 gefahr#gewalt > kinder#eskalation > index#orientierung (+17)
+Sie hat mir eine Ohrfeige gegeben | r4-73 – | r4-76 = | r4-75 gefahr#gewalt > kinder#eskalation > index#orientierung (+17)
+mein Mann schlägt die Kinder | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 kinder#eskalation > gefahr#gewalt > index#orientierung (+17)
+der Vater meiner Kinder schlägt mich | r4-73 grenzen#rollen > rolle#schuld > kurz#jetzt (+1) | r4-76 = | r4-75 gefahr#gewalt > kinder#eskalation > index#orientierung (+17)
+Zwangseinweisung | r4-73 – | r4-76 = | r4-75 fragen#f-einweisung > fragen > begriffe#b-fu (+5)
+Beschwerde FU Frist | r4-73 selbstfuersorge#erholung > diagnose#begleiterkrankungen > quellen#schweiz (+2) | r4-76 = | r4-75 fragen#f-einweisung > selbstfuersorge#erholung > diagnose#begleiterkrankungen (+3)
+Arztgeheimnis | r4-73 fragen#weitere > behandlung#rueckschlaege > quellen#diagnostik (+2) | r4-76 = | r4-75 behandlung#auskunft > quellen#diagnostik
+Zweitmeinung | r4-73 quellen#versorgung | r4-76 = | r4-75 diagnose#zweifel > quellen#versorgung
+Jugendamt | r4-73 – | r4-76 = | r4-75 kinder#eskalation > gefahr#riskant > kinder (+5)
+Notfallplan | r4-73 – | r4-76 = | r4-75 krise#krisenplan > grenzen#dear > grenzen#saetze (+5)
+Mentalisieren | r4-73 beziehungen#verantwortung > quellen#forschung | r4-76 = | r4-75 begriffe#b-mentalisierung > fragen#f-welche-therapie > behandlung#therapieformen (+4)
+suizidgefährdet | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Meine Tochter ist suizidgefährdet | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Selbstmorddrohung | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+nach Suizidversuchen | r4-73 quellen#forschung > diagnose#begleiterkrankungen | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Medikamentenüberdosis | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+lebensmüden | r4-73 – | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Sie hat sich geritzt | r4-73 – | r4-76 = | r4-75 krise#selbstverletzung > krise > diagnose#suizidalitaet (+17)
+Selbstverletzungen | r4-73 diagnose#suizidalitaet > krise#suizid > kurz#borderline (+7) | r4-76 = | r4-75 krise#selbstverletzung > krise > diagnose#suizidalitaet (+17) [VERLOREN]
+Er schreibt vom Tod | r4-73 begriffe#begriffe | r4-76 = | r4-75 krise#suizid > krise > diagnose#suizidalitaet (+17)
+Beleidigungen | r4-73 – | r4-76 = | r4-75 kommunizieren#moment > grenzen#saetze > grenzen#erkennen (+1)
+FU | r4-73 unterstuetzung#beratung > index#haltung > index#beratung (+17) | r4-76 = | r4-75 begriffe#b-fu > fragen#f-einweisung > fragen (+5)

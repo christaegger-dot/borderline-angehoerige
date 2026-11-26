@@ -1,0 +1,34 @@
+# 31 Anfragen · Bezug r4-73 · JS-Fehler 0
+# r4-76 gegen r4-73: vollständige Trefferliste gleich 31 von 31 · Ersttreffer gleich 31 · Sicherheitsabschnitt aus den ersten zwei verloren 0 · vorher Treffer, nachher leer 0 · Gegenrichtung: Sicherheitsabschnitt neu unter den ersten zwei 0 · vorher leer, nachher Treffer 0
+# r4-75 gegen r4-73: vollständige Trefferliste gleich 20 von 31 · Ersttreffer gleich 22 · Sicherheitsabschnitt aus den ersten zwei verloren 7 · vorher Treffer, nachher leer 1 · Gegenrichtung: Sicherheitsabschnitt neu unter den ersten zwei 1 · vorher leer, nachher Treffer 0
+Mein Mann schlägt zu | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Meine Frau schlägt zu | r4-73 gefahr#gewalt > quellen#schweiz > quellen#leitlinien (+2) | r4-76 = | r4-75 quellen#schweiz > quellen#leitlinien > verstehen#mythen (+1) [VERLOREN]
+Mein Partner schlägt zu | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Meine Partnerin schlägt zu | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Mein Freund schlägt zu | r4-73 grenzen#rollen > fragen#f-umfeld > fragen#f-stabiler (+6) | r4-76 = | r4-75 =
+Meine Freundin schlägt zu | r4-73 grenzen#rollen > quellen#leitlinien > selbstfuersorge#kraft | r4-76 = | r4-75 =
+Mein Sohn schlägt zu | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Meine Tochter schlägt zu | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Mein Bruder schlägt zu | r4-73 grenzen#rollen > jugendliche#geschwister | r4-76 = | r4-75 =
+Mein Vater schlägt zu | r4-73 grenzen#rollen > rolle#schuld > kurz#jetzt (+1) | r4-76 = | r4-75 =
+Er schlägt zu | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Sie schlägt zu | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Mein Mann ist gewalttätig | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Mein Partner ist gewalttätig | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Mein Sohn ist gewalttätig | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Meine Tochter ist gewalttätig | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung (+17) | r4-76 = | r4-75 =
+Mein Mann schlägt unseren Sohn | r4-73 gefahr#gewalt | r4-76 = | r4-75 – [LEER]
+Mein Mann schlägt unsere Tochter | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 quellen#schweiz [VERLOREN]
+Mein Mann schlägt die Kinder | r4-73 gefahr#gewalt > quellen#schweiz | r4-76 = | r4-75 kinder#eskalation > gefahr#gewalt > index#orientierung (+17) [GEWONNEN]
+Mein Partner schlägt unseren Sohn | r4-73 gefahr#gewalt > kinder#eskalation > index#orientierung | r4-76 = | r4-75 =
+Mein Sohn schneidet sich seit Wochen | r4-73 krise#selbstverletzung | r4-76 = | r4-75 begriffe#begriffe [VERLOREN]
+Meine Tochter schneidet sich seit Wochen | r4-73 krise#selbstverletzung | r4-76 = | r4-75 begriffe#begriffe [VERLOREN]
+Mein Sohn schneidet sich seit Monaten | r4-73 krise#selbstverletzung | r4-76 = | r4-75 krise#selbstverletzung > krise > begriffe#b-selbstverletzung
+Mein Sohn schneidet sich | r4-73 krise#selbstverletzung | r4-76 = | r4-75 krise#selbstverletzung > krise > diagnose#suizidalitaet (+17)
+Sie schneidet sich wegen mir | r4-73 krise#selbstverletzung | r4-76 = | r4-75 begriffe#begriffe [VERLOREN]
+Mein Sohn ritzt sich seit Wochen | r4-73 krise#selbstverletzung | r4-76 = | r4-75 =
+Er droht mir | r4-73 gefahr#gewalt > behandlung#keine-behandlung > kommunizieren#anerkennen (+17) | r4-76 = | r4-75 =
+Er droht ihr | r4-73 rolle#anbieten > behandlung#kontakt > jugendliche#rolle (+17) | r4-76 = | r4-75 =
+Suizidgefahr FU | r4-73 krise#suizid > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen (+17) | r4-76 = | r4-75 =
+FU bei Suizidgefahr | r4-73 krise#suizid > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen (+17) | r4-76 = | r4-75 =
+Lebensmut | r4-73 – | r4-76 = | r4-75 =

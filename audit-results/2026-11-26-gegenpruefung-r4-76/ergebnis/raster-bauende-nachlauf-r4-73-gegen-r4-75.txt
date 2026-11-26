@@ -1,0 +1,2 @@
+saetze: 23328 Anfragen · Sicherheitsabschnitt aus den ersten zwei verloren 646 · vorher Treffer, nachher keiner 185
+JS-Fehler: 0

@@ -1,0 +1,57 @@
+# 54 Anfragen · Bezug r4-73 · JS-Fehler 0
+# r4-76 gegen r4-73: vollständige Trefferliste gleich 54 von 54 · Ersttreffer gleich 54 · Sicherheitsabschnitt aus den ersten zwei verloren 0 · vorher Treffer, nachher leer 0
+# r4-75 gegen r4-73: vollständige Trefferliste gleich 54 von 54 · Ersttreffer gleich 54 · Sicherheitsabschnitt aus den ersten zwei verloren 0 · vorher Treffer, nachher leer 0
+Er bringt sich um sagt er immer wieder | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie bringt sich um hat sie wieder gesagt | r4-73 – | r4-76 = | r4-75 =
+Sie sagt immer wieder sie bringt sich um wegen mir | r4-73 krise#suizid | r4-76 = | r4-75 =
+Mein Sohn sagt immer wieder ich bring mich um Mama | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er schreibt immer wieder er bringt sich um heute Nacht | r4-73 – | r4-76 = | r4-75 =
+Sie sagt oft sie bringt sich um wegen der Trennung | r4-73 – | r4-76 = | r4-75 =
+Er sagt immer er bringt sich um ohne mich | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie schreibt mir oft sie bringt sich um heute | r4-73 – | r4-76 = | r4-75 =
+Er redet immer wieder davon er bringt sich um irgendwann | r4-73 – | r4-76 = | r4-75 =
+Sie erzählt immer wieder sie bringt sich um eines Tages | r4-73 – | r4-76 = | r4-75 =
+Er sagte er bringt sich um noch heute | r4-73 – | r4-76 = | r4-75 =
+Meine Tochter sagt immer wieder sie bringt sich um mit Tabletten | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er sagt immer wieder ich bringe mich um mit dem Auto | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie sagt sie bringt sich um mit Tabletten | r4-73 – | r4-76 = | r4-75 =
+Er bringt sich um mit Tabletten sagt er | r4-73 – | r4-76 = | r4-75 =
+Sie sagt immer wieder sie bringe sich um deswegen | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er sagt immer wieder er bringt mich um eines Tages | r4-73 – | r4-76 = | r4-75 =
+Mein Mann sagt oft er bringt mich um im Schlaf | r4-73 – | r4-76 = | r4-75 =
+Er schreibt immer wieder er bringt uns um alle | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie sagt immer wieder sie bringt die Kinder um und sich auch | r4-73 kinder#eskalation > gefahr#gewalt > krise#suizid (+17) | r4-76 = | r4-75 =
+Er sagt immer wieder er bringt sich um was soll ich tun | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie sagt immer wieder sie bringt sich um was kann ich machen | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er sagt oft er bringt sich um wie reagieren | r4-73 – | r4-76 = | r4-75 =
+Sie sagt wieder sie bringt sich um soll ich die Polizei rufen | r4-73 – | r4-76 = | r4-75 =
+Er sagt immer wieder er bringt sich um ist das ernst | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie sagt immer wieder sie bringt sich um meint sie das ernst | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er droht immer wieder er bringt sich um ernst nehmen | r4-73 krise#suizid | r4-76 = | r4-75 =
+Tochter sagt immer wieder sie bringt sich um Hilfe | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sohn schreibt wieder er bringt sich um Notfall | r4-73 – | r4-76 = | r4-75 =
+Partner sagt oft er bringt sich um Angst | r4-73 – | r4-76 = | r4-75 =
+Si seit immer wieder si bringt sich um | r4-73 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt (+17) | r4-76 = | r4-75 =
+Er seit immer wieder er bringi sich um | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie sagt immer wieder sie well sich umbringä | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er sagt immer wieder er will sich umbrigen | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie sagt oft sie will sich umbringn | r4-73 – | r4-76 = | r4-75 =
+Er redet immer wieder vom Umbringen | r4-73 krise#suizid > gefahr#gewalt > krise (+17) | r4-76 = | r4-75 =
+Sie spricht oft vom Umbringen | r4-73 krise#suizid > gefahr#gewalt > krise (+17) | r4-76 = | r4-75 =
+Er sagt immer wieder er macht Schluss mit dem Leben | r4-73 krise#suizid | r4-76 = | r4-75 =
+Sie sagt immer wieder sie erhängt sich | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er sagt oft er erschiesst sich | r4-73 – | r4-76 = | r4-75 =
+Sie sagt immer wieder sie springt vor den Zug | r4-73 krise#suizid | r4-76 = | r4-75 =
+Er sagt immer wieder er bringt sich um | r4-73 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt (+17) | r4-76 = | r4-75 =
+Sie sagt oft sie bringt sich um | r4-73 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt (+17) | r4-76 = | r4-75 =
+Er sagt immer wieder: Ich bringe mich um. | r4-73 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt (+17) | r4-76 = | r4-75 =
+Sie sagt immer wieder, sie bringt sich um, wegen mir | r4-73 kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt (+17) | r4-76 = | r4-75 =
+Er bringt sich um wegen mir | r4-73 – | r4-76 = | r4-75 =
+Sie bringt sich um heute Nacht | r4-73 – | r4-76 = | r4-75 =
+Ich bring mich um Mama | r4-73 fragen#f-einweisung > fragen > begriffe#b-fu | r4-76 = | r4-75 =
+Sie bringt sich um mit Tabletten | r4-73 behandlung#rollen > behandlung#kontakt | r4-76 = | r4-75 =
+Er bringt mich um eines Tages | r4-73 – | r4-76 = | r4-75 =
+Er bringt sich um was soll ich tun | r4-73 behandlung#kontakt > behandlung#rollen | r4-76 = | r4-75 =
+Sie bringt sich um soll ich die Polizei rufen | r4-73 – | r4-76 = | r4-75 =
+Er bringt sich um ist das ernst | r4-73 – | r4-76 = | r4-75 =
+Sie bringt sich um Hilfe | r4-73 behandlung#rollen > behandlung#kontakt | r4-76 = | r4-75 =

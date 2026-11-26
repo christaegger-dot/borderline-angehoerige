@@ -1,0 +1,30 @@
+== V0 unverändert (r4-66)
+Selbsttest: 125/125 bestanden
+== V1 ohne ctlTxt (accTxt wie r4-65)
+FAIL | Direkteinstieg mit img alt im Link (r4-66, N61-2) | erwartet: utility-nav | erhalten: crisis-number-check
+FAIL | Direkteinstieg im Menü mit input value im Link (r4-66, N61-2) | erwartet: nav | erhalten: crisis-number-check
+Selbsttest: 123/125 bestanden
+== V2 nur img, kein input
+FAIL | Direkteinstieg im Menü mit input value im Link (r4-66, N61-2) | erwartet: nav | erhalten: crisis-number-check
+Selbsttest: 124/125 bestanden
+== V3 nur input, kein img
+FAIL | Direkteinstieg mit img alt im Link (r4-66, N61-2) | erwartet: utility-nav | erhalten: crisis-number-check
+Selbsttest: 124/125 bestanden
+== V4 leeres alt zählt als «Bild»
+FAIL | Bild mit leerem alt und verborgenes Bild im Direkteinstieg sind zulässig (r4-66, N61-2) | erwartet: kein utility-nav | erhalten: utility-nav
+Selbsttest: 124/125 bestanden
+== V5 ctlTxt vor hiddenFlag (verborgene Bilder und Felder zählen)
+Selbsttest: 125/125 bestanden
+== V6 type=hidden zählt mit
+Selbsttest: 125/125 bestanden
+== V7 ohne Platzhalter [Eingabefeld]
+Selbsttest: 125/125 bestanden
+== V8 type ohne toLowerCase
+Selbsttest: 125/125 bestanden
+== V9 img ohne Leerzeichen um alt
+Selbsttest: 125/125 bestanden
+== V10 Bild nur verborgen, wenn selbst hidden (Vorfahren egal)
+FAIL | Verborgener Zusatz im Linktext zählt nicht zur Beschriftung (Nachtrag N60-1, P4.6) | erwartet: kein nav, kein utility-nav | erhalten: utility-nav
+FAIL | Bild mit leerem alt und verborgenes Bild im Direkteinstieg sind zulässig (r4-66, N61-2) | erwartet: kein utility-nav | erhalten: utility-nav
+FAIL | Beschriftung eines Direkteinstiegs nur in aria-hidden (r4-59, N58-1) | erwartet: utility-nav | erhalten: crisis-number-check
+Selbsttest: 122/125 bestanden

@@ -1,0 +1,88 @@
+{
+ "chromium": "156.0.8078.4",
+ "m": {
+  "figH": 1992,
+  "allOl": [
+   {
+    "cls": "puk-vis-build__steps bl-kurve__liste bl-phase-actions",
+    "inDetails": false,
+    "n": 4
+   },
+   {
+    "cls": "puk-vis-build__steps bl-kurve__liste",
+    "inDetails": true,
+    "n": 4
+   }
+  ],
+  "cards": [
+   {
+    "top": 650,
+    "bottom": 818,
+    "h": 168,
+    "h3": "Wir können sprechen.",
+    "action": "bl-kurve__hilft",
+    "actionText": "Was hilftKurze Sätze, Zuhören und Abspra",
+    "actionBottom": 798,
+    "visible": true
+   },
+   {
+    "top": 830,
+    "bottom": 1102,
+    "h": 272,
+    "h3": "Es wird eng.",
+    "action": "puk-vis-ansatz",
+    "actionText": "Argumentieren Sie nicht weiter und mache",
+    "actionBottom": 1082,
+    "visible": true
+   },
+   {
+    "top": 1114,
+    "bottom": 1311,
+    "h": 197,
+    "h3": "Es ist gerade zu viel.",
+    "action": "bl-kurve__hilft",
+    "actionText": "Was hilftSicherheit geht vor Klärung: ei",
+    "actionBottom": 1291,
+    "visible": true
+   },
+   {
+    "top": 1323,
+    "bottom": 1603,
+    "h": 281,
+    "h3": "Es kann wieder ruhiger werden.",
+    "action": "(p)",
+    "actionText": "Bieten Sie neuen Kontakt nur an, wenn es",
+    "actionBottom": 1583,
+    "visible": true
+   }
+  ],
+  "schutz": {
+   "top": 1623,
+   "bottom": 1670,
+   "h": 47
+  },
+  "summaries": [
+   {
+    "t": "Mehr zu den vier Phasen",
+    "top": 1691,
+    "bottom": 1735,
+    "h": 44
+   },
+   {
+    "t": "Grenzen des Bildes",
+    "top": 1756,
+    "bottom": 1800,
+    "h": 44
+   }
+  ],
+  "caption": {
+   "top": 1824,
+   "bottom": 1980,
+   "h": 157
+  },
+  "detailsOpen": [
+   false,
+   false
+  ]
+ }
+}

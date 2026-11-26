@@ -1,0 +1,124 @@
+== M0-grenze1500
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: fourth phase ends at 1603px, beyond 1800px
+exit 1
+-- #809:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: fourth phase ends at 1603px, beyond 1800px
+exit 1
+== M1-vierte-display-none
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: only 3 of 4 phase cards visible
+exit 1
+-- #809:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+== M2-handlung-weg
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: 4 phase card(s) without visible heading or text
+exit 1
+-- #809:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+== M3-unten-waechst
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: whole figure 4992px exceeds 2400px
+exit 1
+-- #809:
+Bekannte Ausnahme B2c bestanden: Figur 4992 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px).
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+== M4-schutz-weg
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: protection note not visible before the disclosures
+exit 1
+-- #809:
+Bekannte Ausnahme B2c bestanden: Figur 1926 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px).
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+== M5-in-details
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: 0 phase cards outside disclosures instead of 4
+exit 1
+-- #809:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: 0 visible phase cards instead of 4
+exit 1
+== M6-karten-wachsen
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: fourth phase ends at 1903px, beyond 1800px
+exit 1
+-- #809:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: fourth phase ends at 1903px, beyond 1800px
+exit 1
+== M7-umgekehrt-wachsen
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: fourth phase ends at 1903px, beyond 1800px
+exit 1
+-- #809:
+Bekannte Ausnahme B2c bestanden: Figur 2292 px hoch, vierte Phase endet bei 931 px (Grenze 1800 px).
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+== M8-fuenf
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: 5 phase cards outside disclosures instead of 4
+exit 1
+-- #809:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: 5 visible phase cards instead of 4
+exit 1
+== M9-vierte-unsichtbar
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: only 3 of 4 phase cards visible
+exit 1
+-- #809:
+Bekannte Ausnahme B2c bestanden: Figur 1992 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px).
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+== M10-schutz-nach-details
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: protection note not visible before the disclosures
+exit 1
+-- #809:
+Bekannte Ausnahme B2c bestanden: Figur 1992 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px).
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+== M11-titel-weg
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: 1 phase card(s) without visible heading or text
+exit 1
+-- #809:
+Bekannte Ausnahme B2c bestanden: Figur 1960 px hoch, vierte Phase endet bei 1571 px (Grenze 1800 px).
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+== M12-opacity
+-- neu:
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen.
+tension core: only 3 of 4 phase cards visible
+exit 1
+-- #809:
+Bekannte Ausnahme B2c bestanden: Figur 1992 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px).
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+== M13-unten-200px-erlaubt
+-- neu:
+Bekannte Ausnahme B2c bestanden: Figur 2192 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+-- #809:
+Bekannte Ausnahme B2c bestanden: Figur 2192 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px).
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0

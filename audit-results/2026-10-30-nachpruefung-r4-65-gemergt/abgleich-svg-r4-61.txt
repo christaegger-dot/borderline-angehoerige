@@ -1,0 +1,20 @@
+Gate r4-61
+ABWEICHUNG | L1  | Zeile: <svg hidden aria-label="Pfeil">           | Chromium: Name «Kurz und klar Pfeil»               | Gate: kein utility-nav
+ABWEICHUNG | L2  | Zeile: <svg inert><title>Pfeil</title>           | Chromium: Name «Kurz und klar Pfeil»               | Gate: kein utility-nav
+gleich     | L3  | Zeile: <svg aria-hidden="true" aria-label="Pfeil"> | Chromium: Name «Kurz und klar»                     | Gate: kein utility-nav
+gleich     | L4  | Zeile: <span hidden><svg aria-label="Pfeil">     | Chromium: Name «Kurz und klar»                     | Gate: kein utility-nav
+gleich     | L5  | Zeile: <svg><g hidden><title>Pfeil</title></g>   | Chromium: Name «Kurz und klar»                     | Gate: kein utility-nav
+gleich     | L6  | Zeile: <svg aria-hidden="true"> (ohne Namen)     | Chromium: Name «Kurz und klar»                     | Gate: kein utility-nav
+ABWEICHUNG | M1  | Menü: <svg inert><title>Pfeil</title>            | Chromium: Name «Kurz und klar Pfeil»               | Gate: kein nav
+ABWEICHUNG | M2  | Menü: <svg hidden aria-label="Pfeil">            | Chromium: Name «Kurz und klar Pfeil»               | Gate: kein nav
+gleich     | F0  | Abbildung: Bestand (aria-hidden="true")          | Chromium: verborgen                                | Gate: kein figure-alt
+gleich     | F1  | Abbildung: ohne aria-hidden                      | Chromium: sichtbar, Rolle image, Name «»           | Gate: figure-alt
+ABWEICHUNG | F2  | Abbildung: hidden statt aria-hidden              | Chromium: sichtbar, Rolle image, Name «»           | Gate: kein figure-alt
+ABWEICHUNG | F3  | Abbildung: inert statt aria-hidden               | Chromium: sichtbar, Rolle image, Name «»           | Gate: kein figure-alt
+gleich     | F4  | Abbildung: aria-hidden="TRUE"                    | Chromium: verborgen                                | Gate: kein figure-alt
+gleich     | F5  | Abbildung: aria-hidden=" true "                  | Chromium: verborgen                                | Gate: kein figure-alt
+gleich     | F6  | Abbildung: aria-hidden="false"                   | Chromium: sichtbar, Rolle image, Name «»           | Gate: figure-alt
+gleich     | F7  | Abbildung: ohne aria-hidden in <span inert>      | Chromium: verborgen                                | Gate: kein figure-alt
+gleich     | F8  | Abbildung: ohne aria-hidden in <span hidden>     | Chromium: verborgen                                | Gate: kein figure-alt
+gleich     | F9  | Abbildung: ohne aria-hidden, mit <title>         | Chromium: sichtbar, Rolle image, Name «Szene»      | Gate: kein figure-alt
+Übereinstimmung Gate/Chromium: 12 von 18

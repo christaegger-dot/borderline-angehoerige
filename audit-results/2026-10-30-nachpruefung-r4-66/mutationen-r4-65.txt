@@ -1,0 +1,69 @@
+Worktree <scratch>/wt-main · BUILD r4-65
+Fall | Gate-Blocker (Seite index) | Chromium-Name | Chromium: Name ≠ «Kurz und klar» | Urteil
+Basis ohne Änderung | kein Blocker | "Kurz und klar" | nein | gleich
+img alt="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+img alt="" (leer) | kein Blocker | "Kurz und klar" | nein | gleich
+img alt="   " (Leerraum) | kein Blocker | "Kurz und klar " | nein | gleich
+img ohne alt | kein Blocker | "Kurz und klar" | nein | gleich
+img ohne alt mit title="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+img alt="" title="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+img alt = Beschriftung, Text entfernt | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+Text + img alt = Beschriftung | kein Blocker | "Kurz und klar Kurz und klar" | ja | FALSCH-NEGATIV (Gate lässt durch)
+img alt mitten im Wort: «Kurz und kl<img alt=ar>» | utility-nav | "Kurz und kl ar" | ja | gleich
+img alt="" mitten: «Kurz und<img alt="">klar» | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+img role="presentation" alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+img role="none" alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+img aria-hidden="true" alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+img hidden alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+IMG ALT="Mehr" (Grossschrift) | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+img in svg foreignObject? nein: picture>img alt="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+map/area alt="Mehr" (img usemap) | kein Blocker | "Kurz und klar" | nein | gleich
+area alt="Mehr" direkt im Link | kein Blocker | "Kurz und klar" | nein | gleich
+input type=text value="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=text ohne value | kein Blocker | "Kurz und klar" | nein | gleich
+input type=text value="" | kein Blocker | "Kurz und klar" | nein | gleich
+input type=text placeholder="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input ohne type value="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=hidden value="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+input type=HIDDEN value="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+input type=button value="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=button ohne value | kein Blocker | "Kurz und klar" | nein | gleich
+input type=submit value="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=submit ohne value | kein Blocker | "Kurz und klar Submit" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=reset ohne value | kein Blocker | "Kurz und klar Reset" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=image alt="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=image alt="Mehr" value="X" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=image ohne alt | kein Blocker | "Kurz und klar Submit" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=checkbox | kein Blocker | "Kurz und klar" | nein | gleich
+input type=checkbox value="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+input type=radio value="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+input type=range | kein Blocker | "Kurz und klar 50" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=color | kein Blocker | "Kurz und klar" | nein | gleich
+input type=file | kein Blocker | "Kurz und klar Choose File: No file chosen" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input hidden-Attribut value="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+input aria-hidden="true" value="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+input value = Beschriftung, Text entfernt | utility-nav | "Kurz und klar" | nein | FALSCH-POSITIV (Gate strenger)
+textarea «Mehr» | utility-nav | "Kurz und klar Mehr" | ja | gleich
+textarea leer | kein Blocker | "Kurz und klar" | nein | gleich
+select option «Mehr» | utility-nav | "Kurz und klar Mehr" | ja | gleich
+select zwei Optionen, zweite gewählt | utility-nav | "Kurz und klar Mehr" | ja | gleich
+select mit leerer Option | kein Blocker | "Kurz und klar" | nein | gleich
+button «Mehr» | utility-nav | "Kurz und klar Mehr" | ja | gleich
+img alt="Mehr" title="Anders" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=text title="Mehr" ohne value | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+input type=button title="Mehr" ohne value | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+noscript mit img alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+template mit img alt="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+svg aria-hidden mit foreignObject img alt | kein Blocker | "Kurz und klar" | nein | gleich
+img alt="Mehr" in span aria-hidden="false" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+Menü: img alt="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+Menü: img alt="" | kein Blocker | "Kurz und klar" | nein | gleich
+Menü: input type=button value="Mehr" | kein Blocker | "Kurz und klar Mehr" | ja | FALSCH-NEGATIV (Gate lässt durch)
+Menü: input type=hidden value="Mehr" | kein Blocker | "Kurz und klar" | nein | gleich
+Menü: input type=checkbox | kein Blocker | "Kurz und klar" | nein | gleich
+Rückfall ohne utilityNav: Basis | kein Blocker
+Rückfall ohne utilityNav: img alt="Mehr" (angewandt: true) | kein Blocker
+Rückfall ohne utilityNav: img alt="" + input hidden (angewandt: true) | kein Blocker
+Fehlerseite 404.html: Direkteinstiege-Zeile vorhanden: false | Blocker: kein Blocker
+Fehlerseite mit <a>…<img alt> im Inhalt (angewandt: true) | Blocker: placeholder-status
+Ungeänderte Seiten: 0 Blocker, 20 Hinweise

@@ -342,6 +342,10 @@
   --web-size-h4:1.3125rem;--web-size-h5:1.125rem;--web-size-h6:1rem;
   --web-size-h1-fluid:clamp(2.75rem,8vw,var(--web-size-h1));--web-size-h2-fluid:clamp(2rem,4.5vw,var(--web-size-h2));--web-size-h3-fluid:clamp(1.625rem,3vw,var(--web-size-h3));
 }
+/* r4-71 (Entscheid Christa Egger vom 26.11.2026 zum Website-Review, Punkt 6: «Alles auf 16 px»): Die Regel des Gestaltungssystems
+   «Nichts unter 16 px» gilt für alle Texte am Bildschirm. Kleine Texte (Bildunterschriften, Vertiefungen, Tabellen, Buchangaben, Prüfdaten)
+   und Etiketten in Abbildungen stehen in 1rem statt .9375rem bzw. .8125rem. Im Druck gilt weiter die verkleinerte Druckgrösse. */
+:root{--size-body-sm:1rem;--size-caption:1rem}
 /* ==== Gestaltungssystem «Borderline Angehörige» · r4-43 (29.10.2026) ====
    Rollen über den PUK-Hausfarben und -Massen, wie im Design-System-Artefakt «Borderline Angehörige» beschrieben
    (Abschnitte Farbe, Schrift, Raster). Neu ist nur --nachtblau, eine Schattierung von PUK Blau («sämtliche
@@ -655,8 +659,14 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
    Regel des Gestaltungssystems «Nichts unter 16 px» erfüllt. */
 .puk-site-sender{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-2);min-width:0;margin:0;font-size:1rem;line-height:1.45;color:var(--tinte-leise)}
 .puk-site-sender__label{font:inherit;color:inherit;letter-spacing:0;text-transform:none}
-.puk-site-sender__name{color:var(--tinte);font-weight:var(--fw-medium)}
-.puk-site-sender__contact{margin-left:var(--space-2)}
+/* r4-69 (Nachprüfung #815, N815-4, Auftrag Christa Egger vom 26.11.2026): «Angehörigenarbeit» ist bei 300 % Schrift breiter als ein
+   schmaler Bildschirm und schob die Seite seitlich hinaus. Der Name darf jetzt im Wort umbrechen, aber nur, wenn er sonst nicht passt;
+   bei 100 % und 200 % bleibt der Umbruch wie bisher (keine Silbentrennung). */
+.puk-site-sender__name{min-width:0;max-width:100%;color:var(--tinte);font-weight:var(--fw-medium);overflow-wrap:anywhere}
+/* r4-70 (Website-Review vom 26.11.2026, Punkt 4): «Beratung:» und Adresse bilden eine Gruppe, die als Ganzes umbricht. Der zusätzliche
+   Abstand davor steht rechts am vorderen Element statt links an der Gruppe, damit eine umbrochene Zeile nicht eingerückt beginnt. */
+.puk-site-sender__beratung{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-2);min-width:0;max-width:100%}
+.puk-site-sender>:has(+ .puk-site-sender__beratung){margin-right:var(--space-2)}
 .puk-site-sender a{min-width:0;color:var(--blau);overflow-wrap:anywhere}
 .puk-site-sender a:hover{color:var(--blau-125)}
 /* Tippbereich 44 px ohne negative Ränder: Bricht die Adresse um, überdeckt sie die Zeile darüber nicht.
@@ -669,15 +679,22 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
 @media (max-width:760px){
   .puk-site-subbar{flex-direction:column;align-items:flex-start;padding-bottom:var(--space-1)}
   .puk-site-sender__label{display:none}
-  .puk-site-sender__contact{margin-left:0}
+  .puk-site-sender>:has(+ .puk-site-sender__beratung){margin-right:0}
   .puk-site-utility{gap:0 var(--space-4)}
 }
-@media (max-width:22.5rem){.puk-site-utility{gap:0 var(--space-3)}.puk-site-utility__link{font-size:.9375rem}}
+@media (max-width:22.5rem){.puk-site-utility{gap:0 var(--space-3)}}
+/* r4-71 (Entscheid Christa Egger vom 26.11.2026 zum Website-Review, Punkt 3: «Direkteinstiege ins Menü»): Mit Skript stehen
+   «Kurz und klar», «Nachschlagen» und «Suchen» am Telefon nur im Menü; der Kopf wird 148 statt 192 px hoch. Ohne Skript bleibt die
+   Zeile unter dem Absender, weil das Menü dann aufgeklappt ist und nur die fünf Hauptbereiche zeigt. (Vorher stand hier für
+   schmale Telefone .9375rem; nach Punkt 6 bleibt es bei 1rem.) */
+@media (max-width:760px){html[data-puk-js] .puk-site-subbar .puk-site-utility{display:none}html[data-puk-js] .puk-site-menu__utility{display:block}}
 
 /* Brotkrumen: eine leise Zeile über dem Titel, ohne Fläche und Linie */
 .puk-site-breadcrumb ol{display:flex;flex-wrap:wrap;gap:0 var(--space-2);margin:0;padding:var(--space-4) 0 0;list-style:none;font-size:1rem;line-height:1.5;color:var(--tinte-leise)}
 .puk-site-breadcrumb li{display:flex;align-items:center;min-width:0;margin:0}
-.puk-site-breadcrumb li+li::before{content:"/";margin-right:var(--space-2);color:var(--linie-bedienung)}
+/* r4-70 (Website-Review vom 26.11.2026, Punkt 10): Das Trennzeichen steht hinter dem vorderen Eintrag. Bricht der Pfad um, endet die
+   Zeile mit «/», statt dass die nächste Zeile damit beginnt. */
+.puk-site-breadcrumb li:not(:last-child)::after{content:"/";margin-left:var(--space-2);color:var(--linie-bedienung)}
 .puk-site-breadcrumb a{color:var(--blau);text-decoration:underline;text-underline-offset:.2em}
 .puk-site-breadcrumb a:hover{color:var(--blau-125)}
 .puk-site-breadcrumb a,.puk-site-breadcrumb span{overflow-wrap:anywhere}
@@ -806,7 +823,8 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
 .puk-web-footer__boundary{max-width:var(--lesebreite);margin-top:var(--space-2)} /* r4-64 (N56-1): 8 px Abstand, damit der Hinweis «Diese Website ersetzt keine …» nicht in den Namen der Klinik übergeht */
 .puk-web-footer__details{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-5);max-width:var(--lesebreite)}
 .puk-site-info-links ul{display:flex;flex-wrap:wrap;gap:0 var(--space-5);margin:0;padding:0;list-style:none}
-.puk-site-info-links a,.puk-site-legal a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target)}
+/* r4-69 (N815-4): «Barrierefreiheit» und «Datenschutz» sind bei 300 % Schrift breiter als 320 px; sie dürfen dann im Wort umbrechen. */
+.puk-site-info-links a,.puk-site-legal a{display:inline-flex;align-items:center;max-width:100%;min-height:var(--web-touch-target);overflow-wrap:anywhere}
 .puk-site-legal{margin:0;color:var(--tinte-leise);font-size:1rem;line-height:1.5}
 
 /* Entwurfsmarken (nur bei nicht freigegebener Absenderin, fehlenden Rechtsangaben oder Entwurfsseiten) */
@@ -873,6 +891,9 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
 /* Startseite (r4-45, E3): Die Anliegen folgen gleich unter der Einleitung, ohne Sprungknopf und ohne volle Abschnittslücke */
 html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-top:var(--space-4)}
 .puk-site-quick-entry{margin:var(--space-5) 0 0;padding:0;border:0;background:none}
+/* r4-70 (Website-Review vom 26.11.2026, Punkt 7): .puk-longform__copy p setzt margin-top auf 0 und ist spezifischer; so wirkt der
+   vorgesehene Abstand unter den Anliegen wieder (vorher 0 px). */
+.puk-site-paths+.puk-site-quick-entry{margin-top:var(--space-5)}
 
 /* Merksatz und Nachdenkfeld */
 .puk-longform__reflection{margin:var(--space-8) 0;padding:var(--space-5) var(--space-6);background:var(--flaeche-blau)}
@@ -1044,6 +1065,9 @@ html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-to
 }
 /* Frühe Werkzeuge (Suche, Filter) und Hinweise zur lokalen Verarbeitung (Audit 04, r4-39, übernommen) */
 .bl-crisis-intro{margin-block:var(--space-6)}
+/* r4-70 (Website-Review vom 26.11.2026, Punkt 5): Die Einleitung von «Krisen begleiten» steht ausserhalb des Seitenkopfs und lief bei
+   1440 px über die ganze Breite (rund 130 Zeichen); jetzt gilt dieselbe Lesebreite wie im Seitenkopf. */
+.bl-crisis-intro>*{max-width:var(--lesebreite)}
 .puk-longform__hero:has(+[data-early-tool]){padding-bottom:0}
 [data-early-tool]{margin-top:var(--space-4);padding-top:0}
 [data-early-tool]>.puk-longform__section-grid{display:block}
@@ -1226,6 +1250,9 @@ html[data-page-id="index"] .puk-longform__hero+.puk-longform__section{padding-to
 .puk-vis-more>summary:focus{outline:none}.puk-vis-more>summary:focus-visible{box-shadow:var(--focus-ring)}
 .puk-vis-more__body{padding:0 0 var(--space-4);font:var(--type-body-sm);color:var(--text-default)}
 .puk-vis-more__body p{margin:0 0 var(--space-2)}
+/* r4-70 (Website-Review vom 26.11.2026, Punkt 5): Lesebreite für die kleineren Texte. 36em sind bei 15 px rund 540 px (etwa 75 Zeichen),
+   bei 20 px 720 px wie --lesebreite. Vorher liefen Vertiefungen bei 1440 px bis rund 148 und Bildunterschriften (80ch) bis rund 110 Zeichen. */
+.puk-vis-more__body p,.puk-vis-caption{max-width:36em}
 /* Ansatzpunkt für Angehörige (Muster B, C, G; Profilentscheid 08.10.2026): Beschriftung «Ansatzpunkt» + 4-px-Balken,
    in der Grafik doppelte Kontur. Bedeutung nie nur über Farbe. Ansatzpunkte beschreiben eigene Möglichkeiten,
    keine Verantwortung für Behandlung oder Verlauf. */

@@ -1,0 +1,2 @@
+DOM gleich nach Normalisierung: 24 abweichend: 0
+Abruf 26.11.2026 18:09 UTC; 9 Nicht-HTML-Dateien byte-gleich (css, js, 2 SVG, 3 WOFF2, OFL.txt, robots.txt); _headers und _redirects nicht ausgeliefert (404, erwartet)

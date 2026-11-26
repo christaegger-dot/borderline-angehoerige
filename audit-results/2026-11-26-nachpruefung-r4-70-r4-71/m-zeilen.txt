@@ -1,0 +1,6 @@
+1440px r4-69 {"vertiefung":[142,"kommunizieren.html"],"caption":[117,"verstehen.html"],"krisenEinleitung":[126,"krise.html"]}
+1440px r4-70 {"vertiefung":[77,"verstehen.html"],"caption":[75,"genesung.html"],"krisenEinleitung":[70,"krise.html"]}
+1440px r4-71 {"vertiefung":[77,"verstehen.html"],"caption":[83,"verstehen.html"],"krisenEinleitung":[70,"krise.html"]}
+1024px r4-69 {"vertiefung":[135,"selbstfuersorge.html"],"caption":[117,"verstehen.html"],"krisenEinleitung":[92,"krise.html"]}
+1024px r4-70 {"vertiefung":[77,"verstehen.html"],"caption":[75,"genesung.html"],"krisenEinleitung":[70,"krise.html"]}
+1024px r4-71 {"vertiefung":[77,"verstehen.html"],"caption":[83,"verstehen.html"],"krisenEinleitung":[70,"krise.html"]}

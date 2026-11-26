@@ -1,0 +1,9 @@
+r4-69 index.html CLS 4 Läufe: 0.034 0.034 0.032 0.018 | Quellen: puk-web-container puk-longform__section  ; P ; puk-link--inline ; LI ; puk-site-utility__link
+r4-70 index.html CLS 4 Läufe: 0.3 0.032 0.016 0.032 | Quellen: puk-web-main ; puk-web-nav puk-site-nav--menu ; puk-web-container puk-site-subbar ; puk-web-container puk-longform__section  ; puk-link--inline ; puk-site-utility__link
+r4-71 index.html CLS 4 Läufe: 0.036 0.375 0.036 0.036 | Quellen: puk-web-container puk-longform__section  ; P ; puk-link--inline ; puk-web-main ; puk-web-nav puk-site-nav--menu ; puk-web-container puk-site-subbar
+r4-69 krise.html CLS 4 Läufe: 0.018 0.017 0.018 0.018 | Quellen: OL ; puk-longform__boundary puk-site-inline-r ; puk-link--inline ; puk-site-utility__link ; #text ; LI
+r4-70 krise.html CLS 4 Läufe: 0.318 0.017 0.018 0.298 | Quellen: puk-web-main ; puk-web-nav puk-site-nav--menu ; puk-web-container puk-site-subbar ; puk-site-breadcrumb ; OL ; puk-longform__boundary puk-site-inline-r
+r4-71 krise.html CLS 4 Läufe: 0.038 0.038 0.033 0.038 | Quellen: puk-longform__boundary puk-site-inline-r ; #text ; OL ; puk-link--inline ; LI
+r4-69 verstehen.html CLS 4 Läufe: 0.001 0.002 0.339 0.002 | Quellen: puk-link--inline ; LI ; puk-site-utility__link ; puk-web-main ; puk-web-nav puk-site-nav--menu ; puk-web-container puk-site-subbar
+r4-70 verstehen.html CLS 4 Läufe: 0.339 0.002 0.002 0.002 | Quellen: puk-web-main ; puk-web-nav puk-site-nav--menu ; puk-web-container puk-site-subbar ; puk-site-breadcrumb ; #text ; puk-link--inline
+r4-71 verstehen.html CLS 4 Läufe: 0.001 0.001 0.001 0.001 | Quellen: puk-link--inline ; LI ; ::after

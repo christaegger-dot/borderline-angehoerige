@@ -1,0 +1,3 @@
+r4-69 {"figur":1992,"tiefsteKarteEnde":1603,"karten":4}
+r4-70 {"figur":1992,"tiefsteKarteEnde":1603,"karten":4}
+r4-71 {"figur":2029,"tiefsteKarteEnde":1603,"karten":4}

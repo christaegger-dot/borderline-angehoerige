@@ -1,0 +1,8 @@
+r4-70 Tab bis Knopf: Zum Hauptinhalt > A > Menü | nach Enter expanded= true
+  im Menü: Verstehen[fv=true ring=true h=44 sichtbar=true cur=null] > Im Alltag[fv=true ring=true h=44 sichtbar=true cur=null] > Krisen[fv=true ring=true h=44 sichtbar=true cur=null] > Familie[fv=true ring=true h=44 sichtbar=true cur=null] > Für Sie[fv=true ring=true h=44 sichtbar=true cur=null] > angehoerigenar[fv=true ring=true h=44 sichtbar=true cur=null] > Kurz und klar[fv=true ring=true h=44 sichtbar=true cur=null] > Nachschlagen[fv=true ring=true h=44 sichtbar=true cur=location] > Suchen[fv=true ring=true h=44 sichtbar=true cur=page]
+  Escape im Menü: {"exp":"false","fokus":"Kurz und klar"}
+  Bildschirmleser (Kopf, Menü offen):
+r4-71 Tab bis Knopf: Zum Hauptinhalt > A > Menü | nach Enter expanded= true
+  im Menü: Verstehen[fv=true ring=true h=44 sichtbar=true cur=null] > Im Alltag[fv=true ring=true h=44 sichtbar=true cur=null] > Krisen[fv=true ring=true h=44 sichtbar=true cur=null] > Familie[fv=true ring=true h=44 sichtbar=true cur=null] > Für Sie[fv=true ring=true h=44 sichtbar=true cur=null] > Kurz und klar[fv=true ring=true h=44 sichtbar=true cur=null] > Nachschlagen[fv=true ring=true h=44 sichtbar=true cur=location] > Suchen[fv=true ring=true h=44 sichtbar=true cur=page] > angehoerigenar[fv=true ring=true h=44 sichtbar=true cur=null]
+  Escape im Menü: {"exp":"false","fokus":"A"}
+  Bildschirmleser (Kopf, Menü offen):

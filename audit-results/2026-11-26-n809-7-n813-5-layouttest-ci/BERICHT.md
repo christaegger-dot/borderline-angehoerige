@@ -58,3 +58,12 @@ Ob der neue CI-Schritt auf GitHub läuft, zeigt erst der Lauf auf dem PR.
 - Nachprüfung durch eine andere Sitzung; Merge nur auf Auftrag.
 - Layouttest blockierend schalten, sobald er auf `main` grün ist.
 - N811-3 ist nicht entschieden.
+
+## Nachtrag nach der Nachprüfung (#831) · 26.11.2026
+
+Die Nachprüfung vor dem Merge ([PR #831](https://github.com/christaegger-dot/borderline-angehoerige/pull/831), Entwurf) meldet «Technisch korrekt», keinen Blocker und die Befunde N829-1 bis N829-7. In #829 behoben:
+- **N829-1:** `main` (`9a5341c`, nach #828) ist in den Branch gemergt. Der Überblick der Pendenzendatei führt N809-7 und N813-5 nicht mehr als offene Entscheide. Der Layouttest zählt auf diesem Stand **34** Bedienproben statt 30 (vier neue Proben aus `main`), weiterhin 2 Abweichungen; die Zahl 30 oben gilt für den Stand `56a56df`.
+- **N829-3:** Die Aussage zu den Merge-Aufträgen ist abgeschwächt. «einverstanden» ist im Wortlaut festgehalten, die Lesart ist als offen geführt.
+- **N829-4:** Die Einträge nennen PR #829.
+
+Offen bleibt N829-2 (Entscheid). N829-5 bis N829-7 sind Hinweise.

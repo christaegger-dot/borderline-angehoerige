@@ -7,8 +7,7 @@ const cfgPages=JSON.parse(fs.readFileSync(root+'/authoring/site.config.json')).p
 const navNames=['Verstehen','Im Alltag','Krisen','Familie','Für Sie'];
 /* N829-2: bekannte, dokumentierte Abweichungen auf main. Jede Zeile nennt Herkunft und Stelle in der Pendenzendatei. Der Vergleich nimmt den Anfang der Meldung, ohne den Messwert. */
 const KNOWN_ISSUES=[
- {id:'safety-card-375x667',match:/^safety card starts in first screen 375x667 /,ref:'r4-70/r4-71, Website-Review Punkt 2: Sicherheitskarte der Startseite unter dem ersten Bildschirm'},
- {id:'safety-card-360x740',match:/^safety card starts in first screen 360x740 /,ref:'r4-70/r4-71, Website-Review Punkt 2: Sicherheitskarte der Startseite unter dem ersten Bildschirm'}
+ {id:'safety-card-375x667',match:/^safety card starts in first screen 375x667 /,ref:'r4-70/r4-71, Website-Review Punkt 2: Sicherheitskarte der Startseite unter dem ersten Bildschirm'}
 ];
 /* B2c-Grenzen an einer Stelle, damit Prüfung und Meldungen nicht auseinanderlaufen (Code-Review nach #811, 26.11.2026). */
 const B2C_PHASES=4,B2C_PHASE_END_MAX=1800,B2C_FIGURE_MAX=2400;

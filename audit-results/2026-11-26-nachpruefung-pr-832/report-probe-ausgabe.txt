@@ -1,0 +1,378 @@
+### A nur bekannte · outcome=failure · exit 0 => grün
+stdout:
+  | ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - safety card starts in first screen 360x740 (top 863px)
+  | 
+
+### A nur bekannte · outcome=success · exit 1 => ROT
+stdout:
+  | ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: success.
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - safety card starts in first screen 360x740 (top 863px)
+  | 
+  | **Widerspruch:** Schritt «success», aber Abweichungen in ERGEBNIS.json.
+
+### A nur bekannte · outcome=cancelled · exit 0 => grün
+stdout:
+  | ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: cancelled.
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - safety card starts in first screen 360x740 (top 863px)
+  | 
+
+### A nur bekannte · outcome=skipped · exit 0 => grün
+stdout:
+  | ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: skipped.
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - safety card starts in first screen 360x740 (top 863px)
+  | 
+
+### A nur bekannte · outcome=- · exit 0 => grün
+stdout:
+  | ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: unbekannt.
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - safety card starts in first screen 360x740 (top 863px)
+  | 
+
+### B eine neue + zwei bekannte · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest: neue Abweichung::neu X
+  | ::warning title=Layouttest::2 bekannte Abweichungen, 1 neue
+Zusammenfassung:
+  | ### Layouttest: 1 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+  | 
+  | **Neue Abweichungen (blockieren):**
+  | - neu X
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - safety card starts in first screen 360x740 (top 863px)
+  | 
+
+### B eine neue + zwei bekannte · outcome=success · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest: neue Abweichung::neu X
+  | ::warning title=Layouttest::2 bekannte Abweichungen, 1 neue
+Zusammenfassung:
+  | ### Layouttest: 1 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: success.
+  | 
+  | **Neue Abweichungen (blockieren):**
+  | - neu X
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - safety card starts in first screen 360x740 (top 863px)
+  | 
+  | **Widerspruch:** Schritt «success», aber Abweichungen in ERGEBNIS.json.
+
+### B eine neue + zwei bekannte · outcome=cancelled · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest: neue Abweichung::neu X
+  | ::warning title=Layouttest::2 bekannte Abweichungen, 1 neue
+Zusammenfassung:
+  | ### Layouttest: 1 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: cancelled.
+  | 
+  | **Neue Abweichungen (blockieren):**
+  | - neu X
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - safety card starts in first screen 360x740 (top 863px)
+  | 
+
+### B eine neue + zwei bekannte · outcome=skipped · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest: neue Abweichung::neu X
+  | ::warning title=Layouttest::2 bekannte Abweichungen, 1 neue
+Zusammenfassung:
+  | ### Layouttest: 1 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: skipped.
+  | 
+  | **Neue Abweichungen (blockieren):**
+  | - neu X
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - safety card starts in first screen 360x740 (top 863px)
+  | 
+
+### B eine neue + zwei bekannte · outcome=- · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest: neue Abweichung::neu X
+  | ::warning title=Layouttest::2 bekannte Abweichungen, 1 neue
+Zusammenfassung:
+  | ### Layouttest: 1 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: unbekannt.
+  | 
+  | **Neue Abweichungen (blockieren):**
+  | - neu X
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - safety card starts in first screen 360x740 (top 863px)
+  | 
+
+### C nur neue · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest: neue Abweichung::neu X
+  | ::notice title=Layouttest::Bekannte Abweichung nicht mehr aufgetreten: safety-card-375x667, safety-card-360x740
+Zusammenfassung:
+  | ### Layouttest: 1 neue, 0 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+  | 
+  | **Neue Abweichungen (blockieren):**
+  | - neu X
+  | 
+  | **Nicht mehr aufgetreten, Eintrag in KNOWN_ISSUES entfernen:** safety-card-375x667, safety-card-360x740
+  | 
+
+### D Datei fehlt · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest ohne Ergebnis::ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+Zusammenfassung:
+  | ### Layouttest: ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+  | 
+  | Schritt «Layout test»: failure. Ohne Ergebnis lässt sich nicht sagen, ob es neue Abweichungen gibt.
+
+### D Datei fehlt · outcome=cancelled · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest ohne Ergebnis::ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+Zusammenfassung:
+  | ### Layouttest: ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+  | 
+  | Schritt «Layout test»: cancelled. Ohne Ergebnis lässt sich nicht sagen, ob es neue Abweichungen gibt.
+
+### D Datei fehlt · outcome=success · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest ohne Ergebnis::ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+Zusammenfassung:
+  | ### Layouttest: ERGEBNIS.json fehlt (Abbruch vor dem Schreiben)
+  | 
+  | Schritt «Layout test»: success. Ohne Ergebnis lässt sich nicht sagen, ob es neue Abweichungen gibt.
+
+### E leere Datei · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest ohne Ergebnis::ERGEBNIS.json ist nicht lesbar
+Zusammenfassung:
+  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+  | 
+  | Schritt «Layout test»: failure. Ohne Ergebnis lässt sich nicht sagen, ob es neue Abweichungen gibt.
+
+### F abgeschnittenes JSON · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest ohne Ergebnis::ERGEBNIS.json ist nicht lesbar
+Zusammenfassung:
+  | ### Layouttest: ERGEBNIS.json ist nicht lesbar
+  | 
+  | Schritt «Layout test»: failure. Ohne Ergebnis lässt sich nicht sagen, ob es neue Abweichungen gibt.
+
+### G JSON null · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest ohne Ergebnis::
+Zusammenfassung:
+  | ### Layouttest: 
+  | 
+  | Schritt «Layout test»: failure. Ohne Ergebnis lässt sich nicht sagen, ob es neue Abweichungen gibt.
+
+### H JSON Array · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest::ERGEBNIS.json ohne knownIssues/newIssues
+Zusammenfassung:
+  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+
+### I JSON String · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest::ERGEBNIS.json ohne knownIssues/newIssues
+Zusammenfassung:
+  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+
+### J altes Format (ohne neue Felder) · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest::ERGEBNIS.json ohne knownIssues/newIssues
+Zusammenfassung:
+  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+
+### K newIssues fehlt · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest::ERGEBNIS.json ohne knownIssues/newIssues
+Zusammenfassung:
+  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+
+### L knownIssues kein Array · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest::ERGEBNIS.json ohne knownIssues/newIssues
+Zusammenfassung:
+  | ### Layouttest: ERGEBNIS.json ohne die Felder knownIssues und newIssues
+
+### M alles behoben · outcome=success · exit 0 => grün
+stdout:
+  | ::notice title=Layouttest::Bekannte Abweichung nicht mehr aufgetreten: safety-card-375x667, safety-card-360x740
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 0 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: success.
+  | 
+  | **Nicht mehr aufgetreten, Eintrag in KNOWN_ISSUES entfernen:** safety-card-375x667, safety-card-360x740
+  | 
+  | Keine Abweichungen.
+
+### M2 keine Abweichung, Schritt aber failure · outcome=failure · exit 0 => grün
+stdout:
+  | ::notice title=Layouttest::Bekannte Abweichung nicht mehr aufgetreten: safety-card-375x667, safety-card-360x740
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 0 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+  | 
+  | **Nicht mehr aufgetreten, Eintrag in KNOWN_ISSUES entfernen:** safety-card-375x667, safety-card-360x740
+  | 
+  | Keine Abweichungen.
+
+### M3 keine Abweichung, cancelled · outcome=cancelled · exit 0 => grün
+stdout:
+  | ::notice title=Layouttest::Bekannte Abweichung nicht mehr aufgetreten: safety-card-375x667, safety-card-360x740
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 0 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: cancelled.
+  | 
+  | **Nicht mehr aufgetreten, Eintrag in KNOWN_ISSUES entfernen:** safety-card-375x667, safety-card-360x740
+  | 
+  | Keine Abweichungen.
+
+### N issues nennt eine Abweichung, die in keiner der beiden Listen steht · outcome=failure · exit 1 => ROT
+stdout:
+  | ::warning title=Layouttest::1 bekannte Abweichungen, keine neue
+  | ::error title=Layouttest::Zählung in ERGEBNIS.json stimmt nicht
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 1 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | 
+  | **Zählung stimmt nicht:** issues ≠ knownIssues + newIssues.
+
+### O neue Abweichung steht fälschlich in knownIssues, Zählung daher ungleich · outcome=failure · exit 1 => ROT
+stdout:
+  | ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+  | ::error title=Layouttest::Zählung in ERGEBNIS.json stimmt nicht
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - neu X
+  | 
+  | **Zählung stimmt nicht:** issues ≠ knownIssues + newIssues.
+
+### P neue Abweichung steht in knownIssues, Zählung gleich (nur bei geändertem layouttest.cjs möglich) · outcome=failure · exit 0 => grün
+stdout:
+  | ::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 2 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+  | 
+  | **Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+  | - safety card starts in first screen 375x667 (top 802px)
+  | - neu X
+  | 
+
+### S Sonderzeichen in neuen Abweichungen · outcome=failure · exit 1 => ROT
+stdout:
+  | ::error title=Layouttest: neue Abweichung::100%25 breit%0Azweite Zeile
+  | ::error title=Layouttest: neue Abweichung::a::b ::error title=x::y
+  | ::error title=Layouttest: neue Abweichung::mit `Backticks` und ``` Zaun
+  | ::error title=Layouttest: neue Abweichung::<b>fett</b> <script>x</script> | * _ [l](http://x)
+  | ::error title=Layouttest: neue Abweichung::%0D%0A::warning::eingeschleust
+  | ::error title=Layouttest: neue Abweichung::- Listenpunkt%0A%0A### Titel
+  | ::notice title=Layouttest::Bekannte Abweichung nicht mehr aufgetreten: a%0Ab%25
+Zusammenfassung:
+  | ### Layouttest: 6 neue, 0 bekannte Abweichungen
+  | 
+  | 240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+  | 
+  | **Neue Abweichungen (blockieren):**
+  | - 100% breit
+  | zweite Zeile
+  | - a::b ::error title=x::y
+  | - mit `Backticks` und ``` Zaun
+  | - <b>fett</b> <script>x</script> | * _ [l](http://x)
+  | - 
+  | ::warning::eingeschleust
+  | - - Listenpunkt
+  | 
+  | ### Titel
+  | 
+  | **Nicht mehr aufgetreten, Eintrag in KNOWN_ISSUES entfernen:** a
+  | b%
+  | 
+
+### T ohne states/interactions · outcome=success · exit 0 => grün
+stdout:
+Zusammenfassung:
+  | ### Layouttest: 0 neue, 0 bekannte Abweichungen
+  | 
+  | undefined Seitenzustände, undefined Bedienproben. Schritt «Layout test»: success.
+  | 
+  | Keine Abweichungen.
+
+### U ohne GITHUB_STEP_SUMMARY (lokal)
+::error title=Layouttest: neue Abweichung::neu X
+::warning title=Layouttest::2 bekannte Abweichungen, 1 neue
+### Layouttest: 1 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+
+**Neue Abweichungen (blockieren):**
+- neu X
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 802px)
+- safety card starts in first screen 360x740 (top 863px)
+
+
+exit 1

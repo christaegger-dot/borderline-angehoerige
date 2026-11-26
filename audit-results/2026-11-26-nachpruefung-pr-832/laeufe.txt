@@ -1,0 +1,308 @@
+### base-v0
+Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 2 Abweichungen.
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+layouttest exit 1
+ERGEBNIS: issues 2 knownIssues undefined newIssues undefined knownNotSeen undefined
+Screenshots: 19
+
+### pr-v0
+Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 2 Abweichungen (2 bekannt, 0 neu).
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+layouttest exit 1
+ERGEBNIS: issues 2 knownIssues ["safety card starts in first screen 375x667 (top 802px)","safety card starts in first screen 360x740 (top 863px)"] newIssues [] knownNotSeen []
+Screenshots: 19
+::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+--- Zusammenfassung:
+### Layouttest: 0 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 802px)
+- safety card starts in first screen 360x740 (top 863px)
+
+report exit 0 (outcome failure) => Job grün
+
+### pr-v1
+Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 2 Abweichungen (2 bekannt, 0 neu).
+safety card starts in first screen 375x667 (top 2802px)
+safety card starts in first screen 360x740 (top 2863px)
+layouttest exit 1
+ERGEBNIS: issues 2 knownIssues ["safety card starts in first screen 375x667 (top 2802px)","safety card starts in first screen 360x740 (top 2863px)"] newIssues [] knownNotSeen []
+Screenshots: 19
+::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+--- Zusammenfassung:
+### Layouttest: 0 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 2802px)
+- safety card starts in first screen 360x740 (top 2863px)
+
+report exit 0 (outcome failure) => Job grün
+
+### pr-v2
+Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 4 Abweichungen (2 bekannt, 2 neu).
+safety card starts in first screen 1024x768
+safety card starts in first screen 375x812 (top 862px)
+safety card starts in first screen 375x667 (top 862px)
+safety card starts in first screen 360x740 (top 923px)
+layouttest exit 1
+ERGEBNIS: issues 4 knownIssues ["safety card starts in first screen 375x667 (top 862px)","safety card starts in first screen 360x740 (top 923px)"] newIssues ["safety card starts in first screen 1024x768","safety card starts in first screen 375x812 (top 862px)"] knownNotSeen []
+Screenshots: 19
+::error title=Layouttest: neue Abweichung::safety card starts in first screen 1024x768
+::error title=Layouttest: neue Abweichung::safety card starts in first screen 375x812 (top 862px)
+::warning title=Layouttest::2 bekannte Abweichungen, 2 neue
+--- Zusammenfassung:
+### Layouttest: 2 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+
+**Neue Abweichungen (blockieren):**
+- safety card starts in first screen 1024x768
+- safety card starts in first screen 375x812 (top 862px)
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 862px)
+- safety card starts in first screen 360x740 (top 923px)
+
+report exit 1 (outcome failure) => Job ROT
+
+### pr-v3
+Audit-04-Layouttest: 240 Seitenzustände, 40 Bedienproben, 5 Abweichungen (2 bekannt, 3 neu).
+tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+layouttest exit 1
+ERGEBNIS: issues 5 knownIssues ["safety card starts in first screen 375x667 (top 802px)","safety card starts in first screen 360x740 (top 863px)"] newIssues ["tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible","verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)","verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)"] knownNotSeen []
+Screenshots: 17
+::error title=Layouttest: neue Abweichung::tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+::error title=Layouttest: neue Abweichung::verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+::error title=Layouttest: neue Abweichung::verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+::warning title=Layouttest::2 bekannte Abweichungen, 3 neue
+--- Zusammenfassung:
+### Layouttest: 3 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 40 Bedienproben. Schritt «Layout test»: failure.
+
+**Neue Abweichungen (blockieren):**
+- tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+- verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+- verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 802px)
+- safety card starts in first screen 360x740 (top 863px)
+
+report exit 1 (outcome failure) => Job ROT
+
+### pr-v4
+Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 18 Abweichungen (18 bekannt, 0 neu).
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+safety card starts in first screen 375x667 (vorgetaeuscht)
+layouttest exit 1
+ERGEBNIS: issues 18 knownIssues ["safety card starts in first screen 375x667 (top 802px)","safety card starts in first screen 360x740 (top 863px)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)","safety card starts in first screen 375x667 (vorgetaeuscht)"] newIssues [] knownNotSeen []
+Screenshots: 19
+::warning title=Layouttest::18 bekannte Abweichungen, keine neue
+--- Zusammenfassung:
+### Layouttest: 0 neue, 18 bekannte Abweichungen
+
+240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 802px)
+- safety card starts in first screen 360x740 (top 863px)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+- safety card starts in first screen 375x667 (vorgetaeuscht)
+
+report exit 0 (outcome failure) => Job grün
+
+### pr-v5
+Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 18 Abweichungen (2 bekannt, 16 neu).
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+layouttest exit 1
+ERGEBNIS: issues 18 knownIssues ["safety card starts in first screen 375x667 (top 802px)","safety card starts in first screen 360x740 (top 863px)"] newIssues ["Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)","Error: safety card starts in first screen 375x667 (vorgetaeuscht)"] knownNotSeen []
+Screenshots: 19
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::error title=Layouttest: neue Abweichung::Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+::warning title=Layouttest::2 bekannte Abweichungen, 16 neue
+--- Zusammenfassung:
+### Layouttest: 16 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+
+**Neue Abweichungen (blockieren):**
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+- Error: safety card starts in first screen 375x667 (vorgetaeuscht)
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 802px)
+- safety card starts in first screen 360x740 (top 863px)
+
+report exit 1 (outcome failure) => Job ROT
+
+### pr-v6
+Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 0 Abweichungen (0 bekannt, 0 neu).
+Bekannte Abweichung nicht mehr aufgetreten, Eintrag in KNOWN_ISSUES entfernen: safety-card-375x667, safety-card-360x740
+layouttest exit 0
+ERGEBNIS: issues 0 knownIssues [] newIssues [] knownNotSeen ["safety-card-375x667","safety-card-360x740"]
+Screenshots: 19
+::notice title=Layouttest::Bekannte Abweichung nicht mehr aufgetreten: safety-card-375x667, safety-card-360x740
+--- Zusammenfassung:
+### Layouttest: 0 neue, 0 bekannte Abweichungen
+
+240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: success.
+
+**Nicht mehr aufgetreten, Eintrag in KNOWN_ISSUES entfernen:** safety-card-375x667, safety-card-360x740
+
+Keine Abweichungen.
+report exit 0 (outcome success) => Job grün
+
+### main-v0
+Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 2 Abweichungen (2 bekannt, 0 neu).
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+layouttest exit 1
+ERGEBNIS: issues 2 knownIssues ["safety card starts in first screen 375x667 (top 802px)","safety card starts in first screen 360x740 (top 863px)"] newIssues [] knownNotSeen []
+Screenshots: 19
+::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+--- Zusammenfassung:
+### Layouttest: 0 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 802px)
+- safety card starts in first screen 360x740 (top 863px)
+
+report exit 0 (outcome failure) => Job grün
+
+### main-v1
+Audit-04-Layouttest: 240 Seitenzustände, 38 Bedienproben, 2 Abweichungen (2 bekannt, 0 neu).
+safety card starts in first screen 375x667 (top 2802px)
+safety card starts in first screen 360x740 (top 2863px)
+layouttest exit 1
+ERGEBNIS: issues 2 knownIssues ["safety card starts in first screen 375x667 (top 2802px)","safety card starts in first screen 360x740 (top 2863px)"] newIssues [] knownNotSeen []
+Screenshots: 19
+::warning title=Layouttest::2 bekannte Abweichungen, keine neue
+--- Zusammenfassung:
+### Layouttest: 0 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 38 Bedienproben. Schritt «Layout test»: failure.
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 2802px)
+- safety card starts in first screen 360x740 (top 2863px)
+
+report exit 0 (outcome failure) => Job grün
+
+### main-v3
+Audit-04-Layouttest: 240 Seitenzustände, 40 Bedienproben, 5 Abweichungen (2 bekannt, 3 neu).
+tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+layouttest exit 1
+ERGEBNIS: issues 5 knownIssues ["safety card starts in first screen 375x667 (top 802px)","safety card starts in first screen 360x740 (top 863px)"] newIssues ["tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible","verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)","verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)"] knownNotSeen []
+Screenshots: 17
+::error title=Layouttest: neue Abweichung::tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+::error title=Layouttest: neue Abweichung::verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+::error title=Layouttest: neue Abweichung::verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+::warning title=Layouttest::2 bekannte Abweichungen, 3 neue
+--- Zusammenfassung:
+### Layouttest: 3 neue, 2 bekannte Abweichungen
+
+240 Seitenzustände, 40 Bedienproben. Schritt «Layout test»: failure.
+
+**Neue Abweichungen (blockieren):**
+- tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible
+- verstehen 375px text200=false: first figure not visible, screenshot skipped (for example inside a closed <details>)
+- verstehen 375px text200=true: first figure not visible, screenshot skipped (for example inside a closed <details>)
+
+**Bekannte Abweichungen (blockieren nicht, siehe KNOWN_ISSUES in `layouttest.cjs`):**
+- safety card starts in first screen 375x667 (top 802px)
+- safety card starts in first screen 360x740 (top 863px)
+
+report exit 1 (outcome failure) => Job ROT
+

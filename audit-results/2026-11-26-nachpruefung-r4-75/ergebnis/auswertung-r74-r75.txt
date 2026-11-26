@@ -1,0 +1,59 @@
+## r74-r75-fuellwort-sicherheit.txt: 60 Anfragen (0 mit Tötungswort), geändert 43
+a) Tötungswort, Suizid vorher unter den ersten zwei oder Kinder zuerst, nachher nicht: 0
+b) Anheftung verloren oder kleiner: 0
+c) vorher Treffer, nachher keiner: 4
+   Er sagt oft es hat alles keinen Sinn mehr | begriffe#begriffe → –
+   Er hat wieder Tabletten gesammelt | fragen#f-medikamente > behandlung#therapieformen > behandlung → –
+   Sie hat es schon oft versucht | kommunizieren#beispiele → –
+   Er sagt oft er macht Schluss | buecher#kritisch > buecher#auswahl → –
+d) Sicherheitsabschnitt (auch Selbstverletzung) vorher unter den ersten zwei, nachher dort nicht: 9
+   Ich verletze mich immer wieder | krise#selbstverletzung > begriffe#b-selbstverletzung > kommunizieren#beispiele → krise#suizid > verstehen#borderline > begriffe#begriffe
+   Ich ritze mich immer wieder | krise#selbstverletzung → krise#suizid
+   Ich schneide mich oft | krise#selbstverletzung > verstehen#mythen > diagnose#begleiterkrankungen → diagnose#begleiterkrankungen > verstehen#mythen
+   Ich werde immer wieder geschlagen | gefahr#gewalt > fragen#f-einweisung > fragen#f-mehrere → kurz#jetzt > begriffe#begriffe > quellen#forschung
+   Ich werde oft bedroht | gefahr#gewalt > fragen#f-einweisung > fragen#f-mehrere → begriffe#begriffe > rolle#an-grenzen > selbstfuersorge#warnsignale
+   Er spricht oft davon zu sterben | krise#suizid > kommunizieren#suizid-angesprochen > diagnose#suizidalitaet → krise#suizid
+   Sie hat sich wieder verletzt | krise#selbstverletzung > krise > diagnose#suizidalitaet → krise#suizid > diagnose#suizidalitaet > krise#bleibt
+   Er hat sich wieder geritzt | krise#selbstverletzung > krise > diagnose#suizidalitaet → krise#suizid > diagnose#suizidalitaet > krise#bleibt
+   Er schreibt immer wieder Abschiedsbriefe | krise#suizid > krise > diagnose#suizidalitaet → verstehen#borderline > begriffe#begriffe > quellen#forschung
+## r74-r75-neu.txt: 67 Anfragen (14 mit Tötungswort), geändert 29
+a) Tötungswort, Suizid vorher unter den ersten zwei oder Kinder zuerst, nachher nicht: 0
+b) Anheftung verloren oder kleiner: 0
+c) vorher Treffer, nachher keiner: 3
+   Er redet immer davon er bringt sich um wegen der Schulden | gefahr#riskant → –
+   Sie spricht oft davon sie bringt sich um mit dem Auto | behandlung#rollen > behandlung#kontakt → –
+   Sie redet immer vom Tod | krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid → –
+d) Sicherheitsabschnitt (auch Selbstverletzung) vorher unter den ersten zwei, nachher dort nicht: 2
+   Sie redet immer vom Tod | krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid → –
+   Sie schreibt oft vom Tod | krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid → begriffe#begriffe
+## r74-r75-proben.txt: 479 Anfragen (55 mit Tötungswort), geändert 46
+a) Tötungswort, Suizid vorher unter den ersten zwei oder Kinder zuerst, nachher nicht: 0
+b) Anheftung verloren oder kleiner: 0
+c) vorher Treffer, nachher keiner: 13
+   Ich werde immer wieder beschimpft | grenzen#saetze > grenzen#erkennen → –
+   Ich habe alles falsch gemacht | selbstfuersorge#kraft → –
+   Ich habe es schon oft gesagt | beziehungen#verstaerker > kommunizieren#anerkennen → –
+   Ich habe ihr Geld gegeben | kommunizieren#beispiele > selbstfuersorge#unterstuetzung > begriffe#b-borderline → –
+   Ich habe ihm wieder Geld gegeben | kommunizieren#beispiele > selbstfuersorge#unterstuetzung > begriffe#b-borderline → –
+   Ich weine oft | quellen#forschung → –
+   Ich bekomme immer wieder Nachrichten | beziehungen#bz-sichten-s2 → –
+   Er schreibt dauernd Nachrichten | beziehungen#bz-sichten-s2 → –
+   Er erzählt Lügen über mich | fragen#gespraeche → –
+   Sie hat Schluss gemacht | begriffe#b-vertrauensperson > buecher#kritisch > quellen#angehoerige → –
+   Brief vom Gericht | behandlung#schnell > behandlung#therapieformen → –
+   Sie schreibt in Nachrichten vom Tod | beziehungen#bz-sichten-s2 → –
+   Er redet nie vom Tod | begriffe#begriffe → –
+d) Sicherheitsabschnitt (auch Selbstverletzung) vorher unter den ersten zwei, nachher dort nicht: 1
+   Narben vom Ritzen | krise#selbstverletzung > krise > diagnose#suizidalitaet → begriffe#b-selbstverletzung
+## r74-r75-toetungswort-fuellwort.txt: 54 Anfragen (49 mit Tötungswort), geändert 26
+a) Tötungswort, Suizid vorher unter den ersten zwei oder Kinder zuerst, nachher nicht: 0
+b) Anheftung verloren oder kleiner: 0
+c) vorher Treffer, nachher keiner: 6
+   Sie schreibt mir oft sie bringt sich um heute | selbstfuersorge#selbstfuersorge-schnell → –
+   Er sagte er bringt sich um noch heute | selbstfuersorge#selbstfuersorge-schnell → –
+   Sie sagt sie bringt sich um mit Tabletten | behandlung#rollen > behandlung#kontakt → –
+   Er bringt sich um mit Tabletten sagt er | behandlung#rollen > behandlung#kontakt → –
+   Sohn schreibt wieder er bringt sich um Notfall | krise#krise-schnell > kinder#eskalation > krise → –
+   Sie sagt oft sie will sich umbringn | behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft → –
+d) Sicherheitsabschnitt (auch Selbstverletzung) vorher unter den ersten zwei, nachher dort nicht: 1
+   Sohn schreibt wieder er bringt sich um Notfall | krise#krise-schnell > kinder#eskalation > krise → –

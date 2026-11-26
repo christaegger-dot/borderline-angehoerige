@@ -1,0 +1,61 @@
+# P Aussagen zu Suizidgedanken, Selbstverletzung und Gewalt ohne Tötungswort, mit neuen Füllwörtern (natürliche Wortstellung)
+GLEICH   | Ich denke oft ans Sterben | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Ich denke sehr oft ans Sterben | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Ich denke immer wieder ans Sterben | vorher krise.html#suizid > verstehen.html#anspannung | nachher krise.html#suizid > verstehen.html#anspannung
+GLEICH   | Ich denke immer öfter ans Sterben | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Ich denke ans Sterben | vorher krise.html#suizid > verstehen.html#anspannung > krise.html > kommunizieren.html#suizid-angesprochen > diagnose.html#suizidalitaet | nachher krise.html#suizid > verstehen.html#anspannung > krise.html > kommunizieren.html#suizid-angesprochen > diagnose.html#suizidalitaet
+GLEICH   | Ich denke oft an den Tod | vorher – | nachher –
+GLEICH   | Ich denke immer wieder an den Tod | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Ich habe immer wieder Suizidgedanken | vorher begriffe.html#begriffe | nachher begriffe.html#begriffe
+GLEICH   | Ich habe oft Suizidgedanken | vorher begriffe.html#begriffe > diagnose.html#begleiterkrankungen | nachher begriffe.html#begriffe > diagnose.html#begleiterkrankungen
+GLEICH   | Ich denke oft an Suizid | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Ich denke immer wieder an Selbstmord | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Ich will immer wieder sterben | vorher krise.html#suizid > verstehen.html#borderline > begriffe.html#begriffe > quellen.html#forschung | nachher krise.html#suizid > verstehen.html#borderline > begriffe.html#begriffe > quellen.html#forschung
+GLEICH   | Ich möchte oft einfach sterben | vorher begriffe.html#begriffe | nachher begriffe.html#begriffe
+GLEICH   | Ich wünsche mir oft tot zu sein | vorher – | nachher –
+GLEICH   | Ich denke oft daran nicht mehr zu leben | vorher krise.html#suizid > verstehen.html#mythen > diagnose.html#abklaerung | nachher krise.html#suizid > verstehen.html#mythen > diagnose.html#abklaerung
+GLEICH   | Ich habe immer wieder den Gedanken zu sterben | vorher begriffe.html#begriffe | nachher begriffe.html#begriffe
+GLEICH   | Ich habe ihr oft gesagt dass ich sterben will | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Ich sage immer wieder ich will sterben | vorher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20) | nachher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+GLEICH   | Ich verletze mich immer wieder | vorher krise.html#suizid > verstehen.html#borderline > begriffe.html#begriffe | nachher krise.html#suizid > verstehen.html#borderline > begriffe.html#begriffe
+GLEICH   | Ich ritze mich immer wieder | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Ich schneide mich oft | vorher diagnose.html#begleiterkrankungen > verstehen.html#mythen | nachher diagnose.html#begleiterkrankungen > verstehen.html#mythen
+GLEICH   | Ich werde immer wieder geschlagen | vorher kurz.html#jetzt > begriffe.html#begriffe > quellen.html#forschung | nachher kurz.html#jetzt > begriffe.html#begriffe > quellen.html#forschung
+GLEICH   | Ich werde oft bedroht | vorher begriffe.html#begriffe > rolle.html#an-grenzen > selbstfuersorge.html#warnsignale > kinder.html#erklaeren > kommunizieren.html#zuhoeren … (7) | nachher begriffe.html#begriffe > rolle.html#an-grenzen > selbstfuersorge.html#warnsignale > kinder.html#erklaeren > kommunizieren.html#zuhoeren … (7)
+GLEICH   | Ich habe immer wieder Angst vor ihm | vorher gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20) | nachher gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+GLEICH   | Mein Sohn denkt oft ans Sterben | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie denkt immer wieder ans Sterben | vorher krise.html#suizid | nachher krise.html#suizid
+GEÄNDERT | Sie denkt ans Sterben | vorher beziehungen.html#verantwortung | nachher krise.html#suizid > krise.html > kommunizieren.html#suizid-angesprochen > diagnose.html#suizidalitaet
+GEÄNDERT | Sie redet oft vom Sterben | vorher – | nachher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+GLEICH   | Er spricht oft davon zu sterben | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie sagt oft sie will sterben | vorher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20) | nachher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+GLEICH   | Er sagt immer wieder er will nicht mehr leben | vorher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20) | nachher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+GLEICH   | Sie schreibt oft sie möchte tot sein | vorher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20) | nachher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+GEÄNDERT | Sie hat wieder gesagt sie will nicht mehr | vorher behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) | nachher krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20) [angeheftet: krise.html#suizid, selbstfuersorge.html#warnsignale]
+GLEICH   | Er sagt immer wieder er kann nicht mehr | vorher selbstfuersorge.html#warnsignale > kurz.html > selbstfuersorge.html > selbstfuersorge.html#kraft > kurz.html#jetzt … (20) | nachher selbstfuersorge.html#warnsignale > kurz.html > selbstfuersorge.html > selbstfuersorge.html#kraft > kurz.html#jetzt … (20)
+GLEICH   | Sie sagt immer wieder das Leben hat keinen Sinn | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er sagt oft es hat alles keinen Sinn mehr | vorher – | nachher –
+GLEICH   | Sie sagt immer wieder sie wäre lieber tot | vorher – | nachher –
+GLEICH   | Er sagt immer wieder ohne ihn wären alle besser dran | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie sagt oft sie will einschlafen und nicht mehr aufwachen | vorher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20) | nachher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+GLEICH   | Er hat wieder Tabletten gesammelt | vorher – | nachher –
+GLEICH   | Sie hat sich wieder verletzt | vorher krise.html#suizid > diagnose.html#suizidalitaet > krise.html#bleibt > rolle.html#nach-konflikten > fragen.html#schutz … (13) | nachher krise.html#suizid > diagnose.html#suizidalitaet > krise.html#bleibt > rolle.html#nach-konflikten > fragen.html#schutz … (13)
+GEÄNDERT | Er hat sich wieder geritzt | vorher krise.html#suizid | nachher krise.html#suizid > diagnose.html#suizidalitaet > krise.html#bleibt > rolle.html#nach-konflikten > fragen.html#schutz … (13)
+GLEICH   | Sie hat es schon oft versucht | vorher – | nachher –
+GLEICH   | Er hat es wieder versucht | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie hat wieder einen Suizidversuch gemacht | vorher krise.html#suizid > diagnose.html#suizidalitaet | nachher krise.html#suizid > diagnose.html#suizidalitaet
+GLEICH   | Er hat schon oft einen Suizidversuch gemacht | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie hat schon wieder eine Überdosis genommen | vorher quellen.html#forschung | nachher quellen.html#forschung
+GEÄNDERT | Er hat ihr wieder eine Ohrfeige gegeben | vorher – | nachher gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+GEÄNDERT | Sie hat mich wieder geschlagen | vorher kinder.html#eskalation > index.html#orientierung > fragen.html#schutz > fragen.html#f-kinder > fragen.html#f-ansprechen … (20) | nachher gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20) [angeheftet: gefahr.html#gewalt]
+GEÄNDERT | Er hat mich schon oft bedroht | vorher begriffe.html#begriffe > begriffe.html#b-selbstverletzung > begriffe.html#b-validierung > grenzen.html#konsequenz > kommunizieren.html#moment … (13) | nachher gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20) [angeheftet: gefahr.html#gewalt]
+GLEICH   | Er hat mir wieder gedroht | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie sagt immer wieder sie tut sich etwas an | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er sagt oft er macht Schluss | vorher – | nachher –
+GLEICH   | Sie sagt immer wieder sie will weg sein | vorher krise.html#suizid | nachher krise.html#suizid
+GEÄNDERT | Er redet immer wieder vom Sterben und vom Tod | vorher krise.html#suizid | nachher krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+GLEICH   | Sie spricht immer wieder über Suizid | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Er schreibt immer wieder Abschiedsbriefe | vorher verstehen.html#borderline > begriffe.html#begriffe > quellen.html#forschung | nachher verstehen.html#borderline > begriffe.html#begriffe > quellen.html#forschung
+GLEICH   | Sie sagt sie sei lebensmüde | vorher krise.html#suizid > beziehungen.html#verantwortung > krise.html#selbstverletzung > fragen.html#gespraeche | nachher krise.html#suizid > beziehungen.html#verantwortung > krise.html#selbstverletzung > fragen.html#gespraeche
+GLEICH   | Er sagt immer wieder er sei lebensmüde | vorher krise.html#suizid | nachher krise.html#suizid
+GLEICH   | Sie erzählt oft von Suizidgedanken | vorher krise.html#suizid | nachher krise.html#suizid

@@ -22,8 +22,13 @@ const navNames=['Verstehen','Im Alltag','Krisen','Familie','Für Sie'];
      if(node){const text=node.data;let prev=null,wordStart=0;const word=i=>{let a=i,b=i;while(a>0&&!/\s/.test(text[a-1]))a--;while(b<text.length&&!/\s/.test(text[b]))b++;return text.slice(a,b).replace(/\u00AD/g,'|');};
       /* r4-42 (N41-W1): Jeder Zeilenwechsel innerhalb eines Wortes ist nur an einer weichen Trennstelle (U+00AD) erlaubt, nicht nur irgendwo im Wort. */
       for(let i=0;i<text.length;i++){if(/\s/.test(text[i])){prev=null;continue;}const r=document.createRange();r.setStart(node,i);r.setEnd(node,i+1);const rects=[...r.getClientRects()].filter(x=>x.width>0);if(!rects.length){continue;}const top=Math.round(Math.max(...rects.map(x=>x.top)));/* Chromium meldet für das Zeichen nach einer Trennstelle auch den Trennstrich der Vorzeile; massgebend ist das unterste Rechteck. */if(prev!==null&&Math.abs(top-prev)>2){const w=word(i);if(text[i-1]==='\u00AD'||text[i]==='\u00AD'){if(!title.hyphenated.includes(w))title.hyphenated.push(w);}else if(!title.broken.includes(w))title.broken.push(w+'@'+i);}prev=top;}}
-     /* B2c (A04-2014): massgebend ist, wo die vier sichtbaren Phasenkarten enden, gemessen ab dem oberen Rand der Figur, nicht die Höhe der ganzen Figur. */
-     const fig=document.querySelector('[data-visual-id="v-vs-anspannung"]'),phases=fig?[...fig.querySelectorAll(':scope ol.bl-phase-actions > li')].filter(li=>!li.closest('details')):[],curvePhases={count:phases.length,end:phases.length?Math.round(phases[phases.length-1].getBoundingClientRect().bottom-fig.getBoundingClientRect().top):null};
+     /* B2c (A04-2014): massgebend ist, wo die vier sichtbaren Phasenkarten enden, gemessen ab dem oberen Rand der Figur, nicht die Höhe der ganzen Figur.
+        N809-2: Eine Karte zählt als sichtbar nur mit Höhe, Text und ohne display:none/visibility:hidden/opacity:0; vollständig ist sie mit sichtbarer Überschrift und sichtbarem Absatz (Handlungsmöglichkeit).
+        N809-3: massgebend ist die tiefste sichtbare Karte, nicht die letzte im Quelltext. N809-4: Der Schutzhinweis muss sichtbar sein und vor dem ersten Aufklappbereich stehen. */
+     const fig=document.querySelector('[data-visual-id="v-vs-anspannung"]'),vis=e=>!!e&&e.checkVisibility({opacityProperty:true,visibilityProperty:true})&&e.getBoundingClientRect().height>0&&e.textContent.trim()!=='',ft=fig?fig.getBoundingClientRect().top:0,
+      cards=fig?[...fig.querySelectorAll(':scope ol.bl-phase-actions > li')].filter(li=>!li.closest('details')):[],shown=cards.filter(vis),complete=shown.filter(li=>vis(li.querySelector('h3'))&&[...li.querySelectorAll('p')].some(vis)),
+      schutz=fig?fig.querySelector('.bl-fig-schutz'):null,firstDetails=fig?fig.querySelector('details'):null,
+      curvePhases={count:cards.length,visible:shown.length,complete:complete.length,end:shown.length?Math.round(Math.max(...shown.map(li=>li.getBoundingClientRect().bottom))-ft):null,schutzVisible:vis(schutz)&&!schutz.closest('details'),schutzBeforeDetails:!!schutz&&(!firstDetails||!!(schutz.compareDocumentPosition(firstDetails)&Node.DOCUMENT_POSITION_FOLLOWING))};
      return {title,curvePhases,scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,header:pos('header'),input:pos('input'),quick:pos('.puk-site-quick'),firstCrisisStep:pos('.puk-site-quick li'),curve:pos('[data-visual-id="v-vs-anspannung"]'),firstQuote:pos('.bl-sicht .puk-vis-compare__col'),tableWidth:pos('.bl-tabelle'),tableRegion:pos('.puk-vis-tablewrap'),overflow:over.slice(0,10),copy:pos('.puk-longform__copy')};
     });
     rows.push({page,width,large,...result});
@@ -54,8 +59,16 @@ const navNames=['Verstehen','Im Alltag','Krisen','Familie','Für Sie'];
   if(!r.large&&r.page==='index'&&r.width===320&&r.header.h>250)issues.push('320px header exceeds 250px');
   if(!r.large&&r.width===375&&r.page==='krise'&&r.firstCrisisStep.y>=812)issues.push('first crisis step below first screen');
   if(!r.large&&r.width===375&&['suche','begriffe','quellen'].includes(r.page)&&r.input.y+r.input.h>812)issues.push(r.page+' input below first screen');
-  /* B2c (UEBERGABE-GESTALTUNG-2026-10-21.md, NP708-N2): Die ganze Figur darf höher als 1800 px sein, solange die vier Phasen innerhalb von 1800 px enden. */
-  if(!r.large&&r.width===375&&r.page==='verstehen'){if(r.curvePhases.count!==4)issues.push(`tension core: ${r.curvePhases.count} visible phase cards instead of 4`);else if(r.curvePhases.end>1800)issues.push(`tension core: fourth phase ends at ${r.curvePhases.end}px, beyond 1800px`);else if(r.curve.h>1800)console.log(`Bekannte Ausnahme B2c bestanden: Figur ${Math.round(r.curve.h)} px hoch, vierte Phase endet bei ${r.curvePhases.end} px (Grenze 1800 px).`);}
+  /* B2c (UEBERGABE-GESTALTUNG-2026-10-21.md, NP708-N2; PR #809, Nachbesserung N809-2 bis N809-4): Die ganze Figur darf höher als 1800 px sein, solange die vier Phasen vollständig und sichtbar innerhalb von 1800 px enden
+     und der Schutzhinweis ohne Aufklappen sichtbar ist. Obergrenze für die ganze Figur: 2400 px (N809-4; heute 1992 px, Wert zur Bestätigung durch die Fachstelle). */
+  if(!r.large&&r.width===375&&r.page==='verstehen'){const c=r.curvePhases;
+   if(c.count!==4)issues.push(`tension core: ${c.count} phase cards outside disclosures instead of 4`);
+   else if(c.visible!==4)issues.push(`tension core: only ${c.visible} of 4 phase cards visible`);
+   else if(c.complete!==4)issues.push(`tension core: ${4-c.complete} phase card(s) without visible heading or text`);
+   else if(c.end>1800)issues.push(`tension core: fourth phase ends at ${c.end}px, beyond 1800px`);
+   else if(!c.schutzVisible||!c.schutzBeforeDetails)issues.push('tension core: protection note not visible before the disclosures');
+   else if(r.curve.h>2400)issues.push(`tension core: whole figure ${r.curve.h}px exceeds 2400px`);
+   else if(r.curve.h>1800)console.log(`Bekannte Ausnahme B2c bestanden: Figur ${Math.round(r.curve.h)} px hoch, vierte Phase endet bei ${c.end} px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.`);}
   if(!r.large&&r.width===1440&&r.page==='beziehungen'&&r.firstQuote.h>150)issues.push('quote card exceeds natural height');
   if(r.large&&[768,1024].includes(r.width)&&r.page==='kommunizieren'&&r.tableWidth.width>r.tableRegion.width+2)issues.push('table fails to become labelled records');
   if(r.width&&r.title&&r.title.broken.length)issues.push(`${r.page} ${r.width}px text200=${r.large}: title word breaks without soft hyphen (${r.title.broken.join(', ')})`);

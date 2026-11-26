@@ -24,7 +24,7 @@ Sichtbarer Wortlaut ändert sich nicht. Geändert sind `authoring/js/interaktion
 | SU-02 | Weitere Gewaltbegriffe; Gewalt gegen die eigene Person | «Ohrfeige», «Angst um mein Leben» |
 | SU-02 | Kinder als Betroffene von Gewalt ohne Tötungswort: Kinderschutz zuerst | «mein Mann schlägt die Kinder» |
 | SU-02, SU-09 | Neue Gruppen: Streit und Aggression, Beschimpfung, Kindesschutzbehörde, Mentalisierung, Krisenplan | «aggressiv», «Jugendamt», «Notfallplan» |
-| SU-05 | «Quellen zu dieser Seite» zählt nicht mehr zum vorangehenden Abschnitt | «Geheimnis» führte auf «Weitere Fragen», weil dort der Quellenblock folgt |
+| SU-05 | «Quellen zu dieser Seite» zählt nicht mehr zum vorangehenden Abschnitt | «Geheimnis» führte auf «Ihre Frage ist nicht dabei?», weil dort der Quellenblock folgt |
 | SU-05 | Drei Suchbegriffe in der Konfiguration | «Zweitmeinung», «Arztgeheimnis», «Zwangseinweisung» |
 | SU-06 | Begriffe zur Einweisung; «FU» und «IV» nur als ganzes Wort | «FU» traf vorher jedes «für» |
 

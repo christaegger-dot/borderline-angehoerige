@@ -71,7 +71,7 @@ Diese Übersicht fasst zusammen, was am 26.11.2026 wirklich offen ist. Sie erset
 **Offen:**
 - Bericht der Nachprüfung (nachträglich, läuft seit 23:34 UTC); Merge-Auftrag belegen.
 - Entscheid (Christa Egger): die Abwägungen oben.
-- Erledigt: Die vier Übergangsmuster sind nach dem Merge aus `suchraster-ausnahmen.tsv` entfernt (PR-NUMMER-NACH848); die Liste ist wieder leer.
+- Erledigt: Die vier Übergangsmuster sind nach dem Merge aus `suchraster-ausnahmen.tsv` entfernt ([PR #850](https://github.com/christaegger-dot/borderline-angehoerige/pull/850)); die Liste ist wieder leer.
 - Offen (G846-2): Abdeckung ins Suchraster aufnehmen.
 
 ## Suchraster · Wiederaufbau der Suche, Schritt 1 · auf `main` seit 26.11.2026

@@ -1,0 +1,89 @@
+# Wortanfänge ab fünf Zeichen aus 1680838 Wörtern: 3742519 verschiedene; die Suche schreibt 610 davon um.
+# Unten: Wortanfänge, die umgeschrieben werden, obwohl das fertig getippte Wort der Liste nicht umgeschrieben wird: 87
+abschiedsbrie→abschiedsbrief | beim Tippen von z. B.: abschiedsbrief, abschiedsbriefe
+borderliner→borderline | beim Tippen von z. B.: borderlinern, borderliners
+borderlines→borderline | beim Tippen von z. B.: borderlinesyndrom
+borderlin→borderline | beim Tippen von z. B.: borderline, borderlinern, borderliners, borderlinesyndrom
+krisenlan→krisenplan | beim Tippen von z. B.: krisenland, krisenlandes
+krisenpla→krisenplan | beim Tippen von z. B.: krisenplan
+lebensmüdigkei→lebensmuede | beim Tippen von z. B.: lebensmüdigkeit
+lebensmüdigke→lebensmuede | beim Tippen von z. B.: lebensmüdigkeit
+lebensmüdigk→lebensmuede | beim Tippen von z. B.: lebensmüdigkeit
+lebensmüdig→lebensmuede | beim Tippen von z. B.: lebensmüdigkeit
+lebensmüdi→lebensmuede | beim Tippen von z. B.: lebensmüdigkeit
+lebensmüd→lebensmuede | beim Tippen von z. B.: lebensmüdigkeit, lebensmüde, lebensmüder
+medikamentie→medikamente | beim Tippen von z. B.: medikamentierung, medikamentieren, medikamentierend, medikamentiert
+medikamentö→medikamente | beim Tippen von z. B.: medikamentös, medikamentöse, medikamentösem, medikamentösen, medikamentöser, medikamentöses
+medikamen→medikament | beim Tippen von z. B.: medikament, medikamente, medikamenten, medikamentenabgabe, medikamentenabgaben, medikamentenabhängigkeit
+selbstmod→selbstmord | beim Tippen von z. B.: selbstmodell, selbstmodelle, selbstmodellen, selbstmodells, selbstmodifikation, selbstmodifikationen
+selbstmordgedanke→selbstmord | beim Tippen von z. B.: selbstmordgedanken
+selbstmordgedank→selbstmord | beim Tippen von z. B.: selbstmordgedanken
+selbstmordgedan→selbstmord | beim Tippen von z. B.: selbstmordgedanken
+selbstmordgeda→selbstmord | beim Tippen von z. B.: selbstmordgedanken
+selbstmordged→selbstmord | beim Tippen von z. B.: selbstmordgedanken
+selbstmordge→selbstmord | beim Tippen von z. B.: selbstmordgedanken
+selbstmordg→selbstmord | beim Tippen von z. B.: selbstmordgedanken
+selbstmordversuc→selbstmord | beim Tippen von z. B.: selbstmordversuch, selbstmordversuche
+selbstmordversu→selbstmord | beim Tippen von z. B.: selbstmordversuch, selbstmordversuche
+selbstmordvers→selbstmord | beim Tippen von z. B.: selbstmordversuch, selbstmordversuche
+selbstmordver→selbstmord | beim Tippen von z. B.: selbstmordversuch, selbstmordversuche
+selbstmordve→selbstmord | beim Tippen von z. B.: selbstmordversuch, selbstmordversuche
+selbstmordv→selbstmord | beim Tippen von z. B.: selbstmordversuch, selbstmordversuche
+selbstmor→selbstmord | beim Tippen von z. B.: selbstmord, selbstmordgedanken, selbstmordversuch, selbstmordversuche
+selbsttötun→selbsttoetung | beim Tippen von z. B.: selbsttötung
+selbstverletzend→selbstverletzen | beim Tippen von z. B.: selbstverletzende, selbstverletzendem, selbstverletzenden, selbstverletzender, selbstverletzendes
+selbstverletze→selbstverletzen | beim Tippen von z. B.: selbstverletzende, selbstverletzendem, selbstverletzenden, selbstverletzender, selbstverletzendes
+selbstverletzunge→selbstverletzung | beim Tippen von z. B.: selbstverletzungen
+selbstverletzungs→selbstverletzung | beim Tippen von z. B.: selbstverletzungsdrang, selbstverletzungsinstrument, selbstverletzungsinstrumente, selbstverletzungsinstrumenten, selbstverletzungsverhalten, selbstverletzungsverhaltens
+selbstversetzung→selbstverletzung | beim Tippen von z. B.: selbstversetzungen
+suizidalitä→suizid | beim Tippen von z. B.: suizidalität
+suizidalit→suizid | beim Tippen von z. B.: suizidalität
+suizidali→suizid | beim Tippen von z. B.: suizidalität
+suizida→suizid | beim Tippen von z. B.: suizidalität, suizidal
+suiziddrohunge→suizid | beim Tippen von z. B.: suiziddrohungen
+suiziddrohun→suizid | beim Tippen von z. B.: suiziddrohung, suiziddrohungen
+suiziddrohu→suizid | beim Tippen von z. B.: suiziddrohung, suiziddrohungen
+suiziddroh→suizid | beim Tippen von z. B.: suiziddrohung, suiziddrohungen
+suiziddro→suizid | beim Tippen von z. B.: suiziddrohung, suiziddrohungen
+suiziddr→suizid | beim Tippen von z. B.: suiziddrohung, suiziddrohungen
+suizidd→suizid | beim Tippen von z. B.: suiziddrohung, suiziddrohungen
+suizidgedanke→suizid | beim Tippen von z. B.: suizidgedanken
+suizidgedank→suizid | beim Tippen von z. B.: suizidgedanken
+suizidgedan→suizid | beim Tippen von z. B.: suizidgedanken
+suizidgeda→suizid | beim Tippen von z. B.: suizidgedanken
+suizidged→suizid | beim Tippen von z. B.: suizidgedanken
+suizidge→suizid | beim Tippen von z. B.: suizidgedanken
+suizidg→suizid | beim Tippen von z. B.: suizidgedanken
+suizidversuc→suizid | beim Tippen von z. B.: suizidversuch, suizidversuche
+suizidversu→suizid | beim Tippen von z. B.: suizidversuch, suizidversuche
+suizidvers→suizid | beim Tippen von z. B.: suizidversuch, suizidversuche
+suizidver→suizid | beim Tippen von z. B.: suizidversuch, suizidversuche
+suizidve→suizid | beim Tippen von z. B.: suizidversuch, suizidversuche
+suizidv→suizid | beim Tippen von z. B.: suizidversuch, suizidversuche
+suizi→suizid | beim Tippen von z. B.: suizid, suizidalität, suiziddrohung, suiziddrohungen, suizidgedanken, suizidversuch
+therape→therapie | beim Tippen von z. B.: therapeut, therapeuten, therapeutik, therapeutika, therapeutikum, therapeutin
+therapiea→therapie | beim Tippen von z. B.: therapieabbruch, therapieabbruchs, therapieabbrüche, therapieabbrüchen, therapieabgabe, therapieabgaben
+therapieb→therapie | beim Tippen von z. B.: therapiebausteine, therapiebedarf, therapiebedarfs, therapiebedürftigkeit, therapiebeginn, therapiebeginns
+therapied→therapie | beim Tippen von z. B.: therapiedauer, therapiedosen, therapiedosis
+therapiee→therapie | beim Tippen von z. B.: therapieebene, therapieeffekt, therapieeffekte, therapieeffekten, therapieeinheit, therapieeinheiten
+therapief→therapie | beim Tippen von z. B.: therapiefall, therapiefalles, therapiefehler, therapiefehlern, therapiefehlers, therapieform
+therapieg→therapie | beim Tippen von z. B.: therapiegebieten, therapiegerät, therapiegeräte, therapiegeräten, therapiegewohnheiten, therapiegruppe
+therapieh→therapie | beim Tippen von z. B.: therapiehandbuch, therapiehandbuches, therapiehandbuchs, therapiehandbücher, therapiehandbüchern, therapiehaus
+therapiei→therapie | beim Tippen von z. B.: therapieindikation, therapieindikationen, therapieinhalte, therapieinhalten, therapieinstrument, therapieinstrumente
+therapiek→therapie | beim Tippen von z. B.: therapiekapsel, therapiekapseln, therapieklima, therapieklimas, therapiekontrolle, therapiekontrollen
+therapiel→therapie | beim Tippen von z. B.: therapieleitfaden, therapieleitfadens, therapieleitfäden, therapieleitlinie, therapieleitlinien, therapielexika
+therapiem→therapie | beim Tippen von z. B.: therapiemanagement, therapiemanagements, therapiemanual, therapiemanuale, therapiemanualen, therapiemaßnahme
+therapieo→therapie | beim Tippen von z. B.: therapieoptimierungsstudie, therapieoptimierungsstudien, therapieoption, therapieoptionen
+therapiep→therapie | beim Tippen von z. B.: therapiepause, therapiepausen, therapiepfad, therapiepfade, therapiepfaden, therapiepferd
+therapier→therapie | beim Tippen von z. B.: therapierad, therapierades, therapieraum, therapieraumes, therapieregime, therapieregimes
+therapiet→therapie | beim Tippen von z. B.: therapietechnik, therapietechniken, therapieteil, therapieteile, therapieteilen, therapieteils
+therapieu→therapie | beim Tippen von z. B.: therapieunterstützung
+therapiev→therapie | beim Tippen von z. B.: therapievariante, therapievarianten, therapieverbot, therapieverbote, therapieverboten, therapieverbotes
+therapiew→therapie | beim Tippen von z. B.: therapiewahl, therapiewahlen, therapiewirksamkeit, therapiewirkung, therapiewirkungen, therapiewirkungsforschung
+therapiez→therapie | beim Tippen von z. B.: therapiezeitraum, therapiezeitraumes, therapiezeitraums, therapiezeiträume, therapiezeiträumen, therapiezentren
+therapi→therapie | beim Tippen von z. B.: therapie, therapieabbruch, therapieabbruchs, therapieabbrüche, therapieabbrüchen, therapieabgabe
+todeswunsc→todeswunsch | beim Tippen von z. B.: todeswunsch
+todeswünsch→todeswunsch | beim Tippen von z. B.: todeswünsche
+überdose→ueberdosis | beim Tippen von z. B.: überdosen
+überdosi→ueberdosis | beim Tippen von z. B.: überdosis
+überdos→ueberdosis | beim Tippen von z. B.: überdosen, überdosis

@@ -1,0 +1,398 @@
+# Tötungswort mal Zusätze: 2000 Anfragen (50 Sätze der Gruppe A)
+## a) Suizid vorher unter den ersten zwei oder Kinder zuerst, nachher nicht: 11
+Sie sagt, sie bringt sich um immer wieder | krise#suizid → behandlung#rollen > behandlung#kontakt
+Ich bringe mich um Angst um mein Leben | kinder#eskalation → gefahr#gewalt > kinder#eskalation > index#orientierung [P]
+Ich bringe mich um immer wieder | krise#suizid → kommunizieren#suizid-angesprochen > krise#krise-schnell > fragen#f-kinder
+er bringt uns alle um immer wieder | krise#suizid → behandlung#rollen > behandlung#kontakt
+Er sagt oft er bringt sich um immer wieder | krise#suizid → behandlung#rollen > behandlung#kontakt
+Wenn du gehst bringe ich mich um Angst um mein Leben | kinder#eskalation > kommunizieren#suizid-angesprochen → gefahr#gewalt > kinder#eskalation > index#orientierung [P]
+Wenn du gehst bringe ich mich um immer wieder | krise#suizid → kommunizieren#suizid-angesprochen > kommunizieren#worte
+Sie hat immer wieder gesagt, sie bringt sich um FU | krise#suizid → –
+Sie hat immer wieder gesagt, sie bringt sich um hat er oft gesagt | krise#suizid → –
+Sie hat immer wieder gesagt, sie bringt sich um Selbstverletzungen | krise#suizid → –
+Mein Kind sagt es bringt sich um immer wieder | krise#suizid → kinder > jugendliche > jugendliche#abklaerung
+## a') nachher weder Suizid unter den ersten zwei noch Kinder zuerst: 292
+Sie sagt, sie bringt sich um Ohrfeige | – → gefahr#gewalt > kinder#eskalation > index#orientierung
+Sie sagt, sie bringt sich um FU | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Sie sagt, sie bringt sich um IV | – → –
+Sie sagt, sie bringt sich um Zwangseinweisung | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Sie sagt, sie bringt sich um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Sie sagt, sie bringt sich um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Sie sagt, sie bringt sich um geschnitten | – → behandlung#rollen > behandlung#kontakt
+Sie sagt, sie bringt sich um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Sie sagt, sie bringt sich um Beleidigungen | – → –
+Sie sagt, sie bringt sich um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Sie sagt, sie bringt sich um Angst um mein Leben | – → gefahr#gewalt > kinder#eskalation > index#orientierung
+Sie sagt, sie bringt sich um Krisenplan | – → krise#krisenplan
+Sie sagt, sie bringt sich um aggressiv | – → kommunizieren#kippen > verstehen#anspannung > kommunizieren
+Sie sagt, sie bringt sich um immer wieder | krise#suizid → behandlung#rollen > behandlung#kontakt
+Sie sagt, sie bringt sich um hat er oft gesagt | – → –
+Sie sagt, sie bringt sich um Selbstverletzungen | – → behandlung#rollen > behandlung#kontakt
+Sie sagt, sie bringt sich um Kind | – → kinder > jugendliche > jugendliche#abklaerung
+Sie sagt, sie bringt sich um die Kinder | – → kinder > jugendliche > jugendliche#abklaerung
+Sie sagt, sie bringt sich um mich | – → behandlung#rollen > behandlung#kontakt
+Ich bringe mich um suizidgefährdet | – → kommunizieren#suizid-angesprochen > krise#krise-schnell > krise#sagen
+Ich bringe mich um Suizit | – → kommunizieren#suizid-angesprochen > krise#krise-schnell > krise#sagen
+Ich bringe mich um Selbsmord | – → kommunizieren#suizid-angesprochen > krise#krise-schnell > krise#sagen
+Ich bringe mich um Ohrfeige | – → gefahr#gewalt > kinder#eskalation > index#orientierung [P]
+Ich bringe mich um FU | fragen#f-kinder > fragen#schutz > fragen#f-verlassen → fragen#f-einweisung > fragen > begriffe#b-fu
+Ich bringe mich um IV | kommunizieren#suizid-angesprochen > kommunizieren#worte > fragen#schutz → –
+Ich bringe mich um Zwangseinweisung | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Ich bringe mich um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Ich bringe mich um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Ich bringe mich um geschnitten | – → krise#krise-schnell > krise#sagen > krise#vermeiden
+Ich bringe mich um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Ich bringe mich um Beleidigungen | – → kommunizieren#kippen
+Ich bringe mich um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Ich bringe mich um Angst um mein Leben | kinder#eskalation → gefahr#gewalt > kinder#eskalation > index#orientierung [P]
+Ich bringe mich um Krisenplan | krise#krisenplan → krise#krisenplan
+Ich bringe mich um Abschiedsnachricht | – → kommunizieren#suizid-angesprochen > krise#krise-schnell > krise#sagen
+Ich bringe mich um aggressiv | – → kommunizieren#kippen > kinder#eskalation > kinder#schnell
+Ich bringe mich um immer wieder | krise#suizid → kommunizieren#suizid-angesprochen > krise#krise-schnell > fragen#f-kinder
+Ich bringe mich um hat er oft gesagt | – → –
+Ich bringe mich um Selbstverletzungen | krise#vermeiden → krise#krise-schnell > krise#sagen > krise#vermeiden
+Ich bringe mich um Kind | jugendliche#geschwister > fragen#f-kinder > fragen#schutz → jugendliche#geschwister > fragen#f-kinder > fragen#schutz
+Ich bringe mich um die Kinder | jugendliche#geschwister > fragen#f-kinder > fragen#schutz → jugendliche#geschwister > fragen#f-kinder > fragen#schutz
+Ich bringe mich um mich | kommunizieren#suizid-angesprochen > krise#krise-schnell > fragen#f-kinder → kommunizieren#suizid-angesprochen > krise#krise-schnell > fragen#f-kinder
+er bringt uns alle um Ohrfeige | – → beziehungen#verantwortung
+er bringt uns alle um FU | behandlung#rollen > behandlung#kontakt → fragen#f-einweisung
+er bringt uns alle um IV | behandlung#rollen > behandlung#kontakt → –
+er bringt uns alle um Zwangseinweisung | – → fragen#f-einweisung
+er bringt uns alle um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+er bringt uns alle um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+er bringt uns alle um geschnitten | – → behandlung#rollen > behandlung#kontakt
+er bringt uns alle um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+er bringt uns alle um Jugendamt | – → gefahr#riskant
+er bringt uns alle um Beleidigungen | – → –
+er bringt uns alle um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+er bringt uns alle um Angst um mein Leben | fragen#eigenes-leben → gefahr#gewalt > kinder#eskalation > index#orientierung
+er bringt uns alle um Krisenplan | – → –
+er bringt uns alle um aggressiv | – → verstehen#anspannung > fragen#gespraeche
+er bringt uns alle um immer wieder | krise#suizid → behandlung#rollen > behandlung#kontakt
+er bringt uns alle um hat er oft gesagt | – → –
+er bringt uns alle um Selbstverletzungen | behandlung#rollen > behandlung#kontakt → behandlung#rollen > behandlung#kontakt
+er bringt uns alle um Kind | fragen#schutz → fragen#schutz
+er bringt uns alle um die Kinder | fragen#schutz → fragen#schutz
+er bringt uns alle um mich | behandlung#rollen > behandlung#kontakt → behandlung#rollen > behandlung#kontakt
+Er sagt oft er bringt sich um Ohrfeige | – → gefahr#gewalt > kinder#eskalation > index#orientierung
+Er sagt oft er bringt sich um FU | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Er sagt oft er bringt sich um IV | – → –
+Er sagt oft er bringt sich um Zwangseinweisung | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Er sagt oft er bringt sich um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Er sagt oft er bringt sich um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Er sagt oft er bringt sich um geschnitten | – → behandlung#rollen > behandlung#kontakt
+Er sagt oft er bringt sich um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Er sagt oft er bringt sich um Beleidigungen | – → –
+Er sagt oft er bringt sich um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Er sagt oft er bringt sich um Angst um mein Leben | – → gefahr#gewalt > kinder#eskalation > index#orientierung
+Er sagt oft er bringt sich um Krisenplan | – → krise#krisenplan
+Er sagt oft er bringt sich um aggressiv | – → kommunizieren#kippen > verstehen#anspannung > kommunizieren
+Er sagt oft er bringt sich um immer wieder | krise#suizid → behandlung#rollen > behandlung#kontakt
+Er sagt oft er bringt sich um hat er oft gesagt | – → –
+Er sagt oft er bringt sich um Selbstverletzungen | – → behandlung#rollen > behandlung#kontakt
+Er sagt oft er bringt sich um Kind | – → kinder > jugendliche > jugendliche#abklaerung
+Er sagt oft er bringt sich um die Kinder | – → kinder > jugendliche > jugendliche#abklaerung
+Er sagt oft er bringt sich um mich | – → behandlung#rollen > behandlung#kontakt
+Wenn du gehst bringe ich mich um suizidgefährdet | – → kommunizieren#suizid-angesprochen > kommunizieren#worte
+Wenn du gehst bringe ich mich um Suizit | – → kommunizieren#suizid-angesprochen > kommunizieren#worte
+Wenn du gehst bringe ich mich um Selbsmord | – → kommunizieren#suizid-angesprochen > kommunizieren#worte
+Wenn du gehst bringe ich mich um Ohrfeige | – → gefahr#gewalt > kinder#eskalation > index#orientierung [P]
+Wenn du gehst bringe ich mich um FU | kommunizieren#suizid-angesprochen > kommunizieren#worte → kommunizieren#suizid-angesprochen
+Wenn du gehst bringe ich mich um IV | kommunizieren#suizid-angesprochen > kommunizieren#worte → kommunizieren#suizid-angesprochen
+Wenn du gehst bringe ich mich um Zwangseinweisung | – → kommunizieren#suizid-angesprochen
+Wenn du gehst bringe ich mich um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Wenn du gehst bringe ich mich um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Wenn du gehst bringe ich mich um geschnitten | – → –
+Wenn du gehst bringe ich mich um cha nümme | kommunizieren#suizid-angesprochen → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Wenn du gehst bringe ich mich um Beleidigungen | – → –
+Wenn du gehst bringe ich mich um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Wenn du gehst bringe ich mich um Angst um mein Leben | kinder#eskalation > kommunizieren#suizid-angesprochen → gefahr#gewalt > kinder#eskalation > index#orientierung [P]
+Wenn du gehst bringe ich mich um Krisenplan | – → –
+Wenn du gehst bringe ich mich um Abschiedsnachricht | – → kommunizieren#suizid-angesprochen > kommunizieren#worte
+Wenn du gehst bringe ich mich um immer wieder | krise#suizid → kommunizieren#suizid-angesprochen > kommunizieren#worte
+Wenn du gehst bringe ich mich um hat er oft gesagt | – → –
+Wenn du gehst bringe ich mich um Selbstverletzungen | – → –
+Wenn du gehst bringe ich mich um mich | kommunizieren#suizid-angesprochen > kommunizieren#worte → kommunizieren#suizid-angesprochen > kommunizieren#worte
+Er bringt die Kinder um suizidgefährdet | – → fragen#schutz
+Er bringt die Kinder um Suizit | – → fragen#schutz
+Er bringt die Kinder um Selbsmord | – → fragen#schutz
+Er bringt die Kinder um FU | fragen#f-einweisung > kinder > jugendliche → fragen#f-einweisung
+Er bringt die Kinder um IV | jugendliche#auskunft > fragen#schutz > kinder#hilfe → –
+Er bringt die Kinder um Zwangseinweisung | – → fragen#f-einweisung
+Er bringt die Kinder um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Er bringt die Kinder um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Er bringt die Kinder um geschnitten | – → fragen#schutz
+Er bringt die Kinder um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Er bringt die Kinder um Jugendamt | – → kinder > kinder#eskalation > gefahr#riskant
+Er bringt die Kinder um Beleidigungen | – → –
+Er bringt die Kinder um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Er bringt die Kinder um Krisenplan | jugendliche#auskunft → jugendliche#auskunft
+Er bringt die Kinder um Abschiedsnachricht | – → fragen#schutz
+Er bringt die Kinder um aggressiv | – → kinder > jugendliche#geschwister > kinder#eskalation
+Er bringt die Kinder um immer wieder | – → kinder > jugendliche > jugendliche#abklaerung
+Er bringt die Kinder um hat er oft gesagt | – → –
+Er bringt die Kinder um Selbstverletzungen | – → fragen#schutz
+Er bringt die Kinder um Kind | kinder > jugendliche > jugendliche#abklaerung → kinder > jugendliche > jugendliche#abklaerung
+Er bringt die Kinder um die Kinder | kinder > jugendliche > jugendliche#abklaerung → kinder > jugendliche > jugendliche#abklaerung
+Er bringt die Kinder um mich | kinder > jugendliche > jugendliche#abklaerung → kinder > jugendliche > jugendliche#abklaerung
+Er het gseit er bringt sich um suizidgefährdet | – → –
+Er het gseit er bringt sich um Suizit | – → –
+Er het gseit er bringt sich um Selbsmord | – → –
+Er het gseit er bringt sich um Ohrfeige | – → –
+Er het gseit er bringt sich um FU | – → –
+Er het gseit er bringt sich um IV | – → –
+Er het gseit er bringt sich um Zwangseinweisung | – → –
+Er het gseit er bringt sich um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Er het gseit er bringt sich um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Er het gseit er bringt sich um geschnitten | – → –
+Er het gseit er bringt sich um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Er het gseit er bringt sich um Jugendamt | – → –
+Er het gseit er bringt sich um Beleidigungen | – → –
+Er het gseit er bringt sich um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Er het gseit er bringt sich um Angst um mein Leben | – → gefahr#gewalt > kinder#eskalation > index#orientierung
+Er het gseit er bringt sich um Krisenplan | – → –
+Er het gseit er bringt sich um Abschiedsnachricht | – → –
+Er het gseit er bringt sich um aggressiv | – → –
+Er het gseit er bringt sich um immer wieder | – → –
+Er het gseit er bringt sich um hat er oft gesagt | – → –
+Er het gseit er bringt sich um Selbstverletzungen | – → –
+Er het gseit er bringt sich um Kind | – → –
+Er het gseit er bringt sich um die Kinder | – → –
+Er het gseit er bringt sich um mich | – → –
+Tochter (16) schreibt: «Ich bring mich um» suizidgefährdet | – → kommunizieren#suizid-angesprochen
+Tochter (16) schreibt: «Ich bring mich um» Suizit | – → kommunizieren#suizid-angesprochen
+Tochter (16) schreibt: «Ich bring mich um» Selbsmord | – → kommunizieren#suizid-angesprochen
+Tochter (16) schreibt: «Ich bring mich um» Ohrfeige | – → gefahr#gewalt > kinder#eskalation > index#orientierung [P]
+Tochter (16) schreibt: «Ich bring mich um» FU | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Tochter (16) schreibt: «Ich bring mich um» IV | – → –
+Tochter (16) schreibt: «Ich bring mich um» Zwangseinweisung | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Tochter (16) schreibt: «Ich bring mich um» gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Tochter (16) schreibt: «Ich bring mich um» es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Tochter (16) schreibt: «Ich bring mich um» geschnitten | – → –
+Tochter (16) schreibt: «Ich bring mich um» cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Tochter (16) schreibt: «Ich bring mich um» Jugendamt | – → fragen#f-einweisung > kinder#eskalation > begriffe#b-fu
+Tochter (16) schreibt: «Ich bring mich um» Beleidigungen | – → –
+Tochter (16) schreibt: «Ich bring mich um» schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Tochter (16) schreibt: «Ich bring mich um» Angst um mein Leben | – → gefahr#gewalt > kinder#eskalation > index#orientierung [P]
+Tochter (16) schreibt: «Ich bring mich um» Krisenplan | – → –
+Tochter (16) schreibt: «Ich bring mich um» Abschiedsnachricht | – → kommunizieren#suizid-angesprochen
+Tochter (16) schreibt: «Ich bring mich um» aggressiv | – → kommunizieren#kippen > verstehen#anspannung > kinder#eskalation
+Tochter (16) schreibt: «Ich bring mich um» immer wieder | – → fragen#f-einweisung > fragen > jugendliche
+Tochter (16) schreibt: «Ich bring mich um» hat er oft gesagt | – → –
+Tochter (16) schreibt: «Ich bring mich um» Selbstverletzungen | – → –
+Tochter (16) schreibt: «Ich bring mich um» Kind | – → jugendliche > jugendliche#geschwister > fragen#f-einweisung
+Tochter (16) schreibt: «Ich bring mich um» die Kinder | – → jugendliche > jugendliche#geschwister > fragen#f-einweisung
+Tochter (16) schreibt: «Ich bring mich um» mich | – → fragen#f-einweisung > fragen > jugendliche
+Sie hat gesagt sie bringt erst die Kinder und dann sich um | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um suizidgefährdet | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um Suizit | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um Selbsmord | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um FU | fragen#f-einweisung > rolle#schuld > jugendliche#auskunft → fragen#f-einweisung
+Sie hat gesagt sie bringt erst die Kinder und dann sich um IV | jugendliche#auskunft → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um Zwangseinweisung | – → fragen#f-einweisung
+Sie hat gesagt sie bringt erst die Kinder und dann sich um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Sie hat gesagt sie bringt erst die Kinder und dann sich um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Sie hat gesagt sie bringt erst die Kinder und dann sich um geschnitten | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Sie hat gesagt sie bringt erst die Kinder und dann sich um Jugendamt | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um Beleidigungen | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Sie hat gesagt sie bringt erst die Kinder und dann sich um Krisenplan | jugendliche#auskunft → jugendliche#auskunft
+Sie hat gesagt sie bringt erst die Kinder und dann sich um Abschiedsnachricht | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um aggressiv | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um immer wieder | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um hat er oft gesagt | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um Selbstverletzungen | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um Kind | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um die Kinder | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um mich | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um?! | – → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um … | – → –
+Er sagt immer wieder: Sie hat gesagt sie bringt erst die Kinder und dann sich um | – → –
+Sie schreibt oft, Sie hat gesagt sie bringt erst die Kinder und dann sich um | – → –
+Hilfe! Sie hat gesagt sie bringt erst die Kinder und dann sich um | rolle#an-grenzen > jugendliche#auskunft → rolle#an-grenzen > jugendliche#auskunft
+Kinder: Sie hat gesagt sie bringt erst die Kinder und dann sich um | – → –
+SIE HAT GESAGT SIE BRINGT ERST DIE KINDER UND DANN SICH UM | – → –
+sie hat gesagt sie bringt erst die kinder und dann sich um | – → –
+Sie hat immer wieder gesagt, sie bringt sich um suizidgefährdet | – → –
+Sie hat immer wieder gesagt, sie bringt sich um Suizit | – → –
+Sie hat immer wieder gesagt, sie bringt sich um Selbsmord | – → –
+Sie hat immer wieder gesagt, sie bringt sich um Ohrfeige | – → –
+Sie hat immer wieder gesagt, sie bringt sich um FU | krise#suizid → –
+Sie hat immer wieder gesagt, sie bringt sich um IV | – → –
+Sie hat immer wieder gesagt, sie bringt sich um Zwangseinweisung | – → –
+Sie hat immer wieder gesagt, sie bringt sich um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Sie hat immer wieder gesagt, sie bringt sich um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Sie hat immer wieder gesagt, sie bringt sich um geschnitten | – → –
+Sie hat immer wieder gesagt, sie bringt sich um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Sie hat immer wieder gesagt, sie bringt sich um Jugendamt | – → –
+Sie hat immer wieder gesagt, sie bringt sich um Beleidigungen | – → –
+Sie hat immer wieder gesagt, sie bringt sich um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Sie hat immer wieder gesagt, sie bringt sich um Angst um mein Leben | – → gefahr#gewalt > kinder#eskalation > index#orientierung
+Sie hat immer wieder gesagt, sie bringt sich um Krisenplan | – → –
+Sie hat immer wieder gesagt, sie bringt sich um Abschiedsnachricht | – → –
+Sie hat immer wieder gesagt, sie bringt sich um aggressiv | – → –
+Sie hat immer wieder gesagt, sie bringt sich um immer wieder | – → –
+Sie hat immer wieder gesagt, sie bringt sich um hat er oft gesagt | krise#suizid → –
+Sie hat immer wieder gesagt, sie bringt sich um Selbstverletzungen | krise#suizid → –
+Sie hat immer wieder gesagt, sie bringt sich um Kind | – → –
+Sie hat immer wieder gesagt, sie bringt sich um die Kinder | – → –
+Sie hat immer wieder gesagt, sie bringt sich um mich | – → –
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um suizidgefährdet | – → krise#krise-schnell
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Suizit | – → krise#krise-schnell
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Selbsmord | – → krise#krise-schnell
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Ohrfeige | – → kommunizieren#kippen
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um FU | rolle#schuld → –
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um IV | – → –
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Zwangseinweisung | – → –
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um geschnitten | – → krise#krise-schnell
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Jugendamt | – → –
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Beleidigungen | – → kommunizieren#kippen
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Angst um mein Leben | – → gefahr#gewalt > kinder#eskalation > index#orientierung
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Krisenplan | – → –
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Abschiedsnachricht | – → krise#krise-schnell
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um aggressiv | – → kommunizieren#kippen
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um immer wieder | – → kommunizieren#kippen
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um hat er oft gesagt | – → –
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Selbstverletzungen | – → krise#krise-schnell
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um Kind | – → fragen#schutz
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um die Kinder | – → fragen#schutz
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um mich | – → kommunizieren#kippen
+Er spricht immer vom Tod, er bringt sich um Ohrfeige | – → –
+Er spricht immer vom Tod, er bringt sich um FU | – → –
+Er spricht immer vom Tod, er bringt sich um IV | – → –
+Er spricht immer vom Tod, er bringt sich um Zwangseinweisung | – → –
+Er spricht immer vom Tod, er bringt sich um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Er spricht immer vom Tod, er bringt sich um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Er spricht immer vom Tod, er bringt sich um geschnitten | – → krise#selbstverletzung > begriffe#b-selbstverletzung
+Er spricht immer vom Tod, er bringt sich um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Er spricht immer vom Tod, er bringt sich um Jugendamt | – → –
+Er spricht immer vom Tod, er bringt sich um Beleidigungen | – → –
+Er spricht immer vom Tod, er bringt sich um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Er spricht immer vom Tod, er bringt sich um Angst um mein Leben | – → gefahr#gewalt > kinder#eskalation > index#orientierung
+Er spricht immer vom Tod, er bringt sich um Krisenplan | – → –
+Er spricht immer vom Tod, er bringt sich um aggressiv | – → –
+Er spricht immer vom Tod, er bringt sich um immer wieder | – → –
+Er spricht immer vom Tod, er bringt sich um hat er oft gesagt | – → –
+Er spricht immer vom Tod, er bringt sich um Selbstverletzungen | – → krise#selbstverletzung > begriffe#b-selbstverletzung
+Er spricht immer vom Tod, er bringt sich um Kind | – → –
+Er spricht immer vom Tod, er bringt sich um die Kinder | – → –
+Er spricht immer vom Tod, er bringt sich um mich | – → –
+Mein Kind sagt es bringt sich um suizidgefährdet | – → fragen#schutz
+Mein Kind sagt es bringt sich um Suizit | – → fragen#schutz
+Mein Kind sagt es bringt sich um Selbsmord | – → fragen#schutz
+Mein Kind sagt es bringt sich um FU | – → fragen#f-einweisung
+Mein Kind sagt es bringt sich um IV | – → –
+Mein Kind sagt es bringt sich um Zwangseinweisung | – → fragen#f-einweisung
+Mein Kind sagt es bringt sich um gegen ihren Willen | – → fragen#f-einweisung > fragen > begriffe#b-fu
+Mein Kind sagt es bringt sich um es blutet | – → krise#selbstverletzung > krise > diagnose#suizidalitaet
+Mein Kind sagt es bringt sich um geschnitten | – → fragen#schutz
+Mein Kind sagt es bringt sich um cha nümme | – → selbstfuersorge#warnsignale > kurz > selbstfuersorge
+Mein Kind sagt es bringt sich um Jugendamt | – → kinder > kinder#eskalation > gefahr#riskant
+Mein Kind sagt es bringt sich um Beleidigungen | – → –
+Mein Kind sagt es bringt sich um schreit mich an | – → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+Mein Kind sagt es bringt sich um Krisenplan | – → jugendliche#auskunft
+Mein Kind sagt es bringt sich um Abschiedsnachricht | – → fragen#schutz
+Mein Kind sagt es bringt sich um aggressiv | – → kinder > jugendliche#geschwister > kinder#eskalation
+Mein Kind sagt es bringt sich um immer wieder | krise#suizid → kinder > jugendliche > jugendliche#abklaerung
+Mein Kind sagt es bringt sich um hat er oft gesagt | – → –
+Mein Kind sagt es bringt sich um Selbstverletzungen | – → fragen#schutz
+Mein Kind sagt es bringt sich um Kind | – → kinder > jugendliche > jugendliche#abklaerung
+Mein Kind sagt es bringt sich um die Kinder | – → kinder > jugendliche > jugendliche#abklaerung
+Mein Kind sagt es bringt sich um mich | – → kinder > jugendliche > jugendliche#abklaerung
+## b) Anheftung verloren oder um einen Abschnitt kleiner: 0
+## c) vorher Treffer, nachher keiner: 8
+Ich bringe mich um IV | kommunizieren#suizid-angesprochen > kommunizieren#worte > fragen#schutz → –
+er bringt uns alle um IV | behandlung#rollen > behandlung#kontakt → –
+Er bringt die Kinder um IV | jugendliche#auskunft > fragen#schutz > kinder#hilfe → –
+Sie hat gesagt sie bringt erst die Kinder und dann sich um IV | jugendliche#auskunft → –
+Sie hat immer wieder gesagt, sie bringt sich um FU | krise#suizid → –
+Sie hat immer wieder gesagt, sie bringt sich um hat er oft gesagt | krise#suizid → –
+Sie hat immer wieder gesagt, sie bringt sich um Selbstverletzungen | krise#suizid → –
+Er sagte er habe das schon oft gemacht und bringe sich jetzt um FU | rolle#schuld → –
+## Reihenfolge der Anheftung geändert (blockiert nicht): 81
+Er will mich umbringen und redet vom Tod | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er will mich umbringen suizidgefährdet | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er will mich umbringen Suizit | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er will mich umbringen Selbsmord | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er will mich umbringen Abschiedsnachricht | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Mein Mann droht, mich umzubringen. und redet vom Tod | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Mein Mann droht, mich umzubringen. suizidgefährdet | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Mein Mann droht, mich umzubringen. Suizit | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Mein Mann droht, mich umzubringen. Selbsmord | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Mein Mann droht, mich umzubringen. Abschiedsnachricht | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er hat gedroht mich zu töten und redet vom Tod | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er hat gedroht mich zu töten suizidgefährdet | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er hat gedroht mich zu töten Suizit | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er hat gedroht mich zu töten Selbsmord | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er hat gedroht mich zu töten Abschiedsnachricht | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+er bringt uns alle um und redet vom Tod | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Ich habe Angst dass er mich umbringt und redet vom Tod | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Ich habe Angst dass er mich umbringt suizidgefährdet | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Ich habe Angst dass er mich umbringt Suizit | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Ich habe Angst dass er mich umbringt Selbsmord | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Ich habe Angst dass er mich umbringt Abschiedsnachricht | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er hat seine Frau umgebracht und redet vom Tod | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er hat seine Frau umgebracht suizidgefährdet | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er hat seine Frau umgebracht Suizit | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er hat seine Frau umgebracht Selbsmord | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er hat seine Frau umgebracht Abschiedsnachricht | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er schlägt mich und droht mich umzubringen und redet vom Tod | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er schlägt mich und droht mich umzubringen suizidgefährdet | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er schlägt mich und droht mich umzubringen Suizit | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er schlägt mich und droht mich umzubringen Selbsmord | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er schlägt mich und droht mich umzubringen Abschiedsnachricht | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er schreibt mir wieder er tötet mich und redet vom Tod | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er schreibt mir wieder er tötet mich suizidgefährdet | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er schreibt mir wieder er tötet mich Suizit | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er schreibt mir wieder er tötet mich Selbsmord | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er schreibt mir wieder er tötet mich Abschiedsnachricht | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen ich will nicht mehr | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Sie will nicht mehr. | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen und redet vom Tod | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen suizidgefährdet | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Suizit | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Selbsmord | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen und schlägt die Kinder | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen er schlägt mich | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Ohrfeige | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen FU | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen IV | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Zwangseinweisung | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen gegen ihren Willen | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen es blutet | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen geschnitten | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen cha nümme | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Jugendamt | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Beleidigungen | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen schreit mich an | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Angst um mein Leben | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Krisenplan | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen mag nicht mehr | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen wott nümme | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Abschiedsnachricht | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen aggressiv | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen immer wieder | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen hat er oft gesagt | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Selbstverletzungen | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen Kind | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen die Kinder | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen mich | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen?! | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen … | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Er sagt immer wieder: suizidgefährdet und droht mich umzubringen | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Sie schreibt oft, suizidgefährdet und droht mich umzubringen | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Hilfe! suizidgefährdet und droht mich umzubringen | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Kinder: suizidgefährdet und droht mich umzubringen | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+SUIZIDGEFÄHRDET UND DROHT MICH UMZUBRINGEN | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+suizidgefährdet und droht mich umzubringen | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Mein Mann schlägt die Kinder und droht sie umzubringen und redet vom Tod | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Mein Mann schlägt die Kinder und droht sie umzubringen suizidgefährdet | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Mein Mann schlägt die Kinder und droht sie umzubringen Suizit | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Mein Mann schlägt die Kinder und droht sie umzubringen Selbsmord | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt
+Mein Mann schlägt die Kinder und droht sie umzubringen Abschiedsnachricht | gefahr#gewalt,krise#suizid → krise#suizid,gefahr#gewalt

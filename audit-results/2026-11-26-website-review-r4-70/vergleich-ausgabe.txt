@@ -1,0 +1,2 @@
+vorher {"p4_getrennt":"780,800,820,840,860,880,900","p4_eingerueckt":"nie","p4_abstand1440":"16 px","p7_abstand1440":"0 px","p5_zeichen1440":{"vertiefung":148,"bildunterschrift":113,"krisenEinleitung":130},"p7_abstand375":"0 px","p10":{"zeilen":2,"zweiteZeileBeginntMit":"/"}}
+nachher {"p4_getrennt":"nie","p4_eingerueckt":"nie","p4_abstand1440":"16 px","p7_abstand1440":"20 px","p5_zeichen1440":{"vertiefung":78,"bildunterschrift":76,"krisenEinleitung":71},"p7_abstand375":"20 px","p10":{"zeilen":2,"zweiteZeileBeginntMit":"none"}}

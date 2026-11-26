@@ -1,0 +1,10 @@
+# Live-Abfrage 2026-10-30T11:22:05Z
+$ curl -sS https://borderline-angehoerige.netlify.app/ | grep -o 'data-puk-site-build="[^"]*"'
+HTTP 200
+data-puk-site-build="r4-65"
+$ curl -sS https://borderline-angehoerige.netlify.app/kurz.html | grep -o 'data-puk-site-build="[^"]*"'
+HTTP 200
+data-puk-site-build="r4-65"
+$ curl -sS https://borderline-angehoerige.netlify.app/404-gibt-es-nicht | grep -o 'data-puk-site-build="[^"]*"'
+HTTP 404
+data-puk-site-build="r4-65"

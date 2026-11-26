@@ -687,7 +687,10 @@ li:not(.puk-site-menu__utility)+.puk-site-menu__utility .puk-site-menu__utility-
    «Kurz und klar», «Nachschlagen» und «Suchen» am Telefon nur im Menü; der Kopf wird 148 statt 192 px hoch. Ohne Skript bleibt die
    Zeile unter dem Absender, weil das Menü dann aufgeklappt ist und nur die fünf Hauptbereiche zeigt. (Vorher stand hier für
    schmale Telefone .9375rem; nach Punkt 6 bleibt es bei 1rem.) */
-@media (max-width:760px){html[data-puk-js] .puk-site-subbar .puk-site-utility{display:none}html[data-puk-js] .puk-site-menu__utility{display:block}}
+/* r4-72 (Nachprüfung von r4-71, N824-1): Die Regel gilt nur, solange das Menü ein Aufklappmenü ist (unter 50rem, siehe oben).
+   Vorher galt sie bis 760 px unabhängig davon. War die Standardschrift kleiner als rund 15 px, lag 50rem unter 760 px; dazwischen
+   standen alle acht Links in der waagrechten Leiste ohne Umbruch, und die Seite lief seitlich über. */
+@media (max-width:760px) and (max-width:49.99rem){html[data-puk-js] .puk-site-subbar .puk-site-utility{display:none}html[data-puk-js] .puk-site-menu__utility{display:block}}
 
 /* Brotkrumen: eine leise Zeile über dem Titel, ohne Fläche und Linie */
 .puk-site-breadcrumb ol{display:flex;flex-wrap:wrap;gap:0 var(--space-2);margin:0;padding:var(--space-4) 0 0;list-style:none;font-size:1rem;line-height:1.5;color:var(--tinte-leise)}

@@ -1,0 +1,10 @@
+vorher (r4-71) · Standardschrift 12 px · Überlauf: 600:index+209 600:krise+209 620:index+190 620:krise+190 640:index+171 640:krise+171 660:index+151 660:krise+151 680:index+132 680:krise+132 700:index+113 700:krise+113 720:index+94 720:krise+94 740:index+75 740:krise+75 760:index+55 760:krise+55 · ausserhalb des Bildschirms: 600:Kurz und klar/Nachschlagen/Suchen 620:Kurz und klar/Nachschlagen/Suchen 640:Nachschlagen/Suchen 660:Nachschlagen/Suchen …
+vorher (r4-71) · Standardschrift 13 px · Überlauf: 660:index+192 660:krise+196 680:index+173 680:krise+177 700:index+154 700:krise+158 720:index+135 720:krise+139 740:index+116 740:krise+120 760:index+96 760:krise+100 · ausserhalb des Bildschirms: 660:Nachschlagen/Suchen 680:Nachschlagen/Suchen 700:Nachschlagen/Suchen 720:Nachschlagen/Suchen …
+vorher (r4-71) · Standardschrift 14 px · Überlauf: 700:index+189 700:krise+190 720:index+170 720:krise+171 740:index+151 740:krise+152 760:index+131 760:krise+132 · ausserhalb des Bildschirms: 700:Nachschlagen/Suchen 720:Nachschlagen/Suchen 740:Nachschlagen/Suchen 760:Nachschlagen/Suchen …
+vorher (r4-71) · Standardschrift 15 px · Überlauf: 760:index+172 760:krise+173 · ausserhalb des Bildschirms: 760:Nachschlagen/Suchen
+vorher (r4-71) · Standardschrift 16 px · Überlauf: keiner
+site (r4-72) · Standardschrift 12 px · Überlauf: keiner
+site (r4-72) · Standardschrift 13 px · Überlauf: keiner
+site (r4-72) · Standardschrift 14 px · Überlauf: keiner
+site (r4-72) · Standardschrift 15 px · Überlauf: keiner
+site (r4-72) · Standardschrift 16 px · Überlauf: keiner

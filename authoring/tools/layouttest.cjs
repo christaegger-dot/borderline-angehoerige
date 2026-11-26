@@ -60,7 +60,7 @@ const navNames=['Verstehen','Im Alltag','Krisen','Familie','Für Sie'];
   if(!r.large&&r.width===375&&r.page==='krise'&&r.firstCrisisStep.y>=812)issues.push('first crisis step below first screen');
   if(!r.large&&r.width===375&&['suche','begriffe','quellen'].includes(r.page)&&r.input.y+r.input.h>812)issues.push(r.page+' input below first screen');
   /* B2c (UEBERGABE-GESTALTUNG-2026-10-21.md, NP708-N2; PR #809, Nachbesserung N809-2 bis N809-4): Die ganze Figur darf höher als 1800 px sein, solange die vier Phasen vollständig und sichtbar innerhalb von 1800 px enden
-     und der Schutzhinweis ohne Aufklappen sichtbar ist. Obergrenze für die ganze Figur: 2400 px (N809-4; heute 1992 px, Wert zur Bestätigung durch die Fachstelle). */
+     und der Schutzhinweis ohne Aufklappen sichtbar ist. Obergrenze für die ganze Figur: 2400 px (N809-4; heute 1992 px; bestätigt von Christa Egger am 26.11.2026). */
   if(!r.large&&r.width===375&&r.page==='verstehen'){const c=r.curvePhases;
    if(c.count!==4)issues.push(`tension core: ${c.count} phase cards outside disclosures instead of 4`);
    else if(c.visible!==4)issues.push(`tension core: only ${c.visible} of 4 phase cards visible`);

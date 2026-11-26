@@ -6,7 +6,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
-## Layouttest · Ausnahme B2c als bestanden gewertet · auf `main` seit 26.11.2026 · Nachbesserung N809-2 bis N809-6 offen
+## Layouttest · Ausnahme B2c als bestanden gewertet · auf `main` seit 26.11.2026 (#809, Nachbesserung #811)
 
 **GitHub:** [PR #809](https://github.com/christaegger-dot/borderline-angehoerige/pull/809), Branch `claude/sharp-mendel-6ecwbi` (gelöscht), Kopf `2949b00`, gemergt als `5b7e799` am 26.11.2026, 14:52:50 UTC, über das Konto von Christa Egger, 102 Sekunden nach dem Anlegen. Einen Merge-Auftrag nennen weder der PR noch der Merge-Commit (auf GitHub nicht belegt). CI `build-and-compare` grün auf `2949b00` (14:51:16 bis 14:51:43 UTC); den Layouttest enthält sie nicht. Codex-Review «Completed» ohne Befund um 14:53:43 UTC, 53 Sekunden nach dem Merge (R28-O01 nicht eingehalten). Die Website ist nicht betroffen, `site/` ist unverändert.
 
@@ -18,18 +18,18 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Nachprüfung:** [PR #810](https://github.com/christaegger-dot/borderline-angehoerige/pull/810), Branch `pruefung/2026-11-26-nachpruefung-pr-809`, Entwurf, nicht gemergt. Nachweis: [`audit-results/2026-11-26-nachpruefung-pr-809/NACHPRUEFUNG.md`](audit-results/2026-11-26-nachpruefung-pr-809/NACHPRUEFUNG.md). Ergebnis «Nachbesserung empfohlen, ohne Blocker». Die Werte von #809 sind bestätigt. Befunde: N809-1 (wichtig, Ablauf: Merge vor Nachprüfung und Codex-Ende), N809-2 bis N809-6 (gering), N809-7 (Hinweis: CI ohne Layouttest).
 
-**Nachbesserung N809-2 bis N809-6:** Auftrag von Christa Egger, 26.11.2026: «Nachbesserung N809-2 bis N809-6 umsetzen». Branch `korrektur/2026-11-26-n809-layouttest-b2c`, [PR #811](https://github.com/christaegger-dot/borderline-angehoerige/pull/811), Entwurf, **nicht gemergt**. Nachweis: [`audit-results/2026-11-26-n809-layouttest-b2c/BERICHT.md`](audit-results/2026-11-26-n809-layouttest-b2c/BERICHT.md).
+**Nachbesserung N809-2 bis N809-6:** Auftrag von Christa Egger, 26.11.2026: «Nachbesserung N809-2 bis N809-6 umsetzen». Branch `korrektur/2026-11-26-n809-layouttest-b2c`, [PR #811](https://github.com/christaegger-dot/borderline-angehoerige/pull/811), Kopf `dec530f`, gemergt als `f91db68` am 26.11.2026, 15:50:00 UTC, über das Konto von Christa Egger, 4 Sekunden nachdem der Entwurf auf «bereit zur Prüfung» gestellt wurde. Einen Merge-Auftrag nennen weder der PR noch der Merge-Commit (auf GitHub nicht belegt). CI `build-and-compare` grün auf `dec530f` (15:27:36 bis 15:28:29 UTC). Codex-Review «Completed» ohne Befund um 15:50:26 UTC, 26 Sekunden nach dem Merge (R28-O01 nicht eingehalten). Keine Review-Threads. Eine Nachprüfung durch eine andere Sitzung gab es vor dem Merge nicht. Die Website ist nicht betroffen, `site/` ist unverändert. Nachweis: [`audit-results/2026-11-26-n809-layouttest-b2c/BERICHT.md`](audit-results/2026-11-26-n809-layouttest-b2c/BERICHT.md).
 - **N809-2:** Eine Phasenkarte zählt nur, wenn sie sichtbar ist (`checkVisibility` mit `opacity` und `visibility`, Höhe über 0, Text). Vollständig ist sie mit sichtbarer Überschrift und sichtbarem Absatz, also mit ihrer Handlungsmöglichkeit.
 - **N809-3:** Massgebend ist die tiefste sichtbare Karte, nicht die letzte im Quelltext.
-- **N809-4:** Der Schutzhinweis (`.bl-fig-schutz`) muss sichtbar sein und vor dem ersten Aufklappbereich stehen. Die ganze Figur darf höchstens 2400 px hoch sein. **Der Wert 2400 px ist ein Vorschlag der nachbessernden Sitzung (heute 1992 px) und von Christa Egger zu bestätigen.**
+- **N809-4:** Der Schutzhinweis (`.bl-fig-schutz`) muss sichtbar sein und vor dem ersten Aufklappbereich stehen. Die ganze Figur darf höchstens 2400 px hoch sein. Den Wert 2400 px hat die nachbessernde Sitzung vorgeschlagen (heute 1992 px). **Christa Egger hat ihn am 26.11.2026 bestätigt:** «2400 px bestätigt» (Mitteilung an die nachbessernde Sitzung, auf GitHub nicht belegt).
 - **N809-5:** dieser Abschnitt. **N809-6:** Nachtrag in der Übergabedatei bei B2c.
 - **Messung:** 13 Mutationsproben, alle erkannt; mit #809 blieben 9 davon grün. Eine erlaubte Änderung (+200 px unterhalb der Karten) besteht. Layouttest 240 Zustände, 27 Bedienproben, 0 Abweichungen. Selbsttest 125/125, `--verify-site` 35 Dateien byte-gleich, Suchtest 216/216, Sprach-/UI-Test 73. `--write-site` ändert `site/` nicht.
 - **Wer:** die Sitzung, die die Nachprüfung #810 verfasst hat. Prüfen muss diese Nachbesserung eine andere Sitzung.
 
 **Offen:**
-- Nachprüfung der Nachbesserung durch eine andere Sitzung; Merge nur auf Auftrag.
-- Wert 2400 px bestätigen (Christa Egger).
-- N809-1: Merge-Auftrag zu #809 belegen (Christa Egger).
+- Nachprüfung der Nachbesserung (#811, auf `main`) durch eine andere Sitzung, nachträglich.
+- [PR #810](https://github.com/christaegger-dot/borderline-angehoerige/pull/810) (Nachprüfung von #809) ist weiterhin Entwurf, nicht gemergt.
+- N809-1: Merge-Auftrag zu #809 belegen (Christa Egger); dasselbe gilt für #811.
 - N809-7: ob der Layouttest in die CI soll (Entscheid).
 - Nicht in diesem Auftrag: Die Kopfzeile dieser Datei steht noch auf dem 30.10.2026. Der Abschnitt «Korrektur · r4-66» führt #787 als nicht gemergt; #787 ist seit 30.10.2026, 11:46 UTC gemergt (`cec2bbc`).
 

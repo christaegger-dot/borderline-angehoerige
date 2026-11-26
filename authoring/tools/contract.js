@@ -8,7 +8,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 'use strict';
 const VERSION = 'PUK Website Kit 1.10.1-r4 · abgeleitet';
-const BUILD = 'r4-66';
+const BUILD = 'r4-68';
 const FORMATS = ['text', 'figure', 'process', 'cycle', 'comparison', 'decision', 'illustration', 'stepwise-model', 'tension-field', 'relationship-map', 'continuum', 'layer-model'];
 /* Interaktive Komponenten und Erklärmuster G brauchen components/interaktion.js (HTML-Fassungen ohne React).
    Prüfbefund W3-01 (11.10.2026): auch jede Seite mit aufklappbarer Vertiefung (details) – das Skript öffnet sie vor dem Druck. */
@@ -269,11 +269,15 @@ function renderPage(cfg, page, content) {
   const footerHtml = footer.about || footer.editorialCredit || footer.serviceBoundary || footer.contentDate || footerLinks.length || cfg.disclaimer || legalHtml
     ? `<section class="puk-web-footer__about" aria-labelledby="puk-site-info-title"><h2 class="puk-web-footer__heading" id="puk-site-info-title">${esc(footer.heading || 'Über diese Website')}</h2>${footer.about ? `<p class="puk-web-footer__copy">${esc(footer.about)}</p>` : ''}${footerBoundaryHtml}${footerLinksHtml}${footerMetaHtml}</section>`
     : `<section class="puk-web-footer__about" aria-labelledby="puk-site-info-title"><h2 class="puk-web-footer__heading" id="puk-site-info-title">Über diese Seiten</h2>${cfg.disclaimer ? `<div class="puk-web-footer__boundary"><p class="puk-web-footer__copy" data-disclaimer>${esc(cfg.disclaimer)}</p></div>` : ''}<div class="puk-web-footer__details"><p class="puk-web-footer__meta">Inhaltsverantwortung: ${esc(cfg.contentOwner)}</p><p class="puk-web-footer__meta">${esc(cfg.editorialStatusLabel || `Redaktioneller Status: ${cfg.editorialStatus}`)}</p>${legalHtml}</div></section>`;
+  /* r4-68 (Modern Web Guidance «respect-os-text-scale», Auftrag Christa Egger vom 26.11.2026): <meta name="text-scale" content="scale">
+     übernimmt die Schriftgrösse des Betriebssystems in Browsern, die das Tag kennen; andere ignorieren es. Voraussetzung: Schriftgrössen in rem,
+     keine eigene Schriftgrösse an html am Bildschirm (nur im Druck, site.css @media print). */
   return `<!DOCTYPE html>
 <html lang="${esc(cfg.language)}" data-puk-site-build="${BUILD}" data-page-id="${esc(page.id)}"${page.movedAnchors ? ` data-moved-anchors="${esc(JSON.stringify(page.movedAnchors))}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
 <meta name="description" content="${esc(page.description)}">
 <meta name="generator" content="${esc(VERSION)} · psychoeducation-site-starter">
 ${cfg.robots || notFound ? `<meta name="robots" content="${esc(cfg.robots || 'noindex, nofollow')}">\n` : ''}<title>${esc(page.title)} | ${esc(cfg.siteTitle)}</title>

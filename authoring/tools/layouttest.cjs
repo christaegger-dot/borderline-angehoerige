@@ -27,12 +27,13 @@ const B2C_PHASES=4,B2C_PHASE_END_MAX=1800,B2C_FIGURE_MAX=2400;
      /* B2c (A04-2014): massgebend ist, wo die vier sichtbaren Phasenkarten enden, gemessen ab dem oberen Rand der Figur, nicht die Höhe der ganzen Figur.
         N809-2: Eine Karte zählt als sichtbar nur mit Höhe, Text und ohne display:none/visibility:hidden/opacity:0; vollständig ist sie mit sichtbarer Überschrift und sichtbarem Absatz (Handlungsmöglichkeit).
         N809-3: massgebend ist die tiefste sichtbare Karte, nicht die letzte im Quelltext. N809-4: Der Schutzhinweis muss sichtbar sein und vor dem ersten Aufklappbereich stehen.
-        Als Aufklappbereich zählt nur ein <details> innerhalb der Figur; ein <details> um die ganze Figur macht die Karten nicht unzählbar (Code-Review nach #811). */
+        Als Aufklappbereich zählt nur ein <details> innerhalb der Figur; ein <details> um die ganze Figur macht die Karten nicht unzählbar (Code-Review nach #811).
+        N813-3 (Entscheid Christa Egger, 26.11.2026): Ein <details> um die Figur, offen oder geschlossen, ist unzulässig, weil es die Figur einklappbar macht; es wird als eigene Abweichung gemeldet. */
      const fig=document.querySelector('[data-visual-id="v-vs-anspannung"]'),vis=e=>!!e&&e.checkVisibility({opacityProperty:true,visibilityProperty:true})&&e.getBoundingClientRect().height>0&&e.textContent.trim()!=='',ft=fig?fig.getBoundingClientRect().top:0,
       inDisc=e=>{const d=e.closest('details');return !!d&&fig.contains(d);},
       cards=fig?[...fig.querySelectorAll(':scope ol.bl-phase-actions > li')].filter(li=>!inDisc(li)):[],shown=cards.filter(vis),complete=shown.filter(li=>vis(li.querySelector('h3'))&&[...li.querySelectorAll('p')].some(vis)),
       schutz=fig?fig.querySelector('.bl-fig-schutz'):null,firstDetails=fig?fig.querySelector('details'):null,
-      curvePhases={count:cards.length,visible:shown.length,complete:complete.length,end:shown.length?Math.round(Math.max(...shown.map(li=>li.getBoundingClientRect().bottom))-ft):null,schutzVisible:vis(schutz)&&!inDisc(schutz),schutzBeforeDetails:!!schutz&&(!firstDetails||!!(schutz.compareDocumentPosition(firstDetails)&Node.DOCUMENT_POSITION_FOLLOWING))};
+      curvePhases={wrapped:!!fig&&!!fig.parentElement&&!!fig.parentElement.closest('details'),count:cards.length,visible:shown.length,complete:complete.length,end:shown.length?Math.round(Math.max(...shown.map(li=>li.getBoundingClientRect().bottom))-ft):null,schutzVisible:vis(schutz)&&!inDisc(schutz),schutzBeforeDetails:!!schutz&&(!firstDetails||!!(schutz.compareDocumentPosition(firstDetails)&Node.DOCUMENT_POSITION_FOLLOWING))};
      return {title,curvePhases,scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,header:pos('header'),input:pos('input'),quick:pos('.puk-site-quick'),firstCrisisStep:pos('.puk-site-quick li'),curve:pos('[data-visual-id="v-vs-anspannung"]'),firstQuote:pos('.bl-sicht .puk-vis-compare__col'),tableWidth:pos('.bl-tabelle'),tableRegion:pos('.puk-vis-tablewrap'),overflow:over.slice(0,10),copy:pos('.puk-longform__copy')};
     });
     rows.push({page,width,large,...result});
@@ -66,7 +67,8 @@ const B2C_PHASES=4,B2C_PHASE_END_MAX=1800,B2C_FIGURE_MAX=2400;
   /* B2c (UEBERGABE-GESTALTUNG-2026-10-21.md, NP708-N2; PR #809, Nachbesserung N809-2 bis N809-4): Die ganze Figur darf höher als 1800 px sein, solange die vier Phasen vollständig und sichtbar innerhalb von 1800 px enden
      und der Schutzhinweis ohne Aufklappen sichtbar ist. Obergrenze für die ganze Figur: 2400 px (N809-4; heute 1992 px; bestätigt von Christa Egger am 26.11.2026). */
   if(!r.large&&r.width===375&&r.page==='verstehen'){const c=r.curvePhases;
-   if(c.count!==B2C_PHASES)issues.push(`tension core: ${c.count} phase cards outside disclosures instead of ${B2C_PHASES}`);
+   if(c.wrapped)issues.push('tension core: figure inside a disclosure (<details>); the figure itself must not be collapsible');
+   else if(c.count!==B2C_PHASES)issues.push(`tension core: ${c.count} phase cards outside disclosures instead of ${B2C_PHASES}`);
    else if(c.visible!==B2C_PHASES)issues.push(`tension core: only ${c.visible} of ${B2C_PHASES} phase cards visible`);
    else if(c.complete!==B2C_PHASES)issues.push(`tension core: ${B2C_PHASES-c.complete} phase card(s) without visible heading or text`);
    else if(c.end>B2C_PHASE_END_MAX)issues.push(`tension core: fourth phase ends at ${c.end}px, beyond ${B2C_PHASE_END_MAX}px`);

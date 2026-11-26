@@ -1,0 +1,152 @@
+# Stopp-Regel R34-P01, geprüft über alle Anfragemengen (Vorher r4-73, Nachher r4-74)
+## a) Anfrage mit Tötungswort: Suizid fällt aus den ersten zwei Treffern (ausser Kinder zuerst): 0
+## b) Sicherheitsabschnitt stand vorher unter den ersten zwei und fehlt nachher unter den ersten drei: 16
+festgeschrieben | Selbstverletzungen | diagnose.html#suizidalitaet > krise.html#suizid > kurz.html#borderline > begriffe.html#b-borderline > verstehen.html#borderline … (10) → krise.html#selbstverletzung > krise.html > diagnose.html#suizidalitaet > begriffe.html#b-selbstverletzung > beziehungen.html#bz-sichten-s2 … (20)
+zusatzproben | immer wieder Krisen | krise.html#suizid > begriffe.html#begriffe > quellen.html#forschung → krise.html > krise.html#krisenplan > krise.html#krise-schnell > krise.html#waehrend > krise.html#suizid … (20)
+zusatzproben | Rückfall immer wieder | krise.html#suizid → –
+zusatzproben | Selbstverletzungen | diagnose.html#suizidalitaet > krise.html#suizid > kurz.html#borderline > begriffe.html#b-borderline > verstehen.html#borderline … (10) → krise.html#selbstverletzung > krise.html > diagnose.html#suizidalitaet > begriffe.html#b-selbstverletzung > beziehungen.html#bz-sichten-s2 … (20)
+wortschatz | 390 | gefahr.html#gewalt > quellen.html#schweiz → quellen.html#schweiz
+wortschatz | a1 | quellen.html#schweiz > gefahr.html#gewalt → quellen.html#schweiz
+wortschatz | büro | quellen.html#schweiz > gefahr.html#gewalt > quellen.html#leitlinien → quellen.html#schweiz > quellen.html#leitlinien
+wortschatz | ebg | quellen.html#schweiz > gefahr.html#gewalt → quellen.html#schweiz
+wortschatz | eidgenössisches | quellen.html#schweiz > gefahr.html#gewalt → quellen.html#schweiz
+wortschatz | forensic | quellen.html#schweiz > gefahr.html#gewalt → quellen.html#schweiz
+wortschatz | gleichstellung | quellen.html#schweiz > gefahr.html#gewalt → quellen.html#schweiz
+wortschatz | informationsblatt | gefahr.html#gewalt → –
+wortschatz | nurses | quellen.html#schweiz > gefahr.html#gewalt → quellen.html#schweiz
+wortschatz | opferbetreuung | quellen.html#schweiz > gefahr.html#gewalt → quellen.html#schweiz
+wortschatz | polizeiliche | gefahr.html#gewalt → –
+wortschatz | selbstverletzungen | diagnose.html#suizidalitaet > krise.html#suizid > kurz.html#borderline > begriffe.html#b-borderline > verstehen.html#borderline … (10) → krise.html#selbstverletzung > krise.html > diagnose.html#suizidalitaet > begriffe.html#b-selbstverletzung > beziehungen.html#bz-sichten-s2 … (20)
+## c) Vorher Treffer, nachher keiner: 26
+zusatzproben | Rückfall immer wieder | krise.html#suizid → –
+zusatzproben | IV Rente | fragen.html#f-medikamente > diagnose.html#begleiterkrankungen → –
+wortschatz | 428 | fragen.html#weitere → –
+wortschatz | 429 | fragen.html#weitere → –
+wortschatz | akuthinweis | krise.html#bleibt > kinder.html#hilfe > gefahr.html#gewalt > kommunizieren.html#beispiele > diagnose.html#begleiterkrankungen → –
+wortschatz | alltagssprache | verstehen.html#einordnung → –
+wortschatz | anstieg | krise.html#bleibt → –
+wortschatz | atemzüge | selbstfuersorge.html#beratung → –
+wortschatz | beobachteter | diagnose.html#begleiterkrankungen → –
+wortschatz | beziehungskommunikation | beziehungen.html#verantwortung → –
+wortschatz | carol | selbstfuersorge.html#beratung → –
+wortschatz | deutlichen | selbstfuersorge.html#beratung → –
+wortschatz | diagnosekriterium | diagnose.html#begleiterkrankungen → –
+wortschatz | eingeschlossenen | krise.html#bleibt → –
+wortschatz | erholungsbedarf | selbstfuersorge.html#beratung → –
+wortschatz | familieninformation | beziehungen.html#verantwortung → –
+wortschatz | informationsblatt | gefahr.html#gewalt → –
+wortschatz | polizeiliche | gefahr.html#gewalt → –
+wortschatz | risikoprognose | diagnose.html#begleiterkrankungen → –
+wortschatz | risikostufen | krise.html#bleibt → –
+wortschatz | sicherheitsplans | krise.html#bleibt → –
+wortschatz | verstärkte | krise.html#bleibt → –
+wortschatz | vertiefung | genesung.html#freiwillig > diagnose.html#begleiterkrankungen → –
+wortschatz | vollleitlinie | diagnose.html#begleiterkrankungen → –
+wortschatz | zuständiges | fragen.html#weitere → –
+wortschatz | zusätzlicher | diagnose.html#begleiterkrankungen → –
+## d) Gegenprobe, blockiert nicht: Sicherheitsabschnitt neu unter den ersten zwei: 105
+festgeschrieben | Ich will nicht mehr | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+festgeschrieben | Er sagt er will nicht mehr | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+festgeschrieben | Si wott nüme läbe | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | Sie redet vom Sterben | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | Abschiedsnachricht | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | Suizit | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | Selbsmord | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | Angst um mein Leben | verstehen.html#erleben > fragen.html#eigenes-leben > verstehen.html#borderline > verstehen.html#mythen > ueber.html#warum … (17) → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+festgeschrieben | Sie hat mir eine Ohrfeige gegeben | – → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+festgeschrieben | mein Mann schlägt die Kinder | gefahr.html#gewalt > quellen.html#schweiz → kinder.html#eskalation > gefahr.html#gewalt > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+festgeschrieben | der Vater meiner Kinder schlägt mich | grenzen.html#rollen > rolle.html#schuld > kurz.html#jetzt > quellen.html#schweiz → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+festgeschrieben | Jugendamt | – → kinder.html#eskalation > gefahr.html#riskant > kinder.html > begriffe.html#b-fu > fragen.html#f-einweisung … (8)
+festgeschrieben | suizidgefährdet | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | Meine Tochter ist suizidgefährdet | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | Selbstmorddrohung | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | nach Suizidversuchen | quellen.html#forschung > diagnose.html#begleiterkrankungen → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | Medikamentenüberdosis | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | lebensmüden | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+festgeschrieben | Er schreibt vom Tod | begriffe.html#begriffe → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Abschiedsnachricht | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Abschiedsnachrichten | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Sie hat eine Abschiedsnachricht geschrieben | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen
+zusatzproben | Sie redet vom Tod | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Er spricht vom Tod | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Er spricht oft vom Sterben | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Mi Maa wott nümme läbe | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Si wott nüme läbe | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | nüm läbe | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | vom Sterben | begriffe.html#b-selbstverletzung > begriffe.html#begriffe > quellen.html#leitlinien → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Er schreibt vom Tod | begriffe.html#begriffe → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | will nicht mehr | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | Ich will nicht mehr | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | Ich will nicht mehr. | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | Ich will nicht mehr! | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | Sie möchte nicht mehr | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | Er mag nicht mehr | selbstfuersorge.html#kraft → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | Ich mag nicht mehr | selbstfuersorge.html#kraft → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | I wott nümme | – → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | Er sagt er will nicht mehr | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | Mein Sohn will nicht mehr | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | Meine Tochter sagt sie will nicht mehr | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → krise.html#suizid > selbstfuersorge.html#warnsignale > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen … (20)
+zusatzproben | er schlägt mich und ich will nicht mehr | behandlung.html#keine-behandlung > selbstfuersorge.html#warnsignale > behandlung.html#auskunft > selbstfuersorge.html > behandlung.html … (20) → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+zusatzproben | Suizit | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Suizied | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Suzid | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Selbsmord | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Selbstmort | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Selbstmordgedanke | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Suizidversuchs | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Lebensmüd | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Überdosi | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Jugendamt | – → kinder.html#eskalation > gefahr.html#riskant > kinder.html > begriffe.html#b-fu > fragen.html#f-einweisung … (8)
+zusatzproben | Kindesschutzbehörde | – → kinder.html#eskalation > gefahr.html#riskant > kinder.html > begriffe.html#b-fu > fragen.html#f-einweisung … (8)
+zusatzproben | Ohrfeige | – → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+zusatzproben | geohrfeigt | – → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+zusatzproben | Sie hat mir eine Ohrfeige gegeben | – → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+zusatzproben | Angst um mein Leben | verstehen.html#erleben > fragen.html#eigenes-leben > verstehen.html#borderline > verstehen.html#mythen > ueber.html#warum … (17) → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+zusatzproben | Angst um mein eigenes Leben | fragen.html#eigenes-leben > verstehen.html#mythen > begriffe.html#begriffe → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+zusatzproben | mein Mann schlägt die Kinder | gefahr.html#gewalt > quellen.html#schweiz → kinder.html#eskalation > gefahr.html#gewalt > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+zusatzproben | Kind wird geschlagen | gefahr.html#gewalt > grenzen.html#rollen > begriffe.html#b-urteilsfaehigkeit > kurz.html#jetzt > fragen.html#behandlung … (14) → kinder.html#eskalation > gefahr.html#gewalt > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+zusatzproben | der Vater meiner Kinder schlägt mich | grenzen.html#rollen > rolle.html#schuld > kurz.html#jetzt > quellen.html#schweiz → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+zusatzproben | Er schlägt mich vor den Kindern | kinder.html#eskalation > kinder.html#schnell > kurz.html#jetzt > kinder.html#erklaeren > quellen.html#schweiz … (6) → gefahr.html#gewalt > kinder.html#eskalation > index.html#orientierung > fragen.html > grenzen.html#grenzen-schnell … (20)
+zusatzproben | suizidgefährdet | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Meine Tochter ist suizidgefährdet | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Mein Mann ist selbstmordgefährdet was tun | – → krise.html#suizid > krise.html > krise.html#belastung > krise.html#bleibt > kommunizieren.html#suizid-angesprochen
+zusatzproben | Selbstmorddrohung | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Selbstmordgefahr | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Suizidrisiko | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Suizidabsichten | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | nach Suizidversuchen | quellen.html#forschung > diagnose.html#begleiterkrankungen → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Suizidversuchs | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | suizidalen Krise | krise.html > krise.html#waehrend > krise.html#vermeiden > krise.html#danach > krise.html#krisenplan → krise.html > krise.html#suizid > krise.html#waehrend > krise.html#danach > krise.html#vermeiden … (17)
+zusatzproben | Abschiedsbriefs | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | lebensmüden | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Freitod | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Medikamentenüberdosis | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | überdosiert | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Suizidprävention | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Selbstmordattentäter | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+zusatzproben | Er schreibt vom Tod | begriffe.html#begriffe → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortschatz | suizidale | diagnose.html#suizidalitaet > fragen.html#f-depression > diagnose.html#diagnose-schnell > krise.html#suizid > begriffe.html#b-borderline … (11) → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortschatz | suizidalem | fragen.html#f-depression > fragen.html#verlauf → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortschatz | suizidales | diagnose.html#suizidalitaet > diagnose.html#begleiterkrankungen → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortschatz | suizidankündigungen | fragen.html#f-verlassen > fragen.html#schutz → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortschatz | suizidversuchen | quellen.html#forschung > diagnose.html#begleiterkrankungen → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortschatz | suizidäusserungen | fragen.html#gespraeche > fragen.html#f-bedrohlich → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | abschiedsbriefen | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | abschiedsbriefes | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | abschiedsbriefs | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | lebensmuedem | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | lebensmueden | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | lebensmuedes | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | selbstmorde | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | selbstmordgedanke | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | selbstmords | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | selbstmordversuchen | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | selbstmordversuchs | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | suizidale | diagnose.html#suizidalitaet > fragen.html#f-depression > diagnose.html#diagnose-schnell > krise.html#suizid > begriffe.html#b-borderline … (11) → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | suizide | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | suizidgedankens | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | suizids | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | suizidversuchen | quellen.html#forschung > diagnose.html#begleiterkrankungen → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | suizidversuches | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | suizidversuchs | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)
+wortliste | todeswuenschen | – → krise.html#suizid > krise.html > diagnose.html#suizidalitaet > kommunizieren.html#suizid-angesprochen > krise.html#waehrend … (20)

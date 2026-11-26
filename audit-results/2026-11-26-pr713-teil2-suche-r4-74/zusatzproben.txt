@@ -1,0 +1,220 @@
+# Zusatzproben zu r4-74 (Suchregeln aus PR #713). Eine Anfrage pro Zeile; «#» leitet eine Gruppe ein.
+# Die Proben enthalten bewusst Wortlaute zu Suizid, Selbstverletzung und Gewalt. Sie stehen nur in diesem Nachweisordner.
+# A Neue Füllwörter (vom redet spricht sagt sagte schreibt erzählt immer wieder oft gegeben gemacht getan)
+immer wieder Streit
+immer wieder Krisen
+wieder
+oft
+immer wieder
+sagt nichts
+Er sagt er liebt mich nicht
+Sie spricht nicht mehr mit mir
+redet nicht mit mir
+schreibt mir ständig Nachrichten
+Fehler gemacht
+Was habe ich falsch gemacht
+Schuld gegeben
+vom Arzt
+Rückfall immer wieder
+Sie erzählt Lügen
+oft wütend
+wieder gut machen
+Sie sagt ich bin schuld
+Er redet nicht über Gefühle
+# B Neue Suizidbegriffe
+Abschiedsnachricht
+Abschiedsnachrichten
+Sie hat eine Abschiedsnachricht geschrieben
+Sie redet vom Tod
+Er spricht vom Tod
+Er spricht oft vom Sterben
+Sie redet immer wieder vom Sterben
+Mi Maa wott nümme läbe
+Si wott nüme läbe
+nüm läbe
+vom Sterben
+Angst vor dem Sterben
+Tod der Mutter
+Er schreibt vom Tod
+# C «will nicht mehr» am Ende der Anfrage
+will nicht mehr
+Ich will nicht mehr
+Ich will nicht mehr.
+Ich will nicht mehr!
+Sie möchte nicht mehr
+Er mag nicht mehr
+Ich mag nicht mehr
+I wott nümme
+Er sagt er will nicht mehr
+Mein Sohn will nicht mehr
+Meine Tochter sagt sie will nicht mehr
+Er will nicht mehr leben
+Ich will nicht mehr streiten
+Sie will nicht mehr mit mir reden
+Er will nicht mehr zur Arbeit
+Mein Sohn will nicht mehr in die Schule
+Therapie will er nicht mehr
+Er will die Therapie nicht mehr
+Ich kann nicht mehr
+Ich will nicht mehr helfen
+Sie will mich nicht mehr sehen
+Was tun wenn er nicht mehr will
+Er will nicht mehr in die Therapie
+Ich mag nicht mehr mit ihr streiten
+er schlägt mich und ich will nicht mehr
+Sie will keine Hilfe mehr
+Er will nicht
+# D Tippfehler
+Suizit
+Suizied
+Suzid
+Selbsmord
+Selbstmort
+Selbstmordgedanke
+Suizidgedanke
+Suizidversuchs
+Boderline
+Bordeline
+Borderlin
+Borderliner
+Terapie
+Therapi
+Therapien
+Medikamnte
+Medikamenten
+Krisenpaln
+Krisenplann
+Selbstverletztung
+Selbstverletzng
+Lebensmüde
+Lebensmüd
+Überdosi
+schlafen
+toten
+Totensonntag
+Sterbehilfe
+# E Streit, Aggression, Beschimpfung
+aggressiv
+Aggressionen
+Er ist aggressiv
+aggressives Verhalten
+beschimpft
+Er beschimpft mich
+Sie schreit mich an
+angeschrien
+beleidigt mich
+Beleidigungen
+Wutausbruch
+# F Mundart
+cha nümme
+I cha nümme
+mini Chind
+Chinder
+# G Einweisung und Kürzel
+Zwangseinweisung
+zwangseingewiesen
+Zwangsmedikation
+gegen ihren Willen
+gegen seinen Willen eingewiesen
+FU
+fu
+IV
+IV Rente
+für
+positiv
+Beschwerde
+Rekurs
+Frist
+Beschwerde FU Frist
+fürsorgerische Unterbringung
+Einweisung
+# H Selbstverletzung
+geschnitten
+Er hat sich geschnitten
+Sie schneidet sich
+schneidet sich
+es blutet
+Haare geschnitten
+Er hat sich beim Kochen geschnitten
+Tochter ritzt sich was tun
+ritzen
+# I Neue Gruppen
+KESB
+Jugendamt
+Kindesschutzbehörde
+Mentalisierung
+Mentalisieren
+MBT
+mentalisierungsbasierte Therapie
+Krisenplan
+Notfallplan
+Notfallkarte
+# J Gewalt
+Ohrfeige
+geohrfeigt
+Sie hat mir eine Ohrfeige gegeben
+Angst um mein Leben
+Angst um mein eigenes Leben
+Angst um ihr Leben
+Angst um sein Leben
+Er droht mir
+Er bedroht mich
+Sie schlägt mich
+mich bedroht
+# K Kinder und Gewalt
+mein Mann schlägt die Kinder
+Er schlägt unser Kind
+Kind wird geschlagen
+Mein Kind schlägt mich
+Mein Kind ist gewalttätig
+Kinder haben Angst vor ihm
+Gewalt vor den Kindern
+Sie bedroht die Kinder
+der Vater meiner Kinder schlägt mich
+Meine Tochter schlägt mich
+Mein Sohn schlägt mich
+Kind schlägt um sich
+Er schlägt mich vor den Kindern
+Er schlägt mich und die Kinder
+Gewalt Kinder
+Kinder schlagen
+Darf man Kinder schlagen
+# L Quellenblock (SU-05)
+Geheimnis
+Arztgeheimnis
+Berufsgeheimnis
+Zweitmeinung
+zweite Meinung
+Leitlinie
+Quellen
+Studie
+# M Ergänzung zu PR #713: Beugungen und Zusammensetzungen eindeutiger Suizidwörter, Formen von «ritzen»
+suizidgefährdet
+Meine Tochter ist suizidgefährdet
+Mein Mann ist selbstmordgefährdet was tun
+Selbstmorddrohung
+Selbstmordgefahr
+Suizidrisiko
+Suizidabsichten
+nach Suizidversuchen
+Suizidversuchs
+suizidale Gedanken
+suizidalen Krise
+Abschiedsbriefs
+lebensmüden
+Freitod
+Medikamentenüberdosis
+überdosiert
+Suizidprävention
+Selbstmordattentäter
+Lebensmut
+Überforderung
+Sie hat sich geritzt
+geritzt
+aufgeritzt
+Arme aufgeritzt
+Selbstverletzungen
+selbstverletzendes Verhalten
+Er schreibt vom Tod
+Beleidigungen
+Tod

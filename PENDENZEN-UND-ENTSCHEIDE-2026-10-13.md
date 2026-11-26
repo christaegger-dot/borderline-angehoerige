@@ -13,18 +13,17 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 Diese Übersicht fasst zusammen, was am 26.11.2026 wirklich offen ist. Sie ersetzt die Abschnitte unten nicht; dort stehen Nachweise und Wortlaut. Einträge unter «Offen» in älteren Abschnitten, die inzwischen erledigt sind, tragen den Vermerk «Bereinigung 26.11.2026».
 
 **Prüfung und Ablauf (26.11.2026):**
-- Nachprüfung von r4-70 und r4-71: beauftragt, läuft in einer eigenen Sitzung.
-- Nachprüfung von #811: liegt als Entwurf vor ([PR #823](https://github.com/christaegger-dot/borderline-angehoerige/pull/823)). Ohne Nachprüfung: #816 und r4-69 (#821).
-- Merge-Aufträge belegen (Christa Egger): #809 bis #812, #819, #821, #822, #824 (N809-1).
+- Nachprüfung von r4-70 und r4-71: liegt vor und ist auf `main` ([#827](https://github.com/christaegger-dot/borderline-angehoerige/pull/827)). **Offen daraus: N824-1** (mittel, Regression von r4-71: waagrechter Überlauf bei Standardschrift unter rund 15 px zwischen 50rem und 760 px Breite), N822-1 und N824-2 (Ablauf), N824-3 (Layouttest-Probe zum ersten Krisenschritt).
+- Nachprüfung von #811: liegt vor und ist auf `main` ([#823](https://github.com/christaegger-dot/borderline-angehoerige/pull/823)); offen daraus N811-1 und N811-3. Ohne Nachprüfung: #816 und r4-69 (#821).
+- Merge-Aufträge belegen (Christa Egger): #809 bis #812, #819, #821, #822, #824 (N809-1, N811-1, N822-1, N824-2); zu #784 N65-7 und N65b-1. Seit 26.11.2026 steht die Merge-Regel R65-P01 in dieser Datei.
 - Bestätigen (Christa Egger): fortgeltender Entscheid vom 18.10.2026 für r4-68 bis r4-71; Bildunterschriften 36em statt `80ch` (r4-70).
 - Entscheide: Layouttest in die CI (N809-7); Abbruch beim Screenshot melden (N813-5).
 
-**Offene Pull Requests (Status geprüft am 26.11.2026, Abgleich mit `main` im Nachweis `audit-results/2026-11-26-bereinigung-pendenzen/BERICHT.md`):**
-- Nachprüfungsberichte, je nur ein neuer Ordner unter `audit-results/`, ohne Konflikt mit `main`: [#793](https://github.com/christaegger-dot/borderline-angehoerige/pull/793) (frühere Fassung von #787; N65-1 bis N65-6), [#799](https://github.com/christaegger-dot/borderline-angehoerige/pull/799) (N65-7, N65-8), [#801](https://github.com/christaegger-dot/borderline-angehoerige/pull/801) (N65b-1 bis N65b-3), [#800](https://github.com/christaegger-dot/borderline-angehoerige/pull/800), [#803](https://github.com/christaegger-dot/borderline-angehoerige/pull/803) und [#804](https://github.com/christaegger-dot/borderline-angehoerige/pull/804) (drei Prüfungen von r4-66), [#802](https://github.com/christaegger-dot/borderline-angehoerige/pull/802) (r4-67; N67-1, N67-2) und [#823](https://github.com/christaegger-dot/borderline-angehoerige/pull/823) (#811; N811-1 bis N811-7). Ihre Befunde stehen nur teilweise in dieser Datei.
-- Nachführungen dieser Datei vom 30.10.2026, deren Inhalt auf `main` fehlt: [#805](https://github.com/christaegger-dot/borderline-angehoerige/pull/805) (Merge von #762, Merge-Regel R65-P01), [#806](https://github.com/christaegger-dot/borderline-angehoerige/pull/806) (Abschnitt zur Nachprüfung #801; Konflikt mit `main`) und [#807](https://github.com/christaegger-dot/borderline-angehoerige/pull/807) (#797, #798, «Offen» bei r4-64).
-- [#795](https://github.com/christaegger-dot/borderline-angehoerige/pull/795) (r4-67, N62-2): bereit zur Prüfung, Konflikt mit `main` (Kennung und `site/`).
-- [#713](https://github.com/christaegger-dot/borderline-angehoerige/pull/713) (Entwurf vom 23.10.2026, Auftrag «Einverstanden, leg los»; Kennung r4-43, seither anders vergeben; Konflikt mit `main`): Struktur- und Technikbefunde, nie gemergt. Auf `main` fehlen daraus unter anderem zehn Weiterleitungen der früheren Notfallseiten auf «Krisen begleiten» (`/notfall`, `/notfallkarte` und `/soforthilfe` führen heute auf die Startseite), 25 Sucherwartungen samt Suchregeln und der Link `kinder.html#schnell` auf «Kurz und klar».
-- Zu entscheiden (Christa Egger): je PR mergen, Inhalt übernehmen oder schliessen.
+**Pull Requests (Status geprüft am 26.11.2026, 18:40 UTC; Abgleich mit `main` im Nachweis `audit-results/2026-11-26-bereinigung-pendenzen/BERICHT.md`):**
+- Acht Nachprüfungsberichte sind seit 26.11.2026 auf `main`: [#793](https://github.com/christaegger-dot/borderline-angehoerige/pull/793), [#799](https://github.com/christaegger-dot/borderline-angehoerige/pull/799), [#800](https://github.com/christaegger-dot/borderline-angehoerige/pull/800), [#801](https://github.com/christaegger-dot/borderline-angehoerige/pull/801), [#802](https://github.com/christaegger-dot/borderline-angehoerige/pull/802), [#803](https://github.com/christaegger-dot/borderline-angehoerige/pull/803), [#804](https://github.com/christaegger-dot/borderline-angehoerige/pull/804) und [#823](https://github.com/christaegger-dot/borderline-angehoerige/pull/823), dazu [#827](https://github.com/christaegger-dot/borderline-angehoerige/pull/827) (Nachprüfung von r4-70 und r4-71). Merges und Befunde: Abschnitt «Nachprüfungsberichte · auf `main` seit 26.11.2026».
+- [#805](https://github.com/christaegger-dot/borderline-angehoerige/pull/805), [#806](https://github.com/christaegger-dot/borderline-angehoerige/pull/806) und [#807](https://github.com/christaegger-dot/borderline-angehoerige/pull/807) (Nachführungen dieser Datei vom 30.10.2026): Entscheid von Christa Egger, 26.11.2026: «Übernehmen, dann schliessen». Ihr Inhalt steht jetzt in dieser Datei (Merge-Regel R65-P01, Vermerke zu #762, #797 und #798, Abschnitt «Nachprüfung r4-65 (PR #784)»); die drei PRs werden geschlossen.
+- [#795](https://github.com/christaegger-dot/borderline-angehoerige/pull/795) (r4-67, N62-2, Konflikt mit `main`): Entscheid von Christa Egger, 26.11.2026: «Beim nächsten Release mitnehmen». Offen bis dahin.
+- [#713](https://github.com/christaegger-dot/borderline-angehoerige/pull/713) (Entwurf vom 23.10.2026, Konflikt mit `main`): Entscheid von Christa Egger, 26.11.2026: «Neu aufsetzen als Release». Auf `main` fehlen daraus unter anderem zehn Weiterleitungen der früheren Notfallseiten auf «Krisen begleiten» (`/notfall`, `/notfallkarte` und `/soforthilfe` führen heute auf die Startseite), 25 Sucherwartungen samt Suchregeln und der Link `kinder.html#schnell` auf «Kurz und klar». Offen bis zur Neufassung.
 
 **Website, technisch und gestalterisch:**
 - Review-Punkt 2: Sicherheitskarte der Startseite bei 375 × 667 und 360 × 740 unter dem ersten Bildschirm; der Layouttest meldet deshalb 2 Abweichungen (Abschnitt «r4-71»).
@@ -45,6 +44,37 @@ Diese Übersicht fasst zusammen, was am 26.11.2026 wirklich offen ist. Sie erset
 
 **Keine Pendenz:** Prüfungen mit echtem Screenreader, Safari, Firefox und realen Geräten (AR3-3, Entscheid vom 13.10.2026). Sie bleiben eine dokumentierte Evidenzgrenze.
 
+## Nachprüfungsberichte · auf `main` seit 26.11.2026
+
+**Auftrag von Christa Egger, 26.11.2026:** Auswahl in der Sitzung auf die Frage zu den acht offenen Nachprüfungsberichten #793, #799, #800, #801, #802, #803, #804 und #823: «Alle acht mergen». Der Auftrag steht wörtlich in den sieben Merge-Commits der Sitzung, die #828 verfasst hat. #823 war zu diesem Zeitpunkt schon gemergt, von der Sitzung, die #811 gebaut hat, auf den Auftrag «ja, mergen» (siehe Abschnitt «Layouttest · Ausnahme B2c»). Alle acht fügen nur einen Ordner unter `audit-results/` hinzu; die Website ist unverändert.
+
+| PR | Gegenstand | Merge (26.11.2026, UTC) | Codex-Review |
+|---|---|---|---|
+| [PR #823](https://github.com/christaegger-dot/borderline-angehoerige/pull/823) | Nachprüfung von #811 | `ad2c419`, 18:26:38 | ohne Befund, 18:11:50, vor dem Merge |
+| [PR #800](https://github.com/christaegger-dot/borderline-angehoerige/pull/800) | Nachprüfung r4-66 (#787, Kopf `13f471f`) | `46753a5`, 18:30:21 | ohne Befund, 18:27:53, vor dem Merge |
+| [PR #802](https://github.com/christaegger-dot/borderline-angehoerige/pull/802) | Nachprüfung r4-67 (#795, Stand `51b9b1e`) | `b37a02f`, 18:31:40 | ohne Befund, 18:27:56, vor dem Merge |
+| [PR #803](https://github.com/christaegger-dot/borderline-angehoerige/pull/803) | Nachprüfung r4-66 (zweite) | `9e8b63e`, 18:32:27 | ohne Befund, 18:28:07, vor dem Merge |
+| [PR #804](https://github.com/christaegger-dot/borderline-angehoerige/pull/804) | Nachprüfung r4-66 (dritte) | `94cd124`, 18:32:39 | ohne Befund, 18:28:02, vor dem Merge |
+| [PR #793](https://github.com/christaegger-dot/borderline-angehoerige/pull/793) | Nachprüfung der früheren Fassung von #787 (`f7f8d18`) | `2c8dfcc`, 18:32:52 | keines: am 30.10.2026 am Nutzungslimit gescheitert; Ausnahme von R28-O01 auf den Auftrag oben |
+| [PR #799](https://github.com/christaegger-dot/borderline-angehoerige/pull/799) | Nachprüfung r4-65, gemergter Stand | `5ac6fa4`, 18:33:07 | keines: am 30.10.2026 zweimal gescheitert; Ausnahme wie oben |
+| [PR #801](https://github.com/christaegger-dot/borderline-angehoerige/pull/801) | Nachprüfung r4-65 (#784) | `4b63fa9`, 18:33:27 | keines: am 30.10.2026 gescheitert (laut #806); Ausnahme wie oben |
+
+Dazu kam [PR #827](https://github.com/christaegger-dot/borderline-angehoerige/pull/827), die Nachprüfung von r4-70 und r4-71, gemergt als `d724826` am 26.11.2026, 18:25:40 UTC. Der Merge-Commit nennt keinen Auftrag; wer den Merge auslöste, hat diese Nachführung nicht geprüft.
+
+**Befunde aus den Berichten vom 30.10.2026.** Der Stand ist am 26.11.2026 nur dort neu geprüft, wo es ausdrücklich steht.
+- **Ablauf:** N65-7 und N65b-1 (wichtig): #784 ist ohne abgeschlossenes Codex-Review gemergt, eine Ausnahme ist auf GitHub nicht belegt. Offen: Bestätigung durch Christa Egger. N66-1 (#804, wichtig): drei parallele Nachprüfungen von r4-66; alle drei liegen jetzt auf `main`.
+- **Erledigt oder überholt:** N65-1 (wichtig, doppelte Kennung) laut Abschnitt «Korrektur · r4-66» mit der Neufassung als r4-66. N66-1 aus #803 und N66-3 aus #804 (Konflikt von #787 mit `main`) sind überholt, weil #787 seit 30.10.2026 gemergt ist (`cec2bbc`).
+- **N66-2 aus #803 (wichtig, Mergebedingung von #787):** #787 ist ohne abgeschlossenes Codex-Review gemergt. Den Entscheid dazu führt der Abschnitt «Korrektur · r4-66» als auf GitHub nicht belegt. Offen: Bestätigung durch Christa Egger.
+- **Dokumentation, gering, nicht neu geprüft:** N65-3 und N66-2 aus #804 betreffen den damaligen Stand dieser Datei.
+- **Gate, gering, offen:** N65-4, N65-5, N65-6, N66-1 bis N66-4 aus #800 und N66-3 aus #803. Es geht um Fälle, in denen das Gate milder oder strenger urteilt als Chromium (`title` ohne `alt`, Bild oder Feld statt sichtbarem Text, `type="hidden"` ohne Selbsttest). Die Website enthält keinen dieser Fälle.
+- **Nummernhistorie in `site.config.json`, gering, offen:** N65-2, N65-8, N65b-2, N65b-3, N66-5 aus #800 und N66-4 aus #803 (`pendingScope` und `appliedTo` führen Einträge doppelt oder unvollständig). Beim nächsten Release berichtigen.
+- **r4-67 (#795):** N67-1 und N67-2 sind laut #795 nachgebessert (`fc1213f`); #795 ist nicht gemergt.
+
+**Befunde aus der Nachprüfung von r4-70 und r4-71 (#827):** Ergebnis «Inhaltlich wie beauftragt umgesetzt; ein gemessener Fehler (N824-1) und Nachbesserung bei Ablauf, Test und Dokumentation, ohne Blocker».
+- **N824-1 (mittel, Regression von r4-71): offen.** Siehe Abschnitt «r4-71», «Berichtigungen».
+- N822-1 und N824-2 (wichtig, Ablauf): beide Releases ohne Nachprüfung, vor dem Ende des Codex-Reviews und ohne belegten Merge-Auftrag veröffentlicht; die Entscheide zu r4-71 sind nur aus der Sitzung belegt. Offen: Bestätigung durch Christa Egger, auch ob die neue Reihenfolge auf «Krisen begleiten» fachlich freigegeben ist.
+- N824-3 (gering, Test): offen. N824-4 und N824-6 (Dokumentation): im Abschnitt «r4-71» nachgetragen. N824-5 (Pendenzendatei): mit #825 und #828 nachgeführt. N824-7 und N822-2: Hinweise.
+
 ## r4-71 · Website-Review: Entscheide zu den Punkten 1, 3, 6, 8 und 9 · auf `main` seit 26.11.2026
 
 **GitHub:** [PR #824](https://github.com/christaegger-dot/borderline-angehoerige/pull/824), Branch `claude/sharp-mendel-6ecwbi` (Name von der Cloud-Sitzung vorgegeben, verstösst gegen die Branch-Konvention in `AGENTS.md`), Kopf `059d278`, gemergt als `70238ea` am 26.11.2026, 17:53:39 UTC, über das Konto von Christa Egger, rund 9 Sekunden nachdem der Entwurf auf «bereit zur Prüfung» gestellt wurde. Einen Merge-Auftrag nennen weder der PR noch der Merge-Commit (auf GitHub nicht belegt). CI `build-and-compare` grün auf `059d278`. Codex-Review «Completed» ohne Befund um 17:54:06 UTC, nach dem Merge (R28-O01 nicht eingehalten). Eine Nachprüfung vor dem Merge gab es nicht. Live um 17:55 UTC: `data-puk-site-build="r4-71"` auf Start-, Krisen- und Suchseite, Akuthinweis vor den Schritten, der Satz auf der Suchseite einmal.
@@ -64,6 +94,13 @@ Diese Übersicht fasst zusammen, was am 26.11.2026 wirklich offen ist. Sie erset
 - Kein Text unter 16 px. Die Anspannungskurve ist 2029 statt 1992 px hoch, die vierte Phase endet bei 1603 px.
 
 `--write-site` 24 Seiten · 0 Blocker · 20 Hinweise; `--verify-site` 35 Dateien byte-gleich; Selbsttest 125/125; Suchtest 216/216; Sprach-/UI-Test 73; axe-core 4.14.0 96 Läufe, 0 Verstösse; kein waagrechter Überlauf bis 300 % Schrift. **Layouttest:** 2 Abweichungen, die Sicherheitskarte bei 375 × 667 und 360 × 740 (Punkt 2 auf kleinen Telefonen). Nachweis: [`audit-results/2026-11-26-website-review-r4-71/BERICHT.md`](audit-results/2026-11-26-website-review-r4-71/BERICHT.md).
+
+**Berichtigungen nach der Nachprüfung ([#827](https://github.com/christaegger-dot/borderline-angehoerige/pull/827), 26.11.2026):**
+- **N824-1 (mittel, Regression):** «kein waagrechter Überlauf bis 300 % Schrift» gilt nur mit Standardschrift 16 px oder grösser. Ist sie kleiner als rund 15 px, läuft die Seite mit Skript zwischen 50rem und 760 px Breite um 55 bis 209 px über: Die Regel für die Direkteinstiege gilt bis 760 px, das Menü wird aber ab 50rem zur waagrechten Leiste. **Offen**, Korrektur als eigenes Release.
+- **N824-4:** Mit Punkt 6 ändert sich auch der Druck. Kleine Texte sind im Druck 13 statt 12,19 px gross; «Borderline verstehen» braucht 12 statt 11 Seiten.
+- **N824-6:** Bildunterschriften sind mit 16 px bis 83 Zeichen je Zeile lang (in r4-70: 75).
+- **N824-3:** Der erste Krisenschritt liegt bei 375 × 812 auf 793 px; die Layouttest-Probe dazu besteht nur noch knapp. Eine Probe für die «144» im ersten Bildschirm fehlt.
+- **N824-7:** Bei 320 × 568 ist die «144» nicht ganz im ersten Bildschirm (559 bis 582 px).
 
 **Wer:** die Sitzung, die #809, #813, #815 und #822 gebaut hat. Prüfen muss diese Änderung eine andere Sitzung.
 

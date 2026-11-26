@@ -28,7 +28,7 @@ Diese Datei ist der Nachweis der bauenden Sitzung (Selbstprüfung), keine unabh�
 
 ## 3. Alte offene Pull Requests (Abgleich mit `main` bei `04fecbb`)
 
-Geprüft mit `git merge-tree` und `git diff` gegen die gemeinsame Basis. Nichts ist gemergt oder geschlossen.
+Geprüft mit `git merge-tree` und `git diff` gegen die gemeinsame Basis. Stand vor den Entscheiden in Abschnitt 4.
 
 | PR | Inhalt | Merge mit `main` | Stand des Inhalts auf `main` |
 |---|---|---|---|
@@ -46,4 +46,17 @@ Geprüft mit `git merge-tree` und `git diff` gegen die gemeinsame Basis. Nichts 
 
 **Auffällig bei #713:** `/notfall`, `/notfallkarte` und `/soforthilfe` leiten auf `main` auf die Startseite weiter (`authoring/_redirects`). #713 lenkt sie auf den Abschnitt «Das Wichtigste» von «Krisen begleiten» um.
 
-Über Merge, Übernahme oder Schliessen entscheidet Christa Egger.
+## 4. Entscheide von Christa Egger und Umsetzung (26.11.2026, Auswahl in der Sitzung)
+
+| Frage | Entscheid | Umsetzung |
+|---|---|---|
+| Acht Nachprüfungsberichte (#793, #799 bis #804, #823) | «Alle acht mergen» | Sieben von dieser Sitzung gemergt, 18:30 bis 18:33 UTC, der Auftrag steht wörtlich im Merge-Commit. #823 war schon gemergt (`ad2c419`, 18:26:38 UTC, von der Sitzung, die #811 gebaut hat, auf «ja, mergen»). Für #800, #802, #803, #804 und #823 war das Codex-Review vorher ohne Befund abgeschlossen. Für #793, #799 und #801 gab es kein abgeschlossenes Codex-Review (am 30.10.2026 am Nutzungslimit gescheitert). |
+| #805, #806, #807 | «Übernehmen, dann schliessen» | Inhalt per 3-Wege-Patch in die Pendenzendatei übernommen, auch die Merge-Regel R65-P01. Aus #806 nicht übernommen: die überholte Kopfzeile. Die drei PRs werden nach dem Push geschlossen. |
+| #713 | «Neu aufsetzen als Release» | steht aus, eigenes Release |
+| #795 | «Beim nächsten Release mitnehmen» | steht aus |
+
+Die Merges und die Befunde der Berichte stehen in der Pendenzendatei, Abschnitt «Nachprüfungsberichte · auf `main` seit 26.11.2026».
+
+## 5. Während der Arbeit dazugekommen
+
+Die Nachprüfung von r4-70 und r4-71 ([PR #827](https://github.com/christaegger-dot/borderline-angehoerige/pull/827)) kam um 18:25:40 UTC auf `main`. Sie meldet **N824-1** (mittel): eine Regression von r4-71, gebaut von dieser Sitzung. Bei Standardschrift unter rund 15 px läuft die Seite zwischen 50rem und 760 px Breite waagrecht über. Der Befund ist im Abschnitt «r4-71» der Pendenzendatei nachgetragen und offen; die Korrektur braucht ein eigenes Release.

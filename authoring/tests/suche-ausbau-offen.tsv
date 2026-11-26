@@ -1,0 +1,36 @@
+# Sucherwartungen aus r4-74 und r4-75, die mit dem Rückbau r4-76 nicht mehr gelten (Stand 26.11.2026).
+# Sie sind das Ziel für den Wiederaufbau der Suchregeln aus PR #713 und der Ergänzung (Wortstamm-Regel).
+# Diese Datei wird vom Suchtest nicht automatisch geprüft. Aufruf: node authoring/tools/suchtest.mjs site authoring/tests/suche-ausbau-offen.tsv
+# Spalten wie in suche-ersttreffer.tsv.
+Anfrage	Erwartung	Herkunft
+Ich will nicht mehr	krise.html#suizid > selbstfuersorge.html#warnsignale	r4-74 (aus PR #713) Prüfbericht 23.10.2026, SU-01
+Er sagt er will nicht mehr	krise.html#suizid > selbstfuersorge.html#warnsignale	r4-74 (aus PR #713) SU-01
+Si wott nüme läbe	krise.html#suizid	r4-74 (aus PR #713) SU-01 Mundart
+Sie redet vom Sterben	krise.html#suizid	r4-74 (aus PR #713) SU-01 Füllwörter
+Abschiedsnachricht	krise.html#suizid	r4-74 (aus PR #713) SU-01
+Suizit	krise.html#suizid	r4-74 (aus PR #713) SU-01 Tippfehler
+Selbsmord	krise.html#suizid	r4-74 (aus PR #713) SU-01 Tippfehler
+Selbstverletztung	krise.html#selbstverletzung	r4-74 (aus PR #713) SU-01 Tippfehler
+Er hat sich geschnitten	krise.html#selbstverletzung	r4-74 (aus PR #713) SU-01
+Angst um mein Leben	gefahr.html#gewalt	r4-74 (aus PR #713) SU-02
+Sie hat mir eine Ohrfeige gegeben	gefahr.html#gewalt	r4-74 (aus PR #713) SU-02
+mein Mann schlägt die Kinder	kinder.html#eskalation > gefahr.html#gewalt	r4-74 (aus PR #713) SU-02 Kinder zuerst ohne Tötungswort
+der Vater meiner Kinder schlägt mich	gefahr.html#gewalt	r4-74 (aus PR #713) SU-02 Kinder nicht Betroffene
+Zwangseinweisung	fragen.html#f-einweisung	r4-74 (aus PR #713) SU-06
+Beschwerde FU Frist	fragen.html#f-einweisung	r4-74 (aus PR #713) SU-06
+Arztgeheimnis	behandlung.html#auskunft	r4-74 (aus PR #713) SU-05
+Zweitmeinung	diagnose.html#zweifel	r4-74 (aus PR #713) SU-05
+Jugendamt	kinder.html#eskalation	r4-74 (aus PR #713) SU-09
+Notfallplan	krise.html#krisenplan	r4-74 (aus PR #713) SU-09
+Mentalisieren	begriffe.html#b-mentalisierung	r4-74 (aus PR #713) SU-05/BE-04
+suizidgefährdet	krise.html#suizid	r4-74 Ergänzung zu PR #713 (Wortlisten-Prüfung) Zusammensetzung
+Meine Tochter ist suizidgefährdet	krise.html#suizid	r4-74 Ergänzung zu PR #713 (Wortlisten-Prüfung) Zusammensetzung im Satz
+Selbstmorddrohung	krise.html#suizid	r4-74 Ergänzung zu PR #713 (Wortlisten-Prüfung) Zusammensetzung
+nach Suizidversuchen	krise.html#suizid	r4-74 Ergänzung zu PR #713 (Wortlisten-Prüfung) Beugung; vorher nur Quelleneintrag
+Medikamentenüberdosis	krise.html#suizid	r4-74 Ergänzung zu PR #713 (Wortlisten-Prüfung) Stamm im Wortinnern
+lebensmüden	krise.html#suizid	r4-74 Ergänzung zu PR #713 (Wortlisten-Prüfung) Beugung
+Sie hat sich geritzt	krise.html#selbstverletzung	r4-74 Ergänzung zu PR #713 (Wortlisten-Prüfung) Form von «ritzen»
+Selbstverletzungen	krise.html#selbstverletzung	r4-74 Ergänzung zu PR #713 (Wortlisten-Prüfung) Mehrzahl
+Er schreibt vom Tod	krise.html#suizid	r4-74 Ergänzung zu PR #713 (Zusatzproben)
+Beleidigungen	kommunizieren.html#moment	r4-74 Ergänzung zu PR #713 (Zusatzproben) Mehrzahl
+FU	begriffe.html#b-fu	r4-75 Regressionsprobe (Kürzel nur als Einzelbegriff als ganzes Wort); als Einzelbegriff weiter streng

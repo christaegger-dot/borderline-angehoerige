@@ -1,0 +1,332 @@
+# saetze: 23328 Anfragen · verloren 298 · leer 0
+## Muster (verlorener Abschnitt → neuer Ersttreffer)
+46 | gefahr#gewalt → krise
+25 | kinder#eskalation → krise
+24 | krise#suizid → kommunizieren#kippen
+24 | krise#suizid → kommunizieren#moment
+16 | krise#selbstverletzung → grenzen#erkennen
+16 | krise#selbstverletzung → begriffe#begriffe
+12 | gefahr#gewalt → kommunizieren#moment
+12 | krise#selbstverletzung → gefahr#gewalt
+10 | krise#selbstverletzung → begriffe#b-selbstverletzung
+10 | kinder#eskalation → kommunizieren#moment
+9 | krise#selbstverletzung → kurz#borderline
+8 | krise#selbstverletzung → krise#suizid
+8 | krise#selbstverletzung → krise
+8 | krise#selbstverletzung → krise#krise-schnell
+8 | krise#selbstverletzung → beziehungen#verstaerker
+8 | krise#suizid → kurz#jetzt
+8 | krise#suizid → verstehen#anspannung
+8 | krise#selbstverletzung → quellen#leitlinien
+8 | krise#selbstverletzung → behandlung#rollen
+4 | krise#selbstverletzung → behandlung#kontakt
+4 | kinder#eskalation → krise#bleibt
+4 | krise#selbstverletzung → beziehungen#bz-sichten-s2
+3 | krise#selbstverletzung → fragen#eigenes-leben
+3 | krise#selbstverletzung → fragen#gespraeche
+3 | krise#selbstverletzung → verstehen#borderline
+3 | kinder#eskalation → gefahr#gewalt
+2 | krise#selbstverletzung → beziehungen#schleife
+2 | krise#selbstverletzung → begriffe#b-borderline
+1 | krise#selbstverletzung → fragen#schutz
+1 | krise#selbstverletzung → verstehen#einordnung
+## leer
+## verloren
+ist suizidgefährdet notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+ist suizidgefährdet polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell
+schneidet sich oft | krise#selbstverletzung → begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten
+schneidet sich schon wieder | krise#suizid > krise#selbstverletzung → krise#suizid > diagnose#suizidalitaet > krise#bleibt
+schneidet sich ständig | krise#selbstverletzung → grenzen#erkennen > krise#suizid > begriffe#b-borderline
+schneidet sich wegen mir | krise#selbstverletzung → begriffe#begriffe
+schneidet sich heute | krise#selbstverletzung > selbstfuersorge#selbstfuersorge-schnell → grenzen#erkennen > beziehungen#verstaerker > beziehungen#zwei-sichten
+schneidet sich seit wochen | krise#selbstverletzung → begriffe#begriffe > diagnose#begleiterkrankungen
+schneidet sich notfall | krise#krise-schnell > krise#selbstverletzung > kinder#eskalation → krise > krise#krise-schnell > krise#bleibt
+schneidet sich polizei | krise#krise-schnell > gefahr#gewalt > krise#selbstverletzung → krise > krise#krise-schnell > gefahr#gewalt
+schneidet sich vor den kindern | krise#selbstverletzung → kurz#borderline
+schneidet sich was kann ich machen | krise#selbstverletzung > krise#krise-schnell → krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+schneidet sich hat sie gesagt | krise#selbstverletzung → beziehungen#verstaerker
+hat sich geritzt notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+hat sich geritzt polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+hat sich geschnitten notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+hat sich geschnitten polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+ist aggressiv immer wieder | krise#suizid → kurz#jetzt > begriffe#begriffe > quellen#forschung
+ist aggressiv schon wieder | krise#suizid → verstehen#anspannung > kommunizieren#kippen > kinder#eskalation
+ist aggressiv polizei | krise#krise-schnell > gefahr#gewalt > krise → krise
+ist aggressiv wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen > verstehen#anspannung > fragen#gespraeche
+beschimpft mich schon wieder | krise#suizid → kommunizieren#kippen
+beschimpft mich wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen
+schreit mich an immer wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+schreit mich an schon wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+schreit mich an notfall | krise#krise-schnell > kinder#eskalation > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+schreit mich an polizei | krise#krise-schnell > gefahr#gewalt > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+schreit mich an wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+er ist suizidgefährdet notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+er ist suizidgefährdet polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell
+er schneidet sich oft | krise#selbstverletzung → begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten
+er schneidet sich schon wieder | krise#suizid > krise#selbstverletzung → krise#suizid > diagnose#suizidalitaet > krise#bleibt
+er schneidet sich ständig | krise#selbstverletzung → grenzen#erkennen > krise#suizid > begriffe#b-borderline
+er schneidet sich wegen mir | krise#selbstverletzung → begriffe#begriffe
+er schneidet sich heute | krise#selbstverletzung > selbstfuersorge#selbstfuersorge-schnell → grenzen#erkennen > beziehungen#verstaerker > beziehungen#zwei-sichten
+er schneidet sich seit wochen | krise#selbstverletzung → begriffe#begriffe > diagnose#begleiterkrankungen
+er schneidet sich notfall | krise#krise-schnell > krise#selbstverletzung > kinder#eskalation → krise > krise#krise-schnell > krise#bleibt
+er schneidet sich polizei | krise#krise-schnell > gefahr#gewalt > krise#selbstverletzung → krise > krise#krise-schnell > gefahr#gewalt
+er schneidet sich vor den kindern | krise#selbstverletzung → kurz#borderline
+er schneidet sich was kann ich machen | krise#selbstverletzung > krise#krise-schnell → krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+er schneidet sich hat sie gesagt | krise#selbstverletzung → beziehungen#verstaerker
+er hat sich geritzt notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+er hat sich geritzt polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+er hat sich geschnitten notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+er hat sich geschnitten polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+er ist aggressiv immer wieder | krise#suizid → kurz#jetzt > begriffe#begriffe > quellen#forschung
+er ist aggressiv schon wieder | krise#suizid → verstehen#anspannung > kommunizieren#kippen > kinder#eskalation
+er ist aggressiv polizei | krise#krise-schnell > gefahr#gewalt > krise → krise
+er ist aggressiv wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen > verstehen#anspannung > fragen#gespraeche
+er beschimpft mich schon wieder | krise#suizid → kommunizieren#kippen
+er beschimpft mich wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen
+er schreit mich an immer wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+er schreit mich an schon wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+er schreit mich an notfall | krise#krise-schnell > kinder#eskalation > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+er schreit mich an polizei | krise#krise-schnell > gefahr#gewalt > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+er schreit mich an wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+sie ist suizidgefährdet notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+sie ist suizidgefährdet polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell
+sie schneidet sich oft | krise#selbstverletzung → begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten
+sie schneidet sich schon wieder | krise#suizid > krise#selbstverletzung → krise#suizid > diagnose#suizidalitaet > krise#bleibt
+sie schneidet sich ständig | krise#selbstverletzung → grenzen#erkennen > krise#suizid > begriffe#b-borderline
+sie schneidet sich wegen mir | krise#selbstverletzung → begriffe#begriffe
+sie schneidet sich heute | krise#selbstverletzung > selbstfuersorge#selbstfuersorge-schnell → grenzen#erkennen > beziehungen#verstaerker > beziehungen#zwei-sichten
+sie schneidet sich seit wochen | krise#selbstverletzung → begriffe#begriffe > diagnose#begleiterkrankungen
+sie schneidet sich notfall | krise#krise-schnell > krise#selbstverletzung > kinder#eskalation → krise > krise#krise-schnell > krise#bleibt
+sie schneidet sich polizei | krise#krise-schnell > gefahr#gewalt > krise#selbstverletzung → krise > krise#krise-schnell > gefahr#gewalt
+sie schneidet sich vor den kindern | krise#selbstverletzung → kurz#borderline
+sie schneidet sich was kann ich machen | krise#selbstverletzung > krise#krise-schnell → krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+sie schneidet sich hat sie gesagt | krise#selbstverletzung → beziehungen#verstaerker
+sie hat sich geritzt notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+sie hat sich geritzt polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+sie hat sich geschnitten notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+sie hat sich geschnitten polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+sie ist aggressiv immer wieder | krise#suizid → kurz#jetzt > begriffe#begriffe > quellen#forschung
+sie ist aggressiv schon wieder | krise#suizid → verstehen#anspannung > kommunizieren#kippen > kinder#eskalation
+sie ist aggressiv polizei | krise#krise-schnell > gefahr#gewalt > krise → krise
+sie ist aggressiv wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen > verstehen#anspannung > fragen#gespraeche
+sie beschimpft mich schon wieder | krise#suizid → kommunizieren#kippen
+sie beschimpft mich wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen
+sie schreit mich an immer wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+sie schreit mich an schon wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+sie schreit mich an notfall | krise#krise-schnell > kinder#eskalation > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+sie schreit mich an polizei | krise#krise-schnell > gefahr#gewalt > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+sie schreit mich an wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+ich ist suizidgefährdet notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+ich ist suizidgefährdet polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell
+ich schneidet sich oft | krise#selbstverletzung → begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten
+ich schneidet sich schon wieder | krise#suizid > krise#selbstverletzung → krise#suizid > diagnose#suizidalitaet > krise#bleibt
+ich schneidet sich ständig | krise#selbstverletzung → grenzen#erkennen > krise#suizid > begriffe#b-borderline
+ich schneidet sich wegen mir | krise#selbstverletzung → begriffe#begriffe
+ich schneidet sich heute | krise#selbstverletzung > selbstfuersorge#selbstfuersorge-schnell → grenzen#erkennen > beziehungen#verstaerker > beziehungen#zwei-sichten
+ich schneidet sich seit wochen | krise#selbstverletzung → begriffe#begriffe > diagnose#begleiterkrankungen
+ich schneidet sich notfall | krise#krise-schnell > krise#selbstverletzung > kinder#eskalation → krise > krise#krise-schnell > krise#bleibt
+ich schneidet sich polizei | krise#krise-schnell > gefahr#gewalt > krise#selbstverletzung → krise > krise#krise-schnell > gefahr#gewalt
+ich schneidet sich vor den kindern | krise#selbstverletzung → kurz#borderline
+ich schneidet sich was kann ich machen | krise#selbstverletzung > krise#krise-schnell → krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+ich schneidet sich hat sie gesagt | krise#selbstverletzung → beziehungen#verstaerker
+ich hat sich geritzt notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+ich hat sich geritzt polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+ich hat sich geschnitten notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+ich hat sich geschnitten polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+ich ist aggressiv immer wieder | krise#suizid → kurz#jetzt > begriffe#begriffe > quellen#forschung
+ich ist aggressiv schon wieder | krise#suizid → verstehen#anspannung > kommunizieren#kippen > kinder#eskalation
+ich ist aggressiv polizei | krise#krise-schnell > gefahr#gewalt > krise → krise
+ich ist aggressiv wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen > verstehen#anspannung > fragen#gespraeche
+ich beschimpft mich schon wieder | krise#suizid → kommunizieren#kippen
+ich beschimpft mich wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen
+ich schreit mich an immer wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+ich schreit mich an schon wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+ich schreit mich an notfall | krise#krise-schnell > kinder#eskalation > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+ich schreit mich an polizei | krise#krise-schnell > gefahr#gewalt > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+ich schreit mich an wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein mann ist suizidgefährdet polizei | gefahr#gewalt → krise > krise#krise-schnell > gefahr#gewalt
+mein mann schneidet sich | krise#selbstverletzung → gefahr#gewalt
+mein mann schneidet sich was tun | krise#selbstverletzung → gefahr#gewalt
+mein mann schneidet sich was soll ich tun | krise#selbstverletzung → gefahr#gewalt
+mein mann schneidet sich hilfe | krise#selbstverletzung → gefahr#gewalt
+mein mann schneidet sich fu | krise#selbstverletzung > buecher#auswahl → gefahr#gewalt
+mein mann schneidet sich und droht | krise#selbstverletzung → gefahr#gewalt
+mein mann schneidet sich wenn ich gehe | krise#selbstverletzung → gefahr#gewalt
+mein mann schneidet sich und will keine hilfe | krise#selbstverletzung → gefahr#gewalt
+mein mann schreit mich an polizei | gefahr#gewalt → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine frau ist suizidgefährdet polizei | gefahr#gewalt → krise > krise#krise-schnell > gefahr#gewalt
+meine frau schneidet sich | krise#selbstverletzung → quellen#leitlinien > gefahr#gewalt > quellen#forschung
+meine frau schneidet sich was tun | krise#selbstverletzung > behandlung#kontakt → behandlung#kontakt > quellen#leitlinien > gefahr#gewalt
+meine frau schneidet sich was soll ich tun | krise#selbstverletzung > behandlung#kontakt → behandlung#kontakt > quellen#leitlinien > gefahr#gewalt
+meine frau schneidet sich hilfe | krise#selbstverletzung → gefahr#gewalt > quellen#leitlinien > quellen#forschung
+meine frau schneidet sich fu | krise#selbstverletzung → quellen#leitlinien > gefahr#gewalt > quellen#forschung
+meine frau schneidet sich und droht | krise#selbstverletzung → quellen#leitlinien > gefahr#gewalt > quellen#forschung
+meine frau schneidet sich wenn ich gehe | krise#selbstverletzung → gefahr#gewalt > quellen#forschung
+meine frau schneidet sich und will keine hilfe | krise#selbstverletzung → gefahr#gewalt > quellen#leitlinien > quellen#forschung
+meine frau schreit mich an polizei | gefahr#gewalt → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein partner ist suizidgefährdet notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+mein partner ist suizidgefährdet polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell
+mein partner schneidet sich oft | krise#selbstverletzung → begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten
+mein partner schneidet sich schon wieder | krise#suizid > krise#selbstverletzung → krise#suizid > diagnose#suizidalitaet > krise#bleibt
+mein partner schneidet sich ständig | krise#selbstverletzung → grenzen#erkennen > krise#suizid > begriffe#b-borderline
+mein partner schneidet sich wegen mir | krise#selbstverletzung → begriffe#begriffe
+mein partner schneidet sich heute | krise#selbstverletzung > selbstfuersorge#selbstfuersorge-schnell → grenzen#erkennen > beziehungen#verstaerker > beziehungen#zwei-sichten
+mein partner schneidet sich seit wochen | krise#selbstverletzung → begriffe#begriffe > diagnose#begleiterkrankungen
+mein partner schneidet sich notfall | krise#krise-schnell > krise#selbstverletzung > kinder#eskalation → krise > krise#krise-schnell > krise#bleibt
+mein partner schneidet sich polizei | krise#krise-schnell > gefahr#gewalt > krise#selbstverletzung → krise > krise#krise-schnell > gefahr#gewalt
+mein partner schneidet sich vor den kindern | krise#selbstverletzung → kurz#borderline
+mein partner schneidet sich was kann ich machen | krise#selbstverletzung > krise#krise-schnell → krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+mein partner schneidet sich hat sie gesagt | krise#selbstverletzung → beziehungen#verstaerker
+mein partner hat sich geritzt notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+mein partner hat sich geritzt polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+mein partner hat sich geschnitten notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+mein partner hat sich geschnitten polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+mein partner ist aggressiv immer wieder | krise#suizid → kurz#jetzt > begriffe#begriffe > quellen#forschung
+mein partner ist aggressiv schon wieder | krise#suizid → verstehen#anspannung > kommunizieren#kippen > kinder#eskalation
+mein partner ist aggressiv polizei | krise#krise-schnell > gefahr#gewalt > krise → krise
+mein partner ist aggressiv wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen > verstehen#anspannung > fragen#gespraeche
+mein partner beschimpft mich schon wieder | krise#suizid → kommunizieren#kippen
+mein partner beschimpft mich wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen
+mein partner schreit mich an immer wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein partner schreit mich an schon wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein partner schreit mich an notfall | krise#krise-schnell > kinder#eskalation > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein partner schreit mich an polizei | krise#krise-schnell > gefahr#gewalt > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein partner schreit mich an wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine partnerin ist suizidgefährdet notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+meine partnerin ist suizidgefährdet polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell
+meine partnerin schneidet sich oft | krise#selbstverletzung → begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten
+meine partnerin schneidet sich schon wieder | krise#suizid > krise#selbstverletzung → krise#suizid > diagnose#suizidalitaet > krise#bleibt
+meine partnerin schneidet sich ständig | krise#selbstverletzung → grenzen#erkennen > krise#suizid > begriffe#b-borderline
+meine partnerin schneidet sich wegen mir | krise#selbstverletzung → begriffe#begriffe
+meine partnerin schneidet sich heute | krise#selbstverletzung > selbstfuersorge#selbstfuersorge-schnell → grenzen#erkennen > beziehungen#verstaerker > beziehungen#zwei-sichten
+meine partnerin schneidet sich seit wochen | krise#selbstverletzung → begriffe#begriffe > diagnose#begleiterkrankungen
+meine partnerin schneidet sich notfall | krise#krise-schnell > krise#selbstverletzung > kinder#eskalation → krise > krise#krise-schnell > krise#bleibt
+meine partnerin schneidet sich polizei | krise#krise-schnell > gefahr#gewalt > krise#selbstverletzung → krise > krise#krise-schnell > gefahr#gewalt
+meine partnerin schneidet sich vor den kindern | krise#selbstverletzung → kurz#borderline
+meine partnerin schneidet sich was kann ich machen | krise#selbstverletzung > krise#krise-schnell → krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+meine partnerin schneidet sich hat sie gesagt | krise#selbstverletzung → beziehungen#verstaerker
+meine partnerin hat sich geritzt notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+meine partnerin hat sich geritzt polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+meine partnerin hat sich geschnitten notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+meine partnerin hat sich geschnitten polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+meine partnerin ist aggressiv immer wieder | krise#suizid → kurz#jetzt > begriffe#begriffe > quellen#forschung
+meine partnerin ist aggressiv schon wieder | krise#suizid → verstehen#anspannung > kommunizieren#kippen > kinder#eskalation
+meine partnerin ist aggressiv polizei | krise#krise-schnell > gefahr#gewalt > krise → krise
+meine partnerin ist aggressiv wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen > verstehen#anspannung > fragen#gespraeche
+meine partnerin beschimpft mich schon wieder | krise#suizid → kommunizieren#kippen
+meine partnerin beschimpft mich wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen
+meine partnerin schreit mich an immer wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine partnerin schreit mich an schon wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine partnerin schreit mich an notfall | krise#krise-schnell > kinder#eskalation > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine partnerin schreit mich an polizei | krise#krise-schnell > gefahr#gewalt > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine partnerin schreit mich an wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein sohn ist suizidgefährdet notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+mein sohn ist suizidgefährdet polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell
+mein sohn schneidet sich oft | krise#selbstverletzung → begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten
+mein sohn schneidet sich schon wieder | krise#suizid > krise#selbstverletzung → krise#suizid > diagnose#suizidalitaet > krise#bleibt
+mein sohn schneidet sich ständig | krise#selbstverletzung → grenzen#erkennen > krise#suizid > begriffe#b-borderline
+mein sohn schneidet sich wegen mir | krise#selbstverletzung → begriffe#begriffe
+mein sohn schneidet sich heute | krise#selbstverletzung > selbstfuersorge#selbstfuersorge-schnell → grenzen#erkennen > beziehungen#verstaerker > beziehungen#zwei-sichten
+mein sohn schneidet sich seit wochen | krise#selbstverletzung → begriffe#begriffe > diagnose#begleiterkrankungen
+mein sohn schneidet sich notfall | krise#krise-schnell > krise#selbstverletzung > kinder#eskalation → krise > krise#krise-schnell > krise#bleibt
+mein sohn schneidet sich polizei | krise#krise-schnell > gefahr#gewalt > krise#selbstverletzung → krise > krise#krise-schnell > gefahr#gewalt
+mein sohn schneidet sich vor den kindern | krise#selbstverletzung → kurz#borderline
+mein sohn schneidet sich was kann ich machen | krise#selbstverletzung > krise#krise-schnell → krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+mein sohn schneidet sich hat sie gesagt | krise#selbstverletzung → beziehungen#verstaerker
+mein sohn hat sich geritzt notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+mein sohn hat sich geritzt polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+mein sohn hat sich geschnitten notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+mein sohn hat sich geschnitten polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+mein sohn ist aggressiv immer wieder | krise#suizid → kurz#jetzt > begriffe#begriffe > quellen#forschung
+mein sohn ist aggressiv schon wieder | krise#suizid → verstehen#anspannung > kommunizieren#kippen > kinder#eskalation
+mein sohn ist aggressiv polizei | krise#krise-schnell > gefahr#gewalt > krise → krise
+mein sohn ist aggressiv wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen > verstehen#anspannung > fragen#gespraeche
+mein sohn beschimpft mich schon wieder | krise#suizid → kommunizieren#kippen
+mein sohn beschimpft mich wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen
+mein sohn schreit mich an immer wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein sohn schreit mich an schon wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein sohn schreit mich an notfall | krise#krise-schnell > kinder#eskalation > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein sohn schreit mich an polizei | krise#krise-schnell > gefahr#gewalt > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein sohn schreit mich an wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine tochter ist suizidgefährdet notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+meine tochter ist suizidgefährdet polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell
+meine tochter schneidet sich oft | krise#selbstverletzung → begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten
+meine tochter schneidet sich schon wieder | krise#suizid > krise#selbstverletzung → krise#suizid > diagnose#suizidalitaet > krise#bleibt
+meine tochter schneidet sich ständig | krise#selbstverletzung → grenzen#erkennen > krise#suizid > begriffe#b-borderline
+meine tochter schneidet sich wegen mir | krise#selbstverletzung → begriffe#begriffe
+meine tochter schneidet sich heute | krise#selbstverletzung > selbstfuersorge#selbstfuersorge-schnell → grenzen#erkennen > beziehungen#verstaerker > beziehungen#zwei-sichten
+meine tochter schneidet sich seit wochen | krise#selbstverletzung → begriffe#begriffe > diagnose#begleiterkrankungen
+meine tochter schneidet sich notfall | krise#krise-schnell > krise#selbstverletzung > kinder#eskalation → krise > krise#krise-schnell > krise#bleibt
+meine tochter schneidet sich polizei | krise#krise-schnell > gefahr#gewalt > krise#selbstverletzung → krise > krise#krise-schnell > gefahr#gewalt
+meine tochter schneidet sich vor den kindern | krise#selbstverletzung → kurz#borderline
+meine tochter schneidet sich was kann ich machen | krise#selbstverletzung > krise#krise-schnell → krise#krise-schnell > beziehungen#bz-sichten-s2 > krise#vermeiden
+meine tochter schneidet sich hat sie gesagt | krise#selbstverletzung → beziehungen#verstaerker
+meine tochter hat sich geritzt notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+meine tochter hat sich geritzt polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+meine tochter hat sich geschnitten notfall | krise#krise-schnell > kinder#eskalation > krise → krise > krise#krise-schnell > krise#bleibt
+meine tochter hat sich geschnitten polizei | krise#krise-schnell > gefahr#gewalt > krise → krise > krise#krise-schnell > gefahr#gewalt
+meine tochter ist aggressiv immer wieder | krise#suizid → kurz#jetzt > begriffe#begriffe > quellen#forschung
+meine tochter ist aggressiv schon wieder | krise#suizid → verstehen#anspannung > kommunizieren#kippen > kinder#eskalation
+meine tochter ist aggressiv polizei | krise#krise-schnell > gefahr#gewalt > krise → krise
+meine tochter ist aggressiv wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen > verstehen#anspannung > fragen#gespraeche
+meine tochter beschimpft mich schon wieder | krise#suizid → kommunizieren#kippen
+meine tochter beschimpft mich wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#kippen
+meine tochter schreit mich an immer wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine tochter schreit mich an schon wieder | krise#suizid → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine tochter schreit mich an notfall | krise#krise-schnell > kinder#eskalation > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine tochter schreit mich an polizei | krise#krise-schnell > gefahr#gewalt > krise → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine tochter schreit mich an wenn ich gehe | fragen#f-verlassen > krise#suizid > fragen#f-eifersucht → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein kind ist suizidgefährdet notfall | kinder#eskalation > kinder#hilfe → krise#bleibt
+mein kind ist suizidgefährdet polizei | gefahr#gewalt → krise > krise#krise-schnell > gefahr#gewalt
+mein kind schneidet sich ist das ernst | krise#selbstverletzung → kurz#borderline > jugendliche#schnell
+mein kind schneidet sich notfall | kinder#eskalation > kinder#hilfe → krise#bleibt > gefahr#gewalt > quellen#versorgung
+mein kind schneidet sich wenn ich gehe | fragen#f-verlassen > krise#selbstverletzung > fragen#schutz → fragen#schutz > rolle#nach-konflikten > jugendliche#schnell
+mein kind hat sich geritzt notfall | kinder#eskalation > kinder#hilfe → krise#bleibt > gefahr#gewalt > quellen#versorgung
+mein kind hat sich geschnitten notfall | kinder#eskalation > kinder#hilfe → krise#bleibt > gefahr#gewalt > quellen#versorgung
+mein kind ist aggressiv polizei | gefahr#gewalt → krise > kinder > jugendliche#geschwister
+mein kind schreit mich an notfall | kinder#eskalation > kinder#hilfe → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein kind schreit mich an polizei | gefahr#gewalt → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+meine mutter schneidet sich | krise#selbstverletzung > rolle#schuld > grenzen#rollen → behandlung#rollen > behandlung#kontakt
+meine mutter schneidet sich hilfe | krise#selbstverletzung > rolle#schuld > rolle#anbieten → behandlung#rollen > behandlung#kontakt
+meine mutter schneidet sich und droht | krise#selbstverletzung > rolle#schuld > grenzen#rollen → behandlung#rollen > behandlung#kontakt
+meine mutter schneidet sich und will keine hilfe | rolle#schuld > krise#selbstverletzung > rolle#anbieten → behandlung#rollen > behandlung#kontakt
+mein vater schneidet sich | krise#selbstverletzung > rolle#schuld > grenzen#rollen → behandlung#rollen > behandlung#kontakt
+mein vater schneidet sich hilfe | krise#selbstverletzung > rolle#schuld > rolle#anbieten → behandlung#rollen > behandlung#kontakt
+mein vater schneidet sich und droht | krise#selbstverletzung > rolle#schuld > grenzen#rollen → behandlung#rollen > behandlung#kontakt
+mein vater schneidet sich und will keine hilfe | rolle#schuld > krise#selbstverletzung > rolle#anbieten → behandlung#rollen > behandlung#kontakt
+meine schwester schneidet sich | grenzen#rollen > krise#selbstverletzung → beziehungen#bz-sichten-s2 > beziehungen#schleife > beziehungen#zwei-sichten
+meine schwester schneidet sich was tun | krise#selbstverletzung → beziehungen#bz-sichten-s2 > beziehungen#schleife > beziehungen#zwei-sichten
+meine schwester schneidet sich was soll ich tun | krise#selbstverletzung → beziehungen#bz-sichten-s2 > beziehungen#schleife > beziehungen#zwei-sichten
+meine schwester schneidet sich fu | grenzen#rollen > krise#selbstverletzung → beziehungen#schleife > beziehungen#zwei-sichten
+meine schwester schneidet sich und droht | grenzen#rollen > krise#selbstverletzung → beziehungen#bz-sichten-s2 > beziehungen#schleife > beziehungen#zwei-sichten
+meine schwester schneidet sich sagt er | krise#selbstverletzung → beziehungen#schleife
+mein freund schneidet sich | grenzen#rollen > krise#selbstverletzung > fragen#f-umfeld → fragen#eigenes-leben > fragen#gespraeche > beziehungen#verstaerker
+mein freund schneidet sich was tun | unterstuetzung#beratung > krise#selbstverletzung > behandlung#kontakt → behandlung#kontakt > fragen#gespraeche > fragen#eigenes-leben
+mein freund schneidet sich was soll ich tun | unterstuetzung#beratung > krise#selbstverletzung > behandlung#kontakt → behandlung#kontakt > fragen#gespraeche > fragen#eigenes-leben
+mein freund schneidet sich ist das ernst | krise#selbstverletzung → fragen#gespraeche
+mein freund schneidet sich und droht | grenzen#rollen > krise#selbstverletzung > fragen#f-umfeld → fragen#eigenes-leben > fragen#gespraeche > beziehungen#verstaerker
+mein freund schneidet sich sagt er | krise#selbstverletzung → fragen#gespraeche > beziehungen#verstaerker
+mein freund schneidet sich wenn ich gehe | krise#selbstverletzung > fragen#f-umfeld → fragen#eigenes-leben > fragen#gespraeche
+mein freund schneidet sich und will keine hilfe | unterstuetzung#beratung > krise#selbstverletzung > fragen#f-umfeld → fragen#gespraeche > fragen#eigenes-leben > behandlung#rollen
+meine freundin schneidet sich | grenzen#rollen > krise#selbstverletzung → quellen#leitlinien
+meine freundin schneidet sich was tun | unterstuetzung#beratung > krise#selbstverletzung → quellen#leitlinien
+meine freundin schneidet sich was soll ich tun | unterstuetzung#beratung > krise#selbstverletzung → quellen#leitlinien
+meine freundin schneidet sich und droht | grenzen#rollen > krise#selbstverletzung → quellen#leitlinien
+meine freundin schneidet sich und will keine hilfe | unterstuetzung#beratung > krise#selbstverletzung > selbstfuersorge#unterstuetzung → quellen#leitlinien
+mein ex ist suizidgefährdet notfall | kinder#eskalation → krise > krise#krise-schnell > kinder#eskalation
+mein ex ist suizidgefährdet polizei | gefahr#gewalt → krise > krise#krise-schnell > gefahr#gewalt
+mein ex schneidet sich | krise#selbstverletzung > ueber#grundsaetze → begriffe#b-selbstverletzung > begriffe#b-borderline > begriffe#b-validierung
+mein ex schneidet sich was tun | unterstuetzung#beratung > krise#selbstverletzung > verstehen#bewertungen → begriffe#b-borderline > verstehen#einordnung > verstehen#borderline
+mein ex schneidet sich was soll ich tun | unterstuetzung#beratung > krise#selbstverletzung > verstehen#bewertungen → begriffe#b-borderline > verstehen#einordnung > verstehen#borderline
+mein ex schneidet sich hilfe | unterstuetzung#beratung > krise#selbstverletzung > ueber#grundsaetze → verstehen#einordnung > gefahr#gewalt > begriffe#begriffe
+mein ex schneidet sich ist das ernst | krise#selbstverletzung → verstehen#borderline > kommunizieren#beispiele
+mein ex schneidet sich notfall | kinder#eskalation → gefahr#gewalt > kommunizieren#beispiele
+mein ex schneidet sich und droht | krise#selbstverletzung > ueber#grundsaetze → begriffe#b-selbstverletzung > begriffe#b-borderline > begriffe#b-validierung
+mein ex schneidet sich sagt er | krise#selbstverletzung → verstehen#borderline > beziehungen#schleife
+mein ex schneidet sich wenn ich gehe | krise#selbstverletzung → verstehen#borderline > begriffe#b-borderline > begriffe#begriffe
+mein ex schneidet sich und will keine hilfe | unterstuetzung#beratung > krise#selbstverletzung → gefahr#gewalt > begriffe#begriffe > quellen#forschung
+mein ex hat sich geritzt notfall | kinder#eskalation → gefahr#gewalt > kommunizieren#beispiele
+mein ex hat sich geschnitten notfall | kinder#eskalation → gefahr#gewalt > kommunizieren#beispiele
+mein ex ist aggressiv polizei | gefahr#gewalt → krise > verstehen#anspannung > gefahr#gewalt
+mein ex schreit mich an notfall | kinder#eskalation → kommunizieren#moment > grenzen#saetze > grenzen#erkennen
+mein ex schreit mich an polizei | gefahr#gewalt → kommunizieren#moment > grenzen#saetze > grenzen#erkennen

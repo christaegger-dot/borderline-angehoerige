@@ -217,38 +217,24 @@
       return String(value || '').normalize('NFC').toLocaleLowerCase('de-CH').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
     }
     var stopwords = new Set(('aber als am an auf aus bei bin bis brauche das dass dem den der des die darf dich dir ein eine einer einem einen er erlebt es fuer finde gefunden gegen geht gibt hat haben helfen ich ihm ihn im in ist ja kann koennen lassen man mein meine meiner meinem meinen mich mir mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur').split(' '));
-    /* r4-75: Die 13 Füllwörter aus r4-74 (PR #713, SU-01: vom, redet, spricht, sagt, sagte, schreibt, erzählt, immer, wieder, oft,
-       gegeben, gemacht, getan) sind zurückgenommen. Ohne sie verloren Aussagen wie «Ich denke immer wieder an den Tod» den
-       Suizidabschnitt oder jeden Treffer (Nachprüfung von r4-74, Stopp-Regel R34-P01 a und c). «Sie redet vom Sterben» läuft
-       über die Wendung «vom Sterben» und braucht die Füllwörter nicht. */
     var synonymSets = [
-      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein', 'selbstmordgedanken', 'selbstmordversuch', 'suizidversuch', 'suizidalitaet', 'suizidgefahr', 'suizidandrohung', 'suiziddrohung', 'lebensmuede', 'lebensmuedigkeit', 'todeswunsch', 'abschiedsbrief', 'ueberdosis', 'tabletten genommen', 'zu viele tabletten', 'selbstmordversuche', 'suizidversuche', 'suiziddrohungen', 'suizidandrohungen', 'todeswuensche', 'abschiedsbriefe', 'ueberdosen', 'lebensmueder', 'ist lebensmuede', 'tabletten geschluckt', 'ans umbringen', 'ans toeten',
-        /* r4-74 (aus PR #713, SU-01) */ 'abschiedsnachricht', 'abschiedsnachrichten', 'vom sterben', 'redet vom tod', 'spricht vom tod', 'nueme laebe', 'nuemme laebe', 'nuem laebe',
-        /* r4-74 (Ergänzung zu PR #713, Zusatzproben) */ 'schreibt vom tod'],
+      ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein', 'selbstmordgedanken', 'selbstmordversuch', 'suizidversuch', 'suizidalitaet', 'suizidgefahr', 'suizidandrohung', 'suiziddrohung', 'lebensmuede', 'lebensmuedigkeit', 'todeswunsch', 'abschiedsbrief', 'ueberdosis', 'tabletten genommen', 'zu viele tabletten', 'selbstmordversuche', 'suizidversuche', 'suiziddrohungen', 'suizidandrohungen', 'todeswuensche', 'abschiedsbriefe', 'ueberdosen', 'lebensmueder', 'ist lebensmuede', 'tabletten geschluckt', 'ans umbringen', 'ans toeten'],
       ['arzt', 'aerztin', 'behandler', 'behandlerin', 'therapeut', 'therapeutin', 'fachperson', 'fachpersonen', 'behandlungsteam'],
       ['ablehnen', 'abgelehnt', 'lehnt', 'verweigern', 'verweigert', 'keine', 'will', 'moechte', 'nicht wollen', 'will nicht', 'moechte nicht'],
       ['normal', 'stabil', 'stabiler', 'ruhig', 'ruhiger', 'unauffaellig', 'anders'],
       ['hilfe', 'unterstuetzung', 'beratung', 'angehoerigenberatung', 'entlastung'],
-      ['streit', 'konflikt', 'konflikte', 'eskalation', 'eskaliert', 'kippt', /* r4-74 (aus PR #713, SU-02) */ 'aggressiv', 'aggressive', 'aggression', 'aggressionen'],
-      ['erschoepft', 'ueberfordert', 'belastet', 'kraft', 'am ende', 'keine kraft', 'kann nicht mehr', 'ich kann nicht mehr', /* r4-74 (aus PR #713) */ 'cha nueme', 'cha nuemme'],
-      ['kind', 'kinder', 'jugendliche', /* r4-74 (aus PR #713) */ 'chind', 'chinde', 'chinder'],
-      ['einweisen', 'einweisung', 'fuersorgerisch', 'fuersorgerische', 'fu', /* r4-74 (aus PR #713, SU-06) */ 'zwangseinweisung', 'zwangseingewiesen', 'zwangsmedikation', 'gegen ihren willen', 'gegen seinen willen'],
+      ['streit', 'konflikt', 'konflikte', 'eskalation', 'eskaliert', 'kippt'],
+      ['erschoepft', 'ueberfordert', 'belastet', 'kraft', 'am ende', 'keine kraft', 'kann nicht mehr', 'ich kann nicht mehr'],
+      ['kind', 'kinder', 'jugendliche'],
+      ['einweisen', 'einweisung', 'fuersorgerisch', 'fuersorgerische', 'fu'],
       ['medikament', 'medikamente', 'tabletten', 'antidepressivum'],
       ['pause', 'pausieren', 'kontaktpause', 'abstand'],
-      ['selbstverletzung', 'selbstverletzen', 'verletzt', 'ritzen', /* r4-74 (aus PR #713, SU-01) */ 'geschnitten', 'schneidet', 'es blutet',
-        /* r4-74 (Ergänzung zu PR #713, Wortlisten-Prüfung) */ 'geritzt', 'ritzte', 'aufritzen', 'aufgeritzt', 'selbstverletzungen'],
+      ['selbstverletzung', 'selbstverletzen', 'verletzt', 'ritzen'],
       ['angehoerigengruppe', 'selbsthilfegruppe', 'gruppe', 'austausch'],
-      /* r4-74 (aus PR #713, SU-02, SU-09) */
-      ['beschimpf', 'beschimpft', 'beschimpfen', 'beschimpfung', 'beschimpfungen', 'anschrei', 'anschreien', 'angeschrien', 'schreit mich an', 'beleidigt', 'beleidigen', 'beleidigung', /* r4-74 (Ergänzung zu PR #713) */ 'beleidigungen'],
-      ['kesb', 'jugendamt', 'kindesschutzbehoerde'],
-      ['mentalisierung', 'mentalisieren', 'mentalisierungsbasiert', 'mbt'],
-      ['krisenplan', 'notfallplan', 'notfallkarte'],
       ['gespraech', 'reden', 'kommunikation'],
       ['genesung', 'recovery', 'remission', 'besser', 'bessern', 'verbessern'],
       ['kosten', 'bezahlt', 'bezahlen', 'krankenkasse', 'finanzierung'],
-      ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'gewuergt', 'wuergt', 'frauenhaus', 'angst vor ihm', 'angst vor ihr', 'angst vor meinem partner', 'angst vor meiner partnerin', 'angst vor meinem mann', 'angst vor meiner frau', 'bedroht mich', 'mich bedroht', 'morddrohung', 'todesdrohung', 'wuergen', 'angst vor meinem sohn', 'angst vor meiner tochter', 'angst vor meinem vater', 'angst vor meiner mutter', 'angst vor meinem bruder', 'angst vor meiner schwester', 'mit dem tod bedroht', 'mit dem tod gedroht', 'droht mit dem tod', 'drohte mit dem tod', 'droht mit mord', 'mit mord gedroht', 'mit mord bedroht', 'angst vor meinem ex', 'angst vor meiner ex',
-        /* r4-74 (aus PR #713, SU-02) */ 'ohrfeige', 'ohrfeigen', 'geohrfeigt', 'angst um mein leben', 'angst um mein eigenes leben',
-        /* r4-75: als Wendung, weil «gegeben» kein Füllwort mehr ist */ 'ohrfeige gegeben', 'ohrfeigen gegeben']
+      ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'gewuergt', 'wuergt', 'frauenhaus', 'angst vor ihm', 'angst vor ihr', 'angst vor meinem partner', 'angst vor meiner partnerin', 'angst vor meinem mann', 'angst vor meiner frau', 'bedroht mich', 'mich bedroht', 'morddrohung', 'todesdrohung', 'wuergen', 'angst vor meinem sohn', 'angst vor meiner tochter', 'angst vor meinem vater', 'angst vor meiner mutter', 'angst vor meinem bruder', 'angst vor meiner schwester', 'mit dem tod bedroht', 'mit dem tod gedroht', 'droht mit dem tod', 'drohte mit dem tod', 'droht mit mord', 'mit mord gedroht', 'mit mord bedroht', 'angst vor meinem ex', 'angst vor meiner ex']
     ];
     /* Sicherheitsabschnitte (r4-32, Entscheide der Auftraggeberin vom 15.10.2026, R31-P05):
        Enthält eine Anfrage ein Tötungswort («umbringen», «töten», «bringt … um»), stehen «Wenn Suizidgedanken ein Thema sind»
@@ -433,63 +419,8 @@
     synonyms.suizid.forEach(function (value) {
       if (value.indexOf(' ') === -1 && value !== 'sterben' && value !== 'umbringen' && value !== 'umzubringen') suicideWords[value] = 1;
     });
-    /* r4-74 (aus PR #713, SU-01, SU-09): Tippfehler in wenigen Schlüsselwörtern («Suizit», «Selbsmord», «Boderline»). Ersetzt wird nur ein
-       Wort ab fünf Zeichen, das auf der Website nicht vorkommt und von genau einem Schlüsselwort um höchstens ein Zeichen
-       abweicht (gleicher Anfangsbuchstabe). */
-    var typoTargets = Object.keys(suicideWords).concat(['selbstverletzung', 'selbstverletzen', 'borderline', 'therapie', 'medikament', 'medikamente', 'krisenplan']);
-    var vocabulary = null;
-    function knownWord(word) {
-      if (!vocabulary) {
-        vocabulary = {};
-        items.forEach(function (item) {
-          normalized(item.getAttribute('data-search-title') + ' ' + item.getAttribute('data-search-text')).split(' ').forEach(function (w) { vocabulary[w] = 1; });
-        });
-      }
-      return vocabulary[word] === 1;
-    }
-    function oneEdit(a, b) {
-      if (Math.abs(a.length - b.length) > 1 || a === b) return false;
-      var i = 0, j = 0, edits = 0;
-      while (i < a.length && j < b.length) {
-        if (a[i] === b[j]) { i++; j++; continue; }
-        if (++edits > 1) return false;
-        if (a.length > b.length) i++; else if (a.length < b.length) j++; else { i++; j++; }
-      }
-      return edits + (a.length - i) + (b.length - j) <= 1;
-    }
-    /* r4-74 (Ergänzung zu PR #713, Wortlisten-Prüfung): Beugungen und Zusammensetzungen eindeutiger Suizidwörter
-       («suizidgefährdet», «Selbstmorddrohung», «nach Suizidversuchen», «lebensmüden») zählen wie das Grundwort. Vorher fand
-       die Suche für die meisten dieser Formen nichts oder nur einen Quelleneintrag. */
-    var suicideStems = [['suizid', 'suizid'], ['selbstmord', 'selbstmord'], ['selbstmoerd', 'selbstmord'], ['selbsttoetung', 'selbsttoetung'],
-      ['lebensmued', 'lebensmuede'], ['abschiedsbrief', 'abschiedsbrief'], ['todeswunsch', 'todeswunsch'], ['todeswuensch', 'todeswunsch'],
-      ['freitod', 'suizid'], ['ueberdos', 'ueberdosis']];
-    function baseWord(word) {
-      if (synonyms[word]) return word;
-      for (var s = 0; s < suicideStems.length; s++) { if (word.indexOf(suicideStems[s][0]) !== -1) return suicideStems[s][1]; }
-      return word;
-    }
-    function fixTypos(text) {
-      return text.split(' ').map(function (word) {
-        word = baseWord(word);
-        if (word.length < 5 || stopwords.has(word) || synonyms[word] || knownWord(word)) return word;
-        var hits = typoTargets.filter(function (target) { return target[0] === word[0] && oneEdit(word, target); });
-        return hits.length === 1 ? hits[0] : word;
-      }).join(' ');
-    }
-    /* r4-74 (aus PR #713, SU-01): «Ich will nicht mehr», «Er sagt, er will nicht mehr» am Satzende ist eine häufige Umschreibung von
-       Suizidgedanken und zugleich von Erschöpfung: «Wenn Suizidgedanken ein Thema sind» zuerst, «Warnsignale für Überlastung»
-       danach. Nicht «will nicht mehr mit ihr reden» (Ergänzung folgt), nicht «kann nicht mehr» (Erschöpfung, Bestand). */
-    var giveUpEnding = /(?:^| )(?:will|moechte|mag) nicht mehr$|(?:^| )wott (?:nueme|nuemme|nuem)$/;
-    /* r4-74 (aus PR #713, SU-02): Kinder als Betroffene von Gewalt ohne Tötungswort («mein Mann schlägt die Kinder»): Kinderschutz zuerst.
-       Nicht «der Vater meiner Kinder schlägt mich» (gleiche Ausnahmen wie bei der Regel für Tötungswörter). */
-    function childNamedWithViolence(words) {
-      for (var c = 0; c < words.length; c++) {
-        if (childWords[words[c]] && !childGuards[words[c - 1]] && !childGuards[words[c - 2]]) return true;
-      }
-      return false;
-    }
     function queryGroups(query) {
-      var normalizedQuery = fixTypos(normalized(query));
+      var normalizedQuery = normalized(query);
       var paddedQuery = ' ' + normalizedQuery + ' ';
       var phraseHits = phraseGroups.filter(function (entry) {
         return paddedQuery.indexOf(' ' + entry.phrase + ' ') !== -1;
@@ -516,16 +447,8 @@
         words.some(function (word) { return synonyms[word] === violenceGroup; });
       if (order && suicideSignal && order[0] === 'gewalt') order = ['suizid', 'gewalt'];
       if (!order && suicideSignal && violenceSignal) order = ['suizid', 'gewalt'];
-      if (!order && !suicideSignal && violenceSignal && childNamedWithViolence(words)) order = ['kinder', 'gewalt'];
-      /* r4-74 (aus PR #713, SU-02): Gewalt gegen die eigene Person ohne Tötungswort («der Vater meiner Kinder schlägt mich») */
-      if (!order && !suicideSignal && violenceSignal && words.indexOf('mich') !== -1) order = ['gewalt'];
-      if (!order && !violenceSignal && giveUpEnding.test(normalizedQuery)) {
-        var giveUp = [synonyms.suizid];
-        giveUp.pins = [safetyTargets.suizid, 'selbstfuersorge.html#warnsignale'];
-        return giveUp;
-      }
       if (order) {
-        var pinned = [synonyms[order[0] === 'gewalt' || order.indexOf('suizid') === -1 ? 'gewalt' : 'suizid']];
+        var pinned = [synonyms[order[0] === 'gewalt' ? 'gewalt' : 'suizid']];
         pinned.pins = order.map(function (key) { return safetyTargets[key]; });
         return pinned;
       }
@@ -541,27 +464,22 @@
         return true;
       });
     }
-    var wholeWordTerms = { fu: 1, iv: 1 };
-    function matches(field, group, whole) {
-      /* r4-74 (aus PR #713, SU-06, R27-O04): die Kürzel «FU» und «IV» nur als ganzes Wort, nicht als Teil von «für» oder «positiv».
-         r4-75: nur, wenn die Anfrage aus diesem einen Begriff besteht. Zusammen mit anderen Begriffen («Suizidgefahr FU») schloss
-         die strenge Fassung den Suizidabschnitt aus; dort gilt wieder das Verhalten vor r4-74. */
-      return group.some(function (term) { return whole && wholeWordTerms[term] ? (' ' + field + ' ').indexOf(' ' + term + ' ') !== -1 : field.indexOf(term) !== -1; });
+    function matches(field, group) {
+      return group.some(function (term) { return field.indexOf(term) !== -1; });
     }
     function score(item, query, groups, relaxed) {
       /* Zwischenspeicher (W3C-12): setzt voraus, dass sich die data-search-Attribute nach dem Laden nicht ändern. */
       var cached = item.__pukSearch || (item.__pukSearch = { title: normalized(item.getAttribute('data-search-title')), haystack: normalized(item.getAttribute('data-search-text')), keywords: normalized(item.getAttribute('data-search-keywords')) });
       var title = cached.title, haystack = cached.haystack, keywords = cached.keywords;
-      var whole = groups.length === 1;
-      var hitCount = groups.filter(function (group) { return matches(haystack, group, whole); }).length;
+      var hitCount = groups.filter(function (group) { return matches(haystack, group); }).length;
       var required = relaxed && groups.length > 1 ? Math.max(1, Math.min(groups.length - 1, Math.ceil(groups.length * .6))) : groups.length;
       if (hitCount < required) return -1;
       var value = item.getAttribute('data-search-level') === 'section' ? 20 : 0;
       if (title === query) value += 600;
       else if (title.indexOf(query) !== -1) value += 300;
       groups.forEach(function (group) {
-        if (matches(title, group, whole)) value += 80;
-        if (matches(keywords, group, whole)) value += 140;
+        if (matches(title, group)) value += 80;
+        if (matches(keywords, group)) value += 140;
         var positions = group.map(function (term) { return haystack.indexOf(term); }).filter(function (position) { return position !== -1; });
         var first = positions.length ? Math.min.apply(Math, positions) : -1;
         if (first !== -1) value += Math.max(0, 30 - Math.floor(first / 120));

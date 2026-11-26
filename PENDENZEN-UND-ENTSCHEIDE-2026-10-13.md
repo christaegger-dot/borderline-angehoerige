@@ -8,6 +8,43 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 
 **Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken,** zitiert diese Übersicht nicht wörtlich. Sie beschreibt die Proben und nennt den Prüfbericht unter `audit-results/`, der den Wortlaut enthält. Festgeschriebene Anfragen stehen in `authoring/tests/suche-ersttreffer.tsv`. Drei Proben stehen in keinem Prüfbericht; sie sind mit «Wortlaut nur in `f700885`» gekennzeichnet (`git show f700885:PENDENZEN-UND-ENTSCHEIDE-2026-10-13.md`).
 
+## Offene Pendenzen im Überblick · Stand 26.11.2026
+
+Diese Übersicht fasst zusammen, was am 26.11.2026 wirklich offen ist. Sie ersetzt die Abschnitte unten nicht; dort stehen Nachweise und Wortlaut. Einträge unter «Offen» in älteren Abschnitten, die inzwischen erledigt sind, tragen den Vermerk «Bereinigung 26.11.2026».
+
+**Prüfung und Ablauf (26.11.2026):**
+- Nachprüfung von r4-70 und r4-71: beauftragt, läuft in einer eigenen Sitzung.
+- Nachprüfung von #811: liegt als Entwurf vor ([PR #823](https://github.com/christaegger-dot/borderline-angehoerige/pull/823)). Ohne Nachprüfung: #816 und r4-69 (#821).
+- Merge-Aufträge belegen (Christa Egger): #809 bis #812, #819, #821, #822, #824 (N809-1).
+- Bestätigen (Christa Egger): fortgeltender Entscheid vom 18.10.2026 für r4-68 bis r4-71; Bildunterschriften 36em statt `80ch` (r4-70).
+- Entscheide: Layouttest in die CI (N809-7); Abbruch beim Screenshot melden (N813-5).
+
+**Offene Pull Requests (Status geprüft am 26.11.2026, Abgleich mit `main` im Nachweis `audit-results/2026-11-26-bereinigung-pendenzen/BERICHT.md`):**
+- Nachprüfungsberichte, je nur ein neuer Ordner unter `audit-results/`, ohne Konflikt mit `main`: [#793](https://github.com/christaegger-dot/borderline-angehoerige/pull/793) (frühere Fassung von #787; N65-1 bis N65-6), [#799](https://github.com/christaegger-dot/borderline-angehoerige/pull/799) (N65-7, N65-8), [#801](https://github.com/christaegger-dot/borderline-angehoerige/pull/801) (N65b-1 bis N65b-3), [#800](https://github.com/christaegger-dot/borderline-angehoerige/pull/800), [#803](https://github.com/christaegger-dot/borderline-angehoerige/pull/803) und [#804](https://github.com/christaegger-dot/borderline-angehoerige/pull/804) (drei Prüfungen von r4-66), [#802](https://github.com/christaegger-dot/borderline-angehoerige/pull/802) (r4-67; N67-1, N67-2) und [#823](https://github.com/christaegger-dot/borderline-angehoerige/pull/823) (#811; N811-1 bis N811-7). Ihre Befunde stehen nur teilweise in dieser Datei.
+- Nachführungen dieser Datei vom 30.10.2026, deren Inhalt auf `main` fehlt: [#805](https://github.com/christaegger-dot/borderline-angehoerige/pull/805) (Merge von #762, Merge-Regel R65-P01), [#806](https://github.com/christaegger-dot/borderline-angehoerige/pull/806) (Abschnitt zur Nachprüfung #801; Konflikt mit `main`) und [#807](https://github.com/christaegger-dot/borderline-angehoerige/pull/807) (#797, #798, «Offen» bei r4-64).
+- [#795](https://github.com/christaegger-dot/borderline-angehoerige/pull/795) (r4-67, N62-2): bereit zur Prüfung, Konflikt mit `main` (Kennung und `site/`).
+- [#713](https://github.com/christaegger-dot/borderline-angehoerige/pull/713) (Entwurf vom 23.10.2026, Auftrag «Einverstanden, leg los»; Kennung r4-43, seither anders vergeben; Konflikt mit `main`): Struktur- und Technikbefunde, nie gemergt. Auf `main` fehlen daraus unter anderem zehn Weiterleitungen der früheren Notfallseiten auf «Krisen begleiten» (`/notfall`, `/notfallkarte` und `/soforthilfe` führen heute auf die Startseite), 25 Sucherwartungen samt Suchregeln und der Link `kinder.html#schnell` auf «Kurz und klar».
+- Zu entscheiden (Christa Egger): je PR mergen, Inhalt übernehmen oder schliessen.
+
+**Website, technisch und gestalterisch:**
+- Review-Punkt 2: Sicherheitskarte der Startseite bei 375 × 667 und 360 × 740 unter dem ersten Bildschirm; der Layouttest meldet deshalb 2 Abweichungen (Abschnitt «r4-71»).
+- P4-3: Platzhalter im Suchfeld am Telefon abgeschnitten (Wortlaut). Review-Punkte 11 (`og:image`) und 12 (Raster der Startseite).
+- N52-3 (Rest) und N53-1: Sicherheitskarte bei 768 × 1024 «ganz sichtbar»; erste Textzeile bei 1024 × 768 abgeschnitten.
+- Optional: N53-2 (verwaiste Band-Fassung des Titelbilds), W2 bis W4 und V4 aus r4-40, N815-5 und N815-6.
+- Entscheide (Christa Egger): N49-2, H1 (Nachprüfung r4-64), Silbentrennung kurzer Vorsilben (r4-42), Kurvenmotiv als Schmuck (r4-49).
+- N62-2 (`foreignObject`): [PR #795](https://github.com/christaegger-dot/borderline-angehoerige/pull/795) offen; bei einer Neufassung nächste freie Kennung.
+
+**Inhalt, Fach und Recht (Tabelle im Abschnitt «Aktuell sofort umsetzbare Pendenzen»):**
+- A03-R35 (Sprach-Audit 03, 182 Befunde): Entscheide und Freigaben.
+- Suche: R30-P01 und R34-P02.
+- R29-P01 bis R29-P08 und R29-P16; Profilentscheide R29-P09 und R29-P10; optional A8-S, R29-P17, R30-P02, R31-P01.
+- R3C-A11: nur noch der Teil «versionsgebundene Freigabe».
+- Empfohlen: Durchsicht von Impressum und Datenschutz durch den Rechtsdienst.
+
+**Termine:** AR3-5 (gemeinsames Profilpaket, im Profil-Repository) seit 16.11.2026 fällig, Abschluss bis 13.01.2027. Angebote wieder prüfen bis 14.04.2027.
+
+**Keine Pendenz:** Prüfungen mit echtem Screenreader, Safari, Firefox und realen Geräten (AR3-3, Entscheid vom 13.10.2026). Sie bleiben eine dokumentierte Evidenzgrenze.
+
 ## r4-71 · Website-Review: Entscheide zu den Punkten 1, 3, 6, 8 und 9 · auf `main` seit 26.11.2026
 
 **GitHub:** [PR #824](https://github.com/christaegger-dot/borderline-angehoerige/pull/824), Branch `claude/sharp-mendel-6ecwbi` (Name von der Cloud-Sitzung vorgegeben, verstösst gegen die Branch-Konvention in `AGENTS.md`), Kopf `059d278`, gemergt als `70238ea` am 26.11.2026, 17:53:39 UTC, über das Konto von Christa Egger, rund 9 Sekunden nachdem der Entwurf auf «bereit zur Prüfung» gestellt wurde. Einen Merge-Auftrag nennen weder der PR noch der Merge-Commit (auf GitHub nicht belegt). CI `build-and-compare` grün auf `059d278`. Codex-Review «Completed» ohne Befund um 17:54:06 UTC, nach dem Merge (R28-O01 nicht eingehalten). Eine Nachprüfung vor dem Merge gab es nicht. Live um 17:55 UTC: `data-puk-site-build="r4-71"` auf Start-, Krisen- und Suchseite, Akuthinweis vor den Schritten, der Satz auf der Suchseite einmal.
@@ -33,7 +70,7 @@ Dieses Dokument ist nach der Migration die verbindliche Übersicht für offene A
 **Offen:**
 - Nachprüfung von r4-70 und r4-71 durch eine andere Sitzung, nachträglich: am 26.11.2026 in einer eigenen Sitzung beauftragt, noch kein PR.
 - Merge-Auftrag zu #824 belegen (Christa Egger); Bestätigung, dass der fortgeltende Entscheid vom 18.10.2026 auch für r4-68 bis r4-71 gilt.
-- Prüfung auf echten Geräten (Android mit vergrösserter Systemschrift für r4-68; Safari, Firefox, Bildschirmleser).
+- Prüfungen auf echten Geräten, mit Safari, Firefox und Bildschirmleser: nach AR3-3 nicht vorgesehen (Entscheid der Fachstelle vom 13.10.2026); die Wirkung von r4-68 auf echten Geräten bleibt deshalb unbelegt. Eine Prüfung nur, wenn Christa Egger sie neu beauftragt.
 - Punkt 2 auf kleinen Telefonen: Die zwei Layouttest-Proben bleiben rot. Eine gemessene, nicht gewählte Lösung steht im Nachweis.
 - Punkt 9 (P4-3) bleibt offen.
 - Aus dem Review nicht angegangen: 11 (kein Vorschaubild `og:image`) und 12 (Raster «Ich möchte etwas verstehen», Geschmackssache).
@@ -93,7 +130,7 @@ Wortlaut und Skript sind unverändert. **Kennung:** r4-70 (r4-67 übersprungen, 
 
 **Nachprüfung:** Auftrag von Christa Egger, 26.11.2026: «Starte eine Nachprüfung von #815 in einer neuen Sitzung». Branch `pruefung/2026-11-26-nachpruefung-pr-815`, [PR #817](https://github.com/christaegger-dot/borderline-angehoerige/pull/817), Kopf `d75d5f8`, gemergt als `55c35fc` am 26.11.2026, 16:52:55 UTC, über das Konto von Christa Egger. Einen Merge-Auftrag nennen weder der PR noch der Merge-Commit (auf GitHub nicht belegt). Der PR ändert nur `audit-results/`; `build-and-compare` lief deshalb nicht, nur die Netlify-Prüfungen (grün). Codex-Review «Completed» ohne Befund um 16:53:33 UTC, 38 Sekunden nach dem Merge (R28-O01 nicht eingehalten). Nachweis: [`audit-results/2026-11-26-nachpruefung-pr-815/NACHPRUEFUNG.md`](audit-results/2026-11-26-nachpruefung-pr-815/NACHPRUEFUNG.md). Ergebnis «Technisch korrekt. Nachbesserung bei Ablauf und Dokumentation empfohlen, ohne Blocker.» Tag, Wirkung auf `site/`, Gates, axe und Live-Stand sind bestätigt. Befunde: N815-1 (wichtig, Ablauf: Website geändert vor Nachprüfung und Codex-Ende, ohne belegten Merge-Auftrag und ohne bestätigte Freigabe), N815-2 bis N815-4 (gering; umgesetzt in r4-69, siehe dort), N815-5 bis N815-7 (Hinweise: Leitfaden in der Nachprüfsitzung nicht abrufbar, Wirkung des Tags nicht messbar und kein Selbsttest dafür, Kleinigkeiten).
 
-**Offen:** Bestätigung der Freigabe; Prüfung auf einem echten Gerät mit vergrösserter Systemschrift (Android, Chrome); Merge-Auftrag belegen (Christa Egger, N815-1); Wortlaut des Leitfadens `respect-os-text-scale` im Nachweis festhalten (N815-5); optional ein Selbsttest für das Tag (N815-6).
+**Offen:** Bestätigung der Freigabe; Prüfung auf einem echten Gerät mit vergrösserter Systemschrift (Android, Chrome; nach AR3-3 nicht vorgesehen, Wirkung deshalb unbelegt, Bereinigung 26.11.2026); Merge-Auftrag belegen (Christa Egger, N815-1); Wortlaut des Leitfadens `respect-os-text-scale` im Nachweis festhalten (N815-5); optional ein Selbsttest für das Tag (N815-6).
 
 ## Layouttest · Ausnahme B2c als bestanden gewertet · auf `main` seit 26.11.2026 (#809, Nachbesserung #811, Code-Review-Korrekturen #813, Nachprüfung #814, Nachbesserung #816)
 
@@ -136,13 +173,13 @@ Wortlaut und Skript sind unverändert. **Kennung:** r4-70 (r4-67 übersprungen, 
 - **Wer:** die Sitzung, die die Nachprüfung #814 verfasst hat; sie setzt ihre eigenen Befunde um. Prüfen muss diese Nachbesserung eine andere Sitzung.
 
 **Offen:**
-- Nachprüfung der Nachbesserung (#811, auf `main`) durch eine andere Sitzung, nachträglich: **in Arbeit** in einer eigenen Sitzung (Auftrag von Christa Egger, 26.11.2026: «Starte eine Nachprüfung von #811 in einer neuen Sitzung»; vorgesehener Nachweis `audit-results/2026-11-26-nachpruefung-pr-811/NACHPRUEFUNG.md`, als Entwurfs-PR).
+- Nachprüfung der Nachbesserung (#811, auf `main`) durch eine andere Sitzung, nachträglich: **in Arbeit** in einer eigenen Sitzung (Auftrag von Christa Egger, 26.11.2026: «Starte eine Nachprüfung von #811 in einer neuen Sitzung»; vorgesehener Nachweis `audit-results/2026-11-26-nachpruefung-pr-811/NACHPRUEFUNG.md`, als Entwurfs-PR). **Bereinigung 26.11.2026:** liegt als Entwurf vor, [PR #823](https://github.com/christaegger-dot/borderline-angehoerige/pull/823), nicht gemergt.
 - Nachbesserung N813-1 bis N813-4 ([PR #816](https://github.com/christaegger-dot/borderline-angehoerige/pull/816), gemergt): Nachprüfung durch eine andere Sitzung, nachträglich; Merge-Auftrag belegen (Christa Egger).
 - N813-5 (Hinweis): Ein geschlossenes `<details>` um die Figur bricht den Layouttest beim Screenshot ab, ohne `ERGEBNIS.json` (Entscheid, ob der Screenshot-Schritt das melden soll).
 - N809-1: Merge-Auftrag zu #809 belegen (Christa Egger); dasselbe gilt für #810, #811, #812 und #819.
 - N809-7: ob der Layouttest in die CI soll (Entscheid).
 
-## Korrektur · r4-66 · Befund N61-2 · offen seit 30.10.2026
+## Korrektur · r4-66 · Befund N61-2 · auf `main` seit 30.10.2026 (#787)
 
 **GitHub:** Branch `pruefung/2026-10-30-nachpruefung-r4-61` (Name historisch), [PR #787](https://github.com/christaegger-dot/borderline-angehoerige/pull/787), seit 11:11 UTC kein Entwurf mehr (Codex-Auslöser «Draft marked ready»), **nicht gemergt**. **Berichtigung 26.11.2026 (N813-2):** #787 ist gemergt als `cec2bbc` am 30.10.2026, 11:46:37 UTC; dieser Abschnitt gibt sonst den Stand vor dem Merge wieder. Auftrag von Christa Egger, 30.10.2026: «Nachbesserung N61-1 bis N61-3 umsetzen»; Entscheide «#787 neu fassen, dann prüfen» und, nach N65-1 der Nachprüfung r4-65 ([PR #793](https://github.com/christaegger-dot/borderline-angehoerige/pull/793)), «#787 als r4-66 neu fassen». Grundlage: `main` mit r4-65 (#784, `19a72dc`). Nachweis: [`audit-results/2026-10-30-n61-2-r4-66/BERICHT.md`](audit-results/2026-10-30-n61-2-r4-66/BERICHT.md).
 
@@ -301,7 +338,7 @@ Wortlaut und Skript sind unverändert. **Kennung:** r4-70 (r4-67 übersprungen, 
 | Befund | Schweregrad | Inhalt | Stand |
 |---|---|---|---|
 | N61-1 | wichtig | `hiddenFlag` wertet `hidden` und `inert` auch an einem `<svg>` als verborgen; Chromium verbirgt das SVG damit nicht. Im Direkteinstieg ergibt `<svg hidden aria-label="Pfeil">` in Chromium «Kurz und klar Pfeil», das Gate meldet nichts (Regel `relabelled`, `accTxt`); in Abbildungen lässt `<svg hidden>` ohne Textalternative `figure-alt` durch (seit r4-60). Dieselbe Ursache wie N60-3; das Review auf #780 bestätigt den Teil an `relabelled` | umgesetzt in r4-65 (PR #784, `19a72dc`, Inhalt nachgeprüft als r4-62 mit #790), Abbildungen und Direkteinstieg; N62-1 entschieden |
-| N61-2 | gering | `<img alt>` oder `<input value>` im Direkteinstieg ändern den Namen, das Gate meldet nichts; bestand schon vor r4-61 | offen; in r4-66 (PR #787, Entwurf), Nachprüfung der früheren Fassung in PR #793 (Entwurf) |
+| N61-2 | gering | `<img alt>` oder `<input value>` im Direkteinstieg ändern den Namen, das Gate meldet nichts; bestand schon vor r4-61 | offen; in r4-66 (PR #787, Entwurf), Nachprüfung der früheren Fassung in PR #793 (Entwurf). **Bereinigung 26.11.2026:** erledigt, r4-66 mit #787 gemergt als `cec2bbc` am 30.10.2026 |
 | N61-3 | gering | Pendenzendatei auf #780 durch #778 und #779 überholt, #780 als «Entwurf» geführt | mit diesem Eintrag erledigt |
 
 **Offen:** N61-2 (N61-1 umgesetzt in r4-65).
@@ -333,7 +370,7 @@ Wortlaut und Skript sind unverändert. **Kennung:** r4-70 (r4-67 übersprungen, 
 |---|---|---|---|
 | N56-1 | gering | Die zwei Überschriften im Footer sehen aus wie der Text darunter (16 px, Regular, grau, ohne Abstand); der Pflichthinweis «Diese Website ersetzt keine …» geht ohne Abstand in den Namen der Klinik über (`site.css:794–795`) | Entscheid Christa Egger 30.10.2026: «N56-1: Überschriften in Medium und Abstand vor Hinweis umsetzen»; umgesetzt in r4-64 ([PR #788](https://github.com/christaegger-dot/borderline-angehoerige/pull/788), siehe Abschnitt «Footer-Überschriften · r4-64»); Nachprüfung r4-64 (#794): keine Nachbesserung nötig |
 
-**Offen:** Nachprüfung r4-64 liegt vor (#794, keine Nachbesserung nötig); zu entscheiden bleibt weiterhin, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Abschnitt r4-55).
+**Offen:** Nachprüfung r4-64 liegt vor (#794, keine Nachbesserung nötig); zu entscheiden bleibt weiterhin, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Abschnitt r4-55). **Bereinigung 26.11.2026:** entschieden mit r4-71 (Entscheid Christa Egger vom 26.11.2026 «Alles auf 16 px», [PR #824](https://github.com/christaegger-dot/borderline-angehoerige/pull/824)); kein Text am Bildschirm unter 16 px.
 
 ## Nachprüfung r4-60 · liegt vor seit 30.10.2026
 
@@ -594,9 +631,9 @@ Wortlaut und Skript sind unverändert. **Kennung:** r4-70 (r4-67 übersprungen, 
 - **13 px:** Etiketten und Schlüssel in Abbildungen.
 - **15 px:** Direkteinstiege unter 22,5 rem, «Geprüft am», aufklappbare Titel, Bildlegenden, Tabellen und der Schutzsatz unter Abbildungen.
 
-Die Liste steht im Bericht. Zu entscheiden ist, ob die Regel «Nichts unter 16 px» auch dafür gilt.
+Die Liste steht im Bericht. Zu entscheiden ist, ob die Regel «Nichts unter 16 px» auch dafür gilt. **Bereinigung 26.11.2026:** entschieden mit r4-71 (Entscheid Christa Egger vom 26.11.2026 «Alles auf 16 px», [PR #824](https://github.com/christaegger-dot/borderline-angehoerige/pull/824)); kein Text am Bildschirm unter 16 px.
 
-**Offen:** Nachprüfung von r4-55 und r4-56 liegt vor (PR #779, siehe Abschnitt oben). Zu entscheiden bleibt, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Hinweis). Im Gestaltungssystem ist die Abweichung der Absenderzeile entfernt.
+**Offen:** Nachprüfung von r4-55 und r4-56 liegt vor (PR #779, siehe Abschnitt oben). Zu entscheiden bleibt, ob «Nichts unter 16 px» auch für die übrigen Texte gilt (siehe Hinweis). Im Gestaltungssystem ist die Abweichung der Absenderzeile entfernt. **Bereinigung 26.11.2026:** entschieden mit r4-71 (Entscheid Christa Egger vom 26.11.2026 «Alles auf 16 px», [PR #824](https://github.com/christaegger-dot/borderline-angehoerige/pull/824)); kein Text am Bildschirm unter 16 px.
 
 ## Nachprüfung r4-54 · liegt vor seit 29.10.2026
 
@@ -802,7 +839,7 @@ Aufträge von Christa Egger, 29.10.2026, in der Prüfsitzung des Profils: «Behe
 | Befund | Schweregrad | Inhalt | Stand |
 |---|---|---|---|
 | N52-1 | wichtig | Zwischen 62 rem (992 px) und etwa 1160 px schiebt das breite Titelbild die Sicherheitskarte der Startseite aus dem ersten Bildschirm. Bei 1024 × 768 beginnt sie bei 842 statt 724 px (r4-48). Seit r4-49, durch r4-52 nicht verändert | Entscheid Christa Egger 29.10.2026: «Titelbild erst ab 75 rem zeigen»; umgesetzt in r4-53, veröffentlicht am 29.10.2026 (PR #745, siehe oberster Abschnitt) |
-| N52-2 | gering | Fehlen auf einer Seite die Zeile «Direkteinstiege» **und** die Einträge im Menü, meldet das Gate nichts (`contract.js:513`). Bestand schon in r4-51 | offen, bei der nächsten Arbeit am Seitenrahmen mitnehmen (Zeile auf allen Seiten ausser 404 verlangen, Selbsttestfall) |
+| N52-2 | gering | Fehlen auf einer Seite die Zeile «Direkteinstiege» **und** die Einträge im Menü, meldet das Gate nichts (`contract.js:513`). Bestand schon in r4-51 | offen, bei der nächsten Arbeit am Seitenrahmen mitnehmen (Zeile auf allen Seiten ausser 404 verlangen, Selbsttestfall). **Bereinigung 26.11.2026:** erledigt mit r4-54 (Selbsttestfall «Zeile und Menüeinträge der Direkteinstiege fehlen (r4-54, N52-2)») |
 | N52-3 | gering | Die neue Layoutprobe prüft nur 390 × 844, nur ob die Karte *beginnt*, und wartet nicht auf `document.fonts.ready` | teilweise in r4-53 (Probe bei 1024 × 768 mit `document.fonts.ready`); offen: 768 × 1024 mit «ganz sichtbar» |
 
 **Bestätigt:**
@@ -858,7 +895,7 @@ Aufträge von Christa Egger, 29.10.2026, in der Prüfsitzung des Profils: «Behe
 
 | Befund | Schweregrad | Inhalt | Stand |
 |---|---|---|---|
-| N51-1 | gering | Das Gate merkt nicht, wenn **alle** Direkteinstiege im Menü fehlen (`contract.js`, Bedingung `menuUtility.length &&`). Abweichende und einzelne fehlende Einträge erkennt es. Fielen alle weg, wären «Kurz und klar», «Nachschlagen» und «Suchen» bei 200 % Schrift auf dem Handy nicht erreichbar | offen, bei der nächsten Arbeit am Seitenrahmen mitnehmen (Bedingung streichen, Selbsttestfall ergänzen) |
+| N51-1 | gering | Das Gate merkt nicht, wenn **alle** Direkteinstiege im Menü fehlen (`contract.js`, Bedingung `menuUtility.length &&`). Abweichende und einzelne fehlende Einträge erkennt es. Fielen alle weg, wären «Kurz und klar», «Nachschlagen» und «Suchen» bei 200 % Schrift auf dem Handy nicht erreichbar | offen, bei der nächsten Arbeit am Seitenrahmen mitnehmen (Bedingung streichen, Selbsttestfall ergänzen) . **Bereinigung 26.11.2026:** erledigt mit r4-52 (`needsMenuUtility`, Selbsttestfall «Direkteinstiege im Menü fehlen (r4-52, N51-1)»). Seit r4-71 stehen die Direkteinstiege am Telefon mit Skript nur im Menü; ob sie sichtbar erreichbar sind, prüft der Layouttest («direct entries reachable», 375 und 320 px, Bereinigung vom 26.11.2026) |
 | N51-2 | gering | Ohne JavaScript ist der Kopf bei 200 % Schrift und 320 px 937 statt 896 px hoch (acht Links im offenen Menü). Im Bericht r4-51 nicht genannt | offen, keine Änderung nötig; bei einer Überarbeitung des Kopfs ohne Skript mitprüfen |
 
 **Bestätigt:**
@@ -894,7 +931,7 @@ Aufträge von Christa Egger, 29.10.2026, in der Prüfsitzung des Profils: «Behe
 
 | Befund | Schweregrad | Inhalt | Stand |
 |---|---|---|---|
-| N49-1 | wichtig | Das Titelbild (r4-49) schiebt auf dem Handy die Einstiegskarte «Ich sorge mich um Sicherheit, Selbstgefährdung oder Gewalt.» aus dem ersten Bildschirm. Bei 390 × 844 beginnt sie bei 902 px statt bei 783 px (r4-48). Bei 768 × 1024 ist sie nur angeschnitten. Auf r4-51 gemessen gleich (902 px bzw. 895 px) | **offen**, Gestaltungsentscheid Christa Egger (Band auf dem Handy weglassen, nach den Anliegen zeigen oder flacher; dazu eine Probe im Layouttest) |
+| N49-1 | wichtig | Das Titelbild (r4-49) schiebt auf dem Handy die Einstiegskarte «Ich sorge mich um Sicherheit, Selbstgefährdung oder Gewalt.» aus dem ersten Bildschirm. Bei 390 × 844 beginnt sie bei 902 px statt bei 783 px (r4-48). Bei 768 × 1024 ist sie nur angeschnitten. Auf r4-51 gemessen gleich (902 px bzw. 895 px) | **offen**, Gestaltungsentscheid Christa Egger (Band auf dem Handy weglassen, nach den Anliegen zeigen oder flacher; dazu eine Probe im Layouttest) . **Bereinigung 26.11.2026:** behoben mit r4-52 und r4-53 (Titelbild auf dem Handy ausgeblendet); Sicherheitskarte bei 390 × 844 und, seit r4-71, bei 375 × 812 im ersten Bildschirm. Rest bei 375 × 667 und 360 × 740: Review-Punkt 2 im Abschnitt «r4-71» |
 | N49-2 | gering | Der in r4-48 freigegebene Satz «Mehr dazu auf der Seite «Wenn es riskant oder bedrohlich wird»» steht nur auf «Grenzen setzen». Die Freigabe nennt auch `gefahr.html`; dort bleibt sachlich richtig «Mehr dazu im Abschnitt …» | **offen**, kurze Bestätigung durch Christa Egger; Wortlaut nicht ändern |
 
 **Bestätigt:**
@@ -1405,7 +1442,7 @@ Belege: `audit-results/2026-10-15-release-c-r4-29/FREIGABE.md` mit den Nachträg
 | A8-S | Gesammelte optionale Befunde aus R3C-A8, ohne Frist: A8-03 (Kurztext von `v-ko-tassen` ohne «links … rechts»), A8-04 (Oberkante der Kindkarte in `v-ki-alltag`, «Verantwortung für Krisen»), A8-05 (Spaltentitel und Kurztext von `v-ge-forschung`), A8-06 (Einleitung der Validierungstabelle), «überarbeiten» für `v-vs-bewertungen` (Variante 1 aus dem R2 vom 13.10.2026). A8-07 gehört zu R29-P09, A8-10 zu R29-P10. Hinweise aus Audit 03 (A03-R35, `audit-results/2026-10-16-modul-03-r4-35/BERICHT.md`, Abschnitt 5): zu A8-03 ein Wortlaut ohne «den Schmerz» (`teile/G3-befunde.csv`, G3-014), zu A8-06 der Wortlaut von G3-017, zu A8-04 die sechsfache Reihe «Kinder müssen weder …» | offen | bauende Sitzung, Freigabe |
 | R3C-A9 | Suchlücken schliessen: «Selbstmordgedanken», «Selbstmordversuch», «lebensmüde», «Todeswunsch», «Suizidandrohung», «Überdosis» u. a. ohne Treffer; eine Drohung gegen die eigene Person («droht» mit Infinitiv) auf Gewalt statt Suizid (Wortlaut: `audit-results/2026-10-15-delta-r4-30/PRUEFUNG.md`, Ergebnis je Prüfpunkt); Anfragen festschreiben | in r4-30 umgesetzt; festgeschrieben in `authoring/tests/suche-ersttreffer.tsv` (317 Anfragen); Tötungsverben nach Teilsatz, Sprecher und Objekt gewertet, mit Suizid-Vorrang bei «sich», Suizid-Phrasen und Suizidwörtern (D30-09, D30-13, D30-16 bis D30-20, Codex P1 auf #689); veröffentlicht mit r4-30 (#689) und in der Produktion nachgeprüft; Suchregel ergänzt in r4-31 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
 | R3C-A10 | Drei Links auf «Quellen» entfernen (Forensic Nurses, Opferhilfe «Schutz», Pro Juventute), nach D30-02 auch EBG-Blatt A1; Angabe bleibt als Text, Linkregel bleibt | in r4-30 umgesetzt; veröffentlicht mit r4-30 (#689) und in der Produktion nachgeprüft; Suchregel ergänzt in r4-31 | bauende Sitzung |
-| R3C-A11 | Selbsttest des Gates auf diese Website umstellen, Aufruf über Schalter und CI; R3 im Gate an die Änderungsrunde binden (W3C-07, R3C-04) | 13.11.2026 | bauende Sitzung; Nachprüfung durch Prüfsitzung |
+| R3C-A11 | Selbsttest des Gates auf diese Website umstellen, Aufruf über Schalter und CI; R3 im Gate an die Änderungsrunde binden (W3C-07, R3C-04) | 13.11.2026. **Bereinigung 26.11.2026:** Selbsttest-Teil erledigt mit r4-36 (17.10.2026, R29-P11); der Teil «versionsgebundene Freigabe» bleibt als begrenzter Prozesspunkt offen (Abschnitt «Reparaturrunde · r4-36»); Frist verstrichen | bauende Sitzung; Nachprüfung durch Prüfsitzung |
 | R29-P01 | PatG ZH § 15 Abs. 2 (vermutetes Einverständnis gegenüber Bezugspersonen in Spitälern): mit der PUK klären; Musterbrief auf «Behandlung» allenfalls anpassen | offen | Auftraggeberin, PUK |
 | R29-P02 | Mögliche Ergänzungen aus dem Rechtsabgleich: Bezugsperson und Patientenverfügung ab 18, gewaltfreie Erziehung (Art. 302 ZGB), Auskunft für Eltern ohne elterliche Sorge (Art. 275a ZGB) | offen | Auftraggeberin |
 | R29-P03 | KJPP-Abstimmung der Seite «Wenn Ihr jugendliches Kind betroffen ist» (M4.3) | offen | Auftraggeberin, KJPP |
@@ -1477,6 +1514,8 @@ Für diese Website besteht daraus aktuell keine lokale Implementierungspendenz.
 ## Dauerhaft akzeptierte Einschränkung
 
 ### AR3-3 · reale Nutzungs- und Geräteprüfungen
+
+**Bereinigung 26.11.2026:** Viele Abschnitte oben führen unter «Offen» noch «Prüfung mit echtem Screenreader; Safari, Firefox, reale Geräte». Nach diesem Entscheid sind das keine operativen Pendenzen, sondern die hier dokumentierte Evidenzgrenze. Die Vermerke bleiben als historischer Stand stehen; eine Prüfung entsteht erst mit einem neuen Auftrag.
 
 Die Fachstelle hat am 13. Oktober 2026 entschieden, die vorgeschlagenen Tests mit Angehörigen, Menschen mit Borderline-Erfahrung, AT-Nutzenden und unabhängigen Fachpersonen nicht durchzuführen. Ebenso sind derzeit keine vollständigen realen Läufe mit NVDA/Firefox, VoiceOver/Safari, Hardwaretastatur, Touchgeräten oder Windows-Hochkontrastmodus vorgesehen.
 

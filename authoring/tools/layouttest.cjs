@@ -49,6 +49,18 @@ const B2C_PHASES=4,B2C_PHASE_END_MAX=1800,B2C_FIGURE_MAX=2400;
   rows.push({test:'menu arrow opens and focuses first link',large,ok:await p.locator('.puk-web-nav a').first().evaluate(e=>e===document.activeElement)});
   await p.keyboard.press('Escape');rows.push({test:'menu Escape closes and restores button focus',large,ok:await btn.evaluate(e=>e===document.activeElement&&e.getAttribute('aria-expanded')==='false')});
   await p.setViewportSize({width:1440,height:812});rows.push({test:'resize wide navigation visible',large,ok:large?await btn.isVisible():await p.locator('.puk-web-nav a').first().isVisible()});
+  /* Bereinigung der Pendenzen vom 26.11.2026 (Folge von r4-71): Seit r4-71 stehen die Direkteinstiege am Telefon mit Skript nur im Menü.
+     Das Gate (N51-1, N52-2) prüft nur das HTML; ob sie sichtbar erreichbar sind, entscheidet das Stylesheet. Bei 375 und 320 px müssen alle
+     Direkteinstiege der Zeile entweder in der Zeile unter dem Absender oder nach dem Öffnen des Menüs sichtbar sein. */
+  for(const w of [375,320]){
+   await p.setViewportSize({width:w,height:812});await p.goto(base+'index.html');await p.evaluate(()=>document.fonts.ready);
+   const want=await p.evaluate(()=>[...document.querySelectorAll('.puk-site-utility__link')].map(a=>a.textContent.trim()));
+   const shown=()=>p.evaluate(()=>{const v=e=>e.checkVisibility({visibilityProperty:true,opacityProperty:true})&&e.getBoundingClientRect().height>0;return [...new Set([...document.querySelectorAll('.puk-site-utility__link,.puk-site-menu__utility-link')].filter(v).map(a=>a.textContent.trim()))]});
+   let got=await shown();
+   if(want.some(t=>!got.includes(t))){const mb=p.locator('.puk-disclosure__button');if(await mb.isVisible()){await mb.click();await p.waitForTimeout(150);got=await shown();await mb.click();}}
+   const ok=want.length>0&&want.every(t=>got.includes(t));
+   rows.push({test:`direct entries reachable ${w}px text200=${large}`+(ok?'':` (sichtbar: ${got.join(', ')||'keine'})`),large,ok});
+  }
   for(const page of ['suche','begriffe','quellen']){
    await p.goto(base+''+page+'.html');let input=p.locator('input').first();
    for(const query of ['DBT','zzzzkeinbegriff','']){await input.fill(query);await p.waitForTimeout(220);rows.push({test:'search/filter state',large,page,query,status:await p.locator('[role="status"]').first().textContent()});}

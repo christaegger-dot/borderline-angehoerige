@@ -216,9 +216,11 @@
     function normalized(value) {
       return String(value || '').normalize('NFC').toLocaleLowerCase('de-CH').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
     }
-    var stopwords = new Set(('aber als am an auf aus bei bin bis brauche das dass dem den der des die darf dich dir ein eine einer einem einen er erlebt es fuer finde gefunden gegen geht gibt hat haben helfen ich ihm ihn im in ist ja kann koennen lassen man mein meine meiner meinem meinen mich mir mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur' +
-      /* r4-74 (aus PR #713, SU-01): Füllwörter aus Alltagssätzen («Sie redet vom Sterben») */
-      ' vom redet spricht sagt sagte schreibt erzaehlt immer wieder oft gegeben gemacht getan').split(' '));
+    var stopwords = new Set(('aber als am an auf aus bei bin bis brauche das dass dem den der des die darf dich dir ein eine einer einem einen er erlebt es fuer finde gefunden gegen geht gibt hat haben helfen ich ihm ihn im in ist ja kann koennen lassen man mein meine meiner meinem meinen mich mir mit nach noch oder partner partnerin sage schon sich sie sind so sohn soll sprechen tochter um und uns unser unsere von vor warum was welche welcher welches wenn wer wie wir wo zu zum zur').split(' '));
+    /* r4-75: Die 13 Füllwörter aus r4-74 (PR #713, SU-01: vom, redet, spricht, sagt, sagte, schreibt, erzählt, immer, wieder, oft,
+       gegeben, gemacht, getan) sind zurückgenommen. Ohne sie verloren Aussagen wie «Ich denke immer wieder an den Tod» den
+       Suizidabschnitt oder jeden Treffer (Nachprüfung von r4-74, Stopp-Regel R34-P01 a und c). «Sie redet vom Sterben» läuft
+       über die Wendung «vom Sterben» und braucht die Füllwörter nicht. */
     var synonymSets = [
       ['umbringen', 'umzubringen', 'selbstmord', 'selbsttoetung', 'suizid', 'suizidal', 'suizidgedanken', 'sterben', 'leben nehmen', 'das leben nehmen', 'sich das leben nehmen', 'nicht mehr leben', 'nicht weiterleben', 'nicht weiter leben', 'nicht mehr da sein', 'nicht mehr aufwachen', 'sterben wollen', 'will sterben', 'moechte sterben', 'tot sein', 'selbstmordgedanken', 'selbstmordversuch', 'suizidversuch', 'suizidalitaet', 'suizidgefahr', 'suizidandrohung', 'suiziddrohung', 'lebensmuede', 'lebensmuedigkeit', 'todeswunsch', 'abschiedsbrief', 'ueberdosis', 'tabletten genommen', 'zu viele tabletten', 'selbstmordversuche', 'suizidversuche', 'suiziddrohungen', 'suizidandrohungen', 'todeswuensche', 'abschiedsbriefe', 'ueberdosen', 'lebensmueder', 'ist lebensmuede', 'tabletten geschluckt', 'ans umbringen', 'ans toeten',
         /* r4-74 (aus PR #713, SU-01) */ 'abschiedsnachricht', 'abschiedsnachrichten', 'vom sterben', 'redet vom tod', 'spricht vom tod', 'nueme laebe', 'nuemme laebe', 'nuem laebe',
@@ -245,7 +247,8 @@
       ['genesung', 'recovery', 'remission', 'besser', 'bessern', 'verbessern'],
       ['kosten', 'bezahlt', 'bezahlen', 'krankenkasse', 'finanzierung'],
       ['gewalt', 'gewalttaetig', 'schlaegt', 'schlagen', 'geschlagen', 'bedroht', 'bedrohen', 'bedrohung', 'gewuergt', 'wuergt', 'frauenhaus', 'angst vor ihm', 'angst vor ihr', 'angst vor meinem partner', 'angst vor meiner partnerin', 'angst vor meinem mann', 'angst vor meiner frau', 'bedroht mich', 'mich bedroht', 'morddrohung', 'todesdrohung', 'wuergen', 'angst vor meinem sohn', 'angst vor meiner tochter', 'angst vor meinem vater', 'angst vor meiner mutter', 'angst vor meinem bruder', 'angst vor meiner schwester', 'mit dem tod bedroht', 'mit dem tod gedroht', 'droht mit dem tod', 'drohte mit dem tod', 'droht mit mord', 'mit mord gedroht', 'mit mord bedroht', 'angst vor meinem ex', 'angst vor meiner ex',
-        /* r4-74 (aus PR #713, SU-02) */ 'ohrfeige', 'ohrfeigen', 'geohrfeigt', 'angst um mein leben', 'angst um mein eigenes leben']
+        /* r4-74 (aus PR #713, SU-02) */ 'ohrfeige', 'ohrfeigen', 'geohrfeigt', 'angst um mein leben', 'angst um mein eigenes leben',
+        /* r4-75: als Wendung, weil «gegeben» kein Füllwort mehr ist */ 'ohrfeige gegeben', 'ohrfeigen gegeben']
     ];
     /* Sicherheitsabschnitte (r4-32, Entscheide der Auftraggeberin vom 15.10.2026, R31-P05):
        Enthält eine Anfrage ein Tötungswort («umbringen», «töten», «bringt … um»), stehen «Wenn Suizidgedanken ein Thema sind»
@@ -539,23 +542,26 @@
       });
     }
     var wholeWordTerms = { fu: 1, iv: 1 };
-    function matches(field, group) {
-      /* r4-74 (aus PR #713, SU-06, R27-O04): die Kürzel «FU» und «IV» nur als ganzes Wort, nicht als Teil von «für» oder «positiv» */
-      return group.some(function (term) { return wholeWordTerms[term] ? (' ' + field + ' ').indexOf(' ' + term + ' ') !== -1 : field.indexOf(term) !== -1; });
+    function matches(field, group, whole) {
+      /* r4-74 (aus PR #713, SU-06, R27-O04): die Kürzel «FU» und «IV» nur als ganzes Wort, nicht als Teil von «für» oder «positiv».
+         r4-75: nur, wenn die Anfrage aus diesem einen Begriff besteht. Zusammen mit anderen Begriffen («Suizidgefahr FU») schloss
+         die strenge Fassung den Suizidabschnitt aus; dort gilt wieder das Verhalten vor r4-74. */
+      return group.some(function (term) { return whole && wholeWordTerms[term] ? (' ' + field + ' ').indexOf(' ' + term + ' ') !== -1 : field.indexOf(term) !== -1; });
     }
     function score(item, query, groups, relaxed) {
       /* Zwischenspeicher (W3C-12): setzt voraus, dass sich die data-search-Attribute nach dem Laden nicht ändern. */
       var cached = item.__pukSearch || (item.__pukSearch = { title: normalized(item.getAttribute('data-search-title')), haystack: normalized(item.getAttribute('data-search-text')), keywords: normalized(item.getAttribute('data-search-keywords')) });
       var title = cached.title, haystack = cached.haystack, keywords = cached.keywords;
-      var hitCount = groups.filter(function (group) { return matches(haystack, group); }).length;
+      var whole = groups.length === 1;
+      var hitCount = groups.filter(function (group) { return matches(haystack, group, whole); }).length;
       var required = relaxed && groups.length > 1 ? Math.max(1, Math.min(groups.length - 1, Math.ceil(groups.length * .6))) : groups.length;
       if (hitCount < required) return -1;
       var value = item.getAttribute('data-search-level') === 'section' ? 20 : 0;
       if (title === query) value += 600;
       else if (title.indexOf(query) !== -1) value += 300;
       groups.forEach(function (group) {
-        if (matches(title, group)) value += 80;
-        if (matches(keywords, group)) value += 140;
+        if (matches(title, group, whole)) value += 80;
+        if (matches(keywords, group, whole)) value += 140;
         var positions = group.map(function (term) { return haystack.indexOf(term); }).filter(function (position) { return position !== -1; });
         var first = positions.length ? Math.min.apply(Math, positions) : -1;
         if (first !== -1) value += Math.max(0, 30 - Math.floor(first / 120));

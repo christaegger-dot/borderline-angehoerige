@@ -63,7 +63,7 @@ X1/KR-01 (Silbentrennung) aus PR #713 bleibt offen, wie in r4-73 festgehalten. D
 
 Die Liste wuchs von 216 auf 253 Erwartungen: 25 aus PR #713, 12 zur Ergänzung (davon 2 Gegenproben), eine geändert («Geheimnis», SU-05). Die übrigen 215 bestehenden Erwartungen gelten unverändert.
 
-Geändert in `site/`: 24 HTML-Dateien (Versionskennung; `suche.html` zusätzlich mit dem Suchindex) und `assets/interaktion.js`.
+Geändert in `site/`: 24 HTML-Dateien (Versionskennung; `suche.html` zusätzlich mit dem Suchindex) und `js/interaktion.js`. (Berichtigt am 26.11.2026 nach dem Merge: hier stand `assets/interaktion.js`.)
 
 ## 4 Vorher-Nachher-Vergleich
 
@@ -99,11 +99,13 @@ Geprüft über alle vier Anfragemengen (`ergebnis/stoppregel.txt`).
 | c) Vorher Treffer, nachher keiner | 26 | keine Ich-Aussage betroffen, siehe unten |
 | d) Gegenprobe: Sicherheitsabschnitt neu unter den ersten zwei | 105 | beabsichtigt; Nebenwirkungen in Abschnitt 7 |
 
-Zu b): 11 Einzelwörter aus dem Quellenblock des Gewaltabschnitts («EBG», «Opferbetreuung», «polizeiliche»); der Abschnitt war dort nur Treffer, weil sein Quellenblock mitgezählt wurde. «Selbstverletzungen» (drei Zeilen, in drei Mengen) führt neu zuerst auf den Abschnitt zu Selbstverletzung statt auf «Suizidgedanken und Suizidalität» der Diagnoseseite. Zwei Zusatzproben mit «immer wieder» hatten den Suizidabschnitt nur zufällig oben, weil die beiden Füllwörter dort vorkommen. Keine dieser Anfragen war angeheftet.
+Zu b): 11 Einzelwörter aus dem Quellenblock des Gewaltabschnitts («EBG», «Opferbetreuung», «polizeiliche»); der Abschnitt war dort nur Treffer, weil sein Quellenblock mitgezählt wurde. «Selbstverletzungen» (drei Zeilen, in drei Mengen) führt neu zuerst auf den Abschnitt zu Selbstverletzung statt auf «Suizidgedanken und Selbstverletzung» der Diagnoseseite (Titel berichtigt am 26.11.2026). Zwei Zusatzproben mit «immer wieder» hatten den Suizidabschnitt nur zufällig oben, weil die beiden Füllwörter dort vorkommen. Keine dieser Anfragen war angeheftet.
 
 Zu c): 24 Einzelwörter kommen nur in einem Quellenblock vor, vor allem in den Angaben «Verwendet in» («Akuthinweis», «Risikostufen», «Atemzüge»). Dazu die Zusatzproben «Rückfall immer wieder» und «IV Rente»; beide hatten vorher einen zufälligen Treffer (über «immer wieder» und über «iv» in «positiv»).
 
 Ergebnis: kein blockierender Fall nach R34-P01.
+
+**Berichtigt am 26.11.2026, nach dem Merge: Dieses Ergebnis war falsch.** Die Nachprüfung hat mit eigenen Proben gezeigt, dass Aussagen zu Suizid und Sätze mit einer Tötungswendung den Suizidabschnitt verlieren, wenn sie eines der neuen Füllwörter enthalten (Kriterien a und c). Die zwei Zusatzproben mit «immer wieder» unter b) waren ein Hinweis darauf; die bauende Sitzung hat sie als Zufallstreffer eingestuft und nicht weiter geprüft. Korrektur: r4-75, `audit-results/2026-11-26-korrektur-suche-r4-75/BERICHT.md`.
 
 ## 7 Nebenwirkungen und Beobachtungen
 

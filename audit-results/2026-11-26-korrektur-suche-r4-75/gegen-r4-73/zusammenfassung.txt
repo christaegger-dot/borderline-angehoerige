@@ -1,0 +1,8 @@
+Vorher: Stand r4-73 · Nachher: Stand r4-75 · Treffer je Anfrage: die ersten 5
+Suchindex: 215 Einträge vorher, 215 nachher · 21 Unterschiede (suchindex-aenderungen.txt)
+1 festgeschrieben: 261 Anfragen · erste drei Treffer geändert bei 41 (festgeschrieben.txt)
+2 zusatzproben: 205 Anfragen · erste drei Treffer geändert bei 133 (zusatzproben-ergebnis.txt)
+3 wortschatz: 5046 Einzelwörter des Suchindex · erste drei Treffer geändert bei 348 (wortschatz-aenderungen.txt)
+4 wortliste: 1680838 Wörter · 34 Schlüsselwörter · 27 Wörter weichen von einem Schlüsselwort um ein Zeichen ab (gleicher Anfangsbuchstabe, ab 5 Zeichen) · Treffer geändert bei 25 (wortliste-tippfehlerregel.txt)
+Stopp-Regel R34-P01: a) Tötungswort ohne Suizid in den ersten zwei: 0 · b) Sicherheitsabschnitt verloren: 14 · c) vorher Treffer, nachher keiner: 24 · d) Sicherheitsabschnitt neu oben (Gegenprobe): 105 (stoppregel.txt)
+JS-Fehler: 0

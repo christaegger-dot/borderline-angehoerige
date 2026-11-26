@@ -1,0 +1,11 @@
+PASS | Pflichtangebot nur auf einer Entwurfsseite | erwartet: service-review | erhalten: link-draft, crisis-number-check, service-review
+Selbsttest: 125/125 bestanden
+PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+Sprach-/UI-Test: 73 Prüfungen bestanden · JS-Fehler 0
+Audit-04-Layouttest: 240 Seitenzustände, 30 Bedienproben, 2 Abweichungen.
+safety card starts in first screen 375x667 (top 802px)
+safety card starts in first screen 360x740 (top 863px)
+exit 1
+build r4-71 · Seiten: 24 · Läufe: 96 · Verstösse: 0 · axe-core 4.14.0 · Chromium 156.0.8078.4

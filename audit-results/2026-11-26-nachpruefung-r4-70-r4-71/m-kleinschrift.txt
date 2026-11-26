@@ -1,0 +1,8 @@
+font 12 r4-70  (Breite:Überlauf/sichtbare Nav-Links+Zeile) 600:0/5+3 640:0/5+3 680:0/5+3 700:0/5+3 720:0/5+3 740:0/5+3 760:0/5+3 761:0/5+3
+font 12 r4-71  (Breite:Überlauf/sichtbare Nav-Links+Zeile) 600:209/8+0 640:171/8+0 680:132/8+0 700:113/8+0 720:94/8+0 740:75/8+0 760:55/8+0 761:0/5+3
+font 13 r4-70  (Breite:Überlauf/sichtbare Nav-Links+Zeile) 600:0/0+3 640:0/0+3 680:0/5+3 700:0/5+3 720:0/5+3 740:0/5+3 760:0/5+3 761:0/5+3
+font 13 r4-71  (Breite:Überlauf/sichtbare Nav-Links+Zeile) 600:0/0+0 640:0/0+0 680:173/8+0 700:154/8+0 720:135/8+0 740:116/8+0 760:96/8+0 761:0/5+3
+font 14 r4-70  (Breite:Überlauf/sichtbare Nav-Links+Zeile) 600:0/0+3 640:0/0+3 680:0/0+3 700:0/5+3 720:0/5+3 740:0/5+3 760:0/5+3 761:0/5+3
+font 14 r4-71  (Breite:Überlauf/sichtbare Nav-Links+Zeile) 600:0/0+0 640:0/0+0 680:0/0+0 700:189/8+0 720:170/8+0 740:151/8+0 760:131/8+0 761:0/5+3
+font 15 r4-70  (Breite:Überlauf/sichtbare Nav-Links+Zeile) 600:0/0+3 640:0/0+3 680:0/0+3 700:0/0+3 720:0/0+3 740:0/0+3 760:0/5+3 761:0/5+3
+font 15 r4-71  (Breite:Überlauf/sichtbare Nav-Links+Zeile) 600:0/0+0 640:0/0+0 680:0/0+0 700:0/0+0 720:0/0+0 740:0/0+0 760:172/8+0 761:0/5+3

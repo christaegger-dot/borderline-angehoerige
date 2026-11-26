@@ -1,0 +1,31 @@
+== dec dec530f
+-- selftest
+Selbsttest: 125/125 bestanden
+exit 0
+-- verify
+PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+-- such
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+-- sprach
+Sprach-/UI-Test: 73 Prüfungen bestanden · JS-Fehler 0
+-- layout
+Bekannte Ausnahme B2c bestanden: Figur 1992 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0
+
+== main b72d59d
+-- selftest
+Selbsttest: 125/125 bestanden
+exit 0
+-- verify
+PARITÄT BESTANDEN: 35 Dateien byte-gleich mit site/
+Build production: 24 Seiten · 0 Blocker · 20 Hinweise · Ziel dist/site
+-- such
+Suchtest: 216 von 216 Erwartungen wie festgeschrieben · JS-Fehler 0
+-- sprach
+Sprach-/UI-Test: 73 Prüfungen bestanden · JS-Fehler 0
+-- layout
+Bekannte Ausnahme B2c bestanden: Figur 1992 px hoch, vierte Phase endet bei 1603 px (Grenze 1800 px, ganze Figur höchstens 2400 px), Schutzhinweis sichtbar.
+Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen.
+exit 0

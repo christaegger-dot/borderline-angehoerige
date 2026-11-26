@@ -1,0 +1,15 @@
+== G1b-details-offen
+-- neu: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 0 Abweichungen. exit 0 
+-- main: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: 0 phase cards outside disclosures instead of 4 exit 1 
+== G2-grenze1500
+-- neu: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: fourth phase ends at 1603px, beyond 1500px exit 1 
+-- main: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: fourth phase ends at 1603px, beyond 1800px exit 1 
+== G3-vierte-karte-weg
+-- neu: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: only 3 of 4 phase cards visible exit 1 
+-- main: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: only 3 of 4 phase cards visible exit 1 
+== G4-figur-zu-hoch
+-- neu: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: whole figure 2692px exceeds 2400px exit 1 
+-- main: Audit-04-Layouttest: 240 Seitenzustände, 27 Bedienproben, 1 Abweichungen. tension core: whole figure 2692px exceeds 2400px exit 1 
+== G5-details-geschlossen
+-- neu:   name: 'TimeoutError' exit 1 
+-- main:   name: 'TimeoutError' exit 1 

@@ -1,4 +1,4 @@
-**Bereit zum Merge: nein** (zweite Nachkontrolle von Kopf `64593de`, 27.11.2026, 04:00 UTC). Vor dem Merge zu beheben: N855-11 (hoch). N855-9 und N855-10 sind für W1 bis W8 behoben. Siehe Abschnitt 6. Frühere Urteile: Kopf `6d9428d` nein (N855-9), Kopf `6210121` nein (N855-1, N855-2).
+**Bereit zum Merge: nein** (dritte Nachkontrolle von Kopf `deadba9`, 27.11.2026, 04:30 UTC). Vor dem Merge zu beheben: N855-12 (hoch). N855-11 ist behoben. Siehe Abschnitt 7. Frühere Urteile: Kopf `64593de` nein (N855-11), Kopf `6d9428d` nein (N855-9), Kopf `6210121` nein (N855-1, N855-2).
 
 # Nachprüfung der Härtung des Suchrasters (PR #855)
 
@@ -289,3 +289,51 @@ Kleiner, aber nicht vollständig: die Regel für `pointer-events` als Inline-Sti
 ### 6.3 Urteil
 
 **Bereit zum Merge: nein.** Vorher zu beheben ist N855-11. Mit der Prüfung der Bildpunkte (oder mindestens den kleinen Massnahmen) und X1 bis X5 im Selbsttest ist aus meiner Sicht nichts Blockierendes mehr offen. Die Grenze «Pseudo-Element des Links selbst» fiele mit der Prüfung der Bildpunkte ebenfalls weg.
+
+## 7 Dritte Nachkontrolle von Kopf `deadba9` (27.11.2026)
+
+Die bauende Sitzung hat N855-11 mit `deadba9` nachgebessert:
+- **Prüfung der Bildpunkte:** Je Sicherheitsabschnitt und Rang, den die Proben erreichen, nimmt das Werkzeug einen Ausschnitt mit und ohne Link auf. Auf r4-77 sind das 18 Kombinationen, dazu kommt die Leermeldung.
+- **Mischmodi:** `mix-blend-mode` gilt als unsichtbar.
+- **Selbsttest:** 29 Konstruktionen.
+
+### 7.1 Was jetzt hält
+
+- **X1 bis X5 werden gemeldet:**
+  - X1 und X2 über die Bildpunkte (je 3 Verschlechterungen, 6 UNSICHTBAR-Zeilen);
+  - X3 über die Eigenschaften (312);
+  - X4 und X5 über die Leermeldung (je 1).
+- **Selbsttest:** lokal 29 von 29, unveränderter Stand besteht.
+- **Kein Fehlalarm:** r4-77 → r4-77 zweimal mit `--immer`: 0 Verschlechterungen, Bildpunkte «unsichtbar 0». Der kleinste Unterschied eines sichtbaren Links liegt beide Male bei 2 064 Bildpunkten, die Schwelle bei 20. Der Abstand ist gross, die Prüfung ist stabil.
+
+Ergebnis: `ergebnis/nachkontrolle3/konstruktionen-deadba9.txt`.
+
+### 7.2 Was weiter falsch besteht
+
+Das Raster misst nur in einer Umgebung: 1280 × 720 Pixel, Querformat, heller Modus. Eine Regel, die nur in einer anderen Umgebung greift, sieht keine Prüfung, weder die der Eigenschaften noch die der Bildpunkte. Gemessen gegen r4-76, je eine Zeile in `site.css`, auf dem simulierten Telefon (iPhone 13) bzw. im dunklen Modus geprüft (`werkzeug/sicht-umgebung.cjs`, `ergebnis/nachkontrolle3/sicht/`):
+
+| Konstruktion | Änderung | Bildschirm | Raster |
+|---|---|---|---|
+| **Y1** | `@media (max-width:40rem){Suizidtreffer{display:none}}` | Telefon: Suizidtreffer fehlt, zuoberst «Krisen begleiten» | **0** |
+| **Y2** | `@media (prefers-color-scheme:dark){…{display:none}}` | dunkler Modus: Suizidtreffer fehlt | **0** |
+| **Y3** | `@media (max-width:40rem){Sicherheitszeile der Leermeldung{display:none}}` | Telefon: nur noch «häufige Fragen» | **0** |
+| **Y4** | `@media (orientation:portrait){…{display:none}}` | Telefon: Suizidtreffer fehlt | **0** |
+
+**N855-12 (hoch, vor dem Merge beheben):** Viele Angehörige suchen auf dem Telefon, und die Website hat schon heute Regeln für schmale Bildschirme (`max-width:760px` und andere) und eine für den dunklen Modus. Ein Fehler in einer solchen Regel ist realistisch, auch ohne Absicht, und das Raster würde ihn nicht melden. Der Bericht der bauenden Sitzung nennt «schmale Bildschirme» als Grenze; nach R34-P01 a) ist diese Grenze aber nicht hinnehmbar, weil sie den Suizidtreffer betrifft.
+
+**Vorschlag (klein, weil die Stichprobe der Bildpunkte klein ist):**
+- Die Prüfung der Bildpunkte und die Leermeldung zusätzlich in zwei Umgebungen ausführen:
+  - Telefon (z. B. `devices['iPhone 13']`: 390 × 664, Hochformat, `isMobile`);
+  - Desktop im dunklen Modus (`colorScheme:'dark'`).
+- Die Reihenfolge der ersten drei Treffer ebenfalls in beiden Umgebungen vergleichen.
+- Y1 bis Y4 in den Selbsttest aufnehmen.
+
+Mit «forced-colors» (Kontrastmodus) gilt dasselbe. Den kann man als dritte Umgebung aufnehmen oder als Grenze dokumentieren.
+
+Weitere Grenzen, als Hinweis, nicht blockierend:
+- **Ungeprüfte Ränge:** Ränge, die keine Probe erreicht, prüft die Bildpunktprüfung nicht. Die bauende Sitzung nennt das selbst.
+- **Unlesbar, aber sichtbar:** Ein Link, der noch Bildpunkte hat, aber nicht lesbar ist (z. B. `transform:scaleX(.05)`, `font-size` sehr klein oder ein ersetzter Text über ein Pseudo-Element des Links), gilt als sichtbar. Das ist eine Frage der Lesbarkeit, nicht der Sichtbarkeit; ich nehme sie nicht als Merge-Hindernis.
+
+### 7.3 Urteil
+
+**Bereit zum Merge: nein.** Vorher zu beheben ist N855-12. Mit Telefon und dunklem Modus in der Prüfung der Bildpunkte und Y1 bis Y4 im Selbsttest ist aus meiner Sicht nichts Blockierendes mehr offen.

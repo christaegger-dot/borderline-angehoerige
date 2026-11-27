@@ -252,12 +252,11 @@
     var separableVerbs = { bring: 1, bringe: 1, bringt: 1, bringst: 1, bringen: 1, brachte: 1, brachten: 1, brachtest: 1, brachtet: 1 };
     var safetyTargets = { suizid: 'krise.html#suizid', gewalt: 'gefahr.html#gewalt', kinder: 'kinder.html#eskalation', druck: 'kommunizieren.html#suizid-angesprochen',
       selbstverletzung: 'krise.html#selbstverletzung' };
-    /* r4-77 (Wiederaufbau der Suche, Schritt 2): eindeutige Wörter für Selbstverletzung («verletzt» ist mehrdeutig und zählt nicht)
-       und Wörter, die ein unmittelbar folgendes Signalwort verneinen */
+    /* r4-77 (Wiederaufbau der Suche, Schritt 2): eindeutige Wörter für Selbstverletzung («verletzt» ist mehrdeutig und zählt nicht) */
     var selfHarmWords = { selbstverletzung: 1, selbstverletzen: 1, ritzen: 1 };
     var signalChildWords = { kind: 1, kinder: 1, kindern: 1 };
-    var safetyTargetList = Object.keys(safetyTargets).map(function (key) { return safetyTargets[key]; });
-    var negations = { nicht: 1, nie: 1, niemals: 1, kein: 1, keine: 1, keinen: 1, keiner: 1 };
+    /* r4-78 (N848-1): Drohen mit Suizid als Druck; «bedroht» gehört zur Gewaltgruppe und zählt hier nicht */
+    var pressureWords = { droht: 1, drohen: 1, drohte: 1, drohten: 1, drohst: 1, drohe: 1, gedroht: 1, androht: 1, angedroht: 1 };
     var actors = { er: 1, sie: 1, du: 1, jemand: 1, man: 1, ihr: 1, mann: 1, frau: 1, partner: 1, partnerin: 1, ex: 1, exmann: 1, exfrau: 1,
       ehemann: 1, ehefrau: 1, lebenspartner: 1, lebenspartnerin: 1, vater: 1, mutter: 1, stiefvater: 1, stiefmutter: 1, mama: 1, papa: 1,
       sohn: 1, tochter: 1, bruder: 1, schwester: 1, freund: 1, freundin: 1, kind: 1, eltern: 1, familie: 1, nachbar: 1, nachbarin: 1 };
@@ -463,24 +462,30 @@
       /* r4-77 (Wiederaufbau der Suche, Schritt 2, Auftrag Christa Egger vom 26.11.2026): Erkennt die Anfrage ohne Tötungswort ein
          Signal für Suizid, Selbstverletzung oder Gewalt, steht der passende Sicherheitsabschnitt fest oben, unabhängig von den
          übrigen Wörtern. Die Treffer danach berechnet die Suche wie bisher aus der ganzen Anfrage. Bei mehreren Signalen:
-         Suizid, Selbstverletzung, Gewalt; sind Kinder als mögliche Betroffene genannt, Kinderschutz vor Gewalt. Steht in der
-         bisherigen Rangfolge schon ein anderer Sicherheitsabschnitt zuoberst («Gewalt gegen Kinder»: Kinderschutz), bleibt er dort
-         und die angehefteten Abschnitte folgen direkt danach.
-         Ein Wort für Selbstverletzung oder Gewalt direkt nach «nicht», «nie», «kein» zählt nicht.
+         Suizid, Selbstverletzung, Gewalt; sind Kinder als mögliche Betroffene genannt, Kinderschutz vor Gewalt.
+         r4-78 (Nachprüfung r4-77, N848-1 bis N848-3; Auftrag Christa Egger vom 27.11.2026: «ok, leg los»):
+         - Droht jemand mit Suizid («droht mit Suizid», «Suiziddrohung»), folgt «Wenn Suizid angesprochen wird» direkt auf den
+           Suizidabschnitt (N848-1; mit Tötungswort weiter zuerst, R25-010).
+         - Kein Vorrang mehr für einen Sicherheitsabschnitt, der nur zufällig zuoberst stand: Die angehefteten Abschnitte stehen
+           immer zuerst (N848-2).
+         - Keine Verneinungsregel mehr: Auch ein verneintes Signalwort heftet an, wie schon bei Suizidwörtern; eine unnötige
+           Anheftung kostet einen Platz, eine fehlende die Hilfe (N848-3).
          Anfragen mit Tötungswort laufen unverändert über safetyOrder (oben, R34-P01). */
-      var negatedAt = function (i) { return i > 0 && negations[words[i - 1]] === 1; };
       var signalPins = [];
-      if (suicideSignal) signalPins.push(safetyTargets.suizid);
-      if (words.some(function (word, i) { return selfHarmWords[word] && !negatedAt(i); })) signalPins.push(safetyTargets.selbstverletzung);
+      if (suicideSignal) {
+        signalPins.push(safetyTargets.suizid);
+        if (words.some(function (word) { return pressureWords[word] || word.indexOf('drohung') !== -1; })) signalPins.push(safetyTargets.druck);
+      }
+      if (words.some(function (word) { return selfHarmWords[word]; })) signalPins.push(safetyTargets.selbstverletzung);
       if (phraseHits.some(function (entry) { return entry.group === violenceGroup; }) ||
-        words.some(function (word, i) { return synonyms[word] === violenceGroup && !negatedAt(i); })) {
+        words.some(function (word) { return synonyms[word] === violenceGroup; })) {
         /* Kinder als mögliche Betroffene («schlägt die Kinder»): Kinderschutz vor dem Gewaltabschnitt, wie bei Tötungswörtern (r4-32).
            Nicht nach «vor», «mit», «meiner» usw. («der Vater meiner Kinder schlägt mich», «vor den Kindern»). */
         var childNamed = words.some(function (word, i) { return signalChildWords[word] && !childGuards[words[i - 1]] && !childGuards[words[i - 2]]; });
         if (childNamed) signalPins.push(safetyTargets.kinder);
         signalPins.push(safetyTargets.gewalt);
       }
-      if (signalPins.length) { groups.pins = signalPins; groups.pinsAfterSafetyLead = true; }
+      if (signalPins.length) groups.pins = signalPins;
       return groups;
       function baseGroups() {
         if (phraseHit && phraseHit.group !== suicideGroup && suicideSignal) return [suicideGroup];
@@ -543,11 +548,7 @@
         var pinnedItems = groups.pins.map(function (target) {
           return items.filter(function (item) { return item.getAttribute('data-search-target') === target; })[0];
         }).filter(Boolean);
-        /* r4-77: Bei Signal-Anheftungen bleibt ein anderer Sicherheitsabschnitt, der schon zuoberst stand, an erster Stelle. */
-        var first = matches.length ? matches[0].item : null;
-        var lead = groups.pinsAfterSafetyLead && first && pinnedItems.indexOf(first) === -1 && safetyTargetList.indexOf(first.getAttribute('data-search-target')) !== -1 ? [matches[0]] : [];
-        var rest = matches.filter(function (entry) { return pinnedItems.indexOf(entry.item) === -1 && lead.indexOf(entry) === -1; });
-        matches = lead.concat(pinnedItems.map(function (item) { return { item: item }; }), rest);
+        matches = pinnedItems.map(function (item) { return { item: item }; }).concat(matches.filter(function (entry) { return pinnedItems.indexOf(entry.item) === -1; }));
       }
       items.forEach(function (item) { item.hidden = true; });
       matches.slice(0, limit).forEach(function (entry) { entry.item.hidden = false; results.appendChild(entry.item); });

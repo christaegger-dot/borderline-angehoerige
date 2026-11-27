@@ -1,0 +1,18 @@
+# Suchraster · Bezug r4-77 · Prüfstand r4-78
+Ergebnis: KEINE VERSCHLECHTERUNG · 45610 Anfragen · 0 Verschlechterungen · JS-Fehler 0 · 231 s
+- saetze: 23328 Anfragen · geändert 1342 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 651
+- ich: 4416 Anfragen · geändert 6 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+- ichRahmen: 4320 Anfragen · geändert 140 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 80
+- proben: 1132 Anfragen · geändert 26 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 12
+- kombinationen: 5622 Anfragen · geändert 54 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 38
+- tippen: 6792 Anfragen · geändert 80 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 43
+Alle Ausnahmen angewendet oder keine eingetragen.
+
+## saetze: 23328 Anfragen · geändert 1342 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 651
+## ich: 4416 Anfragen · geändert 6 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+## ichRahmen: 4320 Anfragen · geändert 140 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 80
+## proben: 1132 Anfragen · geändert 26 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 12
+## kombinationen: 5622 Anfragen · geändert 54 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 38
+## tippen: 6792 Anfragen · geändert 80 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 43
+
+## Vorlage für suchraster-ausnahmen.tsv (nur für gewollte Änderungen; Begründung und Entscheid ergänzen, gleichartige Fälle besser als Muster)

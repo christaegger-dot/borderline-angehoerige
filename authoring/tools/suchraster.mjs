@@ -13,7 +13,7 @@
 //   --titel=<text>         Überschrift in der Step-Summary
 //   bezug-site: der Stand, gegen den verglichen wird (in der CI: site/ der Basis des Pull Requests)
 //   pruef-site: der neue Stand (in der CI: site/ des Pull Requests)
-// Sind suche.html, js/interaktion.js, _headers und alle Dateien unter css/ in beiden Ständen bis auf die Versionskennung
+// Sind suche.html, js/interaktion.js, _headers, _redirects und alle Dateien unter css/ in beiden Ständen bis auf die Versionskennung
 // byte-gleich, liefert die Suche dieselben Treffer in derselben Darstellung; das Werkzeug meldet das und endet ohne
 // Browserlauf mit 0.
 //
@@ -105,7 +105,7 @@ if (exceptionFile && existsSync(exceptionFile)) {
 }
 
 if (!args.includes('--immer')) {
-  const files = new Set(['suche.html', 'js/interaktion.js', '_headers']);
+  const files = new Set(['suche.html', 'js/interaktion.js', '_headers', '_redirects']);
   for (const d of [baseDir, testDir]) if (existsSync(join(d, 'css'))) readdirSync(join(d, 'css')).forEach(f => files.add(`css/${f}`));
   const same = [...files].every(f => {
     // nur die Kennung als Wert ersetzen (data-puk-site-build="…", ?v=…), nicht Erwähnungen in Kommentaren
@@ -207,22 +207,58 @@ function serve(dir) {
   return new Promise(r => server.listen(0, '127.0.0.1', () => r(server)));
 }
 const hookMissing = new Set();
-// Sichtbare Treffer (höchstens sechs) und die angehefteten Abschnitte, die unter ihnen oben stehen. Die Prüfung der
-// Sichtbarkeit erzwingt je Anfrage Stil und Layout; sie verlängert einen vollen Lauf um rund ein Fünftel.
+// Sicht einer Person (N847-4, N855-1), in der Seite als window.__suchrasterSicht definiert:
+//   sichtbar: checkVisibility (Deckkraft, Sichtbarkeit, content-visibility), mindestens 4 × 4 Pixel, Deckkraft mit allen
+//             Vorfahren mindestens 0,1, kein clip und kein clip-path bei sich oder einem Vorfahren, nicht durch das overflow
+//             eines Vorfahren unter 4 × 4 Pixel abgeschnitten, im Dokument (nicht links oder oben ausserhalb);
+//   Treffpunkt: für die ersten drei Treffer und die Links der Leermeldung nach scrollIntoView die Mitte des Links, dort
+//             muss der Link selbst liegen (nicht überdeckt);
+//   Reihenfolge: nach der Lage auf der Seite (oben, dann links), nicht nach dem DOM.
+// Nicht erfasst: Text in Hintergrundfarbe, ein Pseudo-Element des Links selbst über seinem Text.
+function defineSicht() {
+  window.__suchrasterSicht = function (el, hitTest) {
+    if (!el.checkVisibility({ opacityProperty: true, visibilityProperty: true, contentVisibilityAuto: true })) return false;
+    let r = el.getBoundingClientRect();
+    if (r.width < 4 || r.height < 4) return false;
+    let opacity = 1;
+    for (let n = el; n && n.nodeType === 1; n = n.parentElement) {
+      const cs = getComputedStyle(n);
+      opacity *= parseFloat(cs.opacity);
+      if ((cs.clip && cs.clip !== 'auto') || cs.clipPath !== 'none') return false;
+      if (n !== el && (cs.overflowX !== 'visible' || cs.overflowY !== 'visible')) {
+        const b = n.getBoundingClientRect();
+        const w = Math.min(r.right, b.right) - Math.max(r.left, b.left), h = Math.min(r.bottom, b.bottom) - Math.max(r.top, b.top);
+        if (w < 4 || h < 4) return false;
+      }
+    }
+    if (opacity < 0.1) return false;
+    if (r.right + scrollX <= 0 || r.bottom + scrollY <= 0 || r.left + scrollX >= document.documentElement.scrollWidth) return false;
+    if (!hitTest) return true;
+    el.scrollIntoView({ block: 'center', inline: 'nearest' });
+    const box = el.getClientRects()[0] || el.getBoundingClientRect();
+    const hit = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
+    return !!hit && el.contains(hit);
+  };
+}
+// Sichtbare Treffer (höchstens sechs) in der Reihenfolge auf dem Bildschirm und die angehefteten Abschnitte, die unter
+// ihnen oben stehen; dazu, ob die Sicht von der DOM-Reihenfolge abweicht (Kontrolle: im unveränderten Stand nie).
 function inPage(queries) {
   const input = document.querySelector('#site-search');
-  const visible = el => el.checkVisibility({ opacityProperty: true, visibilityProperty: true }) && (r => r.width > 0 && r.height > 0)(el.getBoundingClientRect());
+  const sicht = window.__suchrasterSicht;
   const out = queries.map(q => {
     input.value = q;
     input.dispatchEvent(new Event('input', { bubbles: true }));
+    const items = [...document.querySelectorAll('[data-search-results] > li:not([hidden])')].map(li => ({ a: li.querySelector('a'), r: li.getBoundingClientRect() })).filter(x => x.a);
+    const dom = items.slice(0, 3).map(x => x.a.getAttribute('href'));
+    items.sort((x, y) => (Math.round(x.r.top) - Math.round(y.r.top)) || (x.r.left - y.r.left));
     const hrefs = [];
-    for (const li of document.querySelectorAll('[data-search-results] > li:not([hidden])')) {
-      const a = li.querySelector('a');
-      if (a && visible(a)) { hrefs.push(a.getAttribute('href')); if (hrefs.length >= 6) break; }
+    for (const x of items) {
+      if (sicht(x.a, hrefs.length < 3)) { hrefs.push(x.a.getAttribute('href')); if (hrefs.length >= 6) break; }
     }
+    window.scrollTo(0, 0);
     const groups = window.__suchrasterGruppen(q);
     const pins = groups && groups.pins ? groups.pins.slice() : [];
-    return { n: hrefs.length, top: hrefs.slice(0, 3), pins: pins.filter(p => hrefs.slice(0, pins.length + 1).includes(p)) };
+    return { n: hrefs.length, top: hrefs.slice(0, 3), pins: pins.filter(p => hrefs.slice(0, pins.length + 1).includes(p)), anders: dom.join() !== hrefs.slice(0, 3).join() };
   });
   input.value = '';
   input.dispatchEvent(new Event('input', { bubbles: true }));
@@ -231,12 +267,13 @@ function inPage(queries) {
 // Leermeldung: sichtbare Links bei einer Anfrage ohne Treffer
 function emptyState(q) {
   const input = document.querySelector('#site-search');
-  const visible = el => el.checkVisibility({ opacityProperty: true, visibilityProperty: true }) && (r => r.width > 0 && r.height > 0)(el.getBoundingClientRect());
+  const sicht = window.__suchrasterSicht;
   input.value = q;
   input.dispatchEvent(new Event('input', { bubbles: true }));
-  const hits = [...document.querySelectorAll('[data-search-results] > li:not([hidden]) a')].filter(visible).length;
+  const hits = [...document.querySelectorAll('[data-search-results] > li:not([hidden]) a')].filter(a => sicht(a, false)).length;
   const box = document.querySelector('[data-search-empty]');
-  const links = box && visible(box) ? [...box.querySelectorAll('a')].filter(visible).map(a => a.getAttribute('href')) : [];
+  const links = box && !box.hidden ? [...box.querySelectorAll('a')].filter(a => sicht(a, true)).map(a => a.getAttribute('href')) : [];
+  window.scrollTo(0, 0);
   input.value = '';
   input.dispatchEvent(new Event('input', { bubbles: true }));
   return { hits, links };
@@ -251,6 +288,7 @@ for (const s of servers) {
   const page = await (await browser.newContext()).newPage();
   page.on('pageerror', e => errors.push(String(e)));
   await page.goto(`http://127.0.0.1:${s.address().port}/suche.html`, { waitUntil: 'networkidle' });
+  await page.evaluate(defineSicht);
   const ready = await page.evaluate(() => typeof window.__suchrasterGruppen === 'function');
   if (!ready) hookMissing.add(s === servers[0] ? baseDir : testDir);
   pages.push(page);
@@ -269,6 +307,8 @@ const allowed = [];
 const summary = [];
 const coverage = themes.map(t => ({ thema: t.thema, passend: t.passend, n: 0, a: 0, b: 0 }));
 const startedAt = Date.now();
+const allQueries = new Set();
+const lossQueries = new Set();
 function judge(name, q, a, b, counts) {
   const kinds = [], losses = [];
   const lost = top2Safety(a).filter(h => !b.top.slice(0, 2).includes(h));
@@ -283,6 +323,7 @@ function judge(name, q, a, b, counts) {
   if (unpinned.length) { kinds.push('ANHEFTUNG'); losses.push(...unpinned.map(p => `ANHEFTUNG:${p}`)); }
   if (a.n && !b.n) { kinds.push('LEER'); losses.push('LEER'); }
   if (!kinds.length) return [];
+  lossQueries.add(q);
   const line = `${kinds.join('+')} | ${name} | ${q} | Bezug ${short(a)}${a.pins.length ? ' [angeheftet]' : ''} | Prüfstand ${short(b)}${b.pins.length ? ' [angeheftet]' : ''}`;
   const hits = covered(q, losses, b);
   if (hits) { counts.AUSNAHME++; allowed.push({ name, q, kinds, before: short(a), after: short(b), muster: hits.map(h => h.pattern) }); return []; }
@@ -297,11 +338,14 @@ for (const [name, queries] of Object.entries(sets)) {
     const [a, b] = await Promise.all(pages.map(p => p.evaluate(inPage, chunk)));
     before.push(...a); after.push(...b);
   }
-  const counts = { VERLOREN: 0, VERDRAENGT: 0, RANG1: 0, RANG3: 0, ANHEFTUNG: 0, LEER: 0, AUSNAHME: 0, NEU_OBEN: 0, GEAENDERT: 0 };
+  const counts = { VERLOREN: 0, VERDRAENGT: 0, RANG1: 0, RANG3: 0, ANHEFTUNG: 0, LEER: 0, AUSNAHME: 0, NEU_OBEN: 0, GEAENDERT: 0, ANDERS_A: 0, ANDERS_B: 0 };
   const lines = [];
   queries.forEach((q, i) => {
     const a = before[i], b = after[i];
     if (short(a) !== short(b) || a.pins.join() !== b.pins.join()) counts.GEAENDERT++;
+    if (a.anders) counts.ANDERS_A++;
+    if (b.anders) counts.ANDERS_B++;
+    allQueries.add(q);
     if (top2Safety(b).some(h => !a.top.slice(0, 2).includes(h))) counts.NEU_OBEN++;
     if (name === 'saetze' && themeOfSentence.has(q)) {
       const c = coverage.find(x => x.thema === themeOfSentence.get(q).thema);
@@ -311,7 +355,7 @@ for (const [name, queries] of Object.entries(sets)) {
     }
     lines.push(...judge(name, q, a, b, counts));
   });
-  const s = `${name}: ${queries.length} Anfragen · geändert ${counts.GEAENDERT} · verloren ${counts.VERLOREN} · verdrängt ${counts.VERDRAENGT} · Suizid nicht mehr zuoberst ${counts.RANG1} · letzter Sicherheitsabschnitt auf Rang 3 verloren ${counts.RANG3} · Anheftung verloren ${counts.ANHEFTUNG} · leer ${counts.LEER} · als Ausnahme erlaubt ${counts.AUSNAHME} · Sicherheitsabschnitt neu oben ${counts.NEU_OBEN}`;
+  const s = `${name}: ${queries.length} Anfragen · geändert ${counts.GEAENDERT} · verloren ${counts.VERLOREN} · verdrängt ${counts.VERDRAENGT} · Suizid nicht mehr zuoberst ${counts.RANG1} · letzter Sicherheitsabschnitt auf Rang 3 verloren ${counts.RANG3} · Anheftung verloren ${counts.ANHEFTUNG} · leer ${counts.LEER} · als Ausnahme erlaubt ${counts.AUSNAHME} · Sicherheitsabschnitt neu oben ${counts.NEU_OBEN} · Bildschirm anders als DOM: Bezug ${counts.ANDERS_A}, Prüfstand ${counts.ANDERS_B}`;
   summary.push(s);
   report.push(`## ${s}`, ...lines);
 }
@@ -333,6 +377,12 @@ for (const [name, queries] of Object.entries(sets)) {
 await browser.close();
 servers.forEach(s => s.close());
 const tooBroad = exceptions.filter(e => e.used > MAX_JE_AUSNAHME).map(e => `Ausnahme zu breit: ${e.pattern} · ${e.loss} deckt ${e.used} Anfragen (höchstens ${MAX_JE_AUSNAHME}). Enger fassen oder aufteilen.`);
+// N855-4: ein Muster darf auch unter den Anfragen ohne jeden Verlust höchstens MAX_JE_AUSNAHME treffen
+for (const e of exceptions) {
+  let n = 0;
+  for (const q of allQueries) if (!lossQueries.has(q) && e.test(q)) n++;
+  if (n > MAX_JE_AUSNAHME) tooBroad.push(`Ausnahme zu breit: ${e.pattern} · ${e.loss} trifft ${n} Anfragen ohne Verlust (höchstens ${MAX_JE_AUSNAHME}). Enger fassen.`);
+}
 const unused = exceptions.filter(e => !e.used).map(e => `${e.pattern} · ${e.loss} · ${e.replacement}`);
 const problems = [...exceptionErrors, ...tooBroad, ...(fullRun && args.includes('--ungenutzt-scheitert') ? unused.map(u => `Ausnahme ohne Anwendung: ${u}. Entfernen.`) : [])];
 
@@ -342,7 +392,9 @@ const total = Object.values(sets).reduce((n, q) => n + q.length, 0) + 1;
 const bad = failures.length || errors.length || problems.length;
 const verdict = bad ? 'VERSCHLECHTERUNG' : 'KEINE VERSCHLECHTERUNG';
 const pct = (x, n) => n ? `${(100 * x / n).toFixed(1).replace('.', ',')} %` : '–';
-const coverageLines = coverage.filter(c => c.n).map(c => `Abdeckung ${c.thema}: Bezug ${pct(c.a, c.n)} · Prüfstand ${pct(c.b, c.n)} (${c.n} Sätze, passender Abschnitt unter den ersten zwei)`);
+const known = cfg.festerBezug && cfg.festerBezug.bezug === buildOf(baseDir) && fullRun
+  ? [`Gegenüber dem zuletzt bekannten Stand (${cfg.festerBezug.verschlechterungen} Verschlechterungen gegen ${cfg.festerBezug.bezug}, Stand ${cfg.festerBezug.stand}): ${failures.length - cfg.festerBezug.verschlechterungen >= 0 ? '+' : ''}${failures.length - cfg.festerBezug.verschlechterungen}`] : [];
+const coverageLines = [...known, ...coverage.filter(c => c.n).map(c => `Abdeckung ${c.thema}: Bezug ${pct(c.a, c.n)} · Prüfstand ${pct(c.b, c.n)} (${c.n} Sätze, passender Abschnitt unter den ersten zwei)`)];
 const allowedLines = allowed.map(f => `${f.kinds.join('+')} | ${f.name} | ${f.q} | ${f.before} → ${f.after} | Muster ${f.muster.join(', ')}`);
 const text = [
   `# ${head}`,

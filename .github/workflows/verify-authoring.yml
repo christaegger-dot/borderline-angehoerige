@@ -5,6 +5,7 @@ on:
       - 'authoring/**'
       - 'site/**'
       - '.github/workflows/verify-authoring.yml'
+      - 'netlify.toml'
   workflow_dispatch:
 jobs:
   build-and-compare:
@@ -56,9 +57,13 @@ jobs:
   # auf Rang 3 verloren, eine verlorene Anheftung, eine Anfrage ohne Treffer oder ein verlorener Sicherheitslink in der
   # Leermeldung lässt den Job scheitern, ausser der Fall steht begründet in authoring/tests/suchraster-ausnahmen.tsv.
   # N847-2: Das Raster läuft zweimal, einmal mit Werkzeug und Proben der Basis, einmal mit denen des Pull Requests.
-  # Ein Pull Request kann das Raster also nicht abschwächen, indem er Werkzeug oder Proben ändert; seine Ausnahmen
-  # gelten in beiden Läufen, und jede neue Ausnahme lässt den Job suchraster-ausnahmen scheitern.
+  # Ein Pull Request kann das Raster also nicht über Werkzeug oder Proben abschwächen; seine Ausnahmen gelten in beiden
+  # Läufen, und jede neue Ausnahme lässt den Job suchraster-ausnahmen scheitern.
+  # N855-2: Diesen Workflow selbst führt GitHub aus dem Pull Request aus. Ein PR, der ihn ändert, könnte die Läufe
+  # abschwächen; deshalb lässt jede Änderung unter .github/workflows/ den Job suchraster-ausnahmen scheitern. Eine grüne
+  # CI ist eine Freigabe nach R34-P01 nur, wenn dieser Job grün ist.
   # N847-8: Ein dritter Lauf vergleicht mit dem festen Stand r4-73 (3764d45) und blockiert nicht.
+  # N855-1: Ein vierter Lauf prüft mit dem Selbsttest, dass das Werkzeug des PR jede bekannte Verschlechterung meldet.
   suchraster:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
@@ -68,7 +73,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        variante: [werkzeug-der-basis, werkzeug-des-pr, fester-bezug-r4-73]
+        variante: [werkzeug-der-basis, werkzeug-des-pr, fester-bezug-r4-73, selbsttest]
     steps:
       - uses: actions/checkout@v4
       - name: Check out base (site, search grid tool and test data)
@@ -109,16 +114,24 @@ jobs:
         env:
           PLAYWRIGHT_MODULE: /tmp/borderline-browser/node_modules/playwright
         run: node authoring/tools/suchraster.mjs suchraster-r4-73/site site --ausnahmen=keine --nur-bericht --titel="Saldo gegenüber dem festen Stand r4-73 (nur Bericht)" --ausgabe=dist/suchraster
+      - name: Self-test of the search grid (every known degradation must be reported)
+        if: ${{ matrix.variante == 'selbsttest' }}
+        env:
+          PLAYWRIGHT_MODULE: /tmp/borderline-browser/node_modules/playwright
+        run: node authoring/tools/suchraster-selbsttest.mjs site --ausgabe=dist/suchraster
       - name: Upload search grid result
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: suchraster-${{ matrix.variante }}
-          path: dist/suchraster/
+          path: |
+            dist/suchraster/**/ERGEBNIS.*
           if-no-files-found: ignore
   # N847-2: Neue oder geänderte Ausnahmen erlauben Verschlechterungen, die der Pull Request selbst begründet. Dieser Job
   # scheitert, sobald suchraster-ausnahmen.tsv gegenüber der Basis eine neue Zeile hat: Die Ausnahme braucht den Entscheid
-  # von Christa Egger und eine Nachprüfung vor dem Merge. Änderungen an Werkzeug und Rasterdaten zeigt er nur an.
+  # von Christa Egger und eine Nachprüfung vor dem Merge. N855-2: Er scheitert auch bei jeder Änderung unter
+  # .github/workflows/, weil der PR diesen Workflow selbst mitbringt. Änderungen an Werkzeug und Rasterdaten zeigt er an;
+  # ändert sich interaktion.js ohne neue Proben, warnt er (N855-3).
   suchraster-ausnahmen:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
@@ -135,16 +148,27 @@ jobs:
           sparse-checkout: |
             authoring/tools
             authoring/tests
-      - name: New exceptions need a decision and a review before merge
+            authoring/js
+            .github/workflows
+      - name: New exceptions and workflow changes need a decision and a review before merge
         run: |
           set -u
           zeilen() { grep -v -e '^#' -e '^Muster' -e '^[[:space:]]*$' "$1" 2>/dev/null | sort -u || true; }
           neu=$(diff <(zeilen suchraster-basis/authoring/tests/suchraster-ausnahmen.tsv) <(zeilen authoring/tests/suchraster-ausnahmen.tsv) | grep '^>' || true)
-          geaendert=$(for f in authoring/tools/suchraster.mjs authoring/tests/suchraster.json authoring/tests/suchraster-proben.txt authoring/tests/suche-ersttreffer.tsv authoring/tests/suche-ausbau-offen.tsv; do cmp -s "$f" "suchraster-basis/$f" || echo "$f"; done)
+          geaendert=$(for f in authoring/tools/suchraster.mjs authoring/tools/suchraster-selbsttest.mjs authoring/tests/suchraster.json authoring/tests/suchraster-proben.txt authoring/tests/suche-ersttreffer.tsv authoring/tests/suche-ausbau-offen.tsv; do cmp -s "$f" "suchraster-basis/$f" || echo "$f"; done)
+          workflow=$(diff -rq .github/workflows suchraster-basis/.github/workflows 2>&1 || true)
+          proben_neu=$(for f in authoring/tests/suchraster.json authoring/tests/suchraster-proben.txt; do cmp -s "$f" "suchraster-basis/$f" || echo "$f"; done)
+          js_neu=$(cmp -s authoring/js/interaktion.js suchraster-basis/authoring/js/interaktion.js || echo ja)
           {
             echo "### Ausnahmen und Rasterdaten"
             if [ -n "$geaendert" ]; then echo "Geändert gegenüber der Basis (eigenes Review nötig):"; echo "$geaendert" | sed 's/^/- /'; else echo "Werkzeug und Rasterdaten unverändert."; fi
             if [ -n "$neu" ]; then echo; echo "**Neue Ausnahmen: Entscheid von Christa Egger und Nachprüfung vor dem Merge nötig.**"; echo '```'; echo "$neu" | sed 's/^> //'; echo '```'; else echo; echo "Keine neue Ausnahme."; fi
+            if [ -n "$workflow" ]; then echo; echo "**Workflow geändert: Der PR bringt seinen eigenen Workflow mit. Eine grüne CI ist hier keine Freigabe nach R34-P01; Prüfung vor dem Merge nötig.**"; echo '```'; echo "$workflow"; echo '```'; else echo; echo "Workflow unverändert."; fi
+            if [ -n "$js_neu" ] && [ -z "$proben_neu" ]; then echo; echo "Hinweis: interaktion.js ist geändert, die Proben des Rasters nicht. Jede neue Suchregel bringt ihre Proben ins Raster mit (N855-3)."; fi
           } >> "$GITHUB_STEP_SUMMARY"
-          if [ -n "$neu" ]; then echo "Neue Ausnahmen in suchraster-ausnahmen.tsv:"; echo "$neu"; exit 1; fi
-          echo "Keine neue Ausnahme."
+          if [ -n "$js_neu" ] && [ -z "$proben_neu" ]; then echo "::warning::interaktion.js geändert, Proben des Suchrasters nicht (N855-3)"; fi
+          fehler=0
+          if [ -n "$neu" ]; then echo "Neue Ausnahmen in suchraster-ausnahmen.tsv:"; echo "$neu"; fehler=1; fi
+          if [ -n "$workflow" ]; then echo "Workflow gegenüber der Basis geändert (N855-2):"; echo "$workflow"; fehler=1; fi
+          [ "$fehler" = 0 ] && echo "Keine neue Ausnahme, Workflow unverändert."
+          exit $fehler

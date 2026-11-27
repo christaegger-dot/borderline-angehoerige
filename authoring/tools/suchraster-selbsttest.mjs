@@ -1,0 +1,93 @@
+// Selbsttest des Suchrasters (Nachprüfung der Härtung, PR #856, N855-1): baut aus einem Stand von site/ Konstruktionen,
+// die die Suche für eine Person verschlechtern, und prüft, dass authoring/tools/suchraster.mjs jede meldet. So kann eine
+// spätere Änderung am Werkzeug die Härtung nicht unbemerkt zurücknehmen.
+// Die Konstruktionen stammen aus den Nachprüfungen #849 (K1, K2, K5, K9) und #856 (V1 bis V8), dazu V10 (Überdeckung).
+// Sie sind als Änderung am Stylesheet, an suche.html oder an js/interaktion.js beschrieben, nicht als Diff gegen einen
+// festen Stand. Passt eine Ersetzung nicht mehr, scheitert der Selbsttest mit «nicht anwendbar»; dann die Konstruktion
+// an den neuen Stand anpassen, nicht streichen.
+// Aufruf: node authoring/tools/suchraster-selbsttest.mjs [site] [--ausgabe=dist/suchraster-selbsttest]
+// Rückgabe: 0, wenn das Raster jede Konstruktion mit der erwarteten Art meldet und den unveränderten Stand bestehen lässt.
+import { cpSync, mkdirSync, readFileSync, writeFileSync, rmSync, appendFileSync } from 'node:fs';
+import { join, dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
+
+const here = dirname(fileURLToPath(import.meta.url));
+const args = process.argv.slice(2);
+const site = resolve(args.find(a => !a.startsWith('--')) || 'site');
+const out = resolve((args.find(a => a.startsWith('--ausgabe=')) || '--ausgabe=dist/suchraster-selbsttest').split('=').slice(1).join('='));
+const SUIZID = '.puk-site-result[data-search-target="krise.html#suizid"]';
+const LEER = '.puk-site-filter__empty p+p';
+const CASES = [
+  { name: 'K1', was: 'Stylesheet blendet Suizidtreffer und Sicherheitszeile der Leermeldung aus (display:none)', css: `${SUIZID},${LEER}{display:none}`, erwartet: ['RANG1', 'LEERMELDUNG'] },
+  { name: 'K2', was: 'Leermeldung ohne Sicherheitszeile (suche.html)', html: [/<p><a class="puk-link--inline" href="krise\.html#krise-schnell"[^]*?<\/a><\/p>/, ''], erwartet: ['LEERMELDUNG'] },
+  { name: 'K5', was: 'Anheftung in der Darstellung abgeschaltet (interaktion.js)', js: ['if (groups.pins) {', 'if (false && groups.pins) {'], erwartet: ['ANHEFTUNG'] },
+  { name: 'K9', was: 'Anheftung in umgekehrter Reihenfolge (interaktion.js)', js: ['var pinnedItems = groups.pins.map(', 'var pinnedItems = groups.pins.slice().reverse().map('], erwartet: ['RANG1'] },
+  { name: 'V1', was: 'Suizidtreffer mit order ans Ende der Liste', css: `${SUIZID}{order:99}`, erwartet: ['RANG1'] },
+  { name: 'V2', was: 'Trefferliste umgekehrt (column-reverse)', css: '.puk-site-result-list{display:flex;flex-direction:column-reverse}', erwartet: ['RANG1'] },
+  { name: 'V3', was: 'Suizidtreffer mit max-height:0 und overflow:hidden', css: `${SUIZID}{max-height:0;overflow:hidden;padding:0;border:0;margin:0}`, erwartet: ['RANG1'] },
+  { name: 'V4', was: 'Suizidtreffer mit clip-path', css: `${SUIZID}{clip-path:inset(50%)}`, erwartet: ['RANG1'] },
+  { name: 'V5', was: 'Suizidtreffer ausserhalb des Bildschirms', css: `${SUIZID}{position:absolute;left:-9999px}`, erwartet: ['RANG1'] },
+  { name: 'V6', was: 'Sicherheitszeile der Leermeldung mit clip-path', css: `${LEER}{clip-path:inset(50%);height:1px;overflow:hidden}`, erwartet: ['LEERMELDUNG'] },
+  { name: 'V6b', was: 'Sicherheitszeile der Leermeldung ausserhalb des Bildschirms', css: `${LEER}{position:absolute;left:-9999px}`, erwartet: ['LEERMELDUNG'] },
+  { name: 'V7', was: 'Sicherheitszeile der Leermeldung mit der Klasse puk-sr (suche.html)', html: ['<p><a class="puk-link--inline" href="krise.html#krise-schnell"', '<p class="puk-sr"><a class="puk-link--inline" href="krise.html#krise-schnell"'], erwartet: ['LEERMELDUNG'] },
+  { name: 'V7b', was: 'Suizidtreffer mit dem Attribut data-puk-sr-only (suche.html)', htmlSuizid: true, erwartet: ['RANG1'] },
+  { name: 'V8', was: '«Wenn Suizid angesprochen wird» ausgeblendet', css: '.puk-site-result[data-search-target="kommunizieren.html#suizid-angesprochen"]{display:none}', erwartet: ['RANG3'] },
+  { name: 'V10', was: 'Suizidtreffer von einem weissen Pseudo-Element überdeckt', css: `${SUIZID}{position:relative}${SUIZID}::after{content:"";position:absolute;inset:0;background:#fff}`, erwartet: ['RANG1'] }
+];
+
+function build(c, dir) {
+  rmSync(dir, { recursive: true, force: true });
+  cpSync(site, dir, { recursive: true });
+  const edit = (file, from, to) => {
+    const f = join(dir, file), src = readFileSync(f, 'utf8');
+    const hit = typeof from === 'string' ? src.includes(from) : from.test(src);
+    if (!hit) throw new Error(`${c.name} nicht anwendbar: ${file} enthält ${from} nicht`);
+    writeFileSync(f, src.replace(from, to));
+  };
+  if (c.css) writeFileSync(join(dir, 'css/site.css'), readFileSync(join(dir, 'css/site.css'), 'utf8') + '\n' + c.css + '\n');
+  if (c.js) edit('js/interaktion.js', c.js[0], c.js[1]);
+  if (c.htmlSuizid) {
+    // data-puk-sr-only nur am Suizidtreffer: das li mit data-search-target="krise.html#suizid"
+    const f = join(dir, 'suche.html'), src = readFileSync(f, 'utf8');
+    const re = /<li class="puk-site-result" (data-search-item [^>]*data-search-target="krise\.html#suizid")/;
+    if (!re.test(src)) throw new Error(`${c.name} nicht anwendbar: Suizidtreffer in suche.html nicht gefunden`);
+    writeFileSync(f, src.replace(re, '<li class="puk-site-result" data-puk-sr-only $1'));
+  } else if (c.html) edit('suche.html', c.html[0], c.html[1]);
+}
+
+mkdirSync(out, { recursive: true });
+const tool = join(here, 'suchraster.mjs');
+const run = (dir, name) => {
+  const r = spawnSync(process.execPath, [tool, site, dir, '--nur=proben', '--ausnahmen=keine', '--immer', `--ausgabe=${join(out, name)}`], { encoding: 'utf8', env: { ...process.env, GITHUB_STEP_SUMMARY: '' } });
+  let result = null;
+  try { result = JSON.parse(readFileSync(join(out, name, 'ERGEBNIS.json'), 'utf8')); } catch { /* kein Ergebnis */ }
+  return { code: r.status, result, log: (r.stdout || '') + (r.stderr || '') };
+};
+const lines = [];
+let bad = 0;
+// Gegenprobe: unveränderter Stand besteht
+{
+  const dir = join(out, 'stand', 'unveraendert');
+  rmSync(dir, { recursive: true, force: true }); cpSync(site, dir, { recursive: true });
+  const r = run(dir, 'unveraendert');
+  const ok = r.code === 0 && r.result && !r.result.verschlechterungen.length;
+  if (!ok) bad++;
+  lines.push(`${ok ? 'BESTANDEN' : 'FEHLER   '} | unverändert | Rückgabe ${r.code}, ${r.result ? r.result.verschlechterungen.length : '?'} Verschlechterungen (erwartet 0)`);
+}
+for (const c of CASES) {
+  const dir = join(out, 'stand', c.name);
+  try { build(c, dir); } catch (e) { bad++; lines.push(`FEHLER    | ${c.name} | ${e.message}`); continue; }
+  const r = run(dir, c.name);
+  const kinds = new Set((r.result ? r.result.verschlechterungen : []).flatMap(f => f.kinds));
+  const missing = c.erwartet.filter(k => !kinds.has(k));
+  const ok = r.code === 1 && r.result && !missing.length;
+  if (!ok) bad++;
+  lines.push(`${ok ? 'BESTANDEN' : 'FEHLER   '} | ${c.name} | ${c.was} | Rückgabe ${r.code} · ${r.result ? r.result.verschlechterungen.length : '?'} Verschlechterungen · Arten ${[...kinds].join(', ') || '–'}${missing.length ? ` · FEHLT ${missing.join(', ')}` : ''}`);
+  if (!r.result) lines.push(r.log.split('\n').slice(0, 5).map(l => `    ${l}`).join('\n'));
+}
+const head = `Selbsttest des Suchrasters · ${CASES.length} Konstruktionen und der unveränderte Stand · ${bad ? `${bad} FEHLER` : 'alle bestanden'}`;
+console.log([head, ...lines].join('\n'));
+writeFileSync(join(out, 'ERGEBNIS.txt'), [head, ...lines].join('\n') + '\n');
+if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, [`### ${head}`, '', ...lines.map(l => `- ${l.replace(/[|`<>]/g, ch => ({ '|': '·', '`': "'", '<': '&lt;', '>': '&gt;' })[ch])}`), ''].join('\n'));
+process.exitCode = bad ? 1 : 0;

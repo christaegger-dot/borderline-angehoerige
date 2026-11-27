@@ -1,0 +1,55 @@
+# Suchraster · Bezug r4-73 · Prüfstand r4-75
+Ergebnis: KEINE VERSCHLECHTERUNG · 1159 Anfragen · 0 Verschlechterungen · 44 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0 · 14 s
+- proben: 1158 Anfragen · geändert 373 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 44 · Sicherheitsabschnitt neu oben 176
+- leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+Alle Ausnahmen angewendet oder keine eingetragen.
+
+## proben: 1158 Anfragen · geändert 373 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 44 · Sicherheitsabschnitt neu oben 176
+
+## Als Ausnahme erlaubt (44)
+LEER | proben | Ich weine oft | diagnose#begleiterkrankungen → – | Muster /^(?!x$|heute|öffnungs).+/
+VERDRAENGT | proben | suizidgefährdet und gewalttätig | gefahr#gewalt > kinder#eskalation > index#orientierung → krise#suizid > gefahr#gewalt > krise | Muster /^(?!x$|heute|öffnungs).+/
+VERDRAENGT | proben | Er ist suizidgefährdet und schlägt mich | gefahr#gewalt > kinder#eskalation > index#orientierung → krise#suizid > gefahr#gewalt > krise | Muster /^(?!x$|heute|öffnungs).+/
+VERDRAENGT | proben | Selbstverletzungen | diagnose#suizidalitaet > krise#suizid > kurz#borderline → krise#selbstverletzung > krise > diagnose#suizidalitaet | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Berufsgeheimnis | quellen#diagnostik > kinder#eskalation → behandlung#auskunft > quellen#diagnostik > kinder#eskalation | Muster /^(?!x$|heute|öffnungs).+/
+VERDRAENGT+RANG1 | proben | Er sagt immer wieder er schlägt mich tot | krise#suizid → gefahr#gewalt > kinder#eskalation > index#orientierung | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Meine Frau schlägt | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Meine Frau schlägt zu | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Meine Frau schlägt unsere Tochter | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Frau schlägt Mann | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Mein Mann schlägt | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Mein Mann schlägt zu | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Mein Mann schlägt unsere Tochter | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN+LEER | proben | Mein Mann schlägt unseren Sohn | gefahr#gewalt → – | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Meine Frau ist gewalttätig | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Mein Mann ist gewalttätig | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Gewalt Frau | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN+LEER | proben | meine frau ist gewalttätig geworden | gefahr#gewalt → – | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | häusliche gewalt mein mann | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | gewalt in der beziehung frau | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | mann gewalttätig was tun | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | frau schlägt mann | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | gewalt gegen den mann | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERDRAENGT | proben | mein mann ist aggressiv und schlägt | gefahr#gewalt → kinder#eskalation > verstehen#anspannung > kommunizieren#kippen | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | mein mann schlägt zu | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | meine frau schlägt zu | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN+LEER | proben | mein mann schlägt unseren sohn | gefahr#gewalt → – | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | ich werde von meinem mann geschlagen | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | er schneidet sich immer noch | krise#selbstverletzung > krise#suizid > grenzen#bruecke → krise#suizid > kurz#borderline > gefahr#gewalt | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | mein sohn schneidet sich mit einer klinge | krise#selbstverletzung > kommunizieren#beispiele → kommunizieren#beispiele | Muster /^(?!x$|heute|öffnungs).+/
+VERDRAENGT | proben | meine tochter hat suizidgedanken und schneidet sich | krise#selbstverletzung → krise > krise#suizid > krise#selbstverletzung | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN+LEER | proben | mein mann bringt sich um polizei | gefahr#gewalt → – | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+LEER | proben | mein bruder bringt sich um ständig | grenzen#rollen → – | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN+LEER | proben | Mein Mann wird gewalttätig und ich habe Angst | gefahr#gewalt → – | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+VERLOREN+LEER | proben | Meine Frau wird gewalttätig, was kann ich machen? | gefahr#gewalt → – | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+VERLOREN+LEER | proben | Mein Mann schlägt zu, wegen mir | gefahr#gewalt → – | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+VERLOREN+LEER | proben | Ich habe Angst, mein Mann wird gewalttätig | gefahr#gewalt → – | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+VERLOREN+LEER | proben | mein mann beschimpft mich polizei | gefahr#gewalt → – | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Ich halte es nicht mehr aus, mein Mann schlägt zu | gefahr#gewalt > beziehungen#verantwortung > fragen#f-eigenes-leben → beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Ich brauche Hilfe, mein Mann ist gewalttätig | gefahr#gewalt > quellen#schweiz → quellen#schweiz | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Ich brauche Hilfe, meine Frau ist gewalttätig | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Ich werde von meiner Frau geschlagen | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > quellen#forschung | Muster /^(?!x$|heute|öffnungs).+/
+VERLOREN+LEER | proben | Ich bin verzweifelt, mein Mann schlägt zu | gefahr#gewalt → – | Muster /^(?!x$|heute|öffnungs).+/, /^(?!x$|heute|öffnungs).+/
+VERLOREN | proben | Mein Sohn schneidet sich seit Wochen | krise#selbstverletzung → begriffe#begriffe | Muster /^(?!x$|heute|öffnungs).+/
+
+## Vorlage für suchraster-ausnahmen.tsv (nur für gewollte Änderungen; Begründung und Entscheid ergänzen, gleichartige Fälle besser als enges Muster)

@@ -1,0 +1,12 @@
+# Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 38743 Anfragen · 495 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0 · 421 s
+- saetze: 37584 Anfragen · geändert 552 · verloren 314 · verdrängt 145 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 145 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 145
+- proben: 1158 Anfragen · geändert 45 · verloren 3 · verdrängt 32 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 1 · Anheftung verloren 32 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 32
+- leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+- Abdeckung Suizid: Bezug 43,7 % · Prüfstand 43,7 % (17400 Sätze, passender Abschnitt unter den ersten zwei)
+- Abdeckung Selbstverletzung: Bezug 27,6 % · Prüfstand 27,6 % (5568 Sätze, passender Abschnitt unter den ersten zwei)
+- Abdeckung Gewalt: Bezug 45,0 % · Prüfstand 45,0 % (14616 Sätze, passender Abschnitt unter den ersten zwei)
+Alle Ausnahmen angewendet oder keine eingetragen.
+
+## saetze: 37584 Anfragen · geändert 552 · verloren 314 · verdrängt 145 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 145 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 145
+RANG3 | proben | mein partner wird handgreiflich | Bezug jugendliche#volljaehrig > diagnose#zweifel > kommunizieren#suizid-angesprochen | Prüfstand jugendliche#volljaehrig > diagnose#zweifel > fragen#f-besser

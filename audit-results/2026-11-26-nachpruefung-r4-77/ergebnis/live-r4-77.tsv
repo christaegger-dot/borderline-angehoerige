@@ -1,0 +1,158 @@
+# live r4-77 2026-11-27T00:00:37.462Z JS-Fehler 0
+Mein Mann will mich umbringen	/gefahr#gewalt > /krise#suizid > /kinder#eskalation > /#orientierung
+Ich will mich umbringen	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+Er bringt mich um, wenn ich gehe	/gefahr#gewalt > /krise#suizid > /kinder#eskalation > /#orientierung
+Wenn du gehst, bringe ich mich um	/kommunizieren#suizid-angesprochen > /krise#suizid > /gefahr#gewalt > /krise
+Mein Mann droht die Kinder umzubringen	/kinder#eskalation > /gefahr#gewalt > /krise#suizid > /krise
+Ich will mich umbringen, er schlägt mich jeden Tag	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+Sie will sich umbringen und ritzt sich	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+Meine Tochter will sich umbringen, was kann ich machen?	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+er hat gedroht sich umzubringen	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+ich habe angst dass er mich umbringt und die kinder	/kinder#eskalation > /gefahr#gewalt > /krise#suizid > /krise
+umbringen	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+töten	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+Ich habe Suizidgedanken	/krise#suizid > /diagnose#suizidalitaet > /krise#krisenplan > /fragen#gespraeche
+Suizidgedanken	/krise#suizid > /diagnose#suizidalitaet > /krise > /kommunizieren#suizid-angesprochen
+Meine Tochter hat Suizidgedanken, was kann ich tun?	/krise#suizid > /krise > /krise#belastung > /krise#bleibt
+Er droht mit Suizid	/krise#suizid > /krise > /diagnose#suizidalitaet > /kommunizieren#suizid-angesprochen
+Er droht mit Suizid, wenn ich ihn verlasse	/krise#suizid > /fragen#f-verlassen > /kommunizieren#suizid-angesprochen > /begriffe#b-borderline
+Meine Frau droht mit Selbstmord, wenn ich gehe	/krise#suizid > /quellen#forschung
+Suiziddrohung	/krise#suizid > /krise > /diagnose#suizidalitaet > /kommunizieren#suizid-angesprochen
+Sie macht mir Druck mit Suiziddrohungen	/krise#suizid > /verstehen#mythen
+Ich habe eine Überdosis genommen	/krise#suizid > /krise#krisenplan > /krise#danach
+Er hat einen Abschiedsbrief geschrieben	/krise#suizid > /krise > /diagnose#suizidalitaet > /kommunizieren#suizid-angesprochen
+Ich will nicht mehr leben	/krise#suizid > /krise > /diagnose#suizidalitaet > /kommunizieren#suizid-angesprochen
+ich bin lebensmüde	/krise#suizid > /krise > /diagnose#suizidalitaet > /kommunizieren#suizid-angesprochen
+Suizidgedanken Kinder	/krise#suizid > /fragen#schutz > /kurz#borderline > /jugendliche#schnell
+Suizid in der Familie, was sagen wir den Kindern?	/krise#suizid > /kinder#erklaeren
+Ich habe keine Suizidgedanken	/krise#suizid > /krise#krisenplan > /fragen#gespraeche > /fragen#f-bedrohlich
+Ich habe keine Suizidgedanken, aber ich bin erschöpft	/krise#suizid > /krise#danach > /begriffe#b-borderline > /begriffe#begriffe
+Er hat nie einen Suizidversuch gemacht	/krise#suizid > /quellen#leitlinien
+Ich will nicht tot sein	/behandlung#keine-behandlung > /selbstfuersorge#warnsignale > /behandlung#auskunft > /selbstfuersorge
+Ich habe nicht keine Suizidgedanken	/krise#suizid > /beziehungen#verantwortung > /diagnose#zweifel > /fragen#gespraeche
+Kein Suizid	/krise#suizid > /krise#sagen > /krise#danach > /krise#belastung
+Suizid ist kein Thema bei uns	/krise#suizid > /krise#belastung > /krise#danach > /beziehungen#verantwortung
+Buch über Suizid	/krise#suizid > /verstehen#borderline > /beziehungen#verantwortung > /quellen#forschung
+Suizidprävention Schweiz	/unterstuetzung#kantone > /quellen#schweiz
+Er schlägt mich	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Mein Mann schlägt mich	/gefahr#gewalt > /quellen#schweiz
+Ich werde geschlagen	/gefahr#gewalt > /fragen#f-mehrere > /gefahr#riskant > /fragen#f-depression
+Ich werde immer wieder geschlagen	/gefahr#gewalt > /kurz#jetzt > /begriffe#begriffe > /quellen#forschung
+Meine Freundin bedroht mich	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Er hat mich gewürgt	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Gewalt	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Gewalt in der Beziehung	/gefahr#gewalt > /#orientierung > /fragen#f-luegen > /begriffe#b-borderline
+In der Beziehung gibt es Gewalt	/gefahr#gewalt > /#orientierung > /fragen#f-luegen > /begriffe#b-borderline
+Ich habe Angst vor meinem Mann	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Ich habe Angst vor ihm, er schreit	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Frauenhaus Zürich	/gefahr#gewalt > /#orientierung > /begriffe#b-fu > /fragen#f-einweisung
+Er hat mich nie geschlagen	/quellen#leitlinien > /begriffe#b-recovery > /grenzen#dear > /grenzen#arten
+Er schlägt mich nicht	/gefahr#gewalt > /kinder#eskalation > /grenzen#konsequenz > /fragen#f-nicht-geteilt
+Er ist nicht gewalttätig	/gefahr#gewalt > /kinder#eskalation > /grenzen#konsequenz > /fragen#f-nicht-geteilt
+Er ist nie gewalttätig gewesen	/quellen#leitlinien
+Er hat mich nicht geschlagen, aber gewürgt	/gefahr#gewalt > /kinder#eskalation > /grenzen#konsequenz > /fragen#f-nicht-geteilt
+Er hat mich nicht nur geschlagen	/gefahr#gewalt > /grenzen#grenzen-schnell > /kinder#schnell > /beziehungen#verantwortung
+Er schlägt mich nicht mehr, aber er droht	/gefahr#gewalt > /fragen#weitere > /fragen#f-mehrere > /fragen#f-nicht-geteilt
+Er hat mich nicht mehr geschlagen	/gefahr#gewalt > /fragen#weitere > /fragen#f-mehrere > /fragen#f-nicht-geteilt
+Ich weiss nicht, schlägt er sie?	/#einstiege > /kurz#jetzt > /kommunizieren#zuhoeren > /kommunizieren#kippen
+Ich weiss es nicht. Geschlagen hat er mich schon	/#einstiege > /kurz#jetzt > /kommunizieren#zuhoeren > /kommunizieren#kippen
+Ich habe keine Angst vor ihm	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Ich habe keine Angst vor meinem Mann	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+keine Gewalt	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /selbstfuersorge#warnsignale
+Es gab nie Gewalt, aber viel Streit	/selbstfuersorge#kraft > /begriffe#begriffe > /quellen#forschung
+Ich kann nicht sagen, dass er mich nie geschlagen hat	/ueber#grundsaetze > /kommunizieren#kippen > /selbstfuersorge#akzeptanz > /begriffe#begriffe
+Was schlagen Sie vor?	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Welche Bücher schlagen Sie vor?	/gefahr#gewalt > /kinder#hilfe
+Ich schlage vor, dass wir reden	/fragen#gespraeche > /begriffe#b-dear-man > /fragen#f-ansprechen > /fragen#f-beschuldigt
+Schlagen Sie Literatur vor	/gefahr#gewalt > /begriffe#begriffe > /begriffe#b-co-abhaengigkeit > /ueber#grundsaetze
+gewaltfreie Kommunikation	/kommunizieren#kippen > /kommunizieren > /beziehungen#bz-sichten-s4 > /kommunizieren#schnell
+Herzschlag	–
+Schlaganfall	–
+Mein Kind wurde in der Schule geschlagen, was tun	/kinder#eskalation > /gefahr#gewalt > /rolle#schuld
+Selbstverletzung	/krise#selbstverletzung > /diagnose#suizidalitaet > /krise > /begriffe#b-selbstverletzung
+Meine Tochter ritzt sich	/krise#selbstverletzung
+Sie ritzt sich immer wieder	/krise#suizid
+Ritzen	/krise#selbstverletzung > /krise > /diagnose#suizidalitaet > /begriffe#b-selbstverletzung
+Was tun bei Ritzen?	/krise#selbstverletzung > /krise > /krise#suizid > /behandlung#kontakt
+Selbstverletzungen	/diagnose#suizidalitaet > /krise#suizid > /kurz#borderline > /begriffe#b-borderline
+selbstverletzendes Verhalten	/begriffe#b-selbstverletzung > /krise#selbstverletzung > /begriffe#begriffe
+Sie verletzt sich selbst	/krise#selbstverletzung > /krise > /diagnose#suizidalitaet > /begriffe#b-selbstverletzung
+Mein Sohn schneidet sich	/krise#selbstverletzung
+Selbstverletzung bei Jugendlichen	/krise#selbstverletzung > /jugendliche#schnell > /quellen#forschung
+Selbstverletzung, was soll ich tun	/krise#selbstverletzung > /krise > /krise#suizid > /behandlung#kontakt
+Sie will sich nicht ritzen	/krise#selbstverletzung > /beziehungen#verantwortung > /beziehungen#schleife > /diagnose#zweifel
+Ich will mich nicht mehr ritzen	/krise#selbstverletzung > /beziehungen#schleife > /beziehungen#verantwortung > /rolle#nach-konflikten
+Ich will nicht ritzen, aber der Druck ist gross	/behandlung#keine-behandlung > /selbstfuersorge#warnsignale > /behandlung#auskunft > /selbstfuersorge
+Sie kann nicht aufhören zu ritzen	/krise#selbstverletzung > /begriffe#b-selbstverletzung > /fragen#f-sprache > /beziehungen#verantwortung
+keine Selbstverletzung	/krise#selbstverletzung > /rolle#nach-konflikten > /krise#sagen > /krise#danach
+nie Selbstverletzung, aber Suizidgedanken	/krise#suizid > /quellen#leitlinien > /kurz#borderline > /krise#danach
+Sie hat aufgehört zu ritzen	/krise#selbstverletzung > /krise > /diagnose#suizidalitaet > /begriffe#b-selbstverletzung
+Mein Kind schlägt mich	/kinder#eskalation > /gefahr#gewalt > /grenzen#rollen > /jugendliche#geschwister
+Mein Sohn schlägt mich	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Meine Tochter schlägt mich	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Die Kinder schlagen sich	/kinder#eskalation > /gefahr#gewalt > /grenzen#rollen > /jugendliche#geschwister
+Mein Mann schlägt die Kinder	/kinder#eskalation > /gefahr#gewalt > /quellen#schweiz
+Mein Mann schlägt unsere Kinder	/kinder#eskalation > /gefahr#gewalt > /quellen#schweiz
+Mein Mann schlägt mich, aber nicht die Kinder	/kinder#eskalation > /gefahr#gewalt > /quellen#schweiz
+Er schlägt mich vor den Kindern	/kinder#eskalation > /gefahr#gewalt > /kinder#schnell > /kurz#jetzt
+Er schlägt mich vor meinen Kindern	/kinder#eskalation > /gefahr#gewalt > /kinder#schnell > /kurz#jetzt
+Der Vater meiner Kinder schlägt mich	/gefahr#gewalt > /grenzen#rollen > /rolle#schuld > /kurz#jetzt
+Der Vater unserer Kinder bedroht mich	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Gewalt gegen Kinder	/kinder#eskalation > /gefahr#gewalt > /grenzen#rollen > /jugendliche#geschwister
+Kinder und Gewalt	/kinder#eskalation > /gefahr#gewalt > /grenzen#rollen > /jugendliche#geschwister
+Mein Kind ritzt sich	/kinder > /jugendliche > /jugendliche#abklaerung > /jugendliche#auskunft
+Mein Kind hat Selbstverletzung	/krise#selbstverletzung > /fragen#schutz > /kurz#borderline > /jugendliche#schnell
+Mein Kind hat Suizidgedanken	/krise#suizid > /fragen#schutz > /kurz#borderline > /jugendliche#schnell
+Die Kinder haben gesehen, wie er mich schlägt	/kinder#eskalation > /gefahr#gewalt > /grenzen#rollen > /jugendliche#geschwister
+Ich habe Angst um die Kinder, er bedroht uns	/kinder#eskalation > /gefahr#gewalt > /begriffe#begriffe
+Kein Kind wurde geschlagen	/kinder#eskalation > /gefahr#gewalt > /quellen#forschung > /begriffe#begriffe
+Mein Mann schlägt die Kinder und ich will nicht mehr leben	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+Mein Mann schlägt die Kinder und ich habe Suizidgedanken	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+Sie hat Suizidgedanken und ritzt sich	/krise#selbstverletzung > /krise#suizid
+Suizidgedanken und Selbstverletzung	/krise#suizid > /krise#selbstverletzung > /diagnose#suizidalitaet > /krise
+Selbstverletzung und Gewalt	/krise#selbstverletzung > /gefahr#gewalt > /begriffe#b-selbstverletzung > /fragen#f-beschuldigt
+Sie ritzt sich und schlägt mich	/gefahr#gewalt > /kinder#eskalation > /krise#selbstverletzung > /#orientierung
+Er schlägt mich und hat Suizidgedanken	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+Selbstverletzung, Suizidgedanken, Gewalt	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+Ritzen Suizid Gewalt Kinder	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+Gewalt Suizid	/krise#suizid > /gefahr#gewalt > /krise > /diagnose#suizidalitaet
+Suizid	/krise#suizid > /diagnose#suizidalitaet > /kommunizieren#suizid-angesprochen > /krise
+suizid?	/krise#suizid > /diagnose#suizidalitaet > /kommunizieren#suizid-angesprochen > /krise
+Was tun bei Suizid	/krise#suizid > /krise > /krise#belastung > /krise#bleibt
+Gewalt.	/gefahr#gewalt > /kinder#eskalation > /#orientierung > /fragen
+Gewalt was tun	/kinder#eskalation > /gefahr#gewalt > /rolle#schuld > /selbstfuersorge#warnsignale
+was tun Gewalt	/kinder#eskalation > /gefahr#gewalt > /rolle#schuld > /selbstfuersorge#warnsignale
+Selbstverletzung was tun	/krise#selbstverletzung > /krise > /krise#suizid > /behandlung#kontakt
+was tun Selbstverletzung	/krise#selbstverletzung > /krise > /krise#suizid > /behandlung#kontakt
+Er schlaat mich	–
+Är het mi gschlage	–
+I ha Suizidgedanke	/krise#suizid > /verstehen#borderline > /krise#selbstverletzung > /kurz#borderline
+I wott nüme lebe	–
+Si ritzt sich	/krise#selbstverletzung
+Mi Ma bedroht mi	/gefahr#gewalt > /kinder#eskalation > /krise#krise-schnell > /grenzen#rollen
+Ich ritze mich	/krise#selbstverletzung
+Ich verletze mich selbst	/krise#selbstverletzung > /begriffe#b-selbstverletzung > /krise#suizid > /rolle#schuld
+Ich will sterben	/krise#suizid > /krise > /diagnose#suizidalitaet > /kommunizieren#suizid-angesprochen
+Ich habe Angst, dass er mich schlägt	/gefahr#gewalt > /selbstfuersorge#warnsignale > /beziehungen#zwei-sichten > /selbstfuersorge#akzeptanz
+Ich werde bedroht	/gefahr#gewalt > /fragen#f-mehrere > /gefahr#riskant > /fragen#f-depression
+Ich habe Suizidgedanken und weiss nicht weiter	/krise#suizid > /diagnose#zweifel > /beziehungen#verantwortung > /diagnose#diagnose-schnell
+Ich brauche Hilfe, mein Partner schlägt mich	/kinder#eskalation > /gefahr#gewalt > /krise#krise-schnell > /gefahr#riskant
+Ich will nicht geschlagen werden	/behandlung#keine-behandlung > /selbstfuersorge#warnsignale > /behandlung#auskunft > /selbstfuersorge
+Ich will nicht mehr geschlagen werden	/gefahr#gewalt > /behandlung#keine-behandlung > /selbstfuersorge#warnsignale > /behandlung#auskunft
+Ich möchte nicht bedroht werden	/behandlung#keine-behandlung > /selbstfuersorge#warnsignale > /behandlung#auskunft > /selbstfuersorge
+Ich will nicht, dass er mich schlägt	/gefahr#gewalt > /behandlung#keine-behandlung > /selbstfuersorge#warnsignale > /behandlung#auskunft
+Ich halte es nicht aus, geschlagen zu werden	/gefahr#gewalt > /gefahr#riskant > /kommunizieren#zuhoeren > /begriffe#b-dbt
+Die Kinder sollen nicht geschlagen werden	/kommunizieren#zuhoeren > /begriffe#begriffe > /quellen#leitlinien
+Er soll die Kinder nicht schlagen	/kinder#eskalation > /gefahr#gewalt > /grenzen#rollen > /fragen#f-sprache
+Ich darf mich nicht ritzen	/krise#selbstverletzung > /begriffe#b-selbstverletzung > /fragen#f-sprache > /beziehungen#verantwortung
+Ich will mich nicht selbstverletzen	/krise#selbstverletzung > /beziehungen#verantwortung > /beziehungen#schleife > /diagnose#zweifel
+Wie schaffe ich es, nicht zu ritzen	/krise#selbstverletzung > /verstehen#einordnung > /fragen#eigenes-leben > /beziehungen#zwei-sichten
+Ich kann das Ritzen nicht lassen	/krise#selbstverletzung > /begriffe#b-selbstverletzung > /fragen#f-sprache > /beziehungen#verantwortung
+Sie kann nicht selbstverletzen lassen	/krise#selbstverletzung > /begriffe#b-selbstverletzung > /fragen#f-sprache > /beziehungen#verantwortung
+Ich weiss es nicht, Gewalt gibt es schon lange	/kommunizieren#kippen
+Ich schaffe es nicht. Gewalt jeden Tag	/kinder#eskalation > /gefahr#gewalt
+Er hört nicht auf. Geschlagen werde ich jeden Abend	/gefahr#gewalt
+nicht Gewalt sondern Kontrolle	/gefahr#gewalt
+Es ist nicht Gewalt, oder doch?	/rolle#an-grenzen > /quellen#forschung
+Ist das nicht Gewalt?	/gefahr#gewalt > /kinder#eskalation > /grenzen#konsequenz > /fragen#f-nicht-geteilt
+Ist es keine Gewalt, wenn er mich nur schubst?	/gefahr#gewalt

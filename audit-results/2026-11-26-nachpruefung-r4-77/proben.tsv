@@ -1,0 +1,263 @@
+# Eigene Proben der Nachprüfung r4-77. Spalten: Kategorie, Anfrage. Wortlaute nur in diesem Ordner.
+T-kill	Mein Mann will mich umbringen
+T-kill	Ich will mich umbringen
+T-kill	Er bringt mich um, wenn ich gehe
+T-kill	Wenn du gehst, bringe ich mich um
+T-kill	Mein Mann droht die Kinder umzubringen
+T-kill	Ich will mich umbringen, er schlägt mich jeden Tag
+T-kill	Sie will sich umbringen und ritzt sich
+T-kill	Meine Tochter will sich umbringen, was kann ich machen?
+T-kill	er hat gedroht sich umzubringen
+T-kill	ich habe angst dass er mich umbringt und die kinder
+T-kill	umbringen
+T-kill	töten
+S-sig	Ich habe Suizidgedanken
+S-sig	Suizidgedanken
+S-sig	Meine Tochter hat Suizidgedanken, was kann ich tun?
+S-sig	Er droht mit Suizid
+S-sig	Er droht mit Suizid, wenn ich ihn verlasse
+S-sig	Meine Frau droht mit Selbstmord, wenn ich gehe
+S-sig	Suiziddrohung
+S-sig	Sie macht mir Druck mit Suiziddrohungen
+S-sig	Ich habe eine Überdosis genommen
+S-sig	Er hat einen Abschiedsbrief geschrieben
+S-sig	Ich will nicht mehr leben
+S-sig	ich bin lebensmüde
+S-sig	Suizidgedanken Kinder
+S-sig	Suizid in der Familie, was sagen wir den Kindern?
+S-neg	Ich habe keine Suizidgedanken
+S-neg	Ich habe keine Suizidgedanken, aber ich bin erschöpft
+S-neg	Er hat nie einen Suizidversuch gemacht
+S-neg	Ich will nicht tot sein
+S-neg	Ich habe nicht keine Suizidgedanken
+S-neg	Kein Suizid
+S-neg	Suizid ist kein Thema bei uns
+S-fehl	Buch über Suizid
+S-fehl	Suizidprävention Schweiz
+V-sig	Er schlägt mich
+V-sig	Mein Mann schlägt mich
+V-sig	Ich werde geschlagen
+V-sig	Ich werde immer wieder geschlagen
+V-sig	Meine Freundin bedroht mich
+V-sig	Er hat mich gewürgt
+V-sig	Gewalt
+V-sig	Gewalt in der Beziehung
+V-sig	In der Beziehung gibt es Gewalt
+V-sig	Ich habe Angst vor meinem Mann
+V-sig	Ich habe Angst vor ihm, er schreit
+V-sig	Frauenhaus Zürich
+V-neg	Er hat mich nie geschlagen
+V-neg	Er schlägt mich nicht
+V-neg	Er ist nicht gewalttätig
+V-neg	Er ist nie gewalttätig gewesen
+V-neg	Er hat mich nicht geschlagen, aber gewürgt
+V-neg	Er hat mich nicht nur geschlagen
+V-neg	Er schlägt mich nicht mehr, aber er droht
+V-neg	Er hat mich nicht mehr geschlagen
+V-neg	Ich weiss nicht, schlägt er sie?
+V-neg	Ich weiss es nicht. Geschlagen hat er mich schon
+V-neg	Ich habe keine Angst vor ihm
+V-neg	Ich habe keine Angst vor meinem Mann
+V-neg	keine Gewalt
+V-neg	Es gab nie Gewalt, aber viel Streit
+V-neg	Ich kann nicht sagen, dass er mich nie geschlagen hat
+V-fehl	Was schlagen Sie vor?
+V-fehl	Welche Bücher schlagen Sie vor?
+V-fehl	Ich schlage vor, dass wir reden
+V-fehl	Schlagen Sie Literatur vor
+V-fehl	gewaltfreie Kommunikation
+V-fehl	Herzschlag
+V-fehl	Schlaganfall
+V-fehl	Mein Kind wurde in der Schule geschlagen, was tun
+H-sig	Selbstverletzung
+H-sig	Meine Tochter ritzt sich
+H-sig	Sie ritzt sich immer wieder
+H-sig	Ritzen
+H-sig	Was tun bei Ritzen?
+H-sig	Selbstverletzungen
+H-sig	selbstverletzendes Verhalten
+H-sig	Sie verletzt sich selbst
+H-sig	Mein Sohn schneidet sich
+H-sig	Selbstverletzung bei Jugendlichen
+H-sig	Selbstverletzung, was soll ich tun
+H-neg	Sie will sich nicht ritzen
+H-neg	Ich will mich nicht mehr ritzen
+H-neg	Ich will nicht ritzen, aber der Druck ist gross
+H-neg	Sie kann nicht aufhören zu ritzen
+H-neg	keine Selbstverletzung
+H-neg	nie Selbstverletzung, aber Suizidgedanken
+H-neg	Sie hat aufgehört zu ritzen
+K-kind	Mein Kind schlägt mich
+K-kind	Mein Sohn schlägt mich
+K-kind	Meine Tochter schlägt mich
+K-kind	Die Kinder schlagen sich
+K-kind	Mein Mann schlägt die Kinder
+K-kind	Mein Mann schlägt unsere Kinder
+K-kind	Mein Mann schlägt mich, aber nicht die Kinder
+K-kind	Er schlägt mich vor den Kindern
+K-kind	Er schlägt mich vor meinen Kindern
+K-kind	Der Vater meiner Kinder schlägt mich
+K-kind	Der Vater unserer Kinder bedroht mich
+K-kind	Gewalt gegen Kinder
+K-kind	Kinder und Gewalt
+K-kind	Mein Kind ritzt sich
+K-kind	Mein Kind hat Selbstverletzung
+K-kind	Mein Kind hat Suizidgedanken
+K-kind	Die Kinder haben gesehen, wie er mich schlägt
+K-kind	Ich habe Angst um die Kinder, er bedroht uns
+K-kind	Kein Kind wurde geschlagen
+K-kind	Mein Mann schlägt die Kinder und ich will nicht mehr leben
+K-kind	Mein Mann schlägt die Kinder und ich habe Suizidgedanken
+M-mehr	Sie hat Suizidgedanken und ritzt sich
+M-mehr	Suizidgedanken und Selbstverletzung
+M-mehr	Selbstverletzung und Gewalt
+M-mehr	Sie ritzt sich und schlägt mich
+M-mehr	Er schlägt mich und hat Suizidgedanken
+M-mehr	Selbstverletzung, Suizidgedanken, Gewalt
+M-mehr	Ritzen Suizid Gewalt Kinder
+M-mehr	Gewalt Suizid
+P-pos	Suizid
+P-pos	suizid?
+P-pos	Was tun bei Suizid
+P-pos	Gewalt.
+P-pos	Gewalt was tun
+P-pos	was tun Gewalt
+P-pos	Selbstverletzung was tun
+P-pos	was tun Selbstverletzung
+D-mund	Er schlaat mich
+D-mund	Är het mi gschlage
+D-mund	I ha Suizidgedanke
+D-mund	I wott nüme lebe
+D-mund	Si ritzt sich
+D-mund	Mi Ma bedroht mi
+I-ich	Ich ritze mich
+I-ich	Ich verletze mich selbst
+I-ich	Ich will sterben
+I-ich	Ich habe Angst, dass er mich schlägt
+I-ich	Ich werde bedroht
+I-ich	Ich habe Suizidgedanken und weiss nicht weiter
+I-ich	Ich brauche Hilfe, mein Partner schlägt mich
+Z-tipp	Ich
+Z-tipp	Ich 
+Z-tipp	Ich h
+Z-tipp	Ich ha
+Z-tipp	Ich hab
+Z-tipp	Ich habe
+Z-tipp	Ich habe 
+Z-tipp	Ich habe S
+Z-tipp	Ich habe Su
+Z-tipp	Ich habe Sui
+Z-tipp	Ich habe Suiz
+Z-tipp	Ich habe Suizi
+Z-tipp	Ich habe Suizid
+Z-tipp	Ich habe Suizidg
+Z-tipp	Ich habe Suizidge
+Z-tipp	Ich habe Suizidged
+Z-tipp	Ich habe Suizidgeda
+Z-tipp	Ich habe Suizidgedan
+Z-tipp	Ich habe Suizidgedank
+Z-tipp	Ich habe Suizidgedanke
+Z-tipp	Ich habe Suizidgedanken
+Z-tipp	Mei
+Z-tipp	Mein
+Z-tipp	Mein 
+Z-tipp	Mein M
+Z-tipp	Mein Ma
+Z-tipp	Mein Man
+Z-tipp	Mein Mann
+Z-tipp	Mein Mann 
+Z-tipp	Mein Mann s
+Z-tipp	Mein Mann sc
+Z-tipp	Mein Mann sch
+Z-tipp	Mein Mann schl
+Z-tipp	Mein Mann schl�
+Z-tipp	Mein Mann schlä
+Z-tipp	Mein Mann schläg
+Z-tipp	Mein Mann schlägt
+Z-tipp	Mein Mann schlägt 
+Z-tipp	Mein Mann schlägt m
+Z-tipp	Mein Mann schlägt mi
+Z-tipp	Mein Mann schlägt mic
+Z-tipp	Mein Mann schlägt mich
+Z-tipp	Sel
+Z-tipp	Selb
+Z-tipp	Selbs
+Z-tipp	Selbst
+Z-tipp	Selbstv
+Z-tipp	Selbstve
+Z-tipp	Selbstver
+Z-tipp	Selbstverl
+Z-tipp	Selbstverle
+Z-tipp	Selbstverlet
+Z-tipp	Selbstverletz
+Z-tipp	Selbstverletzu
+Z-tipp	Selbstverletzun
+Z-tipp	Selbstverletzung
+Z-tipp	Selbstverletzung 
+Z-tipp	Selbstverletzung b
+Z-tipp	Selbstverletzung be
+Z-tipp	Selbstverletzung bei
+Z-tipp	Selbstverletzung bei 
+Z-tipp	Selbstverletzung bei J
+Z-tipp	Selbstverletzung bei Ju
+Z-tipp	Selbstverletzung bei Jug
+Z-tipp	Selbstverletzung bei Juge
+Z-tipp	Selbstverletzung bei Jugen
+Z-tipp	Selbstverletzung bei Jugend
+Z-tipp	Selbstverletzung bei Jugendl
+Z-tipp	Selbstverletzung bei Jugendli
+Z-tipp	Selbstverletzung bei Jugendlic
+Z-tipp	Selbstverletzung bei Jugendlich
+Z-tipp	Selbstverletzung bei Jugendliche
+Z-tipp	Selbstverletzung bei Jugendlichen
+Z-tipp	Er 
+Z-tipp	Er h
+Z-tipp	Er ha
+Z-tipp	Er hat
+Z-tipp	Er hat 
+Z-tipp	Er hat m
+Z-tipp	Er hat mi
+Z-tipp	Er hat mic
+Z-tipp	Er hat mich
+Z-tipp	Er hat mich 
+Z-tipp	Er hat mich n
+Z-tipp	Er hat mich ni
+Z-tipp	Er hat mich nie
+Z-tipp	Er hat mich nie 
+Z-tipp	Er hat mich nie g
+Z-tipp	Er hat mich nie ge
+Z-tipp	Er hat mich nie ges
+Z-tipp	Er hat mich nie gesc
+Z-tipp	Er hat mich nie gesch
+Z-tipp	Er hat mich nie geschl
+Z-tipp	Er hat mich nie geschla
+Z-tipp	Er hat mich nie geschlag
+Z-tipp	Er hat mich nie geschlage
+Z-tipp	Er hat mich nie geschlagen
+Z-tipp	Mei
+Z-tipp	Mein
+Z-tipp	Mein 
+Z-tipp	Mein M
+Z-tipp	Mein Ma
+Z-tipp	Mein Man
+Z-tipp	Mein Mann
+Z-tipp	Mein Mann 
+Z-tipp	Mein Mann s
+Z-tipp	Mein Mann sc
+Z-tipp	Mein Mann sch
+Z-tipp	Mein Mann schl
+Z-tipp	Mein Mann schl�
+Z-tipp	Mein Mann schlä
+Z-tipp	Mein Mann schläg
+Z-tipp	Mein Mann schlägt
+Z-tipp	Mein Mann schlägt 
+Z-tipp	Mein Mann schlägt d
+Z-tipp	Mein Mann schlägt di
+Z-tipp	Mein Mann schlägt die
+Z-tipp	Mein Mann schlägt die 
+Z-tipp	Mein Mann schlägt die K
+Z-tipp	Mein Mann schlägt die Ki
+Z-tipp	Mein Mann schlägt die Kin
+Z-tipp	Mein Mann schlägt die Kind
+Z-tipp	Mein Mann schlägt die Kinde
+Z-tipp	Mein Mann schlägt die Kinder

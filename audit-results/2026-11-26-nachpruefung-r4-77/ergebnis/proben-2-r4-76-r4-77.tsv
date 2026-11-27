@@ -1,0 +1,20 @@
+Kategorie	Anfrage	r4-76 (Treffer: erste vier)	r4-77 (Treffer: erste vier)	r4-77 angeheftet
+N-opfer	Ich will nicht geschlagen werden	behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft > selbstfuersorge	behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft > selbstfuersorge	
+N-opfer	Ich will nicht mehr geschlagen werden	behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft > selbstfuersorge	gefahr#gewalt > behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft	gefahr#gewalt (Signal)
+N-opfer	Ich möchte nicht bedroht werden	behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft > selbstfuersorge	behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft > selbstfuersorge	
+N-opfer	Ich will nicht, dass er mich schlägt	behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft > selbstfuersorge	gefahr#gewalt > behandlung#keine-behandlung > selbstfuersorge#warnsignale > behandlung#auskunft	gefahr#gewalt (Signal)
+N-opfer	Ich halte es nicht aus, geschlagen zu werden	gefahr#riskant > gefahr#gewalt > kommunizieren#zuhoeren > begriffe#b-dbt	gefahr#gewalt > gefahr#riskant > kommunizieren#zuhoeren > begriffe#b-dbt	gefahr#gewalt (Signal)
+N-opfer	Die Kinder sollen nicht geschlagen werden	kommunizieren#zuhoeren > begriffe#begriffe > quellen#leitlinien	kommunizieren#zuhoeren > begriffe#begriffe > quellen#leitlinien	
+N-opfer	Er soll die Kinder nicht schlagen	kinder#eskalation > gefahr#gewalt > grenzen#rollen > fragen#f-sprache	kinder#eskalation > gefahr#gewalt > grenzen#rollen > fragen#f-sprache	
+N-opfer	Ich darf mich nicht ritzen	krise#selbstverletzung > begriffe#b-selbstverletzung > fragen#f-sprache > beziehungen#verantwortung	krise#selbstverletzung > begriffe#b-selbstverletzung > fragen#f-sprache > beziehungen#verantwortung	
+N-opfer	Ich will mich nicht selbstverletzen	krise#selbstverletzung > beziehungen#verantwortung > beziehungen#schleife > diagnose#zweifel	krise#selbstverletzung > beziehungen#verantwortung > beziehungen#schleife > diagnose#zweifel	
+N-opfer	Wie schaffe ich es, nicht zu ritzen	verstehen#einordnung > fragen#eigenes-leben > beziehungen#zwei-sichten	krise#selbstverletzung > verstehen#einordnung > fragen#eigenes-leben > beziehungen#zwei-sichten	krise#selbstverletzung (Signal)
+N-opfer	Ich kann das Ritzen nicht lassen	krise#selbstverletzung > begriffe#b-selbstverletzung > fragen#f-sprache > beziehungen#verantwortung	krise#selbstverletzung > begriffe#b-selbstverletzung > fragen#f-sprache > beziehungen#verantwortung	krise#selbstverletzung (Signal)
+N-opfer	Sie kann nicht selbstverletzen lassen	krise#selbstverletzung > begriffe#b-selbstverletzung > fragen#f-sprache > beziehungen#verantwortung	krise#selbstverletzung > begriffe#b-selbstverletzung > fragen#f-sprache > beziehungen#verantwortung	
+N-grenze	Ich weiss es nicht, Gewalt gibt es schon lange	kommunizieren#kippen	kommunizieren#kippen	
+N-grenze	Ich schaffe es nicht. Gewalt jeden Tag	kinder#eskalation > gefahr#gewalt	kinder#eskalation > gefahr#gewalt	
+N-grenze	Er hört nicht auf. Geschlagen werde ich jeden Abend	–	gefahr#gewalt	gefahr#gewalt (Signal)
+N-grenze	nicht Gewalt sondern Kontrolle	gefahr#gewalt	gefahr#gewalt	
+N-grenze	Es ist nicht Gewalt, oder doch?	rolle#an-grenzen > quellen#forschung	rolle#an-grenzen > quellen#forschung	
+N-grenze	Ist das nicht Gewalt?	gefahr#gewalt > kinder#eskalation > grenzen#konsequenz > fragen#f-nicht-geteilt	gefahr#gewalt > kinder#eskalation > grenzen#konsequenz > fragen#f-nicht-geteilt	
+N-grenze	Ist es keine Gewalt, wenn er mich nur schubst?	gefahr#gewalt	gefahr#gewalt	

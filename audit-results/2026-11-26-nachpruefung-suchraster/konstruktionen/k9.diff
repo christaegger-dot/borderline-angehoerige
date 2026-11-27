@@ -1,0 +1,12 @@
+diff -ru r76/site/js/interaktion.js k9/site/js/interaktion.js
+--- r76/site/js/interaktion.js	2026-11-26 20:54:23.000000000 +0000
++++ k9/site/js/interaktion.js	2026-11-26 23:18:23.355856260 +0000
+@@ -508,7 +508,7 @@
+       }
+       if (groups.pins) {
+         /* Sicherheitsabschnitte zuoberst, in der Reihenfolge der Faustregel (r4-32) */
+-        var pinnedItems = groups.pins.map(function (target) {
++        var pinnedItems = groups.pins.slice().reverse().map(function (target) {
+           return items.filter(function (item) { return item.getAttribute('data-search-target') === target; })[0];
+         }).filter(Boolean);
+         matches = pinnedItems.map(function (item) { return { item: item }; }).concat(matches.filter(function (entry) { return pinnedItems.indexOf(entry.item) === -1; }));

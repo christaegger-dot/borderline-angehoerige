@@ -1,0 +1,13 @@
+# Suchraster · Bezug r4-73 · Prüfstand r4-75
+Ergebnis: VERSCHLECHTERUNG · 45603 Anfragen · 1227 Verschlechterungen · JS-Fehler 0 · 346 s
+- saetze: 23328 Anfragen · geändert 6842 · verloren 630 · verdrängt 130 · Anheftung verloren 0 · leer 185 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 3096
+- ich: 4416 Anfragen · geändert 28 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 1 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 3
+- ichRahmen: 4320 Anfragen · geändert 1171 · verloren 68 · verdrängt 3 · Anheftung verloren 0 · leer 28 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 629
+- proben: 1125 Anfragen · geändert 369 · verloren 36 · verdrängt 6 · Anheftung verloren 0 · leer 12 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 175
+- kombinationen: 5622 Anfragen · geändert 1182 · verloren 34 · verdrängt 48 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 800
+- tippen: 6792 Anfragen · geändert 839 · verloren 177 · verdrängt 18 · Anheftung verloren 0 · leer 19 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 221
+Alle Ausnahmen angewendet oder keine eingetragen.
+
+## saetze: 23328 Anfragen · geändert 6842 · verloren 630 · verdrängt 130 · Anheftung verloren 0 · leer 185 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 3096
+VERLOREN | saetze | ist suizidgefährdet notfall | Bezug krise#krise-schnell > kinder#eskalation > krise | Prüfstand krise > krise#krise-schnell
+rc=1 dauer=348s

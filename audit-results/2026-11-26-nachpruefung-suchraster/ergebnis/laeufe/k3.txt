@@ -1,0 +1,13 @@
+# Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: KEINE VERSCHLECHTERUNG · 45603 Anfragen · 0 Verschlechterungen · JS-Fehler 0 · 285 s
+- saetze: 23328 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+- ich: 4416 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+- ichRahmen: 4320 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+- proben: 1125 Anfragen · geändert 1 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+- kombinationen: 5622 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+- tippen: 6792 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+Alle Ausnahmen angewendet oder keine eingetragen.
+
+## saetze: 23328 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+## ich: 4416 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+rc=0 dauer=286s

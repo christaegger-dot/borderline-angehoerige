@@ -1,0 +1,10 @@
+diff -ru r76/site/css/site.css k8/site/css/site.css
+--- r76/site/css/site.css	2026-11-26 20:54:23.000000000 +0000
++++ k8/site/css/site.css	2026-11-26 23:10:04.280931785 +0000
+@@ -1822,3 +1822,6 @@
+   .puk-longform__boundary:not(.puk-site-inline-ref),.bl-paths-cards li:first-child{border-top-color:var(--tinte-leise)}
+   .bl-paths-cards li,.puk-say>.puk-say__item,.bl-tun,.puk-longform__boundary{break-inside:avoid}
+ }
++
++/* harmlos */
++.puk-site-result{letter-spacing:0}

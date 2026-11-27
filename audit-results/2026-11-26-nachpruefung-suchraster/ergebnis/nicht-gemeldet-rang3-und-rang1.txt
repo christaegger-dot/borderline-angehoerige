@@ -1,0 +1,14 @@
+out/r75alle nicht gemeldet: Sicherheit nur Rang 3 verloren 63 davon mit Tötungswort 0 | Suizid bei Tötungswort von Rang 1 verdrängt 0
+  R3 saetze | mein mann hat suizidgedanken polizei | krise.html > krise.html#krise-schnell > gefahr.html#gewalt → krise.html > krise.html#krise-schnell
+  R3 saetze | mein mann ist suizidal polizei | krise.html > krise.html#krise-schnell > gefahr.html#gewalt → krise.html > krise.html#krise-schnell
+  R3 saetze | mein mann droht mit suizid polizei | krise.html > krise.html#krise-schnell > gefahr.html#gewalt → krise.html > krise.html#krise-schnell
+  R3 saetze | mein mann hat selbstmordgedanken polizei | krise.html > krise.html#krise-schnell > gefahr.html#gewalt → krise.html > krise.html#krise-schnell
+out/r74alle nicht gemeldet: Sicherheit nur Rang 3 verloren 102 davon mit Tötungswort 7 | Suizid bei Tötungswort von Rang 1 verdrängt 4
+  R3 saetze | mein mann hat suizidgedanken polizei | krise.html > krise.html#krise-schnell > gefahr.html#gewalt → krise.html > krise.html#krise-schnell
+  R3 saetze | mein mann ist suizidal polizei | krise.html > krise.html#krise-schnell > gefahr.html#gewalt → krise.html > krise.html#krise-schnell
+  R3 saetze | mein mann droht mit suizid polizei | krise.html > krise.html#krise-schnell > gefahr.html#gewalt → krise.html > krise.html#krise-schnell
+  R3 saetze | mein mann hat selbstmordgedanken polizei | krise.html > krise.html#krise-schnell > gefahr.html#gewalt → krise.html > krise.html#krise-schnell
+  D kombinationen | Tochter sagt immer wieder sie bringt sich um Hilfe suizidgefährdet | krise.html#suizid → krise.html > krise.html#suizid > krise.html#krise-schnell
+  D kombinationen | Tochter sagt immer wieder sie bringt sich um Hilfe Suizit | krise.html#suizid → krise.html > krise.html#suizid > krise.html#krise-schnell
+  D kombinationen | Tochter sagt immer wieder sie bringt sich um Hilfe Selbsmord | krise.html#suizid → krise.html > krise.html#suizid > krise.html#krise-schnell
+  D kombinationen | Tochter sagt immer wieder sie bringt sich um Hilfe Abschiedsnachricht | krise.html#suizid → krise.html > krise.html#suizid > krise.html#krise-schnell

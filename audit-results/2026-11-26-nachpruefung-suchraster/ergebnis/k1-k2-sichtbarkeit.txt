@@ -1,0 +1,12 @@
+== r76
+Suizid {"raster":["krise.html#suizid","diagnose.html#suizidalitaet","kommunizieren.html#suizid-angesprochen"],"sichtbar":["krise.html#suizid","diagnose.html#suizidalitaet","kommunizieren.html#suizid-angesprochen"],"leer_sicherheitslink_sichtbar":false}
+Er will sich umbringen {"raster":["krise.html#suizid","gefahr.html#gewalt","krise.html"],"sichtbar":["krise.html#suizid","gefahr.html#gewalt","krise.html"],"leer_sicherheitslink_sichtbar":false}
+xqzv {"raster":[],"sichtbar":[],"leer_sicherheitslink_sichtbar":true}
+== k1
+Suizid {"raster":["krise.html#suizid","diagnose.html#suizidalitaet","kommunizieren.html#suizid-angesprochen"],"sichtbar":["diagnose.html#suizidalitaet","kommunizieren.html#suizid-angesprochen","krise.html"],"leer_sicherheitslink_sichtbar":false}
+Er will sich umbringen {"raster":["krise.html#suizid","gefahr.html#gewalt","krise.html"],"sichtbar":["gefahr.html#gewalt","krise.html","diagnose.html#suizidalitaet"],"leer_sicherheitslink_sichtbar":false}
+xqzv {"raster":[],"sichtbar":[],"leer_sicherheitslink_sichtbar":false}
+== k2
+Suizid {"raster":["krise.html#suizid","diagnose.html#suizidalitaet","kommunizieren.html#suizid-angesprochen"],"sichtbar":["krise.html#suizid","diagnose.html#suizidalitaet","kommunizieren.html#suizid-angesprochen"],"leer_sicherheitslink_sichtbar":false}
+Er will sich umbringen {"raster":["krise.html#suizid","gefahr.html#gewalt","krise.html"],"sichtbar":["krise.html#suizid","gefahr.html#gewalt","krise.html"],"leer_sicherheitslink_sichtbar":false}
+xqzv {"raster":[],"sichtbar":[],"leer_sicherheitslink_sichtbar":false}

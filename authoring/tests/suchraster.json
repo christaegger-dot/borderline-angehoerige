@@ -27,7 +27,18 @@
       "meine schwester",
       "mein freund",
       "meine freundin",
-      "mein ex"
+      "mein ex",
+      "mein ehemann",
+      "meine ehefrau",
+      "mein stiefvater",
+      "meine mama",
+      "mein papa",
+      "mein nachbar",
+      "meine oma",
+      "mein opa",
+      "meine grossmutter",
+      "mein grossvater",
+      "jemand"
     ],
     "aussagen": [
       "will sterben",
@@ -110,7 +121,8 @@
       "hat sie gesagt",
       "wenn ich gehe",
       "und will keine hilfe"
-    ]
+    ],
+    "_hinweisHandelnde": "Ab der Härtung des Suchrasters (Nachprüfung #849, N847-3) mit weiteren Handelnden aus actors in interaktion.js und Grosseltern"
   },
   "ichAussagen": {
     "_hinweis": "Kern × Füllung × Rahmen (Nachprüfung r4-74, PR #839, kombinationen.cjs)",
@@ -302,5 +314,36 @@
       "GC"
     ],
     "abZeichen": 3
+  },
+  "themen": [
+    {
+      "thema": "Suizid",
+      "ab": "will sterben",
+      "passend": [
+        "krise.html#suizid"
+      ]
+    },
+    {
+      "thema": "Selbstverletzung",
+      "ab": "ritzt sich",
+      "passend": [
+        "krise.html#selbstverletzung"
+      ]
+    },
+    {
+      "thema": "Gewalt",
+      "ab": "schlägt",
+      "passend": [
+        "gefahr.html#gewalt",
+        "kinder.html#eskalation"
+      ]
+    }
+  ],
+  "_hinweisThemen": "Abdeckung je Thema (Hinweis G846-2, wie abdeckung.cjs der Gegenprüfung #846): Aussagen ab «ab» bis zum nächsten Thema; passend ist ein Abschnitt aus «passend» unter den ersten zwei",
+  "festerBezug": {
+    "bezug": "r4-73",
+    "verschlechterungen": 443,
+    "stand": "r4-77, 27.11.2026, mit den Umgebungen Telefon, dunkel und Kontrast (428 im Hauptlauf und je 5 in den drei Umgebungen)",
+    "_hinweis": "Zahl der Verschlechterungen des nicht blockierenden Laufs gegen den festen Stand (N847-8, N855-6). Ändert ein Release sie gewollt, hier nachführen."
   }
 }

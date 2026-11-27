@@ -1,0 +1,11 @@
+Suchraster · Bezug r4-73 · Prüfstand r4-75
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 0 Verschlechterungen · 44 als Ausnahme erlaubt · Fehler in Ausnahmen 6 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 373 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 44 · Sicherheitsabschnitt neu oben 176 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+FEHLER: Ausnahme zu breit: /^(?!x$|heute|öffnungs).+/ · LEER trifft 1114 Anfragen ohne Verlust (höchstens 100). Enger fassen.
+FEHLER: Ausnahme zu breit: /^(?!x$|heute|öffnungs).+/ · kinder.html#eskalation trifft 1114 Anfragen ohne Verlust (höchstens 100). Enger fassen.
+FEHLER: Ausnahme zu breit: /^(?!x$|heute|öffnungs).+/ · krise.html#suizid trifft 1114 Anfragen ohne Verlust (höchstens 100). Enger fassen.
+FEHLER: Ausnahme zu breit: /^(?!x$|heute|öffnungs).+/ · RANG1:krise.html#suizid trifft 1114 Anfragen ohne Verlust (höchstens 100). Enger fassen.
+FEHLER: Ausnahme zu breit: /^(?!x$|heute|öffnungs).+/ · gefahr.html#gewalt trifft 1114 Anfragen ohne Verlust (höchstens 100). Enger fassen.
+FEHLER: Ausnahme zu breit: /^(?!x$|heute|öffnungs).+/ · krise.html#selbstverletzung trifft 1114 Anfragen ohne Verlust (höchstens 100). Enger fassen.
+Als Ausnahme erlaubt: 44, einzeln in /tmp/claude-0/-home-user-borderline-angehoerige/c25b94b7-3e56-5405-8966-070eab006866/scratchpad/h/umgehung/ERGEBNIS.txt

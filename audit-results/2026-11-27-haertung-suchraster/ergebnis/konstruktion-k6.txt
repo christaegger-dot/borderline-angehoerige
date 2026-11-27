@@ -1,0 +1,13 @@
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Suche unverändert: suche.html, js/interaktion.js, _headers, css/site.css sind bis auf die Versionskennung byte-gleich. Kein Browserlauf nötig.
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	krise.html#suizid	–	Bauweise neu	im PR
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	krise.html#selbstverletzung	–	Bauweise neu	im PR
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	gefahr.html#gewalt	–	Bauweise neu	im PR
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	kinder.html#eskalation	–	Bauweise neu	im PR
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	kommunizieren.html#suizid-angesprochen	–	Bauweise neu	im PR
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	LEER	–	Bauweise neu	im PR
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	ANHEFTUNG:krise.html#suizid	–	Bauweise neu	im PR
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	ANHEFTUNG:gefahr.html#gewalt	–	Bauweise neu	im PR
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	ANHEFTUNG:krise.html#selbstverletzung	–	Bauweise neu	im PR
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	ANHEFTUNG:kinder.html#eskalation	–	Bauweise neu	im PR
+Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): /./	ANHEFTUNG:kommunizieren.html#suizid-angesprochen	–	Bauweise neu	im PR

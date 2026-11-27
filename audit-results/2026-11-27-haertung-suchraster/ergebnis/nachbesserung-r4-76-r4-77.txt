@@ -1,0 +1,880 @@
+# Suchraster · Bezug r4-76 · Prüfstand r4-77
+Ergebnis: VERSCHLECHTERUNG · 62863 Anfragen · 428 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0 · 565 s
+- saetze: 37584 Anfragen · geändert 19488 · verloren 0 · verdrängt 282 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 9594 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+- ich: 4416 Anfragen · geändert 192 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 96 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+- ichRahmen: 7290 Anfragen · geändert 3780 · verloren 0 · verdrängt 140 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 2429 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+- proben: 1158 Anfragen · geändert 274 · verloren 0 · verdrängt 5 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 72 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+- kombinationen: 5622 Anfragen · geändert 152 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 143 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+- tippen: 6792 Anfragen · geändert 812 · verloren 0 · verdrängt 1 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 198 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+- leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+- Abdeckung Suizid: Bezug 43,7 % · Prüfstand 67,5 % (17400 Sätze, passender Abschnitt unter den ersten zwei)
+- Abdeckung Selbstverletzung: Bezug 27,6 % · Prüfstand 36,8 % (5568 Sätze, passender Abschnitt unter den ersten zwei)
+- Abdeckung Gewalt: Bezug 45,0 % · Prüfstand 72,3 % (14616 Sätze, passender Abschnitt unter den ersten zwei)
+Alle Ausnahmen angewendet oder keine eingetragen.
+
+## saetze: 37584 Anfragen · geändert 19488 · verloren 0 · verdrängt 282 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 9594 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+VERDRAENGT | saetze | hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | hat einen suizidversuch gemacht was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | hat eine überdosis genommen was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | hat einen abschiedsbrief geschrieben was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | spricht von suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | selbstverletzung oft | Bezug begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten | Prüfstand krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid [angeheftet]
+VERDRAENGT | saetze | selbstverletzung ständig | Bezug grenzen#erkennen > krise#suizid > begriffe#b-borderline | Prüfstand krise#selbstverletzung > grenzen#erkennen > krise#suizid [angeheftet]
+VERDRAENGT | saetze | schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | er hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | er ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | er hat einen suizidversuch gemacht was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | er hat eine überdosis genommen was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | er hat einen abschiedsbrief geschrieben was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | er spricht von suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | er droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | er hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | er hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | er selbstverletzung oft | Bezug begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten | Prüfstand krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid [angeheftet]
+VERDRAENGT | saetze | er selbstverletzung ständig | Bezug grenzen#erkennen > krise#suizid > begriffe#b-borderline | Prüfstand krise#selbstverletzung > grenzen#erkennen > krise#suizid [angeheftet]
+VERDRAENGT | saetze | er schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | er schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | er schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | er ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | er würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | er hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | er bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | er gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | sie hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | sie ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | sie hat einen suizidversuch gemacht was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | sie hat eine überdosis genommen was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | sie hat einen abschiedsbrief geschrieben was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | sie spricht von suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | sie droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | sie hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | sie hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | sie selbstverletzung oft | Bezug begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten | Prüfstand krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid [angeheftet]
+VERDRAENGT | saetze | sie selbstverletzung ständig | Bezug grenzen#erkennen > krise#suizid > begriffe#b-borderline | Prüfstand krise#selbstverletzung > grenzen#erkennen > krise#suizid [angeheftet]
+VERDRAENGT | saetze | sie schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | sie schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | sie schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | sie ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | sie würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | sie hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | sie bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | sie gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | ich hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | ich ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | ich hat einen suizidversuch gemacht was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | ich hat eine überdosis genommen was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | ich hat einen abschiedsbrief geschrieben was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | ich spricht von suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | ich droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | ich hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | ich hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | ich selbstverletzung oft | Bezug begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten | Prüfstand krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid [angeheftet]
+VERDRAENGT | saetze | ich selbstverletzung ständig | Bezug grenzen#erkennen > krise#suizid > begriffe#b-borderline | Prüfstand krise#selbstverletzung > grenzen#erkennen > krise#suizid [angeheftet]
+VERDRAENGT | saetze | ich schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | ich schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | ich schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | ich ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | ich würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | ich hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | ich bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | ich gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein mann hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein mann ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein mann droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein mann hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein mann hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine frau hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine frau ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine frau droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine frau hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine frau hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine frau selbstverletzung | Bezug quellen#leitlinien > gefahr#gewalt > quellen#forschung | Prüfstand krise#selbstverletzung > quellen#leitlinien > gefahr#gewalt [angeheftet]
+VERDRAENGT | saetze | meine frau selbstverletzung fu | Bezug quellen#leitlinien > gefahr#gewalt > quellen#forschung | Prüfstand krise#selbstverletzung > quellen#leitlinien > gefahr#gewalt [angeheftet]
+VERDRAENGT | saetze | meine frau selbstverletzung und droht | Bezug quellen#leitlinien > gefahr#gewalt > quellen#forschung | Prüfstand krise#selbstverletzung > quellen#leitlinien > gefahr#gewalt [angeheftet]
+VERDRAENGT | saetze | mein partner hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein partner ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein partner hat einen suizidversuch gemacht was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein partner hat eine überdosis genommen was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein partner hat einen abschiedsbrief geschrieben was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein partner spricht von suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein partner droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein partner hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein partner hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein partner selbstverletzung oft | Bezug begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten | Prüfstand krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid [angeheftet]
+VERDRAENGT | saetze | mein partner selbstverletzung ständig | Bezug grenzen#erkennen > krise#suizid > begriffe#b-borderline | Prüfstand krise#selbstverletzung > grenzen#erkennen > krise#suizid [angeheftet]
+VERDRAENGT | saetze | mein partner schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein partner schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein partner schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein partner ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein partner würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein partner hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein partner bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein partner gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine partnerin hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine partnerin ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine partnerin hat einen suizidversuch gemacht was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine partnerin hat eine überdosis genommen was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine partnerin hat einen abschiedsbrief geschrieben was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine partnerin spricht von suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine partnerin droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine partnerin hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine partnerin hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine partnerin selbstverletzung oft | Bezug begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten | Prüfstand krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid [angeheftet]
+VERDRAENGT | saetze | meine partnerin selbstverletzung ständig | Bezug grenzen#erkennen > krise#suizid > begriffe#b-borderline | Prüfstand krise#selbstverletzung > grenzen#erkennen > krise#suizid [angeheftet]
+VERDRAENGT | saetze | meine partnerin schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine partnerin schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine partnerin schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine partnerin ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine partnerin würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine partnerin hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine partnerin bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine partnerin gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein sohn hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein sohn ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein sohn hat einen suizidversuch gemacht was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein sohn hat eine überdosis genommen was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein sohn hat einen abschiedsbrief geschrieben was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein sohn spricht von suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein sohn droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein sohn hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein sohn hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein sohn selbstverletzung oft | Bezug begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten | Prüfstand krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid [angeheftet]
+VERDRAENGT | saetze | mein sohn selbstverletzung ständig | Bezug grenzen#erkennen > krise#suizid > begriffe#b-borderline | Prüfstand krise#selbstverletzung > grenzen#erkennen > krise#suizid [angeheftet]
+VERDRAENGT | saetze | mein sohn schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein sohn schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein sohn schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein sohn ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein sohn würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein sohn hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein sohn bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein sohn gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine tochter hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine tochter ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine tochter hat einen suizidversuch gemacht was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine tochter hat eine überdosis genommen was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine tochter hat einen abschiedsbrief geschrieben was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine tochter spricht von suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine tochter droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine tochter hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine tochter hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine tochter selbstverletzung oft | Bezug begriffe#b-selbstverletzung > krise#suizid > rolle#nach-konflikten | Prüfstand krise#selbstverletzung > begriffe#b-selbstverletzung > krise#suizid [angeheftet]
+VERDRAENGT | saetze | meine tochter selbstverletzung ständig | Bezug grenzen#erkennen > krise#suizid > begriffe#b-borderline | Prüfstand krise#selbstverletzung > grenzen#erkennen > krise#suizid [angeheftet]
+VERDRAENGT | saetze | meine tochter schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine tochter schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine tochter schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine tochter ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine tochter würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine tochter hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine tochter bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine tochter gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein kind selbstverletzung notfall | Bezug krise#bleibt > gefahr#gewalt > quellen#versorgung | Prüfstand krise#selbstverletzung > krise#bleibt > gefahr#gewalt [angeheftet]
+VERDRAENGT | saetze | meine mutter hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine mutter ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine mutter droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine mutter hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine mutter hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein vater hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein vater ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein vater droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein vater hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein vater hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein bruder hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein bruder ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein bruder droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein bruder hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein bruder hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine schwester hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine schwester ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine schwester droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine schwester hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine schwester hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein freund hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein freund ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein freund droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein freund hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein freund hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine freundin hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine freundin ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine freundin droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine freundin hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine freundin hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein ex selbstverletzung hilfe | Bezug verstehen#einordnung > gefahr#gewalt > begriffe#begriffe | Prüfstand krise#selbstverletzung > verstehen#einordnung > gefahr#gewalt [angeheftet]
+VERDRAENGT | saetze | mein ehemann hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein ehemann ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein ehemann droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein ehemann hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein ehemann hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein ehemann schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein ehemann schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein ehemann schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein ehemann ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein ehemann würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein ehemann hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein ehemann bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein ehemann gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine ehefrau hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine ehefrau ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine ehefrau droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine ehefrau hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine ehefrau hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine ehefrau schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine ehefrau schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine ehefrau schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine ehefrau ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine ehefrau würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine ehefrau hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine ehefrau bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine ehefrau gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein stiefvater hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein stiefvater ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein stiefvater droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein stiefvater hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein stiefvater hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein stiefvater schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein stiefvater schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein stiefvater schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein stiefvater ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein stiefvater würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein stiefvater hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein stiefvater bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein stiefvater gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine mama hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine mama ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine mama droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine mama hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine mama hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein papa hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein papa ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein papa droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein papa hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein papa hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein nachbar hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein nachbar ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein nachbar droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein nachbar hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein nachbar hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein opa hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein opa ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein opa droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein opa hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein opa hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine grossmutter hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine grossmutter ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine grossmutter droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine grossmutter hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine grossmutter hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | meine grossmutter schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine grossmutter schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine grossmutter schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine grossmutter ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine grossmutter würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine grossmutter hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine grossmutter bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | meine grossmutter gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein grossvater hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein grossvater ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein grossvater droht mit suizid was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein grossvater hat selbstmordgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein grossvater hat einen todeswunsch was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | saetze | mein grossvater schlägt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein grossvater schlägt zu fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein grossvater schlägt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein grossvater ist gewalttätig fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein grossvater würgt mich fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein grossvater hat mich geschlagen fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein grossvater bedroht uns fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | saetze | mein grossvater gewalt fu | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+## ich: 4416 Anfragen · geändert 192 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 96 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+## ichRahmen: 7290 Anfragen · geändert 3780 · verloren 0 · verdrängt 140 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 2429 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+VERDRAENGT | ichRahmen | Ich brauche Hilfe, mein ex selbstverletzung | Bezug verstehen#einordnung > gefahr#gewalt > begriffe#begriffe | Prüfstand krise#selbstverletzung > verstehen#einordnung > gefahr#gewalt [angeheftet]
+VERDRAENGT | ichRahmen | er hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | er ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | er hat einen suizidversuch gemacht, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | er hat eine überdosis genommen, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | er hat einen abschiedsbrief geschrieben, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | er spricht von suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | er droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | er hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | er hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | sie hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | sie ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | sie hat einen suizidversuch gemacht, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | sie hat eine überdosis genommen, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | sie hat einen abschiedsbrief geschrieben, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | sie spricht von suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | sie droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | sie hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | sie hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein mann hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein mann ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein mann droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein mann hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein mann hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine frau hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine frau ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine frau droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine frau hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine frau hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein partner hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein partner ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein partner hat einen suizidversuch gemacht, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein partner hat eine überdosis genommen, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein partner hat einen abschiedsbrief geschrieben, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein partner spricht von suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein partner droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein partner hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein partner hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine partnerin hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine partnerin ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine partnerin hat einen suizidversuch gemacht, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine partnerin hat eine überdosis genommen, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine partnerin hat einen abschiedsbrief geschrieben, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine partnerin spricht von suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine partnerin droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine partnerin hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine partnerin hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein sohn hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein sohn ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein sohn hat einen suizidversuch gemacht, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein sohn hat eine überdosis genommen, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein sohn hat einen abschiedsbrief geschrieben, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein sohn spricht von suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein sohn droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein sohn hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein sohn hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine tochter hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine tochter ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine tochter hat einen suizidversuch gemacht, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine tochter hat eine überdosis genommen, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine tochter hat einen abschiedsbrief geschrieben, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine tochter spricht von suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine tochter droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine tochter hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine tochter hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen > krise#vermeiden | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine mutter hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine mutter ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine mutter droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine mutter hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine mutter hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein vater hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein vater ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein vater droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein vater hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein vater hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein bruder hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein bruder ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein bruder droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein bruder hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein bruder hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine schwester hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine schwester ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine schwester droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine schwester hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine schwester hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein freund hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein freund ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein freund droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein freund hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein freund hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine freundin hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine freundin ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine freundin droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine freundin hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine freundin hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein ehemann hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein ehemann ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein ehemann droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein ehemann hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein ehemann hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine ehefrau hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine ehefrau ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine ehefrau droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine ehefrau hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine ehefrau hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein stiefvater hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein stiefvater ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein stiefvater droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein stiefvater hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein stiefvater hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine mama hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine mama ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine mama droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine mama hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine mama hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein papa hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein papa ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein papa droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein papa hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein papa hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein nachbar hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein nachbar ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein nachbar droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein nachbar hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein nachbar hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein opa hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein opa ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein opa droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein opa hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein opa hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine grossmutter hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine grossmutter ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine grossmutter droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine grossmutter hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | meine grossmutter hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein grossvater hat suizidgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein grossvater ist suizidal, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein grossvater droht mit suizid, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein grossvater hat selbstmordgedanken, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | ichRahmen | mein grossvater hat einen todeswunsch, was kann ich machen? | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > krise#krise-schnell > kommunizieren#suizid-angesprochen [angeheftet]
+## proben: 1158 Anfragen · geändert 274 · verloren 0 · verdrängt 5 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 72 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+VERDRAENGT | proben | FU Gewalt | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | proben | IV Anmeldung Suizid | Bezug diagnose#begleiterkrankungen > kommunizieren#suizid-angesprochen | Prüfstand krise#suizid > diagnose#begleiterkrankungen > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | proben | Suizid IV | Bezug diagnose#begleiterkrankungen > kommunizieren#suizid-angesprochen > fragen#f-depression | Prüfstand krise#suizid > diagnose#begleiterkrankungen > kommunizieren#suizid-angesprochen [angeheftet]
+VERDRAENGT | proben | Gewalt FU | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+VERDRAENGT | proben | Er schlägt mich FU | Bezug fragen#f-einweisung > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > fragen#f-einweisung > kinder#eskalation [angeheftet]
+## kombinationen: 5622 Anfragen · geändert 152 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 143 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+## tippen: 6792 Anfragen · geändert 812 · verloren 0 · verdrängt 1 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 198 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+VERDRAENGT | tippen | Jugendliche schlägt mi | Bezug grenzen#rollen > kinder#eskalation > gefahr#gewalt | Prüfstand gefahr#gewalt > grenzen#rollen > kinder#eskalation [angeheftet]
+
+## Als Ausnahme erlaubt (0)
+
+## Vorlage für suchraster-ausnahmen.tsv (nur für gewollte Änderungen; Begründung und Entscheid ergänzen, gleichartige Fälle besser als enges Muster)
+hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+hat einen suizidversuch gemacht was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+hat eine überdosis genommen was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+hat einen abschiedsbrief geschrieben was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+spricht von suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+selbstverletzung oft	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+selbstverletzung ständig	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+er hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er hat einen suizidversuch gemacht was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er hat eine überdosis genommen was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er hat einen abschiedsbrief geschrieben was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er spricht von suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er selbstverletzung oft	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+er selbstverletzung ständig	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+er schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+er schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+er schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+er ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+er würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+er hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+er bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+er gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+sie hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat einen suizidversuch gemacht was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat eine überdosis genommen was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat einen abschiedsbrief geschrieben was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie spricht von suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie selbstverletzung oft	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+sie selbstverletzung ständig	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+sie schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+sie schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+sie schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+sie ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+sie würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+sie hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+sie bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+sie gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+ich hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+ich ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+ich hat einen suizidversuch gemacht was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+ich hat eine überdosis genommen was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+ich hat einen abschiedsbrief geschrieben was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+ich spricht von suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+ich droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+ich hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+ich hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+ich selbstverletzung oft	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+ich selbstverletzung ständig	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+ich schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+ich schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+ich schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+ich ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+ich würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+ich hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+ich bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+ich gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein mann hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein mann ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein mann droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein mann hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein mann hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau selbstverletzung	gefahr.html#gewalt	–	r4-76	<Begründung>	<Entscheid>
+meine frau selbstverletzung fu	gefahr.html#gewalt	–	r4-76	<Begründung>	<Entscheid>
+meine frau selbstverletzung und droht	gefahr.html#gewalt	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat einen suizidversuch gemacht was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat eine überdosis genommen was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat einen abschiedsbrief geschrieben was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner spricht von suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner selbstverletzung oft	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+mein partner selbstverletzung ständig	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+mein partner schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein partner schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein partner schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein partner ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein partner würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein partner bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein partner gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat einen suizidversuch gemacht was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat eine überdosis genommen was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat einen abschiedsbrief geschrieben was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin spricht von suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin selbstverletzung oft	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin selbstverletzung ständig	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat einen suizidversuch gemacht was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat eine überdosis genommen was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat einen abschiedsbrief geschrieben was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn spricht von suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn selbstverletzung oft	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+mein sohn selbstverletzung ständig	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+mein sohn schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein sohn schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein sohn schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein sohn ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein sohn würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein sohn bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein sohn gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat einen suizidversuch gemacht was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat eine überdosis genommen was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat einen abschiedsbrief geschrieben was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter spricht von suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter selbstverletzung oft	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+meine tochter selbstverletzung ständig	krise.html#suizid	–	r4-76	<Begründung>	<Entscheid>
+meine tochter schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine tochter schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine tochter schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine tochter ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine tochter würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine tochter bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine tochter gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein kind selbstverletzung notfall	gefahr.html#gewalt	–	r4-76	<Begründung>	<Entscheid>
+meine mutter hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mutter ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mutter droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mutter hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mutter hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein vater hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein vater ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein vater droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein vater hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein vater hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein bruder hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein bruder ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein bruder droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein bruder hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein bruder hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine schwester hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine schwester ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine schwester droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine schwester hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine schwester hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein freund hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein freund ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein freund droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein freund hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein freund hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine freundin hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine freundin ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine freundin droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine freundin hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine freundin hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ex selbstverletzung hilfe	gefahr.html#gewalt	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine mama hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mama ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mama droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mama hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mama hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein papa hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein papa ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein papa droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein papa hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein papa hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein nachbar hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein nachbar ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein nachbar droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein nachbar hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein nachbar hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein opa hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein opa ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein opa droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein opa hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein opa hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater hat suizidgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater ist suizidal was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater droht mit suizid was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater hat selbstmordgedanken was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater hat einen todeswunsch was kann ich machen	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater schlägt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater schlägt zu fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater schlägt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater ist gewalttätig fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater würgt mich fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater hat mich geschlagen fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater bedroht uns fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater gewalt fu	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+Ich brauche Hilfe, mein ex selbstverletzung	gefahr.html#gewalt	–	r4-76	<Begründung>	<Entscheid>
+er hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er hat einen suizidversuch gemacht, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er hat eine überdosis genommen, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er hat einen abschiedsbrief geschrieben, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er spricht von suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+er hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat einen suizidversuch gemacht, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat eine überdosis genommen, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat einen abschiedsbrief geschrieben, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie spricht von suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+sie hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein mann hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein mann ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein mann droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein mann hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein mann hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine frau hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat einen suizidversuch gemacht, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat eine überdosis genommen, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat einen abschiedsbrief geschrieben, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner spricht von suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein partner hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat einen suizidversuch gemacht, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat eine überdosis genommen, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat einen abschiedsbrief geschrieben, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin spricht von suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine partnerin hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat einen suizidversuch gemacht, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat eine überdosis genommen, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat einen abschiedsbrief geschrieben, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn spricht von suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein sohn hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat einen suizidversuch gemacht, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat eine überdosis genommen, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat einen abschiedsbrief geschrieben, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter spricht von suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine tochter hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mutter hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mutter ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mutter droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mutter hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mutter hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein vater hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein vater ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein vater droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein vater hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein vater hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein bruder hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein bruder ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein bruder droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein bruder hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein bruder hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine schwester hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine schwester ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine schwester droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine schwester hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine schwester hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein freund hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein freund ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein freund droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein freund hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein freund hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine freundin hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine freundin ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine freundin droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine freundin hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine freundin hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein ehemann hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine ehefrau hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein stiefvater hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mama hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mama ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mama droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mama hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine mama hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein papa hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein papa ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein papa droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein papa hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein papa hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein nachbar hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein nachbar ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein nachbar droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein nachbar hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein nachbar hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein opa hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein opa ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein opa droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein opa hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein opa hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+meine grossmutter hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater hat suizidgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater ist suizidal, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater droht mit suizid, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater hat selbstmordgedanken, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+mein grossvater hat einen todeswunsch, was kann ich machen?	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+FU Gewalt	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+IV Anmeldung Suizid	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+Suizid IV	kommunizieren.html#suizid-angesprochen	–	r4-76	<Begründung>	<Entscheid>
+Gewalt FU	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+Er schlägt mich FU	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>
+Jugendliche schlägt mi	kinder.html#eskalation	–	r4-76	<Begründung>	<Entscheid>

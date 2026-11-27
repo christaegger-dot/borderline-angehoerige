@@ -1,4 +1,6 @@
 # Gewollte Verluste für authoring/tools/suchraster.mjs, mit Begründung und Entscheid. Spalten durch Tabulator getrennt.
-# Muster: genaue Anfrage oder /regulärer Ausdruck/ auf die klein geschriebene Anfrage. Verlust: Abschnitt, LEER oder ANHEFTUNG:<Abschnitt>.
-# Ersatz: Abschnitt, der im Prüfstand unter den ersten zwei stehen muss, oder «–». Stand 26.11.2026: keine Ausnahmen. Die vier Übergangsmuster von r4-76 auf r4-77 sind nach dem Merge entfernt (Nachweis audit-results/2026-11-26-bauweise-suche-r4-77/).
-Muster	Verlust	Ersatz	Begründung	Entscheid
+# Muster: genaue Anfrage oder /regulärer Ausdruck/ auf die klein geschriebene Anfrage; ein Muster, das eine beliebige Anfrage trifft, wird abgelehnt.
+# Verlust: Abschnitt, RANG1:<Abschnitt>, RANG3, LEER, ANHEFTUNG:<Abschnitt> oder LEERMELDUNG:<Link>.
+# Ersatz: Abschnitt, der im Prüfstand unter den ersten zwei stehen muss, oder «–». Bezug: Versionskennung des Bezugs (z. B. r4-77); bei einem anderen Bezug ist die Ausnahme veraltet und lässt den Lauf scheitern.
+# Eine Ausnahme deckt höchstens 100 Anfragen. Jede neue Ausnahme lässt den CI-Job «suchraster-ausnahmen» scheitern: Sie braucht den Entscheid von Christa Egger und eine Nachprüfung vor dem Merge (N847-2). Stand 27.11.2026: keine Ausnahmen. Die vier Übergangsmuster von r4-76 auf r4-77 sind nach dem Merge entfernt (Nachweis audit-results/2026-11-26-bauweise-suche-r4-77/).
+Muster	Verlust	Ersatz	Bezug	Begründung	Entscheid

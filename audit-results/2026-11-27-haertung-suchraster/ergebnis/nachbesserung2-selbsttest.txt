@@ -1,0 +1,25 @@
+Selbsttest des Suchrasters · 23 Konstruktionen und der unveränderte Stand · alle bestanden
+BESTANDEN | unverändert | Rückgabe 0, 0 Verschlechterungen (erwartet 0)
+BESTANDEN | K1 | Stylesheet blendet Suizidtreffer und Sicherheitszeile der Leermeldung aus (display:none) | Rückgabe 1 · 333 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER, LEERMELDUNG
+BESTANDEN | K2 | Leermeldung ohne Sicherheitszeile (suche.html) | Rückgabe 1 · 1 Verschlechterungen · Arten LEERMELDUNG
+BESTANDEN | K5 | Anheftung in der Darstellung abgeschaltet (interaktion.js) | Rückgabe 1 · 229 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | K9 | Anheftung in umgekehrter Reihenfolge (interaktion.js) | Rückgabe 1 · 130 Verschlechterungen · Arten VERDRAENGT, RANG1
+BESTANDEN | V1 | Suizidtreffer mit order ans Ende der Liste | Rückgabe 1 · 269 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1
+BESTANDEN | V2 | Trefferliste umgekehrt (column-reverse) | Rückgabe 1 · 427 Verschlechterungen · Arten VERLOREN, ANHEFTUNG, RANG1, VERDRAENGT
+BESTANDEN | V3 | Suizidtreffer mit max-height:0 und overflow:hidden | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | V4 | Suizidtreffer mit clip-path | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | V5 | Suizidtreffer ausserhalb des Bildschirms | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | V6 | Sicherheitszeile der Leermeldung mit clip-path | Rückgabe 1 · 1 Verschlechterungen · Arten LEERMELDUNG
+BESTANDEN | V6b | Sicherheitszeile der Leermeldung ausserhalb des Bildschirms | Rückgabe 1 · 1 Verschlechterungen · Arten LEERMELDUNG
+BESTANDEN | V7 | Sicherheitszeile der Leermeldung mit der Klasse puk-sr (suche.html) | Rückgabe 1 · 1 Verschlechterungen · Arten LEERMELDUNG
+BESTANDEN | V7b | Suizidtreffer mit dem Attribut data-puk-sr-only (suche.html) | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | V8 | «Wenn Suizid angesprochen wird» ausgeblendet | Rückgabe 1 · 34 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG3
+BESTANDEN | V10 | Suizidtreffer von einem weissen Pseudo-Element überdeckt | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | W1 | Überdeckung mit pointer-events:none | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | W2 | Suizidtreffer mit filter:opacity(0) | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | W3 | Suizidtreffer mit durchsichtiger Maske | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | W4 | Suizidtreffer mit Deckkraft 0,11 | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | W5 | Suizidtreffer weiss auf weiss | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER
+BESTANDEN | W6 | Sicherheitszeile der Leermeldung überdeckt (pointer-events:none) | Rückgabe 1 · 1 Verschlechterungen · Arten LEERMELDUNG
+BESTANDEN | W7 | Sicherheitszeile der Leermeldung mit filter:opacity(0) | Rückgabe 1 · 1 Verschlechterungen · Arten LEERMELDUNG
+BESTANDEN | W8 | Suizidtreffer mit transform verschoben und hinter andere gelegt | Rückgabe 1 · 332 Verschlechterungen · Arten VERDRAENGT, ANHEFTUNG, VERLOREN, RANG1, LEER

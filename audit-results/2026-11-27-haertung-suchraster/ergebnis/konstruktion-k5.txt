@@ -1,0 +1,45 @@
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 157 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 157 · verloren 118 · verdrängt 39 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 157 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 39
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+VERDRAENGT+ANHEFTUNG | proben | Er will mich umbringen | gefahr#gewalt > krise#suizid > kinder#eskalation → gefahr#gewalt > kinder#eskalation > index#orientierung
+VERDRAENGT+ANHEFTUNG | proben | Mein Mann droht, mich umzubringen. | gefahr#gewalt > krise#suizid > kinder#eskalation → gefahr#gewalt > kinder#eskalation > index#orientierung
+VERLOREN+ANHEFTUNG | proben | Sie sagt, sie bringt sich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Ich bringe mich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | ICH BRINGE MICH UM!!! | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Meine Tochter will sich umbringen | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERDRAENGT+ANHEFTUNG | proben | Er hat gedroht mich zu töten | gefahr#gewalt > krise#suizid > kinder#eskalation → gefahr#gewalt > kinder#eskalation > index#orientierung
+VERLOREN+ANHEFTUNG | proben | Sie will sich töten | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERDRAENGT+ANHEFTUNG | proben | er bringt uns alle um | gefahr#gewalt > krise#suizid > kinder#eskalation → gefahr#gewalt > kinder#eskalation > index#orientierung
+VERLOREN+ANHEFTUNG | proben | Mein Sohn schreibt, er bringt sich um. | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Sie redet immer wieder davon, sich umzubringen | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Er sagt oft er bringt sich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Mein Partner hat versucht sich umzubringen | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Sie sagte sie tötet sich | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERDRAENGT+ANHEFTUNG | proben | Ich habe Angst dass er mich umbringt | gefahr#gewalt > krise#suizid > kinder#eskalation → gefahr#gewalt > kinder#eskalation > index#orientierung
+VERLOREN+ANHEFTUNG | proben | Wenn du gehst bringe ich mich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERDRAENGT+ANHEFTUNG | proben | Er bringt die Kinder um | kinder#eskalation > gefahr#gewalt > krise#suizid → krise#suizid > krise > diagnose#suizidalitaet
+VERDRAENGT+ANHEFTUNG | proben | Sie droht die Kinder und sich umzubringen | kinder#eskalation > gefahr#gewalt > krise#suizid → krise#suizid > krise > diagnose#suizidalitaet
+VERDRAENGT+ANHEFTUNG | proben | Mein Ex will mich und die Kinder töten | kinder#eskalation > gefahr#gewalt > krise#suizid → krise#suizid > krise > diagnose#suizidalitaet
+VERDRAENGT+ANHEFTUNG | proben | Er hat seine Frau umgebracht | gefahr#gewalt > krise#suizid > kinder#eskalation → gefahr#gewalt > kinder#eskalation > index#orientierung
+VERLOREN+ANHEFTUNG | proben | Mein Bruder wollte sich umbringen, jetzt will er nicht mehr | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Sie hat sich fast umgebracht | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Kann sie sich umbringen? | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | umbringen | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | töten | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Suizid umbringen | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERDRAENGT+ANHEFTUNG | proben | Er schlägt mich und droht mich umzubringen | gefahr#gewalt > krise#suizid > kinder#eskalation → gefahr#gewalt > kinder#eskalation > index#orientierung
+VERLOREN+ANHEFTUNG | proben | Mini Tochter wott sich umbringe | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Er het gseit er bringt sich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Ich möchte mich nicht umbringen, aber ich will nicht mehr | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Sie will sich nicht umbringen | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Er bringt sich nicht um, oder? | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Mein Vater sagt er bringt sich um wenn ich ausziehe | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Tochter (16) schreibt: «Ich bring mich um» | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Sie spricht davon, sich zu töten. | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Was tun, wenn jemand sagt, er bringe sich um? | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Er erzählt allen, dass er sich umbringt | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Sie hat immer wieder gesagt, sie bringt sich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Er sagte er habe das schon oft gemacht und bringe sich jetzt um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → krise#suizid > krise > diagnose#suizidalitaet
+VERLOREN+ANHEFTUNG | proben | Was hat sie getan, wollte sie sich umbringen | krise#suizid > gefahr#gewalt > krise → krise#suizid > krise > diagnose#suizidalitaet
+… 117 weitere in /tmp/claude-0/-home-user-borderline-angehoerige/c25b94b7-3e56-5405-8966-070eab006866/scratchpad/h/out-k5/ERGEBNIS.txt

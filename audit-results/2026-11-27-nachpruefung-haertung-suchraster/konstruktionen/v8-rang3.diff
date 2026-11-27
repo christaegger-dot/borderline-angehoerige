@@ -1,0 +1,9 @@
+diff -ru r76/site/css/site.css v8-rang3/site/css/site.css
+--- r76/site/css/site.css	2026-11-26 20:54:23.000000000 +0000
++++ v8-rang3/site/css/site.css	2026-11-27 02:08:59.511107137 +0000
+@@ -1822,3 +1822,5 @@
+   .puk-longform__boundary:not(.puk-site-inline-ref),.bl-paths-cards li:first-child{border-top-color:var(--tinte-leise)}
+   .bl-paths-cards li,.puk-say>.puk-say__item,.bl-tun,.puk-longform__boundary{break-inside:avoid}
+ }
++
++.puk-site-result[data-search-target="kommunizieren.html#suizid-angesprochen"]{display:none}

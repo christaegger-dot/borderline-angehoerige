@@ -1,0 +1,18 @@
+# Suchraster · Bezug r4-76 · Prüfstand r4-77
+Ergebnis: VERSCHLECHTERUNG · 62863 Anfragen · 428 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0 · 506 s
+- saetze: 37584 Anfragen · geändert 19488 · verloren 0 · verdrängt 282 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 9594
+- ich: 4416 Anfragen · geändert 192 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 96
+- ichRahmen: 7290 Anfragen · geändert 3780 · verloren 0 · verdrängt 140 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 2429
+- proben: 1158 Anfragen · geändert 274 · verloren 0 · verdrängt 5 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 72
+- kombinationen: 5622 Anfragen · geändert 152 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 143
+- tippen: 6792 Anfragen · geändert 812 · verloren 0 · verdrängt 1 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 198
+- leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+- Abdeckung Suizid: Bezug 43,7 % · Prüfstand 67,5 % (17400 Sätze, passender Abschnitt unter den ersten zwei)
+- Abdeckung Selbstverletzung: Bezug 27,6 % · Prüfstand 36,8 % (5568 Sätze, passender Abschnitt unter den ersten zwei)
+- Abdeckung Gewalt: Bezug 45,0 % · Prüfstand 72,3 % (14616 Sätze, passender Abschnitt unter den ersten zwei)
+Alle Ausnahmen angewendet oder keine eingetragen.
+
+
+
+
+Abgleich mit audit-results/2026-11-27-haertung-suchraster/ergebnis/r4-76-r4-77-ohne-ausnahmen.txt (PR #855): Art, Menge und Anfrage der 428 Fälle, sortiert, mit diff verglichen: identisch.

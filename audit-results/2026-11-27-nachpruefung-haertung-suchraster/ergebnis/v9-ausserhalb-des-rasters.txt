@@ -1,0 +1,48 @@
+# Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 5185 Anfragen · 1076 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0 · 53 s
+- saetze: 5184 Anfragen · geändert 2452 · verloren 1060 · verdrängt 0 · Suizid nicht mehr zuoberst 352 · letzter Sicherheitsabschnitt auf Rang 3 verloren 8 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+- leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+- Abdeckung Suizid: Bezug 44,2 % · Prüfstand 30,7 % (2400 Sätze, passender Abschnitt unter den ersten zwei)
+- Abdeckung Selbstverletzung: Bezug 32,3 % · Prüfstand 7,3 % (768 Sätze, passender Abschnitt unter den ersten zwei)
+
+Erste 40 von 1076 Fällen:
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken | Bezug krise#suizid > krise > diagnose#suizidalitaet | Prüfstand fragen#gespraeche > beziehungen#verantwortung > quellen#leitlinien
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken was tun | Bezug krise#suizid > krise > krise#belastung | Prüfstand krise#bleibt > fragen#gespraeche > beziehungen#verantwortung
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken was soll ich tun | Bezug krise#suizid > krise > krise#belastung | Prüfstand krise#bleibt > fragen#gespraeche > beziehungen#verantwortung
+VERLOREN | saetze | mein kollege hat suizidgedanken hilfe | Bezug krise > krise#suizid > krise#krise-schnell | Prüfstand fragen#gespraeche > krise#bleibt > beziehungen#verantwortung
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken immer wieder | Bezug krise#suizid | Prüfstand begriffe#begriffe > quellen#forschung
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken oft | Bezug krise#suizid | Prüfstand begriffe#begriffe
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken schon wieder | Bezug krise#suizid > diagnose#suizidalitaet | Prüfstand krise#bleibt > quellen#leitlinien > begriffe#begriffe
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken ständig | Bezug krise#suizid | Prüfstand quellen#leitlinien > krise#bleibt > beziehungen#verantwortung
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken ist das ernst | Bezug krise#suizid > kommunizieren#suizid-angesprochen > diagnose#suizidalitaet | Prüfstand fragen#gespraeche
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken fu | Bezug krise#suizid > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen | Prüfstand fragen#gespraeche > quellen#leitlinien > beziehungen#verantwortung
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken und droht | Bezug krise#suizid > krise > diagnose#suizidalitaet | Prüfstand fragen#gespraeche > beziehungen#verantwortung > quellen#leitlinien
+VERLOREN | saetze | mein kollege hat suizidgedanken was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand beziehungen#verantwortung > begriffe#begriffe
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken sagt er | Bezug krise#suizid | Prüfstand beziehungen#verantwortung > fragen#gespraeche
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken wenn ich gehe | Bezug krise#suizid > fragen#f-verlassen > diagnose#suizidalitaet | Prüfstand fragen#gespraeche > beziehungen#verantwortung > krise#bleibt
+VERLOREN+RANG1 | saetze | mein kollege hat suizidgedanken und will keine hilfe | Bezug krise#suizid | Prüfstand fragen#gespraeche > beziehungen#verantwortung > krise#bleibt
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal | Bezug krise#suizid > krise > diagnose#suizidalitaet | Prüfstand fragen#gespraeche > beziehungen#verantwortung > quellen#leitlinien
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal was tun | Bezug krise#suizid > krise > krise#belastung | Prüfstand krise#bleibt > fragen#gespraeche > beziehungen#verantwortung
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal was soll ich tun | Bezug krise#suizid > krise > krise#belastung | Prüfstand krise#bleibt > fragen#gespraeche > beziehungen#verantwortung
+VERLOREN | saetze | mein kollege ist suizidal hilfe | Bezug krise > krise#suizid > krise#krise-schnell | Prüfstand fragen#gespraeche > krise#bleibt > beziehungen#verantwortung
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal immer wieder | Bezug krise#suizid | Prüfstand begriffe#begriffe > quellen#forschung
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal oft | Bezug krise#suizid | Prüfstand begriffe#begriffe
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal schon wieder | Bezug krise#suizid > diagnose#suizidalitaet | Prüfstand krise#bleibt > quellen#leitlinien > begriffe#begriffe
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal ständig | Bezug krise#suizid | Prüfstand quellen#leitlinien > krise#bleibt > beziehungen#verantwortung
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal ist das ernst | Bezug krise#suizid > kommunizieren#suizid-angesprochen > diagnose#suizidalitaet | Prüfstand fragen#gespraeche
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal fu | Bezug krise#suizid > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen | Prüfstand fragen#gespraeche > quellen#leitlinien > beziehungen#verantwortung
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal und droht | Bezug krise#suizid > krise > diagnose#suizidalitaet | Prüfstand fragen#gespraeche > beziehungen#verantwortung > quellen#leitlinien
+VERLOREN | saetze | mein kollege ist suizidal was kann ich machen | Bezug krise#krise-schnell > kommunizieren#suizid-angesprochen | Prüfstand beziehungen#verantwortung > begriffe#begriffe
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal sagt er | Bezug krise#suizid | Prüfstand beziehungen#verantwortung > fragen#gespraeche
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal wenn ich gehe | Bezug krise#suizid > fragen#f-verlassen > diagnose#suizidalitaet | Prüfstand fragen#gespraeche > beziehungen#verantwortung > krise#bleibt
+VERLOREN+RANG1 | saetze | mein kollege ist suizidal und will keine hilfe | Bezug krise#suizid | Prüfstand fragen#gespraeche > beziehungen#verantwortung > krise#bleibt
+RANG1 | saetze | mein kollege hat einen suizidversuch gemacht und will keine hilfe | Bezug krise#suizid | Prüfstand unterstuetzung#beratung > krise#suizid
+VERLOREN+RANG1 | saetze | mein kollege hat eine überdosis genommen immer wieder | Bezug krise#suizid | Prüfstand quellen#forschung
+VERLOREN+RANG1 | saetze | mein kollege hat eine überdosis genommen und will keine hilfe | Bezug krise#suizid > krise#krisenplan | Prüfstand quellen#forschung
+RANG1 | saetze | mein kollege hat einen abschiedsbrief geschrieben und will keine hilfe | Bezug krise#suizid | Prüfstand unterstuetzung#beratung > krise#suizid > ueber#warum
+VERLOREN | saetze | mein kollege spricht von suizid und will keine hilfe | Bezug behandlung#keine-behandlung > krise#suizid | Prüfstand behandlung#keine-behandlung > unterstuetzung#beratung > krise#suizid
+VERLOREN+RANG1 | saetze | mein kollege droht mit suizid | Bezug krise#suizid > krise > diagnose#suizidalitaet | Prüfstand fragen#gespraeche > beziehungen#verantwortung > quellen#leitlinien
+VERLOREN+RANG1 | saetze | mein kollege droht mit suizid was tun | Bezug krise#suizid > krise > krise#belastung | Prüfstand krise#bleibt > fragen#gespraeche > beziehungen#verantwortung
+VERLOREN+RANG1 | saetze | mein kollege droht mit suizid was soll ich tun | Bezug krise#suizid > krise > krise#belastung | Prüfstand krise#bleibt > fragen#gespraeche > beziehungen#verantwortung
+VERLOREN | saetze | mein kollege droht mit suizid hilfe | Bezug krise > krise#suizid > krise#krise-schnell | Prüfstand fragen#gespraeche > krise#bleibt > beziehungen#verantwortung
+VERLOREN+RANG1 | saetze | mein kollege droht mit suizid immer wieder | Bezug krise#suizid | Prüfstand begriffe#begriffe > quellen#forschung

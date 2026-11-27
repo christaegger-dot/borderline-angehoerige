@@ -1,0 +1,11 @@
+diff -ru r76/site/js/interaktion.js v9/site/js/interaktion.js
+--- r76/site/js/interaktion.js	2026-11-26 20:54:23.000000000 +0000
++++ v9/site/js/interaktion.js	2026-11-27 02:16:38.915839039 +0000
+@@ -226,6 +226,7 @@
+       ['streit', 'konflikt', 'konflikte', 'eskalation', 'eskaliert', 'kippt'],
+       ['erschoepft', 'ueberfordert', 'belastet', 'kraft', 'am ende', 'keine kraft', 'kann nicht mehr', 'ich kann nicht mehr'],
+       ['kind', 'kinder', 'jugendliche'],
++      ['kollege', 'kollegin', 'chef', 'chefin', 'arbeitskollege', 'arbeit'],
+       ['einweisen', 'einweisung', 'fuersorgerisch', 'fuersorgerische', 'fu'],
+       ['medikament', 'medikamente', 'tabletten', 'antidepressivum'],
+       ['pause', 'pausieren', 'kontaktpause', 'abstand'],

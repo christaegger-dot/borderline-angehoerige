@@ -1,0 +1,14 @@
+r4-76 | «will sterben» | Sicht des Rasters: krise#suizid > krise > diagnose#suizidalitaet | Bildschirm: krise#suizid > krise > diagnose#suizidalitaet
+k1 | «will sterben» | Sicht des Rasters: krise > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen | Bildschirm: krise > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen
+v1-order | «will sterben» | Sicht des Rasters: krise#suizid > krise > diagnose#suizidalitaet | Bildschirm: krise > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen
+v2-umkehr | «will sterben» | Sicht des Rasters: krise#suizid > krise > diagnose#suizidalitaet | Bildschirm: begriffe#b-borderline > fragen#f-verlassen > fragen#f-depression
+v3-ueberlauf | «will sterben» | Sicht des Rasters: krise#suizid > krise > diagnose#suizidalitaet | Bildschirm: krise > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen
+v4-clip | «will sterben» | Sicht des Rasters: krise#suizid > krise > diagnose#suizidalitaet | Bildschirm: krise > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen
+v5-ausserhalb | «will sterben» | Sicht des Rasters: krise#suizid > krise > diagnose#suizidalitaet | Bildschirm: krise > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen
+v7b-treffer-sr | «will sterben» | Sicht des Rasters: krise#suizid > krise > diagnose#suizidalitaet | Bildschirm: krise > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen
+r4-76 | «qqxzqvwxq» | Sicht des Rasters: – | Bildschirm: – | Leermeldung Raster: fragen, krise#krise-schnell · Bildschirm: fragen, krise#krise-schnell
+k1 | «qqxzqvwxq» | Sicht des Rasters: – | Bildschirm: – | Leermeldung Raster: fragen · Bildschirm: fragen
+k2 | «qqxzqvwxq» | Sicht des Rasters: – | Bildschirm: – | Leermeldung Raster: fragen · Bildschirm: fragen
+v6-leer-clip | «qqxzqvwxq» | Sicht des Rasters: – | Bildschirm: – | Leermeldung Raster: fragen, krise#krise-schnell · Bildschirm: fragen
+v6b-leer-ausserhalb | «qqxzqvwxq» | Sicht des Rasters: – | Bildschirm: – | Leermeldung Raster: fragen, krise#krise-schnell · Bildschirm: fragen
+v7-leer-sr | «qqxzqvwxq» | Sicht des Rasters: – | Bildschirm: – | Leermeldung Raster: fragen, krise#krise-schnell · Bildschirm: fragen

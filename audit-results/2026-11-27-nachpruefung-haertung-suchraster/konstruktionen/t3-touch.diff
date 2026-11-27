@@ -1,0 +1,9 @@
+diff -ru r76/site/css/site.css t3-touch/site/css/site.css
+--- r76/site/css/site.css	2026-11-26 20:54:23.000000000 +0000
++++ t3-touch/site/css/site.css	2026-11-27 04:30:14.822901613 +0000
+@@ -1822,3 +1822,5 @@
+   .puk-longform__boundary:not(.puk-site-inline-ref),.bl-paths-cards li:first-child{border-top-color:var(--tinte-leise)}
+   .bl-paths-cards li,.puk-say>.puk-say__item,.bl-tun,.puk-longform__boundary{break-inside:avoid}
+ }
++
++@media (pointer:coarse){.puk-site-result[data-search-target="krise.html#suizid"]{display:none}}

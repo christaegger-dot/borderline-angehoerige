@@ -1,0 +1,60 @@
+# Passender Sicherheitsabschnitt unter den ersten zwei, je Aussage (von 696 Sätzen) · JS-Fehler 0
+Aussage | r4-76 passend / leer | r4-77 passend / leer
+will sterben | 696 / 0 | 696 / 0
+will nicht mehr leben | 696 / 0 | 696 / 0
+will sich umbringen | 696 / 0 | 696 / 0
+bringt sich um | 161 / 356 | 161 / 356
+droht sich umzubringen | 696 / 0 | 696 / 0
+hat suizidgedanken | 325 / 119 | 696 / 0
+ist suizidal | 325 / 119 | 696 / 0
+ist suizidgefährdet | 24 / 498 | 24 / 498
+ist lebensmüde | 696 / 0 | 696 / 0
+hat einen suizidversuch gemacht | 154 / 484 | 696 / 0
+hat eine überdosis genommen | 48 / 460 | 696 / 0
+hat tabletten genommen | 696 / 0 | 696 / 0
+hat einen abschiedsbrief geschrieben | 153 / 494 | 696 / 0
+redet vom sterben | 16 / 678 | 16 / 678
+spricht von suizid | 153 / 499 | 696 / 0
+droht mit suizid | 325 / 119 | 696 / 0
+denkt ans sterben | 292 / 245 | 292 / 245
+denkt an den tod | 61 / 630 | 61 / 630
+will nicht mehr | 0 / 0 | 0 / 0
+mag nicht mehr | 45 / 332 | 45 / 332
+tut sich etwas an | 0 / 486 | 0 / 486
+sagt das leben hat keinen sinn | 8 / 642 | 8 / 642
+will nicht mehr aufwachen | 696 / 0 | 696 / 0
+hat selbstmordgedanken | 325 / 119 | 696 / 0
+hat einen todeswunsch | 325 / 119 | 696 / 0
+ritzt sich | 352 / 275 | 352 / 275
+verletzt sich selbst | 233 / 83 | 233 / 83
+schneidet sich | 352 / 275 | 352 / 275
+hat sich geritzt | 0 / 498 | 0 / 498
+hat sich geschnitten | 0 / 498 | 0 / 498
+verletzt sich | 182 / 116 | 182 / 116
+selbstverletzung | 182 / 116 | 696 / 0
+hat sich selbst verletzt | 233 / 83 | 233 / 83
+schlägt | 313 / 77 | 696 / 0
+schlägt zu | 313 / 77 | 696 / 0
+schlägt mich | 313 / 77 | 696 / 0
+ist gewalttätig | 313 / 77 | 696 / 0
+bedroht mich | 696 / 0 | 696 / 0
+droht mir | 65 / 102 | 65 / 102
+würgt mich | 313 / 77 | 696 / 0
+hat mich geschlagen | 313 / 77 | 696 / 0
+ist aggressiv | 23 / 498 | 23 / 498
+wird gewalttätig | 327 / 90 | 696 / 0
+bedroht uns | 313 / 77 | 696 / 0
+schlägt die kinder | 361 / 58 | 696 / 0
+hat mir eine ohrfeige gegeben | 0 / 620 | 0 / 620
+droht mich umzubringen | 696 / 0 | 696 / 0
+will mich umbringen | 696 / 0 | 696 / 0
+beschimpft mich | 23 / 498 | 23 / 498
+macht mir angst | 0 / 382 | 0 / 382
+ich habe angst vor ihm | 696 / 0 | 696 / 0
+gewalt | 313 / 77 | 696 / 0
+häusliche gewalt | 472 / 175 | 696 / 0
+schreit mich an | 23 / 498 | 23 / 498
+SUMME Suizid | 7612 von 17400 (43.7 %) / leer 6399 | 11743 von 17400 (67.5 %) / leer 3867
+SUMME Selbstverletzung | 1534 von 5568 (27.6 %) / leer 1944 | 2048 von 5568 (36.8 %) / leer 1828
+SUMME Gewalt | 6582 von 14616 (45.0 %) / leer 3537 | 10574 von 14616 (72.3 %) / leer 2598
+SUMME alle | 15728 von 37584 (41.8 %) / leer 11880 | 24365 von 37584 (64.8 %) / leer 8293

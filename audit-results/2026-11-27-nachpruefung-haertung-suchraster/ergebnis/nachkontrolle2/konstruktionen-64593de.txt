@@ -1,0 +1,71 @@
+== w1-ueberdeckung-pe (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 312 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 314 · verloren 230 · verdrängt 70 · Suizid nicht mehr zuoberst 232 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 157 · leer 59 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 70 · Bildschirm anders als DOM: Bezug 0, Prüfstand 314
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+… 272 weitere in /tmp/claude-0/-home-user-borderline-angehoerige/244f357e-d644-55e0-ba3f-8dd7150564e2/scratchpad/out/z-w1-ueberdeckung-pe/ERGEBNIS.txt
+== w2-filter (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 312 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 314 · verloren 230 · verdrängt 70 · Suizid nicht mehr zuoberst 232 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 157 · leer 59 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 70 · Bildschirm anders als DOM: Bezug 0, Prüfstand 314
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+… 272 weitere in /tmp/claude-0/-home-user-borderline-angehoerige/244f357e-d644-55e0-ba3f-8dd7150564e2/scratchpad/out/z-w2-filter/ERGEBNIS.txt
+== w3-maske (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 312 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 314 · verloren 230 · verdrängt 70 · Suizid nicht mehr zuoberst 232 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 157 · leer 59 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 70 · Bildschirm anders als DOM: Bezug 0, Prüfstand 314
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+… 272 weitere in /tmp/claude-0/-home-user-borderline-angehoerige/244f357e-d644-55e0-ba3f-8dd7150564e2/scratchpad/out/z-w3-maske/ERGEBNIS.txt
+== w4-deckkraft (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 312 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 314 · verloren 230 · verdrängt 70 · Suizid nicht mehr zuoberst 232 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 157 · leer 59 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 70 · Bildschirm anders als DOM: Bezug 0, Prüfstand 314
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+… 272 weitere in /tmp/claude-0/-home-user-borderline-angehoerige/244f357e-d644-55e0-ba3f-8dd7150564e2/scratchpad/out/z-w4-deckkraft/ERGEBNIS.txt
+== w5-farbe (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 312 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 314 · verloren 230 · verdrängt 70 · Suizid nicht mehr zuoberst 232 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 157 · leer 59 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 70 · Bildschirm anders als DOM: Bezug 0, Prüfstand 314
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+… 272 weitere in /tmp/claude-0/-home-user-borderline-angehoerige/244f357e-d644-55e0-ba3f-8dd7150564e2/scratchpad/out/z-w5-farbe/ERGEBNIS.txt
+== w6-leer-ueberdeckung (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 1 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 1 · Sicherheitslink verloren 1 · als Ausnahme erlaubt 0
+== w7-leer-filter (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 1 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 1 · Sicherheitslink verloren 1 · als Ausnahme erlaubt 0
+== w8-transform (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 312 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 314 · verloren 230 · verdrängt 70 · Suizid nicht mehr zuoberst 232 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 157 · leer 59 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 70 · Bildschirm anders als DOM: Bezug 0, Prüfstand 314
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+… 272 weitere in /tmp/claude-0/-home-user-borderline-angehoerige/244f357e-d644-55e0-ba3f-8dd7150564e2/scratchpad/out/z-w8-transform/ERGEBNIS.txt
+== x1-layer-ueberdeckung (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: KEINE VERSCHLECHTERUNG · 1159 Anfragen · 0 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+== x2-verlauf (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: KEINE VERSCHLECHTERUNG · 1159 Anfragen · 0 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+== x3-mischmodus (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: KEINE VERSCHLECHTERUNG · 1159 Anfragen · 0 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+== x4-leer-mischmodus (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: KEINE VERSCHLECHTERUNG · 1159 Anfragen · 0 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+== x5-leer-layer (Werkzeug 64593de)
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: KEINE VERSCHLECHTERUNG · 1159 Anfragen · 0 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0

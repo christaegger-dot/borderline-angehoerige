@@ -1,4 +1,4 @@
-**Bereit zum Merge: nein.** Vorher zu beheben: N855-1 (hoch) und N855-2 (mittel, in der kleinen Form unten). Die übrigen Befunde blockieren nicht.
+**Bereit zum Merge: nein** (Nachkontrolle von Kopf `6d9428d`, 27.11.2026, 03:30 UTC). Vor dem Merge zu beheben: N855-9 (hoch). N855-2 ist behoben, N855-1 für alle bisher bekannten Konstruktionen. Siehe Abschnitt 5. Urteil zum Kopf `6210121`: nein, vor dem Merge zu beheben waren N855-1 (hoch) und N855-2 (mittel, in der kleinen Form unten). Die übrigen Befunde blockieren nicht.
 
 # Nachprüfung der Härtung des Suchrasters (PR #855)
 
@@ -187,3 +187,55 @@ Kein Rückbau nötig: Der PR ändert die Website nicht.
   - Umgehung der Ausnahmen.
 
 Die Wortlaute der Proben stehen nur hier unter `audit-results/`.
+
+## 5 Nachkontrolle von Kopf `6d9428d` (27.11.2026)
+
+Die bauende Sitzung hat #855 mit `6d9428d` nachgebessert («Suchraster: Nachbesserung nach der Nachprüfung #856») und um eine Nachkontrolle vor dem Merge gebeten. Ich habe ausdrücklich versucht, das neue Werkzeug falsch bestehen zu lassen.
+
+### 5.1 Was jetzt hält
+
+- **N855-1, bekannte Konstruktionen: behoben.** Neu ist der Selbsttest `suchraster-selbsttest.mjs`. Er meldet lokal auf r4-77 alle 15 Konstruktionen und den unveränderten Stand richtig (K1, K2, K5, K9, V1 bis V8, V10). In der CI läuft er als vierte Variante, grün in 3 min (`ergebnis/nachkontrolle/selbsttest-6d9428d.txt`).
+- Die Reihenfolge kommt jetzt aus der Lage auf dem Bildschirm. Damit fällt auch eine Verschiebung mit `transform` auf (W8: 312 Fälle).
+- **N855-2: behoben.** `suchraster-ausnahmen` scheitert bei jeder Änderung unter `.github/workflows/`. In #855 selbst ist der Job deshalb gewollt rot («Files .github/workflows/verify-authoring.yml … differ»). Die Freigabe-Aussage in Workflow, Bericht und Pendenzendatei ist berichtigt.
+- **N855-4: behoben.** Meine `werkzeug/umgehung-ausnahmen.tsv` scheitert jetzt mit 6 × «Ausnahme zu breit … trifft 1 114 Anfragen ohne Verlust».
+- **N855-3, N855-6 und N855-7:** umgesetzt wie in der Nachricht beschrieben: Warnung, wenn `interaktion.js` ohne neue Proben geändert wird; `festerBezug` in den Rasterdaten; `netlify.toml` im Pfadfilter, `_redirects` in der Abkürzung.
+- **Falsch scheitern: nein.**
+  - r4-77 → r4-77 voll mit `--immer`: 0 Verschlechterungen, 0 geändert; «Bildschirm anders als DOM» überall 0 (517 s lokal).
+  - r4-76 → r4-77 ohne Ausnahmen: weiter genau 428 Fälle, Abdeckung unverändert (516 s lokal).
+
+  Die Laufzeit ist trotz Prüfung des Treffpunkts nicht länger geworden.
+- **CI auf `6d9428d`:**
+  - grün: `build-and-compare`, `werkzeug-der-basis`, `werkzeug-des-pr` und `selbsttest`;
+  - rot, gewollt: `suchraster-ausnahmen` (Workflow geändert);
+  - beim Abschluss dieser Kontrolle noch laufend: `fester-bezug-r4-73`.
+
+### 5.2 Was das neue Werkzeug weiter falsch bestehen lässt
+
+Alle Konstruktionen sind gegen r4-76 gebaut und mit den Proben und der Leermeldung gelaufen (Werkzeug `6d9428d`, `ergebnis/nachkontrolle/konstruktionen-6d9428d.txt`). Die Fälle mit Bild sind zusätzlich auf dem Bildschirm geprüft (`ergebnis/nachkontrolle/sicht/`).
+
+| Konstruktion | eine CSS-Zeile | Bildschirm | Raster |
+|---|---|---|---|
+| **W1** | weisses `::after` über dem Suizidtreffer, mit `pointer-events:none` | Suizidkarte leer (Bild) | **0** |
+| **W2** | Suizidtreffer `filter:opacity(0)` | unsichtbar (Bild) | **0** |
+| **W3** | Suizidtreffer `mask-image: linear-gradient(transparent,transparent)` | unsichtbar | **0** |
+| W4 | Suizidtreffer `opacity:.11` | kaum lesbar | 0 (Schwelle 0,1 ist dokumentiert) |
+| W5 | Suizidtreffer weiss auf weiss | unsichtbar | 0 (als Grenze dokumentiert) |
+| **W6** | weisses `::after` über der Sicherheitszeile der Leermeldung, `pointer-events:none` | Sicherheitslink unsichtbar | **0** |
+| **W7** | Sicherheitszeile der Leermeldung `filter:opacity(0)` | Sicherheitslink unsichtbar (Bild) | **0** |
+| W8 | Suizidtreffer `transform:translateY(-400%)` | verschoben | 312, erkannt |
+
+**N855-9 (hoch, vor dem Merge beheben):** Die Prüfung des Treffpunkts übersieht eine Überdeckung mit `pointer-events:none`. `elementFromPoint` überspringt solche Elemente; V10 wird nur erkannt, weil seine Überdeckung Mausereignisse annimmt. Wirkstoffe, die die Darstellung ausblenden, ohne `opacity`, `visibility` oder `clip` zu setzen, prüft das Werkzeug nicht: `filter` und `mask`. Damit bleibt der Kern von N855-1 offen: Mit einer einzigen CSS-Zeile verschwindet der Suizidtreffer oder die Sicherheitszeile der Leermeldung, und die CI ist grün.
+
+Vorschlag (klein):
+1. Während der Messung ein Stylesheet `*,*::before,*::after{pointer-events:auto!important}` einsetzen, damit jede Überdeckung den Treffpunkt belegt.
+2. `filter` und `mask-image` (auch `-webkit-mask-image`) bei sich und allen Vorfahren prüfen: Nicht `none` zählt als unsichtbar, oder mindestens `opacity(…)` im Filter in die Deckkraft einrechnen.
+3. Die Schwelle der Deckkraft auf mindestens 0,5 setzen.
+4. W1, W2, W3, W6 und W7 in den Selbsttest aufnehmen.
+
+Danach bleiben als dokumentierte Grenzen nur Farbe gleich Hintergrund (W5) und ein Pseudo-Element des Links selbst. Belastbar wäre auf Dauer ein Vergleich der Bildpunkte im Bereich des Links mit dem Bezug, für die ersten drei Treffer und die Leermeldung. Das ist ein Vorschlag, kein Merge-Hindernis.
+
+**N855-10 (Hinweis):** Die berichtigte Aussage lautet: «Eine grüne CI ist eine Freigabe nach R34-P01 nur, wenn dieser Job grün ist.» Der Job steht aber selbst im Workflow des PR. Ein PR kann also die Prüfung auf Workflow-Änderungen streichen, und der Job wird grün. Genauer wäre: «… nur, wenn der PR nichts unter `.github/` ändert (im Diff zu prüfen).» Die volle Absicherung bleibt ein Entscheid von Christa Egger (N855-2).
+
+### 5.3 Urteil
+
+**Bereit zum Merge: nein.** Vorher zu beheben ist N855-9. Sind die Vorschläge 1 bis 4 umgesetzt und W1 bis W7 im Selbsttest gemeldet, ist aus meiner Sicht nichts Blockierendes mehr offen. N855-5 und die volle Absicherung des Workflows bleiben Entscheide von Christa Egger.

@@ -46,6 +46,26 @@ Diese Übersicht fasst zusammen, was am 26.11.2026 wirklich offen ist. Sie erset
 
 **Keine Pendenz:** Prüfungen mit echtem Screenreader, Safari, Firefox und realen Geräten (AR3-3, Entscheid vom 13.10.2026). Sie bleiben eine dokumentierte Evidenzgrenze.
 
+## r4-78 · Korrektur nach der Nachprüfung von r4-77 (N848-1 bis N848-3) · offen seit 27.11.2026
+
+**GitHub:** Entwurf, Branch `bau/2026-11-27-r4-78-suche-n848`, nicht gemergt. **Gebaut von der Sitzung, die r4-77 nachgeprüft hat (#851); vor dem Merge ist eine Nachprüfung durch eine Sitzung nötig, die weder r4-77 noch r4-78 gebaut oder geprüft hat.**
+
+**Auftrag:** Antwort von Christa Egger, 27.11.2026: «ok, leg los» auf die offenen Entscheide N848-1 bis N848-3. Umsetzung: N848-2 und N848-3 nach Empfehlung (streichen); N848-1 als «anheften», weil nur das den Verlust gegenüber r4-76 rückgängig macht. **Die Wahl bei N848-1 ist eine Lesart und muss bestätigt werden.**
+
+**Inhalt** (Verhalten nur in `authoring/js/interaktion.js`, dazu die Kennung):
+- Suiziddrohung ohne Tötungswort: «Wenn Suizid angesprochen wird» direkt nach dem Suizidabschnitt.
+- Kein Vorrang mehr für einen Sicherheitsabschnitt, der nur zufällig zuoberst stand.
+- Keine Verneinungsregel mehr für Selbstverletzung und Gewalt.
+- Anfragen mit Tötungswort und mit Suizid und Gewalt zusammen bleiben unverändert (5 687 von 5 687 gemessen).
+
+**Messung:** Suchraster gegen r4-77: 0 Verschlechterungen. Gegen r4-76: die 268 in r4-77 hingenommenen Verdrängungen von Platz 2 auf 3, ohne die 30 Suiziddrohungen; 0 verloren, 0 leer, 0 Anheftung verloren. Abdeckung unverändert 65,1 %. Suchtest 247/247 (fünf neue Zeilen). Die übrigen Gates sind bestanden. Nachweis mit Wortlauten: [`audit-results/2026-11-27-korrektur-suche-r4-78/BERICHT.md`](audit-results/2026-11-27-korrektur-suche-r4-78/BERICHT.md).
+
+**Folgen, die zu entscheiden sind:** Bei Kindern als Zeugen steht der Kinderschutz jetzt auf Platz 2 statt 1. Verneinte Sätze ohne Anlass zeigen zuerst einen Sicherheitsabschnitt.
+
+**Offen:**
+- Bestätigung der Lesart bei N848-1 (Christa Egger).
+- Nachprüfung vor dem Merge; Merge nur auf Auftrag für genau diesen PR (R65-P01).
+
 ## r4-77 · Wiederaufbau der Suche, Schritt 2: Bauweise · auf `main` seit 26.11.2026
 
 **GitHub:** [PR #848](https://github.com/christaegger-dot/borderline-angehoerige/pull/848), Branch `claude/sharp-mendel-6ecwbi` (Name von der Cloud-Sitzung vorgegeben, verstösst gegen die Branch-Konvention in `AGENTS.md`), Kopf `ad6eba0`, gemergt als `9d3b7d4` am 26.11.2026, 23:47:57 UTC, über das Konto von Christa Egger; die bauende Sitzung hat den Merge nicht ausgelöst. «Bereit zur Prüfung» um 23:47:53 UTC, Merge rund 4 Sekunden später. Einen Merge-Auftrag nennen weder der PR noch der Merge-Commit (R65-P01). **Die Nachprüfung vor dem Merge, die der PR verlangte, lag nicht vor**; sie läuft seit 23:34 UTC und ist damit nachträglich. CI `build-and-compare` grün auf `a682f0c` um 23:39:28 UTC; das Suchraster lief dort zum ersten Mal voll (45 605 Anfragen in 4 min 17 s, 0 Verschlechterungen, 298 über die vier Muster erlaubt).

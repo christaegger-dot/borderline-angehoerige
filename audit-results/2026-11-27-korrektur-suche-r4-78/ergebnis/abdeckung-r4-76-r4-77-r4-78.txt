@@ -1,0 +1,60 @@
+# Passender Sicherheitsabschnitt unter den ersten zwei, je Aussage (von 432 Sätzen) · JS-Fehler 0
+Aussage | r4-76 passend / leer | r4-77 passend / leer | r4-78 passend / leer
+will sterben | 432 / 0 | 432 / 0 | 432 / 0
+will nicht mehr leben | 432 / 0 | 432 / 0 | 432 / 0
+will sich umbringen | 432 / 0 | 432 / 0 | 432 / 0
+bringt sich um | 106 / 179 | 106 / 179 | 106 / 179
+droht sich umzubringen | 432 / 0 | 432 / 0 | 432 / 0
+hat suizidgedanken | 208 / 51 | 432 / 0 | 432 / 0
+ist suizidal | 208 / 51 | 432 / 0 | 432 / 0
+ist suizidgefährdet | 24 / 246 | 24 / 246 | 24 / 246
+ist lebensmüde | 432 / 0 | 432 / 0 | 432 / 0
+hat einen suizidversuch gemacht | 132 / 245 | 432 / 0 | 432 / 0
+hat eine überdosis genommen | 30 / 238 | 432 / 0 | 432 / 0
+hat tabletten genommen | 432 / 0 | 432 / 0 | 432 / 0
+hat einen abschiedsbrief geschrieben | 131 / 254 | 432 / 0 | 432 / 0
+redet vom sterben | 16 / 414 | 16 / 414 | 16 / 414
+spricht von suizid | 131 / 259 | 432 / 0 | 432 / 0
+droht mit suizid | 208 / 51 | 432 / 0 | 432 / 0
+denkt ans sterben | 160 / 136 | 160 / 136 | 160 / 136
+denkt an den tod | 50 / 378 | 50 / 378 | 50 / 378
+will nicht mehr | 0 / 0 | 0 / 0 | 0 / 0
+mag nicht mehr | 34 / 135 | 34 / 135 | 34 / 135
+tut sich etwas an | 0 / 244 | 0 / 244 | 0 / 244
+sagt das leben hat keinen sinn | 8 / 380 | 8 / 380 | 8 / 380
+will nicht mehr aufwachen | 432 / 0 | 432 / 0 | 432 / 0
+hat selbstmordgedanken | 208 / 51 | 432 / 0 | 432 / 0
+hat einen todeswunsch | 208 / 51 | 432 / 0 | 432 / 0
+ritzt sich | 242 / 123 | 242 / 123 | 242 / 123
+verletzt sich selbst | 140 / 34 | 140 / 34 | 140 / 34
+schneidet sich | 242 / 123 | 242 / 123 | 242 / 123
+hat sich geritzt | 0 / 246 | 0 / 246 | 0 / 246
+hat sich geschnitten | 0 / 246 | 0 / 246 | 0 / 246
+verletzt sich | 108 / 45 | 108 / 45 | 108 / 45
+selbstverletzung | 108 / 45 | 432 / 0 | 432 / 0
+hat sich selbst verletzt | 140 / 34 | 140 / 34 | 140 / 34
+schlägt | 206 / 3 | 432 / 0 | 432 / 0
+schlägt zu | 206 / 3 | 432 / 0 | 432 / 0
+schlägt mich | 206 / 3 | 432 / 0 | 432 / 0
+ist gewalttätig | 206 / 3 | 432 / 0 | 432 / 0
+bedroht mich | 432 / 0 | 432 / 0 | 432 / 0
+droht mir | 37 / 18 | 37 / 18 | 37 / 18
+würgt mich | 206 / 3 | 432 / 0 | 432 / 0
+hat mich geschlagen | 206 / 3 | 432 / 0 | 432 / 0
+ist aggressiv | 22 / 246 | 22 / 246 | 22 / 246
+wird gewalttätig | 203 / 2 | 432 / 0 | 432 / 0
+bedroht uns | 206 / 3 | 432 / 0 | 432 / 0
+schlägt die kinder | 230 / 0 | 432 / 0 | 432 / 0
+hat mir eine ohrfeige gegeben | 0 / 367 | 0 / 367 | 0 / 367
+droht mich umzubringen | 432 / 0 | 432 / 0 | 432 / 0
+will mich umbringen | 432 / 0 | 432 / 0 | 432 / 0
+beschimpft mich | 22 / 246 | 22 / 246 | 22 / 246
+macht mir angst | 0 / 171 | 0 / 171 | 0 / 171
+ich habe angst vor ihm | 432 / 0 | 432 / 0 | 432 / 0
+gewalt | 206 / 3 | 432 / 0 | 432 / 0
+häusliche gewalt | 318 / 66 | 432 / 0 | 432 / 0
+schreit mich an | 22 / 246 | 22 / 246 | 22 / 246
+SUMME Suizid | 4886 von 10800 (45.2 %) / leer 3363 | 7310 von 10800 (67.7 %) / leer 2112 | 7310 von 10800 (67.7 %) / leer 2112
+SUMME Selbstverletzung | 980 von 3456 (28.4 %) / leer 896 | 1304 von 3456 (37.7 %) / leer 851 | 1304 von 3456 (37.7 %) / leer 851
+SUMME Gewalt | 4230 von 9072 (46.6 %) / leer 1386 | 6583 von 9072 (72.6 %) / leer 1294 | 6583 von 9072 (72.6 %) / leer 1294
+SUMME alle | 10096 von 23328 (43.3 %) / leer 5645 | 15197 von 23328 (65.1 %) / leer 4257 | 15197 von 23328 (65.1 %) / leer 4257

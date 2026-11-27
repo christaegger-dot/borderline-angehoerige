@@ -1,4 +1,4 @@
-**Bereit zum Merge: nein** (Nachkontrolle von Kopf `6d9428d`, 27.11.2026, 03:30 UTC). Vor dem Merge zu beheben: N855-9 (hoch). N855-2 ist behoben, N855-1 für alle bisher bekannten Konstruktionen. Siehe Abschnitt 5. Urteil zum Kopf `6210121`: nein, vor dem Merge zu beheben waren N855-1 (hoch) und N855-2 (mittel, in der kleinen Form unten). Die übrigen Befunde blockieren nicht.
+**Bereit zum Merge: nein** (zweite Nachkontrolle von Kopf `64593de`, 27.11.2026, 04:00 UTC). Vor dem Merge zu beheben: N855-11 (hoch). N855-9 und N855-10 sind für W1 bis W8 behoben. Siehe Abschnitt 6. Frühere Urteile: Kopf `6d9428d` nein (N855-9), Kopf `6210121` nein (N855-1, N855-2).
 
 # Nachprüfung der Härtung des Suchrasters (PR #855)
 
@@ -239,3 +239,53 @@ Danach bleiben als dokumentierte Grenzen nur Farbe gleich Hintergrund (W5) und e
 ### 5.3 Urteil
 
 **Bereit zum Merge: nein.** Vorher zu beheben ist N855-9. Sind die Vorschläge 1 bis 4 umgesetzt und W1 bis W7 im Selbsttest gemeldet, ist aus meiner Sicht nichts Blockierendes mehr offen. N855-5 und die volle Absicherung des Workflows bleiben Entscheide von Christa Egger.
+
+## 6 Zweite Nachkontrolle von Kopf `64593de` (27.11.2026)
+
+Die bauende Sitzung hat N855-9 und N855-10 mit `64593de` nachgebessert:
+- Während der Messung gilt `pointer-events:auto!important`, eingesetzt über `adoptedStyleSheets`.
+- `filter` und `mask` gelten als unsichtbar.
+- Die Deckkraft muss mindestens 0,5 sein.
+- Die Textfarbe braucht einen Kontrast von mindestens 1,5:1, gemessen gegen den nächsten deckenden Hintergrund (auch `-webkit-text-fill-color`).
+- Der Selbsttest hat 23 Konstruktionen.
+- Der Job vergleicht ganz `.github/`.
+
+### 6.1 Was jetzt hält
+
+- **W1 bis W8 werden alle gemeldet:**
+  - je 312 Verschlechterungen bei W1 bis W5 und W8;
+  - je 1 «Sicherheitslink verloren» bei W6 und W7.
+
+  Ergebnis: `ergebnis/nachkontrolle2/konstruktionen-64593de.txt`.
+- **N855-10 ist behoben.** Die Aussage zur Freigabe ist richtig gefasst: Eine Freigabe nach R34-P01 gibt es nur, wenn der PR nichts unter `.github/` ändert.
+
+### 6.2 Was weiter falsch besteht
+
+Je eine CSS-Zeile, gegen r4-76, mit den Proben und der Leermeldung. Alle Fälle sind auf Bildern bestätigt (`ergebnis/nachkontrolle2/sicht/`).
+
+| Konstruktion | Änderung | Bildschirm | Raster |
+|---|---|---|---|
+| **X1** | weisses `::after` über dem Suizidtreffer; `pointer-events:none!important` in einem `@layer` | Suizidkarte leer | **0** |
+| **X3** | `mix-blend-mode:screen` im Suizidtreffer | Suizidkarte leer | **0** |
+| **X4** | `mix-blend-mode:screen` am Sicherheitslink der Leermeldung | Sicherheitszeile leer | **0** |
+| **X5** | wie X1, über der Sicherheitszeile der Leermeldung | Sicherheitszeile leer | **0** |
+| X2 | Verlauf als Hintergrundbild, weisser Text | Suizidkarte leer | 0 (als Grenze dokumentiert, aber eine einzige Zeile) |
+
+**N855-11 (hoch, vor dem Merge beheben):**
+- **X1 und X5:** Wichtige Regeln in einer Kaskadenebene (`@layer`) gehen wichtigen Regeln ohne Ebene vor. Die neue Regel aus `adoptedStyleSheets` hat keine Ebene. Die Seite setzt deshalb `pointer-events:none` wieder durch, und der Treffpunkt übergeht die Überdeckung.
+- **X3 und X4:** Die Prüfung von Farbe und Kontrast sieht keine Mischmodi.
+
+Das ist dieselbe Klasse wie N855-1 und N855-9. Jede Runde schliesst die gemeldeten Fälle, und eine weitere CSS-Eigenschaft öffnet einen neuen.
+
+**Vorschlag, der die Reihe beendet:** Die Prüfung der Bildpunkte ersetzt die Aufzählung von Eigenschaften.
+- Für einen festen Satz von Anfragen wird je ein Ausschnitt um den Link aufgenommen, einmal normal und einmal mit `visibility:hidden` am Link, gesetzt über `element.style.setProperty(…, 'important')`. Sind beide Bilder gleich, ist der Link für eine Person unsichtbar. Das deckt Überdeckung, Mischmodi, Farbe, Verläufe, Filter und Masken auf einmal ab.
+- Der Satz von Anfragen: die Proben, bei denen der Bezug einen Sicherheitsabschnitt unter den ersten drei zeigt, und die Leermeldung.
+- Geprüft werden die ersten drei Treffer jeder dieser Anfragen.
+- Weil eine Änderung am Stylesheet für alle Anfragen gleich wirkt, genügt dieser Satz. Die übrigen Mengen behalten die heutige, schnelle Prüfung.
+- X1 bis X5 kommen in den Selbsttest.
+
+Kleiner, aber nicht vollständig: die Regel für `pointer-events` als Inline-Stil mit `important` an jedes Element setzen statt über `adoptedStyleSheets`, und `mix-blend-mode` (nicht `normal`) bei sich oder einem Vorfahren als unsichtbar werten.
+
+### 6.3 Urteil
+
+**Bereit zum Merge: nein.** Vorher zu beheben ist N855-11. Mit der Prüfung der Bildpunkte (oder mindestens den kleinen Massnahmen) und X1 bis X5 im Selbsttest ist aus meiner Sicht nichts Blockierendes mehr offen. Die Grenze «Pseudo-Element des Links selbst» fiele mit der Prüfung der Bildpunkte ebenfalls weg.

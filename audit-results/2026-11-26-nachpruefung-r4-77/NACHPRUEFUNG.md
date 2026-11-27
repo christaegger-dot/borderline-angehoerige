@@ -1,10 +1,12 @@
-**Blockiert nach R34-P01: nein.** Empfehlung: **Merge nach Entscheid zu N848-1 bis N848-3 vertretbar**; ohne diese Entscheide nicht mergen, weil die Ausnahme-Muster N848-1 verdecken und N848-2 dem Auftrag «fest oben» widerspricht. Kein Befund verlangt den Rückbau, keiner verschlechtert eine Anfrage nach R34-P01.
+**Blockiert nach R34-P01: nein.** Empfehlung: **kein Rückbau nötig**. #848 ist während dieser Prüfung gemergt worden (23:47:58 UTC); diese Prüfung ist deshalb **nachträglich**. Meine Empfehlung vor dem Merge wäre gewesen: erst nach dem Entscheid zu N848-1 bis N848-3 mergen. Jetzt gilt: N848-1 bis N848-3 im nächsten Schritt entscheiden, Muster 1 der Ausnahmenliste sofort enger fassen oder entfernen (N848-7). Kein Befund verschlechtert eine Anfrage nach R34-P01. Die Live-Website liefert für alle 157 geprüften Proben dieselben Treffer wie der geprüfte Stand (Abschnitt 9a).
 
 # Nachprüfung r4-77 (PR #848) · Bauweise der Suche
 
-Stand 26.11.2026, Prüfung vor dem Merge · geprüft: [PR #848](https://github.com/christaegger-dot/borderline-angehoerige/pull/848), Branch `claude/sharp-mendel-6ecwbi`, Kopf `ad6eba0`, Basis `main` `451b20f` (r4-76) · PR-Status zu Beginn und am Ende der Prüfung: Entwurf, offen, nicht gemergt.
+Stand 27.11.2026, 00:05 UTC · geprüft: [PR #848](https://github.com/christaegger-dot/borderline-angehoerige/pull/848), Branch `claude/sharp-mendel-6ecwbi`, Kopf `ad6eba0`, Basis `main` `451b20f` (r4-76).
 
-**Unabhängigkeit.** Diese Sitzung hat weder r4-74 bis r4-77 noch das Suchraster gebaut. Alle Zahlen unten sind selbst gemessen; Aussagen des Berichts der bauenden Sitzung (`audit-results/2026-11-26-bauweise-suche-r4-77/BERICHT.md`) sind nur übernommen, wo sie hier nachgemessen sind.
+**Nachträglich.** Beim Beginn der Prüfung war #848 ein offener Entwurf. Er wurde am 26.11.2026, 23:47:58 UTC, über das Konto von Christa Egger gemergt (Merge-Commit `9d3b7d4`; dessen Baum ist identisch mit `ad6eba0`, also mit dem geprüften Stand). Das war vor diesem Bericht und vor dem Entwurfs-PR dieser Prüfung (#851). Der Code-Review von Codex lief erst nach dem Merge ab (23:48:21 UTC, ohne Befunde). Alle Messungen unten gelten unverändert für `main` und die Live-Website (Abschnitt 9a).
+
+**Unabhängigkeit.** Diese Sitzung hat weder r4-74 bis r4-77 noch das Suchraster gebaut, und sie hat den Merge weder ausgelöst noch empfohlen. Alle Zahlen unten sind selbst gemessen; Aussagen des Berichts der bauenden Sitzung (`audit-results/2026-11-26-bauweise-suche-r4-77/BERICHT.md`) sind nur übernommen, wo sie hier nachgemessen sind.
 
 Dieser Bericht und die Dateien dieses Ordners enthalten Suchanfragen im Wortlaut, auch zu Suizid, Selbstverletzung und Gewalt. Sie gehören nicht in die Pendenzendatei.
 
@@ -116,7 +118,7 @@ axe-core habe ich nicht wiederholt (nicht im Auftrag; die Änderung berührt kei
 
 ### N848-7 · niedrig · Ausnahmen und Testlisten kommen aus dem geprüften Stand
 
-`suchraster.mjs` liest `suchraster-ausnahmen.tsv` und die Testlisten aus dem Arbeitsbaum des PR. Ein PR kann also seine eigenen Verschlechterungen erlauben; die grüne CI belegt hier nur, dass die vier Muster greifen, nicht, dass sie richtig sind. Dazu: Die Muster sollen nach dem Merge entfernt werden; das Raster meldet ungenutzte Ausnahmen nur, es scheitert nicht daran. Bleibt Muster 1 (`/./`) stehen, verdeckt es künftig jeden Verlust von «Wenn Suizid angesprochen wird», sobald der Suizidabschnitt oben steht. Vorschlag: Entfernen als eigene, sofortige Pendenz mit PR; prüfen, ob «Ausnahme ohne Anwendung» die CI scheitern lassen soll. Betrifft das Werkzeug aus #847; die dortige Nachprüfung kann das anders sehen.
+`suchraster.mjs` liest `suchraster-ausnahmen.tsv` und die Testlisten aus dem Arbeitsbaum des PR. Ein PR kann also seine eigenen Verschlechterungen erlauben; die grüne CI belegt hier nur, dass die vier Muster greifen, nicht, dass sie richtig sind. Dazu: Die Muster sollen nach dem Merge entfernt werden; das Raster meldet ungenutzte Ausnahmen nur, es scheitert nicht daran. Seit dem Merge steht Muster 1 (`/./`) auf `main`. Es verdeckt bei jedem künftigen PR jeden Verlust von «Wenn Suizid angesprochen wird», sobald der Suizidabschnitt oben steht; die Muster 2 bis 4 verdecken ihre Verluste ebenso. **Dringlichkeit deshalb erhöht:** Die vier Muster jetzt entfernen (eigener PR, vor Schritt 3), weil die Basis jetzt r4-77 ist und sie nicht mehr gebraucht werden; prüfen, ob «Ausnahme ohne Anwendung» die CI scheitern lassen soll. Betrifft das Werkzeug aus #847; die dortige Nachprüfung kann das anders sehen.
 
 ### N848-8 · Hinweis · Nachweis der bauenden Sitzung
 
@@ -155,16 +157,25 @@ Kein Muster verdeckt in diesem Lauf einen Verlust nach R34-P01. Das habe ich nic
 ## 8 Pendenzendatei (Stand PR-Kopf)
 
 - **Zitierregel eingehalten.** Im neuen Abschnitt «r4-77» und im geänderten Kopf stehen keine Suchproben, die ein Töten, eine Suizidabsicht oder eine Gewalttat ausdrücken; Guillemets nur um Auftrag, Antwort, Status und Kennungen.
-- **#847:** gemergt als `451b20f` am 26.11.2026, 23:05:45 UTC (GitHub `merged_at`, geprüft); Kopf `0259793`; so steht es im Abschnitt «Suchraster». Status r4-77 «Entwurf, nicht gemergt» stimmt (geprüft am Ende dieser Prüfung).
+- **#847:** gemergt als `451b20f` am 26.11.2026, 23:05:45 UTC (GitHub `merged_at`, geprüft); Kopf `0259793`; so steht es im Abschnitt «Suchraster».
+- **#848:** Die Pendenzendatei auf `main` sagt noch «Entwurf, nicht gemergt» und «Vor dem Merge ist eine Nachprüfung … nötig». Das ist seit 23:47:58 UTC überholt und muss nachgeführt werden: Merge vor der Nachprüfung, wie schon bei r4-74 (#836) und beim Suchraster (#847); einen Merge-Auftrag für genau diesen PR (R65-P01) nennen weder der PR noch der Merge-Commit. Diese Prüfung ändert die Pendenzendatei nicht (Auftrag: nur Nachweisordner).
 - Der Abschnitt nennt die Abwägungen als offen für Christa Egger und das Entfernen der Muster als Pendenz; die Befunde N848-1 bis N848-3 gehören zu diesen Entscheiden dazu.
 
 ## 9 Grenzen
 
-- Gemessen in Chromium (Playwright aus `/opt/borderline-browser`), lokal gegen die Dateien von `451b20f` und `ad6eba0`, nicht gegen die Live-Website (PR nicht gemergt). Keine echten Geräte, keine Screenreader.
+- Gemessen in Chromium (Playwright aus `/opt/borderline-browser`), lokal gegen die Dateien von `451b20f` und `ad6eba0`; die Live-Website nur mit den 157 Proben aus 9a, ohne Raster. Keine echten Geräte, keine Screenreader.
 - Das Raster und meine Proben vergleichen nur die ersten zwei bis sechs Treffer. Was ab Platz 7 passiert, ist nicht gemessen.
 - Die Proben sind meine Auswahl (281 eigene, alle im Wortlaut in `proben.tsv` und `proben-2.tsv`); Mundart nur in sechs Beispielen, ohne Unterschied zu r4-76.
 - Keine fachliche Prüfung der Abschnittsinhalte; die Einschätzungen in Abschnitt 6 sind keine Freigabe.
 - Das Suchraster selbst (#847) habe ich nur so weit geprüft, wie es diese Messung betrifft (N848-7).
+
+## 9a Live-Website (nachträglich, nur lesend)
+
+27.11.2026, 00:00 UTC, `https://borderline-angehoerige.netlify.app`:
+- `index.html` und `suche.html` tragen `data-puk-site-build="r4-77"`.
+- `js/interaktion.js` ist byte-gleich mit `site/js/interaktion.js` von `ad6eba0`.
+- `suche.html` und `index.html` unterscheiden sich vom Repository nur in den Verweisen: Die Auslieferung schreibt `href="gefahr.html#gewalt"` als `href="/gefahr#gewalt"` und `index.html` als `/`. Das ist nicht Teil von #848, und an den Suchdaten ändert es nichts.
+- Alle 157 Proben aus `proben.tsv` (ohne Tippstufen) und `proben-2.tsv` im Browser auf der Live-Seite: nach Angleichung dieser Pfadschreibweise 0 Abweichungen von meinem lokalen Lauf auf `ad6eba0`, JS-Fehler 0 (`ergebnis/live-r4-77.tsv`). Damit gelten N848-1 bis N848-6 auch live.
 
 ## 10 Reproduktion
 

@@ -147,6 +147,27 @@ Umgesetzt:
 - Geprüft wird ein Fenster von 1280 × 720 Pixeln.
 - Ein Link, der sichtbar ist, aber zu blass zum Lesen, gilt ab 20 deutlich verschiedenen Bildpunkten als sichtbar.
 
+### Dritte Nachkontrolle (Kopf `deadba9`) und vierte Nachbesserung: weitere Umgebungen
+
+Die dritte Nachkontrolle urteilte «Bereit zum Merge: nein» wegen **N855-12 (hoch)**. Bestätigt sind X1 bis X5, der Selbsttest mit 29 Konstruktionen und die stabilen Bildpunkte.
+
+Das Raster mass aber nur bei 1280 × 720, im Querformat und hell. Je eine Zeile `@media` blendete den Suizidtreffer oder die Sicherheitszeile der Leermeldung aus, ohne dass das Raster es meldete:
+- Y1: schmaler Bildschirm;
+- Y2: dunkler Modus;
+- Y3: Leermeldung auf schmalem Bildschirm;
+- Y4: Hochformat.
+
+| Befund | Umsetzung |
+|---|---|
+| **N855-12** | Die Einzelproben laufen zusätzlich in **drei weiteren Umgebungen**, mit denselben Kriterien, der Prüfung der Bildpunkte und der Leermeldung: `proben@telefon` (iPhone 13, Hochformat, 390 × 664, Pixeldichte 3), `proben@dunkel` (dunkler Modus, 1280 × 720) und `proben@kontrast` (erzwungene Farben im dunklen Modus, 1280 × 720). Die Website hat keinen eigenen dunklen Modus; `prefers-color-scheme:dark` kommt nur zusammen mit erzwungenen Farben beim Logo vor. Die Umgebung «Kontrast» trifft deshalb diese Kombination. Der Selbsttest hat neu Y1 bis Y4, dazu Y5 (erzwungene Farben) und Y6 (weiss auf weiss nur im dunklen Modus, erkennbar nur über die Bildpunkte). Jede Konstruktion läuft nur in der Umgebung, die sie trifft (`--umgebungen=`); der unveränderte Stand läuft in allen. |
+
+**Messungen nach der vierten Nachbesserung** (`ergebnis/nachbesserung4-*.txt`):
+- **Unverändert** (r4-77 → r4-77, Proben, alle Umgebungen): 0 Verschlechterungen in jeder Umgebung, je 18 Kombinationen in den Bildpunkten sichtbar. Kleinster Unterschied: 2 064 (hell), 13 802 (Telefon), 2 064 (dunkel; die Website hat keinen eigenen dunklen Modus, deshalb gleich wie hell), 2 221 (Kontrast). Leermeldung mit 2 sichtbaren Links in jeder Umgebung. Dauer 47 s statt 12 s.
+- **Selbsttest:** 35 von 35 gemeldet, Y1 bis Y5 über die Umgebungen, Y6 über die Bildpunkte im dunklen Modus; der unveränderte Stand besteht in allen Umgebungen. Dauer lokal 538 s.
+- **r4-76 → r4-77, voll:** 443 Verschlechterungen, nämlich die 428 des Hauptlaufs und je 5 Verdrängungen der Einzelproben in jeder der drei Umgebungen. Es sind dieselben Fälle wie im Hauptlauf; Bildpunkte und Leermeldung zeigen in jeder Umgebung keinen Befund. Dauer lokal 629 s. Die Zahl für den festen Bezug in `suchraster.json` ist auf 443 nachgeführt.
+
+**Verbleibende Grenzen:** andere Bildschirmgrössen, die zwischen Telefon und 1280 Pixeln liegen, etwa ein Tablet, sowie Druckansicht und Zoomstufen. Die Kriterien in den weiteren Umgebungen gelten nur für die Einzelproben, nicht für die grossen Mengen.
+
 ## 5 Folgen für r4-78
 
 r4-78 setzt die Entscheide zu N848-1 bis N848-3 um. Das gehärtete Raster wird dabei Verschiebungen melden: Bei den Fällen aus N848-2 rücken Abschnitte, die zuvor zufällig führten, nach unten. Wo das gewollt ist, gehört es als enges Muster mit Bezug r4-77 in die Ausnahmen. Dann ist der Job `suchraster-ausnahmen` rot, bis Christa Egger entschieden hat und die Nachprüfung vorliegt.

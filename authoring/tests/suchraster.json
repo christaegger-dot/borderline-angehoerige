@@ -342,8 +342,8 @@
   "_hinweisThemen": "Abdeckung je Thema (Hinweis G846-2, wie abdeckung.cjs der Gegenprüfung #846): Aussagen ab «ab» bis zum nächsten Thema; passend ist ein Abschnitt aus «passend» unter den ersten zwei",
   "festerBezug": {
     "bezug": "r4-73",
-    "verschlechterungen": 428,
-    "stand": "r4-77, 27.11.2026",
+    "verschlechterungen": 443,
+    "stand": "r4-77, 27.11.2026, mit den Umgebungen Telefon, dunkel und Kontrast (428 im Hauptlauf und je 5 in den drei Umgebungen)",
     "_hinweis": "Zahl der Verschlechterungen des nicht blockierenden Laufs gegen den festen Stand (N847-8, N855-6). Ändert ein Release sie gewollt, hier nachführen."
   }
 }

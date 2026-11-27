@@ -127,7 +127,9 @@ Nachweis: [`audit-results/2026-11-26-nachpruefung-suchraster/NACHPRUEFUNG.md`](a
 
 - **Zweite Nachkontrolle auf `64593de`:** Urteil «Bereit zum Merge: nein» wegen **N855-11 (hoch)**. Weitere fünf CSS-Zeilen versteckten Treffer unbemerkt: Kaskadenebene, Hintergrundbild, Mischmodus. **Behoben** mit einer Prüfung der Bildpunkte für die Sicherheitsabschnitte und die Leermeldung, statt weitere Eigenschaften aufzuzählen. Der Selbsttest hat jetzt 29 Konstruktionen.
 
-Nachweis der Nachbesserungen: Abschnitt 4 des Berichts. **Dritte Nachkontrolle durch die Prüfsitzung vor dem Merge nötig.**
+- **Dritte Nachkontrolle auf `deadba9`:** Urteil «Bereit zum Merge: nein» wegen **N855-12 (hoch)**: Das Raster mass nur auf einem hellen Desktop-Bildschirm; Regeln nur für Telefone, Hochformat oder dunklen Modus blieben unerkannt. **Behoben:** Die Einzelproben, die Bildpunkte und die Leermeldung laufen zusätzlich auf einem Telefon, im dunklen Modus und mit erzwungenen Farben. Der Selbsttest hat jetzt 35 Konstruktionen.
+
+Nachweis der Nachbesserungen: Abschnitt 4 des Berichts. **Vierte Nachkontrolle durch die Prüfsitzung vor dem Merge nötig.**
 
 **Offen:**
 - Merge-Auftrag zu #847 belegen (R65-P01).

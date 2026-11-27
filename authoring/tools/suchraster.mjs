@@ -11,6 +11,7 @@
 //   --ungenutzt-scheitert  eine Ausnahme ohne Anwendung lässt den Lauf scheitern (nur bei vollem Lauf)
 //   --nur-bericht          Rückgabe 0 trotz Verschlechterung (Bericht gegen einen festen Stand, nicht blockierend)
 //   --titel=<text>         Überschrift in der Step-Summary
+//   --umgebungen=<liste>   nur diese weiteren Umgebungen (telefon, dunkel, kontrast) oder «keine»; die CI prüft alle
 //   bezug-site: der Stand, gegen den verglichen wird (in der CI: site/ der Basis des Pull Requests)
 //   pruef-site: der neue Stand (in der CI: site/ des Pull Requests)
 // Sind suche.html, js/interaktion.js, _headers, _redirects und alle Dateien unter css/ in beiden Ständen bis auf die Versionskennung
@@ -58,6 +59,8 @@
 // zwei steht, für Bezug und Prüfstand (nur Bericht).
 // Bildpunkte (N855-11): Für Sicherheitsabschnitte und Schnellorientierung unter den ersten drei der Einzelproben und für die
 // Leermeldung vergleicht das Werkzeug zusätzlich Bildausschnitte mit und ohne den Link (UNSICHTBAR, LEERMELDUNG).
+// Umgebungen (N855-12): Hauptlauf 1280 × 720, hell; Einzelproben, Bildpunkte und Leermeldung zusätzlich auf einem Telefon
+// (iPhone 13, Hochformat), im dunklen Modus und mit erzwungenen Farben (Mengen proben@telefon, proben@dunkel, proben@kontrast).
 // Rückgabe: 0 ohne Verschlechterung, 1 bei Verschlechterung, Fehler in einer Ausnahme, JS-Fehler oder fehlender Messzeile.
 // Playwright: Modulpfad über PLAYWRIGHT_MODULE, sonst /opt/npm-tools/node_modules/playwright. CHROMIUM_PATH erlaubt einen Systembrowser.
 import { createServer } from 'node:http';
@@ -129,7 +132,7 @@ if (!args.includes('--immer')) {
   }
 }
 const require = createRequire(import.meta.url);
-const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/opt/npm-tools/node_modules/playwright');
+const { chromium, devices } = require(process.env.PLAYWRIGHT_MODULE || '/opt/npm-tools/node_modules/playwright');
 
 const cfg = JSON.parse(readFileSync(join(tests, 'suchraster.json'), 'utf8'));
 const SAFETY = cfg.sicherheitsabschnitte;
@@ -300,19 +303,24 @@ function emptyState(q) {
 const servers = [await serve(baseDir), await serve(testDir)];
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 const errors = [];
-const pages = [];
-for (const s of servers) {
-  // eigener Kontext je Stand: sonst teilen sich beide Seiten (gleiche Site 127.0.0.1) einen Renderer und laufen nacheinander
-  const page = await (await browser.newContext()).newPage();
-  page.on('pageerror', e => errors.push(String(e)));
-  await page.goto(`http://127.0.0.1:${s.address().port}/suche.html`, { waitUntil: 'networkidle' });
-  await page.evaluate(defineSicht);
-  // über CSSOM, weil die Content-Security-Policy der Produktion eingefügte <style> verbietet
-  await page.evaluate(() => { const sheet = new CSSStyleSheet(); sheet.replaceSync('*,*::before,*::after{pointer-events:auto!important}'); document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet]; });
-  const ready = await page.evaluate(() => typeof window.__suchrasterGruppen === 'function');
-  if (!ready) hookMissing.add(s === servers[0] ? baseDir : testDir);
-  pages.push(page);
+// Ein Seitenpaar (Bezug, Prüfstand) in einer Umgebung. Eigener Kontext je Stand: sonst teilen sich beide Seiten (gleiche
+// Site 127.0.0.1) einen Renderer und laufen nacheinander.
+async function openPair(options) {
+  const pair = [];
+  for (const s of servers) {
+    const page = await (await browser.newContext(options)).newPage();
+    page.on('pageerror', e => errors.push(String(e)));
+    await page.goto(`http://127.0.0.1:${s.address().port}/suche.html`, { waitUntil: 'networkidle' });
+    await page.evaluate(defineSicht);
+    // über CSSOM, weil die Content-Security-Policy der Produktion eingefügte <style> verbietet
+    await page.evaluate(() => { const sheet = new CSSStyleSheet(); sheet.replaceSync('*,*::before,*::after{pointer-events:auto!important}'); document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet]; });
+    const ready = await page.evaluate(() => typeof window.__suchrasterGruppen === 'function');
+    if (!ready) hookMissing.add(s === servers[0] ? baseDir : testDir);
+    pair.push(page);
+  }
+  return pair;
 }
+const pages = await openPair({ viewport: { width: 1280, height: 720 } });
 if (hookMissing.size) {
   console.log(`${head}\nABBRUCH: Messzeile für die Anheftung nicht gefunden in ${[...hookMissing].join(', ')}. Werkzeug an das Suchskript anpassen.`);
   await browser.close(); servers.forEach(s => s.close()); process.exit(1);
@@ -430,53 +438,91 @@ async function pixelVisible(page, q, href, inEmpty) {
   return { visible: pixels >= MIN_BILDPUNKTE, pixels };
 }
 const pixelLines = [];
-if (keptProben) {
+// Bildpunkte je Sicherheitsabschnitt und Rang, für ein Seitenpaar und die Ergebnisse der Einzelproben in dieser Umgebung
+async function pixelPhase(pp, kept, label) {
+  const name = `bildpunkte${label}`;
   const counts = { UNSICHTBAR: 0, AUSNAHME: 0, geprueft: 0, bezugUnsichtbar: 0, kleinster: Infinity };
   const combos = idx => {
     const m = new Map();
-    keptProben[idx].forEach((r, i) => r.top.forEach((h, k) => { if ((SAFETY.includes(h) || h === QUICK) && !m.has(`${h}@${k + 1}`)) m.set(`${h}@${k + 1}`, keptProben.queries[i]); }));
+    kept[idx].forEach((r, i) => r.top.forEach((h, k) => { if ((SAFETY.includes(h) || h === QUICK) && !m.has(`${h}@${k + 1}`)) m.set(`${h}@${k + 1}`, kept.queries[i]); }));
     return m;
   };
   const after = combos('after'), before = combos('before');
   for (const [key, q] of after) {
     const href = key.split('@')[0];
-    const b = await pixelVisible(pages[1], q, href, false);
+    const b = await pixelVisible(pp[1], q, href, false);
     counts.geprueft++;
     if (b.visible) { counts.kleinster = Math.min(counts.kleinster, b.pixels); continue; }
     const qa = before.get(key) || q;
-    const a = await pixelVisible(pages[0], qa, href, false);
-    if (!a.visible && before.has(key)) { counts.bezugUnsichtbar++; pixelLines.push(`im Bezug ebenfalls unsichtbar: ${key}`); continue; }
-    const losses = [`UNSICHTBAR:${key}`], kinds = ['UNSICHTBAR'];
+    const a = await pixelVisible(pp[0], qa, href, false);
+    if (!a.visible && before.has(key)) { counts.bezugUnsichtbar++; pixelLines.push(`${name}: im Bezug ebenfalls unsichtbar: ${key}`); continue; }
+    const losses = [`UNSICHTBAR:${key}${label}`], kinds = ['UNSICHTBAR'];
     const hits = covered(q, losses, { top: [] });
-    if (hits) { counts.AUSNAHME++; allowed.push({ name: 'bildpunkte', q, kinds, before: `${key} sichtbar (${a.pixels} Bildpunkte)`, after: `${key} unsichtbar (${b.pixels})`, muster: hits.map(h => h.pattern) }); continue; }
+    if (hits) { counts.AUSNAHME++; allowed.push({ name, q, kinds, before: `${key} sichtbar (${a.pixels} Bildpunkte)`, after: `${key} unsichtbar (${b.pixels})`, muster: hits.map(h => h.pattern) }); continue; }
     counts.UNSICHTBAR++;
-    failures.push({ name: 'bildpunkte', q, kinds, losses, before: `${key} sichtbar (${a.pixels} Bildpunkte)`, after: `${key} unsichtbar (${b.pixels} Bildpunkte)` });
-    report.push(`UNSICHTBAR | bildpunkte | ${q} | ${key}: im Prüfstand ${b.pixels} Bildpunkte verschieden, im Bezug ${a.pixels}`);
+    failures.push({ name, q, kinds, losses, before: `${key} sichtbar (${a.pixels} Bildpunkte)`, after: `${key} unsichtbar (${b.pixels} Bildpunkte)` });
+    report.push(`UNSICHTBAR | ${name} | ${q} | ${key}: im Prüfstand ${b.pixels} Bildpunkte verschieden, im Bezug ${a.pixels}`);
   }
-  summary.push(`bildpunkte: ${counts.geprueft} Sicherheitsabschnitte und Ränge im Prüfstand geprüft · kleinster Unterschied der sichtbaren ${counts.kleinster === Infinity ? '–' : counts.kleinster} Bildpunkte (Schwelle ${MIN_BILDPUNKTE}) · unsichtbar ${counts.UNSICHTBAR} · als Ausnahme erlaubt ${counts.AUSNAHME}${counts.bezugUnsichtbar ? ` · im Bezug ebenfalls unsichtbar ${counts.bezugUnsichtbar}` : ''}`);
-} else summary.push('bildpunkte: nicht geprüft (Menge «proben» nicht im Lauf)');
-// Leermeldung
-{
+  summary.push(`${name}: ${counts.geprueft} Sicherheitsabschnitte und Ränge im Prüfstand geprüft · kleinster Unterschied der sichtbaren ${counts.kleinster === Infinity ? '–' : counts.kleinster} Bildpunkte (Schwelle ${MIN_BILDPUNKTE}) · unsichtbar ${counts.UNSICHTBAR} · als Ausnahme erlaubt ${counts.AUSNAHME}${counts.bezugUnsichtbar ? ` · im Bezug ebenfalls unsichtbar ${counts.bezugUnsichtbar}` : ''}`);
+}
+// Leermeldung für ein Seitenpaar
+async function emptyPhase(pp, label) {
+  const name = `leermeldung${label}`;
   const probe = 'qqxzqvwxq';
-  const [a, b] = await Promise.all(pages.map(p => p.evaluate(emptyState, probe)));
+  const [a, b] = await Promise.all(pp.map(p => p.evaluate(emptyState, probe)));
   const watched = a.links.filter(h => SAFETY.includes(h) || h === QUICK);
   const missing = a.hits ? [] : watched.filter(h => !b.links.includes(h));
   // Bildpunkte (N855-11): ein Link, den die Prüfung über CSS als sichtbar wertet, muss auch in den Bildpunkten sichtbar sein
   let pixelInfo = '';
   if (!a.hits) for (const h of watched.filter(x => b.links.includes(x))) {
-    const pb = await pixelVisible(pages[1], probe, h, true);
+    const pb = await pixelVisible(pp[1], probe, h, true);
     if (pb.visible) continue;
-    const pa = await pixelVisible(pages[0], probe, h, true);
+    const pa = await pixelVisible(pp[0], probe, h, true);
     if (pa.visible) { missing.push(h); pixelInfo += ` · ${h} in den Bildpunkten unsichtbar (${pb.pixels}, Bezug ${pa.pixels})`; }
   }
   const counts = { LEERMELDUNG: 0, AUSNAHME: 0 };
   if (missing.length) {
-    const q = '(Leermeldung)', losses = missing.map(h => `LEERMELDUNG:${h}`), kinds = ['LEERMELDUNG'];
+    const q = `(Leermeldung${label})`, losses = missing.map(h => `LEERMELDUNG:${h}`), kinds = ['LEERMELDUNG'];
     const hits = covered(q, losses, { top: [] });
-    if (hits) { counts.AUSNAHME++; allowed.push({ name: 'leermeldung', q, kinds, before: a.links.join(' '), after: b.links.join(' ') || '–', muster: hits.map(h => h.pattern) }); }
-    else { counts.LEERMELDUNG++; failures.push({ name: 'leermeldung', q, kinds, losses, before: a.links.join(' '), after: b.links.join(' ') || '–' }); report.push(`## Leermeldung`, `LEERMELDUNG | ${missing.join(', ')} fehlt oder ist unsichtbar`); }
+    if (hits) { counts.AUSNAHME++; allowed.push({ name, q, kinds, before: a.links.join(' '), after: b.links.join(' ') || '–', muster: hits.map(h => h.pattern) }); }
+    else { counts.LEERMELDUNG++; failures.push({ name, q, kinds, losses, before: a.links.join(' '), after: b.links.join(' ') || '–' }); report.push(`## Leermeldung${label}`, `LEERMELDUNG | ${missing.join(', ')} fehlt oder ist unsichtbar`); }
   }
-  summary.push(`leermeldung: sichtbare Links im Bezug ${a.links.length}, im Prüfstand ${b.links.length} · Sicherheitslink verloren ${counts.LEERMELDUNG} · als Ausnahme erlaubt ${counts.AUSNAHME}${pixelInfo}${a.hits ? ' · (Probe hatte im Bezug Treffer, nicht geprüft)' : ''}`);
+  summary.push(`${name}: sichtbare Links im Bezug ${a.links.length}, im Prüfstand ${b.links.length} · Sicherheitslink verloren ${counts.LEERMELDUNG} · als Ausnahme erlaubt ${counts.AUSNAHME}${pixelInfo}${a.hits ? ' · (Probe hatte im Bezug Treffer, nicht geprüft)' : ''}`);
+}
+if (keptProben) await pixelPhase(pages, keptProben, '');
+else summary.push('bildpunkte: nicht geprüft (Menge «proben» nicht im Lauf)');
+await emptyPhase(pages, '');
+// ---------- Weitere Umgebungen (N855-12) ----------
+// Regeln für schmale Bildschirme, Hochformat, den dunklen Modus oder erzwungene Farben wirken im Hauptlauf (1280 × 720,
+// hell) nicht. Die Einzelproben, die Bildpunkte und die Leermeldung laufen deshalb zusätzlich auf einem Telefon im
+// Hochformat, im dunklen Modus und mit erzwungenen Farben, mit denselben Kriterien.
+const UMGEBUNGEN = [
+  { label: '@telefon', was: 'iPhone 13, Hochformat', options: { ...devices['iPhone 13'] } },
+  { label: '@dunkel', was: 'dunkler Modus, 1280 × 720', options: { viewport: { width: 1280, height: 720 }, colorScheme: 'dark' } },
+  // erzwungene Farben im dunklen Modus: die einzige Kombination, für die die Website eigene Regeln hat (Logo)
+  { label: '@kontrast', was: 'erzwungene Farben, dunkel, 1280 × 720', options: { viewport: { width: 1280, height: 720 }, forcedColors: 'active', colorScheme: 'dark' } }
+];
+const envOption = option('umgebungen');
+const envSelected = !envOption ? UMGEBUNGEN : envOption === 'keine' ? [] : UMGEBUNGEN.filter(e => envOption.split(',').includes(e.label.slice(1)));
+if (envOption && envOption !== 'keine' && envSelected.length !== envOption.split(',').length) throw new Error(`Unbekannte Umgebung in --umgebungen=${envOption} (telefon, dunkel, kontrast oder keine)`);
+if (!envSelected.length) summary.push(`weitere Umgebungen: nicht geprüft (--umgebungen=${envOption})`);
+if (keptProben) for (const env of envSelected) {
+  const pp = await openPair(env.options);
+  const queries = keptProben.queries, before = [], after = [];
+  for (let i = 0; i < queries.length; i += 2000) {
+    const chunk = queries.slice(i, i + 2000);
+    const [a, b] = await Promise.all(pp.map(p => p.evaluate(inPage, chunk)));
+    before.push(...a); after.push(...b);
+  }
+  const name = `proben${env.label}`;
+  const counts = { VERLOREN: 0, VERDRAENGT: 0, RANG1: 0, RANG3: 0, ANHEFTUNG: 0, LEER: 0, AUSNAHME: 0 };
+  const lines = [];
+  queries.forEach((q, i) => lines.push(...judge(name, q, before[i], after[i], counts)));
+  summary.push(`${name} (${env.was}): ${queries.length} Anfragen · verloren ${counts.VERLOREN} · verdrängt ${counts.VERDRAENGT} · Suizid nicht mehr zuoberst ${counts.RANG1} · letzter Sicherheitsabschnitt auf Rang 3 verloren ${counts.RANG3} · Anheftung verloren ${counts.ANHEFTUNG} · leer ${counts.LEER} · als Ausnahme erlaubt ${counts.AUSNAHME}`);
+  report.push(`## ${name}`, ...lines);
+  await pixelPhase(pp, { queries, before, after }, env.label);
+  await emptyPhase(pp, env.label);
+  await Promise.all(pp.map(p => p.context().close()));
 }
 await browser.close();
 servers.forEach(s => s.close());

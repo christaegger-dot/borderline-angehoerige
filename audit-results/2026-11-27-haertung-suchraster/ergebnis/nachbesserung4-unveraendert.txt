@@ -1,0 +1,14 @@
+Suchraster · Bezug r4-77 · Prüfstand r4-77
+Ergebnis: KEINE VERSCHLECHTERUNG · 1159 Anfragen · 0 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 0 · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0 · Bildschirm anders als DOM: Bezug 0, Prüfstand 0
+bildpunkte: 18 Sicherheitsabschnitte und Ränge im Prüfstand geprüft · kleinster Unterschied der sichtbaren 2064 Bildpunkte (Schwelle 20) · unsichtbar 0 · als Ausnahme erlaubt 0
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+proben@telefon (iPhone 13, Hochformat): 1158 Anfragen · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0
+bildpunkte@telefon: 18 Sicherheitsabschnitte und Ränge im Prüfstand geprüft · kleinster Unterschied der sichtbaren 13802 Bildpunkte (Schwelle 20) · unsichtbar 0 · als Ausnahme erlaubt 0
+leermeldung@telefon: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+proben@dunkel (dunkler Modus, 1280 × 720): 1158 Anfragen · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0
+bildpunkte@dunkel: 18 Sicherheitsabschnitte und Ränge im Prüfstand geprüft · kleinster Unterschied der sichtbaren 2064 Bildpunkte (Schwelle 20) · unsichtbar 0 · als Ausnahme erlaubt 0
+leermeldung@dunkel: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+proben@kontrast (erzwungene Farben, dunkel, 1280 × 720): 1158 Anfragen · verloren 0 · verdrängt 0 · Suizid nicht mehr zuoberst 0 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0
+bildpunkte@kontrast: 18 Sicherheitsabschnitte und Ränge im Prüfstand geprüft · kleinster Unterschied der sichtbaren 2221 Bildpunkte (Schwelle 20) · unsichtbar 0 · als Ausnahme erlaubt 0
+leermeldung@kontrast: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0

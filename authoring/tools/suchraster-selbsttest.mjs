@@ -1,7 +1,8 @@
 // Selbsttest des Suchrasters (Nachprüfung der Härtung, PR #856, N855-1): baut aus einem Stand von site/ Konstruktionen,
 // die die Suche für eine Person verschlechtern, und prüft, dass authoring/tools/suchraster.mjs jede meldet. So kann eine
 // spätere Änderung am Werkzeug die Härtung nicht unbemerkt zurücknehmen.
-// Die Konstruktionen stammen aus den Nachprüfungen #849 (K1, K2, K5, K9) und #856 (V1 bis V8, W1 bis W8, X1 bis X5), dazu V10 und X6.
+// Die Konstruktionen stammen aus den Nachprüfungen #849 (K1, K2, K5, K9) und #856 (V1 bis V8, W1 bis W8, X1 bis X5, Y1 bis Y4),
+// dazu V10, X6, Y5 und Y6.
 // Sie sind als Änderung am Stylesheet, an suche.html oder an js/interaktion.js beschrieben, nicht als Diff gegen einen
 // festen Stand. Passt eine Ersetzung nicht mehr, scheitert der Selbsttest mit «nicht anwendbar»; dann die Konstruktion
 // an den neuen Stand anpassen, nicht streichen.
@@ -47,7 +48,13 @@ const CASES = [
   { name: 'X3', was: 'mix-blend-mode:screen im Suizidtreffer', css: `${SUIZID} *{mix-blend-mode:screen}`, erwartet: ['RANG1'] },
   { name: 'X4', was: 'mix-blend-mode:screen am Sicherheitslink der Leermeldung', css: `${LEER} a{mix-blend-mode:screen}`, erwartet: ['LEERMELDUNG'] },
   { name: 'X5', was: 'Überdeckung der Sicherheitszeile der Leermeldung, pointer-events in einer Kaskadenebene', css: `${LEER}{position:relative}${LEER}::after{content:"";position:absolute;inset:-4px;background:#fff}@layer sr{${LEER}::after{pointer-events:none!important}}`, erwartet: ['LEERMELDUNG'] },
-  { name: 'X6', was: 'Suizidtreffer fast weiss vor einem Hintergrundbild (nur über die Bildpunkte erkennbar)', css: `${SUIZID}{background-image:linear-gradient(#fff,#fff)}${SUIZID} *{color:#f4f4f4!important;mix-blend-mode:normal}`, erwartet: ['UNSICHTBAR'] }
+  { name: 'X6', was: 'Suizidtreffer fast weiss vor einem Hintergrundbild (nur über die Bildpunkte erkennbar)', css: `${SUIZID}{background-image:linear-gradient(#fff,#fff)}${SUIZID} *{color:#f4f4f4!important;mix-blend-mode:normal}`, erwartet: ['UNSICHTBAR'] },
+  { name: 'Y1', was: 'Suizidtreffer auf schmalen Bildschirmen ausgeblendet', css: `@media (max-width:40rem){${SUIZID}{display:none}}`, umgebungen: 'telefon', erwartet: ['RANG1'] },
+  { name: 'Y2', was: 'Suizidtreffer im dunklen Modus ausgeblendet', css: `@media (prefers-color-scheme:dark){${SUIZID}{display:none}}`, umgebungen: 'dunkel', erwartet: ['RANG1'] },
+  { name: 'Y3', was: 'Sicherheitszeile der Leermeldung auf schmalen Bildschirmen ausgeblendet', css: `@media (max-width:40rem){${LEER}{display:none}}`, umgebungen: 'telefon', erwartet: ['LEERMELDUNG'] },
+  { name: 'Y4', was: 'Suizidtreffer im Hochformat ausgeblendet', css: `@media (orientation:portrait){${SUIZID}{display:none}}`, umgebungen: 'telefon', erwartet: ['RANG1'] },
+  { name: 'Y5', was: 'Suizidtreffer bei erzwungenen Farben ausgeblendet', css: `@media (forced-colors:active){${SUIZID}{display:none}}`, umgebungen: 'kontrast', erwartet: ['RANG1'] },
+  { name: 'Y6', was: 'Suizidtreffer im dunklen Modus weiss auf weiss (nur über die Bildpunkte erkennbar)', css: `@media (prefers-color-scheme:dark){${SUIZID}{background-image:linear-gradient(#fff,#fff)}${SUIZID} *{color:#fff!important}}`, umgebungen: 'dunkel', erwartet: ['UNSICHTBAR'] }
 ];
 
 function build(c, dir) {
@@ -72,8 +79,10 @@ function build(c, dir) {
 
 mkdirSync(out, { recursive: true });
 const tool = join(here, 'suchraster.mjs');
-const run = (dir, name) => {
-  const r = spawnSync(process.execPath, [tool, site, dir, '--nur=proben', '--ausnahmen=keine', '--immer', `--ausgabe=${join(out, name)}`], { encoding: 'utf8', env: { ...process.env, GITHUB_STEP_SUMMARY: '' } });
+// Die weiteren Umgebungen (Telefon, dunkel, erzwungene Farben) verdreifachen die Laufzeit; jede Konstruktion läuft deshalb
+// nur in der Umgebung, die sie trifft, der unveränderte Stand in allen.
+const run = (dir, name, umgebungen = 'keine') => {
+  const r = spawnSync(process.execPath, [tool, site, dir, '--nur=proben', '--ausnahmen=keine', '--immer', `--umgebungen=${umgebungen}`, `--ausgabe=${join(out, name)}`], { encoding: 'utf8', env: { ...process.env, GITHUB_STEP_SUMMARY: '' } });
   let result = null;
   try { result = JSON.parse(readFileSync(join(out, name, 'ERGEBNIS.json'), 'utf8')); } catch { /* kein Ergebnis */ }
   return { code: r.status, result, log: (r.stdout || '') + (r.stderr || '') };
@@ -84,7 +93,7 @@ let bad = 0;
 {
   const dir = join(out, 'stand', 'unveraendert');
   rmSync(dir, { recursive: true, force: true }); cpSync(site, dir, { recursive: true });
-  const r = run(dir, 'unveraendert');
+  const r = run(dir, 'unveraendert', 'telefon,dunkel,kontrast');
   const ok = r.code === 0 && r.result && !r.result.verschlechterungen.length;
   if (!ok) bad++;
   lines.push(`${ok ? 'BESTANDEN' : 'FEHLER   '} | unverändert | Rückgabe ${r.code}, ${r.result ? r.result.verschlechterungen.length : '?'} Verschlechterungen (erwartet 0)`);
@@ -92,7 +101,7 @@ let bad = 0;
 for (const c of CASES) {
   const dir = join(out, 'stand', c.name);
   try { build(c, dir); } catch (e) { bad++; lines.push(`FEHLER    | ${c.name} | ${e.message}`); continue; }
-  const r = run(dir, c.name);
+  const r = run(dir, c.name, c.umgebungen);
   const kinds = new Set((r.result ? r.result.verschlechterungen : []).flatMap(f => f.kinds));
   const missing = c.erwartet.filter(k => !kinds.has(k));
   const ok = r.code === 1 && r.result && !missing.length;

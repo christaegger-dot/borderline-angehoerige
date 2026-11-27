@@ -105,3 +105,17 @@ node authoring/tools/build.mjs --production --out=site --write-site
 node authoring/tools/suchtest.mjs site
 node authoring/tools/suchraster.mjs /tmp/r76/site site
 ```
+
+## 10 Nachtrag nach dem Merge: Abdeckung (26.11.2026, 23:55 UTC)
+
+Die parallele Gegenprüfung von r4-76 (PR #846, G846-2) hat darauf hingewiesen, dass das Suchraster nur Verluste zählt und keine Gewinne. Mit ihrem Skript `audit-results/2026-11-26-gegenpruefung-r4-76-saldo/abdeckung.cjs` gemessen: In wie vielen der 23 328 Sätze des Rasters steht der **passende** Sicherheitsabschnitt unter den ersten zwei (Suizid → Suizidabschnitt; Selbstverletzung → Abschnitt zur Selbstverletzung; Gewalt → Gewalt- oder Kinderschutzabschnitt)?
+
+| Thema | r4-76 (= r4-73) | r4-75 | r4-77 (live) |
+|---|---|---|---|
+| Suizid | 4 886 von 10 800 (45,2 %) | 5 603 (51,9 %) | 7 310 (67,7 %) |
+| Selbstverletzung | 980 von 3 456 (28,4 %) | 1 102 (31,9 %) | 1 304 (37,7 %) |
+| Gewalt | 4 230 von 9 072 (46,6 %) | 5 278 (58,2 %) | 6 583 (72,6 %) |
+| zusammen | 10 096 von 23 328 (43,3 %) | 11 983 (51,4 %) | 15 197 (65,1 %) |
+| leere Antworten | 5 645 | 3 869 | 4 257 |
+
+r4-77 findet den passenden Abschnitt ohne ein einziges neues Wort häufiger als r4-75 und verliert gegenüber r4-76 nichts. Weniger leere Antworten als r4-75 hat es nicht, weil die neuen Wörter erst mit Schritt 3 kommen. Messung: `ergebnis/abdeckung-r4-76-r4-75-r4-77.txt` (Stände `451b20f`, `e8efa78`, `9d3b7d4`).

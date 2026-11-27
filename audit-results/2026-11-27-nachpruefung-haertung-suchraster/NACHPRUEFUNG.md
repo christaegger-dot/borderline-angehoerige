@@ -1,4 +1,4 @@
-**Bereit zum Merge: nein** (dritte Nachkontrolle von Kopf `deadba9`, 27.11.2026, 04:30 UTC). Vor dem Merge zu beheben: N855-12 (hoch). N855-11 ist behoben. Siehe Abschnitt 7. Frühere Urteile: Kopf `64593de` nein (N855-11), Kopf `6d9428d` nein (N855-9), Kopf `6210121` nein (N855-1, N855-2).
+**Bereit zum Merge: ja** (vierte Nachkontrolle von Kopf `2bf11b5`, 27.11.2026, 05:00 UTC). Kein blockierender Befund mehr offen; die verbleibenden Hinweise stehen in Abschnitt 8. Frühere Urteile: Kopf `deadba9` nein (N855-12), `64593de` nein (N855-11), `6d9428d` nein (N855-9), `6210121` nein (N855-1, N855-2).
 
 # Nachprüfung der Härtung des Suchrasters (PR #855)
 
@@ -337,3 +337,57 @@ Weitere Grenzen, als Hinweis, nicht blockierend:
 ### 7.3 Urteil
 
 **Bereit zum Merge: nein.** Vorher zu beheben ist N855-12. Mit Telefon und dunklem Modus in der Prüfung der Bildpunkte und Y1 bis Y4 im Selbsttest ist aus meiner Sicht nichts Blockierendes mehr offen.
+
+## 8 Vierte Nachkontrolle von Kopf `2bf11b5` (27.11.2026)
+
+Die bauende Sitzung hat N855-12 mit `2bf11b5` nachgebessert. Proben, Bildpunkte und Leermeldung laufen jetzt zusätzlich in drei Umgebungen:
+- `telefon`: iPhone 13, Hochformat;
+- `dunkel`: dunkler Modus, 1280 × 720;
+- `kontrast`: erzwungene Farben und dunkler Modus.
+
+Der Selbsttest hat 35 Konstruktionen.
+
+### 8.1 Was jetzt hält
+
+- **Y1 bis Y4:** Alle werden gemeldet (Y1 312, Y2 624, Y3 1, Y4 312). Eine Regel für Touch-Eingabe (`pointer:coarse`, T3) wird über die Telefon-Umgebung ebenfalls gemeldet (312).
+- **Selbsttest:** lokal 35 von 35, unveränderter Stand besteht.
+- **Kein Fehlalarm:** r4-77 → r4-77 mit `--immer` in allen vier Umgebungen: 0 Verschlechterungen. Kleinster Unterschied der Bildpunkte: 2 064 hell und dunkel, 13 802 Telefon. Die Schwelle liegt bei 20.
+- **CI auf `2bf11b5`:**
+  - grün: `build-and-compare`, `werkzeug-der-basis`, `werkzeug-des-pr`, `selbsttest` (7 min) und `fester-bezug-r4-73` (voller Lauf, 8 min 14 s, unter dem Limit von 30 min);
+  - rot, gewollt: `suchraster-ausnahmen`, weil der PR den Workflow ändert (N855-2).
+
+Ergebnis: `ergebnis/nachkontrolle4/konstruktionen-2bf11b5.txt`.
+
+### 8.2 Verbleibende Hinweise (nicht blockierend)
+
+**N855-13 (niedrig): Medienmerkmale ohne Umgebung.** Je eine Zeile gegen r4-76, das Raster meldet 0:
+- T1: `@media (min-width:761px) and (max-width:1200px)` (Tablet-Breite);
+- T2: `prefers-reduced-motion:reduce`;
+- T4: `prefers-contrast:more`.
+
+Die Tablet-Breite nennt die bauende Sitzung selbst als Grenze. Die Website hat Umbrüche bei 760 px und 1 200 px; eine Regel nur für den Bereich dazwischen ist denkbar, aber seltener als eine für schmale Bildschirme. T2 und T4 sind Einstellungen der Nutzenden; dass dort ein Sicherheitstreffer ausgeblendet wird, setzt eine sehr ungewöhnliche Änderung voraus. Vorschlag für später:
+- eine vierte Umgebung mit z. B. 900 × 1 200 Pixeln, `reducedMotion:'reduce'` und `contrast:'more'` über `page.emulateMedia`;
+- oder eine Warnung, wenn eine geänderte Regel in `site.css` ein `@media` mit einem Merkmal enthält, das keine Umgebung abdeckt.
+
+**Weiter geltende Grenzen:**
+- Ränge, die keine Probe erreicht.
+- Sichtbare, aber unlesbare Links.
+- Druck und Zoom.
+- Die grossen Anfragemengen laufen nur in der Hauptumgebung.
+
+Alle sind im Bericht der bauenden Sitzung genannt.
+
+**Ablauf beim Merge:**
+- `suchraster-ausnahmen` ist in #855 gewollt rot, weil der PR den Workflow ändert.
+- Diese Nachprüfung ist die Prüfung, die der Job verlangt. Wer mergt, setzt sich bewusst über den roten Job hinweg.
+- Für spätere PRs gilt: Eine grüne CI ist nur dann eine Freigabe nach R34-P01, wenn der PR nichts unter `.github/` ändert (N855-10).
+- Die Entscheide zu N855-5 (Reihenfolge Gewalt vor Suizid bei Fremdbedrohung) und zur vollen Absicherung des Workflows (N855-2) liegen weiter bei Christa Egger.
+
+### 8.3 Urteil
+
+**Bereit zum Merge: ja.** Die Leitfrage «Kann das gehärtete Raster noch falsch bestehen?» beantworte ich so:
+- Mit den bekannten und naheliegenden Änderungen an Suchregeln, Darstellung, Ausnahmen und Werkzeug nicht mehr.
+- Möglich bleibt es über den Workflow selbst, nur sichtbar und mit rotem Job.
+- Möglich bleibt es auch über die in 8.2 genannten seltenen Umgebungen.
+
+Kein Merge durch diese Sitzung.

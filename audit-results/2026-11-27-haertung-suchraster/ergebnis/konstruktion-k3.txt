@@ -1,0 +1,48 @@
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 37585 Anfragen · 474 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+saetze: 37584 Anfragen · geändert 1319 · verloren 474 · verdrängt 0 · Suizid nicht mehr zuoberst 143 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 0
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+Abdeckung Suizid: Bezug 43,7 % · Prüfstand 43,0 % (17400 Sätze, passender Abschnitt unter den ersten zwei)
+Abdeckung Selbstverletzung: Bezug 27,6 % · Prüfstand 26,1 % (5568 Sätze, passender Abschnitt unter den ersten zwei)
+Abdeckung Gewalt: Bezug 45,0 % · Prüfstand 43,6 % (14616 Sätze, passender Abschnitt unter den ersten zwei)
+VERLOREN+RANG1 | saetze | mein opa hat suizidgedanken oft | krise#suizid → begriffe#begriffe
+VERLOREN | saetze | mein opa hat suizidgedanken was kann ich machen | krise#krise-schnell > kommunizieren#suizid-angesprochen → begriffe#begriffe
+VERLOREN+RANG1 | saetze | mein opa ist suizidal oft | krise#suizid → begriffe#begriffe
+VERLOREN | saetze | mein opa ist suizidal was kann ich machen | krise#krise-schnell > kommunizieren#suizid-angesprochen → begriffe#begriffe
+VERLOREN+RANG1 | saetze | mein opa droht mit suizid oft | krise#suizid → begriffe#begriffe
+VERLOREN | saetze | mein opa droht mit suizid was kann ich machen | krise#krise-schnell > kommunizieren#suizid-angesprochen → begriffe#begriffe
+VERLOREN+RANG1 | saetze | mein opa hat selbstmordgedanken oft | krise#suizid → begriffe#begriffe
+VERLOREN | saetze | mein opa hat selbstmordgedanken was kann ich machen | krise#krise-schnell > kommunizieren#suizid-angesprochen → begriffe#begriffe
+VERLOREN+RANG1 | saetze | mein opa hat einen todeswunsch oft | krise#suizid → begriffe#begriffe
+VERLOREN | saetze | mein opa hat einen todeswunsch was kann ich machen | krise#krise-schnell > kommunizieren#suizid-angesprochen → begriffe#begriffe
+VERLOREN | saetze | mein opa verletzt sich selbst oft | begriffe#b-selbstverletzung > krise#suizid → begriffe#begriffe
+VERLOREN | saetze | mein opa verletzt sich selbst seit wochen | krise#selbstverletzung > krise > begriffe#b-selbstverletzung → begriffe#begriffe
+VERLOREN | saetze | mein opa verletzt sich ist das ernst | krise#selbstverletzung > diagnose#suizidalitaet → kommunizieren#beispiele
+VERLOREN | saetze | mein opa verletzt sich sagt er | krise#selbstverletzung → beziehungen#verstaerker
+VERLOREN | saetze | mein opa selbstverletzung ist das ernst | krise#selbstverletzung > diagnose#suizidalitaet → kommunizieren#beispiele
+VERLOREN | saetze | mein opa selbstverletzung sagt er | krise#selbstverletzung → beziehungen#verstaerker
+VERLOREN | saetze | mein opa hat sich selbst verletzt oft | begriffe#b-selbstverletzung > krise#suizid → begriffe#begriffe
+VERLOREN | saetze | mein opa hat sich selbst verletzt seit wochen | krise#selbstverletzung > krise > begriffe#b-selbstverletzung → begriffe#begriffe
+VERLOREN | saetze | mein opa droht mir notfall | krise#krise-schnell > kinder#eskalation > krise → kommunizieren#beispiele
+VERLOREN | saetze | mein opa wird gewalttätig immer wieder | gefahr#gewalt > kurz#jetzt → begriffe#begriffe
+VERLOREN | saetze | mein opa wird gewalttätig seit wochen | gefahr#gewalt → begriffe#begriffe
+VERLOREN | saetze | mein opa wird gewalttätig wenn ich gehe | gefahr#gewalt > fragen#f-besser → begriffe#begriffe
+VERLOREN | saetze | mein opa schlägt die kinder seit wochen | gefahr#gewalt > grenzen#rollen → begriffe#begriffe
+VERLOREN | saetze | mein opa schlägt die kinder und ich habe angst | kinder#eskalation → begriffe#begriffe
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken | krise#suizid > krise > diagnose#suizidalitaet → genesung#forschung > begriffe#begriffe > quellen#forschung
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken was tun | krise#suizid > krise > krise#belastung → genesung#forschung > quellen#forschung > begriffe#begriffe
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken was soll ich tun | krise#suizid > krise > krise#belastung → genesung#forschung > quellen#forschung > begriffe#begriffe
+VERLOREN | saetze | meine grossmutter hat suizidgedanken hilfe | krise > krise#suizid > krise#krise-schnell → genesung#forschung > quellen#forschung > begriffe#begriffe
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken immer wieder | krise#suizid → begriffe#begriffe > quellen#forschung
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken oft | krise#suizid → begriffe#begriffe
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken schon wieder | krise#suizid > diagnose#suizidalitaet → genesung#forschung > begriffe#begriffe > quellen#leitlinien
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken ständig | krise#suizid → begriffe#begriffe > quellen#forschung > quellen#leitlinien
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken fu | krise#suizid > diagnose#suizidalitaet > kommunizieren#suizid-angesprochen → genesung#forschung > begriffe#begriffe > quellen#forschung
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken und droht | krise#suizid > krise > diagnose#suizidalitaet → genesung#forschung > begriffe#begriffe > quellen#forschung
+VERLOREN | saetze | meine grossmutter hat suizidgedanken was kann ich machen | krise#krise-schnell > kommunizieren#suizid-angesprochen → begriffe#begriffe
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken wenn ich gehe | krise#suizid > fragen#f-verlassen > diagnose#suizidalitaet → genesung#forschung > begriffe#begriffe > quellen#forschung
+VERLOREN+RANG1 | saetze | meine grossmutter hat suizidgedanken und will keine hilfe | krise#suizid → genesung#forschung > quellen#forschung > begriffe#begriffe
+VERLOREN+RANG1 | saetze | meine grossmutter ist suizidal | krise#suizid > krise > diagnose#suizidalitaet → genesung#forschung > begriffe#begriffe > quellen#forschung
+VERLOREN+RANG1 | saetze | meine grossmutter ist suizidal was tun | krise#suizid > krise > krise#belastung → genesung#forschung > quellen#forschung > begriffe#begriffe
+VERLOREN+RANG1 | saetze | meine grossmutter ist suizidal was soll ich tun | krise#suizid > krise > krise#belastung → genesung#forschung > quellen#forschung > begriffe#begriffe
+… 434 weitere in /tmp/claude-0/-home-user-borderline-angehoerige/c25b94b7-3e56-5405-8966-070eab006866/scratchpad/h/out-k3/ERGEBNIS.txt

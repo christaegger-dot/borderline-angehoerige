@@ -1,61 +1,113 @@
 // Suchraster: prüft, ob eine Änderung an der Suche Sicherheitsanfragen gegenüber einem Bezugsstand verschlechtert.
 // Die Suche läuft mit dem echten interaktion.js beider Stände im Browser (Playwright mit Chromium).
 //
-// Aufruf: node authoring/tools/suchraster.mjs <bezug-site> <pruef-site> [--ausgabe=<ordner>] [--ohne-tippen] [--nur=<menge>,…] [--immer]
-//   --nur: nur diese Anfragemengen (für schnelle Läufe am Arbeitsplatz; die CI prüft immer alle)
-//   --immer: auch prüfen, wenn die Suche in beiden Ständen gleich ist
-// Sind suche.html, js/interaktion.js und _headers in beiden Ständen bis auf die Versionskennung byte-gleich, liefert
-// die Suche dieselben Treffer; das Werkzeug meldet das und endet ohne Browserlauf mit 0.
+// Aufruf: node authoring/tools/suchraster.mjs <bezug-site> <pruef-site> [Optionen]
+//   --ausgabe=<ordner>     Ergebnisordner (Vorgabe dist/suchraster)
+//   --ausnahmen=<datei>    Ausnahmenliste (Vorgabe: authoring/tests/suchraster-ausnahmen.tsv neben diesem Werkzeug);
+//                          «keine» prüft ohne Ausnahmen. In der CI liest das Werkzeug der Basis die Liste des Pull Requests.
+//   --nur=<menge>,…        nur diese Anfragemengen (für schnelle Läufe am Arbeitsplatz; die CI prüft immer alle)
+//   --ohne-tippen          ohne die Menge «tippen»
+//   --immer                auch prüfen, wenn die Suche in beiden Ständen gleich ist
+//   --ungenutzt-scheitert  eine Ausnahme ohne Anwendung lässt den Lauf scheitern (nur bei vollem Lauf)
+//   --nur-bericht          Rückgabe 0 trotz Verschlechterung (Bericht gegen einen festen Stand, nicht blockierend)
+//   --titel=<text>         Überschrift in der Step-Summary
 //   bezug-site: der Stand, gegen den verglichen wird (in der CI: site/ der Basis des Pull Requests)
 //   pruef-site: der neue Stand (in der CI: site/ des Pull Requests)
+// Sind suche.html, js/interaktion.js, _headers und alle Dateien unter css/ in beiden Ständen bis auf die Versionskennung
+// byte-gleich, liefert die Suche dieselben Treffer in derselben Darstellung; das Werkzeug meldet das und endet ohne
+// Browserlauf mit 0.
 //
-// Anfragemengen (authoring/tests/suchraster.json, authoring/tests/suchraster-proben.txt):
+// Anfragemengen (Rasterdefinition und Proben aus authoring/tests/ neben diesem Werkzeug; in der CI laufen Werkzeug und
+// Proben einmal aus der Basis und einmal aus dem Pull Request, N847-2):
 //   saetze        Handelnde × Aussage zu Suizid, Selbstverletzung oder Gewalt × Nachsatz
 //   ich           Ich-Aussagen aus Kern × Füllung × Rahmen
 //   ichRahmen     klare Ich-Aussage um eine Aussage über Dritte: Rahmen × Handelnde × Aussage
 //   proben        alle Einzelproben, dazu die festgeschriebenen Anfragen aus suche-ersttreffer.tsv und suche-ausbau-offen.tsv
 //   kombinationen Proben ausgewählter Gruppen mal Zusätze und Vorsätze, in Gross- und Kleinschreibung
 //   tippen        jede Zwischenstufe beim Tippen der Proben ausgewählter Gruppen
+// Jede neue Suchregel bringt ihre Proben ins Raster mit (N847-3); sonst schützt das Raster sie beim nächsten PR nicht.
 //
+// Treffer und Links der Leermeldung zählen nur, wenn sie sichtbar sind (checkVisibility mit Deckkraft und Sichtbarkeit,
+// Fläche grösser null; N847-4). Nicht erfasst: Farbe gleich dem Hintergrund, Überdeckung durch ein anderes Element.
 // Als Verschlechterung zählt (Stopp-Regel R34-P01, auf alle Sicherheitsabschnitte erweitert):
 //   VERLOREN    ein Sicherheitsabschnitt steht im Bezug unter den ersten zwei Treffern, im Prüfstand nicht
-//   ANHEFTUNG   der Bezug heftet einen Sicherheitsabschnitt an, der Prüfstand nicht
+//   RANG1       der Suizidabschnitt steht im Bezug zuoberst, im Prüfstand nicht (N847-5)
+//   RANG3       der Bezug hat einen Sicherheitsabschnitt nur auf Rang 3, der Prüfstand keinen in den ersten drei (N847-5, N840-5)
+//   ANHEFTUNG   ein Sicherheitsabschnitt, den der Bezug anheftet und oben zeigt, ist im Prüfstand nicht angeheftet oben
+//               (angeheftet laut queryGroups und sichtbar unter den ersten «Anzahl Anheftungen + 1» Treffern; N847-6)
 //   LEER        der Bezug hat einen Treffer, der Prüfstand keinen
+//   LEERMELDUNG ein Link, den die Leermeldung des Bezugs sichtbar zeigt (Sicherheitsabschnitt oder Schnellorientierung),
+//               fehlt in der Leermeldung des Prüfstands oder ist unsichtbar (N847-4)
 // Im Bericht heisst ein Verlust VERDRAENGT, wenn an seiner Stelle ein anderer Sicherheitsabschnitt oder die
-// Schnellorientierung von «Krisen begleiten» neu unter den ersten zwei steht. Auch das zählt als Verschlechterung,
-// weil es den Suizidabschnitt bei einer Tötungsanfrage verdrängen kann; gewollte Fälle gehören in die Ausnahmen.
+// Schnellorientierung von «Krisen begleiten» neu unter den ersten zwei steht. Auch das zählt als Verschlechterung.
 //
-// Gewollte Änderungen stehen mit Begründung und Entscheid in authoring/tests/suchraster-ausnahmen.tsv:
-//   Muster     genaue Anfrage oder /regulärer Ausdruck/ auf die klein geschriebene Anfrage
-//   Verlust    verlorener Abschnitt (z. B. krise.html#suizid), LEER oder ANHEFTUNG:<Abschnitt>
+// Gewollte Änderungen stehen mit Begründung und Entscheid in authoring/tests/suchraster-ausnahmen.tsv (N847-2):
+//   Muster     genaue Anfrage oder /regulärer Ausdruck/ auf die klein geschriebene Anfrage; ein Muster, das eine
+//              beliebige Anfrage trifft (leer, «x», ein neutraler Satz), wird abgelehnt
+//   Verlust    verlorener Abschnitt (z. B. krise.html#suizid), RANG1:<Abschnitt>, RANG3, LEER, ANHEFTUNG:<Abschnitt>
+//              oder LEERMELDUNG:<Link>
 //   Ersatz     Abschnitt, der im Prüfstand unter den ersten zwei stehen muss, damit die Ausnahme gilt, oder «–»
-// Eine Anfrage gilt nur als erlaubt, wenn jeder ihrer Verluste durch eine Ausnahme gedeckt ist.
+//   Bezug      Versionskennung des Bezugs, für den die Ausnahme gilt (z. B. r4-77); bei einem anderen Bezug ist sie
+//              veraltet und lässt den Lauf scheitern, bis sie entfernt ist
+// Eine Anfrage gilt nur als erlaubt, wenn jeder ihrer Verluste durch eine Ausnahme gedeckt ist. Eine Ausnahme darf
+// höchstens MAX_JE_AUSNAHME Anfragen decken. Jede erlaubte Anfrage steht einzeln im Bericht und in der Step-Summary.
 //
 // Die Anheftung liest das Werkzeug über eine Messzeile, die queryGroups der Website nach aussen reicht; sonst läuft
 // das Skript unverändert. Fehlt die Stelle für die Messzeile, bricht das Werkzeug ab, statt ohne sie weiterzuprüfen.
-// Rückgabe: 0 ohne Verschlechterung, 1 bei Verschlechterung, JS-Fehler oder fehlender Messzeile.
+// Abdeckung (Hinweis G846-2): Anteil der Sätze je Thema, bei denen der passende Sicherheitsabschnitt unter den ersten
+// zwei steht, für Bezug und Prüfstand (nur Bericht).
+// Rückgabe: 0 ohne Verschlechterung, 1 bei Verschlechterung, Fehler in einer Ausnahme, JS-Fehler oder fehlender Messzeile.
 // Playwright: Modulpfad über PLAYWRIGHT_MODULE, sonst /opt/npm-tools/node_modules/playwright. CHROMIUM_PATH erlaubt einen Systembrowser.
 import { createServer } from 'node:http';
-import { readFileSync, existsSync, statSync, mkdirSync, writeFileSync, appendFileSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync, statSync, mkdirSync, writeFileSync, appendFileSync } from 'node:fs';
 import { join, dirname, extname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 
+const MAX_JE_AUSNAHME = 100;
 const here = dirname(fileURLToPath(import.meta.url));
 const tests = join(here, '..', 'tests');
 const args = process.argv.slice(2);
 const positional = args.filter(a => !a.startsWith('--'));
 const option = name => (args.find(a => a.startsWith(`--${name}=`)) || '').split('=').slice(1).join('=');
 if (positional.length !== 2) {
-  console.error('Aufruf: node authoring/tools/suchraster.mjs <bezug-site> <pruef-site> [--ausgabe=<ordner>] [--ohne-tippen] [--nur=<menge>,…] [--immer]');
+  console.error('Aufruf: node authoring/tools/suchraster.mjs <bezug-site> <pruef-site> [--ausgabe=<ordner>] [--ausnahmen=<datei>|keine] [--ohne-tippen] [--nur=<menge>,…] [--immer] [--ungenutzt-scheitert] [--nur-bericht] [--titel=<text>]');
   process.exit(2);
 }
 const [baseDir, testDir] = positional.map(p => resolve(p));
 const outDir = resolve(option('ausgabe') || join('dist', 'suchraster'));
 const withTyping = !args.includes('--ohne-tippen');
+const reportOnly = args.includes('--nur-bericht');
 const buildOf = d => (readFileSync(join(d, 'index.html'), 'utf8').match(/data-puk-site-build="([^"]+)"/) || [])[1] || '?';
+const title = option('titel') || 'Suchraster';
+const head = `${title} · Bezug ${buildOf(baseDir)} · Prüfstand ${buildOf(testDir)}`;
+const esc = s => String(s).replace(/[|`<>]/g, c => ({ '|': '\\|', '`': "'", '<': '&lt;', '>': '&gt;' })[c]);
+const stepSummary = lines => { if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join('\n') + '\n'); };
+
+// ---------- Ausnahmen (vor der Abkürzung: eine fehlerhafte oder veraltete Ausnahme fällt auch ohne Browserlauf auf) ----------
+const exceptions = [];
+const exceptionErrors = [];
+const exceptionFile = option('ausnahmen') === 'keine' ? null : resolve(option('ausnahmen') || join(tests, 'suchraster-ausnahmen.tsv'));
+const NEUTRAL = ['', 'x', 'heute ist ein schöner tag', 'öffnungszeiten der bibliothek'];
+if (exceptionFile && existsSync(exceptionFile)) {
+  for (const line of readFileSync(exceptionFile, 'utf8').split('\n')) {
+    if (!line || line.startsWith('#') || line.startsWith('Muster\t')) continue;
+    const [pattern, loss, replacement, bezug, reason, decision] = line.split('\t');
+    if (!pattern || !loss || !replacement || !bezug || !reason || !decision) { exceptionErrors.push(`Ausnahme unvollständig (sechs Spalten nötig: Muster, Verlust, Ersatz, Bezug, Begründung, Entscheid): ${line}`); continue; }
+    let re = null;
+    if (/^\/.+\/$/.test(pattern)) {
+      try { re = new RegExp(pattern.slice(1, -1)); } catch (e) { exceptionErrors.push(`Ausnahme mit ungültigem Muster ${pattern}: ${e.message}`); continue; }
+      if (NEUTRAL.some(q => re.test(q))) { exceptionErrors.push(`Ausnahme zu breit: Muster ${pattern} trifft auch eine beliebige Anfrage`); continue; }
+    }
+    if (bezug !== buildOf(baseDir)) { exceptionErrors.push(`Ausnahme veraltet: ${pattern} · ${loss} gilt für den Bezug ${bezug}, der Bezug ist ${buildOf(baseDir)}. Entfernen.`); continue; }
+    exceptions.push({ pattern, test: q => re ? re.test(q.toLocaleLowerCase('de-CH')) : q === pattern, loss, replacement, used: 0, queries: [] });
+  }
+}
+
 if (!args.includes('--immer')) {
-  const same = ['suche.html', 'js/interaktion.js', '_headers'].every(f => {
+  const files = new Set(['suche.html', 'js/interaktion.js', '_headers']);
+  for (const d of [baseDir, testDir]) if (existsSync(join(d, 'css'))) readdirSync(join(d, 'css')).forEach(f => files.add(`css/${f}`));
+  const same = [...files].every(f => {
     // nur die Kennung als Wert ersetzen (data-puk-site-build="…", ?v=…), nicht Erwähnungen in Kommentaren
     const read = d => {
       if (!existsSync(join(d, f))) return null;
@@ -66,10 +118,12 @@ if (!args.includes('--immer')) {
     return a !== null && a === b;
   });
   if (same) {
-    const msg = `Suchraster · Bezug ${buildOf(baseDir)} · Prüfstand ${buildOf(testDir)}\nSuche unverändert: suche.html, js/interaktion.js und _headers sind bis auf die Versionskennung byte-gleich. Kein Browserlauf nötig.`;
-    console.log(msg);
-    if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Suchraster\n${msg.split('\n')[1]}\n`);
-    process.exit(0);
+    const fail = exceptionErrors.length || exceptions.length;
+    const msg = [`${head}`, `Suche unverändert: ${[...files].join(', ')} sind bis auf die Versionskennung byte-gleich. Kein Browserlauf nötig.`,
+      ...exceptionErrors, ...(exceptions.length ? [`Ausnahmen ohne Anwendung (die Suche ist unverändert): ${exceptions.length}. Entfernen.`] : [])];
+    console.log(msg.join('\n'));
+    stepSummary([`### ${esc(head)}`, ...msg.slice(1).map(esc), '']);
+    process.exit(fail && !reportOnly ? 1 : 0);
   }
 }
 const require = createRequire(import.meta.url);
@@ -77,6 +131,8 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/opt/npm-tools/no
 
 const cfg = JSON.parse(readFileSync(join(tests, 'suchraster.json'), 'utf8'));
 const SAFETY = cfg.sicherheitsabschnitte;
+const SUIZID = 'krise.html#suizid';
+const QUICK = 'krise.html#krise-schnell';
 const HOOK = "input.addEventListener('input', renderSearch);";
 
 // ---------- Anfragen ----------
@@ -94,8 +150,17 @@ const groupsOf = keys => keys.flatMap(k => {
   if (!probeGroups.has(k)) throw new Error(`Gruppe ${k} fehlt in suchraster-proben.txt`);
   return probeGroups.get(k);
 });
+// Thema je Satz für die Abdeckung: eine Aussage gehört zum letzten Thema, dessen erste Aussage vor ihr steht
+const themeOfSentence = new Map();
+const themes = cfg.themen || [];
+const themeAt = i => themes.filter(t => cfg.saetze.aussagen.indexOf(t.ab) <= i).pop();
+for (const t of themes) if (cfg.saetze.aussagen.indexOf(t.ab) === -1) throw new Error(`Thema ${t.thema}: Aussage «${t.ab}» fehlt in saetze.aussagen`);
 const sets = {
-  saetze: cfg.saetze.handelnde.flatMap(a => cfg.saetze.aussagen.flatMap(p => cfg.saetze.nachsaetze.map(x => [a, p, x].filter(Boolean).join(' ')))),
+  saetze: cfg.saetze.handelnde.flatMap(a => cfg.saetze.aussagen.flatMap((p, i) => cfg.saetze.nachsaetze.map(x => {
+    const q = [a, p, x].filter(Boolean).join(' ');
+    if (themes.length && !themeOfSentence.has(q)) themeOfSentence.set(q, themeAt(i));
+    return q;
+  }))),
   ich: cfg.ichAussagen.kerne.flatMap(k => cfg.ichAussagen.fuellungen.flatMap(f => cfg.ichAussagen.rahmen.map(r => r.replace('{k}', k + f)))),
   ichRahmen: cfg.ichRahmen.rahmen.flatMap(r => cfg.saetze.handelnde.filter(h => h && h !== 'ich').flatMap(h => cfg.saetze.aussagen.map(a => r.replace('{s}', `${h} ${a}`)))),
   proben: [...[...probeGroups.values()].flat(), ...tsvQueries(join(tests, 'suche-ersttreffer.tsv')), ...tsvQueries(join(tests, 'suche-ausbau-offen.tsv'))],
@@ -110,25 +175,14 @@ if (withTyping) sets.tippen = groupsOf(cfg.tippen.gruppen).flatMap(s => Array.fr
 for (const k of Object.keys(sets)) sets[k] = [...new Set(sets[k])];
 const only = option('nur') ? option('nur').split(',') : null;
 if (only) for (const k of Object.keys(sets)) if (!only.includes(k)) delete sets[k];
+const fullRun = !only && withTyping;
 
-// ---------- Ausnahmen ----------
-const exceptions = [];
-const exceptionFile = join(tests, 'suchraster-ausnahmen.tsv');
-if (existsSync(exceptionFile)) {
-  for (const line of readFileSync(exceptionFile, 'utf8').split('\n')) {
-    if (!line || line.startsWith('#') || line.startsWith('Muster\t')) continue;
-    const [pattern, loss, replacement, reason, decision] = line.split('\t');
-    if (!pattern || !loss || !replacement || !reason || !decision) throw new Error(`Ausnahme unvollständig (fünf Spalten nötig): ${line}`);
-    const re = /^\/.+\/$/.test(pattern) ? new RegExp(pattern.slice(1, -1)) : null;
-    exceptions.push({ pattern, test: q => re ? re.test(q.toLocaleLowerCase('de-CH')) : q === pattern, loss, replacement, used: 0 });
-  }
-}
-// Verluste einer Anfrage: Abschnitte, LEER, ANHEFTUNG:<Abschnitt>
+// Verluste einer Anfrage: Abschnitte, RANG1:…, RANG3, LEER, ANHEFTUNG:…, LEERMELDUNG:…
 function covered(q, losses, after) {
   const hits = losses.map(loss => exceptions.find(e => e.test(q) && e.loss === loss && (e.replacement === '–' || after.top.slice(0, 2).includes(e.replacement))));
-  if (hits.some(h => !h)) return false;
-  hits.forEach(h => h.used++);
-  return true;
+  if (hits.some(h => !h)) return null;
+  hits.forEach(h => { h.used++; h.queries.push(q); });
+  return hits;
 }
 
 // ---------- Server und Browser ----------
@@ -153,18 +207,39 @@ function serve(dir) {
   return new Promise(r => server.listen(0, '127.0.0.1', () => r(server)));
 }
 const hookMissing = new Set();
+// Sichtbare Treffer (höchstens sechs) und die angehefteten Abschnitte, die unter ihnen oben stehen. Die Prüfung der
+// Sichtbarkeit erzwingt je Anfrage Stil und Layout; sie verlängert einen vollen Lauf um rund ein Fünftel.
 function inPage(queries) {
   const input = document.querySelector('#site-search');
+  const visible = el => el.checkVisibility({ opacityProperty: true, visibilityProperty: true }) && (r => r.width > 0 && r.height > 0)(el.getBoundingClientRect());
   const out = queries.map(q => {
     input.value = q;
     input.dispatchEvent(new Event('input', { bubbles: true }));
-    const hrefs = [...document.querySelectorAll('[data-search-results] > li:not([hidden]) a')].map(a => a.getAttribute('href'));
+    const hrefs = [];
+    for (const li of document.querySelectorAll('[data-search-results] > li:not([hidden])')) {
+      const a = li.querySelector('a');
+      if (a && visible(a)) { hrefs.push(a.getAttribute('href')); if (hrefs.length >= 6) break; }
+    }
     const groups = window.__suchrasterGruppen(q);
-    return { n: hrefs.length, top: hrefs.slice(0, 3), pins: groups && groups.pins ? groups.pins.slice() : [] };
+    const pins = groups && groups.pins ? groups.pins.slice() : [];
+    return { n: hrefs.length, top: hrefs.slice(0, 3), pins: pins.filter(p => hrefs.slice(0, pins.length + 1).includes(p)) };
   });
   input.value = '';
   input.dispatchEvent(new Event('input', { bubbles: true }));
   return out;
+}
+// Leermeldung: sichtbare Links bei einer Anfrage ohne Treffer
+function emptyState(q) {
+  const input = document.querySelector('#site-search');
+  const visible = el => el.checkVisibility({ opacityProperty: true, visibilityProperty: true }) && (r => r.width > 0 && r.height > 0)(el.getBoundingClientRect());
+  input.value = q;
+  input.dispatchEvent(new Event('input', { bubbles: true }));
+  const hits = [...document.querySelectorAll('[data-search-results] > li:not([hidden]) a')].filter(visible).length;
+  const box = document.querySelector('[data-search-empty]');
+  const links = box && visible(box) ? [...box.querySelectorAll('a')].filter(visible).map(a => a.getAttribute('href')) : [];
+  input.value = '';
+  input.dispatchEvent(new Event('input', { bubbles: true }));
+  return { hits, links };
 }
 
 const servers = [await serve(baseDir), await serve(testDir)];
@@ -172,15 +247,14 @@ const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PAT
 const errors = [];
 const pages = [];
 for (const s of servers) {
-  const page = await browser.newPage();
+  // eigener Kontext je Stand: sonst teilen sich beide Seiten (gleiche Site 127.0.0.1) einen Renderer und laufen nacheinander
+  const page = await (await browser.newContext()).newPage();
   page.on('pageerror', e => errors.push(String(e)));
   await page.goto(`http://127.0.0.1:${s.address().port}/suche.html`, { waitUntil: 'networkidle' });
   const ready = await page.evaluate(() => typeof window.__suchrasterGruppen === 'function');
   if (!ready) hookMissing.add(s === servers[0] ? baseDir : testDir);
   pages.push(page);
 }
-const build = buildOf;
-const head = `Suchraster · Bezug ${build(baseDir)} · Prüfstand ${build(testDir)}`;
 if (hookMissing.size) {
   console.log(`${head}\nABBRUCH: Messzeile für die Anheftung nicht gefunden in ${[...hookMissing].join(', ')}. Werkzeug an das Suchskript anpassen.`);
   await browser.close(); servers.forEach(s => s.close()); process.exit(1);
@@ -191,8 +265,31 @@ const short = r => r.n ? r.top.map(h => h.replace('.html', '')).join(' > ') : '�
 const top2Safety = r => r.top.slice(0, 2).filter(h => SAFETY.includes(h));
 const report = [];
 const failures = [];
+const allowed = [];
 const summary = [];
+const coverage = themes.map(t => ({ thema: t.thema, passend: t.passend, n: 0, a: 0, b: 0 }));
 const startedAt = Date.now();
+function judge(name, q, a, b, counts) {
+  const kinds = [], losses = [];
+  const lost = top2Safety(a).filter(h => !b.top.slice(0, 2).includes(h));
+  if (lost.length) {
+    const displaced = b.top.slice(0, 2).some(h => (SAFETY.includes(h) || h === QUICK) && !a.top.slice(0, 2).includes(h));
+    kinds.push(displaced ? 'VERDRAENGT' : 'VERLOREN');
+    losses.push(...lost);
+  }
+  if (a.top[0] === SUIZID && b.top[0] !== SUIZID) { kinds.push('RANG1'); losses.push(`RANG1:${SUIZID}`); }
+  if (!top2Safety(a).length && SAFETY.includes(a.top[2]) && !b.top.some(h => SAFETY.includes(h))) { kinds.push('RANG3'); losses.push('RANG3'); }
+  const unpinned = a.pins.filter(p => SAFETY.includes(p) && !b.pins.includes(p));
+  if (unpinned.length) { kinds.push('ANHEFTUNG'); losses.push(...unpinned.map(p => `ANHEFTUNG:${p}`)); }
+  if (a.n && !b.n) { kinds.push('LEER'); losses.push('LEER'); }
+  if (!kinds.length) return [];
+  const line = `${kinds.join('+')} | ${name} | ${q} | Bezug ${short(a)}${a.pins.length ? ' [angeheftet]' : ''} | Prüfstand ${short(b)}${b.pins.length ? ' [angeheftet]' : ''}`;
+  const hits = covered(q, losses, b);
+  if (hits) { counts.AUSNAHME++; allowed.push({ name, q, kinds, before: short(a), after: short(b), muster: hits.map(h => h.pattern) }); return []; }
+  kinds.forEach(k => counts[k]++);
+  failures.push({ name, q, kinds, losses, before: short(a), after: short(b) });
+  return [line];
+}
 for (const [name, queries] of Object.entries(sets)) {
   const before = [], after = [];
   for (let i = 0; i < queries.length; i += 2000) {
@@ -200,60 +297,78 @@ for (const [name, queries] of Object.entries(sets)) {
     const [a, b] = await Promise.all(pages.map(p => p.evaluate(inPage, chunk)));
     before.push(...a); after.push(...b);
   }
-  const counts = { VERLOREN: 0, VERDRAENGT: 0, ANHEFTUNG: 0, LEER: 0, AUSNAHME: 0, NEU_OBEN: 0, GEAENDERT: 0 };
+  const counts = { VERLOREN: 0, VERDRAENGT: 0, RANG1: 0, RANG3: 0, ANHEFTUNG: 0, LEER: 0, AUSNAHME: 0, NEU_OBEN: 0, GEAENDERT: 0 };
   const lines = [];
   queries.forEach((q, i) => {
     const a = before[i], b = after[i];
     if (short(a) !== short(b) || a.pins.join() !== b.pins.join()) counts.GEAENDERT++;
-    const kinds = [], losses = [];
-    const lost = top2Safety(a).filter(h => !b.top.slice(0, 2).includes(h));
-    if (lost.length) {
-      const displaced = b.top.slice(0, 2).some(h => (SAFETY.includes(h) || h === 'krise.html#krise-schnell') && !a.top.slice(0, 2).includes(h));
-      kinds.push(displaced ? 'VERDRAENGT' : 'VERLOREN');
-      losses.push(...lost);
-    }
-    const unpinned = a.pins.filter(p => SAFETY.includes(p) && !b.pins.includes(p));
-    if (unpinned.length) { kinds.push('ANHEFTUNG'); losses.push(...unpinned.map(p => `ANHEFTUNG:${p}`)); }
-    if (a.n && !b.n) { kinds.push('LEER'); losses.push('LEER'); }
     if (top2Safety(b).some(h => !a.top.slice(0, 2).includes(h))) counts.NEU_OBEN++;
-    if (!kinds.length) return;
-    if (covered(q, losses, b)) { counts.AUSNAHME++; return; }
-    kinds.forEach(k => counts[k]++);
-    const line = `${kinds.join('+')} | ${name} | ${q} | Bezug ${short(a)}${a.pins.length ? ' [angeheftet]' : ''} | Prüfstand ${short(b)}${b.pins.length ? ' [angeheftet]' : ''}`;
-    lines.push(line);
-    failures.push({ name, q, kinds, losses, before: short(a), after: short(b) });
+    if (name === 'saetze' && themeOfSentence.has(q)) {
+      const c = coverage.find(x => x.thema === themeOfSentence.get(q).thema);
+      c.n++;
+      if (a.top.slice(0, 2).some(h => c.passend.includes(h))) c.a++;
+      if (b.top.slice(0, 2).some(h => c.passend.includes(h))) c.b++;
+    }
+    lines.push(...judge(name, q, a, b, counts));
   });
-  const s = `${name}: ${queries.length} Anfragen · geändert ${counts.GEAENDERT} · verloren ${counts.VERLOREN} · verdrängt ${counts.VERDRAENGT} · Anheftung verloren ${counts.ANHEFTUNG} · leer ${counts.LEER} · als Ausnahme erlaubt ${counts.AUSNAHME} · Sicherheitsabschnitt neu oben ${counts.NEU_OBEN}`;
+  const s = `${name}: ${queries.length} Anfragen · geändert ${counts.GEAENDERT} · verloren ${counts.VERLOREN} · verdrängt ${counts.VERDRAENGT} · Suizid nicht mehr zuoberst ${counts.RANG1} · letzter Sicherheitsabschnitt auf Rang 3 verloren ${counts.RANG3} · Anheftung verloren ${counts.ANHEFTUNG} · leer ${counts.LEER} · als Ausnahme erlaubt ${counts.AUSNAHME} · Sicherheitsabschnitt neu oben ${counts.NEU_OBEN}`;
   summary.push(s);
   report.push(`## ${s}`, ...lines);
 }
-const unused = exceptions.filter(e => !e.used).map(e => `${e.pattern} · ${e.loss} · ${e.replacement}`);
+// Leermeldung
+{
+  const probe = 'qqxzqvwxq';
+  const [a, b] = await Promise.all(pages.map(p => p.evaluate(emptyState, probe)));
+  const watched = a.links.filter(h => SAFETY.includes(h) || h === QUICK);
+  const missing = a.hits ? [] : watched.filter(h => !b.links.includes(h));
+  const counts = { LEERMELDUNG: 0, AUSNAHME: 0 };
+  if (missing.length) {
+    const q = '(Leermeldung)', losses = missing.map(h => `LEERMELDUNG:${h}`), kinds = ['LEERMELDUNG'];
+    const hits = covered(q, losses, { top: [] });
+    if (hits) { counts.AUSNAHME++; allowed.push({ name: 'leermeldung', q, kinds, before: a.links.join(' '), after: b.links.join(' ') || '–', muster: hits.map(h => h.pattern) }); }
+    else { counts.LEERMELDUNG++; failures.push({ name: 'leermeldung', q, kinds, losses, before: a.links.join(' '), after: b.links.join(' ') || '–' }); report.push(`## Leermeldung`, `LEERMELDUNG | ${missing.join(', ')} fehlt oder ist unsichtbar`); }
+  }
+  summary.push(`leermeldung: sichtbare Links im Bezug ${a.links.length}, im Prüfstand ${b.links.length} · Sicherheitslink verloren ${counts.LEERMELDUNG} · als Ausnahme erlaubt ${counts.AUSNAHME}${a.hits ? ' · (Probe hatte im Bezug Treffer, nicht geprüft)' : ''}`);
+}
 await browser.close();
 servers.forEach(s => s.close());
+const tooBroad = exceptions.filter(e => e.used > MAX_JE_AUSNAHME).map(e => `Ausnahme zu breit: ${e.pattern} · ${e.loss} deckt ${e.used} Anfragen (höchstens ${MAX_JE_AUSNAHME}). Enger fassen oder aufteilen.`);
+const unused = exceptions.filter(e => !e.used).map(e => `${e.pattern} · ${e.loss} · ${e.replacement}`);
+const problems = [...exceptionErrors, ...tooBroad, ...(fullRun && args.includes('--ungenutzt-scheitert') ? unused.map(u => `Ausnahme ohne Anwendung: ${u}. Entfernen.`) : [])];
 
 // ---------- Ausgabe ----------
 mkdirSync(outDir, { recursive: true });
-const total = Object.values(sets).reduce((n, q) => n + q.length, 0);
-const verdict = failures.length || errors.length ? 'VERSCHLECHTERUNG' : 'KEINE VERSCHLECHTERUNG';
+const total = Object.values(sets).reduce((n, q) => n + q.length, 0) + 1;
+const bad = failures.length || errors.length || problems.length;
+const verdict = bad ? 'VERSCHLECHTERUNG' : 'KEINE VERSCHLECHTERUNG';
+const pct = (x, n) => n ? `${(100 * x / n).toFixed(1).replace('.', ',')} %` : '–';
+const coverageLines = coverage.filter(c => c.n).map(c => `Abdeckung ${c.thema}: Bezug ${pct(c.a, c.n)} · Prüfstand ${pct(c.b, c.n)} (${c.n} Sätze, passender Abschnitt unter den ersten zwei)`);
+const allowedLines = allowed.map(f => `${f.kinds.join('+')} | ${f.name} | ${f.q} | ${f.before} → ${f.after} | Muster ${f.muster.join(', ')}`);
 const text = [
   `# ${head}`,
-  `Ergebnis: ${verdict} · ${total} Anfragen · ${failures.length} Verschlechterungen · JS-Fehler ${errors.length} · ${Math.round((Date.now() - startedAt) / 1000)} s`,
+  `Ergebnis: ${verdict} · ${total} Anfragen · ${failures.length} Verschlechterungen · ${allowed.length} als Ausnahme erlaubt · Fehler in Ausnahmen ${problems.length} · JS-Fehler ${errors.length} · ${Math.round((Date.now() - startedAt) / 1000)} s`,
   ...summary.map(s => `- ${s}`),
+  ...coverageLines.map(s => `- ${s}`),
+  ...problems.map(p => `FEHLER: ${p}`),
   unused.length ? `Ausnahmen ohne Anwendung (prüfen, ob noch nötig): ${unused.length}` : 'Alle Ausnahmen angewendet oder keine eingetragen.',
   ...unused.map(q => `  - ${q}`),
   '',
   ...report,
   '',
-  '## Vorlage für suchraster-ausnahmen.tsv (nur für gewollte Änderungen; Begründung und Entscheid ergänzen, gleichartige Fälle besser als Muster)',
-  ...[...new Map(failures.flatMap(f => f.losses.map(l => [`${f.q}\t${l}`, f]))).entries()].map(([k]) => `${k}\t–\t<Begründung>\t<Entscheid>`),
+  `## Als Ausnahme erlaubt (${allowed.length})`,
+  ...allowedLines,
+  '',
+  '## Vorlage für suchraster-ausnahmen.tsv (nur für gewollte Änderungen; Begründung und Entscheid ergänzen, gleichartige Fälle besser als enges Muster)',
+  ...[...new Map(failures.flatMap(f => f.losses.map(l => [`${f.q}\t${l}`, f]))).entries()].map(([k]) => `${k}\t–\t${buildOf(baseDir)}\t<Begründung>\t<Entscheid>`),
   ...errors.map(e => `JS-Fehler: ${e}`)
 ].join('\n') + '\n';
 writeFileSync(join(outDir, 'ERGEBNIS.txt'), text);
-writeFileSync(join(outDir, 'ERGEBNIS.json'), JSON.stringify({ bezug: build(baseDir), pruefstand: build(testDir), anfragen: total, verschlechterungen: failures, jsFehler: errors, ausnahmenOhneAnwendung: unused }, null, 1) + '\n');
-console.log([`${head}`, `Ergebnis: ${verdict} · ${total} Anfragen · ${failures.length} Verschlechterungen · JS-Fehler ${errors.length}`, ...summary, ...failures.slice(0, 40).map(f => `${f.kinds.join('+')} | ${f.name} | ${f.q} | ${f.before} → ${f.after}`), failures.length > 40 ? `… ${failures.length - 40} weitere in ${join(outDir, 'ERGEBNIS.txt')}` : ''].filter(Boolean).join('\n'));
-if (process.env.GITHUB_STEP_SUMMARY) {
-  const esc = s => String(s).replace(/[|`<>]/g, c => ({ '|': '\\|', '`': "'", '<': '&lt;', '>': '&gt;' })[c]);
-  appendFileSync(process.env.GITHUB_STEP_SUMMARY, [`### ${esc(head)}`, `**${verdict}** · ${total} Anfragen · ${failures.length} Verschlechterungen · JS-Fehler ${errors.length}`, '', ...summary.map(s => `- ${esc(s)}`), '',
-    ...(failures.length ? ['| Art | Menge | Anfrage | Bezug | Prüfstand |', '|---|---|---|---|---|', ...failures.slice(0, 60).map(f => `| ${f.kinds.join('+')} | ${f.name} | ${esc(f.q)} | ${esc(f.before)} | ${esc(f.after)} |`)] : []), ''].join('\n'));
-}
-process.exitCode = failures.length || errors.length ? 1 : 0;
+writeFileSync(join(outDir, 'ERGEBNIS.json'), JSON.stringify({ bezug: buildOf(baseDir), pruefstand: buildOf(testDir), anfragen: total, verschlechterungen: failures, erlaubt: allowed, fehlerInAusnahmen: problems, jsFehler: errors, ausnahmenOhneAnwendung: unused, abdeckung: coverage }, null, 1) + '\n');
+console.log([`${head}`, `Ergebnis: ${verdict} · ${total} Anfragen · ${failures.length} Verschlechterungen · ${allowed.length} als Ausnahme erlaubt · Fehler in Ausnahmen ${problems.length} · JS-Fehler ${errors.length}`, ...summary, ...coverageLines, ...problems.map(p => `FEHLER: ${p}`),
+  ...failures.slice(0, 40).map(f => `${f.kinds.join('+')} | ${f.name} | ${f.q} | ${f.before} → ${f.after}`), failures.length > 40 ? `… ${failures.length - 40} weitere in ${join(outDir, 'ERGEBNIS.txt')}` : '',
+  allowed.length ? `Als Ausnahme erlaubt: ${allowed.length}, einzeln in ${join(outDir, 'ERGEBNIS.txt')}` : ''].filter(Boolean).join('\n'));
+stepSummary([`### ${esc(head)}`, `**${verdict}** · ${total} Anfragen · ${failures.length} Verschlechterungen · ${allowed.length} als Ausnahme erlaubt · Fehler in Ausnahmen ${problems.length} · JS-Fehler ${errors.length}${reportOnly ? ' · nur Bericht, blockiert nicht' : ''}`, '',
+  ...summary.map(s => `- ${esc(s)}`), ...coverageLines.map(s => `- ${esc(s)}`), ...problems.map(p => `- **FEHLER:** ${esc(p)}`), '',
+  ...(failures.length ? ['| Art | Menge | Anfrage | Bezug | Prüfstand |', '|---|---|---|---|---|', ...failures.slice(0, 60).map(f => `| ${f.kinds.join('+')} | ${f.name} | ${esc(f.q)} | ${esc(f.before)} | ${esc(f.after)} |`), failures.length > 60 ? `\n… ${failures.length - 60} weitere im Artefakt ERGEBNIS.txt` : '', ''] : []),
+  ...(allowed.length ? [`**Als Ausnahme erlaubt (${allowed.length}), jede Anfrage einzeln:**`, '', '| Art | Menge | Anfrage | Bezug | Prüfstand | Muster |', '|---|---|---|---|---|---|', ...allowed.slice(0, 200).map(f => `| ${f.kinds.join('+')} | ${f.name} | ${esc(f.q)} | ${esc(f.before)} | ${esc(f.after)} | ${esc(f.muster.join(', '))} |`), allowed.length > 200 ? `\n… ${allowed.length - 200} weitere im Artefakt ERGEBNIS.txt` : '', ''] : [])]);
+process.exitCode = bad && !reportOnly ? 1 : 0;

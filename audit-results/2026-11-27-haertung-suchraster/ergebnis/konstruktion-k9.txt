@@ -1,0 +1,45 @@
+Suchraster · Bezug r4-76 · Prüfstand r4-76
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 130 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 157 · verloren 0 · verdrängt 44 · Suizid nicht mehr zuoberst 86 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 0 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 44
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+VERDRAENGT | proben | Sie sagt, sie bringt sich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+VERDRAENGT | proben | Ich bringe mich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+VERDRAENGT | proben | ICH BRINGE MICH UM!!! | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+RANG1 | proben | Meine Tochter will sich umbringen | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | Sie will sich töten | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+VERDRAENGT | proben | Mein Sohn schreibt, er bringt sich um. | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+RANG1 | proben | Sie redet immer wieder davon, sich umzubringen | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+VERDRAENGT | proben | Er sagt oft er bringt sich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+RANG1 | proben | Mein Partner hat versucht sich umzubringen | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | Sie sagte sie tötet sich | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+VERDRAENGT | proben | Wenn du gehst bringe ich mich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+VERDRAENGT | proben | Er bringt die Kinder um | kinder#eskalation > gefahr#gewalt > krise#suizid → krise#suizid > gefahr#gewalt > kinder#eskalation
+VERDRAENGT | proben | Sie droht die Kinder und sich umzubringen | kinder#eskalation > gefahr#gewalt > krise#suizid → krise#suizid > gefahr#gewalt > kinder#eskalation
+VERDRAENGT | proben | Mein Ex will mich und die Kinder töten | kinder#eskalation > gefahr#gewalt > krise#suizid → krise#suizid > gefahr#gewalt > kinder#eskalation
+RANG1 | proben | Mein Bruder wollte sich umbringen, jetzt will er nicht mehr | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | Sie hat sich fast umgebracht | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | Kann sie sich umbringen? | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | umbringen | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | töten | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | Suizid umbringen | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | Mini Tochter wott sich umbringe | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+VERDRAENGT | proben | Er het gseit er bringt sich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+RANG1 | proben | Ich möchte mich nicht umbringen, aber ich will nicht mehr | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | Sie will sich nicht umbringen | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+VERDRAENGT | proben | Er bringt sich nicht um, oder? | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+VERDRAENGT | proben | Mein Vater sagt er bringt sich um wenn ich ausziehe | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+VERDRAENGT | proben | Tochter (16) schreibt: «Ich bring mich um» | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+RANG1 | proben | Sie spricht davon, sich zu töten. | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+VERDRAENGT | proben | Was tun, wenn jemand sagt, er bringe sich um? | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+RANG1 | proben | Er erzählt allen, dass er sich umbringt | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+VERDRAENGT | proben | Sie hat immer wieder gesagt, sie bringt sich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+VERDRAENGT | proben | Er sagte er habe das schon oft gemacht und bringe sich jetzt um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+RANG1 | proben | Was hat sie getan, wollte sie sich umbringen | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | Sie redet vom Sterben und will sich umbringen | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+VERDRAENGT | proben | Er spricht immer vom Tod, er bringt sich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+RANG1 | proben | Suizit, er will sich umbringen | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+VERDRAENGT | proben | Mein Kind sagt es bringt sich um | kommunizieren#suizid-angesprochen > krise#suizid > gefahr#gewalt → gefahr#gewalt > krise#suizid > kommunizieren#suizid-angesprochen
+RANG1 | proben | Die Kinder haben Angst, dass Papa sich umbringt | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | Er will sich umbringen und ich mag nicht mehr | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+RANG1 | proben | Er schlägt mich und ist suizidal | krise#suizid > gefahr#gewalt > krise → gefahr#gewalt > krise#suizid > krise
+… 90 weitere in /tmp/claude-0/-home-user-borderline-angehoerige/c25b94b7-3e56-5405-8966-070eab006866/scratchpad/h/out-k9/ERGEBNIS.txt

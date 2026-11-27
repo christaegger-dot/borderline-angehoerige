@@ -1,0 +1,56 @@
+Suchraster · Bezug r4-73 · Prüfstand r4-75
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 44 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 11 · JS-Fehler 0
+proben: 1158 Anfragen · geändert 373 · verloren 36 · verdrängt 6 · Suizid nicht mehr zuoberst 1 · letzter Sicherheitsabschnitt auf Rang 3 verloren 0 · Anheftung verloren 0 · leer 12 · als Ausnahme erlaubt 0 · Sicherheitsabschnitt neu oben 176
+leermeldung: sichtbare Links im Bezug 2, im Prüfstand 2 · Sicherheitslink verloren 0 · als Ausnahme erlaubt 0
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+FEHLER: Ausnahme zu breit: Muster /./ trifft auch eine beliebige Anfrage
+LEER | proben | Ich weine oft | diagnose#begleiterkrankungen → –
+VERDRAENGT | proben | suizidgefährdet und gewalttätig | gefahr#gewalt > kinder#eskalation > index#orientierung → krise#suizid > gefahr#gewalt > krise
+VERDRAENGT | proben | Er ist suizidgefährdet und schlägt mich | gefahr#gewalt > kinder#eskalation > index#orientierung → krise#suizid > gefahr#gewalt > krise
+VERDRAENGT | proben | Selbstverletzungen | diagnose#suizidalitaet > krise#suizid > kurz#borderline → krise#selbstverletzung > krise > diagnose#suizidalitaet
+VERLOREN | proben | Berufsgeheimnis | quellen#diagnostik > kinder#eskalation → behandlung#auskunft > quellen#diagnostik > kinder#eskalation
+VERDRAENGT+RANG1 | proben | Er sagt immer wieder er schlägt mich tot | krise#suizid → gefahr#gewalt > kinder#eskalation > index#orientierung
+VERLOREN | proben | Meine Frau schlägt | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | Meine Frau schlägt zu | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | Meine Frau schlägt unsere Tochter | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | Frau schlägt Mann | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERLOREN | proben | Mein Mann schlägt | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERLOREN | proben | Mein Mann schlägt zu | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERLOREN | proben | Mein Mann schlägt unsere Tochter | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERLOREN+LEER | proben | Mein Mann schlägt unseren Sohn | gefahr#gewalt → –
+VERLOREN | proben | Meine Frau ist gewalttätig | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | Mein Mann ist gewalttätig | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERLOREN | proben | Gewalt Frau | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN+LEER | proben | meine frau ist gewalttätig geworden | gefahr#gewalt → –
+VERLOREN | proben | häusliche gewalt mein mann | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERLOREN | proben | gewalt in der beziehung frau | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN | proben | mann gewalttätig was tun | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERLOREN | proben | frau schlägt mann | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERLOREN | proben | gewalt gegen den mann | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERDRAENGT | proben | mein mann ist aggressiv und schlägt | gefahr#gewalt → kinder#eskalation > verstehen#anspannung > kommunizieren#kippen
+VERLOREN | proben | mein mann schlägt zu | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERLOREN | proben | meine frau schlägt zu | gefahr#gewalt > quellen#schweiz > quellen#leitlinien → quellen#schweiz > quellen#leitlinien > verstehen#mythen
+VERLOREN+LEER | proben | mein mann schlägt unseren sohn | gefahr#gewalt → –
+VERLOREN | proben | ich werde von meinem mann geschlagen | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+VERLOREN | proben | er schneidet sich immer noch | krise#selbstverletzung > krise#suizid > grenzen#bruecke → krise#suizid > kurz#borderline > gefahr#gewalt
+VERLOREN | proben | mein sohn schneidet sich mit einer klinge | krise#selbstverletzung > kommunizieren#beispiele → kommunizieren#beispiele
+VERDRAENGT | proben | meine tochter hat suizidgedanken und schneidet sich | krise#selbstverletzung → krise > krise#suizid > krise#selbstverletzung
+VERLOREN+LEER | proben | mein mann bringt sich um polizei | gefahr#gewalt → –
+LEER | proben | mein bruder bringt sich um ständig | grenzen#rollen → –
+VERLOREN+LEER | proben | Mein Mann wird gewalttätig und ich habe Angst | gefahr#gewalt → –
+VERLOREN+LEER | proben | Meine Frau wird gewalttätig, was kann ich machen? | gefahr#gewalt → –
+VERLOREN+LEER | proben | Mein Mann schlägt zu, wegen mir | gefahr#gewalt → –
+VERLOREN+LEER | proben | Ich habe Angst, mein Mann wird gewalttätig | gefahr#gewalt → –
+VERLOREN+LEER | proben | mein mann beschimpft mich polizei | gefahr#gewalt → –
+VERLOREN | proben | Ich halte es nicht mehr aus, mein Mann schlägt zu | gefahr#gewalt > beziehungen#verantwortung > fragen#f-eigenes-leben → beziehungen#verantwortung > fragen#f-eigenes-leben > begriffe#b-selbstverletzung
+VERLOREN | proben | Ich brauche Hilfe, mein Mann ist gewalttätig | gefahr#gewalt > quellen#schweiz → quellen#schweiz
+… 4 weitere in /tmp/claude-0/-home-user-borderline-angehoerige/c25b94b7-3e56-5405-8966-070eab006866/scratchpad/h/out-k6b/ERGEBNIS.txt

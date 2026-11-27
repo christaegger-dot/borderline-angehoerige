@@ -1003,3 +1003,35 @@ Ich bin verzweifelt, mein Mann schlägt zu
 Ich fühle mich bedroht von meinem Mann
 Ich habe Angst, meine Tochter schneidet sich
 Ich mache mir Sorgen, mein Sohn schneidet sich seit Wochen
+# ZR Satzformen, die dem Raster fehlten (Methoden, Waffen, sexualisierte Gewalt, Grosseltern, Notrufnummern) · Quelle: Nachprüfung des Suchrasters, PR #849, N847-3
+Er will sich erhängen
+Meine Tochter will sich aufhängen
+Mein Sohn hat gesagt, er springt von der Brücke
+Sie will vom Dach springen
+Er hat sich die Pulsadern aufgeschnitten
+Meine Frau will sich vergiften
+Er droht, mich zu erstechen
+Er bedroht mich mit einem Messer
+Mein Mann hat ein Messer gezogen
+Er hat eine Waffe zu Hause
+Er droht mit der Pistole
+Mein Partner hat mich vergewaltigt
+Ich wurde vergewaltigt
+Meine Schwester wurde vergewaltigt
+Missbrauch in der Familie
+Sexueller Missbrauch
+Mein Opa schlägt meine Oma
+Mein Opa will nicht mehr leben
+Meine Oma hat Suizidgedanken
+Mein Grossvater ritzt sich
+Mama will sich umbringen
+Papa schlägt Mama
+Mein Stiefvater schlägt mich
+Mein Nachbar bedroht mich
+Notruf
+Notruf Nummer
+Wann soll ich den Notruf wählen
+143
+147
+Telefon 143
+Dargebotene Hand

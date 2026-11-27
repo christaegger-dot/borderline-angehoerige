@@ -1,0 +1,16 @@
+k1 rc=1
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 313 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+k2 rc=1
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 1 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+k5 rc=1
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 157 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+k9 rc=1
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 130 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0
+k6 rc=1
+Suche unverändert: suche.html, js/interaktion.js, _headers, css/site.css sind bis auf die Versionskennung byte-gleich. Kein Browserlauf nötig.
+k6b rc=1
+Ergebnis: VERSCHLECHTERUNG · 1159 Anfragen · 44 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 11 · JS-Fehler 0
+k6c rc=1
+Suche unverändert: suche.html, js/interaktion.js, _headers, css/site.css sind bis auf die Versionskennung byte-gleich. Kein Browserlauf nötig.
+k3 rc=1
+Ergebnis: VERSCHLECHTERUNG · 37585 Anfragen · 474 Verschlechterungen · 0 als Ausnahme erlaubt · Fehler in Ausnahmen 0 · JS-Fehler 0

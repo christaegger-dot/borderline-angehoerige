@@ -56,6 +56,8 @@
 // das Skript unverändert. Fehlt die Stelle für die Messzeile, bricht das Werkzeug ab, statt ohne sie weiterzuprüfen.
 // Abdeckung (Hinweis G846-2): Anteil der Sätze je Thema, bei denen der passende Sicherheitsabschnitt unter den ersten
 // zwei steht, für Bezug und Prüfstand (nur Bericht).
+// Bildpunkte (N855-11): Für Sicherheitsabschnitte und Schnellorientierung unter den ersten drei der Einzelproben und für die
+// Leermeldung vergleicht das Werkzeug zusätzlich Bildausschnitte mit und ohne den Link (UNSICHTBAR, LEERMELDUNG).
 // Rückgabe: 0 ohne Verschlechterung, 1 bei Verschlechterung, Fehler in einer Ausnahme, JS-Fehler oder fehlender Messzeile.
 // Playwright: Modulpfad über PLAYWRIGHT_MODULE, sonst /opt/npm-tools/node_modules/playwright. CHROMIUM_PATH erlaubt einen Systembrowser.
 import { createServer } from 'node:http';
@@ -228,7 +230,7 @@ function defineSicht() {
       const cs = getComputedStyle(n);
       opacity *= parseFloat(cs.opacity);
       if ((cs.clip && cs.clip !== 'auto') || cs.clipPath !== 'none') return false;
-      if (cs.filter !== 'none' || (cs.maskImage && cs.maskImage !== 'none') || (cs.webkitMaskImage && cs.webkitMaskImage !== 'none')) return false;
+      if (cs.filter !== 'none' || (cs.maskImage && cs.maskImage !== 'none') || (cs.webkitMaskImage && cs.webkitMaskImage !== 'none') || (cs.mixBlendMode && cs.mixBlendMode !== 'normal')) return false;
       if (!background && !backgroundImage) {
         if (cs.backgroundImage !== 'none') backgroundImage = true;
         else { const b = rgba(cs.backgroundColor); if (b && b[3] > 0.9) background = b; }
@@ -325,6 +327,7 @@ const allowed = [];
 const summary = [];
 const coverage = themes.map(t => ({ thema: t.thema, passend: t.passend, n: 0, a: 0, b: 0 }));
 const startedAt = Date.now();
+let keptProben = null;
 const allQueries = new Set();
 const lossQueries = new Set();
 function judge(name, q, a, b, counts) {
@@ -376,13 +379,96 @@ for (const [name, queries] of Object.entries(sets)) {
   const s = `${name}: ${queries.length} Anfragen · geändert ${counts.GEAENDERT} · verloren ${counts.VERLOREN} · verdrängt ${counts.VERDRAENGT} · Suizid nicht mehr zuoberst ${counts.RANG1} · letzter Sicherheitsabschnitt auf Rang 3 verloren ${counts.RANG3} · Anheftung verloren ${counts.ANHEFTUNG} · leer ${counts.LEER} · als Ausnahme erlaubt ${counts.AUSNAHME} · Sicherheitsabschnitt neu oben ${counts.NEU_OBEN} · Bildschirm anders als DOM: Bezug ${counts.ANDERS_A}, Prüfstand ${counts.ANDERS_B}`;
   summary.push(s);
   report.push(`## ${s}`, ...lines);
+  if (name === 'proben') keptProben = { queries, before, after };
 }
+// ---------- Bildpunkte (N855-11) ----------
+// Die Prüfung über CSS-Eigenschaften bleibt eine Aufzählung. Für die Sicherheitsabschnitte und die Schnellorientierung
+// prüft das Werkzeug deshalb zusätzlich die Bildpunkte: Für jeden Abschnitt und jeden Rang unter den ersten drei, den die
+// Einzelproben im Prüfstand zeigen, und für die Links der Leermeldung nimmt es einen Ausschnitt um den Link auf, einmal
+// normal und einmal mit dem Link und allen seinen Nachfahren auf visibility:hidden (als Inline-Stil mit !important, den
+// keine Regel des Stylesheets überstimmt). Unterscheiden sich weniger als MIN_BILDPUNKTE Bildpunkte deutlich (mehr als 48
+// in einem Farbkanal), sieht eine Person den Link nicht. Weil eine Änderung am Stylesheet für alle Anfragen gleich wirkt,
+// genügt je Abschnitt und Rang eine Anfrage.
+const MIN_BILDPUNKTE = 20;
+const cmpPage = await (await browser.newContext()).newPage();
+await cmpPage.setContent('<!doctype html><title>Vergleich</title>');
+const diffPixels = (a, b) => cmpPage.evaluate(async ({ a, b }) => {
+  const load = async s => { const bin = atob(s); const u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return createImageBitmap(new Blob([u], { type: 'image/png' })); };
+  const [ia, ib] = await Promise.all([load(a), load(b)]);
+  const w = Math.min(ia.width, ib.width), h = Math.min(ia.height, ib.height);
+  if (!w || !h) return 0;
+  const c = new OffscreenCanvas(w, h), x = c.getContext('2d');
+  x.drawImage(ia, 0, 0); const da = x.getImageData(0, 0, w, h).data;
+  x.clearRect(0, 0, w, h); x.drawImage(ib, 0, 0); const db = x.getImageData(0, 0, w, h).data;
+  let n = 0;
+  for (let i = 0; i < da.length; i += 4) if (Math.max(Math.abs(da[i] - db[i]), Math.abs(da[i + 1] - db[i + 1]), Math.abs(da[i + 2] - db[i + 2])) > 48) n++;
+  return n;
+}, { a: a.toString('base64'), b: b.toString('base64') });
+async function pixelVisible(page, q, href, inEmpty) {
+  const box = await page.evaluate(({ q, href, inEmpty }) => {
+    const input = document.querySelector('#site-search');
+    input.value = q;
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    const scope = inEmpty ? '[data-search-empty] a' : '[data-search-results] > li:not([hidden]) a';
+    const a = [...document.querySelectorAll(scope)].find(x => x.getAttribute('href') === href);
+    if (!a) return null;
+    a.scrollIntoView({ block: 'center', inline: 'nearest' });
+    window.__suchrasterBildpunkte = a;
+    const r = a.getBoundingClientRect();
+    return { x: r.left, y: r.top, width: r.width, height: r.height, vw: innerWidth, vh: innerHeight };
+  }, { q, href, inEmpty });
+  if (!box) return { visible: false, pixels: 0 };
+  const x = Math.max(0, Math.floor(box.x) - 2), y = Math.max(0, Math.floor(box.y) - 2);
+  const clip = { x, y, width: Math.min(box.vw, Math.ceil(box.x + box.width) + 2) - x, height: Math.min(box.vh, Math.ceil(box.y + box.height) + 2) - y };
+  if (clip.width < 1 || clip.height < 1) return { visible: false, pixels: 0 };
+  const shot = () => page.screenshot({ clip, animations: 'disabled', caret: 'hide' });
+  const normal = await shot();
+  await page.evaluate(() => { for (const el of [window.__suchrasterBildpunkte, ...window.__suchrasterBildpunkte.querySelectorAll('*')]) el.style.setProperty('visibility', 'hidden', 'important'); });
+  const hidden = await shot();
+  await page.evaluate(() => { for (const el of [window.__suchrasterBildpunkte, ...window.__suchrasterBildpunkte.querySelectorAll('*')]) el.style.removeProperty('visibility'); window.scrollTo(0, 0); });
+  const pixels = await diffPixels(normal, hidden);
+  return { visible: pixels >= MIN_BILDPUNKTE, pixels };
+}
+const pixelLines = [];
+if (keptProben) {
+  const counts = { UNSICHTBAR: 0, AUSNAHME: 0, geprueft: 0, bezugUnsichtbar: 0, kleinster: Infinity };
+  const combos = idx => {
+    const m = new Map();
+    keptProben[idx].forEach((r, i) => r.top.forEach((h, k) => { if ((SAFETY.includes(h) || h === QUICK) && !m.has(`${h}@${k + 1}`)) m.set(`${h}@${k + 1}`, keptProben.queries[i]); }));
+    return m;
+  };
+  const after = combos('after'), before = combos('before');
+  for (const [key, q] of after) {
+    const href = key.split('@')[0];
+    const b = await pixelVisible(pages[1], q, href, false);
+    counts.geprueft++;
+    if (b.visible) { counts.kleinster = Math.min(counts.kleinster, b.pixels); continue; }
+    const qa = before.get(key) || q;
+    const a = await pixelVisible(pages[0], qa, href, false);
+    if (!a.visible && before.has(key)) { counts.bezugUnsichtbar++; pixelLines.push(`im Bezug ebenfalls unsichtbar: ${key}`); continue; }
+    const losses = [`UNSICHTBAR:${key}`], kinds = ['UNSICHTBAR'];
+    const hits = covered(q, losses, { top: [] });
+    if (hits) { counts.AUSNAHME++; allowed.push({ name: 'bildpunkte', q, kinds, before: `${key} sichtbar (${a.pixels} Bildpunkte)`, after: `${key} unsichtbar (${b.pixels})`, muster: hits.map(h => h.pattern) }); continue; }
+    counts.UNSICHTBAR++;
+    failures.push({ name: 'bildpunkte', q, kinds, losses, before: `${key} sichtbar (${a.pixels} Bildpunkte)`, after: `${key} unsichtbar (${b.pixels} Bildpunkte)` });
+    report.push(`UNSICHTBAR | bildpunkte | ${q} | ${key}: im Prüfstand ${b.pixels} Bildpunkte verschieden, im Bezug ${a.pixels}`);
+  }
+  summary.push(`bildpunkte: ${counts.geprueft} Sicherheitsabschnitte und Ränge im Prüfstand geprüft · kleinster Unterschied der sichtbaren ${counts.kleinster === Infinity ? '–' : counts.kleinster} Bildpunkte (Schwelle ${MIN_BILDPUNKTE}) · unsichtbar ${counts.UNSICHTBAR} · als Ausnahme erlaubt ${counts.AUSNAHME}${counts.bezugUnsichtbar ? ` · im Bezug ebenfalls unsichtbar ${counts.bezugUnsichtbar}` : ''}`);
+} else summary.push('bildpunkte: nicht geprüft (Menge «proben» nicht im Lauf)');
 // Leermeldung
 {
   const probe = 'qqxzqvwxq';
   const [a, b] = await Promise.all(pages.map(p => p.evaluate(emptyState, probe)));
   const watched = a.links.filter(h => SAFETY.includes(h) || h === QUICK);
   const missing = a.hits ? [] : watched.filter(h => !b.links.includes(h));
+  // Bildpunkte (N855-11): ein Link, den die Prüfung über CSS als sichtbar wertet, muss auch in den Bildpunkten sichtbar sein
+  let pixelInfo = '';
+  if (!a.hits) for (const h of watched.filter(x => b.links.includes(x))) {
+    const pb = await pixelVisible(pages[1], probe, h, true);
+    if (pb.visible) continue;
+    const pa = await pixelVisible(pages[0], probe, h, true);
+    if (pa.visible) { missing.push(h); pixelInfo += ` · ${h} in den Bildpunkten unsichtbar (${pb.pixels}, Bezug ${pa.pixels})`; }
+  }
   const counts = { LEERMELDUNG: 0, AUSNAHME: 0 };
   if (missing.length) {
     const q = '(Leermeldung)', losses = missing.map(h => `LEERMELDUNG:${h}`), kinds = ['LEERMELDUNG'];
@@ -390,7 +476,7 @@ for (const [name, queries] of Object.entries(sets)) {
     if (hits) { counts.AUSNAHME++; allowed.push({ name: 'leermeldung', q, kinds, before: a.links.join(' '), after: b.links.join(' ') || '–', muster: hits.map(h => h.pattern) }); }
     else { counts.LEERMELDUNG++; failures.push({ name: 'leermeldung', q, kinds, losses, before: a.links.join(' '), after: b.links.join(' ') || '–' }); report.push(`## Leermeldung`, `LEERMELDUNG | ${missing.join(', ')} fehlt oder ist unsichtbar`); }
   }
-  summary.push(`leermeldung: sichtbare Links im Bezug ${a.links.length}, im Prüfstand ${b.links.length} · Sicherheitslink verloren ${counts.LEERMELDUNG} · als Ausnahme erlaubt ${counts.AUSNAHME}${a.hits ? ' · (Probe hatte im Bezug Treffer, nicht geprüft)' : ''}`);
+  summary.push(`leermeldung: sichtbare Links im Bezug ${a.links.length}, im Prüfstand ${b.links.length} · Sicherheitslink verloren ${counts.LEERMELDUNG} · als Ausnahme erlaubt ${counts.AUSNAHME}${pixelInfo}${a.hits ? ' · (Probe hatte im Bezug Treffer, nicht geprüft)' : ''}`);
 }
 await browser.close();
 servers.forEach(s => s.close());

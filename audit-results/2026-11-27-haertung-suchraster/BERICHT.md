@@ -119,6 +119,34 @@ Umgesetzt:
 
 **Verbleibende Grenzen:** ein Pseudo-Element des Links selbst über seinem Text, Text vor einem Hintergrundbild, schmale Bildschirme.
 
+### Zweite Nachkontrolle (Kopf `64593de`) und dritte Nachbesserung: Prüfung der Bildpunkte
+
+Die zweite Nachkontrolle urteilte «Bereit zum Merge: nein» wegen **N855-11 (hoch)**. Bestätigt sind W1 bis W8 und die Fassung von N855-10.
+
+Fünf Konstruktionen mit je einer CSS-Zeile bestanden noch falsch:
+- X1: weisse Überdeckung, deren `pointer-events:none!important` in einer Kaskadenebene die Messregel schlägt;
+- X2: Verlauf als Hintergrundbild mit weissem Text;
+- X3 und X4: `mix-blend-mode:screen` im Suizidtreffer und am Sicherheitslink der Leermeldung;
+- X5: wie X1, für die Leermeldung.
+
+Die Prüfsitzung schlug vor, die Reihe mit einer Prüfung der Bildpunkte zu beenden, statt weitere CSS-Eigenschaften aufzuzählen.
+
+Umgesetzt:
+
+| Befund | Umsetzung |
+|---|---|
+| **N855-11** | **Prüfung der Bildpunkte** für jeden Sicherheitsabschnitt und für die Schnellorientierung, je Rang unter den ersten drei der Einzelproben im Prüfstand (auf r4-77: 18 Kombinationen), und für die Links der Leermeldung. Das Werkzeug nimmt einen Ausschnitt um den Link auf, einmal normal und einmal mit dem Link und allen Nachfahren auf `visibility:hidden` (Inline-Stil mit `!important`; ihn überstimmt keine Regel des Stylesheets, auch nicht in einer Kaskadenebene). Unterscheiden sich weniger als 20 Bildpunkte deutlich (mehr als 48 in einem Farbkanal), gilt der Link als unsichtbar: neue Art **UNSICHTBAR** bzw. LEERMELDUNG. Je Abschnitt und Rang genügt eine Anfrage, weil eine Änderung am Stylesheet für alle Anfragen gleich wirkt. Den Vergleich macht eine leere Seite ohne CSP (`OffscreenCanvas`). Zusätzlich gilt `mix-blend-mode` (nicht `normal`) bei sich oder einem Vorfahren für jede Anfrage als unsichtbar. Der Selbsttest hat jetzt 29 Konstruktionen mit X1 bis X5; dazu kommt X6, fast weisser Text vor einem Hintergrundbild, den nur die Bildpunkte erkennen. |
+
+**Messungen nach der dritten Nachbesserung** (`ergebnis/nachbesserung3-*.txt`):
+- **Selbsttest:** 29 von 29 gemeldet; X1, X2 und X6 über die Bildpunkte (je 3 Ränge), X3 bis X5 über die Prüfung der Eigenschaften. Der unveränderte Stand besteht. Dauer lokal 350 s.
+- **Unverändert** (r4-77 → r4-77, Proben): 0 Verschlechterungen. Es gibt 18 Kombinationen aus Abschnitt und Rang, alle in den Bildpunkten sichtbar. Der kleinste Unterschied liegt bei **2 064 Bildpunkten**, die Schwelle bei 20. Der Lauf dauert 11,8 s statt 10,7 s.
+- **r4-76 → r4-77, voll:** weiter 428 Verschlechterungen, alle VERDRAENGT; Bildpunkte: 18 geprüft, 0 unsichtbar; Leermeldung mit 2 sichtbaren Links. Dauer lokal 593 s.
+
+**Verbleibende Grenzen:**
+- Die Bildpunkte werden nur für Sicherheitsabschnitte und Schnellorientierung auf den Rängen geprüft, die die Einzelproben im Prüfstand zeigen. Ein Stylesheet, das nur einen Rang trifft, den keine Einzelprobe erreicht, bleibt der Prüfung über die Eigenschaften überlassen.
+- Geprüft wird ein Fenster von 1280 × 720 Pixeln.
+- Ein Link, der sichtbar ist, aber zu blass zum Lesen, gilt ab 20 deutlich verschiedenen Bildpunkten als sichtbar.
+
 ## 5 Folgen für r4-78
 
 r4-78 setzt die Entscheide zu N848-1 bis N848-3 um. Das gehärtete Raster wird dabei Verschiebungen melden: Bei den Fällen aus N848-2 rücken Abschnitte, die zuvor zufällig führten, nach unten. Wo das gewollt ist, gehört es als enges Muster mit Bezug r4-77 in die Ausnahmen. Dann ist der Job `suchraster-ausnahmen` rot, bis Christa Egger entschieden hat und die Nachprüfung vorliegt.

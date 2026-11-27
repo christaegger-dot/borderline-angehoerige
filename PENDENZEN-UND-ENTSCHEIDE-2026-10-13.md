@@ -125,7 +125,9 @@ Nachweis: [`audit-results/2026-11-26-nachpruefung-suchraster/NACHPRUEFUNG.md`](a
 
 - **Nachkontrolle auf `6d9428d`:** Urteil «Bereit zum Merge: nein» wegen **N855-9 (hoch)**. Fünf Arten, Treffer zu verstecken, blieben unerkannt: Überdeckung mit `pointer-events:none`, `filter`, Maske, jeweils auch bei der Sicherheitszeile der Leermeldung. **Behoben:** `pointer-events` während der Messung, `filter` und `mask` als unsichtbar, Deckkraft ab 0,5, Prüfung von Textfarbe gegen Hintergrund, Selbsttest mit 23 Konstruktionen. N855-10: Der Job vergleicht ganz `.github/`.
 
-Nachweis der Nachbesserungen: Abschnitt 4 des Berichts. **Zweite Nachkontrolle durch die Prüfsitzung vor dem Merge nötig.**
+- **Zweite Nachkontrolle auf `64593de`:** Urteil «Bereit zum Merge: nein» wegen **N855-11 (hoch)**. Weitere fünf CSS-Zeilen versteckten Treffer unbemerkt: Kaskadenebene, Hintergrundbild, Mischmodus. **Behoben** mit einer Prüfung der Bildpunkte für die Sicherheitsabschnitte und die Leermeldung, statt weitere Eigenschaften aufzuzählen. Der Selbsttest hat jetzt 29 Konstruktionen.
+
+Nachweis der Nachbesserungen: Abschnitt 4 des Berichts. **Dritte Nachkontrolle durch die Prüfsitzung vor dem Merge nötig.**
 
 **Offen:**
 - Merge-Auftrag zu #847 belegen (R65-P01).

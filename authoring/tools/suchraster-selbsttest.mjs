@@ -1,7 +1,7 @@
 // Selbsttest des Suchrasters (Nachprüfung der Härtung, PR #856, N855-1): baut aus einem Stand von site/ Konstruktionen,
 // die die Suche für eine Person verschlechtern, und prüft, dass authoring/tools/suchraster.mjs jede meldet. So kann eine
 // spätere Änderung am Werkzeug die Härtung nicht unbemerkt zurücknehmen.
-// Die Konstruktionen stammen aus den Nachprüfungen #849 (K1, K2, K5, K9) und #856 (V1 bis V8, W1 bis W8), dazu V10.
+// Die Konstruktionen stammen aus den Nachprüfungen #849 (K1, K2, K5, K9) und #856 (V1 bis V8, W1 bis W8, X1 bis X5), dazu V10 und X6.
 // Sie sind als Änderung am Stylesheet, an suche.html oder an js/interaktion.js beschrieben, nicht als Diff gegen einen
 // festen Stand. Passt eine Ersetzung nicht mehr, scheitert der Selbsttest mit «nicht anwendbar»; dann die Konstruktion
 // an den neuen Stand anpassen, nicht streichen.
@@ -41,7 +41,13 @@ const CASES = [
   { name: 'W5', was: 'Suizidtreffer weiss auf weiss', css: `${SUIZID},${SUIZID} *{color:#fff!important;background:#fff!important;border-color:#fff!important}`, erwartet: ['RANG1'] },
   { name: 'W6', was: 'Sicherheitszeile der Leermeldung überdeckt (pointer-events:none)', css: `${LEER}{position:relative}${LEER}::after{content:"";position:absolute;inset:-4px;background:#fff;pointer-events:none}`, erwartet: ['LEERMELDUNG'] },
   { name: 'W7', was: 'Sicherheitszeile der Leermeldung mit filter:opacity(0)', css: `${LEER}{filter:opacity(0)}`, erwartet: ['LEERMELDUNG'] },
-  { name: 'W8', was: 'Suizidtreffer mit transform verschoben und hinter andere gelegt', css: `${SUIZID}{transform:translateY(-400%);z-index:-1;position:relative}`, erwartet: ['RANG1'] }
+  { name: 'W8', was: 'Suizidtreffer mit transform verschoben und hinter andere gelegt', css: `${SUIZID}{transform:translateY(-400%);z-index:-1;position:relative}`, erwartet: ['RANG1'] },
+  { name: 'X1', was: 'Überdeckung, pointer-events:none!important in einer Kaskadenebene', css: `${SUIZID}{position:relative}${SUIZID}::after{content:"";position:absolute;inset:0;background:#fff}@layer sr{${SUIZID}::after{pointer-events:none!important}}`, erwartet: ['UNSICHTBAR'] },
+  { name: 'X2', was: 'Verlauf als Hintergrundbild mit weissem Text', css: `${SUIZID}{background-image:linear-gradient(#fff,#fff)}${SUIZID} *{color:#fff!important}`, erwartet: ['UNSICHTBAR'] },
+  { name: 'X3', was: 'mix-blend-mode:screen im Suizidtreffer', css: `${SUIZID} *{mix-blend-mode:screen}`, erwartet: ['RANG1'] },
+  { name: 'X4', was: 'mix-blend-mode:screen am Sicherheitslink der Leermeldung', css: `${LEER} a{mix-blend-mode:screen}`, erwartet: ['LEERMELDUNG'] },
+  { name: 'X5', was: 'Überdeckung der Sicherheitszeile der Leermeldung, pointer-events in einer Kaskadenebene', css: `${LEER}{position:relative}${LEER}::after{content:"";position:absolute;inset:-4px;background:#fff}@layer sr{${LEER}::after{pointer-events:none!important}}`, erwartet: ['LEERMELDUNG'] },
+  { name: 'X6', was: 'Suizidtreffer fast weiss vor einem Hintergrundbild (nur über die Bildpunkte erkennbar)', css: `${SUIZID}{background-image:linear-gradient(#fff,#fff)}${SUIZID} *{color:#f4f4f4!important;mix-blend-mode:normal}`, erwartet: ['UNSICHTBAR'] }
 ];
 
 function build(c, dir) {

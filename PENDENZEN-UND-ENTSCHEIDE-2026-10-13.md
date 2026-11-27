@@ -117,17 +117,19 @@ Nachweis: [`audit-results/2026-11-26-nachpruefung-suchraster/NACHPRUEFUNG.md`](a
 
 **Nachprüfung der Härtung (vor dem Merge, [PR #856](https://github.com/christaegger-dot/borderline-angehoerige/pull/856), Entwurf, eigene Sitzung):** Urteil «Bereit zum Merge: nein». Alle Zahlen des Nachweises sind bestätigt, die Abdeckung ist identisch mit `abdeckung.cjs`. Der volle Lauf dauert auf GitHub 6 min 21 s.
 - **N855-1 (hoch):** Das Raster mass Reihenfolge und Sichtbarkeit nicht auf dem Bildschirm. Sieben Konstruktionen blieben unerkannt; zwei davon brauchten nur ein Attribut, das die Website schon kennt (Stylesheet-Reihenfolge, Abschneiden, Ausschnitt, ausserhalb, Bildschirmleser-Klasse). **Behoben:** Reihenfolge nach der Lage, strengere Sichtbarkeit mit Treffpunkt und ein Selbsttest mit 15 Konstruktionen als vierte CI-Variante.
-- **N855-2 (mittel):** Den Workflow bringt der PR selbst mit. **In kleiner Form behoben:** Jede Änderung unter `.github/workflows/` lässt `suchraster-ausnahmen` scheitern, also auch #855 selbst. **Eine grüne CI ist eine Freigabe nach R34-P01 nur, wenn `suchraster-ausnahmen` grün ist.**
+- **N855-2 (mittel):** Den Workflow bringt der PR selbst mit. **In kleiner Form behoben:** Jede Änderung unter `.github/workflows/` lässt `suchraster-ausnahmen` scheitern, also auch #855 selbst. **Eine grüne CI ist eine Freigabe nach R34-P01 nur, wenn der PR nichts unter `.github/` ändert und `suchraster-ausnahmen` grün ist** (N855-10: Der PR kann den Job selbst ändern; der Job vergleicht deshalb ganz `.github/`).
 - N855-3 (mittel): Ausserhalb des Rasters bleibt der Mechanismus offen. Eine Warnung erscheint, wenn `interaktion.js` sich ohne neue Proben ändert. Weitere Satzformen kommen mit Schritt 3.
 - N855-4 (niedrig): Die Ablehnung breiter Muster ist verschärft.
 - N855-6 und N855-7 (Hinweise): umgesetzt. N855-8: Freigabe-Aussage berichtigt.
 - **Entscheide (Christa Egger), nicht blockierend:** N855-2, den Workflow ganz absichern (`pull_request_target` mit dem Werkzeug der Basis oder eine Pflichtprüfung von `.github/`); N855-5, ob das Raster melden soll, wenn bei einer Bedrohung durch Dritte der Gewaltabschnitt Rang 1 verliert.
 
-Nachweis der Nachbesserung: Abschnitt 4 des Berichts. **Nachkontrolle durch die Prüfsitzung vor dem Merge nötig.**
+- **Nachkontrolle auf `6d9428d`:** Urteil «Bereit zum Merge: nein» wegen **N855-9 (hoch)**. Fünf Arten, Treffer zu verstecken, blieben unerkannt: Überdeckung mit `pointer-events:none`, `filter`, Maske, jeweils auch bei der Sicherheitszeile der Leermeldung. **Behoben:** `pointer-events` während der Messung, `filter` und `mask` als unsichtbar, Deckkraft ab 0,5, Prüfung von Textfarbe gegen Hintergrund, Selbsttest mit 23 Konstruktionen. N855-10: Der Job vergleicht ganz `.github/`.
+
+Nachweis der Nachbesserungen: Abschnitt 4 des Berichts. **Zweite Nachkontrolle durch die Prüfsitzung vor dem Merge nötig.**
 
 **Offen:**
 - Merge-Auftrag zu #847 belegen (R65-P01).
-- **Härtung des Rasters** (ändert die Website nicht, mit Nachprüfung vor dem Merge; Entscheid Christa Egger, 27.11.2026: «Raster härten, dann r4-78»): N847-2 bis N847-5, dazu N847-6 bis N847-8 und G846-2 (Abdeckung). In Arbeit ([PR #855](https://github.com/christaegger-dot/borderline-angehoerige/pull/855)), siehe «Härtung» oben. Bis zum Merge der Härtung gilt eine grüne CI nicht als Freigabe nach R34-P01. Danach gilt sie als Freigabe nur, wenn auch `suchraster-ausnahmen` grün ist, also keine neue Ausnahme und kein geänderter Workflow vorliegt (N855-2, N855-8).
+- **Härtung des Rasters** (ändert die Website nicht, mit Nachprüfung vor dem Merge; Entscheid Christa Egger, 27.11.2026: «Raster härten, dann r4-78»): N847-2 bis N847-5, dazu N847-6 bis N847-8 und G846-2 (Abdeckung). In Arbeit ([PR #855](https://github.com/christaegger-dot/borderline-angehoerige/pull/855)), siehe «Härtung» oben. Bis zum Merge der Härtung gilt eine grüne CI nicht als Freigabe nach R34-P01. Danach gilt sie als Freigabe nur, wenn der PR nichts unter `.github/` ändert und `suchraster-ausnahmen` grün ist, also keine neue Ausnahme vorliegt (N855-2, N855-8, N855-10).
 - Entscheid (Christa Egger): Soll der CI-Schritt eine erforderliche Prüfung werden, damit ein roter Lauf das Mergen sperrt? Das ist eine Einstellung im Repository, keine Dateiänderung.
 - Erledigt: Schritt 2 (Bauweise der Suche) als r4-77, siehe Abschnitt «r4-77».
 

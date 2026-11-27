@@ -91,7 +91,33 @@ Die Nachprüfung ([PR #856](https://github.com/christaegger-dot/borderline-angeh
 - **r4-76 → r4-77, voll:** unverändert 428 Verschlechterungen, alle VERDRAENGT, gleiche Abdeckung, «Bildschirm anders als DOM» 0 in allen Mengen und beiden Ständen (`ergebnis/nachbesserung-r4-76-r4-77.txt`). Die Zahl für den festen Bezug (428) steht in `suchraster.json`.
 - **Laufzeit auf GitHub:** Der volle Lauf gegen r4-73 dauerte vor der Nachbesserung 6 min 21 s, der Job 7 min 2 s. Die Prüfung des Treffpunkts verlängert ihn kaum: Die Proben brauchen lokal 10,7 s statt 10 s.
 
-**Grenzen nach der Nachbesserung:** Text in Hintergrundfarbe und ein Pseudo-Element des Links selbst über seinem Text bleiben unerkannt. Sichtbarkeit und Treffpunkt gelten für ein Fenster von 1280 × 720 Pixeln; schmale Bildschirme prüft das Raster nicht.
+**Grenzen nach der Nachbesserung:** Text in Hintergrundfarbe und ein Pseudo-Element des Links selbst über seinem Text bleiben unerkannt (zum ersten Punkt siehe die zweite Nachbesserung unten). Sichtbarkeit und Treffpunkt gelten für ein Fenster von 1280 × 720 Pixeln; schmale Bildschirme prüft das Raster nicht.
+
+### Nachkontrolle der Prüfsitzung (Kopf `6d9428d`) und zweite Nachbesserung
+
+Die Nachkontrolle urteilte «Bereit zum Merge: nein» wegen **N855-9 (hoch)**. Bestätigt sind der Selbsttest (15/15), die 428 Fälle, die Kontrollzahl 0, N855-2 und N855-4. Ein verschobener Treffer (W8) wird erkannt.
+
+Fünf Konstruktionen mit je einer CSS-Zeile bestanden noch falsch:
+- W1: weisses Pseudo-Element mit `pointer-events:none` über dem Suizidtreffer;
+- W2: `filter:opacity(0)`;
+- W3: durchsichtige Maske;
+- W6 und W7: dasselbe für die Sicherheitszeile der Leermeldung.
+
+Ausserdem waren W4 (Deckkraft 0,11) und W5 (weiss auf weiss) als Grenzen dokumentiert.
+
+Umgesetzt:
+
+| Befund | Umsetzung |
+|---|---|
+| **N855-9** | Während der Messung gilt `pointer-events:auto` für alle Elemente und Pseudo-Elemente. Das Stylesheet hängt über CSSOM an (`adoptedStyleSheets`), weil die Content-Security-Policy der Produktion eingefügte Styles verbietet. Damit erhält eine Überdeckung den Treffpunkt. Unsichtbar ist jetzt auch ein Element mit `filter`, `mask-image` oder `-webkit-mask-image` bei sich oder einem Vorfahren; die Website nutzt `filter` nur für das Logo bei erzwungenen Farben. Die Schwelle der Deckkraft liegt bei 0,5. **Neu** ist eine Prüfung der Textfarbe: Sie muss gegen den nächsten deckenden Hintergrund einen Kontrast von mindestens 1,5 : 1 haben, und die Textfarbe selbst muss zu mindestens 0,5 deckend sein. Das schliesst auch W5. Der Selbsttest hat jetzt 23 Konstruktionen, darunter W1 bis W8. |
+| **N855-10** | Der Job `suchraster-ausnahmen` vergleicht jetzt ganz `.github/` mit der Basis, nicht nur die Workflows. Die Aussagen sind berichtigt: Eine grüne CI ist eine Freigabe nach R34-P01 nur, **wenn der PR nichts unter `.github/` ändert**. Der PR kann den Job selbst ändern; ein grüner Job allein genügt deshalb nicht. |
+
+**Messungen nach der zweiten Nachbesserung** (`ergebnis/nachbesserung2-*.txt`):
+- **Selbsttest:** 23 von 23 Konstruktionen gemeldet, auch W1 bis W8; der unveränderte Stand besteht. Dauer lokal 249 s.
+- **Unverändert** (r4-77 → r4-77, Proben): 0 Verschlechterungen, «Bildschirm anders als DOM» 0, Leermeldung mit 2 sichtbaren Links.
+- **r4-76 → r4-77, voll:** weiter 428 Verschlechterungen, alle VERDRAENGT; «Bildschirm anders als DOM» in allen Mengen und beiden Ständen 0.
+
+**Verbleibende Grenzen:** ein Pseudo-Element des Links selbst über seinem Text, Text vor einem Hintergrundbild, schmale Bildschirme.
 
 ## 5 Folgen für r4-78
 

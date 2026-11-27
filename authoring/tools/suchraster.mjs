@@ -207,31 +207,47 @@ function serve(dir) {
   return new Promise(r => server.listen(0, '127.0.0.1', () => r(server)));
 }
 const hookMissing = new Set();
-// Sicht einer Person (N847-4, N855-1), in der Seite als window.__suchrasterSicht definiert:
+// Sicht einer Person (N847-4, N855-1, N855-9), in der Seite als window.__suchrasterSicht definiert:
 //   sichtbar: checkVisibility (Deckkraft, Sichtbarkeit, content-visibility), mindestens 4 × 4 Pixel, Deckkraft mit allen
-//             Vorfahren mindestens 0,1, kein clip und kein clip-path bei sich oder einem Vorfahren, nicht durch das overflow
-//             eines Vorfahren unter 4 × 4 Pixel abgeschnitten, im Dokument (nicht links oder oben ausserhalb);
+//             Vorfahren mindestens 0,5, kein clip, clip-path, filter oder mask bei sich oder einem Vorfahren, nicht durch
+//             das overflow eines Vorfahren unter 4 × 4 Pixel abgeschnitten, im Dokument (nicht links oder oben ausserhalb),
+//             Textfarbe gegen den nächsten deckenden Hintergrund mit Kontrast mindestens 1,5 : 1;
 //   Treffpunkt: für die ersten drei Treffer und die Links der Leermeldung nach scrollIntoView die Mitte des Links, dort
-//             muss der Link selbst liegen (nicht überdeckt);
+//             muss der Link selbst liegen (nicht überdeckt). Während der Messung gilt pointer-events:auto für alle
+//             Elemente und Pseudo-Elemente, damit auch eine Überdeckung mit pointer-events:none den Treffpunkt erhält;
 //   Reihenfolge: nach der Lage auf der Seite (oben, dann links), nicht nach dem DOM.
-// Nicht erfasst: Text in Hintergrundfarbe, ein Pseudo-Element des Links selbst über seinem Text.
+// Nicht erfasst: ein Pseudo-Element des Links selbst über seinem Text, Hintergrundbilder hinter dem Text.
 function defineSicht() {
   window.__suchrasterSicht = function (el, hitTest) {
     if (!el.checkVisibility({ opacityProperty: true, visibilityProperty: true, contentVisibilityAuto: true })) return false;
     let r = el.getBoundingClientRect();
     if (r.width < 4 || r.height < 4) return false;
-    let opacity = 1;
+    let opacity = 1, background = null, backgroundImage = false;
+    const rgba = c => { const m = String(c).match(/rgba?\(([^)]+)\)/); if (!m) return null; const v = m[1].split(/[\s,\/]+/).filter(Boolean).map(Number); return [v[0], v[1], v[2], v.length > 3 ? v[3] : 1]; };
     for (let n = el; n && n.nodeType === 1; n = n.parentElement) {
       const cs = getComputedStyle(n);
       opacity *= parseFloat(cs.opacity);
       if ((cs.clip && cs.clip !== 'auto') || cs.clipPath !== 'none') return false;
+      if (cs.filter !== 'none' || (cs.maskImage && cs.maskImage !== 'none') || (cs.webkitMaskImage && cs.webkitMaskImage !== 'none')) return false;
+      if (!background && !backgroundImage) {
+        if (cs.backgroundImage !== 'none') backgroundImage = true;
+        else { const b = rgba(cs.backgroundColor); if (b && b[3] > 0.9) background = b; }
+      }
       if (n !== el && (cs.overflowX !== 'visible' || cs.overflowY !== 'visible')) {
         const b = n.getBoundingClientRect();
         const w = Math.min(r.right, b.right) - Math.max(r.left, b.left), h = Math.min(r.bottom, b.bottom) - Math.max(r.top, b.top);
         if (w < 4 || h < 4) return false;
       }
     }
-    if (opacity < 0.1) return false;
+    if (opacity < 0.5) return false;
+    const cs = getComputedStyle(el);
+    const fg = rgba(cs.webkitTextFillColor || cs.color) || rgba(cs.color);
+    if (fg && fg[3] < 0.5) return false;
+    if (fg && background) {
+      const lum = c => { const [r, g, b] = c.slice(0, 3).map(x => { x /= 255; return x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4); }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+      const a = lum(fg), b = lum(background);
+      if ((Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05) < 1.5) return false;
+    }
     if (r.right + scrollX <= 0 || r.bottom + scrollY <= 0 || r.left + scrollX >= document.documentElement.scrollWidth) return false;
     if (!hitTest) return true;
     el.scrollIntoView({ block: 'center', inline: 'nearest' });
@@ -289,6 +305,8 @@ for (const s of servers) {
   page.on('pageerror', e => errors.push(String(e)));
   await page.goto(`http://127.0.0.1:${s.address().port}/suche.html`, { waitUntil: 'networkidle' });
   await page.evaluate(defineSicht);
+  // über CSSOM, weil die Content-Security-Policy der Produktion eingefügte <style> verbietet
+  await page.evaluate(() => { const sheet = new CSSStyleSheet(); sheet.replaceSync('*,*::before,*::after{pointer-events:auto!important}'); document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet]; });
   const ready = await page.evaluate(() => typeof window.__suchrasterGruppen === 'function');
   if (!ready) hookMissing.add(s === servers[0] ? baseDir : testDir);
   pages.push(page);

@@ -1,7 +1,7 @@
 // Selbsttest des Suchrasters (Nachprüfung der Härtung, PR #856, N855-1): baut aus einem Stand von site/ Konstruktionen,
 // die die Suche für eine Person verschlechtern, und prüft, dass authoring/tools/suchraster.mjs jede meldet. So kann eine
 // spätere Änderung am Werkzeug die Härtung nicht unbemerkt zurücknehmen.
-// Die Konstruktionen stammen aus den Nachprüfungen #849 (K1, K2, K5, K9) und #856 (V1 bis V8), dazu V10 (Überdeckung).
+// Die Konstruktionen stammen aus den Nachprüfungen #849 (K1, K2, K5, K9) und #856 (V1 bis V8, W1 bis W8), dazu V10.
 // Sie sind als Änderung am Stylesheet, an suche.html oder an js/interaktion.js beschrieben, nicht als Diff gegen einen
 // festen Stand. Passt eine Ersetzung nicht mehr, scheitert der Selbsttest mit «nicht anwendbar»; dann die Konstruktion
 // an den neuen Stand anpassen, nicht streichen.
@@ -33,7 +33,15 @@ const CASES = [
   { name: 'V7', was: 'Sicherheitszeile der Leermeldung mit der Klasse puk-sr (suche.html)', html: ['<p><a class="puk-link--inline" href="krise.html#krise-schnell"', '<p class="puk-sr"><a class="puk-link--inline" href="krise.html#krise-schnell"'], erwartet: ['LEERMELDUNG'] },
   { name: 'V7b', was: 'Suizidtreffer mit dem Attribut data-puk-sr-only (suche.html)', htmlSuizid: true, erwartet: ['RANG1'] },
   { name: 'V8', was: '«Wenn Suizid angesprochen wird» ausgeblendet', css: '.puk-site-result[data-search-target="kommunizieren.html#suizid-angesprochen"]{display:none}', erwartet: ['RANG3'] },
-  { name: 'V10', was: 'Suizidtreffer von einem weissen Pseudo-Element überdeckt', css: `${SUIZID}{position:relative}${SUIZID}::after{content:"";position:absolute;inset:0;background:#fff}`, erwartet: ['RANG1'] }
+  { name: 'V10', was: 'Suizidtreffer von einem weissen Pseudo-Element überdeckt', css: `${SUIZID}{position:relative}${SUIZID}::after{content:"";position:absolute;inset:0;background:#fff}`, erwartet: ['RANG1'] },
+  { name: 'W1', was: 'Überdeckung mit pointer-events:none', css: `${SUIZID}{position:relative}${SUIZID}::after{content:"";position:absolute;inset:0;background:#fff;pointer-events:none}`, erwartet: ['RANG1'] },
+  { name: 'W2', was: 'Suizidtreffer mit filter:opacity(0)', css: `${SUIZID}{filter:opacity(0)}`, erwartet: ['RANG1'] },
+  { name: 'W3', was: 'Suizidtreffer mit durchsichtiger Maske', css: `${SUIZID}{-webkit-mask-image:linear-gradient(transparent,transparent);mask-image:linear-gradient(transparent,transparent)}`, erwartet: ['RANG1'] },
+  { name: 'W4', was: 'Suizidtreffer mit Deckkraft 0,11', css: `${SUIZID}{opacity:.11}`, erwartet: ['RANG1'] },
+  { name: 'W5', was: 'Suizidtreffer weiss auf weiss', css: `${SUIZID},${SUIZID} *{color:#fff!important;background:#fff!important;border-color:#fff!important}`, erwartet: ['RANG1'] },
+  { name: 'W6', was: 'Sicherheitszeile der Leermeldung überdeckt (pointer-events:none)', css: `${LEER}{position:relative}${LEER}::after{content:"";position:absolute;inset:-4px;background:#fff;pointer-events:none}`, erwartet: ['LEERMELDUNG'] },
+  { name: 'W7', was: 'Sicherheitszeile der Leermeldung mit filter:opacity(0)', css: `${LEER}{filter:opacity(0)}`, erwartet: ['LEERMELDUNG'] },
+  { name: 'W8', was: 'Suizidtreffer mit transform verschoben und hinter andere gelegt', css: `${SUIZID}{transform:translateY(-400%);z-index:-1;position:relative}`, erwartet: ['RANG1'] }
 ];
 
 function build(c, dir) {
